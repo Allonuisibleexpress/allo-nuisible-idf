@@ -82,8 +82,8 @@ export default function Hero() {
 
         {/* H1 */}
         <h1 className="hero-2 font-black text-white tracking-tight mb-6" style={{ fontSize: 'clamp(3.2rem, 9vw, 6.75rem)', lineHeight: 0.9 }}>
-          Nuisibles<br />
-          <span style={{ color: ACCENT }}>éliminés.</span>
+          Nuisibles&nbsp;?<br />
+          <span style={{ color: ACCENT }}>On s’en charge.</span>
         </h1>
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
