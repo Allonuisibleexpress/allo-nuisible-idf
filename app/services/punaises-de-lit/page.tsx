@@ -1,0 +1,64 @@
+import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+
+const data: ServiceData = {
+  badge: 'Traitement insecticide · Chaleur · Résultat garanti',
+  heroTitle: 'Punaises de lit —',
+  heroHighlight: 'Éradication totale',
+  heroDescription: 'Protocole professionnel certifié : insecticide rémanent longue durée + traitement chaleur si nécessaire. Vous dormez tranquille dès la première nuit après intervention.',
+  heroPrices: [
+    { price: '250', label: 'Studio' },
+    { price: '400', label: 'Appartement' },
+    { price: '600', label: 'Maison' },
+  ],
+  trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', 'Protocole ANSES', 'Garantie 1 mois'],
+  benefits: [
+    { icon: 'microscope', title: 'Insecticides de 4e génération', text: 'Les punaises de lit ont développé des résistances aux produits grand public. Nos biocides professionnels agissent sur le système nerveux et restent actifs plusieurs semaines après le passage.' },
+    { icon: 'search', title: 'Inspection complète du logement', text: 'Matelas, sommier, cadre de lit, plinthes, prises électriques, meubles proches du lit : nos techniciens inspectent chaque recoin pour ne laisser aucun foyer sans traitement.' },
+    { icon: 'shield', title: 'Protocole ANSES validé', text: 'Notre protocole suit les recommandations officielles de l\'Agence nationale de sécurité sanitaire. Traitement de toutes les zones de vie, pas seulement le lit.' },
+  ],
+  process: [
+    { title: 'Diagnostic téléphonique', text: 'Vous décrivez les symptômes (piqûres, taches, observations). Nous évaluons le niveau d\'infestation et confirmons le tarif. Devis gratuit, sans engagement.' },
+    { title: 'Inspection sur place', text: 'Le technicien inspecte l\'ensemble du logement avec une lampe UV. Identification de tous les foyers et cartographie complète avant traitement.' },
+    { title: 'Traitement insecticide professionnel', text: 'Pulvérisation et application d\'insecticide rémanent de 4e génération sur toutes les surfaces infestées et adjacentes. Vous quittez le logement 4 à 6h.' },
+    { title: 'Suivi & garantie', text: 'Retour sous 15 jours pour contrôle. En cas de réapparition dans le délai de garantie, intervention gratuite. Vous dormez tranquille.' },
+  ],
+  pricing: [
+    {
+      label: 'Studio',
+      price: '250',
+      description: 'Jusqu\'à 35 m² · 1 pièce',
+      features: ['1 passage complet', 'Insecticide professionnel', 'Zones à risque traitées', 'Garantie 15 jours'],
+    },
+    {
+      label: 'Appartement',
+      price: '400',
+      description: 'De 35 à 80 m² · 2 à 3 pièces',
+      features: ['1 passage complet', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Garantie 1 mois', 'Visite de contrôle incluse'],
+      highlight: true,
+    },
+    {
+      label: 'Maison / Grande surface',
+      price: 'Sur devis',
+      description: 'Plus de 80 m² ou forte infestation',
+      features: ['2 passages inclus', 'Traitement thermique en option', 'Toutes pièces + mobilier', 'Garantie 1 mois étendue'],
+      cta: 'Obtenir un devis gratuit',
+    },
+  ],
+  testimonials: [
+    { name: 'Amina B.', ville: 'Paris 15e', note: 5, texte: 'Retour de voyage avec des punaises dans les bagages. Allo Nuisible IDF est intervenu le lendemain. Protocole sérieux, technicien rassurant. Plus aucune piqûre depuis.' },
+    { name: 'Laurent V.', ville: 'Vincennes', note: 5, texte: 'Infestation découverte lors d\'un déménagement. Intervention rapide et discrète. Le technicien a traité toutes les pièces méthodiquement. Je recommande sans hésiter.' },
+    { name: 'Claire D.', ville: 'Montreuil', note: 5, texte: 'Très professionnel. L\'inspection a été très complète, le technicien a trouvé des foyers que je n\'avais pas vus. Résultat parfait après 1 semaine.' },
+  ],
+  faq: [
+    { q: 'Comment savoir si j\'ai des punaises de lit ?', a: 'Les signes typiques : piqûres en ligne ou en grappe au réveil, petites taches de sang sur les draps, points noirs (excréments) sur le matelas ou le sommier, et parfois une légère odeur sucrée. Les punaises se cachent dans les coutures du matelas, le sommier, les plinthes.' },
+    { q: 'Les punaises de lit arrivent-elles de l\'extérieur ?', a: 'Oui. Elles voyagent dans les bagages, vêtements, meubles d\'occasion et literies. Hôtels, transports en commun, déménagements : tout objet infesté peut introduire des punaises dans votre logement. Elles ne volent pas mais se déplacent très rapidement.' },
+    { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Dans la grande majorité des cas, oui. Notre protocole combine insecticide rémanent et traitement de toutes les zones. Pour les fortes infestations, une seconde intervention peut être nécessaire — incluse dans notre garantie.' },
+    { q: 'Faut-il jeter le matelas ?', a: 'Pas forcément. Un matelas peut être traité efficacement. Notre technicien évalue sur place. Si le matelas est trop endommagé ou infesté en profondeur, il vous le signalera. Dans la plupart des cas, le traitement suffit.' },
+    { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Oui, pendant 4 à 6 heures après le traitement. Les animaux domestiques doivent également quitter le logement. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
+  ],
+  ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
+}
+
+export default function PunaisesPage() {
+  return <ServicePageTemplate data={data} />
+}

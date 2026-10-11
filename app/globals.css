@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #E8441A;
+  --dark: #1a1a1a;
+  --darker: #222222;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #1a1a1a;
+}
+
+/* Fade-in animation utility */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll-delay-1 { transition-delay: 0.1s; }
+.animate-on-scroll-delay-2 { transition-delay: 0.2s; }
+.animate-on-scroll-delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll-delay-4 { transition-delay: 0.4s; }
+.animate-on-scroll-delay-5 { transition-delay: 0.5s; }
+.animate-on-scroll-delay-6 { transition-delay: 0.6s; }
+.animate-on-scroll-delay-7 { transition-delay: 0.7s; }
+.animate-on-scroll-delay-8 { transition-delay: 0.8s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #E8441A; border-radius: 3px; }
+
+/* ══════════════════════════════════════════════════════
+   PREMIUM TRANSITIONS — crème de la crème
+══════════════════════════════════════════════════════ */
+
+/* ── Scroll reveal — état initial ── */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal       { transform: translateY(32px); }
+.reveal-left  { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-scale { transform: scale(0.93); }
+
+/* ── Scroll reveal — déclenché ── */
+.reveal.in-view,
+.reveal-left.in-view,
+.reveal-right.in-view,
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity  0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Stagger delays ── */
+.d1 { transition-delay:  80ms; }
+.d2 { transition-delay: 160ms; }
+.d3 { transition-delay: 240ms; }
+.d4 { transition-delay: 320ms; }
+.d5 { transition-delay: 400ms; }
+.d6 { transition-delay: 480ms; }
+.d7 { transition-delay: 560ms; }
+
+/* ── Hero entrance (page load) ── */
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.hero-1 { animation: heroSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.hero-2 { animation: heroSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both; }
+.hero-3 { animation: heroSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both; }
+.hero-4 { animation: heroSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both; }
+.hero-5 { animation: heroSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.60s both; }
+
+/* ── Navbar glass sur scroll ── */
+.nav-scrolled {
+  background: rgba(8, 8, 8, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── FAQ accordion smooth ── */
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.48s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-body.open { max-height: 700px; }
+
+/* ── Hover card lift ── */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Reduced motion (accessibilité) ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .hero-1, .hero-2, .hero-3, .hero-4, .hero-5 {
+    animation: none !important; opacity: 1 !important; transform: none !important;
+  }
+  .faq-body { transition: none !important; }
+  .card-hover { transition: none !important; }
+}
+
+/* ── Bouton "lava" — blobs animés (hero) ── */
+@keyframes blobA {
+  0%,100% { transform: translate(0,0) scale(1); }
+  25%     { transform: translate(70px,-45px) scale(1.12); }
+  50%     { transform: translate(-35px,60px) scale(0.88); }
+  75%     { transform: translate(50px,25px) scale(1.05); }
+}
+@keyframes blobB {
+  0%,100% { transform: translate(0,0) scale(1); }
+  25%     { transform: translate(-60px,50px) scale(0.92); }
+  50%     { transform: translate(45px,-70px) scale(1.18); }
+  75%     { transform: translate(-25px,-18px) scale(0.96); }
+}
