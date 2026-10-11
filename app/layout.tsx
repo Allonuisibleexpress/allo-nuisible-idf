@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Allo Nuisible IDF — Chasseurs de nuisibles en Île-de-France',
+  title: 'Lutte contre les nuisibles 7j/7 en Île-de-France',
   description: 'Entreprise certifiée de dératisation, désinsectisation et désinfection en Île-de-France. Interventions 7j/7 et 24h/24. Punaises de lit, cafards, rongeurs, guêpes. Devis gratuit.',
   keywords: 'nuisible, Île-de-France, Paris, dératisation, désinsectisation, punaises de lit, cafards, rongeurs, guêpes',
 }
