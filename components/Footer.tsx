@@ -50,7 +50,7 @@ export default function Footer() {
               radicales et durables, disponibles 7j/7 et 24h/24.
             </p>
             <div className="space-y-2">
-              <a href="tel:+33123456789" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
+              <a href="tel:+33768077219" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
                 <Phone className="w-4 h-4 text-[#E8441A]" />
                 <span className="group-hover:underline">07 68 07 72 19</span>
               </a>

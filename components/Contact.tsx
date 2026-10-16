@@ -22,7 +22,7 @@ const contactInfo = [
     label: 'Téléphone',
     value: '07 68 07 72 19',
     sub: 'Appel gratuit, 7j/7 et 24h/24',
-    href: 'tel:+33123456789',
+    href: 'tel:+33768077219',
   },
   {
     icon: Mail,
@@ -273,7 +273,7 @@ export default function Contact() {
                 Une infestation ne peut pas attendre ? Appelez-nous maintenant.
               </p>
               <a
-                href="tel:+33123456789"
+                href="tel:+33768077219"
                 className="inline-flex items-center gap-2 bg-white text-[#E8441A] font-black text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-4 h-4" />

@@ -38,7 +38,6 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function FourmisPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [floatVisible, setFloatVisible] = useState(false)
-  const [parallax, setParallax] = useState(0)
   const [lightbox, setLightbox] = useState<{src:string,city:string}|null>(null)
   const [dynCounts, setDynCounts] = useState({ total: 480, week: 12, tech: 2 })
 
@@ -60,7 +59,6 @@ export default function FourmisPage() {
         requestAnimationFrame(() => {
           const nearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 140
           setFloatVisible(window.scrollY > 380 && !nearBottom)
-          setParallax(window.scrollY * 0.28)
           ticking = false
         })
         ticking = true
@@ -128,8 +126,6 @@ export default function FourmisPage() {
 
         {/* ══════════════════ HERO ══════════════════ */}
         <section className="relative flex flex-col justify-center px-6 sm:px-10 lg:px-16 overflow-hidden pt-10 pb-12 md:pt-14 md:pb-16" style={{ background: '#0d0d0d', minHeight: '100svh' }}>
-          {/* Parallax bg — étendu ±15% pour éviter le gap noir */}
-          <div className="absolute pointer-events-none" style={{ top: '-15%', bottom: '-15%', left: 0, right: 0, backgroundImage: 'url(/hero-fourmis.jpg)', backgroundSize: 'cover', backgroundPosition: 'center 40%', opacity: 0.52, transform: `translateY(${parallax}px)`, willChange: 'transform' }} />
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(13,13,13,0.25) 50%, rgba(13,13,13,0.92) 100%)' }} />
 
           <div className="relative w-full max-w-5xl mx-auto text-center">
