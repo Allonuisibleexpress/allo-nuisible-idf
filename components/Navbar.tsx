@@ -43,29 +43,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
-  const [toastVisible, setToastVisible] = useState(false)
-  const [toastInfo, setToastInfo] = useState({ name: 'Pierre', city: 'Neuilly-sur-Seine', action: "vient d'appeler" })
-
-  useEffect(() => {
-    const NAMES = ["Pierre","Sophie","Julien","Marie","Thomas","Isabelle","Antoine","Charlotte","Nicolas","Camille","Alexandre","Aurélie","Vincent","Laure","Romain","Nathalie"]
-    const CITIES = ["Paris 16e","Neuilly-sur-Seine","Versailles","Boulogne-Billancourt","Saint-Cloud","Vincennes","Rueil-Malmaison","Le Vésinet","Levallois-Perret","Enghien-les-Bains","Maisons-Laffitte","Saint-Germain-en-Laye","Créteil","Nogent-sur-Marne","Montreuil","Massy"]
-    const ACTIONS = ["vient d'appeler","vient d'appeler","vient de prendre RDV","vient de demander un devis"]
-    let hideTimer: ReturnType<typeof setTimeout>
-    let interval: ReturnType<typeof setInterval>
-    const show = () => {
-      setToastInfo({
-        name: NAMES[Math.floor(Math.random() * NAMES.length)],
-        city: CITIES[Math.floor(Math.random() * CITIES.length)],
-        action: ACTIONS[Math.floor(Math.random() * ACTIONS.length)],
-      })
-      setToastVisible(true)
-      clearTimeout(hideTimer)
-      hideTimer = setTimeout(() => setToastVisible(false), 5000)
-    }
-    const initial = setTimeout(() => { show(); interval = setInterval(show, 40000) }, 8000)
-    return () => { clearTimeout(initial); clearTimeout(hideTimer); clearInterval(interval) }
-  }, [])
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -147,80 +124,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between py-2.5 lg:py-3" style={{ position: 'relative' }}>
-
-          {/* Toast social proof — desktop : centré dans le header (lg+) */}
-          <div
-            aria-live="polite"
-            className="hidden lg:flex"
-            style={{
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: toastVisible ? 'translate(-50%, -50%)' : 'translate(-50%, calc(-50% + 5px))',
-              transition: 'opacity 0.35s ease, transform 0.35s ease',
-              opacity: toastVisible ? 1 : 0,
-              pointerEvents: 'none',
-              zIndex: 20,
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              background: 'rgba(18,18,18,0.97)',
-              border: '1px solid rgba(232,68,26,0.28)',
-              borderRadius: 9999,
-              padding: '5px 14px 5px 9px',
-              fontSize: 11.5,
-              fontWeight: 500,
-              color: 'rgba(255,255,255,0.9)',
-              boxShadow: '0 2px 16px rgba(0,0,0,0.5)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-            }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e', flexShrink: 0, display: 'inline-block' }} />
-              <span style={{ color: '#fff', fontWeight: 700 }}>{toastInfo.name}</span>
-              <span style={{ color: 'rgba(255,255,255,0.25)' }}> · </span>
-              <span style={{ color: '#E8441A', fontWeight: 600 }}>{toastInfo.city}</span>
-              <span style={{ color: 'rgba(255,255,255,0.25)' }}> · </span>
-              <span style={{ color: 'rgba(255,255,255,0.55)' }}>{toastInfo.action}</span>
-            </div>
-          </div>
-
-          {/* Toast social proof — mobile : pill fixé juste sous la navbar */}
-          <div
-            className="lg:hidden"
-            style={{
-              position: 'fixed',
-              top: 66,
-              left: '50%',
-              transform: toastVisible ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-6px)',
-              transition: 'opacity 0.35s ease, transform 0.35s ease',
-              opacity: toastVisible ? 1 : 0,
-              pointerEvents: 'none',
-              zIndex: 49,
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: 5,
-              background: 'rgba(18,18,18,0.97)',
-              border: '1px solid rgba(232,68,26,0.28)',
-              borderRadius: 9999,
-              padding: '4px 12px 4px 8px',
-              fontSize: 10.5,
-              fontWeight: 500,
-              color: 'rgba(255,255,255,0.9)',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-            }}>
-              <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#22c55e', flexShrink: 0, display: 'inline-block' }} />
-              <span style={{ color: '#fff', fontWeight: 700 }}>{toastInfo.name}</span>
-              <span style={{ color: 'rgba(255,255,255,0.25)' }}> · </span>
-              <span style={{ color: '#E8441A', fontWeight: 600 }}>{toastInfo.city}</span>
-              <span style={{ color: 'rgba(255,255,255,0.55)' }}> · {toastInfo.action}</span>
-            </div>
-          </div>
 
           {/* Logo */}
           <button

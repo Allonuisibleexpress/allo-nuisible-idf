@@ -34,7 +34,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: 'Horaires',
-    value: '7j/7 — 24h/24',
+    value: '7j/7, 24h/24',
     sub: 'Urgences incluses, sans majoration',
   },
   {
@@ -228,7 +228,7 @@ export default function Contact() {
                   </button>
 
                   <p className="text-gray-400 text-xs text-center">
-                    * Champs obligatoires — Vos données restent confidentielles
+                    * Champs obligatoires. Vos données restent confidentielles
                   </p>
                 </form>
               )}

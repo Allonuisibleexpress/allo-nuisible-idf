@@ -125,7 +125,7 @@ export default function TarifsPage() {
               Le tarif est confirmé avant chaque intervention. Pas de mauvaise surprise, pas de frais cachés. Appelez pour un devis gratuit en 5 minutes.
             </p>
             <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl text-sm" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
-              <Phone className="w-4 h-4" />Devis gratuit — {PHONE}
+              <Phone className="w-4 h-4" />Devis gratuit : {PHONE}
             </a>
           </div>
         </section>

@@ -162,7 +162,7 @@ export default function NosNuisibles() {
           border: '1px solid rgba(232,68,26,0.15)',
         }}>
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>
-            Vous ne savez pas quel service choisir ? Appelez — on identifie et on intervient.
+            Vous ne savez pas quel service choisir ? Appelez, on identifie et on intervient.
           </p>
           <a
             href="tel:+33768077219"

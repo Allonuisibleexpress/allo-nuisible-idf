@@ -2,7 +2,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 
 const data: ServiceData = {
   badge: 'Rats · Souris · Ragondins · Particuliers & Pros',
-  heroTitle: 'Rongeurs —',
+  heroTitle: 'Rongeurs',
   heroHighlight: 'Dératisation certifiée',
   heroDescription: 'Postes d\'appâtage sécurisés, identification des points d\'entrée, colmatage. Attestation fournie pour les professionnels. Contrats de maintenance disponibles.',
   heroPrices: [
@@ -18,7 +18,7 @@ const data: ServiceData = {
   ],
   process: [
     { title: 'Diagnostic sur place', text: 'Inspection complète : points d\'entrée, couloirs, nids, crottes, traces. Identification précise de l\'espèce (rat brun, souris domestique, mulot) pour adapter le protocole.' },
-    { title: 'Installation des postes', text: 'Mise en place de postes d\'appâtage sécurisés aux points stratégiques. Les rongeurs sont prudents — la phase d\'apprivoisement dure 3 à 7 jours avant qu\'ils consomment les appâts.' },
+    { title: 'Installation des postes', text: 'Mise en place de postes d\'appâtage sécurisés aux points stratégiques. Les rongeurs sont prudents : la phase d\'apprivoisement dure 3 à 7 jours avant qu\'ils consomment les appâts.' },
     { title: 'Suivi & relevés', text: 'Retour sous 1 à 2 semaines pour relever les consommations, ajuster les appâts et évaluer l\'efficacité. Plusieurs passages peuvent être nécessaires selon le niveau d\'infestation.' },
     { title: 'Sécurisation & prévention', text: 'Colmatage des points d\'entrée identifiés et conseils pour éviter les réinfestations. Fourniture de l\'attestation d\'intervention pour les professionnels.' },
   ],

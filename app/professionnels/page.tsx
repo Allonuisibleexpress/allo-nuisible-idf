@@ -39,14 +39,14 @@ const contracts = [
   {
     label: 'Trimestriel',
     price: 'Sur devis',
-    description: '4 visites par an — idéal pour restaurants et commerces alimentaires',
+    description: '4 visites par an, idéal pour restaurants et commerces alimentaires',
     features: ['4 passages/an', 'Relevés de postes', 'Rapport trimestriel', 'Registre de suivi', 'Attestations incluses'],
     highlight: true,
   },
   {
     label: 'Mensuel',
     price: 'Sur devis',
-    description: '12 visites par an — pour les établissements à fort risque',
+    description: '12 visites par an, pour les établissements à fort risque',
     features: ['12 passages/an', 'Relevés mensuels', 'Rapport mensuel', 'Accès prioritaire urgences', 'Registre complet fourni'],
   },
 ]
@@ -75,7 +75,7 @@ export default function ProfessionnelsPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
               <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
-                <Phone className="w-4 h-4" />Devis professionnel — {PHONE}
+                <Phone className="w-4 h-4" />Devis professionnel : {PHONE}
               </a>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold text-white px-7 py-4 rounded-2xl text-sm" style={{ background: '#25D366' }}>
                 WhatsApp pro
@@ -192,7 +192,7 @@ export default function ProfessionnelsPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Questions fréquentes</p>
-              <h2 className="text-2xl font-black text-white">Professionnels — vos questions</h2>
+              <h2 className="text-2xl font-black text-white">Professionnels : vos questions</h2>
             </div>
             <div className="space-y-4">
               {[

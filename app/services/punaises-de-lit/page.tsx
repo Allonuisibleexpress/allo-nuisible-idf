@@ -2,7 +2,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 
 const data: ServiceData = {
   badge: 'Traitement insecticide · Chaleur · Résultat garanti',
-  heroTitle: 'Punaises de lit —',
+  heroTitle: 'Punaises de lit',
   heroHighlight: 'Éradication totale',
   heroDescription: 'Protocole professionnel certifié : insecticide rémanent longue durée + traitement chaleur si nécessaire. Vous dormez tranquille dès la première nuit après intervention.',
   heroPrices: [
@@ -52,7 +52,7 @@ const data: ServiceData = {
   faq: [
     { q: 'Comment savoir si j\'ai des punaises de lit ?', a: 'Les signes typiques : piqûres en ligne ou en grappe au réveil, petites taches de sang sur les draps, points noirs (excréments) sur le matelas ou le sommier, et parfois une légère odeur sucrée. Les punaises se cachent dans les coutures du matelas, le sommier, les plinthes.' },
     { q: 'Les punaises de lit arrivent-elles de l\'extérieur ?', a: 'Oui. Elles voyagent dans les bagages, vêtements, meubles d\'occasion et literies. Hôtels, transports en commun, déménagements : tout objet infesté peut introduire des punaises dans votre logement. Elles ne volent pas mais se déplacent très rapidement.' },
-    { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Dans la grande majorité des cas, oui. Notre protocole combine insecticide rémanent et traitement de toutes les zones. Pour les fortes infestations, une seconde intervention peut être nécessaire — incluse dans notre garantie.' },
+    { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Dans la grande majorité des cas, oui. Notre protocole combine insecticide rémanent et traitement de toutes les zones. Pour les fortes infestations, une seconde intervention peut être nécessaire, incluse dans notre garantie.' },
     { q: 'Faut-il jeter le matelas ?', a: 'Pas forcément. Un matelas peut être traité efficacement. Notre technicien évalue sur place. Si le matelas est trop endommagé ou infesté en profondeur, il vous le signalera. Dans la plupart des cas, le traitement suffit.' },
     { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Oui, pendant 4 à 6 heures après le traitement. Les animaux domestiques doivent également quitter le logement. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
   ],

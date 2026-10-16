@@ -39,18 +39,6 @@ export default function FourmisPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [floatVisible, setFloatVisible] = useState(false)
   const [lightbox, setLightbox] = useState<{src:string,city:string}|null>(null)
-  const [dynCounts, setDynCounts] = useState({ total: 480, week: 12, tech: 2 })
-
-  useEffect(() => {
-    const now = new Date()
-    const startOfYear = new Date(now.getFullYear(), 0, 1)
-    const weekNum = Math.floor((now.getTime() - startOfYear.getTime()) / 604800000)
-    const total = 380 + weekNum * 18
-    const seed = weekNum * 11 + 5
-    const week = 8 + (seed % 10)
-    const tech = [1, 2, 2, 3][Math.floor(Math.random() * 4)]
-    setDynCounts({ total, week, tech })
-  }, [])
 
   useEffect(() => {
     let ticking = false
@@ -130,14 +118,6 @@ export default function FourmisPage() {
 
           <div className="relative w-full max-w-5xl mx-auto text-center">
 
-            {/* Badge */}
-            <div className="hero-1 inline-flex items-center gap-2 rounded-full px-3 py-1 mt-3 mb-4" style={{ background: 'rgba(232,68,26,0.12)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
-              <span className="text-[10px] font-semibold tracking-normal" style={{ color: ACCENT }}>
-                {dynCounts.tech} technicien{dynCounts.tech > 1 ? 's' : ''} disponible{dynCounts.tech > 1 ? 's' : ''} · Devis offert
-              </span>
-            </div>
-
             {/* Titre */}
             <h1 className="hero-2 font-black text-white leading-none tracking-tight mb-8" style={{ fontSize: 'clamp(3rem, 9vw, 7rem)' }}>
               Les fourmis ont{' '}
@@ -147,7 +127,7 @@ export default function FourmisPage() {
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Tant que la reine pond, la colonie se reconstitue.{' '}
               <strong style={{ color: ACCENT }}>Nos techniciens ciblent le nid entier</strong>{' '}
-              et garantissent le résultat sous 48h — 7j/7 en Île-de-France.{' '}
+              et garantissent le résultat sous 48h, 7j/7 en Île-de-France.{' '}
               <strong style={{ color: ACCENT }}>Devis et déplacement gratuits.</strong>
             </p>
 
@@ -223,21 +203,6 @@ export default function FourmisPage() {
           </div>
         </section>
 
-        {/* ══════════════════ COMPTEUR DYNAMIQUE ══════════════════ */}
-        <div style={{ background: ACCENT }}>
-          <div className="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-            <span className="text-white font-black text-2xl md:text-3xl">{dynCounts.total} colonies</span>
-            <span className="text-white/80 font-medium text-sm md:text-base">de fourmis traitées en Île-de-France cette saison</span>
-            <span className="hidden sm:inline text-white/50 text-sm">·</span>
-            <span className="text-white font-bold text-sm md:text-base">dont {dynCounts.week} cette semaine</span>
-            <span className="hidden sm:inline text-white/50 text-sm">·</span>
-            <span className="text-white font-bold text-sm md:text-base flex items-center gap-1.5">
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'rgba(255,255,255,0.9)', animation: 'sp-pulse 1.5s ease-in-out infinite', display: 'inline-block', flexShrink: 0 }} />
-              {dynCounts.tech} technicien{dynCounts.tech > 1 ? 's' : ''} disponible{dynCounts.tech > 1 ? 's' : ''}
-            </span>
-          </div>
-        </div>
-
         {/* ══════════════════ GARANTIE 1 MOIS ══════════════════ */}
         <section className="reveal" style={{ background: '#141414', padding: '52px 16px' }}>
           <div className="max-w-2xl mx-auto">
@@ -264,7 +229,7 @@ export default function FourmisPage() {
                 Si les fourmis reviennent, on revient sans frais.
               </p>
               <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
-                Toute intervention est garantie. En cas de réapparition après les passages effectués, notre technicien revient — seuls les frais de déplacement vous sont facturés, le traitement est offert.
+                Toute intervention est garantie. En cas de réapparition après les passages effectués, notre technicien revient : seuls les frais de déplacement vous sont facturés, le traitement est offert.
               </p>
               <a
                 href={PHONE_HREF}
@@ -368,14 +333,14 @@ export default function FourmisPage() {
             <div className="flex gap-4 marquee-r" style={{ width: 'max-content' }}>
               {[
                 { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 4 jours', texte: "Fourmis dans le garde-manger, insupportable. Un appel le soir, technicien le lendemain matin. Il a posé le gel sous les plinthes et expliqué comment prévenir le retour. Résultat parfait en 10 jours." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin — une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
+                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin, une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
                 { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 2 semaines', texte: "Fourmis charpentières dans le parquet. J'étais inquiète pour la structure. Le technicien a injecté le produit directement dans les galeries. Plus aucun signe d'activité depuis. Merci !" },
                 { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 3 semaines', texte: "Invasion de fourmis pharaon dans la salle de bain. Le technicien a refusé d'utiliser un spray (contre-productif) et a posé le gel adapté. 2 semaines plus tard, problem solved. Vraiment pro." },
                 { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 1 mois', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette fois des fourmis noires sous la terrasse. Intervention rapide, prix honnête, garantie incluse. Je les garde en favori." },
                 { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 semaines', texte: "Pistes de fourmis depuis la cave jusqu'à la cuisine. Technicien très méthodique, a suivi les pistes jusqu'au nid dans le mur. Traitement en profondeur, résultat garanti. Très satisfait." },
               ].concat([
                 { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 4 jours', texte: "Fourmis dans le garde-manger, insupportable. Un appel le soir, technicien le lendemain matin. Il a posé le gel sous les plinthes et expliqué comment prévenir le retour. Résultat parfait en 10 jours." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin — une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
+                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin, une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
                 { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 2 semaines', texte: "Fourmis charpentières dans le parquet. J'étais inquiète pour la structure. Le technicien a injecté le produit directement dans les galeries. Plus aucun signe d'activité depuis. Merci !" },
                 { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 3 semaines', texte: "Invasion de fourmis pharaon dans la salle de bain. Le technicien a refusé d'utiliser un spray (contre-productif) et a posé le gel adapté. 2 semaines plus tard, problem solved. Vraiment pro." },
                 { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 1 mois', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette fois des fourmis noires sous la terrasse. Intervention rapide, prix honnête, garantie incluse. Je les garde en favori." },
@@ -478,7 +443,7 @@ export default function FourmisPage() {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 rounded-xl px-5 py-4" style={{ background: 'rgba(232,68,26,0.06)', border: '1px solid rgba(232,68,26,0.16)' }}>
-              <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem' }}>Un technicien certifié règle le problème définitivement — gel appât professionnel + barrière rémanente.</p>
+              <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem' }}>Un technicien certifié règle le problème définitivement : gel appât professionnel + barrière rémanente.</p>
               <a href={PHONE_HREF} className="shrink-0 inline-flex items-center gap-2 font-bold text-white px-5 py-2.5 rounded-lg text-sm" style={{ background: ACCENT }}>
                 <Phone className="w-3.5 h-3.5" /> Appeler maintenant
               </a>
@@ -525,7 +490,7 @@ export default function FourmisPage() {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.65),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Printemps (mars–juin) — Idéal</p>
+                <p className="font-bold text-white text-sm mb-2">Printemps (mars–juin) : idéal</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Reprise d&apos;activité après l&apos;hiver. Les colonies sont encore petites.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>C&apos;est le meilleur moment pour traiter avant l&apos;explosion estivale.</strong>
@@ -533,7 +498,7 @@ export default function FourmisPage() {
               </div>
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(251,146,60,0.07)', border: '1px solid rgba(251,146,60,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(251,146,60,0.8),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Été (juin–septembre) — Urgent</p>
+                <p className="font-bold text-white text-sm mb-2">Été (juin–septembre) : urgent</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Activité maximale. Invasions massives dans cuisines et garde-mangers.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Appelez immédiatement, chaque jour = centaines de nouvelles fourmis.</strong>
@@ -550,7 +515,7 @@ export default function FourmisPage() {
             <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
               {[
-                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles — 10 % de la colonie. La reine, en sécurité dans le nid, continue de pondre jusqu'à 1 000 œufs par jour. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
+                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles, soit 10 % de la colonie. La reine, en sécurité dans le nid, continue de pondre jusqu'à 1 000 œufs par jour. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
                 { q: 'La fourmi pharaon est-elle dangereuse ?', a: "Oui, particulièrement en milieu hospitalier et pour les personnes immunodéprimées : elle peut transporter des bactéries pathogènes. En appartement, elle s'installe derrière les plinthes et dans les circuits électriques. Un pulvérisateur classique aggrave la situation en dispersant la colonie." },
                 { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans le mois, nous revenons gratuitement." },
                 { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
@@ -698,7 +663,7 @@ function CallbackForm() {
         {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
       </button>
       <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.7rem', textAlign: 'center' }}>
-        * Champs obligatoires — Vos données restent confidentielles
+        * Champs obligatoires. Vos données restent confidentielles
       </p>
     </form>
   )
@@ -774,9 +739,8 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
         <div className="px-6 pt-6 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                Technicien disponible
+                Devis gratuit
               </span>
             </div>
             <button type="button" onClick={handleClose}
@@ -835,7 +799,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
             </div>
             <div>
               <label style={lbl}>Décrivez votre situation</label>
-              <textarea name="message" rows={3} placeholder="Où se trouvent les fourmis ? Cuisine, jardin, charpente… — Urgence ce soir ou demain ?" style={{ ...field, resize: 'none' }} />
+              <textarea name="message" rows={3} placeholder="Où se trouvent les fourmis ? Cuisine, jardin, charpente… Urgence ce soir ou demain ?" style={{ ...field, resize: 'none' }} />
             </div>
             <button type="submit" disabled={loading}
               className="w-full font-black text-white py-4 rounded-xl text-sm uppercase tracking-wider transition-all hover:opacity-90 disabled:opacity-60"

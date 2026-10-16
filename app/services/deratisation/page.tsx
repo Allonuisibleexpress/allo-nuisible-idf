@@ -2,7 +2,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 
 const data: ServiceData = {
   badge: 'Certibiocide · HACCP · Particuliers & ERP · Contrats annuels',
-  heroTitle: 'Dératisation —',
+  heroTitle: 'Dératisation',
   heroHighlight: 'Intervention certifiée',
   heroDescription: 'Élimination des rongeurs par des techniciens Certibiocide. Postes sécurisés, attestations pour professionnels, contrats de maintenance. Résultat garanti.',
   heroPrices: [
@@ -12,7 +12,7 @@ const data: ServiceData = {
   ],
   trustBar: ['Certibiocide', 'Attestation HACCP', 'Postes sécurisés', 'Contrats maintenance', 'RC Pro incluse'],
   benefits: [
-    { icon: 'home', title: 'Particuliers — intervention rapide', text: 'Inspection du logement, identification des points d\'entrée, installation de postes d\'appâtage sécurisés. Intervention le jour même pour les urgences, discrète et efficace.' },
+    { icon: 'home', title: 'Particuliers : intervention rapide', text: 'Inspection du logement, identification des points d\'entrée, installation de postes d\'appâtage sécurisés. Intervention le jour même pour les urgences, discrète et efficace.' },
     { icon: 'food', title: 'Professionnels & ERP conformes', text: 'Intervention conforme aux normes HACCP. Fourniture des attestations et rapports d\'intervention obligatoires pour restaurants, hôtels, commerces alimentaires et ERP.' },
     { icon: 'building', title: 'Copropriétés & parties communes', text: 'Traitement des caves, locaux poubelles, parkings et parties communes. Intervention en lien avec le syndic. Contrats pluriannuels avec visites régulières et registre de suivi.' },
   ],

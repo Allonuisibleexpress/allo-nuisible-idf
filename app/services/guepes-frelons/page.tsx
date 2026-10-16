@@ -25,7 +25,7 @@ const faq = [
   },
   {
     q: "Quel est le tarif pour la destruction d'un nid de guêpes ?",
-    a: "Le tarif dépend de l'emplacement du nid, de son accessibilité et de la taille de la colonie. Appelez-nous pour un devis gratuit en 5 minutes — intervention possible le jour même 7j/7.",
+    a: "Le tarif dépend de l'emplacement du nid, de son accessibilité et de la taille de la colonie. Appelez-nous pour un devis gratuit en 5 minutes, intervention possible le jour même 7j/7.",
   },
   {
     q: "Peut-on détruire un nid de guêpes soi-même ?",
@@ -41,10 +41,10 @@ const faq = [
   },
   {
     q: "Que faire en cas de piqûre de frelon asiatique ?",
-    a: "Retirez le dard si visible, désinfectez, appliquez du froid pour limiter le gonflement, prenez un antihistaminique si disponible. Surveillez les 30 minutes suivantes : gonflement du visage ou de la gorge, difficultés respiratoires, vertiges ou chute de tension sont des signaux d'alarme — appelez le 15 (SAMU) immédiatement. Plus de 5 piqûres simultanées nécessitent aussi une consultation urgente, même sans allergie connue.",
+    a: "Retirez le dard si visible, désinfectez, appliquez du froid pour limiter le gonflement, prenez un antihistaminique si disponible. Surveillez les 30 minutes suivantes : gonflement du visage ou de la gorge, difficultés respiratoires, vertiges ou chute de tension sont des signaux d'alarme : appelez le 15 (SAMU) immédiatement. Plus de 5 piqûres simultanées nécessitent aussi une consultation urgente, même sans allergie connue.",
   },
   {
-    q: 'Pompiers ou exterminateur — qui appeler pour un nid de guêpes ?',
+    q: 'Pompiers ou exterminateur : qui appeler pour un nid de guêpes ?',
     a: "Les pompiers n'interviennent plus gratuitement pour les nids de guêpes depuis 2014, sauf danger immédiat dans un espace public. Un professionnel comme Allo Nuisible IDF reste la solution la plus fiable : intervention le jour même en Île-de-France, équipement adapté, produit rémanent et garantie de résultat.",
   },
 ]
@@ -85,7 +85,7 @@ const garanties = [
 
 /* ─────────────────────────── Timeline ─────────────────────── */
 const timeline = [
-  { num: '1', title: 'Appel & rappel sous 5 min', text: 'Vous nous contactez — on vous rappelle sous 5 minutes. Diagnostic par téléphone et devis gratuit immédiat.' },
+  { num: '1', title: 'Appel & rappel sous 5 min', text: 'Vous nous contactez, on vous rappelle sous 5 minutes. Diagnostic par téléphone et devis gratuit immédiat.' },
   { num: '2', title: 'Intervention le jour même', text: 'Un technicien équipé intervient sous une heure. Traitement insecticide foudroyant directement dans le nid.' },
   { num: '3', title: 'Neutralisation complète', text: 'Le nid est traité et retiré si accessible. Le produit rémanent agit sous 48h pour éliminer les guêpes de retour.' },
   { num: '4', title: 'Contrôle post-intervention', text: `En cas d'activité persistante sous 48h, notre technicien revient sans délai ni frais supplémentaires.` },
@@ -103,7 +103,7 @@ const sections = [
   },
   {
     title: 'Quel est le bon moment pour intervenir ?',
-    content: "Au printemps, les nids primaires ont la taille d'une balle de golf — c'est la fenêtre idéale pour intervenir rapidement et à moindre coût. En été, les colonies atteignent leur pleine taille et peuvent compter des milliers d'individus. N'essayez jamais de les approcher seul. Contactez-nous pour une intervention sécurisée partout en Île-de-France.",
+    content: "Au printemps, les nids primaires ont la taille d'une balle de golf, c'est la fenêtre idéale pour intervenir rapidement et à moindre coût. En été, les colonies atteignent leur pleine taille et peuvent compter des milliers d'individus. N'essayez jamais de les approcher seul. Contactez-nous pour une intervention sécurisée partout en Île-de-France.",
   },
 ]
 
@@ -140,18 +140,6 @@ export default function GuêpesFrelonsPage() {
   const [lightbox, setLightbox] = useState<{src:string,city:string}|null>(null)
 
   const [floatVisible, setFloatVisible] = useState(false)
-  const [dynCounts, setDynCounts] = useState({ total: 320, week: 8, tech: 2 })
-
-  useEffect(() => {
-    const now = new Date()
-    const startOfYear = new Date(now.getFullYear(), 0, 1)
-    const weekNum = Math.floor((now.getTime() - startOfYear.getTime()) / 604800000)
-    const total = 220 + weekNum * 14
-    const seed = weekNum * 13 + 7
-    const week = 5 + (seed % 8)
-    const tech = [1, 2, 2, 3][Math.floor(Math.random() * 4)]
-    setDynCounts({ total, week, tech })
-  }, [])
 
   useEffect(() => {
     let ticking = false
@@ -228,14 +216,6 @@ export default function GuêpesFrelonsPage() {
 
           <div className="relative w-full max-w-5xl mx-auto text-center">
 
-            {/* Badge */}
-            <div className="hero-1 inline-flex items-center gap-2 rounded-full px-3 py-1 mt-3 mb-8" style={{ background: 'rgba(232,68,26,0.12)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
-              <span className="text-[10px] font-semibold tracking-normal" style={{ color: '#E8441A' }}>
-                2 techniciens disponibles · Devis offert
-              </span>
-            </div>
-
             {/* Titre */}
             <h1 className="hero-2 font-black text-white leading-none tracking-tight mb-8" style={{ fontSize: 'clamp(3rem, 9vw, 7rem)' }}>
               Ne touchez pas{' '}
@@ -245,7 +225,7 @@ export default function GuêpesFrelonsPage() {
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Une attaque de frelons peut provoquer un{' '}
               <strong style={{ color: ACCENT }}>choc anaphylactique</strong>, même sans allergie.
-              Nos techniciens interviennent en moins d&apos;1h partout en Île-de-France — résultat garanti.
+              Nos techniciens interviennent en moins d&apos;1h partout en Île-de-France, résultat garanti.
             </p>
 
             {/* ── NUMÉRO — bouton lava ── */}
@@ -331,21 +311,6 @@ export default function GuêpesFrelonsPage() {
           </div>
         </section>
 
-        {/* ══════════════════ COMPTEUR SOCIAL PROOF ══════════════════ */}
-        <div style={{ background: ACCENT }}>
-          <div className="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-            <span className="text-white font-black text-2xl md:text-3xl">{dynCounts.total} nids</span>
-            <span className="text-white/80 font-medium text-sm md:text-base">neutralisés en Île-de-France cette saison</span>
-            <span className="hidden sm:inline text-white/50 text-sm">·</span>
-            <span className="text-white font-bold text-sm md:text-base">dont {dynCounts.week} cette semaine</span>
-            <span className="hidden sm:inline text-white/50 text-sm">·</span>
-            <span className="text-white font-bold text-sm md:text-base flex items-center gap-1.5">
-              <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'rgba(255,255,255,0.9)', animation: 'sp-pulse 1.5s ease-in-out infinite', display: 'inline-block', flexShrink: 0 }} />
-              {dynCounts.tech} technicien{dynCounts.tech > 1 ? 's' : ''} disponible{dynCounts.tech > 1 ? 's' : ''}
-            </span>
-          </div>
-        </div>
-
         {/* ══════════════════ GARANTIE 1 MOIS PREMIUM ══════════════════ */}
         <section className="reveal" style={{ background: '#141414', padding: '52px 16px' }}>
           <div className="max-w-2xl mx-auto">
@@ -429,8 +394,8 @@ export default function GuêpesFrelonsPage() {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { src: '/galerie-1.png', alt: 'Nid de guêpes dans une cloison traité par notre technicien en Île-de-France', city: 'Paris 6e' },
-                { src: '/galerie-2.png', alt: 'Destruction nid de guêpes sous avant-toit — intervention Île-de-France', city: 'Créteil' },
-                { src: '/galerie-3.png', alt: 'Intervention nid de guêpes en hauteur — technicien certifié Île-de-France', city: 'Pontault-Combault' },
+                { src: '/galerie-2.png', alt: 'Destruction nid de guêpes sous avant-toit, intervention Île-de-France', city: 'Créteil' },
+                { src: '/galerie-3.png', alt: 'Intervention nid de guêpes en hauteur, technicien certifié Île-de-France', city: 'Pontault-Combault' },
                 { src: '/galerie-4.png', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention guêpes', city: 'Évry' },
                 { src: '/galerie-5.png', alt: 'Nid de guêpes neutralisé dans les combles en Île-de-France', city: 'Drancy' },
                 { src: '/galerie-6.png', alt: 'Traitement nid de frelons par notre équipe en Île-de-France', city: 'Montmorency' },
@@ -485,7 +450,7 @@ export default function GuêpesFrelonsPage() {
                 </div>
                 <div>
                   <p className="font-bold text-white text-sm md:text-base mb-1.5">
-                    N&apos;intervenez jamais seul — c&apos;est dangereux
+                    N&apos;intervenez jamais seul, c&apos;est dangereux
                   </p>
                   <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.65 }}>
                     Un nid d&apos;été peut renfermer jusqu&apos;à{' '}
@@ -528,7 +493,7 @@ export default function GuêpesFrelonsPage() {
                 {[
                   {
                     title: "Le spray n'atteint pas le nid",
-                    text: "Les insecticides grand public ne pénètrent pas dans les galeries internes du nid. Vous éliminez quelques ouvrières — les 9 000 autres poursuivent. Le nid reprend de plus belle sous 48h.",
+                    text: "Les insecticides grand public ne pénètrent pas dans les galeries internes du nid. Vous éliminez quelques ouvrières, les 9 000 autres poursuivent. Le nid reprend de plus belle sous 48h.",
                   },
                   {
                     title: 'Sans tenue de protection, le risque est maximal',
@@ -557,7 +522,7 @@ export default function GuêpesFrelonsPage() {
                 style={{ background: `rgba(232,68,26,0.06)`, border: `1px solid rgba(232,68,26,0.16)` }}
               >
                 <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem' }}>
-                  Un technicien certifié règle le problème définitivement — en une seule visite.
+                  Un technicien certifié règle le problème définitivement, en une seule visite.
                 </p>
                 <a
                   href={PHONE_HREF}
@@ -602,7 +567,7 @@ export default function GuêpesFrelonsPage() {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.65),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Printemps (mars–juin) — Idéal</p>
+                <p className="font-bold text-white text-sm mb-2">Printemps (mars–juin) : idéal</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Le nid est encore petit (taille d&apos;une balle de golf). L&apos;intervention est plus rapide, moins coûteuse.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>C&apos;est le meilleur moment pour agir.</strong>
@@ -610,7 +575,7 @@ export default function GuêpesFrelonsPage() {
               </div>
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(251,146,60,0.07)', border: '1px solid rgba(251,146,60,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(251,146,60,0.8),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Été (juillet–septembre) — Urgent</p>
+                <p className="font-bold text-white text-sm mb-2">Été (juillet–septembre) : urgent</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Le nid peut atteindre la taille d&apos;un ballon de foot et contenir des milliers d&apos;individus.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Appelez immédiatement, chaque heure compte.</strong>
@@ -734,14 +699,14 @@ export default function GuêpesFrelonsPage() {
                 { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 10 jours', texte: "Guêpes dans le cabanon de jardin depuis plusieurs semaines. Je n'osais plus y aller. Un seul appel, un technicien le lendemain matin, problème réglé en 45 minutes. Service impeccable et prix honnête." },
                 { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert par mes enfants en jouant. J'ai appelé en urgence, le technicien est arrivé en 50 minutes. Travail soigné, zone sécurisée, mes enfants ont pu jouer dehors dès le lendemain." },
                 { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 3 semaines', texte: "Très impressionnée par le professionnalisme. Le technicien est venu en combinaison complète, a identifié l'espèce (frelon européen), traité le nid et laissé les lieux propres. Garantie re-intervention incluse. Parfait." },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide — ça inspire confiance. Je recommande sans hésiter." },
+                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide, ça inspire confiance. Je recommande sans hésiter." },
                 { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 5 semaines', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette année c'était un nid de frelons asiatiques dans le garage. Intervention le soir même après mon appel en fin d'après-midi. Remarquable." },
               ].concat([
                 { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 jours', texte: "Frelon asiatique repéré sur la terrasse, nid trouvé dans un arbre voisin. Intervention très professionnelle, le technicien a sécurisé le périmètre avant de traiter. Aucun incident, nid retiré proprement." },
                 { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 10 jours', texte: "Guêpes dans le cabanon de jardin depuis plusieurs semaines. Je n'osais plus y aller. Un seul appel, un technicien le lendemain matin, problème réglé en 45 minutes. Service impeccable et prix honnête." },
                 { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert par mes enfants en jouant. J'ai appelé en urgence, le technicien est arrivé en 50 minutes. Travail soigné, zone sécurisée, mes enfants ont pu jouer dehors dès le lendemain." },
                 { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 3 semaines', texte: "Très impressionnée par le professionnalisme. Le technicien est venu en combinaison complète, a identifié l'espèce (frelon européen), traité le nid et laissé les lieux propres. Garantie re-intervention incluse. Parfait." },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide — ça inspire confiance. Je recommande sans hésiter." },
+                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide, ça inspire confiance. Je recommande sans hésiter." },
                 { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 5 semaines', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette année c'était un nid de frelons asiatiques dans le garage. Intervention le soir même après mon appel en fin d'après-midi. Remarquable." },
               ]).map((a, i) => (
                 <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -1013,7 +978,7 @@ function CallbackForm() {
         {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
       </button>
       <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.7rem', textAlign: 'center' }}>
-        * Champs obligatoires — Vos données restent confidentielles
+        * Champs obligatoires. Vos données restent confidentielles
       </p>
     </form>
   )
@@ -1086,9 +1051,8 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
         <div className="px-6 pt-6 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                Technicien disponible
+                Devis gratuit
               </span>
             </div>
             <button
@@ -1172,7 +1136,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
               <textarea
                 name="message"
                 rows={3}
-                placeholder="Où se trouve le nid ? Jardin, toiture, combles… — Urgence ce soir ou demain ?"
+                placeholder="Où se trouve le nid ? Jardin, toiture, combles… Urgence ce soir ou demain ?"
                 style={{ ...field, resize: 'none' }}
               />
             </div>

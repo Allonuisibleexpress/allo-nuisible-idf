@@ -2,7 +2,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 
 const data: ServiceData = {
   badge: 'Pics · Filets · Dispositifs électriques · Sans nuire aux oiseaux',
-  heroTitle: 'Pigeons envahissants —',
+  heroTitle: 'Pigeons envahissants',
   heroHighlight: 'Protection permanente',
   heroDescription: 'Pics inox, filets sur mesure, dispositifs répulsifs : on sécurise vos toits, rebords, balcons et façades durablement. Intervention en hauteur sécurisée.',
   heroPrices: [
