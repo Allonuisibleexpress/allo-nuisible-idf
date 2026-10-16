@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { Phone, ShieldCheck, ArrowRight } from 'lucide-react'
 
 const ACCENT = '#E8441A'
@@ -9,49 +8,12 @@ const PHONE_HREF = 'tel:+33768077219'
 const WA = 'https://wa.me/33768077219'
 
 export default function Hero() {
-  // Valeur stable au SSR (évite le mismatch d'hydratation), variée après montage
-  const [techCount, setTechCount] = useState(2)
-  const [parallax, setParallax] = useState(0)
-
-  useEffect(() => {
-    setTechCount([2, 2, 2, 3][Math.floor(Math.random() * 4)])
-  }, [])
-
-  // Parallax doux de l'image de fond
-  useEffect(() => {
-    let ticking = false
-    const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setParallax(window.scrollY * 0.16)
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <section
       id="accueil"
       className="relative flex flex-col justify-center items-center overflow-hidden px-5 sm:px-10 lg:px-16 pt-12 pb-16 md:pt-16 md:pb-20"
       style={{ background: '#0d0d0d', minHeight: '100svh' }}
     >
-      {/* ── Vraie image en fond, parallax (étendue ±15% pour éviter le gap) ── */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: '-15%', bottom: '-15%', left: 0, right: 0,
-          backgroundImage: 'url(/hero-fourmis.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 32%',
-          opacity: 0.5,
-          transform: `translateY(${parallax}px)`,
-          willChange: 'transform',
-        }}
-      />
       {/* Voile dégradé — lisibilité + fondu vers le bas */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'linear-gradient(to bottom, rgba(13,13,13,0.62) 0%, rgba(13,13,13,0.42) 42%, rgba(13,13,13,0.97) 100%)',
@@ -68,17 +30,6 @@ export default function Hero() {
 
       {/* ── CONTENU ── */}
       <div className="relative w-full max-w-4xl mx-auto text-center">
-
-        {/* Badge live */}
-        <div className="hero-1 inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-7" style={{
-          background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.28)',
-          backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
-        }}>
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" style={{ boxShadow: '0 0 8px rgba(74,222,128,0.9)' }} />
-          <span className="text-green-400 text-xs font-black tracking-widest uppercase">
-            {techCount} techniciens disponibles · 7j/7
-          </span>
-        </div>
 
         {/* H1 */}
         <h1 className="hero-2 font-black text-white tracking-tight mb-6" style={{ fontSize: 'clamp(3.2rem, 9vw, 6.75rem)', lineHeight: 0.9 }}>
