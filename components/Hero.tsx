@@ -32,16 +32,14 @@ export default function Hero() {
       <div className="relative w-full max-w-4xl mx-auto text-center">
 
         {/* H1 */}
-        <h1 className="hero-2 font-black text-white tracking-tight mb-6" style={{ fontSize: 'clamp(3.2rem, 9vw, 6.75rem)', lineHeight: 0.9 }}>
-          Nuisibles&nbsp;?<br />
-          <span style={{ color: ACCENT }}>On s’en charge.</span>
+        <h1 className="hero-2 font-black text-white tracking-tight mb-6" style={{ fontSize: 'clamp(2.4rem, 6.2vw, 4.75rem)', lineHeight: 1 }}>
+          Votre spécialiste <span className="whitespace-nowrap">anti-nuisibles</span>{' '}
+          <span style={{ color: ACCENT }}>en <span className="whitespace-nowrap">Île-de-France.</span></span>
         </h1>
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
-          Guêpes, punaises, rongeurs, cafards — nos techniciens{' '}
-          <strong className="text-white font-bold">certifiés Certibiocide</strong>{' '}
-          interviennent le jour même, partout en Île-de-France.{' '}
-          <strong style={{ color: ACCENT }}>Résultat garanti 1 mois.</strong>
+          Dératisation, désinsectisation et désinfection{' '}
+          <strong className="text-white font-bold">7j/7</strong>, à Paris et dans toute la région.
         </p>
 
         {/* ── Bouton "lava" — numéro ── */}
