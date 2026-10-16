@@ -86,7 +86,7 @@ const garanties = [
 /* ─────────────────────────── Timeline ─────────────────────── */
 const timeline = [
   { num: '1', title: 'Appel & rappel sous 5 min', text: 'Vous nous contactez, on vous rappelle sous 5 minutes. Diagnostic par téléphone et devis gratuit immédiat.' },
-  { num: '2', title: 'Intervention le jour même', text: 'Un technicien équipé intervient sous une heure. Traitement insecticide foudroyant directement dans le nid.' },
+  { num: '2', title: 'Intervention le jour même', text: 'Un technicien équipé peut intervenir le jour même. Traitement insecticide foudroyant directement dans le nid.' },
   { num: '3', title: 'Neutralisation complète', text: 'Le nid est traité et retiré si accessible. Le produit rémanent agit sous 48h pour éliminer les guêpes de retour.' },
   { num: '4', title: 'Contrôle post-intervention', text: `En cas d'activité persistante sous 48h, notre technicien revient sans délai ni frais supplémentaires.` },
 ]
@@ -225,7 +225,7 @@ export default function GuêpesFrelonsPage() {
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Une attaque de frelons peut provoquer un{' '}
               <strong style={{ color: ACCENT }}>choc anaphylactique</strong>, même sans allergie.
-              Nos techniciens interviennent en moins d&apos;1h partout en Île-de-France, résultat garanti.
+              Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Résultat garanti.
             </p>
 
             {/* ── NUMÉRO — bouton lava ── */}
