@@ -520,7 +520,7 @@ export default function FourmisPage() {
                 { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans le mois, nous revenons gratuitement." },
                 { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
                 { q: 'Quelle différence entre fourmis charpentières et termites ?', a: "Les fourmis charpentières creusent le bois pour nidifier mais ne le mangent pas (contrairement aux termites). Vous trouverez de la sciure fine (frass) sous les zones touchées. Le traitement est différent : injection en galeries + insecticide de contact. Si vous avez un doute, appelez pour une inspection." },
-                { q: 'Intervenez-vous le week-end et en soirée ?', a: "Oui, 7j/7 y compris week-ends et jours fériés. En Île-de-France, nos techniciens peuvent intervenir le jour même partout en Île-de-France. Appelez le 07 68 07 72 19 pour un créneau rapide." },
+                { q: 'Intervenez-vous le week-end et en soirée ?', a: "Oui, 7j/7 y compris week-ends et jours fériés. Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Appelez le 07 68 07 72 19 pour un créneau rapide." },
               ].map(({ q, a }) => <FAQItem key={q} q={q} a={a} />)}
             </div>
           </div>
