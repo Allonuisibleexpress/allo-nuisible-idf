@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Des pigeons envahissants ?\nOn protège votre bien.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Dépigeonnage : pics, filets et répulsifs en Île-de-France',
+  description: 'Pics inox, filets sur mesure et dispositifs répulsifs pour protéger toits, rebords, balcons et façades, sans nuire aux oiseaux. Devis gratuit.',
+  path: '/services/pigeons',
+})
 
 export default function PigeonsPage() {
   return <ServicePageTemplate data={data} />

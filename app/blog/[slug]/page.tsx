@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OG_IMAGE } from '@/lib/seo'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -23,6 +24,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       url,
       type: 'article',
       locale: 'fr_FR',
+      images: [OG_IMAGE],
     },
   }
 }

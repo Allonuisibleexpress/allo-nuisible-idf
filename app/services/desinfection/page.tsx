@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Besoin d\'une désinfection ?\nContactez-nous maintenant.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Désinfection professionnelle avec attestation, Île-de-France',
+  description: 'Désinfection après infestation, sinistre ou contamination : bactéries, virus, moisissures. Attestation officielle fournie. Devis gratuit.',
+  path: '/services/desinfection',
+})
 
 export default function DesinfectionPage() {
   return <ServicePageTemplate data={data} />

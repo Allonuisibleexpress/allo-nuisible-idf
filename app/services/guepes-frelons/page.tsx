@@ -393,12 +393,12 @@ export default function GuêpesFrelonsPage() {
             {/* Grille 2 colonnes, 3 rangées */}
             <div className="grid grid-cols-2 gap-3">
               {[
-                { src: '/galerie-1.png', alt: 'Nid de guêpes dans une cloison traité par notre technicien en Île-de-France', city: 'Paris 6e' },
-                { src: '/galerie-2.png', alt: 'Destruction nid de guêpes sous avant-toit, intervention Île-de-France', city: 'Créteil' },
-                { src: '/galerie-3.png', alt: 'Intervention nid de guêpes en hauteur, technicien certifié Île-de-France', city: 'Pontault-Combault' },
-                { src: '/galerie-4.png', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention guêpes', city: 'Évry' },
-                { src: '/galerie-5.png', alt: 'Nid de guêpes neutralisé dans les combles en Île-de-France', city: 'Drancy' },
-                { src: '/galerie-6.png', alt: 'Traitement nid de frelons par notre équipe en Île-de-France', city: 'Montmorency' },
+                { src: '/galerie-1.jpg', alt: 'Nid de guêpes dans une cloison traité par notre technicien en Île-de-France', city: 'Paris 6e' },
+                { src: '/galerie-2.jpg', alt: 'Destruction nid de guêpes sous avant-toit, intervention Île-de-France', city: 'Créteil' },
+                { src: '/galerie-3.jpg', alt: 'Intervention nid de guêpes en hauteur, technicien certifié Île-de-France', city: 'Pontault-Combault' },
+                { src: '/galerie-4.jpg', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention guêpes', city: 'Évry' },
+                { src: '/galerie-5.jpg', alt: 'Nid de guêpes neutralisé dans les combles en Île-de-France', city: 'Drancy' },
+                { src: '/galerie-6.jpg', alt: 'Traitement nid de frelons par notre équipe en Île-de-France', city: 'Montmorency' },
               ].map(({ src, alt, city }) => (
                 <div
                   key={src}

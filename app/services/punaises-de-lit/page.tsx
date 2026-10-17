@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Punaises de lit : traitement professionnel en Île-de-France',
+  description: 'Insecticide rémanent et traitement par la chaleur si nécessaire, par des techniciens certifiés. Résultat garanti. Intervention 7j/7, devis gratuit.',
+  path: '/services/punaises-de-lit',
+})
 
 export default function PunaisesPage() {
   return <ServicePageTemplate data={data} />

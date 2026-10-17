@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Des rongeurs chez vous ?\nOn intervient rapidement.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Rats, souris, ragondins : traitement en Île-de-France',
+  description: 'Rats ou souris chez vous ? Identification des points d\'entrée, postes sécurisés et colmatage. Particuliers et professionnels, 7j/7. Devis gratuit.',
+  path: '/services/rongeurs',
+})
 
 export default function RongeursPage() {
   return <ServicePageTemplate data={data} />

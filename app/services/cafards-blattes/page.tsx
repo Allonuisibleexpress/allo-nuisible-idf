@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Des cafards chez vous ?\nOn intervient rapidement.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Cafards et blattes : traitement en 2 passages, Île-de-France',
+  description: 'Protocole en 2 passages pour éliminer adultes et oothèques. Produits professionnels adaptés aux cuisines et locaux alimentaires. Devis gratuit.',
+  path: '/services/cafards-blattes',
+})
 
 export default function CafardsPage() {
   return <ServicePageTemplate data={data} />

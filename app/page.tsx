@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import NosNuisibles from '@/components/NosNuisibles'
@@ -6,9 +7,35 @@ import PourquoiNous from '@/components/PourquoiNous'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
+export const metadata = pageMetadata({
+  title: 'Lutte contre les nuisibles 7j/7 en Île-de-France',
+  description: 'Rats, cafards, punaises de lit, guêpes : techniciens certifiés Certibiocide, intervention le jour même en Île-de-France, 7j/7. Devis gratuit.',
+  path: '',
+})
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Allo Nuisible IDF',
+  url: 'https://allonuisibleidf.fr',
+  logo: 'https://allonuisibleidf.fr/logo-transparent.png',
+  image: 'https://allonuisibleidf.fr/opengraph-image',
+  telephone: '+33768077219',
+  email: 'allonuisibleidf@gmail.com',
+  areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
+}
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
       <Navbar />
       <main>
         <Hero />

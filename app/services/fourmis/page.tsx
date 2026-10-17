@@ -253,12 +253,12 @@ export default function FourmisPage() {
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { src: '/galerie-1.png', alt: 'Traitement fourmis dans une cuisine en Île-de-France', city: 'Paris 6e' },
-                { src: '/galerie-2.png', alt: 'Gel appât professionnel anti-fourmis posé sous plan de travail', city: 'Créteil' },
-                { src: '/galerie-3.png', alt: 'Intervention fourmis charpentières dans charpente en bois', city: 'Pontault-Combault' },
-                { src: '/galerie-4.png', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention fourmis', city: 'Évry' },
-                { src: '/galerie-5.png', alt: 'Traitement barrière rémanente anti-fourmis sur périmètre extérieur', city: 'Drancy' },
-                { src: '/galerie-6.png', alt: 'Nid de fourmis neutralisé dans les murs par notre équipe', city: 'Montmorency' },
+                { src: '/galerie-1.jpg', alt: 'Traitement fourmis dans une cuisine en Île-de-France', city: 'Paris 6e' },
+                { src: '/galerie-2.jpg', alt: 'Gel appât professionnel anti-fourmis posé sous plan de travail', city: 'Créteil' },
+                { src: '/galerie-3.jpg', alt: 'Intervention fourmis charpentières dans charpente en bois', city: 'Pontault-Combault' },
+                { src: '/galerie-4.jpg', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention fourmis', city: 'Évry' },
+                { src: '/galerie-5.jpg', alt: 'Traitement barrière rémanente anti-fourmis sur périmètre extérieur', city: 'Drancy' },
+                { src: '/galerie-6.jpg', alt: 'Nid de fourmis neutralisé dans les murs par notre équipe', city: 'Montmorency' },
               ].map(({ src, alt, city }) => (
                 <div
                   key={src}

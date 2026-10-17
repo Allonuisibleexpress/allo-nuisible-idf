@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -58,6 +59,12 @@ const data: ServiceData = {
   ],
   ctaTitle: 'Besoin d\'une dératisation ?\nOn intervient rapidement.',
 }
+
+export const metadata = pageMetadata({
+  title: 'Dératisation en Île-de-France, intervention le jour même',
+  description: 'Dératisation par des techniciens Certibiocide : postes d\'appâtage sécurisés, attestation pour les professionnels, contrats de maintenance. Devis gratuit.',
+  path: '/services/deratisation',
+})
 
 export default function DeratisationPage() {
   return <ServicePageTemplate data={data} />
