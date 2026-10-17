@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Award, Users, Clock } from 'lucide-react'
-import BeforeAfterSlider from './BeforeAfterSlider'
+import { ArrowRight, Award, Users, Clock, MapPin } from 'lucide-react'
+import { REGIONS } from '@/lib/zones'
 
 const stats = [
-  { icon: Award, target: 5, suffix: '+', label: 'ans d\'expérience', duration: 1200 },
+  { icon: Award, target: 3, suffix: '+', label: 'ans d\'activité', duration: 1200 },
   { icon: Users, target: 1500, suffix: '+', label: 'clients satisfaits', duration: 2000 },
   { icon: Clock, target: null, suffix: '24/7', label: 'disponibilité', duration: 0 },
 ]
@@ -97,9 +97,10 @@ export default function QuiSommesNous() {
             </div>
 
             <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
-              <span className="font-bold text-[#1a1a1a]">Allo Nuisible IDF</span> incarne l&apos;excellence dans
-              la lutte contre les nuisibles. Nos experts, certifiés et agréés par l&apos;État, mettent leur
-              savoir-faire au service de la protection de votre cadre de vie en Île-de-France.
+              <span className="font-bold text-[#1a1a1a]">Allo Nuisible IDF</span> est née en Île-de-France
+              il y a plus de 3 ans. Basés en Île-de-France, nous intervenons aujourd&apos;hui dans{' '}
+              <strong>toute la moitié nord de la France</strong>, avec des techniciens certifiés
+              Certibiocide, habilitation délivrée par l&apos;État.
             </p>
             <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
               Disponibles <strong>24h/24 et 7j/7</strong>, nous intervenons avec rigueur, discrétion et
@@ -124,12 +125,23 @@ export default function QuiSommesNous() {
             </button>
           </div>
 
-          {/* Right — Before/After slider */}
+          {/* Right — zones d'intervention */}
           <div className="animate-on-scroll animate-on-scroll-delay-2">
             <div className="relative">
-              <BeforeAfterSlider />
+              <div className="rounded-3xl bg-[#1a1a1a] p-8 sm:p-10">
+                <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-2">Zones d&apos;intervention</p>
+                <p className="text-white text-2xl font-black leading-tight mb-6">Toute la moitié nord de la France</p>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                  {REGIONS.map((region) => (
+                    <li key={region} className="flex items-center gap-2 text-white/85 text-sm sm:text-base">
+                      <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
+                      {region}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100">
+              <div className="relative mt-4 inline-block bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-[#E8441A]/10 rounded-full flex items-center justify-center">
                     <Award className="w-5 h-5 text-[#E8441A]" />

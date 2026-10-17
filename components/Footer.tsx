@@ -46,8 +46,8 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-gray-400 text-sm leading-relaxed">
-              Chasseurs de nuisibles certifiés en Île-de-France. Interventions rapides,
-              radicales et durables, disponibles 7j/7 et 24h/24.
+              Chasseurs de nuisibles certifiés, basés en Île-de-France. Interventions dans
+              toute la moitié nord de la France, 7j/7 et 24h/24.
             </p>
             <div className="space-y-2">
               <a href="tel:+33768077219" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
@@ -60,7 +60,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
-                <span>Île-de-France</span>
+                <span>Basés en Île-de-France</span>
               </div>
             </div>
           </div>
@@ -119,6 +119,7 @@ export default function Footer() {
             <div className="mt-4 p-3 bg-[#E8441A]/10 border border-[#E8441A]/20 rounded-xl">
               <p className="text-[#E8441A] text-xs font-semibold">
                 + Toute l&apos;Île-de-France (75, 77, 78, 91, 92, 93, 94, 95)
+                <span className="block mt-1 text-gray-400 font-normal">et la moitié nord de la France</span>
               </p>
             </div>
           </div>

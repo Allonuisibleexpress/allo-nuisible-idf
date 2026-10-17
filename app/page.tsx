@@ -4,6 +4,8 @@ import Hero from '@/components/Hero'
 import NosNuisibles from '@/components/NosNuisibles'
 import AvantApres from '@/components/AvantApres'
 import PourquoiNous from '@/components/PourquoiNous'
+import QuiSommesNous from '@/components/QuiSommesNous'
+import { REGIONS } from '@/lib/zones'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -22,7 +24,7 @@ const localBusiness = {
   image: 'https://allonuisibleidf.fr/opengraph-image',
   telephone: '+33768077219',
   email: 'allonuisibleidf@gmail.com',
-  areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+  areaServed: REGIONS.map((name) => ({ '@type': 'AdministrativeArea', name })),
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -84,6 +86,7 @@ export default function Home() {
           </div>
         </section>
 
+        <QuiSommesNous />
         <PourquoiNous />
         <AvantApres />
         <Contact />
