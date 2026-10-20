@@ -27,9 +27,9 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'allonuisibleidf@gmail.com',
+    value: 'contact@allonuisibleidf.fr',
     sub: 'Réponse sous 2h',
-    href: 'mailto:allonuisibleidf@gmail.com',
+    href: 'mailto:contact@allonuisibleidf.fr',
   },
   {
     icon: Clock,

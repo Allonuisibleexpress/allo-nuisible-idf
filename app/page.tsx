@@ -22,7 +22,7 @@ const localBusiness = {
   logo: 'https://allonuisibleidf.fr/logo-transparent.png',
   image: 'https://allonuisibleidf.fr/opengraph-image',
   telephone: '+33768077219',
-  email: 'allonuisibleidf@gmail.com',
+  email: 'contact@allonuisibleidf.fr',
   areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',

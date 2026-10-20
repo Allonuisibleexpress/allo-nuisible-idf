@@ -54,9 +54,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-[#E8441A]" />
                 <span className="group-hover:underline">07 68 07 72 19</span>
               </a>
-              <a href="mailto:allonuisibleidf@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
+              <a href="mailto:contact@allonuisibleidf.fr" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
                 <Mail className="w-4 h-4 text-[#E8441A]" />
-                <span className="group-hover:underline">allonuisibleidf@gmail.com</span>
+                <span className="group-hover:underline">contact@allonuisibleidf.fr</span>
               </a>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
