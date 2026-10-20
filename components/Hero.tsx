@@ -39,7 +39,7 @@ export default function Hero() {
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
           Dératisation, désinsectisation et désinfection{' '}
-          <strong className="text-white font-bold">7j/7</strong>. Basés en Île-de-France depuis plus de 3 ans, nous intervenons dans toute la moitié nord de la France.
+          <strong className="text-white font-bold">7j/7</strong>, à Paris et dans toute la région.
         </p>
 
         {/* ── Bouton "lava" — numéro ── */}
