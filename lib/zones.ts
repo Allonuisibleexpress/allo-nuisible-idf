@@ -1,5 +1,0 @@
-// Départements d'intervention (Île-de-France), affichés sur l'accueil.
-export const DEPARTEMENTS = [
-  'Paris (75)', 'Seine-et-Marne (77)', 'Yvelines (78)', 'Essonne (91)',
-  'Hauts-de-Seine (92)', 'Seine-Saint-Denis (93)', 'Val-de-Marne (94)', "Val-d'Oise (95)",
-]

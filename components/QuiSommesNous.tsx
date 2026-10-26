@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Award, Users, Clock, MapPin } from 'lucide-react'
-import { DEPARTEMENTS } from '@/lib/zones'
+import { DEPARTEMENTS_IDF } from '@/lib/departements'
 
 const stats = [
   { icon: Award, target: 3, suffix: '+', label: 'ans d\'activité', duration: 1200 },
@@ -131,10 +131,12 @@ export default function QuiSommesNous() {
                 <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-2">Zones d&apos;intervention</p>
                 <p className="text-white text-2xl font-black leading-tight mb-6">Toute l&apos;Île-de-France</p>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
-                  {DEPARTEMENTS.map((dep) => (
-                    <li key={dep} className="flex items-center gap-2 text-white/85 text-sm sm:text-base">
-                      <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
-                      {dep}
+                  {DEPARTEMENTS_IDF.map((d) => (
+                    <li key={d.slug}>
+                      <a href={`/zones/${d.slug}`} className="flex items-center gap-2 text-white/85 hover:text-white text-sm sm:text-base transition-colors">
+                        <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
+                        {d.nom} ({d.code})
+                      </a>
                     </li>
                   ))}
                 </ul>

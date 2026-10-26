@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { ARTICLES } from './blog/articles'
+import { DEPARTEMENTS_IDF } from '@/lib/departements'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -25,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    ...['/zones', ...DEPARTEMENTS_IDF.map((d) => `/zones/${d.slug}`)].map((p) => ({
+      url: `${BASE}${p}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
     ...ARTICLES.map((a) => ({
       url: `${BASE}/blog/${a.slug}`,

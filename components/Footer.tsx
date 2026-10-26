@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { DEPARTEMENTS_IDF } from '@/lib/departements'
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
 
 const quickLinks = [
@@ -9,12 +10,6 @@ const quickLinks = [
   { label: 'Tarifs', href: '#tarifs' },
   { label: 'Contact', href: '#contact' },
   { label: 'Mentions légales', href: '#' },
-]
-
-const zones = [
-  'Paris', 'Versailles', 'Boulogne-Billancourt', 'Neuilly-sur-Seine', 'Vincennes',
-  'Saint-Cloud', 'Créteil', 'Montreuil', 'Rueil-Malmaison', 'Levallois-Perret',
-  'Enghien-les-Bains', 'Saint-Germain-en-Laye', 'Maisons-Laffitte',
 ]
 
 const services = [
@@ -107,20 +102,21 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Zones couvertes</h4>
             <div className="flex flex-wrap gap-2">
-              {zones.map((zone) => (
-                <span
-                  key={zone}
-                  className="text-gray-400 text-xs bg-white/5 border border-white/10 hover:border-[#E8441A]/40 hover:text-[#E8441A] rounded-full px-2.5 py-1 transition-colors cursor-default"
+              {DEPARTEMENTS_IDF.map((d) => (
+                <a
+                  key={d.slug}
+                  href={`/zones/${d.slug}`}
+                  className="text-gray-400 text-xs bg-white/5 border border-white/10 hover:border-[#E8441A]/40 hover:text-[#E8441A] rounded-full px-2.5 py-1 transition-colors"
                 >
-                  {zone}
-                </span>
+                  {d.nom} ({d.code})
+                </a>
               ))}
             </div>
-            <div className="mt-4 p-3 bg-[#E8441A]/10 border border-[#E8441A]/20 rounded-xl">
+            <a href="/zones" className="block mt-4 p-3 bg-[#E8441A]/10 border border-[#E8441A]/20 hover:bg-[#E8441A]/15 rounded-xl transition-colors">
               <p className="text-[#E8441A] text-xs font-semibold">
-                + Toute l&apos;Île-de-France (75, 77, 78, 91, 92, 93, 94, 95)
+                Toutes nos zones d&apos;intervention en Île-de-France
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
