@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { ARTICLES } from './blog/articles'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
+import { COMMUNES_94 } from '@/lib/communes94'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -27,7 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    ...['/zones', ...DEPARTEMENTS_IDF.map((d) => `/zones/${d.slug}`)].map((p) => ({
+    ...[
+      '/zones',
+      ...DEPARTEMENTS_IDF.map((d) => `/zones/${d.slug}`),
+      ...COMMUNES_94.map((c) => `/zones/val-de-marne/${c.slug}`),
+    ].map((p) => ({
       url: `${BASE}${p}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

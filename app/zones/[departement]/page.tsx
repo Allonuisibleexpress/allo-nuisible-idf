@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { PestIcon, type PestKey } from '@/components/PestIcons'
 import { pageMetadata } from '@/lib/seo'
 import { DEPARTEMENTS_IDF, SERVICES, getDepartement, type ServiceSlug } from '@/lib/departements'
+import { COMMUNES_94 } from '@/lib/communes94'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -146,15 +147,34 @@ export default function DepartementPage({ params }: { params: { departement: str
             <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
               Communes où nous intervenons {d.dans}
             </h2>
-            <p className="text-white/55 mb-8">Et dans toutes les autres communes du département.</p>
-            <ul className="flex flex-wrap gap-2">
-              {d.communes.map((c) => (
-                <li key={c} className="inline-flex items-center gap-1.5 text-sm text-white/75 rounded-full px-3.5 py-1.5"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{c}
-                </li>
-              ))}
-            </ul>
+            {d.slug === 'val-de-marne' ? (
+              <>
+                <p className="text-white/55 mb-8">Les 47 communes du département, chacune avec sa page.</p>
+                <ul className="flex flex-wrap gap-2">
+                  {COMMUNES_94.map((c) => (
+                    <li key={c.slug}>
+                      <a href={`/zones/val-de-marne/${c.slug}`}
+                        className="inline-flex items-center gap-1.5 text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{c.nom}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <>
+                <p className="text-white/55 mb-8">Et dans toutes les autres communes du département.</p>
+                <ul className="flex flex-wrap gap-2">
+                  {d.communes.map((c) => (
+                    <li key={c} className="inline-flex items-center gap-1.5 text-sm text-white/75 rounded-full px-3.5 py-1.5"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{c}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </section>
 
