@@ -16,6 +16,9 @@ export const GUIDES_RONGEURS: Record<string, string> = {
   'souris-par-ou-entrent-elles': 'Souris : par où entrent-elles ?',
   'rongeur-moteur-voiture-cables': 'Câbles de voiture rongés : rat, souris ou fouine ?',
   'lerot-grenier-combles': 'Lérot dans le grenier : bruits la nuit',
+  'rats-dans-les-combles': 'Rats dans les combles : signes et traitement',
+  'rat-dans-les-murs-cloisons': 'Rat dans les murs ou les cloisons',
+  'rat-vide-sanitaire': 'Rat dans le vide sanitaire',
   'restaurant-plan-lutte-nuisibles': 'Plan de lutte nuisibles en restaurant',
 }
 

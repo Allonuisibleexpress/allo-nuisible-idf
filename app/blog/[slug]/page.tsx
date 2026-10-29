@@ -199,12 +199,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {a.blocks.map(renderBlock)}
 
-          {/* Ce qu'on observe sur le terrain */}
+          {/* Ce qu'on observe sur le terrain (uniquement si un vrai retour d'expérience est fourni) */}
+          {a.terrain && (
           <div style={{ borderLeft: '3px solid #E8441A', background: 'rgba(255,255,255,0.03)', borderRadius: '0 12px 12px 0', padding: '22px 24px', marginTop: '48px', marginBottom: '8px' }}>
             <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: '#E8441A', marginBottom: '12px' }}>Ce qu'on observe sur le terrain</p>
             <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.85)', fontStyle: 'italic', marginBottom: '12px' }}>« {a.terrain} »</p>
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: 0 }}>L'équipe Allo Nuisible IDF, techniciens certifiés Certibiocide en Île-de-France</p>
           </div>
+          )}
 
           {/* FAQ */}
           <h2 style={{ fontSize: 'clamp(22px, 4vw, 30px)', fontWeight: 800, color: '#fff', marginTop: '56px', marginBottom: '20px' }}>Questions fréquentes</h2>
