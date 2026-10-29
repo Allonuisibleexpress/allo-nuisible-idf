@@ -6,6 +6,7 @@ import { PestIcon, type PestKey } from '@/components/PestIcons'
 import { pageMetadata } from '@/lib/seo'
 import { SERVICES } from '@/lib/departements'
 import { COMMUNES_94, METHODES, SECTEURS, getCommune94 } from '@/lib/communes94'
+import { getVilleDeratisation } from '@/lib/villes-deratisation'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -33,6 +34,7 @@ export default function CommunePage({ params }: { params: Params }) {
   const secteur = SECTEURS[c.secteur]
   const voisines = COMMUNES_94.filter((x) => x.secteur === c.secteur && x.slug !== c.slug)
   const autres = Object.keys(METHODES).filter((k) => !secteur.ordre.includes(k))
+  const villeDerat = getVilleDeratisation(c.slug)
 
   return (
     <>
@@ -124,6 +126,11 @@ export default function CommunePage({ params }: { params: Params }) {
                 </span>
               ))}
             </p>
+            {villeDerat && (
+              <a href={`/deratisation/${villeDerat.slug}`} className="inline-flex items-center gap-1.5 mt-4 text-sm font-bold" style={{ color: ACCENT }}>
+                Tout savoir sur la dératisation {villeDerat.a} <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
           </div>
         </section>
 

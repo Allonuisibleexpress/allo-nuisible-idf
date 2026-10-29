@@ -70,6 +70,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Pourquoi la dératisation doit viser tout l'immeuble" },
       { t: 'p', x: "Tuer le rat sorti de la cuvette ne règle rien : il fait partie d'une colonie installée dans le réseau. Une intervention sérieuse commence par un **diagnostic des points d'accès** (caves, vide-ordures, regards, locaux poubelles), puis la pose de postes d'appâtage sécurisés aux bons endroits et un suivi. C'est ce que nous faisons lors d'une [dératisation en Île-de-France](/services/deratisation)." },
       { t: 'p', x: "Vous hésitez entre rat et souris selon les traces trouvées ? Les petites déjections et les grignotages dans les placards orientent plutôt vers la souris : voir notre article sur [les points d'entrée des souris](/blog/souris-par-ou-entrent-elles)." },
+      { t: 'p', x: "Besoin d'une intervention ? Notre [dératisation](/services/deratisation) traite le réseau et les parties communes, avec colmatage des accès. Nous intervenons partout en Île-de-France, par exemple à [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses) ou à [Fontainebleau](/deratisation/fontainebleau)." },
     ],
     terrain: "Dans les immeubles anciens de Paris et de la petite couronne, quand un rat sort d'une cuvette, on trouve presque toujours un défaut en cave : regard descellé, fonte fissurée, trappe de vide-ordures qui ferme mal. Tant que ce point n'est pas réparé, le clapet protège l'appartement mais les rats continuent de circuler dans l'immeuble.",
     faq: [
@@ -133,6 +134,7 @@ export const ARTICLES: Article[] = [
         "**Nettoyer et désinfecter** la zone souillée, remplacer l'isolant si besoin.",
       ] },
       { t: 'p', x: "Si les bruits viennent plutôt des cloisons que de la charpente, il peut s'agir de souris ou de rats. Dans ce cas, notre équipe spécialisée [rongeurs en Île-de-France](/services/rongeurs) identifie l'animal avant de choisir la méthode. Pour les accès des petits rongeurs, voyez aussi [par où entrent les souris](/blog/souris-par-ou-entrent-elles)." },
+      { t: 'p', x: "Si les traces ne sont pas celles d'un lérot mais d'un rat ou d'une souris, une [dératisation](/services/deratisation) est nécessaire. Nous intervenons notamment dans les communes boisées, comme [Gif-sur-Yvette](/deratisation/gif-sur-yvette) ou [Le Vésinet](/deratisation/le-vesinet)." },
     ],
     terrain: "En octobre et novembre, dans les pavillons proches des bois de l'Essonne, des Yvelines ou de Seine-et-Marne, on nous appelle pour des « rats au grenier » et on trouve régulièrement des lérots. Le premier réflexe des gens est la mort-aux-rats : c'est justement ce qu'il ne faut pas faire. Une fois les accès fermés, le problème ne revient pas.",
     faq: [
@@ -188,6 +190,7 @@ export const ARTICLES: Article[] = [
         "**Protéger mécaniquement** : grillage sous le compartiment moteur ou gaines anti-rongeurs posées par un garagiste.",
       ] },
       { t: 'p', x: "Pour une copropriété, un parking d'entreprise ou un garage automobile, nous mettons en place un plan de lutte avec postes d'appâtage sécurisés et suivi : voir notre offre [professionnels](/professionnels) et notre page [rongeurs en Île-de-France](/services/rongeurs)." },
+      { t: 'p', x: "Si ce sont des rats ou des souris qui s'en prennent à votre voiture, une [dératisation](/services/deratisation) du garage ou du parking s'impose. Nous intervenons par exemple à [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses) et à [Maisons-Laffitte](/deratisation/maisons-laffitte)." },
     ],
     terrain: "Dans les parkings souterrains de résidence, c'est souvent la même histoire : plusieurs voitures touchées en quelques semaines, et un local poubelles ou un local vélo qui sert de garde-manger aux rats. Tant que ce local n'est pas traité et fermé correctement, les garagistes voient revenir les mêmes véhicules.",
     faq: [
@@ -242,6 +245,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Pourquoi l'automne est la saison des souris" },
       { t: 'p', x: "Dès que les températures baissent, les souris quittent jardins, champs et abords pour chercher chaleur et nourriture à l'intérieur. C'est le moment où la plupart des appels commencent en Île-de-France, en pavillon comme en immeuble. Faire la tournée du crayon **en septembre et octobre** évite une bonne partie des invasions." },
       { t: 'p', x: "Déjà des crottes dans les placards ? Il faut traiter avant de calfeutrer. Notre équipe de [dératisation en Île-de-France](/services/deratisation) élimine les souris présentes puis vous indique précisément les points à boucher. Des bruits plutôt dans les combles ? Lisez notre article sur [le lérot au grenier](/blog/lerot-grenier-combles)." },
+      { t: 'p', x: "Si les souris sont déjà installées, notre [dératisation](/services/deratisation) combine dispositif adapté et colmatage des entrées. Nous intervenons notamment à [Gif-sur-Yvette](/deratisation/gif-sur-yvette) et à [Maisons-Laffitte](/deratisation/maisons-laffitte)." },
     ],
     terrain: "Sur les pavillons, le point d'entrée qu'on trouve le plus souvent n'est pas un trou spectaculaire : c'est le passage des tuyaux derrière le lave-linge ou sous l'évier, laissé ouvert après une installation. Un doigt de laine d'acier et du mastic, et le problème est réglé pour des années.",
     faq: [
@@ -568,6 +572,7 @@ export const ARTICLES: Article[] = [
         "**Des accès non traités** : bas de porte de livraison, passages de gaines, siphons de sol.",
       ] },
       { t: 'p', x: "Nous mettons en place des plans de lutte clés en main pour la restauration et les commerces alimentaires, avec [dératisation](/services/deratisation), [traitement des cafards](/services/cafards-blattes) et registre à jour : voir notre offre [professionnels](/professionnels). Les blattes résistent à vos gels ? Lisez [pourquoi le gel anti-cafard échoue](/blog/gel-anti-cafard-ne-marche-pas)." },
+      { t: 'p', x: "Pour les restaurants et commerces, notre [dératisation](/services/deratisation) inclut attestation et suivi régulier, avec postes sécurisés ou pièges connectés. Nous intervenons par exemple à [Fontainebleau](/deratisation/fontainebleau) et à [Maisons-Laffitte](/deratisation/maisons-laffitte)." },
     ],
     terrain: "Quand un restaurateur nous appelle en urgence avant ou après un contrôle, le problème n'est presque jamais l'absence de contrat : c'est un classeur qui dort pendant que les souris passent par la porte de livraison. Un plan qui marche, c'est des postes bien placés, des accès fermés et des rapports lus et suivis d'actions.",
     faq: [

@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
 
 const data: ServiceData = {
   badge: 'Certibiocide · HACCP · Particuliers & ERP · Contrats annuels',
@@ -57,6 +58,10 @@ const data: ServiceData = {
     { q: 'Puis-je rester chez moi pendant la dératisation ?', a: 'Oui, dans la plupart des cas. Les postes d\'appâtage sont sécurisés et verrouillés. Nous vous informons de toutes les précautions à prendre, notamment si vous avez des animaux domestiques.' },
     { q: 'Proposez-vous des contrats de dératisation annuels ?', a: 'Oui. Nous proposons des contrats mensuels, trimestriels ou annuels pour les professionnels et les copropriétés, avec visites programmées, relevés et rapports d\'intervention fournis à chaque passage.' },
   ],
+  related: {
+    villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.a} (${v.code})` })) },
+    guides: { title: 'Nos guides sur les rongeurs', links: [...Object.entries(GUIDES_RONGEURS).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
+  },
   ctaTitle: 'Besoin d\'une dératisation ?\nOn intervient rapidement.',
 }
 

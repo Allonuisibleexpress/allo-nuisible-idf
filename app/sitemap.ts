@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { ARTICLES } from './blog/articles'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
 import { COMMUNES_94 } from '@/lib/communes94'
+import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -37,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...VILLES_DERATISATION.map((v) => ({
+      url: `${BASE}/deratisation/${v.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
     ...ARTICLES.map((a) => ({
       url: `${BASE}/blog/${a.slug}`,

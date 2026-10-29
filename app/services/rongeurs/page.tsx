@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
 
 const data: ServiceData = {
   badge: 'Rats · Souris · Ragondins · Particuliers & Pros',
@@ -59,6 +60,10 @@ const data: ServiceData = {
     { q: 'Combien de temps faut-il pour éliminer une infestation ?', a: 'En général 2 à 4 semaines. Les rongeurs sont néophobes (méfiants envers les nouveaux objets), ce qui demande du temps pour qu\'ils consomment les appâts. Un suivi régulier est essentiel.' },
     { q: 'Proposez-vous des contrats de maintenance ?', a: 'Oui. Contrats mensuels, trimestriels ou annuels pour les professionnels et copropriétés. Visites régulières, relevés et rapports d\'intervention fournis à chaque passage.' },
   ],
+  related: {
+    villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.a} (${v.code})` })) },
+    guides: { title: 'Nos guides sur les rongeurs', links: [{ href: '/services/deratisation', label: 'Dératisation : notre méthode complète' }, ...Object.entries(GUIDES_RONGEURS).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
+  },
   ctaTitle: 'Des rongeurs chez vous ?\nOn intervient rapidement.',
 }
 
