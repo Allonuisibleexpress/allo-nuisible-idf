@@ -54,7 +54,7 @@ export default function CommunePage({ params }: { params: Params }) {
               <span style={{ color: ACCENT }} className={c.nom.length <= 18 ? 'whitespace-nowrap' : undefined}>{c.a.split(' ').slice(1).join(' ')}</span>
             </h1>
             <p className="text-lg text-white/75 max-w-2xl mx-auto mb-4 leading-relaxed">
-              Cryogénie et vapeur sèche contre les punaises de lit, rongeurs traités sans mort-aux-rats en première intention.
+              Traitements professionnels chimiques ou sans produit (cryogénie, vapeur sèche, pièges connectés), selon votre situation.
             </p>
             {secteur.intro(c.nom).map((p) => (
               <p key={p.slice(0, 24)} className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{p}</p>
@@ -84,8 +84,9 @@ export default function CommunePage({ params }: { params: Params }) {
               Nos méthodes {c.a}
             </h2>
             <p className="text-white/55 mb-10 max-w-2xl">
-              Nous commençons toujours par les solutions sans insecticide ni poison. Un produit n&apos;est utilisé
-              que si la situation l&apos;exige, et nous vous en expliquons la raison avant d&apos;intervenir.
+              Pour chaque nuisible, nous proposons deux familles de solutions : un traitement chimique professionnel
+              et une méthode sans produit. Le technicien vous conseille l&apos;une, l&apos;autre ou les deux selon le
+              logement et l&apos;infestation, et vous explique son choix avant d&apos;intervenir.
             </p>
             <div className="space-y-4">
               {secteur.ordre.map((k) => {

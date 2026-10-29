@@ -1,6 +1,6 @@
 // Pages locales des 47 communes du Val-de-Marne (/zones/val-de-marne/[commune]).
-// Mise en avant des méthodes sans insecticide ni poison réellement pratiquées :
-// cryogénie, vapeur sèche, rongeurs sans mort-aux-rats en première intention, pièges connectés.
+// Traitements chimiques professionnels et méthodes sans produit présentés au même niveau.
+// Méthodes sans produit réellement pratiquées : cryogénie, vapeur sèche, pièges mécaniques et connectés.
 // Règles : pas de « écologique » générique (allégation encadrée), pas de « naturel » ni « sans danger »,
 // pas de chiffre inventé, pas de tiret long.
 
@@ -13,53 +13,54 @@ type Methode = { service: ServiceSlug; titre: string; texte: string; points: str
 export const METHODES: Record<string, Methode> = {
   punaises: {
     service: 'punaises-de-lit',
-    titre: 'Punaises de lit : cryogénie et vapeur sèche',
-    texte: 'Nous traitons en priorité sans insecticide. La cryogénie projette de la neige carbonique (environ −78 °C) qui tue les punaises et leurs œufs par le choc thermique. La vapeur sèche, à très haute température, pénètre les coutures de matelas, les sommiers, les canapés et les plinthes.',
+    titre: 'Punaises de lit : insecticide, cryogénie ou vapeur sèche',
+    texte: 'Deux approches professionnelles, souvent combinées. L\'insecticide rémanent traite les surfaces infestées et continue d\'agir après le passage. La cryogénie (neige carbonique, environ −78 °C) et la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit, sur les matelas, sommiers, canapés et plinthes.',
     points: [
-      'Aucun produit chimique pendant ces traitements',
-      'Logement utilisable juste après, sans temps de séchage',
-      'Insecticide seulement si la situation l\'exige, et on vous l\'explique avant',
+      'Insecticide rémanent professionnel sur les zones infestées',
+      'Cryogénie et vapeur sèche sur la literie et le mobilier',
+      'Sans produit : logement utilisable juste après',
+      'Le technicien choisit avec vous selon l\'infestation',
     ],
   },
   rongeurs: {
     service: 'rongeurs',
-    titre: 'Rats et souris : sans mort-aux-rats en première intention',
-    texte: 'La mort-aux-rats ne règle pas la cause : tant que l\'accès reste ouvert, d\'autres rongeurs reviennent. Nous commençons par trouver par où ils entrent, puis nous bouchons ces passages et posons des pièges mécaniques.',
+    titre: 'Rats et souris : postes d\'appâtage ou pièges connectés',
+    texte: 'Selon le lieu, nous posons des postes d\'appâtage sécurisés avec raticide professionnel, ou des pièges mécaniques et connectés. Dans tous les cas, nous trouvons par où les rongeurs entrent et nous bouchons ces passages, sinon d\'autres reviennent.',
     points: [
-      'Diagnostic des points d\'entrée (gaines, aérations, bas de portes, regards)',
-      'Colmatage et pièges mécaniques ou de capture',
-      'Pièges connectés qui signalent chaque capture, utiles pour les commerces et les copropriétés',
-      'Appâts uniquement en dernier recours, dans des postes sécurisés',
+      'Postes d\'appâtage sécurisés et verrouillés',
+      'Pièges mécaniques ou de capture',
+      'Pièges connectés qui signalent chaque capture (commerces, copropriétés)',
+      'Diagnostic et colmatage des points d\'entrée',
     ],
   },
   cafards: {
     service: 'cafards-blattes',
-    titre: 'Cafards : vapeur sèche et traitement ciblé',
-    texte: 'Les cafards se cachent dans les joints, derrière l\'électroménager et dans les gaines. La vapeur sèche les atteint dans ces recoins sans pulvériser de produit dans la pièce. Un gel appât ciblé complète si besoin, posé uniquement dans les zones de passage.',
+    titre: 'Cafards : gel, insecticide et vapeur sèche',
+    texte: 'Les cafards se cachent dans les joints, derrière l\'électroménager et dans les gaines. Le gel appât professionnel atteint toute la colonie, l\'insecticide traite les surfaces, et la vapeur sèche ou la cryogénie détruisent les cafards dans les recoins sans produit.',
     points: [
-      'Vapeur sèche dans les cuisines, salles de bain et joints',
-      'Cryogénie possible selon les cas',
+      'Gel appât et insecticide professionnels',
+      'Vapeur sèche ou cryogénie dans les joints et recoins',
       'Protocole en 2 passages pour atteindre les éclosions',
     ],
   },
   guepes: {
     service: 'guepes-frelons',
-    titre: 'Guêpes et frelons : intervention sur le nid uniquement',
-    texte: 'Un nid ne se traite pas soi-même. Notre technicien agit directement et uniquement sur le nid, sans traiter le jardin autour, puis retire le nid quand il est accessible.',
+    titre: 'Guêpes et frelons : destruction du nid',
+    texte: 'Un nid ne se traite pas soi-même. Notre technicien équipé traite directement le nid avec un insecticide professionnel, sans pulvériser le jardin autour, puis retire le nid quand il est accessible.',
     points: [
-      'Intervention ciblée, rien n\'est pulvérisé au hasard',
+      'Traitement ciblé sur le nid',
       'Retrait du nid quand c\'est possible',
       'Conseils pour éviter une nouvelle installation',
     ],
   },
   fourmis: {
     service: 'fourmis',
-    titre: 'Fourmis : on vise la colonie, pas la pièce',
-    texte: 'Pulvériser sur les fourmis visibles ne sert à rien : la colonie continue. Nous repérons le nid et les passages, colmatons les entrées et posons un appât ciblé seulement là où il faut.',
+    titre: 'Fourmis : on vise la colonie',
+    texte: 'Pulvériser sur les fourmis visibles ne suffit pas : la colonie continue. Nous repérons le nid et les passages, posons un gel appât ou un insecticide adapté à l\'espèce, et colmatons les entrées.',
     points: [
       'Repérage du nid et des chemins de passage',
+      'Gel appât ou insecticide professionnel selon l\'espèce',
       'Colmatage des entrées',
-      'Appât ciblé, sans pulvérisation dans la maison',
     ],
   },
   pigeons: {
@@ -75,7 +76,7 @@ export const SECTEURS: Record<SecteurId, { nom: string; intro: (c: string) => st
     nom: 'Portes de Paris',
     intro: (c) => [
       `${c} fait partie des communes du Val-de-Marne proches de Paris : immeubles, copropriétés, commerces en rez-de-chaussée. Les nuisibles y passent facilement d'un logement à l'autre par les caves, les gaines et les parties communes.`,
-      'En appartement occupé, avec des enfants ou des animaux, beaucoup de familles préfèrent éviter les insecticides. C\'est pour cela que nous traitons d\'abord par le froid ou la vapeur.',
+      'En appartement occupé, avec des enfants ou des animaux, certaines familles préfèrent un traitement sans produit. Nous proposons donc, à côté des traitements chimiques professionnels, la cryogénie et la vapeur sèche.',
     ],
     ordre: ['punaises', 'cafards', 'rongeurs', 'pigeons'],
   },
@@ -83,7 +84,7 @@ export const SECTEURS: Record<SecteurId, { nom: string; intro: (c: string) => st
     nom: 'Bords de Marne',
     intro: (c) => [
       `À ${c}, entre berges, pavillons et immeubles, on rencontre à la fois les nuisibles des jardins et ceux des logements collectifs. Les rongeurs, en particulier, remontent volontiers vers les maisons et les sous-sols.`,
-      'Plutôt que de multiplier les appâts empoisonnés près des jardins et des animaux domestiques, nous fermons les accès et piégeons de façon mécanique.',
+      'Selon le lieu, nous posons des postes d\'appâtage sécurisés ou des pièges mécaniques, et nous fermons toujours les accès pour éviter leur retour.',
     ],
     ordre: ['rongeurs', 'guepes', 'punaises', 'fourmis'],
   },
@@ -91,7 +92,7 @@ export const SECTEURS: Record<SecteurId, { nom: string; intro: (c: string) => st
     nom: 'Sud du département et bords de Seine',
     intro: (c) => [
       `${c} se situe dans le sud du Val-de-Marne, où se mêlent résidences, pavillons, commerces et zones d'activité. Particuliers et professionnels n'ont pas les mêmes besoins, et le traitement s'adapte.`,
-      'Pour les commerces, restaurants et entrepôts, les pièges connectés permettent un suivi des captures sans multiplier les passages. Pour les logements, nous privilégions la vapeur sèche et la cryogénie.',
+      'Pour les commerces, restaurants et entrepôts, nous proposons postes d\'appâtage sécurisés et pièges connectés, qui permettent un suivi des captures. Pour les logements, traitement chimique, vapeur sèche ou cryogénie selon la situation.',
     ],
     ordre: ['rongeurs', 'cafards', 'punaises', 'guepes'],
   },
@@ -99,7 +100,7 @@ export const SECTEURS: Record<SecteurId, { nom: string; intro: (c: string) => st
     nom: 'Est du département et plateau briard',
     intro: (c) => [
       `À ${c}, l'habitat est surtout pavillonnaire, avec jardins, dépendances et espaces verts à proximité. Les rongeurs cherchent un abri dès les premiers froids, et les guêpes s'installent sous les toits et dans les haies.`,
-      'Près des jardins, des potagers et des animaux, nous évitons le poison : colmatage des accès, pièges mécaniques et intervention ciblée sur les nids.',
+      'Près des jardins, des potagers et des animaux, vous avez le choix : postes d\'appâtage sécurisés ou pièges mécaniques, toujours avec le colmatage des accès.',
     ],
     ordre: ['rongeurs', 'guepes', 'fourmis', 'punaises'],
   },
@@ -138,9 +139,9 @@ function aCommune(nom: string) {
 function titre(nom: string) {
   const a = aCommune(nom)
   const variantes = [
-    `Anti-nuisibles ${a} (94), méthodes sans poison`,
-    `Anti-nuisibles ${a} (94), sans poison`,
-    `Nuisibles ${a} (94), sans poison`,
+    `Anti-nuisibles ${a} (94), intervention le jour même`,
+    `Anti-nuisibles ${a} (94), intervention 7j/7`,
+    `Anti-nuisibles ${a} (94), 7j/7`,
   ]
   return variantes.find((t) => t.length <= 60) ?? variantes[variantes.length - 1]
 }
@@ -160,7 +161,7 @@ export const COMMUNES_94: Commune[] = LISTE.map(([nom, secteur]) => ({
   a: aCommune(nom),
   secteur,
   title: titre(nom),
-  description: `Punaises de lit par cryogénie ou vapeur sèche, rats et souris sans mort-aux-rats ${aCommune(nom)}. Techniciens Certibiocide, 7j/7, devis gratuit.`,
+  description: `Rats, punaises de lit, cafards ${aCommune(nom)} : traitement chimique ou sans produit (cryogénie, vapeur sèche). Certibiocide, 7j/7.`,
 }))
 
 export function getCommune94(slug: string) {

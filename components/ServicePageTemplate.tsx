@@ -231,7 +231,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Pourquoi nous choisir</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">Ce qui nous distingue</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className={`grid ${data.benefits.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-5`}>
               {data.benefits.map(({ icon, title, text }) => {
                 const BIcon = BENEFIT_ICONS[icon]
                 return (

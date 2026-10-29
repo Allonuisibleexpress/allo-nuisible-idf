@@ -2,10 +2,10 @@ import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
-  badge: 'Traitement insecticide · Chaleur · Résultat garanti',
+  badge: 'Cryogénie · Vapeur sèche · Insecticide · Résultat garanti',
   heroTitle: 'Punaises de lit',
   heroHighlight: 'Éradication totale',
-  heroDescription: 'Protocole professionnel certifié : insecticide rémanent longue durée + traitement chaleur si nécessaire. Vous dormez tranquille dès la première nuit après intervention.',
+  heroDescription: 'Deux approches professionnelles, choisies selon votre logement : cryogénie ou vapeur sèche, sans produit, et insecticide rémanent longue durée. Souvent, on combine les deux.',
   heroPrices: [
     { price: '250', label: 'Studio' },
     { price: '400', label: 'Appartement' },
@@ -14,13 +14,14 @@ const data: ServiceData = {
   trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', 'Protocole ANSES', 'Garantie 1 mois'],
   benefits: [
     { icon: 'microscope', title: 'Insecticides de 4e génération', text: 'Les punaises de lit ont développé des résistances aux produits grand public. Nos biocides professionnels agissent sur le système nerveux et restent actifs plusieurs semaines après le passage.' },
+    { icon: 'thermo', title: 'Cryogénie et vapeur sèche', text: 'La neige carbonique (environ −78 °C) ou la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. Idéal pour matelas, sommiers, canapés et plinthes : le logement reste utilisable juste après.' },
     { icon: 'search', title: 'Inspection complète du logement', text: 'Matelas, sommier, cadre de lit, plinthes, prises électriques, meubles proches du lit : nos techniciens inspectent chaque recoin pour ne laisser aucun foyer sans traitement.' },
     { icon: 'shield', title: 'Protocole ANSES validé', text: 'Notre protocole suit les recommandations officielles de l\'Agence nationale de sécurité sanitaire. Traitement de toutes les zones de vie, pas seulement le lit.' },
   ],
   process: [
     { title: 'Diagnostic téléphonique', text: 'Vous décrivez les symptômes (piqûres, taches, observations). Nous évaluons le niveau d\'infestation et confirmons le tarif. Devis gratuit, sans engagement.' },
     { title: 'Inspection sur place', text: 'Le technicien inspecte l\'ensemble du logement avec une lampe UV. Identification de tous les foyers et cartographie complète avant traitement.' },
-    { title: 'Traitement insecticide professionnel', text: 'Pulvérisation et application d\'insecticide rémanent de 4e génération sur toutes les surfaces infestées et adjacentes. Vous quittez le logement 4 à 6h.' },
+    { title: 'Traitement adapté à votre logement', text: 'Cryogénie ou vapeur sèche sur la literie, les meubles et les recoins, et insecticide rémanent de 4e génération sur les surfaces infestées et adjacentes. Après un traitement insecticide, vous quittez le logement 4 à 6 h.' },
     { title: 'Suivi & garantie', text: 'Retour sous 15 jours pour contrôle. En cas de réapparition dans le délai de garantie, intervention gratuite. Vous dormez tranquille.' },
   ],
   pricing: [
@@ -34,7 +35,7 @@ const data: ServiceData = {
       label: 'Appartement',
       price: '400',
       description: 'De 35 à 80 m² · 2 à 3 pièces',
-      features: ['1 passage complet', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Garantie 1 mois', 'Visite de contrôle incluse'],
+      features: ['1 passage complet', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Cryogénie ou vapeur sèche possible', 'Garantie 1 mois', 'Visite de contrôle incluse'],
       highlight: true,
     },
     {
@@ -55,14 +56,15 @@ const data: ServiceData = {
     { q: 'Les punaises de lit arrivent-elles de l\'extérieur ?', a: 'Oui. Elles voyagent dans les bagages, vêtements, meubles d\'occasion et literies. Hôtels, transports en commun, déménagements : tout objet infesté peut introduire des punaises dans votre logement. Elles ne volent pas mais se déplacent très rapidement.' },
     { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Dans la grande majorité des cas, oui. Notre protocole combine insecticide rémanent et traitement de toutes les zones. Pour les fortes infestations, une seconde intervention peut être nécessaire, incluse dans notre garantie.' },
     { q: 'Faut-il jeter le matelas ?', a: 'Pas forcément. Un matelas peut être traité efficacement. Notre technicien évalue sur place. Si le matelas est trop endommagé ou infesté en profondeur, il vous le signalera. Dans la plupart des cas, le traitement suffit.' },
-    { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Oui, pendant 4 à 6 heures après le traitement. Les animaux domestiques doivent également quitter le logement. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
+    { q: 'Proposez-vous un traitement sans insecticide ?', a: 'Oui. La cryogénie (neige carbonique, environ −78 °C) et la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. L\'insecticide rémanent, lui, continue d\'agir après le passage. Selon l\'infestation, le technicien vous propose l\'une, l\'autre ou les deux.' },
+    { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Avec un traitement insecticide, oui, pendant 4 à 6 heures, animaux domestiques compris. Avec la cryogénie ou la vapeur sèche, ce n\'est pas nécessaire. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
   ],
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }
 
 export const metadata = pageMetadata({
   title: 'Punaises de lit : traitement professionnel en Île-de-France',
-  description: 'Insecticide rémanent et traitement par la chaleur si nécessaire, par des techniciens certifiés. Résultat garanti. Intervention 7j/7, devis gratuit.',
+  description: 'Cryogénie, vapeur sèche ou insecticide rémanent selon votre logement, par des techniciens certifiés. Résultat garanti, 7j/7, devis gratuit.',
   path: '/services/punaises-de-lit',
 })
 
