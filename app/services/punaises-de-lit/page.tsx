@@ -29,13 +29,13 @@ const data: ServiceData = {
     {
       label: 'Studio',
       price: '290',
-      description: 'Jusqu\'à 30 m² environ',
+      description: 'Une pièce principale',
       features: ['2 passages inclus', 'Insecticide professionnel', 'Zones à risque traitées', 'Garantie 1 an'],
     },
     {
       label: 'T2 ou T3',
       price: '390',
-      description: 'De 30 à 70 m² environ',
+      description: 'Appartement de 2 à 3 pièces',
       features: ['2 passages inclus', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Cryogénie ou vapeur sèche possible', 'Garantie 1 an'],
       highlight: true,
     },

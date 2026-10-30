@@ -28,7 +28,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     icon: 'punaises-de-lit',
     href: '/services/punaises-de-lit',
     tiers: [
-      { label: 'Studio ou T1', price: '290', details: '2 passages inclus, jusqu\'à 30 m² environ' },
+      { label: 'Studio ou T1', price: '290', details: '2 passages inclus, inspection de toutes les pièces' },
       { label: 'T2 ou T3', price: '390', details: '2 passages inclus. Insecticide, cryogénie ou vapeur sèche', highlight: true },
       { label: 'T4, maison ou forte infestation', price: null, details: '2 passages inclus, prix après inspection' },
     ],
@@ -78,8 +78,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     icon: 'pigeons',
     href: '/services/pigeons',
     tiers: [
-      { label: 'Balcon standard', price: '150', details: 'Environ 6 m²' },
-      { label: 'Pics anti-pigeons inox', price: '25', unit: ' / mètre', details: 'Rebords, corniches', highlight: true },
+      { label: 'Balcon, rebord', price: '150', details: 'Pics ou filet anti-pigeons, pose comprise' },
+      { label: 'Terrasse, corniches', price: null, details: 'Filet ou pics sur mesure', highlight: true },
       { label: 'Façade, toiture', price: null, details: 'Étude technique, nacelle si besoin' },
     ],
   },
@@ -194,7 +194,7 @@ export default function TarifsPage() {
           {/* Note bas */}
           <div className="max-w-3xl mx-auto mt-10 rounded-2xl px-6 py-5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem', lineHeight: 1.75 }}>
-              Prix TTC indicatifs « à partir de ». Le prix final dépend de la surface, du niveau d'infestation et de l'accès : il est toujours confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
+              Prix TTC indicatifs « à partir de ». Le prix exact est établi sur place par le technicien, selon la superficie et le niveau d'infestation, puis confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
             </p>
           </div>
         </section>

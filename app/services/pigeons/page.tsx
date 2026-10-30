@@ -7,8 +7,8 @@ const data: ServiceData = {
   heroHighlight: 'Protection permanente',
   heroDescription: 'Pics inox, filets sur mesure, dispositifs répulsifs : on sécurise vos toits, rebords, balcons et façades durablement. Intervention en hauteur sécurisée.',
   heroPrices: [
-    { price: '25', label: 'Pics, le mètre' },
-    { price: '150', label: 'Balcon' },
+    { price: '150', label: 'Balcon, rebord' },
+    { price: 'Sur devis', label: 'Terrasse' },
     { price: 'Sur devis', label: 'Façade' },
   ],
   trustBar: ['Intervention en hauteur', 'Pics inox longue durée', 'Filets sur mesure', 'Sans nuire aux oiseaux', 'Discret et esthétique'],
@@ -26,15 +26,14 @@ const data: ServiceData = {
   pricing: [
     {
       label: 'Rebord / Corniche',
-      price: '25',
-      unit: '/ mètre',
-      description: 'Pics anti-pigeons inox, prix au mètre',
+      price: '150',
+      description: 'Pics anti-pigeons inox, pose comprise',
       features: ['Pics inox galvanisé', 'Pose professionnelle', 'Résistant 10+ ans', 'Nettoyage des fientes inclus'],
     },
     {
       label: 'Balcon / Terrasse',
-      price: '150',
-      description: 'Balcon standard, environ 6 m²',
+      price: 'Sur devis',
+      description: 'Filet sur mesure',
       features: ['Filet sur mesure', 'Fixation discrète', 'Ouverture zippée possible', 'Garantie pose 2 ans', 'Esthétique préservée'],
       highlight: true,
     },

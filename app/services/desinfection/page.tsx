@@ -33,7 +33,7 @@ const data: ServiceData = {
     {
       label: 'T2 ou T3',
       price: '200',
-      description: 'De 30 à 70 m² environ',
+      description: 'Appartement de 2 à 3 pièces',
       features: ['Désinfection intégrale', 'Traitement air + surfaces', 'Zones difficiles incluses', 'Rapport d\'intervention', 'Attestation officielle'],
       highlight: true,
     },
