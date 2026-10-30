@@ -28,9 +28,9 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     icon: 'punaises-de-lit',
     href: '/services/punaises-de-lit',
     tiers: [
-      { label: 'Studio ou T1', price: '290', details: 'Jusqu\'à 30 m² environ, inspection de toutes les pièces' },
-      { label: 'T2 ou T3', price: '390', details: 'Insecticide, cryogénie ou vapeur sèche selon le cas', highlight: true },
-      { label: 'T4, maison ou forte infestation', price: null, details: 'Après inspection du logement' },
+      { label: 'Studio ou T1', price: '290', details: '2 passages inclus, jusqu\'à 30 m² environ' },
+      { label: 'T2 ou T3', price: '390', details: '2 passages inclus. Insecticide, cryogénie ou vapeur sèche', highlight: true },
+      { label: 'T4, maison ou forte infestation', price: null, details: '2 passages inclus, prix après inspection' },
     ],
   },
   {

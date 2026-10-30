@@ -8,8 +8,8 @@ const data: ServiceData = {
   heroHighlight: 'Éradication totale',
   heroDescription: 'Deux approches professionnelles, choisies selon votre logement : cryogénie ou vapeur sèche, sans produit, et insecticide rémanent longue durée. Souvent, on combine les deux.',
   heroPrices: [
-    { price: '250', label: 'Studio' },
-    { price: '400', label: 'Appartement' },
+    { price: '290', label: 'Studio' },
+    { price: '390', label: 'Appartement' },
     { price: '600', label: 'Maison' },
   ],
   trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', 'Protocole ANSES', 'Garantie 1 an'],
@@ -28,15 +28,15 @@ const data: ServiceData = {
   pricing: [
     {
       label: 'Studio',
-      price: '250',
+      price: '290',
       description: 'Jusqu\'à 35 m² · 1 pièce',
-      features: ['1 passage complet', 'Insecticide professionnel', 'Zones à risque traitées', 'Garantie 1 an'],
+      features: ['2 passages inclus', 'Insecticide professionnel', 'Zones à risque traitées', 'Garantie 1 an'],
     },
     {
       label: 'Appartement',
-      price: '400',
+      price: '390',
       description: 'De 35 à 80 m² · 2 à 3 pièces',
-      features: ['1 passage complet', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Cryogénie ou vapeur sèche possible', 'Garantie 1 an', 'Visite de contrôle incluse'],
+      features: ['2 passages inclus', 'Toutes pièces traitées', 'Produit rémanent longue durée', 'Cryogénie ou vapeur sèche possible', 'Garantie 1 an'],
       highlight: true,
     },
     {
