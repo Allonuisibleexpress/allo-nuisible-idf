@@ -5,7 +5,8 @@ import {
   Phone, ShieldCheck, Star, ChevronDown, ArrowRight,
   AlertTriangle, Clock, FileText, Briefcase, RefreshCw, X
 } from 'lucide-react'
-import NextImage from 'next/image'
+import PhotosChantiers from '@/components/PhotosChantiers'
+import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -137,7 +138,6 @@ export default function GuêpesFrelonsPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => setModalOpen(true)
   const closeModal = () => setModalOpen(false)
-  const [lightbox, setLightbox] = useState<{src:string,city:string}|null>(null)
 
   const [floatVisible, setFloatVisible] = useState(false)
 
@@ -382,51 +382,8 @@ export default function GuêpesFrelonsPage() {
           </div>
         </section>
 
-        {/* ══════════════════ GALERIE ══════════════════ */}
-        <section className="reveal py-14 md:py-20" style={{ background: '#111' }}>
-          <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <div className="text-center mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Galerie</p>
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Nos interventions en images</h2>
-              <div className="w-12 h-1 mx-auto rounded-full" style={{ background: ACCENT }} />
-            </div>
-            {/* Grille 2 colonnes, 3 rangées */}
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { src: '/galerie-1.jpg', alt: 'Nid de guêpes dans une cloison traité par notre technicien en Île-de-France', city: 'Paris 6e' },
-                { src: '/galerie-2.jpg', alt: 'Destruction nid de guêpes sous avant-toit, intervention Île-de-France', city: 'Créteil' },
-                { src: '/galerie-3.jpg', alt: 'Intervention nid de guêpes en hauteur, technicien certifié Île-de-France', city: 'Pontault-Combault' },
-                { src: '/galerie-4.jpg', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention guêpes', city: 'Évry' },
-                { src: '/galerie-5.jpg', alt: 'Nid de guêpes neutralisé dans les combles en Île-de-France', city: 'Drancy' },
-                { src: '/galerie-6.jpg', alt: 'Traitement nid de frelons par notre équipe en Île-de-France', city: 'Montmorency' },
-              ].map(({ src, alt, city }) => (
-                <div
-                  key={src}
-                  className="relative overflow-hidden rounded-2xl cursor-pointer group"
-                  style={{ aspectRatio: '4/3' }}
-                  onClick={() => setLightbox({ src, city })}
-                >
-                  <NextImage src={src} alt={alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top,rgba(0,0,0,0.72) 0%,transparent 100%)', padding: '18px 10px 8px' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: 'rgba(232,68,26,0.88)', borderRadius: 999, padding: '3px 10px', fontSize: 10, fontWeight: 700, color: '#fff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                      Intervention · {city}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <a
-                href={PHONE_HREF}
-                className="inline-flex items-center gap-2 font-bold text-white px-7 py-3.5 rounded-full text-sm"
-                style={{ background: ACCENT, boxShadow: `0 4px 20px rgba(232,68,26,0.3)` }}
-              >
-                <Phone className="w-4 h-4" />
-                Appelez maintenant
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* Galerie : vraies photos de chantier (lib/photos-chantiers.ts) */}
+        <PhotosChantiers photos={['nidGuepes']} titre="Un de nos chantiers guêpes" />
 
         {/* ══════════════════ SECTION CONVERSION SOMBRE ══════════════════ */}
         <section
@@ -636,99 +593,8 @@ export default function GuêpesFrelonsPage() {
           </div>
         </section>
 
-        {/* ══════════════════ TÉMOIGNAGES CAROUSEL ══════════════════ */}
-        <section className="reveal py-14 md:py-20 overflow-hidden" style={{ background: '#111' }}>
-          <style>{`
-            @keyframes marquee-l { from { transform:translateX(0) } to { transform:translateX(-50%) } }
-            @keyframes marquee-r { from { transform:translateX(-50%) } to { transform:translateX(0) } }
-            .marquee-l { animation: marquee-l 38s linear infinite; }
-            .marquee-r { animation: marquee-r 44s linear infinite; }
-            .marquee-l:hover, .marquee-r:hover { animation-play-state: paused; }
-            @keyframes sp-pulse { 0%, 100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(0.85); } }
-          `}</style>
-
-          <div className="text-center mb-10 px-4">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Témoignages</p>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Ce que disent nos clients</h2>
-            <div className="w-12 h-1 mx-auto rounded-full" style={{ background: ACCENT }} />
-          </div>
-
-          {/* Rangée 1 → gauche */}
-          <div className="overflow-hidden mb-4">
-            <div className="flex gap-4 marquee-l" style={{ width: 'max-content' }}>
-              {[
-                { name: 'Mathieu L.', ville: 'Paris 15e', date: 'il y a 3 jours', texte: "Nid de frelons asiatiques dans nos combles, impossible d'y aller. Appelé à 9h, technicien présent à 10h30 avec son équipement complet. Le nid faisait la taille d'un ballon de foot. Traitement immédiat, résultat parfait. Merci !" },
-                { name: 'Sophie R.', ville: 'Versailles', date: 'il y a 1 semaine', texte: "Des guêpes avaient installé un nid sous la terrasse en bois. Mes enfants ne pouvaient plus jouer dehors. Intervention rapide, propre et efficace. Prix exactement celui annoncé par téléphone. Je recommande à 100%." },
-                { name: 'Pierre D.', ville: 'Boulogne-Billancourt', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert dans le volet roulant du salon. L'équipe est intervenue en combinaison intégrale, a retiré le nid proprement sans abîmer le volet. Vraiment sérieux et professionnels." },
-                { name: 'Isabelle M.', ville: 'Vincennes', date: 'il y a 3 semaines', texte: "Frelons asiatiques dans un arbre du jardin. J'étais paniquée, le nid était énorme. Le technicien est arrivé en moins d'une heure, très rassurant, très compétent. Le nid a été neutralisé le soir même." },
-                { name: 'Thomas B.', ville: 'Neuilly-sur-Seine', date: 'il y a 1 mois', texte: "Urgence absolue : nid de guêpes découvert dans les combles lors de travaux. Contacté en urgence, intervention le soir même malgré l'heure tardive. Sérieux, efficace, je garde le numéro précieusement." },
-                { name: 'Claire V.', ville: 'Saint-Cloud', date: 'il y a 1 mois', texte: "Petit nid repéré tôt au printemps sous l'avant-toit. Traitement rapide et à un tarif très raisonnable. Le technicien m'a expliqué comment éviter une réinstallation l'année prochaine. Service au top !" },
-              ].concat([
-                { name: 'Mathieu L.', ville: 'Paris 15e', date: 'il y a 3 jours', texte: "Nid de frelons asiatiques dans nos combles, impossible d'y aller. Appelé à 9h, technicien présent à 10h30 avec son équipement complet. Le nid faisait la taille d'un ballon de foot. Traitement immédiat, résultat parfait. Merci !" },
-                { name: 'Sophie R.', ville: 'Versailles', date: 'il y a 1 semaine', texte: "Des guêpes avaient installé un nid sous la terrasse en bois. Mes enfants ne pouvaient plus jouer dehors. Intervention rapide, propre et efficace. Prix exactement celui annoncé par téléphone. Je recommande à 100%." },
-                { name: 'Pierre D.', ville: 'Boulogne-Billancourt', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert dans le volet roulant du salon. L'équipe est intervenue en combinaison intégrale, a retiré le nid proprement sans abîmer le volet. Vraiment sérieux et professionnels." },
-                { name: 'Isabelle M.', ville: 'Vincennes', date: 'il y a 3 semaines', texte: "Frelons asiatiques dans un arbre du jardin. J'étais paniquée, le nid était énorme. Le technicien est arrivé en moins d'une heure, très rassurant, très compétent. Le nid a été neutralisé le soir même." },
-                { name: 'Thomas B.', ville: 'Neuilly-sur-Seine', date: 'il y a 1 mois', texte: "Urgence absolue : nid de guêpes découvert dans les combles lors de travaux. Contacté en urgence, intervention le soir même malgré l'heure tardive. Sérieux, efficace, je garde le numéro précieusement." },
-                { name: 'Claire V.', ville: 'Saint-Cloud', date: 'il y a 1 mois', texte: "Petit nid repéré tôt au printemps sous l'avant-toit. Traitement rapide et à un tarif très raisonnable. Le technicien m'a expliqué comment éviter une réinstallation l'année prochaine. Service au top !" },
-              ]).map((a, i) => (
-                <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center font-black text-white text-sm shrink-0" style={{ background: ACCENT }}>
-                        {a.name[0]}
-                      </div>
-                      <div>
-                        <p className="font-bold text-white text-sm leading-none mb-0.5">{a.name}</p>
-                        <p className="text-white/35 text-xs">{a.ville}</p>
-                      </div>
-                    </div>
-                    <p className="text-white/25 text-xs">{a.date}</p>
-                  </div>
-                  <p className="text-xs mb-3" style={{ color: '#facc15' }}>★★★★★</p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a.texte}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Rangée 2 → droite */}
-          <div className="overflow-hidden">
-            <div className="flex gap-4 marquee-r" style={{ width: 'max-content' }}>
-              {[
-                { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 jours', texte: "Frelon asiatique repéré sur la terrasse, nid trouvé dans un arbre voisin. Intervention très professionnelle, le technicien a sécurisé le périmètre avant de traiter. Aucun incident, nid retiré proprement." },
-                { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 10 jours', texte: "Guêpes dans le cabanon de jardin depuis plusieurs semaines. Je n'osais plus y aller. Un seul appel, un technicien le lendemain matin, problème réglé en 45 minutes. Service impeccable et prix honnête." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert par mes enfants en jouant. J'ai appelé en urgence, le technicien est arrivé en 50 minutes. Travail soigné, zone sécurisée, mes enfants ont pu jouer dehors dès le lendemain." },
-                { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 3 semaines', texte: "Très impressionnée par le professionnalisme. Le technicien est venu en combinaison complète, a identifié l'espèce (frelon européen), traité le nid et laissé les lieux propres. Garantie re-intervention incluse. Parfait." },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide, ça inspire confiance. Je recommande sans hésiter." },
-                { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 5 semaines', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette année c'était un nid de frelons asiatiques dans le garage. Intervention le soir même après mon appel en fin d'après-midi. Remarquable." },
-              ].concat([
-                { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 jours', texte: "Frelon asiatique repéré sur la terrasse, nid trouvé dans un arbre voisin. Intervention très professionnelle, le technicien a sécurisé le périmètre avant de traiter. Aucun incident, nid retiré proprement." },
-                { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 10 jours', texte: "Guêpes dans le cabanon de jardin depuis plusieurs semaines. Je n'osais plus y aller. Un seul appel, un technicien le lendemain matin, problème réglé en 45 minutes. Service impeccable et prix honnête." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 2 semaines', texte: "Nid de guêpes découvert par mes enfants en jouant. J'ai appelé en urgence, le technicien est arrivé en 50 minutes. Travail soigné, zone sécurisée, mes enfants ont pu jouer dehors dès le lendemain." },
-                { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 3 semaines', texte: "Très impressionnée par le professionnalisme. Le technicien est venu en combinaison complète, a identifié l'espèce (frelon européen), traité le nid et laissé les lieux propres. Garantie re-intervention incluse. Parfait." },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 1 mois', texte: "Nid dans la haie mitoyenne, impossible de tondre. L'équipe est intervenue rapidement avec du matériel adapté. Résultat garanti et technicien Certibiocide, ça inspire confiance. Je recommande sans hésiter." },
-                { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 5 semaines', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette année c'était un nid de frelons asiatiques dans le garage. Intervention le soir même après mon appel en fin d'après-midi. Remarquable." },
-              ]).map((a, i) => (
-                <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center font-black text-white text-sm shrink-0" style={{ background: 'rgba(232,68,26,0.6)' }}>
-                        {a.name[0]}
-                      </div>
-                      <div>
-                        <p className="font-bold text-white text-sm leading-none mb-0.5">{a.name}</p>
-                        <p className="text-white/35 text-xs">{a.ville}</p>
-                      </div>
-                    </div>
-                    <p className="text-white/25 text-xs">{a.date}</p>
-                  </div>
-                  <p className="text-xs mb-3" style={{ color: '#facc15' }}>★★★★★</p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a.texte}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Vrais avis Google (lib/avis-google.ts) */}
+        <AvisGoogle />
 
         {/* ══════════════════ FORMULAIRE DE RAPPEL ══════════════════ */}
         <section id="rappel" className="reveal py-14 md:py-18" style={{ background: '#0d0d0d' }}>
@@ -811,27 +677,6 @@ export default function GuêpesFrelonsPage() {
         </section>
 
       </main>
-
-      {/* Lightbox galerie */}
-      {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.93)', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20, padding: 20, cursor: 'pointer' }}
-        >
-          <div style={{ position: 'relative', width: '90vw', maxWidth: 700, height: 'min(60vh,525px)' }}>
-            <NextImage src={lightbox.src} alt={lightbox.city} fill style={{ objectFit: 'contain' }} className="rounded-2xl" />
-          </div>
-          <p style={{ fontSize: 'clamp(1.1rem,3vw,1.5rem)', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>
-            Intervention à <span style={{ color: ACCENT }}>{lightbox.city}</span>
-          </p>
-          <button
-            onClick={e => { e.stopPropagation(); setLightbox(null) }}
-            style={{ position: 'absolute', top: 16, right: 16, width: 38, height: 38, borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          >
-            <X style={{ width: 18, height: 18 }} />
-          </button>
-        </div>
-      )}
 
       <Footer />
     </>

@@ -1,3 +1,4 @@
+import type { PhotoKey } from '@/lib/photos-chantiers'
 // Articles du blog Allo Nuisible IDF.
 // Sujets choisis pour NE PAS cannibaliser le blog d'allonuisibleexpress.fr (aucun doublon d'intention).
 // Texte riche : **gras** et [ancre](/lien) sont interprétés au rendu.
@@ -23,6 +24,7 @@ export interface Article {
   service: { href: string; label: string }
   blocks: Block[]
   terrain?: string // retour d'expérience réel uniquement, sinon laisser vide
+  photos?: PhotoKey[] // vraies photos de chantier (lib/photos-chantiers.ts)
   faq: { q: string; a: string }[]
   sources: { label: string; url: string }[]
   cta: { title: string; text: string }
@@ -896,6 +898,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Vincennes](/punaises-de-lit/vincennes) ou à [Paris](/zones/paris)." },
       { t: 'p', x: "La cryogénie est aussi disponible à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont) et à [Saint-Maurice](/punaises-de-lit/saint-maurice)." },
     ],
+    terrain: "En urgence, un foyer pour enfants handicapés nous a contactés pour des punaises de lit, avec une demande précise : aucun produit chimique ni biocide. Nous avons proposé la cryogénie, la solution la mieux adaptée à leur établissement, et traité les chambres pièce par pièce, lits compris.",
+    photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
     faq: [
       { q: "La cryogénie tue-t-elle aussi les œufs ?", a: "Oui, le choc thermique tue les punaises et leurs œufs au contact. Il faut donc atteindre chaque endroit où ils se cachent." },
       { q: "La cryogénie mouille-t-elle le matelas ?", a: "Non. La neige carbonique passe directement à l'état de gaz : rien ne mouille et il ne reste aucun résidu." },

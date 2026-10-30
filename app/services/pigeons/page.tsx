@@ -45,11 +45,6 @@ const data: ServiceData = {
       cta: 'Demander une étude',
     },
   ],
-  testimonials: [
-    { name: 'Catherine M.', ville: 'Paris 16e', note: 5, texte: 'Pigeons sur ma terrasse depuis 2 ans. Les pics ont été posés proprement, sans abîmer la balustrade. Plus un pigeon depuis l\'installation.' },
-    { name: 'Patrick L.', ville: 'Versailles', note: 5, texte: 'Fientes sur toute la gouttière. L\'équipe est venue avec l\'équipement adapté, a tout nettoyé et posé les pics. Travail soigné et résultat immédiat.' },
-    { name: 'Sylvie N.', ville: 'Levallois-Perret', note: 5, texte: 'Filet posé sur mon balcon. Vraiment discret, on ne le voit presque pas depuis la rue. Les pigeons ont disparu en 24h. Parfait.' },
-  ],
   faq: [
     { q: 'Les pics anti-pigeons font-ils mal aux oiseaux ?', a: 'Non. Les pics empêchent physiquement les pigeons de se poser sans les blesser. Ils ne constituent pas de piège et n\'infligent aucune douleur. C\'est une méthode 100% humaine et légale.' },
     { q: 'Les fientes de pigeons sont-elles dangereuses ?', a: 'Oui. Les fientes de pigeon peuvent transmettre la salmonellose, la psittacose et des champignons pathogènes (Cryptococcus, Histoplasma). Elles sont aussi très corrosives pour les façades, toitures et véhicules.' },

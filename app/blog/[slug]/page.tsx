@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ARTICLES, getArticle, type Block } from '../articles'
+import NextImage from 'next/image'
+import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }))
@@ -198,6 +200,23 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </section>
 
           {a.blocks.map(renderBlock)}
+
+          {/* Vraies photos de chantier */}
+          {a.photos && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '40px' }}>
+              {a.photos.map((cle) => {
+                const p = PHOTOS_CHANTIERS[cle]
+                return (
+                  <figure key={cle} style={{ margin: 0 }}>
+                    <div style={{ position: 'relative', aspectRatio: '3/4', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }}>
+                      <NextImage src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 50vw, 360px" style={{ objectFit: 'cover' }} />
+                    </div>
+                    <figcaption style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>{p.legende}</figcaption>
+                  </figure>
+                )
+              })}
+            </div>
+          )}
 
           {/* Ce qu'on observe sur le terrain (uniquement si un vrai retour d'expérience est fourni) */}
           {a.terrain && (

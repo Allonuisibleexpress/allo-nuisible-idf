@@ -7,6 +7,8 @@ import PourquoiNous from '@/components/PourquoiNous'
 import QuiSommesNous from '@/components/QuiSommesNous'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import PhotosChantiers from '@/components/PhotosChantiers'
+import AvisGoogle from '@/components/AvisGoogle'
 
 export const metadata = pageMetadata({
   title: 'Lutte contre les nuisibles 7j/7 en Île-de-France',
@@ -99,6 +101,8 @@ export default function Home() {
         <QuiSommesNous />
         <PourquoiNous />
         <AvantApres />
+        <PhotosChantiers photos={['cryoFoyer', 'litCryo', 'nidGuepes', 'toit']} />
+        <AvisGoogle fond="#111" />
         <Contact />
       </main>
       <Footer />

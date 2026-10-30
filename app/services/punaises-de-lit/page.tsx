@@ -47,11 +47,6 @@ const data: ServiceData = {
       cta: 'Obtenir un devis gratuit',
     },
   ],
-  testimonials: [
-    { name: 'Amina B.', ville: 'Paris 15e', note: 5, texte: 'Retour de voyage avec des punaises dans les bagages. Allo Nuisible IDF est intervenu le lendemain. Protocole sérieux, technicien rassurant. Plus aucune piqûre depuis.' },
-    { name: 'Laurent V.', ville: 'Vincennes', note: 5, texte: 'Infestation découverte lors d\'un déménagement. Intervention rapide et discrète. Le technicien a traité toutes les pièces méthodiquement. Je recommande sans hésiter.' },
-    { name: 'Claire D.', ville: 'Montreuil', note: 5, texte: 'Très professionnel. L\'inspection a été très complète, le technicien a trouvé des foyers que je n\'avais pas vus. Résultat parfait après 1 semaine.' },
-  ],
   faq: [
     { q: 'Comment savoir si j\'ai des punaises de lit ?', a: 'Les signes typiques : piqûres en ligne ou en grappe au réveil, petites taches de sang sur les draps, points noirs (excréments) sur le matelas ou le sommier, et parfois une légère odeur sucrée. Les punaises se cachent dans les coutures du matelas, le sommier, les plinthes.' },
     { q: 'Les punaises de lit arrivent-elles de l\'extérieur ?', a: 'Oui. Elles voyagent dans les bagages, vêtements, meubles d\'occasion et literies. Hôtels, transports en commun, déménagements : tout objet infesté peut introduire des punaises dans votre logement. Elles ne volent pas mais se déplacent très rapidement.' },
@@ -60,6 +55,8 @@ const data: ServiceData = {
     { q: 'Proposez-vous un traitement sans insecticide ?', a: 'Oui. La cryogénie (neige carbonique, environ −78 °C) et la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. L\'insecticide rémanent, lui, continue d\'agir après le passage. Selon l\'infestation, le technicien vous propose l\'une, l\'autre ou les deux.' },
     { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Avec un traitement insecticide, oui, pendant 4 à 6 heures, animaux domestiques compris. Avec la cryogénie ou la vapeur sèche, ce n\'est pas nécessaire. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
   ],
+  avis: ['jo', 'lisa', 'lauren'],
+  photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
   related: {
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides sur les punaises de lit', links: Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },

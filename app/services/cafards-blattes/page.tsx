@@ -46,11 +46,6 @@ const data: ServiceData = {
       cta: 'Obtenir un devis pro',
     },
   ],
-  testimonials: [
-    { name: 'Rachid M.', ville: 'Paris 15e', note: 5, texte: 'Restaurant fermé d\'urgence à cause des cafards. Allo Nuisible IDF est intervenu le soir même. 2 passages, attestation HACCP fournie, aucun cafard depuis 3 mois.' },
-    { name: 'Isabelle T.', ville: 'Rueil-Malmaison', note: 5, texte: 'Infestation dans la cuisine. Le technicien a tout expliqué clairement, notamment pourquoi 2 passages sont nécessaires. Résultat impeccable.' },
-    { name: 'Marc P.', ville: 'Saint-Cloud', note: 5, texte: 'Très réactifs et professionnels. Le gel appât a fonctionné bien mieux que tous les produits du commerce que j\'avais essayés. Je recommande.' },
-  ],
   faq: [
     { q: 'Pourquoi y a-t-il des cafards chez moi ?', a: 'Les blattes sont attirées par la chaleur, l\'humidité et les sources alimentaires. Elles s\'introduisent via les canalisations, fissures, cartons et livraisons. Leur présence n\'est pas liée à la propreté du logement.' },
     { q: 'Les cafards sont-ils dangereux pour la santé ?', a: 'Oui. Les blattes transportent salmonelles, E. coli et autres agents pathogènes. Elles peuvent déclencher des allergies respiratoires, notamment chez les enfants asthmatiques. Leur présence dans une cuisine est un risque sanitaire sérieux.' },

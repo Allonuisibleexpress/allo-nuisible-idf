@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Phone, ShieldCheck, ChevronDown, X } from 'lucide-react'
-import NextImage from 'next/image'
+import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -38,7 +38,6 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function FourmisPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [floatVisible, setFloatVisible] = useState(false)
-  const [lightbox, setLightbox] = useState<{src:string,city:string}|null>(null)
 
   useEffect(() => {
     let ticking = false
@@ -243,127 +242,8 @@ export default function FourmisPage() {
           </div>
         </section>
 
-        {/* ══════════════════ GALERIE ══════════════════ */}
-        <section className="reveal py-14 md:py-20" style={{ background: '#111' }}>
-          <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <div className="text-center mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Galerie</p>
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Nos interventions en images</h2>
-              <div className="w-12 h-1 mx-auto rounded-full" style={{ background: ACCENT }} />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { src: '/galerie-1.jpg', alt: 'Traitement fourmis dans une cuisine en Île-de-France', city: 'Paris 6e' },
-                { src: '/galerie-2.jpg', alt: 'Gel appât professionnel anti-fourmis posé sous plan de travail', city: 'Créteil' },
-                { src: '/galerie-3.jpg', alt: 'Intervention fourmis charpentières dans charpente en bois', city: 'Pontault-Combault' },
-                { src: '/galerie-4.jpg', alt: 'Technicien Allo Nuisible IDF lors d\'une intervention fourmis', city: 'Évry' },
-                { src: '/galerie-5.jpg', alt: 'Traitement barrière rémanente anti-fourmis sur périmètre extérieur', city: 'Drancy' },
-                { src: '/galerie-6.jpg', alt: 'Nid de fourmis neutralisé dans les murs par notre équipe', city: 'Montmorency' },
-              ].map(({ src, alt, city }) => (
-                <div
-                  key={src}
-                  className="relative overflow-hidden rounded-2xl cursor-pointer group"
-                  style={{ aspectRatio: '4/3' }}
-                  onClick={() => setLightbox({ src, city })}
-                >
-                  <NextImage src={src} alt={alt} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top,rgba(0,0,0,0.72) 0%,transparent 100%)', padding: '18px 10px 8px' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: 'rgba(232,68,26,0.88)', borderRadius: 999, padding: '3px 10px', fontSize: 10, fontWeight: 700, color: '#fff', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                      Intervention · {city}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2 font-bold text-white px-7 py-3.5 rounded-full text-sm" style={{ background: ACCENT, boxShadow: `0 4px 20px rgba(232,68,26,0.3)` }}>
-                <Phone className="w-4 h-4" />
-                Appelez maintenant
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════ TÉMOIGNAGES CAROUSEL ══════════════════ */}
-        <section className="reveal py-14 md:py-20 overflow-hidden" style={{ background: '#0d0d0d' }}>
-          <div className="text-center mb-10 px-4">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Témoignages</p>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Ce que disent nos clients</h2>
-            <div className="w-12 h-1 mx-auto rounded-full" style={{ background: ACCENT }} />
-          </div>
-
-          {/* Rangée 1 → gauche */}
-          <div className="overflow-hidden mb-4">
-            <div className="flex gap-4 marquee-l" style={{ width: 'max-content' }}>
-              {[
-                { name: 'Céline M.', ville: 'Versailles', date: 'il y a 2 jours', texte: "Des fourmis partout dans la cuisine depuis des semaines. Le technicien est venu le lendemain, a posé le gel et en 3 jours plus rien. Vraiment bluffant, je n'aurais jamais cru que ce serait aussi rapide." },
-                { name: 'David K.', ville: 'Neuilly-sur-Seine', date: 'il y a 1 semaine', texte: "Fourmis charpentières dans la charpente. J'avais essayé les produits du commerce, rien à faire. Allo Nuisible IDF a réglé le problème définitivement avec un protocole injection en galeries." },
-                { name: 'Sophie L.', ville: 'Créteil', date: 'il y a 2 semaines', texte: "Service très professionnel, technicien ponctuel et efficace. Il a pris le temps d'expliquer le traitement et les précautions. 3 semaines après, plus une seule fourmi. Je recommande sans hésiter." },
-                { name: 'Marc T.', ville: 'Boulogne-Billancourt', date: 'il y a 3 semaines', texte: "Fourmis pharaon dans l'appartement depuis l'emménagement. Impossible de les éradiquer seul. Le technicien a identifié l'espèce et posé le gel adapté. Résultat en 2 semaines. Impeccable." },
-                { name: 'Élodie V.', ville: 'Saint-Cloud', date: 'il y a 1 mois', texte: "Colonie de fourmis noires sous la terrasse. Intervention rapide, propre, technicien très pédagogue. Le prix était exactement celui annoncé par téléphone. Je recommande à 100%." },
-                { name: 'Thomas B.', ville: 'Vincennes', date: 'il y a 1 mois', texte: "Appelé un samedi matin pour une invasion massive de fourmis dans la cuisine. Technicien présent à 11h, traitement en 45 minutes. Dès le lendemain, les fourmis avaient disparu. Excellent service." },
-              ].concat([
-                { name: 'Céline M.', ville: 'Versailles', date: 'il y a 2 jours', texte: "Des fourmis partout dans la cuisine depuis des semaines. Le technicien est venu le lendemain, a posé le gel et en 3 jours plus rien. Vraiment bluffant, je n'aurais jamais cru que ce serait aussi rapide." },
-                { name: 'David K.', ville: 'Neuilly-sur-Seine', date: 'il y a 1 semaine', texte: "Fourmis charpentières dans la charpente. J'avais essayé les produits du commerce, rien à faire. Allo Nuisible IDF a réglé le problème définitivement avec un protocole injection en galeries." },
-                { name: 'Sophie L.', ville: 'Créteil', date: 'il y a 2 semaines', texte: "Service très professionnel, technicien ponctuel et efficace. Il a pris le temps d'expliquer le traitement et les précautions. 3 semaines après, plus une seule fourmi. Je recommande sans hésiter." },
-                { name: 'Marc T.', ville: 'Boulogne-Billancourt', date: 'il y a 3 semaines', texte: "Fourmis pharaon dans l'appartement depuis l'emménagement. Impossible de les éradiquer seul. Le technicien a identifié l'espèce et posé le gel adapté. Résultat en 2 semaines. Impeccable." },
-                { name: 'Élodie V.', ville: 'Saint-Cloud', date: 'il y a 1 mois', texte: "Colonie de fourmis noires sous la terrasse. Intervention rapide, propre, technicien très pédagogue. Le prix était exactement celui annoncé par téléphone. Je recommande à 100%." },
-                { name: 'Thomas B.', ville: 'Vincennes', date: 'il y a 1 mois', texte: "Appelé un samedi matin pour une invasion massive de fourmis dans la cuisine. Technicien présent à 11h, traitement en 45 minutes. Dès le lendemain, les fourmis avaient disparu. Excellent service." },
-              ]).map((a, i) => (
-                <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center font-black text-white text-sm shrink-0" style={{ background: ACCENT }}>{a.name[0]}</div>
-                      <div>
-                        <p className="font-bold text-white text-sm leading-none mb-0.5">{a.name}</p>
-                        <p className="text-white/35 text-xs">{a.ville}</p>
-                      </div>
-                    </div>
-                    <p className="text-white/25 text-xs">{a.date}</p>
-                  </div>
-                  <p className="text-xs mb-3" style={{ color: '#facc15' }}>★★★★★</p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a.texte}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Rangée 2 → droite */}
-          <div className="overflow-hidden">
-            <div className="flex gap-4 marquee-r" style={{ width: 'max-content' }}>
-              {[
-                { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 4 jours', texte: "Fourmis dans le garde-manger, insupportable. Un appel le soir, technicien le lendemain matin. Il a posé le gel sous les plinthes et expliqué comment prévenir le retour. Résultat parfait en 10 jours." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin, une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
-                { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 2 semaines', texte: "Fourmis charpentières dans le parquet. J'étais inquiète pour la structure. Le technicien a injecté le produit directement dans les galeries. Plus aucun signe d'activité depuis. Merci !" },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 3 semaines', texte: "Invasion de fourmis pharaon dans la salle de bain. Le technicien a refusé d'utiliser un spray (contre-productif) et a posé le gel adapté. 2 semaines plus tard, problem solved. Vraiment pro." },
-                { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 1 mois', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette fois des fourmis noires sous la terrasse. Intervention rapide, prix honnête, garantie incluse. Je les garde en favori." },
-                { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 semaines', texte: "Pistes de fourmis depuis la cave jusqu'à la cuisine. Technicien très méthodique, a suivi les pistes jusqu'au nid dans le mur. Traitement en profondeur, résultat garanti. Très satisfait." },
-              ].concat([
-                { name: 'Nathalie G.', ville: 'Montreuil', date: 'il y a 4 jours', texte: "Fourmis dans le garde-manger, insupportable. Un appel le soir, technicien le lendemain matin. Il a posé le gel sous les plinthes et expliqué comment prévenir le retour. Résultat parfait en 10 jours." },
-                { name: 'Romain P.', ville: 'Rueil-Malmaison', date: 'il y a 10 jours', texte: "Fourmis de feu découvertes dans le jardin, une urgence pour mes enfants. Technicien arrivé en 50 minutes. Protocole renforcé et signalement effectué. Sérieux, compétent, rassurant." },
-                { name: 'Aurélie D.', ville: 'Maisons-Laffitte', date: 'il y a 2 semaines', texte: "Fourmis charpentières dans le parquet. J'étais inquiète pour la structure. Le technicien a injecté le produit directement dans les galeries. Plus aucun signe d'activité depuis. Merci !" },
-                { name: 'Laurent M.', ville: 'Nogent-sur-Marne', date: 'il y a 3 semaines', texte: "Invasion de fourmis pharaon dans la salle de bain. Le technicien a refusé d'utiliser un spray (contre-productif) et a posé le gel adapté. 2 semaines plus tard, problem solved. Vraiment pro." },
-                { name: 'Valérie C.', ville: 'Enghien-les-Bains', date: 'il y a 1 mois', texte: "Deuxième fois que je fais appel à eux, toujours aussi efficaces. Cette fois des fourmis noires sous la terrasse. Intervention rapide, prix honnête, garantie incluse. Je les garde en favori." },
-                { name: 'Jean-Marc T.', ville: 'Créteil', date: 'il y a 5 semaines', texte: "Pistes de fourmis depuis la cave jusqu'à la cuisine. Technicien très méthodique, a suivi les pistes jusqu'au nid dans le mur. Traitement en profondeur, résultat garanti. Très satisfait." },
-              ]).map((a, i) => (
-                <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center font-black text-white text-sm shrink-0" style={{ background: 'rgba(232,68,26,0.6)' }}>{a.name[0]}</div>
-                      <div>
-                        <p className="font-bold text-white text-sm leading-none mb-0.5">{a.name}</p>
-                        <p className="text-white/35 text-xs">{a.ville}</p>
-                      </div>
-                    </div>
-                    <p className="text-white/25 text-xs">{a.date}</p>
-                  </div>
-                  <p className="text-xs mb-3" style={{ color: '#facc15' }}>★★★★★</p>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a.texte}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Vrais avis Google (lib/avis-google.ts) */}
+        <AvisGoogle />
 
         {/* ══════════════════ FORMULAIRE RAPPEL ══════════════════ */}
         <section id="rappel" className="reveal py-14" style={{ background: '#0d0d0d' }}>
@@ -550,27 +430,6 @@ export default function FourmisPage() {
         </section>
 
       </main>
-
-      {/* Lightbox galerie */}
-      {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.93)', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20, padding: 20, cursor: 'pointer' }}
-        >
-          <div style={{ position: 'relative', width: '90vw', maxWidth: 700, height: 'min(60vh,525px)' }}>
-            <NextImage src={lightbox.src} alt={lightbox.city} fill style={{ objectFit: 'contain' }} className="rounded-2xl" />
-          </div>
-          <p style={{ fontSize: 'clamp(1.1rem,3vw,1.5rem)', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>
-            Intervention à <span style={{ color: ACCENT }}>{lightbox.city}</span>
-          </p>
-          <button
-            onClick={e => { e.stopPropagation(); setLightbox(null) }}
-            style={{ position: 'absolute', top: 16, right: 16, width: 38, height: 38, borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          >
-            <X style={{ width: 18, height: 18 }} />
-          </button>
-        </div>
-      )}
 
       <Footer />
     </>

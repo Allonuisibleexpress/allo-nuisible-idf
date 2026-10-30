@@ -9,6 +9,10 @@ import {
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PhotosChantiers from '@/components/PhotosChantiers'
+import type { PhotoKey } from '@/lib/photos-chantiers'
+import AvisGoogle from '@/components/AvisGoogle'
+import type { CleAvis } from '@/lib/avis-google'
 
 /** Icônes de bénéfices — clés sémantiques mappées vers Lucide (fallback emoji). */
 const BENEFIT_ICONS: Record<string, LucideIcon> = {
@@ -44,10 +48,13 @@ export interface ServiceData {
   benefits: Array<{ icon: string; title: string; text: string }>
   process: Array<{ title: string; text: string }>
   pricing: PricingTier[]
-  testimonials?: Array<{ name: string; ville: string; note: number; texte: string }>
+  // Ordre des vrais avis Google (lib/avis-google.ts), le plus proche du service en premier
+  avis?: CleAvis[]
   faq: Array<{ q: string; a: string }>
   ctaTitle: string
   metaTitle?: string
+  // Vraies photos de chantier à afficher (clés de lib/photos-chantiers.ts)
+  photos?: PhotoKey[]
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
@@ -335,39 +342,10 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           </div>
         </section>
 
-        {/* ── TESTIMONIALS ── */}
-        {data.testimonials && (
-          <section className="py-16 md:py-24 px-4" style={{ background: '#0d0d0d' }}>
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="flex items-center justify-center gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Témoignages</p>
-                <h2 className="text-2xl md:text-3xl font-black text-white">Ce que disent nos clients</h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-5">
-                {data.testimonials.map(({ name, ville, texte }) => (
-                  <div key={name} className="rounded-2xl p-6"
-                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center font-black text-white text-sm flex-shrink-0"
-                        style={{ background: ACCENT }}>
-                        {name[0]}
-                      </div>
-                      <div>
-                        <p className="font-black text-white text-sm leading-none mb-1">{name}</p>
-                        <p className="text-white/35 text-xs">{ville}</p>
-                      </div>
-                    </div>
-                    <p className="text-yellow-400 text-xs mb-3">★★★★★</p>
-                    <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', lineHeight: 1.7 }}>{texte}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        {/* ── VRAIS AVIS GOOGLE ── */}
+        <AvisGoogle ordre={data.avis} />
+
+        {data.photos && <PhotosChantiers photos={data.photos} fond="#0d0d0d" />}
 
         {/* ── MAILLAGE : VILLES ET GUIDES ── */}
         {data.related && (

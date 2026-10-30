@@ -45,11 +45,6 @@ const data: ServiceData = {
       cta: 'Devis urgent disponible',
     },
   ],
-  testimonials: [
-    { name: 'Marie-Claire F.', ville: 'Versailles', note: 5, texte: 'Désinfection après infestation de rongeurs. Très professionnel, l\'attestation a été fournie le jour même. Le logement est à nouveau sain.' },
-    { name: 'Omar S.', ville: 'Paris 15e', note: 5, texte: 'Désinfection urgente de mon restaurant après un signalement. Intervention le soir même, attestation HACCP, contrôle passé sans problème. Merci !' },
-    { name: 'Nathalie P.', ville: 'Boulogne-Billancourt', note: 5, texte: 'Après un dégât des eaux avec moisissures. Traitement efficace, technicien sérieux. Plus aucune odeur et les moisissures n\'ont pas repoussé.' },
-  ],
   faq: [
     { q: 'Dans quels cas faut-il désinfecter un logement ?', a: 'Après une infestation de nuisibles (rongeurs, cafards), après un décès ou une situation de grande insalubrité, après une contamination bactérienne ou virale, après un dégât des eaux avec moisissures, ou dans le cadre d\'une remise en état post-sinistre.' },
     { q: 'Quelle différence entre désinfection et désinsectisation ?', a: 'La désinsectisation élimine les insectes. La désinfection traite les agents pathogènes (bactéries, virus, champignons) présents sur les surfaces et dans l\'air. Les deux peuvent être combinées.' },

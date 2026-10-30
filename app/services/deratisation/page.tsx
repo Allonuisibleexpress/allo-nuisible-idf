@@ -46,11 +46,7 @@ const data: ServiceData = {
       cta: 'Demander un devis',
     },
   ],
-  testimonials: [
-    { name: 'Pierre V.', ville: 'Rueil-Malmaison', note: 5, texte: 'Rats dans la cave de copropriété. Le syndic a fait appel à Allo Nuisible IDF, intervention rapide et sérieuse. Les postes sont relevés tous les mois, problème éradiqué.' },
-    { name: 'Samia K.', ville: 'Créteil', note: 5, texte: 'Restaurant avec des souris signalées par un client. Intervention en urgence le soir même, attestation HACCP fournie. Contrôle sanitaire passé sans problème.' },
-    { name: 'Henri M.', ville: 'Maisons-Laffitte', note: 5, texte: 'Rats brun dans le jardin et la remise. Technicien très compétent, a trouvé 3 points d\'entrée que je n\'avais pas vus. Résultat en 3 semaines.' },
-  ],
+  avis: ['lauren', 'jo', 'lisa'],
   faq: [
     { q: 'Quelle différence entre dératisation et simple piégeage ?', a: 'Un piège posé seul, sans diagnostic, ne règle pas la source. Une dératisation professionnelle combine identification des points d\'entrée, colmatage et un dispositif adapté au lieu : appâts raticides en postes sécurisés, pièges mécaniques ou pièges connectés. Objectif : éliminer la population entière et empêcher le retour.' },
     { q: 'La dératisation est-elle obligatoire pour les restaurants ?', a: 'Les établissements recevant du public (restaurants, hôtels, commerces alimentaires) ont une obligation légale de lutte antiparasitaire. Nous fournissons les attestations HACCP et rapports requis pour vos contrôles sanitaires.' },
