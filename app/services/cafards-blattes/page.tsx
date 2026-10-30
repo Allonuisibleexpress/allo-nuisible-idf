@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+import { VILLES_CAFARDS, GUIDES_CAFARDS } from '@/lib/villes-cafards'
 
 const data: ServiceData = {
   badge: '2 passages inclus · Oothèques éliminées · HACCP',
@@ -58,6 +59,10 @@ const data: ServiceData = {
     { q: 'Combien de temps après le traitement peut-on cuisiner ?', a: 'Généralement 2 à 4 heures après l\'intervention. Le gel appât est appliqué en petites quantités aux endroits ciblés et ne nécessite pas de nettoyage de toute la cuisine. Votre technicien vous donnera les instructions précises.' },
     { q: 'Êtes-vous conformes aux normes HACCP pour les restaurants ?', a: 'Oui. Nos techniciens sont formés aux exigences HACCP et utilisent des produits homologués pour les locaux alimentaires. Nous fournissons les attestations et rapports d\'intervention requis pour vos contrôles sanitaires.' },
   ],
+  related: {
+    villes: { title: 'Cafards par ville', links: VILLES_CAFARDS.map((v) => ({ href: `/cafards/${v.slug}`, label: `Cafards ${v.a} (${v.code})` })) },
+    guides: { title: 'Nos guides', links: Object.entries(GUIDES_CAFARDS).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },
+  },
   ctaTitle: 'Des cafards chez vous ?\nOn intervient rapidement.',
 }
 

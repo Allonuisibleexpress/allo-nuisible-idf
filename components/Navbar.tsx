@@ -14,6 +14,7 @@ const servicePages: Record<string, string> = {
   'Pigeons':           '/services/pigeons',
   'Dératisation':      '/services/deratisation',
   'Désinfection':      '/services/desinfection',
+  'Chenilles processionnaires': '/services/chenilles-processionnaires',
 }
 
 const services = [
@@ -24,6 +25,7 @@ const services = [
   'Pigeons',
   'Dératisation',
   'Désinfection',
+  'Chenilles processionnaires',
 ]
 
 const navLinks = [

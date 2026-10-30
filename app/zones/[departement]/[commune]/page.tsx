@@ -8,6 +8,9 @@ import { SERVICES } from '@/lib/departements'
 import { COMMUNES_94, METHODES, SECTEURS, getCommune94 } from '@/lib/communes94'
 import { getVilleDeratisation } from '@/lib/villes-deratisation'
 import { getVillePunaises } from '@/lib/villes-punaises'
+import { getVilleCafards } from '@/lib/villes-cafards'
+import { getVilleSouris } from '@/lib/villes-souris'
+import { getVilleChenilles } from '@/lib/villes-chenilles'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -37,6 +40,9 @@ export default function CommunePage({ params }: { params: Params }) {
   const autres = Object.keys(METHODES).filter((k) => !secteur.ordre.includes(k))
   const villeDerat = getVilleDeratisation(c.slug)
   const villePunaises = getVillePunaises(c.slug)
+  const villeCafards = getVilleCafards(c.slug)
+  const villeSouris = getVilleSouris(c.slug)
+  const villeChenilles = getVilleChenilles(c.slug)
 
   return (
     <>
@@ -136,6 +142,21 @@ export default function CommunePage({ params }: { params: Params }) {
             {villePunaises && (
               <a href={`/punaises-de-lit/${villePunaises.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
                 Tout savoir sur les punaises de lit {villePunaises.a} <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {villeCafards && (
+              <a href={`/cafards/${villeCafards.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+                Tout savoir sur les cafards {villeCafards.a} <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {villeSouris && (
+              <a href={`/souris/${villeSouris.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+                Tout savoir sur les souris {villeSouris.a} <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {villeChenilles && (
+              <a href={`/chenilles-processionnaires/${villeChenilles.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+                Tout savoir sur les chenilles processionnaires {villeChenilles.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
           </div>

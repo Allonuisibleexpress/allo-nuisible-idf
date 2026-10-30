@@ -3,7 +3,7 @@
 
 export type ServiceSlug =
   | 'deratisation' | 'rongeurs' | 'cafards-blattes' | 'punaises-de-lit'
-  | 'fourmis' | 'guepes-frelons' | 'pigeons' | 'desinfection'
+  | 'fourmis' | 'guepes-frelons' | 'pigeons' | 'desinfection' | 'chenilles-processionnaires'
 
 export type Departement = {
   slug: string
@@ -26,6 +26,7 @@ export const SERVICES: Record<ServiceSlug, { nom: string; icon: string }> = {
   'guepes-frelons': { nom: 'Guêpes et frelons', icon: 'guepes-frelons' },
   pigeons: { nom: 'Pigeons', icon: 'pigeons' },
   desinfection: { nom: 'Désinfection', icon: 'desinfection' },
+  'chenilles-processionnaires': { nom: 'Chenilles processionnaires', icon: 'chenilles' },
 }
 
 export const DEPARTEMENTS_IDF: Departement[] = [

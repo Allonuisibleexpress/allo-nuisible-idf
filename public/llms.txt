@@ -2,7 +2,7 @@
 
 > Entreprise de lutte contre les nuisibles en Île-de-France. Techniciens certifiés Certibiocide, intervention possible le jour même, 7j/7. Devis gratuit, garantie 1 mois. Téléphone : 07 68 07 72 19. Email : contact@allonuisibleidf.fr.
 
-Allo Nuisible IDF traite les rats et souris (dératisation), les punaises de lit, les cafards, les fourmis, les guêpes et frelons, les pigeons, et réalise des désinfections. Pour chaque nuisible, l'entreprise propose un traitement chimique professionnel et une méthode sans produit : cryogénie et vapeur sèche (punaises de lit, cafards), pièges mécaniques et connectés (rongeurs), selon la situation. Particuliers, copropriétés et professionnels (attestations HACCP, contrats de suivi).
+Allo Nuisible IDF traite les rats et souris (dératisation), les punaises de lit, les cafards, les fourmis, les guêpes et frelons, les pigeons, les chenilles processionnaires, et réalise des désinfections. Pour chaque nuisible, l'entreprise propose un traitement chimique professionnel et une méthode sans produit : cryogénie et vapeur sèche (punaises de lit, cafards), pièges mécaniques et connectés (rongeurs), selon la situation. Particuliers, copropriétés et professionnels (attestations HACCP, contrats de suivi).
 
 Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marne, Yvelines, Essonne, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne, Val-d'Oise). Les prix sont donnés sur devis.
 
@@ -16,6 +16,7 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Guêpes et frelons](https://allonuisibleidf.fr/services/guepes-frelons)
 - [Pigeons](https://allonuisibleidf.fr/services/pigeons)
 - [Désinfection](https://allonuisibleidf.fr/services/desinfection)
+- [Chenilles processionnaires](https://allonuisibleidf.fr/services/chenilles-processionnaires): pins et chênes, retrait des nids, écopièges
 - [Professionnels](https://allonuisibleidf.fr/professionnels): contrats et conformité HACCP
 
 ## Dératisation par ville
@@ -42,6 +43,37 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Punaises de lit à Bry-sur-Marne (94)](https://allonuisibleidf.fr/punaises-de-lit/bry-sur-marne)
 - [Punaises de lit à Sucy-en-Brie (94)](https://allonuisibleidf.fr/punaises-de-lit/sucy-en-brie)
 - [Punaises de lit à Santeny (94)](https://allonuisibleidf.fr/punaises-de-lit/santeny)
+
+## Cafards par ville
+
+- [Cafards à Vincennes (94)](https://allonuisibleidf.fr/cafards/vincennes)
+- [Cafards à Saint-Mandé (94)](https://allonuisibleidf.fr/cafards/saint-mande)
+- [Cafards à Saint-Maurice (94)](https://allonuisibleidf.fr/cafards/saint-maurice)
+- [Cafards à Charenton-le-Pont (94)](https://allonuisibleidf.fr/cafards/charenton-le-pont)
+- [Cafards à Nogent-sur-Marne (94)](https://allonuisibleidf.fr/cafards/nogent-sur-marne)
+- [Cafards au Perreux-sur-Marne (94)](https://allonuisibleidf.fr/cafards/le-perreux-sur-marne)
+- [Cafards à Bry-sur-Marne (94)](https://allonuisibleidf.fr/cafards/bry-sur-marne)
+- [Cafards à Sucy-en-Brie (94)](https://allonuisibleidf.fr/cafards/sucy-en-brie)
+- [Cafards à Santeny (94)](https://allonuisibleidf.fr/cafards/santeny)
+
+## Souris par ville
+
+- [Souris à Vincennes (94)](https://allonuisibleidf.fr/souris/vincennes)
+- [Souris à Saint-Mandé (94)](https://allonuisibleidf.fr/souris/saint-mande)
+- [Souris à Saint-Maurice (94)](https://allonuisibleidf.fr/souris/saint-maurice)
+- [Souris à Charenton-le-Pont (94)](https://allonuisibleidf.fr/souris/charenton-le-pont)
+- [Souris à Nogent-sur-Marne (94)](https://allonuisibleidf.fr/souris/nogent-sur-marne)
+- [Souris au Perreux-sur-Marne (94)](https://allonuisibleidf.fr/souris/le-perreux-sur-marne)
+- [Souris à Bry-sur-Marne (94)](https://allonuisibleidf.fr/souris/bry-sur-marne)
+- [Souris à Sucy-en-Brie (94)](https://allonuisibleidf.fr/souris/sucy-en-brie)
+- [Souris à Santeny (94)](https://allonuisibleidf.fr/souris/santeny)
+
+## Chenilles processionnaires
+
+- [Service chenilles processionnaires](https://allonuisibleidf.fr/services/chenilles-processionnaires): retrait des nids, écopièges, pièges à phéromones, prévention
+- [Cycle de vie et dangers](https://allonuisibleidf.fr/blog/chenilles-processionnaires-cycle-dangers)
+- [Traitements et prévention](https://allonuisibleidf.fr/blog/chenilles-processionnaires-traitement-prevention)
+- 19 pages communes du Val-de-Marne : https://allonuisibleidf.fr/chenilles-processionnaires/[commune], par exemple [Sucy-en-Brie](https://allonuisibleidf.fr/chenilles-processionnaires/sucy-en-brie)
 
 ## Zones
 

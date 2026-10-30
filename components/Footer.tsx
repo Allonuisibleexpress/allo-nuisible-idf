@@ -15,6 +15,7 @@ const quickLinks = [
 const services = [
   'Punaises de lit', 'Cafards & blattes', 'Rongeurs', 'Fourmis',
   'Guêpes & frelons', 'Pigeons', 'Dératisation', 'Désinfection',
+  'Chenilles processionnaires',
 ]
 
 

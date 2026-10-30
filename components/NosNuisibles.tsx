@@ -68,6 +68,13 @@ const nuisibles: {
     href: '/services/desinfection',
     urgency: null,
   },
+  {
+    icon: 'chenilles',
+    name: 'Chenilles processionnaires',
+    desc: 'Pins et chênes · Retrait des nids · Écopièges',
+    href: '/services/chenilles-processionnaires',
+    urgency: null,
+  },
 ]
 
 export default function NosNuisibles() {
@@ -96,7 +103,7 @@ export default function NosNuisibles() {
         </div>
 
         {/* Grille — 2 cols mobile / 4 cols desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {nuisibles.map(({ icon, name, desc, href, urgency }) => (
             <a
               key={name}

@@ -133,6 +133,21 @@ export function IconDesinfection({ className, size }: IconProps) {
   )
 }
 
+/* ── Chenilles processionnaires : corps segmenté, poils urticants ── */
+export function IconChenille({ className, size }: IconProps) {
+  return (
+    <svg {...base(size)} className={className} aria-hidden="true">
+      <circle cx="6.5" cy="19" r="2.8" />
+      <circle cx="11.5" cy="18" r="3" />
+      <circle cx="17" cy="18" r="3" />
+      <circle cx="22.5" cy="19" r="2.8" />
+      <circle cx="26.8" cy="16.2" r="2.2" />
+      <path d="M6.5 16.2v-2.6M11.5 15v-3M17 15v-3M22.5 16.2v-2.6M9 15.6l-1.4-2.2M14.3 14.8l-.9-2.4M19.7 14.8l.9-2.4" />
+      <path d="M7.5 21.6v2.6M12.5 20.9v2.8M17.5 20.9v2.8M22 21.6v2.6" />
+    </svg>
+  )
+}
+
 /* ── Registre / map (icônes utilitaires) ── */
 export function IconShieldCheck({ className, size }: IconProps) {
   return (
@@ -151,6 +166,7 @@ export const PEST_ICONS = {
   'guepes-frelons': IconGuepe,
   rongeurs: IconRongeur,
   pigeons: IconPigeon,
+  chenilles: IconChenille,
   deratisation: IconDeratisation,
   desinfection: IconDesinfection,
 } as const
