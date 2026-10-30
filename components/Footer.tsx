@@ -4,27 +4,30 @@ import Image from 'next/image'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
 
+// Vrais liens (et non des boutons de défilement) : ils fonctionnent depuis toutes les pages du site.
 const quickLinks = [
-  { label: 'Accueil', href: '#accueil' },
-  { label: 'Services', href: '#services' },
-  { label: 'Tarifs', href: '#tarifs' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'Mentions légales', href: '#' },
+  { label: 'Accueil', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Tarifs', href: '/tarifs' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Zones d\'intervention', href: '/zones' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 const services = [
-  'Punaises de lit', 'Cafards & blattes', 'Rongeurs', 'Fourmis',
-  'Guêpes & frelons', 'Pigeons', 'Dératisation', 'Désinfection',
-  'Chenilles processionnaires',
+  { label: 'Punaises de lit', href: '/services/punaises-de-lit' },
+  { label: 'Cafards & blattes', href: '/services/cafards-blattes' },
+  { label: 'Rongeurs', href: '/services/rongeurs' },
+  { label: 'Fourmis', href: '/services/fourmis' },
+  { label: 'Guêpes & frelons', href: '/services/guepes-frelons' },
+  { label: 'Pigeons', href: '/services/pigeons' },
+  { label: 'Dératisation', href: '/services/deratisation' },
+  { label: 'Désinfection', href: '/services/desinfection' },
+  { label: 'Chenilles processionnaires', href: '/services/chenilles-processionnaires' },
 ]
 
 
 export default function Footer() {
-  const scrollTo = (href: string) => {
-    if (href === '#') return
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
@@ -69,13 +72,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={() => scrollTo(link.href)}
+                  <a
+                    href={link.href}
                     className="text-gray-400 hover:text-[#E8441A] text-sm transition-colors hover:translate-x-1 inline-flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#E8441A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -86,14 +89,14 @@ export default function Footer() {
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Nos services</h4>
             <ul className="space-y-2.5">
               {services.map((s) => (
-                <li key={s}>
-                  <button
-                    onClick={() => scrollTo('#services')}
+                <li key={s.href}>
+                  <a
+                    href={s.href}
                     className="text-gray-400 hover:text-[#E8441A] text-sm transition-colors group inline-flex items-center gap-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#E8441A] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {s}
-                  </button>
+                    {s.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -128,21 +131,7 @@ export default function Footer() {
           <p className="text-gray-500 text-xs text-center sm:text-left">
             © 2026 Allo Nuisible IDF. Tous droits réservés
           </p>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => scrollTo('#')}
-              className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors"
-            >
-              Mentions légales
-            </button>
-            <span className="text-gray-600">·</span>
-            <button
-              onClick={() => scrollTo('#')}
-              className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors"
-            >
-              Politique de confidentialité
-            </button>
-          </div>
+          {/* Mentions légales et politique de confidentialité : à remettre quand les pages existeront */}
           {/* Scroll to top */}
           <button
             onClick={scrollToTop}
