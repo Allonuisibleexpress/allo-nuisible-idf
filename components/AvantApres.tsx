@@ -50,7 +50,7 @@ export default function AvantApres() {
             </div>
             <div className="w-px self-stretch" style={{ background: 'rgba(255,255,255,0.1)' }} />
             <div>
-              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: ACCENT }}>5,0<span className="text-white/40 text-lg">/5</span></div>
+              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: ACCENT }}>4,7<span className="text-white/40 text-lg">/5</span></div>
               <div className="text-white/35 text-xs font-semibold mt-1.5 uppercase tracking-wider">Note Google</div>
             </div>
           </div>

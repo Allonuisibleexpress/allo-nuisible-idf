@@ -168,8 +168,8 @@ export default function FourmisPage() {
             <div className="flex flex-wrap items-center justify-center gap-0 max-w-2xl mx-auto mb-10 overflow-hidden rounded-2xl" style={{ background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.14)' }}>
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
-                <span className="text-white font-semibold">4,9/5</span>
-                <span className="text-white/40 text-sm hidden sm:inline">· 63 avis</span>
+                <span className="text-white font-semibold">4,7/5</span>
+                <span className="text-white/40 text-sm hidden sm:inline">· 49 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">

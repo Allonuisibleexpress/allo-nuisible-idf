@@ -59,7 +59,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
-                <span>Île-de-France</span>
+                <a href="https://maps.google.com/?cid=11887181769674817823" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8441A] hover:underline">6 bis Rue du Val d&apos;Osne, 94410 Saint-Maurice</a>
               </div>
             </div>
           </div>

@@ -73,8 +73,8 @@ export default function Hero() {
           <div className="flex items-center gap-2.5 px-5 py-3.5">
             <span className="font-black text-base" style={{ background: 'linear-gradient(90deg,#4285F4,#EA4335,#FBBC05,#34A853)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>G</span>
             <span className="tracking-tight text-sm" style={{ color: '#facc15' }}>★★★★★</span>
-            <span className="text-white font-bold text-sm">5,0</span>
-            <span className="text-white/40 text-sm hidden sm:inline">· 47 avis</span>
+            <span className="text-white font-bold text-sm">4,7</span>
+            <span className="text-white/40 text-sm hidden sm:inline">· 49 avis</span>
           </div>
           <div className="w-px self-stretch bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2 px-5 py-3.5">

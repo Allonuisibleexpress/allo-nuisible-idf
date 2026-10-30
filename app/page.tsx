@@ -23,6 +23,17 @@ const localBusiness = {
   image: 'https://allonuisibleidf.fr/opengraph-image',
   telephone: '+33768077219',
   email: 'contact@allonuisibleidf.fr',
+  '@id': 'https://allonuisibleidf.fr/#entreprise',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: "6 bis Rue du Val d'Osne",
+    postalCode: '94410',
+    addressLocality: 'Saint-Maurice',
+    addressRegion: 'Île-de-France',
+    addressCountry: 'FR',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
+  hasMap: 'https://maps.google.com/?cid=11887181769674817823',
   areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -49,7 +60,7 @@ export default function Home() {
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="text-white/85 font-medium text-sm">satisfaits en Île-de-France</span>
             <span className="hidden sm:inline text-white/50">·</span>
-            <span className="text-white font-bold text-sm">Note Google 5/5</span>
+            <span className="text-white font-bold text-sm">Note Google 4,7/5</span>
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="text-white font-bold text-sm">7j/7 · 24h/24</span>
           </div>
