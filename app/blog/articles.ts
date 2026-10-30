@@ -300,6 +300,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Quand elle est utile… et quand elle fait perdre du temps" },
       { t: 'p', x: "Utile : **en complément** d'un traitement professionnel, comme barrière dans les interstices, ou en prévention dans les plinthes d'une chambre d'amis. Contre-productive : **en solution unique** face à une infestation installée. Pendant que la poudre agit lentement, la population continue de croître et peut se disperser dans les pièces voisines." },
       { t: 'p', x: "Si vous voyez des piqûres alignées au réveil, des taches noires sur le sommier ou des punaises vivantes, faites intervenir un professionnel. Notre protocole de [traitement des punaises de lit en Île-de-France](/services/punaises-de-lit) combine vapeur, produits biocides autorisés et passages de contrôle." },
+      { t: 'p', x: "Pour un traitement efficace, nos techniciens interviennent notamment à [Vincennes](/punaises-de-lit/vincennes) et à [Saint-Mandé](/punaises-de-lit/saint-mande)." },
     ],
     terrain: "On arrive souvent dans des chambres couvertes d'une couche blanche bien visible, parfois sur le matelas. Les punaises contournent simplement les tas et vont pondre ailleurs, et les occupants ont passé trois ou quatre semaines de plus à se faire piquer. Bien utilisée, en voile fin dans les plinthes après notre passage, la terre de diatomée est une bonne alliée.",
     faq: [
@@ -841,7 +842,8 @@ export const ARTICLES: Article[] = [
         "**Cryogénie et vapeur sèche** sur la literie, le mobilier, les plinthes et les recoins.",
         "**Passage de contrôle** pour vérifier qu'aucune punaise n'a survécu, avec la garantie 1 mois.",
       ] },
-      { t: 'p', x: "Découvrez notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, par exemple à [Paris](/zones/paris), [Vincennes](/zones/val-de-marne/vincennes), [Saint-Mandé](/zones/val-de-marne/saint-mande) ou [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
+      { t: 'p', x: "Découvrez notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, par exemple à [Paris](/zones/paris), [Vincennes](/punaises-de-lit/vincennes), [Saint-Mandé](/punaises-de-lit/saint-mande) ou [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
+      { t: 'p', x: "Nous traitons aussi les punaises de lit sans produit à [Bry-sur-Marne](/punaises-de-lit/bry-sur-marne) et au [Perreux-sur-Marne](/punaises-de-lit/le-perreux-sur-marne)." },
     ],
     faq: [
       { q: "Peut-on vraiment éliminer les punaises de lit sans insecticide ?", a: "Oui, avec la cryogénie et la vapeur sèche appliquées de façon minutieuse, complétées par le lavage du linge et un passage de contrôle. Pour les infestations importantes, une combinaison avec un insecticide professionnel peut être proposée." },
@@ -885,7 +887,8 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Les limites" },
       { t: 'p', x: "Comme la vapeur, la cryogénie n'agit **qu'au contact** : elle ne protège pas après le passage. Chaque recoin doit être traité, et un **passage de contrôle** permet de vérifier qu'aucun œuf n'a échappé au traitement. Pour une infestation importante, le technicien peut proposer de la combiner avec un insecticide professionnel, toujours après vous avoir expliqué pourquoi." },
       { t: 'callout', tone: 'info', title: 'Cryogénie ou vapeur sèche ?', x: "La cryogénie est sèche et très précise, idéale pour les fentes, les cadres et les zones où l'on veut éviter toute humidité. La vapeur sèche est très efficace sur les textiles et les grandes surfaces. Souvent, on utilise les deux." },
-      { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Vincennes](/zones/val-de-marne/vincennes) ou à [Paris](/zones/paris)." },
+      { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Vincennes](/punaises-de-lit/vincennes) ou à [Paris](/zones/paris)." },
+      { t: 'p', x: "La cryogénie est aussi disponible à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont) et à [Saint-Maurice](/punaises-de-lit/saint-maurice)." },
     ],
     faq: [
       { q: "La cryogénie tue-t-elle aussi les œufs ?", a: "Oui, le choc thermique tue les punaises et leurs œufs au contact. Il faut donc atteindre chaque endroit où ils se cachent." },
@@ -934,7 +937,8 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Les limites" },
       { t: 'p', x: "La vapeur n'agit **qu'au contact** et ne protège pas après le passage : il faut traiter chaque recoin, puis prévoir un **passage de contrôle**. On l'évite sur les **matériaux sensibles à la chaleur** et près des appareils électriques, où l'on préfère la cryogénie, qui est sèche. En cas d'infestation importante, le technicien peut proposer de combiner avec un insecticide professionnel, après vous avoir expliqué pourquoi." },
       { t: 'callout', tone: 'info', title: 'Le bon réflexe en complément', x: "Pendant que le technicien traite la literie et les meubles, lavez le linge à 60 °C pendant 1 heure, ou passez-le au sèche-linge au moins 30 minutes, comme le recommande stop-punaises.gouv.fr." },
-      { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Saint-Mandé](/zones/val-de-marne/saint-mande) ou à [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
+      { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Saint-Mandé](/punaises-de-lit/saint-mande) ou à [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
+      { t: 'p', x: "Nous intervenons à la vapeur sèche notamment à [Sucy-en-Brie](/punaises-de-lit/sucy-en-brie) et à [Santeny](/punaises-de-lit/santeny)." },
     ],
     faq: [
       { q: "La vapeur sèche tue-t-elle les œufs de punaises de lit ?", a: "Oui, la chaleur tue les punaises et leurs œufs au contact, à condition d'appliquer la vapeur lentement et au plus près des surfaces." },
@@ -984,6 +988,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Combiner pour un résultat complet" },
       { t: 'p', x: "L'insecticide n'est pas forcément utilisé seul. Sur la literie et les textiles, où l'on préfère éviter tout produit, le technicien peut le combiner avec la [cryogénie](/blog/cryogenie-punaises-de-lit) ou la [vapeur sèche](/blog/vapeur-seche-punaises-de-lit). Si vous souhaitez éviter totalement les produits chimiques, voir [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide)." },
       { t: 'p', x: "Découvrez notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, par exemple à [Paris](/zones/paris), [Créteil](/zones/val-de-marne/creteil) ou [Vitry-sur-Seine](/zones/val-de-marne/vitry-sur-seine)." },
+      { t: 'p', x: "Traitement insecticide disponible notamment à [Sucy-en-Brie](/punaises-de-lit/sucy-en-brie) et à [Saint-Maurice](/punaises-de-lit/saint-maurice)." },
     ],
     faq: [
       { q: "Combien de temps faut-il quitter le logement ?", a: "En général 4 à 6 heures, animaux compris. Le technicien vous indique la durée exacte selon le produit utilisé, puis vous aérez à votre retour." },
@@ -1058,7 +1063,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Quand les punaises ont gagné plusieurs pièces ou la structure du logement (parquet, plinthes, prises), une simple barrière ciblée ne suffit plus : le technicien peut proposer un [traitement insecticide professionnel](/blog/insecticide-punaises-de-lit) de tout le logement, en plus de la cryogénie et de la vapeur. Le logement sera alors bloqué quelques heures de plus, mais le résultat sera plus sûr. Il vous explique toujours les options avant d'intervenir." },
       { t: 'h2', x: "Propriétaires et conciergeries : anticiper" },
       { t: 'p', x: "Si vous gérez plusieurs logements, un **suivi régulier** limite les urgences : inspections programmées entre deux rotations, intervention rapide au moindre signalement et **attestation d'intervention** à conserver. Nous organisons les passages autour de vos arrivées et départs." },
-      { t: 'p', x: "Découvrez [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, notamment à [Paris](/zones/paris), [Vincennes](/zones/val-de-marne/vincennes) ou [Nogent-sur-Marne](/zones/val-de-marne/nogent-sur-marne)." },
+      { t: 'p', x: "Découvrez [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, notamment à [Paris](/zones/paris), [Vincennes](/punaises-de-lit/vincennes) ou [Nogent-sur-Marne](/punaises-de-lit/nogent-sur-marne)." },
+      { t: 'p', x: "Intervention en urgence pour les locations courte durée, par exemple à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont)." },
     ],
     faq: [
       { q: "Combien de temps mon logement sera-t-il bloqué ?", a: "Le moins possible. La cryogénie et la vapeur sèche ne demandent aucune attente. Seule la barrière insecticide, très légère, demande un court temps de séchage, que le technicien vous indique. La durée de l'intervention dépend de la surface et de l'infestation." },

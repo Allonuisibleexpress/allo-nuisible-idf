@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
 const data: ServiceData = {
   badge: 'Cryogénie · Vapeur sèche · Insecticide · Résultat garanti',
@@ -60,14 +61,8 @@ const data: ServiceData = {
     { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Avec un traitement insecticide, oui, pendant 4 à 6 heures, animaux domestiques compris. Avec la cryogénie ou la vapeur sèche, ce n\'est pas nécessaire. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
   ],
   related: {
-    guides: { title: 'Nos guides sur les punaises de lit', links: [
-      { href: '/blog/punaises-de-lit-sans-insecticide', label: 'Punaises de lit sans insecticide : les méthodes' },
-      { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : principe et limites' },
-      { href: '/blog/vapeur-seche-punaises-de-lit', label: 'Vapeur sèche : efficacité et limites' },
-      { href: '/blog/insecticide-punaises-de-lit', label: 'Insecticide : le traitement choc' },
-      { href: '/blog/punaises-de-lit-airbnb-location-courte-duree', label: 'Airbnb : traiter en urgence et relouer vite' },
-      { href: '/blog/terre-de-diatomee-punaises-de-lit', label: 'Terre de diatomée : efficace ou piège ?' },
-    ] },
+    villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
+    guides: { title: 'Nos guides sur les punaises de lit', links: Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },
   },
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }

@@ -31,6 +31,18 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Dératisation à Sucy-en-Brie (94)](https://allonuisibleidf.fr/deratisation/sucy-en-brie)
 - [Dératisation à Santeny (94)](https://allonuisibleidf.fr/deratisation/santeny)
 
+## Punaises de lit par ville
+
+- [Punaises de lit à Vincennes (94)](https://allonuisibleidf.fr/punaises-de-lit/vincennes)
+- [Punaises de lit à Saint-Mandé (94)](https://allonuisibleidf.fr/punaises-de-lit/saint-mande)
+- [Punaises de lit à Saint-Maurice (94)](https://allonuisibleidf.fr/punaises-de-lit/saint-maurice)
+- [Punaises de lit à Charenton-le-Pont (94)](https://allonuisibleidf.fr/punaises-de-lit/charenton-le-pont)
+- [Punaises de lit à Nogent-sur-Marne (94)](https://allonuisibleidf.fr/punaises-de-lit/nogent-sur-marne)
+- [Punaises de lit au Perreux-sur-Marne (94)](https://allonuisibleidf.fr/punaises-de-lit/le-perreux-sur-marne)
+- [Punaises de lit à Bry-sur-Marne (94)](https://allonuisibleidf.fr/punaises-de-lit/bry-sur-marne)
+- [Punaises de lit à Sucy-en-Brie (94)](https://allonuisibleidf.fr/punaises-de-lit/sucy-en-brie)
+- [Punaises de lit à Santeny (94)](https://allonuisibleidf.fr/punaises-de-lit/santeny)
+
 ## Zones
 
 - [Toutes les zones d'intervention](https://allonuisibleidf.fr/zones)
