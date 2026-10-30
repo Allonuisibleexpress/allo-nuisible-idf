@@ -128,13 +128,13 @@ export default function TarifsPage() {
           <div className="relative max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style={{ background: 'rgba(232,68,26,0.12)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-black tracking-widest uppercase" style={{ color: ACCENT }}>Prix à partir de · Devis gratuit · Sans engagement</span>
+              <span className="text-xs font-black tracking-widest uppercase" style={{ color: ACCENT }}>Prix TTC · Devis gratuit · Sans engagement</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
               Nos <span style={{ color: ACCENT }}>tarifs</span>
             </h1>
             <p className="text-lg text-white/55 mb-8 leading-relaxed max-w-xl mx-auto">
-              Prix de départ pour chaque nuisible. Le prix exact est confirmé par un devis gratuit avant toute intervention, sans frais cachés.
+              Prix de départ TTC pour chaque nuisible. Le prix exact est confirmé par un devis gratuit avant toute intervention, sans frais cachés.
             </p>
             <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl text-sm" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-4 h-4" />Devis gratuit : {PHONE}
@@ -194,7 +194,7 @@ export default function TarifsPage() {
           {/* Note bas */}
           <div className="max-w-3xl mx-auto mt-10 rounded-2xl px-6 py-5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem', lineHeight: 1.75 }}>
-              Prix indicatifs « à partir de ». Le prix final dépend de la surface, du niveau d'infestation et de l'accès : il est toujours confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
+              Prix TTC indicatifs « à partir de ». Le prix final dépend de la surface, du niveau d'infestation et de l'accès : il est toujours confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
             </p>
           </div>
         </section>
