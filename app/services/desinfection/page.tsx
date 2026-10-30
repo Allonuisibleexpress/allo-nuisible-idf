@@ -7,9 +7,9 @@ const data: ServiceData = {
   heroHighlight: 'Assainissement complet',
   heroDescription: 'Désinfection professionnelle après infestation, sinistre ou contamination. Produits biocides à large spectre. Attestation officielle fournie pour vos obligations réglementaires.',
   heroPrices: [
-    { price: '200', label: 'Studio' },
-    { price: '350', label: 'Appartement' },
-    { price: '500', label: 'Local pro' },
+    { price: '150', label: 'Studio' },
+    { price: '200', label: 'T2 ou T3' },
+    { price: 'Sur devis', label: 'Local pro' },
   ],
   trustBar: ['Produits homologués', 'Large spectre', 'Attestation officielle', 'ERP & collectivités', 'RC Pro incluse'],
   benefits: [
@@ -26,20 +26,20 @@ const data: ServiceData = {
   pricing: [
     {
       label: 'Logement',
-      price: '200',
-      description: 'Appartement jusqu\'à 50 m²',
+      price: '150',
+      description: 'Studio ou T1',
       features: ['Traitement complet', 'Produit large spectre', 'Nébulisation si nécessaire', 'Attestation fournie'],
     },
     {
-      label: 'Grand logement / Bureaux',
-      price: '350',
-      description: 'De 50 à 150 m²',
+      label: 'T2 ou T3',
+      price: '200',
+      description: 'De 30 à 70 m² environ',
       features: ['Désinfection intégrale', 'Traitement air + surfaces', 'Zones difficiles incluses', 'Rapport d\'intervention', 'Attestation officielle'],
       highlight: true,
     },
     {
       label: 'Local professionnel',
-      price: '500',
+      price: 'Sur devis',
       description: 'Restaurant, crèche, EHPAD, hôtel',
       features: ['Protocole sectoriel adapté', 'Produits HACCP conformes', 'Attestation réglementaire', 'Disponible hors horaires', 'Urgences 24h/24'],
       cta: 'Devis urgent disponible',

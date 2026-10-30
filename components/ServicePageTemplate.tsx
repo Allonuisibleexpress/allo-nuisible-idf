@@ -207,7 +207,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             {data.heroPrices && (
               <div className="flex gap-3 justify-center max-w-lg mx-auto">
                 {data.heroPrices.map(({ price, label }) => (
-                  <div key={price} className="flex-1 rounded-2xl px-4 py-5 text-center relative"
+                  <div key={label} className="flex-1 rounded-2xl px-4 py-5 text-center relative"
                     style={{
                       background: 'rgba(255,255,255,0.06)',
                       backdropFilter: 'blur(20px)',
@@ -215,7 +215,14 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                       border: '1px solid rgba(255,255,255,0.12)',
                     }}>
                     <div className="absolute inset-x-0 top-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
-                    <p className="text-3xl font-black text-white leading-none mb-1">Sur devis</p>
+                    {/^\d+$/.test(price) ? (
+                      <>
+                        <p className="text-white/45 text-[11px] font-semibold mb-1">à partir de</p>
+                        <p className="text-3xl font-black text-white leading-none mb-1">{price} €</p>
+                      </>
+                    ) : (
+                      <p className="text-3xl font-black text-white leading-none mb-1">Sur devis</p>
+                    )}
                     <p className="text-white/45 text-[11px]">{label}</p>
                   </div>
                 ))}
@@ -310,13 +317,21 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                       <div className="absolute inset-x-0 top-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
                       <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-black text-white uppercase tracking-wider"
                         style={{ background: ACCENT }}>
-                        Le + choisi
+                        Formule type
                       </div>
                     </>
                   )}
                   <p className="font-black text-white text-sm mb-1 uppercase tracking-wider">{tier.label}</p>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-4xl font-black" style={{ color: tier.highlight ? ACCENT : '#fff' }}>Sur devis</span>
+                    {/^\d+$/.test(tier.price) ? (
+                      <>
+                        <span className="text-white/45 text-sm font-semibold">à partir de</span>
+                        <span className="text-4xl font-black" style={{ color: tier.highlight ? ACCENT : '#fff' }}>{tier.price} €</span>
+                        {tier.unit && <span className="text-white/45 text-sm">{tier.unit}</span>}
+                      </>
+                    ) : (
+                      <span className="text-4xl font-black" style={{ color: tier.highlight ? ACCENT : '#fff' }}>Sur devis</span>
+                    )}
                   </div>
                   <p className="text-white/40 text-xs mb-5 leading-relaxed">{tier.description}</p>
                   <ul className="space-y-2.5 flex-1 mb-6">

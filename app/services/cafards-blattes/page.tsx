@@ -8,9 +8,9 @@ const data: ServiceData = {
   heroHighlight: 'Éradication définitive',
   heroDescription: 'Protocole en 2 passages pour éliminer adultes ET oothèques (cocons d\'œufs). Gel et insecticide professionnels, vapeur sèche ou cryogénie selon les pièces.',
   heroPrices: [
-    { price: '180', label: 'Appartement' },
-    { price: '280', label: 'Maison' },
-    { price: '350', label: 'Local pro' },
+    { price: '120', label: 'T1 ou T2' },
+    { price: '150', label: 'Grand logement' },
+    { price: '200', label: 'Local pro' },
   ],
   trustBar: ['2 passages inclus', 'Gel HACCP', 'Oothèques traitées', 'Normes ERP', 'Résultat garanti'],
   benefits: [
@@ -26,21 +26,21 @@ const data: ServiceData = {
   ],
   pricing: [
     {
-      label: 'Appartement',
-      price: '180',
-      description: 'Logement jusqu\'à 80 m²',
+      label: 'T1 ou T2',
+      price: '120',
+      description: 'Petit logement, gel professionnel',
       features: ['2 passages inclus', 'Gel appât professionnel', 'Traitement toutes pièces', 'Garantie 1 an'],
     },
     {
       label: 'Maison / Grand logement',
-      price: '280',
-      description: 'Logement de plus de 80 m²',
+      price: '150',
+      description: 'Grand logement ou infestation marquée',
       features: ['2 passages inclus', 'Gel + pulvérisation rémanente', 'Traitement intérieur complet', 'Garantie 1 an', 'Conseils préventifs'],
       highlight: true,
     },
     {
       label: 'Local professionnel',
-      price: '350',
+      price: '200',
       description: 'Restaurant, commerce, hôtel',
       features: ['2 passages inclus', 'Produits HACCP homologués', 'Attestation officielle fournie', 'Rapport d\'intervention', 'Contrat annuel disponible'],
       cta: 'Obtenir un devis pro',

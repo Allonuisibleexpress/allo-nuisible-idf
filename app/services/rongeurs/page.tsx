@@ -9,9 +9,9 @@ const data: ServiceData = {
   heroHighlight: 'Dératisation certifiée',
   heroDescription: 'Postes d\'appâtage sécurisés ou pièges mécaniques et connectés, selon le lieu. Identification des points d\'entrée, colmatage, attestation pour les professionnels.',
   heroPrices: [
-    { price: '150', label: 'Logement' },
-    { price: '280', label: 'Professionnel' },
-    { price: '400', label: 'Copropriété' },
+    { price: '120', label: 'Logement' },
+    { price: '250', label: 'Professionnel' },
+    { price: 'Sur devis', label: 'Copropriété' },
   ],
   trustBar: ['Certibiocide', 'Postes sécurisés', 'Pièges connectés', 'Attestation HACCP', 'Contrats annuels', 'RC Pro incluse'],
   benefits: [
@@ -29,20 +29,20 @@ const data: ServiceData = {
   pricing: [
     {
       label: 'Particulier',
-      price: '150',
-      description: 'Logement jusqu\'à 100 m²',
+      price: '120',
+      description: 'Appartement (maison dès 180 €)',
       features: ['Inspection complète', '1 à 2 postes sécurisés', 'Suivi inclus', 'Conseils colmatage'],
     },
     {
       label: 'Local professionnel',
-      price: '280',
+      price: '250',
       description: 'Restaurant, commerce, bureau',
       features: ['Inspection détaillée', 'Postes sécurisés adaptés', 'Attestation HACCP fournie', 'Rapport d\'intervention', 'Garantie résultat'],
       highlight: true,
     },
     {
       label: 'Copropriété',
-      price: '400',
+      price: 'Sur devis',
       description: 'Parties communes, caves, parkings',
       features: ['Cartographie complète', 'Postes multiples', 'Registre de suivi', 'Contrat annuel disponible', 'Coordination syndic'],
       cta: 'Contacter pour devis',

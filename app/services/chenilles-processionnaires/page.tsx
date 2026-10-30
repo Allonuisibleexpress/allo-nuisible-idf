@@ -10,9 +10,9 @@ const data: ServiceData = {
   heroHighlight: 'Protégez votre jardin',
   heroDescription: 'Retrait et destruction des nids, écopièges sur les troncs, pièges à phéromones et conseils de prévention, par des techniciens équipés contre les poils urticants.',
   heroPrices: [
-    { price: 'devis', label: 'Jardin' },
-    { price: 'devis-2', label: 'Grand terrain' },
-    { price: 'devis-3', label: 'Copropriété' },
+    { price: '89', label: 'Nid accessible' },
+    { price: '149', label: 'Nid en hauteur' },
+    { price: 'Sur devis', label: 'Grand arbre' },
   ],
   trustBar: ['Équipement de protection', 'Pins et chênes', 'Écopièges', 'Pièges à phéromones', 'Conseils de prévention'],
   benefits: [
@@ -27,8 +27,8 @@ const data: ServiceData = {
     { title: 'Conseils et suivi', text: 'Calendrier d\'intervention pour l\'année suivante, conseils de prévention (nichoirs à mésanges, choix des essences) et suivi des arbres.' },
   ],
   pricing: [
-    { label: 'Jardin', price: 'Sur devis', description: 'Quelques arbres', features: ['Diagnostic', 'Retrait des nids', 'Écopièges si besoin', 'Conseils de prévention'] },
-    { label: 'Grand terrain', price: 'Sur devis', description: 'Propriété, plusieurs arbres touchés', features: ['Diagnostic complet', 'Retrait des nids en hauteur', 'Écopièges et pièges à phéromones', 'Calendrier annuel'], highlight: true },
+    { label: 'Jardin', price: '89', description: 'Nid accessible', features: ['Diagnostic', 'Retrait des nids', 'Écopièges si besoin', 'Conseils de prévention'] },
+    { label: 'Grand terrain', price: '149', description: 'Nid en hauteur, perche télescopique', features: ['Diagnostic complet', 'Retrait des nids en hauteur', 'Écopièges et pièges à phéromones', 'Calendrier annuel'], highlight: true },
     { label: 'Copropriété', price: 'Sur devis', description: 'Résidences, espaces verts', features: ['Intervention coordonnée', 'Sécurisation des zones', 'Rapport d\'intervention', 'Suivi saisonnier'], cta: 'Demander un devis' },
   ],
   faq: [

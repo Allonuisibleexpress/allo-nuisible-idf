@@ -8,9 +8,9 @@ const data: ServiceData = {
   heroHighlight: 'Intervention certifiée',
   heroDescription: 'Élimination des rongeurs par des techniciens Certibiocide. Postes d\'appâtage sécurisés ou pièges connectés, attestations pour professionnels, contrats de maintenance.',
   heroPrices: [
-    { price: '150', label: 'Particulier' },
-    { price: '280', label: 'Professionnel' },
-    { price: '500', label: 'Copropriété' },
+    { price: '120', label: 'Particulier' },
+    { price: '250', label: 'Professionnel' },
+    { price: 'Sur devis', label: 'Copropriété' },
   ],
   trustBar: ['Certibiocide', 'Attestation HACCP', 'Postes sécurisés', 'Contrats maintenance', 'RC Pro incluse'],
   benefits: [
@@ -27,20 +27,20 @@ const data: ServiceData = {
   pricing: [
     {
       label: 'Particulier',
-      price: '150',
-      description: 'Logement jusqu\'à 150 m²',
+      price: '120',
+      description: 'Appartement (maison dès 180 €)',
       features: ['Inspection complète', 'Postes sécurisés', 'Suivi 2 semaines', 'Conseils préventifs'],
     },
     {
       label: 'Professionnel',
-      price: '280',
+      price: '250',
       description: 'Restaurant, commerce, bureau',
       features: ['Inspection HACCP', 'Postes certifiés', 'Attestation officielle', 'Rapport d\'intervention', 'Garantie résultat'],
       highlight: true,
     },
     {
       label: 'Copropriété',
-      price: '500',
+      price: 'Sur devis',
       description: 'Parties communes et caves',
       features: ['Audit complet', 'Postes multiples', 'Registre de suivi', 'Contrat annuel dispo', 'Coordination syndic'],
       cta: 'Demander un devis',
