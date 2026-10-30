@@ -131,7 +131,15 @@ export default function Footer() {
           <p className="text-gray-500 text-xs text-center sm:text-left">
             © 2026 Allo Nuisible IDF. Tous droits réservés
           </p>
-          {/* Mentions légales et politique de confidentialité : à remettre quand les pages existeront */}
+          <div className="flex items-center gap-4">
+            <a href="/mentions-legales" className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors">
+              Mentions légales
+            </a>
+            <span className="text-gray-600">·</span>
+            <a href="/politique-de-confidentialite" className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors">
+              Politique de confidentialité
+            </a>
+          </div>
           {/* Scroll to top */}
           <button
             onClick={scrollToTop}
