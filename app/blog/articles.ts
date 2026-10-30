@@ -313,7 +313,8 @@ export const ARTICLES: Article[] = [
       { q: "Peut-on l'utiliser avec un traitement professionnel ?", a: "Oui, en complément et en accord avec le technicien, souvent après le premier passage pour créer une barrière dans les interstices." },
     ],
     sources: [
-      { label: "ANSES, punaises de lit : impacts, prévention et lutte", url: 'https://www.anses.fr/fr/content/punaises-de-lit' },
+      { label: "ANSES, punaises de lit : des conséquences sur le budget et la qualité de vie des Français", url: 'https://www.anses.fr/fr/actualite/punaises-lit-consequences-budget-qualite-vie-francais' },
+      { label: 'Stop Punaises, site du gouvernement', url: 'https://stop-punaises.gouv.fr/' },
     ],
     cta: { title: 'La poudre ne suffit pas ?', text: "Nos techniciens Certibiocide éradiquent les punaises de lit, œufs compris, avec un protocole en plusieurs passages en Île-de-France." },
   },
