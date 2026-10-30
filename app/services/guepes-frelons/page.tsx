@@ -335,15 +335,15 @@ export default function GuêpesFrelonsPage() {
               <p style={{ color: ACCENT, fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 Garantie résultat
               </p>
-              {/* Grand "1 mois" */}
+              {/* Grand "1 an" */}
               <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: ACCENT, lineHeight: 0.88, marginBottom: '14px' }}>
-                1 mois
+                1 an
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les nuisibles reviennent, on revient sans frais.
               </p>
               <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
-                Toute intervention est garantie 1 mois. En cas de réapparition, notre technicien revient sans aucun supplément.
+                Toute intervention est garantie 1 an. En cas de réapparition, notre technicien revient sans aucun supplément.
               </p>
               <a
                 href={PHONE_HREF}

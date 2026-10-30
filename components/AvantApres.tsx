@@ -30,7 +30,7 @@ export default function AvantApres() {
             {[
               'Diagnostic précis puis traitement ciblé',
               'Résultat visible dès la première intervention',
-              'Garanti 1 mois, sinon on revient sans frais',
+              'Garanti 1 an, sinon on revient sans frais',
             ].map((t) => (
               <div key={t} className="flex items-center gap-3">
                 <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg"

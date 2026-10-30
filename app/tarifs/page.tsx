@@ -10,15 +10,17 @@ const PHONE_HREF = 'tel:+33768077219'
 const ACCENT = '#E8441A'
 const WA = 'https://wa.me/33768077219'
 
-const services = [
+// Prix « à partir de », alignés sur la grille publique d'Allo Nuisible Express (consultée le 30/10/2026).
+// price = montant de départ en euros ; null = « Sur devis » (cas complexes).
+const services: { name: string; icon: string; href: string; tiers: { label: string; price: string | null; unit?: string; details: string; highlight?: boolean }[] }[] = [
   {
     name: 'Guêpes & Frelons',
     icon: 'guepes-frelons',
     href: '/services/guepes-frelons',
     tiers: [
-      { label: 'Nid accessible', price: '89', details: 'Sous un auvent, cabanon, hauteur < 3m' },
-      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique, hauteur 3 à 10m', highlight: true },
-      { label: 'Nid encastré / Nacelle', price: '250+', details: 'Intérieur mur, toiture, hauteur > 10m' },
+      { label: 'Nid accessible', price: '89', details: 'Jusqu\'à 5 m environ : auvent, cabanon, haie' },
+      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
+      { label: 'Nid difficile d\'accès', price: '199', details: 'Toiture, combles, cheminée. Nacelle : sur devis' },
     ],
   },
   {
@@ -26,9 +28,9 @@ const services = [
     icon: 'punaises-de-lit',
     href: '/services/punaises-de-lit',
     tiers: [
-      { label: 'Studio jusqu\'à 35 m²', price: '250', details: '1 passage, garantie 15 jours' },
-      { label: 'Appartement jusqu\'à 80 m²', price: '400', details: '1 passage, garantie 1 mois', highlight: true },
-      { label: 'Maison ou forte infestation', price: 'Sur devis', details: '2 passages + traitement thermique' },
+      { label: 'Studio ou T1', price: '290', details: 'Jusqu\'à 30 m² environ, inspection de toutes les pièces' },
+      { label: 'T2 ou T3', price: '390', details: 'Insecticide, cryogénie ou vapeur sèche selon le cas', highlight: true },
+      { label: 'T4, maison ou forte infestation', price: null, details: 'Après inspection du logement' },
     ],
   },
   {
@@ -36,9 +38,9 @@ const services = [
     icon: 'cafards-blattes',
     href: '/services/cafards-blattes',
     tiers: [
-      { label: 'Appartement', price: '180', details: '2 passages inclus, gel professionnel' },
-      { label: 'Maison / Grand logement', price: '280', details: '2 passages + pulvérisation rémanente', highlight: true },
-      { label: 'Local professionnel', price: '350', details: '2 passages + attestation HACCP' },
+      { label: 'T1 ou T2', price: '120', details: 'Gel appât professionnel' },
+      { label: 'Grand logement', price: '150', details: 'Ou infestation marquée', highlight: true },
+      { label: 'Local professionnel', price: '200', details: 'Restaurant, commerce, attestation fournie' },
     ],
   },
   {
@@ -46,29 +48,9 @@ const services = [
     icon: 'rongeurs',
     href: '/services/rongeurs',
     tiers: [
-      { label: 'Particulier', price: '150', details: 'Postes sécurisés + suivi 2 semaines' },
-      { label: 'Professionnel', price: '280', details: 'Postes + attestation HACCP', highlight: true },
-      { label: 'Copropriété', price: '500+', details: 'Parties communes + contrat annuel dispo' },
-    ],
-  },
-  {
-    name: 'Fourmis',
-    icon: 'fourmis',
-    href: '/services/fourmis',
-    tiers: [
-      { label: 'Studio / F1', price: '120', details: 'Gel appât, 1 passage' },
-      { label: 'Appartement', price: '180', details: 'Gel + barrière rémanente', highlight: true },
-      { label: 'Maison', price: '280', details: '2 passages, intérieur + extérieur' },
-    ],
-  },
-  {
-    name: 'Pigeons',
-    icon: 'pigeons',
-    href: '/services/pigeons',
-    tiers: [
-      { label: 'Rebord / Corniche (5 ml)', price: '200', details: 'Pics inox galvanisé posés' },
-      { label: 'Balcon / Terrasse (20 m²)', price: '400', details: 'Filet sur mesure + fixation', highlight: true },
-      { label: 'Façade / Toiture', price: 'Sur devis', details: 'Étude technique + nacelle si besoin' },
+      { label: 'Appartement', price: '120', details: 'Rats ou souris, recherche des accès' },
+      { label: 'Maison', price: '180', details: 'Combles, cave, garage, jardin', highlight: true },
+      { label: 'Local commercial', price: '250', details: 'Attestation fournie' },
     ],
   },
   {
@@ -76,9 +58,29 @@ const services = [
     icon: 'deratisation',
     href: '/services/deratisation',
     tiers: [
-      { label: 'Particulier', price: '150', details: 'Logement jusqu\'à 150 m²' },
-      { label: 'Professionnel (ERP)', price: '280', details: 'Attestation HACCP incluse', highlight: true },
-      { label: 'Copropriété', price: '500+', details: 'Parties communes + registre suivi' },
+      { label: 'Particulier', price: '120', details: 'Postes d\'appâtage sécurisés ou pièges' },
+      { label: 'Commerce, restaurant', price: '250', details: 'Attestation fournie', highlight: true },
+      { label: 'Copropriété, contrat annuel', price: null, details: 'Parties communes, passages réguliers' },
+    ],
+  },
+  {
+    name: 'Fourmis',
+    icon: 'fourmis',
+    href: '/services/fourmis',
+    tiers: [
+      { label: 'Appartement', price: '120', details: 'Gel appât sur les pistes' },
+      { label: 'Maison avec jardin', price: '150', details: 'Intérieur et extérieur', highlight: true },
+      { label: 'Fourmis charpentières', price: '250', details: 'Bois, charpente. Supercolonie : sur devis' },
+    ],
+  },
+  {
+    name: 'Pigeons',
+    icon: 'pigeons',
+    href: '/services/pigeons',
+    tiers: [
+      { label: 'Balcon standard', price: '150', details: 'Environ 6 m²' },
+      { label: 'Pics anti-pigeons inox', price: '25', unit: ' / mètre', details: 'Rebords, corniches', highlight: true },
+      { label: 'Façade, toiture', price: null, details: 'Étude technique, nacelle si besoin' },
     ],
   },
   {
@@ -86,9 +88,19 @@ const services = [
     icon: 'desinfection',
     href: '/services/desinfection',
     tiers: [
-      { label: 'Logement jusqu\'à 50 m²', price: '200', details: 'Attestation fournie' },
-      { label: 'Appartement / Bureaux', price: '350', details: 'Air + surfaces + rapport', highlight: true },
-      { label: 'Local professionnel', price: '500+', details: 'Protocole HACCP + urgences 24h' },
+      { label: 'Studio ou T1', price: '150', details: 'Attestation fournie' },
+      { label: 'T2 ou T3', price: '200', details: 'Air et surfaces', highlight: true },
+      { label: 'Maison, local professionnel', price: null, details: 'Selon la surface et la contamination' },
+    ],
+  },
+  {
+    name: 'Chenilles processionnaires',
+    icon: 'chenilles',
+    href: '/services/chenilles-processionnaires',
+    tiers: [
+      { label: 'Nid accessible', price: '89', details: 'Retrait et destruction du nid' },
+      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
+      { label: 'Grand arbre, nacelle', price: null, details: 'Selon la hauteur et le nombre de nids' },
     ],
   },
 ]
@@ -97,7 +109,7 @@ const guarantees = [
   'Devis gratuit confirmé avant intervention',
   'Tarif annoncé = tarif final, sans surprise',
   'RC Pro incluse sur toutes les interventions',
-  'Garantie résultat 1 mois minimum',
+  'Garantie 1 an',
   'Re-intervention gratuite si réapparition',
   'Intervention 7j/7 soirs et week-ends',
 ]
@@ -116,13 +128,13 @@ export default function TarifsPage() {
           <div className="relative max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style={{ background: 'rgba(232,68,26,0.12)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-black tracking-widest uppercase" style={{ color: ACCENT }}>Sur devis · Sans engagement · Devis gratuit</span>
+              <span className="text-xs font-black tracking-widest uppercase" style={{ color: ACCENT }}>Prix à partir de · Devis gratuit · Sans engagement</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
-              Devis <span style={{ color: ACCENT }}>gratuit</span>
+              Nos <span style={{ color: ACCENT }}>tarifs</span>
             </h1>
             <p className="text-lg text-white/55 mb-8 leading-relaxed max-w-xl mx-auto">
-              Le tarif est confirmé avant chaque intervention. Pas de mauvaise surprise, pas de frais cachés. Appelez pour un devis gratuit en 5 minutes.
+              Prix de départ pour chaque nuisible. Le prix exact est confirmé par un devis gratuit avant toute intervention, sans frais cachés.
             </p>
             <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl text-sm" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-4 h-4" />Devis gratuit : {PHONE}
@@ -161,7 +173,7 @@ export default function TarifsPage() {
                 </div>
                 {/* Tiers */}
                 <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                  {tiers.map(({ label, price, details, highlight }) => (
+                  {tiers.map(({ label, price, unit, details, highlight }) => (
                     <div key={label} className="p-5 relative"
                       style={{ background: highlight ? 'rgba(232,68,26,0.05)' : 'transparent' }}>
                       {highlight && (
@@ -169,7 +181,7 @@ export default function TarifsPage() {
                       )}
                       <p className="text-white/50 text-xs font-semibold mb-1.5 uppercase tracking-wide">{label}</p>
                       <p className="font-black mb-1.5" style={{ fontSize: '1.75rem', color: highlight ? ACCENT : '#fff', lineHeight: 1 }}>
-                        <span className="text-2xl">Sur devis</span>
+                        {price ? (<><span className="text-white/45 text-sm font-semibold">dès </span>{price} €<span className="text-base">{unit}</span></>) : <span className="text-2xl">Sur devis</span>}
                       </p>
                       <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', lineHeight: 1.5 }}>{details}</p>
                     </div>
@@ -182,7 +194,7 @@ export default function TarifsPage() {
           {/* Note bas */}
           <div className="max-w-3xl mx-auto mt-10 rounded-2xl px-6 py-5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem', lineHeight: 1.75 }}>
-              Tous nos devis sont gratuits et confirmés avant intervention. Le tarif est adapté à chaque situation (surface, type de nuisible, accessibilité). Paiement possible par CB, virement ou espèces.
+              Prix indicatifs « à partir de ». Le prix final dépend de la surface, du niveau d'infestation et de l'accès : il est toujours confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
             </p>
           </div>
         </section>

@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="w-px self-stretch bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2 px-5 py-3.5">
             <ShieldCheck className="w-4 h-4" style={{ color: ACCENT }} />
-            <span className="text-white/80 text-sm font-medium">Garantie 1 mois</span>
+            <span className="text-white/80 text-sm font-medium">Garantie 1 an</span>
           </div>
         </div>
 

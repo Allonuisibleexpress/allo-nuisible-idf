@@ -66,7 +66,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               </a>
             </div>
             <p className="text-white/40 text-xs tracking-wide">
-              Intervention possible le jour même {d.dans} · Devis gratuit · Garantie 1 mois
+              Intervention possible le jour même {d.dans} · Devis gratuit · Garantie 1 an
             </p>
           </div>
         </section>
@@ -110,7 +110,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                 ['Vous nous appelez', `Expliquez-nous la situation au ${PHONE}. On vous pose quelques questions pour identifier le nuisible.`],
                 ['Devis gratuit', 'Vous connaissez le prix avant toute intervention, sans engagement.'],
                 ['Intervention', `Un technicien certifié Certibiocide peut intervenir le jour même ${d.dans}.`],
-                ['Garantie 1 mois', 'Si les nuisibles reviennent dans le mois, on revient.'],
+                ['Garantie 1 an', 'Si les nuisibles reviennent dans l\'année, on revient.'],
               ].map(([t, txt], i) => (
                 <li key={t} className="flex gap-4">
                   <span className="w-9 h-9 flex-shrink-0 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>

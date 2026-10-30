@@ -48,7 +48,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
     'Méthodes sans produit : cryogénie (neige carbonique à environ −78 °C) et vapeur sèche, qui tuent punaises et œufs au contact.',
     'Protocole mixte : cryogénie et vapeur, plus une barrière insecticide très légère et rémanente, renouvelée au deuxième passage.',
     'Infestation importante : traitement insecticide professionnel par un technicien certifié Certibiocide.',
-    'Intervention possible le jour même, 7j/7. Devis gratuit, deuxième passage et garantie 1 mois.',
+    'Intervention possible le jour même, 7j/7. Devis gratuit, deuxième passage et garantie 1 an.',
   ]
 
   const jsonLd = {

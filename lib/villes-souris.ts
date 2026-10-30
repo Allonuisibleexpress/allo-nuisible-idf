@@ -23,7 +23,7 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
     'Méthodes : pièges mécaniques, pièges connectés qui signalent chaque capture, postes d\'appâtage sécurisés avec rodenticide professionnel.',
     'Dans tous les cas : recherche et colmatage des points d\'entrée, sans quoi d\'autres souris reviennent.',
     'Techniciens certifiés Certibiocide, intervention possible le jour même, 7j/7.',
-    'Devis gratuit, suivi et garantie 1 mois, attestation pour les professionnels.',
+    'Devis gratuit, suivi et garantie 1 an, attestation pour les professionnels.',
   ],
   cachettes: {
     titre: 'Où elles se cachent',
@@ -103,7 +103,7 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
       { titre: 'Colmatage', texte: 'Fermeture des accès avec des matériaux que les souris ne rongent pas (grillage métallique fin, mortier), une fois la population éliminée.' },
       { titre: 'Suivi', texte: 'Relevé des pièges ou des postes, ajustement du dispositif si besoin. Avec les pièges connectés, nous sommes alertés à chaque capture.' },
       { titre: 'Nettoyage et conseils', texte: 'Conseils pour nettoyer et désinfecter les traces, et pour éviter le retour : stockage de la nourriture, bas de portes, surveillance à l\'automne.' },
-      { titre: 'Garantie', texte: 'Garantie 1 mois et attestation d\'intervention pour les professionnels.' },
+      { titre: 'Garantie', texte: 'Garantie 1 an et attestation d\'intervention pour les professionnels.' },
     ],
   },
   publics: {

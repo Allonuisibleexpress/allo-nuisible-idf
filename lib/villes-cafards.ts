@@ -20,7 +20,7 @@ export const CONFIG_CAFARDS: VilleServiceConfig = {
     'Méthodes : gel appât professionnel, insecticide ciblé à effet rémanent, et sans produit : vapeur sèche et cryogénie.',
     'Protocole en 2 passages pour éliminer les adultes puis les jeunes éclos des oothèques.',
     'Techniciens certifiés Certibiocide, intervention possible le jour même, 7j/7.',
-    'Devis gratuit, garantie 1 mois, attestation pour les professionnels.',
+    'Devis gratuit, garantie 1 an, attestation pour les professionnels.',
   ],
   cachettes: {
     titre: 'Où ils se cachent',
@@ -100,7 +100,7 @@ export const CONFIG_CAFARDS: VilleServiceConfig = {
       { titre: 'Premier passage', texte: 'Gel appât professionnel dans les zones de passage, insecticide ciblé si l\'infestation l\'exige, vapeur sèche ou cryogénie dans les joints et les zones sensibles.' },
       { titre: 'Entre les deux passages', texte: 'Ne nettoyez pas le gel et n\'utilisez aucun aérosol. Voir encore quelques cafards pendant quelques jours est normal : le gel agit progressivement sur la colonie.' },
       { titre: 'Deuxième passage', texte: '2 à 3 semaines plus tard, pour éliminer les jeunes cafards éclos des oothèques et compléter le traitement.' },
-      { titre: 'Suivi et garantie', texte: 'Garantie 1 mois, attestation d\'intervention pour les professionnels et conseils pour éviter leur retour.' },
+      { titre: 'Suivi et garantie', texte: 'Garantie 1 an, attestation d\'intervention pour les professionnels et conseils pour éviter leur retour.' },
     ],
   },
   publics: {
@@ -125,7 +125,7 @@ const FAQ_COMMUNE = (a: string) => [
   { q: 'Pourquoi faut-il 2 passages ?', a: 'Les oothèques, les cocons d\'œufs des cafards, résistent aux traitements. Le deuxième passage, 2 à 3 semaines plus tard, élimine les jeunes cafards éclos entre-temps.' },
   { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Non pour le gel appât, la vapeur sèche et la cryogénie. Si une pulvérisation d\'insecticide est nécessaire, le technicien vous indique combien de temps attendre avant de réoccuper les pièces traitées.' },
   { q: 'Est-ce normal de voir encore des cafards après le premier passage ?', a: 'Oui, pendant quelques jours. Le gel agit progressivement : les cafards le consomment, le ramènent dans leurs cachettes et la colonie diminue. Ne nettoyez pas le gel et n\'utilisez pas d\'aérosol.' },
-  { q: 'Les cafards peuvent-ils revenir ?', a: 'Oui, s\'ils sont réintroduits (cartons, logement voisin, livraisons). La garantie 1 mois couvre le traitement, et les conseils de prévention limitent fortement le risque.' },
+  { q: 'Les cafards peuvent-ils revenir ?', a: 'Oui, s\'ils sont réintroduits (cartons, logement voisin, livraisons). La garantie 1 an couvre le traitement, et les conseils de prévention limitent fortement le risque.' },
 ]
 
 export type VilleCafards = Ville & { title: string }

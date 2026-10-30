@@ -68,7 +68,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Garantie 1 mois */}
+        {/* Garantie 1 an */}
         <section style={{ background: '#141414', padding: '52px 16px' }}>
           <div className="max-w-2xl mx-auto">
             <div style={{
@@ -81,13 +81,13 @@ export default function Home() {
                 Garantie résultat
               </p>
               <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: '#E8441A', lineHeight: 0.88, marginBottom: '14px' }}>
-                1 mois
+                1 an
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les nuisibles reviennent, on revient sans frais.
               </p>
               <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
-                Toute intervention est garantie 1 mois. En cas de réapparition, notre technicien revient sans aucun supplément.
+                Toute intervention est garantie 1 an. En cas de réapparition, notre technicien revient sans aucun supplément.
               </p>
               <a href="tel:+33768077219"
                 className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full text-sm"

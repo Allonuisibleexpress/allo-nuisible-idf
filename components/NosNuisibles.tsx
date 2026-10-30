@@ -15,7 +15,7 @@ const nuisibles: {
   {
     icon: 'punaises-de-lit',
     name: 'Punaises de lit',
-    desc: 'Éradication totale · Insecticide professionnel · Garantie 1 mois',
+    desc: 'Éradication totale · Insecticide professionnel · Garantie 1 an',
     href: '/services/punaises-de-lit',
     urgency: 'Urgent',
   },

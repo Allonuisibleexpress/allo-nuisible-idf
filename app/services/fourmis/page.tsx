@@ -222,7 +222,7 @@ export default function FourmisPage() {
                 Garantie résultat
               </p>
               <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: ACCENT, lineHeight: 0.88, marginBottom: '14px' }}>
-                1 mois
+                1 an
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les fourmis reviennent, on revient sans frais.
@@ -397,7 +397,7 @@ export default function FourmisPage() {
               {[
                 { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles, soit 10 % de la colonie. La reine, en sécurité dans le nid, continue de pondre jusqu'à 1 000 œufs par jour. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
                 { q: 'La fourmi pharaon est-elle dangereuse ?', a: "Oui, particulièrement en milieu hospitalier et pour les personnes immunodéprimées : elle peut transporter des bactéries pathogènes. En appartement, elle s'installe derrière les plinthes et dans les circuits électriques. Un pulvérisateur classique aggrave la situation en dispersant la colonie." },
-                { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans le mois, nous revenons gratuitement." },
+                { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans l'année, nous revenons gratuitement." },
                 { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
                 { q: 'Quelle différence entre fourmis charpentières et termites ?', a: "Les fourmis charpentières creusent le bois pour nidifier mais ne le mangent pas (contrairement aux termites). Vous trouverez de la sciure fine (frass) sous les zones touchées. Le traitement est différent : injection en galeries + insecticide de contact. Si vous avez un doute, appelez pour une inspection." },
                 { q: 'Intervenez-vous le week-end et en soirée ?', a: "Oui, 7j/7 y compris week-ends et jours fériés. Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Appelez le 07 68 07 72 19 pour un créneau rapide." },

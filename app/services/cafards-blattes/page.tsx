@@ -22,20 +22,20 @@ const data: ServiceData = {
     { title: 'Diagnostic & devis', text: 'Identification de l\'espèce (blatte germanique, orientale, américaine) et du niveau d\'infestation par téléphone ou sur place. Devis gratuit, intervention possible le jour même.' },
     { title: '1er passage : traitement principal', text: 'Application de gel appât dans les zones clés (derrière les appareils électroménagers, sous les éviers, dans les fissures) + pulvérisation insecticide sur les surfaces. Vapeur sèche ou cryogénie dans les joints et recoins selon les cas.' },
     { title: '2e passage : élimination des oothèques', text: 'Retour 2 à 3 semaines plus tard pour éliminer les jeunes blattes issues des cocons qui n\'avaient pas encore éclos. Cette étape est indispensable pour une éradication totale.' },
-    { title: 'Attestation et garantie', text: 'Fourniture d\'une attestation d\'intervention pour vos obligations réglementaires. Garantie re-intervention si réapparition dans le mois suivant.' },
+    { title: 'Attestation et garantie', text: 'Fourniture d\'une attestation d\'intervention pour vos obligations réglementaires. Garantie re-intervention si réapparition dans l\'année suivante.' },
   ],
   pricing: [
     {
       label: 'Appartement',
       price: '180',
       description: 'Logement jusqu\'à 80 m²',
-      features: ['2 passages inclus', 'Gel appât professionnel', 'Traitement toutes pièces', 'Garantie 1 mois'],
+      features: ['2 passages inclus', 'Gel appât professionnel', 'Traitement toutes pièces', 'Garantie 1 an'],
     },
     {
       label: 'Maison / Grand logement',
       price: '280',
       description: 'Logement de plus de 80 m²',
-      features: ['2 passages inclus', 'Gel + pulvérisation rémanente', 'Traitement intérieur complet', 'Garantie 1 mois', 'Conseils préventifs'],
+      features: ['2 passages inclus', 'Gel + pulvérisation rémanente', 'Traitement intérieur complet', 'Garantie 1 an', 'Conseils préventifs'],
       highlight: true,
     },
     {

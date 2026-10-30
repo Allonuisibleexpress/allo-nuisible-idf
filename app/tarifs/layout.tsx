@@ -1,8 +1,8 @@
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
-  title: 'Devis gratuit pour vos nuisibles en Île-de-France',
-  description: 'Chaque intervention est chiffrée sur devis, gratuit et sans engagement. Appelez-nous ou décrivez votre problème, réponse rapide 7j/7.',
+  title: 'Prix anti-nuisibles en Île-de-France : dès 89 €',
+  description: 'Nos tarifs en Île-de-France : nid de guêpes dès 89 €, cafards, rats et fourmis dès 120 €, punaises de lit dès 290 €. Cas complexes sur devis gratuit.',
   path: '/tarifs',
 })
 

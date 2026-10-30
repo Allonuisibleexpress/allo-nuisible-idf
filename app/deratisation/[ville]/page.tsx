@@ -39,7 +39,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
     'Rongeurs traités : surmulot (rat d\'égout), rat noir, souris domestique.',
     'Méthodes : postes d\'appâtage sécurisés avec raticide professionnel, pièges mécaniques ou connectés, colmatage des points d\'entrée.',
     'Techniciens certifiés Certibiocide, intervention possible le jour même, 7j/7.',
-    'Devis gratuit avant intervention, garantie 1 mois, attestation fournie aux professionnels.',
+    'Devis gratuit avant intervention, garantie 1 an, attestation fournie aux professionnels.',
   ]
 
   const jsonLd = {
@@ -152,7 +152,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                 ['Diagnostic', 'Identification de l\'espèce (surmulot, rat noir, souris), des points d\'entrée, des couloirs de passage et des zones de nidification.'],
                 ['Dispositif adapté', 'Postes d\'appâtage sécurisés et verrouillés avec raticide professionnel, ou pièges mécaniques et connectés qui signalent chaque capture.'],
                 ['Colmatage', 'Fermeture des accès trouvés (grilles, gaines, passages de tuyaux, bas de portes). Sans cette étape, d\'autres rongeurs reviennent.'],
-                ['Suivi et garantie', 'Contrôle des postes ou des pièges, ajustement si besoin, garantie 1 mois et attestation pour les professionnels.'],
+                ['Suivi et garantie', 'Contrôle des postes ou des pièges, ajustement si besoin, garantie 1 an et attestation pour les professionnels.'],
               ].map(([t, txt], i) => (
                 <li key={t} className="flex gap-4">
                   <span className="w-9 h-9 flex-shrink-0 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>

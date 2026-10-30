@@ -82,7 +82,7 @@ export default function CommunePage({ params }: { params: Params }) {
               </a>
             </div>
             <p className="text-white/40 text-xs tracking-wide">
-              Intervention possible le jour même {c.a} · Certibiocide · Garantie 1 mois
+              Intervention possible le jour même {c.a} · Certibiocide · Garantie 1 an
             </p>
           </div>
         </section>
@@ -171,7 +171,7 @@ export default function CommunePage({ params }: { params: Params }) {
                 ['Vous nous appelez', `Décrivez la situation au ${PHONE}. On identifie le nuisible avec vous.`],
                 ['Devis gratuit', 'Vous connaissez la méthode proposée et le prix avant toute intervention.'],
                 ['Intervention', `Un technicien certifié Certibiocide peut intervenir le jour même ${c.a}.`],
-                ['Garantie 1 mois', 'Si les nuisibles reviennent dans le mois, on revient.'],
+                ['Garantie 1 an', 'Si les nuisibles reviennent dans l\'année, on revient.'],
               ].map(([t, txt], i) => (
                 <li key={t} className="flex gap-4">
                   <span className="w-9 h-9 flex-shrink-0 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>

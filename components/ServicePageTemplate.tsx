@@ -410,7 +410,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-white/40 text-xs mt-6">RC Pro · Certibiocide · Garantie résultat 1 mois</p>
+            <p className="text-white/40 text-xs mt-6">RC Pro · Certibiocide · Garantie 1 an</p>
           </div>
         </section>
 
