@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -39,17 +40,21 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   if (!v) notFound()
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
-  const autres = VILLES_PUNAISES.filter((x) => x.slug !== v.slug)
+  const autres = villesVoisines(VILLES_PUNAISES, v)
   const maj = new Date(MAJ_PUNAISES).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
-  const enBref = [
-    `Allo Nuisible IDF traite les punaises de lit ${v.a} (${v.departement}, ${v.code}) et dans les communes proches.`,
+  const rang = Math.max(0, VILLES_PUNAISES.findIndex((x) => x.slug === v.slug))
+  const enBrefComplet = [
+    `Allo Nuisible IDF traite les punaises de lit ${v.a} (${v.departement}, ${v.code}) et dans les communes proches : ${v.proches.join(', ')}.`,
     'Méthodes sans produit : cryogénie (neige carbonique à environ −78 °C) et vapeur sèche, qui tuent punaises et œufs au contact.',
     'Protocole mixte : cryogénie et vapeur, plus une barrière insecticide très légère et rémanente, renouvelée au deuxième passage.',
     'Infestation importante : traitement insecticide professionnel par un technicien certifié Certibiocide.',
     'Intervention possible le jour même, 7j/7. Devis gratuit, deuxième passage et garantie 1 an.',
   ]
+  const generales = enBrefComplet.slice(1)
+  const db = rang % generales.length
+  const enBref = [enBrefComplet[0], ...[...generales.slice(db), ...generales.slice(0, db)].slice(0, 3)]
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -162,7 +167,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                   <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
                     style={{ color: ACCENT, background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
                   <h3 className="text-xl font-black text-white mb-2">{m.titre}</h3>
-                  <p className="text-white/65 text-sm leading-relaxed mb-3">{m.texte}</p>
+                  <p className="text-white/65 text-sm leading-relaxed mb-3">{premierePhrase(m.texte)}</p>
                   <span className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
                     En savoir plus <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </span>

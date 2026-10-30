@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { villesVoisines } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -30,12 +31,13 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   if (!v) notFound()
 
   const url = `${SITE_URL}/deratisation/${v.slug}`
-  const autres = VILLES_DERATISATION.filter((x) => x.slug !== v.slug)
+  const autres = villesVoisines(VILLES_DERATISATION, v)
   const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const enBref = [
     `Allo Nuisible IDF réalise la dératisation ${v.a} (${v.departement}, ${v.code}) et dans les communes proches.`,
+    `Points à contrôler en priorité ${v.a} : ${v.lieux.map((l) => l.charAt(0).toLowerCase() + l.slice(1)).join(', ')}.`,
     'Rongeurs traités : surmulot (rat d\'égout), rat noir, souris domestique.',
     'Méthodes : postes d\'appâtage sécurisés avec raticide professionnel, pièges mécaniques ou connectés, colmatage des points d\'entrée.',
     'Techniciens certifiés Certibiocide, intervention possible le jour même, 7j/7.',

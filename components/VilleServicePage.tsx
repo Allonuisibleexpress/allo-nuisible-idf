@@ -1,4 +1,5 @@
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
+import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { SITE_URL } from '@/lib/seo'
@@ -63,7 +64,19 @@ function inline(text: string) {
 
 export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: Ville[]; c: VilleServiceConfig }) {
   const url = `${SITE_URL}${c.basePath}/${v.slug}`
-  const autres = villes.filter((x) => x.slug !== v.slug)
+  const autres = villesVoisines(villes, v)
+  // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
+  // évite que toutes les pages villes répètent le même texte.
+  const rang = Math.max(0, villes.findIndex((x) => x.slug === v.slug))
+  const sections = c.sections ? [c.sections[rang % c.sections.length]] : undefined
+  // Encadré de conseils et cartes « publics » en alternance d'une ville à l'autre
+  const avecEncadre = rang % 2 === 0
+  // FAQ : la question propre à la ville, puis 2 questions générales en rotation
+  const generales = v.faq.slice(1)
+  const d = rang % Math.max(1, generales.length)
+  const faq = [v.faq[0], ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2)]
+  const db = rang % Math.max(1, c.enBref.length)
+  const enBref = [`Intervention ${v.a} (${v.departement}, ${v.code}) et dans les communes voisines : ${v.proches.slice(0, 4).join(', ')}.`, ...[...c.enBref.slice(db), ...c.enBref.slice(0, db)].slice(0, 3)]
   const maj = new Date(c.maj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   const jsonLd = {
@@ -80,7 +93,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
       },
       {
         '@type': 'FAQPage',
-        mainEntity: v.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+        mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -119,7 +132,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
               <ul className="space-y-2">
-                {c.enBref.map((t) => (
+                {enBref.map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
                     <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} />{t}
                   </li>
@@ -162,10 +175,10 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         {/* ── CONTENU DÉTAILLÉ ── */}
-        {c.sections && (
+        {sections && (
           <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
             <div className="max-w-4xl mx-auto space-y-12">
-              {c.sections.map((s) => (
+              {sections.map((s) => (
                 <div key={s.titre}>
                   <h2 className="text-2xl md:text-3xl font-black text-white mb-5">{s.titre}</h2>
                   {s.paras.map((p) => (
@@ -198,6 +211,10 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                   )}
                 </div>
               ))}
+              <p className="text-white/55 text-sm">
+                Espèces, causes, risques et erreurs à éviter : tout est détaillé sur{' '}
+                <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
+              </p>
             </div>
           </section>
         )}
@@ -216,7 +233,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                     <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
                       style={{ color: ACCENT, background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
                     <h3 className="text-xl font-black text-white mb-2">{m.titre}</h3>
-                    <p className="text-white/65 text-sm leading-relaxed">{m.texte}</p>
+                    <p className="text-white/65 text-sm leading-relaxed">{premierePhrase(m.texte)}</p>
                   </>
                 )
                 return m.href ? (
@@ -226,6 +243,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 )
               })}
             </div>
+            {avecEncadre && (
             <div className="rounded-2xl p-6 mt-6" style={card}>
               <h3 className="text-lg font-black text-white mb-3">{c.encadre.titre}</h3>
               {c.encadre.intro && <p className="text-white/60 text-sm mb-3">{c.encadre.intro}</p>}
@@ -237,6 +255,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 ))}
               </ul>
             </div>
+            )}
           </div>
         </section>
 
@@ -260,7 +279,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                   </ol>
                 </div>
               )}
-              {c.publics && (
+              {c.publics && !avecEncadre && (
                 <div>
                   <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{c.publics.titre}</h2>
                   <div className="grid md:grid-cols-3 gap-4">
@@ -303,7 +322,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
-              {v.faq.map((f) => (
+              {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
                     {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>

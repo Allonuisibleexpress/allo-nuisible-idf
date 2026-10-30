@@ -36,13 +36,18 @@ export default function CommunePage({ params }: { params: Params }) {
   if (!c) notFound()
 
   const secteur = SECTEURS[c.secteur]
-  const voisines = COMMUNES_94.filter((x) => x.secteur === c.secteur && x.slug !== c.slug)
+  // 6 communes du même secteur au plus, en rotation, pour ne pas répéter la même liste sur chaque page
+  const memeSecteur = COMMUNES_94.filter((x) => x.secteur === c.secteur && x.slug !== c.slug)
+  const decalage = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug)) % Math.max(1, memeSecteur.length)
+  const voisines = [...memeSecteur.slice(decalage), ...memeSecteur.slice(0, decalage)].slice(0, 6)
   const autres = Object.keys(METHODES).filter((k) => !secteur.ordre.includes(k))
   const villeDerat = getVilleDeratisation(c.slug)
   const villePunaises = getVillePunaises(c.slug)
   const villeCafards = getVilleCafards(c.slug)
   const villeSouris = getVilleSouris(c.slug)
   const villeChenilles = getVilleChenilles(c.slug)
+  // Paragraphe propre à la commune, repris de sa page service la plus détaillée
+  const local = (villeDerat ?? villeChenilles ?? villePunaises)?.contexte[0]
 
   return (
     <>
@@ -69,6 +74,7 @@ export default function CommunePage({ params }: { params: Params }) {
             {secteur.intro(c.nom).map((p) => (
               <p key={p.slice(0, 24)} className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{p}</p>
             ))}
+            {local && <p className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{local}</p>}
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-4">
               <a href={PHONE_HREF}
                 className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
