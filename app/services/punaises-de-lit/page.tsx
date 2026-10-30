@@ -65,6 +65,7 @@ const data: ServiceData = {
       { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : principe et limites' },
       { href: '/blog/vapeur-seche-punaises-de-lit', label: 'Vapeur sèche : efficacité et limites' },
       { href: '/blog/insecticide-punaises-de-lit', label: 'Insecticide : le traitement choc' },
+      { href: '/blog/punaises-de-lit-airbnb-location-courte-duree', label: 'Airbnb : traiter en urgence et relouer vite' },
       { href: '/blog/terre-de-diatomee-punaises-de-lit', label: 'Terre de diatomée : efficace ou piège ?' },
     ] },
   },
