@@ -31,6 +31,21 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Dératisation à Bry-sur-Marne (94)](https://allonuisibleidf.fr/deratisation/bry-sur-marne)
 - [Dératisation à Sucy-en-Brie (94)](https://allonuisibleidf.fr/deratisation/sucy-en-brie)
 - [Dératisation à Santeny (94)](https://allonuisibleidf.fr/deratisation/santeny)
+- [Dératisation à Vitry-sur-Seine (94)](https://allonuisibleidf.fr/deratisation/vitry-sur-seine)
+- [Dératisation à Créteil (94)](https://allonuisibleidf.fr/deratisation/creteil)
+- [Dératisation à Champigny-sur-Marne (94)](https://allonuisibleidf.fr/deratisation/champigny-sur-marne)
+- [Dératisation à Ivry-sur-Seine (94)](https://allonuisibleidf.fr/deratisation/ivry-sur-seine)
+- [Dératisation à Maisons-Alfort (94)](https://allonuisibleidf.fr/deratisation/maisons-alfort)
+- [Dératisation à Fontenay-sous-Bois (94)](https://allonuisibleidf.fr/deratisation/fontenay-sous-bois)
+- [Dératisation à Villejuif (94)](https://allonuisibleidf.fr/deratisation/villejuif)
+- [Dératisation à Vincennes (94)](https://allonuisibleidf.fr/deratisation/vincennes)
+- [Dératisation à Alfortville (94)](https://allonuisibleidf.fr/deratisation/alfortville)
+- [Dératisation à Choisy-le-Roi (94)](https://allonuisibleidf.fr/deratisation/choisy-le-roi)
+- [Dératisation au Kremlin-Bicêtre (94)](https://allonuisibleidf.fr/deratisation/le-kremlin-bicetre)
+- [Dératisation à Charenton-le-Pont (94)](https://allonuisibleidf.fr/deratisation/charenton-le-pont)
+- [Dératisation à Saint-Maurice (94)](https://allonuisibleidf.fr/deratisation/saint-maurice)
+- [Dératisation à Thiais (94)](https://allonuisibleidf.fr/deratisation/thiais)
+- [Dératisation à Cachan (94)](https://allonuisibleidf.fr/deratisation/cachan)
 
 ## Punaises de lit par ville
 
