@@ -43,7 +43,10 @@ const data: ServiceData = {
   ],
   related: {
     villes: { title: 'Traitement des acariens par ville', links: VILLES_ACARIENS.map((v) => ({ href: `/acariens/${v.slug}`, label: `Acariens ${v.a} (${v.code})` })) },
-    guides: { title: 'Nos méthodes en détail', links: [
+    guides: { title: 'Nos guides sur les acariens', links: [
+      { href: '/blog/acariens-matelas', label: 'Acariens dans le matelas : 7 gestes' },
+      { href: '/blog/acariens-ou-punaises-de-lit', label: 'Acariens ou punaises de lit ?' },
+      { href: '/blog/acariens-humidite-maison', label: 'Acariens et humidité : le bon taux' },
       { href: '/blog/vapeur-seche-punaises-de-lit', label: 'La vapeur sèche : principe et limites' },
       { href: '/blog/cryogenie-punaises-de-lit', label: 'La cryogénie : comment ça marche' },
     ] },
