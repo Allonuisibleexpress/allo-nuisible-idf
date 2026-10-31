@@ -20,6 +20,12 @@ export const GUIDES_RONGEURS: Record<string, string> = {
   'rat-dans-les-murs-cloisons': 'Rat dans les murs ou les cloisons',
   'rat-vide-sanitaire': 'Rat dans le vide sanitaire',
   'restaurant-plan-lutte-nuisibles': 'Plan de lutte nuisibles en restaurant',
+  'deratisation-sans-mort-aux-rats': 'Dératisation sans mort-aux-rats : le piège Ekomille',
+  'rat-mode-de-vie': 'Le rat : mode de vie et comportement',
+  'reproduction-des-rats': 'Reproduction des rats',
+  'nourrir-oiseaux-pigeons-attire-rats': 'Nourrir les oiseaux attire les rats',
+  'rat-compost': 'Rats dans le compost',
+  'trou-dans-le-jardin': 'Trou dans le jardin : rat, campagnol ou taupe ?',
 }
 
 export type VilleDeratisation = {
