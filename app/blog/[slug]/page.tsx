@@ -17,7 +17,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!a) return {}
   const url = `https://allonuisibleidf.fr/blog/${a.slug}`
   return {
-    title: `${a.seoTitle} | Allo Nuisible IDF`,
+    title: a.seoTitle,
     description: a.description,
     alternates: { canonical: url },
     openGraph: {
