@@ -27,6 +27,7 @@ const services = [
   'Dératisation',
   'Désinfection',
   'Chenilles processionnaires',
+  'Acariens',
 ]
 
 const navLinks = [
