@@ -343,6 +343,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Miettes, gras derrière la plaque, gamelle d'animal, poubelle ouverte : si la nourriture est partout, le gel n'est qu'un repas parmi d'autres. Un **nettoyage soigné avant la pose** multiplie son efficacité." },
       { t: 'h2', x: "4. Un spray insecticide pulvérisé à côté" },
       { t: 'p', x: "C'est l'erreur la plus fréquente. Un aérosol pulvérisé près du gel **le contamine et fait fuir les blattes** : elles évitent la zone, se dispersent et l'infestation s'étend aux pièces voisines. Gel et spray ne font pas bon ménage." },
+      { t: 'p', x: "Les **bombes fumigènes** font encore moins bien : une étude de l'université NC State (*BMC Public Health*, 2019) n'a mesuré **aucune baisse de population** dans 20 logements infestés, avec des résidus d'insecticide multipliés par 85 sur les plans de travail. Nos confrères d'Allo Nuisible Express comparent bombes, sprays, gels du commerce et méthodes professionnelles, chiffres à l'appui, dans leur [guide du traitement des cafards](https://allonuisibleexpress.fr/traitement-cafards/)." },
       { t: 'h2', x: "5. Les oothèques continuent d'éclore" },
       { t: 'p', x: "La blatte germanique femelle porte une **oothèque**, une capsule contenant plusieurs dizaines d'œufs, que le gel n'atteint pas. De nouvelles larves apparaissent donc pendant des semaines après la pose. Ce n'est pas un échec si elles meurent ensuite : il faut **renouveler le gel** et suivre la décroissance." },
       { t: 'table', head: ['Erreur', 'Correction'], rows: [
@@ -353,7 +354,7 @@ export const ARTICLES: Article[] = [
         ['Arrêt au bout d\'une semaine', 'Renouveler et suivre plusieurs semaines'],
       ] },
       { t: 'h2', x: "Pourquoi il ne faut pas laisser traîner" },
-      { t: 'p', x: "D'après l'**ANSES**, les blattes transportent **plus de 30 bactéries différentes** sur leurs pattes et dans leur tube digestif, et leurs déjections libèrent des allergènes impliqués dans l'asthme. En habitat collectif, une infestation non maîtrisée passe par les gaines techniques d'un appartement à l'autre." },
+      { t: 'p', x: "Une étude menée à Rennes (Cloarec et al., 1992) a isolé **une trentaine d'espèces de bactéries** sur des blattes prélevées dans 52 appartements, et leurs déjections libèrent des allergènes impliqués dans l'asthme. En habitat collectif, une infestation non maîtrisée passe par les gaines techniques d'un appartement à l'autre." },
       { t: 'p', x: "Si après deux tentatives les blattes sont toujours là, un [traitement professionnel des cafards](/services/cafards-blattes) combine inspection des refuges, rotation des gels, pièges de contrôle et suivi. Pour les établissements alimentaires, voir aussi nos obligations [plan de lutte en restauration](/blog/restaurant-plan-lutte-nuisibles)." },
       { t: 'p', x: "Nos techniciens traitent les cafards en 2 passages, avec gel, insecticide, vapeur sèche ou cryogénie, notamment à [Vincennes](/cafards/vincennes), [Saint-Mandé](/cafards/saint-mande), [Saint-Maurice](/cafards/saint-maurice) et [Sucy-en-Brie](/cafards/sucy-en-brie)." },
     ],
