@@ -9,8 +9,8 @@ const data: ServiceData = {
   heroDescription: 'Protocole en 2 passages pour éliminer adultes ET oothèques (cocons d\'œufs). Gel et insecticide professionnels, vapeur sèche ou cryogénie selon les pièces.',
   heroPrices: [
     { price: '120', label: 'T1 ou T2' },
-    { price: '150', label: 'Grand logement' },
-    { price: '200', label: 'Local pro' },
+    { price: 'Sur devis', label: 'Grand logement' },
+    { price: 'Sur devis', label: 'Local pro' },
   ],
   trustBar: ['2 passages inclus', 'Gel HACCP', 'Oothèques traitées', 'Normes ERP', 'Résultat garanti'],
   benefits: [
@@ -33,14 +33,14 @@ const data: ServiceData = {
     },
     {
       label: 'Maison / Grand logement',
-      price: '150',
+      price: 'Sur devis',
       description: 'Grand logement ou infestation marquée',
       features: ['2 passages inclus', 'Gel + pulvérisation rémanente', 'Traitement intérieur complet', 'Garantie 1 an', 'Conseils préventifs'],
       highlight: true,
     },
     {
       label: 'Local professionnel',
-      price: '200',
+      price: 'Sur devis',
       description: 'Restaurant, commerce, hôtel',
       features: ['2 passages inclus', 'Produits HACCP homologués', 'Attestation officielle fournie', 'Rapport d\'intervention', 'Contrat annuel disponible'],
       cta: 'Obtenir un devis pro',

@@ -267,7 +267,7 @@ export default function GuêpesFrelonsPage() {
                 <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(232,68,26,0.7),transparent)' }} />
                 <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '.1em' }}>Tarification</p>
                 <p className="font-black text-white mb-2" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)' }}><span className="text-white/45 text-base font-semibold">à partir de </span>89 €</p>
-                <p className="text-white/55 text-sm leading-relaxed">Nid accessible dès 89 €, en hauteur dès 149 €,<br />difficile d&apos;accès dès 199 €. Nacelle : sur devis. Prix TTC.</p>
+                <p className="text-white/55 text-sm leading-relaxed">Nid accessible dès 89 € TTC.<br />Nid en hauteur, difficile d&apos;accès ou nacelle : sur devis.</p>
               </div>
               <p className="text-white/35 text-xs mt-3 text-center">Devis gratuit · Réponse en 5 min · 7j/7 soirs et week-ends</p>
             </div>

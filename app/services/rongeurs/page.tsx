@@ -10,7 +10,7 @@ const data: ServiceData = {
   heroDescription: 'Postes d\'appâtage sécurisés ou pièges mécaniques et connectés, selon le lieu. Identification des points d\'entrée, colmatage, attestation pour les professionnels.',
   heroPrices: [
     { price: '120', label: 'Logement' },
-    { price: '250', label: 'Professionnel' },
+    { price: 'Sur devis', label: 'Professionnel' },
     { price: 'Sur devis', label: 'Copropriété' },
   ],
   trustBar: ['Certibiocide', 'Postes sécurisés', 'Pièges connectés', 'Attestation HACCP', 'Contrats annuels', 'RC Pro incluse'],
@@ -30,12 +30,12 @@ const data: ServiceData = {
     {
       label: 'Particulier',
       price: '120',
-      description: 'Appartement (maison dès 180 €)',
+      description: 'Appartement',
       features: ['Inspection complète', '1 à 2 postes sécurisés', 'Suivi inclus', 'Conseils colmatage'],
     },
     {
       label: 'Local professionnel',
-      price: '250',
+      price: 'Sur devis',
       description: 'Restaurant, commerce, bureau',
       features: ['Inspection détaillée', 'Postes sécurisés adaptés', 'Attestation HACCP fournie', 'Rapport d\'intervention', 'Garantie résultat'],
       highlight: true,

@@ -19,8 +19,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/guepes-frelons',
     tiers: [
       { label: 'Nid accessible', price: '89', details: 'Jusqu\'à 5 m environ : auvent, cabanon, haie' },
-      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
-      { label: 'Nid difficile d\'accès', price: '199', details: 'Toiture, combles, cheminée. Nacelle : sur devis' },
+      { label: 'Nid en hauteur', price: null, details: 'Perche télescopique', highlight: true },
+      { label: 'Nid difficile d\'accès', price: null, details: 'Toiture, combles, cheminée. Nacelle : sur devis' },
     ],
   },
   {
@@ -29,7 +29,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/punaises-de-lit',
     tiers: [
       { label: 'Studio ou T1', price: '290', details: '2 passages inclus, inspection de toutes les pièces' },
-      { label: 'T2 ou T3', price: '390', details: '2 passages inclus. Insecticide, cryogénie ou vapeur sèche', highlight: true },
+      { label: 'T2 ou T3', price: null, details: '2 passages inclus. Insecticide, cryogénie ou vapeur sèche', highlight: true },
       { label: 'T4, maison ou forte infestation', price: null, details: '2 passages inclus, prix après inspection' },
     ],
   },
@@ -39,8 +39,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/cafards-blattes',
     tiers: [
       { label: 'T1 ou T2', price: '120', details: 'Gel appât professionnel' },
-      { label: 'Grand logement', price: '150', details: 'Ou infestation marquée', highlight: true },
-      { label: 'Local professionnel', price: '200', details: 'Restaurant, commerce, attestation fournie' },
+      { label: 'Grand logement', price: null, details: 'Ou infestation marquée', highlight: true },
+      { label: 'Local professionnel', price: null, details: 'Restaurant, commerce, attestation fournie' },
     ],
   },
   {
@@ -49,8 +49,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/rongeurs',
     tiers: [
       { label: 'Appartement', price: '120', details: 'Rats ou souris, recherche des accès' },
-      { label: 'Maison', price: '180', details: 'Combles, cave, garage, jardin', highlight: true },
-      { label: 'Local commercial', price: '250', details: 'Attestation fournie' },
+      { label: 'Maison', price: null, details: 'Combles, cave, garage, jardin', highlight: true },
+      { label: 'Local commercial', price: null, details: 'Attestation fournie' },
     ],
   },
   {
@@ -59,7 +59,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/deratisation',
     tiers: [
       { label: 'Particulier', price: '120', details: 'Postes d\'appâtage sécurisés ou pièges' },
-      { label: 'Commerce, restaurant', price: '250', details: 'Attestation fournie', highlight: true },
+      { label: 'Commerce, restaurant', price: null, details: 'Attestation fournie', highlight: true },
       { label: 'Copropriété, contrat annuel', price: null, details: 'Parties communes, passages réguliers' },
     ],
   },
@@ -69,8 +69,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/fourmis',
     tiers: [
       { label: 'Appartement', price: '120', details: 'Gel appât sur les pistes' },
-      { label: 'Maison avec jardin', price: '150', details: 'Intérieur et extérieur', highlight: true },
-      { label: 'Fourmis charpentières', price: '250', details: 'Bois, charpente. Supercolonie : sur devis' },
+      { label: 'Maison avec jardin', price: null, details: 'Intérieur et extérieur', highlight: true },
+      { label: 'Fourmis charpentières', price: null, details: 'Bois, charpente. Supercolonie : sur devis' },
     ],
   },
   {
@@ -89,7 +89,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/desinfection',
     tiers: [
       { label: 'Studio ou T1', price: '150', details: 'Attestation fournie' },
-      { label: 'T2 ou T3', price: '200', details: 'Air et surfaces', highlight: true },
+      { label: 'T2 ou T3', price: null, details: 'Air et surfaces', highlight: true },
       { label: 'Maison, local professionnel', price: null, details: 'Selon la surface et la contamination' },
     ],
   },
@@ -99,7 +99,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/chenilles-processionnaires',
     tiers: [
       { label: 'Nid accessible', price: '89', details: 'Retrait et destruction du nid' },
-      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
+      { label: 'Nid en hauteur', price: null, details: 'Perche télescopique', highlight: true },
       { label: 'Grand arbre, nacelle', price: null, details: 'Selon la hauteur et le nombre de nids' },
     ],
   },

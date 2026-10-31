@@ -11,7 +11,7 @@ const data: ServiceData = {
   heroDescription: 'Retrait et destruction des nids, écopièges sur les troncs, pièges à phéromones et conseils de prévention, par des techniciens équipés contre les poils urticants.',
   heroPrices: [
     { price: '89', label: 'Nid accessible' },
-    { price: '149', label: 'Nid en hauteur' },
+    { price: 'Sur devis', label: 'Nid en hauteur' },
     { price: 'Sur devis', label: 'Grand arbre' },
   ],
   trustBar: ['Équipement de protection', 'Pins et chênes', 'Écopièges', 'Pièges à phéromones', 'Conseils de prévention'],
@@ -28,7 +28,7 @@ const data: ServiceData = {
   ],
   pricing: [
     { label: 'Jardin', price: '89', description: 'Nid accessible', features: ['Diagnostic', 'Retrait des nids', 'Écopièges si besoin', 'Conseils de prévention'] },
-    { label: 'Grand terrain', price: '149', description: 'Nid en hauteur, perche télescopique', features: ['Diagnostic complet', 'Retrait des nids en hauteur', 'Écopièges et pièges à phéromones', 'Calendrier annuel'], highlight: true },
+    { label: 'Grand terrain', price: 'Sur devis', description: 'Nid en hauteur, perche télescopique', features: ['Diagnostic complet', 'Retrait des nids en hauteur', 'Écopièges et pièges à phéromones', 'Calendrier annuel'], highlight: true },
     { label: 'Copropriété', price: 'Sur devis', description: 'Résidences, espaces verts', features: ['Intervention coordonnée', 'Sécurisation des zones', 'Rapport d\'intervention', 'Suivi saisonnier'], cta: 'Demander un devis' },
   ],
   faq: [

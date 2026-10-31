@@ -9,7 +9,7 @@ const data: ServiceData = {
   heroDescription: 'Élimination des rongeurs par des techniciens Certibiocide. Piège multicapture Ekomille sans raticide, postes d\'appâtage sécurisés ou pièges connectés, attestations pour professionnels, contrats de maintenance.',
   heroPrices: [
     { price: '120', label: 'Particulier' },
-    { price: '250', label: 'Professionnel' },
+    { price: 'Sur devis', label: 'Professionnel' },
     { price: 'Sur devis', label: 'Copropriété' },
   ],
   trustBar: ['Certibiocide', 'Ekomille sans raticide', 'Attestation HACCP', 'Postes sécurisés', 'Contrats maintenance', 'RC Pro incluse'],
@@ -29,12 +29,12 @@ const data: ServiceData = {
     {
       label: 'Particulier',
       price: '120',
-      description: 'Appartement (maison dès 180 €)',
+      description: 'Appartement',
       features: ['Inspection complète', 'Postes sécurisés', 'Suivi 2 semaines', 'Conseils préventifs'],
     },
     {
       label: 'Professionnel',
-      price: '250',
+      price: 'Sur devis',
       description: 'Restaurant, commerce, bureau',
       features: ['Inspection HACCP', 'Postes certifiés', 'Attestation officielle', 'Rapport d\'intervention', 'Garantie résultat'],
       highlight: true,

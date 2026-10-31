@@ -8,7 +8,7 @@ const data: ServiceData = {
   heroDescription: 'Désinfection professionnelle après infestation, sinistre ou contamination. Produits biocides à large spectre. Attestation officielle fournie pour vos obligations réglementaires.',
   heroPrices: [
     { price: '150', label: 'Studio' },
-    { price: '200', label: 'T2 ou T3' },
+    { price: 'Sur devis', label: 'T2 ou T3' },
     { price: 'Sur devis', label: 'Local pro' },
   ],
   trustBar: ['Produits homologués', 'Large spectre', 'Attestation officielle', 'ERP & collectivités', 'RC Pro incluse'],
@@ -32,7 +32,7 @@ const data: ServiceData = {
     },
     {
       label: 'T2 ou T3',
-      price: '200',
+      price: 'Sur devis',
       description: 'Appartement de 2 à 3 pièces',
       features: ['Désinfection intégrale', 'Traitement air + surfaces', 'Zones difficiles incluses', 'Rapport d\'intervention', 'Attestation officielle'],
       highlight: true,
