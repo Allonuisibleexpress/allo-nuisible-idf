@@ -148,6 +148,18 @@ export function IconChenille({ className, size }: IconProps) {
   )
 }
 
+export function IconAcarien({ className, size }: IconProps) {
+  return (
+    <svg {...base(size)} className={className} aria-hidden="true">
+      <ellipse cx="16" cy="18" rx="6.5" ry="7.5" />
+      <circle cx="16" cy="9" r="2.6" />
+      <path d="M10 14.5l-4.5-2.5M9.6 18H4.5M10 21.5l-4.5 2.8M11.5 24.5l-3 3.5" />
+      <path d="M22 14.5l4.5-2.5M22.4 18h5.1M22 21.5l4.5 2.8M20.5 24.5l3 3.5" />
+      <path d="M14.8 6.8l-1.3-2.3M17.2 6.8l1.3-2.3" />
+    </svg>
+  )
+}
+
 /* ── Registre / map (icônes utilitaires) ── */
 export function IconShieldCheck({ className, size }: IconProps) {
   return (
@@ -167,6 +179,7 @@ export const PEST_ICONS = {
   rongeurs: IconRongeur,
   pigeons: IconPigeon,
   chenilles: IconChenille,
+  acariens: IconAcarien,
   deratisation: IconDeratisation,
   desinfection: IconDesinfection,
 } as const

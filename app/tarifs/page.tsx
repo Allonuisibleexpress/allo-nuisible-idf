@@ -103,6 +103,16 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
       { label: 'Grand arbre, nacelle', price: null, details: 'Selon la hauteur et le nombre de nids' },
     ],
   },
+  {
+    name: 'Acariens',
+    icon: 'acariens',
+    href: '/services/acariens',
+    tiers: [
+      { label: 'Une chambre', price: '120', details: 'Matelas, sommier et oreillers à la vapeur sèche' },
+      { label: 'Logement complet', price: null, details: 'Literie, canapés, tapis, rideaux', highlight: true },
+      { label: 'Professionnels', price: null, details: 'Hôtels, crèches, locations meublées' },
+    ],
+  },
 ]
 
 const guarantees = [

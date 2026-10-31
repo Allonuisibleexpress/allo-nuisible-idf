@@ -7,6 +7,7 @@ import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_CAFARDS } from '@/lib/villes-cafards'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
+import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -16,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', '/blog', '/tarifs', '/professionnels']
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
-    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'rongeurs', 'chenilles-processionnaires',
+    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'rongeurs', 'chenilles-processionnaires', 'acariens',
   ]
   const legacyPosts = ['punaise-colza-invasion-idf-2026']
 
@@ -55,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`)].map((p) => ({
+    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`)].map((p) => ({
       url: `${BASE}${p}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

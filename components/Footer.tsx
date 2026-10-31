@@ -24,6 +24,7 @@ const services = [
   { label: 'Dératisation', href: '/services/deratisation' },
   { label: 'Désinfection', href: '/services/desinfection' },
   { label: 'Chenilles processionnaires', href: '/services/chenilles-processionnaires' },
+  { label: 'Acariens', href: '/services/acariens' },
 ]
 
 

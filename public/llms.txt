@@ -107,6 +107,11 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Traitements et prévention](https://allonuisibleidf.fr/blog/chenilles-processionnaires-traitement-prevention)
 - 30 pages villes : https://allonuisibleidf.fr/chenilles-processionnaires/[commune]. Val-de-Marne (21 communes, dont [Sucy-en-Brie](https://allonuisibleidf.fr/chenilles-processionnaires/sucy-en-brie) et [Vincennes](https://allonuisibleidf.fr/chenilles-processionnaires/vincennes)), Hauts-de-Seine ([Neuilly-sur-Seine](https://allonuisibleidf.fr/chenilles-processionnaires/neuilly-sur-seine), [Saint-Cloud](https://allonuisibleidf.fr/chenilles-processionnaires/saint-cloud), [Sceaux](https://allonuisibleidf.fr/chenilles-processionnaires/sceaux), [Rueil-Malmaison](https://allonuisibleidf.fr/chenilles-processionnaires/rueil-malmaison), [Meudon](https://allonuisibleidf.fr/chenilles-processionnaires/meudon)), Yvelines ([Saint-Germain-en-Laye](https://allonuisibleidf.fr/chenilles-processionnaires/saint-germain-en-laye), [Versailles](https://allonuisibleidf.fr/chenilles-processionnaires/versailles), [Le Vésinet](https://allonuisibleidf.fr/chenilles-processionnaires/le-vesinet), [Maisons-Laffitte](https://allonuisibleidf.fr/chenilles-processionnaires/maisons-laffitte)).
 
+## Acariens
+
+- [Traitement anti-acariens en Île-de-France](https://allonuisibleidf.fr/services/acariens) : vapeur sèche, cryogénie ou pulvérisation acaricide sur la literie, les canapés, les tapis et les textiles, dès 120 € TTC pour une chambre
+- 15 pages villes du Val-de-Marne : https://allonuisibleidf.fr/acariens/[commune], par exemple [Créteil](https://allonuisibleidf.fr/acariens/creteil) ou [Vincennes](https://allonuisibleidf.fr/acariens/vincennes)
+
 ## Zones
 
 - [Toutes les zones d'intervention](https://allonuisibleidf.fr/zones)

@@ -11,6 +11,7 @@ import { getVillePunaises } from '@/lib/villes-punaises'
 import { getVilleCafards } from '@/lib/villes-cafards'
 import { getVilleSouris } from '@/lib/villes-souris'
 import { getVilleChenilles } from '@/lib/villes-chenilles'
+import { getVilleAcariens } from '@/lib/villes-acariens'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -46,6 +47,7 @@ export default function CommunePage({ params }: { params: Params }) {
   const villeCafards = getVilleCafards(c.slug)
   const villeSouris = getVilleSouris(c.slug)
   const villeChenilles = getVilleChenilles(c.slug)
+  const villeAcariens = getVilleAcariens(c.slug)
   // Paragraphe propre à la commune, repris de sa page service la plus détaillée
   const local = (villeDerat ?? villeChenilles ?? villePunaises)?.contexte[0]
 
@@ -163,6 +165,11 @@ export default function CommunePage({ params }: { params: Params }) {
             {villeChenilles && (
               <a href={`/chenilles-processionnaires/${villeChenilles.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
                 Tout savoir sur les chenilles processionnaires {villeChenilles.a} <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {villeAcariens && (
+              <a href={`/acariens/${villeAcariens.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+                Traitement anti-acariens {villeAcariens.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
           </div>
