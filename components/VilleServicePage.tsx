@@ -34,6 +34,8 @@ export type VilleServiceConfig = {
   cachettes: { titre: string; items: string[]; signes: string }
   methodes: { titre: string; tag: string; texte: string; href?: string }[]
   encadre: { titre: string; intro?: string; items: string[] }
+  // Méthode de remplacement, présentée après les méthodes principales (ex. Ekomille pour les souris)
+  alternative?: { surtitre: string; titre: string; texte: string; href: string; lien: string }
   guides: { href: string; label: string }[]
   sources: { label: string; url: string }[]
   maj: string
@@ -255,6 +257,14 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 ))}
               </ul>
             </div>
+            )}
+            {c.alternative && (
+              <div className="rounded-2xl p-6 mt-6" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>{c.alternative.surtitre}</p>
+                <p className="text-lg font-black text-white mb-2">{c.alternative.titre}</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-3">{c.alternative.texte}</p>
+                <a href={c.alternative.href} className="text-sm font-bold underline" style={{ color: ACCENT }}>{c.alternative.lien}</a>
+              </div>
             )}
           </div>
         </section>

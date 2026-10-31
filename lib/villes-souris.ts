@@ -43,6 +43,13 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
     { titre: 'Postes d\'appâtage sécurisés', tag: 'Traitement de fond', texte: 'Boîtiers verrouillés contenant un rodenticide professionnel, inaccessibles aux enfants et aux animaux. Réservés aux techniciens certifiés Certibiocide.' },
     { titre: 'Colmatage des accès', tag: 'Indispensable', texte: 'Une souris passe par une ouverture de la taille d\'un crayon. Nous bouchons les passages de tuyaux, les bas de portes et les gaines avec des matériaux qu\'elles ne rongent pas.', href: '/blog/souris-par-ou-entrent-elles' },
   ],
+  alternative: {
+    surtitre: 'Vous ne voulez pas de mort-aux-rats ?',
+    titre: 'Alternative : le piège multicapture Ekomille',
+    texte: 'Si vous préférez éviter tout raticide, nous pouvons poser un piège Ekomille sur le passage le plus fréquenté, avec des appâts alimentaires. La souris tombe dans une cuve fermée et y reste, au lieu de mourir dans une cloison ou un meuble.',
+    href: '/blog/deratisation-sans-mort-aux-rats',
+    lien: 'Comment fonctionne le piège Ekomille',
+  },
   encadre: {
     titre: 'Prévenir le retour des souris',
     items: [

@@ -27,7 +27,7 @@ export const METHODES: Record<string, Methode> = {
     titre: 'Rats et souris : piège Ekomille, postes d\'appâtage ou pièges connectés',
     texte: 'Selon le lieu, nous posons des postes d\'appâtage sécurisés avec raticide professionnel, ou des pièges mécaniques et connectés. Dans tous les cas, nous trouvons par où les rongeurs entrent et nous bouchons ces passages, sinon d\'autres reviennent.',
     points: [
-      'Piège multicapture Ekomille, sans raticide, contre les rats',
+      'Sans mort-aux-rats si vous le souhaitez : piège multicapture Ekomille',
       'Postes d\'appâtage sécurisés et verrouillés',
       'Pièges mécaniques ou de capture',
       'Pièges connectés qui signalent chaque capture (commerces, copropriétés)',

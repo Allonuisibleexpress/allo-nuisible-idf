@@ -1512,7 +1512,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Et la « dératisation écologique » ?" },
       { t: 'p', x: "C'est une recherche très fréquente. Le terme est séduisant mais imprécis : aucune méthode n'est sans impact, et la loi encadre strictement ce type d'allégation. Ce que la plupart des gens veulent dire, c'est une **dératisation sans poison**. C'est possible, et voici comment." },
       { t: 'h2', x: "Notre solution phare : le piège multicapture Ekomille" },
-      { t: 'p', x: "**Ekomille** est un appareil électromécanique de **capture multiple et continue** des rats. Il fonctionne uniquement avec des **appâts alimentaires**, sans raticide. C'est l'outil que nous mettons en avant quand il y a des enfants, des animaux ou une activité alimentaire." },
+      { t: 'p', x: "**Ekomille** est un appareil électromécanique de **capture multiple et continue** des rats et des souris. Il fonctionne uniquement avec des **appâts alimentaires**, sans raticide. C'est la solution que nous proposons quand vous ne souhaitez pas de mort-aux-rats, en particulier avec des enfants, des animaux ou une activité alimentaire." },
       { t: 'h3', x: "Comment il fonctionne" },
       { t: 'ol', items: [
         "**Nous le posons sur le passage le plus fréquenté** par les rats, repéré pendant le diagnostic.",
