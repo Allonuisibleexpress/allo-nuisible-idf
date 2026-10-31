@@ -21,7 +21,7 @@ export const CONFIG_CHENILLES: VilleServiceConfig = {
     'Méthodes : retrait et destruction des nids, écopièges sur les troncs, pièges à phéromones contre les papillons, conseils de prévention.',
     'Techniciens équipés contre les poils urticants : combinaison, gants, masque et lunettes.',
     'Calendrier : retrait des nids de la processionnaire du pin en hiver, écopièges avant la descente, phéromones en été.',
-    'Devis gratuit, intervention 7j/7 dans le Val-de-Marne.',
+    'Devis gratuit, intervention 7j/7 en Île-de-France.',
   ],
   cachettes: {
     titre: 'Où les repérer',
@@ -162,6 +162,30 @@ const ville = (nom: string, a: string, slug: string, secteur: Secteur, local: st
   }
 }
 
+const DEPTS = {
+  '78': { departement: 'Yvelines', zoneHref: '/zones/yvelines' },
+  '92': { departement: 'Hauts-de-Seine', zoneHref: '/zones/hauts-de-seine' },
+  '94': { departement: 'Val-de-Marne', zoneHref: '' },
+} as const
+
+const villeLocale = (nom: string, a: string, slug: string, code: keyof typeof DEPTS, contexte: [string, string], proches: string[], faq: { q: string; a: string }): VilleChenilles => {
+  const d = DEPTS[code]
+  const titres = [`Chenilles processionnaires ${a} (${code})`, `Chenilles processionnaires ${a}`]
+  return {
+    slug,
+    nom,
+    a,
+    code,
+    departement: d.departement,
+    zoneHref: d.zoneHref || `/zones/val-de-marne/${slug}`,
+    title: titres.find((x) => x.length <= 60) ?? titres[1],
+    description: `Chenilles processionnaires ${a} : retrait des nids, écopièges et pièges à phéromones sur pins et chênes. Techniciens équipés, devis gratuit.`,
+    contexte,
+    proches,
+    faq: [faq, ...FAQ_COMMUNE(a)],
+  }
+}
+
 export const VILLES_CHENILLES: VilleChenilles[] = [
   // Est et plateau briard
   ville('Sucy-en-Brie', 'à Sucy-en-Brie', 'sucy-en-brie', 'plateau', 'Entre son centre ancien, ses quartiers pavillonnaires et les bois qui l\'entourent, Sucy-en-Brie compte beaucoup de grands arbres, et donc de nids à surveiller chaque hiver.', ['Boissy-Saint-Léger', 'Noiseau', 'Ormesson-sur-Marne', 'Chennevières-sur-Marne']),
@@ -184,6 +208,63 @@ export const VILLES_CHENILLES: VilleChenilles[] = [
   ville('Chennevières-sur-Marne', 'à Chennevières-sur-Marne', 'chennevieres-sur-marne', 'marne', 'À Chennevières-sur-Marne, entre bords de Marne et quartiers pavillonnaires, les jardins arborés et les coteaux sont exposés aux deux espèces de processionnaires.', ['Ormesson-sur-Marne', 'Champigny-sur-Marne', 'Saint-Maur-des-Fossés', 'Sucy-en-Brie']),
   ville('Champigny-sur-Marne', 'à Champigny-sur-Marne', 'champigny-sur-marne', 'marne', 'À Champigny-sur-Marne, les nombreux pavillons avec jardin et les espaces verts au bord de la Marne demandent une surveillance des pins et des chênes.', ['Bry-sur-Marne', 'Chennevières-sur-Marne', 'Saint-Maur-des-Fossés', 'Villiers-sur-Marne']),
   ville('Nogent-sur-Marne', 'à Nogent-sur-Marne', 'nogent-sur-marne', 'marne', 'À Nogent-sur-Marne, entre le Bois de Vincennes et la Marne, les jardins et résidences arborés peuvent accueillir des nids, notamment sur les chênes et les pins isolés.', ['Le Perreux-sur-Marne', 'Fontenay-sous-Bois', 'Joinville-le-Pont', 'Bry-sur-Marne']),
+
+  // Ouest parisien et Bois de Vincennes (31/10/2026) : communes aisées et très arborées
+  villeLocale('Saint-Germain-en-Laye', 'à Saint-Germain-en-Laye', 'saint-germain-en-laye', '78', [
+    'Saint-Germain-en-Laye est bordée par sa grande forêt domaniale, et la carte forestière de l\'IGN (BD Forêt) y recense environ 67 hectares de forêt de pin sylvestre : c\'est l\'une des communes de l\'ouest parisien les plus exposées à la processionnaire du pin. Les chênes, très nombreux dans la forêt, accueillent aussi la processionnaire du chêne.',
+    'Les propriétés en lisière, les villas aux grands jardins et les résidences arborées reçoivent chaque année des papillons venus de la forêt. Les nids apparaissent en hiver au bout des branches des pins, puis les chenilles descendent en procession vers les pelouses et les allées.',
+  ], ['Le Pecq', 'Maisons-Laffitte', 'Le Vésinet', 'Mareil-Marly', 'Chambourcy'],
+  { q: 'La forêt de Saint-Germain fait-elle venir les chenilles dans mon jardin ?', a: 'Oui. Les papillons sortent en été et volent vers les pins et les chênes bien exposés des jardins proches pour pondre. Les maisons en lisière doivent inspecter leurs arbres chaque automne, et poser des écopièges avant la descente des chenilles.' }),
+  villeLocale('Versailles', 'à Versailles', 'versailles', '78', [
+    'À Versailles, les grandes avenues plantées, les jardins des quartiers de Montreuil, Clagny-Glatigny ou Porchefontaine et les résidences entourées d\'espaces verts offrent de nombreux pins, cèdres et chênes où les processionnaires s\'installent.',
+    'Nous intervenons chez les particuliers, en copropriété et pour les établissements (écoles, résidences seniors, entreprises). Les arbres des voies publiques et du domaine national relèvent de leurs gestionnaires : en cas de nids sur un arbre de rue, prévenez la mairie.',
+  ], ['Le Chesnay-Rocquencourt', 'Viroflay', 'Buc', 'Saint-Cyr-l\'École', 'Jouy-en-Josas'],
+  { q: 'Un nid est sur un arbre de la rue devant chez moi : qui doit intervenir ?', a: 'Pour un arbre de voirie ou d\'un espace public, c\'est le gestionnaire (mairie, département ou domaine) qui intervient : signalez-le. Pour un arbre de votre jardin ou de votre copropriété, c\'est au propriétaire ou au syndic de faire traiter.' }),
+  villeLocale('Le Vésinet', 'au Vésinet', 'le-vesinet', '78', [
+    'Ville-parc dessinée autour de pelouses, de lacs et de grandes propriétés, Le Vésinet compte une densité d\'arbres remarquable, avec beaucoup de pins et de cèdres dans les jardins. C\'est un terrain idéal pour la processionnaire du pin.',
+    'Sur les grandes pelouses et les allées, les processions de fin d\'hiver passent souvent par les zones de jeux et de promenade. Les familles avec enfants et chiens ont intérêt à faire retirer les nids dès qu\'ils sont visibles, en hiver.',
+  ], ['Chatou', 'Croissy-sur-Seine', 'Le Pecq', 'Montesson'],
+  { q: 'Les chenilles sont-elles dangereuses pour mon chien ?', a: 'Oui, très. Un chien qui lèche ou mord une chenille peut avoir une langue gravement abîmée. Rincez sa gueule à l\'eau sans frotter et allez chez le vétérinaire en urgence. Au jardin, gardez-le loin des pieds de pins de février à avril.' }),
+  villeLocale('Maisons-Laffitte', 'à Maisons-Laffitte', 'maisons-laffitte', '78', [
+    'À Maisons-Laffitte, le parc, ses avenues bordées d\'arbres et la forêt de Saint-Germain toute proche forment un grand ensemble boisé. Pins et chênes y accueillent les deux espèces de processionnaires.',
+    'La ville est aussi la cité du cheval, avec ses écuries et ses pistes d\'entraînement. Les poils urticants des chenilles irritent la peau, les yeux et la bouche des animaux : autour des écuries et des paddocks, les nids doivent être repérés et retirés tôt.',
+  ], ['Le Mesnil-le-Roi', 'Sartrouville', 'Saint-Germain-en-Laye', 'Le Pecq'],
+  { q: 'Les chenilles processionnaires sont-elles dangereuses pour les chevaux ?', a: 'Oui. Leurs poils urticants peuvent provoquer des réactions sur la peau, les yeux et la bouche des chevaux, notamment s\'ils broutent près d\'une procession ou d\'un nid tombé. Retirez les nids proches des paddocks et appelez le vétérinaire en cas de réaction.' }),
+  villeLocale('Neuilly-sur-Seine', 'à Neuilly-sur-Seine', 'neuilly-sur-seine', '92', [
+    'Neuilly-sur-Seine touche le Bois de Boulogne, et ses hôtels particuliers, villas et résidences ont souvent des jardins arborés. Pins et cèdres y sont fréquents : un seul arbre bien exposé peut suffire à la processionnaire du pin.',
+    'En copropriété, les nids se trouvent souvent dans les jardins intérieurs, au-dessus des allées ou près des aires de jeux. Nous intervenons discrètement, avec un compte rendu pour le syndic.',
+  ], ['Levallois-Perret', 'Courbevoie', 'Puteaux', 'Boulogne-Billancourt', 'Paris 16e'],
+  { q: 'Il y a des nids dans le jardin de ma copropriété : qui doit agir ?', a: 'Le jardin commun relève du syndicat des copropriétaires : prévenez le syndic, qui fait intervenir un professionnel. Si l\'arbre est sur une partie privative, c\'est au copropriétaire concerné de le faire traiter.' }),
+  villeLocale('Saint-Cloud', 'à Saint-Cloud', 'saint-cloud', '92', [
+    'Saint-Cloud s\'étage sur ses coteaux face à la Seine, entre le grand parc du domaine national et des quartiers de villas comme Montretout. Les jardins en pente, riches en grands arbres, accueillent pins et chênes.',
+    'Avec le parc tout proche, les papillons de la processionnaire du chêne trouvent facilement de quoi pondre au printemps. Sur les chênes, les nids sont aplatis contre le tronc et les grosses branches : ils se voient moins que ceux du pin, mais sont tout aussi urticants.',
+  ], ['Sèvres', 'Garches', 'Suresnes', 'Boulogne-Billancourt', 'Ville-d\'Avray'],
+  { q: 'Comment reconnaître la processionnaire du chêne ?', a: 'Ses nids sont plaqués contre le tronc ou les grosses branches des chênes, au printemps et en été, et non en boule au bout des branches comme sur les pins. Les chenilles se déplacent en groupe sur le tronc. Ne vous approchez pas : leurs poils sont très urticants.' }),
+  villeLocale('Sceaux', 'à Sceaux', 'sceaux', '92', [
+    'Sceaux est une ville verte, autour de son grand parc départemental, avec beaucoup de maisons et de jardins arborés. Les cèdres et les pins des propriétés privées sont les premiers choisis par la processionnaire du pin.',
+    'Les écoles, crèches et résidences de la ville demandent une attention particulière à la fin de l\'hiver, quand les chenilles descendent : une procession qui traverse une cour ou un jardin d\'enfants doit être signalée et traitée rapidement.',
+  ], ['Bourg-la-Reine', 'Fontenay-aux-Roses', 'Châtenay-Malabry', 'Antony', 'Le Plessis-Robinson'],
+  { q: 'Une école ou une crèche peut-elle vous faire intervenir ?', a: 'Oui. Nous intervenons pour les établissements recevant des enfants, en dehors des heures de présence si besoin, avec retrait des nids et pose d\'écopièges. Un compte rendu est remis au gestionnaire.' }),
+  villeLocale('Rueil-Malmaison', 'à Rueil-Malmaison', 'rueil-malmaison', '92', [
+    'Rueil-Malmaison associe de grands quartiers pavillonnaires, le parc du Bois-Préau et la forêt domaniale de la Malmaison sur les hauteurs de Buzenval. Pins et chênes sont nombreux dans les jardins proches des bois.',
+    'Les maisons en lisière de forêt voient arriver les papillons chaque été. Inspecter ses pins à l\'automne et poser des écopièges sur les troncs avant la fin de l\'hiver évite que les chenilles ne descendent sur la pelouse.',
+  ], ['Nanterre', 'Suresnes', 'Bougival', 'Garches', 'Chatou'],
+  { q: 'Quand poser un écopiège sur mon pin ?', a: 'Avant la descente des chenilles, donc en hiver, idéalement dès que les nids sont repérés. L\'écopiège entoure le tronc et capture les chenilles quand elles descendent pour s\'enterrer, à la fin de l\'hiver ou au début du printemps selon la météo.' }),
+  villeLocale('Meudon', 'à Meudon', 'meudon', '92', [
+    'Meudon est l\'une des villes les plus boisées des Hauts-de-Seine, avec sa grande forêt domaniale, majoritairement plantée de chênes. De Bellevue à Meudon-la-Forêt, de nombreux jardins touchent la forêt.',
+    'La processionnaire du chêne y est la plus à craindre, au printemps et en été. Les pins et cèdres des jardins peuvent aussi porter des nids de la processionnaire du pin en hiver. Sur les sentiers et aux abords des maisons, mieux vaut ne jamais toucher un nid tombé : il reste urticant.',
+  ], ['Issy-les-Moulineaux', 'Sèvres', 'Clamart', 'Chaville', 'Vélizy-Villacoublay'],
+  { q: 'Un vieux nid tombé au sol est-il encore dangereux ?', a: 'Oui. Les poils urticants restent actifs longtemps dans les nids, même vides. Ne le ramassez pas à mains nues et ne le balayez pas : cela disperse les poils. Faites-le retirer par un professionnel équipé.' }),
+  villeLocale('Vincennes', 'à Vincennes', 'vincennes', '94', [
+    'Vincennes est une ville dense, mais collée au Bois de Vincennes, avec des jardins de copropriété, des cours plantées et des squares. Pins et chênes du bois et des jardins proches peuvent accueillir des nids.',
+    'En ville, le risque concerne surtout les cours d\'immeubles, les squares et les jardins d\'écoles, où enfants et chiens passent tous les jours. Un seul nid sur un arbre de cour suffit à disperser des poils urticants sur les allées.',
+  ], ['Saint-Mandé', 'Fontenay-sous-Bois', 'Montreuil', 'Nogent-sur-Marne'],
+  { q: 'Peut-on avoir des chenilles processionnaires en ville ?', a: 'Oui, dès qu\'il y a des pins ou des chênes : cours d\'immeubles, squares, jardins de copropriété. La proximité du Bois de Vincennes augmente le risque. Nous intervenons même dans les petits espaces, avec retrait des nids et écopièges.' }),
+  villeLocale('Saint-Mandé', 'à Saint-Mandé', 'saint-mande', '94', [
+    'Saint-Mandé, petite ville résidentielle aux portes de Paris, borde le Bois de Vincennes et le lac de Saint-Mandé. Les résidences arborées et les jardins proches du bois sont les plus concernés par les processionnaires.',
+    'Les arbres du bois et des espaces publics relèvent de leurs gestionnaires. Dans les jardins privés et de copropriété, nous retirons les nids et posons des écopièges, en prévenant le syndic si besoin.',
+  ], ['Vincennes', 'Saint-Maurice', 'Charenton-le-Pont', 'Paris 12e'],
+  { q: 'Que faire si je vois une procession sur un trottoir près du Bois ?', a: 'Ne la touchez pas, éloignez enfants et chiens, et signalez-la à la mairie si elle est sur l\'espace public. Si les chenilles viennent d\'un arbre de votre résidence, faites retirer les nids et poser un écopiège sur le tronc.' }),
 ]
 
 export function getVilleChenilles(slug: string) {
