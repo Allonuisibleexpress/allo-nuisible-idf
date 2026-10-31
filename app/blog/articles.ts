@@ -1501,7 +1501,7 @@ export const ARTICLES: Article[] = [
     date: '2026-10-31',
     category: 'Rongeurs',
     readMin: 7,
-    tldr: "La mort-aux-rats (raticide) est un poison : mal utilisée, elle présente un risque pour les enfants, les chiens et les chats. On peut s'en passer dans la plupart des logements, en combinant plusieurs méthodes : boucher les accès, poser un clapet anti-retour, supprimer la nourriture, et utiliser des pièges mécaniques, de capture ou connectés. Notre solution phare est le piège multicapture Ekomille : le rongeur, attiré par un appât alimentaire, tombe dans une cuve fermée et reste dans l'appareil, au lieu d'aller mourir dans la rue ou dans une cloison. Le raticide reste utile dans certains cas (grosse colonie, réseaux, copropriété), mais seulement en postes verrouillés posés par un professionnel certifié.",
+    tldr: "La mort-aux-rats (raticide) est un poison : mal utilisée, elle présente un risque pour les enfants, les chiens et les chats. On peut s'en passer dans la plupart des logements, en combinant plusieurs méthodes : boucher les accès, poser un clapet anti-retour, supprimer la nourriture, et utiliser des pièges mécaniques, de capture ou connectés. La méthode la plus courante reste le raticide en postes d'appâtage sécurisés ; comme méthode alternative, nous proposons le piège multicapture Ekomille : le rongeur, attiré par un appât alimentaire, tombe dans une cuve fermée et reste dans l'appareil, au lieu d'aller mourir dans la rue ou dans une cloison. Le raticide doit toujours être placé en postes verrouillés, par un professionnel certifié.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Un enfant qui marche à quatre pattes, un chien qui fouille partout, un chat qui chasse : quand on a des rats ou des souris, la première inquiétude est souvent la même. Faut-il vraiment mettre du poison ? Dans la majorité des cas, non." },
@@ -1511,8 +1511,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Le danger vient surtout des produits répandus en vrac : granulés au sol, pâte posée derrière un meuble, appâts achetés hors des circuits autorisés. C'est précisément ce que nous trouvons le plus souvent chez les particuliers qui ont essayé de se débrouiller seuls." },
       { t: 'h2', x: "Et la « dératisation écologique » ?" },
       { t: 'p', x: "C'est une recherche très fréquente. Le terme est séduisant mais imprécis : aucune méthode n'est sans impact, et la loi encadre strictement ce type d'allégation. Ce que la plupart des gens veulent dire, c'est une **dératisation sans poison**. C'est possible, et voici comment." },
-      { t: 'h2', x: "Notre solution phare : le piège multicapture Ekomille" },
-      { t: 'p', x: "**Ekomille** est un appareil électromécanique de **capture multiple et continue** des rats et des souris. Il fonctionne uniquement avec des **appâts alimentaires**, sans raticide. C'est la solution que nous proposons quand vous ne souhaitez pas de mort-aux-rats, en particulier avec des enfants, des animaux ou une activité alimentaire." },
+      { t: 'h2', x: "Une méthode alternative : le piège multicapture Ekomille" },
+      { t: 'p', x: "**Ekomille** est un appareil électromécanique de **capture multiple et continue** des rats et des souris. Il fonctionne uniquement avec des **appâts alimentaires**, sans raticide. La méthode la plus courante reste les postes d'appâtage sécurisés avec raticide : Ekomille est la méthode alternative que nous proposons quand vous ne souhaitez pas de mort-aux-rats, par exemple avec des enfants, des animaux ou une activité alimentaire." },
       { t: 'h3', x: "Comment il fonctionne" },
       { t: 'ol', items: [
         "**Nous le posons sur le passage le plus fréquenté** par les rats, repéré pendant le diagnostic.",
@@ -1520,7 +1520,7 @@ export const ARTICLES: Article[] = [
         "**Le rongeur bascule dans une cuve fermée** remplie d'un liquide de conservation, où il meurt. Le cadavre reste conservé à l'intérieur de l'appareil, sans se décomposer.",
         "**L'appareil compte les captures**, et en version connectée il nous signale son activité : nous savons quand intervenir pour le vider et le recharger.",
       ] },
-      { t: 'callout', tone: 'ok', title: 'Pourquoi c\'est mieux que la mort-aux-rats', x: "Avec un poison, le rat ne meurt pas tout de suite : il repart et meurt n'importe où, dans la rue, au jardin, dans une cloison ou un faux plafond. Impossible de savoir où, et le cadavre reste à portée des chiens et des enfants, avec des odeurs pendant des jours. Avec l'Ekomille, le rongeur meurt dans l'appareil fermé : rien ne traîne dehors, et nous récupérons les captures." },
+      { t: 'callout', tone: 'ok', title: 'Ce qu\'il change par rapport à la mort-aux-rats', x: "Avec un poison, le rat ne meurt pas tout de suite : il repart et meurt n'importe où, dans la rue, au jardin, dans une cloison ou un faux plafond. Impossible de savoir où, et le cadavre reste à portée des chiens et des enfants, avec des odeurs pendant des jours. Avec l'Ekomille, le rongeur meurt dans l'appareil fermé : rien ne traîne dehors, et nous récupérons les captures." },
       { t: 'p', x: "Nous l'utilisons à l'intérieur comme à l'extérieur des bâtiments : jardins et sous-sols de maisons, parties communes et locaux poubelles de copropriétés, restaurants, commerces et entrepôts alimentaires, où il s'intègre dans le plan de maîtrise sanitaire (HACCP)." },
       { t: 'h2', x: "Les 6 autres méthodes sans mort-aux-rats" },
       { t: 'h3', x: "1. Boucher les accès" },
@@ -1542,8 +1542,8 @@ export const ARTICLES: Article[] = [
         "**Le chat** : il peut attraper quelques souris, mais ne règle pas une colonie de rats installée.",
         "**Reboucher un terrier actif** : les rats creusent une autre sortie. Voir [trou dans le jardin](/blog/trou-dans-le-jardin).",
       ] },
-      { t: 'h2', x: "Et quand le raticide reste nécessaire ?" },
-      { t: 'p', x: "Pour une grosse colonie, dans des réseaux, un parking ou les parties communes d'une copropriété, le raticide professionnel reste parfois la solution la plus efficace. Dans ce cas, il est placé **dans des postes d'appâtage verrouillés**, fixés et inaccessibles aux enfants et aux animaux, par un technicien titulaire du **Certibiocide**. Vous choisissez avec le technicien, après le diagnostic." },
+      { t: 'h2', x: "La méthode la plus courante : les postes d'appâtage" },
+      { t: 'p', x: "Dans la plupart des dératisations, la méthode la plus courante reste le raticide professionnel. Il est placé **dans des postes d'appâtage verrouillés**, fixés et inaccessibles aux enfants et aux animaux, par un technicien titulaire du **Certibiocide**. Les méthodes sans poison présentées ici sont des alternatives : vous choisissez avec le technicien, après le diagnostic." },
       { t: 'h2', x: "Comment se passe une dératisation sans poison chez vous" },
       { t: 'ol', items: [
         "**Diagnostic** : quel rongeur, par où il entre, ce qui l'attire.",
@@ -1554,7 +1554,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Notre [dératisation](/services/deratisation) est à partir de 120 € TTC, avec un devis gratuit établi sur place et une garantie 1 an. Pour mieux connaître l'ennemi, lisez notre article sur le [mode de vie du rat](/blog/rat-mode-de-vie)." },
     ],
     faq: [
-      { q: "Qu'est-ce que le piège Ekomille ?", a: "Un appareil électromécanique de capture multiple et continue des rats, qui fonctionne avec des appâts alimentaires. Le rongeur tombe dans une cuve fermée contenant un liquide de conservation et reste dans l'appareil, au lieu de mourir dans la rue ou dans une cloison." },
+      { q: "Qu'est-ce que le piège Ekomille ?", a: "Un appareil électromécanique de capture multiple et continue des rats et des souris, qui fonctionne avec des appâts alimentaires. C'est une méthode alternative aux postes avec raticide, qui restent la méthode la plus courante. Le rongeur tombe dans une cuve fermée contenant un liquide de conservation et reste dans l'appareil, au lieu de mourir dans la rue ou dans une cloison." },
       { q: "Peut-on se débarrasser des rats sans mort-aux-rats ?", a: "Oui, dans la plupart des logements : colmatage des accès, clapet anti-retour, suppression de la nourriture, et pièges mécaniques, de capture ou connectés posés sur les passages." },
       { q: "La mort-aux-rats est-elle dangereuse pour mon chien ou mon chat ?", a: "Oui. Un animal peut s'intoxiquer en avalant l'appât ou en mangeant un rongeur empoisonné. En cas de doute, appelez votre vétérinaire en urgence." },
       { q: "Mon enfant a peut-être touché ou avalé de la mort-aux-rats, que faire ?", a: "Appelez immédiatement le 15 ou un centre antipoison, en gardant l'emballage du produit à portée de main." },
@@ -1566,7 +1566,7 @@ export const ARTICLES: Article[] = [
       { label: 'Office français de la biodiversité, fiche Rat surmulot', url: 'https://ofb.gouv.fr/especes/rat-surmulot-rattus-norvegicus' },
       { label: 'Edialux France, fiche technique Ekomille', url: 'https://edialux.fr/pieges-a-rats-et-multicatch/1408-7015-ekomille.html' },
     ],
-    cta: { title: 'Des rongeurs, des enfants ou des animaux à la maison ?', text: "N'hésitez pas à nous contacter : nous vous proposons une dératisation sans poison, avec piège Ekomille ou autres pièges, adaptée à votre logement. Devis gratuit, garantie 1 an." },
+    cta: { title: 'Des rongeurs, des enfants ou des animaux à la maison ?', text: "N'hésitez pas à nous contacter : postes d'appâtage sécurisés ou, en méthode alternative, piège Ekomille et autres pièges sans poison, selon votre logement. Devis gratuit, garantie 1 an." },
   },
 ]
 

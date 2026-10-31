@@ -34,7 +34,7 @@ export type VilleServiceConfig = {
   cachettes: { titre: string; items: string[]; signes: string }
   methodes: { titre: string; tag: string; texte: string; href?: string }[]
   encadre: { titre: string; intro?: string; items: string[] }
-  // Méthode de remplacement, présentée après les méthodes principales (ex. Ekomille pour les souris)
+  // Méthode alternative, présentée après les méthodes principales (ex. Ekomille pour les souris)
   alternative?: { surtitre: string; titre: string; texte: string; href: string; lien: string }
   guides: { href: string; label: string }[]
   sources: { label: string; url: string }[]

@@ -13,11 +13,11 @@ const data: ServiceData = {
     { price: 'Sur devis', label: 'Professionnel' },
     { price: 'Sur devis', label: 'Copropriété' },
   ],
-  trustBar: ['Certibiocide', 'Ekomille sans raticide', 'Postes sécurisés', 'Pièges connectés', 'Attestation HACCP', 'Contrats annuels', 'RC Pro incluse'],
+  trustBar: ['Certibiocide', 'Postes sécurisés', 'Alternative Ekomille', 'Pièges connectés', 'Attestation HACCP', 'Contrats annuels', 'RC Pro incluse'],
   benefits: [
     { icon: 'pin', title: 'Inspection & cartographie complète', text: 'Identification des points d\'entrée, zones de nidification et couloirs de passage. Cartographie détaillée pour un traitement ciblé. On ne traite pas à l\'aveugle.' },
     { icon: 'lock', title: 'Postes d\'appâtage sécurisés', text: 'Boîtiers verrouillés contenant des raticides de 2e génération. Inaccessibles aux enfants et animaux. Relevés réguliers pour contrôler l\'efficacité et ajuster si nécessaire.' },
-    { icon: 'zap', title: 'Sans raticide : Ekomille et pièges', text: 'Quand vous le préférez (enfants, animaux, potager) : piège multicapture Ekomille contre les rats et les souris, qui garde le rongeur dans une cuve fermée au lieu de le laisser mourir dehors, ou pièges mécaniques, de capture et connectés qui signalent chaque capture.' },
+    { icon: 'zap', title: 'Méthode alternative : Ekomille et pièges', text: 'Si vous ne voulez pas de raticide (enfants, animaux, potager) : piège multicapture Ekomille contre les rats et les souris, qui garde le rongeur dans une cuve fermée au lieu de le laisser mourir dehors, ou pièges mécaniques, de capture et connectés qui signalent chaque capture.' },
     { icon: 'building', title: 'Professionnels & copropriétés', text: 'Attestations HACCP, rapports d\'intervention et registres de suivi pour restaurants, commerces, EHPAD et syndics. Contrats de maintenance mensuelle ou trimestrielle disponibles.' },
   ],
   process: [
