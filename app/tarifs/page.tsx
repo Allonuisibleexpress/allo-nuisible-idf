@@ -19,8 +19,8 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/guepes-frelons',
     tiers: [
       { label: 'Nid accessible', price: '89', details: 'Jusqu\'à 5 m environ : auvent, cabanon, haie' },
-      { label: 'Nid en hauteur', price: null, details: 'Perche télescopique', highlight: true },
-      { label: 'Nid difficile d\'accès', price: null, details: 'Toiture, combles, cheminée. Nacelle : sur devis' },
+      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
+      { label: 'Nid difficile d\'accès', price: '199', details: 'Toiture, combles, cheminée. Nacelle : sur devis' },
     ],
   },
   {
@@ -99,7 +99,7 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     href: '/services/chenilles-processionnaires',
     tiers: [
       { label: 'Nid accessible', price: '89', details: 'Retrait et destruction du nid' },
-      { label: 'Nid en hauteur', price: null, details: 'Perche télescopique', highlight: true },
+      { label: 'Nid en hauteur', price: '149', details: 'Perche télescopique', highlight: true },
       { label: 'Grand arbre, nacelle', price: null, details: 'Selon la hauteur et le nombre de nids' },
     ],
   },

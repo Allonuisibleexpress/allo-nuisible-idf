@@ -152,7 +152,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             <ol className="space-y-5">
               {[
                 ['Diagnostic', 'Identification de l\'espèce (surmulot, rat noir, souris), des points d\'entrée, des couloirs de passage et des zones de nidification.'],
-                ['Dispositif adapté', 'Postes d\'appâtage sécurisés et verrouillés avec raticide professionnel, ou pièges mécaniques et connectés qui signalent chaque capture.'],
+                ['Dispositif adapté', 'Piège multicapture Ekomille sans raticide, postes d\'appâtage sécurisés et verrouillés avec raticide professionnel, ou pièges mécaniques et connectés qui signalent chaque capture.'],
                 ['Colmatage', 'Fermeture des accès trouvés (grilles, gaines, passages de tuyaux, bas de portes). Sans cette étape, d\'autres rongeurs reviennent.'],
                 ['Suivi et garantie', 'Contrôle des postes ou des pièges, ajustement si besoin, garantie 1 an et attestation pour les professionnels.'],
               ].map(([t, txt], i) => (
@@ -165,6 +165,15 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                 </li>
               ))}
             </ol>
+            <div className="rounded-2xl p-6 mt-8" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>Sans mort-aux-rats</p>
+              <p className="text-lg font-black text-white mb-2">Le piège multicapture Ekomille {v.a}</p>
+              <p className="text-white/70 text-sm leading-relaxed mb-3">
+                Posé sur le passage le plus fréquenté et appâté avec des appâts alimentaires, il fait tomber le rat dans une cuve fermée où il reste.
+                Pas de cadavre dans la rue, au jardin ou dans une cloison, à portée des enfants et des chiens.
+              </p>
+              <a href="/blog/deratisation-sans-mort-aux-rats" className="text-sm font-bold underline" style={{ color: ACCENT }}>Comment fonctionne le piège Ekomille</a>
+            </div>
             <p className="text-white/60 text-sm mt-8">
               Pour aller plus loin : <a href="/services/deratisation" className="underline" style={{ color: ACCENT }}>notre page dératisation</a>
               {' '}et <a href="/services/rongeurs" className="underline" style={{ color: ACCENT }}>le traitement des rats et souris</a>.
