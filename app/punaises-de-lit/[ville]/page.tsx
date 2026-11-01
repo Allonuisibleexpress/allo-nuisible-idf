@@ -46,8 +46,10 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const rang = Math.max(0, VILLES_PUNAISES.findIndex((x) => x.slug === v.slug))
   const enBrefComplet = [
-    `Allo Nuisible IDF traite les punaises de lit ${v.a} (${v.departement}, ${v.code}) et dans les communes proches : ${v.proches.join(', ')}.`,
-    'Méthodes sans produit : cryogénie (neige carbonique à environ −78 °C) et vapeur sèche, qui tuent punaises et œufs au contact.',
+    v.code === '75'
+      ? `Allo Nuisible IDF traite les punaises de lit ${v.a}, par traitement insecticide ou sans insecticide (cryogénie et vapeur sèche), et dans les arrondissements voisins : ${v.proches.join(', ')}.`
+      : `Allo Nuisible IDF traite les punaises de lit ${v.a} (${v.departement}, ${v.code}), par traitement insecticide ou sans insecticide (cryogénie et vapeur sèche), et dans les communes proches : ${v.proches.join(', ')}.`,
+    'Sans insecticide : cryogénie (neige carbonique à environ −78 °C) et vapeur sèche, qui tuent punaises et œufs au contact.',
     'Protocole mixte : cryogénie et vapeur, plus une barrière insecticide très légère et rémanente, renouvelée au deuxième passage.',
     'Infestation importante : traitement insecticide professionnel par un technicien certifié Certibiocide.',
     'Intervention possible le jour même, 7j/7. Devis gratuit, deuxième passage et garantie 1 an.',
@@ -163,7 +165,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Nos méthodes de traitement {v.a}</h2>
             <p className="text-white/55 mb-8 max-w-2xl">
-              Avec ou sans produit : le technicien vous propose la méthode adaptée à votre logement et à l&apos;infestation, et vous explique son choix avant d&apos;intervenir.
+              Traitement insecticide professionnel ou sans insecticide, avec la cryogénie et la vapeur sèche : le technicien vous propose la méthode adaptée à votre logement et vous explique son choix avant d&apos;intervenir.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {METHODES_PUNAISES.map((m) => (
