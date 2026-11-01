@@ -54,6 +54,10 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   ]
   const generales = enBrefComplet.slice(1)
   const db = rang % generales.length
+  // Encadré « en attendant » et questions générales en alternance d'une ville à l'autre
+  const avecEncadre = rang % 2 === 0
+  const generalesFaq = v.faq.filter((f) => !v.faq.slice(0, v.faq.length - 2).includes(f))
+  const faq = [...v.faq.slice(0, v.faq.length - 2), generalesFaq[rang % generalesFaq.length]]
   const enBref = [enBrefComplet[0], ...[...generales.slice(db), ...generales.slice(0, db)].slice(0, 3)]
 
   const jsonLd = {
@@ -70,7 +74,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
       },
       {
         '@type': 'FAQPage',
-        mainEntity: v.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+        mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -175,6 +179,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               ))}
             </div>
 
+            {avecEncadre && (
             <div className="rounded-2xl p-6 mt-6" style={card}>
               <h3 className="text-lg font-black text-white mb-3">Ce que vous pouvez faire en attendant</h3>
               <p className="text-white/60 text-sm mb-3">Recommandé par le site du gouvernement stop-punaises.gouv.fr, pour le linge et les effets personnels :</p>
@@ -190,6 +195,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                 ))}
               </ul>
             </div>
+            )}
           </div>
         </section>
 
@@ -219,7 +225,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
-              {v.faq.map((f) => (
+              {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
                     {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
