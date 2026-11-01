@@ -15,7 +15,7 @@ const nuisibles: {
   {
     icon: 'punaises-de-lit',
     name: 'Punaises de lit',
-    desc: 'Éradication totale · Insecticide professionnel · Garantie 1 an',
+    desc: 'Insecticide ou sans insecticide · 2 passages inclus · Garantie 1 an',
     href: '/services/punaises-de-lit',
     urgency: 'Urgent',
   },
@@ -75,6 +75,13 @@ const nuisibles: {
     href: '/services/chenilles-processionnaires',
     urgency: null,
   },
+  {
+    icon: 'acariens',
+    name: 'Acariens',
+    desc: 'Vapeur sèche · Cryogénie · Literie, canapés et tapis',
+    href: '/services/acariens',
+    urgency: null,
+  },
 ]
 
 export default function NosNuisibles() {
@@ -102,8 +109,8 @@ export default function NosNuisibles() {
           <div className="w-12 h-1 rounded-full mt-5" style={{ background: ACCENT }} />
         </div>
 
-        {/* Grille — 2 cols mobile / 4 cols desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        {/* Grille : 2 colonnes mobile, 5 colonnes ordinateur */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
           {nuisibles.map(({ icon, name, desc, href, urgency }) => (
             <a
               key={name}
