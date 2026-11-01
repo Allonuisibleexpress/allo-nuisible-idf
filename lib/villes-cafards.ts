@@ -130,14 +130,16 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleCafards = Ville & { title: string }
 
-const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleCafards => ({
+// Val-de-Marne par défaut ; Paris passe { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }
+type Dep = { code: string; departement: string; zoneHref: string }
+const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }, dep?: Dep): VilleCafards => ({
   slug,
   nom,
   a,
-  code: '94',
-  departement: 'Val-de-Marne',
-  zoneHref: `/zones/val-de-marne/${slug}`,
-  title: `Cafards ${a} (94), intervention 7j/7`,
+  code: dep?.code ?? '94',
+  departement: dep?.departement ?? 'Val-de-Marne',
+  zoneHref: dep?.zoneHref ?? `/zones/val-de-marne/${slug}`,
+  title: `Cafards ${a} (${dep?.code ?? '94'}), intervention 7j/7`,
   description: `Cafards et blattes ${a} : gel professionnel, insecticide, vapeur sèche ou cryogénie, 2 passages inclus. Techniciens Certibiocide, devis gratuit.`,
   contexte,
   proches,
@@ -198,6 +200,69 @@ export const VILLES_CAFARDS: VilleCafards[] = [
     'Plus on intervient tôt, plus le traitement est simple. Gel appât, insecticide ciblé, vapeur sèche ou cryogénie : nous proposons toutes les méthodes, avec 2 passages.',
   ], ['Villecresnes', 'Marolles-en-Brie', 'Mandres-les-Roses', 'Périgny'],
   { q: 'Comment savoir si j\'ai des cafards ?', a: 'Insectes qui fuient à la lumière la nuit, petites crottes noires comme du poivre moulu, oothèques brunes derrière les meubles, odeur désagréable dans les placards.' }),
+
+  ville('Maisons-Alfort', 'à Maisons-Alfort', 'maisons-alfort', [
+    'Entre la Marne et la Seine, Maisons-Alfort mêle quartiers pavillonnaires, comme Charentonneau, et grands ensembles. Dans les immeubles, la blatte germanique colonise les cuisines ; dans les pavillons anciens, la blatte orientale préfère les caves et les sous-sols humides.',
+    'Le traitement commence par l\'identification de l\'espèce. Gel appât professionnel dans les zones de passage, insecticide ciblé et vapeur sèche dans les recoins, en 2 passages pour atteindre les jeunes éclos entre-temps.',
+    'Dans les pavillons des bords de Marne, pensez aux regards et aux siphons de sol du sous-sol : un siphon sec laisse passer les blattes depuis les canalisations. Remplir d\'eau les siphons peu utilisés est un geste simple et utile.',
+  ], ['Saint-Maurice', 'Alfortville', 'Charenton-le-Pont', 'Créteil'],
+  { q: 'Des cafards dans une maison avec sous-sol, est-ce fréquent ?', a: 'Oui, surtout la blatte orientale, qui aime les sous-sols frais et humides et remonte par les canalisations. Réparer les fuites, aérer et boucher les passages de tuyaux complète le traitement.' }),
+
+  ville('Joinville-le-Pont', 'à Joinville-le-Pont', 'joinville-le-pont', [
+    'À Joinville-le-Pont, au bord de la Marne, résidences récentes, petits immeubles et maisons se côtoient près des berges. Les cafards s\'installent dans les cuisines, les locaux poubelles et les gaines des résidences, et arrivent souvent avec des cartons ou un logement voisin.',
+    'Dans une résidence, un traitement coordonné avec le syndic donne les meilleurs résultats. Pour un appartement isolé, gel appât, insecticide ciblé ou vapeur sèche, toujours en 2 passages.',
+    'Les résidences récentes ne sont pas épargnées : les cafards voyagent dans les cartons de déménagement. Après une installation, déballez vite et sortez les cartons, plutôt que de les garder dans un placard ou à la cave.',
+  ], ['Saint-Maurice', 'Saint-Maur-des-Fossés', 'Nogent-sur-Marne', 'Champigny-sur-Marne'],
+  { q: 'Faut-il prévenir le syndic si j\'ai des cafards ?', a: 'C\'est conseillé. Les cafards passent par les gaines et les colonnes d\'eau : si plusieurs appartements sont touchés, un traitement des logements concernés et des parties communes évite qu\'ils reviennent.' }),
+
+  ville('Paris 12e', 'à Paris 12e', 'paris-12', [
+    'Dans le 12e arrondissement, des immeubles haussmanniens de Daumesnil aux résidences de Bercy, les cafards profitent des colonnes d\'eau, des vide-ordures et des commerces de bouche, nombreux autour du marché d\'Aligre et de la gare de Lyon.',
+    'Restaurants, boulangeries et épiceries reçoivent une attestation d\'intervention et peuvent souscrire un suivi régulier. En appartement, protocole en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie.',
+    'Dans les immeubles haussmanniens, les anciennes cuisines donnent souvent sur une courette et un escalier de service : vérifiez les passages de tuyaux sous l\'évier et derrière les meubles hauts, les blattes y circulent d\'un étage à l\'autre.',
+  ], ['Saint-Mandé', 'Charenton-le-Pont', 'Vincennes', 'Paris 11e'],
+  { q: 'Mon immeuble a un vide-ordures, est-ce un risque ?', a: 'Oui, les vide-ordures et locaux poubelles offrent chaleur et nourriture aux cafards, qui remontent ensuite par les gaines. Un traitement du local et des appartements touchés, puis un nettoyage régulier du conduit, limitent le problème.' }, { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }),
+
+  ville('Alfortville', 'à Alfortville', 'alfortville', [
+    'Alfortville, à la confluence de la Seine et de la Marne, est une commune dense, faite surtout d\'immeubles et de résidences. Les blattes germaniques passent d\'un logement à l\'autre par les gaines techniques, les colonnes d\'eau et les passages de canalisations.',
+    'Dans les grands immeubles, nous pouvons traiter plusieurs appartements le même jour pour éviter que les cafards se déplacent chez le voisin. Gel appât, insecticide et vapeur sèche, en 2 passages.',
+    'Dans les tours et grands immeubles, signaler vite la présence de cafards au gardien ou au bailleur permet de traiter les colonnes avant que toute la cage d\'escalier soit touchée.',
+  ], ['Maisons-Alfort', 'Ivry-sur-Seine', 'Vitry-sur-Seine', 'Créteil'],
+  { q: 'Pourquoi les cafards reviennent-ils après un traitement fait soi-même ?', a: 'Les bombes du commerce tuent les cafards visibles mais pas les oothèques, ni la colonie cachée dans les gaines. Elles dispersent même les insectes vers d\'autres pièces. Le gel professionnel, en 2 passages, atteint toute la colonie.' }),
+
+  ville('Créteil', 'à Créteil', 'creteil', [
+    'Préfecture du Val-de-Marne, Créteil réunit grands ensembles, résidences autour du lac, pavillons, hôpitaux, université et centre commercial. Dans les immeubles, les cafards circulent par les gaines et les vide-ordures ; dans les commerces, ils s\'installent dans les réserves.',
+    'Particuliers, bailleurs et professionnels n\'ont pas les mêmes besoins : traitement d\'un appartement en 2 passages, intervention sur plusieurs logements d\'une résidence, ou suivi régulier avec attestation pour un commerce.',
+    'Dans les résidences avec vide-ordures, le conduit et le local en bas d\'immeuble sont souvent le point de départ. Fermer les sacs, ne rien jeter en vrac et signaler un local sale au gestionnaire limite fortement les blattes.',
+  ], ['Maisons-Alfort', 'Alfortville', 'Saint-Maur-des-Fossés', 'Bonneuil-sur-Marne'],
+  { q: 'Le bailleur doit-il payer le traitement contre les cafards ?', a: 'Le logement doit être remis au locataire exempt de nuisibles. Si les cafards apparaissent en cours de bail, prévenez votre bailleur par écrit : quand l\'infestation touche plusieurs logements, le traitement est souvent organisé à l\'échelle de l\'immeuble. Renseignez-vous auprès de l\'ADIL du Val-de-Marne.' }),
+
+  ville('Ivry-sur-Seine', 'à Ivry-sur-Seine', 'ivry-sur-seine', [
+    'Ancienne ville industrielle au bord de la Seine, Ivry-sur-Seine mêle immeubles, résidences récentes, entrepôts et commerces. Les cafards y arrivent par les livraisons, les cartons stockés et les gaines des immeubles.',
+    'Pour les entrepôts, restaurants et commerces alimentaires, nous mettons en place un suivi avec attestation. En logement, gel appât et insecticide ciblé, complétés par la vapeur sèche dans les recoins de la cuisine.',
+    'Dans les lofts et logements aménagés dans d\'anciens locaux d\'activité, les gaines et les faux plafonds sont nombreux : le technicien les inspecte avec une lampe et un miroir pour repérer les colonies cachées.',
+  ], ['Vitry-sur-Seine', 'Alfortville', 'Charenton-le-Pont', 'Le Kremlin-Bicêtre'],
+  { q: 'Des cafards dans un entrepôt ou une réserve, que faire ?', a: 'Inspectez les cartons à la réception, stockez les marchandises surélevées et loin des murs, et faites poser un gel appât professionnel dans les zones chaudes (moteurs, compresseurs). Un suivi régulier détecte tôt une nouvelle colonie.' }),
+
+  ville('Saint-Maur-des-Fossés', 'à Saint-Maur-des-Fossés', 'saint-maur-des-fosses', [
+    'Dans la boucle de la Marne, Saint-Maur-des-Fossés est surtout pavillonnaire, avec des quartiers comme La Varenne, Le Parc ou Adamville, et des résidences près des gares. Dans les maisons, les cafards s\'installent dans les cuisines, les buanderies et les sous-sols humides.',
+    'En maison, nous traitons les pièces touchées et vérifions les points d\'entrée : canalisations, bouches d\'aération, cartons stockés au sous-sol. Gel appât, insecticide ciblé ou vapeur sèche, en 2 passages.',
+    'Les vérandas, buanderies et cuisines d\'été des maisons saint-mauriennes restent chaudes et humides : ce sont des refuges classiques pour les blattes, à inspecter en même temps que la cuisine principale.',
+  ], ['Saint-Maurice', 'Joinville-le-Pont', 'Créteil', 'Champigny-sur-Marne'],
+  { q: 'Un cafard isolé dans la maison, faut-il s\'inquiéter ?', a: 'Un cafard vu en journée signale souvent une colonie déjà installée, car ils sortent surtout la nuit. Vérifiez derrière le réfrigérateur, sous l\'évier et autour du lave-vaisselle : petites crottes noires et oothèques brunes confirment l\'infestation.' }),
+
+  ville('Fontenay-sous-Bois', 'à Fontenay-sous-Bois', 'fontenay-sous-bois', [
+    'En bordure du Bois de Vincennes, Fontenay-sous-Bois réunit immeubles, quartiers pavillonnaires et le pôle de bureaux du Val de Fontenay. Les cafards s\'installent dans les cuisines d\'appartement, les restaurants d\'entreprise et les locaux techniques.',
+    'Pour les bureaux et restaurants, nous intervenons en dehors des heures d\'ouverture, avec attestation. Chez les particuliers, protocole en 2 passages, avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie.',
+    'Dans les cuisines collectives et les espaces de pause, les cafards se cachent dans les moteurs des réfrigérateurs, des distributeurs et des machines à café, où il fait chaud en permanence.',
+  ], ['Vincennes', 'Nogent-sur-Marne', 'Montreuil', 'Saint-Mandé'],
+  { q: 'Peut-on traiter des bureaux sans fermer ?', a: 'Oui. Le gel appât et la vapeur sèche peuvent être appliqués en dehors des heures de travail, sans gêner l\'activité. Si une pulvérisation est nécessaire, le technicien indique le temps d\'aération avant le retour des équipes.' }),
+
+  ville('Vitry-sur-Seine', 'à Vitry-sur-Seine', 'vitry-sur-seine', [
+    'Grande commune au bord de la Seine, Vitry-sur-Seine mêle grands ensembles, pavillons, zones d\'activité et commerces. Les cafards circulent dans les immeubles par les gaines et les vide-ordures, et s\'installent dans les réserves des commerces.',
+    'Que ce soit un appartement, une résidence entière ou un local professionnel, le traitement se fait en 2 passages : gel appât professionnel, insecticide ciblé et vapeur sèche, selon les pièces et l\'infestation.',
+    'Dans les grands ensembles, une intervention groupée sur plusieurs appartements d\'une même cage d\'escalier, organisée avec le bailleur, évite que les cafards fassent la navette entre voisins.',
+  ], ['Ivry-sur-Seine', 'Alfortville', 'Choisy-le-Roi', 'Villejuif'],
+  { q: 'Combien de temps pour se débarrasser des cafards ?', a: 'Il faut compter quelques semaines : le premier passage réduit fortement la colonie, le second, 2 à 3 semaines plus tard, élimine les jeunes éclos des oothèques. La garantie 1 an couvre le traitement.' }),
 ]
 
 export function getVilleCafards(slug: string) {

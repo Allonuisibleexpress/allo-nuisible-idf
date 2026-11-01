@@ -141,14 +141,16 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleSouris = Ville & { title: string }
 
-const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleSouris => ({
+// Val-de-Marne par défaut ; Paris passe { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }
+type Dep = { code: string; departement: string; zoneHref: string }
+const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }, dep?: Dep): VilleSouris => ({
   slug,
   nom,
   a,
-  code: '94',
-  departement: 'Val-de-Marne',
-  zoneHref: `/zones/val-de-marne/${slug}`,
-  title: `Souris ${a} (94) : traitement et prévention`,
+  code: dep?.code ?? '94',
+  departement: dep?.departement ?? 'Val-de-Marne',
+  zoneHref: dep?.zoneHref ?? `/zones/val-de-marne/${slug}`,
+  title: `Souris ${a} (${dep?.code ?? '94'}) : traitement et prévention`,
   description: `Souris ${a} : pièges mécaniques ou connectés, postes sécurisés et colmatage des accès. Techniciens Certibiocide, 7j/7, devis gratuit.`,
   contexte,
   proches,
@@ -209,6 +211,69 @@ export const VILLES_SOURIS: VilleSouris[] = [
     'Dans les dépendances et lieux de stockage, les pièges connectés évitent des visites inutiles. Dans la maison, pièges ou postes sécurisés, toujours avec le colmatage des accès.',
   ], ['Villecresnes', 'Marolles-en-Brie', 'Mandres-les-Roses', 'Périgny'],
   { q: 'Pourquoi des souris après les moissons ?', a: 'Quand les champs sont fauchés, souris et mulots perdent abri et nourriture et se rapprochent des maisons et des dépendances. Vérifiez alors les bas de portes et les passages de tuyaux.' }),
+
+  ville('Maisons-Alfort', 'à Maisons-Alfort', 'maisons-alfort', [
+    'À Maisons-Alfort, entre la Marne, la Seine et de nombreux pavillons avec jardin, les souris entrent dans les maisons à l\'automne par les garages, les soupiraux et les passages de canalisations. Dans les immeubles, elles montent par les gaines depuis les caves.',
+    'La méthode la plus courante reste les postes d\'appâtage sécurisés, verrouillés et hors de portée. Nous posons aussi des pièges mécaniques selon le lieu, et nous bouchons toujours les accès.',
+    'Dans les maisons avec jardin, rangez les sacs de terreau, de graines pour oiseaux et de croquettes dans des boîtes fermées : ce sont des réserves de nourriture idéales pour les souris du garage.',
+  ], ['Saint-Maurice', 'Alfortville', 'Charenton-le-Pont', 'Créteil'],
+  { q: 'Des souris dans le garage, faut-il traiter la maison ?', a: 'Souvent oui : le garage est la porte d\'entrée, et les souris gagnent vite la cuisine ou les combles. Le technicien traite le garage, vérifie la maison et bouche le passage entre les deux.' }),
+
+  ville('Joinville-le-Pont', 'à Joinville-le-Pont', 'joinville-le-pont', [
+    'À Joinville-le-Pont, entre les bords de Marne et le Bois de Vincennes, les souris passent facilement des espaces verts aux résidences et aux maisons, surtout quand le froid arrive. Caves, locaux poubelles et cuisines sont les premiers touchés.',
+    'En résidence, les parties communes doivent être traitées en même temps que les appartements. Postes d\'appâtage sécurisés, la méthode la plus courante, ou pièges, avec colmatage des accès.',
+    'Les locaux à vélos et poussettes des résidences, peu fréquentés la nuit, servent souvent de refuge aux souris : gardez-les dégagés et signalez au gestionnaire toute trace de crottes.',
+  ], ['Saint-Maurice', 'Saint-Maur-des-Fossés', 'Nogent-sur-Marne', 'Champigny-sur-Marne'],
+  { q: 'Pourquoi des souris près des bords de Marne ?', a: 'Les berges et les espaces verts leur offrent abri et nourriture. Quand il fait froid, elles se rapprochent des bâtiments les plus proches. Près de l\'eau, on rencontre aussi le rat brun : le technicien identifie le rongeur avant de traiter.' }),
+
+  ville('Paris 12e', 'à Paris 12e', 'paris-12', [
+    'Dans le 12e arrondissement, les souris circulent par les caves, les gaines et les faux plafonds des immeubles anciens, et profitent des nombreux commerces de bouche autour d\'Aligre, de Bercy et de la gare de Lyon.',
+    'Pour les restaurants et commerces, nous posons des postes sécurisés ou des pièges connectés avec suivi des captures et attestation. En appartement, postes ou pièges selon la situation, et colmatage des passages.',
+    'Autour des marchés et des commerces de bouche, les souris profitent des déchets alimentaires : dans votre immeuble, les poubelles bien fermées et le local à ordures propre sont la première protection.',
+  ], ['Saint-Mandé', 'Charenton-le-Pont', 'Vincennes', 'Paris 11e'],
+  { q: 'Une souris dans un appartement parisien, d\'où vient-elle ?', a: 'Le plus souvent des caves ou d\'un commerce du rez-de-chaussée : elle monte par les gaines techniques, les colonnes et les doublages. Boucher les passages autour des tuyaux, sous l\'évier et derrière la cuisine est indispensable.' }, { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }),
+
+  ville('Alfortville', 'à Alfortville', 'alfortville', [
+    'À Alfortville, commune dense entre la Seine et la Marne, les souris passent d\'un appartement à l\'autre par les gaines techniques, les faux plafonds et les caves des immeubles.',
+    'Un traitement efficace associe les logements touchés et les parties communes. La méthode la plus courante reste les postes d\'appâtage sécurisés ; si vous ne souhaitez pas de raticide, le piège Ekomille est une méthode alternative.',
+    'En appartement, les souris se glissent derrière les plinthes et sous l\'évier par les passages de tuyaux. Un simple tour avec une lampe derrière la cuisine et les placards bas suffit souvent à trouver leur entrée.',
+  ], ['Maisons-Alfort', 'Ivry-sur-Seine', 'Vitry-sur-Seine', 'Créteil'],
+  { q: 'J\'entends des grattements dans le plafond, est-ce une souris ?', a: 'Très souvent. Les souris se déplacent la nuit dans les faux plafonds et les doublages. Des crottes petites et pointues dans les placards ou derrière l\'électroménager confirment leur présence.' }),
+
+  ville('Créteil', 'à Créteil', 'creteil', [
+    'À Créteil, entre le lac, les parcs, les grands ensembles et les quartiers pavillonnaires, les souris s\'installent dans les caves et locaux poubelles des résidences comme dans les garages et cuisines des maisons.',
+    'Nous intervenons chez les particuliers, pour les bailleurs et dans les commerces : postes d\'appâtage sécurisés, la méthode la plus courante, pièges mécaniques ou connectés selon le lieu, et fermeture des accès.',
+    'Près du lac et des parcs, les souris des espaces verts se rapprochent des immeubles à l\'automne : les rez-de-chaussée et les caves sont alors les premiers concernés.',
+  ], ['Maisons-Alfort', 'Alfortville', 'Saint-Maur-des-Fossés', 'Bonneuil-sur-Marne'],
+  { q: 'Les souris sont-elles dangereuses pour la santé ?', a: 'Elles peuvent souiller les aliments et les surfaces par leurs déjections et leur urine. Jetez les denrées entamées, nettoyez avec des gants et faites traiter rapidement, car une souris se reproduit très vite.' }),
+
+  ville('Ivry-sur-Seine', 'à Ivry-sur-Seine', 'ivry-sur-seine', [
+    'À Ivry-sur-Seine, entre entrepôts, commerces, résidences récentes et immeubles anciens, les souris trouvent facilement nourriture et abri. Les réserves, les locaux techniques et les caves sont les plus exposés.',
+    'Pour les professionnels, les pièges connectés signalent chaque capture et évitent des visites inutiles, avec attestation d\'intervention. En logement, postes d\'appâtage sécurisés ou pièges, toujours avec colmatage.',
+    'Dans les commerces et réserves, stockez les marchandises sur des étagères à distance du mur et du sol : cela facilite l\'inspection et prive les souris de cachettes.',
+  ], ['Vitry-sur-Seine', 'Alfortville', 'Charenton-le-Pont', 'Le Kremlin-Bicêtre'],
+  { q: 'Qu\'est-ce qu\'un piège connecté ?', a: 'C\'est un piège qui envoie une alerte à chaque capture. Il permet d\'intervenir rapidement, de suivre l\'évolution de l\'infestation et de garder une trace pour un contrôle sanitaire, sans multiplier les passages.' }),
+
+  ville('Saint-Maur-des-Fossés', 'à Saint-Maur-des-Fossés', 'saint-maur-des-fosses', [
+    'À Saint-Maur-des-Fossés, commune surtout pavillonnaire dans la boucle de la Marne, les souris entrent dans les maisons à l\'automne par les garages, les sous-sols, les soupiraux et les passages de câbles.',
+    'Dans une maison, elles s\'installent vite dans les combles et les doublages. Nous repérons leurs passages, posons des postes d\'appâtage sécurisés ou des pièges, et refermons les ouvertures avec des matériaux qu\'elles ne rongent pas.',
+    'Les vieux murs de meulière, fréquents dans les maisons de la boucle, ont souvent des joints dégradés : ce sont autant de passages pour les souris, à reboucher après le traitement.',
+  ], ['Saint-Maurice', 'Joinville-le-Pont', 'Créteil', 'Champigny-sur-Marne'],
+  { q: 'Quels matériaux pour boucher un trou de souris ?', a: 'De la laine d\'acier ou une grille métallique, scellée au mortier ou au mastic. La mousse expansive seule ne suffit pas : les souris la rongent facilement.' }),
+
+  ville('Fontenay-sous-Bois', 'à Fontenay-sous-Bois', 'fontenay-sous-bois', [
+    'À Fontenay-sous-Bois, en bordure du Bois de Vincennes, les souris passent des espaces boisés aux maisons et aux immeubles dès les premiers froids. Les bureaux et restaurants d\'entreprise du Val de Fontenay sont aussi concernés.',
+    'Pour les bureaux, nous intervenons en dehors des heures de travail avec des pièges connectés et un suivi des captures. Chez les particuliers, postes sécurisés ou pièges, et colmatage des accès.',
+    'Dans les maisons proches du bois, les abris de jardin et les tas de bois de chauffage contre la façade servent de relais aux souris : éloignez-les de quelques mètres de la maison.',
+  ], ['Vincennes', 'Nogent-sur-Marne', 'Montreuil', 'Saint-Mandé'],
+  { q: 'Des souris dans des bureaux, que faire ?', a: 'Ne laissez pas de nourriture dans les tiroirs et les espaces de pause, et prévenez le gestionnaire du bâtiment. Le traitement porte sur les zones de passage, les faux plafonds et les gaines, avec un suivi jusqu\'à disparition des traces.' }),
+
+  ville('Vitry-sur-Seine', 'à Vitry-sur-Seine', 'vitry-sur-seine', [
+    'À Vitry-sur-Seine, entre pavillons avec jardin, grands ensembles et zones d\'activité, les souris s\'installent aussi bien dans les garages et cuisines des maisons que dans les caves et locaux poubelles des immeubles.',
+    'Postes d\'appâtage sécurisés, la méthode la plus courante, pièges mécaniques ou connectés selon le lieu : le traitement s\'accompagne toujours du colmatage des entrées. En méthode alternative, sans raticide, le piège Ekomille.',
+    'Dans les pavillons, une mangeoire à oiseaux ou un compost près de la maison attire souvent les souris : placez-les au fond du jardin et ramassez les graines tombées.',
+  ], ['Ivry-sur-Seine', 'Alfortville', 'Choisy-le-Roi', 'Villejuif'],
+  { q: 'Combien de souris y a-t-il quand on en voit une ?', a: 'Souvent plusieurs : les souris vivent en groupe et sortent surtout la nuit. Voir une souris en journée indique en général qu\'elles sont déjà bien installées. Mieux vaut faire traiter sans attendre.' }),
 ]
 
 export function getVilleSouris(slug: string) {
