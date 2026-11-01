@@ -4365,5 +4365,380 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Les Antes",
    "Rungis Ville"
   ]
+ },
+ "clamart": {
+  "slug": "clamart",
+  "nom": "Clamart",
+  "paris": false,
+  "population": 58576,
+  "surfaceKm2": 8.76,
+  "densite": 6687,
+  "cp": [
+   "92140"
+  ],
+  "distParis": 9.6,
+  "direction": "sud-ouest",
+  "gares": [
+   "Clamart",
+   "Hôpital Béclère",
+   "Georges Pompidou",
+   "Soleil Levant",
+   "Mail de la Plaine",
+   "Pavé Blanc",
+   "Jardin Parisien"
+  ],
+  "lignes": [
+   "TRAM 6",
+   "TRAM 10",
+   "TRAIN N"
+  ],
+  "eaux": [],
+  "verts": [
+   "Bois de Verrières",
+   "Parc de la Maison Blanche",
+   "Parc Beauséjour"
+  ],
+  "jardins": 1,
+  "voisines": [
+   "Le Plessis-Robinson",
+   "Meudon",
+   "Fontenay-aux-Roses",
+   "Châtillon"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Petit Clamart",
+   "La Gare",
+   "Percy",
+   "Jardin Parisien"
+  ]
+ },
+ "gennevilliers": {
+  "slug": "gennevilliers",
+  "nom": "Gennevilliers",
+  "paris": false,
+  "population": 50979,
+  "surfaceKm2": 11.63,
+  "densite": 4384,
+  "cp": [
+   "92230"
+  ],
+  "distParis": 9.9,
+  "direction": "nord-ouest",
+  "gares": [
+   "Le Luth",
+   "Les Grésillons",
+   "Timbaud",
+   "Les Agnettes",
+   "Les Courtilles",
+   "Gennevilliers",
+   "Le Village",
+   "Parc des Chanteraines"
+  ],
+  "lignes": [
+   "RER C",
+   "METRO 13",
+   "TRAM 1"
+  ],
+  "eaux": [
+   "La Seine",
+   "Petit bras de la Seine",
+   "Chenal d'Entrée Ouest"
+  ],
+  "verts": [
+   "Parc des Chanteraines",
+   "Parc des Sévines",
+   "Parc des Sports"
+  ],
+  "jardins": 5,
+  "voisines": [
+   "Asnières-sur-Seine",
+   "Bois-Colombes",
+   "Villeneuve-la-Garenne",
+   "L'Île-Saint-Denis"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Grésillons",
+   "Fossé de l'Aumône",
+   "Village Chandon",
+   "Luth",
+   "Agnettes"
+  ]
+ },
+ "suresnes": {
+  "slug": "suresnes",
+  "nom": "Suresnes",
+  "paris": false,
+  "population": 48956,
+  "surfaceKm2": 3.8,
+  "densite": 12895,
+  "cp": [
+   "92150"
+  ],
+  "distParis": 9.8,
+  "direction": "ouest",
+  "gares": [
+   "Suresnes-Mont-Valérien",
+   "Belvédère",
+   "Suresnes-Longchamp"
+  ],
+  "lignes": [
+   "TRAM 2",
+   "TRAIN L",
+   "TRAIN U"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc du Mont-Valérien",
+   "Parc du Château",
+   "Square Léon Bourgeois"
+  ],
+  "jardins": 2,
+  "voisines": [
+   "Puteaux",
+   "Rueil-Malmaison",
+   "Nanterre",
+   "Saint-Cloud"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Cité Jardins",
+   "Plateau Ouest",
+   "Carnot Gambetta",
+   "Plateau Nord",
+   "République",
+   "Bas de Suresnes"
+  ]
+ },
+ "montrouge": {
+  "slug": "montrouge",
+  "nom": "Montrouge",
+  "paris": false,
+  "population": 46324,
+  "surfaceKm2": 2.07,
+  "densite": 22372,
+  "cp": [
+   "92120"
+  ],
+  "distParis": 4.8,
+  "direction": "sud-ouest",
+  "gares": [
+   "Mairie de Montrouge"
+  ],
+  "lignes": [
+   "METRO 4"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc Jean-Loup Metton",
+   "Parc Renaudel",
+   "Mini-Forêt Miyawaki"
+  ],
+  "jardins": 6,
+  "voisines": [
+   "Paris 14e",
+   "Malakoff",
+   "Arcueil",
+   "Gentilly"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Châtillon-Montrouge",
+   "Dispensaire",
+   "Stade",
+   "Jean Jaurès",
+   "Jules Ferry",
+   "Piscine"
+  ]
+ },
+ "bagneux": {
+  "slug": "bagneux",
+  "nom": "Bagneux",
+  "paris": false,
+  "population": 44572,
+  "surfaceKm2": 4.18,
+  "densite": 10653,
+  "cp": [
+   "92220"
+  ],
+  "distParis": 6.8,
+  "direction": "sud-ouest",
+  "gares": [
+   "Barbara",
+   "Bagneux - Lucie Aubrac"
+  ],
+  "lignes": [
+   "METRO 4"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc François Mitterrand",
+   "Parc Richelieu",
+   "Parc Gabriel Cosson"
+  ],
+  "jardins": 2,
+  "voisines": [
+   "Châtillon",
+   "Cachan",
+   "Fontenay-aux-Roses",
+   "Arcueil"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "puteaux": {
+  "slug": "puteaux",
+  "nom": "Puteaux",
+  "paris": false,
+  "population": 44002,
+  "surfaceKm2": 3.19,
+  "densite": 13794,
+  "cp": [
+   "92800"
+  ],
+  "distParis": 8.8,
+  "direction": "ouest",
+  "gares": [
+   "Puteaux",
+   "La Défense",
+   "Esplanade de la Défense"
+  ],
+  "lignes": [
+   "RER A",
+   "RER E",
+   "METRO 1",
+   "TRAM 2",
+   "TRAIN L",
+   "TRAIN U"
+  ],
+  "eaux": [
+   "La Seine",
+   "Petit Bras de la Seine"
+  ],
+  "verts": [
+   "Parc Lebaudy",
+   "Jardin de la rose des vents",
+   "Parc Offenbach"
+  ],
+  "jardins": 7,
+  "voisines": [
+   "Suresnes",
+   "Neuilly-sur-Seine",
+   "Courbevoie",
+   "La Garenne-Colombes"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Wallace",
+   "Seine",
+   "Wilson",
+   "République",
+   "Bergère Nord",
+   "Agora"
+  ]
+ },
+ "chatillon": {
+  "slug": "chatillon",
+  "nom": "Châtillon",
+  "paris": false,
+  "population": 36705,
+  "surfaceKm2": 2.92,
+  "densite": 12554,
+  "cp": [
+   "92320"
+  ],
+  "distParis": 7.1,
+  "direction": "sud-ouest",
+  "gares": [
+   "Division Leclerc",
+   "Parc André Malraux",
+   "Centre de Châtillon",
+   "Châtillon-Montrouge",
+   "Vauban"
+  ],
+  "lignes": [
+   "METRO 13",
+   "TRAM 6"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc André Malraux",
+   "Parc Henri Matisse",
+   "Parc des Pierrettes"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Fontenay-aux-Roses",
+   "Malakoff",
+   "Bagneux",
+   "Vanves"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Sablons",
+   "Stade",
+   "Parc",
+   "Guynemer",
+   "Ponceau",
+   "Gatinot"
+  ]
+ },
+ "chatenay-malabry": {
+  "slug": "chatenay-malabry",
+  "nom": "Châtenay-Malabry",
+  "paris": false,
+  "population": 35825,
+  "surfaceKm2": 6.37,
+  "densite": 5628,
+  "cp": [
+   "92290"
+  ],
+  "distParis": 11.4,
+  "direction": "sud-ouest",
+  "gares": [
+   "Malabry",
+   "Cité-Jardin",
+   "Petit-Châtenay",
+   "Les Peintres",
+   "LaVallée",
+   "Vallée aux Loups",
+   "Théâtre La Piscine"
+  ],
+  "lignes": [
+   "TRAM 10"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc Boisé du Parc de la Vallée-aux-Loups",
+   "Parc de la Roseraie",
+   "Parc Boisé"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Le Plessis-Robinson",
+   "Verrières-le-Buisson",
+   "Sceaux",
+   "Clamart"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Butte Rouge",
+   "Division Leclerc",
+   "Aulnay",
+   "Faulotte",
+   "Malabry",
+   "Voltaire"
+  ]
  }
 }
