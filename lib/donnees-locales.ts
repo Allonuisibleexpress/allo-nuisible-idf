@@ -5,6 +5,10 @@ export type DonneesLocales = {
   slug: string; nom: string; paris: boolean; population: number; surfaceKm2: number; densite: number
   cp: string[]; distParis: number; direction: string; gares: string[]; lignes: string[]
   eaux: string[]; verts: string[]; jardins: number; voisines: string[]; pinsHa: number; osm: boolean
+  quartiers: string[] // noms de quartiers Insee (IRIS), via data.iledefrance.fr
+  // Villes autour de Saint-Maurice : inventaire SRU 2025 (ministère du Logement) et commerces recensés sur OpenStreetMap
+  sru?: { lls: number; taux: string } | null
+  poi?: { resto: number; hotels: number; marches: string[]; commercesAlim: number }
 }
 
 export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
@@ -48,7 +52,33 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Créteil"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Adamville",
+   "La Varenne",
+   "Le Parc Saint-Maur",
+   "Le Vieux Saint-Maur",
+   "La Pie",
+   "Les Mûriers"
+  ],
+  "sru": {
+   "lls": 4121,
+   "taux": "11,50%"
+  },
+  "poi": {
+   "resto": 161,
+   "hotels": 6,
+   "marches": [
+    "Marché Diderot",
+    "Marché d'Adamville",
+    "Marché des Mûriers",
+    "Marché de La Varenne",
+    "Marché du Vieux-Saint-Maur",
+    "Marché des Marronniers",
+    "Marché de Champignol"
+   ],
+   "commercesAlim": 68
+  }
  },
  "le-vesinet": {
   "slug": "le-vesinet",
@@ -83,7 +113,12 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Le Pecq"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Merlettes",
+   "Lac Inférieur",
+   "Ibis"
+  ]
  },
  "maisons-laffitte": {
   "slug": "maisons-laffitte",
@@ -121,7 +156,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Houilles"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Tir",
+   "Napoléon",
+   "Saint-Nicolas",
+   "Charlemagne",
+   "Les Côtes",
+   "Marine"
+  ]
  },
  "gif-sur-yvette": {
   "slug": "gif-sur-yvette",
@@ -158,7 +201,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Gometz-la-Ville"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Chevry Neuveries",
+   "Damiette Belleville",
+   "Coudraies-Hacquinière-Abbaye",
+   "Chevry Plaine",
+   "Moulon-Vatonne-Centre",
+   "Coupières Mérantaise"
+  ]
  },
  "fontainebleau": {
   "slug": "fontainebleau",
@@ -192,7 +243,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Barbizon"
   ],
   "pinsHa": 4461.4,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "le-perreux-sur-marne": {
   "slug": "le-perreux-sur-marne",
@@ -228,7 +280,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Fontenay-sous-Bois"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Parclairs",
+   "L'Orage",
+   "Les Corluis",
+   "Iris",
+   "Le Thillard",
+   "La Prairie de Nogent"
+  ]
  },
  "nogent-sur-marne": {
   "slug": "nogent-sur-marne",
@@ -264,7 +324,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Bry-sur-Marne"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Hauts de Nogent",
+   "La Sous-Préfecture",
+   "Boulevard de Strasbourg",
+   "Place Leclerc",
+   "Les Maréchaux",
+   "Dagobert et Marie Curie"
+  ],
+  "sru": {
+   "lls": 2812,
+   "taux": "17,93%"
+  },
+  "poi": {
+   "resto": 48,
+   "hotels": 4,
+   "marches": [
+    "Marché Leclerc"
+   ],
+   "commercesAlim": 25
+  }
  },
  "bry-sur-marne": {
   "slug": "bry-sur-marne",
@@ -300,7 +380,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Noisy-le-Grand"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "La Garenne",
+   "Pépinière",
+   "Ferber Leclerc",
+   "Carnot",
+   "Les Coteaux",
+   "Centre Ancien"
+  ]
  },
  "sucy-en-brie": {
   "slug": "sucy-en-brie",
@@ -336,7 +424,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Chennevières-sur-Marne"
   ],
   "pinsHa": 2.3,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Plateau-Parc",
+   "Berges-Noyers-Poil Vert",
+   "Le Centre",
+   "La Fosse Rouge",
+   "La Cité Verte",
+   "Gare Varennes Zone Industrielle"
+  ]
  },
  "santeny": {
   "slug": "santeny",
@@ -364,7 +460,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villecresnes"
   ],
   "pinsHa": 9.4,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "vitry-sur-seine": {
   "slug": "vitry-sur-seine",
@@ -412,7 +509,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Thiais"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Auber",
+   "Rabelais Commune de Paris",
+   "Dalou",
+   "La Petite Saussaie Commune de Paris",
+   "Ferme Sud",
+   "Balzac"
+  ],
+  "sru": {
+   "lls": 15888,
+   "taux": "43,59%"
+  },
+  "poi": {
+   "resto": 77,
+   "hotels": 4,
+   "marches": [
+    "Marché du Centre"
+   ],
+   "commercesAlim": 46
+  }
  },
  "creteil": {
   "slug": "creteil",
@@ -457,7 +574,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Choisy-le-Roi"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Palais-Grand Pavois",
+   "La Brèche",
+   "Montaigut Université",
+   "Port-Source",
+   "La Habette",
+   "La Croix des Mèches"
+  ],
+  "sru": {
+   "lls": 16773,
+   "taux": "46,96%"
+  },
+  "poi": {
+   "resto": 108,
+   "hotels": 6,
+   "marches": [
+    "Marché Créteil village"
+   ],
+   "commercesAlim": 55
+  }
  },
  "champigny-sur-marne": {
   "slug": "champigny-sur-marne",
@@ -493,7 +630,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Chennevières-sur-Marne"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Quatre Cités",
+   "Bois l'Abbé",
+   "Cœuilly",
+   "Tremblay",
+   "Plant",
+   "Mordacs"
+  ]
  },
  "ivry-sur-seine": {
   "slug": "ivry-sur-seine",
@@ -536,7 +681,25 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Vitry-sur-Seine"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Cité Pierre et Marie Curie",
+   "Fort",
+   "Petit Ivry Sud",
+   "Gagarine",
+   "Monmousseau",
+   "Ivry Port Nord"
+  ],
+  "sru": {
+   "lls": 12535,
+   "taux": "44,15%"
+  },
+  "poi": {
+   "resto": 150,
+   "hotels": 19,
+   "marches": [],
+   "commercesAlim": 48
+  }
  },
  "maisons-alfort": {
   "slug": "maisons-alfort",
@@ -576,7 +739,26 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Joinville-le-Pont"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Centre Vert de Maison",
+   "Alfort",
+   "Charentonneau",
+   "Planètes"
+  ],
+  "sru": {
+   "lls": 6333,
+   "taux": "25,24%"
+  },
+  "poi": {
+   "resto": 62,
+   "hotels": 6,
+   "marches": [
+    "Marché du Centre",
+    "Marché de Charentonneau"
+   ],
+   "commercesAlim": 45
+  }
  },
  "fontenay-sous-bois": {
   "slug": "fontenay-sous-bois",
@@ -612,7 +794,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Vincennes"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Village",
+   "Les Larris",
+   "Bois Cadet",
+   "Roublot",
+   "Parapluies",
+   "Jean Zay"
+  ],
+  "sru": {
+   "lls": 7903,
+   "taux": "34,93%"
+  },
+  "poi": {
+   "resto": 78,
+   "hotels": 3,
+   "marches": [
+    "Marché Moreau David"
+   ],
+   "commercesAlim": 34
+  }
  },
  "villejuif": {
   "slug": "villejuif",
@@ -652,7 +854,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Arcueil"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Hautes Bruyères",
+   "Lion d'Or",
+   "Esselières",
+   "Guipons",
+   "République",
+   "Lebon"
+  ]
  },
  "vincennes": {
   "slug": "vincennes",
@@ -690,7 +900,22 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Bagnolet"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [],
+  "sru": {
+   "lls": 3233,
+   "taux": "13,17%"
+  },
+  "poi": {
+   "resto": 128,
+   "hotels": 10,
+   "marches": [
+    "Marché de la Place Carnot",
+    "Marché de la Rue de Fontenay",
+    "Marché de la place Diderot"
+   ],
+   "commercesAlim": 47
+  }
  },
  "alfortville": {
   "slug": "alfortville",
@@ -727,7 +952,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Saint-Maurice"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Zola Carnot",
+   "Marché Guesde",
+   "Jardin Val de Seine",
+   "Carnot Petit Pont Alouettes",
+   "Diderot Louis Blanc",
+   "Tony Garnier Soladier"
+  ],
+  "sru": {
+   "lls": 8408,
+   "taux": "40,49%"
+  },
+  "poi": {
+   "resto": 46,
+   "hotels": 5,
+   "marches": [
+    "Marché"
+   ],
+   "commercesAlim": 31
+  }
  },
  "choisy-le-roi": {
   "slug": "choisy-le-roi",
@@ -769,7 +1014,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Créteil"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Gondoles Sud I",
+   "Port",
+   "Parc Maurice-Thorez",
+   "Centre II",
+   "Parc Prairie II",
+   "Centre I"
+  ]
  },
  "le-kremlin-bicetre": {
   "slug": "le-kremlin-bicetre",
@@ -805,7 +1058,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Ivry-sur-Seine"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Closeaux-Les Martinets",
+   "Les Coquettes",
+   "Les Plantes",
+   "Barnufles",
+   "Hauts Fossés-Esselières-Sorières",
+   "Les Périchets"
+  ]
  },
  "charenton-le-pont": {
   "slug": "charenton-le-pont",
@@ -843,7 +1104,25 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Saint-Maurice"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Carrières",
+   "Valmy",
+   "Gabrielle Leclerc",
+   "Plateau",
+   "Franges du Bois de Vincennes",
+   "Conflans"
+  ],
+  "sru": {
+   "lls": 3692,
+   "taux": "25,83%"
+  },
+  "poi": {
+   "resto": 52,
+   "hotels": 3,
+   "marches": [],
+   "commercesAlim": 23
+  }
  },
  "saint-maurice": {
   "slug": "saint-maurice",
@@ -876,7 +1155,25 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Charenton-le-Pont"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Plateau",
+   "Pont",
+   "Écluse-Gravelle-Panoramis",
+   "Centre et Bras de Marne"
+  ],
+  "sru": {
+   "lls": 1572,
+   "taux": "25,55%"
+  },
+  "poi": {
+   "resto": 11,
+   "hotels": 2,
+   "marches": [
+    "Marché Émile Bertrand"
+   ],
+   "commercesAlim": 5
+  }
  },
  "thiais": {
   "slug": "thiais",
@@ -916,7 +1213,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Rungis"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Baudemons",
+   "La Prévoté",
+   "La Belle Épine",
+   "Le Martray",
+   "Les Néfliers",
+   "Le Fossé Bazin"
+  ]
  },
  "cachan": {
   "slug": "cachan",
@@ -951,7 +1256,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Bagneux"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "La Plaine",
+   "Grange-Ory Lumières",
+   "Coteau",
+   "Prairie",
+   "Pont Royal",
+   "Cité Jardins"
+  ]
  },
  "villeneuve-saint-georges": {
   "slug": "villeneuve-saint-georges",
@@ -991,7 +1304,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villeneuve-le-Roi"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Robert Schumann",
+   "Sellier",
+   "Bernard de Palissy",
+   "Victor Hugo",
+   "Gare Triage SNCF",
+   "Secteur Valenton"
+  ]
  },
  "l-hay-les-roses": {
   "slug": "l-hay-les-roses",
@@ -1025,7 +1346,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villejuif"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Petit Robinson",
+   "Jardin Parisien",
+   "Les Blondeaux",
+   "Lallier P. Hochart",
+   "La Vallée aux Renards"
+  ]
  },
  "villiers-sur-marne": {
   "slug": "villiers-sur-marne",
@@ -1059,7 +1387,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Le Plessis-Trévise"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Bois de Gaumont",
+   "Les Boutareines",
+   "Les Stades",
+   "Les Luats",
+   "Les Perroquets",
+   "Les Portes de Villiers"
+  ]
  },
  "fresnes": {
   "slug": "fresnes",
@@ -1091,7 +1427,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "L'Haÿ-les-Roses"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Domaine Pénitentiaire",
+   "Fosse aux Loups",
+   "Fleurs-Pasteur",
+   "Peupleraie",
+   "Bergonie-Frères Lumière",
+   "Vallée aux Renards"
+  ]
  },
  "limeil-brevannes": {
   "slug": "limeil-brevannes",
@@ -1126,7 +1470,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villeneuve-Saint-Georges"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Candies",
+   "Les Orchidées",
+   "Les Neufs Saulets",
+   "Les Varennes",
+   "Les Grands Champs",
+   "Saint-Martin"
+  ]
  },
  "orly": {
   "slug": "orly",
@@ -1169,7 +1521,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Choisy-le-Roi"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Nouvelet-Les Saules",
+   "Parc de la Cloche",
+   "Carrières-Sentiers",
+   "Gazier Navigateurs",
+   "Pierre au Prêtre",
+   "Vieil Orly-Centre Ville"
+  ]
  },
  "arcueil": {
   "slug": "arcueil",
@@ -1203,7 +1563,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Le Kremlin-Bicêtre"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Joliot-Curie",
+   "Laplace",
+   "Jean-Macé",
+   "Jules Ferry",
+   "Barbusse"
+  ]
  },
  "saint-mande": {
   "slug": "saint-mande",
@@ -1231,7 +1598,27 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 20e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Saint-Michel",
+   "Daumesnil",
+   "La Pelouse",
+   "Charles de Gaulle",
+   "Saint-Louis",
+   "Libération"
+  ],
+  "sru": {
+   "lls": 1423,
+   "taux": "14,00%"
+  },
+  "poi": {
+   "resto": 41,
+   "hotels": 2,
+   "marches": [
+    "Marché de la Tourelle"
+   ],
+   "commercesAlim": 23
+  }
  },
  "villeneuve-le-roi": {
   "slug": "villeneuve-le-roi",
@@ -1268,7 +1655,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villeneuve-Saint-Georges"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Val d'Ablon et Zone Industrielle",
+   "La Grusie",
+   "Faisanderie Bas et Gare",
+   "Haut Pays",
+   "Faisanderie Haut",
+   "Bord de l'Eau et Zone Industrielle"
+  ]
  },
  "joinville-le-pont": {
   "slug": "joinville-le-pont",
@@ -1306,7 +1701,25 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Maisons-Alfort"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Oudinot",
+   "Moutier",
+   "Môquet",
+   "Péri",
+   "Platanes",
+   "Vautier"
+  ],
+  "sru": {
+   "lls": 2216,
+   "taux": "25,04%"
+  },
+  "poi": {
+   "resto": 19,
+   "hotels": 1,
+   "marches": [],
+   "commercesAlim": 11
+  }
  },
  "le-plessis-trevise": {
   "slug": "le-plessis-trevise",
@@ -1336,7 +1749,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Noisy-le-Grand"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Saint-Antoine",
+   "Saint-Pierre-Kiffer",
+   "Le Val Roger-Parc de la Lande",
+   "Marbeau-Cœuilly",
+   "Saint-Martin",
+   "Le Centre"
+  ]
  },
  "chevilly-larue": {
   "slug": "chevilly-larue",
@@ -1372,7 +1793,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Thiais"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Larue",
+   "Bretagne",
+   "Sorbiers",
+   "La Guinet",
+   "Saussaie"
+  ]
  },
  "chennevieres-sur-marne": {
   "slug": "chennevieres-sur-marne",
@@ -1404,7 +1832,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Sucy-en-Brie"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Moulin",
+   "Bois l'Abbé 2 Plaine des Bordes",
+   "Hauts de Chennevières Pince-Vent",
+   "Bois l'Abbé",
+   "Le Fort-La Maillarde",
+   "Coteaux"
+  ]
  },
  "gentilly": {
   "slug": "gentilly",
@@ -1438,7 +1874,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Cachan"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Plateau",
+   "Reine Blanche",
+   "Chaperon Vert",
+   "Victor Hugo"
+  ]
  },
  "bonneuil-sur-marne": {
   "slug": "bonneuil-sur-marne",
@@ -1472,7 +1914,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Créteil"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Saint-Exupéry",
+   "République",
+   "Centre Ancien",
+   "Haut Bonneuil",
+   "Fosse aux Moines",
+   "Salvador Allende"
+  ]
  },
  "boissy-saint-leger": {
   "slug": "boissy-saint-leger",
@@ -1506,7 +1956,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Sucy-en-Brie"
   ],
   "pinsHa": 6.6,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Savreau",
+   "Les Hautes Varennes",
+   "Le Centre",
+   "Bois Clary",
+   "Rostand",
+   "Prévert"
+  ]
  },
  "valenton": {
   "slug": "valenton",
@@ -1540,7 +1998,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Choisy-le-Roi"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Val Pompadour-L'Étang étendu",
+   "Lutèce-Bergerie",
+   "Vignes-Coteau",
+   "Pologne-Saint-Martin"
+  ]
  },
  "paris-12": {
   "slug": "paris-12",
@@ -1606,7 +2070,29 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Saint-Maurice"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Picpus",
+   "Bel-Air",
+   "Quinze-Vingts",
+   "Bercy"
+  ],
+  "sru": null,
+  "poi": {
+   "resto": 626,
+   "hotels": 95,
+   "marches": [
+    "Marché Ledru-Rollin",
+    "Marché Daumesnil",
+    "Marché Bercy",
+    "Marché Porte-Dorée",
+    "Marché Saint-Éloi",
+    "Marché Cours de Vincennes",
+    "Marché d'Aligre",
+    "Marché Beauvau"
+   ],
+   "commercesAlim": 136
+  }
  },
  "paris-13": {
   "slug": "paris-13",
@@ -1669,7 +2155,12 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Gentilly"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Maison Blanche",
+   "Croulebarbe",
+   "Salpêtrière"
+  ]
  },
  "paris-20": {
   "slug": "paris-20",
@@ -1729,7 +2220,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 3e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Charonne",
+   "Saint-Fargeau",
+   "Père Lachaise",
+   "Belleville"
+  ]
  },
  "paris-11": {
   "slug": "paris-11",
@@ -1786,7 +2283,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 10e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Roquette",
+   "Folie Méricourt",
+   "Saint-Ambroise",
+   "Sainte-Marguerite"
+  ]
  },
  "paris-5": {
   "slug": "paris-5",
@@ -1833,7 +2336,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 3e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Val de Grâce",
+   "Jardin des Plantes",
+   "Saint-Victor",
+   "Sorbonne"
+  ]
  },
  "paris-4": {
   "slug": "paris-4",
@@ -1882,7 +2391,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 2e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Arsenal",
+   "Saint-Gervais",
+   "Saint-Merri",
+   "Notre-Dame"
+  ]
  },
  "paris-3": {
   "slug": "paris-3",
@@ -1924,7 +2439,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 11e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Arts et Métiers",
+   "Les Archives",
+   "Sainte-Avoye",
+   "Enfants Rouges"
+  ]
  },
  "paris-14": {
   "slug": "paris-14",
@@ -1976,7 +2497,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 15e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Plaisance",
+   "Petit Montrouge",
+   "Montparnasse",
+   "Parc de Montsouris"
+  ]
  },
  "paris-6": {
   "slug": "paris-6",
@@ -2027,7 +2554,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 4e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Notre-Dame des Champs",
+   "Odéon",
+   "Monnaie",
+   "Saint-Germain des Prés"
+  ]
  },
  "paris-10": {
   "slug": "paris-10",
@@ -2088,7 +2621,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 18e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Hôpital Saint-Louis",
+   "Porte Saint-Martin",
+   "Saint-Vincent de Paul",
+   "Porte Saint-Denis"
+  ]
  },
  "boulogne-billancourt": {
   "slug": "boulogne-billancourt",
@@ -2129,7 +2668,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Sèvres"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Princes Marmottan",
+   "République Point du Jour",
+   "Jean-Baptiste Clément",
+   "Mail Maréchal Juin",
+   "Trapèze",
+   "Route de la Reine"
+  ]
  },
  "nanterre": {
   "slug": "nanterre",
@@ -2172,7 +2719,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Bezons"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Zilina Henri Martin",
+   "Damades La Source",
+   "Hôtel de Ville",
+   "Komarov",
+   "Haut Plateau",
+   "Demoiselles d'Avignon"
+  ]
  },
  "asnieres-sur-seine": {
   "slug": "asnieres-sur-seine",
@@ -2215,7 +2770,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Levallois-Perret"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "III",
+   "Grésillons I",
+   "Magenta II",
+   "Mairie IV",
+   "Mairie I",
+   "Renoir III"
+  ]
  },
  "colombes": {
   "slug": "colombes",
@@ -2259,7 +2822,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Courbevoie"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Henri Barbusse Sud",
+   "Moslard-Agriculture",
+   "Stade Berthelot",
+   "Jeanne d'Arc-Salle des Fêtes",
+   "Cerisiers",
+   "Canibouts-Champy"
+  ]
  },
  "courbevoie": {
   "slug": "courbevoie",
@@ -2298,7 +2869,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Puteaux"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Franklin",
+   "Jean Blot",
+   "Fallet",
+   "Montagne",
+   "Visien",
+   "Schweitzer"
+  ]
  },
  "rueil-malmaison": {
   "slug": "rueil-malmaison",
@@ -2334,7 +2913,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Nanterre"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Plateau",
+   "Plaine-Gare",
+   "Buzenval",
+   "Fouilleuse",
+   "Closeaux",
+   "Martinets"
+  ]
  },
  "levallois-perret": {
   "slug": "levallois-perret",
@@ -2375,7 +2962,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Courbevoie"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Eiffel",
+   "Trézel",
+   "Villiers-Danton",
+   "Villiers-L. Michel",
+   "Wilson-Rivay",
+   "Henri Barbusse"
+  ]
  },
  "issy-les-moulineaux": {
   "slug": "issy-les-moulineaux",
@@ -2418,7 +3013,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 15e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Colombiers",
+   "Fort Gardes Mobiles",
+   "Verdi",
+   "Palais des Congrès Mail Menand",
+   "Parc Henri Barbusse",
+   "Les Varennes Foucher Lepelletier"
+  ]
  },
  "clichy": {
   "slug": "clichy",
@@ -2454,7 +3057,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Saint-Ouen-sur-Seine"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "SNCF",
+   "Teinturiers",
+   "Morel",
+   "Chance-Milly",
+   "Palloy-Paymal",
+   "Pasteur-Gesnouin"
+  ]
  },
  "antony": {
   "slug": "antony",
@@ -2500,7 +3111,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Verrières-le-Buisson"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Godets",
+   "Guillebaud",
+   "Fontaine Mouton",
+   "La Fontaine",
+   "Zone d'Activités",
+   "Chemin de Fer"
+  ]
  },
  "paris-1": {
   "slug": "paris-1",
@@ -2552,7 +3171,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 3e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Halles",
+   "Saint-Germain l'Auxerrois",
+   "Palais Royal",
+   "Place Vendôme"
+  ]
  },
  "paris-2": {
   "slug": "paris-2",
@@ -2597,7 +3222,12 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 10e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Bonne Nouvelle",
+   "Mail",
+   "Vivienne"
+  ]
  },
  "paris-7": {
   "slug": "paris-7",
@@ -2649,7 +3279,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 8e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Gros Caillou",
+   "Saint-Thomas d'Aquin",
+   "École Militaire",
+   "Invalides"
+  ]
  },
  "paris-8": {
   "slug": "paris-8",
@@ -2710,7 +3346,12 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 1er"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Europe",
+   "Faubourg du Roule",
+   "Champs Élysées"
+  ]
  },
  "paris-9": {
   "slug": "paris-9",
@@ -2769,7 +3410,12 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 18e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Saint-Georges",
+   "Rochechouart",
+   "Faubourg Montmartre"
+  ]
  },
  "paris-15": {
   "slug": "paris-15",
@@ -2843,7 +3489,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Malakoff"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Saint-Lambert",
+   "Javel",
+   "Grenelle",
+   "Necker"
+  ]
  },
  "paris-16": {
   "slug": "paris-16",
@@ -2909,7 +3561,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Puteaux"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Auteuil",
+   "Muette",
+   "Porte Dauphine",
+   "Chaillot"
+  ]
  },
  "paris-17": {
   "slug": "paris-17",
@@ -2971,7 +3629,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 9e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Épinettes",
+   "Batignolles",
+   "Plaine Monceau",
+   "Ternes"
+  ]
  },
  "paris-18": {
   "slug": "paris-18",
@@ -3028,7 +3692,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paris 2e"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Grandes Carrières",
+   "Clignancourt",
+   "Goutte d'Or",
+   "Chapelle"
+  ]
  },
  "paris-19": {
   "slug": "paris-19",
@@ -3095,7 +3765,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Les Lilas"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Amérique",
+   "Villette",
+   "Combat",
+   "Pont de Flandre"
+  ]
  },
  "villecresnes": {
   "slug": "villecresnes",
@@ -3125,7 +3801,13 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Yerres"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Le Réveillon",
+   "Grosbois",
+   "Les Sablons",
+   "La Gare"
+  ]
  },
  "mandres-les-roses": {
   "slug": "mandres-les-roses",
@@ -3156,7 +3838,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Épinay-sous-Sénart"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "perigny": {
   "slug": "perigny",
@@ -3184,7 +3867,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Servon"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "marolles-en-brie": {
   "slug": "marolles-en-brie",
@@ -3214,7 +3898,11 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Mandres-les-Roses"
   ],
   "pinsHa": 3.6,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Vieux Village-Murs du Parc",
+   "La Butte du Berger"
+  ]
  },
  "noiseau": {
   "slug": "noiseau",
@@ -3240,7 +3928,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Chennevières-sur-Marne"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "la-queue-en-brie": {
   "slug": "la-queue-en-brie",
@@ -3270,7 +3959,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Chennevières-sur-Marne"
   ],
   "pinsHa": 2.6,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Marnières",
+   "Bois des Friches",
+   "L'Hermitage",
+   "Village Pierre Lais",
+   "Les Bordes Hôtel de Ville"
+  ]
  },
  "ormesson-sur-marne": {
   "slug": "ormesson-sur-marne",
@@ -3298,7 +3994,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Champigny-sur-Marne"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "saint-germain-en-laye": {
   "slug": "saint-germain-en-laye",
@@ -3338,7 +4035,10 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Le Pecq"
   ],
   "pinsHa": 66.8,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Iris"
+  ]
  },
  "versailles": {
   "slug": "versailles",
@@ -3383,7 +4083,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Saint-Cyr-l'École"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Chantiers",
+   "Notre-Dame",
+   "Montreuil",
+   "Clagny",
+   "Jussieu",
+   "Saint-Louis"
+  ]
  },
  "neuilly-sur-seine": {
   "slug": "neuilly-sur-seine",
@@ -3421,7 +4129,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "La Garenne-Colombes"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Parc de Neuilly",
+   "Plaine des Sablons",
+   "Saint-James Madrid",
+   "Charles Laffitte",
+   "Saint-James"
+  ]
  },
  "saint-cloud": {
   "slug": "saint-cloud",
@@ -3463,7 +4178,14 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Vaucresson"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Montretout",
+   "Val d'Or",
+   "Coteaux",
+   "Pasteur",
+   "Fouilleuse"
+  ]
  },
  "sceaux": {
   "slug": "sceaux",
@@ -3498,7 +4220,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Châtenay-Malabry"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Blagis",
+   "Robinson",
+   "Chéneaux Sablons",
+   "Musiciens-Roosevelt",
+   "Vieux Sceaux-Curie",
+   "Desgranges-Fontenay"
+  ]
  },
  "meudon": {
   "slug": "meudon",
@@ -3543,7 +4273,15 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Vélizy-Villacoublay"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Meudon la Forêt",
+   "Le Centre",
+   "Val Fleury",
+   "Bas Meudon",
+   "Bellevue",
+   "Forêt Domaniale"
+  ]
  },
  "ablon-sur-seine": {
   "slug": "ablon-sur-seine",
@@ -3580,7 +4318,8 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Villeneuve-Saint-Georges"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": []
  },
  "rungis": {
   "slug": "rungis",
@@ -3621,6 +4360,10 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Paray-Vieille-Poste"
   ],
   "pinsHa": 0,
-  "osm": true
+  "osm": true,
+  "quartiers": [
+   "Les Antes",
+   "Rungis Ville"
+  ]
  }
 }

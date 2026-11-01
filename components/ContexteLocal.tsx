@@ -170,10 +170,19 @@ function traitement(d: DonneesLocales, s: ServiceLocal, a: string) {
   }
 }
 
-// La ville, en une phrase : juste de quoi situer
-function villeCourte(d: DonneesLocales, s: ServiceLocal) {
+// La ville, en une phrase : toute la ville, quartier par quartier (noms Insee), et les communes voisines
+function villeCourte(d: DonneesLocales, s: ServiceLocal, a = '') {
   const lieu = d.paris ? `Le ${d.nom.replace('Paris ', '')} arrondissement` : d.nom
   const v = liste(d.voisines.slice(0, 3))
+  const q = d.quartiers
+  if (q.length >= 2) {
+    const tout = d.paris ? `tout le ${d.nom.replace('Paris ', '')} arrondissement` : `toute la ville`
+    return pick(`${d.slug}${s}quartiers`, [
+      `Nous intervenons dans ${tout} (${d.cp.join(', ')}), quartier par quartier : ${liste(q)}. Et aussi dans les communes voisines : ${v}.`,
+      `${majuscule(a)}, nos techniciens se déplacent dans tous les quartiers, ${liste(q)}, ainsi que dans les communes voisines (${v}).`,
+      `Quel que soit votre quartier ${a} (${liste(q)}), une intervention est possible le jour même. Nous couvrons aussi ${v}.`,
+    ])
+  }
   return pick(`${d.slug}${s}ville`, [
     `${lieu} (${d.cp.join(', ')}) compte ${nf(d.population)} habitants. Nous intervenons aussi tout près, à ${v}.`,
     `${lieu}, ${nf(d.population)} habitants, code postal ${d.cp[0]} : intervention possible le jour même, comme dans les communes voisines (${v}).`,
@@ -185,6 +194,40 @@ function villeCourte(d: DonneesLocales, s: ServiceLocal) {
 function transportsCourt(d: DonneesLocales) {
   if (!d.gares.length) return null
   return `Le risque d'attraper des punaises de lit dans les transports, ici ${ligneLisible(d.lignes[0], true)}${d.lignes[1] ? ` ou ${ligneLisible(d.lignes[1], true)}` : ''}, reste faible : elles voyagent surtout dans les bagages, après un séjour à l'hôtel ou un voyage.`
+}
+
+// Villes autour de Saint-Maurice : une seule phrase sur les secteurs les plus exposés, avec les vrais lieux
+// (berges, marchés, parcs d'après OpenStreetMap ; part de logement social d'après l'inventaire SRU 2025).
+function zonesRisque(d: DonneesLocales, s: ServiceLocal, a: string) {
+  if (!d.poi || !['deratisation', 'souris', 'punaises', 'cafards'].includes(s)) return null
+  const p = d.poi
+  const taux = d.sru ? parseFloat(d.sru.taux.replace(',', '.')) : 0
+  const collectif = d.paris || taux >= 30 || d.densite >= 10000
+  const marches = p.marches.filter((m) => m.trim().toLowerCase() !== 'marché').slice(0, 2)
+  const eau = d.eaux.find((e) => /Seine|Marne/.test(e))
+  const parc = d.verts[0]
+  const A = majuscule(a)
+  const z: string[] = []
+  if (s === 'deratisation') {
+    if (eau) z.push(`les bords ${deArt(eau)}`)
+    if (marches.length) z.push(`les abords ${liste(marches.map(deArt))}`)
+    z.push(collectif ? 'les caves et locaux poubelles des résidences collectives' : 'les jardins, composts et garages des quartiers pavillonnaires')
+    if (z.length < 3 && p.resto >= 40) z.push('les arrière-cours des rues commerçantes')
+    return `${A}, les secteurs les plus exposés aux rats sont ${liste(z.slice(0, 3))}.`
+  }
+  if (s === 'souris') {
+    z.push(collectif ? 'dans les caves et les gaines des immeubles' : 'dans les garages, celliers et combles des maisons')
+    if (parc) z.push(`près ${deArt(parc)}`)
+    if (marches.length) z.push(`autour ${deArt(marches[0])}`)
+    return `${A}, les souris se manifestent surtout ${liste(z.slice(0, 3))}, en particulier à l'arrivée du froid.`
+  }
+  if (s === 'punaises') {
+    return `${A}, le risque de propagation est plus fort dans les ${collectif ? 'grands immeubles collectifs' : 'immeubles et petites copropriétés'}, où les appartements partagent gaines et paliers${p.hotels >= 3 ? ', ainsi qu\'autour des hôtels' : ''}. Ce n'est pas une question de propreté.`
+  }
+  z.push(p.resto >= 15 ? 'les cuisines des restaurants et commerces de bouche' : 'les cuisines et salles de bains')
+  z.push(collectif ? 'les vide-ordures et gaines des grands immeubles' : 'les sous-sols humides des maisons')
+  if (marches.length) z.push(`les abords ${deArt(marches[0])}`)
+  return `${A}, les cafards se concentrent surtout dans ${liste(z.slice(0, 3))}.`
 }
 
 const TITRES: Record<ServiceLocal, (a: string) => string> = {
@@ -200,9 +243,11 @@ const TITRES: Record<ServiceLocal, (a: string) => string> = {
 export default function ContexteLocal({ slug, service, a }: { slug: string; service: ServiceLocal; a: string }) {
   const d = DONNEES_LOCALES[slug]
   if (!d) return null
-  // 1. le traitement, 2. le conseil lié au type de logement, 3. au plus 2 détails locaux utiles au nuisible, 4. la ville en une phrase
-  const details = [eau(d, service), ...verdure(d, service), service === 'punaises' ? transportsCourt(d) : null].filter((p): p is string => Boolean(p)).slice(0, 2)
-  const paragraphes = [traitement(d, service, a), habitat(d, service), ...details, villeCourte(d, service)].filter(
+  // 1. le traitement, 2. le conseil lié au type de logement, 3. au plus 2 détails locaux utiles au nuisible, 4. la ville en une phrase.
+  // Autour de Saint-Maurice : la ville en chiffres et les zones à risque remplacent les détails et la phrase courte.
+  const zr = zonesRisque(d, service, a)
+  const details = zr ? [] : [eau(d, service), ...verdure(d, service), service === 'punaises' ? transportsCourt(d) : null].filter((p): p is string => Boolean(p)).slice(0, 2)
+  const paragraphes = [traitement(d, service, a), habitat(d, service), zr, ...details, villeCourte(d, service, a)].filter(
     (p): p is string => Boolean(p),
   )
   return (
@@ -216,7 +261,7 @@ export default function ContexteLocal({ slug, service, a }: { slug: string; serv
           </p>
         ))}
         <p className="text-white/35 text-xs mt-5">
-          Sources : Insee, population municipale (geo.api.gouv.fr) ; Île-de-France Mobilités, gares et stations ; OpenStreetMap, cours d&apos;eau et espaces verts{service === 'chenilles' && d.pinsHa ? ' ; IGN, inventaire forestier' : ''}.
+          Sources : Insee, population municipale et quartiers IRIS (geo.api.gouv.fr, data.iledefrance.fr){zr && !d.paris ? ' ; ministère du Logement, inventaire SRU 2025' : ''} ; Île-de-France Mobilités, gares et stations ; OpenStreetMap, cours d&apos;eau, espaces verts{zr ? ', marchés et commerces' : ''}{service === 'chenilles' && d.pinsHa ? ' ; IGN, inventaire forestier' : ''}.
         </p>
       </div>
     </section>
