@@ -72,3 +72,14 @@ export const PHOTOS_CHANTIERS = {
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
+
+// Chantier Diogène à Maisons-Alfort (94) : photo et vidéos publiées sur la fiche Google le 01/11/2026.
+export const CHANTIER_DIOGENE = {
+  ville: 'maisons-alfort',
+  article: '/blog/deratisation-logement-syndrome-diogene',
+  photos: ['ratDiogene'] as PhotoKey[],
+  videos: [
+    { src: '/chantiers/rats-diogene-video-1.mp4', legende: 'Ramassage d’un rat, placé dans un bac fermé (Maisons-Alfort, 94)' },
+    { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la pose des postes (Maisons-Alfort, 94)' },
+  ],
+}

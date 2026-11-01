@@ -1,4 +1,4 @@
-import type { PhotoKey } from '@/lib/photos-chantiers'
+import { CHANTIER_DIOGENE, type PhotoKey } from '@/lib/photos-chantiers'
 // Articles du blog Allo Nuisible IDF.
 // Sujets choisis par l'utilisateur (il a levé le 31/10/2026 la contrainte liée au blog d'allonuisibleexpress.fr).
 // Texte riche : **gras** et [ancre](/lien) sont interprétés au rendu.
@@ -2309,10 +2309,7 @@ export const ARTICLES: Article[] = [
     ],
     terrain: "Dans ce logement, nous avons ramassé une trentaine de rats deux jours après la mise en place du dispositif. Ce type de chantier montre à quel point l'ordre des opérations compte : si le débarras avait commencé avant la dératisation, une bonne partie de ces rats serait partie chez les voisins.",
     photos: ['ratDiogene'],
-    videos: [
-      { src: '/chantiers/rats-diogene-video-1.mp4', legende: 'Ramassage d’un rat, placé dans un bac fermé (logement à Maisons-Alfort, 94)' },
-      { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la mise en place des postes (Maisons-Alfort, 94)' },
-    ],
+    videos: CHANTIER_DIOGENE.videos,
     faq: [
       { q: "Faut-il dératiser avant de vider un logement encombré ?", a: "Oui. Vider d'abord fait fuir les rats vers les logements voisins et expose les équipes. Et sans rats qui courent autour, le nettoyage se fait beaucoup plus tranquillement. On traite sur place, on attend que la population baisse, puis on débarrasse et on nettoie." },
       { q: "Combien de temps faut-il avant de pouvoir nettoyer ?", a: "Cela dépend de l'infestation. Les raticides professionnels agissent en quelques jours : dans ce chantier, les rats étaient très affaiblis deux jours après la pose. Le technicien vous dit quand le débarras peut commencer, et les postes restent en place pendant le nettoyage." },

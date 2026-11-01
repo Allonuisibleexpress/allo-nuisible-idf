@@ -7,6 +7,9 @@ import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
+import MediasChantier from '@/components/MediasChantier'
+import VignettesChantier from '@/components/VignettesChantier'
+import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
 import {
   VILLES_DERATISATION, GUIDES_RONGEURS, SOURCES_DERATISATION, MAJ_DERATISATION, getVilleDeratisation,
 } from '@/lib/villes-deratisation'
@@ -99,6 +102,12 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               </span>
             </h1>
 
+            {v.slug === CHANTIER_DIOGENE.ville && (
+              <div className="-mt-2 mb-8">
+                <VignettesChantier photos={CHANTIER_DIOGENE.photos} videos={CHANTIER_DIOGENE.videos} centre texte={`Notre dernier chantier ${v.a}`} />
+              </div>
+            )}
+
             {/* En bref */}
             <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
@@ -151,6 +160,17 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         {avisVille('deratisation', v.slug).length > 0 && <AvisGoogle ordre={avisVille('deratisation', v.slug)} />}
+
+        {/* Vrai chantier dans cette ville, en photo et vidéos */}
+        {v.slug === CHANTIER_DIOGENE.ville && (
+          <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-3xl mx-auto">
+              <MediasChantier photos={CHANTIER_DIOGENE.photos} videos={CHANTIER_DIOGENE.videos}
+                titre={`Notre dernier chantier ${v.a} : logement très encombré`}
+                lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
+            </div>
+          </section>
+        )}
 
         {/* ── MÉTHODE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

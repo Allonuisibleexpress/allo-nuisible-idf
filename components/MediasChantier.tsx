@@ -1,0 +1,58 @@
+import NextImage from 'next/image'
+import { PHOTOS_CHANTIERS, type PhotoKey } from '@/lib/photos-chantiers'
+
+const ACCENT = '#E8441A'
+
+export type VideoChantier = { src: string; legende: string }
+
+// Miniatures d'un vrai chantier (photos + vidéos), avec le filigrane de l'entreprise sur les vidéos.
+export default function MediasChantier({
+  photos = [],
+  videos = [],
+  titre = 'Le chantier en images',
+  lien,
+}: {
+  photos?: PhotoKey[]
+  videos?: VideoChantier[]
+  titre?: string
+  lien?: { href: string; label: string }
+}) {
+  const tuile = { position: 'relative' as const, aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }
+  const legende = { fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '6px', lineHeight: 1.4 }
+  return (
+    <div>
+      <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: ACCENT, marginBottom: '12px' }}>{titre}</p>
+      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(3, photos.length + videos.length)}, minmax(0, 1fr))`, gap: '10px' }}>
+        {photos.map((cle) => {
+          const p = PHOTOS_CHANTIERS[cle]
+          return (
+            <figure key={cle} style={{ margin: 0 }}>
+              <a href={p.src} target="_blank" rel="noopener" style={{ display: 'block', ...tuile }}>
+                <NextImage src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 33vw, 250px" style={{ objectFit: 'cover' }} />
+              </a>
+              <figcaption style={legende}>{p.legende}</figcaption>
+            </figure>
+          )
+        })}
+        {videos.map((v) => (
+          <figure key={v.src} style={{ margin: 0 }}>
+            <div style={tuile}>
+              <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
+              <span aria-hidden="true" style={{ position: 'absolute', right: '8px', bottom: '56px', pointerEvents: 'none', fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.85)', background: 'rgba(0,0,0,0.45)', padding: '2px 6px', borderRadius: '6px', textShadow: '0 1px 2px rgba(0,0,0,0.6)', whiteSpace: 'nowrap' }}>
+                Allo Nuisible <span style={{ color: ACCENT }}>IDF</span>
+              </span>
+            </div>
+            <figcaption style={legende}>{v.legende}</figcaption>
+          </figure>
+        ))}
+      </div>
+      {lien && (
+        <p style={{ fontSize: '14px', marginTop: '12px' }}>
+          <a href={lien.href} style={{ color: ACCENT, fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '2px' }}>{lien.label}</a>
+        </p>
+      )}
+    </div>
+  )
+}

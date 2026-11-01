@@ -10,6 +10,8 @@ import {
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PhotosChantiers from '@/components/PhotosChantiers'
+import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
+import VignettesChantier from '@/components/VignettesChantier'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import type { CleAvis } from '@/lib/avis-google'
@@ -55,6 +57,8 @@ export interface ServiceData {
   metaTitle?: string
   // Vraies photos de chantier à afficher (clés de lib/photos-chantiers.ts)
   photos?: PhotoKey[]
+  // Vrai chantier en vidéos (remplace la galerie photos)
+  chantier?: { photos?: PhotoKey[]; videos: VideoChantier[]; titre: string; lien?: { href: string; label: string } }
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
@@ -171,6 +175,11 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
                 {data.heroDescription}
               </p>
+              {data.chantier && (
+                <div className="-mt-4 mb-8">
+                  <VignettesChantier photos={data.chantier.photos} videos={data.chantier.videos} centre texte="Un de nos chantiers en images" />
+                </div>
+              )}
 
               {/* CTA buttons */}
               <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
@@ -360,7 +369,14 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         {/* ── VRAIS AVIS GOOGLE ── */}
         <AvisGoogle ordre={data.avis} />
 
-        {data.photos && <PhotosChantiers photos={data.photos} fond="#0d0d0d" />}
+        {data.photos && !data.chantier && <PhotosChantiers photos={data.photos} fond="#0d0d0d" />}
+        {data.chantier && (
+          <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-3xl mx-auto">
+              <MediasChantier photos={data.chantier.photos} videos={data.chantier.videos} titre={data.chantier.titre} lien={data.chantier.lien} />
+            </div>
+          </section>
+        )}
 
         {/* ── MAILLAGE : VILLES ET GUIDES ── */}
         {data.related && (

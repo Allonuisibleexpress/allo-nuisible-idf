@@ -7,6 +7,8 @@ import Footer from '@/components/Footer'
 import { ARTICLES, getArticle, type Block } from '../articles'
 import NextImage from 'next/image'
 import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
+import MediasChantier from '@/components/MediasChantier'
+import VignettesChantier from '@/components/VignettesChantier'
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }))
@@ -188,10 +190,22 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <span>·</span>
               <span>Lecture {a.readMin} min</span>
             </div>
+            {a.videos && (
+              <div style={{ marginTop: '20px' }}>
+                <VignettesChantier photos={a.photos} videos={a.videos} texte="Photos et vidéos du chantier" />
+              </div>
+            )}
           </div>
         </section>
 
         <article className="max-w-3xl mx-auto px-4" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
+
+          {/* Le chantier en images, tout en haut : les clients veulent voir avant de lire */}
+          {a.videos && (
+            <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>
+              <MediasChantier photos={a.photos} videos={a.videos} />
+            </div>
+          )}
 
           {/* EN BREF */}
           <section style={{ background: 'rgba(232, 68, 26, 0.08)', border: '1px solid rgba(232, 68, 26, 0.25)', borderRadius: '16px', padding: '24px', marginBottom: '48px' }}>
@@ -201,8 +215,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {a.blocks.map(renderBlock)}
 
-          {/* Vraies photos de chantier */}
-          {a.photos && (
+          {/* Vraies photos de chantier (en haut de page quand il y a des vidéos) */}
+          {a.photos && !a.videos && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '40px' }}>
               {a.photos.map((cle) => {
                 const p = PHOTOS_CHANTIERS[cle]
@@ -215,25 +229,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   </figure>
                 )
               })}
-            </div>
-          )}
-
-          {/* Vraies vidéos de chantier */}
-          {a.videos && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '24px' }}>
-              {a.videos.map((v) => (
-                <figure key={v.src} style={{ margin: 0 }}>
-                  <div style={{ position: 'relative' }}>
-                    <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata"
-                      style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', background: '#1a1a1a', display: 'block' }} />
-                    {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
-                    <span aria-hidden="true" style={{ position: 'absolute', right: '10px', bottom: '72px', pointerEvents: 'none', fontSize: '11px', fontWeight: 800, letterSpacing: '.02em', color: 'rgba(255,255,255,0.85)', background: 'rgba(0,0,0,0.45)', padding: '3px 7px', borderRadius: '6px', textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
-                      Allo Nuisible <span style={{ color: '#E8441A' }}>IDF</span>
-                    </span>
-                  </div>
-                  <figcaption style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>{v.legende}</figcaption>
-                </figure>
-              ))}
             </div>
           )}
 
