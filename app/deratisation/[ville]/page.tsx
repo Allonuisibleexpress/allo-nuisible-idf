@@ -36,7 +36,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const enBref = [
-    `Allo Nuisible IDF réalise la dératisation ${v.a} (${v.departement}, ${v.code}) et dans les communes proches.`,
+    v.code === '75'
+      ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`
+      : `Allo Nuisible IDF réalise la dératisation ${v.a} (${v.departement}, ${v.code}) et dans les communes proches.`,
     `Points à contrôler en priorité ${v.a} : ${v.lieux.map((l) => l.charAt(0).toLowerCase() + l.slice(1)).join(', ')}.`,
     'Rongeurs traités : surmulot (rat d\'égout), rat noir, souris domestique.',
     'Méthodes : postes d\'appâtage sécurisés avec raticide professionnel, pièges mécaniques ou connectés, colmatage des points d\'entrée.',
