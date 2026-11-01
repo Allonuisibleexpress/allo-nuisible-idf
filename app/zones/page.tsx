@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { pageMetadata } from '@/lib/seo'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
+import { premierePhrase } from '@/lib/maillage'
 
 const ACCENT = '#E8441A'
 
@@ -36,6 +37,7 @@ export default function ZonesPage() {
                     <h2 className="text-xl font-black text-white">{d.nom} <span style={{ color: ACCENT }}>({d.code})</span></h2>
                     <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
                   </div>
+                  <p className="text-white/65 text-sm leading-relaxed mb-3">{premierePhrase(d.intro[0])}</p>
                   <p className="text-white/55 text-sm flex items-start gap-1.5">
                     <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                     {d.communes.slice(0, 5).join(', ')}…

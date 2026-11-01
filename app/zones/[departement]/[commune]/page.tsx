@@ -11,6 +11,7 @@ import { getVillePunaises } from '@/lib/villes-punaises'
 import { getVilleCafards } from '@/lib/villes-cafards'
 import { getVilleSouris } from '@/lib/villes-souris'
 import { getVilleChenilles } from '@/lib/villes-chenilles'
+import ContexteLocal from '@/components/ContexteLocal'
 import { getVilleAcariens } from '@/lib/villes-acariens'
 
 const ACCENT = '#E8441A'
@@ -41,7 +42,10 @@ export default function CommunePage({ params }: { params: Params }) {
   const memeSecteur = COMMUNES_94.filter((x) => x.secteur === c.secteur && x.slug !== c.slug)
   const decalage = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug)) % Math.max(1, memeSecteur.length)
   const voisines = [...memeSecteur.slice(decalage), ...memeSecteur.slice(0, decalage)].slice(0, 6)
-  const autres = Object.keys(METHODES).filter((k) => !secteur.ordre.includes(k))
+  // 2 méthodes détaillées par commune, en rotation dans le secteur ; les autres en simple lien
+  const rang = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug))
+  const ordre = [...secteur.ordre.slice(rang % secteur.ordre.length), ...secteur.ordre.slice(0, rang % secteur.ordre.length)].slice(0, 2)
+  const autres = Object.keys(METHODES).filter((k) => !ordre.includes(k))
   const villeDerat = getVilleDeratisation(c.slug)
   const villePunaises = getVillePunaises(c.slug)
   const villeCafards = getVilleCafards(c.slug)
@@ -73,7 +77,7 @@ export default function CommunePage({ params }: { params: Params }) {
             <p className="text-lg text-white/75 max-w-2xl mx-auto mb-4 leading-relaxed">
               Traitements professionnels chimiques ou sans produit (cryogénie, vapeur sèche, pièges connectés), selon votre situation.
             </p>
-            {secteur.intro(c.nom).map((p) => (
+            {[secteur.intro(c.nom)[rang % 2]].map((p) => (
               <p key={p.slice(0, 24)} className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{p}</p>
             ))}
             {local && <p className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{local}</p>}
@@ -107,7 +111,7 @@ export default function CommunePage({ params }: { params: Params }) {
               logement et l&apos;infestation, et vous explique son choix avant d&apos;intervenir.
             </p>
             <div className="space-y-4">
-              {secteur.ordre.map((k) => {
+              {ordre.map((k) => {
                 const m = METHODES[k]
                 return (
                   <article key={k} className="rounded-2xl p-6 md:p-7"
@@ -174,6 +178,8 @@ export default function CommunePage({ params }: { params: Params }) {
             )}
           </div>
         </section>
+
+        <ContexteLocal slug={c.slug} service="commune" a={c.a} />
 
         {/* ── DÉROULÉ ── */}
         <section className="py-16 md:py-20 px-4" style={{ background: '#111' }}>

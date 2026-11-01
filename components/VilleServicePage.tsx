@@ -2,6 +2,8 @@ import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-
 import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ContexteLocal from '@/components/ContexteLocal'
+import type { ServiceLocal } from '@/components/ContexteLocal'
 import { SITE_URL } from '@/lib/seo'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
@@ -11,6 +13,9 @@ const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
+// Angle du texte local (components/ContexteLocal) selon la page service de la famille
+const serviceLocal = (href: string): ServiceLocal =>
+  href.includes('cafards') ? 'cafards' : href.includes('rongeurs') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
 
 export type Ville = {
   slug: string
@@ -176,6 +181,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           </div>
         </section>
 
+        <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+
         {/* ── CONTENU DÉTAILLÉ ── */}
         {sections && (
           <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
@@ -273,7 +280,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {(c.protocole || c.publics) && (
           <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
             <div className="max-w-4xl mx-auto space-y-14">
-              {c.protocole && (
+              {/* Déroulé et publics en alternance d'une ville à l'autre (les méthodes restent sur toutes les pages) */}
+              {c.protocole && (avecEncadre || !c.publics) && (
                 <div>
                   <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{c.protocole.titre} {v.a}</h2>
                   <ol className="space-y-5">

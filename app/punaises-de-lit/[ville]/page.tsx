@@ -4,6 +4,7 @@ import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
+import ContexteLocal from '@/components/ContexteLocal'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
 } from '@/lib/villes-punaises'
@@ -159,6 +160,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             </p>
           </div>
         </section>
+
+        <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
 
         {/* ── TOUTES LES MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
