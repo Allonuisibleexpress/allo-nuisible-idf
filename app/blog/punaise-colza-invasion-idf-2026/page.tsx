@@ -48,7 +48,7 @@ export default function PunaiseCorzaArticle() {
               lineHeight: 1.2,
               marginBottom: '16px',
             }}>
-              Punaise de colza en Île-de-France : invasion estivale sans danger (12 jours)
+              Punaise de colza en Île-de-France : une invasion estivale qui ne pique pas (12 jours)
             </h1>
             <div style={{
               display: 'flex',

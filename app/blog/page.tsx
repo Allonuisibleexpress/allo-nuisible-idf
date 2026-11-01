@@ -17,8 +17,8 @@ interface Card {
 const legacy: Card[] = [
   {
     slug: 'punaise-colza-invasion-idf-2026',
-    title: `Punaise de colza en Île-de-France : invasion estivale sans danger (12 jours)`,
-    description: `Invasion massive de punaises de colza après moisson ? Complètement inoffensif. Voici ce qu'il faut vraiment faire (et ne pas faire).`,
+    title: `Punaise de colza en Île-de-France : une invasion estivale qui ne pique pas (12 jours)`,
+    description: `Invasion massive de punaises de colza après moisson ? Elle ne pique pas et ne transmet pas de maladie. Voici ce qu'il faut vraiment faire (et ne pas faire).`,
     date: '2026-08-23',
     category: 'Guide',
   },
