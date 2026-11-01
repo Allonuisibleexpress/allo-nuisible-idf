@@ -25,6 +25,7 @@ export interface Article {
   blocks: Block[]
   terrain?: string // retour d'expérience réel uniquement, sinon laisser vide
   photos?: PhotoKey[] // vraies photos de chantier (lib/photos-chantiers.ts)
+  videos?: { src: string; legende: string }[] // vraies vidéos de chantier (public/chantiers)
   faq: { q: string; a: string }[]
   sources: { label: string; url: string }[]
   cta: { title: string; text: string }
@@ -2243,6 +2244,87 @@ export const ARTICLES: Article[] = [
       { label: 'Waldwissen, processionnaire du chêne : recommandations pratiques', url: 'https://www.waldwissen.net/fr/economie-forestiere/gestion-des-degats/insectes/processionnaire-du-chene-recommandations-pratiques' },
     ],
     cta: { title: 'Des nids sur vos chênes ?', text: "Nos techniciens retirent les nids en tenue de protection complète et posent des pièges à phéromones. À partir de 89 € TTC, garantie 1 an, en Île-de-France." },
+  },
+  // 39 ─────────────────────────────────────────────────────────────
+  {
+    slug: 'deratisation-logement-syndrome-diogene',
+    title: "Dératisation d'un logement en syndrome de Diogène à Maisons-Alfort : notre intervention en images",
+    seoTitle: "Dératisation Diogène à Maisons-Alfort : chantier en images",
+    description: "Maisons-Alfort (94) : logement très encombré infesté de rats. Dératisation avant le nettoyage, ramassage, désinfection. Notre chantier en vidéos.",
+    date: '2026-11-02',
+    category: 'Rongeurs',
+    readMin: 8,
+    tldr: "Une mairie nous a confié un logement de Maisons-Alfort (94) touché par le syndrome de Diogène, envahi par les déchets et par les rats. Avant tout nettoyage, il fallait dératiser : vider un logement infesté sans traiter d'abord disperse les rats dans l'immeuble et expose les équipes. Nous avons posé un important dispositif de postes d'appâtage sécurisés. Deux jours plus tard, les rats étaient très affaiblis et nous en avons ramassé une trentaine, en combinaison et masque à cartouches. Le débarras, le nettoyage et la désinfection ont pu commencer ensuite, avec un suivi des postes jusqu'à disparition des traces.",
+    service: { href: '/services/deratisation', label: 'Dératisation : postes sécurisés, pièges, suivi et garantie' },
+    blocks: [
+      { t: 'p', x: "Certains chantiers ne ressemblent à aucun autre. Récemment, **une mairie nous a contactés** pour un logement de **Maisons-Alfort (94)** touché par le **syndrome de Diogène** : des mois, peut-être des années, d'accumulation d'objets, d'emballages et de restes alimentaires. Dans ces conditions, les rats s'installent vite et se multiplient sans être dérangés. Avant de pouvoir vider et nettoyer, il a fallu mener une **grosse dératisation**. Voici comment nous avons procédé, étape par étape, avec les photos et vidéos prises sur place par notre technicien." },
+      { t: 'callout', tone: 'info', title: 'Discrétion', x: "Par respect pour l'occupant, nous ne donnons ni l'adresse, ni aucune information sur la personne. Les images ne montrent que le logement et notre technicien." },
+      { t: 'h2', x: "Le syndrome de Diogène, c'est quoi ?" },
+      { t: 'p', x: "On parle de **syndrome de Diogène** quand une personne laisse s'accumuler chez elle des objets et des déchets, au point que le logement devient difficile, voire impossible, à habiter et à entretenir. Ce n'est pas une question de « négligence » : c'est une situation de grande fragilité, souvent repérée par les voisins, la famille, un bailleur ou les services de la mairie. Pour nous, la priorité est double : **régler le problème sanitaire** et **intervenir avec respect**." },
+      { t: 'h2', x: "Pourquoi les rats prolifèrent dans un logement encombré" },
+      { t: 'p', x: "Un rat a besoin de trois choses : **de la nourriture, de l'eau et un abri**. Un logement très encombré lui offre les trois, sans aucun dérangement :" },
+      { t: 'ul', items: [
+        "**De la nourriture partout** : restes de repas, emballages, sacs poubelles jamais sortis.",
+        "**Des abris à volonté** : piles de cartons, de vêtements et de sacs, où les rats creusent leurs nids.",
+        "**Aucune présence humaine dans certaines pièces** : les rats y circulent de jour comme de nuit.",
+        "**Une reproduction rapide** : sans prédateur ni dérangement, une petite colonie devient vite une grosse population. Voir notre article sur la [reproduction des rats](/blog/reproduction-des-rats).",
+      ] },
+      { t: 'p', x: "Le problème ne reste pas dans l'appartement : par les gaines, les colonnes d'évacuation et les caves, les rats rejoignent les **logements voisins et les parties communes**. C'est souvent ce qui alerte l'immeuble." },
+      { t: 'h2', x: "Les risques pour la santé" },
+      { t: 'p', x: "Les rats peuvent transmettre des maladies, en particulier la **leptospirose**, par leur urine et les eaux ou surfaces souillées (voir les sources en bas de page). S'y ajoutent les **morsures**, les **puces**, les **odeurs** et la dégradation des câbles électriques, avec un risque d'incendie. Dans un logement très encombré, les poussières, les moisissures et les déjections rendent l'air lui-même irritant. C'est pourquoi **personne ne doit commencer à vider un tel logement sans protection** ni avant la dératisation." },
+      { t: 'h2', x: "Pourquoi dératiser avant de nettoyer ?" },
+      { t: 'p', x: "C'est la question qu'on nous pose le plus. Si l'on commence par vider le logement :" },
+      { t: 'ul', items: [
+        "**les rats fuient** dès qu'on déplace les piles d'objets, et partent s'installer chez les voisins, en cave ou dans les gaines ;",
+        "**les équipes de débarras sont exposées** aux morsures, aux déjections et aux cadavres cachés sous les déchets ;",
+        "**le problème revient** : la colonie, simplement déplacée, revient dès que le logement est vide.",
+      ] },
+      { t: 'p', x: "C'est aussi une **question de confort**. Débarrasser et nettoyer un logement pendant que des rats courent entre les sacs et vous passent à côté des pieds, c'est éprouvant, même pour des professionnels. Une fois la dératisation faite, l'équipe peut **nettoyer tranquillement**, pièce par pièce, sans être surprise à chaque carton soulevé." },
+      { t: 'p', x: "En traitant d'abord, on fait baisser la population **sur place**, là où les rats ont leurs habitudes, avant de toucher à leurs abris." },
+      { t: 'h2', x: "Notre intervention, étape par étape" },
+      { t: 'h3', x: "1. Visite et sécurisation" },
+      { t: 'p', x: "Le technicien entre en **tenue de protection complète** : combinaison jetable, **masque à cartouches**, gants épais et surchaussures. Il repère les zones de passage, les traces (déjections, traces de grignotage, coulées le long des murs), les nids et les accès vers le reste de l'immeuble." },
+      { t: 'h3', x: "2. Mise en place d'un important dispositif" },
+      { t: 'p', x: "Vu l'ampleur de l'infestation, nous avons installé **de nombreux postes d'appâtage sécurisés** avec un raticide professionnel, la méthode la plus courante et la plus efficace sur une population installée. Les postes sont **verrouillés** et placés sur les passages, le long des murs et près des nids. Seul un technicien certifié **Certibiocide** peut utiliser ces produits." },
+      { t: 'h3', x: "3. Deux jours plus tard : les rats très affaiblis" },
+      { t: 'p', x: "Les raticides professionnels n'agissent pas immédiatement : c'est voulu, pour que les rats ne fassent pas le lien avec l'appât et que toute la colonie en consomme. **Deux jours après la pose**, les rats étaient très affaiblis. Nous avons pu en **ramasser une trentaine**, un à un, dans les pièces encombrées." },
+      { t: 'h3', x: "4. Ramassage et évacuation" },
+      { t: 'p', x: "Les rats sont ramassés avec des gants et une pince, placés dans des **bacs fermés**, puis évacués. Ne jamais toucher un rat, même mort, à mains nues : c'est l'une des voies de transmission de la leptospirose. Les vidéos ci-dessous, prises dans ce logement de Maisons-Alfort (94), montrent ce ramassage." },
+      { t: 'h3', x: "5. Débarras, nettoyage et désinfection" },
+      { t: 'p', x: "Une fois la population maîtrisée, le logement peut être vidé et nettoyé en sécurité. Les surfaces souillées par les déjections et l'urine sont ensuite traitées par une [désinfection](/services/desinfection)." },
+      { t: 'h3', x: "6. Colmatage et suivi" },
+      { t: 'p', x: "Les postes sont contrôlés et réapprovisionnés jusqu'à ce qu'il n'y ait **plus aucune consommation ni nouvelle trace**. Les accès trouvés (trous autour des tuyaux, gaines, bas de portes) sont bouchés pour éviter que d'autres rats ne reviennent de l'immeuble." },
+      { t: 'table', head: ['Étape', 'Ce que fait le technicien', 'Pourquoi'], rows: [
+        ['Sécurisation', 'Tenue complète, masque à cartouches, repérage', 'Protéger l\'équipe et cibler le traitement'],
+        ['Dératisation', 'Postes sécurisés et verrouillés avec raticide', 'Réduire la colonie sur place, avant de toucher aux abris'],
+        ['Ramassage', 'Gants, pince, bacs fermés', 'Éviter le contact avec les cadavres et les odeurs'],
+        ['Nettoyage', 'Débarras et nettoyage du logement', 'Supprimer nourriture et abris'],
+        ['Désinfection', 'Traitement des surfaces souillées', 'Limiter le risque sanitaire'],
+        ['Suivi', 'Contrôle des postes, colmatage', 'S\'assurer que les rats ne reviennent pas'],
+      ] },
+      { t: 'h2', x: "Qui contacter face à un logement de ce type ?" },
+      { t: 'p', x: "Si vous êtes voisin, bailleur, syndic ou proche, et qu'un logement très encombré pose un problème de rats, d'odeurs ou de sécurité, vous pouvez **alerter la mairie** de la commune, qui dispose souvent d'un service d'hygiène. Côté traitement, une entreprise de dératisation peut intervenir à la demande de la mairie, du bailleur, du syndic ou de la famille, comme nous l'avons fait ici." },
+      { t: 'callout', tone: 'warn', title: 'À ne pas faire', x: "Vider soi-même un logement infesté sans protection. Toucher des rats morts à mains nues. Répandre de la mort-aux-rats achetée en magasin dans un logement encombré, où les appâts se perdent et peuvent être atteints par des animaux domestiques." },
+      { t: 'p', x: "**Ce que nous proposons** : dératisation par des techniciens Certibiocide, postes sécurisés, ramassage, désinfection, colmatage et suivi, avec un compte rendu pour la mairie, le bailleur ou le syndic. Intervention possible en urgence partout en Île-de-France. Voir notre page [dératisation](/services/deratisation), notre page [dératisation à Maisons-Alfort](/deratisation/maisons-alfort) et, pour les autres rongeurs, [rats et souris](/services/rongeurs)." },
+    ],
+    terrain: "Dans ce logement, nous avons ramassé une trentaine de rats deux jours après la mise en place du dispositif. Ce type de chantier montre à quel point l'ordre des opérations compte : si le débarras avait commencé avant la dératisation, une bonne partie de ces rats serait partie chez les voisins.",
+    photos: ['ratDiogene'],
+    videos: [
+      { src: '/chantiers/rats-diogene-video-1.mp4', legende: 'Ramassage d’un rat, placé dans un bac fermé (logement à Maisons-Alfort, 94)' },
+      { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la mise en place des postes (Maisons-Alfort, 94)' },
+    ],
+    faq: [
+      { q: "Faut-il dératiser avant de vider un logement encombré ?", a: "Oui. Vider d'abord fait fuir les rats vers les logements voisins et expose les équipes. Et sans rats qui courent autour, le nettoyage se fait beaucoup plus tranquillement. On traite sur place, on attend que la population baisse, puis on débarrasse et on nettoie." },
+      { q: "Combien de temps faut-il avant de pouvoir nettoyer ?", a: "Cela dépend de l'infestation. Les raticides professionnels agissent en quelques jours : dans ce chantier, les rats étaient très affaiblis deux jours après la pose. Le technicien vous dit quand le débarras peut commencer, et les postes restent en place pendant le nettoyage." },
+      { q: "Qui paie la dératisation d'un logement en syndrome de Diogène ?", a: "Selon les cas, la mairie, le bailleur, le syndic ou la famille. Nous établissons un devis gratuit avant l'intervention et remettons un compte rendu après chaque passage." },
+      { q: "Les voisins sont-ils à risque ?", a: "Les rats circulent par les gaines, les caves et les colonnes d'évacuation. C'est pourquoi il faut traiter vite et, si besoin, vérifier aussi les parties communes et les logements voisins." },
+      { q: "Intervenez-vous en urgence ?", a: "Oui, partout en Île-de-France, 7j/7. Appelez le 07 68 07 72 19 pour un devis gratuit." },
+    ],
+    sources: [
+      { label: 'Santé publique France, leptospirose', url: 'https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-transmissibles-de-l-animal-a-l-homme/leptospirose' },
+      { label: 'Règlement (UE) n° 528/2012 sur les produits biocides (EUR-Lex)', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32012R0528' },
+    ],
+    cta: { title: 'Un logement envahi par les rats ?', text: "Mairie, bailleur, syndic ou famille : nos techniciens Certibiocide dératisent avant le nettoyage, ramassent les rongeurs et assurent le suivi. Devis gratuit, intervention 7j/7 en Île-de-France." },
   },
 ]
 

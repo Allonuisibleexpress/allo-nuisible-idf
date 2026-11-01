@@ -218,6 +218,25 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
           )}
 
+          {/* Vraies vidéos de chantier */}
+          {a.videos && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '24px' }}>
+              {a.videos.map((v) => (
+                <figure key={v.src} style={{ margin: 0 }}>
+                  <div style={{ position: 'relative' }}>
+                    <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata"
+                      style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', borderRadius: '12px', background: '#1a1a1a', display: 'block' }} />
+                    {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
+                    <span aria-hidden="true" style={{ position: 'absolute', right: '10px', bottom: '72px', pointerEvents: 'none', fontSize: '11px', fontWeight: 800, letterSpacing: '.02em', color: 'rgba(255,255,255,0.85)', background: 'rgba(0,0,0,0.45)', padding: '3px 7px', borderRadius: '6px', textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
+                      Allo Nuisible <span style={{ color: '#E8441A' }}>IDF</span>
+                    </span>
+                  </div>
+                  <figcaption style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>{v.legende}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+
           {/* Ce qu'on observe sur le terrain (uniquement si un vrai retour d'expérience est fourni) */}
           {a.terrain && (
           <div style={{ borderLeft: '3px solid #E8441A', background: 'rgba(255,255,255,0.03)', borderRadius: '0 12px 12px 0', padding: '22px 24px', marginTop: '48px', marginBottom: '8px' }}>

@@ -1,4 +1,5 @@
 // Vraies photos d'interventions, publiées par l'entreprise sur sa fiche Google Maps (juin 2026).
+// Photo et vidéos rats (logement très encombré) : publiées sur la fiche Google le 01/11/2026.
 // Photos cafards : publiées par notre client Gaëtan V. avec son avis Google, utilisées avec son accord (01/11/2026).
 // Ne jamais ajouter ici d'image d'illustration ni de ville non vérifiée.
 export interface PhotoChantier {
@@ -62,6 +63,11 @@ export const PHOTOS_CHANTIERS = {
     src: '/chantiers/cafards-morts-pres-meuble.jpg',
     alt: 'Cafards morts au sol entre un meuble et le mur',
     legende: 'Cafards morts entre le meuble et le mur (photo de Gaëtan V.)',
+  },
+  ratDiogene: {
+    src: '/chantiers/rat-capture-technicien.jpg',
+    alt: 'Technicien en combinaison et masque à cartouches tenant un rat mort dans un logement très encombré',
+    legende: 'Rat ramassé après la dératisation d’un logement très encombré',
   },
 } satisfies Record<string, PhotoChantier>
 
