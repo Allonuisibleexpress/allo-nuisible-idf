@@ -1,4 +1,5 @@
 // Vraies photos d'interventions, publiées par l'entreprise sur sa fiche Google Maps (juin 2026).
+// Photos cafards : publiées par notre client Gaëtan V. avec son avis Google, utilisées avec son accord (01/11/2026).
 // Ne jamais ajouter ici d'image d'illustration ni de ville non vérifiée.
 export interface PhotoChantier {
   src: string
@@ -41,6 +42,26 @@ export const PHOTOS_CHANTIERS = {
     src: '/chantiers/intervention-balcon-tenue-protection.jpg',
     alt: 'Technicien en combinaison et masque de protection sur un balcon encombré',
     legende: 'Nettoyage d’un balcon en tenue de protection complète',
+  },
+  cafardsSol: {
+    src: '/chantiers/cafards-morts-sol-cuisine.jpg',
+    alt: 'Dizaines de cafards morts sur le sol d’une cuisine',
+    legende: 'Cafards morts au sol de la cuisine (photo de notre client Gaëtan V., avis Google)',
+  },
+  cafardsTiroir: {
+    src: '/chantiers/cafards-morts-tiroir-cuisine.jpg',
+    alt: 'Tiroir de cuisine rempli de cafards morts et de déjections',
+    legende: 'Tiroir de cuisine : cafards morts et déjections (photo de Gaëtan V.)',
+  },
+  cafardsTiroir2: {
+    src: '/chantiers/cafards-morts-tiroir-ouvert.jpg',
+    alt: 'Tiroir de cuisine ouvert avec des cafards morts au fond',
+    legende: 'Autre tiroir de la même cuisine (photo de Gaëtan V.)',
+  },
+  cafardsMeuble: {
+    src: '/chantiers/cafards-morts-pres-meuble.jpg',
+    alt: 'Cafards morts au sol entre un meuble et le mur',
+    legende: 'Cafards morts entre le meuble et le mur (photo de Gaëtan V.)',
   },
 } satisfies Record<string, PhotoChantier>
 

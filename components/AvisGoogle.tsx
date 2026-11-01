@@ -3,7 +3,7 @@ import { AVIS_GOOGLE, FICHE_GOOGLE_URL, NOTE_GOOGLE, type CleAvis } from '@/lib/
 const ACCENT = '#E8441A'
 
 // Vrais avis de la fiche Google (lib/avis-google.ts). `ordre` met en avant l'avis le plus proche du service.
-export default function AvisGoogle({ ordre = ['jo', 'lina', 'lauren'], fond = '#0d0d0d' }: { ordre?: CleAvis[]; fond?: string }) {
+export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = '#0d0d0d' }: { ordre?: CleAvis[]; fond?: string }) {
   return (
     <section className="py-16 md:py-24 px-4" style={{ background: fond }}>
       <div className="max-w-5xl mx-auto">

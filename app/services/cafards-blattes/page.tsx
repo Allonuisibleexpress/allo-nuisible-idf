@@ -46,6 +46,8 @@ const data: ServiceData = {
       cta: 'Obtenir un devis pro',
     },
   ],
+  avis: ['gaetan', 'christine', 'lisa'],
+  photos: ['cafardsSol', 'cafardsTiroir', 'cafardsTiroir2', 'cafardsMeuble'],
   faq: [
     { q: 'Pourquoi y a-t-il des cafards chez moi ?', a: 'Les blattes sont attirées par la chaleur, l\'humidité et les sources alimentaires. Elles s\'introduisent via les canalisations, fissures, cartons et livraisons. Leur présence n\'est pas liée à la propreté du logement.' },
     { q: 'Les cafards sont-ils dangereux pour la santé ?', a: 'Oui. Les blattes transportent salmonelles, E. coli et autres agents pathogènes. Elles peuvent déclencher des allergies respiratoires, notamment chez les enfants asthmatiques. Leur présence dans une cuisine est un risque sanitaire sérieux.' },

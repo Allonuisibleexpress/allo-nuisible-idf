@@ -3,7 +3,7 @@
 export const FICHE_GOOGLE_URL = 'https://maps.google.com/?cid=11887181769674817823'
 export const NOTE_GOOGLE = { note: '4,7', nombre: 50 }
 
-export type CleAvis = 'jo' | 'lauren' | 'lisa' | 'lina' | 'christine'
+export type CleAvis = 'jo' | 'lauren' | 'lisa' | 'lina' | 'christine' | 'gaetan'
 
 // ville : slug de la page ville où l'avis est mis en avant (la ville est citée dans l'avis)
 export const AVIS_GOOGLE: Record<CleAvis, { auteur: string; sujet: string; texte: string; ville?: string }> = {
@@ -32,5 +32,10 @@ export const AVIS_GOOGLE: Record<CleAvis, { auteur: string; sujet: string; texte
     auteur: 'Christine C.',
     sujet: 'Intervention rapide',
     texte: 'Je recommande cette société pour son intervention rapide, son efficacité, ses compétences et son honnêteté.',
+  },
+  gaetan: {
+    auteur: 'Gaëtan V.',
+    sujet: 'Cafards, bouches d\'aération',
+    texte: 'Bonjour nous avons fait appel à cette société car nous avons eu des cafards venant des bouches d’aérations et je vous conseille les yeux fermés. Les 2 techniciens Yassine et Soufiane sont très professionnels ils sont même revenus à 21h car nous en avions encore un peu et c’est pas toutes les sociétés qui seraient disponibles comme eux. Un grand bravo et merci pour leur professionnalisme et leurs conseils',
   },
 }
