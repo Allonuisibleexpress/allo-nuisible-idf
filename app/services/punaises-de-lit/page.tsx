@@ -55,7 +55,7 @@ const data: ServiceData = {
     { q: 'Proposez-vous un traitement sans insecticide ?', a: 'Oui. La cryogénie (neige carbonique, environ −78 °C) et la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. L\'insecticide rémanent, lui, continue d\'agir après le passage. Selon l\'infestation, le technicien vous propose l\'une, l\'autre ou les deux.' },
     { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Avec un traitement insecticide, oui, pendant 4 à 6 heures, animaux domestiques compris. Avec la cryogénie ou la vapeur sèche, ce n\'est pas nécessaire. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
   ],
-  avis: ['jo', 'lisa', 'lauren'],
+  avis: ['jo', 'lina', 'christine'],
   photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
   related: {
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },

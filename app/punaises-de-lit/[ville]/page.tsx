@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
+import AvisGoogle from '@/components/AvisGoogle'
+import { AVIS_GOOGLE, type CleAvis } from '@/lib/avis-google'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
 } from '@/lib/villes-punaises'
@@ -39,6 +41,7 @@ const CACHETTES = [
 export default function PunaisesVillePage({ params }: { params: { ville: string } }) {
   const v = getVillePunaises(params.ville)
   if (!v) notFound()
+  const avisVille = (Object.keys(AVIS_GOOGLE) as CleAvis[]).filter((k) => AVIS_GOOGLE[k].ville === v.slug)
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
   const autres = villesVoisines(VILLES_PUNAISES, v)
@@ -162,6 +165,9 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
+
+        {/* Avis Google d'un client de cette ville, s'il y en a un */}
+        {avisVille.length > 0 && <AvisGoogle ordre={avisVille} />}
 
         {/* ── TOUTES LES MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

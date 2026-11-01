@@ -33,7 +33,7 @@ const data: ServiceData = {
     { label: 'Logement complet', price: 'Sur devis', description: 'Literie, canapés, tapis, rideaux', features: ['Toutes les pièces', 'Vapeur, cryogénie ou acaricide', 'Plan de prévention', 'Garantie 1 an'], highlight: true },
     { label: 'Professionnels', price: 'Sur devis', description: 'Hôtels, crèches, locations meublées', features: ['Intervention planifiée', 'Literie et textiles', 'Attestation d\'intervention', 'Contrat possible'], cta: 'Demander un devis' },
   ],
-  avis: ['lisa', 'jo', 'lauren'],
+  avis: ['lisa', 'christine', 'jo'],
   faq: [
     { q: 'Comment savoir si j\'ai des acariens ?', a: 'Les acariens de la poussière sont invisibles à l\'œil nu et présents dans presque tous les logements. On les soupçonne surtout quand une personne allergique réagit au réveil ou au contact de la literie et des textiles. Le diagnostic d\'une allergie relève d\'un médecin.' },
     { q: 'Le traitement soigne-t-il une allergie aux acariens ?', a: 'Non. Il réduit la quantité d\'acariens et de leurs allergènes dans la literie et les textiles. Le suivi d\'une allergie se fait avec votre médecin ou un allergologue.' },

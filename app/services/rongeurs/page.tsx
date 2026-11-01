@@ -48,7 +48,7 @@ const data: ServiceData = {
       cta: 'Contacter pour devis',
     },
   ],
-  avis: ['lauren', 'jo', 'lisa'],
+  avis: ['lauren', 'christine', 'lisa'],
   faq: [
     { q: 'Comment savoir si j\'ai des rats ou des souris ?', a: 'Crottes allongées et grandes = rats. Petites et pointues = souris. Autres signes : traces de grignotage sur les câbles, emballages ou menuiseries, bruits nocturnes dans les cloisons, traces de passages graisseuses sur les murs.' },
     { q: 'Les rongeurs sont-ils dangereux pour la santé ?', a: 'Oui. Rats et souris transmettent leptospirose, salmonellose et autres maladies via leurs déjections. Ils peuvent aussi provoquer des incendies en rongeant les câbles électriques.' },
