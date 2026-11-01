@@ -1,6 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
-import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
+import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
 import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
 
 const data: ServiceData = {
@@ -51,10 +51,10 @@ const data: ServiceData = {
   avis: ['lauren', 'christine', 'lisa'],
   photos: ['ratDiogene'],
   chantier: {
-    photos: CHANTIER_DIOGENE.photos,
-    videos: CHANTIER_DIOGENE.videos,
-    titre: 'Un de nos chantiers : logement très encombré à Maisons-Alfort (94)',
-    lien: { href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' },
+    photos: MEDIAS_DERATISATION.photos,
+    videos: MEDIAS_DERATISATION.videos,
+    titre: 'Nos chantiers de dératisation en images',
+    lien: { href: CHANTIER_DIOGENE.article, label: 'Lire le récit d’un chantier : logement très encombré à Maisons-Alfort' },
   },
   faq: [
     { q: 'Peut-on dératiser sans mort-aux-rats ?', a: 'Oui, en méthode alternative. La méthode la plus courante reste les postes d\'appâtage avec raticide, mais si vous n\'en voulez pas, nous utilisons notamment le piège multicapture Ekomille : posé sur le passage le plus fréquenté et appâté avec des appâts alimentaires, il fait tomber le rongeur dans une cuve fermée où il reste, sans raticide. Le cadavre ne se retrouve ni dans la rue ni dans une cloison, hors de portée des enfants et des animaux. Tout est expliqué dans notre guide sur la dératisation sans mort-aux-rats.' },

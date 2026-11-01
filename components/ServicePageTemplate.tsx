@@ -58,7 +58,7 @@ export interface ServiceData {
   // Vraies photos de chantier à afficher (clés de lib/photos-chantiers.ts)
   photos?: PhotoKey[]
   // Vrai chantier en vidéos (remplace la galerie photos)
-  chantier?: { photos?: PhotoKey[]; videos: VideoChantier[]; titre: string; lien?: { href: string; label: string } }
+  chantier?: { photos?: PhotoKey[]; videos?: VideoChantier[]; titre: string; vignettes?: string; lien?: { href: string; label: string } }
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
@@ -177,7 +177,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               </p>
               {data.chantier && (
                 <div className="-mt-4 mb-8">
-                  <VignettesChantier photos={data.chantier.photos} videos={data.chantier.videos} centre texte="Un de nos chantiers en images" />
+                  <VignettesChantier photos={data.chantier.photos} videos={data.chantier.videos} centre texte={data.chantier.vignettes ?? 'Un de nos chantiers en images'} />
                 </div>
               )}
 

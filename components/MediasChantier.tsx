@@ -1,5 +1,5 @@
 import NextImage from 'next/image'
-import { PHOTOS_CHANTIERS, type PhotoKey } from '@/lib/photos-chantiers'
+import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
 
 const ACCENT = '#E8441A'
 
@@ -11,13 +11,15 @@ export default function MediasChantier({
   videos = [],
   titre = 'Le chantier en images',
   lien,
+  legendes = true,
 }: {
   photos?: PhotoKey[]
   videos?: VideoChantier[]
   titre?: string
   lien?: { href: string; label: string }
+  legendes?: boolean // false sur les pages ville : évite de répéter le même texte sur des dizaines de pages
 }) {
-  const tuile = { position: 'relative' as const, aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }
+  const tuile = { position: 'relative' as const, aspectRatio: '3/4', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }
   const legende = { fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '6px', lineHeight: 1.4 }
   return (
     <div>
@@ -28,23 +30,23 @@ export default function MediasChantier({
           return (
             <figure key={cle} style={{ margin: 0 }}>
               <a href={p.src} target="_blank" rel="noopener" style={{ display: 'block', ...tuile }}>
-                <NextImage src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 33vw, 250px" style={{ objectFit: 'cover' }} />
+                <NextImage src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 33vw, 250px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[cle] as PhotoChantier).cadrage }} />
               </a>
-              <figcaption style={legende}>{p.legende}</figcaption>
+              {legendes && <figcaption style={legende}>{p.legende}</figcaption>}
             </figure>
           )
         })}
         {videos.map((v) => (
           <figure key={v.src} style={{ margin: 0 }}>
             <div style={tuile}>
-              <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata"
+              <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata" aria-label={v.legende}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
               <span aria-hidden="true" style={{ position: 'absolute', right: '8px', bottom: '56px', pointerEvents: 'none', fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.85)', background: 'rgba(0,0,0,0.45)', padding: '2px 6px', borderRadius: '6px', textShadow: '0 1px 2px rgba(0,0,0,0.6)', whiteSpace: 'nowrap' }}>
                 Allo Nuisible <span style={{ color: ACCENT }}>IDF</span>
               </span>
             </div>
-            <figcaption style={legende}>{v.legende}</figcaption>
+            {legendes && <figcaption style={legende}>{v.legende}</figcaption>}
           </figure>
         ))}
       </div>

@@ -6,6 +6,7 @@ export interface PhotoChantier {
   src: string
   alt: string
   legende: string
+  cadrage?: string // object-position quand la photo est recadrée en vignette
 }
 
 export const PHOTOS_CHANTIERS = {
@@ -69,6 +70,43 @@ export const PHOTOS_CHANTIERS = {
     alt: 'Technicien en combinaison et masque à cartouches tenant un rat mort dans un logement très encombré',
     legende: 'Rat ramassé après la dératisation d’un logement très encombré',
   },
+  ratPiege: {
+    src: '/chantiers/rat-piege-mecanique.jpg',
+    alt: 'Rat pris dans un piège mécanique posé au sol, derrière des appareils électroménagers',
+    legende: 'Rat pris dans un piège mécanique, derrière l’électroménager',
+  },
+  ratPlaque: {
+    src: '/chantiers/rat-plaque-glu.jpg',
+    alt: 'Rat capturé sur une plaque de glu posée au sol, près d’un mur en pierre',
+    legende: 'Rat capturé près d’un trou au niveau de la cheminée',
+  },
+  rongeursGlu: {
+    src: '/chantiers/rongeurs-plaques-glu.jpg',
+    alt: 'Trois petits rongeurs capturés sur une plaque de glu posée le long d’un mur extérieur',
+    legende: 'Trois petits rongeurs capturés le long d’un mur',
+    cadrage: '85% center',
+  },
+  frelonsPerche: {
+    src: '/chantiers/frelons-nid-perche-toit.jpg',
+    alt: 'Technicien en tenue de protection retirant un gros nid de frelons sous un toit avec une perche télescopique',
+    legende: 'Nid de frelons sous le toit, retiré à la perche télescopique',
+    cadrage: '30% center',
+  },
+  frelonsPorte: {
+    src: '/chantiers/frelons-nid-porte.jpg',
+    alt: 'Perche de traitement dirigée vers un nid de frelons logé au-dessus d’une porte en bois',
+    legende: 'Nid de frelons au-dessus d’une porte, traité à distance',
+  },
+  frelonsArbre: {
+    src: '/chantiers/frelons-arbre-echelle.jpg',
+    alt: 'Grand arbre sans feuilles avec une échelle posée contre le tronc pour atteindre un nid de frelons',
+    legende: 'Nid de frelons en haut d’un arbre, visible après la chute des feuilles',
+  },
+  balconEncombre: {
+    src: '/chantiers/balcon-encombre.jpg',
+    alt: 'Balcon couvert de fientes et de débris laissés par les pigeons, avant nettoyage',
+    legende: 'Balcon envahi par les pigeons, avant le nettoyage',
+  },
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
@@ -83,3 +121,13 @@ export const CHANTIER_DIOGENE = {
     { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la pose des postes (Maisons-Alfort, 94)' },
   ],
 }
+
+// Médias de dératisation affichés sur toutes les pages dératisation (miniatures en haut, galerie au milieu).
+export const MEDIAS_DERATISATION = {
+  photos: ['ratDiogene', 'ratPiege', 'ratPlaque', 'rongeursGlu'] as PhotoKey[],
+  videos: CHANTIER_DIOGENE.videos,
+}
+
+// Médias guêpes et frelons, et pigeons (photos de la fiche Google)
+export const MEDIAS_FRELONS = { photos: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[] }
+export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }

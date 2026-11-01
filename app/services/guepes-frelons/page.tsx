@@ -5,7 +5,9 @@ import {
   Phone, ShieldCheck, Star, ChevronDown, ArrowRight,
   AlertTriangle, Clock, FileText, Briefcase, RefreshCw, X
 } from 'lucide-react'
-import PhotosChantiers from '@/components/PhotosChantiers'
+import MediasChantier from '@/components/MediasChantier'
+import VignettesChantier from '@/components/VignettesChantier'
+import { MEDIAS_FRELONS } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -228,6 +230,11 @@ export default function GuêpesFrelonsPage() {
               Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Résultat garanti.
             </p>
 
+            {/* Miniatures de vrais chantiers */}
+            <div className="hero-3 -mt-6 mb-10">
+              <VignettesChantier photos={MEDIAS_FRELONS.photos.slice(0, 3)} centre texte="Nos nids retirés en photos" />
+            </div>
+
             {/* ── NUMÉRO — bouton lava ── */}
             <div className="hero-4 mb-12">
               <a
@@ -383,7 +390,11 @@ export default function GuêpesFrelonsPage() {
         </section>
 
         {/* Galerie : vraies photos de chantier (lib/photos-chantiers.ts) */}
-        <PhotosChantiers photos={['nidGuepes']} titre="Un de nos chantiers guêpes" />
+        <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#111' }}>
+          <div className="max-w-3xl mx-auto">
+            <MediasChantier photos={MEDIAS_FRELONS.photos} titre="Nos chantiers guêpes et frelons en images" />
+          </div>
+        </section>
 
         {/* ══════════════════ SECTION CONVERSION SOMBRE ══════════════════ */}
         <section

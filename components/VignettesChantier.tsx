@@ -1,5 +1,5 @@
 import NextImage from 'next/image'
-import { PHOTOS_CHANTIERS, type PhotoKey } from '@/lib/photos-chantiers'
+import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
 import type { VideoChantier } from '@/components/MediasChantier'
 
 const ACCENT = '#E8441A'
@@ -23,7 +23,7 @@ export default function VignettesChantier({
     <a href={ancre} style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: centre ? 'center' : 'flex-start', textDecoration: 'none', flexWrap: 'wrap' }}>
       {photos.map((cle) => (
         <span key={cle} style={tuile}>
-          <NextImage src={PHOTOS_CHANTIERS[cle].src} alt={PHOTOS_CHANTIERS[cle].alt} fill sizes="72px" style={{ objectFit: 'cover' }} />
+          <NextImage src={PHOTOS_CHANTIERS[cle].src} alt={PHOTOS_CHANTIERS[cle].alt} fill sizes="72px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[cle] as PhotoChantier).cadrage }} />
         </span>
       ))}
       {videos.map((v) => (
