@@ -30,10 +30,13 @@ function ligneLisible(l: string, avecArticle = false) {
 
 // Ajoute l'article à un nom de lieu (« la Seine », « le canal Saint-Martin », « l'Île de loisirs »)
 function article(nom: string) {
-  const m = nom.match(/^(Le|La|Les|L['’])\s?(.*)$/)
-  if (m) return `${m[1].toLowerCase()}${m[1].endsWith('e') || m[1].endsWith('a') || m[1].endsWith('s') ? ' ' : ''}${m[2]}`
+  const m = nom.match(/^(Les|Le|La) (.*)$/)
+  if (m) return `${m[1].toLowerCase()} ${m[2]}`
+  const l = nom.match(/^L['’](.*)$/)
+  if (l) return `l'${l[1]}`
   const mot = nom.split(' ')[0]
   const commun = /^(Canal|Bras|Ru)$/.test(mot) ? nom.charAt(0).toLowerCase() + nom.slice(1) : nom
+  if (/^(Jardins|Bassins|Berges|Buttes|Rives|Quais|Étangs|Îles)$/.test(mot)) return `les ${commun}`
   if (/^[AEIOUÉÈÎÏaeiouéèîï]/.test(nom)) return `l'${commun}`
   if (/^(Forêt|Coulée|Promenade|Pelouse|Plaine|Butte|Colline|Roseraie|Rivière|Coulée)$/.test(mot)) return `la ${commun}`
   return `le ${commun}`
@@ -175,17 +178,19 @@ function villeCourte(d: DonneesLocales, s: ServiceLocal, a = '') {
   const lieu = d.paris ? `Le ${d.nom.replace('Paris ', '')} arrondissement` : d.nom
   const v = liste(d.voisines.slice(0, 3))
   const q = d.quartiers
+  // À Paris, les voisins sont des arrondissements (et parfois des communes)
+  const voisins = d.paris ? 'les secteurs voisins' : 'les communes voisines'
   if (q.length >= 2) {
     const tout = d.paris ? `tout le ${d.nom.replace('Paris ', '')} arrondissement` : `toute la ville`
     return pick(`${d.slug}${s}quartiers`, [
-      `Nous intervenons dans ${tout} (${d.cp.join(', ')}), quartier par quartier : ${liste(q)}. Et aussi dans les communes voisines : ${v}.`,
-      `${majuscule(a)}, nos techniciens se déplacent dans tous les quartiers, ${liste(q)}, ainsi que dans les communes voisines (${v}).`,
+      `Nous intervenons dans ${tout} (${d.cp.join(', ')}), quartier par quartier : ${liste(q)}. Et aussi dans ${voisins} : ${v}.`,
+      `${majuscule(a)}, nos techniciens se déplacent dans tous les quartiers, ${liste(q)}, ainsi que dans ${voisins} (${v}).`,
       `Quel que soit votre quartier ${a} (${liste(q)}), une intervention est possible le jour même. Nous couvrons aussi ${v}.`,
     ])
   }
   return pick(`${d.slug}${s}ville`, [
     `${lieu} (${d.cp.join(', ')}) compte ${nf(d.population)} habitants. Nous intervenons aussi tout près, à ${v}.`,
-    `${lieu}, ${nf(d.population)} habitants, code postal ${d.cp[0]} : intervention possible le jour même, comme dans les communes voisines (${v}).`,
+    `${lieu}, ${nf(d.population)} habitants, code postal ${d.cp[0]} : intervention possible le jour même, comme dans ${voisins} (${v}).`,
     `Nous couvrons tout ${d.paris ? 'l\'arrondissement' : 'le territoire de la commune'} (${d.cp.join(', ')}, ${nf(d.population)} habitants) et les alentours : ${v}.`,
   ])
 }

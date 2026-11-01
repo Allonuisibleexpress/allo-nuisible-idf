@@ -15,7 +15,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
             <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur {NOTE_GOOGLE.nombre} avis Google. Avis reproduits mot pour mot.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className={ordre.length >= 3 ? 'grid md:grid-cols-3 gap-5' : ordre.length === 2 ? 'grid md:grid-cols-2 gap-5 max-w-3xl mx-auto' : 'max-w-xl mx-auto'}>
           {ordre.map((cle) => {
             const a = AVIS_GOOGLE[cle]
             return (
@@ -28,7 +28,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
                   </div>
                   <figcaption>
                     <p className="font-black text-white text-sm leading-none mb-1">{a.auteur}</p>
-                    <p className="text-white/40 text-xs">{a.sujet} · septembre 2026</p>
+                    <p className="text-white/40 text-xs">{a.sujet} · {a.mois ?? 'septembre 2026'}</p>
                   </figcaption>
                 </div>
                 <p className="text-yellow-400 text-xs mb-3" aria-label="5 étoiles sur 5">★★★★★</p>

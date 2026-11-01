@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
+import AvisGoogle from '@/components/AvisGoogle'
+import { avisVille } from '@/lib/avis-google'
 import {
   VILLES_DERATISATION, GUIDES_RONGEURS, SOURCES_DERATISATION, MAJ_DERATISATION, getVilleDeratisation,
 } from '@/lib/villes-deratisation'
@@ -146,6 +148,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
+
+        {/* Avis Google d'un client de cette ville, s'il y en a un */}
+        {avisVille('deratisation', v.slug).length > 0 && <AvisGoogle ordre={avisVille('deratisation', v.slug)} />}
 
         {/* ── MÉTHODE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

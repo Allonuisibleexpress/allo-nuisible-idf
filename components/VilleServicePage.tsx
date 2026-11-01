@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ContexteLocal from '@/components/ContexteLocal'
 import type { ServiceLocal } from '@/components/ContexteLocal'
+import AvisGoogle from '@/components/AvisGoogle'
+import { avisVille } from '@/lib/avis-google'
 import { SITE_URL } from '@/lib/seo'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
@@ -78,6 +80,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   const sections = c.sections ? [c.sections[rang % c.sections.length]] : undefined
   // Encadré de conseils et cartes « publics » en alternance d'une ville à l'autre
   const avecEncadre = rang % 2 === 0
+  const sl = serviceLocal(c.pilier.href)
+  const avisLocaux = sl === 'souris' || sl === 'cafards' ? avisVille(sl, v.slug) : []
   // FAQ : la question propre à la ville, puis 2 questions générales en rotation
   const generales = v.faq.slice(1)
   const d = rang % Math.max(1, generales.length)
@@ -182,6 +186,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+
+        {/* Avis Google d'un client de cette ville pour ce nuisible, s'il y en a un */}
+        {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
 
         {/* ── CONTENU DÉTAILLÉ ── */}
         {sections && (
