@@ -33,6 +33,7 @@ const services = [
 const navLinks = [
   { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Services', href: '#services', dropdown: true },
+  { label: 'Nos interventions', href: '/nos-interventions', external: true },
   { label: 'Tarifs', href: '/tarifs', external: true },
   { label: 'Blog', href: '/blog', external: true },
   { label: 'Professionnels', href: '/professionnels', external: true },
@@ -158,7 +159,7 @@ export default function Navbar() {
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
                   <button
-                    className="flex items-center gap-1 text-white/90 hover:text-[#E8441A] font-medium text-sm px-3 py-2 rounded transition-colors duration-200"
+                    className="flex items-center gap-1 text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
                     {link.label}
@@ -188,7 +189,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-3 py-2 rounded transition-colors duration-200"
+                  className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -196,7 +197,7 @@ export default function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-3 py-2 rounded transition-colors duration-200"
+                  className={`${['Accueil', 'À Propos'].includes(link.label) ? 'hidden xl:inline-block ' : ''}text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200`}
                 >
                   {link.label}
                 </button>
@@ -211,7 +212,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-white/80 hover:text-white text-sm transition-colors"
             >
               <Phone className="w-4 h-4 text-[#E8441A]" />
-              <span className="font-semibold">07 68 07 72 19</span>
+              <span className="font-semibold hidden 2xl:inline whitespace-nowrap">07 68 07 72 19</span>
             </a>
             <button
               onClick={() => {
@@ -221,7 +222,7 @@ export default function Navbar() {
                   scrollTo('#contact')
                 }
               }}
-              className="bg-[#E8441A] hover:bg-[#d03a15] text-white font-bold text-sm px-5 py-2.5 rounded-full uppercase tracking-wider transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#E8441A]/30"
+              className="bg-[#E8441A] hover:bg-[#d03a15] text-white font-bold text-sm px-5 py-2.5 rounded-full uppercase tracking-wider whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#E8441A]/30"
             >
               PRENDRE RENDEZ-VOUS
             </button>

@@ -206,4 +206,5 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 - [Trois petits rongeurs capturés en urgence](https://allonuisibleidf.fr/blog/trois-rongeurs-captures-plaques-glu)
 - [Rat capturé derrière l'électroménager](https://allonuisibleidf.fr/blog/rat-piege-cuisine-electromenager)
 - [Punaises de lit : pulvérisation puis nébulisation](https://allonuisibleidf.fr/blog/punaises-de-lit-traitement-insecticide-appartement)
+- [Nos interventions en images](https://allonuisibleidf.fr/nos-interventions): photos et vidéos de vrais chantiers, classées par nuisible
 - [Tous les articles](https://allonuisibleidf.fr/blog)

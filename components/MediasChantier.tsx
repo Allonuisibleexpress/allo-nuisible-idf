@@ -32,7 +32,7 @@ export default function MediasChantier({
   const legende = { fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '6px', lineHeight: 1.4 }
   return (
     <div>
-      <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: ACCENT, marginBottom: '12px' }}>{titre}</p>
+      {titre && <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: ACCENT, marginBottom: '12px' }}>{titre}</p>}
       <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(3, photos.length + videos.length)}, minmax(0, 1fr))`, gap: '10px', maxWidth: photos.length + videos.length === 1 ? '320px' : photos.length + videos.length === 2 ? '560px' : undefined }}>
         {photos.map((cle) => {
           const p = PHOTOS_CHANTIERS[cle]
