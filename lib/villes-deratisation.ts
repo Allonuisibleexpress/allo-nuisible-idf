@@ -1,5 +1,5 @@
 // Pages « Dératisation à [ville] » (/deratisation/[ville]) : 5 villes cibles.
-// Cocon sémantique : pilier /services/deratisation, sœur /services/rongeurs, guides du blog rongeurs.
+// Cocon sémantique : pilier /services/deratisation (rats et souris), guides du blog rongeurs.
 // GEO : bloc « En bref » factuel + FAQ balisée. E-E-A-T : auteur, certification, date, sources vérifiées.
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel » ni « sans danger ».
 

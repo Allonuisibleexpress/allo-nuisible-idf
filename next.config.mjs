@@ -12,6 +12,8 @@ const nextConfig = {
         destination: 'https://allonuisibleidf.fr/:path*',
         permanent: true,
       },
+      // Page « Rongeurs » fusionnée avec « Dératisation » (même requête, une seule page)
+      { source: '/services/rongeurs', destination: '/services/deratisation', permanent: true },
     ]
   },
 }

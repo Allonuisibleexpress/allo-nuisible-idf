@@ -44,21 +44,11 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     ],
   },
   {
-    name: 'Rongeurs',
-    icon: 'rongeurs',
-    href: '/services/rongeurs',
-    tiers: [
-      { label: 'Appartement', price: '120', details: 'Rats ou souris, recherche des accès' },
-      { label: 'Maison', price: null, details: 'Combles, cave, garage, jardin', highlight: true },
-      { label: 'Local commercial', price: null, details: 'Attestation fournie' },
-    ],
-  },
-  {
-    name: 'Dératisation',
+    name: 'Dératisation / Rongeurs',
     icon: 'deratisation',
     href: '/services/deratisation',
     tiers: [
-      { label: 'Particulier', price: '120', details: 'Postes d\'appâtage sécurisés ou pièges' },
+      { label: 'Appartement', price: '120', details: 'Rats ou souris, postes sécurisés ou pièges' },
       { label: 'Commerce, restaurant', price: null, details: 'Attestation fournie', highlight: true },
       { label: 'Copropriété, contrat annuel', price: null, details: 'Parties communes, passages réguliers' },
     ],

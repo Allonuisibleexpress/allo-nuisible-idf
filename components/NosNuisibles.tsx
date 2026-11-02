@@ -27,13 +27,6 @@ const nuisibles: {
     urgency: null,
   },
   {
-    icon: 'rongeurs',
-    name: 'Rongeurs',
-    desc: 'Postes sécurisés · Attestation HACCP · Contrats annuels',
-    href: '/services/rongeurs',
-    urgency: null,
-  },
-  {
     icon: 'fourmis',
     name: 'Fourmis',
     desc: 'Gel "effet domino" · Reine éliminée · Résultat sous 48h',
@@ -56,8 +49,8 @@ const nuisibles: {
   },
   {
     icon: 'deratisation',
-    name: 'Dératisation',
-    desc: 'Certibiocide · ERP & copropriétés · Registres de suivi',
+    name: 'Dératisation / Rongeurs',
+    desc: 'Postes sécurisés · Pièges ou Ekomille · Pros & copropriétés',
     href: '/services/deratisation',
     urgency: null,
   },

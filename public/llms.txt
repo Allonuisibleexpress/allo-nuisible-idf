@@ -8,8 +8,7 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 
 ## Services
 
-- [Dératisation](https://allonuisibleidf.fr/services/deratisation): postes d'appâtage sécurisés ou pièges connectés, colmatage, attestation pour les professionnels
-- [Rats, souris, ragondins](https://allonuisibleidf.fr/services/rongeurs): diagnostic des accès, postes sécurisés, pièges mécaniques et connectés
+- [Dératisation, rats, souris et ragondins](https://allonuisibleidf.fr/services/deratisation): diagnostic des accès, postes d'appâtage sécurisés ou pièges mécaniques et connectés, colmatage, attestation pour les professionnels
 - [Punaises de lit](https://allonuisibleidf.fr/services/punaises-de-lit): cryogénie, vapeur sèche et insecticide rémanent
 - [Cafards et blattes](https://allonuisibleidf.fr/services/cafards-blattes): protocole en 2 passages, gel, insecticide, vapeur sèche
 - [Fourmis](https://allonuisibleidf.fr/services/fourmis)

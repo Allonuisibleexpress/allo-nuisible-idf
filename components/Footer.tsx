@@ -17,11 +17,10 @@ const quickLinks = [
 const services = [
   { label: 'Punaises de lit', href: '/services/punaises-de-lit' },
   { label: 'Cafards & blattes', href: '/services/cafards-blattes' },
-  { label: 'Rongeurs', href: '/services/rongeurs' },
   { label: 'Fourmis', href: '/services/fourmis' },
   { label: 'Guêpes & frelons', href: '/services/guepes-frelons' },
   { label: 'Pigeons', href: '/services/pigeons' },
-  { label: 'Dératisation', href: '/services/deratisation' },
+  { label: 'Dératisation / Rongeurs', href: '/services/deratisation' },
   { label: 'Désinfection', href: '/services/desinfection' },
   { label: 'Chenilles processionnaires', href: '/services/chenilles-processionnaires' },
   { label: 'Acariens', href: '/services/acariens' },

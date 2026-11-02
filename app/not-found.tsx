@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const LIENS: { href: string; label: string; icon: PestKey }[] = [
   { href: '/services/punaises-de-lit', label: 'Punaises de lit', icon: 'punaises-de-lit' },
   { href: '/services/cafards-blattes', label: 'Cafards et blattes', icon: 'cafards-blattes' },
-  { href: '/services/rongeurs', label: 'Rats et souris', icon: 'rongeurs' },
+  { href: '/services/deratisation', label: 'Rats et souris', icon: 'rongeurs' },
   { href: '/services/guepes-frelons', label: 'Guêpes et frelons', icon: 'guepes-frelons' },
   { href: '/services/fourmis', label: 'Fourmis', icon: 'fourmis' },
   { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires', icon: 'chenilles' },

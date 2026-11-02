@@ -1,6 +1,6 @@
 // Pages « Souris à [ville] » (/souris/[ville]) : 9 villes du Val-de-Marne.
 // Visent les recherches « souris » (maison, appartement), les pages /deratisation/[ville] restent centrées sur les rats.
-// Cocon : sœur /services/rongeurs, pilier /services/deratisation, guides rongeurs du blog, pages communes du 94.
+// Cocon : pilier /services/deratisation (rats et souris), guides rongeurs du blog, pages communes du 94.
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
@@ -17,7 +17,7 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
   basePath: '/souris',
   titre: 'Souris',
   serviceType: 'Traitement contre les souris',
-  pilier: { href: '/services/rongeurs', label: 'Rats et souris', lien: 'notre traitement des rats et souris en Île-de-France' },
+  pilier: { href: '/services/deratisation', label: 'Rats et souris', lien: 'notre traitement des rats et souris en Île-de-France' },
   enBref: [
     'Allo Nuisible IDF élimine les souris (souris domestique, mulot) dans les appartements, maisons, caves, garages et commerces.',
     'Méthodes : pièges mécaniques, pièges connectés qui signalent chaque capture, postes d\'appâtage sécurisés avec rodenticide professionnel.',

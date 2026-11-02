@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', '/blog', '/tarifs', '/professionnels']
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
-    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'rongeurs', 'chenilles-processionnaires', 'acariens',
+    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'chenilles-processionnaires', 'acariens',
   ]
   const legacyPosts = ['punaise-colza-invasion-idf-2026']
 

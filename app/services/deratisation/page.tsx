@@ -2,12 +2,13 @@ import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
 import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
+import { VILLES_SOURIS } from '@/lib/villes-souris'
 
 const data: ServiceData = {
-  badge: 'Certibiocide · HACCP · Particuliers & ERP · Contrats annuels',
-  heroTitle: 'Dératisation',
-  heroHighlight: 'Intervention certifiée',
-  heroDescription: 'Élimination des rongeurs par des techniciens Certibiocide. Postes d\'appâtage sécurisés, pièges connectés ou, en méthode alternative, piège multicapture Ekomille sans raticide, attestations pour professionnels, contrats de maintenance.',
+  badge: 'Rats · Souris · Ragondins · Particuliers, pros & copropriétés',
+  heroTitle: 'Dératisation / Rongeurs',
+  heroHighlight: 'Rats et souris',
+  heroDescription: 'Rats, souris ou ragondins : élimination des rongeurs par des techniciens Certibiocide, avec recherche et colmatage des accès. Postes d\'appâtage sécurisés, pièges connectés ou, en méthode alternative, piège multicapture Ekomille sans raticide, attestations pour professionnels, contrats de maintenance.',
   heroPrices: [
     { price: '120', label: 'Particulier' },
     { price: 'Sur devis', label: 'Professionnel' },
@@ -57,6 +58,9 @@ const data: ServiceData = {
     lien: { href: CHANTIER_DIOGENE.article, label: 'Lire le récit d’un chantier : logement très encombré à Maisons-Alfort' },
   },
   faq: [
+    { q: 'Comment savoir si j\'ai des rats ou des souris ?', a: 'Crottes allongées et grandes : rats. Petites et pointues : souris. Autres signes : traces de grignotage sur les câbles, les emballages ou les menuiseries, bruits la nuit dans les cloisons, traces de passage grasses le long des murs.' },
+    { q: 'Les rongeurs sont-ils dangereux pour la santé ?', a: 'Oui. Rats et souris peuvent transmettre des maladies, dont la leptospirose, par leurs déjections et leur urine. Ils peuvent aussi provoquer des incendies en rongeant les câbles électriques.' },
+    { q: 'Les raticides sont-ils dangereux pour mes animaux ?', a: 'Oui, c\'est pourquoi nous les plaçons uniquement dans des postes d\'appâtage sécurisés, verrouillés et inaccessibles aux animaux domestiques et aux enfants. Si vous préférez, nous utilisons des pièges mécaniques, connectés ou le piège Ekomille.' },
     { q: 'Peut-on dératiser sans mort-aux-rats ?', a: 'Oui, en méthode alternative. La méthode la plus courante reste les postes d\'appâtage avec raticide, mais si vous n\'en voulez pas, nous utilisons notamment le piège multicapture Ekomille : posé sur le passage le plus fréquenté et appâté avec des appâts alimentaires, il fait tomber le rongeur dans une cuve fermée où il reste, sans raticide. Le cadavre ne se retrouve ni dans la rue ni dans une cloison, hors de portée des enfants et des animaux. Tout est expliqué dans notre guide sur la dératisation sans mort-aux-rats.' },
     { q: 'Quelle différence entre dératisation et simple piégeage ?', a: 'Un piège posé seul, sans diagnostic, ne règle pas la source. Une dératisation professionnelle combine identification des points d\'entrée, colmatage et un dispositif adapté au lieu : appâts raticides en postes sécurisés, pièges mécaniques ou pièges connectés. Objectif : éliminer la population entière et empêcher le retour.' },
     { q: 'La dératisation est-elle obligatoire pour les restaurants ?', a: 'Les établissements recevant du public (restaurants, hôtels, commerces alimentaires) ont une obligation légale de lutte antiparasitaire. Nous fournissons les attestations HACCP et rapports requis pour vos contrôles sanitaires.' },
@@ -67,13 +71,14 @@ const data: ServiceData = {
   related: {
     villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides sur les rongeurs', links: [...Object.entries(GUIDES_RONGEURS).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
+    souris: { title: 'Souris par ville', links: VILLES_SOURIS.map((v) => ({ href: `/souris/${v.slug}`, label: `Souris ${v.a} (${v.code})` })) },
   },
   ctaTitle: 'Besoin d\'une dératisation ?\nOn intervient rapidement.',
 }
 
 export const metadata = pageMetadata({
-  title: 'Dératisation en Île-de-France, intervention le jour même',
-  description: 'Dératisation par des techniciens Certibiocide : postes d\'appâtage sécurisés ou pièges connectés, attestation pour les pros. Devis gratuit.',
+  title: 'Dératisation / Rongeurs : rats et souris en IDF, 7j/7',
+  description: 'Rats ou souris ? Dératisation par des techniciens Certibiocide : postes sécurisés ou pièges connectés, colmatage, attestation pro. Devis gratuit.',
   path: '/services/deratisation',
 })
 

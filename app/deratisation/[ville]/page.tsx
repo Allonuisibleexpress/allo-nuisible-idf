@@ -205,8 +205,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               <a href="/blog/deratisation-sans-mort-aux-rats" className="text-sm font-bold underline" style={{ color: ACCENT }}>Comment fonctionne le piège Ekomille</a>
             </div>
             <p className="text-white/60 text-sm mt-8">
-              Pour aller plus loin : <a href="/services/deratisation" className="underline" style={{ color: ACCENT }}>notre page dératisation</a>
-              {' '}et <a href="/services/rongeurs" className="underline" style={{ color: ACCENT }}>le traitement des rats et souris</a>.
+              Pour aller plus loin : <a href="/services/deratisation" className="underline" style={{ color: ACCENT }}>notre page dératisation, rats et souris</a>.
             </p>
           </div>
         </section>
