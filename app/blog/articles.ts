@@ -952,6 +952,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'info', title: 'Le bon réflexe en complément', x: "Pendant que le technicien traite la literie et les meubles, lavez le linge à 60 °C pendant 1 heure, ou passez-le au sèche-linge au moins 30 minutes, comme le recommande stop-punaises.gouv.fr." },
       { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Saint-Mandé](/punaises-de-lit/saint-mande) ou à [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
       { t: 'p', x: "Nous intervenons à la vapeur sèche notamment à [Sucy-en-Brie](/punaises-de-lit/sucy-en-brie) et à [Santeny](/punaises-de-lit/santeny)." },
+      { t: 'p', x: "**Nous pratiquons la cryogénie** dans les logements, les hôtels et les établissements sensibles : voir notre page [traitement des punaises de lit par cryogénie](/services/cryogenie-punaises-de-lit), avec les vidéos de nos chantiers." },
     ],
     faq: [
       { q: "La vapeur sèche tue-t-elle les œufs de punaises de lit ?", a: "Oui, la chaleur tue les punaises et leurs œufs au contact, à condition d'appliquer la vapeur lentement et au plus près des surfaces." },

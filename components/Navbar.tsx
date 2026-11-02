@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 /* Pages de service disponibles */
 const servicePages: Record<string, string> = {
   'Punaises de lit':  '/services/punaises-de-lit',
+  'Cryogénie punaises de lit': '/services/cryogenie-punaises-de-lit',
   'Cafards & blattes': '/services/cafards-blattes',
   'Fourmis':           '/services/fourmis',
   'Guêpes & frelons':  '/services/guepes-frelons',
@@ -20,6 +21,7 @@ const servicePages: Record<string, string> = {
 
 const services = [
   'Punaises de lit',
+  'Cryogénie punaises de lit',
   'Cafards & blattes',
   'Fourmis',
   'Guêpes & frelons',

@@ -10,6 +10,7 @@ Zone d'intervention : les 8 départements d'Île-de-France (Paris, Seine-et-Marn
 
 - [Dératisation, rats, souris et ragondins](https://allonuisibleidf.fr/services/deratisation): diagnostic des accès, postes d'appâtage sécurisés ou pièges mécaniques et connectés, colmatage, attestation pour les professionnels
 - [Punaises de lit](https://allonuisibleidf.fr/services/punaises-de-lit): cryogénie, vapeur sèche et insecticide rémanent
+- [Cryogénie contre les punaises de lit](https://allonuisibleidf.fr/services/cryogenie-punaises-de-lit): neige carbonique à environ −78 °C, sans insecticide, 2 passages inclus dès 290 € TTC, vidéos de chantier
 - [Cafards et blattes](https://allonuisibleidf.fr/services/cafards-blattes): protocole en 2 passages, gel, insecticide, vapeur sèche
 - [Fourmis](https://allonuisibleidf.fr/services/fourmis)
 - [Guêpes et frelons](https://allonuisibleidf.fr/services/guepes-frelons)

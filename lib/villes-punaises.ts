@@ -120,6 +120,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'À Bry-sur-Marne, commune résidentielle et familiale, les punaises de lit arrivent surtout avec les voyages, les meubles chinés et les séjours d\'enfants en colonie ou chez des proches. Un sac posé sur un lit suffit à en ramener.',
       'Dans les chambres d\'enfants, beaucoup de parents préfèrent un traitement sans produit : la cryogénie et la vapeur sèche traitent la literie et les jouets en tissu sans laisser de résidu.',
+      'Dans une maison, les punaises ne restent pas dans une seule pièce : elles voyagent avec le linge, les valises et les enfants qui changent de chambre. Nous traitons chaque pièce où quelqu\'un dort, chambre d\'amis comprise.',
     ],
     proches: ['Le Perreux-sur-Marne', 'Champigny-sur-Marne', 'Villiers-sur-Marne', 'Nogent-sur-Marne'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -403,6 +404,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'À Villejuif, de nombreuses jeunes familles cherchent un traitement contre les punaises de lit compatible avec une grossesse ou l\'arrivée d\'un bébé. C\'est exactement le cas où l\'on évite l\'insecticide.',
       'La cryogénie et la vapeur sèche traitent le lit, le berceau, les textiles et les plinthes sans aucun produit. Le logement est utilisable juste après, sans odeur.',
+      'Pour les personnes qui travaillent en horaires décalés, nous intervenons tôt le matin ou en soirée, selon les disponibilités, afin de ne pas bloquer votre journée de repos.',
     ],
     proches: ['Le Kremlin-Bicêtre', 'Vitry-sur-Seine', 'Cachan', 'L\'Haÿ-les-Roses'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -523,6 +525,8 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'À Thiais, entre quartiers pavillonnaires, résidences et grands centres commerciaux, les punaises de lit arrivent surtout par les voyages, les achats d\'occasion et les visites.',
       'Avec la cryogénie et la vapeur sèche, il n\'est pas nécessaire de quitter son logement : on peut dormir dans la chambre traitée le soir même.',
+      'Beaucoup d\'infestations commencent par un meuble ou un matelas d\'occasion. Avant de le rapporter chez vous, inspectez les coutures, les jointures et le dessous avec une lampe : des points noirs ou des mues doivent vous alerter.',
+      'Si vous travaillez dans un commerce, un entrepôt ou un centre commercial, sachez que les punaises ne vivent pas sur les personnes : elles se déplacent avec les sacs, les vêtements posés et les meubles. Le traitement se concentre donc sur le logement, là où elles se nourrissent la nuit.',
     ],
     proches: ['Choisy-le-Roi', 'Orly', 'Rungis', 'Chevilly-Larue', 'Vitry-sur-Seine'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -584,6 +588,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 13e compte de grandes tours, des résidences étudiantes et de nombreux logements familiaux. Dans un immeuble de grande hauteur, les punaises de lit peuvent passer d\'un appartement à l\'autre par les gaines et les plinthes.',
       'Nous traitons l\'appartement touché à la cryogénie et à la vapeur sèche, sans produit, et nous conseillons de faire inspecter les logements voisins pour éviter un retour.',
+      'Dans les grandes résidences et les résidences étudiantes, une infestation se règle avec le gestionnaire : traitement des logements touchés, contrôle des logements voisins et information des occupants.',
     ],
     proches: ['Paris 12e', 'Paris 5e', 'Paris 14e', 'Ivry-sur-Seine', 'Le Kremlin-Bicêtre'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -624,6 +629,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 11e, très animé, compte beaucoup de jeunes actifs et de colocations, avec des allers-retours fréquents, des invités et des achats d\'occasion. Autant d\'occasions pour les punaises de lit d\'entrer.',
       'Avec la cryogénie et la vapeur sèche, il n\'y a pas besoin de quitter l\'appartement pendant des heures ni de vider les placards : aucun produit n\'est appliqué.',
+      'En colocation, les punaises passent vite d\'une chambre à l\'autre. Toutes les chambres doivent être traitées le même jour, et chaque colocataire prépare son linge : sinon, elles reviennent par la chambre oubliée.',
     ],
     proches: ['Paris 12e', 'Paris 20e', 'Paris 3e', 'Paris 4e', 'Paris 10e'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -664,6 +670,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 4e, avec le Marais et l\'île Saint-Louis, compte beaucoup de locations meublées pour touristes. Les voyageurs se succèdent, et un seul séjour suffit à apporter des punaises de lit.',
       'Pour les propriétaires, la cryogénie et la vapeur sèche permettent de traiter et de relouer vite, sans odeur, avec une attestation d\'intervention à présenter si besoin.',
+      'Lits anciens à cadre sculpté, boiseries, meubles de famille : dans les logements anciens du Marais et des îles, nous privilégions la cryogénie, sans humidité, pour protéger les bois anciens.',
     ],
     proches: ['Paris 3e', 'Paris 5e', 'Paris 11e', 'Paris 12e', 'Paris 1er'],
     guides: ['punaises-de-lit-airbnb-location-courte-duree', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -724,6 +731,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Dans le 6e, les appartements anciens ont souvent de beaux parquets, des moulures et des meubles de famille. Les punaises de lit se glissent entre les lames de parquet et dans les assemblages des meubles.',
       'La cryogénie traite les joints de parquet et les meubles en bois sans humidité ni produit, et la vapeur sèche la literie et les tissus.',
+      'Les chambres de bonne et les petits logements étudiants sont souvent meublés de lits en bois et de bibliothèques : autant de fentes à traiter, une par une, à la lance de cryogénie ou à la vapeur.',
     ],
     proches: ['Paris 5e', 'Paris 7e', 'Paris 14e', 'Paris 15e'],
     guides: ['cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit', 'terre-de-diatomee-punaises-de-lit'],
@@ -785,6 +793,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 2e, du Sentier à la Bourse, mêle bureaux, espaces de coworking, passages couverts, hôtels et logements anciens. Les punaises de lit peuvent s\'installer dans un canapé de salle de pause comme dans une chambre.',
       'Nous intervenons le soir ou le week-end pour ne pas gêner l\'activité, avec la cryogénie et la vapeur sèche, sans insecticide, ou un traitement insecticide si besoin.',
+      'Petits studios et logements loués à la nuitée : nous intervenons entre deux locations et conseillons une housse anti-punaises sur le matelas, qui facilite les contrôles suivants.',
     ],
     proches: ['Paris 1er', 'Paris 3e', 'Paris 9e', 'Paris 10e'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -805,6 +814,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Dans le 7e, les appartements ont souvent des tissus précieux, des rideaux épais, des tapis et des meubles de style. Les punaises de lit se cachent dans les coutures, les passementeries et les assemblages du bois.',
       'La cryogénie, sèche et sans résidu, convient aux tissus délicats et aux meubles anciens ; la vapeur sèche traite matelas et canapés. Le tout sans insecticide, ou avec un traitement insecticide si l\'infestation l\'exige.',
+      'Dans les appartements haussmanniens, les parquets anciens aux lames disjointes et les moulures offrent des cachettes. La cryogénie, sèche, permet de traiter les jointures du parquet sans abîmer le bois.',
     ],
     proches: ['Paris 6e', 'Paris 15e', 'Paris 8e', 'Paris 16e'],
     guides: ['cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit', 'punaises-de-lit-sans-insecticide'],
@@ -825,6 +835,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 8e réunit des hôtels de prestige, des bureaux, des boutiques et des appartements de standing. Dans ces lieux, la discrétion compte autant que l\'efficacité.',
       'Véhicule banalisé, technicien en tenue discrète, intervention à l\'heure choisie : nous traitons par cryogénie et vapeur sèche, sans insecticide, ou par traitement insecticide, avec une attestation remise à la fin.',
+      'Résidences d\'affaires et appartements meublés loués à la semaine voient passer beaucoup de voyageurs. Une inspection entre deux locataires permet de repérer les punaises avant qu\'elles ne s\'installent.',
     ],
     proches: ['Paris 17e', 'Paris 16e', 'Paris 9e', 'Paris 1er', 'Paris 7e'],
     guides: ['punaises-de-lit-airbnb-location-courte-duree', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -845,6 +856,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 9e, des grands magasins à Pigalle, compte des théâtres, des salles de spectacle, des hôtels et beaucoup de logements anciens. Les fauteuils en tissu et les canapés sont des refuges appréciés des punaises de lit.',
       'La vapeur sèche traite en profondeur les fauteuils, banquettes et canapés, sans insecticide. Un traitement insecticide complète si l\'infestation est importante.',
+      'Le 9e compte de nombreux hôtels et meublés touristiques : les punaises y arrivent dans les bagages des voyageurs. Nous traitons chambre par chambre, en dehors des heures d\'arrivée, pour que l\'établissement continue de fonctionner.',
     ],
     proches: ['Paris 2e', 'Paris 10e', 'Paris 18e', 'Paris 8e'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -885,6 +897,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Dans le 16e, les grands appartements ont souvent des chambres de service sous les toits. Quand des punaises de lit apparaissent, il faut vérifier l\'appartement principal et les chambres annexes, car les affaires circulent entre les deux.',
       'Nous traitons l\'ensemble par cryogénie et vapeur sèche, sans insecticide, ou par traitement insecticide selon l\'infestation, avec deux passages inclus.',
+      'Dans les grands appartements, n\'oubliez pas la chambre de service, la buanderie et la lingerie : le linge y transite et les punaises avec. Nous traitons l\'ensemble des pièces concernées en une seule intervention.',
     ],
     proches: ['Paris 8e', 'Paris 17e', 'Paris 15e', 'Boulogne-Billancourt', 'Neuilly-sur-Seine'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -905,6 +918,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 17e, des Batignolles au quartier des Ternes, accueille de nombreuses familles et de nouveaux quartiers, ainsi que des hôtels autour du Palais des Congrès. Au retour d\'un déplacement, il est fréquent de rapporter des punaises dans ses vêtements.',
       'Inutile de jeter vos affaires : le linge se traite au lavage, et le logement par cryogénie et vapeur sèche, sans insecticide, ou par traitement insecticide si nécessaire.',
+      'Dans les chambres d\'enfants, les lits superposés et les lits mezzanine multiplient les cachettes : lattes, échelles, jonctions. Chaque niveau du lit est traité, ainsi que les peluches et le linge.',
     ],
     proches: ['Paris 8e', 'Paris 16e', 'Paris 18e', 'Levallois-Perret', 'Clichy'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
@@ -925,6 +939,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     contexte: [
       'Le 18e, de Montmartre à la Goutte d\'Or, compte beaucoup d\'immeubles anciens, de petits logements et de locations touristiques. Dans un vieil immeuble, les punaises de lit passent d\'un appartement à l\'autre par les plinthes, les gaines et les fissures.',
       'Nous traitons le logement par cryogénie et vapeur sèche, sans insecticide, ou par traitement insecticide, et nous conseillons de prévenir les voisins pour une inspection.',
+      'Dans les petits immeubles anciens de la butte et de la Goutte d\'Or, les punaises passent d\'un appartement à l\'autre par les plinthes et les gaines. Prévenez vos voisins et le syndic : traiter un seul logement ne suffit pas toujours.',
     ],
     proches: ['Paris 17e', 'Paris 9e', 'Paris 19e', 'Paris 10e', 'Saint-Ouen-sur-Seine'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],

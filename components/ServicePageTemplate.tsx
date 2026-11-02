@@ -59,6 +59,10 @@ export interface ServiceData {
   photos?: PhotoKey[]
   // Vrai chantier en vidéos (remplace la galerie photos)
   chantier?: { photos?: PhotoKey[]; videos?: VideoChantier[]; titre: string; vignettes?: string; lien?: { href: string; label: string } }
+  // Bandeau d'urgence sous le titre (ex. punaises de lit)
+  urgence?: { titre: string; texte: string }
+  // Tableau comparatif affiché après le déroulé (ex. cryogénie, vapeur, insecticide)
+  tableau?: { titre: string; intro?: string; head: string[]; rows: string[][] }
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
@@ -173,6 +177,16 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 {data.heroTitle}<br />
                 <span style={{ color: ACCENT }}>{data.heroHighlight}</span>
               </h1>
+              {data.urgence && (
+                <div className="max-w-2xl mx-auto mb-6 rounded-2xl px-5 py-4 flex items-start gap-3 text-left"
+                  style={{ background: 'rgba(232,68,26,0.14)', border: '1px solid rgba(232,68,26,0.5)' }}>
+                  <Clock className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: ACCENT }} />
+                  <div>
+                    <p className="font-black text-white text-base md:text-lg leading-snug">{data.urgence.titre}</p>
+                    <p className="text-white/70 text-sm mt-1">{data.urgence.texte}</p>
+                  </div>
+                </div>
+              )}
               <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
                 {data.heroDescription}
               </p>
@@ -305,6 +319,30 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             </div>
           </div>
         </section>
+
+        {/* ── TABLEAU COMPARATIF ── */}
+        {data.tableau && (
+          <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-3">{data.tableau.titre}</h2>
+              {data.tableau.intro && <p className="text-white/60 mb-6">{data.tableau.intro}</p>}
+              <div className="overflow-x-auto rounded-2xl" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr>{data.tableau.head.map((h) => <th key={h} className="text-left font-bold px-4 py-3" style={{ color: ACCENT }}>{h}</th>)}</tr>
+                  </thead>
+                  <tbody>
+                    {data.tableau.rows.map((r) => (
+                      <tr key={r[0]} className="border-t border-white/10">
+                        {r.map((cell, j) => <td key={j} className={`px-4 py-3 align-top ${j === 0 ? 'text-white font-bold' : 'text-white/70'}`}>{cell}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── PRICING ── */}
         <section className="py-16 md:py-24 px-4" style={{ background: '#080808' }}>

@@ -3,10 +3,14 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
 const data: ServiceData = {
-  badge: 'Cryogénie · Vapeur sèche · Insecticide · Résultat garanti',
+  badge: 'Urgence 7j/7 · Cryogénie · Vapeur sèche · Insecticide',
   heroTitle: 'Punaises de lit',
   heroHighlight: 'Éradication totale',
   heroDescription: 'Deux approches professionnelles, choisies selon votre logement : cryogénie ou vapeur sèche, sans produit, et insecticide rémanent longue durée. Souvent, on combine les deux.',
+  urgence: {
+    titre: 'Urgence punaises de lit : intervention possible le jour même, 7j/7',
+    texte: 'Appelez-nous dès les premières piqûres : selon les disponibilités, un technicien passe dans la journée, week-end compris, partout en Île-de-France.',
+  },
   heroPrices: [
     { price: '290', label: 'Studio' },
     { price: 'Sur devis', label: 'T2 ou T3' },
@@ -59,7 +63,7 @@ const data: ServiceData = {
   photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
   related: {
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
-    guides: { title: 'Nos guides sur les punaises de lit', links: Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },
+    guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
   },
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }

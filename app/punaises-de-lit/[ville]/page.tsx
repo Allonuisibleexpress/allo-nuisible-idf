@@ -177,7 +177,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               Traitement insecticide professionnel ou sans insecticide, avec la cryogénie et la vapeur sèche : le technicien vous propose la méthode adaptée à votre logement et vous explique son choix avant d&apos;intervenir.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
-              {METHODES_PUNAISES.map((m) => (
+              {[...METHODES_PUNAISES.slice(rang % METHODES_PUNAISES.length), ...METHODES_PUNAISES.slice(0, rang % METHODES_PUNAISES.length)].slice(0, 3).map((m) => (
                 <a key={m.titre} href={`/blog/${m.guide}`} className="group rounded-2xl p-6 transition-colors hover:bg-white/[0.06]" style={card}>
                   <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
                     style={{ color: ACCENT, background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
@@ -189,6 +189,17 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                 </a>
               ))}
             </div>
+
+            {/* Cryogénie : 5 formulations en rotation d'une ville à l'autre, lien vers la page dédiée */}
+            <p className="text-white/70 leading-relaxed mt-6">
+              {[
+                <>Vous préférez un traitement sans produit chimique ? La cryogénie, de la neige carbonique à environ −78 °C, tue les punaises et leurs œufs au contact. Voir notre <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>traitement des punaises de lit par cryogénie</a>, avec les vidéos de nos chantiers.</>,
+                <>Enfants en bas âge, animaux, personne fragile : {v.a}, nous pouvons traiter votre logement par cryogénie, sans insecticide. Découvrez <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>comment se déroule un traitement par cryogénie</a>.</>,
+                <>Sèche et précise, la cryogénie est notre méthode de choix pour les fentes, les cadres de lit et le mobilier : elle ne laisse aucun produit derrière elle. Tout savoir sur <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>notre traitement par cryogénie</a>.</>,
+                <>Hôtels, foyers, résidences : {v.a}, nous traitons chambre par chambre par cryogénie pour limiter la gêne des occupants. Voir notre page <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>cryogénie et punaises de lit</a>.</>,
+                <>Le froid comme arme : la neige carbonique tue au contact, puis un second passage traite les éclosions. Notre page <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>cryogénie</a> détaille la méthode, les prix et nos chantiers en vidéo.</>,
+              ][rang % 5]}
+            </p>
 
             {avecEncadre && (
             <div className="rounded-2xl p-6 mt-6" style={card}>
