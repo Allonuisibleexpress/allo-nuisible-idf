@@ -10,6 +10,7 @@ import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
+import { VILLES_SOURIS } from '@/lib/villes-souris'
 import {
   VILLES_DERATISATION, GUIDES_RONGEURS, SOURCES_DERATISATION, MAJ_DERATISATION, getVilleDeratisation,
 } from '@/lib/villes-deratisation'
@@ -157,6 +158,13 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
+
+        {/* Page souris de la même ville : chaque page garde son sujet */}
+        {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60">
+            Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: ACCENT }}>souris {v.a}</a>.
+          </p>
+        )}
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         {avisVille('deratisation', v.slug).length > 0 && <AvisGoogle ordre={avisVille('deratisation', v.slug)} />}

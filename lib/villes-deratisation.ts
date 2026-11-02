@@ -58,7 +58,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/saint-maur-des-fosses',
     title: 'Dératisation à Saint-Maur-des-Fossés (94), intervention 7j/7',
-    description: 'Rats et souris à Saint-Maur-des-Fossés : postes sécurisés, pièges connectés, colmatage. Techniciens Certibiocide, jour même possible.',
+    description: 'Rats à Saint-Maur-des-Fossés : postes sécurisés, pièges connectés, colmatage. Techniciens Certibiocide, jour même possible.',
     contexte: [
       'Saint-Maur-des-Fossés est bordée par la Marne et majoritairement pavillonnaire, de La Varenne à Adamville en passant par Le Parc et Champignol. Les surmulots vivent le long des berges et dans les réseaux, puis remontent vers les jardins, les sous-sols et les garages.',
       'Dans une maison, une infestation commence souvent par un détail : une grille d\'aération abîmée, un regard mal fermé, un compost ouvert. C\'est ce point d\'entrée que nous cherchons en premier.',
@@ -165,7 +165,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/le-perreux-sur-marne',
     title: 'Dératisation au Perreux-sur-Marne (94), intervention 7j/7',
-    description: 'Rats et souris au Perreux-sur-Marne : maisons, jardins, bords de Marne. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
+    description: 'Rats au Perreux-sur-Marne : maisons, jardins, bords de Marne. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
     contexte: [
       'Le Perreux-sur-Marne est une commune résidentielle en bord de Marne, où dominent les maisons avec jardin. Les surmulots vivent le long des berges et dans les réseaux d\'eaux usées, puis cherchent un abri dans les sous-sols, les garages et les cabanons.',
       'Dans une maison, un seul passage suffit : grille d\'aération descellée, porte de garage mal ajustée, regard ouvert. Nous commençons toujours par trouver cet accès avant de choisir le dispositif.',
@@ -186,7 +186,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/nogent-sur-marne',
     title: 'Dératisation à Nogent-sur-Marne (94), intervention 7j/7',
-    description: 'Rats et souris à Nogent-sur-Marne : maisons, copropriétés, commerces. Postes sécurisés, pièges connectés, colmatage. Certibiocide, devis gratuit.',
+    description: 'Rats à Nogent-sur-Marne : maisons, copropriétés, commerces. Postes sécurisés, pièges connectés, colmatage. Certibiocide, devis gratuit.',
     contexte: [
       'Entre le Bois de Vincennes et la Marne, Nogent-sur-Marne mêle maisons, résidences et commerces. Les rongeurs profitent de ces deux milieux : espaces verts d\'un côté, caves, locaux poubelles et réseaux de l\'autre.',
       'En copropriété, traiter un seul logement ne suffit pas : caves, parkings et parties communes doivent être inclus. Nous travaillons avec les syndics et fournissons un rapport après chaque passage.',
@@ -207,7 +207,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/bry-sur-marne',
     title: 'Dératisation à Bry-sur-Marne (94), intervention 7j/7',
-    description: 'Rats et souris à Bry-sur-Marne : maisons, jardins, sous-sols. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide.',
+    description: 'Rats à Bry-sur-Marne : maisons, jardins, sous-sols. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide.',
     contexte: [
       'Bry-sur-Marne est une petite commune résidentielle en bord de Marne, avec beaucoup de maisons et de jardins. Les rongeurs y trouvent eau, abris et nourriture, en particulier près des berges et des potagers.',
       'Près des jardins, des potagers et des animaux domestiques, vous avez le choix entre postes d\'appâtage verrouillés et pièges mécaniques ou connectés, toujours avec le colmatage des accès.',
@@ -228,7 +228,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/sucy-en-brie',
     title: 'Dératisation à Sucy-en-Brie (94), intervention 7j/7',
-    description: 'Rats et souris à Sucy-en-Brie : maisons, résidences, commerces. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide.',
+    description: 'Rats à Sucy-en-Brie : maisons, résidences, commerces. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide.',
     contexte: [
       'Sucy-en-Brie associe un centre ancien, de nombreux quartiers pavillonnaires et des bois à proximité. À l\'arrivée du froid, rats et souris quittent les espaces verts pour les garages, les sous-sols et les combles.',
       'Les maisons anciennes du centre ont souvent des caves et des murs de pierre qui offrent des passages. Les pavillons plus récents, eux, laissent entrer les rongeurs par les gaines et les passages de tuyaux.',
@@ -249,7 +249,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/santeny',
     title: 'Dératisation à Santeny (94), intervention 7j/7',
-    description: 'Rats et souris à Santeny : maisons, dépendances, granges. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide, devis gratuit.',
+    description: 'Rats à Santeny : maisons, dépendances, granges. Postes sécurisés, pièges mécaniques et connectés, colmatage. Certibiocide, devis gratuit.',
     contexte: [
       'Santeny est un village du plateau briard, entouré de champs et de bois, avec de grandes maisons, des dépendances et parfois des chevaux. Après les moissons et à l\'arrivée du froid, les rongeurs des champs se rapprochent des habitations.',
       'Granges, écuries et abris de stockage demandent un suivi dans le temps : les pièges connectés signalent chaque capture, et les postes d\'appâtage sécurisés restent hors de portée des animaux.',
@@ -271,7 +271,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/vitry-sur-seine',
     title: 'Dératisation à Vitry-sur-Seine (94), intervention 7j/7',
-    description: 'Rats et souris à Vitry-sur-Seine : caves, locaux poubelles, entrepôts, pavillons. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Vitry-sur-Seine : caves, locaux poubelles, entrepôts, pavillons. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Vitry-sur-Seine mêle grands ensembles, quartiers pavillonnaires et zones d\'activités le long de la Seine, comme les Ardoines. Ces trois milieux n\'attirent pas les rongeurs de la même façon : caves et vide-ordures dans les résidences, jardins et sous-sols dans les pavillons, quais et entrepôts côté fleuve.',
       'Dans les grandes résidences, les rats circulent d\'une cage d\'escalier à l\'autre par les caves et les gaines. Un traitement utile couvre tout le bâtiment, avec un suivi des postes, et pas seulement l\'appartement qui a donné l\'alerte.',
@@ -292,7 +292,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/creteil',
     title: 'Dératisation à Créteil (94), intervention le jour même',
-    description: 'Rats et souris à Créteil : résidences, pavillons, commerces, bords de Marne. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
+    description: 'Rats à Créteil : résidences, pavillons, commerces, bords de Marne. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
     contexte: [
       'Préfecture du Val-de-Marne, Créteil réunit des quartiers très différents : le vieux Créteil et ses maisons en bord de Marne, les résidences du Mont-Mesly ou des Bleuets, les abords du lac et le grand pôle commercial du centre. Partout où l\'eau et les déchets se rencontrent, les surmulots trouvent de quoi s\'installer.',
       'Autour des commerces et de la restauration, la question n\'est pas seulement de supprimer les rongeurs mais de pouvoir le prouver : nous posons des dispositifs suivis et remettons un rapport après chaque passage.',
@@ -334,7 +334,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/ivry-sur-seine',
     title: 'Dératisation à Ivry-sur-Seine (94), intervention 7j/7',
-    description: 'Rats et souris à Ivry-sur-Seine : immeubles, chantiers, commerces, bords de Seine. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Ivry-sur-Seine : immeubles, chantiers, commerces, bords de Seine. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Aux portes de Paris, Ivry-sur-Seine se transforme vite : anciennes emprises industrielles reconverties, nouveaux immeubles, grands chantiers comme Ivry-Confluences. Les travaux de terrassement et de réseaux dérangent les colonies de rats, qui se déplacent vers les bâtiments voisins.',
       'Dans les immeubles anciens du centre, ce sont plutôt les caves, les cours et les canalisations en fonte qui laissent passer les rongeurs. Nous identifions d\'abord le chemin emprunté avant de choisir le dispositif.',
@@ -355,7 +355,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/maisons-alfort',
     title: 'Dératisation à Maisons-Alfort (94), intervention 7j/7',
-    description: 'Rats et souris à Maisons-Alfort : maisons, copropriétés, commerces, bords de Marne. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Maisons-Alfort : maisons, copropriétés, commerces, bords de Marne. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Maisons-Alfort est bordée par la Marne et proche de sa confluence avec la Seine. Les quartiers pavillonnaires comme Charentonneau ou Alfort côtoient des copropriétés et des rues commerçantes. Lors des fortes pluies et des crues, les rats quittent les réseaux et les berges et remontent vers les sous-sols.',
       'Les caves inondables et les regards mal fermés sont des points d\'entrée fréquents. Un clapet anti-retour sur les évacuations et le colmatage des passages complètent le traitement.',
@@ -376,7 +376,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/fontenay-sous-bois',
     title: 'Dératisation à Fontenay-sous-Bois (94), 7j/7',
-    description: 'Rats et souris à Fontenay-sous-Bois : maisons, résidences, bureaux du Val de Fontenay. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Fontenay-sous-Bois : maisons, résidences, bureaux du Val de Fontenay. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Fontenay-sous-Bois touche le Bois de Vincennes et s\'étage entre ville haute et ville basse, avec des pavillons, des résidences et le quartier d\'affaires du Val de Fontenay. Le bois est un réservoir de rongeurs qui se rapprochent des habitations à l\'automne.',
       'Pour les bureaux et les entreprises, nous proposons des pièges connectés qui signalent chaque capture : le suivi se fait sans gêner l\'activité et chaque passage donne lieu à un rapport.',
@@ -418,7 +418,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/vincennes',
     title: 'Dératisation à Vincennes (94), intervention le jour même',
-    description: 'Rats et souris à Vincennes : immeubles anciens, cours, restaurants, caves. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
+    description: 'Rats à Vincennes : immeubles anciens, cours, restaurants, caves. Postes sécurisés, pièges connectés, colmatage. Certibiocide.',
     contexte: [
       'Vincennes est une ville dense d\'immeubles anciens, de cours intérieures et de commerces, accolée au Bois de Vincennes. Les rats du bois et des réseaux trouvent dans les caves voûtées, les cours et les locaux poubelles des abris faciles d\'accès.',
       'Dans un immeuble ancien, les passages sont nombreux : soupiraux, joints de caves dégradés, anciennes descentes en fonte. Nous traitons les parties communes en lien avec le syndic et bouchons les accès identifiés.',
@@ -439,7 +439,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/alfortville',
     title: 'Dératisation à Alfortville (94), intervention 7j/7',
-    description: 'Rats et souris à Alfortville : immeubles, pavillons, quais de Seine et de Marne. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Alfortville : immeubles, pavillons, quais de Seine et de Marne. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Alfortville occupe la pointe entre la Seine et la Marne, à leur confluence. Avec de l\'eau sur deux côtés, les quais et les réseaux d\'eaux usées hébergent des surmulots qui remontent vers les immeubles et les pavillons des rues proches.',
       'Les rez-de-chaussée et les sous-sols proches des quais sont les plus exposés. Nous combinons postes d\'appâtage sécurisés dans les parties communes et colmatage des passages autour des canalisations.',
@@ -502,7 +502,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/charenton-le-pont',
     title: 'Dératisation à Charenton-le-Pont (94), 7j/7',
-    description: 'Rats et souris à Charenton-le-Pont : copropriétés, caves, commerces, bords de Seine. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Charenton-le-Pont : copropriétés, caves, commerces, bords de Seine. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Entre le Bois de Vincennes, la Seine et la Marne, Charenton-le-Pont est une ville d\'immeubles et de copropriétés, avec le quartier de Bercy à l\'ouest. Les caves, les parkings et les locaux poubelles sont les endroits où l\'on trouve le plus souvent des rongeurs.',
       'Nous sommes voisins : notre siège est à Saint-Maurice, juste à côté. Nous intervenons rapidement dans les copropriétés et remettons au syndic un rapport détaillé après chaque passage.',
@@ -523,7 +523,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/saint-maurice',
     title: 'Dératisation à Saint-Maurice (94), intervention 7j/7',
-    description: 'Rats et souris à Saint-Maurice, où se trouve notre siège : maisons, copropriétés, bords de Marne. Postes sécurisés, pièges connectés.',
+    description: 'Rats à Saint-Maurice, où se trouve notre siège : maisons, copropriétés, bords de Marne. Postes sécurisés, pièges connectés.',
     contexte: [
       'Saint-Maurice est notre commune : le siège d\'Allo Nuisible IDF est rue du Val d\'Osne. Coincée entre le Bois de Vincennes et la Marne, la ville est exposée des deux côtés : rongeurs du bois en lisière, surmulots des berges et des réseaux côté rivière.',
       'Les maisons de Gravelle et les copropriétés en pente vers la Marne ont souvent des sous-sols et des caves où les rats s\'installent en hiver. Nous les connaissons bien et pouvons venir très vite.',
@@ -734,7 +734,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/saint-mande',
     title: 'Dératisation à Saint-Mandé (94), intervention le jour même',
-    description: 'Rats et souris à Saint-Mandé : immeubles anciens, caves, commerces, abords du Bois de Vincennes. Postes sécurisés, pièges connectés.',
+    description: 'Rats à Saint-Mandé : immeubles anciens, caves, commerces, abords du Bois de Vincennes. Postes sécurisés, pièges connectés.',
     contexte: [
       'Petite ville très dense collée à Paris, Saint-Mandé est bordée par le Bois de Vincennes et le lac de Saint-Mandé. Ses immeubles anciens, avec caves et cours, côtoient de nombreux commerces de bouche. Le bois et les réseaux fournissent un flux régulier de rongeurs.',
       'Dans ces immeubles, le problème se règle à l\'échelle de la copropriété : caves, cours et locaux poubelles. Nous intervenons à la demande du syndic et remettons un rapport après chaque passage.',
@@ -776,7 +776,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Val-de-Marne',
     zoneHref: '/zones/val-de-marne/joinville-le-pont',
     title: 'Dératisation à Joinville-le-Pont (94), 7j/7',
-    description: 'Rats et souris à Joinville-le-Pont : bords de Marne, maisons, copropriétés, restaurants. Postes sécurisés, pièges connectés. Certibiocide.',
+    description: 'Rats à Joinville-le-Pont : bords de Marne, maisons, copropriétés, restaurants. Postes sécurisés, pièges connectés. Certibiocide.',
     contexte: [
       'Joinville-le-Pont est traversée par la Marne, avec ses îles, ses quais et ses établissements en bord de rivière, et touche le Bois de Vincennes. Entre l\'eau, le bois et les restaurants, les surmulots y trouvent tout ce qu\'il leur faut.',
       'Les maisons et les copropriétés proches des quais doivent surveiller les sous-sols et les locaux poubelles. Pour les restaurants en bord de Marne, un suivi régulier avec pièges connectés évite les mauvaises surprises.',
@@ -1155,10 +1155,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Boulogne-Billancourt (92), intervention 7j/7',
-    description: 'Rats et souris à Boulogne-Billancourt : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Boulogne-Billancourt : parkings souterrains de résidences, locaux à déchets. Postes verrouillés, colmatage, garantie 1 an. Devis gratuit.',
     contexte: [
       'Boulogne-Billancourt, entre la Seine et le Bois de Boulogne, est la plus grande ville des Hauts-de-Seine. Les anciens terrains industriels ont laissé place à de nouveaux quartiers, avec beaucoup de parkings souterrains et de locaux techniques.',
       'Même dans une résidence récente, les rats peuvent s\'installer dans les parkings, les locaux à déchets et les gaines. Nous traitons ces parties communes avec le syndic et fermons les passages vers les logements.',
+      'Pour un restaurant ou un commerce de bouche, nous mettons en place un plan de lutte avec un plan des postes, des passages réguliers et un compte rendu daté à chaque visite : ce sont les documents que demandent les services d\'hygiène lors d\'un contrôle.',
     ],
     lieux: ['Parkings souterrains de résidences', 'Locaux à déchets', 'Bords de Seine', 'Jardins proches du Bois de Boulogne'],
     proches: ['Issy-les-Moulineaux', 'Saint-Cloud', 'Sèvres', 'Paris 16e'],
@@ -1176,7 +1177,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Nanterre (92), intervention 7j/7',
-    description: 'Rats et souris à Nanterre : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Nanterre : sous-sols et garages des pavillons. Postes sécurisés, pièges, suivi jusqu\'au résultat. Devis gratuit.',
     contexte: [
       'Préfecture des Hauts-de-Seine, Nanterre réunit des quartiers pavillonnaires, de grands ensembles, l\'université, le parc André-Malraux et des bords de Seine. Les grands chantiers de la ville ont aussi déplacé une partie des rongeurs.',
       'Selon le quartier, le problème change : jardins et sous-sols dans les pavillons, caves et locaux poubelles dans les résidences, réserves dans les commerces. Le dispositif est adapté à chaque cas.',
@@ -1197,10 +1198,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Asnières-sur-Seine (92), intervention 7j/7',
-    description: 'Rats et souris à Asnières-sur-Seine : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Asnières-sur-Seine : bords de Seine, caves et sous-sols, jardins des pavillons. Techniciens Certibiocide, colmatage des accès. Devis gratuit.',
     contexte: [
       'Asnières-sur-Seine s\'étend le long de la Seine, avec des immeubles, des résidences et des quartiers pavillonnaires. Les berges et les réseaux d\'eaux usées hébergent des surmulots qui gagnent les caves et les jardins.',
       'Les maisons et immeubles proches du fleuve sont les plus exposés, surtout après de fortes pluies, quand les rats quittent les réseaux saturés.',
+      'Dans un pavillon, la visite commence par l\'extérieur : regards d\'eaux pluviales, soupiraux, grilles de ventilation du vide sanitaire. Un seul passage ouvert suffit à expliquer des bruits sous le plancher, et c\'est lui que nous fermons en priorité après le traitement.',
     ],
     lieux: ['Bords de Seine', 'Caves et sous-sols', 'Jardins des pavillons', 'Regards et évacuations'],
     proches: ['Gennevilliers', 'Colombes', 'Clichy', 'Bois-Colombes', 'Courbevoie'],
@@ -1218,7 +1220,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Colombes (92), intervention 7j/7',
-    description: 'Rats et souris à Colombes : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Colombes : composts et potagers, poulaillers et abris de jardin, garages et sous-sols. Intervention 7j/7, postes verrouillés, garantie 1 an.',
     contexte: [
       'Colombes est une ville en grande partie pavillonnaire, avec beaucoup de jardins, de potagers et de jardins familiaux. Composts, poulaillers et abris de jardin y attirent régulièrement les rats.',
       'Au jardin, supprimer la nourriture accessible (graines au sol, compost ouvert) est aussi important que le traitement lui-même. Nous vous conseillons sur place.',
@@ -1239,10 +1241,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Courbevoie (92), intervention 7j/7',
-    description: 'Rats et souris à Courbevoie : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Courbevoie : faux planchers et faux plafonds de bureaux. Postes verrouillés, colmatage, garantie 1 an. Devis gratuit.',
     contexte: [
       'Courbevoie accueille une grande partie du quartier d\'affaires de La Défense, avec ses tours, ses parkings et ses restaurants d\'entreprise, et des quartiers résidentiels au bord de la Seine.',
       'Dans les bureaux, souris et rats passent par les faux planchers, les faux plafonds et les gaines. Nous intervenons en dehors des heures d\'activité, avec des pièges connectés qui évitent de gêner les équipes.',
+      'En immeuble de bureaux, les souris se déplacent dans les faux plafonds et les faux planchers, le long des câbles. Nous intervenons en dehors des heures de travail, avec des pièges et des postes placés hors de vue des salariés, et un suivi par contrat si besoin.',
     ],
     lieux: ['Faux planchers et faux plafonds de bureaux', 'Restaurants d\'entreprise', 'Parkings souterrains', 'Bords de Seine'],
     proches: ['Puteaux', 'La Garenne-Colombes', 'Neuilly-sur-Seine', 'Asnières-sur-Seine'],
@@ -1260,7 +1263,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Rueil-Malmaison (92), intervention 7j/7',
-    description: 'Rats et souris à Rueil-Malmaison : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Rueil-Malmaison : garages et sous-sols, combles et isolation. Postes sécurisés, pièges, suivi jusqu\'au résultat. Devis gratuit.',
     contexte: [
       'Rueil-Malmaison associe de grands quartiers pavillonnaires, des bords de Seine et la forêt de la Malmaison sur les hauteurs. Rats et souris des espaces boisés se rapprochent des maisons quand le froid arrive.',
       'Dans les maisons en lisière, le sous-sol, le garage et les combles sont les premières cibles. Nous traitons et bouchons ces accès avant l\'hiver.',
@@ -1281,10 +1284,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Levallois-Perret (92), intervention 7j/7',
-    description: 'Rats et souris à Levallois-Perret : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Levallois-Perret : gaines techniques et vides entre étages. Techniciens Certibiocide, colmatage des accès. Devis gratuit.',
     contexte: [
       'Levallois-Perret, l\'une des villes les plus denses de France, est faite d\'immeubles récents et anciens, de commerces et de parkings, avec l\'île de la Jatte sur la Seine. Les rongeurs y vivent surtout dans les réseaux, les parkings et les gaines.',
       'Dans les immeubles récents, ils circulent par les gaines techniques et les vides entre étages. Nous repérons ces passages et les fermons après le traitement.',
+      'Dans les immeubles récents, les rongeurs empruntent les gaines techniques d\'un étage à l\'autre. Nous traitons au point d\'arrivée, dans le logement, puis remontons la gaine jusqu\'au local technique ou au parking pour placer les postes là où ils circulent vraiment.',
     ],
     lieux: ['Gaines techniques et vides entre étages', 'Parkings souterrains', 'Commerces et réserves', 'Bords de Seine'],
     proches: ['Clichy', 'Neuilly-sur-Seine', 'Paris 17e', 'Courbevoie'],
@@ -1302,7 +1306,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Issy-les-Moulineaux (92), intervention 7j/7',
-    description: 'Rats et souris à Issy-les-Moulineaux : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Issy-les-Moulineaux : locaux techniques de bureaux, restaurants et cafétérias. Intervention 7j/7, postes verrouillés, garantie 1 an.',
     contexte: [
       'Issy-les-Moulineaux mêle bords de Seine, grands sièges d\'entreprises, nouveaux quartiers comme celui du fort et coteaux résidentiels. Bureaux, restaurants et résidences ont chacun leurs points sensibles.',
       'Pour les entreprises, un contrat de suivi avec visites régulières et rapports permet de garder des locaux sans rongeurs et de le prouver en cas de contrôle ou d\'audit.',
@@ -1323,7 +1327,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Clichy (92), intervention 7j/7',
-    description: 'Rats et souris à Clichy : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Clichy : rez-de-chaussée commerciaux, caves d\'immeubles, locaux à déchets. Postes verrouillés, colmatage, garantie 1 an. Devis gratuit.',
     contexte: [
       'Clichy, très dense et commerçante, s\'étend le long de la Seine aux portes de Paris. Immeubles anciens, commerces de bouche et réseaux en font un terrain favorable aux surmulots.',
       'Les rez-de-chaussée commerciaux et les caves d\'immeubles sont les premiers touchés. Un traitement coordonné entre commerçants et syndic évite que les rats ne passent d\'un local à l\'autre.',
@@ -1344,7 +1348,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Antony (92), intervention 7j/7',
-    description: 'Rats et souris à Antony : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Antony : abris de jardin et tas de bois, garages et sous-sols. Postes sécurisés, pièges, suivi jusqu\'au résultat. Devis gratuit.',
     contexte: [
       'Antony, au sud du département, est une ville verte, très pavillonnaire, proche du parc de Sceaux. Jardins, abris, tas de bois et garages offrent de nombreux abris aux rongeurs.',
       'Dans les maisons, les rats s\'installent volontiers dans les abris de jardin et les garages avant d\'entrer dans le sous-sol. Nous traitons le jardin et la maison, et fermons les accès.',
@@ -1365,7 +1369,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Neuilly-sur-Seine (92), intervention 7j/7',
-    description: 'Rats et souris à Neuilly-sur-Seine : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Neuilly-sur-Seine : caves des immeubles haussmanniens. Techniciens Certibiocide, colmatage des accès. Devis gratuit.',
     contexte: [
       'Neuilly-sur-Seine, entre la Seine et le Bois de Boulogne, est faite d\'immeubles haussmanniens, de résidences et d\'hôtels particuliers avec jardin. Les rats y trouvent des caves anciennes, des cours intérieures et, côté bois et berges, des espaces verts où creuser leurs terriers.',
       'Dans les immeubles de standing, la discrétion compte : nous intervenons dans les caves et les parties communes en accord avec le syndic ou le gardien, avec des postes verrouillés et un suivi jusqu\'à disparition des traces.',
@@ -1386,7 +1390,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Clamart (92), intervention 7j/7',
-    description: 'Rats et souris à Clamart : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Clamart : pavillons en lisière de forêt, composts et abris de jardin. Intervention 7j/7, postes verrouillés, garantie 1 an.',
     contexte: [
       'Clamart s\'étend de la plaine, plus urbaine, jusqu\'au Haut-Clamart en lisière de la forêt domaniale de Meudon. Les nombreux pavillons avec jardin, au contact du bois, voient arriver rats et souris dès que le froid s\'installe.',
       'Autour des maisons, nous posons les postes d\'appâtage sécurisés le long des passages repérés, loin des enfants et des animaux, et nous fermons les accès au sous-sol, au garage et aux combles.',
@@ -1407,7 +1411,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Gennevilliers (92), intervention 7j/7',
-    description: 'Rats et souris à Gennevilliers : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Gennevilliers : entrepôts et quais du port. Postes verrouillés, colmatage, garantie 1 an. Devis gratuit.',
     contexte: [
       'Gennevilliers abrite le port de Gennevilliers, l\'un des principaux ports fluviaux d\'Île-de-France, avec ses entrepôts et ses zones d\'activité, mais aussi de grands ensembles, des pavillons et les bords de Seine. Marchandises, quais et réseaux d\'eaux pluviales offrent aux rats nourriture et passages.',
       'Pour les entrepôts et entreprises, nous mettons en place des postes sécurisés et des pièges connectés avec suivi des captures et attestation. Dans les résidences, nous traitons caves, locaux poubelles et vide-ordures avec le bailleur.',
@@ -1428,7 +1432,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Suresnes (92), intervention 7j/7',
-    description: 'Rats et souris à Suresnes : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Suresnes : bords de Seine, coteaux et talus du Mont-Valérien. Postes sécurisés, pièges, suivi jusqu\'au résultat. Devis gratuit.',
     contexte: [
       'Suresnes descend des pentes du Mont-Valérien jusqu\'aux bords de Seine. On y trouve la cité-jardin, des pavillons sur les coteaux, des immeubles plus récents près du fleuve et des commerces dans le centre. Les rats circulent des berges vers les caves, et des jardins vers les maisons.',
       'Sur les coteaux, les murets et talus abritent souvent des terriers. Nous traitons les zones de passage et fermons les accès aux sous-sols, avec des postes d\'appâtage verrouillés.',
@@ -1449,7 +1453,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Meudon (92), intervention 7j/7',
-    description: 'Rats et souris à Meudon : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Meudon : maisons des coteaux, lisière de la forêt de Meudon. Techniciens Certibiocide, colmatage des accès. Devis gratuit.',
     contexte: [
       'Meudon s\'étend des bords de Seine, au Bas-Meudon, jusqu\'à Meudon-la-Forêt, en passant par les coteaux, l\'Observatoire et une grande partie de la forêt de Meudon. Entre maisons avec jardin, résidences et bois, rats et souris trouvent abri toute l\'année.',
       'Dans les maisons des coteaux, les rongeurs entrent par les soupiraux, les vides sanitaires et les garages. Nous localisons les passages, posons des postes sécurisés et refermons les ouvertures.',
@@ -1470,10 +1474,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Montrouge (92), intervention 7j/7',
-    description: 'Rats et souris à Montrouge : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Montrouge : caves et cours d\'immeubles, locaux poubelles. Intervention 7j/7, postes verrouillés, garantie 1 an.',
     contexte: [
       'Limitrophe du 14e arrondissement, Montrouge est l\'une des villes les plus denses de France : immeubles anciens, petites cours, nombreux commerces et restaurants. Les rats circulent par les caves, les égouts et les cours, et s\'installent près des locaux poubelles.',
       'En copropriété, nous traitons les caves et parties communes avec le syndic. Pour les restaurants et commerces, postes sécurisés et suivi régulier avec attestation d\'intervention.',
+      'Dans les petits commerces, une souris dans la réserve se règle souvent avec des pièges mécaniques placés le long des murs, sans produit au contact des marchandises, et en bouchant le passage derrière les comptoirs et les meubles réfrigérés.',
     ],
     lieux: ['Caves et cours d\'immeubles', 'Locaux poubelles', 'Restaurants et commerces de bouche', 'Rez-de-chaussée sur rue'],
     proches: ['Malakoff', 'Châtillon', 'Bagneux', 'Paris 14e'],
@@ -1491,10 +1496,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Bagneux (92), intervention 7j/7',
-    description: 'Rats et souris à Bagneux : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Bagneux : caves des grands ensembles, abords des chantiers. Postes verrouillés, colmatage, garantie 1 an. Devis gratuit.',
     contexte: [
       'Bagneux mêle grands ensembles, quartiers pavillonnaires et nouveaux quartiers construits autour du métro 4. Les grands chantiers déplacent souvent les rongeurs, qui cherchent alors refuge dans les caves et les jardins voisins.',
       'Nous intervenons pour les particuliers, les bailleurs et les syndics : postes d\'appâtage sécurisés dans les caves et locaux poubelles, pièges selon le lieu, et colmatage des passages vers les logements.',
+      'Dans les grands ensembles, une dératisation efficace se coordonne avec le bailleur : traitement des caves, des locaux à déchets et des vides sanitaires de toute la résidence, et pas seulement du logement qui a signalé le problème.',
     ],
     lieux: ['Caves des grands ensembles', 'Abords des chantiers', 'Jardins pavillonnaires', 'Locaux poubelles des résidences'],
     proches: ['Montrouge', 'Châtillon', 'Fontenay-aux-Roses', 'Cachan'],
@@ -1512,10 +1518,11 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Puteaux (92), intervention 7j/7',
-    description: 'Rats et souris à Puteaux : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Puteaux : parkings et locaux techniques, restaurants et commerces. Postes sécurisés, pièges, suivi jusqu\'au résultat. Devis gratuit.',
     contexte: [
       'Puteaux réunit une partie du quartier d\'affaires de La Défense, des immeubles d\'habitation denses, l\'île de Puteaux et les bords de Seine. Restaurants d\'entreprise, commerces, parkings et locaux techniques offrent aux rongeurs nourriture et cachettes.',
       'Pour les bureaux, restaurants et parkings, nous posons des postes sécurisés et des pièges connectés avec suivi des captures, en dehors des heures d\'ouverture si besoin. En résidence, traitement des caves et locaux poubelles avec le syndic.',
+      'En copropriété, le traitement est commandé par le syndic : nous établissons le devis pour les parties communes, prévenons les résidents par affichage, puis contrôlons les postes jusqu\'à ce qu\'il n\'y ait plus aucune consommation.',
     ],
     lieux: ['Parkings et locaux techniques', 'Restaurants et commerces', 'Berges et île de Puteaux', 'Caves des résidences'],
     proches: ['Courbevoie', 'Suresnes', 'Neuilly-sur-Seine', 'Nanterre'],
@@ -1533,7 +1540,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Châtillon (92), intervention 7j/7',
-    description: 'Rats et souris à Châtillon : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Châtillon : pavillons avec jardin, caves des résidences, commerces du centre. Techniciens Certibiocide, colmatage des accès. Devis gratuit.',
     contexte: [
       'Châtillon, sur les hauteurs au sud de Paris, alterne quartiers pavillonnaires, résidences et centre commerçant, avec le terminus du métro 13. Dans les maisons, les rongeurs arrivent par les jardins et les sous-sols ; dans les immeubles, par les caves.',
       'Nous adaptons le traitement au lieu : postes d\'appâtage sécurisés, la méthode la plus courante, pièges mécaniques ou connectés, et toujours le colmatage des ouvertures.',
@@ -1554,7 +1561,7 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
     departement: 'Hauts-de-Seine',
     zoneHref: '/zones/hauts-de-seine',
     title: 'Dératisation à Châtenay-Malabry (92), intervention 7j/7',
-    description: 'Rats et souris à Châtenay-Malabry : caves, cours, commerces, résidences. Postes sécurisés, pièges connectés, Ekomille en alternative. Certibiocide.',
+    description: 'Dératisation à Châtenay-Malabry : jardins proches des bois, cité-jardin de la Butte-Rouge. Intervention 7j/7, postes verrouillés, garantie 1 an.',
     contexte: [
       'Châtenay-Malabry est très verte : la Vallée-aux-Loups, la proximité du parc de Sceaux et de la forêt de Verrières, la cité-jardin de la Butte-Rouge et de nombreux pavillons. Ces espaces attirent rats, souris et lérots, qui se rapprochent des habitations à l\'automne.',
       'Nous traitons les jardins, sous-sols et parties communes des résidences avec des postes sécurisés et verrouillés. En méthode alternative, sans raticide, le piège Ekomille peut être installé sur le passage le plus fréquenté.',

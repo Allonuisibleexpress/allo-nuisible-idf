@@ -6,6 +6,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import type { ServiceLocal } from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
+import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { SITE_URL } from '@/lib/seo'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
@@ -186,6 +187,13 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+
+        {/* Rats aussi ? page dératisation de la même ville */}
+        {serviceLocal(c.pilier.href) === 'souris' && VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60">
+            Des rats plutôt que des souris ? Voir notre page <a href={`/deratisation/${v.slug}`} className="underline" style={{ color: ACCENT }}>dératisation {v.a}</a>.
+          </p>
+        )}
 
         {/* Avis Google d'un client de cette ville pour ce nuisible, s'il y en a un */}
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
