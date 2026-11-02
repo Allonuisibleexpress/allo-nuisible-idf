@@ -141,6 +141,50 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleSouris = Ville & { title: string }
 
+// Accroche de la description Google, propre à chaque ville (évite les descriptions identiques)
+const ACCROCHES: Record<string, string> = {
+  'vincennes': 'immeubles anciens, caves, gaines et doublages des murs. Pièges, colmatage, rapport au syndic.',
+  'saint-mande': 'cuisines, placards et réserves, près du Bois de Vincennes. Pièges sur les passages, colmatage.',
+  'saint-maurice': 'garages, caves et cuisines entre Marne et Bois de Vincennes. Pièges sans produit, colmatage.',
+  'charenton-le-pont': 'restaurants, commerces, caves et gaines. Pièges connectés avec suivi et attestation.',
+  'nogent-sur-marne': 'cuisines, caves et garages, entrées par tuyaux et bas de portes. Pièges, colmatage.',
+  'le-perreux-sur-marne': 'maisons, garages, sous-sols et combles. Recherche des passages, pièges, colmatage.',
+  'bry-sur-marne': 'souris et mulots dans les maisons avec jardin. Pièges sans produit, postes verrouillés.',
+  'sucy-en-brie': 'maisons, résidences et commerces. Pièges ou postes sécurisés, fermeture des accès. Devis gratuit.',
+  'santeny': 'maisons, dépendances et granges. Pièges ou postes sécurisés, fermeture des accès. Devis gratuit.',
+  'maisons-alfort': 'maisons, copropriétés et commerces. Pièges ou postes sécurisés, colmatage des entrées.',
+  'joinville-le-pont': 'maisons et copropriétés des bords de Marne. Pièges ou postes sécurisés, colmatage.',
+  'paris-12': 'appartements, caves et commerces du 12e. Pièges discrets, postes sécurisés, colmatage. Devis gratuit.',
+  'alfortville': 'immeubles et pavillons entre Seine et Marne. Pièges ou postes sécurisés, colmatage. Devis gratuit.',
+  'creteil': 'résidences, pavillons et commerces. Pièges ou postes sécurisés, fermeture des accès. Devis gratuit.',
+  'ivry-sur-seine': 'immeubles, commerces et logements récents. Pièges ou postes sécurisés, colmatage. Devis gratuit.',
+  'saint-maur-des-fosses': 'maisons, garages et sous-sols. Pièges, postes sécurisés, colmatage. Devis gratuit.',
+  'fontenay-sous-bois': 'maisons, résidences et bureaux du Val de Fontenay. Pièges, postes sécurisés. Devis gratuit.',
+  'vitry-sur-seine': 'pavillons, grands ensembles, caves et locaux poubelles. Pièges, postes, colmatage. Devis gratuit.',
+  'champigny-sur-marne': 'garages et sous-sols des pavillons, caves des résidences. Pièges, postes sécurisés, colmatage. Devis gratuit.',
+  'villejuif': 'logements, gaines et locaux à déchets des résidences. Traitement coordonné avec le syndic. Devis gratuit.',
+  'choisy-le-roi': 'caves, celliers et cuisines, du centre ancien aux bords de Seine. Pièges, colmatage. Devis gratuit.',
+  'le-kremlin-bicetre': 'appartements, caves et commerces d\'une commune très dense. Pièges discrets, colmatage. Devis gratuit.',
+  'thiais': 'pavillons, commerces et entrepôts. Pièges ou postes sécurisés, contrôle des câbles rongés. Devis gratuit.',
+  'cachan': 'placards de cuisine, pavillons et immeubles. Pièges, postes sécurisés et conseils de stockage. Devis gratuit.',
+  'villeneuve-saint-georges': 'souris domestiques et mulots, maisons et immeubles. Identification de l\'espèce, pièges, colmatage. Devis gratuit.',
+  'l-hay-les-roses': 'pavillons avec jardin, composts et abris. Traitement intérieur et conseils pour le jardin. Devis gratuit.',
+  'villiers-sur-marne': 'sous-sols, combles et cloisons. Pose des dispositifs puis contrôle des captures. Devis gratuit.',
+  'fresnes': 'résidences et pavillons. Élimination, fermeture des accès et consignes de nettoyage. Devis gratuit.',
+  'limeil-brevannes': 'maisons récentes, garages, passages de gaines. Recherche des accès, pièges, colmatage. Devis gratuit.',
+  'orly': 'grands ensembles, pavillons, caves. Pièges sur les passages nocturnes, postes sécurisés. Devis gratuit.',
+  'arcueil': 'bureaux, immeubles, pavillons. Pièges connectés avec alerte de capture, colmatage. Devis gratuit.',
+  'villeneuve-le-roi': 'pavillons, cuisines, celliers et garages. Dispositifs dans chaque pièce touchée, colmatage. Devis gratuit.',
+  'le-plessis-trevise': 'maisons avec jardin, foyers avec animaux. Pièges adaptés aux chats, colmatage. Devis gratuit.',
+  'chevilly-larue': 'entrepôts, ateliers et pavillons. Postes en périphérie, suivi avec plan des postes. Devis gratuit.',
+  'chennevieres-sur-marne': 'maisons des coteaux, sous-sols et jardins. Traitement, retrait des souris mortes, colmatage. Devis gratuit.',
+  'gentilly': 'appartements, passages de tuyaux et plinthes. Traitement et colmatage durable. Devis gratuit.',
+  'bonneuil-sur-marne': 'bureaux, locaux d\'entreprise, logements. Intervention hors heures de travail, contrat de suivi. Devis gratuit.',
+  'boissy-saint-leger': 'pavillons et résidences. Postes verrouillés ou pièges plutôt que produits du commerce. Devis gratuit.',
+  'valenton': 'locataires de résidences et pavillons. Traitement du logement et rapport pour le bailleur. Devis gratuit.',
+}
+
+
 // Val-de-Marne par défaut ; Paris passe { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }
 type Dep = { code: string; departement: string; zoneHref: string }
 const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }, dep?: Dep): VilleSouris => ({
@@ -150,8 +194,9 @@ const ville = (nom: string, a: string, slug: string, contexte: string[], proches
   code: dep?.code ?? '94',
   departement: dep?.departement ?? 'Val-de-Marne',
   zoneHref: dep?.zoneHref ?? `/zones/val-de-marne/${slug}`,
-  title: `Souris ${a} (${dep?.code ?? '94'}) : traitement et prévention`,
-  description: `Souris ${a} : pièges mécaniques ou connectés, postes sécurisés et colmatage des accès. Techniciens Certibiocide, 7j/7, devis gratuit.`,
+  // Titre raccourci pour les noms de ville longs (60 caractères au plus)
+  title: `Souris ${a} (${dep?.code ?? '94'}) : traitement et prévention`.length > 60 ? `Souris ${a} (${dep?.code ?? '94'}) : traitement` : `Souris ${a} (${dep?.code ?? '94'}) : traitement et prévention`,
+  description: ACCROCHES[slug] ? `Souris ${a} : ${ACCROCHES[slug]}` : `Souris ${a} : pièges mécaniques ou connectés, postes sécurisés et colmatage des accès. Techniciens Certibiocide, 7j/7, devis gratuit.`,
   contexte,
   proches,
   faq: [faq, ...FAQ_COMMUNE(a)],
@@ -209,6 +254,7 @@ export const VILLES_SOURIS: VilleSouris[] = [
   ville('Santeny', 'à Santeny', 'santeny', [
     'À Santeny, entourée de champs et de bois, les souris et les mulots se rapprochent des maisons après les moissons et à l\'arrivée du froid. Granges, garages et dépendances sont les premiers touchés.',
     'Dans les dépendances et lieux de stockage, les pièges connectés évitent des visites inutiles. Dans la maison, pièges ou postes sécurisés, toujours avec le colmatage des accès.',
+    'Dans les corps de ferme et les granges, le foin, les graines et les sacs d\'aliments pour animaux nourrissent les souris tout l\'hiver : nous traitons ces dépendances en même temps que la maison, sinon elles servent de réserve.',
   ], ['Villecresnes', 'Marolles-en-Brie', 'Mandres-les-Roses', 'Périgny'],
   { q: 'Pourquoi des souris après les moissons ?', a: 'Quand les champs sont fauchés, souris et mulots perdent abri et nourriture et se rapprochent des maisons et des dépendances. Vérifiez alors les bas de portes et les passages de tuyaux.' }),
 
@@ -274,6 +320,152 @@ export const VILLES_SOURIS: VilleSouris[] = [
     'Dans les pavillons, une mangeoire à oiseaux ou un compost près de la maison attire souvent les souris : placez-les au fond du jardin et ramassez les graines tombées.',
   ], ['Ivry-sur-Seine', 'Alfortville', 'Choisy-le-Roi', 'Villejuif'],
   { q: 'Combien de souris y a-t-il quand on en voit une ?', a: 'Souvent plusieurs : les souris vivent en groupe et sortent surtout la nuit. Voir une souris en journée indique en général qu\'elles sont déjà bien installées. Mieux vaut faire traiter sans attendre.' }),
+  ville('Champigny-sur-Marne', 'à Champigny-sur-Marne', 'champigny-sur-marne', [
+    'À Champigny-sur-Marne, beaucoup de souris arrivent par les garages et les sous-sols des pavillons, nombreux dans la commune, mais aussi par les caves des grandes résidences. Le premier signe est souvent un sac de croquettes ou de graines percé.',
+    'Nous commençons par chercher le passage : bas de porte de garage, fourreaux de câbles, grilles d\'aération. Ensuite, pièges mécaniques ou connectés sur ce couloir, postes sécurisés si la colonie est installée, et colmatage.',
+    'Rangez les sacs d\'aliments pour animaux dans des bacs fermés : c\'est la première source de nourriture des souris dans un garage.',
+  ], ['Saint-Maur-des-Fossés', 'Villiers-sur-Marne', 'Chennevières-sur-Marne', 'Joinville-le-Pont'],
+  { q: 'Des souris dans le garage : ma voiture risque-t-elle quelque chose ?', a: 'Oui, les souris peuvent ronger les câbles et faire leur nid sous le capot, surtout quand la voiture roule peu. Un traitement du garage et la fermeture des accès protègent aussi le véhicule.' }),
+
+  ville('Villejuif', 'à Villejuif', 'villejuif', [
+    'À Villejuif, les souris se plaisent dans les immeubles et les résidences, où elles passent d\'un logement à l\'autre par les gaines et les vide-ordures. Un voisin qui en voit, et bientôt tout l\'escalier est concerné.',
+    'En résidence, le traitement le plus efficace combine le logement touché et les parties communes : locaux à déchets, caves, gaines. Nous travaillons avec le bailleur ou le syndic et laissons un compte rendu.',
+    'Signalez rapidement au gardien ou au syndic : plus le traitement couvre l\'immeuble tôt, moins il dure.',
+  ], ['Le Kremlin-Bicêtre', 'Vitry-sur-Seine', 'Cachan', 'Chevilly-Larue'],
+  { q: 'Souris dans une résidence : qui doit payer le traitement ?', a: 'Les parties communes relèvent du bailleur ou de la copropriété. Pour le logement, cela dépend du bail et de l\'origine du problème. Nous pouvons établir un devis à transmettre au syndic ou au bailleur.' }),
+
+  ville('Choisy-le-Roi', 'à Choisy-le-Roi', 'choisy-le-roi', [
+    'À Choisy-le-Roi, entre le centre ancien, les résidences et les maisons proches de la Seine, les souris s\'installent surtout dans les caves, les celliers et les cuisines.',
+    'Le diagnostic distingue souris et rats, car le traitement n\'est pas le même : pour les souris, pièges posés tous les quelques mètres le long des murs, car elles explorent peu loin de leur nid, puis colmatage.',
+    'Une cave encombrée de cartons offre un abri idéal : désencombrer facilite le traitement et le repérage des passages.',
+  ], ['Vitry-sur-Seine', 'Orly', 'Thiais', 'Villeneuve-le-Roi'],
+  { q: 'Une cave humide attire-t-elle les souris ?', a: 'L\'humidité compte moins que l\'abri et la nourriture. Une cave encombrée, avec des denrées ou des cartons, attire bien plus les souris qu\'une cave rangée, même humide.' }),
+
+  ville('Le Kremlin-Bicêtre', 'au Kremlin-Bicêtre', 'le-kremlin-bicetre', [
+    'Le Kremlin-Bicêtre, petite commune très dense aux portes de Paris, compte surtout des immeubles : les souris y circulent entre caves, commerces de rez-de-chaussée et appartements.',
+    'En appartement, nous plaçons des pièges discrets derrière l\'électroménager et sous l\'évier, puis bouchons les passages autour des tuyaux. Si les souris viennent du commerce en dessous, nous le signalons au syndic.',
+    'Les répulsifs à ultrasons vendus en magasin ne remplacent pas un traitement : nous ne les recommandons pas seuls.',
+  ], ['Villejuif', 'Gentilly', 'Arcueil', 'Ivry-sur-Seine'],
+  { q: 'Les répulsifs à ultrasons sont-ils efficaces contre les souris ?', a: 'Leur efficacité n\'est pas démontrée de façon fiable, et les souris peuvent s\'y habituer. Ils ne règlent pas la cause : il faut supprimer les accès et la nourriture, et piéger.' }),
+
+  ville('Thiais', 'à Thiais', 'thiais', [
+    'À Thiais, les souris visitent aussi bien les pavillons que les commerces et les entrepôts proches des grandes zones commerciales. Dans une maison, elles s\'installent souvent dans les doublages et derrière la cuisine équipée.',
+    'Nous repérons les traces, posons pièges ou postes sécurisés sur les passages et vérifions les câbles : une souris qui ronge une gaine électrique crée un vrai risque.',
+    'Si une prise ou un appareil ne fonctionne plus et que vous trouvez des crottes à côté, faites vérifier l\'installation électrique.',
+  ], ['Choisy-le-Roi', 'Orly', 'Chevilly-Larue', 'Vitry-sur-Seine'],
+  { q: 'Les souris abîment-elles l\'installation électrique ?', a: 'Oui, elles rongent les gaines et les câbles pour user leurs incisives. Cela peut provoquer des pannes, voire un départ de feu. Il faut traiter vite et faire contrôler les câbles touchés.' }),
+
+  ville('Cachan', 'à Cachan', 'cachan', [
+    'À Cachan, commune de pavillons et d\'immeubles, les souris s\'invitent d\'abord dans les placards de cuisine : sachets de céréales, pâtes, farine sont leurs cibles préférées.',
+    'Le traitement associe pièges sur les passages, postes sécurisés si besoin et colmatage. Le nettoyage des placards et le stockage en boîtes fermées complètent l\'intervention.',
+    'Jetez les aliments entamés par les souris et nettoyez les étagères : les déjections et l\'urine souillent ce qu\'elles touchent.',
+  ], ['Arcueil', 'L\'Haÿ-les-Roses', 'Villejuif', 'Fresnes'],
+  { q: 'Faut-il jeter les aliments touchés par des souris ?', a: 'Oui, tout aliment entamé ou souillé de déjections doit être jeté. Lavez ensuite les étagères et rangez les denrées dans des boîtes hermétiques.' }),
+
+  ville('Villeneuve-Saint-Georges', 'à Villeneuve-Saint-Georges', 'villeneuve-saint-georges', [
+    'À Villeneuve-Saint-Georges, au confluent de la Seine et de l\'Yerres, on rencontre la souris domestique dans les maisons et les immeubles, mais aussi des mulots qui viennent des jardins et des berges.',
+    'Identifier l\'espèce change la méthode : le mulot vient de l\'extérieur et se gère surtout en fermant les accès, la souris domestique vit dans le bâti et demande des pièges sur ses passages.',
+    'Un mulot a de grandes oreilles, de grands yeux et une longue queue ; la souris domestique est plus grise et plus petite.',
+  ], ['Valenton', 'Villeneuve-le-Roi', 'Limeil-Brévannes', 'Choisy-le-Roi'],
+  { q: 'Mulot ou souris domestique : comment faire la différence ?', a: 'Le mulot a de grandes oreilles, de gros yeux, une longue queue et saute ; il vit surtout dehors. La souris domestique est plus petite, plus grise, et vit dans les bâtiments.' }),
+
+  ville('L\'Haÿ-les-Roses', 'à L\'Haÿ-les-Roses', 'l-hay-les-roses', [
+    'À L\'Haÿ-les-Roses, commune verte et pavillonnaire, les souris passent du jardin à la maison quand le froid arrive : abris de jardin, composts et tas de bois leur servent d\'étape.',
+    'Nous traitons l\'intérieur avec des pièges ou des postes sécurisés, et conseillons sur l\'extérieur : éloigner le bois de chauffage des murs, fermer le compost, ranger les graines.',
+    'Un tas de bois collé contre la façade est un véritable escalier vers la maison : laissez un espace.',
+  ], ['Cachan', 'Fresnes', 'Chevilly-Larue', 'Villejuif'],
+  { q: 'Le jardin attire-t-il les souris vers la maison ?', a: 'Oui : composts ouverts, graines pour oiseaux et tas de bois contre les murs leur offrent nourriture et abri tout près de la maison. Quelques rangements réduisent beaucoup le risque.' }),
+
+  ville('Villiers-sur-Marne', 'à Villiers-sur-Marne', 'villiers-sur-marne', [
+    'À Villiers-sur-Marne, entre pavillons et résidences, les souris s\'installent dans les sous-sols, les combles et les doublages. On les entend gratter la nuit dans les cloisons.',
+    'Un traitement contre les souris demande en général quelques semaines : premier passage pour poser les dispositifs, puis contrôle pour relever les captures et ajuster.',
+    'Notez où et quand vous entendez les bruits : cela aide le technicien à trouver plus vite les passages.',
+  ], ['Champigny-sur-Marne', 'Le Plessis-Trévise', 'Bry-sur-Marne', 'Chennevières-sur-Marne'],
+  { q: 'Combien de temps dure un traitement contre les souris ?', a: 'En général quelques semaines, avec un contrôle après la pose. La durée dépend de l\'infestation et de la fermeture des accès.' }),
+
+  ville('Fresnes', 'à Fresnes', 'fresnes', [
+    'À Fresnes, les souris se retrouvent dans les résidences comme dans les pavillons. Leur présence n\'est pas qu\'une gêne : déjections et urine souillent les surfaces et les aliments.',
+    'Nous éliminons les souris par pièges ou postes sécurisés, fermons les accès et donnons les consignes de nettoyage : gants, produit ménager désinfectant, pas d\'aspirateur sur des déjections sèches.',
+    'Avant de nettoyer des déjections, humidifiez-les pour éviter de soulever des poussières.',
+  ], ['L\'Haÿ-les-Roses', 'Cachan', 'Chevilly-Larue', 'Thiais'],
+  { q: 'Les souris transmettent-elles des maladies ?', a: 'Elles peuvent contaminer les aliments et les surfaces par leurs déjections et leur urine. D\'où l\'importance de jeter les denrées touchées et de nettoyer avec des gants.' }),
+
+  ville('Limeil-Brévannes', 'à Limeil-Brévannes', 'limeil-brevannes', [
+    'À Limeil-Brévannes, les quartiers récents ne sont pas épargnés : les souris entrent dans les maisons neuves par les réservations de gaines, les passages de tuyaux et les garages.',
+    'Dans une construction récente, nous vérifions les fourreaux électriques, le tour des canalisations et les joints des portes de garage, puis posons les pièges sur les passages repérés.',
+    'Un joint de porte de garage abîmé ou une réservation non rebouchée suffisent : contrôlez-les à l\'automne.',
+  ], ['Valenton', 'Boissy-Saint-Léger', 'Villeneuve-Saint-Georges', 'Bonneuil-sur-Marne'],
+  { q: 'Une maison neuve peut-elle avoir des souris ?', a: 'Oui. Les passages de gaines et de tuyaux sont parfois mal rebouchés après les travaux, et les souris en profitent dès les premiers froids.' }),
+
+  ville('Orly', 'à Orly', 'orly', [
+    'À Orly, entre grands ensembles, pavillons et bords de Seine, les souris sont surtout actives la nuit : bruits dans les plafonds, grignotage dans les placards au petit matin.',
+    'Nous plaçons les pièges là où elles circulent la nuit, le long des murs et derrière les meubles, avec des postes sécurisés dans les caves et locaux techniques si besoin.',
+    'Ne laissez pas de vaisselle sale ni de restes de repas la nuit : c\'est à ce moment qu\'elles cherchent à manger.',
+  ], ['Choisy-le-Roi', 'Villeneuve-le-Roi', 'Thiais', 'Vitry-sur-Seine'],
+  { q: 'Pourquoi entend-on les souris surtout la nuit ?', a: 'Elles sont surtout actives la nuit, quand la maison est calme. C\'est à ce moment qu\'elles circulent dans les cloisons et cherchent de la nourriture.' }),
+
+  ville('Arcueil', 'à Arcueil', 'arcueil', [
+    'À Arcueil, entre immeubles, bureaux et pavillons, les pièges connectés sont utiles quand le lieu est souvent vide : bureaux, logements loués, résidences secondaires.',
+    'Un piège connecté envoie une alerte à chaque capture : on sait tout de suite si les souris sont encore là, sans attendre la visite de contrôle. Nous le combinons avec le colmatage.',
+    'Pour un bureau, un suivi régulier évite qu\'une souris ne revienne pendant les congés.',
+  ], ['Cachan', 'Gentilly', 'Le Kremlin-Bicêtre', 'Villejuif'],
+  { q: 'Comment fonctionnent les pièges connectés ?', a: 'Le piège capture la souris et envoie une alerte. On suit les captures à distance et on intervient au bon moment, ce qui est pratique pour les bureaux et les logements souvent vides.' }),
+
+  ville('Villeneuve-le-Roi', 'à Villeneuve-le-Roi', 'villeneuve-le-roi', [
+    'À Villeneuve-le-Roi, commune surtout pavillonnaire au bord de la Seine, les souris occupent souvent plusieurs pièces à la fois : cuisine, cellier, garage.',
+    'Nous posons des dispositifs dans chaque pièce où il y a des traces, et non un seul piège au hasard : une souris explore peu loin de son nid, il faut aller sur ses passages.',
+    'Plusieurs pièges bien placés valent mieux qu\'un seul mal placé.',
+  ], ['Orly', 'Ablon-sur-Seine', 'Choisy-le-Roi', 'Villeneuve-Saint-Georges'],
+  { q: 'Faut-il un piège par pièce ?', a: 'Il faut des dispositifs partout où il y a des traces. Les souris se déplacent peu loin de leur nid : un piège à l\'autre bout de la maison ne servira à rien.' }),
+
+  ville('Le Plessis-Trévise', 'au Plessis-Trévise', 'le-plessis-trevise', [
+    'Au Plessis-Trévise, commune pavillonnaire et boisée, les souris viennent des jardins et des espaces verts. Beaucoup de foyers ont un chat, mais il ne suffit pas toujours.',
+    'Le chat fait fuir ou attrape quelques souris, sans régler l\'accès ni le nid. Nous traitons avec des pièges adaptés aux animaux de compagnie et fermons les passages.',
+    'Si vous avez un chat, signalez-le : nous choisissons des dispositifs inaccessibles pour lui.',
+  ], ['Villiers-sur-Marne', 'Chennevières-sur-Marne', 'Champigny-sur-Marne', 'Sucy-en-Brie'],
+  { q: 'Mon chat ne suffit-il pas contre les souris ?', a: 'Il peut en attraper, mais il ne bouche pas les accès et ne trouve pas le nid. Pour une infestation installée, un traitement et un colmatage restent nécessaires.' }),
+
+  ville('Chevilly-Larue', 'à Chevilly-Larue', 'chevilly-larue', [
+    'À Chevilly-Larue, entre pavillons et zones d\'activité, les souris touchent aussi les locaux professionnels : entrepôts, ateliers, réserves de marchandises.',
+    'En entrepôt, nous installons des postes sécurisés en périphérie, des pièges près des zones de stockage, et un suivi régulier avec plan des postes et comptes rendus.',
+    'Stockez les marchandises sur palettes, à distance des murs : les passages restent visibles et faciles à contrôler.',
+  ], ['Thiais', 'Fresnes', 'L\'Haÿ-les-Roses', 'Villejuif'],
+  { q: 'Des souris dans un entrepôt : comment protéger la marchandise ?', a: 'Postes sécurisés en périphérie, pièges près des stocks, palettes éloignées des murs et suivi régulier. Un plan des postes et des comptes rendus sont remis à chaque passage.' }),
+
+  ville('Chennevières-sur-Marne', 'à Chennevières-sur-Marne', 'chennevieres-sur-marne', [
+    'À Chennevières-sur-Marne, sur les coteaux de la Marne, les maisons avec sous-sol et jardin voient arriver les souris dès les premiers froids.',
+    'Après le traitement, il faut parfois retirer des souris mortes : nous expliquons comment le faire sans risque, avec des gants et un sac fermé, et comment nettoyer.',
+    'Une odeur persistante peut venir d\'une souris morte dans une cloison : signalez-la au technicien.',
+  ], ['Champigny-sur-Marne', 'Le Plessis-Trévise', 'Sucy-en-Brie', 'Ormesson-sur-Marne'],
+  { q: 'Que faire d\'une souris morte ?', a: 'Portez des gants, placez-la dans un sac fermé et jetez-le avec les ordures ménagères. Nettoyez ensuite l\'endroit avec un produit ménager désinfectant.' }),
+
+  ville('Gentilly', 'à Gentilly', 'gentilly', [
+    'À Gentilly, commune dense aux portes de Paris, les souris passent par les trous autour des tuyaux, sous les éviers et derrière les plinthes. Beaucoup d\'habitants essaient de boucher eux-mêmes.',
+    'Pour boucher durablement, on utilise de la laine d\'acier tassée puis un mastic ou un mortier : la mousse expansive seule est rongée. Nous colmatons les passages trouvés après le traitement.',
+    'La mousse expansive seule ne suffit pas : les souris la rongent en quelques nuits.',
+  ], ['Arcueil', 'Le Kremlin-Bicêtre', 'Cachan', 'Ivry-sur-Seine'],
+  { q: 'Peut-on boucher les trous soi-même ?', a: 'Oui pour les petits passages : laine d\'acier tassée puis mastic ou mortier. Évitez la mousse expansive seule, que les souris rongent. Le technicien repère les accès que vous n\'avez pas vus.' }),
+
+  ville('Bonneuil-sur-Marne', 'à Bonneuil-sur-Marne', 'bonneuil-sur-marne', [
+    'À Bonneuil-sur-Marne, autour du port et des zones d\'activité, les souris touchent aussi les bureaux et les locaux d\'entreprise, en plus des logements.',
+    'Dans des bureaux, nous intervenons en dehors des heures de travail, avec des dispositifs placés hors de vue des salariés, et proposons un contrat de suivi si besoin.',
+    'Ne laissez pas de nourriture dans les tiroirs des bureaux : c\'est souvent là que les souris trouvent à manger.',
+  ], ['Créteil', 'Saint-Maur-des-Fossés', 'Sucy-en-Brie', 'Valenton'],
+  { q: 'Pouvez-vous intervenir en dehors des heures de bureau ?', a: 'Oui, tôt le matin, le soir ou le week-end, pour ne pas gêner l\'activité. Les dispositifs sont discrets et placés hors de vue.' }),
+
+  ville('Boissy-Saint-Léger', 'à Boissy-Saint-Léger', 'boissy-saint-leger', [
+    'À Boissy-Saint-Léger, entre pavillons, résidences et espaces boisés, beaucoup de particuliers essaient d\'abord la mort-aux-rats achetée en magasin, souvent sans résultat durable.',
+    'Les produits vendus au grand public sont limités et mal placés : les souris en consomment peu, et ils peuvent être atteints par un enfant ou un animal. Nous utilisons des postes verrouillés ou des pièges, avec colmatage.',
+    'Si vous avez déjà posé des produits, dites-le au technicien : il les retire et adapte le traitement.',
+  ], ['Sucy-en-Brie', 'Limeil-Brévannes', 'Valenton', 'Santeny'],
+  { q: 'La mort-aux-rats du commerce marche-t-elle contre les souris ?', a: 'Rarement de façon durable : produits limités, appâts mal placés, accès laissés ouverts. Un traitement professionnel combine dispositifs sécurisés sur les passages et colmatage.' }),
+
+  ville('Valenton', 'à Valenton', 'valenton', [
+    'À Valenton, la plupart des demandes viennent de locataires de résidences ou de pavillons qui découvrent des crottes dans la cuisine et ne savent pas à qui s\'adresser.',
+    'Nous intervenons dans le logement et, si les souris viennent des parties communes, nous fournissons un rapport à transmettre au bailleur ou au syndic pour traiter l\'immeuble.',
+    'Prévenez votre propriétaire ou votre syndic dès les premières traces : le traitement des parties communes leur revient.',
+  ], ['Villeneuve-Saint-Georges', 'Limeil-Brévannes', 'Créteil', 'Bonneuil-sur-Marne'],
+  { q: 'Locataire : faut-il prévenir le propriétaire ?', a: 'Oui, dès les premières traces. Selon l\'origine, le traitement peut lui revenir, et les parties communes relèvent du bailleur ou du syndic. Nous fournissons un rapport utile pour ces démarches.' }),
 ]
 
 export function getVilleSouris(slug: string) {

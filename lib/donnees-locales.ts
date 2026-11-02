@@ -901,7 +901,7 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
   ],
   "pinsHa": 0,
   "osm": true,
-  "quartiers": [],
+  "quartiers": ["Centre Nord", "Centre Sud", "Est", "Ouest"],
   "sru": {
    "lls": 3233,
    "taux": "13,17%"

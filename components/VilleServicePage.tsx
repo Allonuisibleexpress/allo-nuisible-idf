@@ -81,6 +81,15 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   const sections = c.sections ? [c.sections[rang % c.sections.length]] : undefined
   // Encadré de conseils et cartes « publics » en alternance d'une ville à l'autre
   const avecEncadre = rang % 2 === 0
+  // Blocs communs en rotation : chaque page n'en montre qu'une partie, différente de ses voisines
+  const tourne = <T,>(l: T[], k: number) => [...l.slice(k % Math.max(1, l.length)), ...l.slice(0, k % Math.max(1, l.length))]
+  const methodes = tourne(c.methodes, rang).slice(0, Math.min(2, c.methodes.length))
+  const cachettes = tourne(c.cachettes.items, rang).slice(0, Math.min(3, c.cachettes.items.length))
+  const introMethodes = [
+    'Avec ou sans produit : le technicien vous propose la méthode adaptée à votre logement et à l\'infestation, et vous explique son choix avant d\'intervenir.',
+    'Le choix dépend du lieu, de l\'ampleur de l\'infestation et de la présence d\'enfants ou d\'animaux.',
+    'Deux exemples de dispositifs que nous utilisons, toujours associés à la fermeture des accès.',
+  ][rang % 3]
   const sl = serviceLocal(c.pilier.href)
   const avisLocaux = sl === 'souris' || sl === 'cafards' ? avisVille(sl, v.slug) : []
   // FAQ : la question propre à la ville, puis 2 questions générales en rotation
@@ -176,13 +185,13 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             ))}
             <h3 className="text-lg font-black text-white mt-8 mb-4">{c.cachettes.titre}</h3>
             <ul className="grid sm:grid-cols-2 gap-3">
-              {c.cachettes.items.map((l) => (
+              {cachettes.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
                   <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{l}
                 </li>
               ))}
             </ul>
-            <p className="text-white/50 text-sm mt-4">{c.cachettes.signes}</p>
+            {rang % 2 === 1 && <p className="text-white/50 text-sm mt-4">{c.cachettes.signes}</p>}
           </div>
         </section>
 
@@ -235,10 +244,10 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                   )}
                 </div>
               ))}
-              <p className="text-white/55 text-sm">
+              {rang % 2 === 0 && <p className="text-white/55 text-sm">
                 Espèces, causes, risques et erreurs à éviter : tout est détaillé sur{' '}
                 <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
-              </p>
+              </p>}
             </div>
           </section>
         )}
@@ -247,11 +256,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Nos méthodes de traitement {v.a}</h2>
-            <p className="text-white/55 mb-8 max-w-2xl">
-              Avec ou sans produit : le technicien vous propose la méthode adaptée à votre logement et à l&apos;infestation, et vous explique son choix avant d&apos;intervenir.
-            </p>
+            <p className="text-white/55 mb-8 max-w-2xl">{introMethodes}</p>
             <div className="grid sm:grid-cols-2 gap-4">
-              {c.methodes.map((m) => {
+              {methodes.map((m) => {
                 const contenu = (
                   <>
                     <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
@@ -280,7 +287,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               </ul>
             </div>
             )}
-            {c.alternative && (
+            {c.alternative && !avecEncadre && (
               <div className="rounded-2xl p-6 mt-6" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
                 <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>{c.alternative.surtitre}</p>
                 <p className="text-lg font-black text-white mb-2">{c.alternative.titre}</p>
