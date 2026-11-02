@@ -1,5 +1,6 @@
 import NextImage from 'next/image'
 import { PHOTOS_CHANTIERS, type PhotoKey } from '@/lib/photos-chantiers'
+import { Filigrane } from '@/components/MediasChantier'
 
 const ACCENT = '#E8441A'
 
@@ -34,6 +35,7 @@ export default function PhotosChantiers({
                   style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)', padding: '28px 10px 10px' }}>
                   {p.legende}
                 </figcaption>
+                <Filigrane bas={38} />
               </figure>
             )
           })}

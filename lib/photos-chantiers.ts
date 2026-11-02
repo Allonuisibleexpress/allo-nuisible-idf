@@ -107,6 +107,39 @@ export const PHOTOS_CHANTIERS = {
     alt: 'Balcon couvert de fientes et de débris laissés par les pigeons, avant nettoyage',
     legende: 'Balcon envahi par les pigeons, avant le nettoyage',
   },
+  sourisAirbnb: {
+    src: '/chantiers/souris-airbnb-carrelage.jpg',
+    alt: 'Souris sur le carrelage d’un logement loué en courte durée',
+    legende: 'Souris repérée sur le carrelage du logement (Saint-Maur-des-Fossés, 94)',
+  },
+  frelonsAsiatiques: {
+    src: '/chantiers/frelons-asiatiques-nid-arbre.jpg',
+    alt: 'Gros nid de frelons asiatiques caché dans le feuillage d’un arbre',
+    legende: 'Le nid de frelons asiatiques, caché dans le feuillage',
+  },
+  sourisGlu: {
+    src: '/chantiers/souris-glu-gite.jpg',
+    alt: 'Souris capturée sur une plaque de glu posée sur un plancher en bois',
+    legende: 'Souris capturée sur plaque, posée sept à huit jours plus tôt',
+  },
+  frelonsEcoleTech: {
+    src: '/chantiers/frelons-nuit-ecole.jpg',
+    alt: 'Technicien en tenue de protection, accroupi devant une haie avec un pulvérisateur',
+    legende: 'Intervention en fin de journée, derrière une école',
+    cadrage: '0% center',
+  },
+  frelonsEcoleNid: {
+    src: '/chantiers/frelons-nuit-ecole.jpg',
+    alt: 'Nid de frelons caché dans une haie, traité à la lance',
+    legende: 'Le nid, caché au cœur de la haie',
+    cadrage: '100% center',
+  },
+  frelonsBuissonTech: {
+    src: '/chantiers/frelons-nid-buisson.jpg',
+    alt: 'Technicien en combinaison traitant un buisson avec un pulvérisateur',
+    legende: 'Traitement du nid dans le buisson',
+    cadrage: '0% center',
+  },
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS

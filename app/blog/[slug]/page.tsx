@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import { ARTICLES, getArticle, type Block } from '../articles'
 import NextImage from 'next/image'
 import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
-import MediasChantier from '@/components/MediasChantier'
+import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 
 export function generateStaticParams() {
@@ -190,7 +190,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <span>·</span>
               <span>Lecture {a.readMin} min</span>
             </div>
-            {a.videos && (
+            {(a.videos || a.mediasEnHaut) && (
               <div style={{ marginTop: '20px' }}>
                 <VignettesChantier photos={a.photos} videos={a.videos} texte="Photos et vidéos du chantier" />
               </div>
@@ -201,7 +201,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <article className="max-w-3xl mx-auto px-4" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
 
           {/* Le chantier en images, tout en haut : les clients veulent voir avant de lire */}
-          {a.videos && (
+          {(a.videos || a.mediasEnHaut) && (
             <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>
               <MediasChantier photos={a.photos} videos={a.videos} />
             </div>
@@ -216,7 +216,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           {a.blocks.map(renderBlock)}
 
           {/* Vraies photos de chantier (en haut de page quand il y a des vidéos) */}
-          {a.photos && !a.videos && (
+          {a.photos && !a.videos && !a.mediasEnHaut && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '12px', marginTop: '40px' }}>
               {a.photos.map((cle) => {
                 const p = PHOTOS_CHANTIERS[cle]
@@ -224,6 +224,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   <figure key={cle} style={{ margin: 0 }}>
                     <div style={{ position: 'relative', aspectRatio: '3/4', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }}>
                       <NextImage src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 50vw, 360px" style={{ objectFit: 'cover' }} />
+                      <Filigrane />
                     </div>
                     <figcaption style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginTop: '8px', lineHeight: 1.5 }}>{p.legende}</figcaption>
                   </figure>
