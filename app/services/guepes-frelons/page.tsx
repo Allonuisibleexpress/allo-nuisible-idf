@@ -396,6 +396,7 @@ export default function GuêpesFrelonsPage() {
             <p className="text-white/70 text-sm font-bold mt-8 mb-3">Le récit de nos interventions :</p>
             <ul className="space-y-2 text-sm">
               {[
+                ['/blog/nid-frelons-cheminee-nogent-sur-marne', 'Nid de frelons dans une cheminée à Nogent-sur-Marne (94)'],
                 ['/blog/nid-guepes-gretz-armainvilliers', 'Nid de guêpes dans un abri de jardin à Gretz-Armainvilliers (77)'],
                 ['/blog/enorme-nid-frelons-asiatiques-arbre', 'Énorme nid de frelons asiatiques dans un arbre'],
                 ['/blog/nid-frelons-porte-hauteur-perche', 'Nid de frelons au-dessus d’une porte, retiré à la perche'],

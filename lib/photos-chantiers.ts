@@ -174,7 +174,10 @@ export const MEDIAS_DERATISATION = {
 // Médias guêpes et frelons, et pigeons (photos de la fiche Google)
 export const MEDIAS_FRELONS = {
   photos: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[],
-  videos: [{ src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true }],
+  videos: [
+    { src: '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4', legende: 'Nid de frelons dans une cheminée, sur la toiture (Nogent-sur-Marne, 94)', banniere: true },
+    { src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true },
+  ],
 }
 export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }
 

@@ -2886,6 +2886,42 @@ export const ARTICLES: Article[] = [
     sources: [],
     cta: { title: 'Un nid dans votre abri de jardin ?', text: "Destruction à la source par un technicien en tenue complète, à partir de 89 € TTC. Appel gratuit." },
   },
+  {
+    slug: 'nid-frelons-cheminee-nogent-sur-marne',
+    title: "Nid de frelons dans une cheminée à Nogent-sur-Marne : intervention sur la toiture",
+    seoTitle: "Nid de frelons dans une cheminée à Nogent-sur-Marne",
+    description: "Nogent-sur-Marne (94) : un nid de frelons installé dans une cheminée. Notre technicien monte sur la toiture et traite le nid à la source. En vidéo.",
+    date: '2026-11-04',
+    category: 'Guêpes et frelons',
+    readMin: 4,
+    tldr: "À Nogent-sur-Marne (94), des frelons avaient fait leur nid dans le conduit d'une cheminée. Pour l'atteindre, notre technicien est monté sur la toiture, en tenue de protection complète, et a traité le nid directement par le haut de la cheminée. La vidéo montre l'intervention sur le toit.",
+    service: { href: '/services/guepes-frelons', label: 'Guêpes et frelons : destruction de nids' },
+    videos: [
+      { src: '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4', legende: 'Traitement d’un nid de frelons dans une cheminée, sur la toiture (Nogent-sur-Marne, 94)', banniere: true },
+    ],
+    blocks: [
+      { t: 'p', x: "Un va-et-vient de frelons au-dessus du toit, un bourdonnement dans le conduit : chez ce client de **Nogent-sur-Marne (94)**, les frelons avaient construit leur nid **dans une cheminée**. Un emplacement fréquent, et l'un des plus difficiles à traiter depuis l'intérieur de la maison." },
+      { t: 'h2', x: "Pourquoi les frelons s'installent dans les cheminées" },
+      { t: 'p', x: "Un conduit de cheminée peu utilisé offre exactement ce que recherche une colonie : un **abri sombre, sec et protégé** de la pluie et du vent, avec une ouverture en hauteur pour entrer et sortir. Le nid grandit à l'intérieur du conduit, souvent sans être visible." },
+      { t: 'h2', x: "Notre intervention sur la toiture" },
+      { t: 'ol', items: [
+        "**Accès à la toiture** en sécurité, jusqu'à la souche de la cheminée.",
+        "**Tenue de protection complète** : combinaison, voile et gants, car les frelons défendent leur nid.",
+        "**Traitement du nid à la source**, directement par le haut du conduit, comme on le voit sur la vidéo.",
+        "**Contrôle de l'activité** avant de redescendre, et conseils au client pour la suite.",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Surtout, ne faites pas de feu', x: "N'allumez jamais un feu pour enfumer un nid dans une cheminée : la colonie s'affole et peut entrer dans la maison, et un nid sec peut s'enflammer dans le conduit. Fermez la trappe de la cheminée et appelez un professionnel." },
+      { t: 'p', x: "Une fois la colonie éliminée, faites **ramoner le conduit** avant de le réutiliser : les restes du nid peuvent le boucher. Pensez aussi à poser un **chapeau ou une grille** en haut de la cheminée pour éviter qu'un autre nid s'y installe." },
+      { t: 'p', x: "Destruction de nid **à partir de 89 € TTC**. Nous intervenons à **Nogent-sur-Marne** et dans tout le Val-de-Marne : voir notre page [Nogent-sur-Marne](/zones/val-de-marne/nogent-sur-marne) et notre service [guêpes et frelons](/services/guepes-frelons)." },
+    ],
+    faq: [
+      { q: "Peut-on traiter un nid de frelons dans une cheminée par l'intérieur ?", a: "C'est risqué : la colonie peut descendre dans la maison. Le traitement se fait de préférence par le haut du conduit, depuis la toiture, par un professionnel équipé." },
+      { q: "Faut-il ramoner après le traitement ?", a: "Oui, avant toute nouvelle utilisation de la cheminée : les restes du nid peuvent obstruer le conduit." },
+      { q: "Comment éviter qu'un nid revienne ?", a: "Un chapeau ou une grille en haut de la cheminée empêche les frelons et les oiseaux d'entrer dans le conduit." },
+    ],
+    sources: [],
+    cta: { title: 'Des frelons dans votre cheminée ?', text: "Intervention sur toiture en tenue complète, à partir de 89 € TTC. Appel gratuit, intervention rapide dans le Val-de-Marne." },
+  },
 ]
 
 export const getArticle = (slug: string) => ARTICLES.find((a) => a.slug === slug)
