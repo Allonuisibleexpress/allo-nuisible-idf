@@ -51,8 +51,7 @@ export default function MediasChantier({
             <div style={tuile}>
               <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata" aria-label={v.legende}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
-              {!v.banniere && <Filigrane bas={56} />}
+              {/* La bannière « Allo Nuisible IDF » est incrustée dans toutes les vidéos (règle absolue) */}
             </div>
             {legendes && <figcaption style={legende}>{v.legende}</figcaption>}
           </figure>
