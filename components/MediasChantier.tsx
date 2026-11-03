@@ -3,7 +3,7 @@ import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photo
 
 const ACCENT = '#E8441A'
 
-export type VideoChantier = { src: string; legende: string }
+export type VideoChantier = { src: string; legende: string; banniere?: boolean } // banniere : logo déjà incrusté dans la vidéo
 
 // Petit logo de l'entreprise en bas à droite des photos et vidéos
 export function Filigrane({ bas = 8 }: { bas?: number }) {
@@ -52,7 +52,7 @@ export default function MediasChantier({
               <video src={`${v.src}#t=0.5`} controls muted playsInline preload="metadata" aria-label={v.legende}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               {/* Filigrane de l'entreprise, au-dessus de la barre de lecture */}
-              <Filigrane bas={56} />
+              {!v.banniere && <Filigrane bas={56} />}
             </div>
             {legendes && <figcaption style={legende}>{v.legende}</figcaption>}
           </figure>

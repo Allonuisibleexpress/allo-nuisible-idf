@@ -7,6 +7,8 @@ import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
+import MediasChantier from '@/components/MediasChantier'
+import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
 } from '@/lib/villes-punaises'
@@ -168,6 +170,16 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
+
+        {/* Vrai chantier dans cette ville, en vidéo */}
+        {CHANTIERS_PUNAISES_VILLE[v.slug] && (
+          <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-3xl mx-auto">
+              <MediasChantier photos={CHANTIERS_PUNAISES_VILLE[v.slug].photos} videos={[CHANTIERS_PUNAISES_VILLE[v.slug].video]} titre={CHANTIERS_PUNAISES_VILLE[v.slug].titre}
+                lien={{ href: CHANTIERS_PUNAISES_VILLE[v.slug].article, label: 'Lire le récit de l’intervention' }} />
+            </div>
+          </section>
+        )}
 
         {/* ── TOUTES LES MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

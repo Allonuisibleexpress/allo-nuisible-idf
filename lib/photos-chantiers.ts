@@ -140,6 +140,16 @@ export const PHOTOS_CHANTIERS = {
     legende: 'Traitement du nid dans le buisson',
     cadrage: '0% center',
   },
+  creteilLattes1: {
+    src: '/chantiers/punaises-creteil-lattes-1.jpg',
+    alt: 'Punaises de lit et déjections autour de la fixation d’une latte de sommier',
+    legende: 'Punaises et traces autour de la fixation d’une latte (Créteil, 94)',
+  },
+  creteilLattes2: {
+    src: '/chantiers/punaises-creteil-lattes-2.jpg',
+    alt: 'Points noirs de punaises de lit dans le trou de fixation des lattes d’un sommier',
+    legende: 'Le trou de fixation des lattes, cachette des punaises (Créteil, 94)',
+  },
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
@@ -162,5 +172,23 @@ export const MEDIAS_DERATISATION = {
 }
 
 // Médias guêpes et frelons, et pigeons (photos de la fiche Google)
-export const MEDIAS_FRELONS = { photos: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[] }
+export const MEDIAS_FRELONS = {
+  photos: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[],
+  videos: [{ src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true }],
+}
 export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }
+
+// Vrais chantiers de punaises de lit, affichés sur la page de la ville où ils ont eu lieu (03/11/2026)
+export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean }; article: string }> = {
+  creteil: {
+    titre: 'Notre chantier à Créteil : punaises localisées dans les sommiers',
+    photos: ['creteilLattes1', 'creteilLattes2'],
+    video: { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Punaises dans les trous des lattes du sommier (Créteil, 94)', banniere: true },
+    article: '/blog/punaises-de-lit-creteil-sommier-lattes',
+  },
+  'paris-12': {
+    titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
+    video: { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Punaises mortes au sol : résultat du premier passage, avant le deuxième (Paris 12e)', banniere: true },
+    article: '/blog/punaises-de-lit-paris-12-grosse-infestation',
+  },
+}

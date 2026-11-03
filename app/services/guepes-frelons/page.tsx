@@ -232,7 +232,7 @@ export default function GuêpesFrelonsPage() {
 
             {/* Miniatures de vrais chantiers */}
             <div className="hero-3 -mt-6 mb-10">
-              <VignettesChantier photos={MEDIAS_FRELONS.photos.slice(0, 3)} centre texte="Nos nids retirés en photos" />
+              <VignettesChantier photos={MEDIAS_FRELONS.photos.slice(0, 2)} videos={MEDIAS_FRELONS.videos} centre texte="Nos nids retirés en photos et vidéo" />
             </div>
 
             {/* ── NUMÉRO — bouton lava ── */}
@@ -392,7 +392,19 @@ export default function GuêpesFrelonsPage() {
         {/* Galerie : vraies photos de chantier (lib/photos-chantiers.ts) */}
         <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
-            <MediasChantier photos={MEDIAS_FRELONS.photos} titre="Nos chantiers guêpes et frelons en images" />
+            <MediasChantier photos={MEDIAS_FRELONS.photos} videos={MEDIAS_FRELONS.videos} titre="Nos chantiers guêpes et frelons en images" />
+            <p className="text-white/70 text-sm font-bold mt-8 mb-3">Le récit de nos interventions :</p>
+            <ul className="space-y-2 text-sm">
+              {[
+                ['/blog/nid-guepes-gretz-armainvilliers', 'Nid de guêpes dans un abri de jardin à Gretz-Armainvilliers (77)'],
+                ['/blog/enorme-nid-frelons-asiatiques-arbre', 'Énorme nid de frelons asiatiques dans un arbre'],
+                ['/blog/nid-frelons-porte-hauteur-perche', 'Nid de frelons au-dessus d’une porte, retiré à la perche'],
+                ['/blog/nids-frelons-buissons-haies-intervention', 'Nids de frelons dans des haies, dont une école'],
+                ['/blog/nid-guepes-sous-tuile-essonne', 'Nid de guêpes sous une tuile en Essonne'],
+              ].map(([href, label]) => (
+                <li key={href}><a href={href} className="underline underline-offset-2" style={{ color: '#E8441A' }}>{label}</a></li>
+              ))}
+            </ul>
           </div>
         </section>
 

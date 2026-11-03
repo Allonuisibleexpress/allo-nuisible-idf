@@ -25,7 +25,7 @@ export interface Article {
   blocks: Block[]
   terrain?: string // retour d'expérience réel uniquement, sinon laisser vide
   photos?: PhotoKey[] // vraies photos de chantier (lib/photos-chantiers.ts)
-  videos?: { src: string; legende: string }[] // vraies vidéos de chantier (public/chantiers)
+  videos?: { src: string; legende: string; banniere?: boolean }[] // vraies vidéos de chantier (public/chantiers)
   mediasEnHaut?: boolean // récit d'intervention : photos en miniatures et en galerie en haut de l'article
   faq: { q: string; a: string }[]
   sources: { label: string; url: string }[]
@@ -2775,6 +2775,116 @@ export const ARTICLES: Article[] = [
       { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' },
     ],
     cta: { title: 'Des punaises de lit chez vous ?', text: "Traitement insecticide ou sans insecticide, 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'punaises-de-lit-creteil-sommier-lattes',
+    title: "Punaises de lit à Créteil : localisées dans les sommiers, là où une première société n'avait rien trouvé",
+    seoTitle: "Punaises de lit à Créteil : cachées dans les sommiers",
+    description: "Créteil (94) : une première société n'avait rien trouvé. Nous avons localisé les punaises de lit dans les sommiers, au creux des lattes. Photos et vidéo.",
+    date: '2026-11-03',
+    category: 'Punaises de lit',
+    readMin: 4,
+    tldr: "Le mardi 3 novembre, nous sommes intervenus chez un client à Créteil (94) pour des punaises de lit. Une première société était passée sans rien trouver. Notre technicien a localisé les punaises principalement au niveau des sommiers, cachées dans les trous des lattes, dans deux chambres. Le logement va être traité par un traitement chimique professionnel, en deux passages.",
+    service: { href: '/services/punaises-de-lit', label: 'Punaises de lit : traitement insecticide ou sans insecticide' },
+    photos: ['creteilLattes1', 'creteilLattes2'],
+    videos: [
+      { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Punaises et traces dans les trous des lattes du sommier (Créteil, 94)', banniere: true },
+    ],
+    blocks: [
+      { t: 'p', x: "Des piqûres au réveil, mais **rien de visible** sur le matelas : c'est la situation de ce client de **Créteil (94)**. Une première société était déjà passée et **n'avait rien trouvé**. Il nous a appelés pour un second avis, et nous sommes intervenus le **mardi 3 novembre**." },
+      { t: 'h2', x: "Les punaises étaient dans les sommiers" },
+      { t: 'p', x: "Notre technicien a inspecté chaque lit **pièce par pièce**, jusqu'au sommier. Les punaises étaient **principalement localisées au niveau des sommiers**, cachées **dans les trous des lattes**, autour des vis et des fixations. Les photos et la vidéo le montrent : insectes et petits points noirs regroupés dans ces cavités de quelques millimètres. **Deux chambres** étaient touchées." },
+      { t: 'p', x: "C'est un cas classique : les punaises recherchent les **fentes sombres et étroites** au plus près de la personne qu'elles piquent. Un matelas propre ne veut pas dire un lit sain." },
+      { t: 'h2', x: "Le traitement prévu" },
+      { t: 'p', x: "Les deux chambres vont être traitées par un **traitement chimique professionnel**, appliqué par un technicien certifié Certibiocide, en insistant sur les sommiers, les lattes, les cadres de lit et les plinthes. Comme pour tous nos traitements de punaises de lit, **deux passages** sont prévus : le second élimine les punaises écloses entre-temps. À partir de **290 € TTC, 2 passages inclus**, garantie 1 an." },
+      { t: 'h2', x: "Où regarder dans un lit" },
+      { t: 'ul', items: [
+        "**Les lattes**, et surtout les trous des vis et les embouts en plastique.",
+        "**Les jonctions du cadre** et les angles de la tête de lit.",
+        "**Les coutures, passepoils et étiquettes** du matelas.",
+        "**Le dessous du sommier**, souvent oublié.",
+      ] },
+      { t: 'callout', tone: 'info', title: 'Un premier diagnostic négatif ?', x: "Si les piqûres continuent, faites inspecter à nouveau. Les punaises se cachent dans des endroits très étroits, et une inspection rapide passe facilement à côté." },
+      { t: 'p', x: "Nous intervenons à **Créteil** et dans tout le Val-de-Marne : voir notre page [punaises de lit à Créteil](/punaises-de-lit/creteil), notre service [punaises de lit](/services/punaises-de-lit) et, sans insecticide, notre [traitement par cryogénie](/services/cryogenie-punaises-de-lit)." },
+    ],
+    faq: [
+      { q: "Pourquoi une première société n'a-t-elle rien trouvé ?", a: "Les punaises se cachent dans des fentes très étroites : trous de lattes, vis, jonctions. Sans démonter et inspecter chaque partie du lit, on peut passer à côté." },
+      { q: "Faut-il jeter le sommier ?", a: "Rarement. Un sommier se traite. Le technicien vous dit sur place s'il peut être conservé." },
+      { q: "Pourquoi traiter les deux chambres ?", a: "Les punaises se déplacent avec le linge et les personnes. Toutes les pièces où l'on dort et où l'on trouve des traces doivent être traitées en même temps." },
+    ],
+    sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
+    cta: { title: 'Des piqûres mais rien de visible ?', text: "Nos techniciens inspectent le lit en détail, jusqu'aux lattes. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'punaises-de-lit-paris-12-grosse-infestation',
+    title: "Punaises de lit à Paris 12e : le résultat du premier passage, avant le deuxième",
+    seoTitle: "Punaises de lit à Paris 12e : résultat du 1er passage",
+    description: "Paris 12e : très grosse infestation chez une cliente. Pulvérisation puis nébulisation au premier passage : punaises mortes au sol. Deuxième passage en vidéo.",
+    date: '2026-11-03',
+    category: 'Punaises de lit',
+    readMin: 4,
+    tldr: "Nous sommes intervenus à Paris 12e, au domicile d'une cliente, pour une très grosse infestation de punaises de lit. Au premier passage, nous avons réalisé un traitement chimique professionnel par pulvérisation puis nébulisation. La vidéo a été tournée à notre arrivée pour le deuxième passage : elle montre le résultat du premier, avec les punaises mortes au sol.",
+    service: { href: '/services/punaises-de-lit', label: 'Punaises de lit : traitement insecticide ou sans insecticide' },
+    videos: [
+      { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Résultat du premier passage : punaises mortes au sol (Paris 12e)', banniere: true },
+    ],
+    blocks: [
+      { t: 'p', x: "Une cliente de **Paris 12e** nous a appelés pour une **très grosse infestation** de punaises de lit dans son logement. Nous sommes intervenus **chez elle**, en urgence." },
+      { t: 'h2', x: "Premier passage : pulvérisation puis nébulisation" },
+      { t: 'p', x: "Le technicien, certifié **Certibiocide**, a réalisé un **traitement chimique professionnel** en deux temps : **pulvérisation** d'insecticide sur les zones de refuge (literie, sommier, plinthes, meubles, prises), puis **nébulisation**, qui diffuse le produit en fines gouttelettes pour atteindre les recoins. La cliente a quitté le logement le temps que le produit agisse." },
+      { t: 'h2', x: "Deuxième passage : le résultat en vidéo" },
+      { t: 'p', x: "La vidéo a été tournée **à notre arrivée pour le deuxième passage**. Elle montre **le résultat du premier** : les punaises sont **mortes au sol**, sur le carrelage. Le deuxième passage traite à nouveau le logement pour éliminer les punaises écloses depuis, avant qu'elles ne deviennent adultes et ne pondent." },
+      { t: 'h2', x: "Les signes d'une grosse infestation" },
+      { t: 'ul', items: [
+        "Des **piqûres** chaque nuit, en ligne ou en grappe.",
+        "Des **punaises visibles** en journée, sur les murs ou au sol.",
+        "De nombreux **points noirs** sur le matelas, les plinthes et les meubles.",
+        "Une **odeur** particulière dans la chambre.",
+      ] },
+      { t: 'callout', tone: 'warn', title: "N'attendez pas", x: "Plus l'infestation dure, plus elle s'étend aux pièces voisines et aux logements à côté. Faites intervenir un professionnel dès les premiers signes." },
+      { t: 'p', x: "Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an, intervention possible le jour même, 7j/7. Voir notre page [punaises de lit à Paris 12e](/punaises-de-lit/paris-12), notre service [punaises de lit](/services/punaises-de-lit) et un autre [traitement par pulvérisation et nébulisation](/blog/punaises-de-lit-traitement-insecticide-appartement)." },
+    ],
+    faq: [
+      { q: "Pourquoi voit-on des punaises mortes au sol après le traitement ?", a: "Le produit agit au contact : les punaises sortent de leurs cachettes, sont touchées et meurent, souvent au sol ou le long des plinthes. C'est le signe que le traitement fonctionne." },
+      { q: "Pourquoi un deuxième passage ?", a: "Les œufs sont plus résistants que les adultes. Le deuxième passage élimine les jeunes punaises écloses après le premier traitement." },
+      { q: "Faut-il quitter le logement ?", a: "Oui, quelques heures après une pulvérisation et une nébulisation, puis on aère avant de revenir. Le technicien vous donne les consignes précises." },
+    ],
+    sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
+    cta: { title: 'Une infestation importante ?', text: "Intervention en urgence 7j/7, traitement en 2 passages, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'nid-guepes-gretz-armainvilliers',
+    title: "Nid de guêpes à Gretz-Armainvilliers : un gros nid traité dans un abri de jardin",
+    seoTitle: "Nid de guêpes à Gretz-Armainvilliers (77) : vidéo",
+    description: "Gretz-Armainvilliers (77) : un gros nid de guêpes accroché au plafond d'un petit abri de jardin, traité à la source. Le chantier en vidéo.",
+    date: '2026-11-03',
+    category: 'Guêpes et frelons',
+    readMin: 3,
+    tldr: "À Gretz-Armainvilliers (77), un client avait un gros nid de guêpes accroché au plafond de son petit abri de jardin. Notre technicien, en tenue de protection, l'a traité à la source pour éliminer toute la colonie. La vidéo montre le nid avant l'intervention.",
+    service: { href: '/services/guepes-frelons', label: 'Guêpes et frelons : destruction de nids' },
+    videos: [
+      { src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Gros nid de guêpes au plafond d’un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true },
+    ],
+    blocks: [
+      { t: 'p', x: "Abris de jardin, remises, garages : les guêpes adorent les **petits bâtiments peu fréquentés**. Chez ce client de **Gretz-Armainvilliers (77)**, un **gros nid** s'était construit au plafond de son **petit abri de jardin**, au-dessus de l'entrée." },
+      { t: 'h2', x: "Pourquoi les guêpes choisissent les abris de jardin" },
+      { t: 'p', x: "À l'abri de la pluie et du vent, rarement dérangées, elles y trouvent l'endroit idéal. Le nid grandit tout l'été, sans qu'on le remarque, jusqu'au jour où l'on ouvre la porte." },
+      { t: 'h2', x: "Notre intervention" },
+      { t: 'ol', items: [
+        "**Sécurisation** de la zone et éloignement des occupants.",
+        "**Traitement du nid à la source**, en tenue de protection complète.",
+        "**Contrôle** de l'activité avant de quitter les lieux.",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Ne touchez jamais au nid', x: "Ne le décrochez pas, ne l'arrosez pas, ne le bouchez pas : la colonie se défend en masse. Fermez l'abri et appelez un professionnel." },
+      { t: 'p', x: "Destruction de nid **à partir de 89 € TTC**. Nous intervenons à Gretz-Armainvilliers et dans toute la [Seine-et-Marne](/zones/seine-et-marne), comme dans le reste de l'Île-de-France. Voir aussi notre service [guêpes et frelons](/services/guepes-frelons)." },
+    ],
+    faq: [
+      { q: "Le nid sera-t-il réutilisé l'an prochain ?", a: "Non, un nid de guêpes n'est pas réutilisé. Mais un abri de jardin peut attirer une nouvelle reine au printemps : surveillez-le." },
+      { q: "Faut-il retirer le nid après le traitement ?", a: "Le technicien vous conseille sur place. Une fois la colonie éliminée, le nid peut être retiré sans risque." },
+      { q: "Intervenez-vous en Seine-et-Marne ?", a: "Oui, dans toute la Seine-et-Marne et l'Île-de-France. Appelez-nous pour connaître le délai." },
+    ],
+    sources: [],
+    cta: { title: 'Un nid dans votre abri de jardin ?', text: "Destruction à la source par un technicien en tenue complète, à partir de 89 € TTC. Appel gratuit." },
   },
 ]
 
