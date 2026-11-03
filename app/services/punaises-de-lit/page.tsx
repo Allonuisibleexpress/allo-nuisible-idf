@@ -62,7 +62,7 @@ const data: ServiceData = {
   avis: ['jo', 'lina', 'christine'],
   photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
   chantier: {
-    photos: ['creteilLattes1', 'creteilLattes2', 'cryoFoyer'],
+    photos: ['creteilLattes1', 'cryoFoyer'],
     videos: [
       { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Créteil (94) : punaises localisées dans les lattes du sommier', banniere: true },
       { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Paris 12e : punaises mortes au sol après le premier passage', banniere: true },

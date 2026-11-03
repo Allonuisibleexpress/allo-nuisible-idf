@@ -2786,14 +2786,14 @@ export const ARTICLES: Article[] = [
     readMin: 4,
     tldr: "Le mardi 3 novembre, nous sommes intervenus chez un client à Créteil (94) pour des punaises de lit. Une première société était passée sans rien trouver. Notre technicien a localisé les punaises principalement au niveau des sommiers, cachées dans les trous des lattes, dans deux chambres. Le logement va être traité par un traitement chimique professionnel, en deux passages.",
     service: { href: '/services/punaises-de-lit', label: 'Punaises de lit : traitement insecticide ou sans insecticide' },
-    photos: ['creteilLattes1', 'creteilLattes2'],
+    photos: ['creteilLattes1'],
     videos: [
       { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Punaises et traces dans les trous des lattes du sommier (Créteil, 94)', banniere: true },
     ],
     blocks: [
       { t: 'p', x: "Des piqûres au réveil, mais **rien de visible** sur le matelas : c'est la situation de ce client de **Créteil (94)**. Une première société était déjà passée et **n'avait rien trouvé**. Il nous a appelés pour un second avis, et nous sommes intervenus le **mardi 3 novembre**." },
       { t: 'h2', x: "Les punaises étaient dans les sommiers" },
-      { t: 'p', x: "Notre technicien a inspecté chaque lit **pièce par pièce**, jusqu'au sommier. Les punaises étaient **principalement localisées au niveau des sommiers**, cachées **dans les trous des lattes**, autour des vis et des fixations. Les photos et la vidéo le montrent : insectes et petits points noirs regroupés dans ces cavités de quelques millimètres. **Deux chambres** étaient touchées." },
+      { t: 'p', x: "Notre technicien a inspecté chaque lit **pièce par pièce**, jusqu'au sommier. Les punaises étaient **principalement localisées au niveau des sommiers**, cachées **dans les trous des lattes**, autour des vis et des fixations. La photo et la vidéo le montrent : insectes et petits points noirs regroupés dans ces cavités de quelques millimètres. **Deux chambres** étaient touchées." },
       { t: 'p', x: "C'est un cas classique : les punaises recherchent les **fentes sombres et étroites** au plus près de la personne qu'elles piquent. Un matelas propre ne veut pas dire un lit sain." },
       { t: 'h2', x: "Le traitement prévu" },
       { t: 'p', x: "Les deux chambres vont être traitées par un **traitement chimique professionnel**, appliqué par un technicien certifié Certibiocide, en insistant sur les sommiers, les lattes, les cadres de lit et les plinthes. Comme pour tous nos traitements de punaises de lit, **deux passages** sont prévus : le second élimine les punaises écloses entre-temps. À partir de **290 € TTC, 2 passages inclus**, garantie 1 an." },

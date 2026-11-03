@@ -182,7 +182,7 @@ export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey
 export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean }; article: string }> = {
   creteil: {
     titre: 'Notre chantier à Créteil : punaises localisées dans les sommiers',
-    photos: ['creteilLattes1', 'creteilLattes2'],
+    photos: ['creteilLattes1'],
     video: { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Punaises dans les trous des lattes du sommier (Créteil, 94)', banniere: true },
     article: '/blog/punaises-de-lit-creteil-sommier-lattes',
   },
