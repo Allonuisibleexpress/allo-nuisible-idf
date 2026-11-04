@@ -3,6 +3,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 
 const VIDEOS_CRYO = [
+  { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur un sommier, sans produit chimique, sous les yeux du client', banniere: true },
   { src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4', legende: 'Cryogénie dans une chambre de foyer' },
   { src: '/chantiers/cryogenie-punaises-foyer-video-2.mp4', legende: 'Traitement le long du mobilier et des plinthes' },
   { src: '/chantiers/cryogenie-punaises-foyer-video-3.mp4', legende: 'Cryogénie sur la literie, chambre suivante' },
@@ -23,7 +24,7 @@ const data: ServiceData = {
     { icon: 'thermo', title: 'Le froid extrême, au contact', text: 'La neige carbonique crée un choc thermique qui tue les adultes, les larves et les œufs là où le jet les touche. Elle se transforme en gaz sans laisser d\'eau : la literie reste presque sèche.' },
     { icon: 'health', title: 'Pour les lieux sensibles', text: 'Foyers, crèches, EHPAD, hôtels, familles avec bébé ou animaux : aucun produit n\'est déposé. C\'est la méthode que nous avons choisie pour un foyer d\'enfants handicapés, vidéos à l\'appui.' },
     { icon: 'search', title: 'Précision dans les recoins', text: 'Coutures et étiquettes du matelas, sommier, tête de lit, jonctions des meubles, plinthes : le jet va là où se cachent les punaises, dans les fentes de l\'épaisseur d\'une carte bancaire.' },
-    { icon: 'shield', title: 'Sécurité maîtrisée', text: 'La pièce traitée est libérée pendant l\'intervention puis aérée. Nos techniciens sont équipés et contrôlent l\'aération, car le CO2 ne doit pas s\'accumuler dans une pièce fermée.' },
+    { icon: 'shield', title: 'Sécurité maîtrisée', text: 'Le logement est libéré pendant l\'intervention puis aéré. Nos techniciens sont équipés et contrôlent l\'aération, car le CO2 ne doit pas s\'accumuler dans une pièce fermée.' },
   ],
   process: [
     { title: 'Inspection', text: 'Lampe et carte en main, le technicien repère les foyers : points noirs, mues, œufs, punaises vivantes, dans un rayon de quelques mètres autour des lits et des canapés.' },
@@ -75,7 +76,7 @@ const data: ServiceData = {
   faq: [
     { q: 'La cryogénie tue-t-elle les œufs de punaises de lit ?', a: 'Oui, au contact : le choc thermique tue les œufs comme les adultes. C\'est pourquoi le jet doit atteindre chaque recoin, et pourquoi un second passage traite ceux qui auraient échappé au premier.' },
     { q: 'Pourquoi faut-il deux passages ?', a: 'La cryogénie n\'a pas d\'effet qui dure : un œuf non touché éclot en une à deux semaines. Le second passage, 10 à 15 jours plus tard, élimine ces jeunes punaises avant qu\'elles ne pondent.' },
-    { q: 'Faut-il quitter le logement ?', a: 'Seulement la pièce en cours de traitement, le temps de l\'intervention. On aère ensuite, et la pièce peut être réutilisée : aucun produit n\'est déposé.' },
+    { q: 'Faut-il quitter le logement ?', a: 'En général, oui : nous demandons de quitter le logement pendant le traitement. On aère ensuite, et les pièces peuvent être réutilisées : aucun produit n\'est déposé.' },
     { q: 'Peut-on traiter un matelas par cryogénie ?', a: 'Oui, en insistant sur les coutures, les passepoils et les étiquettes, où se cachent les punaises. On complète souvent par la vapeur sèche et une housse anti-punaises.' },
     { q: 'La cryogénie abîme-t-elle les meubles ?', a: 'Le bois, les tissus et la plupart des matériaux supportent bien le traitement. Le technicien évite les appareils électroniques, le verre et les surfaces fragiles, sensibles au choc thermique et à la condensation.' },
     { q: 'Cryogénie ou insecticide : que choisir ?', a: 'La cryogénie convient aux lieux sensibles et aux infestations localisées. Pour une infestation importante, on passe au protocole mixte ou à l\'insecticide. Le technicien vous conseille après l\'inspection.' },

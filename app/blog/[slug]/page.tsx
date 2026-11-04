@@ -169,6 +169,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     ],
   }
 
+  // Récits de chantier : mise en page centrée
+  const recit = !!(a.videos || a.mediasEnHaut)
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -177,7 +180,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
         {/* Hero */}
         <section style={{ paddingTop: '120px', paddingBottom: '40px', background: 'linear-gradient(135deg, #0a0a0a 0%, rgba(232, 68, 26, 0.05) 100%)', borderBottom: '1px solid rgba(232, 68, 26, 0.15)' }}>
-          <div className="max-w-3xl mx-auto px-4">
+          <div className={`max-w-3xl mx-auto px-4${recit ? ' recit-centre' : ''}`}>
             <div style={{ marginBottom: '20px' }}>
               <Link href="/blog" style={{ fontSize: '12px', fontWeight: 600, color: '#E8441A', textDecoration: 'none' }}>← Retour au blog</Link>
             </div>
@@ -192,13 +195,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
             {(a.videos || a.mediasEnHaut) && (
               <div style={{ marginTop: '20px' }}>
-                <VignettesChantier photos={a.photos} videos={a.videos} texte="Photos et vidéos du chantier" />
+                <VignettesChantier photos={a.photos} videos={a.videos} centre={recit} texte="Photos et vidéos du chantier" />
               </div>
             )}
           </div>
         </section>
 
-        <article className="max-w-3xl mx-auto px-4" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
+        <article className={`max-w-3xl mx-auto px-4${recit ? ' recit-centre' : ''}`} style={{ paddingTop: '48px', paddingBottom: '80px' }}>
 
           {/* Le chantier en images, tout en haut : les clients veulent voir avant de lire */}
           {(a.videos || a.mediasEnHaut) && (
