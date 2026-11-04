@@ -205,6 +205,11 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     video: { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Punaises dans les trous des lattes du sommier (Créteil, 94)', banniere: true },
     article: '/blog/punaises-de-lit-creteil-sommier-lattes',
   },
+  'l-hay-les-roses': {
+    titre: 'Notre chantier à L’Haÿ-les-Roses : cryogénie sur un sommier',
+    video: { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur un sommier, sans produit chimique (L’Haÿ-les-Roses, 94)', banniere: true },
+    article: '/blog/cryogenie-punaises-de-lit-sommier',
+  },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
     video: { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Punaises mortes au sol : résultat du premier passage, avant le deuxième (Paris 12e)', banniere: true },

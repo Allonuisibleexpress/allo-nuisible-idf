@@ -2932,19 +2932,19 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'cryogenie-punaises-de-lit-sommier',
-    title: "Cryogénie contre les punaises de lit : le sommier traité sans produit chimique, sous les yeux du client",
-    seoTitle: "Cryogénie punaises de lit sans produit chimique : vidéo",
-    description: "Punaises de lit dans un sommier : traitement par cryogénie à −78 °C, sans produit chimique, sous les yeux du client. Le chantier en vidéo.",
+    title: "Cryogénie contre les punaises de lit à L'Haÿ-les-Roses (94) : le sommier traité sans produit chimique",
+    seoTitle: "Cryogénie punaises de lit à L'Haÿ-les-Roses (94) : vidéo",
+    description: "L'Haÿ-les-Roses (94) : punaises de lit dans un sommier, traitées par cryogénie à −78 °C, sans produit chimique. Le chantier en vidéo.",
     date: '2026-11-04',
     category: 'Punaises de lit',
     readMin: 4,
-    tldr: "Les punaises de lit s'étaient installées dans le sommier à lattes. Notre technicien a traité chaque recoin du sommier par cryogénie : de la neige carbonique à environ −78 °C, qui tue les punaises et leurs œufs au contact, sans aucun produit chimique. Exceptionnellement, le client a regardé pendant le traitement du sommier, comme on le voit sur la vidéo.",
+    tldr: "À L'Haÿ-les-Roses (94), les punaises de lit s'étaient installées dans le sommier à lattes. Notre technicien a traité chaque recoin du sommier par cryogénie : de la neige carbonique à environ −78 °C, qui tue les punaises et leurs œufs au contact, sans aucun produit chimique. Exceptionnellement, le client a regardé pendant le traitement du sommier, comme on le voit sur la vidéo.",
     service: { href: '/services/cryogenie-punaises-de-lit', label: 'Cryogénie contre les punaises de lit' },
     videos: [
-      { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur le sommier et ses lattes, sans produit chimique, sous les yeux du client', banniere: true },
+      { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur le sommier et ses lattes, sans produit chimique (L’Haÿ-les-Roses, 94)', banniere: true },
     ],
     blocks: [
-      { t: 'p', x: "Un **sommier à lattes**, c'est le refuge préféré des punaises de lit : des dizaines de jonctions, de vis et de fentes, juste à côté de la personne qu'elles piquent. Sur ce chantier, c'est dans le sommier qu'elles s'étaient installées, et nous les avons traitées **par cryogénie, sans aucun produit chimique**." },
+      { t: 'p', x: "Un **sommier à lattes**, c'est le refuge préféré des punaises de lit : des dizaines de jonctions, de vis et de fentes, juste à côté de la personne qu'elles piquent. Sur ce chantier à **L'Haÿ-les-Roses (94)**, c'est dans le sommier qu'elles s'étaient installées, et nous les avons traitées **par cryogénie, sans aucun produit chimique**." },
       { t: 'h2', x: "Zéro produit chimique : le froid fait tout le travail" },
       { t: 'p', x: "La lance de cryogénie projette de la **neige carbonique, à environ −78 °C**. Le choc thermique **tue au contact** les punaises adultes, les larves et **les œufs**. Aucun insecticide n'est pulvérisé, rien ne reste sur le sommier ni dans l'air. La neige se transforme en gaz sans laisser d'eau : le bois et le métal ne sont pas mouillés, et la chambre peut être réutilisée après aération." },
       { t: 'h2', x: "Exceptionnellement, le client a regardé le traitement du sommier" },
@@ -2959,7 +2959,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'info', title: 'Le secret : la lenteur', x: "La cryogénie agit au contact : il faut passer lentement, au plus près des surfaces, dans chaque fente. Un passage trop rapide ne refroidit pas assez la surface." },
       { t: 'h2', x: "Et après ? Un second passage pour finir le travail" },
       { t: 'p', x: "La cryogénie n'a pas d'effet qui dure : un **second passage**, 10 à 15 jours plus tard, élimine les punaises écloses entre-temps. Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an." },
-      { t: 'p', x: "Intervention réalisée dans notre secteur du Val-de-Marne et des Hauts-de-Seine. Voir notre page [cryogénie et punaises de lit](/services/cryogenie-punaises-de-lit), un autre chantier par [cryogénie dans un foyer](/blog/cryogenie-punaises-de-lit-foyer-enfants), et nos pages [Vincennes](/punaises-de-lit/vincennes), [Saint-Maur-des-Fossés](/punaises-de-lit/saint-maur-des-fosses) et [Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine)." },
+      { t: 'p', x: "Intervention réalisée à **L'Haÿ-les-Roses (94)**. Voir notre page [punaises de lit à L'Haÿ-les-Roses](/punaises-de-lit/l-hay-les-roses), notre service [punaises de lit](/services/punaises-de-lit), notre page [cryogénie et punaises de lit](/services/cryogenie-punaises-de-lit), un autre chantier par [cryogénie dans un foyer](/blog/cryogenie-punaises-de-lit-foyer-enfants), et nos pages voisines [Cachan](/punaises-de-lit/cachan), [Villejuif](/punaises-de-lit/villejuif) et [Thiais](/punaises-de-lit/thiais)." },
     ],
     faq: [
       { q: "Faut-il quitter le logement pendant la cryogénie ?", a: "En général, oui : nous demandons au client de quitter le logement pendant le traitement, puis la pièce est aérée avant son retour. Aucun produit chimique n'est utilisé, mais le CO2 ne doit pas s'accumuler dans une pièce occupée." },
@@ -2967,7 +2967,7 @@ export const ARTICLES: Article[] = [
       { q: "La cryogénie abîme-t-elle le bois ou le métal ?", a: "Non, le bois et le métal supportent bien le traitement, et il ne laisse pas d'eau. On évite seulement les appareils électroniques et le verre." },
     ],
     sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
-    cta: { title: 'Un traitement sans produit chimique ?', text: "Cryogénie à −78 °C, latte par latte, sans produit chimique. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+    cta: { title: 'Un traitement sans produit chimique ?', text: "Cryogénie à −78 °C, latte par latte, sans produit chimique, à L'Haÿ-les-Roses et dans tout le Val-de-Marne. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
   },
 ]
 

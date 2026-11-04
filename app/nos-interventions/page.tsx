@@ -40,6 +40,7 @@ const LIEUX: Record<string, { nom: string; href: string }> = {
   'nid-guepes-gretz-armainvilliers': { nom: 'Gretz-Armainvilliers (77)', href: '/zones/seine-et-marne' },
   'nid-guepes-sous-tuile-essonne': { nom: 'Essonne (91)', href: '/zones/essonne' },
   'nid-frelons-cheminee-nogent-sur-marne': { nom: 'Nogent-sur-Marne (94)', href: '/zones/val-de-marne/nogent-sur-marne' },
+  'cryogenie-punaises-de-lit-sommier': { nom: 'L’Haÿ-les-Roses (94)', href: '/punaises-de-lit/l-hay-les-roses' },
 }
 const SECTEUR = { nom: 'Val-de-Marne et Hauts-de-Seine', href: '/zones/val-de-marne' }
 

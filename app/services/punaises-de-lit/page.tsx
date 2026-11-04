@@ -66,6 +66,7 @@ const data: ServiceData = {
     videos: [
       { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Créteil (94) : punaises localisées dans les lattes du sommier', banniere: true },
       { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Paris 12e : punaises mortes au sol après le premier passage', banniere: true },
+      { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'L’Haÿ-les-Roses (94) : cryogénie sur un sommier, sans produit chimique', banniere: true },
       { src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4', legende: 'Cryogénie dans un foyer pour enfants' },
     ],
     titre: 'Nos chantiers de punaises de lit en images',
@@ -73,7 +74,7 @@ const data: ServiceData = {
   },
   related: {
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
-    guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, { href: '/blog/punaises-de-lit-creteil-sommier-lattes', label: 'Chantier à Créteil : punaises dans les sommiers' }, { href: '/blog/punaises-de-lit-paris-12-grosse-infestation', label: 'Chantier à Paris 12e : résultat du premier passage' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
+    guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, { href: '/blog/punaises-de-lit-creteil-sommier-lattes', label: 'Chantier à Créteil : punaises dans les sommiers' }, { href: '/blog/punaises-de-lit-paris-12-grosse-infestation', label: 'Chantier à Paris 12e : résultat du premier passage' }, { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Chantier à L’Haÿ-les-Roses : cryogénie sur un sommier' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
   },
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }

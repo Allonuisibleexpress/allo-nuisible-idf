@@ -3,7 +3,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 
 const VIDEOS_CRYO = [
-  { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur un sommier, sans produit chimique, sous les yeux du client', banniere: true },
+  { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'L’Haÿ-les-Roses (94) : cryogénie sur un sommier, sans produit chimique', banniere: true },
   { src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4', legende: 'Cryogénie dans une chambre de foyer' },
   { src: '/chantiers/cryogenie-punaises-foyer-video-2.mp4', legende: 'Traitement le long du mobilier et des plinthes' },
   { src: '/chantiers/cryogenie-punaises-foyer-video-3.mp4', legende: 'Cryogénie sur la literie, chambre suivante' },
@@ -86,6 +86,7 @@ const data: ServiceData = {
     guides: { title: 'Pour aller plus loin', links: [
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
       { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : comment ça marche, efficacité et limites' },
+      { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Récit : cryogénie sur un sommier à L’Haÿ-les-Roses (94)' },
       { href: '/blog/cryogenie-punaises-de-lit-foyer-enfants', label: 'Récit : cryogénie dans un foyer pour enfants' },
       { href: '/blog/traiter-vetements-punaises-de-lit', label: 'Traiter ses vêtements contre les punaises de lit' },
       { href: '/blog/punaises-de-lit-traitement-insecticide-appartement', label: 'Récit : traitement insecticide en appartement' },
