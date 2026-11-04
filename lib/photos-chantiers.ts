@@ -150,6 +150,21 @@ export const PHOTOS_CHANTIERS = {
     alt: 'Points noirs de punaises de lit dans le trou de fixation des lattes d’un sommier',
     legende: 'Le trou de fixation des lattes, cachette des punaises (Créteil, 94)',
   },
+  trouRat1: {
+    src: '/chantiers/rats-trou-mur-1.jpg',
+    alt: 'Trou de rat au ras du sol, dans l’angle d’un mur tapissé, avant rebouchage',
+    legende: 'Trou de rat dans l’angle d’un mur, au ras du sol (Maisons-Alfort, 94)',
+  },
+  trouRat2: {
+    src: '/chantiers/rats-trou-mur-2.jpg',
+    alt: 'Trou de rat au bas d’un mur, à côté d’un radiateur, avec traces de passage',
+    legende: 'Trou au bas du mur, à côté du radiateur (Maisons-Alfort, 94)',
+  },
+  trouRat3: {
+    src: '/chantiers/rats-trou-mur-3.jpg',
+    alt: 'Trou de rat creusé dans l’angle d’un mur, au-dessus de la plinthe, avec débris au sol',
+    legende: 'Trou creusé dans l’angle, au-dessus de la plinthe (Maisons-Alfort, 94)',
+  },
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
@@ -158,16 +173,17 @@ export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
 export const CHANTIER_DIOGENE = {
   ville: 'maisons-alfort',
   article: '/blog/deratisation-logement-syndrome-diogene',
-  photos: ['ratDiogene'] as PhotoKey[],
+  photos: ['ratDiogene', 'trouRat1', 'trouRat3'] as PhotoKey[],
   videos: [
     { src: '/chantiers/rats-diogene-video-1.mp4', legende: 'Ramassage d’un rat, placé dans un bac fermé (Maisons-Alfort, 94)' },
     { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la pose des postes (Maisons-Alfort, 94)' },
+    { src: '/chantiers/rats-trous-cloison-video.mp4', legende: 'Retour sur le chantier : les trous laissés par les rats, avant rebouchage (Maisons-Alfort, 94)' },
   ],
 }
 
 // Médias de dératisation affichés sur toutes les pages dératisation (miniatures en haut, galerie au milieu).
 export const MEDIAS_DERATISATION = {
-  photos: ['ratDiogene', 'ratPiege', 'ratPlaque', 'rongeursGlu'] as PhotoKey[],
+  photos: ['ratDiogene', 'trouRat1', 'ratPiege', 'ratPlaque', 'rongeursGlu'] as PhotoKey[],
   videos: CHANTIER_DIOGENE.videos,
 }
 
