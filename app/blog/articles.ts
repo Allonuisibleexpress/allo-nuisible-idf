@@ -25,7 +25,7 @@ export interface Article {
   blocks: Block[]
   terrain?: string // retour d'expérience réel uniquement, sinon laisser vide
   photos?: PhotoKey[] // vraies photos de chantier (lib/photos-chantiers.ts)
-  videos?: { src: string; legende: string; banniere?: boolean }[] // vraies vidéos de chantier (public/chantiers)
+  videos?: { src: string; legende: string; banniere?: boolean; apercu?: number }[] // vraies vidéos de chantier (public/chantiers)
   mediasEnHaut?: boolean // récit d'intervention : photos en miniatures et en galerie en haut de l'article
   faq: { q: string; a: string }[]
   sources: { label: string; url: string }[]
@@ -2968,6 +2968,54 @@ export const ARTICLES: Article[] = [
     ],
     sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
     cta: { title: 'Un traitement sans produit chimique ?', text: "Cryogénie à −78 °C, latte par latte, sans produit chimique, à L'Haÿ-les-Roses et dans tout le Val-de-Marne. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'punaises-de-lit-ivry-sur-seine-personne-agee',
+    title: "Punaises de lit à Ivry-sur-Seine (94) : énorme infestation chez une personne âgée, traitée sans produit chimique",
+    seoTitle: "Punaises de lit à Ivry-sur-Seine (94) : énorme infestation",
+    description: "Ivry-sur-Seine (94) : énorme infestation de punaises de lit chez une dame âgée hospitalisée. Traitement sans produit chimique, le chantier en vidéo.",
+    date: '2026-11-05',
+    category: 'Punaises de lit',
+    readMin: 4,
+    tldr: "À Ivry-sur-Seine (94), nous sommes intervenus en urgence chez une dame âgée face à une énorme infestation de punaises de lit : des punaises en très grand nombre sur le sol, le fauteuil et un coussin près de son lit médicalisé. Piquée sans relâche, elle a eu des problèmes sanguins et a dû être hospitalisée. Pour une personne aussi fragile, il fallait à tout prix éviter les produits chimiques : nous avons traité sans insecticide.",
+    service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    videos: [
+      { src: '/chantiers/punaises-ivry-lit-medicalise-video.mp4', legende: 'Énorme infestation de punaises de lit autour d’un lit médicalisé (Ivry-sur-Seine, 94)', banniere: true, apercu: 12.5 },
+    ],
+    mediasEnHaut: true,
+    blocks: [
+      { t: 'p', x: "Une infestation de **punaises de lit** hors norme. À **Ivry-sur-Seine (94)**, nous avons été appelés en urgence chez une **dame âgée** dont le logement était envahi : des punaises **sur le sol, autour du fauteuil, le long des plinthes**, et un coussin posé près de son **lit médicalisé** qui en était littéralement couvert. Piquée nuit après nuit, elle a eu des **problèmes sanguins** et a dû être **hospitalisée**. La vidéo a été tournée sur place, avec l'accord de l'occupante." },
+      { t: 'h2', x: "Une contrainte absolue : aucun produit chimique" },
+      { t: 'p', x: "Pour une personne âgée, affaiblie et appelée à revenir vivre dans ce logement, **il fallait à tout prix éviter les produits chimiques**. Nous avons donc traité **sans insecticide**, avec nos méthodes physiques : la **cryogénie** (neige carbonique à environ −78 °C) et la **vapeur sèche** à très haute température, qui tuent les punaises et leurs œufs **au contact**, sans laisser de résidu dans la chambre, sur le lit médicalisé ou dans l'air." },
+      { t: 'h2', x: "Pourquoi une infestation peut devenir aussi grave chez une personne âgée" },
+      { t: 'p', x: "Les punaises de lit ne viennent pas d'un manque de propreté : elles arrivent avec un bagage, un meuble ou un visiteur. Mais chez une personne âgée ou alitée, plusieurs choses les laissent proliférer sans que personne ne s'en aperçoive :" },
+      { t: 'ul', items: [
+        "**Une personne qui bouge peu** reste à portée des punaises jour et nuit : elles n'ont jamais à chercher leur repas.",
+        "**Un lit médicalisé** offre énormément de cachettes : armature métallique, moteur, barrières, articulations, matelas spécial.",
+        "**La vue qui baisse** et la fatigue empêchent de repérer les premiers insectes ou les petites taches sur les draps.",
+        "**Les piqûres sont mises sur le compte d'autre chose** : allergie, peau sèche, effet d'un traitement.",
+      ] },
+      { t: 'h2', x: "Les signes à surveiller chez un proche âgé" },
+      { t: 'ul', items: [
+        "Des **piqûres groupées ou en ligne**, souvent sur les bras, les jambes, le cou.",
+        "Des **petites taches noires** (déjections) sur les draps, le matelas ou l'armature du lit.",
+        "Des **traces de sang** sur la literie au réveil.",
+        "Des **insectes bruns et plats**, de la taille d'un pépin de pomme, le long des coutures du matelas ou dans les fentes du lit.",
+        "Une **odeur sucrée et désagréable** dans la chambre, quand l'infestation est importante.",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Familles, aides à domicile, infirmiers', x: "Vous êtes souvent les seuls à pouvoir donner l'alerte. Au moindre doute, soulevez le drap housse, regardez les coutures du matelas et l'armature du lit, et appelez un professionnel sans attendre : plus l'infestation est prise tôt, plus le traitement est simple." },
+      { t: 'h2', x: "Notre intervention" },
+      { t: 'p', x: "Face à une infestation de cette ampleur, le traitement porte sur **tout le logement**, pas seulement sur le lit : lit médicalisé, fauteuil, coussins, meubles proches, plinthes et fentes. Les textiles sont lavés à 60 °C ou passés au froid, et un **second passage** 10 à 15 jours plus tard élimine les punaises écloses entre-temps. Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an." },
+      { t: 'p', x: "Intervention réalisée à **Ivry-sur-Seine (94)**. Voir notre page [punaises de lit à Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine), notre service [punaises de lit](/services/punaises-de-lit), et d'autres chantiers à [Créteil](/blog/punaises-de-lit-creteil-sommier-lattes) et à [L'Haÿ-les-Roses](/blog/cryogenie-punaises-de-lit-sommier)." },
+    ],
+    faq: [
+      { q: "Les punaises de lit sont-elles dangereuses pour une personne âgée ?", a: "Elles ne transmettent pas de maladie connue, mais des piqûres nombreuses et répétées peuvent provoquer démangeaisons, lésions de grattage, troubles du sommeil et anxiété. Chez une personne fragile, il faut agir vite et en parler à son médecin." },
+      { q: "Peut-on traiter un lit médicalisé ?", a: "Oui. Le technicien traite l'armature, les articulations, les barrières et le matelas, en tenant compte des parties électriques. Le lit reste en place." },
+      { q: "Peut-on traiter les punaises de lit sans produit chimique ?", a: "Oui. La cryogénie et la vapeur sèche tuent les punaises et leurs œufs au contact, sans insecticide. C'est la solution à privilégier chez une personne âgée, un malade, un bébé ou une femme enceinte. Un second passage reste nécessaire pour les œufs éclos entre-temps." },
+      { q: "Faut-il quitter le logement pendant le traitement ?", a: "Oui, le temps du traitement et de l'aération. Pour une personne alitée, l'intervention s'organise avec la famille ou les soignants." },
+    ],
+    sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
+    cta: { title: 'Un proche âgé se fait piquer la nuit ?', text: "Traitement des punaises de lit sans produit chimique à Ivry-sur-Seine et dans tout le Val-de-Marne. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
   },
   {
     slug: 'mites-vetements-origine-traitement-prevention',

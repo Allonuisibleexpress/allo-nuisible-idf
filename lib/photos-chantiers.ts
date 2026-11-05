@@ -198,7 +198,7 @@ export const MEDIAS_FRELONS = {
 export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }
 
 // Vrais chantiers de punaises de lit, affichés sur la page de la ville où ils ont eu lieu (03/11/2026)
-export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean }; article: string }> = {
+export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean; apercu?: number }; article: string }> = {
   creteil: {
     titre: 'Notre chantier à Créteil : punaises localisées dans les sommiers',
     photos: ['creteilLattes1'],
@@ -209,6 +209,11 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     titre: 'Notre chantier à L’Haÿ-les-Roses : cryogénie sur un sommier',
     video: { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'Cryogénie sur un sommier, sans produit chimique (L’Haÿ-les-Roses, 94)', banniere: true },
     article: '/blog/cryogenie-punaises-de-lit-sommier',
+  },
+  'ivry-sur-seine': {
+    titre: 'Notre chantier à Ivry-sur-Seine : énorme infestation chez une personne âgée',
+    video: { src: '/chantiers/punaises-ivry-lit-medicalise-video.mp4', legende: 'Énorme infestation de punaises de lit autour d’un lit médicalisé (Ivry-sur-Seine, 94)', banniere: true, apercu: 12.5 },
+    article: '/blog/punaises-de-lit-ivry-sur-seine-personne-agee',
   },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
