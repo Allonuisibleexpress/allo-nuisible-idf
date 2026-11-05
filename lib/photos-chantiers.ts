@@ -215,6 +215,11 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     video: { src: '/chantiers/punaises-ivry-lit-medicalise-video.mp4', legende: 'Énorme infestation de punaises de lit autour d’un lit médicalisé (Ivry-sur-Seine, 94)', banniere: true, apercu: 12.5 },
     article: '/blog/punaises-de-lit-ivry-sur-seine-personne-agee',
   },
+  'paris-1': {
+    titre: 'Notre chantier à Paris 1er : les punaises cachées dans les goulottes d’un hôtel',
+    video: { src: '/chantiers/punaises-goulotte-hotel-video.mp4', legende: 'Punaises de lit cachées dans une goulotte électrique, dans un hôtel (Paris 1er)', banniere: true, apercu: 4 },
+    article: '/blog/punaises-de-lit-introuvables-goulotte-hotel',
+  },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
     video: { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Punaises mortes au sol : résultat du premier passage, avant le deuxième (Paris 12e)', banniere: true },

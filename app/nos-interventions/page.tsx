@@ -29,6 +29,7 @@ const ACCROCHES: Record<string, string> = {
   'punaises-de-lit-traitement-insecticide-appartement': 'Pulvérisation puis nébulisation, filmées sur place',
   'deratisation-logement-syndrome-diogene': 'Une trentaine de rats ramassés avant de pouvoir nettoyer',
   'punaises-de-lit-ivry-sur-seine-personne-agee': 'Une dame âgée hospitalisée : traitement sans produit chimique',
+  'punaises-de-lit-introuvables-goulotte-hotel': 'Introuvables pour plusieurs sociétés : les punaises étaient dans les goulottes',
 }
 
 // Lieu réel de chaque chantier, avec lien vers la page locale (référencement local).
@@ -43,6 +44,7 @@ const LIEUX: Record<string, { nom: string; href: string }> = {
   'nid-frelons-cheminee-nogent-sur-marne': { nom: 'Nogent-sur-Marne (94)', href: '/zones/val-de-marne/nogent-sur-marne' },
   'cryogenie-punaises-de-lit-sommier': { nom: 'L’Haÿ-les-Roses (94)', href: '/punaises-de-lit/l-hay-les-roses' },
   'punaises-de-lit-ivry-sur-seine-personne-agee': { nom: 'Ivry-sur-Seine (94)', href: '/punaises-de-lit/ivry-sur-seine' },
+  'punaises-de-lit-introuvables-goulotte-hotel': { nom: 'Hôtel, Paris 1er (75)', href: '/punaises-de-lit/paris-1' },
 }
 const SECTEUR = { nom: 'Val-de-Marne et Hauts-de-Seine', href: '/zones/val-de-marne' }
 
