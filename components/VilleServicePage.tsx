@@ -3,6 +3,7 @@ import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ContexteLocal from '@/components/ContexteLocal'
+import ContactMairie from '@/components/ContactMairie'
 import type { ServiceLocal } from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
@@ -356,6 +357,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             </p>
           </div>
         </section>
+
+        <ContactMairie slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

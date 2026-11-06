@@ -12,6 +12,7 @@ import { getVilleCafards } from '@/lib/villes-cafards'
 import { getVilleSouris } from '@/lib/villes-souris'
 import { getVilleChenilles } from '@/lib/villes-chenilles'
 import ContexteLocal from '@/components/ContexteLocal'
+import ContactMairie from '@/components/ContactMairie'
 import { getVilleAcariens } from '@/lib/villes-acariens'
 
 const ACCENT = '#E8441A'
@@ -203,6 +204,8 @@ export default function CommunePage({ params }: { params: Params }) {
             </ol>
           </div>
         </section>
+
+        <ContactMairie slug={c.slug} service="commune" a={c.a} />
 
         {/* ── COMMUNES DU MÊME SECTEUR ── */}
         <section className="py-16 md:py-20 px-4" style={{ background: '#080808' }}>

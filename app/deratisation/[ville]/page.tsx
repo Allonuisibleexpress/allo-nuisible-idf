@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
+import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
@@ -235,6 +236,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </div>
           </div>
         </section>
+
+        <ContactMairie slug={v.slug} service="deratisation" a={v.a} />
 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
