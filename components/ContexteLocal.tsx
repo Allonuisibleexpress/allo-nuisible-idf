@@ -7,7 +7,7 @@ import { DONNEES_LOCALES, type DonneesLocales } from '@/lib/donnees-locales'
 
 const ACCENT = '#E8441A'
 
-export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'commune'
+export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'commune'
 
 const nf = (n: number) => n.toLocaleString('fr-FR')
 // Choix déterministe d'une variante de phrase, différent d'une ville et d'un service à l'autre
@@ -79,6 +79,11 @@ function verdure(d: DonneesLocales, s: ServiceLocal) {
     if (j) parts.push(`OpenStreetMap recense aussi ${j > 1 ? `${j} jardins familiaux ou partagés` : 'un jardin familial ou partagé'} ${d.paris ? 'dans l\'arrondissement' : 'sur la commune'} : un composteur mal fermé ou un abri de jardin encombré suffit à attirer rats et souris.`)
     return parts
   }
+  if (s === 'fourmis' && v.length)
+    return [pick(`${d.slug}fv`, [
+      `Près ${liste(v.map(deArt))}, les fourmis des pelouses et des massifs trouvent pucerons et nourriture, puis gagnent les maisons et rez-de-chaussée voisins quand il fait chaud.`,
+      `Parcs et jardins comme ${liste(v.map(article))} abritent de nombreuses fourmilières : tant qu'elles restent dehors, elles sont utiles ; il faut agir quand une colonie entre dans le logement.`,
+    ])]
   if (s === 'commune' && v.length)
     return [`Côté nature, ${liste(v.map(article))} ${v.length > 1 ? 'font' : 'fait'} partie des espaces verts de la commune. Au printemps et en été, guêpes et frelons y trouvent de quoi construire leurs nids, souvent sous les toits et dans les haies des maisons voisines.`]
   return parts
@@ -112,6 +117,10 @@ function habitat(d: DonneesLocales, s: ServiceLocal) {
       return dense
         ? 'Même en ville, un seul pin dans une cour, un square ou une résidence peut accueillir des nids.'
         : pick(k, ['Haies, bosquets et allées plantées : dans les quartiers de maisons, les nids se voient surtout de décembre à mars, quand les arbres sont dégarnis autour.', 'Un pin planté près d\'une terrasse ou d\'une aire de jeux mérite une inspection chaque automne : c\'est là que le contact avec les poils urticants est le plus probable.', 'Dans les jardins privés, ce sont souvent un ou deux pins isolés qui hébergent les nids : inspectez-les dès l\'automne.', 'Les grands jardins plantés de pins sont les plus exposés : les nids apparaissent en hiver au sommet des branches ensoleillées.'])
+    case 'fourmis':
+      return dense
+        ? pick(k, ['En immeuble, les fourmis suivent les gaines, les plinthes et les joints de carrelage : le nid peut se trouver dans un mur, un faux plafond ou la cour, loin de la cuisine où on les voit.', 'Dans les logements collectifs chauffés, certaines espèces comme la fourmi pharaon restent actives toute l\'année et passent d\'un appartement à l\'autre par les gaines.', 'En appartement, les fourmis entrent souvent par les passages de tuyaux sous l\'évier et les joints abîmés de la salle de bains.', 'Dans un immeuble, une piste qui apparaît chez plusieurs voisins signale un nid dans les parties communes ou les murs : le traitement doit viser cet endroit.', 'En logement collectif, les fourmis profitent des vide-ordures, des locaux poubelles et des gaines pour circuler d\'un étage à l\'autre.'])
+        : pick(k, ['Autour des maisons, les fourmis nichent sous les dalles de terrasse, au pied des murs et dans les pelouses, puis entrent par les seuils et les joints.', 'En pavillon, les invasions commencent souvent au printemps par la cuisine ou la véranda, depuis un nid installé dans le jardin ou sous la terrasse.', 'Dans une maison, le bois humide des fenêtres, des seuils et des terrasses peut abriter des fourmis charpentières : surveillez la sciure fine.', 'Autour d\'une maison, une haie ou un massif collé à la façade sert de pont aux fourmis : dégager un espace le long des murs limite les entrées.', 'En pavillon, les jardinières, les pots et les composts proches de la porte abritent souvent des fourmilières qui finissent par entrer.'])
     default:
       return dense
         ? pick(k, ['Dans les immeubles, punaises de lit et cafards passent d\'un logement à l\'autre par les gaines et les parties communes, et les rats fréquentent caves et locaux poubelles.', 'En habitat collectif, les demandes les plus courantes concernent les punaises de lit, les cafards dans les cuisines et les rats dans les caves.', 'En copropriété, rats des parties communes, cafards des gaines et punaises de lit se traitent mieux à l\'échelle de l\'immeuble qu\'appartement par appartement.'])
@@ -162,6 +171,16 @@ function traitement(d: DonneesLocales, s: ServiceLocal, a: string) {
         `Acariens ${a} : vapeur sèche et cryogénie sans produit, ou pulvérisation acaricide professionnelle quand plusieurs pièces sont touchées. Dès 120 € TTC pour une chambre, garantie 1 an.`,
         `${majuscule(a)}, le traitement anti-acariens porte sur les matelas, sommiers, canapés, coussins et tapis : vapeur sèche, cryogénie ou acaricide professionnel, dès 120 € TTC, garantie 1 an.`,
         `Pour réduire les acariens ${a}, nous assainissons la literie et les textiles à la vapeur sèche ou à la cryogénie, sans produit, ou par pulvérisation acaricide. À partir de 120 € TTC.`,
+      ])
+    case 'fourmis':
+      return pick(k, [
+        `Contre les fourmis ${a}, nous visons la reine : gel appât professionnel rapporté au nid par les ouvrières, ou traitement direct du nid quand il est accessible. À partir de 120 € TTC, garantie 1 an.`,
+        `Fourmis ${a} : identification de l'espèce, recherche du nid, puis appât à action lente ou traitement du nid pour atteindre la reine. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+        `${majuscule(a)}, un traitement contre les fourmis n'est efficace que s'il atteint la reine. Nous posons un gel appât professionnel sur les pistes ou traitons le nid directement. À partir de 120 € TTC, garantie 1 an.`,
+        `Pour se débarrasser des fourmis ${a}, il faut détruire la colonie et sa reine, pas seulement les ouvrières visibles : appât professionnel, traitement du nid ou injection dans le bois. Dès 120 € TTC, garantie 1 an.`,
+        `Une file de fourmis dans la cuisine ${a} ? Le technicien remonte la piste, identifie l'espèce et choisit entre gel appât et traitement du nid, avec un objectif : la reine. À partir de 120 € TTC.`,
+        `${majuscule(a)}, nous éliminons les colonies de fourmis à la source : l'appât professionnel est partagé par les ouvrières jusqu'à la reine et aux larves. Tarif dès 120 € TTC, garantie 1 an, devis gratuit.`,
+        `Traitement anti-fourmis ${a} : pas de pulvérisation au hasard, mais un appât à action lente ou un traitement ciblé du nid, pour détruire la reine. Dès 120 € TTC, garantie 1 an.`,
       ])
     default:
       return pick(k, [
@@ -242,6 +261,7 @@ const TITRES: Record<ServiceLocal, (a: string) => string> = {
   souris: (a) => `Traitement des souris ${a}`,
   chenilles: (a) => `Chenilles processionnaires ${a} : notre intervention`,
   acariens: (a) => `Traitement des acariens ${a}`,
+  fourmis: (a) => `Traitement des fourmis ${a}`,
   commune: (a) => `Nos traitements ${a}`,
 }
 

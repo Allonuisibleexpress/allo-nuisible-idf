@@ -6,6 +6,7 @@ import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_CAFARDS } from '@/lib/villes-cafards'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
+import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
 import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 
@@ -56,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`)].map((p) => ({
+    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_FOURMIS.map((v) => `/fourmis/${v.slug}`), '/fourmis', ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`)].map((p) => ({
       url: `${BASE}${p}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

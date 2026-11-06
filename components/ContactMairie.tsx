@@ -95,6 +95,18 @@ const TEXTES: Record<ServiceLocal, Texte> = {
       ['Locataire : le propriétaire doit fournir un logement décent. Signalez-lui le problème par écrit.'],
     ],
   },
+  fourmis: {
+    nuisible: 'fourmis',
+    points: (a) => [
+      [
+        `Des fourmis envahissent toute une rue, un square ou plusieurs maisons, comme le font les espèces envahissantes (Tapinoma) : signalez-le à la mairie ${a}, une action collective est plus efficace.`,
+        `Une invasion de fourmis qui touche plusieurs jardins ou l'espace public ${a} mérite un signalement à la mairie : contre les fourmis envahissantes, il faut agir ensemble.`,
+        `Fourmis sur un trottoir, dans un parc ou chez tous les voisins de la rue ${a} : prévenez la mairie, surtout s'il peut s'agir d'une espèce envahissante.`,
+        `Si plusieurs maisons de votre quartier ${a} sont envahies en même temps, parlez-en à la mairie : une colonie envahissante se traite mieux à l'échelle du quartier.`,
+      ],
+      LOCATAIRE,
+    ],
+  },
   commune: {
     nuisible: 'nuisibles',
     points: (a) => [

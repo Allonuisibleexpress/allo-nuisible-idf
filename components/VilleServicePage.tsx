@@ -19,7 +19,7 @@ const PHONE_HREF = 'tel:+33768077219'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 // Angle du texte local (components/ContexteLocal) selon la page service de la famille
 const serviceLocal = (href: string): ServiceLocal =>
-  href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
+  href.includes('fourmis') ? 'fourmis' : href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
 
 export type Ville = {
   slug: string

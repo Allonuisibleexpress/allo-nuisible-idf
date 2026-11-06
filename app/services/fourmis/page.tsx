@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
 import { Phone, ShieldCheck, ChevronDown, X } from 'lucide-react'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
@@ -126,7 +127,7 @@ export default function FourmisPage() {
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Tant que la reine pond, la colonie se reconstitue.{' '}
               <strong style={{ color: ACCENT }}>Nos techniciens ciblent le nid entier</strong>{' '}
-              et garantissent le résultat sous 48h, 7j/7 en Île-de-France.{' '}
+              et interviennent 7j/7 en Île-de-France, avec une garantie 1 an.{' '}
               <strong style={{ color: ACCENT }}>Devis et déplacement gratuits.</strong>
             </p>
 
@@ -296,6 +297,21 @@ export default function FourmisPage() {
                 </div>
               ))}
             </div>
+            <div className="text-center mt-8">
+              <a href="/fourmis" className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full hover:brightness-110" style={{ background: ACCENT }}>
+                Voir les 11 types de fourmis et leurs reines
+              </a>
+            </div>
+            <div className="mt-12">
+              <p className="text-white font-bold mb-4 text-center">Traitement des fourmis par ville</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {VILLES_FOURMIS.map((v) => (
+                  <a key={v.slug} href={`/fourmis/${v.slug}`} className="text-sm text-white/70 px-3 py-1.5 rounded-full hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
+                    Fourmis {v.a}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -305,11 +321,11 @@ export default function FourmisPage() {
             <div className="text-center mb-10">
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Erreur fréquente</p>
               <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Pourquoi traiter seul ne fonctionne pas</h2>
-              <p className="text-white/50 max-w-2xl mx-auto">Les fourmis que vous voyez représentent seulement 10 % de la colonie. Le reste est dans le nid.</p>
+              <p className="text-white/50 max-w-2xl mx-auto">Les fourmis que vous voyez ne sont que des ouvrières. La reine et le couvain restent cachés dans le nid.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-3 mb-6">
               {[
-                { title: 'Le spray ne tue que 10 %', text: "Les ouvrières visibles sont éliminées, mais la reine continue de pondre jusqu'à 1 000 œufs par jour. La colonie se reconstitue en 48h." },
+                { title: 'Le spray ne tue pas la reine', text: "Les ouvrières visibles sont éliminées, mais la reine continue de pondre dans le nid. La colonie remplace les ouvrières et revient." },
                 { title: "La poudre n'atteint pas le nid", text: "La diatomée agit sur les pistes mais ne pénètre pas dans les galeries. La reine reste protégée et pond." },
                 { title: "L'appât du commerce est trop faible", text: "Concentration insuffisante. Les fourmis apprennent à l'éviter. Le «budding» disperse la colonie en plusieurs sous-nids." },
               ].map(({ title, text }) => (
@@ -395,7 +411,7 @@ export default function FourmisPage() {
             <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
               {[
-                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles, soit 10 % de la colonie. La reine, en sécurité dans le nid, continue de pondre jusqu'à 1 000 œufs par jour. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
+                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles. La reine, en sécurité dans le nid, continue de pondre et la colonie se reconstitue. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
                 { q: 'La fourmi pharaon est-elle dangereuse ?', a: "Oui, particulièrement en milieu hospitalier et pour les personnes immunodéprimées : elle peut transporter des bactéries pathogènes. En appartement, elle s'installe derrière les plinthes et dans les circuits électriques. Un pulvérisateur classique aggrave la situation en dispersant la colonie." },
                 { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans l'année, nous revenons gratuitement." },
                 { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
