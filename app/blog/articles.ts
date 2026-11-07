@@ -2833,13 +2833,15 @@ export const ARTICLES: Article[] = [
     readMin: 3,
     tldr: "À Vincennes, nous avons traité un logement victime d'une grosse infestation de punaises de lit. La vidéo a été filmée 10 jours après notre passage : on y voit une très grande quantité de punaises mortes au sol, dans les angles et contre les plinthes, ainsi que les traces noires qu'elles avaient laissées sur les murs.",
     service: { href: '/services/punaises-de-lit', label: 'Punaises de lit : traitement insecticide ou sans insecticide' },
+    mediasEnHaut: true,
+    photos: ['vincennesMortes1', 'vincennesMortes2'],
     videos: [
-      { src: '/chantiers/punaises-vincennes-punaises-mortes-video.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 8.5 },
+      { src: '/chantiers/punaises-vincennes-punaises-mortes-hd.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 13 },
     ],
     blocks: [
       { t: 'p', x: "Cette intervention a eu lieu à **Vincennes**, dans le Val-de-Marne, dans un logement victime d'une **grosse infestation de punaises de lit**. Voici ce que nous avons trouvé **10 jours après notre passage**." },
       { t: 'h2', x: "10 jours après : le sol couvert de punaises mortes" },
-      { t: 'p', x: "La vidéo a été filmée **10 jours après notre passage**. Les petits points sombres qui couvrent le sol sont des **punaises de lit mortes**, en très grand nombre. Elles se concentrent dans les **angles de la pièce** et **le long des plinthes**, là où elles se cachaient." },
+      { t: 'p', x: "La vidéo a été filmée **10 jours après notre passage**. Les petits points sombres qui couvrent le sol sont des **punaises de lit mortes**, en très grand nombre. Elles se concentrent dans les **angles de la pièce** et **le long des plinthes**, là où elles se cachaient. La fin de la vidéo est **rejouée au ralenti** pour bien les voir." },
       { t: 'h2', x: "Des murs marqués par les déjections" },
       { t: 'p', x: "On voit aussi des **taches noires sur les murs** au-dessus des plinthes : ce sont leurs **déjections**, du sang digéré. Leur quantité montre depuis combien de temps les punaises étaient installées dans la pièce." },
       { t: 'h2', x: "Pourquoi elles meurent à découvert : la preuve que le traitement agit" },

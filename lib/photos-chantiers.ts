@@ -140,6 +140,16 @@ export const PHOTOS_CHANTIERS = {
     legende: 'Traitement du nid dans le buisson',
     cadrage: '0% center',
   },
+  vincennesMortes1: {
+    src: '/chantiers/punaises-vincennes-mortes-1.jpg',
+    alt: 'Punaises de lit mortes en grand nombre au sol, dans l’angle d’une pièce, après traitement',
+    legende: '10 jours après notre passage : punaises de lit mortes dans l’angle (Vincennes, 94)',
+  },
+  vincennesMortes2: {
+    src: '/chantiers/punaises-vincennes-mortes-2.jpg',
+    alt: 'Angle de pièce avec murs tachés de déjections de punaises de lit et punaises mortes au sol',
+    legende: 'Murs tachés de déjections et punaises mortes au sol (Vincennes, 94)',
+  },
   creteilLattes1: {
     src: '/chantiers/punaises-creteil-lattes-1.jpg',
     alt: 'Punaises de lit et déjections autour de la fixation d’une latte de sommier',
@@ -222,7 +232,8 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
   },
   vincennes: {
     titre: 'Notre chantier à Vincennes : grosse infestation, le résultat 10 jours après',
-    video: { src: '/chantiers/punaises-vincennes-punaises-mortes-video.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 8.5 },
+    photos: ['vincennesMortes1', 'vincennesMortes2'],
+    video: { src: '/chantiers/punaises-vincennes-punaises-mortes-hd.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 13 },
     article: '/blog/punaises-de-lit-vincennes-punaises-mortes',
   },
   'paris-12': {
