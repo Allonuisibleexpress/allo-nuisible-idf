@@ -1,5 +1,7 @@
 import NextImage from 'next/image'
+import { Youtube } from 'lucide-react'
 import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
+import { CHAINE_YOUTUBE, lienYoutube } from '@/lib/youtube'
 
 const ACCENT = '#E8441A'
 
@@ -29,6 +31,7 @@ export default function MediasChantier({
   legendes?: boolean // false sur les pages ville : évite de répéter le même texte sur des dizaines de pages
 }) {
   const tuile = { position: 'relative' as const, aspectRatio: '3/4', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }
+  const lienYt = { display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '6px', fontSize: '13px', fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: '2px' }
   const legende = { fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '6px', lineHeight: 1.4 }
   return (
     <div>
@@ -54,9 +57,21 @@ export default function MediasChantier({
               {/* La bannière « Allo Nuisible IDF » est incrustée dans toutes les vidéos (règle absolue) */}
             </div>
             {legendes && <figcaption style={legende}>{v.legende}</figcaption>}
+            {lienYoutube(v.src) && (
+              <a href={lienYoutube(v.src)!} target="_blank" rel="noopener" style={lienYt}>
+                <Youtube size={15} aria-hidden="true" /> Voir la vidéo sur YouTube
+              </a>
+            )}
           </figure>
         ))}
       </div>
+      {videos.length > 0 && videos.some((v) => !lienYoutube(v.src)) && (
+        <p style={{ fontSize: '13px', marginTop: '10px', textAlign: 'center' }}>
+          <a href={CHAINE_YOUTUBE} target="_blank" rel="noopener" style={lienYt}>
+            <Youtube size={15} aria-hidden="true" /> Toutes nos interventions en vidéo sur YouTube
+          </a>
+        </p>
+      )}
       {lien && (
         <p style={{ fontSize: '14px', marginTop: '12px' }}>
           <a href={lien.href} style={{ color: ACCENT, fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '2px' }}>{lien.label}</a>
