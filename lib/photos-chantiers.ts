@@ -220,6 +220,11 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     video: { src: '/chantiers/punaises-goulotte-hotel-video.mp4', legende: 'Punaises de lit cachées dans une goulotte électrique, dans un hôtel (Paris 1er)', banniere: true, apercu: 4 },
     article: '/blog/punaises-de-lit-introuvables-goulotte-hotel',
   },
+  vincennes: {
+    titre: 'Notre chantier à Vincennes : grosse infestation, le résultat 10 jours après',
+    video: { src: '/chantiers/punaises-vincennes-punaises-mortes-video.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 8.5 },
+    article: '/blog/punaises-de-lit-vincennes-punaises-mortes',
+  },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
     video: { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Punaises mortes au sol : résultat du premier passage, avant le deuxième (Paris 12e)', banniere: true },

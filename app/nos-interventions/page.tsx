@@ -30,6 +30,7 @@ const ACCROCHES: Record<string, string> = {
   'deratisation-logement-syndrome-diogene': 'Une trentaine de rats ramassés avant de pouvoir nettoyer',
   'punaises-de-lit-ivry-sur-seine-personne-agee': 'Une dame âgée hospitalisée : traitement sans produit chimique',
   'punaises-de-lit-introuvables-goulotte-hotel': 'Introuvables pour plusieurs sociétés : les punaises étaient dans les goulottes',
+  'punaises-de-lit-vincennes-punaises-mortes': 'Grosse infestation : le sol couvert de punaises mortes 10 jours après',
 }
 
 // Lieu réel de chaque chantier, avec lien vers la page locale (référencement local).
@@ -39,6 +40,7 @@ const LIEUX: Record<string, { nom: string; href: string }> = {
   'souris-airbnb-saint-maur-des-fosses': { nom: 'Saint-Maur-des-Fossés (94)', href: '/souris/saint-maur-des-fosses' },
   'punaises-de-lit-creteil-sommier-lattes': { nom: 'Créteil (94)', href: '/punaises-de-lit/creteil' },
   'punaises-de-lit-paris-12-grosse-infestation': { nom: 'Paris 12e (75)', href: '/punaises-de-lit/paris-12' },
+  'punaises-de-lit-vincennes-punaises-mortes': { nom: 'Vincennes (94)', href: '/punaises-de-lit/vincennes' },
   'nid-guepes-gretz-armainvilliers': { nom: 'Gretz-Armainvilliers (77)', href: '/zones/seine-et-marne' },
   'nid-guepes-sous-tuile-essonne': { nom: 'Essonne (91)', href: '/zones/essonne' },
   'nid-frelons-cheminee-nogent-sur-marne': { nom: 'Nogent-sur-Marne (94)', href: '/zones/val-de-marne/nogent-sur-marne' },
