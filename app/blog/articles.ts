@@ -3788,6 +3788,120 @@ export const ARTICLES: Article[] = [
     ],
     cta: { title: 'Des fourmis qui reviennent toujours ?', text: "Nos techniciens certifiés Certibiocide identifient l'espèce, trouvent le nid et atteignent la reine. Dès 120 € TTC, devis gratuit, garantie 1 an, en Île-de-France." },
   },
+  {
+    slug: 'arnaques-deratisation-nuisibles',
+    title: "Arnaques à la dératisation et aux punaises de lit : les 8 pièges des faux dératiseurs (et comment les déjouer)",
+    seoTitle: "Arnaque dératisation : les 8 pièges à éviter",
+    description: "Faux agents de la mairie, diagnostic par téléphone, facture qui explose, paiement d'avance : les 8 arnaques les plus courantes chez les dératiseurs et nos conseils pour ne jamais tomber dans le piège.",
+    date: '2026-11-08',
+    category: 'Conseils',
+    readMin: 9,
+    tldr: "Rats, punaises de lit, cafards : la panique est le meilleur allié des escrocs. Les pièges les plus courants sont les faux agents « officiels », les prospectus aux couleurs de la mairie, le diagnostic par téléphone, l'infestation inventée, le prix qui explose sur place et le paiement réclamé avant l'intervention. Exigez un déplacement, un devis écrit et détaillé, un certificat Certibiocide et une facture. Ne payez jamais avant la fin de la prestation. En cas de problème : SignalConso.",
+    service: { href: '/services/deratisation', label: 'Dératisation professionnelle : devis gratuit' },
+    blocks: [
+      { t: 'p', x: "Un **rat dans la cuisine**, des **piqûres au réveil**, des **cafards** sous l'évier : quand les nuisibles débarquent, on veut une solution **tout de suite**. C'est exactement sur cette **urgence** que comptent les **escrocs**. La **DGCCRF** (la répression des fraudes) le dit sans détour : la hausse des infestations de punaises de lit a « aiguisé l'appétit de personnes peu scrupuleuses ». Voici **les 8 pièges les plus courants** et **comment reconnaître un vrai professionnel** en quelques minutes." },
+      { t: 'callout', tone: 'warn', title: 'La règle d’or', x: "**Ne payez jamais avant que l'intervention soit réalisée**, et **ne signez rien sous la pression**. Un professionnel sérieux vous laisse le temps de lire son devis." },
+
+      { t: 'h2', x: "Piège n°1 : le faux agent « officiel » qui vous oblige à signer" },
+      { t: 'p', x: "Ils se présentent comme **agents de l'État**, de la **mairie** ou des **services d'hygiène**, et affirment qu'un **contrat de dératisation est obligatoire**. Le **GHR**, syndicat des restaurateurs, a alerté en 2025 sur ces **faux agents** signalés **à Paris**, qui jouent sur la peur des commerçants pour faire signer un contrat." },
+      { t: 'ul', items: [
+        "**Aucun agent public ne vous fait signer un contrat** avec une entreprise privée.",
+        "**Vous n'avez aucune obligation de signer** sur le moment.",
+        "Demandez une **carte professionnelle**, notez le nom, et **appelez vous-même la mairie** pour vérifier.",
+      ] },
+
+      { t: 'h2', x: "Piège n°2 : le carton « numéros d'urgence » aux couleurs de votre ville" },
+      { t: 'p', x: "Un petit carton dans la boîte aux lettres, avec le **logo de la mairie**, liste des urgences : **dératisation**, **punaises de lit**, plomberie... **UFC-Que Choisir** a révélé qu'un de ces cartons, au logo de la **mairie de Paris**, renvoyait en réalité vers une **entreprise impossible à identifier**, sans numéro **RCS**. Pour inspirer confiance, le carton mélangeait même **de vrais numéros municipaux**." },
+      { t: 'p', x: "**Le bon réflexe** : jetez ces cartons. **Une mairie ne fait pas de publicité** pour une entreprise de dératisation." },
+
+      { t: 'h2', x: "Piège n°3 : le diagnostic par téléphone, sans jamais se déplacer" },
+      { t: 'p', x: "« Vous avez des punaises, c'est sûr, il faut traiter tout l'appartement. » Le tout **sans avoir vu une seule trace**. La **DGCCRF** met en garde contre les professionnels qui proposent des **diagnostics en ligne, par téléphone ou en visio** : seul un **déplacement** permet de mesurer l'**ampleur réelle** du problème et de choisir le **bon traitement**." },
+      { t: 'p', x: "Une **photo** peut aider à identifier un insecte, mais **elle ne remplace pas une inspection** du logement." },
+
+      { t: 'h2', x: "Piège n°4 : l'infestation inventée de toutes pièces" },
+      { t: 'p', x: "C'est l'arnaque la plus cruelle : vous **faire croire à des nuisibles qui n'existent pas**. La DGCCRF le signale noir sur blanc pour les **punaises de lit**. Son conseil : **demandez l'avis d'au moins deux professionnels**." },
+      { t: 'p', x: "Un vrai technicien vous **montre les preuves** : **insectes**, **déjections**, **mues**, **œufs**, **traces de passage** ou **crottes de rongeurs**. S'il ne peut rien vous montrer, méfiance." },
+
+      { t: 'h2', x: "Piège n°5 : le petit prix au téléphone qui explose sur place" },
+      { t: 'p', x: "Au téléphone, un **prix d'appel très bas**. Une fois chez vous, s'ajoutent les **frais de déplacement**, un **supplément urgence**, un **produit spécial**, un **deuxième passage obligatoire**... et la facture **est multipliée**." },
+      { t: 'p', x: "**La parade : un devis écrit avant toute intervention.** D'après la DGCCRF, il doit indiquer :" },
+      { t: 'ul', items: [
+        "les **coordonnées complètes** de l'entreprise ;",
+        "le **détail des prestations** prévues ;",
+        "les **frais de déplacement** éventuels et le **coût du devis** s'il est payant ;",
+        "le **prix HT et TTC** ;",
+        "les **conditions de paiement**.",
+      ] },
+
+      { t: 'h2', x: "Piège n°6 : « Payez maintenant, on revient demain »" },
+      { t: 'p', x: "**Acompte en liquide**, **virement immédiat**, **chèque encaissé** avant le moindre traitement : certains **encaissent sans jamais réaliser la prestation**. La DGCCRF est claire : **ne payez rien tant que la prestation n'a pas été réalisée**." },
+      { t: 'callout', tone: 'info', title: 'Vos droits si le contrat est signé chez vous', x: "Si un professionnel vient **sans que vous l'ayez appelé** (démarchage) et vous fait signer chez vous, il **ne peut recevoir aucun paiement avant 7 jours**, et vous avez **14 jours pour changer d'avis** (droit de rétractation). Attention : pour une **intervention urgente que vous avez vous-même demandée**, le droit de rétractation peut ne pas s'appliquer. D'où l'importance de **lire le devis avant de signer**." },
+
+      { t: 'h2', x: "Piège n°7 : le traitement bidon ou le produit interdit" },
+      { t: 'p', x: "Certains facturent des **produits ou des interventions inefficaces**. D'autres utilisent des **insecticides interdits**. La DGCCRF et la Douane alertent sur le **SNIPER 1000 EC DDVP**, vendu sur des marchés, dans des bazars ou sur internet : il est **interdit** et **dangereux pour la santé**." },
+      { t: 'ul', items: [
+        "**Demandez le protocole de traitement** : quel produit, quelle méthode, combien de passages.",
+        "Pour un traitement insecticide, **exigez le certificat Certibiocide** du technicien, en cours de validité. C'est l'attestation officielle délivrée par le ministère de la Transition écologique.",
+        "**Méfiez-vous des produits miracles** vendus en ligne : UFC-Que Choisir a repéré de nombreuses annonces frauduleuses.",
+      ] },
+
+      { t: 'h2', x: "Piège n°8 : pas de facture, pas de recours" },
+      { t: 'p', x: "Sans **facture**, impossible de faire jouer une **garantie**, de **contester** un prix ou de prouver que l'intervention a eu lieu. La DGCCRF le rappelle : **exigez-la**. Elle doit reprendre le **détail des prestations** et le **prix payé**." },
+
+      { t: 'h2', x: "Vrai professionnel ou arnaqueur ? Le tableau pour trancher en 2 minutes" },
+      { t: 'table', head: ['', 'Professionnel sérieux', 'Signal d’alarme'], rows: [
+        ['Diagnostic', 'Se déplace et vous montre les traces', 'Diagnostic par téléphone ou en visio'],
+        ['Devis', 'Écrit, détaillé, prix HT et TTC', 'Prix oral, flou, « on verra sur place »'],
+        ['Paiement', 'Après l’intervention', 'Acompte immédiat, liquide exigé'],
+        ['Identité', 'SIRET vérifiable, adresse réelle', 'Numéro seul, aucune trace de l’entreprise'],
+        ['Produits', 'Protocole expliqué, Certibiocide', '« Produit spécial », refus d’expliquer'],
+        ['Ton', 'Vous laisse le temps de réfléchir', 'Pression, peur, « il faut signer maintenant »'],
+      ] },
+
+      { t: 'h2', x: "La check-list anti-arnaque avant d'appeler un dératiseur" },
+      { t: 'ol', items: [
+        "**Vérifiez l'entreprise** : tapez son nom ou son **SIRET** sur **annuaire-entreprises.data.gouv.fr**. Une société sans existence officielle, c'est un **non**.",
+        "**Lisez les avis Google**, surtout les **plus récents** et les **réponses** de l'entreprise.",
+        "**Demandez au moins deux devis** quand la situation le permet, comme le conseille la DGCCRF.",
+        "**Exigez un déplacement** avant tout traitement important.",
+        "**Demandez le certificat Certibiocide** si un insecticide ou un raticide est utilisé.",
+        "**Ne payez qu'après** l'intervention, et **gardez la facture**.",
+      ] },
+
+      { t: 'h2', x: "Victime d'une arnaque ? Les 3 réflexes immédiats" },
+      { t: 'ol', items: [
+        "**Signalez-le sur SignalConso** (signal.conso.gouv.fr) : il existe un parcours dédié aux **services de lutte contre les rats, les punaises de lit et la désinfection**.",
+        "**Portez plainte** au commissariat ou à la gendarmerie, surtout en cas de **faux agent** ou de **paiement sans prestation**.",
+        "**Gardez toutes les preuves** : devis, facture, messages, numéro appelé, prospectus.",
+      ] },
+      { t: 'p', x: "Pour les **punaises de lit**, l'État a aussi mis en place un **numéro national d'information** : **0806 706 806**." },
+
+      { t: 'h2', x: "Chez Allo Nuisible IDF : nos engagements, noir sur blanc" },
+      { t: 'ul', items: [
+        "**Devis gratuit** et **écrit** avant toute intervention.",
+        "**Techniciens certifiés Certibiocide**, protocole expliqué avant de commencer.",
+        "**Garantie 1 an** sur nos traitements.",
+        "Entreprise **identifiable** : société **ALLO NUISIBLE IDF**, basée à **Saint-Maurice (94)**, SIRET **928 763 713 00023**.",
+      ] },
+    ],
+    faq: [
+      { q: "Un agent de la mairie peut-il m'obliger à signer un contrat de dératisation ?", a: "Non. Un agent public ne vous fait pas signer de contrat avec une entreprise privée. Si quelqu'un se présente ainsi, ne signez rien, demandez sa carte professionnelle et appelez vous-même la mairie. En cas de doute, signalez-le à la DGCCRF et portez plainte." },
+      { q: "Est-ce normal de payer un acompte avant le traitement ?", a: "La DGCCRF conseille de ne rien payer tant que la prestation n'a pas été réalisée. Et si le contrat a été signé chez vous à la suite d'un démarchage, le professionnel ne peut recevoir aucun paiement avant 7 jours." },
+      { q: "Comment vérifier qu'une entreprise de dératisation existe vraiment ?", a: "Recherchez son nom ou son SIRET sur annuaire-entreprises.data.gouv.fr. Vous y verrez sa date de création, son adresse et son activité. Vérifiez aussi qu'elle a une adresse réelle et des avis clients récents." },
+      { q: "Qu'est-ce que le certificat Certibiocide ?", a: "C'est le certificat délivré par le ministère de la Transition écologique aux professionnels qui utilisent certains produits biocides, comme les insecticides et les raticides. La DGCCRF recommande de vérifier qu'il est en cours de validité." },
+      { q: "Où signaler une arnaque aux nuisibles ?", a: "Sur SignalConso (signal.conso.gouv.fr), qui propose une catégorie dédiée aux services de lutte contre les rats, les punaises de lit et la désinfection. En cas d'escroquerie, portez aussi plainte." },
+    ],
+    sources: [
+      { label: 'DGCCRF, Se débarrasser des punaises de lit : comparez les devis pour éviter les arnaques', url: 'https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/se-debarrasser-des-punaises-de-lit-comparez-les-devis-pour-eviter-les-arnaques' },
+      { label: 'GHR, Prestataires de dératisation : attention aux arnaques (2025)', url: 'https://www.ghr.fr/reglementation-fiscalite/hygiene/prestataires-de-deratisation-attention-aux-arnaques' },
+      { label: 'UFC-Que Choisir, Dépannage à domicile : l’arnaque au prospectus', url: 'https://www.quechoisir.org/actualite-depannage-a-domicile-l-arnaque-au-prospectus-toujours-et-encore-n66179/' },
+      { label: 'UFC-Que Choisir, Punaises de lit : les escrocs attaquent', url: 'https://www.quechoisir.org/actualite-punaises-de-lit-les-escrocs-attaquent-n112078' },
+      { label: 'Douane et DGCCRF, alerte sur l’insecticide interdit SNIPER (2024)', url: 'https://www.economie.gouv.fr/dgccrf/actualites/recrudescence-des-saisies-de-sniper-la-douane-et-la-dgccrf-alertent-les' },
+      { label: 'Service-public.fr, Démarchage à domicile : règles à respecter', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F23224' },
+      { label: 'SignalConso, faire un signalement', url: 'https://signal.conso.gouv.fr/fr/services-aux-particuliers/faire-un-signalement' },
+    ],
+    cta: { title: 'Un nuisible chez vous ? Faites appel à un pro identifiable', text: "Devis gratuit et écrit, techniciens certifiés Certibiocide, protocole expliqué avant de commencer et garantie 1 an. Paris et Val-de-Marne, 7j/7." },
+  },
 ]
 
 export const getArticle = (slug: string) => ARTICLES.find((a) => a.slug === slug)
