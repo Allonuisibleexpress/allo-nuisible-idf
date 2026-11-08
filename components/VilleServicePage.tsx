@@ -10,7 +10,12 @@ import type { ServiceLocal } from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
-import { SITE_URL } from '@/lib/seo'
+import { SITE_URL, pageMetadata } from '@/lib/seo'
+import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import AvisDefilants from '@/components/AvisDefilants'
+import { autresServicesVille } from '@/lib/services-ville'
+import { codePostal } from '@/lib/codes-postaux'
+import { PROFILS } from '@/lib/profils-ville'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
 // Même structure que /punaises-de-lit/[ville] : En bref (GEO), contexte, méthodes, guides, FAQ, E-E-A-T, maillage.
@@ -63,6 +68,13 @@ export type VilleServiceConfig = {
   centre?: boolean // page entièrement centrée (règle de l'utilisateur pour les nouvelles pages)
 }
 
+// Titre et description Google d'une page nuisible + ville (modèle du 09/11/2026)
+export function metaVille(v: Ville, c: VilleServiceConfig) {
+  const p = PROFILS[serviceLocal(c.pilier.href) as keyof typeof PROFILS]
+  const title = titreGoogle(p.motCle, v.nom, v.slug, p.suffixes)
+  return pageMetadata({ title, description: p.description(v.a, codePostal(v.slug)), path: `${c.basePath}/${v.slug}` })
+}
+
 // Texte riche : **gras** et [ancre](/lien)
 function inline(text: string) {
   const out: React.ReactNode[] = []
@@ -99,6 +111,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
     'Deux exemples de dispositifs que nous utilisons, toujours associés à la fermeture des accès.',
   ][rang % 3]
   const sl = serviceLocal(c.pilier.href)
+  const profil = PROFILS[sl as keyof typeof PROFILS]
   const avisLocaux = sl === 'souris' || sl === 'cafards' ? avisVille(sl, v.slug) : []
   // FAQ : la question propre à la ville, puis 2 questions générales en rotation
   const generales = v.faq.slice(1)
@@ -117,8 +130,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         serviceType: c.serviceType,
         url,
         description: v.description,
-        areaServed: { '@type': 'City', name: v.nom, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
-        provider: { '@type': 'LocalBusiness', name: 'Allo Nuisible IDF', url: SITE_URL, telephone: '+33768077219' },
+        areaServed: { '@type': 'City', name: v.nom, postalCode: codePostal(v.slug) || undefined, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
+        provider: schemaPrestataire(),
+        offers: schemaOffre(profil.prixNum, profil.offre),
       },
       {
         '@type': 'FAQPage',
@@ -140,48 +154,22 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <main className={c.centre ? 'recit-centre' : undefined}>
-        {/* ── HERO ── */}
-        <section className="relative pt-10 md:pt-14 pb-14 px-4 overflow-hidden" style={{ background: '#080808' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
-          }} />
-          <div className="relative max-w-4xl mx-auto">
-            <nav className="text-xs text-white/40 mb-5 text-center" aria-label="Fil d'Ariane">
-              <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
-              <a href={c.pilier.href} className="hover:text-white/70">{c.pilier.label}</a>{' / '}
-              <span className="text-white/60">{v.nom}</span>
-            </nav>
-            <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6 tracking-tight text-center">
-              {c.titre}{' '}
-              <span style={{ color: ACCENT }}>
-                {v.a.split(' ')[0]} <span className={v.nom.length <= 16 ? 'whitespace-nowrap' : undefined}>{v.a.split(' ').slice(1).join(' ')}</span>
-              </span>
-            </h1>
+        <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre={profil.heroTitre}
+          fil={{ href: c.pilier.href, label: c.pilier.label }}
+          prix={profil.prix} prixNote={profil.prixNote}
+          accroche={`${phraseDistance(v.slug, v.nom)} ${profil.accroches[rang % profil.accroches.length]}`} />
 
-            <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
-              <EtiquettePrix prix={premierPrix(c.enBref) ?? PRIX_DEPART[sl] ?? null} />
-              <ul className="space-y-2">
-                {enBref.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <a href={PHONE_HREF}
-                className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
-                style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
-                <Phone className="w-4 h-4" /> {PHONE}
-              </a>
-              <a href="/tarifs"
-                className="inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-125"
-                style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff' }}>
-                Devis gratuit <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+        {/* En bref */}
+        <section className="px-4 pb-4" style={{ background: '#080808' }}>
+          <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
+            <ul className="space-y-2">
+              {enBref.map((t) => (
+                <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
+                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -189,13 +177,13 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.titre} {v.a}</h2>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.titre} {v.a} : <span style={{ color: ACCENT }}>ce que nous constatons</span></h2>
             {v.contexte.map((p) => (
               <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>
             ))}
-            <h3 className="text-lg font-black text-white mt-8 mb-4">{c.cachettes.titre}</h3>
-            <ul className="grid sm:grid-cols-2 gap-3">
+            <h3 className="text-lg md:text-xl font-black text-white mt-10 mb-4">{c.cachettes.titre} {v.a}</h3>
+            <ul className="grid sm:grid-cols-2 gap-3 text-left">
               {cachettes.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
                   <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{l}
@@ -210,13 +198,19 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
         {/* Rats aussi ? page dératisation de la même ville */}
         {serviceLocal(c.pilier.href) === 'souris' && VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
-          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60">
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
             Des rats plutôt que des souris ? Voir notre page <a href={`/deratisation/${v.slug}`} className="underline" style={{ color: ACCENT }}>dératisation {v.a}</a>.
           </p>
         )}
 
         {/* Avis Google d'un client de cette ville pour ce nuisible, s'il y en a un */}
+        <EtapesVille slug={v.slug} a={v.a} titre={profil.etapesTitre(v.a)} etapes={profil.etapes} />
+
+        <TarifsVille titre={profil.tarifsTitre(v.a)} intro={profil.tarifsIntro} lignes={profil.tarifs}
+          note="Prix TTC. Garantie 1 an sur nos traitements, devis gratuit." />
+
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
+        <AvisDefilants depart={rang + 3} />
 
         {/* ── CONTENU DÉTAILLÉ ── */}
         {sections && (
@@ -224,9 +218,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             <div className="max-w-4xl mx-auto space-y-12">
               {sections.map((s) => (
                 <div key={s.titre}>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-5">{s.titre}</h2>
+                  <h2 className="text-2xl md:text-3xl font-black text-white mb-5 text-center">{s.titre}</h2>
                   {s.paras.map((p) => (
-                    <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>
+                    <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4 text-center">{inline(p)}</p>
                   ))}
                   {s.table && (
                     <div className="overflow-x-auto rounded-2xl mt-2" style={card}>
@@ -255,7 +249,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                   )}
                 </div>
               ))}
-              {rang % 2 === 0 && <p className="text-white/55 text-sm">
+              {rang % 2 === 0 && <p className="text-white/55 text-sm text-center">
                 Espèces, causes, risques et erreurs à éviter : tout est détaillé sur{' '}
                 <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
               </p>}
@@ -266,8 +260,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* ── MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Nos méthodes de traitement {v.a}</h2>
-            <p className="text-white/55 mb-8 max-w-2xl">{introMethodes}</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 text-center">Nos méthodes {v.a} : <span style={{ color: ACCENT }}>avec ou sans produit</span></h2>
+            <p className="text-white/55 mb-8 max-w-2xl mx-auto text-center">{introMethodes}</p>
             <div className="grid sm:grid-cols-2 gap-4">
               {methodes.map((m) => {
                 const contenu = (
@@ -287,7 +281,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             </div>
             {avecEncadre && (
             <div className="rounded-2xl p-6 mt-6" style={card}>
-              <h3 className="text-lg font-black text-white mb-3">{c.encadre.titre}</h3>
+              <h3 className="text-lg font-black text-white mb-3 text-center">{c.encadre.titre}</h3>
               {c.encadre.intro && <p className="text-white/60 text-sm mb-3">{c.encadre.intro}</p>}
               <ul className="space-y-2">
                 {c.encadre.items.map((t) => (
@@ -310,29 +304,13 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         {/* ── DÉROULÉ DE L'INTERVENTION + PUBLICS ── */}
-        {(c.protocole || c.publics) && (
+        {c.publics && !avecEncadre && (
           <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
             <div className="max-w-4xl mx-auto space-y-14">
               {/* Déroulé et publics en alternance d'une ville à l'autre (les méthodes restent sur toutes les pages) */}
-              {c.protocole && (avecEncadre || !c.publics) && (
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{c.protocole.titre} {v.a}</h2>
-                  <ol className="space-y-5">
-                    {c.protocole.etapes.map((e, i) => (
-                      <li key={e.titre} className="flex gap-4">
-                        <span className="w-9 h-9 flex-shrink-0 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>
-                        <div>
-                          <p className="font-bold text-white">{e.titre}</p>
-                          <p className="text-white/60 text-sm leading-relaxed">{inline(e.texte)}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
               {c.publics && !avecEncadre && (
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{c.publics.titre}</h2>
+                  <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center">{c.publics.titre}</h2>
                   <div className="grid md:grid-cols-3 gap-4">
                     {c.publics.cartes.map((p) => (
                       <div key={p.titre} className="rounded-2xl p-6" style={card}>
@@ -350,7 +328,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* ── GUIDES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-6">Nos guides</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center">Nos guides pour tout comprendre</h2>
             <div className="grid sm:grid-cols-3 gap-3">
               {c.guides.map((g) => (
                 <a key={g.href} href={g.href} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
@@ -362,7 +340,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 </a>
               ))}
             </div>
-            <p className="text-white/60 text-sm mt-6">
+            <p className="text-white/60 text-sm mt-6 text-center">
               Voir aussi <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
             </p>
           </div>
@@ -373,7 +351,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Questions fréquentes</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-8 text-center">Vos questions : {c.titre.toLowerCase()} {v.a}</h2>
             <div className="space-y-3">
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
@@ -407,6 +385,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             </ul>
           </div>
         </section>
+
+        <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, profil.famille)} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>

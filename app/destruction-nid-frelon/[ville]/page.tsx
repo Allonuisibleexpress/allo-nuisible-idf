@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_FRELONS, CONFIG_FRELONS, frelonsIndexee, getVilleFrelons } from '@/lib/villes-frelons'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleFrelons(params.ville)
   if (!v) return {}
-  const meta = pageMetadata({ title: v.title, description: v.description, path: `/destruction-nid-frelon/${v.slug}` })
+  const meta = metaVille(v, CONFIG_FRELONS)
   // Mise en ligne progressive : noindex pour les villes absentes de FRELONS_VILLES_INDEXEES
   return frelonsIndexee(v.slug) ? meta : { ...meta, robots: { index: false, follow: true } }
 }

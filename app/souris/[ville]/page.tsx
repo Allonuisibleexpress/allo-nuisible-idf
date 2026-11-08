@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_SOURIS, CONFIG_SOURIS, getVilleSouris } from '@/lib/villes-souris'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleSouris(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/souris/${v.slug}` })
+  return metaVille(v, CONFIG_SOURIS)
 }
 
 export default function SourisVillePage({ params }: { params: { ville: string } }) {

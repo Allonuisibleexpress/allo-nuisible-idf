@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_FOURMIS, CONFIG_FOURMIS, getVilleFourmis } from '@/lib/villes-fourmis'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleFourmis(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/fourmis/${v.slug}` })
+  return metaVille(v, CONFIG_FOURMIS)
 }
 
 export default function FourmisVillePage({ params }: { params: { ville: string } }) {

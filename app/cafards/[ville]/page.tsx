@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_CAFARDS, CONFIG_CAFARDS, getVilleCafards } from '@/lib/villes-cafards'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleCafards(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/cafards/${v.slug}` })
+  return metaVille(v, CONFIG_CAFARDS)
 }
 
 export default function CafardsVillePage({ params }: { params: { ville: string } }) {

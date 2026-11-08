@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_CHENILLES, CONFIG_CHENILLES, getVilleChenilles } from '@/lib/villes-chenilles'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleChenilles(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/chenilles-processionnaires/${v.slug}` })
+  return metaVille(v, CONFIG_CHENILLES)
 }
 
 export default function ChenillesVillePage({ params }: { params: { ville: string } }) {

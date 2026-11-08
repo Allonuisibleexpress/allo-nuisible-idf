@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
-import VilleServicePage from '@/components/VilleServicePage'
-import { pageMetadata } from '@/lib/seo'
+import VilleServicePage, { metaVille } from '@/components/VilleServicePage'
 import { VILLES_ACARIENS, CONFIG_ACARIENS, getVilleAcariens } from '@/lib/villes-acariens'
 
 export const dynamicParams = false
@@ -12,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleAcariens(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/acariens/${v.slug}` })
+  return metaVille(v, CONFIG_ACARIENS)
 }
 
 export default function AcariensVillePage({ params }: { params: { ville: string } }) {
