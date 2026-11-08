@@ -2,13 +2,17 @@ import { notFound } from 'next/navigation'
 import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
-import { avecPrix, EtiquettePrix } from '@/components/PrixGros'
+import { avecPrix } from '@/components/PrixGros'
+import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance } from '@/components/VilleBlocs'
+import { autresServicesVille } from '@/lib/services-ville'
+import { codePostal } from '@/lib/codes-postaux'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
+import AvisDefilants from '@/components/AvisDefilants'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
@@ -29,10 +33,29 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVillePunaises(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/punaises-de-lit/${v.slug}` })
+  const cp = codePostal(v.slug)
+  const title = titreGoogle('Punaises de lit', v.nom, v.slug, [' : traitement dès 290 €', ' : traitement 7j/7', ' : traitement', ''])
+  const description = `Punaises de lit ${v.a}${cp ? ` (${cp})` : ''} : insecticide, cryogénie ou vapeur sèche. 2 passages dès 290 € TTC, devis gratuit, garantie 1 an, 7j/7.`
+  return pageMetadata({ title, description, path: `/punaises-de-lit/${v.slug}` })
 }
 
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
+
+// Phrase d'accroche du haut de page, en rotation d'une ville à l'autre
+const ACCROCHES = [
+  'Un technicien certifié vient chez vous 7j/7, avec ou sans insecticide, et revient pour un deuxième passage.',
+  'Inspection complète, traitement adapté à votre logement et deuxième passage inclus : on règle le problème pour de bon.',
+  'Cryogénie, vapeur sèche ou insecticide professionnel : nous choisissons avec vous la méthode la plus efficace.',
+  'Piqûres au réveil, taches sur les draps ? Nous intervenons vite, souvent le jour même, avec une garantie d’un an.',
+  'Logement, location saisonnière ou hôtel : nous traitons chaque pièce touchée et vous laissons des consignes simples pour la suite.',
+]
+
+const ETAPES = [
+  ['Appel ou photo|Vous nous appelez ou envoyez une photo sur WhatsApp : nous confirmons qu’il s’agit bien de punaises et vous donnons le prix.', 'Devis gratuit|Quelques questions sur votre logement suffisent : vous connaissez le tarif avant tout déplacement.', 'Premier contact|Un appel, une photo : nous identifions l’insecte et vous annonçons le prix, sans engagement.'],
+  ['Inspection|Le technicien vérifie le matelas, le sommier, la tête de lit, les plinthes et le canapé pour repérer tous les foyers.', 'Recherche des foyers|Coutures, cadre de lit, prises, fentes du parquet : chaque cachette est contrôlée avant de traiter.', 'Diagnostic sur place|Nous mesurons l’ampleur de l’infestation pièce par pièce et vous expliquons la méthode retenue.'],
+  ['Premier traitement|Cryogénie, vapeur sèche, protocole mixte ou insecticide : le traitement vise les punaises et leurs œufs.', 'Traitement ciblé|Le froid, la vapeur ou l’insecticide professionnel sont appliqués sur chaque zone touchée.', 'Élimination|Nous traitons literie, mobilier et zones de passage, avec des consignes claires pour la suite.'],
+  ['Deuxième passage|Nous revenons traiter les éventuelles éclosions. Votre traitement est garanti 1 an.', 'Contrôle et garantie|Un second passage est inclus pour finir le travail, puis la garantie d’un an vous couvre.', 'Suivi|Deuxième passage inclus, conseils pour éviter une nouvelle infestation et garantie 1 an.'],
+]
 
 const CACHETTES = [
   'Coutures et passepoil du matelas',
@@ -103,49 +126,22 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <main>
-        {/* ── HERO ── */}
-        <section className="relative pt-10 md:pt-14 pb-14 px-4 overflow-hidden" style={{ background: '#080808' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
-          }} />
-          <div className="relative max-w-4xl mx-auto">
-            <nav className="text-xs text-white/40 mb-5 text-center" aria-label="Fil d'Ariane">
-              <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
-              <a href="/services/punaises-de-lit" className="hover:text-white/70">Punaises de lit</a>{' / '}
-              <span className="text-white/60">{v.nom}</span>
-            </nav>
-            <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6 tracking-tight text-center">
-              Traitement punaises de lit{' '}
-              <span style={{ color: ACCENT }}>
-                {v.a.split(' ')[0]} <span className={v.nom.length <= 16 ? 'whitespace-nowrap' : undefined}>{v.a.split(' ').slice(1).join(' ')}</span>
-              </span>
-            </h1>
+        <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Traitement punaises de lit"
+          fil={{ href: '/services/punaises-de-lit', label: 'Punaises de lit' }}
+          prix="290 €" prixNote="Studio ou T1, 2 passages inclus. Devis gratuit."
+          accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
 
-            {/* En bref */}
-            <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
-              <EtiquettePrix prix="290 €" />
-              <ul className="space-y-2">
-                {enBref.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <a href={PHONE_HREF}
-                className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
-                style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
-                <Phone className="w-4 h-4" /> {PHONE}
-              </a>
-              <a href="/tarifs"
-                className="inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-125"
-                style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff' }}>
-                Devis gratuit <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+        {/* En bref */}
+        <section className="px-4 pb-4" style={{ background: '#080808' }}>
+          <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
+            <ul className="space-y-2">
+              {enBref.map((t) => (
+                <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
+                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -154,11 +150,11 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">Punaises de lit {v.a}</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Punaises de lit {v.a} : <span style={{ color: ACCENT }}>ce que nous voyons sur le terrain</span></h2>
             {v.contexte.map((p) => (
-              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{p}</p>
+              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
             ))}
-            <h3 className="text-lg font-black text-white mt-8 mb-4">Où elles se cachent</h3>
+            <h3 className="text-lg md:text-xl font-black text-white mt-10 mb-4 text-center">Leurs 6 cachettes préférées</h3>
             <ul className="grid sm:grid-cols-2 gap-3">
               {CACHETTES.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
@@ -166,7 +162,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                 </li>
               ))}
             </ul>
-            <p className="text-white/50 text-sm mt-4">
+            <p className="text-white/50 text-sm mt-4 text-center">
               Signes fréquents : piqûres groupées au réveil, petites taches noires ou de sang sur les draps, insectes bruns dans les coutures.
             </p>
           </div>
@@ -174,8 +170,20 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
 
+        <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe le traitement ${v.a}`} etapes={ETAPES} />
+
+        <TarifsVille titre={`Prix d’un traitement punaises de lit ${v.a}`}
+          intro="Deux passages toujours inclus, quelle que soit la méthode. Le devis est gratuit et le prix est fixé avant l’intervention."
+          lignes={[
+            { label: 'Studio ou T1', prix: 'dès 290 €', detail: '2 passages, inspection de toutes les pièces' },
+            { label: 'T2 ou T3', prix: 'sur devis', detail: 'Insecticide, cryogénie ou vapeur sèche' },
+            { label: 'T4, maison ou forte infestation', prix: 'sur devis', detail: 'Prix confirmé après inspection' },
+          ]}
+          note="Prix TTC. Garantie 1 an sur nos traitements." />
+
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
+        <AvisDefilants depart={rang} />
 
         {/* Vrai chantier dans cette ville, en vidéo */}
         {CHANTIERS_PUNAISES_VILLE[v.slug] && (
@@ -190,8 +198,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* ── TOUTES LES MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Nos méthodes de traitement {v.a}</h2>
-            <p className="text-white/55 mb-8 max-w-2xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 text-center">Avec ou sans insecticide : <span style={{ color: ACCENT }}>nos méthodes {v.a}</span></h2>
+            <p className="text-white/55 mb-8 max-w-2xl mx-auto text-center">
               Traitement insecticide professionnel ou sans insecticide, avec la cryogénie et la vapeur sèche : le technicien vous propose la méthode adaptée à votre logement et vous explique son choix avant d&apos;intervenir.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -209,7 +217,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             </div>
 
             {/* Cryogénie : 5 formulations en rotation d'une ville à l'autre, lien vers la page dédiée */}
-            <p className="text-white/70 leading-relaxed mt-6">
+            <p className="text-white/70 leading-relaxed mt-6 text-center">
               {[
                 <>Vous préférez un traitement sans produit chimique ? La cryogénie, de la neige carbonique à environ −78 °C, tue les punaises et leurs œufs au contact. Voir notre <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>traitement des punaises de lit par cryogénie</a>, avec les vidéos de nos chantiers.</>,
                 <>Enfants en bas âge, animaux, personne fragile : {v.a}, nous pouvons traiter votre logement par cryogénie, sans insecticide. Découvrez <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>comment se déroule un traitement par cryogénie</a>.</>,
@@ -221,7 +229,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
             {avecEncadre && (
             <div className="rounded-2xl p-6 mt-6" style={card}>
-              <h3 className="text-lg font-black text-white mb-3">Ce que vous pouvez faire en attendant</h3>
+              <h3 className="text-lg font-black text-white mb-3 text-center">En attendant le technicien : 3 gestes utiles</h3>
               <p className="text-white/60 text-sm mb-3">Recommandé par le site du gouvernement stop-punaises.gouv.fr, pour le linge et les effets personnels :</p>
               <ul className="space-y-2">
                 {[
@@ -242,7 +250,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* ── GUIDES DU BLOG ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-6">Nos guides sur les punaises de lit</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center">Nos guides pour tout comprendre</h2>
             <div className="grid sm:grid-cols-3 gap-3">
               {v.guides.map((g) => (
                 <a key={g} href={`/blog/${g}`} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
@@ -254,7 +262,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                 </a>
               ))}
             </div>
-            <p className="text-white/60 text-sm mt-6">
+            <p className="text-white/60 text-sm mt-6 text-center">
               Voir aussi notre <a href="/services/punaises-de-lit" className="underline" style={{ color: ACCENT }}>traitement des punaises de lit en Île-de-France</a>.
             </p>
           </div>
@@ -265,7 +273,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Questions fréquentes</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-8 text-center">Vos questions sur les punaises de lit {v.a}</h2>
             <div className="space-y-3">
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
@@ -302,6 +310,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             </ul>
           </div>
         </section>
+
+        <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'punaises')} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>

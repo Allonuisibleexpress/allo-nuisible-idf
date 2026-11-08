@@ -296,10 +296,10 @@ export default function ContexteLocal({ slug, service, a }: { slug: string; serv
   )
   return (
     <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{TITRES[service](a)}</h2>
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{TITRES[service](a)}</h2>
         {paragraphes.map((p, i) => (
-          <p key={p.slice(0, 32)} className={i === paragraphes.length - 1 ? 'text-white/50 text-sm leading-relaxed mt-6 flex items-start gap-2' : 'text-white/70 leading-relaxed mb-4'}>
+          <p key={p.slice(0, 32)} className={i === paragraphes.length - 1 ? 'text-white/50 text-sm leading-relaxed mt-6 flex items-start justify-center gap-2' : 'text-white/70 leading-relaxed mb-4'}>
             {i === paragraphes.length - 1 && <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />}
             {p}
           </p>
