@@ -3,7 +3,7 @@
 import { Phone, Camera, ShieldCheck, Search, Clock, Hand, Ruler } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { Detective, Galerie } from '@/components/IdentifierNuisible'
+import { Detective, Galerie, Scanner } from '@/components/IdentifierNuisible'
 import { FICHES } from '@/lib/identifier-nuisibles'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 
@@ -96,6 +96,7 @@ export default function IdentifierNuisiblePage() {
         <section className="pt-10 md:pt-14 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs text-white/45 mb-5"><a href="/" className="hover:text-white">Accueil</a> / Identifier un nuisible</p>
+            <Scanner />
             <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <Search className="w-3.5 h-3.5" />Identification gratuite
             </p>

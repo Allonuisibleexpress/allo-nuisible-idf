@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Search, RotateCcw, ArrowLeft, ArrowRight, Phone, Camera, Ruler } from 'lucide-react'
 import { FICHES, PIECES, DANGERS, ETAPES, ficheParId, type Fiche, type Piece } from '@/lib/identifier-nuisibles'
 
@@ -8,6 +8,56 @@ const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 const TEL = 'tel:+33768077219'
 const SMS = 'https://wa.me/33768077219?text=Bonjour%2C%20voici%20une%20photo%20du%20nuisible%20trouv%C3%A9%20chez%20moi%20%3A'
+
+/* ── Scanner animé : une ligne laser balaie la photo, le nuisible change à chaque passage ── */
+const SCAN_IDS = ['punaise-de-lit', 'blatte-germanique', 'rat', 'frelon-asiatique', 'souris', 'guepe', 'poisson-argent', 'chenille-processionnaire']
+const DUREE = 2600
+
+export function Scanner() {
+  const [i, setI] = useState(0)
+  const [trouve, setTrouve] = useState(false)
+  useEffect(() => {
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduit) { setTrouve(true); return }
+    let t1: ReturnType<typeof setTimeout>
+    const cycle = () => {
+      setTrouve(false)
+      t1 = setTimeout(() => setTrouve(true), DUREE * 0.62)
+    }
+    cycle()
+    const t = setInterval(() => { setI((n) => (n + 1) % SCAN_IDS.length); cycle() }, DUREE)
+    return () => { clearInterval(t); clearTimeout(t1) }
+  }, [])
+  const f = ficheParId(SCAN_IDS[i])
+  const coin = 'absolute w-7 h-7 border-[3px]'
+  return (
+    <div className="flex flex-col items-center mb-6" aria-hidden>
+      <style>{`
+        @keyframes scan-ligne { 0% { top: 4% } 50% { top: 92% } 100% { top: 4% } }
+        @keyframes scan-pouls { 0%,100% { opacity: .55 } 50% { opacity: 1 } }
+        @keyframes scan-apparait { from { opacity: 0; transform: scale(1.06) } to { opacity: 1; transform: scale(1) } }
+        .scan-ligne { animation: scan-ligne ${DUREE}ms ease-in-out infinite }
+        .scan-coin { animation: scan-pouls 1.3s ease-in-out infinite }
+        .scan-img { animation: scan-apparait .45s ease-out }
+        @media (prefers-reduced-motion: reduce) { .scan-ligne, .scan-coin, .scan-img { animation: none } }
+      `}</style>
+      <div className="relative w-40 h-40 sm:w-48 sm:h-48 p-2.5">
+        <span className={`${coin} scan-coin top-0 left-0 border-r-0 border-b-0 rounded-tl-xl`} style={{ borderColor: ACCENT }} />
+        <span className={`${coin} scan-coin top-0 right-0 border-l-0 border-b-0 rounded-tr-xl`} style={{ borderColor: ACCENT }} />
+        <span className={`${coin} scan-coin bottom-0 left-0 border-r-0 border-t-0 rounded-bl-xl`} style={{ borderColor: ACCENT }} />
+        <span className={`${coin} scan-coin bottom-0 right-0 border-l-0 border-t-0 rounded-br-xl`} style={{ borderColor: ACCENT }} />
+        <div className="relative w-full h-full rounded-xl overflow-hidden" style={{ background: '#111' }}>
+          <img key={f.id} src={f.photo.src} alt="" className="scan-img w-full h-full object-cover" style={{ filter: trouve ? 'none' : 'grayscale(0.6) brightness(0.75)', transition: 'filter .4s' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '100% 6px' }} />
+          <div className="scan-ligne absolute left-0 right-0 h-[3px]" style={{ background: ACCENT, boxShadow: `0 0 12px 3px ${ACCENT}, 0 0 28px 8px rgba(232,68,26,0.45)` }} />
+        </div>
+      </div>
+      <p className="mt-3 h-6 text-sm font-black tracking-widest uppercase" style={{ color: trouve ? ACCENT : 'rgba(255,255,255,0.5)' }}>
+        {trouve ? `Identifié : ${f.nom.replace(/ \(.*\)$/, '')}` : 'Analyse en cours…'}
+      </p>
+    </div>
+  )
+}
 
 function Badge({ f }: { f: Fiche }) {
   const d = DANGERS[f.danger]
