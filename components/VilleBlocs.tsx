@@ -4,6 +4,8 @@ import { Phone, Camera, Star, ShieldCheck, Clock, BadgeCheck, ArrowRight, MapPin
 import { NOTE_GOOGLE, FICHE_GOOGLE_URL } from '@/lib/avis-google'
 import { REPERES } from '@/lib/reperes-villes'
 import { codePostal } from '@/lib/codes-postaux'
+import { PHOTOS_MAIRIES } from '@/lib/photos-mairies'
+import { MAIRIES } from '@/lib/mairies'
 
 const ACCENT = '#E8441A'
 export const WHATSAPP = 'https://wa.me/33768077219?text=Bonjour%2C%20voici%20une%20photo%20du%20probl%C3%A8me%20chez%20moi%20%3A'
@@ -40,7 +42,8 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil }
   return (
     <section className="relative pt-10 md:pt-14 pb-12 px-4 overflow-hidden" style={{ background: '#080808' }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.18) 0%, transparent 65%)' }} />
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className={`relative mx-auto ${PHOTOS_MAIRIES[slug] ? 'max-w-6xl lg:grid lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-10 lg:items-center' : 'max-w-4xl'}`}>
+      <div className="text-center">
         <nav className="text-xs text-white/40 mb-5" aria-label="Fil d'Ariane">
           <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
           <a href={fil.href} className="hover:text-white/70">{fil.label}</a>{' / '}
@@ -89,6 +92,22 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil }
             </li>
           ))}
         </ul>
+      </div>
+      {PHOTOS_MAIRIES[slug] && (
+        <figure className="mt-10 lg:mt-0 max-w-md mx-auto lg:max-w-none w-full">
+          <div className="relative rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.55)' }}>
+            <img src={PHOTOS_MAIRIES[slug].src} alt={`${MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}, façade`} width={760} height={900}
+              className="w-full h-64 sm:h-80 lg:h-[440px] object-cover" fetchPriority="high" />
+            <div className="absolute inset-x-0 bottom-0 p-5 text-left" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.85))' }}>
+              <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Nous intervenons {a}</p>
+              <p className="text-white font-black text-lg leading-tight">{MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}</p>
+            </div>
+          </div>
+          <figcaption className="text-[10px] text-white/35 mt-2 text-center lg:text-right">
+            Photo : <a href={PHOTOS_MAIRIES[slug].page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{PHOTOS_MAIRIES[slug].credit}</a>, {PHOTOS_MAIRIES[slug].licence}
+          </figcaption>
+        </figure>
+      )}
       </div>
     </section>
   )
@@ -162,4 +181,19 @@ export function AutresServicesVille({ nom, a, liens }: { nom: string; a: string;
       </div>
     </section>
   )
+}
+
+// Données structurées : l'entreprise (adresse réelle) et l'offre « à partir de » pour une page service + ville
+export function schemaPrestataire() {
+  return {
+    '@type': 'LocalBusiness',
+    name: 'Allo Nuisible IDF',
+    url: 'https://allonuisibleidf.fr',
+    telephone: '+33768077219',
+    priceRange: '€€',
+    address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
+  }
+}
+export function schemaOffre(prix: string, libelle: string) {
+  return { '@type': 'Offer', priceCurrency: 'EUR', price: prix, description: `À partir de ${prix} € TTC, ${libelle}`, availability: 'https://schema.org/InStock' }
 }

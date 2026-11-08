@@ -3,7 +3,7 @@ import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
-import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance } from '@/components/VilleBlocs'
+import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import BandeauDevis from '@/components/BandeauDevis'
@@ -103,8 +103,9 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         serviceType: 'Traitement des punaises de lit',
         url,
         description: v.description,
-        areaServed: { '@type': 'City', name: v.nom, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
-        provider: { '@type': 'LocalBusiness', name: 'Allo Nuisible IDF', url: SITE_URL, telephone: '+33768077219' },
+        areaServed: { '@type': 'City', name: v.nom, postalCode: codePostal(v.slug) || undefined, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
+        provider: schemaPrestataire(),
+        offers: schemaOffre('290', 'studio ou T1, 2 passages inclus'),
       },
       {
         '@type': 'FAQPage',

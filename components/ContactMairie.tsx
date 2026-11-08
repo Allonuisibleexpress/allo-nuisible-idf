@@ -146,7 +146,7 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
   return (
     <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{titre}</h2>
+        <h2 className="text-2xl md:text-3xl font-black text-white mb-8 text-center">{titre}</h2>
         <div className="grid md:grid-cols-5 gap-6">
           <div className="md:col-span-3 space-y-3">
             {t.points(a).map((alts, i) => pick(slug + service + i, alts)).map((p) => (
@@ -156,7 +156,8 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
               Pour le traitement lui-même, chez vous ou dans votre immeuble, nos techniciens interviennent rapidement, sur devis.
             </p>
           </div>
-          <div className="md:col-span-2 rounded-2xl p-6 self-start" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="md:col-span-2 rounded-2xl overflow-hidden self-start" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="p-6">
             <p className="flex items-center gap-2 text-white font-bold mb-4">
               <Landmark className="w-5 h-5 flex-shrink-0" style={{ color: ACCENT }} />{m.mairie}
             </p>
@@ -179,6 +180,7 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
                 <> · <a href={LOI_1989} target="_blank" rel="noopener noreferrer nofollow" className="underline">Loi du 6 juillet 1989</a></>
               )}
             </p>
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,11 @@ import { notFound } from 'next/navigation'
 import { villesVoisines } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
-import { avecPrix, EtiquettePrix } from '@/components/PrixGros'
+import { avecPrix } from '@/components/PrixGros'
+import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import AvisDefilants from '@/components/AvisDefilants'
+import { autresServicesVille } from '@/lib/services-ville'
+import { codePostal } from '@/lib/codes-postaux'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -31,10 +35,29 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleDeratisation(params.ville)
   if (!v) return {}
-  return pageMetadata({ title: v.title, description: v.description, path: `/deratisation/${v.slug}` })
+  const cp = codePostal(v.slug)
+  const title = titreGoogle('Dératisation', v.nom, v.slug, [' : intervention 7j/7', ' : rats et souris', ' : dès 120 €', ''])
+  const description = `Dératisation ${v.a}${cp ? ` (${cp})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
+  return pageMetadata({ title, description, path: `/deratisation/${v.slug}` })
 }
 
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
+
+// Accroche du haut de page, en rotation d'une ville à l'autre
+const ACCROCHES = [
+  'Rats ou souris : un technicien certifié trouve par où ils entrent, pose les bons dispositifs et rebouche les accès.',
+  'Bruits la nuit, crottes, emballages rongés ? Nous intervenons vite, souvent le jour même, avec une garantie d’un an.',
+  'Postes sécurisés, pièges ou piège Ekomille sans raticide : la méthode est choisie avec vous selon le lieu.',
+  'Appartement, maison, commerce ou copropriété : diagnostic, traitement et colmatage, avec attestation pour les pros.',
+  'Le plus important n’est pas seulement d’éliminer les rongeurs, mais de les empêcher de revenir : c’est notre méthode.',
+]
+
+const ETAPES = [
+  ['Appel ou photo|Une photo des crottes ou des dégâts suffit souvent pour savoir s’il s’agit de rats ou de souris. Vous avez le prix tout de suite.', 'Devis gratuit|Vous décrivez la situation, nous vous annonçons le tarif avant de nous déplacer.', 'Premier contact|Un appel ou un message WhatsApp : nous identifions le rongeur et fixons le prix, sans engagement.'],
+  ['Diagnostic|Le technicien identifie l’espèce (surmulot, rat noir, souris), les couloirs de passage et les points d’entrée.', 'Recherche des accès|Gaines, passages de tuyaux, bas de portes, grilles : chaque entrée possible est repérée.', 'Inspection|Caves, cuisine, combles et extérieurs sont contrôlés pour localiser les nids et les passages.'],
+  ['Dispositif adapté|Postes d’appâtage sécurisés et verrouillés, pièges mécaniques ou connectés, ou piège Ekomille sans raticide.', 'Traitement|Les dispositifs sont placés sur les passages, hors de portée des enfants et des animaux.', 'Pose des postes|Raticide professionnel en postes fermés à clé, ou pièges selon le lieu et vos préférences.'],
+  ['Colmatage et garantie|Les accès trouvés sont rebouchés, les postes contrôlés. Garantie 1 an, attestation pour les professionnels.', 'Suivi|Contrôle des dispositifs, accès fermés pour éviter le retour des rongeurs, garantie 1 an.', 'Fermeture des accès|Sans colmatage, d’autres rongeurs reviennent : nous bouchons les passages et vous garantissons 1 an.'],
+]
 
 export default function DeratisationVillePage({ params }: { params: { ville: string } }) {
   const v = getVilleDeratisation(params.ville)
@@ -45,6 +68,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
+  const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
   const enBref = [
     v.code === '75'
       ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`
@@ -65,8 +89,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         serviceType: 'Dératisation',
         url,
         description: v.description,
-        areaServed: { '@type': 'City', name: v.nom, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
-        provider: { '@type': 'LocalBusiness', name: 'Allo Nuisible IDF', url: SITE_URL, telephone: '+33768077219' },
+        areaServed: { '@type': 'City', name: v.nom, postalCode: codePostal(v.slug) || undefined, containedInPlace: { '@type': 'AdministrativeArea', name: v.departement } },
+        provider: schemaPrestataire(),
+        offers: schemaOffre('120', 'appartement, rats ou souris'),
       },
       {
         '@type': 'FAQPage',
@@ -88,34 +113,21 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <main>
-        {/* ── HERO ── */}
-        <section className="relative pt-10 md:pt-14 pb-14 px-4 overflow-hidden" style={{ background: '#080808' }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
-          }} />
-          <div className="relative max-w-4xl mx-auto">
-            <nav className="text-xs text-white/40 mb-5 text-center" aria-label="Fil d'Ariane">
-              <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
-              <a href="/services/deratisation" className="hover:text-white/70">Dératisation</a>{' / '}
-              <span className="text-white/60">{v.nom}</span>
-            </nav>
-            <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6 tracking-tight text-center">
-              Dératisation{' '}
-              <span style={{ color: ACCENT }}>
-                {v.a.split(' ')[0]} <span className={v.nom.length <= 16 ? 'whitespace-nowrap' : undefined}>{v.a.split(' ').slice(1).join(' ')}</span>
-              </span>
-            </h1>
+        <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Dératisation"
+          fil={{ href: '/services/deratisation', label: 'Dératisation' }}
+          prix="120 €" prixNote="Appartement, rats ou souris. Devis gratuit."
+          accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
 
+        {/* En bref */}
+        <section className="px-4 pb-4" style={{ background: '#080808' }}>
+          <div className="max-w-3xl mx-auto">
             {v.slug === CHANTIER_DIOGENE.ville && (
-              <div className="-mt-2 mb-8">
+              <div className="mb-8">
                 <VignettesChantier photos={CHANTIER_DIOGENE.photos} videos={CHANTIER_DIOGENE.videos} centre texte={`Notre dernier chantier ${v.a}`} />
               </div>
             )}
-
-            {/* En bref */}
-            <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
-              <EtiquettePrix prix="120 €" />
+            <div className="rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
               <ul className="space-y-2">
                 {enBref.map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
@@ -123,19 +135,6 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <a href={PHONE_HREF}
-                className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
-                style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
-                <Phone className="w-4 h-4" /> {PHONE}
-              </a>
-              <a href="/tarifs"
-                className="inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-125"
-                style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff' }}>
-                Devis gratuit <ArrowRight className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </section>
@@ -145,11 +144,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">Rats et souris {v.a}</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Rats et souris {v.a} : <span style={{ color: ACCENT }}>ce que nous constatons</span></h2>
             {v.contexte.map((p) => (
-              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{p}</p>
+              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
             ))}
-            <h3 className="text-lg font-black text-white mt-8 mb-4">Où chercher les signes de passage</h3>
+            <h3 className="text-lg md:text-xl font-black text-white mt-10 mb-4 text-center">Où chercher les signes de passage {v.a}</h3>
             <ul className="grid sm:grid-cols-2 gap-3">
               {v.lieux.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
@@ -157,7 +156,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                 </li>
               ))}
             </ul>
-            <p className="text-white/50 text-sm mt-4">
+            <p className="text-white/50 text-sm mt-4 text-center">
               Indices fréquents : déjections, traces de grignotage, bruits la nuit dans les cloisons, terriers au pied des murs.
             </p>
           </div>
@@ -167,13 +166,25 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
-          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60">
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
             Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: ACCENT }}>souris {v.a}</a>.
           </p>
         )}
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
+        <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe la dératisation ${v.a}`} etapes={ETAPES} />
+
+        <TarifsVille titre={`Prix d’une dératisation ${v.a}`}
+          intro="Le devis est gratuit et le prix est fixé avant l’intervention. Rats ou souris, le tarif dépend du lieu et de l’ampleur."
+          lignes={[
+            { label: 'Appartement', prix: 'dès 120 €', detail: 'Rats ou souris, postes sécurisés ou pièges' },
+            { label: 'Commerce, restaurant', prix: 'sur devis', detail: 'Attestation fournie' },
+            { label: 'Copropriété, contrat annuel', prix: 'sur devis', detail: 'Parties communes, passages réguliers' },
+          ]}
+          note="Prix TTC. Garantie 1 an sur nos traitements." />
+
         {avisVille('deratisation', v.slug).length > 0 && <AvisGoogle ordre={avisVille('deratisation', v.slug)} />}
+        <AvisDefilants depart={rang + 7} />
 
         {/* Vrai chantier dans cette ville, en photo et vidéos */}
         {v.slug === CHANTIER_DIOGENE.ville && (
@@ -186,30 +197,14 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </section>
         )}
 
-        {/* ── MÉTHODE ── */}
+        {/* ── MÉTHODE ALTERNATIVE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Notre méthode de dératisation</h2>
-            <p className="text-white/55 mb-8">
-              Deux familles de dispositifs, choisies selon le lieu et l&apos;infestation, toujours avec le colmatage des accès.
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Avec ou sans raticide : <span style={{ color: ACCENT }}>vous avez le choix</span></h2>
+            <p className="text-white/55 mb-2">
+              Postes d&apos;appâtage sécurisés ou pièges, toujours avec le colmatage des accès : la méthode est choisie selon le lieu et l&apos;infestation.
             </p>
-            <ol className="space-y-5">
-              {[
-                ['Diagnostic', 'Identification de l\'espèce (surmulot, rat noir, souris), des points d\'entrée, des couloirs de passage et des zones de nidification.'],
-                ['Dispositif adapté', 'Postes d\'appâtage sécurisés et verrouillés avec raticide professionnel, la méthode la plus courante. En méthode alternative : piège multicapture Ekomille sans raticide, pièges mécaniques et connectés.'],
-                ['Colmatage', 'Fermeture des accès trouvés (grilles, gaines, passages de tuyaux, bas de portes). Sans cette étape, d\'autres rongeurs reviennent.'],
-                ['Suivi et garantie', 'Contrôle des postes ou des pièges, ajustement si besoin, garantie 1 an et attestation pour les professionnels.'],
-              ].map(([t, txt], i) => (
-                <li key={t} className="flex gap-4">
-                  <span className="w-9 h-9 flex-shrink-0 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>
-                  <div>
-                    <p className="font-bold text-white">{t}</p>
-                    <p className="text-white/60 text-sm leading-relaxed">{txt}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <div className="rounded-2xl p-6 mt-8" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
+            <div className="rounded-2xl p-6 mt-8 text-left" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>Méthode alternative</p>
               <p className="text-lg font-black text-white mb-2">Le piège multicapture Ekomille {v.a}</p>
               <p className="text-white/70 text-sm leading-relaxed mb-3">
@@ -227,7 +222,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* ── GUIDES DU BLOG ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-6">Nos guides sur les rongeurs</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center">Nos guides pour tout comprendre sur les rats</h2>
             <div className="grid sm:grid-cols-3 gap-3">
               {v.guides.map((g) => (
                 <a key={g} href={`/blog/${g}`} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
@@ -247,7 +242,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Questions fréquentes</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-8 text-center">Vos questions sur la dératisation {v.a}</h2>
             <div className="space-y-3">
               {v.faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
@@ -284,6 +279,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </ul>
           </div>
         </section>
+
+        <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'deratisation')} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
