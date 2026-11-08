@@ -37,6 +37,7 @@ const services = [
 const navLinks = [
   { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Services', href: '#services', dropdown: true },
+  { label: 'Identifier un nuisible', court: 'Identifier', href: '/identifier-nuisible', external: true },
   { label: 'Nos interventions', href: '/nos-interventions', external: true },
   { label: 'Tarifs', href: '/tarifs', external: true },
   { label: 'Blog', href: '/blog', external: true },
@@ -195,7 +196,7 @@ export default function Navbar() {
                   href={link.href}
                   className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                 >
-                  {link.label}
+                  {link.court ? (<><span className="2xl:hidden">{link.court}</span><span className="hidden 2xl:inline">{link.label}</span></>) : link.label}
                 </a>
               ) : (
                 <button

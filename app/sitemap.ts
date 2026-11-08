@@ -16,7 +16,7 @@ const BASE = 'https://allonuisibleidf.fr'
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  const staticPages = ['', '/nos-interventions', '/blog', '/tarifs', '/professionnels']
+  const staticPages = ['', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels']
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
     'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens',
