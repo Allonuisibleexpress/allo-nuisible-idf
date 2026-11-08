@@ -123,7 +123,7 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleAcariens = Ville & { title: string }
 
-const ville = (nom: string, a: string, slug: string, contexte: [string, string], proches: string[], faq: { q: string; a: string }): VilleAcariens => {
+const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleAcariens => {
   const titres = [`Traitement anti-acariens ${a} (94)`, `Acariens ${a} (94) : traitement`, `Acariens ${a}`]
   return {
     slug,
@@ -144,6 +144,7 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
   ville('Créteil', 'à Créteil', 'creteil', [
     'À Créteil, entre le lac, les bras de la Marne et de grandes résidences, l\'humidité est un sujet dans beaucoup de logements. Or les acariens se développent justement dans les intérieurs chauds et humides.',
     'La ville accueille aussi de nombreux étudiants. Matelas fournis, chambres petites et peu aérées : un traitement de la literie à l\'entrée dans le logement permet de partir sur de bonnes bases.',
+    'Du Mont-Mesly aux bords du lac, en passant par le vieux Créteil, nous adaptons le traitement au logement : studio d\'étudiant, appartement familial ou maison avec sous-sol.',
   ], ['Maisons-Alfort', 'Saint-Maur-des-Fossés', 'Alfortville', 'Bonneuil-sur-Marne'],
   { q: 'J\'emménage dans un logement étudiant meublé : faut-il traiter le matelas ?', a: 'C\'est une bonne idée si le matelas a déjà servi, surtout si vous êtes allergique. Un passage à la vapeur sèche traite le matelas et l\'oreiller sans produit, et une housse anti-acariens intégrale protège ensuite la literie.' }),
   ville('Vitry-sur-Seine', 'à Vitry-sur-Seine', 'vitry-sur-seine', [
@@ -164,6 +165,7 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
   ville('Ivry-sur-Seine', 'à Ivry-sur-Seine', 'ivry-sur-seine', [
     'Ivry-sur-Seine compte beaucoup de logements neufs, très bien isolés. C\'est un avantage pour le chauffage, mais si l\'air est mal renouvelé, l\'humidité s\'accumule et les acariens en profitent.',
     'Dans ces appartements, le bon fonctionnement de la ventilation compte autant que le traitement : bouches propres, entrées d\'air ouvertes, et aération quotidienne.',
+    'Des nouveaux quartiers d\'Ivry Confluences aux immeubles du centre-ville et du Petit-Ivry, nous intervenons aussi bien à l\'emménagement qu\'en cas d\'allergie déclarée.',
   ], ['Vitry-sur-Seine', 'Le Kremlin-Bicêtre', 'Charenton-le-Pont', 'Villejuif'],
   { q: 'Mon logement neuf est très bien isolé : est-ce un problème pour les acariens ?', a: 'Pas en soi, à condition que l\'air soit bien renouvelé. Vérifiez que les bouches de ventilation ne sont ni bouchées ni encrassées et aérez chaque pièce au moins 10 minutes par jour, comme le conseille l\'Assurance maladie.' }),
   ville('Maisons-Alfort', 'à Maisons-Alfort', 'maisons-alfort', [
@@ -184,6 +186,8 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
   ville('Vincennes', 'à Vincennes', 'vincennes', [
     'Les appartements anciens de Vincennes ont souvent des moquettes, de gros rideaux et des tapis sur parquet. Ces textiles épais, rarement lavés, retiennent la poussière et les acariens.',
     'Nous traitons les moquettes, tapis et rideaux à la vapeur sèche ou en cryogénie, et la literie en même temps, pour ne laisser aucun réservoir dans la pièce.',
+    'Un matelas qui a suivi plusieurs déménagements, un canapé d\'occasion acheté en ligne : à Vincennes comme ailleurs, ce sont souvent eux qui font flamber les allergies, bien plus que la propreté du logement.',
+    'Près du château et du Bois, beaucoup de familles vivent dans des deux ou trois pièces où la chambre des enfants sert aussi de salle de jeux : peluches, tapis d\'éveil et coussins y rejoignent la liste des textiles à traiter.',
   ], ['Saint-Mandé', 'Fontenay-sous-Bois', 'Montreuil', 'Nogent-sur-Marne'],
   { q: 'Faut-il retirer la moquette pour se débarrasser des acariens ?', a: 'L\'Assurance maladie conseille de préférer un revêtement dur lavable aux moquettes pour les personnes allergiques. Si vous gardez la moquette, aspirez-la souvent avec un filtre HEPA et faites-la traiter en même temps que la literie.' }),
   ville('Nogent-sur-Marne', 'à Nogent-sur-Marne', 'nogent-sur-marne', [
@@ -204,11 +208,14 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
   ville('Saint-Mandé', 'à Saint-Mandé', 'saint-mande', [
     'Saint-Mandé compte de nombreux immeubles anciens, avec de grandes pièces, des rideaux épais, des tentures et des tapis. Ces textiles lourds, rarement lavés, sont des réservoirs à acariens.',
     'Nous traitons rideaux, tentures, tapis et literie à la vapeur sèche ou en cryogénie, sans les décrocher quand c\'est possible.',
+    'Commune résidentielle collée au lac et au Bois de Vincennes, Saint-Mandé abrite aussi des maisons de retraite et des résidences seniors : pour les personnes âgées ou fragiles, nous privilégions les méthodes sans produit. Chez ces publics, nous programmons l\'intervention le matin pour que la chambre soit aérée et utilisable le soir même.',
+    'Autre spécificité de Saint-Mandé : beaucoup d\'appartements donnent sur des cours fermées, peu ensoleillées. Les chambres sur cour sèchent mal, et c\'est souvent là que nous trouvons les literies les plus chargées.',
   ], ['Vincennes', 'Saint-Maurice', 'Charenton-le-Pont', 'Paris 12e'],
   { q: 'Les rideaux et tentures retiennent-ils les acariens ?', a: 'Oui, surtout s\'ils sont épais et rarement lavés. Lavez-les selon leur étiquette, ou faites-les traiter à la vapeur sèche ou en cryogénie. Pour une chambre de personne allergique, des rideaux légers et lavables sont plus faciles à entretenir.' }),
   ville('Alfortville', 'à Alfortville', 'alfortville', [
     'Alfortville, entre la Seine et la Marne, est une ville où l\'air peut être humide, surtout dans les logements bas et proches des quais. Or l\'humidité est le premier allié des acariens.',
     'Avant de traiter, nous regardons l\'humidité de la chambre : un hygromètre permet de vérifier qu\'elle reste dans la zone conseillée, et un déshumidificateur aide si elle est trop élevée.',
+    'Des tours du quartier Chantereine aux maisons proches du parc Sarrazin, le traitement s\'adapte : literie seule dans un studio, ou literie, canapés et tapis dans une maison familiale.',
   ], ['Maisons-Alfort', 'Vitry-sur-Seine', 'Créteil', 'Ivry-sur-Seine'],
   { q: 'Quel taux d\'humidité viser contre les acariens ?', a: 'L\'Assurance maladie indique un taux d\'humidité idéal entre 40 et 60 %, avec une température entre 18 et 22 °C selon les pièces. Un hygromètre, peu coûteux, permet de le vérifier dans la chambre.' }),
   ville('Saint-Maurice', 'à Saint-Maurice', 'saint-maurice', [

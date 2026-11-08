@@ -4,6 +4,7 @@ import { MEDIAS_PIGEONS } from '@/lib/photos-chantiers'
 
 const data: ServiceData = {
   badge: 'Pics · Filets · Dispositifs électriques · Sans nuire aux oiseaux',
+  devis: 'Devis gratuit dépigeonnage',
   heroTitle: 'Pigeons envahissants',
   heroHighlight: 'Protection permanente',
   heroDescription: 'Pics inox, filets sur mesure, dispositifs répulsifs : on sécurise vos toits, rebords, balcons et façades durablement. Intervention en hauteur sécurisée.',

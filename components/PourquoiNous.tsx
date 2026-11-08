@@ -32,7 +32,7 @@ const reasons = [
   {
     icon: ThumbsUp,
     title: 'Satisfaction client 5 étoiles',
-    desc: 'Noté 4,7/5 sur Google, sur 49 avis clients. Professionnalisme, ponctualité et efficacité : c\'est notre réputation.',
+    desc: 'Noté 4,8/5 sur Google, sur 57 avis clients. Professionnalisme, ponctualité et efficacité : c\'est notre réputation.',
   },
 ]
 

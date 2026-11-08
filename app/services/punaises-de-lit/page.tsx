@@ -4,7 +4,8 @@ import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
 const data: ServiceData = {
   badge: 'Urgence 7j/7 · Cryogénie · Vapeur sèche · Insecticide',
-  heroTitle: 'Punaises de lit',
+  devis: 'Devis gratuit punaises de lit',
+  heroTitle: 'Traitement punaises de lit',
   heroHighlight: 'Éradication totale',
   heroDescription: 'Deux approches professionnelles, choisies selon votre logement : cryogénie ou vapeur sèche, sans produit, et insecticide rémanent longue durée. Souvent, on combine les deux.',
   urgence: {

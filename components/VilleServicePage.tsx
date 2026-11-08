@@ -1,6 +1,8 @@
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
+import { avecPrix, premierPrix, EtiquettePrix } from '@/components/PrixGros'
+import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
@@ -16,10 +18,14 @@ import { SITE_URL } from '@/lib/seo'
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
+// Prix de départ affichés en gros (alignés sur /tarifs)
+const PRIX_DEPART: Partial<Record<ServiceLocal, string>> = { cafards: '120 €', souris: '120 €', fourmis: '120 €', acariens: '120 €', chenilles: '89 €', frelons: '89 €' }
+// Mot-clé du bandeau « devis gratuit » selon le service
+const MOT_DEVIS: Record<ServiceLocal, string> = { frelons: 'destruction de nid de frelons', fourmis: 'traitement des fourmis', cafards: 'traitement des cafards', souris: 'traitement contre les souris', chenilles: 'chenilles processionnaires', acariens: 'traitement des acariens', punaises: 'punaises de lit', deratisation: 'dératisation', commune: 'nuisibles' }
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 // Angle du texte local (components/ContexteLocal) selon la page service de la famille
 const serviceLocal = (href: string): ServiceLocal =>
-  href.includes('fourmis') ? 'fourmis' : href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
+  href.includes('fourmis') ? 'fourmis' : href.includes('guepes-frelons') ? 'frelons' : href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
 
 export type Ville = {
   slug: string
@@ -54,6 +60,7 @@ export type VilleServiceConfig = {
   sections?: { titre: string; paras: string[]; table?: { head: string[]; rows: string[][] }; liste?: string[] }[]
   protocole?: { titre: string; etapes: { titre: string; texte: string }[] }
   publics?: { titre: string; cartes: { titre: string; texte: string }[] }
+  centre?: boolean // page entièrement centrée (règle de l'utilisateur pour les nouvelles pages)
 }
 
 // Texte riche : **gras** et [ancre](/lien)
@@ -132,7 +139,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
-      <main>
+      <main className={c.centre ? 'recit-centre' : undefined}>
         {/* ── HERO ── */}
         <section className="relative pt-10 md:pt-14 pb-14 px-4 overflow-hidden" style={{ background: '#080808' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
@@ -153,10 +160,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
             <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
+              <EtiquettePrix prix={premierPrix(c.enBref) ?? PRIX_DEPART[sl] ?? null} />
               <ul className="space-y-2">
                 {enBref.map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} />{t}
+                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
                   </li>
                 ))}
               </ul>
@@ -177,12 +185,14 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           </div>
         </section>
 
+        <BandeauDevis slug={v.slug} mot={MOT_DEVIS[sl]} a={v.a} prix={premierPrix(c.enBref) ?? PRIX_DEPART[sl] ?? null} />
+
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.titre} {v.a}</h2>
             {v.contexte.map((p) => (
-              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{p}</p>
+              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>
             ))}
             <h3 className="text-lg font-black text-white mt-8 mb-4">{c.cachettes.titre}</h3>
             <ul className="grid sm:grid-cols-2 gap-3">

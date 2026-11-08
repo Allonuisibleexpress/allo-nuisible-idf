@@ -59,6 +59,8 @@ export interface ServiceData {
   photos?: PhotoKey[]
   // Vrai chantier en vidéos (remplace la galerie photos)
   chantier?: { photos?: PhotoKey[]; videos?: VideoChantier[]; titre: string; vignettes?: string; lien?: { href: string; label: string } }
+  // Mot-clé du badge « devis gratuit » sous le titre (ex. « Devis gratuit punaises de lit »)
+  devis?: string
   // Bandeau d'urgence sous le titre (ex. punaises de lit)
   urgence?: { titre: string; texte: string }
   // Tableau comparatif affiché après le déroulé (ex. cryogénie, vapeur, insecticide)
@@ -222,8 +224,13 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   Voir les tarifs <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              <p className="text-white/30 text-xs tracking-wide">
-                Devis gratuit · Réponse en 5 min · 7j/7 soirs et week-ends · Île-de-France
+              <p className="mb-2">
+                <span className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>
+                  {data.devis || 'Devis gratuit'}
+                </span>
+              </p>
+              <p className="text-white/60 text-sm tracking-wide">
+                Sans engagement · Réponse en 5 min · 7j/7 soirs et week-ends · Île-de-France
               </p>
             </div>
 

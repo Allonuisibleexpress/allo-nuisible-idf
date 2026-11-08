@@ -107,6 +107,20 @@ const TEXTES: Record<ServiceLocal, Texte> = {
       LOCATAIRE,
     ],
   },
+  frelons: {
+    nuisible: 'frelons et guêpes',
+    points: (a) => [
+      [
+        `Un nid de frelons dans un arbre de la rue, d’un parc ou d’une école : signalez-le à la mairie ${a}, qui gère l’espace public.`,
+        `Nid de frelons asiatiques sur l’espace public ${a} (square, arbre d’alignement, bâtiment communal) : c’est à la mairie qu’il faut le signaler.`,
+        `Vous repérez un nid dans un arbre public ou près d’une école ${a} ? Prévenez la mairie : l’espace public relève de ses services.`,
+      ],
+      [
+        'Certaines communes participent aux frais de destruction des nids de frelons asiatiques chez les particuliers : demandez à votre mairie si c’est le cas chez vous.',
+        'Renseignez-vous auprès de votre mairie : certaines communes aident financièrement à la destruction des nids de frelons asiatiques.',
+      ],
+    ],
+  },
   commune: {
     nuisible: 'nuisibles',
     points: (a) => [
@@ -161,7 +175,7 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
             )}
             <p className="text-white/35 text-xs mt-4">
               Source : <a href="https://lannuaire.service-public.fr/" target="_blank" rel="noopener noreferrer nofollow" className="underline">Annuaire service-public.fr</a>
-              {service !== 'chenilles' && (
+              {service !== 'chenilles' && service !== 'frelons' && (
                 <> · <a href={LOI_1989} target="_blank" rel="noopener noreferrer nofollow" className="underline">Loi du 6 juillet 1989</a></>
               )}
             </p>

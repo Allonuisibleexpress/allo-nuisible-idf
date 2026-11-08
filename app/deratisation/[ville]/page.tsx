@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { villesVoisines } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
+import { avecPrix, EtiquettePrix } from '@/components/PrixGros'
+import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
@@ -113,10 +115,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             {/* En bref */}
             <div className="rounded-2xl p-6 md:p-7 mb-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En bref</p>
+              <EtiquettePrix prix="120 €" />
               <ul className="space-y-2">
                 {enBref.map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} />{t}
+                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
                   </li>
                 ))}
               </ul>
@@ -136,6 +139,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </div>
           </div>
         </section>
+
+        <BandeauDevis slug={v.slug} mot="dératisation" a={v.a} prix="120 €" />
 
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>

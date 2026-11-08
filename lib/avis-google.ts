@@ -1,7 +1,7 @@
 // Vrais avis clients, copiés mot pour mot depuis la fiche Google Maps (relevés le 30/10/2026, complétés le 01/11/2026).
 // Ne jamais ajouter d'avis qui ne figure pas sur la fiche. Prénom + initiale uniquement.
 export const FICHE_GOOGLE_URL = 'https://maps.google.com/?cid=11887181769674817823'
-export const NOTE_GOOGLE = { note: '4,7', nombre: 50 }
+export const NOTE_GOOGLE = { note: '4,8', nombre: 57 }
 
 export type ServiceAvis = 'punaises' | 'deratisation' | 'souris' | 'cafards'
 

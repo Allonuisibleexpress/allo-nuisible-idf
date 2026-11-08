@@ -62,7 +62,7 @@ export default function Home() {
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="text-white/85 font-medium text-sm">satisfaits en Île-de-France</span>
             <span className="hidden sm:inline text-white/50">·</span>
-            <span className="text-white font-bold text-sm">Note Google 4,7/5</span>
+            <span className="text-white font-bold text-sm">Note Google 4,8/5</span>
             <span className="hidden sm:inline text-white/50">·</span>
             <span className="text-white font-bold text-sm">7j/7 · 24h/24</span>
           </div>

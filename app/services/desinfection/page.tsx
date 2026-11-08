@@ -3,6 +3,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 
 const data: ServiceData = {
   badge: 'Bactéries · Virus · Champignons · Moisissures · Attestation officielle',
+  devis: 'Devis gratuit désinfection',
   heroTitle: 'Désinfection',
   heroHighlight: 'Assainissement complet',
   heroDescription: 'Désinfection professionnelle après infestation, sinistre ou contamination. Produits biocides à large spectre. Attestation officielle fournie pour vos obligations réglementaires.',

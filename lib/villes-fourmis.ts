@@ -271,6 +271,7 @@ export const VILLES_FOURMIS: VilleFourmis[] = [
       'À Santeny, dans les maisons entourées de jardins et de champs, les fourmilières se trouvent dans les pelouses, sous les pierres et au pied des murs. Tant qu\'elles restent dehors, elles sont utiles ; c\'est quand elles entrent dans la maison qu\'il faut agir.',
       'Nous traitons uniquement les colonies qui envahissent la maison, avec un appât que les ouvrières rapportent jusqu\'à la reine.',
       'Dans les longères et maisons anciennes, les murs en pierre et les vieux joints offrent de nombreux passages : nous repérons ceux qu\'empruntent les fourmis pour y concentrer l\'appât.',
+      'Village du plateau briard à la limite de la Seine-et-Marne, Santeny est entouré de terres agricoles : après la moisson ou un labour, les colonies dérangées cherchent parfois refuge dans les maisons voisines.',
     ],
     proches: ['Villecresnes', 'Marolles-en-Brie', 'Mandres-les-Roses', 'Périgny'],
     faq: [{ q: 'Faut-il détruire toutes les fourmilières du jardin ?', a: 'Non. Au jardin, les fourmis aèrent le sol et mangent d\'autres insectes. On ne traite que les colonies qui entrent dans la maison ou qui nichent contre les murs.' }, ...FAQ_COMMUNE('à Santeny')],

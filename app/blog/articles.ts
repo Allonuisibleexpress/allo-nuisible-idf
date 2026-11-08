@@ -37,7 +37,7 @@ export const ARTICLES: Article[] = [
   // 1 ─────────────────────────────────────────────────────────────
   {
     slug: 'rat-dans-les-toilettes',
-    title: "Rat dans les toilettes : comment il remonte (et comment le bloquer)",
+    title: "Un rat dans vos toilettes ? Comment il remonte par les WC (et comment le bloquer pour de bon)",
     seoTitle: "Rat dans les toilettes : comment il remonte (et le bloquer)",
     description: "Un rat est sorti de vos WC ? Voici par où il passe, les 4 gestes à faire tout de suite et la seule protection durable : le clapet anti-retour.",
     date: '2026-09-23',
@@ -48,7 +48,7 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'p', x: "Oui, **un rat peut sortir de vos toilettes**, et ce n'est pas une légende urbaine. Le coupable est presque toujours le **surmulot** (*Rattus norvegicus*), aussi appelé rat d'égout. Il vit dans les réseaux d'assainissement, nage très bien, retient sa respiration le temps de franchir le siphon et grimpe à l'intérieur des canalisations verticales. La cuvette n'est pour lui qu'une sortie de plus." },
       { t: 'callout', tone: 'warn', title: 'Pourquoi ne pas prendre ça à la légère', x: "Selon **Santé publique France**, la France compte en moyenne **300 à 600 cas de leptospirose par an**, en hausse depuis 2014, et **les rats en sont le principal réservoir animal**. La bactérie passe par leur urine, précisément ce qu'ils laissent sur la lunette et dans la salle de bain." },
-      { t: 'h2', x: "Par où un rat remonte-t-il jusqu'aux WC ?" },
+      { t: 'h2', x: "Par où un rat remonte-t-il jusqu'à vos WC ? Le trajet expliqué" },
       { t: 'p', x: "Le trajet est toujours le même : égout public, branchement de l'immeuble, **colonne d'évacuation commune**, puis la dérivation de votre appartement. Le siphon rempli d'eau au fond de la cuvette ne l'arrête pas : quelques secondes d'apnée lui suffisent." },
       { t: 'h3', x: "Les 3 situations qui déclenchent une remontée" },
       { t: 'ul', items: [
@@ -64,7 +64,7 @@ export const ARTICLES: Article[] = [
         "**Prévenez le syndic ou le bailleur** si vous êtes en immeuble : la colonne est commune, vos voisins sont concernés.",
       ] },
       { t: 'callout', tone: 'info', title: "L'erreur qu'on voit souvent", x: "Verser de la javel ou de l'insecticide en grande quantité dans la cuvette. Cela n'élimine pas les rats du réseau, abîme les canalisations et dégage des vapeurs irritantes dans une petite pièce fermée." },
-      { t: 'h2', x: "La seule protection durable : le clapet anti-retour" },
+      { t: 'h2', x: "La seule vraie protection : le clapet anti-retour" },
       { t: 'p', x: "Le **clapet anti-retour** (ou clapet anti-rongeurs) se pose sur l'évacuation des toilettes ou sur le collecteur de l'immeuble. Il ne s'ouvre que dans le sens de l'écoulement puis se referme : un rat qui remonte trouve une porte close qu'il ne peut ni pousser ni ronger. C'est une pose de plomberie, rapide dans la plupart des configurations." },
       { t: 'table', head: ['Solution', 'Efficacité', 'Pour qui'], rows: [
         ['Abattant lesté', 'Dépannage de quelques heures', 'Tout le monde, tout de suite'],
@@ -72,7 +72,7 @@ export const ARTICLES: Article[] = [
         ['Dératisation du réseau et des parties communes', 'Fait baisser la population à la source', 'Copropriété, bailleur, commerce'],
         ['Réparation des fissures et regards', 'Supprime la cause', 'Copropriété, propriétaire'],
       ] },
-      { t: 'h2', x: "Pourquoi la dératisation doit viser tout l'immeuble" },
+      { t: 'h2', x: "Pourquoi traiter seul votre appartement ne suffit pas" },
       { t: 'p', x: "Tuer le rat sorti de la cuvette ne règle rien : il fait partie d'une colonie installée dans le réseau. Une intervention sérieuse commence par un **diagnostic des points d'accès** (caves, vide-ordures, regards, locaux poubelles), puis la pose de postes d'appâtage sécurisés aux bons endroits et un suivi. C'est ce que nous faisons lors d'une [dératisation en Île-de-France](/services/deratisation)." },
       { t: 'p', x: "Vous hésitez entre rat et souris selon les traces trouvées ? Les petites déjections et les grignotages dans les placards orientent plutôt vers la souris : voir notre article sur [les points d'entrée des souris](/blog/souris-par-ou-entrent-elles)." },
       { t: 'p', x: "Besoin d'une intervention ? Notre [dératisation](/services/deratisation) traite le réseau et les parties communes, avec colmatage des accès. Nous intervenons partout en Île-de-France, par exemple à [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses) ou à [Fontainebleau](/deratisation/fontainebleau)." },
@@ -94,8 +94,8 @@ export const ARTICLES: Article[] = [
   // 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'lerot-grenier-combles',
-    title: "Lérot dans le grenier : le « rongeur masqué » qui hiberne chez vous",
-    seoTitle: "Lérot dans le grenier : bruits la nuit (et que faire)",
+    title: "Bruits la nuit dans le grenier ? Le lérot, ce « rongeur masqué » qui hiberne chez vous",
+    seoTitle: "Bruits la nuit dans le grenier ? C'est peut-être un lérot",
     description: "Galopades au grenier la nuit, masque noir, queue touffue ? C'est sans doute un lérot. Comment le reconnaître, ce que dit la loi et comment l'écarter.",
     date: '2026-09-23',
     category: 'Rongeurs',
@@ -118,7 +118,7 @@ export const ARTICLES: Article[] = [
         ['Statut national', 'Non protégé', 'Non protégé', 'Non protégé'],
         ['Raticides autorisés', 'Non', 'Non', 'Oui'],
       ] },
-      { t: 'h2', x: "Pourquoi il choisit votre grenier en automne" },
+      { t: 'h2', x: "Pourquoi il s'invite dans votre grenier à l'automne" },
       { t: 'p', x: "Le lérot **hiberne d'octobre ou novembre jusqu'à mars ou avril**, roulé en boule dans un nid, selon les observations naturalistes. Son sommeil n'est pas continu : il alterne de longues phases de torpeur et de courts réveils, surtout lors des redoux. Un grenier isolé, calme et hors gel est pour lui l'abri idéal, d'autant qu'il y trouve souvent de quoi faire son nid dans la laine de verre." },
       { t: 'h3', x: "Les dégâts qu'il peut causer" },
       { t: 'ul', items: [
@@ -127,10 +127,10 @@ export const ARTICLES: Article[] = [
         "**Crottes et urine** accumulées sur l'isolant et les solives.",
         "**Nuisances sonores** qui empêchent de dormir sous les combles.",
       ] },
-      { t: 'h2', x: "Lérot : ce que dit vraiment la loi" },
+      { t: 'h2', x: "Lérot : ce que la loi vous autorise (et interdit)" },
       { t: 'p', x: "Beaucoup de sites affirment que le lérot est protégé. C'est inexact au niveau national : **l'arrêté du 23 avril 2007 fixant la liste des mammifères terrestres protégés ne cite, parmi les gliridés, que le muscardin**. Le lérot et le loir gris n'y figurent pas." },
       { t: 'callout', tone: 'warn', title: 'Mais pas de mort-aux-rats', x: "Les raticides sont des produits biocides autorisés pour des cibles précises : **rats et souris**. Le lérot n'en fait pas partie. En plus, un lérot empoisonné mourrait dans l'isolant, avec une odeur tenace pendant des semaines. La réponse adaptée est l'**exclusion**." },
-      { t: 'h2', x: "Comment se débarrasser d'un lérot, dans le bon ordre" },
+      { t: 'h2', x: "Se débarrasser d'un lérot : les étapes dans le bon ordre" },
       { t: 'ol', items: [
         "**Repérer les accès** : rives de toit, tuiles déplacées, arbres ou treilles qui touchent la façade, passages de câbles.",
         "**Attendre qu'il sorte** (hors pleine hibernation) ou poser un dispositif qui lui permet de sortir sans revenir.",
@@ -160,7 +160,7 @@ export const ARTICLES: Article[] = [
   // 3 ─────────────────────────────────────────────────────────────
   {
     slug: 'rongeur-moteur-voiture-cables',
-    title: "Câbles rongés sous le capot : rat, souris ou fouine ?",
+    title: "Câbles rongés sous le capot : rat, souris ou fouine ? Comment trouver le coupable et protéger votre voiture",
     seoTitle: "Câbles de voiture rongés : rat, souris ou fouine ?",
     description: "Voyant allumé, câbles grignotés, isolant arraché sous le capot ? Voici comment savoir qui est passé, ce que couvre l'assurance et comment protéger la voiture.",
     date: '2026-09-23',
@@ -178,16 +178,16 @@ export const ARTICLES: Article[] = [
         ['Traces', 'Traînées grasses', 'Peu visibles', 'Empreintes de pattes sur le capot'],
       ] },
       { t: 'callout', tone: 'info', title: 'Bon à savoir', x: "La **fouine n'est pas un rongeur** : c'est un mustélidé, un petit carnivore. Les raticides ne la concernent pas et une dératisation ne la fera pas partir. D'où l'intérêt de bien identifier l'auteur avant d'agir." },
-      { t: 'h2', x: "Pourquoi les rongeurs s'attaquent aux voitures" },
+      { t: 'h2', x: "Pourquoi votre moteur attire les rongeurs" },
       { t: 'ul', items: [
         "**La chaleur du moteur** : en automne et en hiver, un moteur tiède est un abri recherché.",
         "**L'immobilisation** : une voiture qui ne roule pas pendant plusieurs jours devient un gîte tranquille.",
         "**La proximité d'une source de nourriture** : poubelles, local vélos, stockage dans le box, jardin.",
         "**Le besoin de ronger** : les incisives des rongeurs poussent en continu, ils usent tout ce qui est à portée.",
       ] },
-      { t: 'h2', x: "Qui paie les réparations ?" },
+      { t: 'h2', x: "Réparations : qui paie la facture ?" },
       { t: 'p', x: "D'après les guides des assureurs (MAIF, Leocare), les dégâts de rongeurs vont **de quelques dizaines à plusieurs centaines d'euros** et ne sont généralement couverts que par une formule **tous risques**. En assurance au tiers, ils sont le plus souvent exclus. Prenez des photos des câbles et des crottes avant réparation : elles servent à la déclaration." },
-      { t: 'h2', x: "Comment protéger sa voiture durablement" },
+      { t: 'h2', x: "Protéger votre voiture pour de bon : les solutions qui marchent" },
       { t: 'ol', items: [
         "**Traiter la source** : si les rongeurs vivent dans le parking souterrain, le box ou le jardin, la voiture sera réattaquée. C'est là qu'une [dératisation](/services/deratisation) agit.",
         "**Rouler régulièrement** ou déplacer la voiture : une place fixe et un moteur froid attirent moins qu'un véhicule immobile.",
@@ -216,7 +216,7 @@ export const ARTICLES: Article[] = [
   // 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'souris-par-ou-entrent-elles',
-    title: "Souris : par où entrent-elles dans la maison ? (le test du crayon)",
+    title: "Souris dans la maison : par où entrent-elles ? Le test du crayon qui vous le dit tout de suite",
     seoTitle: "Souris : par où entrent-elles ? (le test du crayon)",
     description: "Une souris passe par un trou de 6 mm, la largeur d'un crayon. Les 8 points d'entrée à vérifier cet automne et comment les boucher sans erreur.",
     date: '2026-09-23',
@@ -228,7 +228,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "**Une souris passe par un trou de 6 mm**, soit la largeur d'un crayon. Un rat passe par 2 cm, à peu près une pièce de 2 €. La raison est anatomique : seul le crâne est rigide, le reste du corps suit. Voilà pourquoi les souris réapparaissent chaque automne dans des maisons qui semblent pourtant « bien fermées »." },
       { t: 'h2', x: "Le test du crayon : vérifier un trou en 2 secondes" },
       { t: 'p', x: "Prenez un crayon de papier. **Si le crayon passe, une souris passe.** Faites le tour de la maison avec, en commençant par les endroits sombres et peu fréquentés. C'est la méthode la plus simple pour dresser la liste des trous à boucher." },
-      { t: 'h2', x: "Les 8 points d'entrée à vérifier en priorité" },
+      { t: 'h2', x: "Les 8 entrées secrètes à vérifier en priorité" },
       { t: 'ol', items: [
         "**Passages de tuyaux** sous l'évier, derrière le lave-linge et le lave-vaisselle.",
         "**Gaines électriques et de fibre** qui traversent les murs.",
@@ -239,7 +239,7 @@ export const ARTICLES: Article[] = [
         "**Garage et cellier**, qui communiquent souvent avec la maison.",
         "**Conduits de cheminée** et tuiles déplacées pour les souris grimpeuses.",
       ] },
-      { t: 'h2', x: "Avec quoi boucher (et ce qui ne marche pas)" },
+      { t: 'h2', x: "Avec quoi boucher les trous (et ce qui ne marche pas du tout)" },
       { t: 'table', head: ['Matériau', 'Efficace ?', 'Commentaire'], rows: [
         ['Laine d\'acier + mastic ou mortier', 'Oui', 'La souris ne peut pas ronger l\'acier'],
         ['Grillage métallique mailles de 6 mm maximum', 'Oui', 'Idéal pour aérations et vides sanitaires'],
@@ -248,7 +248,7 @@ export const ARTICLES: Article[] = [
         ['Scotch, carton, papier', 'Non', 'Aucune résistance'],
       ] },
       { t: 'callout', tone: 'warn', title: "L'erreur qui aggrave tout", x: "Boucher les trous **alors que des souris sont encore dedans**. Elles se retrouvent enfermées, cherchent de nouvelles sorties en rongeant et se reproduisent sur place. Le bon ordre : **éliminer d'abord, calfeutrer ensuite**." },
-      { t: 'h2', x: "Pourquoi l'automne est la saison des souris" },
+      { t: 'h2', x: "Automne : la saison où les souris débarquent" },
       { t: 'p', x: "Dès que les températures baissent, les souris quittent jardins, champs et abords pour chercher chaleur et nourriture à l'intérieur. C'est le moment où la plupart des appels commencent en Île-de-France, en pavillon comme en immeuble. Faire la tournée du crayon **en septembre et octobre** évite une bonne partie des invasions." },
       { t: 'p', x: "Déjà des crottes dans les placards ? Il faut traiter avant de calfeutrer. Notre équipe de [dératisation en Île-de-France](/services/deratisation) élimine les souris présentes puis vous indique précisément les points à boucher. Des bruits plutôt dans les combles ? Lisez notre article sur [le lérot au grenier](/blog/lerot-grenier-combles)." },
       { t: 'p', x: "Si les souris sont déjà installées, notre [dératisation](/services/deratisation) combine dispositif adapté et colmatage des entrées. Nous intervenons notamment à [Gif-sur-Yvette](/deratisation/gif-sur-yvette) et à [Maisons-Laffitte](/deratisation/maisons-laffitte)." },
@@ -271,7 +271,7 @@ export const ARTICLES: Article[] = [
   // 5 ─────────────────────────────────────────────────────────────
   {
     slug: 'terre-de-diatomee-punaises-de-lit',
-    title: "Terre de diatomée contre les punaises de lit : ce qu'elle fait vraiment",
+    title: "Terre de diatomée contre les punaises de lit : miracle ou perte de temps ? Ce qu'elle fait vraiment",
     seoTitle: "Terre de diatomée punaises de lit : efficace ou piège ?",
     description: "La terre de diatomée tue les punaises de lit, mais lentement, pas les œufs, et mal en milieu humide. Mode d'emploi honnête, erreurs à éviter et limites.",
     date: '2026-09-23',
@@ -282,16 +282,16 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'p', x: "La **terre de diatomée** est l'une des solutions « naturelles » les plus recommandées contre les punaises de lit. Elle agit réellement, mais pas comme on le croit : **elle ne tue pas vite, elle ne tue pas les œufs** et elle échoue souvent parce qu'elle est mal appliquée. Voici ce qu'il faut savoir avant d'en acheter un sac." },
       { t: 'callout', tone: 'info', title: "Le contexte en chiffres", x: "Selon l'**ANSES**, **11 % des ménages français** ont été infestés par les punaises de lit entre 2017 et 2022, pour un **coût moyen de 866 € par ménage**. Une bonne part de ce coût vient des tentatives ratées qui laissent l'infestation s'installer." },
-      { t: 'h2', x: "Comment la terre de diatomée tue une punaise" },
+      { t: 'h2', x: "Comment elle tue une punaise de lit" },
       { t: 'p', x: "Il s'agit de squelettes fossilisés d'algues microscopiques, réduits en poudre. Quand une punaise traverse cette poudre, les particules **rayent la couche cireuse de sa cuticule** et absorbent ses lipides. L'insecte se **déshydrate** progressivement et meurt. C'est une action mécanique, pas chimique : pas de résistance possible, mais un effet lent." },
-      { t: 'h2', x: "Les 4 limites à connaître" },
+      { t: 'h2', x: "Les 4 limites qu'on ne vous dit pas" },
       { t: 'ol', items: [
         "**Elle est lente** : il faut plusieurs jours de contact, pendant lesquels les punaises continuent de piquer et de pondre.",
         "**Elle ne tue pas les œufs** : il faut que les larves écloses traversent à leur tour la poudre, donc la laisser en place plusieurs semaines.",
         "**L'humidité la neutralise** : dans une pièce humide ou après un nettoyage à la vapeur, la poudre agglomérée perd son effet.",
         "**Les punaises contournent les tas** : une couche épaisse et visible est évitée. Seul un voile quasi invisible fonctionne.",
       ] },
-      { t: 'h2', x: "Mode d'emploi honnête" },
+      { t: 'h2', x: "Le mode d'emploi honnête" },
       { t: 'ol', items: [
         "Choisir une terre de diatomée **non calcinée** (dite « blanche » ou d'usage alimentaire). La terre **calcinée** contient de la silice cristalline, à ne pas respirer.",
         "Appliquer avec une **poire à poudrer**, en voile très fin, dans les **plinthes, fentes du sommier, dessous du lit, cadres de lit, prises murales hors tension**.",
@@ -304,7 +304,7 @@ export const ARTICLES: Article[] = [
         ['Vapeur sèche haute température', 'Oui, au contact', 'Oui, au contact', 'Immédiate mais locale'],
         ['Traitement professionnel combiné', 'Oui', 'Oui (protocole en plusieurs passages)', 'Quelques semaines pour l\'éradication'],
       ] },
-      { t: 'h2', x: "Quand elle est utile… et quand elle fait perdre du temps" },
+      { t: 'h2', x: "Utile ou perte de temps ? Le verdict" },
       { t: 'p', x: "Utile : **en complément** d'un traitement professionnel, comme barrière dans les interstices, ou en prévention dans les plinthes d'une chambre d'amis. Contre-productive : **en solution unique** face à une infestation installée. Pendant que la poudre agit lentement, la population continue de croître et peut se disperser dans les pièces voisines." },
       { t: 'p', x: "Si vous voyez des piqûres alignées au réveil, des taches noires sur le sommier ou des punaises vivantes, faites intervenir un professionnel. Notre protocole de [traitement des punaises de lit en Île-de-France](/services/punaises-de-lit) combine vapeur, produits biocides autorisés et passages de contrôle." },
       { t: 'p', x: "Pour un traitement efficace, nos techniciens interviennent notamment à [Vincennes](/punaises-de-lit/vincennes) et à [Saint-Mandé](/punaises-de-lit/saint-mande)." },
@@ -327,7 +327,7 @@ export const ARTICLES: Article[] = [
   // 6 ─────────────────────────────────────────────────────────────
   {
     slug: 'gel-anti-cafard-ne-marche-pas',
-    title: "Gel anti-cafard qui ne marche pas : les 5 raisons (dont une génétique)",
+    title: "Votre gel anti-cafard ne marche pas ? Les 5 raisons (dont une génétique) et la solution",
     seoTitle: "Gel anti-cafard inefficace : 5 raisons (dont 1 génétique)",
     description: "Vous posez du gel et les blattes reviennent ? Aversion au glucose, gel mal placé, spray par-dessus, oothèques : les 5 causes d'échec et comment les corriger.",
     date: '2026-09-23',
@@ -356,7 +356,7 @@ export const ARTICLES: Article[] = [
         ['Cuisine non nettoyée', 'Supprimer miettes et graisses avant la pose'],
         ['Arrêt au bout d\'une semaine', 'Renouveler et suivre plusieurs semaines'],
       ] },
-      { t: 'h2', x: "Pourquoi il ne faut pas laisser traîner" },
+      { t: 'h2', x: "Pourquoi chaque semaine compte contre les cafards" },
       { t: 'p', x: "Une étude menée à Rennes (Cloarec et al., 1992) a isolé **une trentaine d'espèces de bactéries** sur des blattes prélevées dans 52 appartements, et leurs déjections libèrent des allergènes impliqués dans l'asthme. En habitat collectif, une infestation non maîtrisée passe par les gaines techniques d'un appartement à l'autre." },
       { t: 'p', x: "Si après deux tentatives les blattes sont toujours là, un [traitement professionnel des cafards](/services/cafards-blattes) combine inspection des refuges, rotation des gels, pièges de contrôle et suivi. Pour les établissements alimentaires, voir aussi nos obligations [plan de lutte en restauration](/blog/restaurant-plan-lutte-nuisibles)." },
       { t: 'p', x: "Nos techniciens traitent les cafards en 2 passages, avec gel, insecticide, vapeur sèche ou cryogénie, notamment à [Vincennes](/cafards/vincennes), [Saint-Mandé](/cafards/saint-mande), [Saint-Maurice](/cafards/saint-maurice) et [Sucy-en-Brie](/cafards/sucy-en-brie)." },
@@ -379,7 +379,7 @@ export const ARTICLES: Article[] = [
   // 7 ─────────────────────────────────────────────────────────────
   {
     slug: 'tapinoma-magnum-fourmi-invasive',
-    title: "Tapinoma magnum : la fourmi invasive qui sent le beurre rance",
+    title: "Tapinoma magnum : la fourmi invasive qui sent le beurre rance et forme des supercolonies",
     seoTitle: "Tapinoma magnum : la fourmi invasive qui arrive au nord",
     description: "Fourmis noires brillantes par milliers, odeur de beurre rance quand on les écrase ? C'est peut-être Tapinoma magnum. Identification, risques et traitement.",
     date: '2026-09-23',
@@ -389,7 +389,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/fourmis', label: 'Traitement des fourmis en Île-de-France' },
     blocks: [
       { t: 'p', x: "Des **fourmis noires et brillantes** qui envahissent terrasse, cuisine et salle de bain par milliers, et une **odeur de beurre rance** quand on en écrase une : ces deux indices suffisent souvent à reconnaître ***Tapinoma magnum***, une fourmi invasive venue du pourtour méditerranéen qui s'installe désormais de plus en plus au nord." },
-      { t: 'h2', x: "Comment reconnaître Tapinoma magnum" },
+      { t: 'h2', x: "Comment la reconnaître (l'odeur ne trompe pas)" },
       { t: 'ul', items: [
         "**Couleur** : noir brillant, presque vernie.",
         "**Taille variable** dans une même colonie, d'environ **2 à 5 mm**.",
@@ -397,10 +397,10 @@ export const ARTICLES: Article[] = [
         "**Comportement** : très rapide, en **pistes denses** et continues, jour et nuit par temps doux.",
         "**Nids** : sous les dalles, pavés et bordures, avec de petits monticules de terre fine.",
       ] },
-      { t: 'h2', x: "Pourquoi on parle de supercolonie" },
+      { t: 'h2', x: "Supercolonie : pourquoi elle est si difficile à éliminer" },
       { t: 'p', x: "Selon des chercheurs de l'**Université de Montpellier** (article publié dans *The Conversation*), les colonies observées sont constituées de **nombreux nids interconnectés** par des pistes permanentes, un réseau pouvant couvrir **plusieurs hectares**, avec des centaines de reines. Ces fourmis ont été repérées dès **2011** en France, en Allemagne et en Italie, et sont aujourd'hui signalées du pourtour méditerranéen jusqu'à la région nantaise et la frontière rhénane." },
       { t: 'callout', tone: 'warn', title: "Pourquoi les appâts du supermarché échouent", x: "Un appât classique élimine au mieux un nid. Avec des dizaines de nids reliés et des centaines de reines, **la colonie se réorganise en quelques jours**. Pulvériser un insecticide sur une piste fait même éclater les nids en de nouveaux foyers." },
-      { t: 'h2', x: "Quels dégâts et quels risques ?" },
+      { t: 'h2', x: "Dégâts et risques : ce qu'il faut savoir" },
       { t: 'ul', items: [
         "**Pas de danger direct pour la santé** : elle ne pique pas de façon notable et ne transmet pas de maladie connue.",
         "**Envahissement massif** des logements, notamment cuisines et pièces d'eau.",
@@ -408,9 +408,9 @@ export const ARTICLES: Article[] = [
         "**Soulèvement de pavés** et de dalles de terrasse.",
         "**Élevage de pucerons** dans le jardin et éviction des fourmis locales.",
       ] },
-      { t: 'h2', x: "Comment elle arrive jusqu'à chez vous" },
+      { t: 'h2', x: "Comment elle arrive jusqu'à votre jardin" },
       { t: 'p', x: "Principalement par les **échanges commerciaux** : **plantes en pot, terre, matériaux de construction**. Un olivier ou un agrume acheté en pépinière du sud, une livraison de terre végétale ou de sable peuvent suffire à introduire une colonie. Avant de planter, **inspectez les mottes** : pistes de fourmis noires brillantes, odeur caractéristique." },
-      { t: 'h2', x: "Le traitement qui fonctionne" },
+      { t: 'h2', x: "Le traitement qui fonctionne vraiment" },
       { t: 'ol', items: [
         "**Cartographier** tous les nids et pistes, y compris chez les voisins si la colonie déborde.",
         "**Combiner** appâts adaptés et traitement ciblé des nids, dans le bon ordre.",
@@ -436,7 +436,7 @@ export const ARTICLES: Article[] = [
   // 8 ─────────────────────────────────────────────────────────────
   {
     slug: 'nid-de-frelon-en-hiver',
-    title: "Nid de frelon en hiver : faut-il vraiment le détruire ?",
+    title: "Nid de frelon en hiver : faut-il vraiment le détruire ? La réponse va vous surprendre",
     seoTitle: "Nid de frelon en hiver : faut-il vraiment le détruire ?",
     description: "En hiver, un nid de frelons asiatiques est vide et ne sera jamais réutilisé. Mais en octobre et novembre, il fabrique les reines de l'an prochain. Le bon calendrier.",
     date: '2026-09-23',
@@ -446,17 +446,17 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/guepes-frelons', label: 'Destruction de nids de guêpes et frelons en Île-de-France' },
     blocks: [
       { t: 'p', x: "Les feuilles tombent et vous découvrez **une énorme boule en haut d'un arbre** : un nid de frelons asiatiques, invisible tout l'été. Faut-il le faire détruire ? **Tout dépend de la date.** Un nid détruit en octobre et un nid détruit en janvier n'ont pas du tout le même intérêt." },
-      { t: 'h2', x: "Le cycle d'un nid de frelons asiatiques en un coup d'œil" },
+      { t: 'h2', x: "La vie d'un nid de frelons asiatiques en un coup d'œil" },
       { t: 'table', head: ['Période', 'Ce qui se passe', 'Détruire ?'], rows: [
         ['Printemps', 'La fondatrice crée seule un nid primaire', 'Oui, petit nid facile'],
         ['Été', 'Le nid secondaire grossit, des milliers d\'ouvrières', 'Oui, surtout près des habitations'],
         ['Septembre à novembre', 'Le nid produit mâles et futures reines', 'Oui, impact maximal'],
         ['Décembre à février', 'Le nid se vide, les ouvrières meurent', 'Inutile s\'il est vide'],
       ] },
-      { t: 'h2', x: "En hiver, le nid est vide et ne sera jamais réutilisé" },
+      { t: 'h2', x: "En hiver, le nid est vide : il ne sera jamais réutilisé" },
       { t: 'p', x: "Les nids de frelons asiatiques **se vident progressivement à la fin de l'automne** et sont en général abandonnés en début d'année. Comme le rappelle le **Muséum national d'Histoire naturelle**, ils **ne sont pas réutilisés** : les jeunes reines fécondées quittent le nid, hivernent dans des abris (bois dégradé, interstices) et construiront un nid neuf au printemps, ailleurs. La vieille reine, les ouvrières et les mâles meurent." },
       { t: 'callout', tone: 'ok', title: "En pratique", x: "Un nid **sans aucune activité** en décembre ou janvier n'est pas une menace. Le faire « détruire » par un prestataire est une dépense inutile, sauf s'il faut le décrocher parce qu'il risque de tomber." },
-      { t: 'h2', x: "En automne, c'est le moment où la destruction compte le plus" },
+      { t: 'h2', x: "L'automne, le vrai moment où il faut agir" },
       { t: 'p', x: "C'est en **fin d'été et en automne** que le nid produit les **futures fondatrices**. Chaque nid laissé actif jusqu'en novembre peut libérer de nombreuses reines, donc potentiellement de nombreux nids l'année suivante. Le **frelon asiatique** est désormais présent dans **96 départements**, et sa progression se joue en partie à ce moment-là." },
       { t: 'h3', x: "Comment savoir si un nid est encore actif ?" },
       { t: 'ul', items: [
@@ -465,7 +465,7 @@ export const ARTICLES: Article[] = [
         "Aucun mouvement pendant plusieurs jours doux, nid abîmé par le vent : il est probablement abandonné.",
       ] },
       { t: 'callout', tone: 'warn', title: "Ne l'approchez pas", x: "Un nid actif en octobre contient encore beaucoup de frelons défensifs. Ne tirez pas dessus, ne l'arrosez pas, ne le percez pas. Même un nid qui semble calme peut réagir aux vibrations." },
-      { t: 'h2', x: "Et les nids de guêpes ?" },
+      { t: 'h2', x: "Et les nids de guêpes, même combat ?" },
       { t: 'p', x: "Le principe est le même : les nids de guêpes communes sont **annuels**, abandonnés en hiver et non réutilisés. Un vieux nid dans un grenier ou un cabanon peut être retiré sans risque en plein hiver s'il n'y a plus aucune activité." },
       { t: 'p', x: "Un doute sur l'activité d'un nid cet automne ? Envoyez une photo. Nous intervenons pour la [destruction de nids de guêpes et frelons en Île-de-France](/services/guepes-frelons), y compris en hauteur." },
     ],
@@ -487,7 +487,7 @@ export const ARTICLES: Article[] = [
   // 9 ─────────────────────────────────────────────────────────────
   {
     slug: 'nid-de-pigeon-balcon-enlever',
-    title: "Nid de pigeon sur le balcon : a-t-on le droit de l'enlever ?",
+    title: "Nid de pigeon sur le balcon : a-t-on le droit de l'enlever ? Ce que dit la loi (et les solutions)",
     seoTitle: "Nid de pigeon sur le balcon : a-t-on le droit de l'enlever ?",
     description: "Nid vide, œufs ou pigeonneaux : ce que vous pouvez faire, ce qui est interdit, l'amende pour nourrissage et les protections qui empêchent le retour.",
     date: '2026-09-23',
@@ -497,7 +497,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/pigeons', label: 'Anti-pigeons en Île-de-France' },
     blocks: [
       { t: 'p', x: "Un couple de pigeons a installé un **nid sur votre balcon**, dans une jardinière ou derrière le climatiseur. Vous avez le droit d'agir, mais **pas n'importe comment ni à n'importe quel moment**. Tout dépend de ce que contient le nid." },
-      { t: 'h2', x: "Ce que dit la loi, simplement" },
+      { t: 'h2', x: "Ce que dit la loi, en clair" },
       { t: 'p', x: "Le **pigeon biset** (*Columba livia*), le pigeon des villes, **ne figure pas sur la liste des oiseaux protégés** fixée par l'arrêté du 29 octobre 2009. Cela ne veut pas dire que tout est permis : la destruction d'œufs ou de jeunes vivants reste à proscrire, et la maltraitance animale est sanctionnée." },
       { t: 'table', head: ['Situation', 'Que faire ?'], rows: [
         ['Pigeons qui repèrent le balcon, pas encore de nid', 'Agir tout de suite : retirer brindilles, poser une protection'],
@@ -508,7 +508,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'info', title: "Combien de temps attendre ?", x: "Comptez **environ un mois et demi entre la ponte et l'envol** des pigeonneaux. Profitez de ce délai pour préparer la pose de la protection, qui sera installée juste après leur départ, sinon le couple repondra au même endroit." },
       { t: 'h2', x: "Nourrir les pigeons : interdit et sanctionné" },
       { t: 'p', x: "L'**article 120 du règlement sanitaire départemental** interdit de jeter ou déposer des graines ou de la nourriture susceptibles d'attirer les pigeons, sur la voie publique comme dans les cours et parties d'immeuble quand cela gêne le voisinage ou attire des rongeurs. L'infraction relève de la **contravention de 3e classe**, jusqu'à **450 €**. Si un voisin nourrit les pigeons, c'est souvent la vraie cause du problème : signalez-le au syndic ou à la mairie." },
-      { t: 'h2', x: "Retirer un nid vide sans risque" },
+      { t: 'h2', x: "Retirer un nid vide sans risque, étape par étape" },
       { t: 'ol', items: [
         "**Gants et masque** : les fientes sèches forment une poussière à ne pas respirer.",
         "**Humidifier** les fientes avant de gratter, pour éviter la poussière.",
@@ -516,7 +516,7 @@ export const ARTICLES: Article[] = [
         "**Désinfecter** la surface.",
         "**Poser une protection** le jour même, sinon ils reviennent.",
       ] },
-      { t: 'h2', x: "Les protections qui empêchent vraiment le retour" },
+      { t: 'h2', x: "Les protections qui les empêchent vraiment de revenir" },
       { t: 'ul', items: [
         "**Filet anti-pigeons** : ferme totalement la loggia ou le balcon, la solution la plus radicale.",
         "**Pics anti-pigeons** : sur rebords, garde-corps et dessus de climatiseur.",
@@ -543,8 +543,8 @@ export const ARTICLES: Article[] = [
   // 10 ────────────────────────────────────────────────────────────
   {
     slug: 'restaurant-plan-lutte-nuisibles',
-    title: "Restaurant : le plan de lutte contre les nuisibles exigé au contrôle",
-    seoTitle: "Plan de lutte nuisibles restaurant : ce que vérifie la DDPP",
+    title: "Restaurant : le plan de lutte contre les nuisibles que l'inspecteur va vous demander",
+    seoTitle: "Restaurant : le plan anti-nuisibles exigé par l'inspecteur",
     description: "Règlement 852/2004, PMS, registre, obligation de résultat : ce que l'inspecteur regarde dans votre plan de lutte contre les nuisibles, et les erreurs qui coûtent cher.",
     date: '2026-09-23',
     category: 'Professionnels',
@@ -553,12 +553,12 @@ export const ARTICLES: Article[] = [
     service: { href: '/professionnels', label: 'Contrats nuisibles pour professionnels' },
     blocks: [
       { t: 'p', x: "Si vous tenez un **restaurant, une boulangerie ou un commerce de bouche** en Île-de-France, votre **plan de lutte contre les nuisibles** est l'un des premiers documents que l'inspecteur de la DDPP demandera. Ce n'est pas une formalité : c'est un point qui peut faire basculer un contrôle." },
-      { t: 'h2', x: "D'où vient l'obligation ?" },
+      { t: 'h2', x: "D'où vient l'obligation ? Les textes en clair" },
       { t: 'p', x: "Du **règlement (CE) n° 852/2004** relatif à l'hygiène des denrées alimentaires, dit « paquet hygiène ». Son annexe II impose que les locaux permettent de bonnes pratiques d'hygiène, **notamment en luttant contre les nuisibles**. En pratique, cela se traduit par un plan de lutte intégré à votre **Plan de Maîtrise Sanitaire (PMS)**, au même titre que le nettoyage ou la maîtrise des températures." },
       { t: 'callout', tone: 'warn', title: "Obligation de résultat", x: "Avoir un contrat ne suffit pas. **Vous devez garantir l'absence de nuisibles.** Des crottes de souris sous un meuble ou des blattes dans un joint de chambre froide sont une non-conformité, même avec un prestataire qui passe tous les trimestres." },
-      { t: 'h2', x: "Un contrat de dératisation est-il obligatoire ?" },
+      { t: 'h2', x: "Un contrat de dératisation est-il vraiment obligatoire ?" },
       { t: 'p', x: "Aucun texte n'impose de signer un contrat avec une entreprise précise, ni un nombre fixe de passages. Mais vous devez **prouver** que la lutte est organisée et efficace. Un contrat avec un prestataire certifié **Certibiocide**, qui fournit rapports et traçabilité, est de loin la manière la plus simple d'apporter cette preuve. La fréquence des passages se fixe selon le risque : activité, environnement, historique." },
-      { t: 'h2', x: "Ce que l'inspecteur vérifie dans votre classeur" },
+      { t: 'h2', x: "Ce que l'inspecteur regarde dans votre classeur" },
       { t: 'ul', items: [
         "**Le plan des postes** : où sont les boîtes d'appâtage, pièges et désinsectiseurs, numérotés.",
         "**Les rapports de passage** datés et signés, avec constats et consommations.",
@@ -567,14 +567,14 @@ export const ARTICLES: Article[] = [
         "**Le certificat Certibiocide** de l'entreprise intervenante.",
         "**L'état réel des locaux** : l'inspecteur regarde aussi derrière les équipements.",
       ] },
-      { t: 'h2', x: "Ce que vous risquez" },
+      { t: 'h2', x: "Ce que vous risquez en cas de contrôle" },
       { t: 'table', head: ['Constat', 'Suite possible'], rows: [
         ['Plan incomplet, pas de traces', 'Avertissement, mise en demeure'],
         ['Présence de nuisibles sans action corrective', 'Mise en demeure, contrôle de suivi'],
         ['Infestation avec risque pour la santé', 'Fermeture administrative'],
       ] },
       { t: 'p', x: "Depuis 2017, les résultats des contrôles sanitaires sont **publiés sur Alim'confiance**, consultable par vos clients. Un niveau « à améliorer » ou « à corriger de manière urgente » se voit." },
-      { t: 'h2', x: "Les 5 erreurs qu'on voit le plus en restauration" },
+      { t: 'h2', x: "Les 5 erreurs qui coûtent cher en restauration" },
       { t: 'ol', items: [
         "**Un classeur à jour mais des postes vides** depuis des mois.",
         "**Un aérosol acheté en grande surface** utilisé en cuisine, sans fiche et qui disperse les blattes.",
@@ -604,8 +604,8 @@ export const ARTICLES: Article[] = [
   // 11 ─────────────────────────────────────────────────────────────
   {
     slug: 'rats-dans-les-combles',
-    title: "Rats dans les combles : signes, dératisation et prévention",
-    seoTitle: "Rats dans les combles : signes, dératisation et prévention",
+    title: "Rats dans les combles : les signes qui ne trompent pas et comment s'en débarrasser",
+    seoTitle: "Rats dans les combles : les signes et comment les chasser",
     description: "Bruits la nuit au-dessus du plafond ? Comment reconnaître des rats dans les combles, par où ils entrent, comment les traiter et éviter leur retour.",
     date: '2026-10-30',
     category: 'Rongeurs',
@@ -614,7 +614,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Des grattements et des petites courses au-dessus du plafond, surtout la nuit : c'est le signe le plus courant d'un rongeur dans les combles. Le coupable est souvent le **rat noir** (*Rattus rattus*), un grimpeur agile qui préfère les hauteurs, d'où son surnom de **rat des greniers**. Son cousin le **surmulot** (*Rattus norvegicus*) vit plutôt en bas : caves, vides sanitaires, réseaux d'eaux usées. Avant de traiter, il faut donc savoir à qui l'on a affaire." },
-      { t: 'h2', x: "Rat, souris ou lérot : qui fait du bruit dans les combles ?" },
+      { t: 'h2', x: "Rat, souris ou lérot : qui fait ce bruit au-dessus de votre tête ?" },
       { t: 'table', head: ['Animal', 'Où on le trouve', 'Indices'], rows: [
         ['Rat noir', 'Combles, greniers, toitures', 'Déjections en fuseau, traces grasses sur les poutres, isolant creusé'],
         ['Surmulot', 'Caves, vide sanitaire, réseaux, rarement en hauteur', 'Terriers, déjections plus grosses, remontées par les canalisations'],
@@ -622,7 +622,7 @@ export const ARTICLES: Article[] = [
         ['Lérot', 'Combles proches des bois, du printemps à l\'automne', 'Bruits très forts la nuit, masque noir autour des yeux'],
       ] },
       { t: 'p', x: "Le lérot ne se traite pas comme un rat : si vous avez un doute, lisez notre article sur [le lérot dans le grenier](/blog/lerot-grenier-combles). Pour les souris, voir [par où elles entrent](/blog/souris-par-ou-entrent-elles)." },
-      { t: 'h2', x: "Les signes d'une présence de rats dans les combles" },
+      { t: 'h2', x: "Les signes qui prouvent qu'un rat est là-haut" },
       { t: 'ul', items: [
         "**Bruits de course et de grattement**, surtout en début et en fin de nuit.",
         "**Déjections** sur l'isolant, le long des poutres et près de la trappe d'accès.",
@@ -632,7 +632,7 @@ export const ARTICLES: Article[] = [
         "**Odeur d'urine forte** dans un espace peu aéré.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Les câbles rongés, un vrai risque', x: "Les rongeurs entretiennent leurs dents en rongeant, y compris les gaines électriques. Un fil mis à nu peut provoquer un court-circuit et un départ de feu. Si des câbles sont touchés, faites vérifier l'installation par un électricien après la dératisation." },
-      { t: 'h2', x: "Par où les rats montent-ils dans les combles ?" },
+      { t: 'h2', x: "Par où montent-ils ? Les chemins insoupçonnés" },
       { t: 'ul', items: [
         "**Tuiles déplacées**, faîtage ou rives mal jointoyés, souvent après une tempête.",
         "**Gouttières et descentes** d'eaux pluviales, que le rat noir escalade facilement.",
@@ -640,10 +640,10 @@ export const ARTICLES: Article[] = [
         "**Gaines techniques, passages de câbles et conduits de VMC** qui traversent les planchers.",
         "**Cloisons creuses et doublages** qui relient le rez-de-chaussée aux combles.",
       ] },
-      { t: 'h2', x: "Les rats ne restent pas toujours dans les combles" },
+      { t: 'h2', x: "Attention : ils ne restent pas dans les combles" },
       { t: 'p', x: "Les combles communiquent souvent avec le reste de la maison. Derrière les doublages en plaques de plâtre et dans les cloisons creuses, il reste un vide où les rongeurs circulent du sol jusqu'au toit : c'est pour cela qu'on les entend parfois **dans les murs**. Voir notre article [rat dans les murs ou les cloisons](/blog/rat-dans-les-murs-cloisons)." },
       { t: 'p', x: "Plus bas, c'est le surmulot qui s'installe dans le **vide sanitaire**, sous le plancher, puis remonte par les gaines. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire). Une dératisation sérieuse traite toute la maison, pas seulement l'endroit où l'on a entendu du bruit." },
-      { t: 'h2', x: "Comment traiter des rats dans les combles" },
+      { t: 'h2', x: "Comment on les élimine des combles" },
       { t: 'p', x: "Il existe deux familles de dispositifs, choisies selon l'accès, la présence d'enfants ou d'animaux et l'importance de l'infestation. Dans tous les cas, elles s'accompagnent du colmatage des accès." },
       { t: 'h3', x: "Postes d'appâtage sécurisés" },
       { t: 'p', x: "Des boîtiers verrouillés contenant un **raticide professionnel** sont posés le long des passages des rats. L'utilisation de ces produits est réservée aux professionnels titulaires du **Certibiocide**. Point de vigilance dans les combles : un rat peut mourir dans un endroit inaccessible (isolant, cloison) et provoquer des odeurs. C'est pourquoi l'emplacement des postes et leur suivi comptent autant que le produit." },
@@ -654,7 +654,7 @@ export const ARTICLES: Article[] = [
       { t: 'h3', x: "Nettoyage et isolant" },
       { t: 'p', x: "Après le traitement, il faut retirer les déjections et les nids, puis désinfecter. Un isolant souillé, tassé ou creusé de galeries perd ses performances et doit souvent être remplacé. Portez des gants et un masque : l'urine de rat peut transmettre la **leptospirose**, selon Santé publique France." },
       { t: 'callout', tone: 'info', title: 'Les erreurs à éviter', x: "Répandre du raticide en vrac sur l'isolant : il est accessible aux enfants et aux animaux, et un chat ou un rapace qui mange un rongeur empoisonné peut s'intoxiquer à son tour. Boucher les accès avant d'avoir traité. Manipuler déjections ou cadavres à mains nues." },
-      { t: 'h2', x: "Prévenir le retour des rats dans les combles" },
+      { t: 'h2', x: "Empêcher leur retour pour de bon" },
       { t: 'ol', items: [
         "**Élaguez les branches** qui touchent le toit et dégagez le lierre des façades.",
         "**Faites vérifier la toiture** après chaque tempête : tuiles, faîtage, rives.",
@@ -682,8 +682,8 @@ export const ARTICLES: Article[] = [
   // 12 ─────────────────────────────────────────────────────────────
   {
     slug: 'rat-dans-les-murs-cloisons',
-    title: "Rat dans les murs ou les cloisons : signes et solutions",
-    seoTitle: "Rat dans les murs ou les cloisons : que faire ?",
+    title: "Un rat dans les murs ? Les signes qui ne trompent pas et comment le déloger",
+    seoTitle: "Rat dans les murs : les signes et comment le déloger",
     description: "Grattements dans un mur, odeur derrière une cloison ? Comment les rats circulent dans les doublages, comment les localiser, les traiter et fermer leurs accès.",
     date: '2026-10-30',
     category: 'Rongeurs',
@@ -693,7 +693,7 @@ export const ARTICLES: Article[] = [
     photos: ['trouRat1', 'trouRat2', 'trouRat3'],
     blocks: [
       { t: 'p', x: "Un grattement qui semble venir de l'intérieur du mur, des bruits qui montent et descendent, parfois une odeur : un rongeur circule dans vos cloisons. C'est plus fréquent qu'on ne le pense, parce que la plupart des maisons ont des **vides cachés** qui forment de véritables couloirs entre le sol et les combles." },
-      { t: 'h2', x: "Pourquoi les rats passent par les murs et les cloisons" },
+      { t: 'h2', x: "Pourquoi les rats adorent vos murs et cloisons" },
       { t: 'ul', items: [
         "**Doublages en plaques de plâtre** : entre la plaque et le mur porteur, il reste un vide continu sur toute la hauteur.",
         "**Cloisons creuses ou alvéolaires** : faciles à traverser et à ronger.",
@@ -701,7 +701,7 @@ export const ARTICLES: Article[] = [
         "**Gaines et passages de tuyaux** : ils relient la cuisine, la salle de bain, le vide sanitaire et les combles.",
       ] },
       { t: 'p', x: "Le rat noir y monte vers les [combles](/blog/rats-dans-les-combles), le surmulot y arrive souvent depuis le [vide sanitaire](/blog/rat-vide-sanitaire) ou les canalisations. Les souris, elles, passent par des ouvertures minuscules : voir [par où elles entrent](/blog/souris-par-ou-entrent-elles)." },
-      { t: 'h2', x: "Les signes d'un rongeur dans les murs" },
+      { t: 'h2', x: "Grattements, odeur, traces : les signes d'un rongeur dans les murs" },
       { t: 'ul', items: [
         "**Grattements localisés**, toujours au même endroit, surtout la nuit.",
         "**Bruits verticaux** : quelque chose qui monte ou descend dans la cloison.",
@@ -709,12 +709,12 @@ export const ARTICLES: Article[] = [
         "**Déjections** derrière les meubles de cuisine et autour des passages de tuyaux.",
         "**Taches ou auréoles** sur le placo, et **odeur forte** si un animal est mort dans le mur.",
       ] },
-      { t: 'h2', x: "Comment localiser le rongeur et ses passages" },
+      { t: 'h2', x: "Comment repérer exactement où il passe" },
       { t: 'p', x: "Le technicien commence par écouter et repérer où les bruits se concentrent, puis inspecte les **points bas** (plinthes, passages de tuyaux, arrière des meubles) et les **points hauts** (combles, gaines). Si besoin, une petite caméra d'inspection passée par un trou discret permet de voir l'intérieur de la cloison sans la démolir." },
-      { t: 'h2', x: "À quoi ressemble un trou de rat" },
+      { t: 'h2', x: "À quoi ressemble un trou de rat (photos à l'appui)" },
       { t: 'p', x: "Un trou de rat se trouve presque toujours **au ras du sol**, dans un **angle de mur**, le long d'une plinthe ou derrière un meuble ou un radiateur. Il fait souvent **quelques centimètres de diamètre**, avec des bords rongés ou effrités, des **traces grasses et sombres** autour (le pelage qui frotte) et parfois des déjections ou des débris de plâtre au sol. Les photos en fin d'article viennent d'un de nos chantiers à Maisons-Alfort." },
       { t: 'p', x: "Sur ce chantier, après la dératisation, chaque trou a été rebouché avec de la **laine d'acier** puis fermé par une **grille**. Voir le [récit complet du chantier de Maisons-Alfort](/blog/deratisation-logement-syndrome-diogene)." },
-      { t: 'h2', x: "Les méthodes de traitement" },
+      { t: 'h2', x: "Les méthodes pour le déloger" },
       { t: 'p', x: "**On ne traite pas à l'intérieur du mur.** Le dispositif est placé là où les rongeurs entrent et sortent :" },
       { t: 'ul', items: [
         "**Postes d'appâtage sécurisés** avec raticide professionnel, posés près des entrées, réservés aux professionnels certifiés Certibiocide.",
@@ -722,7 +722,7 @@ export const ARTICLES: Article[] = [
         "**Colmatage** des trous en bas de cloison, des passages de tuyaux et des gaines, une fois les rongeurs éliminés.",
       ] },
       { t: 'callout', tone: 'warn', title: "Un rat mort dans le mur : que faire ?", x: "L'odeur de décomposition peut durer longtemps et attirer des mouches. Pour retrouver l'animal, on suit l'odeur et la présence de mouches, puis on ouvre une petite trappe dans le placo, on retire le cadavre avec des gants, on désinfecte et on referme. Un neutralisant d'odeurs aide ensuite, mais ne remplace pas le retrait." },
-      { t: 'h2', x: "Prévenir le retour" },
+      { t: 'h2', x: "Empêcher son retour pour de bon" },
       { t: 'ol', items: [
         "**Fermez les passages de tuyaux** sous l'évier, derrière le lave-linge et le lave-vaisselle, avec du mortier ou du grillage métallique.",
         "**Rebouchez les trous en bas de plinthes** et autour des gaines électriques.",
@@ -749,8 +749,8 @@ export const ARTICLES: Article[] = [
   // 13 ─────────────────────────────────────────────────────────────
   {
     slug: 'rat-vide-sanitaire',
-    title: "Rat dans le vide sanitaire : comment il entre et que faire",
-    seoTitle: "Rat dans le vide sanitaire : accès, traitement, prévention",
+    title: "Rats dans le vide sanitaire : comment ils entrent sous votre maison et comment les en chasser",
+    seoTitle: "Rat dans le vide sanitaire : comment il entre et le chasser",
     description: "Bruits sous le plancher, terriers autour de la maison ? Pourquoi le surmulot s'installe dans le vide sanitaire, comment le traiter et fermer ses accès.",
     date: '2026-10-30',
     category: 'Rongeurs',
@@ -759,7 +759,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Le **vide sanitaire** est l'espace laissé entre le sol et le plancher du rez-de-chaussée. Il protège la maison de l'humidité et laisse passer les canalisations. Sombre, peu visité et souvent humide, c'est aussi un abri idéal pour le **surmulot** (*Rattus norvegicus*), le rat d'égout, un rongeur qui creuse et suit volontiers les réseaux d'eaux usées." },
-      { t: 'h2', x: "Comment le rat entre dans le vide sanitaire" },
+      { t: 'h2', x: "Comment le rat se glisse sous votre maison" },
       { t: 'ul', items: [
         "**Grilles d'aération cassées, absentes ou à mailles trop larges.**",
         "**Passages de canalisations** mal rebouchés dans les murs de soubassement.",
@@ -767,7 +767,7 @@ export const ARTICLES: Article[] = [
         "**Terriers** creusés le long de la maison, sous les fondations.",
         "**Réseaux d'eaux usées** : un regard mal fermé ou une canalisation fissurée ouvre un accès direct.",
       ] },
-      { t: 'h2', x: "Les signes d'une présence de rats sous le plancher" },
+      { t: 'h2', x: "Les signes d'un rat sous le plancher" },
       { t: 'ul', items: [
         "**Bruits sous le plancher**, surtout la nuit.",
         "**Terriers et trous** au pied des murs extérieurs, terre fraîchement retournée.",
@@ -775,9 +775,9 @@ export const ARTICLES: Article[] = [
         "**Isolant sous plancher arraché** ou tombé au sol.",
         "**Canalisations ou gaines rongées**, odeur d'urine qui remonte.",
       ] },
-      { t: 'h2', x: "Pourquoi il ne faut pas laisser faire" },
+      { t: 'h2', x: "Pourquoi il ne faut surtout pas attendre" },
       { t: 'p', x: "Depuis le vide sanitaire, les rats remontent par les gaines et les cloisons creuses vers le reste de la maison, jusqu'aux [combles](/blog/rats-dans-les-combles) (voir aussi [rat dans les murs ou les cloisons](/blog/rat-dans-les-murs-cloisons)). Ils abîment l'isolation et les réseaux, et leur urine peut transmettre la **leptospirose**, selon Santé publique France." },
-      { t: 'h2', x: "Les méthodes de traitement" },
+      { t: 'h2', x: "Les méthodes pour s'en débarrasser" },
       { t: 'ul', items: [
         "**Diagnostic des accès** : grilles, passages de tuyaux, terriers extérieurs, regards.",
         "**Postes d'appâtage sécurisés** avec raticide professionnel, posés dans le vide sanitaire et sur les passages extérieurs, réservés aux professionnels certifiés Certibiocide.",
@@ -786,7 +786,7 @@ export const ARTICLES: Article[] = [
         "**Clapet anti-retour** sur l'évacuation si les rats viennent du réseau, comme pour [un rat dans les toilettes](/blog/rat-dans-les-toilettes).",
       ] },
       { t: 'callout', tone: 'warn', title: 'Ne bouchez jamais les aérations', x: "Le vide sanitaire doit rester ventilé, sinon l'humidité remonte dans la maison. On remplace les grilles abîmées par des grilles anti-rongeurs qui laissent passer l'air, on ne les obstrue pas." },
-      { t: 'h2', x: "Prévenir le retour" },
+      { t: 'h2', x: "Empêcher son retour pour de bon" },
       { t: 'ol', items: [
         "**Contrôlez les grilles d'aération** chaque année et remplacez celles qui sont abîmées.",
         "**Rebouchez les passages de tuyaux** après chaque travaux de plomberie.",
@@ -812,7 +812,7 @@ export const ARTICLES: Article[] = [
   // 14 ─────────────────────────────────────────────────────────────
   {
     slug: 'punaises-de-lit-sans-insecticide',
-    title: "Punaises de lit sans insecticide : les méthodes qui marchent",
+    title: "Punaises de lit sans insecticide : les méthodes qui marchent vraiment (et celles qui échouent)",
     seoTitle: "Punaises de lit sans insecticide : les méthodes qui marchent",
     description: "Cryogénie, vapeur sèche, lavage, congélation : comment éliminer les punaises de lit sans produit chimique, ce qui marche et les limites à connaître.",
     date: '2026-10-30',
@@ -823,7 +823,7 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Un traitement sans chimie', x: "Sans produit chimique · sans biocide · sans odeur · aucun résidu · logement utilisable tout de suite." },
       { t: 'p', x: "Beaucoup de familles veulent se débarrasser des punaises de lit **sans pulvériser de produit chimique** dans la chambre, surtout avec des enfants ou des animaux. Bonne nouvelle : c'est possible. Le site du gouvernement **stop-punaises.gouv.fr** rappelle d'ailleurs que les insecticides courants du commerce sont inefficaces contre les punaises. Les solutions sans produit, elles, existent et ont fait leurs preuves." },
-      { t: 'h2', x: "Pourquoi choisir un traitement sans produit chimique" },
+      { t: 'h2', x: "Pourquoi choisir un traitement sans produit chimique ?" },
       { t: 'ul', items: [
         "**Aucun résidu** sur la literie, les vêtements, les jouets ou les meubles.",
         "**Aucune odeur** de produit dans la chambre après l'intervention.",
@@ -832,14 +832,14 @@ export const ARTICLES: Article[] = [
         "**Aucun biocide** : ces méthodes agissent uniquement par le froid ou la chaleur.",
         "**Aucun biocide rejeté** dans l'air intérieur, les eaux usées ou l'environnement.",
       ] },
-      { t: 'h2', x: "Les méthodes professionnelles sans biocide" },
+      { t: 'h2', x: "Les méthodes pro qui éliminent sans biocide" },
       { t: 'table', head: ['Méthode', 'Comment elle agit', 'Où l\'utiliser', 'Limite'], rows: [
         ['Cryogénie', 'Neige carbonique à environ −78 °C, choc thermique', 'Matelas, sommier, cadre de lit, plinthes, meubles', 'Aucun effet après le passage'],
         ['Vapeur sèche', 'Vapeur à très haute température, très peu d\'eau', 'Coutures de matelas, canapés, rideaux, moquettes', 'Lente, à éviter sur les matériaux sensibles à la chaleur'],
         ['Aspiration', 'Retire les insectes et les œufs visibles', 'Partout, en complément', 'Ne suffit jamais seule'],
       ] },
       { t: 'p', x: "Pour aller plus loin : [la cryogénie contre les punaises de lit](/blog/cryogenie-punaises-de-lit) et [la vapeur sèche](/blog/vapeur-seche-punaises-de-lit)." },
-      { t: 'h2', x: "Ce que vous pouvez faire vous-même" },
+      { t: 'h2', x: "Ce que vous pouvez faire vous-même dès ce soir" },
       { t: 'p', x: "Le gouvernement recommande, pour le linge et les effets personnels, l'une de ces trois méthodes :" },
       { t: 'ol', items: [
         "**Lavage en machine à 60 °C pendant 1 heure.**",
@@ -848,10 +848,10 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'p', x: "Ajoutez à cela un **aspirateur** passé sur le matelas, le sommier et les plinthes, avec un sac jeté immédiatement dans un sac fermé, et une **housse anti-punaises** sur le matelas. Ces gestes réduisent fortement la population, mais ne remplacent pas un traitement complet du logement." },
       { t: 'callout', tone: 'warn', title: 'Les bombes insecticides du commerce ne marchent pas', x: "Les punaises de lit résistent aux insecticides grand public, et ces produits peuvent les disperser vers d'autres pièces. Même chose pour les poudres vendues comme miracle : voir notre article sur [la terre de diatomée](/blog/terre-de-diatomee-punaises-de-lit)." },
-      { t: 'h2', x: "Les limites à connaître" },
+      { t: 'h2', x: "Les limites à connaître avant de vous lancer" },
       { t: 'p', x: "Le froid et la vapeur tuent les punaises **au contact**, mais n'ont **aucun effet après le passage**. Un œuf oublié dans une fissure peut éclore quelques jours plus tard. Un traitement sans produit doit donc être **minutieux** (chaque couture, chaque fente, chaque prise) et suivi d'un **passage de contrôle**." },
       { t: 'p', x: "En cas d'infestation importante, le technicien peut vous proposer de combiner la cryogénie ou la vapeur avec un [traitement insecticide professionnel](/blog/insecticide-punaises-de-lit) à effet rémanent. Il vous explique toujours pourquoi avant d'intervenir, et c'est vous qui décidez." },
-      { t: 'h2', x: "Comment se passe un traitement sans produit chez nous" },
+      { t: 'h2', x: "Comment se passe notre traitement sans produit" },
       { t: 'ol', items: [
         "**Inspection** de tout le logement pour repérer chaque foyer.",
         "**Préparation** : lavage du linge, désencombrement autour du lit.",
@@ -877,8 +877,8 @@ export const ARTICLES: Article[] = [
   // 15 ─────────────────────────────────────────────────────────────
   {
     slug: 'cryogenie-punaises-de-lit',
-    title: "Cryogénie contre les punaises de lit : comment ça marche",
-    seoTitle: "Cryogénie punaises de lit : principe, efficacité, limites",
+    title: "Cryogénie contre les punaises de lit : le froid extrême qui les tue sans produit chimique",
+    seoTitle: "Cryogénie : le froid qui tue les punaises de lit",
     description: "La cryogénie tue les punaises de lit et leurs œufs par le froid, sans produit chimique. Principe, avantages, précautions et limites de ce traitement.",
     date: '2026-10-30',
     category: 'Punaises de lit',
@@ -888,9 +888,9 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Un traitement sans chimie', x: "Sans produit chimique · sans biocide · sans odeur · aucun résidu · logement utilisable tout de suite." },
       { t: 'p', x: "La **cryogénie** traite les punaises de lit par le **froid extrême**, sans aucun produit chimique. C'est l'une des deux grandes méthodes professionnelles sans biocide, avec [la vapeur sèche](/blog/vapeur-seche-punaises-de-lit)." },
-      { t: 'h2', x: "Le principe" },
+      { t: 'h2', x: "Le principe : un choc de froid extrême" },
       { t: 'p', x: "Un appareil transforme du dioxyde de carbone liquide en **neige carbonique**, projetée à environ **−78 °C** par une buse fine. Au contact, les punaises et leurs œufs subissent un **choc thermique** qui les tue. La neige carbonique se **sublime** : elle passe directement à l'état de gaz, sans fondre. Il n'y a donc ni eau, ni trace, ni résidu." },
-      { t: 'h2', x: "Les avantages" },
+      { t: 'h2', x: "Ses gros avantages" },
       { t: 'ul', items: [
         "**Sans produit chimique** et sans biocide.",
         "**Sec** : rien ne mouille, ni le matelas, ni les meubles.",
@@ -898,9 +898,9 @@ export const ARTICLES: Article[] = [
         "**Précis** : la buse atteint les coutures, les fentes du sommier, les plinthes et l'arrière des cadres.",
         "**Logement utilisable juste après** l'intervention.",
       ] },
-      { t: 'h2', x: "Les précautions" },
+      { t: 'h2', x: "Les précautions à respecter" },
       { t: 'p', x: "La neige carbonique peut brûler la peau par le froid, et le CO2 libéré doit être évacué : le technicien **aère la pièce** pendant et après le traitement. Pour ces raisons, la cryogénie se fait avec un équipement professionnel, par un technicien formé." },
-      { t: 'h2', x: "Les limites" },
+      { t: 'h2', x: "Ses limites (et comment on les compense)" },
       { t: 'p', x: "Comme la vapeur, la cryogénie n'agit **qu'au contact** : elle ne protège pas après le passage. Chaque recoin doit être traité, et un **passage de contrôle** permet de vérifier qu'aucun œuf n'a échappé au traitement. Pour une infestation importante, le technicien peut proposer de la combiner avec un insecticide professionnel, toujours après vous avoir expliqué pourquoi." },
       { t: 'callout', tone: 'info', title: 'Cryogénie ou vapeur sèche ?', x: "La cryogénie est sèche et très précise, idéale pour les fentes, les cadres et les zones où l'on veut éviter toute humidité. La vapeur sèche est très efficace sur les textiles et les grandes surfaces. Souvent, on utilise les deux." },
       { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Vincennes](/punaises-de-lit/vincennes) ou à [Paris](/zones/paris)." },
@@ -923,7 +923,7 @@ export const ARTICLES: Article[] = [
   // 16 ─────────────────────────────────────────────────────────────
   {
     slug: 'vapeur-seche-punaises-de-lit',
-    title: "Vapeur sèche et punaises de lit : efficacité et limites",
+    title: "Vapeur sèche contre les punaises de lit : l'arme de choc sans produit chimique, ses forces et ses limites",
     seoTitle: "Vapeur sèche et punaises de lit : efficacité et limites",
     description: "La vapeur sèche tue les punaises de lit et leurs œufs par la chaleur, sans produit chimique. Comment elle agit, où l'utiliser et pourquoi la technique compte.",
     date: '2026-10-30',
@@ -934,25 +934,25 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Un traitement sans chimie', x: "Sans produit chimique · sans biocide · sans odeur · aucun résidu · logement utilisable tout de suite." },
       { t: 'p', x: "La **vapeur sèche** traite les punaises de lit par la **chaleur**, sans aucun produit chimique. Avec [la cryogénie](/blog/cryogenie-punaises-de-lit), c'est l'une des deux grandes méthodes professionnelles sans biocide." },
-      { t: 'h2', x: "Le principe" },
+      { t: 'h2', x: "Le principe : une chaleur qui tue au contact" },
       { t: 'p', x: "Un générateur produit une vapeur à **très haute température**, avec **très peu d'eau** : d'où le nom de vapeur « sèche ». Projetée au plus près des surfaces, elle tue les punaises et leurs œufs par la chaleur. Elle pénètre dans les coutures, les plis et les fibres des tissus, là où les punaises se cachent." },
-      { t: 'h2', x: "Où elle est la plus efficace" },
+      { t: 'h2', x: "Là où elle est redoutable" },
       { t: 'ul', items: [
         "**Matelas**, surtout les coutures et le passepoil.",
         "**Canapés et fauteuils** en tissu.",
         "**Rideaux, moquettes et tapis.**",
         "**Têtes de lit capitonnées** et sommiers tapissés.",
       ] },
-      { t: 'h2', x: "Pourquoi la technique compte" },
+      { t: 'h2', x: "Pourquoi le geste du technicien fait toute la différence" },
       { t: 'p', x: "La vapeur perd très vite sa chaleur en s'éloignant de la buse. Pour être efficace, elle doit être appliquée **lentement, au contact des surfaces**, avec la bonne buse. Les nettoyeurs vapeur grand public sont souvent moins chauds en sortie et plus humides : ils risquent de mouiller le matelas sans atteindre toutes les punaises." },
-      { t: 'h2', x: "Les avantages" },
+      { t: 'h2', x: "Ses atouts" },
       { t: 'ul', items: [
         "**Sans produit chimique** et sans biocide.",
         "**Aucun résidu** et aucune odeur.",
         "**Très peu d'humidité**, le matelas sèche vite.",
         "**Logement utilisable juste après** l'intervention.",
       ] },
-      { t: 'h2', x: "Les limites" },
+      { t: 'h2', x: "Ses limites (à connaître avant de choisir)" },
       { t: 'p', x: "La vapeur n'agit **qu'au contact** et ne protège pas après le passage : il faut traiter chaque recoin, puis prévoir un **passage de contrôle**. On l'évite sur les **matériaux sensibles à la chaleur** et près des appareils électriques, où l'on préfère la cryogénie, qui est sèche. En cas d'infestation importante, le technicien peut proposer de combiner avec un insecticide professionnel, après vous avoir expliqué pourquoi." },
       { t: 'callout', tone: 'info', title: 'Le bon réflexe en complément', x: "Pendant que le technicien traite la literie et les meubles, lavez le linge à 60 °C pendant 1 heure, ou passez-le au sèche-linge au moins 30 minutes, comme le recommande stop-punaises.gouv.fr." },
       { t: 'p', x: "Tout savoir sur [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit), par exemple à [Saint-Mandé](/punaises-de-lit/saint-mande) ou à [Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine)." },
@@ -974,7 +974,7 @@ export const ARTICLES: Article[] = [
   // 17 ─────────────────────────────────────────────────────────────
   {
     slug: 'insecticide-punaises-de-lit',
-    title: "Insecticide contre les punaises de lit : le traitement choc",
+    title: "Insecticide contre les punaises de lit : le traitement choc des professionnels expliqué",
     seoTitle: "Insecticide punaises de lit : le traitement choc des pros",
     description: "Infestation importante ? L'insecticide professionnel agit vite et continue d'agir après le passage. Quand le choisir, déroulé et précautions.",
     date: '2026-10-30',
@@ -985,9 +985,9 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'callout', tone: 'info', title: 'Le traitement choc', x: "Action immédiate au contact · effet rémanent après le passage · traitement de toutes les pièces touchées · technicien certifié Certibiocide · passage de contrôle et garantie 1 an." },
       { t: 'p', x: "Quand les punaises de lit ont gagné plusieurs pièces, se cachent dans les parquets, les plinthes et les prises, ou résistent à tout ce que vous avez essayé, il faut frapper fort. Le **traitement insecticide professionnel** est la méthode la plus radicale : il agit tout de suite et **continue d'agir après le passage**, ce qu'aucune méthode sans produit ne permet." },
-      { t: 'h2', x: "Insecticide du commerce ou insecticide professionnel ?" },
+      { t: 'h2', x: "Bombe du commerce ou produit pro : la vraie différence" },
       { t: 'p', x: "Le site du gouvernement **stop-punaises.gouv.fr** est clair : les insecticides courants du commerce sont inefficaces contre les punaises de lit. Elles ont développé des résistances, et les bombes aérosols les dispersent vers d'autres pièces. Les produits professionnels sont différents : leur utilisation est réservée aux techniciens titulaires du **Certibiocide**, qui choisissent la substance et la technique d'application selon les supports et l'infestation." },
-      { t: 'h2', x: "Quand choisir le traitement insecticide" },
+      { t: 'h2', x: "Quand l'insecticide est le bon choix" },
       { t: 'ul', items: [
         "**Infestation étendue**, dans plusieurs pièces.",
         "**Punaises installées dans la structure** : parquet, plinthes, prises, encadrements, fissures.",
@@ -995,7 +995,7 @@ export const ARTICLES: Article[] = [
         "**Échec des méthodes maison** ou d'un premier traitement.",
         "**Besoin d'une protection qui dure** après l'intervention, grâce à l'effet rémanent.",
       ] },
-      { t: 'h2', x: "Comment se déroule le traitement" },
+      { t: 'h2', x: "Le traitement, étape par étape" },
       { t: 'ol', items: [
         "**Inspection complète** du logement pour repérer tous les foyers.",
         "**Préparation** : lavage du linge à 60 °C pendant 1 heure (ou sèche-linge au moins 30 minutes), désencombrement, bords des murs dégagés.",
@@ -1004,7 +1004,7 @@ export const ARTICLES: Article[] = [
         "**Passage de contrôle** environ 15 jours plus tard pour atteindre les punaises issues des œufs, avec la garantie 1 an.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Les précautions à respecter', x: "Respectez la durée d'absence indiquée par le technicien. Couvrez les aquariums et coupez leur pompe : beaucoup d'insecticides sont toxiques pour les poissons. Tenez enfants et animaux à l'écart des zones traitées jusqu'à ce qu'elles soient sèches, et ne nettoyez pas les plinthes traitées avant le passage de contrôle, sauf avis contraire du technicien." },
-      { t: 'h2', x: "Combiner pour un résultat complet" },
+      { t: 'h2', x: "Le combo gagnant pour un résultat complet" },
       { t: 'p', x: "L'insecticide n'est pas forcément utilisé seul. Sur la literie et les textiles, où l'on préfère éviter tout produit, le technicien peut le combiner avec la [cryogénie](/blog/cryogenie-punaises-de-lit) ou la [vapeur sèche](/blog/vapeur-seche-punaises-de-lit). Si vous souhaitez éviter totalement les produits chimiques, voir [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide)." },
       { t: 'p', x: "Découvrez notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, par exemple à [Paris](/zones/paris), [Créteil](/zones/val-de-marne/creteil) ou [Vitry-sur-Seine](/zones/val-de-marne/vitry-sur-seine)." },
       { t: 'p', x: "Traitement insecticide disponible notamment à [Sucy-en-Brie](/punaises-de-lit/sucy-en-brie) et à [Saint-Maurice](/punaises-de-lit/saint-maurice)." },
@@ -1026,7 +1026,7 @@ export const ARTICLES: Article[] = [
   // 18 ─────────────────────────────────────────────────────────────
   {
     slug: 'punaises-de-lit-airbnb-location-courte-duree',
-    title: "Punaises de lit en Airbnb : traiter en urgence et relouer vite",
+    title: "Punaises de lit dans votre Airbnb : traiter en urgence et relouer vite sans mauvais avis",
     seoTitle: "Punaises de lit Airbnb : traiter en urgence, relouer vite",
     description: "Un voyageur signale des punaises de lit ? Cryogénie, vapeur sèche et légère barrière insecticide : un traitement rapide pour relouer au plus vite.",
     date: '2026-10-31',
@@ -1037,9 +1037,9 @@ export const ARTICLES: Article[] = [
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Airbnb : protégez-vous des punaises de lit. Un traitement choc, efficace et urgent', x: "Intervention possible le jour même · cryogénie et vapeur sèche sur la literie et les textiles · légère barrière insecticide ciblée qui continue d'agir · renouvelée au deuxième passage." },
       { t: 'p', x: "Un voyageur vous envoie une photo de piqûres ou d'un petit insecte brun sur le matelas. Pour un propriétaire ou une conciergerie, l'urgence est double : **traiter vite**, et **ne pas bloquer le calendrier** plus longtemps que nécessaire. Un traitement insecticide complet impose de quitter le logement plusieurs heures puis d'aérer. Notre protocole pour les locations courte durée va plus vite : la **cryogénie** et la **vapeur sèche** traitent la literie et les textiles sans produit, et une **légère barrière insecticide**, appliquée uniquement sur les zones de passage, protège le logement après l'intervention." },
-      { t: 'h2', x: "Pourquoi les locations courte durée sont exposées" },
+      { t: 'h2', x: "Pourquoi les locations courte durée sont en première ligne" },
       { t: 'p', x: "Les punaises de lit voyagent dans les **valises, les sacs et les vêtements**. Plus il y a de voyageurs qui se succèdent, plus le risque qu'un bagage en apporte augmente. Ce n'est pas une question de propreté : un logement impeccable peut être touché du jour au lendemain. Ce qui compte, c'est de réagir vite pour éviter qu'elles se propagent à tout le logement." },
-      { t: 'h2', x: "Les bons réflexes dès le signalement" },
+      { t: 'h2', x: "Les bons réflexes dès le message du voyageur" },
       { t: 'ol', items: [
         "**Ne relouez pas avant le traitement** : un nouveau voyageur piqué, c'est un mauvais avis assuré.",
         "**Mettez le linge de lit et les serviettes dans des sacs fermés**, puis lavez-les à 60 °C pendant 1 heure, ou passez-les au sèche-linge au moins 30 minutes, comme le recommande stop-punaises.gouv.fr.",
@@ -1061,7 +1061,7 @@ export const ARTICLES: Article[] = [
         ['Barrière insecticide ciblée', 'Le court temps de séchage indiqué par le technicien', 'Aucune odeur perceptible'],
         ['Insecticide sur tout le logement', 'Après 4 à 6 heures d\'absence et une aération', 'Possible pendant quelques heures'],
       ] },
-      { t: 'h2', x: "Remettre le logement en location sereinement" },
+      { t: 'h2', x: "Relouer sereinement, sans mauvaise surprise" },
       { t: 'p', x: "La cryogénie et la vapeur n'agissent **qu'au contact** : un œuf oublié peut éclore quelques jours plus tard. C'est le rôle de la **barrière insecticide rémanente** : elle continue d'agir sur ces nouvelles punaises après notre passage. Une fois le court temps de séchage indiqué par le technicien respecté, vous pouvez le préparer pour l'arrivée suivante. Pour relouer sans mauvaise surprise :" },
       { t: 'ul', items: [
         "**Housses anti-punaises** sur les matelas et les oreillers.",
@@ -1080,7 +1080,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'warn', title: 'Ce qu\'il faut éviter', x: "Les bombes insecticides du commerce : elles sont inefficaces selon stop-punaises.gouv.fr et dispersent les punaises vers d'autres pièces. Relouer en espérant que le problème disparaisse seul. Jeter le matelas sans traiter le reste : les punaises se cachent aussi dans le sommier, les meubles et les plinthes." },
       { t: 'h2', x: "Et si l'infestation est importante ?" },
       { t: 'p', x: "Quand les punaises ont gagné plusieurs pièces ou la structure du logement (parquet, plinthes, prises), une simple barrière ciblée ne suffit plus : le technicien peut proposer un [traitement insecticide professionnel](/blog/insecticide-punaises-de-lit) de tout le logement, en plus de la cryogénie et de la vapeur. Le logement sera alors bloqué quelques heures de plus, mais le résultat sera plus sûr. Il vous explique toujours les options avant d'intervenir." },
-      { t: 'h2', x: "Propriétaires et conciergeries : anticiper" },
+      { t: 'h2', x: "Propriétaires et conciergeries : prendre de l'avance" },
       { t: 'p', x: "Si vous gérez plusieurs logements, un **suivi régulier** limite les urgences : inspections programmées entre deux rotations, intervention rapide au moindre signalement et **attestation d'intervention** à conserver. Nous organisons les passages autour de vos arrivées et départs." },
       { t: 'p', x: "Découvrez [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et notre [traitement des punaises de lit](/services/punaises-de-lit). Nous intervenons partout en Île-de-France, notamment à [Paris](/zones/paris), [Vincennes](/punaises-de-lit/vincennes) ou [Nogent-sur-Marne](/punaises-de-lit/nogent-sur-marne)." },
       { t: 'p', x: "Intervention en urgence pour les locations courte durée, par exemple à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont)." },
@@ -1102,8 +1102,8 @@ export const ARTICLES: Article[] = [
   // 19 ─────────────────────────────────────────────────────────────
   {
     slug: 'chenilles-processionnaires-cycle-dangers',
-    title: "Chenilles processionnaires : cycle de vie, dangers et comment les reconnaître",
-    seoTitle: "Chenilles processionnaires : cycle de vie et dangers",
+    title: "Chenilles processionnaires : un danger pour vos enfants et vos animaux ? Cycle de vie et bons réflexes",
+    seoTitle: "Chenilles processionnaires : dangers, cycle et bons réflexes",
     description: "Processionnaire du pin ou du chêne : comment elles vivent, pourquoi elles avancent en file, les dangers des poils urticants et les bons réflexes en cas de contact.",
     date: '2026-10-31',
     category: 'Chenilles processionnaires',
@@ -1112,25 +1112,25 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/chenilles-processionnaires', label: 'Traitement des chenilles processionnaires' },
     blocks: [
       { t: 'p', x: "Elles avancent en file indienne sur les allées et les pelouses, et leurs nids blancs ressemblent à de la barbe à papa accrochée aux pins. Les **chenilles processionnaires** sont de plus en plus présentes dans les jardins d'Île-de-France. Comprendre leur cycle permet d'agir au bon moment, et de protéger enfants et animaux." },
-      { t: 'h2', x: "Deux espèces en Île-de-France" },
+      { t: 'h2', x: "Deux espèces à connaître en Île-de-France" },
       { t: 'table', head: ['', 'Processionnaire du pin', 'Processionnaire du chêne'], rows: [
         ['Arbres', 'Pins, cèdres', 'Chênes'],
         ['Nids', 'Cocons blancs soyeux au bout des branches, bien visibles en hiver', 'Nids aplatis sur le tronc et les grosses branches'],
         ['Période active', 'Automne et hiver, processions à la fin de l\'hiver', 'Printemps et été'],
         ['Où on les voit', 'En file au sol, en descendant de l\'arbre', 'En file sur le tronc'],
       ] },
-      { t: 'h2', x: "Le cycle de la processionnaire du pin" },
+      { t: 'h2', x: "La processionnaire du pin, mois par mois" },
       { t: 'ol', items: [
         "**En été**, les papillons sortent du sol, s'accouplent et pondent sur les aiguilles des pins et des cèdres.",
         "**À la fin de l'été et en automne**, les chenilles éclosent, se nourrissent d'aiguilles, surtout la nuit, et grandissent.",
         "**En hiver**, elles tissent un **nid soyeux** blanc, au bout des branches les plus ensoleillées.",
         "**À la fin de l'hiver ou au début du printemps**, elles descendent de l'arbre en procession pour s'enterrer dans le sol et se transformer en chrysalides. Certaines restent parfois plus longtemps dans le sol avant de devenir papillons.",
       ] },
-      { t: 'h2', x: "Le cycle de la processionnaire du chêne" },
+      { t: 'h2', x: "La processionnaire du chêne, mois par mois" },
       { t: 'p', x: "Les œufs passent l'hiver sur les rameaux. Les chenilles éclosent **au printemps**, quand les chênes font leurs feuilles. Elles se nourrissent la nuit, se regroupent en journée dans des nids aplatis sur le tronc et les grosses branches, et se déplacent en procession le long du tronc. **En été**, elles se transforment dans le nid, puis les papillons pondent à leur tour." },
-      { t: 'h2', x: "Pourquoi avancent-elles en procession ?" },
+      { t: 'h2', x: "Pourquoi avancent-elles en file indienne ?" },
       { t: 'p', x: "Chaque chenille suit le fil de soie laissé par celle qui la précède. Ce déplacement en file leur permet de rester groupées pour chercher de la nourriture ou, pour la processionnaire du pin, un endroit où s'enterrer. Une procession au sol signifie donc que les chenilles quittent l'arbre : c'est le moment le plus exposé pour les enfants et les animaux." },
-      { t: 'h2', x: "Les poils urticants : un vrai danger" },
+      { t: 'h2', x: "Les poils urticants : le vrai danger" },
       { t: 'p', x: "À partir d'un certain stade, les chenilles portent de très nombreux **poils urticants** microscopiques. Elles les libèrent au moindre contact ou quand elles se sentent menacées, et le vent les transporte autour des arbres." },
       { t: 'ul', items: [
         "**Sur la peau** : démangeaisons, plaques rouges, boutons.",
@@ -1139,14 +1139,14 @@ export const ARTICLES: Article[] = [
         "**Longtemps après** : les poils restent actifs dans les vieux nids et dans le sol où les chenilles se sont enterrées.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Les chiens sont très exposés', x: "Un chien qui renifle, lèche ou mordille une chenille peut subir des lésions graves de la langue et de la gueule. Rincez sa gueule à l'eau sans frotter et consultez un vétérinaire en urgence. Les chats et les chevaux peuvent aussi être touchés." },
-      { t: 'h2', x: "Que faire en cas de contact ?" },
+      { t: 'h2', x: "Contact avec une chenille : les gestes d'urgence" },
       { t: 'ol', items: [
         "**Ne vous frottez pas** : vous feriez pénétrer les poils.",
         "**Rincez abondamment à l'eau** la peau touchée.",
         "**Changez de vêtements** et lavez-les à haute température.",
         "**Consultez** un médecin en cas de réaction aux yeux, de gêne respiratoire ou de réaction importante, ou appelez un centre antipoison.",
       ] },
-      { t: 'h2', x: "Comment les repérer dans votre jardin" },
+      { t: 'h2', x: "Comment les repérer dans votre jardin avant qu'il soit trop tard" },
       { t: 'ul', items: [
         "**En automne et en hiver** : regardez le bout des branches de vos pins et cèdres, côté soleil. Un cocon blanc, c'est un nid.",
         "**À la fin de l'hiver** : surveillez le pied des pins, les allées et les pelouses pour repérer les processions.",
@@ -1171,8 +1171,8 @@ export const ARTICLES: Article[] = [
   // 20 ─────────────────────────────────────────────────────────────
   {
     slug: 'chenilles-processionnaires-traitement-prevention',
-    title: "Chenilles processionnaires : traitements et prévention au jardin",
-    seoTitle: "Chenilles processionnaires : traitements et prévention",
+    title: "Chenilles processionnaires : les traitements qui marchent et le bon calendrier pour protéger votre jardin",
+    seoTitle: "Chenilles processionnaires : traitements et calendrier",
     description: "Retrait des nids, écopièges, pièges à phéromones, Bacillus thuringiensis, mésanges : quelles méthodes contre les chenilles processionnaires, et à quel moment.",
     date: '2026-10-31',
     category: 'Chenilles processionnaires',
@@ -1181,7 +1181,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/chenilles-processionnaires', label: 'Traitement des chenilles processionnaires' },
     blocks: [
       { t: 'p', x: "Les chenilles processionnaires reviennent chaque année si l'on ne traite que les nids visibles. La bonne stratégie consiste à **combiner plusieurs méthodes**, chacune à la bonne saison. Si vous ne savez pas encore à quelle espèce vous avez affaire, commencez par notre guide [cycle de vie et dangers](/blog/chenilles-processionnaires-cycle-dangers)." },
-      { t: 'h2', x: "Les méthodes de traitement" },
+      { t: 'h2', x: "Les méthodes qui marchent" },
       { t: 'table', head: ['Méthode', 'Principe', 'Quand'], rows: [
         ['Retrait des nids', 'Coupe et destruction sécurisée des nids', 'Hiver pour le pin, printemps et été pour le chêne'],
         ['Écopièges', 'Collier sur le tronc qui guide les chenilles vers un sac', 'Posés avant la descente des chenilles du pin'],
@@ -1200,14 +1200,14 @@ export const ARTICLES: Article[] = [
       { t: 'h3', x: "Les mésanges, alliées du jardin" },
       { t: 'p', x: "Les mésanges consomment de nombreuses chenilles. Installer des **nichoirs** dans le jardin aide à limiter les populations sur la durée, sans aucune intervention." },
       { t: 'callout', tone: 'warn', title: 'Ce qu\'il ne faut pas faire', x: "Brûler un nid dans l'arbre : risque d'incendie et dispersion des poils urticants. Couper ou toucher un nid sans protection. Passer le jet d'eau ou la tondeuse sur une procession. Pulvériser un insecticide du commerce : il n'atteint pas l'intérieur du nid et disperse les chenilles." },
-      { t: 'h2', x: "Le calendrier idéal" },
+      { t: 'h2', x: "Le calendrier idéal, saison par saison" },
       { t: 'table', head: ['Saison', 'Processionnaire du pin', 'Processionnaire du chêne'], rows: [
         ['Été', 'Pièges à phéromones, nichoirs à mésanges', 'Retrait des nids, papillons et ponte'],
         ['Automne', 'Surveillance des jeunes nids', 'Œufs sur les rameaux'],
         ['Hiver', 'Retrait des nids, pose des écopièges', 'Surveillance'],
         ['Fin d\'hiver et printemps', 'Processions : écopièges en place', 'Éclosion, surveillance des troncs'],
       ] },
-      { t: 'h2', x: "Prévenir le retour" },
+      { t: 'h2', x: "Empêcher leur retour l'an prochain" },
       { t: 'ol', items: [
         "**Inspectez vos pins et cèdres chaque automne**, côté soleil.",
         "**Posez des écopièges chaque hiver** sur les pins déjà touchés.",
@@ -1232,7 +1232,7 @@ export const ARTICLES: Article[] = [
   // ── Rats : mode de vie, reproduction, jardin (31/10/2026) ──
   {
     slug: 'rat-mode-de-vie',
-    title: "Le rat : mode de vie, habitudes et comportement",
+    title: "Le rat : comment il vit, mange et se cache chez nous (ce qu'il faut savoir pour s'en débarrasser)",
     seoTitle: "Rat : mode de vie, habitudes et comportement du surmulot",
     description: "Où vit le rat, que mange-t-il, quand sort-il ? Mode de vie du surmulot et du rat noir, colonie, terriers, nage : tout pour mieux s'en protéger.",
     date: '2026-10-31',
@@ -1242,24 +1242,24 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "On voit rarement un rat en plein jour, et c'est justement ce qui rend une infestation difficile à mesurer. Comprendre comment il vit aide à repérer les bons signes, à éviter de l'attirer et à choisir le bon traitement." },
-      { t: 'h2', x: "Deux rats en Île-de-France : le surmulot et le rat noir" },
+      { t: 'h2', x: "Surmulot ou rat noir : lequel vit chez vous ?" },
       { t: 'table', head: ['', 'Surmulot (rat brun, rat d\'égout)', 'Rat noir (rat des greniers)'], rows: [
         ['Où il vit', 'Sol, caves, égouts, berges, jardins, vides sanitaires', 'En hauteur : combles, greniers, toitures, faux plafonds'],
         ['Allure', 'Trapu, queue plus courte ou égale au corps, petites oreilles rondes', 'Plus fin, queue plus longue que le corps, grandes oreilles'],
         ['Talent', 'Creuse et nage', 'Grimpe'],
       ] },
       { t: 'p', x: "Le surmulot est de loin le plus fréquent. Le rat noir, excellent grimpeur, se rencontre surtout dans les combles : voir notre article sur les [rats dans les combles](/blog/rats-dans-les-combles)." },
-      { t: 'h2', x: "Un animal de la nuit" },
+      { t: 'h2', x: "Un animal de la nuit, presque invisible le jour" },
       { t: 'p', x: "Le surmulot est **actif principalement à partir de la tombée de la nuit**, selon l'OFB. Il passe la journée au terrier ou dans un abri, et sort pour se nourrir quand tout est calme. Voir un rat en plein jour est souvent mauvais signe : la population est importante, ou l'animal a été dérangé (travaux, crue, chantier)." },
       { t: 'h2', x: "Une vie en colonie, avec un chef" },
       { t: 'p', x: "Le surmulot est un animal social. L'OFB décrit des **groupes très structurés pouvant rassembler jusqu'à 200 individus**, chaque clan étant dirigé par un mâle dominant. Conséquence pratique : quand on voit un rat, il y en a presque toujours d'autres, et éliminer quelques individus ne suffit pas si la colonie et ses accès ne sont pas traités." },
-      { t: 'h2', x: "Il mange de tout" },
+      { t: 'h2', x: "Il mange absolument de tout" },
       { t: 'p', x: "Le surmulot est **opportuniste et omnivore**, avec une préférence pour la viande. Il se nourrit de déchets, de restes de repas, de graines, de fruits tombés, de croquettes d'animaux, de compost mal géré. C'est pourquoi les jardins où l'on [nourrit les oiseaux ou les pigeons](/blog/nourrir-oiseaux-pigeons-attire-rats) et les [composts ouverts](/blog/rat-compost) l'attirent autant." },
       { t: 'callout', tone: 'info', title: 'Méfiant face à la nouveauté', x: "Les rats se méfient des objets et des aliments nouveaux sur leur parcours. Un appât ou un piège posé à la hâte peut être ignoré plusieurs jours. C'est une des raisons pour lesquelles un professionnel place les dispositifs sur les passages réels des rats, et revient contrôler." },
-      { t: 'h2', x: "Creuseur et nageur" },
+      { t: 'h2', x: "Creuseur, grimpeur et nageur hors pair" },
       { t: 'p', x: "Le surmulot préfère les milieux humides. **Très bon nageur, il peut parcourir 800 m à la nage et rester jusqu'à 72 heures dans l'eau**, selon l'OFB. Cela explique sa présence le long de la Seine et de la Marne, dans les réseaux d'eaux usées, et parfois dans les toilettes : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)." },
       { t: 'p', x: "Il **creuse des terriers** dans le sol, au pied des haies, sous les dalles, dans les fentes des murs. Pour reconnaître ces galeries, lisez notre guide sur le [trou dans le jardin](/blog/trou-dans-le-jardin)." },
-      { t: 'h2', x: "Les signes de sa présence" },
+      { t: 'h2', x: "Les signes qui trahissent sa présence" },
       { t: 'ul', items: [
         "**Déjections** en forme de fuseau le long des murs et des passages.",
         "**Traces grasses et sombres** sur les murs, à force de passages répétés.",
@@ -1267,7 +1267,7 @@ export const ARTICLES: Article[] = [
         "**Grignotages** sur les sacs, les câbles, les tuyaux, le bois.",
         "**Bruits** de grattement la nuit dans les murs, les plafonds ou le sous-sol.",
       ] },
-      { t: 'h2', x: "Pourquoi c'est un problème" },
+      { t: 'h2', x: "Pourquoi il ne faut jamais le laisser s'installer" },
       { t: 'p', x: "Au-delà des dégâts sur les câbles et l'isolant, les rats sont le principal réservoir de la **leptospirose**, une maladie transmise notamment par leur urine (Santé publique France). Ne touchez jamais les déjections ni un rat mort à mains nues." },
       { t: 'p', x: "Vous voyez des signes chez vous ? Notre [dératisation](/services/deratisation) commence par un diagnostic des accès, puis un traitement par postes sécurisés ou pièges, selon votre situation. Intervention dans toute l'Île-de-France." },
     ],
@@ -1286,8 +1286,8 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'reproduction-des-rats',
-    title: "Reproduction des rats : pourquoi une colonie grandit si vite",
-    seoTitle: "Reproduction des rats : portées, maturité, longévité",
+    title: "Reproduction des rats : pourquoi une colonie explose si vite (et pourquoi il faut agir tout de suite)",
+    seoTitle: "Reproduction des rats : pourquoi une colonie explose si vite",
     description: "Combien de petits par portée, combien de portées par an, à quel âge un rat se reproduit-il ? Les chiffres officiels et ce qu'ils changent pour agir vite.",
     date: '2026-10-31',
     category: 'Rongeurs',
@@ -1296,7 +1296,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "« Je n'en ai vu qu'un » : c'est la phrase qu'on entend le plus souvent au téléphone. Le problème, c'est la vitesse de reproduction du rat. Voici les chiffres officiels, et ce qu'ils impliquent concrètement." },
-      { t: 'h2', x: "Les chiffres clés" },
+      { t: 'h2', x: "Les chiffres qui font peur" },
       { t: 'table', head: ['Paramètre', 'Surmulot (Rattus norvegicus)'], rows: [
         ['Saison de reproduction', 'Toute l\'année'],
         ['Portées par femelle et par an', '4 à 7'],
@@ -1305,17 +1305,17 @@ export const ARTICLES: Article[] = [
         ['Longévité', '2 ans, parfois 18 mois en milieu naturel'],
       ] },
       { t: 'p', x: "Source : fiche espèce de l'Office français de la biodiversité (OFB)." },
-      { t: 'h2', x: "Ce que cela donne pour une seule femelle" },
+      { t: 'h2', x: "Ce que peut donner une seule femelle" },
       { t: 'p', x: "Avec 4 à 7 portées de 3 à 12 petits, une seule femelle peut donner naissance **de 12 à 84 petits en un an**, selon les conditions. Et comme les jeunes sont capables de se reproduire dès 2 mois, les premières portées de l'année se reproduisent à leur tour avant la fin de l'année." },
       { t: 'callout', tone: 'warn', title: 'Pas de trêve en hiver', x: "Le surmulot n'a pas de saison de reproduction. Dans une cave chauffée, un vide sanitaire ou un égout, la colonie continue de grandir en plein hiver. L'automne et l'hiver sont aussi la période où les rongeurs cherchent à entrer dans les maisons." },
-      { t: 'h2', x: "Ce qui freine ou accélère la croissance" },
+      { t: 'h2', x: "Ce qui freine ou accélère la colonie" },
       { t: 'ul', items: [
         "**La nourriture disponible** : poubelles ouvertes, graines pour oiseaux, compost, croquettes. Plus il y a à manger, plus les portées sont nombreuses.",
         "**Les abris** : sous-sols encombrés, tas de bois, haies épaisses, vides sanitaires.",
         "**L'eau** : berges, fuites, regards, réseaux d'eaux usées.",
         "**Le dérangement** : une colonie souvent dérangée s'installe moins durablement.",
       ] },
-      { t: 'h2', x: "Pourquoi il faut agir vite" },
+      { t: 'h2', x: "Pourquoi chaque semaine compte" },
       { t: 'p', x: "Une petite population se traite en général rapidement. Une colonie installée depuis plusieurs mois demande plus de passages, plus de dispositifs et un vrai travail de colmatage. Les rats se méfient en plus des objets nouveaux : le traitement met parfois quelques jours à démarrer." },
       { t: 'ol', items: [
         "**Notez les signes** : déjections, traces grasses, terriers, bruits la nuit.",
@@ -1339,7 +1339,7 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'nourrir-oiseaux-pigeons-attire-rats',
-    title: "Nourrir les oiseaux ou les pigeons attire les rats : que faire ?",
+    title: "Nourrir les oiseaux attire les rats : l'erreur que font beaucoup de jardiniers (et les bons gestes)",
     seoTitle: "Nourrir les oiseaux attire les rats : les bons gestes",
     description: "Les graines jetées au sol pour les oiseaux ou les pigeons nourrissent aussi les rats. Ce que dit la loi et comment nourrir les oiseaux sans les attirer.",
     date: '2026-10-31',
@@ -1349,13 +1349,13 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Jeter du pain aux pigeons, remplir une mangeoire en hiver, laisser tomber des graines sous le poste de nourrissage : ce sont des gestes partis d'une bonne intention. Mais ce qui tombe au sol ne nourrit pas que les oiseaux." },
-      { t: 'h2', x: "Pourquoi les graines attirent les rats" },
+      { t: 'h2', x: "Pourquoi vos graines attirent les rats" },
       { t: 'p', x: "Le surmulot est **opportuniste et omnivore** (Office français de la biodiversité). Des graines au pied d'une mangeoire, du pain sur une pelouse ou une gamelle laissée dehors sont une source de nourriture régulière, au même endroit, chaque jour. Le rat l'apprend vite et installe son terrier à proximité." },
       { t: 'callout', tone: 'warn', title: 'Le pain, le pire choix', x: "Le pain n'est pas adapté aux oiseaux et, laissé au sol, il attire rats, pigeons et goélands. C'est l'une des premières choses que nous demandons d'arrêter quand nous trouvons des rats dans un jardin." },
-      { t: 'h2', x: "Ce que dit la réglementation" },
+      { t: 'h2', x: "Ce que dit la réglementation (et ce que vous risquez)" },
       { t: 'p', x: "Le règlement sanitaire départemental de Paris (article 120) interdit de **jeter ou de déposer des graines ou de la nourriture, en tous lieux publics, susceptibles d'attirer les animaux errants, notamment les chats ou les pigeons**. La même interdiction s'applique aux **voies privées, cours ou autres parties d'un immeuble** lorsque cette pratique risque de gêner le voisinage ou **d'attirer les rongeurs**." },
       { t: 'p', x: "Chaque département a son propre règlement sanitaire, avec des règles très proches. Pour votre commune, renseignez-vous auprès de la mairie. En copropriété, le règlement intérieur interdit aussi souvent de nourrir les pigeons depuis les balcons." },
-      { t: 'h2', x: "Nourrir les oiseaux sans attirer les rats" },
+      { t: 'h2', x: "Nourrir les oiseaux sans inviter les rats" },
       { t: 'ol', items: [
         "**Jamais de graines au sol** : utilisez une mangeoire suspendue, loin des murs, des haies et des branches basses.",
         "**Ajoutez un plateau récupérateur** sous la mangeoire, ou ramassez chaque jour les graines tombées.",
@@ -1364,14 +1364,14 @@ export const ARTICLES: Article[] = [
         "**Rangez les sacs de graines** dans une boîte métallique fermée, pas dans le garage ouvert.",
         "**Ne nourrissez pas les pigeons** : c'est interdit et cela attire aussi les rats. Voir notre article sur les [pigeons sur le balcon](/blog/nid-de-pigeon-balcon-enlever).",
       ] },
-      { t: 'h2', x: "Les autres sources de nourriture à surveiller" },
+      { t: 'h2', x: "Les autres buffets à volonté à surveiller" },
       { t: 'ul', items: [
         "**Le compost** ouvert ou qui reçoit des restes de repas : voir [rats dans le compost](/blog/rat-compost).",
         "**Les gamelles** de chats ou de chiens laissées dehors la nuit.",
         "**Les poulaillers** : grain répandu, mangeoires accessibles.",
         "**Les fruits tombés** au sol et les poubelles mal fermées.",
       ] },
-      { t: 'h2', x: "Déjà des rats dans le jardin ?" },
+      { t: 'h2', x: "Déjà des rats dans le jardin ? Que faire" },
       { t: 'p', x: "Supprimer la nourriture est indispensable, mais ne suffit pas toujours quand une colonie est installée : les rats cherchent alors à manger ailleurs, parfois dans la maison. Repérez les [trous dans le jardin](/blog/trou-dans-le-jardin) et faites traiter la colonie. Notre [dératisation](/services/deratisation) traite le jardin et la maison, avec le colmatage des accès." },
     ],
     faq: [
@@ -1389,8 +1389,8 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'rat-compost',
-    title: "Rats dans le compost : pourquoi ils viennent et comment les éviter",
-    seoTitle: "Rats dans le compost : 7 gestes pour les éviter",
+    title: "Rats dans le compost : pourquoi ils adorent votre bac et 7 gestes pour les faire fuir",
+    seoTitle: "Rats dans le compost : 7 gestes pour les faire fuir",
     description: "Un compost mal géré offre aux rats nourriture, chaleur et abri. Ce qu'il ne faut pas y mettre, quel composteur choisir, que faire s'ils sont déjà là.",
     date: '2026-10-31',
     category: 'Rongeurs',
@@ -1399,20 +1399,20 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Le compost est une très bonne pratique au jardin. Mais c'est aussi l'un des endroits où nous trouvons le plus souvent des rats chez les particuliers. La bonne nouvelle : quelques réglages suffisent pour qu'il ne les attire plus." },
-      { t: 'h2', x: "Pourquoi les rats aiment le compost" },
+      { t: 'h2', x: "Pourquoi les rats adorent votre compost" },
       { t: 'ul', items: [
         "**La nourriture** : le surmulot est omnivore, avec une préférence pour la viande (Office français de la biodiversité). Les restes de repas sont pour lui un garde-manger.",
         "**La chaleur** : la décomposition chauffe le tas, un abri idéal en hiver.",
         "**La tranquillité** : un tas jamais remué, au fond du jardin, contre une haie ou un mur, est un endroit parfait pour creuser un terrier.",
       ] },
-      { t: 'h2', x: "Les signes de rats dans le compost" },
+      { t: 'h2', x: "Les signes qu'ils s'y sont installés" },
       { t: 'ul', items: [
         "**Des trous et des galeries** dans le tas ou au pied du composteur.",
         "**Des déjections** en forme de fuseau autour du bac.",
         "**Des restes tirés hors du composteur**, des sacs déchirés.",
         "**Un chemin tassé** dans l'herbe entre le compost et une haie, un abri ou un mur.",
       ] },
-      { t: 'h2', x: "7 gestes pour ne pas attirer les rats" },
+      { t: 'h2', x: "7 gestes pour ne plus les attirer" },
       { t: 'ol', items: [
         "**Pas de viande, de poisson, d'os, de produits laitiers ni de plats cuisinés** dans le compost.",
         "**Pas de pain ni de restes gras.** Ils attirent les rongeurs avant même de se décomposer.",
@@ -1423,7 +1423,7 @@ export const ARTICLES: Article[] = [
         "**Installez-le loin de la maison**, des haies épaisses et des tas de bois, et gardez ses abords dégagés.",
       ] },
       { t: 'callout', tone: 'info', title: 'Et les graines pour les oiseaux ?', x: "Un compost bien géré ne sert à rien si des graines tombent au sol juste à côté. Voir notre article : [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats)." },
-      { t: 'h2', x: "Des rats sont déjà installés : que faire ?" },
+      { t: 'h2', x: "Ils sont déjà là : que faire ?" },
       { t: 'ol', items: [
         "**Arrêtez tout apport de déchets de cuisine** pendant quelques semaines.",
         "**Ne videz pas le compost à mains nues** : portez des gants. Les rats sont le principal réservoir de la leptospirose (Santé publique France).",
@@ -1447,7 +1447,7 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'trou-dans-le-jardin',
-    title: "Trou dans le jardin : rat, campagnol ou taupe ? Comment savoir et agir",
+    title: "Trou dans le jardin : rat, campagnol ou taupe ? Le test simple pour savoir (et agir vite)",
     seoTitle: "Trou dans le jardin : rat, campagnol ou taupe ?",
     description: "Un trou dans le jardin ? Souvent un rongeur. Reconnaître un terrier de rat, le distinguer d'un trou de campagnol ou de taupe, et savoir quoi faire.",
     date: '2026-10-31',
@@ -1457,7 +1457,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Un trou qui apparaît au pied de la haie, sous la terrasse ou près du composteur : c'est souvent le signe d'un rongeur. Rat ou campagnol ? Et si ce n'était qu'une taupe ? Voici comment reconnaître l'animal, puis repérer un terrier de rat et savoir s'il est occupé." },
-      { t: 'h2', x: "Trou dans le jardin : où les rats creusent-ils ?" },
+      { t: 'h2', x: "Où les rats creusent-ils leurs terriers ?" },
       { t: 'p', x: "Selon l'Office français de la biodiversité, le surmulot **creuse des terriers dans le sol, dans les fentes de murs ou tout autre substrat**. Au jardin, il choisit des endroits abrités, proches de la nourriture et de l'eau :" },
       { t: 'ul', items: [
         "**Au pied des haies** et des massifs denses.",
@@ -1466,22 +1466,22 @@ export const ARTICLES: Article[] = [
         "**Près du compost**, du poulailler ou des mangeoires.",
         "**Le long des murs** et des fondations.",
       ] },
-      { t: 'h2', x: "Rat, taupe ou campagnol : comment faire la différence" },
+      { t: 'h2', x: "Rat, taupe ou campagnol : comment les distinguer" },
       { t: 'table', head: ['Animal', 'Ce qu\'on voit', 'Indices'], rows: [
         ['Rat (surmulot)', 'Trou rond aux bords lisses, ouvert, souvent plusieurs entrées', 'Terre fraîche devant, chemin tassé, déjections en fuseau'],
         ['Taupe (pas un rongeur)', 'Taupinières : monticules de terre, sans trou visible', 'Pas de déjections, galeries sous la pelouse'],
         ['Campagnol', 'Petits trous nombreux, ouverts', 'Racines et bulbes rongés, galeries superficielles'],
       ] },
-      { t: 'h2', x: "Le test simple pour savoir si le terrier est actif" },
+      { t: 'h2', x: "Le test simple pour savoir si le terrier est habité" },
       { t: 'ol', items: [
         "**Rebouchez légèrement l'entrée** avec un peu de terre ou du papier journal froissé, avec des gants.",
         "**Revenez le lendemain matin.**",
         "**Si l'entrée est rouverte**, le terrier est occupé.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Ne bouchez pas un terrier actif', x: "Reboucher définitivement un terrier occupé, verser de l'eau ou des produits dedans ne règle rien : les rats creusent une autre sortie, parfois vers le sous-sol ou la maison. Il faut d'abord traiter la colonie, puis combler les galeries." },
-      { t: 'h2', x: "Les risques pour la maison" },
+      { t: 'h2', x: "Les risques pour votre maison" },
       { t: 'p', x: "Un terrier au jardin n'est souvent que la partie visible. Les rats cherchent ensuite un abri plus chaud : **sous-sol, garage, vide sanitaire, cave**. Ils passent par les grilles d'aération abîmées, les passages de tuyaux et les bas de portes. Voir aussi [rat dans le vide sanitaire](/blog/rat-vide-sanitaire)." },
-      { t: 'h2', x: "Comment nous traitons les terriers" },
+      { t: 'h2', x: "Comment on traite les terriers" },
       { t: 'ol', items: [
         "**Diagnostic** : repérage des terriers, des passages et de ce qui nourrit les rats (graines, compost, poulailler).",
         "**Traitement** : postes d'appâtage sécurisés près des terriers, ou pièges mécaniques et connectés si vous avez un potager, des enfants ou des animaux.",
@@ -1504,7 +1504,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'deratisation-sans-mort-aux-rats',
-    title: "Dératisation sans mort-aux-rats : les méthodes alternatives",
+    title: "Dératisation sans mort-aux-rats : les méthodes alternatives qui marchent vraiment",
     seoTitle: "Dératisation sans mort-aux-rats : 6 méthodes alternatives",
     description: "Enfants, chien ou chat à la maison ? La mort-aux-rats présente des risques. Les 6 méthodes pour se débarrasser des rats et des souris sans poison.",
     date: '2026-10-31',
@@ -1514,13 +1514,13 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Un enfant qui marche à quatre pattes, un chien qui fouille partout, un chat qui chasse : quand on a des rats ou des souris, la première inquiétude est souvent la même. Faut-il vraiment mettre du poison ? Dans la majorité des cas, non." },
-      { t: 'h2', x: "Pourquoi la mort-aux-rats inquiète" },
+      { t: 'h2', x: "Pourquoi la mort-aux-rats inquiète autant" },
       { t: 'p', x: "Les raticides sont faits pour tuer des mammifères. Un enfant ou un animal domestique qui en avale peut être gravement intoxiqué. Un chien ou un chat peut aussi s'intoxiquer en mangeant un rongeur qui a consommé du poison." },
       { t: 'callout', tone: 'warn', title: 'L\'alerte de l\'ANSES', x: "En 2021, l'ANSES a rapporté le décès de deux très jeunes enfants après l'ingestion accidentelle d'un raticide interdit en France. Elle recommande de n'acheter que des produits autorisés, de les tenir hors de portée des enfants et de faire appel à une entreprise spécialisée en cas d'échec." },
       { t: 'p', x: "Le danger vient surtout des produits répandus en vrac : granulés au sol, pâte posée derrière un meuble, appâts achetés hors des circuits autorisés. C'est précisément ce que nous trouvons le plus souvent chez les particuliers qui ont essayé de se débrouiller seuls." },
       { t: 'h2', x: "Et la « dératisation écologique » ?" },
       { t: 'p', x: "C'est une recherche très fréquente. Le terme est séduisant mais imprécis : aucune méthode n'est sans impact, et la loi encadre strictement ce type d'allégation. Ce que la plupart des gens veulent dire, c'est une **dératisation sans poison**. C'est possible, et voici comment." },
-      { t: 'h2', x: "Une méthode alternative : le piège multicapture Ekomille" },
+      { t: 'h2', x: "Le piège multicapture Ekomille, sans raticide" },
       { t: 'p', x: "**Ekomille** est un appareil électromécanique de **capture multiple et continue** des rats et des souris. Il fonctionne uniquement avec des **appâts alimentaires**, sans raticide. La méthode la plus courante reste les postes d'appâtage sécurisés avec raticide : Ekomille est la méthode alternative que nous proposons quand vous ne souhaitez pas de mort-aux-rats, par exemple avec des enfants, des animaux ou une activité alimentaire." },
       { t: 'h3', x: "Comment il fonctionne" },
       { t: 'ol', items: [
@@ -1531,7 +1531,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'callout', tone: 'ok', title: 'Ce qu\'il change par rapport à la mort-aux-rats', x: "Avec un poison, le rat ne meurt pas tout de suite : il repart et meurt n'importe où, dans la rue, au jardin, dans une cloison ou un faux plafond. Impossible de savoir où, et le cadavre reste à portée des chiens et des enfants, avec des odeurs pendant des jours. Avec l'Ekomille, le rongeur meurt dans l'appareil fermé : rien ne traîne dehors, et nous récupérons les captures." },
       { t: 'p', x: "Nous l'utilisons à l'intérieur comme à l'extérieur des bâtiments : jardins et sous-sols de maisons, parties communes et locaux poubelles de copropriétés, restaurants, commerces et entrepôts alimentaires, où il s'intègre dans le plan de maîtrise sanitaire (HACCP)." },
-      { t: 'h2', x: "Les 6 autres méthodes sans mort-aux-rats" },
+      { t: 'h2', x: "6 autres méthodes sans mort-aux-rats" },
       { t: 'h3', x: "1. Boucher les accès" },
       { t: 'p', x: "C'est la base de toute dératisation durable. Une souris passe par un trou de la taille d'un crayon. Nous fermons les passages avec du **grillage métallique à mailles fines, de la laine d'acier et du mastic**, des grilles sur les aérations et des bas de porte adaptés. Voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles)." },
       { t: 'h3', x: "2. Poser un clapet anti-retour" },
@@ -1544,14 +1544,14 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Ils capturent le rongeur vivant. Ils doivent être contrôlés tous les jours. Le rongeur capturé ne doit pas être relâché ailleurs : nous nous en chargeons." },
       { t: 'h3', x: "6. Les pièges connectés" },
       { t: 'p', x: "Ils envoient une **alerte à chaque capture**. Très utiles dans les commerces, les copropriétés ou les maisons secondaires : on sait exactement où et quand le rongeur est passé, sans contrôle quotidien sur place." },
-      { t: 'h2', x: "Ce qui ne suffit pas" },
+      { t: 'h2', x: "Ce qui ne suffit pas (et fait perdre du temps)" },
       { t: 'ul', items: [
         "**Les appareils à ultrasons** : leur efficacité dans la durée n'est pas démontrée, et ils ne ferment aucun accès.",
         "**La menthe, les huiles essentielles, le vinaigre** : au mieux, ils déplacent les rongeurs quelques jours.",
         "**Le chat** : il peut attraper quelques souris, mais ne règle pas une colonie de rats installée.",
         "**Reboucher un terrier actif** : les rats creusent une autre sortie. Voir [trou dans le jardin](/blog/trou-dans-le-jardin).",
       ] },
-      { t: 'h2', x: "La méthode la plus courante : les postes d'appâtage" },
+      { t: 'h2', x: "La méthode la plus utilisée : les postes d'appâtage" },
       { t: 'p', x: "Dans la plupart des dératisations, la méthode la plus courante reste le raticide professionnel. Il est placé **dans des postes d'appâtage verrouillés**, fixés et inaccessibles aux enfants et aux animaux, par un technicien titulaire du **Certibiocide**. Les méthodes sans poison présentées ici sont des alternatives : vous choisissez avec le technicien, après le diagnostic." },
       { t: 'h2', x: "Comment se passe une dératisation sans poison chez vous" },
       { t: 'ol', items: [
@@ -1580,8 +1580,8 @@ export const ARTICLES: Article[] = [
   // ── Acariens (31/10/2026) ──
   {
     slug: 'acariens-matelas',
-    title: "Acariens dans le matelas : comment s'en débarrasser",
-    seoTitle: "Acariens dans le matelas : 7 gestes pour s'en débarrasser",
+    title: "Acariens dans le matelas : 7 gestes simples pour s'en débarrasser et mieux dormir",
+    seoTitle: "Acariens dans le matelas : 7 gestes pour mieux dormir",
     description: "Le matelas est le premier refuge des acariens. Housse, aspiration, lavage à 60 °C, vapeur sèche : les gestes qui marchent, et quand appeler un pro.",
     date: '2026-10-31',
     category: 'Acariens',
@@ -1590,7 +1590,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/acariens', label: 'Traitement anti-acariens en Île-de-France' },
     blocks: [
       { t: 'p', x: "On passe environ un tiers de sa vie au lit, et les acariens aussi. Invisibles à l'œil nu, ils s'installent dans le matelas, les oreillers et la couette, où ils trouvent chaleur, humidité et nourriture. Pour une personne allergique, c'est souvent là que tout se joue." },
-      { t: 'h2', x: "Pourquoi le matelas attire les acariens" },
+      { t: 'h2', x: "Pourquoi votre matelas est leur paradis" },
       { t: 'ul', items: [
         "**La nourriture** : les petites peaux mortes que nous perdons chaque nuit.",
         "**La chaleur** du corps, toute la nuit.",
@@ -1608,7 +1608,7 @@ export const ARTICLES: Article[] = [
         "**Faites traiter le matelas en profondeur** si une personne allergique dort dedans ou s'il a déjà servi à quelqu'un d'autre.",
       ] },
       { t: 'callout', tone: 'info', title: 'Faut-il changer de matelas ?', x: "Pas forcément. Un matelas en bon état, protégé par une housse intégrale et traité en profondeur, peut être gardé. Le changer sans changer les habitudes (aération, humidité, lavage) ne règle rien : les acariens recoloniseront le neuf." },
-      { t: 'h2', x: "Le traitement professionnel du matelas" },
+      { t: 'h2', x: "Le traitement pro qui assainit le matelas" },
       { t: 'p', x: "Un aspirateur ne va pas au cœur du matelas. Pour un traitement en profondeur, nous utilisons :" },
       { t: 'ul', items: [
         "**La vapeur sèche** : vapeur à haute température appliquée lentement sur toute la surface du matelas et du sommier. Aucun produit, le lit est utilisable le soir même.",
@@ -1631,7 +1631,7 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'acariens-ou-punaises-de-lit',
-    title: "Acariens ou punaises de lit : comment faire la différence",
+    title: "Acariens ou punaises de lit ? Comment faire la différence (sans vous tromper de traitement)",
     seoTitle: "Acariens ou punaises de lit : comment faire la différence",
     description: "Démangeaisons, boutons au réveil : acariens ou punaises de lit ? Taille, piqûres, traces sur le matelas : les signes pour savoir, et quoi faire.",
     date: '2026-10-31',
@@ -1641,7 +1641,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/acariens', label: 'Traitement anti-acariens en Île-de-France' },
     blocks: [
       { t: 'p', x: "Vous vous réveillez avec des démangeaisons ou des boutons, et vous pensez aux acariens ? Ou au contraire, vous craignez les punaises de lit ? La confusion est fréquente. Voici comment faire la différence." },
-      { t: 'h2', x: "Le tableau pour s'y retrouver" },
+      { t: 'h2', x: "Le tableau pour ne plus confondre" },
       { t: 'table', head: ['', 'Acariens de la poussière', 'Punaises de lit'], rows: [
         ['Visibles à l\'œil nu ?', 'Non, jamais', 'Oui, les adultes se voient, de la taille d\'un pépin de pomme'],
         ['Piquent-ils ?', 'Non', 'Oui, la nuit, pour se nourrir de sang'],
@@ -1650,14 +1650,14 @@ export const ARTICLES: Article[] = [
         ['Qui est touché', 'Tous les logements, à des degrés divers', 'Un logement infesté, souvent après un voyage ou un meuble d\'occasion'],
       ] },
       { t: 'callout', tone: 'warn', title: 'Des boutons qui grattent ? Pensez d\'abord aux punaises', x: "Les acariens ne piquent pas. Si vous avez des piqûres au réveil, inspectez les coutures du matelas, le sommier et la tête de lit à la lampe : de petites taches noires ou des insectes bruns orientent vers les punaises de lit." },
-      { t: 'h2', x: "Comment vérifier chez vous" },
+      { t: 'h2', x: "Le test à faire chez vous" },
       { t: 'ol', items: [
         "**Inspectez les coutures du matelas** et le dessous du sommier avec une lampe torche.",
         "**Regardez la tête de lit**, les plinthes proches et les cadres au-dessus du lit.",
         "**Cherchez de petites taches noires**, qui ne partent pas facilement, ou des traces de sang sur les draps.",
         "**Pas de traces, mais des symptômes respiratoires** au réveil ? Les acariens sont plus probables : parlez-en à votre médecin, qui peut confirmer une allergie.",
       ] },
-      { t: 'h2', x: "Des traitements très différents" },
+      { t: 'h2', x: "Deux traitements qui n'ont rien à voir" },
       { t: 'p', x: "**Contre les acariens**, on réduit leur nombre dans la literie et les textiles (vapeur sèche, cryogénie, acaricide) et on agit sur l'humidité : voir notre [traitement anti-acariens](/services/acariens) et nos conseils pour [le matelas](/blog/acariens-matelas)." },
       { t: 'p', x: "**Contre les punaises de lit**, il faut un protocole complet, sur tout le logement, avec en général deux passages. L'ANSES rappelle que ces infestations pèsent lourd sur le budget et la qualité de vie des ménages. Voir notre [traitement des punaises de lit](/services/punaises-de-lit)." },
     ],
@@ -1676,8 +1676,8 @@ export const ARTICLES: Article[] = [
 
   {
     slug: 'acariens-humidite-maison',
-    title: "Acariens et humidité : le bon taux à viser chez soi",
-    seoTitle: "Acariens et humidité : le bon taux à viser chez soi",
+    title: "Acariens et humidité : le bon taux à viser chez vous pour les faire disparaître",
+    seoTitle: "Acariens et humidité : le bon taux pour les faire reculer",
     description: "Les acariens aiment la chaleur et l'humidité. Le taux conseillé par l'Assurance maladie, comment le mesurer et 6 gestes pour assainir votre logement.",
     date: '2026-10-31',
     category: 'Acariens',
@@ -1686,11 +1686,11 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/acariens', label: 'Traitement anti-acariens en Île-de-France' },
     blocks: [
       { t: 'p', x: "Traiter la literie sans s'occuper de l'humidité, c'est comme vider une baignoire sans fermer le robinet. Les acariens se développent dans les intérieurs chauds et humides : maîtriser l'humidité est la meilleure façon de garder le résultat d'un traitement." },
-      { t: 'h2', x: "Le bon taux d'humidité" },
+      { t: 'h2', x: "Le bon taux d'humidité à viser" },
       { t: 'p', x: "Selon l'Assurance maladie, **le taux d'humidité idéal se situe entre 40 et 60 %**, avec une **température entre 18 et 22 °C** selon les pièces. Au-delà, les acariens se développent plus facilement, et les moisissures aussi." },
-      { t: 'h2', x: "Comment le mesurer" },
+      { t: 'h2', x: "Comment le mesurer facilement" },
       { t: 'p', x: "Un **hygromètre**, vendu en magasin de bricolage ou en ligne pour quelques euros, affiche le taux d'humidité d'une pièce. Placez-le dans la chambre, loin d'une fenêtre ou d'un radiateur, et regardez-le à différents moments de la journée, notamment le matin." },
-      { t: 'h2', x: "D'où vient l'humidité chez vous" },
+      { t: 'h2', x: "D'où vient l'humidité chez vous ?" },
       { t: 'ul', items: [
         "**Le linge qui sèche à l'intérieur**, surtout dans les chambres.",
         "**Les fuites et infiltrations d'eau** : toiture, canalisations, fenêtres.",
@@ -1708,7 +1708,7 @@ export const ARTICLES: Article[] = [
         "**Gardez une température raisonnable** dans les chambres, entre 18 et 22 °C.",
       ] },
       { t: 'callout', tone: 'info', title: 'Après un dégât des eaux', x: "Asséchez d'abord le logement et réparez la cause. Ensuite seulement, faites traiter la literie et les textiles restés humides, et pensez à une désinfection si l'eau a touché plusieurs pièces." },
-      { t: 'h2', x: "Et la literie ?" },
+      { t: 'h2', x: "Et la literie, on fait comment ?" },
       { t: 'p', x: "Une fois l'humidité maîtrisée, traitez les réservoirs d'acariens : matelas, oreillers, canapés, tapis. Voir nos conseils pour [le matelas](/blog/acariens-matelas) et notre [traitement anti-acariens](/services/acariens), à partir de 120 € TTC pour une chambre." },
     ],
     faq: [
@@ -1726,7 +1726,7 @@ export const ARTICLES: Article[] = [
   // 32 ─────────────────────────────────────────────────────────────
   {
     slug: 'punaises-de-lit-cinema',
-    title: "Punaises de lit au cinéma : quel risque réel et quels réflexes ?",
+    title: "Punaises de lit au cinéma : quel risque réel ? Les réflexes pour une séance tranquille",
     seoTitle: "Punaises de lit au cinéma : risque réel et bons réflexes",
     description: "Peut-on ramener des punaises de lit d'une salle de cinéma ? Ce qui s'est passé à Paris en 2023 et 2025, le vrai niveau de risque et 6 réflexes simples.",
     date: '2026-11-01',
@@ -1736,11 +1736,11 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
     blocks: [
       { t: 'p', x: "Depuis l'automne 2023, la question revient souvent : **peut-on attraper des punaises de lit au cinéma ?** La réponse est oui, c'est possible, mais il faut garder la mesure. Voici ce qui s'est réellement passé en Île-de-France, pourquoi une salle de cinéma peut être concernée, et les gestes simples pour ne rien ramener à la maison." },
-      { t: 'h2', x: "Ce qui s'est passé dans les cinémas parisiens" },
+      { t: 'h2', x: "Ce qui s'est vraiment passé dans les cinémas parisiens" },
       { t: 'p', x: "En septembre et octobre 2023, des spectateurs ont signalé des piqûres sur les réseaux sociaux après des séances dans plusieurs cinémas de Paris et de la petite couronne. Selon l'office du tourisme de Paris, les salles concernées ont déclenché leur procédure d'urgence et ont été traitées. Tous les signalements n'ont pas été confirmés, mais certains l'ont été." },
       { t: 'p', x: "Fin novembre 2025, la **Cinémathèque française**, dans le 12e arrondissement, a fermé quatre salles pendant environ un mois après de nouveaux signalements. D'après Sortiraparis, tous les fauteuils ont été démontés et traités un par un à la **vapeur sèche**, plusieurs fois, avec des contrôles par **chien détecteur** pour valider chaque étape." },
       { t: 'callout', tone: 'info', title: 'Ce n\'est pas une question de propreté', x: "Les punaises de lit ne se nourrissent que de sang. Une salle impeccable peut être touchée si un spectateur en apporte une dans son sac ou ses vêtements. C'est d'ailleurs ce que rappelait la Ville de Paris en 2023." },
-      { t: 'h2', x: "Comment traite-t-on une salle de cinéma ?" },
+      { t: 'h2', x: "Comment traite-t-on une salle entière ?" },
       { t: 'p', x: "Dans une salle, on ne peut pas se contenter de pulvériser un produit : il faut atteindre les punaises cachées au cœur de chaque fauteuil, sans abîmer les tissus et sans immobiliser la salle trop longtemps. C'est pourquoi la **vapeur sèche** et la **cryogénie**, deux méthodes **sans insecticide**, sont particulièrement adaptées. Elles se complètent :" },
       { t: 'ul', items: [
         "**La vapeur sèche**, à très haute température et très peu humide, pénètre les **tissus, la mousse et les coutures** des assises et des dossiers. C'est la méthode retenue par la Cinémathèque française fin 2025, selon Sortiraparis.",
@@ -1766,10 +1766,10 @@ export const ARTICLES: Article[] = [
         "**En rentrant, au moindre doute**, mettez les vêtements dans un sac fermé puis lavez-les à 60 °C, ou passez-les au moins 30 minutes au sèche-linge.",
         "**Inspectez votre sac** à la lumière, surtout les coutures et les poches, avant de le ranger.",
       ] },
-      { t: 'h2', x: "Vous avez été piqué après une séance ?" },
+      { t: 'h2', x: "Des piqûres après la séance ? Que faire" },
       { t: 'p', x: "Les piqûres de punaises sont souvent **groupées ou alignées** sur les zones découvertes. Mais une piqûre ne suffit pas à prouver que vous avez ramené des punaises : d'autres insectes piquent aussi, et les réactions varient beaucoup d'une personne à l'autre. Si de nouvelles piqûres apparaissent **au réveil, plusieurs jours de suite**, vérifiez votre lit : coutures du matelas, sommier, tête de lit. Vous pouvez aussi lire [comment les reconnaître face aux acariens](/blog/acariens-ou-punaises-de-lit)." },
       { t: 'callout', tone: 'warn', title: 'À éviter', x: "Les bombes insecticides du commerce : elles sont jugées inefficaces par stop-punaises.gouv.fr et dispersent les punaises dans le logement. Déplacer son matelas dans une autre pièce : vous déplaceriez le problème." },
-      { t: 'h2', x: "Si les punaises sont arrivées chez vous" },
+      { t: 'h2', x: "Si elles vous ont suivi jusqu'à chez vous" },
       { t: 'p', x: "Plus on agit tôt, plus le traitement est simple. Nous intervenons par **traitement insecticide ou sans insecticide** (cryogénie et vapeur sèche), avec **2 passages inclus**, à partir de 290 € TTC et une **garantie 1 an**. Voir notre [traitement des punaises de lit](/services/punaises-de-lit) et [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide)." },
       { t: 'p', x: "Nous intervenons dans tout Paris, par exemple dans le [12e arrondissement](/punaises-de-lit/paris-12), le [5e](/punaises-de-lit/paris-5) ou le [14e](/punaises-de-lit/paris-14), et dans le Val-de-Marne, comme à [Vincennes](/punaises-de-lit/vincennes). Pour tous les autres lieux à risque, lisez notre article [comment attrape-t-on des punaises de lit](/blog/comment-attrape-t-on-des-punaises-de-lit)." },
     ],
@@ -1792,8 +1792,8 @@ export const ARTICLES: Article[] = [
   // 33 ─────────────────────────────────────────────────────────────
   {
     slug: 'punaises-de-lit-transports-en-commun',
-    title: "Punaises de lit dans les transports en commun : quel risque ?",
-    seoTitle: "Punaises de lit dans les transports en commun : le risque",
+    title: "Punaises de lit dans le métro, le RER et le train : quel risque réel ? Les bons réflexes",
+    seoTitle: "Punaises de lit dans le métro et le train : quel risque ?",
     description: "Métro, RER, bus, tram, train, car, avion : peut-on y attraper des punaises de lit ? Le vrai risque selon le transport et les gestes simples qui protègent.",
     date: '2026-11-01',
     category: 'Punaises de lit',
@@ -1802,10 +1802,10 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
     blocks: [
       { t: 'p', x: "Une vidéo d'insecte sur un siège de RER ou de TGV, et c'est la panique. À l'automne 2023, les signalements de punaises de lit dans les transports se sont multipliés sur les réseaux sociaux. **Métro, RER, bus, tramway, train, car ou avion : qu'en est-il vraiment, et comment se protéger sans céder à la psychose ?**" },
-      { t: 'h2', x: "Ce que disaient la RATP et la SNCF" },
+      { t: 'h2', x: "Ce qu'ont dit la RATP et la SNCF" },
       { t: 'p', x: "Le 4 octobre 2023, le ministre des Transports a réuni les opérateurs. Selon ses déclarations, **une dizaine de signalements** avaient été faits à la RATP et **37** à la SNCF dans les semaines précédentes. Tous avaient été vérifiés, et **aucun n'avait été confirmé**. La RATP indiquait de son côté qu'aucun cas avéré n'avait été constaté dans le métro, le RER, le tramway et le bus, et la SNCF qu'aucun cas n'avait été confirmé à bord de ses TGV après inspection. Le ministre a demandé aux opérateurs de publier leurs données de signalement tous les trois mois." },
       { t: 'callout', tone: 'info', title: 'Ce qui compte : la durée et le sommeil', x: "Les punaises de lit se nourrissent sur une personne immobile, le plus souvent endormie, et vivent cachées tout près d'elle. Un trajet de vingt minutes, avec des voyageurs qui bougent sans cesse, ne leur offre pas ces conditions. Plus on reste longtemps assis, et a fortiori si l'on dort, plus le risque augmente." },
-      { t: 'h2', x: "Le risque, transport par transport" },
+      { t: 'h2', x: "Métro, bus, train : le risque transport par transport" },
       { t: 'table', head: ['Transport', 'Risque', 'Point de vigilance'], rows: [
         ['Métro, RER', 'Faible', 'Sièges en tissu, sac posé sur le siège voisin'],
         ['Bus, tramway', 'Faible', 'Trajets courts, sièges souvent en tissu'],
@@ -1816,7 +1816,7 @@ export const ARTICLES: Article[] = [
         ['Avion', 'Modéré sur les longs vols', 'Sièges en tissu, sommeil à bord, bagages en soute'],
       ] },
       { t: 'p', x: "Ce classement n'est pas une statistique : il reflète simplement les conditions qui favorisent les punaises (durée, sommeil, tissu, bagages). Dans tous les cas, c'est rarement le siège qui pique : c'est le **sac, la valise ou le manteau** qui sert de transport à une punaise jusqu'à votre logement." },
-      { t: 'h2', x: "Les bons gestes dans tous les transports" },
+      { t: 'h2', x: "Les bons gestes pendant le trajet" },
       { t: 'ol', items: [
         "**Gardez votre sac fermé** et sur vos genoux, ou entre vos pieds plutôt que sur le siège voisin.",
         "**Regardez le siège** avant de vous asseoir sur un long trajet : coutures, accoudoirs, appui-tête, petites taches noires.",
@@ -1833,7 +1833,7 @@ export const ARTICLES: Article[] = [
         "**Aspirez la valise**, surtout les coutures et les poches, puis jetez le sac de l'aspirateur dans un sac fermé.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Pas de psychose', x: "Renoncer aux transports en commun ne protège pas : les punaises de lit voyagent surtout avec les bagages, les meubles d'occasion et les séjours à l'hôtel. Quelques gestes simples suffisent, et ce sont les mêmes partout." },
-      { t: 'h2', x: "Si des piqûres apparaissent au réveil" },
+      { t: 'h2', x: "Des piqûres au réveil ? Que faire" },
       { t: 'p', x: "Des piqûres **groupées ou en ligne**, qui reviennent **plusieurs matins de suite**, doivent faire inspecter la chambre : coutures du matelas, sommier, tête de lit, plinthes. Si vous trouvez des punaises, nous intervenons par **traitement insecticide ou sans insecticide** (cryogénie et vapeur sèche), avec **2 passages inclus**, à partir de 290 € TTC et une **garantie 1 an**. Voir notre [traitement des punaises de lit](/services/punaises-de-lit)." },
       { t: 'p', x: "Nous intervenons partout en Île-de-France : à Paris, par exemple dans le [1er arrondissement](/punaises-de-lit/paris-1) autour de Châtelet, le [10e](/punaises-de-lit/paris-10) près des gares du Nord et de l'Est, ou le [13e](/punaises-de-lit/paris-13), et dans le Val-de-Marne, comme à [Créteil](/punaises-de-lit/creteil). Pour tous les lieux à risque, lisez [comment attrape-t-on des punaises de lit](/blog/comment-attrape-t-on-des-punaises-de-lit)." },
     ],
@@ -1855,7 +1855,7 @@ export const ARTICLES: Article[] = [
   // 34 ─────────────────────────────────────────────────────────────
   {
     slug: 'comment-attrape-t-on-des-punaises-de-lit',
-    title: "Comment attrape-t-on des punaises de lit ? 7 situations et la prévention",
+    title: "Comment attrape-t-on des punaises de lit ? Les 7 situations à risque (et comment s'en protéger)",
     seoTitle: "Comment attrape-t-on des punaises de lit ? 7 situations",
     description: "Hôtel, Airbnb, meubles d'occasion, voisinage, linge partagé : les 7 façons d'attraper des punaises de lit et les gestes de prévention qui marchent vraiment.",
     date: '2026-11-01',
@@ -1865,13 +1865,13 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
     blocks: [
       { t: 'p', x: "« Mais comment elles sont arrivées chez moi ? » C'est la première question que l'on nous pose. Selon l'**Anses**, plus d'**un foyer français sur dix** a été infesté par des punaises de lit entre 2017 et 2022. Tout le monde peut être concerné, quel que soit son logement." },
-      { t: 'h2', x: "D'abord, trois idées reçues" },
+      { t: 'h2', x: "D'abord, 3 idées reçues à oublier" },
       { t: 'ul', items: [
         "**« C'est un problème de saleté. »** Faux : elles se nourrissent uniquement de sang. Un logement impeccable peut être infesté.",
         "**« Elles sautent d'une personne à l'autre. »** Faux : elles ne sautent pas et ne volent pas. Elles marchent, et voyagent cachées dans les affaires.",
         "**« Elles vivent sur nous, comme les poux. »** Faux : elles piquent puis retournent se cacher près du lit. Elles ne restent pas sur la peau.",
       ] },
-      { t: 'h2', x: "Les 7 situations où l'on attrape des punaises de lit" },
+      { t: 'h2', x: "Les 7 situations où on les ramène chez soi" },
       { t: 'h3', x: "1. L'hôtel et la location de type Airbnb" },
       { t: 'p', x: "C'est la situation la plus fréquente. Une chambre d'hôtel ou un logement loué sur Airbnb peut être infesté par des punaises de lit, quel que soit son standing ou son prix : les voyageurs se succèdent, et il suffit d'une valise pour en apporter. C'est d'ailleurs ce que nous constatons le plus souvent en intervention : **beaucoup de nos clients ont ramené des punaises de lit chez eux après un séjour à Paris, en particulier dans un hôtel parisien**. Elles se glissent dans la valise ou les vêtements posés près du lit, puis s'installent dans votre logement." },
       { t: 'p', x: "Le bon réflexe, **avant même de défaire la valise**, est d'inspecter le couchage pendant quelques minutes, avec la lampe du téléphone :" },
@@ -1899,7 +1899,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Cinémas, salles d'attente, transports en commun (surtout les trains de nuit, les cars et les longs vols) : le risque est plus faible qu'à l'hôtel, mais une punaise peut monter dans un sac ou un manteau. Voir nos articles sur [les punaises au cinéma](/blog/punaises-de-lit-cinema) et [dans les transports en commun](/blog/punaises-de-lit-transports-en-commun)." },
       { t: 'h3', x: "7. Les lieux d'hébergement collectif" },
       { t: 'p', x: "Foyers, internats, résidences étudiantes, colonies : là où beaucoup de personnes dorment et se succèdent, une seule valise suffit à introduire des punaises. Nous intervenons régulièrement dans ce type d'établissement." },
-      { t: 'h2', x: "La prévention au quotidien" },
+      { t: 'h2', x: "Les bons réflexes au quotidien" },
       { t: 'h3', x: "En voyage" },
       { t: 'ol', items: [
         "**Inspectez le lit en arrivant**, avant de défaire la valise : soulevez le matelas, regardez le sommier et derrière la tête de lit, à la recherche d'excréments, d'œufs ou de punaises.",
@@ -1917,7 +1917,7 @@ export const ARTICLES: Article[] = [
         "**Bouchez les fissures et les passages** autour des plinthes et des gaines si vous êtes en immeuble.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Ce qui ne protège pas', x: "Les bombes et fumigènes insecticides du commerce, jugés inefficaces par stop-punaises.gouv.fr, qui dispersent les punaises. Les répulsifs pour la peau ne sont pas conçus pour éloigner les punaises de lit. Jeter son matelas sans traiter le reste du logement." },
-      { t: 'h2', x: "Les signes qui doivent alerter" },
+      { t: 'h2', x: "Les signes qui doivent vous alerter" },
       { t: 'ul', items: [
         "**Des piqûres au réveil**, souvent groupées ou alignées, qui reviennent plusieurs jours de suite.",
         "**Des petites taches noires** dans les coutures du matelas ou sur le sommier (déjections).",
@@ -1925,7 +1925,7 @@ export const ARTICLES: Article[] = [
         "**Des insectes bruns et plats**, de 4 à 7 mm à l'âge adulte, ou leurs mues claires.",
       ] },
       { t: 'p', x: "En cas de doute, ne laissez pas traîner : une infestation détectée tôt se traite plus facilement. Le numéro national d'information est le **0806 706 806**, et le site officiel est stop-punaises.gouv.fr. Vous hésitez avec des acariens ? Lisez [acariens ou punaises de lit](/blog/acariens-ou-punaises-de-lit)." },
-      { t: 'h2', x: "Si les punaises sont déjà là" },
+      { t: 'h2', x: "Elles sont déjà là ? Que faire" },
       { t: 'p', x: "Nous traitons par **traitement insecticide ou sans insecticide** (cryogénie et vapeur sèche), avec **2 passages inclus**, à partir de 290 € TTC et une **garantie 1 an**. Voir notre [traitement des punaises de lit](/services/punaises-de-lit), [les méthodes sans insecticide](/blog/punaises-de-lit-sans-insecticide) et [le traitement insecticide](/blog/insecticide-punaises-de-lit). Nous intervenons dans tout Paris, par exemple dans le [11e](/punaises-de-lit/paris-11) ou le [20e](/punaises-de-lit/paris-20), et dans le Val-de-Marne, comme à [Saint-Maur-des-Fossés](/punaises-de-lit/saint-maur-des-fosses)." },
     ],
     photos: ['cryoFoyer', 'litEnfant'],
@@ -1948,7 +1948,7 @@ export const ARTICLES: Article[] = [
   // 35 ─────────────────────────────────────────────────────────────
   {
     slug: 'traiter-vetements-punaises-de-lit',
-    title: "Punaises de lit : comment traiter ses vêtements (60 °C, sèche-linge, congélateur)",
+    title: "Punaises de lit : comment traiter vos vêtements sans les ramener partout (60 °C, sèche-linge, congélateur)",
     seoTitle: "Punaises de lit : traiter ses vêtements à 60 °C ou au froid",
     description: "Vêtements et linge infestés : lavage à 60 °C, sèche-linge 30 min ou congélateur à -20 °C. Comment chaque méthode tue les punaises de lit, et nos solutions.",
     date: '2026-11-01',
@@ -1958,14 +1958,14 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
     blocks: [
       { t: 'p', x: "Lors d'une infestation de punaises de lit, les vêtements, les draps et les textiles sont un point clé : les punaises et leurs œufs s'y cachent, et c'est par eux qu'elles voyagent d'une pièce à l'autre ou d'un logement à l'autre. Traiter le logement sans traiter le linge, c'est prendre le risque d'une réinfestation. Voici les méthodes qui marchent vraiment, et comment elles agissent." },
-      { t: 'h2', x: "Avant tout : ne rien déplacer sans précaution" },
+      { t: 'h2', x: "Règle n° 1 : ne rien déplacer sans précaution" },
       { t: 'ol', items: [
         "**Mettez le linge dans des sacs plastique fermés** directement dans la pièce infestée, sans le secouer ni le poser ailleurs.",
         "**Transportez les sacs fermés** jusqu'à la machine, puis jetez le sac vide dans un sac poubelle bien fermé.",
         "**Séparez le linge propre du linge à traiter** : un vêtement traité ne doit pas retourner dans une armoire qui n'a pas été traitée.",
         "**Rangez le linge traité dans des sacs neufs fermés** jusqu'à la fin du traitement du logement.",
       ] },
-      { t: 'h2', x: "La solution classique : le lavage à 60 °C" },
+      { t: 'h2', x: "La solution qui marche : le lavage à 60 °C" },
       { t: 'p', x: "C'est la méthode recommandée par le gouvernement sur stop-punaises.gouv.fr, et elle est validée par la recherche : une étude publiée en 2010 dans le Journal of Economic Entomology (Naylor et Boase) a montré qu'un **lavage à 60 °C tue les punaises de lit à tous les stades**, œufs compris." },
       { t: 'h3', x: "Comment ça fonctionne" },
       { t: 'p', x: "Comme tous les insectes, la punaise de lit ne supporte pas une forte chaleur : au-delà d'un certain seuil, les protéines de son organisme sont détruites et elle meurt. L'œuf, protégé par sa coque, est plus résistant que l'insecte adulte, c'est pourquoi on vise **60 °C** et non une température plus basse. L'eau chaude a un avantage : elle pénètre **toutes les fibres, les coutures et les plis**, là où se cachent les œufs. La même étude a d'ailleurs montré qu'un simple trempage de 24 heures dans l'eau, sans chaleur, tue les punaises mais **pas les œufs**." },
@@ -1978,7 +1978,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h3', x: "Le sèche-linge : aussi efficace" },
       { t: 'p', x: "Selon la même étude, un passage au **sèche-linge sur un programme chaud pendant au moins 30 minutes** tue lui aussi tous les stades. C'est la solution idéale pour les vêtements qui ne passent pas à 60 °C mais supportent le sèche-linge, et un bon complément après le lavage. Le nettoyage à sec en pressing est également efficace selon cette étude : prévenez le pressing que le linge est infesté et apportez-le dans un sac fermé." },
-      { t: 'h2', x: "Pour ce qui ne supporte pas la chaleur : le congélateur" },
+      { t: 'h2', x: "Ce qui ne supporte pas la chaleur : direction le congélateur" },
       { t: 'p', x: "Laine, soie, chaussures, peluches, sacs, livres, petits objets : le froid tue aussi les punaises de lit, mais **beaucoup plus lentement** que la chaleur. Les agences régionales de santé conseillent de placer les objets dans un sac fermé, au congélateur, **à -20 °C pendant au moins 72 heures**." },
       { t: 'h3', x: "Pourquoi il faut autant de temps" },
       { t: 'ul', items: [
@@ -1987,7 +1987,7 @@ export const ARTICLES: Article[] = [
         "**Tous les congélateurs n'atteignent pas -20 °C** : un compartiment à glaçons de réfrigérateur ne suffit pas. Un thermomètre de congélateur permet de vérifier.",
       ] },
       { t: 'callout', tone: 'info', title: 'Nos conseils pour le congélateur', x: "Petits sacs peu remplis plutôt qu'un gros sac tassé. Objets secs (l'humidité forme du givre). Laissez au moins 72 heures sans ouvrir, puis laissez revenir à température ambiante dans le sac fermé avant de déballer." },
-      { t: 'h2', x: "Et quand il y a trop de linge ? Nos solutions" },
+      { t: 'h2', x: "Trop de linge à traiter ? Nos solutions" },
       { t: 'p', x: "Dans une infestation importante, ce sont parfois des dizaines de sacs de vêtements, de linge de maison, de peluches ou de chaussures qu'il faut traiter. Un congélateur domestique ne suffit pas, et laver tout à 60 °C prend des jours. C'est là que nous intervenons :" },
       { t: 'ul', items: [
         "**Notre grande chambre froide à -20 °C** : nous prenons en charge un grand volume de textiles, de chaussures et d'objets, qui y restent **au moins 72 heures**, la durée conseillée par les agences régionales de santé. Tout est traité en une seule fois, pendant que le logement est traité.",
@@ -2024,7 +2024,7 @@ export const ARTICLES: Article[] = [
   // 36 ─────────────────────────────────────────────────────────────
   {
     slug: 'anthrenes-origine-traitement',
-    title: "Anthrènes : d'où viennent-ils et comment s'en débarrasser ?",
+    title: "Anthrènes : ces petits insectes qui dévorent vos tapis et vêtements, d'où viennent-ils et comment s'en débarrasser ?",
     seoTitle: "Anthrènes : d'où viennent-ils et comment s'en débarrasser",
     description: "Petits coléoptères tachetés, larves velues qui trouent laine et tapis : d'où viennent les anthrènes, comment les traiter et les méthodes sans insecticide.",
     date: '2026-11-01',
@@ -2034,7 +2034,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/desinfection', label: 'Désinfection et désinsectisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "De petits insectes ronds sur le rebord de la fenêtre, des trous dans un pull en laine, de minuscules « chenilles » poilues sous le lit ou le long des plinthes : ce sont souvent des **anthrènes**. On les confond facilement avec des mites ou des punaises de lit, mais ils n'ont rien à voir. Voici comment les reconnaître, d'où ils viennent et comment s'en débarrasser." },
-      { t: 'h2', x: "Comment reconnaître un anthrène" },
+      { t: 'h2', x: "Comment reconnaître un anthrène (et sa larve)" },
       { t: 'h3', x: "L'adulte : un petit coléoptère tacheté" },
       { t: 'p', x: "L'adulte est un coléoptère presque rond, de **2 à 4 mm**, couvert de petites écailles qui forment des taches **blanches, brunes, jaunes ou orangées**. Les deux espèces les plus courantes dans les maisons sont l'**anthrène des tapis** (Anthrenus scrophulariae) et l'**anthrène bigarré** (Anthrenus verbasci). L'adulte ne s'attaque pas aux textiles : il se nourrit de pollen et de nectar, surtout sur les fleurs blanches, et ne vit que quelques semaines." },
       { t: 'h3', x: "La larve : la vraie responsable des dégâts" },
@@ -2044,7 +2044,7 @@ export const ARTICLES: Article[] = [
         ['Mite des vêtements (larve)', 'Petite chenille blanchâtre, souvent dans un fourreau', 'Ronge laine et textiles, laisse des fils de soie'],
         ['Punaise de lit', 'Insecte plat et brun, 4 à 7 mm adulte', 'Pique la nuit, ne ronge pas les textiles'],
       ] },
-      { t: 'h2', x: "D'où viennent les anthrènes ?" },
+      { t: 'h2', x: "D'où viennent-ils ?" },
       { t: 'p', x: "Les anthrènes vivent naturellement **dehors**, dans les jardins fleuris, les arbres creux et surtout les **nids d'oiseaux** (moineaux, martinets), où les larves trouvent des plumes, des poils et des insectes morts. Ils arrivent dans la maison de plusieurs façons :" },
       { t: 'ul', items: [
         "**Par les fenêtres ouvertes**, au printemps et au début de l'été : les adultes, sortis pour butiner, entrent et cherchent un endroit où pondre. C'est pourquoi on les trouve souvent sur les rebords de fenêtre.",
@@ -2056,7 +2056,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "La femelle pond ses œufs près de ce qui nourrira ses larves : **tapis et moquettes en laine**, vêtements stockés, couvertures, coussins en plumes, fourrures, cuir, **poils d'animaux** accumulés, **insectes morts** derrière les plinthes ou dans les luminaires. Les endroits sombres et peu dérangés sont ses préférés : dessous des meubles, fonds de placard, bords de moquette, plinthes." },
       { t: 'h3', x: "Un cycle long et discret" },
       { t: 'p', x: "Les larves peuvent se développer pendant des mois, et le cycle complet de l'anthrène bigarré dure **de 1 à 3 ans** selon la température. C'est ce qui rend l'infestation discrète : on découvre souvent les dégâts longtemps après l'arrivée des premiers insectes." },
-      { t: 'h2', x: "Les signes d'une infestation" },
+      { t: 'h2', x: "Les signes qui doivent vous alerter" },
       { t: 'ul', items: [
         "**Des trous irréguliers** dans les lainages, les tapis, les couvertures ou les fourrures, souvent dans les zones peu manipulées.",
         "**Des mues de larves**, petites peaux vides brunes et velues, sous les meubles ou dans les placards.",
@@ -2064,7 +2064,7 @@ export const ARTICLES: Article[] = [
         "**Des adultes** sur les rebords de fenêtre, au printemps et en été, car ils se dirigent vers la lumière.",
       ] },
       { t: 'callout', tone: 'info', title: 'Et pour la santé ?', x: "L'anthrène ne pique pas et ne transmet pas de maladie. En revanche, le contact de la peau avec les poils et les mues de larves peut provoquer une irritation, une dermatite. En cas de réaction, consultez un médecin." },
-      { t: 'h2', x: "Le traitement professionnel" },
+      { t: 'h2', x: "Le traitement pro qui en vient à bout" },
       { t: 'p', x: "Le mode de traitement le plus courant combine plusieurs étapes, car les larves sont dispersées et bien cachées :" },
       { t: 'ol', items: [
         "**Recherche du foyer** : le technicien cherche d'où viennent les larves (tapis, placard, nid d'oiseaux dans les combles, insectes morts accumulés).",
@@ -2073,7 +2073,7 @@ export const ARTICLES: Article[] = [
         "**Traitement des textiles touchés**, à la chaleur ou au froid (voir ci-dessous).",
         "**Contrôle** après quelques semaines, car des œufs peuvent éclore après le passage.",
       ] },
-      { t: 'h2', x: "Les méthodes alternatives, sans insecticide" },
+      { t: 'h2', x: "Les méthodes sans insecticide" },
       { t: 'p', x: "Pour les textiles, les vêtements et les objets fragiles, ou si vous ne souhaitez pas d'insecticide dans certaines pièces, il existe des méthodes alternatives. La chaleur et le froid intense sont efficaces contre les larves et les œufs :" },
       { t: 'ul', items: [
         "**La vapeur sèche** : une vapeur à très haute température et très peu humide, pour les tapis, les moquettes, les canapés, les matelas et les plinthes. Voir [la vapeur sèche en détail](/blog/vapeur-seche-punaises-de-lit).",
@@ -2081,7 +2081,7 @@ export const ARTICLES: Article[] = [
         "**Le lavage à 60 °C** quand l'étiquette le permet, ou le passage au sèche-linge chaud, pour les vêtements et le linge touchés.",
       ] },
       { t: 'p', x: "Ces méthodes n'agissent qu'au contact : elles ne laissent pas de protection après le passage. Elles sont donc souvent associées à l'aspiration, à la suppression du foyer et, si besoin, à une pulvérisation ciblée sur les plinthes. Le technicien vous explique les options avant d'intervenir." },
-      { t: 'h2', x: "Prévenir le retour des anthrènes" },
+      { t: 'h2', x: "Empêcher leur retour" },
       { t: 'ul', items: [
         "**Aspirez régulièrement** sous les meubles, le long des plinthes et sous les tapis, et videz l'aspirateur dehors.",
         "**Rangez les lainages propres** dans des housses ou des boîtes fermées : les larves recherchent les textiles tachés et les poils.",
@@ -2111,8 +2111,8 @@ export const ARTICLES: Article[] = [
   // 37 ─────────────────────────────────────────────────────────────
   {
     slug: 'chenille-processionnaire-du-pin',
-    title: "Chenille processionnaire du pin : origine, cycle, risques et toutes les méthodes",
-    seoTitle: "Chenille processionnaire du pin : cycle, risques, solutions",
+    title: "Chenille processionnaire du pin : le guide complet pour protéger votre famille et vos animaux",
+    seoTitle: "Chenille processionnaire du pin : le guide complet",
     description: "Processionnaire du pin : origine, reproduction, arbres ciblés, risques pour la santé et l'environnement, et toutes les méthodes pour l'éliminer.",
     date: '2026-11-01',
     category: 'Chenilles processionnaires',
@@ -2121,9 +2121,9 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires : retrait des nids et écopièges' },
     blocks: [
       { t: 'p', x: "Un nid blanc comme de la barbe à papa en haut d'un pin, des chenilles qui avancent en file indienne sur le trottoir au printemps : c'est la **processionnaire du pin** (Thaumetopoea pityocampa). Depuis le décret n° 2022-686 du 25 avril 2022, elle fait partie, avec la processionnaire du chêne, des espèces dont la prolifération est reconnue nuisible à la santé humaine dans le code de la santé publique. Voici tout ce qu'il faut savoir pour s'en protéger." },
-      { t: 'h2', x: "D'où vient la processionnaire du pin ?" },
+      { t: 'h2', x: "D'où vient-elle ?" },
       { t: 'p', x: "C'est une espèce d'origine **méditerranéenne**. Ses chenilles supportent mal les hivers trop froids, ce qui limitait autrefois sa présence au sud de la France. Selon les travaux de l'**INRAE**, elle progresse depuis plusieurs décennies vers le nord et en altitude, et le réchauffement du climat en est le principal moteur. Elle est aujourd'hui installée en Île-de-France, en particulier dans les parcs, les jardins et les forêts plantés de pins." },
-      { t: 'h2', x: "Son cycle de vie et sa reproduction" },
+      { t: 'h2', x: "Son cycle de vie, saison par saison" },
       { t: 'ol', items: [
         "**L'été (juin à août)** : les papillons, nocturnes et discrets, sortent du sol. Ils ne vivent que quelques jours, le temps de s'accoupler. La femelle pond ses œufs en manchon autour d'une paire d'aiguilles de pin.",
         "**La fin de l'été** : les œufs éclosent environ un mois plus tard. Les jeunes chenilles vivent en colonie et se nourrissent des aiguilles.",
@@ -2133,7 +2133,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Quels arbres attaque-t-elle ?" },
       { t: 'p', x: "Elle s'en prend surtout aux **pins** : pin noir d'Autriche, pin laricio, pin maritime, pin sylvestre. Elle s'attaque aussi aux **cèdres**, et plus rarement à d'autres conifères. Les arbres isolés et bien exposés au soleil, en bordure de route, dans un jardin ou une cour de résidence, sont souvent les plus touchés." },
-      { t: 'h2', x: "Comment est-on exposé ?" },
+      { t: 'h2', x: "Comment est-on exposé sans le savoir ?" },
       { t: 'p', x: "Le danger ne vient pas d'une morsure : ce sont les **poils urticants**, qui apparaissent dès le **troisième stade** de la chenille. Ces poils minuscules, chargés d'une protéine irritante (la thaumétopoéine), se détachent au moindre stress de la chenille et peuvent être **transportés par le vent**. On peut donc être touché :" },
       { t: 'ul', items: [
         "**en touchant une chenille ou un nid**, même un nid tombé ou abandonné ;",
@@ -2141,7 +2141,7 @@ export const ARTICLES: Article[] = [
         "**par le linge étendu** dehors, ou en jardinant près d'un pin touché ;",
         "**par un animal** qui a reniflé ou léché des chenilles et ramène des poils dans son pelage.",
       ] },
-      { t: 'h2', x: "Les risques pour la santé" },
+      { t: 'h2', x: "Les risques pour vous, vos enfants et vos animaux" },
       { t: 'ul', items: [
         "**La peau** : rougeurs et démangeaisons intenses, parfois des boutons, qui apparaissent quelques heures après le contact.",
         "**Les yeux** : irritation, conjonctivite. Un poil dans l'œil demande de consulter rapidement.",
@@ -2150,7 +2150,7 @@ export const ARTICLES: Article[] = [
         "**Les chiens et les chats** : en léchant ou en reniflant les chenilles, ils peuvent subir une atteinte grave de la langue et de la bouche. C'est une urgence vétérinaire.",
       ] },
       { t: 'callout', tone: 'warn', title: 'En cas de contact', x: "Ne vous grattez pas. Retirez les vêtements touchés et lavez-les à haute température. Rincez la peau à l'eau sans frotter, et les yeux à grande eau. En cas de gêne respiratoire, de réaction importante ou de poil dans l'œil, appelez le 15 ou consultez. Pour un animal, contactez immédiatement un vétérinaire." },
-      { t: 'h2', x: "Les risques pour l'environnement" },
+      { t: 'h2', x: "Les dégâts sur les arbres" },
       { t: 'p', x: "En mangeant les aiguilles, les colonies peuvent **défolier** une partie de l'arbre, parfois sa totalité lors d'une forte infestation. Le pin survit le plus souvent, mais il est **affaibli** : sa croissance ralentit et il devient plus sensible à la sécheresse et à d'autres ravageurs. Dans les parcs et jardins, les arbres dégarnis et les zones à éviter pendant les processions ont aussi un coût pour les communes et les copropriétés." },
       { t: 'h2', x: "Toutes les méthodes pour s'en débarrasser" },
       { t: 'p', x: "Aucune méthode ne suffit seule : l'efficacité vient de leur **combinaison au bon moment de l'année**. L'objectif, rappelé dans les arrêtés préfectoraux, n'est pas d'éradiquer l'espèce mais de limiter sa présence là où elle gêne." },
@@ -2183,8 +2183,8 @@ export const ARTICLES: Article[] = [
   // 38 ─────────────────────────────────────────────────────────────
   {
     slug: 'chenille-processionnaire-du-chene',
-    title: "Chenille processionnaire du chêne : origine, cycle, risques et toutes les méthodes",
-    seoTitle: "Chenille processionnaire du chêne : risques et solutions",
+    title: "Chenille processionnaire du chêne : le guide complet pour vous protéger de ses poils urticants",
+    seoTitle: "Chenille processionnaire du chêne : le guide complet",
     description: "Processionnaire du chêne : origine, reproduction, arbres ciblés, nids urticants pendant des années, risques pour la santé et l'environnement, et méthodes.",
     date: '2026-11-01',
     category: 'Chenilles processionnaires',
@@ -2193,9 +2193,9 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires : retrait des nids et écopièges' },
     blocks: [
       { t: 'p', x: "Moins connue que sa cousine du pin, la **processionnaire du chêne** (Thaumetopoea processionea) n'est pas moins dangereuse. On la remarque souvent trop tard, en promenade en forêt ou en coupant du bois, quand les démangeaisons apparaissent. Comme la processionnaire du pin, elle est inscrite depuis le décret n° 2022-686 du 25 avril 2022 parmi les espèces dont la prolifération est nuisible à la santé humaine." },
-      { t: 'h2', x: "D'où vient la processionnaire du chêne ?" },
+      { t: 'h2', x: "D'où vient-elle ?" },
       { t: 'p', x: "Elle est présente depuis longtemps dans les forêts de chênes d'Europe, mais ses **pullulations** se sont multipliées ces dernières décennies, jusqu'au nord de l'Europe. On la rencontre dans les forêts, les parcs, les allées et les jardins plantés de chênes, y compris en Île-de-France." },
-      { t: 'h2', x: "Son cycle de vie et sa reproduction" },
+      { t: 'h2', x: "Son cycle de vie, saison par saison" },
       { t: 'p', x: "Son cycle dure **un an**, et il est décalé par rapport à celui du pin :" },
       { t: 'ol', items: [
         "**L'été (mi-juillet à fin août)** : les papillons, nocturnes, s'accouplent. La femelle pond sur les jeunes rameaux de chênes âgés.",
@@ -2206,7 +2206,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Quels arbres attaque-t-elle ?" },
       { t: 'p', x: "Elle vit presque exclusivement sur les **chênes**, en particulier les chênes pédonculés et sessiles. Elle préfère les arbres âgés et bien ensoleillés : lisières de forêt, chênes isolés dans un parc ou un jardin, alignements le long des allées." },
-      { t: 'h2', x: "Comment est-on exposé ?" },
+      { t: 'h2', x: "Comment est-on exposé sans le savoir ?" },
       { t: 'p', x: "Comme pour le pin, ce sont les **poils urticants** qui posent problème, à partir du troisième stade de la chenille. Ces poils microscopiques se détachent quand la chenille est dérangée et sont **dispersés par le vent**. La particularité du chêne, ce sont ses **nids** : ils concentrent les mues et les poils, et ils restent urticants **plusieurs mois, voire une à deux années**, bien après le départ des chenilles. On peut donc être exposé :" },
       { t: 'ul', items: [
         "**en s'appuyant contre un tronc** ou en ramassant des branches ;",
@@ -2214,7 +2214,7 @@ export const ARTICLES: Article[] = [
         "**en se promenant ou en pique-niquant** sous des chênes infestés, surtout par temps sec et venteux ;",
         "**par les animaux**, chiens et chevaux en particulier.",
       ] },
-      { t: 'h2', x: "Les risques pour la santé" },
+      { t: 'h2', x: "Les risques pour vous, vos enfants et vos animaux" },
       { t: 'ul', items: [
         "**La peau** : éruption et démangeaisons très fortes, qui peuvent durer plusieurs jours.",
         "**Les yeux** : irritation et conjonctivite.",
@@ -2223,7 +2223,7 @@ export const ARTICLES: Article[] = [
         "**Les professionnels exposés** : élagueurs, bûcherons, agents d'entretien des espaces verts, qui doivent porter un équipement de protection.",
       ] },
       { t: 'callout', tone: 'warn', title: 'En cas de contact', x: "Ne vous grattez pas. Changez de vêtements et lavez-les à haute température. Douchez-vous sans frotter et rincez les yeux à grande eau. En cas de gêne respiratoire, de réaction importante ou d'atteinte des yeux, appelez le 15 ou consultez. Pour un animal, contactez un vétérinaire." },
-      { t: 'h2', x: "Les risques pour l'environnement" },
+      { t: 'h2', x: "Les dégâts sur les chênes" },
       { t: 'p', x: "Les chenilles **défolient les chênes au printemps**. L'arbre produit en général de nouvelles feuilles dans l'été, mais des attaques répétées l'**affaiblissent** et le rendent plus sensible aux sécheresses, aux maladies et aux autres insectes. Dans les forêts et les parcs fréquentés, les nids urticants obligent aussi parfois à fermer des chemins ou des aires de jeux." },
       { t: 'h2', x: "Toutes les méthodes pour s'en débarrasser" },
       { t: 'table', head: ['Méthode', 'Quand', 'Principe'], rows: [
@@ -2255,8 +2255,8 @@ export const ARTICLES: Article[] = [
   // 39 ─────────────────────────────────────────────────────────────
   {
     slug: 'deratisation-logement-syndrome-diogene',
-    title: "Dératisation d'un logement en syndrome de Diogène à Maisons-Alfort : notre intervention en images",
-    seoTitle: "Dératisation Diogène à Maisons-Alfort : chantier en images",
+    title: "Logement Diogène envahi par les rats à Maisons-Alfort : notre intervention choc en images",
+    seoTitle: "Logement Diogène envahi par les rats : nos images choc",
     description: "Maisons-Alfort (94) : logement très encombré infesté de rats. Dératisation avant le nettoyage, ramassage, désinfection. Notre chantier en vidéos.",
     date: '2026-11-02',
     category: 'Rongeurs',
@@ -2277,7 +2277,7 @@ export const ARTICLES: Article[] = [
         "**Une reproduction rapide** : sans prédateur ni dérangement, une petite colonie devient vite une grosse population. Voir notre article sur la [reproduction des rats](/blog/reproduction-des-rats).",
       ] },
       { t: 'p', x: "Le problème ne reste pas dans l'appartement : par les gaines, les colonnes d'évacuation et les caves, les rats rejoignent les **logements voisins et les parties communes**. C'est souvent ce qui alerte l'immeuble." },
-      { t: 'h2', x: "Les risques pour la santé" },
+      { t: 'h2', x: "Un vrai danger pour la santé" },
       { t: 'p', x: "Les rats peuvent transmettre des maladies, en particulier la **leptospirose**, par leur urine et les eaux ou surfaces souillées (voir les sources en bas de page). S'y ajoutent les **morsures**, les **puces**, les **odeurs** et la dégradation des câbles électriques, avec un risque d'incendie. Dans un logement très encombré, les poussières, les moisissures et les déjections rendent l'air lui-même irritant. C'est pourquoi **personne ne doit commencer à vider un tel logement sans protection** ni avant la dératisation." },
       { t: 'h2', x: "Pourquoi dératiser avant de nettoyer ?" },
       { t: 'p', x: "C'est la question qu'on nous pose le plus. Si l'on commence par vider le logement :" },
@@ -2313,7 +2313,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Une fois le logement vidé, nous sommes revenus à Maisons-Alfort pour la dernière étape : **repérer et boucher les passages**. Sans les déchets, on voit enfin les trous creusés par les rats : **au ras du sol, dans les angles des murs**, derrière un radiateur, juste au-dessus des plinthes. La vidéo et les photos montrent ces trous avant rebouchage." },
       { t: 'p', x: "Chaque trou a été **rebouché avec de la laine d'acier**, que les rats ne peuvent pas ronger, puis **fermé par une grille**. Depuis notre dératisation et ce colmatage, **il n'y a plus de rats** dans le logement." },
       { t: 'callout', tone: 'ok', title: 'Pourquoi la laine d’acier et la grille', x: "Un rat ronge le plâtre, le bois, la mousse expansive et même certains mortiers frais. La laine d'acier tassée dans le trou le bloque, et la grille vissée par-dessus tient l'ensemble dans le temps." },
-      { t: 'h2', x: "Qui contacter face à un logement de ce type ?" },
+      { t: 'h2', x: "Un proche vit dans ces conditions ? Qui contacter" },
       { t: 'p', x: "Si vous êtes voisin, bailleur, syndic ou proche, et qu'un logement très encombré pose un problème de rats, d'odeurs ou de sécurité, vous pouvez **alerter la mairie** de la commune, qui dispose souvent d'un service d'hygiène. Côté traitement, une entreprise de dératisation peut intervenir à la demande de la mairie, du bailleur, du syndic ou de la famille, comme nous l'avons fait ici." },
       { t: 'callout', tone: 'warn', title: 'À ne pas faire', x: "Vider soi-même un logement infesté sans protection. Toucher des rats morts à mains nues. Répandre de la mort-aux-rats achetée en magasin dans un logement encombré, où les appâts se perdent et peuvent être atteints par des animaux domestiques." },
       { t: 'p', x: "**Ce que nous proposons** : dératisation par des techniciens Certibiocide, postes sécurisés, ramassage, désinfection, colmatage et suivi, avec un compte rendu pour la mairie, le bailleur ou le syndic. Intervention possible en urgence partout en Île-de-France. Voir notre page [dératisation](/services/deratisation) et notre page [dératisation à Maisons-Alfort](/deratisation/maisons-alfort)." },
@@ -2337,7 +2337,7 @@ export const ARTICLES: Article[] = [
   // 40 ─── Récits d'intervention (fiche Google) ───────────────────
   {
     slug: 'souris-airbnb-saint-maur-des-fosses',
-    title: "Souris dans un Airbnb à Saint-Maur-des-Fossés : notre intervention",
+    title: "Souris dans un Airbnb à Saint-Maur-des-Fossés : comment nous avons sauvé la location",
     seoTitle: "Souris dans un Airbnb à Saint-Maur (94) : intervention",
     description: "Odeurs et petites crottes dans un Airbnb à Saint-Maur-des-Fossés : recherche des accès, pièges sécurisés, colmatage. Résultat dès le 1er passage.",
     date: '2026-11-02',
@@ -2349,9 +2349,9 @@ export const ARTICLES: Article[] = [
     photos: ['sourisAirbnb'],
     blocks: [
       { t: 'p', x: "Pour un logement loué sur Airbnb, une souris, c'est vite un mauvais commentaire. Notre client, qui loue son appartement en **courte durée à Saint-Maur-des-Fossés (94)**, nous a appelés après plusieurs remarques de voyageurs : **odeurs de rongeurs** et **petites crottes** dans la cuisine." },
-      { t: 'h2', x: "Ce que nous avons trouvé" },
+      { t: 'h2', x: "Ce que nous avons découvert sur place" },
       { t: 'p', x: "Sur place, le diagnostic a confirmé la présence de **souris**. Les crottes, petites et allongées, étaient concentrées le long des plinthes, sous l'évier et derrière l'électroménager : ce sont leurs couloirs de passage habituels. La photo montre une souris sur le carrelage du logement." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention, étape par étape" },
       { t: 'ol', items: [
         "**Recherche des accès** : passages de tuyaux sous l'évier, gaines, jour sous les portes, plinthes décollées.",
         "**Pose de dispositifs adaptés à un logement occupé** : pièges et postes sécurisés, hors de portée des voyageurs, des enfants et des animaux.",
@@ -2375,7 +2375,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'cryogenie-punaises-de-lit-foyer-enfants',
-    title: "Punaises de lit dans un foyer pour enfants handicapés : traitement par cryogénie",
+    title: "Punaises de lit dans un foyer pour enfants handicapés : un traitement par le froid, sans aucun produit chimique",
     seoTitle: "Cryogénie punaises de lit dans un foyer : intervention",
     description: "Un foyer pour enfants handicapés voulait un traitement sans produit chimique contre les punaises de lit. Cryogénie chambre par chambre, en vidéos.",
     date: '2026-11-02',
@@ -2391,9 +2391,9 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Dans un établissement qui accueille des enfants handicapés, un traitement contre les punaises de lit doit être **efficace, rapide et compatible avec la présence des enfants**. Le foyer nous a contactés **en urgence**, avec une demande claire : **pas de produit chimique, pas de biocide**." },
-      { t: 'h2', x: "Pourquoi la cryogénie" },
+      { t: 'h2', x: "Pourquoi le froid plutôt qu'un insecticide" },
       { t: 'p', x: "La cryogénie consiste à projeter de la **neige carbonique, à environ −78 °C**, sur les zones où se cachent les punaises. Le froid extrême tue au contact les adultes, les larves et les œufs, **sans insecticide**. C'est la solution que nous avons jugée la mieux adaptée à cet établissement." },
-      { t: 'h2', x: "Le déroulé, chambre par chambre" },
+      { t: 'h2', x: "Le traitement, chambre par chambre" },
       { t: 'ol', items: [
         "**Inspection** de chaque chambre : coutures des matelas, sommiers, têtes de lit, meubles, plinthes, prises.",
         "**Cryogénie** sur la literie, les cadres de lit, le mobilier et les jonctions murs et sols, comme on le voit sur les vidéos.",
@@ -2417,7 +2417,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'enorme-nid-frelons-asiatiques-arbre',
-    title: "Énorme nid de frelons asiatiques dans un arbre : notre intervention en vidéo",
+    title: "Énorme nid de frelons asiatiques dans un arbre : notre intervention impressionnante en vidéo",
     seoTitle: "Énorme nid de frelons asiatiques dans un arbre : vidéo",
     description: "Un très gros nid de frelons asiatiques caché dans le feuillage d'un arbre de jardin. Repérage, destruction à distance, intervention garantie trois mois.",
     date: '2026-11-02',
@@ -2431,9 +2431,9 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Un nid de frelons asiatiques peut passer inaperçu tout l'été : il est souvent construit **en hauteur, au cœur du feuillage**. Notre cliente avait surtout remarqué le **va-et-vient des frelons** au-dessus de son jardin. En levant les yeux depuis le pied de l'arbre, nous avons trouvé un **nid énorme**, comme on le voit sur la vidéo." },
-      { t: 'h2', x: "Pourquoi ne jamais s'en approcher" },
+      { t: 'h2', x: "Pourquoi il ne faut jamais s'en approcher" },
       { t: 'p', x: "Les frelons défendent leur nid quand on s'en approche ou qu'on secoue les branches. Une taille de haie, un élagage ou un ballon peuvent suffire à déclencher une attaque. **N'essayez jamais de le détruire vous-même**, ni avec un jet d'eau, ni avec un produit acheté en magasin." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention en vidéo" },
       { t: 'ol', items: [
         "**Repérage** de la position exacte du nid et des branches qui le portent.",
         "**Mise en sécurité** : éloignement des occupants et des animaux, tenue de protection complète pour nos deux techniciens.",
@@ -2457,8 +2457,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'rat-cheminee-intervention',
-    title: "Un rat entrait par la cheminée : comment nous l'avons arrêté",
-    seoTitle: "Rat qui entre par la cheminée : notre intervention",
+    title: "Un rat entrait par la cheminée : comment nous l'avons stoppé net",
+    seoTitle: "Rat qui entre par la cheminée : comment on l'a stoppé",
     description: "Un rongeur se promenait la nuit dans la maison. L'accès était un trou au niveau de la cheminée : mousse raticide, pièges, colmatage. Récit et photo.",
     date: '2026-11-02',
     category: 'Rongeurs',
@@ -2469,7 +2469,7 @@ export const ARTICLES: Article[] = [
     photos: ['ratPlaque'],
     blocks: [
       { t: 'p', x: "« Il y a quelque chose qui se promène la nuit. » C'est souvent la première phrase de nos clients. Ici, le bruit venait du salon, et les indices menaient tous au même endroit : **la cheminée**." },
-      { t: 'h2', x: "Trouver par où il entre" },
+      { t: 'h2', x: "L'enquête : par où entrait-il ?" },
       { t: 'p', x: "Un rat passe par un trou de la taille d'une grosse pièce de monnaie. Dans une maison, les points faibles sont connus : **conduit et trappe de cheminée**, passages de tuyaux, soupiraux, grilles d'aération abîmées. Ici, nous avons localisé **un trou au niveau de la cheminée**, avec des traces de passage autour." },
       { t: 'h2', x: "Notre intervention" },
       { t: 'ol', items: [
@@ -2494,8 +2494,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'depigeonnage-balcon-filet-nettoyage',
-    title: "Balcon envahi par les pigeons : dépigeonnage, filet et nettoyage",
-    seoTitle: "Balcon envahi par les pigeons : filet et nettoyage",
+    title: "Balcon envahi par les pigeons : notre dépigeonnage complet (nettoyage et filet)",
+    seoTitle: "Balcon envahi par les pigeons : nettoyage et pose de filet",
     description: "Un balcon couvert de fientes et de débris : départ des pigeons, filet anti-pigeons, nettoyage complet et désinfection. Notre chantier en photos.",
     date: '2026-11-02',
     category: 'Pigeons',
@@ -2506,13 +2506,13 @@ export const ARTICLES: Article[] = [
     photos: ['balconEncombre', 'balcon'],
     blocks: [
       { t: 'p', x: "Les pigeons s'installent vite sur un balcon peu utilisé. En quelques mois, il se couvre de **fientes, de plumes et de débris de nids**. La première photo montre l'état du balcon à notre arrivée." },
-      { t: 'h2', x: "Pourquoi il faut intervenir" },
+      { t: 'h2', x: "Pourquoi il ne faut pas laisser faire" },
       { t: 'ul', items: [
         "**Hygiène** : les fientes accumulées salissent, sentent et attirent d'autres nuisibles, comme les acariens et les insectes.",
         "**Dégradations** : elles bouchent les évacuations et abîment les revêtements.",
         "**Voisinage** : les nuisances se propagent aux balcons voisins.",
       ] },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention : nettoyage et filet" },
       { t: 'ol', items: [
         "**Départ des pigeons** présents sur le balcon.",
         "**Pose d'un filet anti-pigeons** pour empêcher leur retour, sans gêner la vue ni l'aération.",
@@ -2545,9 +2545,9 @@ export const ARTICLES: Article[] = [
     photos: ['frelonsPorte', 'frelonsPerche'],
     blocks: [
       { t: 'p', x: "Un nid au-dessus d'une porte, c'est le pire endroit : **chaque passage dérange les frelons**. Notre cliente avait remarqué des allées et venues autour de l'entrée et nous a appelés aussitôt." },
-      { t: 'h2', x: "Traiter à distance avec une perche" },
+      { t: 'h2', x: "Traiter à distance, sans prendre de risque" },
       { t: 'p', x: "Le nid était **en hauteur, au-dessus de la porte**. Avec une **perche spécialisée**, le technicien atteint le nid sans échelle contre la façade et sans se placer dessous : il **traite le nid**, attend que l'activité baisse, puis le **retire avec précaution**. La première photo montre la perche dirigée vers le nid ; la seconde, un autre nid sous un toit retiré de la même façon." },
-      { t: 'h2', x: "Pourquoi inspecter les combles" },
+      { t: 'h2', x: "Pourquoi on inspecte toujours les combles" },
       { t: 'p', x: "Quand un nid est installé près de la toiture, il n'est pas rare qu'un **second nid** soit caché ailleurs, notamment dans les **combles**. Après le retrait, nous avons fait une **inspection complète des combles** de la maison. Aucun autre nid : l'intervention s'est terminée avec succès, en toute sécurité pour la cliente et son domicile." },
       { t: 'callout', tone: 'warn', title: 'En attendant notre arrivée', x: "Utilisez une autre entrée si possible, gardez portes et fenêtres fermées de ce côté, éloignez enfants et animaux, et ne touchez pas au nid." },
       { t: 'p', x: "Destruction de nid **à partir de 89 € TTC**, devis gratuit par téléphone." },
@@ -2578,9 +2578,9 @@ export const ARTICLES: Article[] = [
     photos: ['sourisGlu'],
     blocks: [
       { t: 'p', x: "Un gîte reste souvent **vide plusieurs jours** entre deux locations : c'est exactement ce qu'aiment les souris. Calme, chaleur, quelques miettes oubliées, et elles s'installent. Notre client, qui loue ce gîte, nous a appelés dès les premiers indices." },
-      { t: 'h2', x: "Où poser les pièges" },
+      { t: 'h2', x: "Où poser les pièges pour qu'ils marchent" },
       { t: 'p', x: "Une souris suit toujours les mêmes chemins, **le long des murs**, derrière les meubles et l'électroménager. Nous avons repéré ces passages grâce aux crottes et aux traces, et posé les pièges **exactement sur ces couloirs**, hors de portée des locataires." },
-      { t: 'h2', x: "Le résultat" },
+      { t: 'h2', x: "Le résultat : souris capturée" },
       { t: 'p', x: "**Sept à huit jours après la pose**, une souris était capturée sur l'une des plaques, comme on le voit sur la photo. Depuis, **plus aucun problème de souris** : dératisation réussie." },
       { t: 'callout', tone: 'info', title: 'Entre deux locations', x: "Ne laissez aucune denrée ouverte dans les placards, videz les poubelles au départ des locataires et vérifiez le bas des portes et les passages de tuyaux. Ce sont les entrées les plus fréquentes." },
       { t: 'h2', x: "Où intervenons-nous ?" },
@@ -2596,7 +2596,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'nid-guepes-sous-tuile-essonne',
-    title: "Nid de guêpes sous une tuile en Essonne : intervention en hauteur, en vidéo",
+    title: "Nid de guêpes caché sous une tuile en Essonne : intervention en hauteur, en vidéo",
     seoTitle: "Nid de guêpes sous une tuile en Essonne : vidéo",
     description: "Nid de guêpes logé sous une tuile, en Essonne (91) : intervention en hauteur, destruction sécurisée. Pourquoi les guêpes aiment les toitures.",
     date: '2026-11-02',
@@ -2609,11 +2609,11 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Cette fois, nos équipes sont intervenues **en Essonne (91)** pour un nid de **guêpes communes** installé **sous une tuile**. La hauteur ne nous arrête pas : la vidéo montre notre technicien sur l'échelle, en tenue complète, au niveau de la toiture." },
-      { t: 'h2', x: "Pourquoi les guêpes s'installent sous les tuiles" },
+      { t: 'h2', x: "Pourquoi les guêpes adorent vos tuiles" },
       { t: 'p', x: "Au printemps, la **reine fondatrice**, qui a passé l'hiver à l'abri, sort quand les températures remontent et cherche un endroit pour construire son nid. Les espaces sous les tuiles lui offrent tout ce qu'elle cherche : **l'obscurité, la protection contre la pluie et un peu de chaleur** emmagasinée par la toiture. Elle construit seule les premières alvéoles avec du bois mâché, puis la colonie grandit au fil des semaines." },
-      { t: 'h2', x: "Jusqu'à quand dure la saison ?" },
+      { t: 'h2', x: "Jusqu'à quand dure la saison des guêpes ?" },
       { t: 'p', x: "En général **de mai à octobre**, avec un pic d'activité en plein été. C'est **en fin de saison** que les colonies sont les plus grosses et les plus défensives : mieux vaut ne pas attendre." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention en hauteur" },
       { t: 'ol', items: [
         "**Repérage** de l'entrée du nid, en observant les allées et venues des guêpes.",
         "**Mise en place** de l'échelle et sécurisation de la zone au sol.",
@@ -2635,7 +2635,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'nids-frelons-buissons-haies-intervention',
-    title: "Nids de frelons dans des buissons et des haies : deux interventions, dont une derrière une école",
+    title: "Nids de frelons cachés dans les haies : deux interventions, dont une derrière une école",
     seoTitle: "Nid de frelons dans une haie : 2 interventions en photos",
     description: "Deux nids de frelons cachés dans des haies, dont un derrière une école, traité en fin de journée. Pourquoi ces nids sont dangereux, comment on intervient.",
     date: '2026-11-02',
@@ -2649,9 +2649,9 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Un nid dans une haie est **le plus dangereux pour les passants** : il est à hauteur d'homme et on ne le voit pas. Un coup de taille-haie, un enfant qui récupère un ballon, et la colonie attaque." },
       { t: 'h2', x: "Derrière une école, en fin de journée" },
       { t: 'p', x: "Un nid de frelons s'était installé dans la végétation **à l'arrière d'une école**. Nous sommes intervenus **en fin de journée**, quand les frelons sont rentrés au nid et que l'école est vide : le traitement touche toute la colonie, sans risque pour les enfants. Les deux premières photos montrent le technicien devant la haie et le nid caché au cœur des branches." },
-      { t: 'h2', x: "Dans le buisson d'un jardin" },
+      { t: 'h2', x: "Caché dans le buisson d'un jardin" },
       { t: 'p', x: "Autre chantier, même piège : un **énorme nid** dans un buisson de jardin. Le technicien a traité le nid au pulvérisateur, puis l'a **retiré** une fois l'activité arrêtée. La dernière photo le montre, nid en main, dans le jardin." },
-      { t: 'h2', x: "Notre méthode" },
+      { t: 'h2', x: "Notre méthode, sans risque pour les riverains" },
       { t: 'ul', items: [
         "**Tenue de protection complète** : combinaison, voile, gants.",
         "**Traitement de préférence en fin de journée**, quand la colonie est au nid.",
@@ -2675,7 +2675,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'trois-rongeurs-captures-plaques-glu',
-    title: "Trois petits rongeurs capturés : une intervention de dératisation en urgence",
+    title: "Trois rongeurs capturés en une intervention : dératisation en urgence",
     seoTitle: "Trois petits rongeurs capturés : intervention en urgence",
     description: "Appel urgent d'une cliente pour des rongeurs : plaques et appâts posés sur les passages, trois petits rongeurs capturés rapidement. Récit et photos.",
     date: '2026-11-02',
@@ -2687,7 +2687,7 @@ export const ARTICLES: Article[] = [
     photos: ['rongeursGlu'],
     blocks: [
       { t: 'p', x: "Certaines infestations ne peuvent pas attendre. Cette cliente nous a appelés **en urgence** : des rongeurs circulaient autour de chez elle, jusqu'au pied des murs." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention en urgence" },
       { t: 'ol', items: [
         "**Repérage des passages** : les rongeurs longent toujours les murs, c'est là qu'il faut poser les dispositifs.",
         "**Pose de plaques et d'appâts** sur ces couloirs, à l'abri de la pluie et hors de portée des animaux domestiques.",
@@ -2709,7 +2709,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'rat-piege-cuisine-electromenager',
-    title: "Rat capturé derrière l'électroménager : le piège classique bien placé",
+    title: "Rat caché derrière l'électroménager : capturé grâce au piège classique bien placé",
     seoTitle: "Rat derrière l'électroménager : capturé au piège classique",
     description: "Un rat circulait derrière l'électroménager : piège mécanique posé sur son passage, rat capturé. Pourquoi cuisines et réserves sont des zones sensibles.",
     date: '2026-11-02',
@@ -2723,7 +2723,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Derrière le frigo, le lave-linge ou la cuisinière, il fait chaud, c'est sombre et les tuyaux mènent partout : **c'est l'autoroute des rongeurs**. Chez ce client, les traces menaient toutes derrière l'électroménager." },
       { t: 'h2', x: "Pourquoi un piège classique ici" },
       { t: 'p', x: "Dans une **cuisine ou une réserve**, on évite de placer du raticide près des aliments. Un **piège mécanique** bien placé est efficace, ne diffuse aucun produit et permet de **constater la capture** : c'est ce que montre la photo, le rat pris au piège entre les tuyaux." },
-      { t: 'h2', x: "Les étapes" },
+      { t: 'h2', x: "La capture, étape par étape" },
       { t: 'ol', items: [
         "**Repérage** des traces : crottes, traces grasses le long des tuyaux, câbles grignotés.",
         "**Pose du piège** exactement sur le passage, contre le mur.",
@@ -2747,8 +2747,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'punaises-de-lit-traitement-insecticide-appartement',
-    title: "Punaises de lit dans un appartement : pulvérisation puis nébulisation, en vidéo",
-    seoTitle: "Punaises de lit : traitement insecticide en appartement",
+    title: "Punaises de lit dans un appartement : le traitement choc en vidéo (pulvérisation puis nébulisation)",
+    seoTitle: "Punaises de lit : le traitement choc en vidéo",
     description: "Appartement infesté de punaises de lit : pulvérisation dans tout le logement, nébulisation, 4 heures d'attente, deuxième passage. Le déroulé en vidéo.",
     date: '2026-11-02',
     category: 'Punaises de lit',
@@ -2760,11 +2760,11 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Quand l'infestation est importante et touche plusieurs pièces, le **traitement insecticide** reste une solution efficace. C'est ce que nous avons réalisé dans cet appartement, en **deux étapes** le même jour." },
-      { t: 'h2', x: "1. La pulvérisation" },
+      { t: 'h2', x: "Étape 1 : la pulvérisation, cachette par cachette" },
       { t: 'p', x: "Le technicien, certifié **Certibiocide**, pulvérise un insecticide professionnel dans **tout l'appartement** : coutures des matelas, sommiers, cadres de lit, plinthes, prises, dessous des meubles. Ce sont les cachettes préférées des punaises." },
-      { t: 'h2', x: "2. La nébulisation" },
+      { t: 'h2', x: "Étape 2 : la nébulisation, jusque dans les recoins" },
       { t: 'p', x: "La **nébulisation** diffuse ensuite le produit en fines gouttelettes dans les pièces, pour atteindre les recoins que la pulvérisation ne touche pas directement." },
-      { t: 'h2', x: "Après le traitement" },
+      { t: 'h2', x: "Après le traitement : les consignes" },
       { t: 'ul', items: [
         "**Quitter le logement** et laisser le produit agir **environ quatre heures**.",
         "**Aérer** en revenant, avant de réoccuper les pièces.",
@@ -2787,8 +2787,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'punaises-de-lit-creteil-sommier-lattes',
-    title: "Punaises de lit à Créteil : localisées dans les sommiers, là où une première société n'avait rien trouvé",
-    seoTitle: "Punaises de lit à Créteil : cachées dans les sommiers",
+    title: "Punaises de lit à Créteil : trouvées dans les sommiers, là où une autre société n'avait rien vu",
+    seoTitle: "Punaises de lit à Créteil : là où d'autres ont échoué",
     description: "Créteil (94) : une première société n'avait rien trouvé. Nous avons localisé les punaises de lit dans les sommiers, au creux des lattes. Photos et vidéo.",
     date: '2026-11-03',
     category: 'Punaises de lit',
@@ -2801,12 +2801,12 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Des piqûres au réveil, mais **rien de visible** sur le matelas : c'est la situation de ce client de **Créteil (94)**. Une première société était déjà passée et **n'avait rien trouvé**. Il nous a appelés pour un second avis, et nous sommes intervenus le **mardi 3 novembre**." },
-      { t: 'h2', x: "Les punaises étaient dans les sommiers" },
+      { t: 'h2', x: "Elles étaient cachées dans les sommiers" },
       { t: 'p', x: "Notre technicien a inspecté chaque lit **pièce par pièce**, jusqu'au sommier. Les punaises étaient **principalement localisées au niveau des sommiers**, cachées **dans les trous des lattes**, autour des vis et des fixations. La photo et la vidéo le montrent : insectes et petits points noirs regroupés dans ces cavités de quelques millimètres. **Deux chambres** étaient touchées." },
       { t: 'p', x: "C'est un cas classique : les punaises recherchent les **fentes sombres et étroites** au plus près de la personne qu'elles piquent. Un matelas propre ne veut pas dire un lit sain." },
-      { t: 'h2', x: "Le traitement prévu" },
+      { t: 'h2', x: "Le traitement mis en place" },
       { t: 'p', x: "Les deux chambres vont être traitées par un **traitement chimique professionnel**, appliqué par un technicien certifié Certibiocide, en insistant sur les sommiers, les lattes, les cadres de lit et les plinthes. Comme pour tous nos traitements de punaises de lit, **deux passages** sont prévus : le second élimine les punaises écloses entre-temps. À partir de **290 € TTC, 2 passages inclus**, garantie 1 an." },
-      { t: 'h2', x: "Où regarder dans un lit" },
+      { t: 'h2', x: "Où regarder dans votre lit" },
       { t: 'ul', items: [
         "**Les lattes**, et surtout les trous des vis et les embouts en plastique.",
         "**Les jonctions du cadre** et les angles de la tête de lit.",
@@ -2823,6 +2823,265 @@ export const ARTICLES: Article[] = [
     ],
     sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
     cta: { title: 'Des piqûres mais rien de visible ?', text: "Nos techniciens inspectent le lit en détail, jusqu'aux lattes. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'guepes-tout-savoir',
+    title: "Guêpes : pourquoi elles deviennent infernales à la fin de l'été (et comment s'en débarrasser sans se faire piquer)",
+    seoTitle: "Guêpes : pourquoi elles deviennent si agressives en été",
+    description: "Guêpes autour de la table, nid dans le mur ou le jardin ? Comment les reconnaître, pourquoi elles deviennent agressives en fin d'été et les bons gestes pour éviter les piqûres.",
+    date: '2026-11-08',
+    category: 'Guêpes et frelons',
+    readMin: 8,
+    tldr: "Les guêpes vivent en colonies d'une seule saison : seule la jeune reine passe l'hiver. En fin d'été, la colonie est à son maximum et les ouvrières recherchent avant tout du sucre : c'est pour ça qu'elles envahissent les terrasses. Contrairement à l'abeille, une guêpe peut piquer plusieurs fois. Un nid ne se détruit jamais soi-même, et on ne bouche jamais son entrée.",
+    service: { href: '/services/guepes-frelons', label: 'Guêpes et frelons : destruction de nids' },
+    photos: ['nidGuepes'],
+    blocks: [
+      { t: 'p', x: "Elles tournent autour de votre **verre**, se posent sur le **melon**, reviennent sans cesse malgré vos gestes... À la fin de l'été, les **guêpes** semblent partout et **beaucoup plus agressives**. Ce n'est pas une impression. Voici **comment elles vivent**, **pourquoi elles changent de comportement** et **comment s'en débarrasser sans vous faire piquer**." },
+      { t: 'h2', x: "Guêpe, abeille ou frelon ? Ne vous trompez plus" },
+      { t: 'img', src: '/guepes/vespula-vulgaris.jpg', alt: 'Guêpe commune (Vespula vulgaris) au corps noir et jaune vif', legende: "La **guêpe commune** (Vespula vulgaris) : corps **lisse, noir et jaune vif**, **taille fine** entre le thorax et l'abdomen (ici un mâle, reconnaissable à ses longues antennes).", credit: 'Magne Flåten', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Vespula_vulgaris-m.jpg' },
+      { t: 'table', head: ['', 'Guêpe', 'Abeille', 'Frelon'], rows: [
+        ['Aspect', 'Lisse, jaune vif et noir, taille fine', 'Velue, brun doré', 'Beaucoup plus grand'],
+        ['Ce qu’elle cherche', 'Sucre et viande', 'Nectar et pollen', 'Insectes et sucre'],
+        ['Piqûre', 'Peut piquer plusieurs fois', 'Pique une fois et laisse son dard', 'Peut piquer plusieurs fois'],
+        ['Nid', 'Boule de papier gris, souvent cachée', 'Ruche ou cavité, en cire', 'Selon l’espèce, en hauteur ou en cavité'],
+      ] },
+      { t: 'p', x: "Pour les frelons, lisez nos guides sur le [frelon asiatique](/blog/frelon-asiatique-tout-savoir) et le [frelon européen](/blog/frelon-europeen-tout-savoir)." },
+      { t: 'h2', x: "Les 3 guêpes que vous croisez le plus souvent" },
+      { t: 'ul', items: [
+        "**La guêpe commune** (Vespula vulgaris) : la plus répandue, celle des terrasses. Elle niche souvent **dans le sol** ou dans une **cavité**.",
+        "**La guêpe germanique** (Vespula germanica) : très proche, tout aussi attirée par vos repas. Elle niche aussi **dans le sol**, les murs ou les combles.",
+        "**La guêpe poliste** : plus élancée, avec de **longues pattes pendantes** en vol. Son petit nid est **ouvert**, sans enveloppe, accroché sous un rebord, un volet ou une tuile. Elle est **beaucoup moins agressive**.",
+      ] },
+      { t: 'h2', x: "Une colonie qui ne vit qu'une saison : le cycle de la guêpe" },
+      { t: 'ol', items: [
+        "**Au printemps**, une **reine** sort d'hibernation, se nourrit de **nectar** et cherche un endroit abrité pour fonder son nid.",
+        "Elle construit seule les premières alvéoles en **papier mâché** : des fibres de bois qu'elle mâche et mélange à sa salive. Elle pond les premières **ouvrières**.",
+        "**En été**, les ouvrières agrandissent le nid sans arrêt. Un nid de guêpe commune peut atteindre **la taille d'un ballon de basket**.",
+        "**En fin d'été**, le nid produit les **futures reines** et les **mâles**.",
+        "**En automne**, la colonie **meurt**. Seules les **jeunes reines fécondées** survivent, cachées dans un **grenier**, une **remise** ou un **arbre creux**. Le vieux nid **n'est pas réutilisé**.",
+      ] },
+      { t: 'h2', x: "Pourquoi elles deviennent infernales en fin d'été" },
+      { t: 'p', x: "Tout l'été, les ouvrières chassent des **insectes** pour nourrir les larves. En **fin de saison**, la colonie est à son **maximum**, il y a moins de larves à nourrir, et les adultes passent à un régime **beaucoup plus sucré**. Résultat : des **centaines d'ouvrières** se mettent à chercher du **sucre**... sur vos **fruits**, vos **boissons**, vos **poubelles** et vos **desserts**." },
+      { t: 'p', x: "C'est aussi l'époque où les nids sont **les plus gros** et les plus **peuplés** : un nid dérangé à ce moment-là réagit **très violemment**." },
+      { t: 'h2', x: "Où se cache leur nid ? Les endroits à vérifier" },
+      { t: 'ul', items: [
+        "**Dans le sol** : un trou dans la pelouse, une rocaille, un talus, avec des **allées et venues** constantes.",
+        "**Dans les murs** : un trou de façade, un joint abîmé, une **aération**.",
+        "**Dans les combles** et sous la toiture, **sous les tuiles**.",
+        "**Dans les coffres de volets roulants**, les **abris de jardin**, les **nichoirs**, les **boîtes aux lettres**.",
+        "**Dans les haies** et les buissons épais.",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Ne bouchez jamais l’entrée d’un nid', x: "Un nid dans un **mur** ou sous un **plancher** ? Ne bouchez **surtout pas** le trou : les guêpes cherchent une autre sortie et peuvent **ressortir à l'intérieur de la maison**, par une prise, un plafond ou une plinthe." },
+      { t: 'h2', x: "Piqûre de guêpe : quand faut-il s'inquiéter ?" },
+      { t: 'p', x: "Contrairement à l'abeille, la guêpe **ne laisse pas son dard** : elle peut **piquer plusieurs fois**. Une piqûre est **douloureuse** mais en général **sans gravité**. Le danger vient des **piqûres multiples**, des piqûres **dans la bouche ou la gorge** (une guêpe cachée dans une canette !) et des **allergies**." },
+      { t: 'callout', tone: 'warn', title: 'Quand appeler les secours', x: "Appelez le **15** ou le **112** en cas de **piqûres multiples**, de piqûre **dans la bouche ou la gorge**, de **gonflement du visage**, de **difficultés à respirer** ou de **malaise**, et toujours chez une personne **allergique**." },
+      { t: 'h2', x: "6 réflexes pour profiter de l'été sans guêpes" },
+      { t: 'ul', items: [
+        "**Couvrez** les plats, les fruits et les boissons sur la table.",
+        "**Buvez avec une paille** ou dans un verre couvert : jamais directement à la canette.",
+        "**Fermez les poubelles** et rincez les emballages sucrés.",
+        "**Ramassez les fruits tombés** sous les arbres.",
+        "**Ne faites pas de grands gestes** : restez calme, la guêpe repart d'elle-même.",
+        "**Inspectez au printemps** les abris, volets et avant-toits : un **petit nid de reine** se traite très facilement.",
+      ] },
+      { t: 'h2', x: "Nid de guêpes : pourquoi il ne faut pas le détruire vous-même" },
+      { t: 'p', x: "Bombe insecticide, eau, feu : les tentatives maison finissent souvent en **attaque groupée**. Nos techniciens certifiés **Certibiocide** interviennent en **tenue de protection intégrale** et traitent le nid **directement à l'intérieur**, avec une **perche télescopique** si besoin. Découvrez nos interventions : [nid de guêpes sous une tuile en Essonne](/blog/nid-guepes-sous-tuile-essonne) et [énorme nid dans un abri de jardin à Gretz-Armainvilliers](/blog/nid-guepes-gretz-armainvilliers)." },
+      { t: 'table', head: ['Situation du nid', 'Prix'], rows: [
+        ['Nid accessible (jusqu’à 5 m environ : auvent, cabanon, haie)', 'à partir de 89 € TTC'],
+        ['Nid en hauteur, traité à la perche télescopique', 'à partir de 149 € TTC'],
+        ['Nid difficile d’accès (toiture, combles, cheminée)', 'à partir de 199 € TTC'],
+        ['Nacelle nécessaire', 'sur devis'],
+      ] },
+      { t: 'p', x: "Voir notre service [guêpes et frelons](/services/guepes-frelons), intervention **7j/7 en Île-de-France**. Et en hiver ? Lisez [nid de frelon ou de guêpes en hiver : faut-il le détruire ?](/blog/nid-de-frelon-en-hiver)" },
+    ],
+    faq: [
+      { q: "Pourquoi les guêpes sont-elles plus agressives en fin d'été ?", a: "La colonie est à son maximum et les ouvrières recherchent surtout du sucre : elles envahissent alors les tables, les fruits et les poubelles. Les nids sont aussi les plus gros et se défendent violemment." },
+      { q: "Une guêpe peut-elle piquer plusieurs fois ?", a: "Oui. Contrairement à l'abeille, elle ne laisse pas son dard dans la peau et peut piquer plusieurs fois." },
+      { q: "Un nid de guêpes est-il réutilisé l'année suivante ?", a: "Non. La colonie meurt en automne et seules les jeunes reines hibernent, ailleurs. Elles construiront un nouveau nid au printemps." },
+      { q: "Peut-on boucher le trou d'un nid de guêpes dans un mur ?", a: "Non, jamais : les guêpes cherchent une autre sortie et peuvent ressortir à l'intérieur de la maison. Faites d'abord traiter le nid par un professionnel." },
+      { q: "Combien coûte la destruction d'un nid de guêpes ?", a: "Chez nous, à partir de 89 € TTC pour un nid accessible, 149 € TTC en hauteur à la perche et 199 € TTC pour un nid difficile d'accès (toiture, combles, cheminée). Nacelle sur devis." },
+    ],
+    sources: [
+      { label: 'Bruxelles Environnement : les guêpes (cycle, nid, régime de fin d’été)', url: 'https://document.environnement.brussels/opac_css/elecfile/IF%20Biodiversite%20guepe%20FR' },
+      { label: 'INPN, Muséum national d’Histoire naturelle : Vespula vulgaris', url: 'https://inpn.mnhn.fr/espece/cd_nom/52902' },
+      { label: 'Encyclopædia Universalis : guêpe', url: 'https://www.universalis.fr/encyclopedie/guepe/' },
+      { label: 'Photo : Wikimedia Commons (licence libre, auteur cité sous la photo)', url: 'https://commons.wikimedia.org/wiki/File:Vespula_vulgaris-m.jpg' },
+    ],
+    cta: { title: 'Un nid de guêpes chez vous ?', text: "N'y touchez pas : nos techniciens le détruisent en toute sécurité, 7j/7 en Île-de-France. À partir de 89 € TTC." },
+  },
+  {
+    slug: 'frelon-europeen-tout-savoir',
+    title: "Frelon européen : le géant qui vole même la nuit (moins dangereux qu'on le dit, mais à ne jamais déranger)",
+    seoTitle: "Frelon européen : vole la nuit, dangereux ? Tout savoir",
+    description: "Le plus grand frelon d'Europe vole même la nuit et se cogne à vos fenêtres. Est-il dangereux ? Comment le reconnaître, où il niche et quand faire détruire son nid.",
+    date: '2026-11-08',
+    category: 'Guêpes et frelons',
+    readMin: 7,
+    tldr: "Le frelon européen (Vespa crabro) est une espèce d'ici, la plus grande guêpe d'Europe. Il vole le jour mais aussi la nuit, attiré par les lumières. Loin de son nid, il est plutôt craintif et pique rarement. Son nid, caché dans une cavité, se défend en revanche avec vigueur : on ne s'en approche pas, et on le fait détruire s'il est près d'un lieu de passage.",
+    service: { href: '/services/guepes-frelons', label: 'Guêpes et frelons : destruction de nids' },
+    photos: ['frelonsPorte', 'frelonsPerche'],
+    blocks: [
+      { t: 'p', x: "Un **énorme insecte** se cogne contre votre fenêtre **en pleine nuit**, attiré par la lampe du salon ? C'est très probablement un **frelon européen**. Impressionnant, il traîne une **réputation terrible**... souvent exagérée. Voici **comment le reconnaître**, **comment il vit** et **quand il devient vraiment dangereux**." },
+      { t: 'h2', x: "Le plus grand frelon d'Europe : comment le reconnaître" },
+      { t: 'img', src: '/frelons/vespa-crabro.jpg', alt: 'Frelon européen (Vespa crabro), brun-roux et jaune', legende: "Le **frelon européen** (Vespa crabro) : **tête et thorax brun-roux**, **abdomen jaune** rayé de brun, et une taille **nettement plus grande** que celle d'une guêpe.", credit: 'Didier Descouens', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Frelon_europeen.jpg' },
+      { t: 'table', head: ['', 'Frelon européen', 'Frelon asiatique'], rows: [
+        ['Couleur', 'Brun-roux et jaune vif', 'Très sombre, presque noir'],
+        ['Abdomen', 'Majoritairement jaune', 'Sombre, un seul anneau orangé'],
+        ['Pattes', 'Brunes', 'Jaunes au bout'],
+        ['Actif la nuit', 'Oui, attiré par les lumières', 'Non, surtout le jour'],
+        ['Nid', 'Dans une cavité (arbre creux, grenier, cheminée)', 'Souvent très haut dans les arbres'],
+      ] },
+      { t: 'p', x: "Tout savoir sur son cousin envahissant : notre guide du [frelon asiatique](/blog/frelon-asiatique-tout-savoir)." },
+      { t: 'h2', x: "Une espèce d'ici, pas un envahisseur" },
+      { t: 'p', x: "Contrairement au frelon asiatique, le frelon européen est **une espèce locale** : il vit en Europe depuis toujours. C'est un **grand chasseur d'insectes** (mouches, guêpes, chenilles) qui joue un **rôle utile** dans les jardins et les forêts. Les adultes complètent leur menu avec du **sucre** : fruits mûrs, nectar, sève." },
+      { t: 'h2', x: "Pourquoi il vole la nuit (et se cogne à vos fenêtres)" },
+      { t: 'p', x: "C'est sa grande particularité : le frelon européen est **actif le jour mais aussi la nuit**. Il continue de chasser après le coucher du soleil et il est **attiré par les lumières**. Voilà pourquoi on le retrouve le soir contre une **vitre éclairée**, sous un **lampadaire** ou **dans la maison**, fenêtre ouverte." },
+      { t: 'ul', items: [
+        "**Fermez les fenêtres** ou posez des **moustiquaires** sur les pièces éclairées le soir.",
+        "**Éteignez les lumières extérieures** inutiles près des portes et fenêtres.",
+        "Un frelon entré dans la pièce ? **Éteignez la lumière**, ouvrez grand la fenêtre et **laissez-le ressortir** : il est attiré par la lumière extérieure.",
+      ] },
+      { t: 'h2', x: "Arbre creux, cheminée, grenier : ses cachettes préférées" },
+      { t: 'p', x: "Le frelon européen aime les **cavités sombres et abritées** : **arbre creux**, **cheminée**, **grenier**, **combles**, **coffre de volet roulant**, **nichoir à oiseaux**, **abri de jardin**. Son nid est fabriqué avec une **pâte d'écorce** mâchée et mélangée à de la salive. Comme pour les guêpes, la colonie **ne vit qu'une saison** : seules les jeunes reines passent l'hiver, et **le nid n'est pas réutilisé**." },
+      { t: 'h2', x: "« 7 piqûres tuent un cheval » : la vérité sur sa piqûre" },
+      { t: 'p', x: "C'est une **légende**. La piqûre du frelon européen est **douloureuse**, mais son venin n'est **pas plus dangereux** que celui d'une abeille. **Loin de son nid**, il est même plutôt **craintif** et **pique rarement**." },
+      { t: 'p', x: "Le danger est ailleurs : les **piqûres multiples** quand on dérange un nid, les piqûres au **visage ou à la gorge**, et les **allergies au venin**." },
+      { t: 'callout', tone: 'warn', title: 'Quand appeler les secours', x: "Appelez le **15** ou le **112** en cas de **piqûres multiples**, de piqûre **dans la bouche ou la gorge**, de **gonflement du visage**, de **difficultés à respirer** ou de **malaise**, et toujours chez une personne **allergique**." },
+      { t: 'h2', x: "Nid près de chez vous : le laisser ou le faire détruire ?" },
+      { t: 'p', x: "Un nid **loin de tout passage**, au fond du jardin ou dans un arbre isolé, peut souvent être **laissé tranquille** : il disparaîtra de lui-même en fin de saison. En revanche, faites-le **détruire sans attendre** s'il se trouve :" },
+      { t: 'ul', items: [
+        "**Près d'une porte, d'une fenêtre ou d'une terrasse**.",
+        "**Dans une cheminée, des combles ou un volet roulant** : les frelons risquent d'**entrer dans la maison**.",
+        "**Près d'une école, d'une aire de jeux** ou d'un lieu fréquenté.",
+        "Chez une personne **allergique**, ou s'il y a des **enfants** ou des **animaux**.",
+      ] },
+      { t: 'p', x: "**Ne tentez jamais de le détruire vous-même** et ne bouchez pas l'entrée d'une cavité occupée. Nos techniciens certifiés **Certibiocide** traitent le nid à distance, en tenue intégrale. Voir nos interventions : [nid de frelons au-dessus d'une porte](/blog/nid-frelons-porte-hauteur-perche) et [nid de frelons dans une cheminée à Nogent-sur-Marne](/blog/nid-frelons-cheminee-nogent-sur-marne)." },
+      { t: 'table', head: ['Situation du nid', 'Prix'], rows: [
+        ['Nid accessible (jusqu’à 5 m environ : auvent, cabanon, haie)', 'à partir de 89 € TTC'],
+        ['Nid en hauteur, traité à la perche télescopique', 'à partir de 149 € TTC'],
+        ['Nid difficile d’accès (toiture, combles, cheminée)', 'à partir de 199 € TTC'],
+        ['Nacelle nécessaire', 'sur devis'],
+      ] },
+      { t: 'p', x: "Voir notre service [guêpes et frelons](/services/guepes-frelons), intervention **7j/7 en Île-de-France**." },
+    ],
+    faq: [
+      { q: "Le frelon européen est-il dangereux ?", a: "Loin de son nid, il est plutôt craintif et pique rarement. Sa piqûre est douloureuse mais pas plus dangereuse que celle d'une abeille. Le risque vient des piqûres multiples près d'un nid dérangé et des allergies." },
+      { q: "Pourquoi le frelon européen vole-t-il la nuit ?", a: "Il est actif le jour mais aussi la nuit, et il est attiré par les lumières : c'est pour ça qu'on le voit contre les fenêtres éclairées le soir." },
+      { q: "Est-il vrai que 7 piqûres de frelon tuent un cheval ?", a: "Non, c'est une légende. Le danger vient surtout d'un grand nombre de piqûres, de piqûres au visage ou à la gorge, ou d'une allergie." },
+      { q: "Faut-il détruire un nid de frelons européens ?", a: "S'il est loin de tout passage, on peut souvent le laisser : la colonie meurt en fin de saison. S'il est près d'une porte, dans une cheminée, des combles, près d'enfants ou d'une personne allergique, il faut le faire détruire par un professionnel." },
+      { q: "Comment différencier frelon européen et frelon asiatique ?", a: "L'européen est brun-roux avec un abdomen jaune vif et des pattes brunes. L'asiatique est très sombre, avec un seul anneau orangé et des pattes jaunes au bout." },
+    ],
+    sources: [
+      { label: 'CARI (Belgique) : fiche frelon européen', url: 'https://www.cari.be/IMG/pdf/191_frelon.pdf' },
+      { label: 'Parc naturel régional du Pilat : fiche pratique frelons', url: 'https://www.parc-naturel-pilat.fr/wp-content/uploads/2024/09/ParcPilat_FichePraticFrelon.pdf' },
+      { label: 'Futura Sciences : frelon, définition', url: 'https://www.futura-sciences.com/planete/definitions/zoologie-frelon-4798/' },
+      { label: 'Photo : Wikimedia Commons (licence libre, auteur cité sous la photo)', url: 'https://commons.wikimedia.org/wiki/File:Frelon_europeen.jpg' },
+    ],
+    cta: { title: 'Un nid de frelons près de chez vous ?', text: "Ne vous en approchez pas : nos techniciens le détruisent à distance, 7j/7 en Île-de-France. À partir de 89 € TTC." },
+  },
+  {
+    slug: 'frelon-asiatique-tout-savoir',
+    title: "Frelon asiatique : tout savoir sur ce redoutable prédateur venu d'Asie (et pourquoi ses nids sont énormes en automne)",
+    seoTitle: "Frelon asiatique : tout savoir, dangers et nids géants",
+    description: "Origine, mode de vie, ce qu'il aime, pourquoi il tourne autour des haies, nids énormes en automne : tout sur le frelon asiatique et les gestes pour ne pas se faire attaquer.",
+    date: '2026-11-08',
+    category: 'Guêpes et frelons',
+    readMin: 9,
+    tldr: "Arrivé en France en 2004 dans des poteries venues de Chine, le frelon asiatique est aujourd'hui partout. Il chasse les abeilles en vol stationnaire, adore les fruits mûrs et les fleurs de lierre, et construit des nids qui atteignent leur taille maximale en fin de saison. En octobre et novembre, quand les feuilles tombent, ces nids géants apparaissent dans les arbres : il ne faut surtout pas s'en approcher.",
+    service: { href: '/services/guepes-frelons', label: 'Guêpes et frelons : destruction de nids' },
+    photos: ['frelonsArbre', 'frelonsAsiatiques'],
+    blocks: [
+      { t: 'p', x: "Il est **plus sombre** que le frelon européen, il **chasse les abeilles** en plein vol et ses nids peuvent devenir **énormes**. Le **frelon asiatique** s'est installé partout en France en une vingtaine d'années. Voici **tout ce qu'il faut savoir** pour le reconnaître, comprendre son comportement et **ne jamais vous faire attaquer**." },
+      { t: 'h2', x: "Comment le reconnaître au premier coup d'œil" },
+      { t: 'img', src: '/frelons/vespa-velutina.jpg', alt: 'Frelon asiatique (Vespa velutina) posé sur des fleurs blanches', legende: "Le **frelon asiatique** : thorax **noir**, abdomen **sombre** avec **un seul anneau orangé**, et des **pattes jaunes** au bout (d'où son autre nom : **frelon à pattes jaunes**).", credit: 'Charles J. Sharp', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Asian_hornet_(Vespa_velutina).jpg' },
+      { t: 'table', head: ['', 'Frelon asiatique', 'Frelon européen'], rows: [
+        ['Couleur générale', 'Très sombre, presque noir', 'Brun-roux et jaune'],
+        ['Abdomen', 'Sombre, un seul anneau orangé', 'Majoritairement jaune'],
+        ['Pattes', 'Jaunes au bout', 'Brunes'],
+        ['Taille', 'Un peu plus petit', 'Le plus grand des deux'],
+        ['Nid', 'Souvent très haut dans les arbres, en forme de poire', 'Plutôt dans des cavités (arbres creux, greniers)'],
+      ] },
+      { t: 'p', x: "Tout savoir sur son cousin local : notre guide du [frelon européen](/blog/frelon-europeen-tout-savoir). Et pour les guêpes : [pourquoi elles deviennent si agressives en été](/blog/guepes-tout-savoir)." },
+      { t: 'h2', x: "D'où vient-il ? L'incroyable voyage jusqu'en Europe" },
+      { t: 'p', x: "Le frelon asiatique (**Vespa velutina**) vient d'**Asie du Sud-Est**. Il a été repéré pour la première fois en Europe **en 2004, dans le Lot-et-Garonne**. Selon le **Muséum national d'Histoire naturelle**, quelques **reines fondatrices** seraient arrivées cachées dans des **poteries importées de Chine** par un horticulteur." },
+      { t: 'p', x: "Il est donc en Europe depuis **plus de 20 ans**. Depuis, il s'est répandu à grande vitesse : il est aujourd'hui présent **dans toute la France métropolitaine**, y compris en **Île-de-France**, et dans plusieurs pays voisins." },
+      { t: 'h2', x: "Sa vie en une année : de la reine solitaire au nid géant" },
+      { t: 'ol', items: [
+        "**Au printemps**, une **reine** sort d'hibernation et construit seule un **petit nid primaire**, souvent bas : abri de jardin, avant-toit, buisson.",
+        "**Au début de l'été**, quand la colonie grandit, les ouvrières construisent souvent un **nid secondaire**, beaucoup plus grand, **en hauteur dans un arbre**.",
+        "**Tout l'été et en automne**, le nid **grossit sans arrêt** : c'est **en fin de saison** qu'il atteint sa **taille maximale**.",
+        "**En automne**, le nid produit les **futures reines** et les mâles, qui s'accouplent.",
+        "**En fin d'automne et en hiver**, la colonie **meurt**. Seules les **jeunes reines** survivent, cachées pour hiberner. Le nid vide **n'est jamais réutilisé**.",
+      ] },
+      { t: 'p', x: "Pour tout savoir sur ce qui se passe en hiver, lisez notre article [nid de frelon en hiver : faut-il le détruire ?](/blog/nid-de-frelon-en-hiver)." },
+      { t: 'h2', x: "Ce qu'il adore (et ce qui le fait fuir)" },
+      { t: 'p', x: "Les **larves** ont besoin de **protéines** : les ouvrières leur rapportent de la chair d'insectes, surtout des **abeilles**. Les **adultes**, eux, carburent au **sucre**." },
+      { t: 'ul', items: [
+        "**Les abeilles** : devant les ruches, il chasse en **vol stationnaire** et attrape les butineuses au retour.",
+        "**Les fruits mûrs** : raisins, figues, pommes et poires tombées au sol.",
+        "**Les fleurs de lierre**, qui fleurit justement à l'automne : un vrai buffet en fin de saison.",
+        "**Les arbustes en fleurs**, où il trouve à la fois du nectar et des insectes à chasser.",
+      ] },
+      { t: 'p', x: "Ce qu'il n'aime pas : le **froid**, qui ralentit puis arrête son activité, la **pluie**, et surtout **qu'on dérange son nid**. Là, il ne fuit pas : **il attaque**." },
+      { t: 'h2', x: "Pourquoi il tourne autour de vos haies et arbustes" },
+      { t: 'p', x: "Vous le voyez **aller et venir autour d'une haie**, d'un arbuste ou d'un lierre, sans jamais se poser longtemps ? Il **chasse**. Il patrouille autour des **fleurs** pour attraper les **mouches, abeilles et autres insectes** qui viennent butiner, et il en profite pour boire du **nectar**." },
+      { t: 'p', x: "**Loin de son nid, il n'est pas agressif** : il ne s'intéresse pas à vous. Mais s'il revient **toujours au même endroit**, en ligne droite, c'est souvent que **le nid n'est pas loin**." },
+      { t: 'h2', x: "Des frelons autour de votre arbre mais aucun nid en vue ? Pas de panique" },
+      { t: 'p', x: "C'est une situation très courante : des frelons **tournent autour d'un buisson, d'un arbuste ou d'un arbre**, mais vous ne voyez **aucun nid**, même en regardant bien. Dans ce cas, **le nid n'est très probablement pas là**." },
+      { t: 'p', x: "Les frelons viennent simplement **se nourrir** dans votre arbre : ils boivent le **nectar des fleurs** (le **lierre** en automne), mangent les **fruits mûrs** ou **chassent les insectes** qui butinent. Leur nid peut se trouver **à plusieurs centaines de mètres**, chez un voisin ou dans un parc." },
+      { t: 'ul', items: [
+        "**Ils vont et viennent dans tous les sens**, se posent sur les fleurs ou les fruits : ils sont **en train de manger**, pas de défendre un nid.",
+        "**Ils repartent toujours dans la même direction**, en ligne droite : ils rentrent au nid. Suivez cette direction **du regard**, de loin, pour le repérer.",
+        "**Ils entrent et sortent toujours par le même point** du feuillage, d'une haie ou d'un toit : là, en revanche, **le nid est peut-être juste devant vous**. Éloignez-vous et appelez un professionnel.",
+      ] },
+      { t: 'callout', tone: 'info', title: 'Le bon réflexe', x: "Pas de nid visible ? **Inutile de faire traiter l'arbre** : un traitement ne sert à rien s'il n'y a pas de nid. Ramassez les **fruits tombés**, évitez de manger dehors juste à côté, et **observez de loin** dans quelle direction ils repartent. En cas de doute, envoyez-nous une **photo** ou une **courte vidéo** : nous vous disons s'il faut intervenir." },
+      { t: 'h2', x: "Octobre, novembre : la saison des nids géants" },
+      { t: 'callout', tone: 'warn', title: 'Encore des frelons en novembre', x: "Avec les **automnes doux** de ces dernières années, nous voyons encore **beaucoup de frelons asiatiques actifs en octobre et en novembre**. C'est justement la **fin de saison** : les nids ont grossi tout l'été et atteignent leur **taille maximale**." },
+      { t: 'p', x: "Et c'est maintenant qu'on les découvre : **les feuilles tombent**, et des nids restés **cachés tout l'été** dans le feuillage apparaissent d'un coup, **énormes**, en haut des arbres, dans les haies ou sous les toits. Un nid **passé inaperçu tout l'été** peut ainsi se révéler **juste au-dessus de votre terrasse**." },
+      { t: 'p', x: "Un nid découvert en automne **peut encore être plein de frelons**. Tant qu'il y a de l'activité à l'entrée, il est **dangereux**." },
+      { t: 'h2', x: "Danger : ne vous approchez surtout pas du nid" },
+      { t: 'p', x: "Le frelon asiatique **défend son nid avec une grande agressivité**. Quand il se sent menacé, il libère des **phéromones d'alerte** qui appellent ses congénères : ce n'est pas **un** frelon qui attaque, c'est **un groupe**, et les **piqûres multiples** peuvent être graves." },
+      { t: 'ul', items: [
+        "**Restez à au moins 5 mètres** du nid, plus s'il est bas.",
+        "**Ne lancez jamais** de pierre, de bâton ou de jet d'eau sur le nid.",
+        "**Ne taillez pas** la haie et **n'élaguez pas** l'arbre où se trouve le nid : les **vibrations** déclenchent les attaques.",
+        "**Pas de tondeuse ni de débroussailleuse** à proximité d'un nid bas.",
+        "**Éloignez les enfants et les animaux**, et prévenez vos voisins.",
+        "**N'essayez jamais de le détruire vous-même**, même avec une bombe insecticide.",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Piqûres : quand appeler les secours', x: "Appelez le **15** ou le **112** en cas de **piqûres multiples**, de piqûre **dans la bouche ou la gorge**, de **gonflement du visage**, de **difficultés à respirer** ou de **malaise**, et toujours chez une personne **allergique**." },
+      { t: 'h2', x: "Comment on détruit un nid de frelons asiatiques" },
+      { t: 'p', x: "Nos techniciens certifiés **Certibiocide** traitent le nid **à distance**, en **tenue de protection intégrale**, avec une **perche télescopique** qui injecte le produit directement **dans le nid**, sans grimper dans l'arbre. Le traitement se fait de préférence quand **toute la colonie est rentrée**. Voir nos interventions en vidéo : un [énorme nid dans un arbre](/blog/enorme-nid-frelons-asiatiques-arbre), un [nid dans une cheminée à Nogent-sur-Marne](/blog/nid-frelons-cheminee-nogent-sur-marne) et des [nids cachés dans les haies](/blog/nids-frelons-buissons-haies-intervention)." },
+      { t: 'table', head: ['Situation du nid', 'Prix'], rows: [
+        ['Nid accessible (jusqu’à 5 m environ : auvent, cabanon, haie)', 'à partir de 89 € TTC'],
+        ['Nid en hauteur, traité à la perche télescopique', 'à partir de 149 € TTC'],
+        ['Nid difficile d’accès (toiture, combles, cheminée)', 'à partir de 199 € TTC'],
+        ['Nacelle nécessaire', 'sur devis'],
+      ] },
+      { t: 'p', x: "Certaines communes **participent aux frais** de destruction des nids de frelons asiatiques : **renseignez-vous auprès de votre mairie**. Pour une intervention, voir notre service [guêpes et frelons](/services/guepes-frelons), intervention **7j/7 en Île-de-France**." },
+      { t: 'h2', x: "Comment limiter son retour au printemps" },
+      { t: 'ul', items: [
+        "**Ramassez les fruits tombés** au sol en fin d'été et en automne.",
+        "**Inspectez au printemps** les abris de jardin, avant-toits et buissons : un **petit nid primaire** se traite facilement.",
+        "**Apiculteurs** : protégez l'entrée des ruches avec une **muselière** ou une grille adaptée.",
+        "**Piégeage** : les pièges attrapent aussi beaucoup d'autres insectes. S'il est utilisé, il doit rester **ciblé et raisonné**, de préférence près des ruches.",
+      ] },
+    ],
+    faq: [
+      { q: "Depuis quand le frelon asiatique est-il en France ?", a: "Depuis 2004 : il a été repéré pour la première fois dans le Lot-et-Garonne, probablement arrivé dans des poteries importées de Chine. Il est aujourd'hui présent dans toute la France métropolitaine." },
+      { q: "Le frelon asiatique est-il dangereux pour l'homme ?", a: "Loin de son nid, il n'est pas agressif. Près du nid, il attaque en groupe : les piqûres multiples sont dangereuses, surtout pour les personnes allergiques. Restez à au moins 5 mètres d'un nid." },
+      { q: "Pourquoi voit-on des nids énormes en automne ?", a: "Le nid grossit tout l'été et atteint sa taille maximale en fin de saison. En octobre et novembre, la chute des feuilles révèle des nids restés cachés tout l'été dans les arbres." },
+      { q: "Un nid de frelons asiatiques est-il réutilisé l'année suivante ?", a: "Non. La colonie meurt en fin d'automne, seules les jeunes reines hibernent ailleurs et construiront un nouveau nid au printemps." },
+      { q: "Pourquoi le frelon asiatique tourne-t-il autour de ma haie ?", a: "Il chasse les insectes qui butinent les fleurs et boit du nectar, notamment sur le lierre en fleurs à l'automne. S'il revient toujours au même endroit en ligne droite, le nid est peut-être proche." },
+      { q: "Peut-on détruire soi-même un nid de frelons asiatiques ?", a: "Non, c'est très dangereux : la colonie attaque en groupe. Faites appel à un professionnel équipé d'une tenue intégrale et d'une perche télescopique." },
+    ],
+    sources: [
+      { label: 'Muséum national d’Histoire naturelle : le frelon asiatique', url: 'https://frelonasiatique.mnhn.fr/home' },
+      { label: 'Ministère de la Transition écologique : plan national de lutte contre le frelon asiatique', url: 'https://www.ecologie.gouv.fr/sites/default/files/documents/Plan-frelon_Projet.pdf' },
+      { label: 'Encyclopædia Universalis : frelon asiatique', url: 'https://www.universalis.fr/encyclopedie/frelon-asiatique/' },
+      { label: 'Photo : Wikimedia Commons (licence libre, auteur cité sous la photo)', url: 'https://commons.wikimedia.org/wiki/File:Asian_hornet_(Vespa_velutina).jpg' },
+    ],
+    cta: { title: 'Un nid de frelons asiatiques chez vous ?', text: "Ne vous approchez pas : nos techniciens le détruisent à distance, en toute sécurité, 7j/7 en Île-de-France. Destruction de nid à partir de 89 € TTC." },
   },
   {
     slug: 'punaises-des-bois-maison',
@@ -2935,8 +3194,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'punaises-de-lit-paris-12-grosse-infestation',
-    title: "Punaises de lit à Paris 12e : le résultat du premier passage, avant le deuxième",
-    seoTitle: "Punaises de lit à Paris 12e : résultat du 1er passage",
+    title: "Énorme infestation de punaises de lit à Paris 12e : le résultat choc du premier passage",
+    seoTitle: "Énorme infestation de punaises de lit à Paris 12e",
     description: "Paris 12e : très grosse infestation chez une cliente. Pulvérisation puis nébulisation au premier passage : punaises mortes au sol. Deuxième passage en vidéo.",
     date: '2026-11-03',
     category: 'Punaises de lit',
@@ -2972,7 +3231,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'nid-guepes-gretz-armainvilliers',
-    title: "Nid de guêpes à Gretz-Armainvilliers : un gros nid traité dans un abri de jardin",
+    title: "Énorme nid de guêpes dans un abri de jardin à Gretz-Armainvilliers : l'intervention en vidéo",
     seoTitle: "Nid de guêpes à Gretz-Armainvilliers (77) : vidéo",
     description: "Gretz-Armainvilliers (77) : un gros nid de guêpes accroché au plafond d'un petit abri de jardin, traité à la source. Le chantier en vidéo.",
     date: '2026-11-03',
@@ -2985,9 +3244,9 @@ export const ARTICLES: Article[] = [
     ],
     blocks: [
       { t: 'p', x: "Abris de jardin, remises, garages : les guêpes adorent les **petits bâtiments peu fréquentés**. Chez ce client de **Gretz-Armainvilliers (77)**, un **gros nid** s'était construit au plafond de son **petit abri de jardin**, au-dessus de l'entrée." },
-      { t: 'h2', x: "Pourquoi les guêpes choisissent les abris de jardin" },
+      { t: 'h2', x: "Pourquoi les guêpes adorent les abris de jardin" },
       { t: 'p', x: "À l'abri de la pluie et du vent, rarement dérangées, elles y trouvent l'endroit idéal. Le nid grandit tout l'été, sans qu'on le remarque, jusqu'au jour où l'on ouvre la porte." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention en vidéo" },
       { t: 'ol', items: [
         "**Sécurisation** de la zone et éloignement des occupants.",
         "**Traitement du nid à la source**, en tenue de protection complète.",
@@ -3006,7 +3265,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'nid-frelons-cheminee-nogent-sur-marne',
-    title: "Nid de frelons dans une cheminée à Nogent-sur-Marne : intervention sur la toiture",
+    title: "Nid de frelons dans une cheminée à Nogent-sur-Marne : intervention sur le toit",
     seoTitle: "Nid de frelons dans une cheminée à Nogent-sur-Marne",
     description: "Nogent-sur-Marne (94) : un nid de frelons installé dans une cheminée. Notre technicien monte sur la toiture et traite le nid à la source. En vidéo.",
     date: '2026-11-04',
@@ -3021,7 +3280,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Un va-et-vient de frelons au-dessus du toit, un bourdonnement dans le conduit : chez ce client de **Nogent-sur-Marne (94)**, les frelons avaient construit leur nid **dans une cheminée**. Un emplacement fréquent, et l'un des plus difficiles à traiter depuis l'intérieur de la maison." },
       { t: 'h2', x: "Pourquoi les frelons s'installent dans les cheminées" },
       { t: 'p', x: "Un conduit de cheminée peu utilisé offre exactement ce que recherche une colonie : un **abri sombre, sec et protégé** de la pluie et du vent, avec une ouverture en hauteur pour entrer et sortir. Le nid grandit à l'intérieur du conduit, souvent sans être visible." },
-      { t: 'h2', x: "Notre intervention sur la toiture" },
+      { t: 'h2', x: "Notre intervention, perchés sur la toiture" },
       { t: 'ol', items: [
         "**Accès à la toiture** en sécurité, jusqu'à la souche de la cheminée.",
         "**Tenue de protection complète** : combinaison, voile et gants, car les frelons défendent leur nid.",
@@ -3042,7 +3301,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'cryogenie-punaises-de-lit-sommier',
-    title: "Cryogénie contre les punaises de lit à L'Haÿ-les-Roses (94) : le sommier traité sans produit chimique",
+    title: "Punaises de lit à L'Haÿ-les-Roses : le sommier traité par le froid, sans aucun produit chimique",
     seoTitle: "Cryogénie punaises de lit à L'Haÿ-les-Roses (94) : vidéo",
     description: "L'Haÿ-les-Roses (94) : punaises de lit dans un sommier, traitées par cryogénie à −78 °C, sans produit chimique. Le chantier en vidéo.",
     date: '2026-11-04',
@@ -3081,7 +3340,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'punaises-de-lit-ivry-sur-seine-personne-agee',
-    title: "Punaises de lit à Ivry-sur-Seine (94) : énorme infestation chez une personne âgée, traitée sans produit chimique",
+    title: "Énorme infestation de punaises de lit chez une personne âgée à Ivry-sur-Seine : traitée sans produit chimique",
     seoTitle: "Punaises de lit à Ivry-sur-Seine (94) : énorme infestation",
     description: "Ivry-sur-Seine (94) : énorme infestation de punaises de lit chez une dame âgée hospitalisée. Traitement sans produit chimique, le chantier en vidéo.",
     date: '2026-11-05',
@@ -3114,7 +3373,7 @@ export const ARTICLES: Article[] = [
         "Une **odeur sucrée et désagréable** dans la chambre, quand l'infestation est importante.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Familles, aides à domicile, infirmiers', x: "Vous êtes souvent les seuls à pouvoir donner l'alerte. Au moindre doute, soulevez le drap housse, regardez les coutures du matelas et l'armature du lit, et appelez un professionnel sans attendre : plus l'infestation est prise tôt, plus le traitement est simple." },
-      { t: 'h2', x: "Notre intervention" },
+      { t: 'h2', x: "Notre intervention, pièce par pièce" },
       { t: 'p', x: "Face à une infestation de cette ampleur, le traitement porte sur **tout le logement**, pas seulement sur le lit : lit médicalisé, fauteuil, coussins, meubles proches, plinthes et fentes. Les textiles sont lavés à 60 °C ou passés au froid, et un **second passage** 10 à 15 jours plus tard élimine les punaises écloses entre-temps. Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an." },
       { t: 'p', x: "Intervention réalisée à **Ivry-sur-Seine (94)**. Voir notre page [punaises de lit à Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine), notre service [punaises de lit](/services/punaises-de-lit), et d'autres chantiers à [Créteil](/blog/punaises-de-lit-creteil-sommier-lattes) et à [L'Haÿ-les-Roses](/blog/cryogenie-punaises-de-lit-sommier)." },
     ],
@@ -3129,8 +3388,8 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'punaises-de-lit-introuvables-goulotte-hotel',
-    title: "Impossible de trouver les punaises de lit ? Leur cachette en vidéo dans un hôtel de Paris 1er",
-    seoTitle: "Punaises de lit introuvables à Paris 1er : la goulotte",
+    title: "Punaises de lit introuvables ? Leur cachette secrète filmée dans un hôtel de Paris 1er",
+    seoTitle: "Punaises de lit introuvables : leur cachette secrète filmée",
     description: "Paris 1er : punaises de lit introuvables dans un hôtel, cachées dans les goulottes électriques. Plinthes, placards et goulottes démontés, en vidéo.",
     date: '2026-11-05',
     category: 'Punaises de lit',
@@ -3145,7 +3404,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Vous traitez, vous retraitez, et les **punaises de lit** reviennent toujours ? C'est souvent qu'elles se cachent là où personne ne pense à regarder. La vidéo ci-dessus montre l'une de ces cachettes : une **goulotte électrique** au mur, ouverte par notre technicien. Le long du câble, on voit des punaises vivantes, leurs **mues** (les peaux qu'elles laissent en grandissant) et leurs déjections." },
       { t: 'h2', x: "Un hôtel où personne n'arrivait à les trouver" },
       { t: 'p', x: "Ce chantier se passe dans un **établissement hôtelier de Paris 1er**. Avant nous, **plusieurs sociétés** étaient déjà intervenues, sans jamais régler le problème : les clients continuaient à se faire piquer. Nous avons réalisé nos **deux passages** habituels, avec un **traitement aux produits chimiques** sur les lits, les matelas et le mobilier. Ils n'ont pas suffi, et notre technicien est revenu **une troisième fois**, bien décidé à trouver où elles se cachaient." },
-      { t: 'h2', x: "Le troisième passage : tout démonter" },
+      { t: 'h2', x: "Le troisième passage : on démonte tout" },
       { t: 'p', x: "Quand un traitement bien fait ne suffit pas, c'est que les punaises vivent dans un endroit que le produit n'atteint pas. Notre technicien a donc démonté, pièce par pièce :" },
       { t: 'ol', items: [
         "**Les plinthes**, derrière lesquelles les punaises circulent d'une pièce à l'autre.",
@@ -3154,7 +3413,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'p', x: "C'est dans les goulottes, près des lampes, qu'il a **enfin trouvé** le foyer : les punaises s'y abritaient, à quelques centimètres des lits, hors de portée des traitements précédents. Une fois la cachette ouverte et traitée, le problème a été réglé. **Depuis, cet hôtel de Paris 1er n'a plus de problème de punaises de lit.**" },
       { t: 'callout', tone: 'info', title: 'Pourquoi les goulottes ?', x: "Une goulotte est sombre, chaude, tranquille, et passe souvent juste au-dessus ou à côté des lits pour alimenter les lampes de chevet. Pour une punaise de lit, c'est une cachette idéale : à l'abri, et à quelques centimètres de son repas." },
-      { t: 'h2', x: "Les cachettes oubliées des punaises de lit" },
+      { t: 'h2', x: "Les cachettes que tout le monde oublie" },
       { t: 'p', x: "Les punaises de lit ne vivent pas que dans le matelas. Quand elles semblent introuvables, il faut regarder :" },
       { t: 'ul', items: [
         "Dans les **goulottes électriques**, comme dans la vidéo ci-dessus, et derrière les **prises** et les **interrupteurs**.",
@@ -3178,7 +3437,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'mites-vetements-origine-traitement-prevention',
-    title: "Mites des vêtements : origine, traitement et prévention",
+    title: "Mites des vêtements : d'où viennent-elles et comment en finir pour de bon ?",
     seoTitle: "Mites des vêtements : d'où viennent-elles, comment en finir",
     description: "D'où viennent les mites des vêtements, comment elles vivent, ce qu'elles abîment si on ne traite pas, le traitement complet et 8 règles pour ne plus en avoir.",
     date: '2026-11-04',
@@ -3188,7 +3447,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/desinfection', label: 'Désinfection et désinsectisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "Un trou dans votre pull en cachemire préféré, de petits papillons beiges qui s'envolent quand vous ouvrez le placard : ce sont des **mites des vêtements**. Ce guide reprend tout : **d'où elles viennent**, comment elles vivent, **ce qui se passe si on ne traite pas**, comment **s'en débarrasser** et comment **ne plus jamais en avoir**. Les mites de la cuisine sont d'autres insectes : voir notre article sur [les mites alimentaires](/blog/mites-alimentaires-cuisine)." },
-      { t: 'h2', x: "Qui est la mite des vêtements ?" },
+      { t: 'h2', x: "Qui est vraiment la mite des vêtements ?" },
       { t: 'p', x: "Dans les maisons, la plus fréquente est la **mite des vêtements** (Tineola bisselliella), aussi appelée teigne des vêtements. On rencontre aussi la **teigne des fourrures** (Tinea pellionella), dont la larve vit dans un petit fourreau. **Le papillon que vous voyez n'est pas le coupable** : ce sont ses larves qui font les trous." },
       { t: 'table', head: ['Stade', 'À quoi il ressemble', 'Ce qu\'il fait'], rows: [
         ['Œuf', 'Minuscule, blanchâtre, collé au textile', 'Pondu directement sur la nourriture des futures larves'],
@@ -3196,7 +3455,7 @@ export const ARTICLES: Article[] = [
         ['Nymphe', 'Cocon de soie, souvent mêlé de fibres', 'Transformation en papillon'],
         ['Adulte', 'Petit papillon beige doré, ailes étroites', 'Se reproduit, mange peu ou pas du tout'],
       ] },
-      { t: 'h2', x: "Son mode de vie" },
+      { t: 'h2', x: "Comment elle vit (et ce qu'elle mange)" },
       { t: 'ul', items: [
         "**Les larves mangent de la kératine**, la protéine des poils, de la laine et des plumes : laine, cachemire, mohair, alpaga, soie, fourrure, feutre, plumes, tapis en laine. Le coton et le synthétique pur les intéressent peu, sauf s'ils sont mélangés à de la laine ou tachés.",
         "**Elles adorent les textiles sales** : les traces de sueur, de nourriture ou de boisson complètent leur alimentation. Les dégâts apparaissent souvent au col, aux poignets et aux aisselles d'un vêtement rangé sans être lavé.",
@@ -3204,7 +3463,7 @@ export const ARTICLES: Article[] = [
         "**Les adultes volent peu** et ne sont pas attirés par la lumière : ils préfèrent courir ou se cacher. Les papillons qui volettent au plafond de la cuisine le soir sont plutôt des mites alimentaires.",
         "**Le cycle dépend de la chaleur** : la femelle pond plusieurs dizaines d'œufs sur les textiles, et les larves grandissent pendant quelques semaines à plusieurs mois. Dans un logement chauffé, plusieurs générations peuvent se succéder dans l'année.",
       ] },
-      { t: 'h2', x: "D'où viennent les mites ?" },
+      { t: 'h2', x: "D'où viennent-elles ?" },
       { t: 'ul', items: [
         "**Des vêtements et textiles d'occasion** : friperies, vide-greniers, vente entre particuliers, vêtements vintage. Ils peuvent contenir des œufs ou des larves invisibles.",
         "**Des tapis, couvertures et fourrures** anciens ou d'occasion, souvent stockés longtemps avant d'être vendus.",
@@ -3214,7 +3473,7 @@ export const ARTICLES: Article[] = [
         "**Plus rarement, de l'extérieur** ou d'un logement voisin, par une fenêtre ou les gaines.",
       ] },
       { t: 'callout', tone: 'info', title: "Ce n'est pas une question de propreté", x: "Un logement bien tenu peut avoir des mites : il suffit d'un pull d'occasion ou d'un tapis ancien. En revanche, la poussière, les poils d'animaux et les vêtements rangés sales les aident à s'installer." },
-      { t: 'h2', x: "Les signes d'une infestation" },
+      { t: 'h2', x: "Les signes qui doivent vous alerter" },
       { t: 'ul', items: [
         "**Des trous** dans les lainages, souvent regroupés, ou des zones où le tissu est rasé.",
         "**Des fils de soie** et de petits tubes ou fourreaux collés aux fibres.",
@@ -3223,7 +3482,7 @@ export const ARTICLES: Article[] = [
         "**De petits papillons beiges** qui s'échappent quand on bouge les vêtements.",
       ] },
       { t: 'p', x: "Vous voyez plutôt des larves brunes et velues, ou de petits coléoptères ronds et tachetés sur les fenêtres ? Ce sont probablement des [anthrènes](/blog/anthrenes-origine-traitement), qui font des dégâts semblables." },
-      { t: 'h2', x: "Que se passe-t-il si on ne traite pas ?" },
+      { t: 'h2', x: "Si on ne fait rien, que se passe-t-il ?" },
       { t: 'p', x: "Les mites ne piquent pas et ne transmettent pas de maladie. Mais une infestation laissée de côté **ne s'arrête jamais d'elle-même**, et les conséquences s'accumulent :" },
       { t: 'ul', items: [
         "**L'infestation s'étend** : des larves et des papillons passent d'un placard à l'autre, puis aux **tapis, moquettes, fauteuils, couettes et oreillers en plumes**.",
@@ -3232,7 +3491,7 @@ export const ARTICLES: Article[] = [
         "**Le coût grimpe** : remplacer des vêtements, faire nettoyer ou restaurer des tapis coûte vite bien plus cher qu'un traitement fait tôt.",
         "**Le traitement devient plus lourd** : plus l'infestation est ancienne, plus il y a de foyers, de textiles à traiter et de pièces à reprendre.",
       ] },
-      { t: 'h2', x: "Le traitement, étape par étape" },
+      { t: 'h2', x: "En finir avec les mites, étape par étape" },
       { t: 'h3', x: "1. Vider et trier" },
       { t: 'p', x: "Videz entièrement le placard touché et les rangements voisins. Inspectez chaque pièce **à la lumière**, surtout les lainages, les cols, les poignets et les plis. Faites trois tas : **à laver**, **à congeler** (ce qui ne se lave pas) et **à jeter** (ce qui est trop abîmé). Mettez les textiles infestés **dans des sacs fermés** dès qu'ils sortent du placard." },
       { t: 'h3', x: "2. Laver ou congeler" },
@@ -3265,7 +3524,7 @@ export const ARTICLES: Article[] = [
         "**Gardez un piège à phéromones** dans le dressing pour être alerté dès les premiers papillons.",
       ] },
       { t: 'p', x: "**Lavande et bois de cèdre ?** Ils peuvent gêner un peu les papillons adultes, mais leur odeur s'estompe vite et ils **ne tuent ni les œufs ni les larves**. Gardez-les en complément, jamais comme traitement." },
-      { t: 'h2', x: "Quand faire appel à un professionnel ?" },
+      { t: 'h2', x: "Quand appeler un professionnel ?" },
       { t: 'ul', items: [
         "Les mites reviennent **malgré le tri, le lavage et l'aspiration**.",
         "Plusieurs **pièces, tapis ou meubles rembourrés** sont touchés.",
@@ -3293,7 +3552,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'mites-alimentaires-cuisine',
-    title: "Mites alimentaires : origine, traitement et prévention",
+    title: "Mites alimentaires dans la cuisine : d'où viennent-elles et comment s'en débarrasser pour de bon ?",
     seoTitle: "Mites alimentaires dans la cuisine : d'où viennent-elles ?",
     description: "Papillons au plafond, fils dans la farine : d'où viennent les mites alimentaires, les risques si on ne traite pas, le traitement et comment ne plus en avoir.",
     date: '2026-11-04',
@@ -3303,9 +3562,9 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/desinfection', label: 'Désinfection et désinsectisation en Île-de-France' },
     blocks: [
       { t: 'p', x: "De petits papillons qui volettent dans la cuisine le soir, des **fils de soie** dans un paquet de farine, de **petites chenilles** dans les rainures du placard ou au plafond : ce sont des **mites alimentaires**. Ce guide reprend tout : **d'où elles viennent**, comment elles vivent, **ce qui se passe si on ne traite pas**, comment **s'en débarrasser** et comment **ne plus jamais en avoir**. Elles ne touchent pas aux vêtements : pour les trous dans les pulls, voir [les mites des vêtements](/blog/mites-vetements-origine-traitement-prevention)." },
-      { t: 'h2', x: "Qui sont les mites alimentaires ?" },
+      { t: 'h2', x: "Qui sont ces papillons de la cuisine ?" },
       { t: 'p', x: "La plus courante est la **pyrale des fruits secs** (Plodia interpunctella), aussi appelée pyrale indienne de la farine. L'adulte est un petit papillon aux **ailes bicolores** : gris pâle près du corps, **brun cuivré** à l'extrémité. La larve est une petite chenille **blanchâtre ou jaunâtre**, à tête brune, qui atteint environ **8 à 10 mm**, selon la Commission canadienne des grains. On trouve aussi la **pyrale de la farine** (Ephestia kuehniella), aux ailes grises." },
-      { t: 'h2', x: "Leur mode de vie" },
+      { t: 'h2', x: "Comment elles vivent dans vos placards" },
       { t: 'ul', items: [
         "**La femelle pond directement sur la nourriture**, dans les paquets ou à proximité.",
         "**Les larves se nourrissent** des aliments secs et y tissent des **fils de soie**, mêlés de déjections : les grains collent entre eux, la farine forme des amas.",
@@ -3313,7 +3572,7 @@ export const ARTICLES: Article[] = [
         "**L'adulte ne se nourrit pas** : il vit pour se reproduire. Il vole surtout le soir, en zigzag.",
         "**Le cycle dépend de la chaleur** : rapide en été, plus lent en hiver. Dans une cuisine chauffée, il continue toute l'année.",
       ] },
-      { t: 'h2', x: "D'où viennent les mites alimentaires ?" },
+      { t: 'h2', x: "D'où viennent-elles ?" },
       { t: 'p', x: "Dans la très grande majorité des cas, elles arrivent **avec un aliment acheté déjà infesté**, sans qu'on puisse le voir : un œuf ou une jeune larve suffit. Ce n'est **pas une question de propreté** de la cuisine. Les aliments les plus touchés :" },
       { t: 'ul', items: [
         "**Farines, semoules, céréales**, flocons d'avoine, riz, pâtes.",
@@ -3330,7 +3589,7 @@ export const ARTICLES: Article[] = [
         "**Des larves** blanchâtres dans les aliments, les rainures des étagères ou les angles du plafond.",
         "**De petits cocons** dans les charnières et les joints des placards.",
       ] },
-      { t: 'h2', x: "Que se passe-t-il si on ne traite pas ?" },
+      { t: 'h2', x: "Si on ne fait rien, que se passe-t-il ?" },
       { t: 'p', x: "Les mites alimentaires ne piquent pas. Mais tant qu'elles trouvent à manger, **les générations se succèdent**, et la situation se dégrade vite :" },
       { t: 'ul', items: [
         "**Tous les placards sont gagnés** : les larves percent les emballages et passent d'un paquet à l'autre.",
@@ -3339,7 +3598,7 @@ export const ARTICLES: Article[] = [
         "**Les nouvelles courses sont contaminées** à leur tour dès qu'elles sont rangées.",
         "**Pour un restaurant, une boulangerie ou un commerce alimentaire**, c'est une non-conformité au contrôle sanitaire, avec un risque de sanction. Voir notre article sur [le plan de lutte contre les nuisibles en restaurant](/blog/restaurant-plan-lutte-nuisibles).",
       ] },
-      { t: 'h2', x: "Le traitement, étape par étape" },
+      { t: 'h2', x: "S'en débarrasser, étape par étape" },
       { t: 'ol', items: [
         "**Videz tous les placards** où sont stockés des aliments secs, y compris ceux des animaux.",
         "**Inspectez chaque paquet**, même fermé : fils de soie, grains collés, petits trous, larves.",
@@ -3380,7 +3639,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'fourmis-tout-savoir-mode-de-vie-reproduction',
-    title: "Tout savoir sur les fourmis : mode de vie, reproduction, espèces et traitement",
+    title: "Tout savoir sur les fourmis : comment elles vivent, se reproduisent et envahissent nos maisons",
     seoTitle: "Fourmis : mode de vie, reproduction, espèces et traitement",
     description: "Comment vivent les fourmis, combien de temps vit une reine, comment naît une colonie, les espèces de nos maisons et comment s'en débarrasser en atteignant la reine.",
     date: '2026-11-07',
@@ -3390,7 +3649,7 @@ export const ARTICLES: Article[] = [
     service: { href: '/services/fourmis', label: 'Traitement des fourmis en Île-de-France' },
     blocks: [
       { t: 'p', x: "Une file de fourmis sur le plan de travail, des fourmis ailées qui sortent d'une plinthe, une colonie qui revient chaque printemps malgré tous les sprays du monde : les fourmis font partie des nuisibles les plus courants dans les maisons et appartements d'Île-de-France. Pour s'en débarrasser durablement, il faut d'abord **comprendre comment elles vivent**. Ce guide reprend tout : leur organisation, leur reproduction, leur origine, **les espèces que l'on rencontre chez soi**, et **comment les traiter**." },
-      { t: 'h2', x: "Qui sont les fourmis ?" },
+      { t: 'h2', x: "Qui sont vraiment les fourmis ?" },
       { t: 'p', x: "Les fourmis sont des **insectes sociaux** de l'ordre des hyménoptères, comme les guêpes et les abeilles. On compte **plus de 12 000 espèces décrites dans le monde** et **un peu plus de 200 en France métropolitaine**, selon l'Inventaire national du patrimoine naturel et les guides spécialisés. Seule une poignée d'entre elles entre dans nos logements." },
       { t: 'p', x: "Une fourmi seule ne survit pas longtemps : c'est la **colonie** qui compte. On parle souvent de « superorganisme » : chaque individu a un rôle, et la colonie fonctionne comme un seul être vivant, avec la reine comme cœur." },
       { t: 'h2', x: "La colonie : qui fait quoi ?" },
@@ -3401,7 +3660,7 @@ export const ARTICLES: Article[] = [
         ['Les futures reines', 'Fonderont de nouvelles colonies', 'Ailées à la naissance, elles perdent leurs ailes après l\'accouplement'],
       ] },
       { t: 'callout', tone: 'warn', title: "La fourmi que vous écrasez n'est pas le problème", x: "Les ouvrières visibles ne sont qu'une petite partie de la colonie. Le nid, le couvain (œufs, larves, nymphes) et la reine restent cachés. C'est pour cela qu'un spray donne l'illusion de régler le problème, alors que la colonie remplace les ouvrières tuées." },
-      { t: 'h2', x: "Leur mode de vie" },
+      { t: 'h2', x: "Une vie parfaitement organisée" },
       { t: 'ul', items: [
         "**Elles communiquent par l'odeur.** Une éclaireuse qui trouve du sucre rentre au nid en laissant une trace chimique, une phéromone. Les autres suivent cette trace et la renforcent : c'est la **piste** que vous voyez sur le plan de travail.",
         "**Elles se partagent la nourriture.** Les ouvrières rapportent la nourriture au nid et la redistribuent de bouche à bouche aux larves, aux autres ouvrières et à la reine. C'est ce partage qui rend l'appât professionnel si efficace.",
@@ -3410,7 +3669,7 @@ export const ARTICLES: Article[] = [
         "**Elles ralentissent l'hiver.** Dehors, la colonie passe l'hiver au ralenti au fond du nid et repart au printemps. Les espèces qui vivent dans les bâtiments chauffés, comme la fourmi pharaon, restent actives toute l'année.",
         "**Elles sont utiles au jardin.** Elles aèrent le sol, dispersent des graines et mangent d'autres insectes. On ne les traite que lorsqu'elles entrent dans la maison ou nichent contre les murs.",
       ] },
-      { t: 'h2', x: "Comment se reproduisent les fourmis ?" },
+      { t: 'h2', x: "Comment se reproduisent-elles ?" },
       { t: 'h3', x: "1. Le vol nuptial" },
       { t: 'p', x: "Quelques jours par an, souvent au printemps ou en été par temps chaud et lourd, une colonie bien installée libère des **fourmis ailées** : des mâles et de futures reines. Ils s'envolent, parfois en même temps que les colonies voisines de la même espèce, et s'accouplent en vol ou au sol. C'est l'**essaimage**." },
       { t: 'callout', tone: 'info', title: "Des fourmis volantes dans le salon ?", x: "Ce n'est pas une autre espèce : ce sont les reproducteurs d'une colonie installée tout près, souvent dans un mur, sous un plancher ou une dalle. Si elles sortent à l'intérieur, le nid est dans le logement ou dans ses murs." },
@@ -3419,7 +3678,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Chez la fourmi noire des jardins, la reine élève seule ses premières ouvrières sans sortir, en puisant dans ses réserves. Ces premières ouvrières prennent ensuite le relais : elles cherchent la nourriture, et la reine ne fait plus que pondre." },
       { t: 'h3', x: "3. De l'œuf à l'adulte" },
       { t: 'p', x: "Comme les papillons, les fourmis passent par **quatre stades** : œuf, larve, nymphe (parfois dans un cocon) et adulte. Les **œufs fécondés donnent des femelles** (ouvrières ou futures reines, selon l'alimentation et les besoins de la colonie), les **œufs non fécondés donnent des mâles**." },
-      { t: 'h2', x: "Combien de temps vivent les fourmis ?" },
+      { t: 'h2', x: "Combien de temps vivent une ouvrière et une reine ?" },
       { t: 'p', x: "C'est la grande différence entre la reine et les autres membres de la colonie, et c'est ce qui explique pourquoi les fourmis reviennent tant que la reine n'est pas atteinte." },
       { t: 'table', head: ['Membre de la colonie', 'Durée de vie', 'À retenir'], rows: [
         ['Ouvrière', 'De 3 semaines à 1 an, parfois jusqu\'à 3 ans selon les espèces', 'Chez la fourmi noire des jardins, une ouvrière vit 1 à 2 ans'],
@@ -3439,7 +3698,7 @@ export const ARTICLES: Article[] = [
         "**De loin, pour les envahissantes** : Tapinoma magnum vient du pourtour méditerranéen et progresse en France depuis les années 2000 ; la fourmi pharaon, d'origine tropicale, a été transportée partout dans le monde avec les marchandises et vit dans les bâtiments chauffés.",
       ] },
       { t: 'callout', tone: 'ok', title: "Ce n'est pas une question de propreté", x: "Une maison très propre peut avoir des fourmis : il suffit d'un nid à côté et d'un peu d'eau ou de sucre. En revanche, des miettes, des fruits à l'air libre et une poubelle ouverte leur facilitent la vie." },
-      { t: 'h2', x: "Les espèces que l'on rencontre en Île-de-France" },
+      { t: 'h2', x: "Les espèces que l'on croise en Île-de-France" },
       { t: 'p', x: "Reconnaître l'espèce, c'est savoir comment la traiter. Voici celles que nous rencontrons le plus en Île-de-France, avec leurs photos sur notre page [les types de fourmis](/fourmis)." },
       { t: 'h3', x: "La fourmi noire des jardins (Lasius niger)" },
       { t: 'p', x: "La plus répandue : petite, noire, elle niche dehors et entre au printemps pour le sucre. **Une seule reine** en général : l'appât en vient à bout." },
@@ -3471,7 +3730,7 @@ export const ARTICLES: Article[] = [
         ['Fourmis rouges', 'Pelouses humides', 'Souvent plusieurs', 'Traitement du nid'],
         ['Tapinoma magnum', 'Jardins, terrasses, maisons', 'Très nombreuses', 'Appâts, plusieurs passages, action collective'],
       ] },
-      { t: 'h2', x: "Les fourmis sont-elles dangereuses ?" },
+      { t: 'h2', x: "Sont-elles dangereuses ?" },
       { t: 'ul', items: [
         "**La plupart sont surtout gênantes** : elles souillent les aliments et le plan de travail, mais ne transmettent pas de maladie connue dans un logement ordinaire.",
         "**La fourmi pharaon** peut transporter des bactéries sur les surfaces qu'elle parcourt, ce qui pose problème dans les lieux de soins et les cuisines professionnelles.",
@@ -3479,7 +3738,7 @@ export const ARTICLES: Article[] = [
         "**Les charpentières** abîment le bois humide où elles nichent.",
         "**Les envahissantes** comme Tapinoma peuvent s'installer dans les boîtiers électriques et envahir maisons et jardins de tout un quartier.",
       ] },
-      { t: 'h2', x: "Comment se débarrasser des fourmis" },
+      { t: 'h2', x: "Comment s'en débarrasser (la règle d'or : la reine)" },
       { t: 'h3', x: "La règle d'or : atteindre la reine" },
       { t: 'p', x: "Tout traitement qui ne touche pas la reine est provisoire. La bonne méthode est un **appât à action lente** : il ne tue pas tout de suite, ce qui laisse aux ouvrières le temps de le rapporter au nid et de le partager avec les larves et la reine. En quelques jours à quelques semaines, la colonie s'éteint." },
       { t: 'h3', x: "Ce qui ne marche pas (ou pas longtemps)" },
@@ -3498,7 +3757,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h3', x: "Le traitement professionnel" },
       { t: 'p', x: "Nos techniciens certifiés Certibiocide **identifient l'espèce**, **recherchent le nid** puis choisissent la méthode : **gel appât professionnel** sur les pistes, **traitement direct du nid** quand il est accessible, ou **injection dans le bois** pour les charpentières. Pour les espèces à plusieurs reines, un ou plusieurs passages de contrôle sont prévus. À partir de 120 € TTC, devis gratuit, garantie 1 an. Voir [notre traitement des fourmis](/services/fourmis) et, près de chez nous, [les fourmis à Saint-Maurice](/fourmis/saint-maurice), [à Créteil](/fourmis/creteil) ou [à Paris 12e](/fourmis/paris-12)." },
-      { t: 'h2', x: "Prévenir le retour des fourmis" },
+      { t: 'h2', x: "Empêcher leur retour" },
       { t: 'ol', items: [
         "**Rejointoyez** les dalles de terrasse et refaites les joints abîmés de la cuisine et de la salle de bains.",
         "**Bouchez les passages** de tuyaux sous l'évier et les fentes au bas des murs.",

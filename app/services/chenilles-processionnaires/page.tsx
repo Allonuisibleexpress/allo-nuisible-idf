@@ -6,7 +6,8 @@ import { VILLES_CHENILLES, GUIDES_CHENILLES } from '@/lib/villes-chenilles'
 // pièges à phéromones, conseils). Le Bacillus thuringiensis (produit phytosanitaire, Certiphyto) n'est pas annoncé.
 const data: ServiceData = {
   badge: 'Pins · Chênes · Retrait des nids · Écopièges',
-  heroTitle: 'Chenilles processionnaires',
+  devis: 'Devis gratuit chenilles processionnaires',
+  heroTitle: 'Traitement chenilles processionnaires',
   heroHighlight: 'Protégez votre jardin',
   heroDescription: 'Retrait et destruction des nids, écopièges sur les troncs, pièges à phéromones et conseils de prévention, par des techniciens équipés contre les poils urticants.',
   heroPrices: [

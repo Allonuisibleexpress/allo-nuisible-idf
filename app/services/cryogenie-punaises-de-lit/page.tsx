@@ -11,6 +11,7 @@ const VIDEOS_CRYO = [
 
 const data: ServiceData = {
   badge: 'Cryogénie · Sans insecticide · Établissements sensibles · Garantie 1 an',
+  devis: 'Devis gratuit cryogénie punaises de lit',
   heroTitle: 'Cryogénie',
   heroHighlight: 'Punaises de lit',
   heroDescription: 'De la neige carbonique, à environ −78 °C, projetée sur la literie, le mobilier et chaque recoin : les punaises de lit et leurs œufs sont tués au contact, sans insecticide ni produit chimique. Traitement chambre par chambre par nos techniciens, 2 passages inclus.',

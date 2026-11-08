@@ -7,6 +7,7 @@ import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 // Conseils de prévention repris d'ameli.fr (humidité 40 à 60 %, literie à 60 °C, housses intégrales, aspirateur HEPA).
 const data: ServiceData = {
   badge: 'Literie · Canapés · Tapis · Textiles',
+  devis: 'Devis gratuit acariens',
   heroTitle: 'Traitement anti-acariens',
   heroHighlight: 'Literie et textiles assainis',
   heroDescription: 'Vapeur sèche, cryogénie ou pulvérisation acaricide sur les matelas, sommiers, oreillers, canapés, tapis et rideaux, par des techniciens certifiés Certibiocide.',

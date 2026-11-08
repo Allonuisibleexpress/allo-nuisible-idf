@@ -6,7 +6,8 @@ import { VILLES_SOURIS } from '@/lib/villes-souris'
 
 const data: ServiceData = {
   badge: 'Rats · Souris · Ragondins · Particuliers, pros & copropriétés',
-  heroTitle: 'Dératisation / Rongeurs',
+  devis: 'Devis gratuit dératisation',
+  heroTitle: 'Dératisation professionnelle',
   heroHighlight: 'Rats et souris',
   heroDescription: 'Rats, souris ou ragondins : élimination des rongeurs par des techniciens Certibiocide, avec recherche et colmatage des accès. Postes d\'appâtage sécurisés, pièges connectés ou, en méthode alternative, piège multicapture Ekomille sans raticide, attestations pour professionnels, contrats de maintenance.',
   heroPrices: [

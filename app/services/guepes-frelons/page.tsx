@@ -276,15 +276,16 @@ export default function GuêpesFrelonsPage() {
                 <p className="font-black text-white mb-2" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)' }}><span className="text-white/45 text-base font-semibold">à partir de </span>89 €</p>
                 <p className="text-white/55 text-sm leading-relaxed">Nid accessible dès 89 €, en hauteur dès 149 €,<br />difficile d&apos;accès dès 199 €. Nacelle : sur devis. Prix TTC.</p>
               </div>
-              <p className="text-white/35 text-xs mt-3 text-center">Devis gratuit · Réponse en 5 min · 7j/7 soirs et week-ends</p>
+              <p className="mt-4 text-center"><span className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: '#E8441A', color: '#fff' }}>Devis gratuit destruction de nid</span></p>
+              <p className="text-white/60 text-sm mt-2 text-center">Sans engagement · Réponse en 5 min · 7j/7 soirs et week-ends</p>
             </div>
 
             {/* Trust bar */}
             <div className="flex flex-wrap items-center justify-center gap-0 max-w-2xl mx-auto mb-10 overflow-hidden rounded-2xl" style={{ background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.14)' }}>
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
-                <span className="text-white font-semibold">4,7/5</span>
-                <span className="text-white/40 text-sm hidden sm:inline">· 49 avis</span>
+                <span className="text-white font-semibold">4,8/5</span>
+                <span className="text-white/40 text-sm hidden sm:inline">· 57 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
@@ -393,8 +394,32 @@ export default function GuêpesFrelonsPage() {
         <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
             <MediasChantier photos={MEDIAS_FRELONS.photos} videos={MEDIAS_FRELONS.videos} titre="Nos chantiers guêpes et frelons en images" />
-            <p className="text-white/70 text-sm font-bold mt-8 mb-3">Le récit de nos interventions :</p>
-            <ul className="space-y-2 text-sm">
+            {/* Guide complet du blog sur le frelon asiatique */}
+            <a href="/blog/frelon-asiatique-tout-savoir" className="block mt-10 rounded-2xl p-6 md:p-8 text-center transition-all hover:brightness-110"
+              style={{ background: 'rgba(232,68,26,0.08)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#E8441A' }}>Le guide complet</p>
+              <p className="text-white text-xl md:text-2xl font-black leading-tight mb-3">Frelon asiatique : tout savoir sur ce redoutable prédateur</p>
+              <p className="text-white/65 text-sm leading-relaxed mb-4 max-w-xl mx-auto">
+                D&apos;où il vient, ce qu&apos;il aime, pourquoi il tourne autour de vos arbres, pourquoi ses nids sont <strong className="text-white">énormes en automne</strong> et comment <strong className="text-white">ne jamais vous faire attaquer</strong>.
+              </p>
+              <span className="inline-flex items-center gap-2 font-bold text-white px-5 py-2.5 rounded-full text-sm" style={{ background: '#E8441A' }}>Lire le guide</span>
+            </a>
+            <div className="grid sm:grid-cols-2 gap-4 mt-4">
+              {[
+                ['/blog/guepes-tout-savoir', 'Guêpes', 'Pourquoi elles deviennent infernales à la fin de l’été'],
+                ['/blog/frelon-europeen-tout-savoir', 'Frelon européen', 'Le géant qui vole même la nuit : dangereux ou pas ?'],
+              ].map(([href, k, t]) => (
+                <a key={href} href={href} className="block rounded-2xl p-5 text-center transition-all hover:brightness-110" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,68,26,0.25)' }}>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#E8441A' }}>Guide {k}</p>
+                  <p className="text-white font-bold leading-snug">{t}</p>
+                </a>
+              ))}
+            </div>
+            <p className="text-center text-sm mt-4">
+              <a href="/blog/nid-de-frelon-en-hiver" className="underline underline-offset-2" style={{ color: '#E8441A' }}>Nid de frelon en hiver : faut-il vraiment le détruire ?</a>
+            </p>
+            <p className="text-white/70 text-sm font-bold mt-8 mb-3 text-center">Le récit de nos interventions :</p>
+            <ul className="space-y-2 text-sm text-center">
               {[
                 ['/blog/nid-frelons-cheminee-nogent-sur-marne', 'Nid de frelons dans une cheminée à Nogent-sur-Marne (94)'],
                 ['/blog/nid-guepes-gretz-armainvilliers', 'Nid de guêpes dans un abri de jardin à Gretz-Armainvilliers (77)'],

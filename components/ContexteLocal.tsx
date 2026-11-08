@@ -7,7 +7,7 @@ import { DONNEES_LOCALES, type DonneesLocales } from '@/lib/donnees-locales'
 
 const ACCENT = '#E8441A'
 
-export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'commune'
+export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'frelons' | 'commune'
 
 const nf = (n: number) => n.toLocaleString('fr-FR')
 // Choix déterministe d'une variante de phrase, différent d'une ville et d'un service à l'autre
@@ -84,6 +84,12 @@ function verdure(d: DonneesLocales, s: ServiceLocal) {
       `Près ${liste(v.map(deArt))}, les fourmis des pelouses et des massifs trouvent pucerons et nourriture, puis gagnent les maisons et rez-de-chaussée voisins quand il fait chaud.`,
       `Parcs et jardins comme ${liste(v.map(article))} abritent de nombreuses fourmilières : tant qu'elles restent dehors, elles sont utiles ; il faut agir quand une colonie entre dans le logement.`,
     ])]
+  if (s === 'frelons' && v.length)
+    return [pick(`${d.slug}frv`, [
+      `Près ${liste(v.map(deArt))}, les grands arbres et les haies offrent aux frelons asiatiques des emplacements en hauteur pour leurs nids, souvent invisibles avant la chute des feuilles.`,
+      `Parcs et jardins comme ${liste(v.map(article))} attirent guêpes et frelons, qui y chassent les insectes et boivent le nectar des fleurs. Un frelon qui tourne autour d'un arbre ne signale pas forcément un nid.`,
+      `Autour ${liste(v.map(deArt))}, les nids de frelons asiatiques apparaissent souvent en octobre et novembre, quand les arbres se dégarnissent : ne vous en approchez pas.`,
+    ])]
   if (s === 'commune' && v.length)
     return [`Côté nature, ${liste(v.map(article))} ${v.length > 1 ? 'font' : 'fait'} partie des espaces verts de la commune. Au printemps et en été, guêpes et frelons y trouvent de quoi construire leurs nids, souvent sous les toits et dans les haies des maisons voisines.`]
   return parts
@@ -121,6 +127,10 @@ function habitat(d: DonneesLocales, s: ServiceLocal) {
       return dense
         ? pick(k, ['En immeuble, les fourmis suivent les gaines, les plinthes et les joints de carrelage : le nid peut se trouver dans un mur, un faux plafond ou la cour, loin de la cuisine où on les voit.', 'Dans les logements collectifs chauffés, certaines espèces comme la fourmi pharaon restent actives toute l\'année et passent d\'un appartement à l\'autre par les gaines.', 'En appartement, les fourmis entrent souvent par les passages de tuyaux sous l\'évier et les joints abîmés de la salle de bains.', 'Dans un immeuble, une piste qui apparaît chez plusieurs voisins signale un nid dans les parties communes ou les murs : le traitement doit viser cet endroit.', 'En logement collectif, les fourmis profitent des vide-ordures, des locaux poubelles et des gaines pour circuler d\'un étage à l\'autre.'])
         : pick(k, ['Autour des maisons, les fourmis nichent sous les dalles de terrasse, au pied des murs et dans les pelouses, puis entrent par les seuils et les joints.', 'En pavillon, les invasions commencent souvent au printemps par la cuisine ou la véranda, depuis un nid installé dans le jardin ou sous la terrasse.', 'Dans une maison, le bois humide des fenêtres, des seuils et des terrasses peut abriter des fourmis charpentières : surveillez la sciure fine.', 'Autour d\'une maison, une haie ou un massif collé à la façade sert de pont aux fourmis : dégager un espace le long des murs limite les entrées.', 'En pavillon, les jardinières, les pots et les composts proches de la porte abritent souvent des fourmilières qui finissent par entrer.'])
+    case 'frelons':
+      return dense
+        ? pick(k, ['En ville, les guêpes nichent volontiers dans les coffres de volets roulants, sous les balcons et dans les trous de façade : un va-et-vient régulier au même endroit trahit le nid.', 'Dans les immeubles, les nids se cachent sous les toitures, dans les cheminées et les gaines d\'aération : prévenez le syndic si le nid touche une partie commune.', 'En appartement, ce sont souvent les guêpes qui posent problème, dans un coffre de volet ou sous un rebord de fenêtre, et les frelons dans les arbres des cours et des squares.', 'Dans un immeuble, ne bouchez jamais l\'entrée d\'un nid dans un mur : les guêpes chercheraient une autre sortie, parfois à l\'intérieur des logements.'])
+        : pick(k, ['Autour des maisons, guêpes et frelons s\'installent sous les avant-toits, dans les abris de jardin, les haies et les combles : inspectez-les au printemps, quand le nid est encore petit.', 'En pavillon, les nids se trouvent souvent sous les tuiles, dans un cabanon ou dans la haie : attention en taillant, les vibrations déclenchent les attaques.', 'Dans les quartiers de maisons, les grands arbres des jardins accueillent les nids de frelons asiatiques, et les combles ceux des frelons européens.', 'Autour d\'une maison, un nid de guêpes dans la pelouse ou une rocaille est dangereux pour la tondeuse : repérez les allées et venues avant de tondre.'])
     default:
       return dense
         ? pick(k, ['Dans les immeubles, punaises de lit et cafards passent d\'un logement à l\'autre par les gaines et les parties communes, et les rats fréquentent caves et locaux poubelles.', 'En habitat collectif, les demandes les plus courantes concernent les punaises de lit, les cafards dans les cuisines et les rats dans les caves.', 'En copropriété, rats des parties communes, cafards des gaines et punaises de lit se traitent mieux à l\'échelle de l\'immeuble qu\'appartement par appartement.'])
@@ -181,6 +191,14 @@ function traitement(d: DonneesLocales, s: ServiceLocal, a: string) {
         `Une file de fourmis dans la cuisine ${a} ? Le technicien remonte la piste, identifie l'espèce et choisit entre gel appât et traitement du nid, avec un objectif : la reine. À partir de 120 € TTC.`,
         `${majuscule(a)}, nous éliminons les colonies de fourmis à la source : l'appât professionnel est partagé par les ouvrières jusqu'à la reine et aux larves. Tarif dès 120 € TTC, garantie 1 an, devis gratuit.`,
         `Traitement anti-fourmis ${a} : pas de pulvérisation au hasard, mais un appât à action lente ou un traitement ciblé du nid, pour détruire la reine. Dès 120 € TTC, garantie 1 an.`,
+      ])
+    case 'frelons':
+      return pick(k, [
+        `Destruction de nid de frelons ou de guêpes ${a} : traitement directement dans le nid, à la perche télescopique si besoin, en tenue de protection intégrale. À partir de 89 € TTC pour un nid accessible.`,
+        `${majuscule(a)}, nous détruisons les nids de guêpes, de frelons européens et de frelons asiatiques, même en hauteur : 89 € TTC pour un nid accessible, 149 € TTC à la perche, 199 € TTC en toiture ou cheminée.`,
+        `Un nid de frelons ${a} ? Nos techniciens certifiés Certibiocide le traitent à distance, sans grimper dans l'arbre, avec une perche télescopique. À partir de 89 € TTC, intervention 7j/7.`,
+        `Pour détruire un nid de guêpes ou de frelons ${a}, le produit est injecté directement à l'intérieur du nid, de préférence quand la colonie est rentrée. Dès 89 € TTC, nacelle sur devis.`,
+        `Nid de guêpes sous le toit, nid de frelons asiatiques dans un arbre ${a} : intervention en tenue intégrale, traitement à la perche jusqu'à plusieurs mètres de haut. À partir de 89 € TTC.`,
       ])
     default:
       return pick(k, [
@@ -262,6 +280,7 @@ const TITRES: Record<ServiceLocal, (a: string) => string> = {
   chenilles: (a) => `Chenilles processionnaires ${a} : notre intervention`,
   acariens: (a) => `Traitement des acariens ${a}`,
   fourmis: (a) => `Traitement des fourmis ${a}`,
+  frelons: (a) => `Un nid de guêpes ou de frelons ${a} ? Notre intervention`,
   commune: (a) => `Nos traitements ${a}`,
 }
 

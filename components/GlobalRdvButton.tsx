@@ -119,7 +119,7 @@ export default function GlobalRdvButton() {
         }}
       >
         <Phone style={{ width: '1rem', height: '1rem', flexShrink: 0 }} />
-        Appelez maintenant
+        Devis gratuit : appelez
       </a>
 
       {/* Modal générique */}

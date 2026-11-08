@@ -32,6 +32,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#111] text-white">
+      {/* Bandeau « devis gratuit » présent sur toutes les pages du site */}
+      <div style={{ background: '#E8441A' }}>
+        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+          <p className="text-white font-black text-xl md:text-2xl uppercase tracking-wide">Devis gratuit et sans engagement</p>
+          <a href="tel:+33768077219" className="inline-flex items-center gap-2 bg-white font-black px-6 py-3 rounded-full text-base md:text-lg" style={{ color: '#E8441A' }}>
+            <Phone className="w-5 h-5" /> 07 68 07 72 19
+          </a>
+        </div>
+      </div>
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">

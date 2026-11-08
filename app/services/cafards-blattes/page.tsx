@@ -4,7 +4,8 @@ import { VILLES_CAFARDS, GUIDES_CAFARDS } from '@/lib/villes-cafards'
 
 const data: ServiceData = {
   badge: '2 passages inclus · Oothèques éliminées · HACCP',
-  heroTitle: 'Cafards & Blattes',
+  devis: 'Devis gratuit cafards',
+  heroTitle: 'Traitement cafards et blattes',
   heroHighlight: 'Éradication définitive',
   heroDescription: 'Protocole en 2 passages pour éliminer adultes ET oothèques (cocons d\'œufs). Gel et insecticide professionnels, vapeur sèche ou cryogénie selon les pièces.',
   heroPrices: [
