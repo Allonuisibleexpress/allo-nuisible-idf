@@ -11,6 +11,7 @@ export type Block =
   | { t: 'ol'; items: string[] }
   | { t: 'callout'; tone: 'warn' | 'ok' | 'info'; title: string; x: string }
   | { t: 'table'; head: string[]; rows: string[][] }
+  | { t: 'img'; src: string; alt: string; legende: string; credit: string; licence: string; page: string } // photo libre (Wikimedia), crédit affiché
 
 export interface Article {
   slug: string
@@ -2822,6 +2823,74 @@ export const ARTICLES: Article[] = [
     ],
     sources: [ { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' } ],
     cta: { title: 'Des piqûres mais rien de visible ?', text: "Nos techniciens inspectent le lit en détail, jusqu'aux lattes. 2 passages inclus, à partir de 290 € TTC, garantie 1 an." },
+  },
+  {
+    slug: 'punaises-des-bois-maison',
+    title: "Punaises des bois dans la maison : pourquoi elles envahissent tout à l'automne (et comment s'en débarrasser)",
+    seoTitle: "Punaises des bois dans la maison : comment s'en débarrasser",
+    description: "Punaises vertes, brunes ou « diaboliques » à vos fenêtres ? Comment les reconnaître, d'où elles viennent, comment les faire partir sans odeur et ne plus en avoir.",
+    date: '2026-11-08',
+    category: 'Insectes',
+    readMin: 7,
+    tldr: "Les punaises des bois (punaise verte, punaise à pattes rousses, punaise diabolique) entrent dans les maisons à l'automne pour passer l'hiver au chaud. Elles ne piquent pas l'homme et ne sont pas des punaises de lit. Leur seul vrai défaut : une odeur forte quand on les écrase. La bonne méthode : les ramasser sans les écraser (aspirateur ou bocal), puis boucher les entrées avant l'automne suivant.",
+    service: { href: '/services/punaises-de-lit', label: 'Punaises de lit : traitement insecticide ou sans insecticide' },
+    blocks: [
+      { t: 'p', x: "Elles se collent aux **fenêtres**, se glissent derrière les **volets**, tombent des **rideaux**... et quand on en écrase une, l'**odeur** envahit toute la pièce. Chaque automne, les **punaises des bois** cherchent à entrer dans les maisons. Voici **comment les reconnaître**, **pourquoi elles arrivent chez vous** et **comment s'en débarrasser pour de bon**." },
+      { t: 'h2', x: "Reconnaître une punaise des bois : les 3 espèces qui envahissent nos maisons" },
+      { t: 'p', x: "Une punaise des bois a un corps **plat en forme de bouclier**, d'un peu plus d'un centimètre, avec **6 pattes** et **2 longues antennes**. On l'appelle aussi « **punaise puante** ». Trois espèces se retrouvent souvent dans les maisons :" },
+      { t: 'img', src: '/punaises-bois/palomena-prasina.jpg', alt: 'Punaise verte des bois (Palomena prasina) posée sur une feuille', legende: "La **punaise verte** (Palomena prasina) : verte au printemps et en été, elle **devient brunâtre à l'automne**, au moment où elle cherche un abri.", credit: 'Charles J. Sharp', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Green_shield_bug_(Palomena_prasina)_3.jpg' },
+      { t: 'img', src: '/punaises-bois/pentatoma-rufipes.jpg', alt: 'Punaise des bois à pattes rousses (Pentatoma rufipes) sur une feuille', legende: "La **punaise à pattes rousses** (Pentatoma rufipes), la « vraie » punaise des bois : **brun-roux**, avec une **tache orangée** au bout du dos.", credit: 'Alchemist-hp (www.pse-mendelejew.de)', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Pentatoma_rufipes_at_a_cherry_leaf.jpg' },
+      { t: 'img', src: '/punaises-bois/halyomorpha-halys.jpg', alt: 'Punaise diabolique (Halyomorpha halys), marbrée de brun, sur une feuille', legende: "La **punaise diabolique** (Halyomorpha halys) : **marbrée de brun**, avec des **bandes claires sur les antennes** et le bord du corps. C'est elle qui arrive **en grand nombre** dans les maisons.", credit: 'Hectonichus', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Pentatomidae_-_Halyomorpha_halys-001.JPG' },
+      { t: 'h2', x: "Punaise des bois ou punaise de lit ? L'erreur qui peut coûter cher" },
+      { t: 'table', head: ['', 'Punaise des bois', 'Punaise de lit'], rows: [
+        ['Forme', 'Bouclier, un peu plus d’un centimètre', 'Ovale et plate, la taille d’un pépin de pomme'],
+        ['Où la voir', 'Fenêtres, volets, murs, rideaux', 'Matelas, sommier, plinthes, tête de lit'],
+        ['Pique l’homme ?', 'Non, elle se nourrit de plantes', 'Oui, elle se nourrit de sang la nuit'],
+        ['Signe typique', 'Odeur forte quand on l’écrase', 'Piqûres en ligne, points noirs sur le matelas'],
+        ['Faut-il un professionnel ?', 'Rarement', 'Oui, presque toujours'],
+      ] },
+      { t: 'p', x: "Vous avez des **piqûres** au réveil et des **petits points noirs** sur le matelas ? Ce ne sont pas des punaises des bois : voir notre page [punaises de lit](/services/punaises-de-lit)." },
+      { t: 'h2', x: "Pourquoi elles débarquent chez vous à chaque automne" },
+      { t: 'p', x: "Le reste de l'année, les punaises des bois vivent **dehors**, sur les arbres, les haies, les potagers et les arbres fruitiers, où elles **piquent les plantes** pour se nourrir. À l'**automne**, quand il fait plus froid, les adultes cherchent un **abri sec pour passer l'hiver** : écorces, fissures, greniers... et **nos maisons**." },
+      { t: 'p', x: "Elles sont attirées par les **façades ensoleillées** et entrent par la moindre ouverture : **fenêtre entrouverte**, **coffre de volet roulant**, **joints abîmés**, **passages de câbles et de tuyaux**, **bas de porte**. Une fois à l'intérieur, elles s'installent dans les recoins et ressortent dès qu'il fait doux." },
+      { t: 'callout', tone: 'info', title: 'La punaise diabolique, une nouvelle venue', x: "Originaire d'Asie, la **punaise diabolique** a été repérée pour la première fois en France **près de Strasbourg en 2012**. Elle s'est depuis répandue dans tout le pays. C'est elle qui provoque les **invasions les plus spectaculaires** sur les façades à l'automne." },
+      { t: 'h2', x: "Sont-elles dangereuses ? La vérité sur la « punaise puante »" },
+      { t: 'p', x: "**Non.** Les punaises des bois **ne piquent pas l'homme**, ne sucent pas le sang et ne s'en prennent pas aux animaux de compagnie. Elles ne se reproduisent pas dans la maison pendant l'hiver. Leur seul vrai défaut : quand on les **dérange ou qu'on les écrase**, elles libèrent un liquide à l'**odeur très forte et tenace**, qui peut aussi **tacher** les rideaux et les tissus." },
+      { t: 'h2', x: "5 astuces pour s'en débarrasser sans les écraser (ni subir l'odeur)" },
+      { t: 'ol', items: [
+        "**Ne les écrasez jamais** à l'intérieur : l'odeur s'incruste dans les tissus.",
+        "**L'aspirateur avec un bas nylon** : glissez un vieux bas dans le tube, maintenez-le avec un élastique, aspirez les punaises, puis fermez le bas et jetez-le dehors. Le sac de l'aspirateur ne sentira rien.",
+        "**Le bocal d'eau savonneuse** : faites tomber les punaises dans un bocal d'eau avec du savon (liquide vaisselle ou savon noir). Elles ne peuvent plus remonter.",
+        "**Le bout de papier** : posez une feuille sous la punaise, elle grimpe dessus, et vous la relâchez dehors, loin des fenêtres.",
+        "**Vérifiez les recoins** : coffres de volets, encadrements, rideaux, plafonds des pièces chaudes, greniers.",
+      ] },
+      { t: 'h2', x: "6 gestes pour ne plus en revoir l'automne prochain" },
+      { t: 'ul', items: [
+        "**Moustiquaires** aux fenêtres des chambres et du salon, à poser **avant septembre**.",
+        "**Refaire les joints** abîmés des fenêtres et des portes, et poser des **bas de porte**.",
+        "**Boucher les passages** de câbles, de tuyaux et de climatisation avec un mastic adapté.",
+        "**Vérifier les coffres de volets roulants**, une de leurs cachettes préférées.",
+        "**Secouer le linge** qui sèche dehors avant de le rentrer en automne.",
+        "Garder les **aérations** de la maison ouvertes : on bouche les passages des punaises, jamais la ventilation.",
+      ] },
+      { t: 'h2', x: "Invasion massive ou doute ? Le bon moment pour appeler un pro" },
+      { t: 'p', x: "Dans la plupart des cas, les gestes ci-dessus suffisent. Mais si vous trouvez des punaises **par dizaines chaque jour**, dans le **grenier**, les **combles** ou les **coffres de volets**, ou si vous n'êtes **pas sûr qu'il s'agisse de punaises des bois**, un technicien peut **identifier l'insecte**, trouver par où il entre et vous conseiller. Nos techniciens certifiés **Certibiocide** interviennent **7j/7 en Île-de-France**, sur devis." },
+      { t: 'callout', tone: 'warn', title: 'Un doute ? Faites identifier l’insecte', x: "Une punaise de lit mal identifiée peut s'étendre à tout le logement en quelques semaines. Si vous avez des **piqûres**, envoyez-nous une **photo** de l'insecte : nous vous disons tout de suite de quoi il s'agit." },
+    ],
+    faq: [
+      { q: "Les punaises des bois piquent-elles ?", a: "Non. Elles se nourrissent de plantes et ne piquent ni l'homme ni les animaux. Si vous avez des piqûres, pensez plutôt aux punaises de lit." },
+      { q: "Pourquoi y a-t-il des punaises des bois chez moi en automne ?", a: "Les adultes cherchent un abri sec et chaud pour passer l'hiver. Ils entrent par les fenêtres, les volets roulants, les joints abîmés et les passages de câbles." },
+      { q: "Comment enlever l'odeur d'une punaise écrasée ?", a: "Aérez la pièce et lavez le tissu ou la surface à l'eau savonneuse. Pour éviter le problème, ramassez-les plutôt avec un aspirateur muni d'un bas nylon ou faites-les tomber dans un bocal d'eau savonneuse." },
+      { q: "Les punaises des bois pondent-elles dans la maison ?", a: "Non, elles passent l'hiver à l'intérieur sans s'y reproduire. Elles repartent dehors au printemps pour pondre sur les plantes." },
+      { q: "Quelle différence entre punaise des bois et punaise diabolique ?", a: "La punaise diabolique (Halyomorpha halys) est une espèce venue d'Asie, marbrée de brun, avec des bandes claires sur les antennes. Elle fait partie des punaises « des bois » au sens large et c'est elle qui arrive le plus en nombre dans les maisons." },
+    ],
+    sources: [
+      { label: 'INPN, Muséum national d’Histoire naturelle : Palomena prasina', url: 'https://inpn.mnhn.fr/espece/cd_nom/51619' },
+      { label: 'e-santé : la punaise diabolique (détection près de Strasbourg en 2012, d’après l’INRAE)', url: 'https://www.e-sante.fr/punaises-diaboliques-le-reflexe-a-eviter-quand-elles-entrent-chez-vous/actualite/615161' },
+      { label: 'Paris Match : la punaise diabolique, sans danger pour l’homme (J.-C. Streito, INRAE)', url: 'https://www.parismatch.be/actualites/societe/2018/10/19/faut-il-avoir-peur-de-la-punaise-diabolique-HEOPCMCMLBCAHJ6ZGBL7J5CI3U/' },
+      { label: 'Photos : Wikimedia Commons (licences libres, auteurs cités sous chaque photo)', url: 'https://commons.wikimedia.org/' },
+    ],
+    cta: { title: 'Punaise des bois ou punaise de lit ?', text: "Envoyez-nous une photo : nous identifions l'insecte et intervenons 7j/7 en Île-de-France si besoin, sur devis." },
   },
   {
     slug: 'punaises-de-lit-vincennes-punaises-mortes',

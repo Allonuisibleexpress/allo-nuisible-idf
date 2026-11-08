@@ -104,6 +104,16 @@ function renderBlock(b: Block, idx: number) {
         </div>
       )
     }
+    case 'img':
+      return (
+        <figure key={k} style={{ margin: '8px auto 28px', maxWidth: '520px', textAlign: 'center' }}>
+          <img src={b.src} alt={b.alt} loading="lazy" style={{ width: '100%', borderRadius: '14px', display: 'block' }} />
+          <figcaption style={{ fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', marginTop: '10px' }}>{inline(b.legende, k)}</figcaption>
+          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '4px' }}>
+            Photo : {b.credit}, <a href={b.page} target="_blank" rel="noopener noreferrer nofollow" style={{ textDecoration: 'underline' }}>{b.licence}</a>, Wikimedia Commons
+          </p>
+        </figure>
+      )
     case 'table':
       return (
         <div key={k} style={{ overflowX: 'auto', marginBottom: '28px', marginTop: '8px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.12)' }}>
@@ -180,7 +190,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
         {/* Hero */}
         <section style={{ paddingTop: '120px', paddingBottom: '40px', background: 'linear-gradient(135deg, #0a0a0a 0%, rgba(232, 68, 26, 0.05) 100%)', borderBottom: '1px solid rgba(232, 68, 26, 0.15)' }}>
-          <div className={`max-w-3xl mx-auto px-4${recit ? ' recit-centre' : ''}`}>
+          <div className="max-w-3xl mx-auto px-4 recit-centre">
             <div style={{ marginBottom: '20px' }}>
               <Link href="/blog" style={{ fontSize: '12px', fontWeight: 600, color: '#E8441A', textDecoration: 'none' }}>← Retour au blog</Link>
             </div>
@@ -201,7 +211,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <article className={`max-w-3xl mx-auto px-4${recit ? ' recit-centre' : ''}`} style={{ paddingTop: '48px', paddingBottom: '80px' }}>
+        <article className="max-w-3xl mx-auto px-4 recit-centre" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
 
           {/* Le chantier en images, tout en haut : les clients veulent voir avant de lire */}
           {(a.videos || a.mediasEnHaut) && (
