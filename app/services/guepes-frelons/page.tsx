@@ -11,6 +11,7 @@ import { MEDIAS_FRELONS } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
@@ -414,6 +415,16 @@ export default function GuêpesFrelonsPage() {
                   <p className="text-white font-bold leading-snug">{t}</p>
                 </a>
               ))}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-white font-black text-lg md:text-xl mb-3">Destruction de nid de frelons près de chez vous</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)).map((v) => (
+                  <a key={v.slug} href={`/destruction-nid-frelon/${v.slug}`} className="text-sm font-bold px-4 py-2 rounded-full" style={{ background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)', color: '#fff' }}>
+                    {v.nom}
+                  </a>
+                ))}
+              </div>
             </div>
             <p className="text-center text-sm mt-4">
               <a href="/blog/nid-de-frelon-en-hiver" className="underline underline-offset-2" style={{ color: '#E8441A' }}>Nid de frelon en hiver : faut-il vraiment le détruire ?</a>

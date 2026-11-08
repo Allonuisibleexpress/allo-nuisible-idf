@@ -8,7 +8,9 @@
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 
-export const FRELONS_VILLES_INDEXEES = false
+// Mise en ligne progressive pour Google (demandée le 08/11/2026) : 5 villes d'abord, les autres dans la semaine.
+export const FRELONS_VILLES_INDEXEES: string[] = ['saint-maurice', 'nogent-sur-marne', 'vincennes', 'saint-maur-des-fosses', 'champigny-sur-marne']
+export const frelonsIndexee = (slug: string) => FRELONS_VILLES_INDEXEES.includes(slug)
 
 export const SOURCES_FRELONS = [
   { label: 'Muséum national d\'Histoire naturelle, le frelon asiatique', url: 'https://frelonasiatique.mnhn.fr/home' },
