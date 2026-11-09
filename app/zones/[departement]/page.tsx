@@ -84,7 +84,7 @@ export default function DepartementPage({ params }: { params: { departement: str
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {d.situations.map((s) => (
-                <a key={s.titre} href={`/services/${s.service}`}
+                <a key={s.titre} href={`/services/${s.service === 'rongeurs' ? 'deratisation' : s.service}`}
                   className="group rounded-2xl p-6 transition-colors hover:bg-white/[0.06]"
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="flex items-center gap-3 mb-3">
@@ -131,7 +131,7 @@ export default function DepartementPage({ params }: { params: { departement: str
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Tous nos services {d.dans}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {(Object.keys(SERVICES) as ServiceSlug[]).map((slug) => (
+              {(Object.keys(SERVICES) as ServiceSlug[]).filter((x) => x !== 'rongeurs').map((slug) => (
                 <a key={slug} href={`/services/${slug}`}
                   className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-white/85 text-sm font-semibold transition-colors hover:bg-white/[0.07]"
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>

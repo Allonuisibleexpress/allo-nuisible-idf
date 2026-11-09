@@ -135,7 +135,7 @@ export default function CommunePage({ params }: { params: Params }) {
                         </li>
                       ))}
                     </ul>
-                    <a href={`/services/${m.service}`} className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
+                    <a href={`/services/${m.service === 'rongeurs' ? 'deratisation' : m.service}`} className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
                       En savoir plus <ArrowRight className="w-4 h-4" />
                     </a>
                   </article>
@@ -146,7 +146,7 @@ export default function CommunePage({ params }: { params: Params }) {
               Nous intervenons aussi {c.a} pour :{' '}
               {autres.map((k, i) => (
                 <span key={k}>
-                  <a href={`/services/${METHODES[k].service}`} className="underline hover:text-white">{SERVICES[METHODES[k].service].nom.toLowerCase()}</a>
+                  <a href={`/services/${METHODES[k].service === 'rongeurs' ? 'deratisation' : METHODES[k].service}`} className="underline hover:text-white">{SERVICES[METHODES[k].service].nom.toLowerCase()}</a>
                   {i < autres.length - 1 ? ', ' : '.'}
                 </span>
               ))}
