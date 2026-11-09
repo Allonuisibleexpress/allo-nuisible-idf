@@ -14,6 +14,8 @@ import { pageMetadata, SITE_URL } from '@/lib/seo'
 import CarteDepartement from '@/components/CarteDepartement'
 import { ficheParId } from '@/lib/identifier-nuisibles'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
+import PhotosChantiers from '@/components/PhotosChantiers'
+import { MEDIAS_DERATISATION, type PhotoKey } from '@/lib/photos-chantiers'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
@@ -29,6 +31,15 @@ const NUISIBLES: Record<ServiceDep, string[]> = {
   deratisation: ['rat', 'souris'], souris: ['souris', 'rat'], punaises: ['punaise-de-lit', 'puce'],
   cafards: ['blatte-germanique', 'blatte-orientale'], frelons: ['frelon-asiatique', 'frelon-europeen', 'guepe'],
 }
+// Vraies photos de chantier (celles des pages services), par nuisible
+const CHANTIERS: Record<ServiceDep, PhotoKey[]> = {
+  deratisation: MEDIAS_DERATISATION.photos.slice(0, 4),
+  souris: ['sourisAirbnb', 'sourisGlu', 'rongeursGlu', 'ratPiege'],
+  punaises: ['vincennesMortes1', 'creteilLattes1', 'cryoFoyer', 'litCryo'],
+  cafards: ['cafardsSol', 'cafardsTiroir', 'cafardsTiroir2', 'cafardsMeuble'],
+  frelons: ['frelonsPerche', 'frelonsArbre', 'nidGuepes', 'toit'],
+}
+
 // À quelle saison ? (connaissances courantes, sans chiffre)
 const SAISONS: Record<ServiceDep, (dans: string) => { t: string; x: string }[]> = {
   deratisation: (dans) => [
@@ -232,6 +243,8 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <a href="/identifier-nuisible" className="inline-flex items-center gap-1 text-sm font-bold mt-6" style={{ color: ACCENT }}>Identifier un autre nuisible <ArrowRight className="w-4 h-4" /></a>
           </div>
         </section>
+
+        <PhotosChantiers photos={CHANTIERS[s]} titre={`Nos chantiers ${s === 'frelons' ? 'de destruction de nids' : `de ${c.label.toLowerCase()}`} en photos`} intro={`Photos prises par nos techniciens lors de vraies interventions, en Île-de-France.`} fond="#0d0d0d" />
 
         {/* ── SAISONS ── */}
         <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
