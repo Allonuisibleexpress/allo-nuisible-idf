@@ -27,13 +27,13 @@ const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
 // Prix de départ affichés en gros (alignés sur /tarifs)
-const PRIX_DEPART: Partial<Record<ServiceLocal, string>> = { cafards: '120 €', souris: '120 €', fourmis: '120 €', acariens: '120 €', chenilles: '89 €', frelons: '89 €' }
+const PRIX_DEPART: Partial<Record<ServiceLocal, string>> = { puces: '120 €', cafards: '120 €', souris: '120 €', fourmis: '120 €', acariens: '120 €', chenilles: '89 €', frelons: '89 €' }
 // Mot-clé du bandeau « devis gratuit » selon le service
-const MOT_DEVIS: Record<ServiceLocal, string> = { frelons: 'destruction de nid de frelons', fourmis: 'traitement des fourmis', cafards: 'traitement des cafards', souris: 'traitement contre les souris', chenilles: 'chenilles processionnaires', acariens: 'traitement des acariens', punaises: 'punaises de lit', deratisation: 'dératisation', commune: 'nuisibles' }
+const MOT_DEVIS: Record<ServiceLocal, string> = { puces: 'traitement des puces', frelons: 'destruction de nid de frelons', fourmis: 'traitement des fourmis', cafards: 'traitement des cafards', souris: 'traitement contre les souris', chenilles: 'chenilles processionnaires', acariens: 'traitement des acariens', punaises: 'punaises de lit', deratisation: 'dératisation', commune: 'nuisibles' }
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 // Angle du texte local (components/ContexteLocal) selon la page service de la famille
 const serviceLocal = (href: string): ServiceLocal =>
-  href.includes('fourmis') ? 'fourmis' : href.includes('guepes-frelons') ? 'frelons' : href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
+  href.includes('puces') ? 'puces' : href.includes('fourmis') ? 'fourmis' : href.includes('guepes-frelons') ? 'frelons' : href.includes('cafards') ? 'cafards' : href.includes('rongeurs') || href.includes('deratisation') ? 'souris' : href.includes('chenilles') ? 'chenilles' : 'acariens'
 
 export type Ville = {
   slug: string

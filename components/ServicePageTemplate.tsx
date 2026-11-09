@@ -113,7 +113,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 // Famille « saisons » d'une page service, d'après son adresse
 const FAMILLE_SAISON: Record<string, keyof typeof SAISONS_FAQ> = {
   'punaises-de-lit': 'punaises', 'cryogenie-punaises-de-lit': 'punaises', deratisation: 'deratisation', 'cafards-blattes': 'cafards',
-  fourmis: 'fourmis', 'guepes-frelons': 'frelons', 'chenilles-processionnaires': 'chenilles', acariens: 'acariens',
+  fourmis: 'fourmis', 'guepes-frelons': 'frelons', 'chenilles-processionnaires': 'chenilles', acariens: 'acariens', puces: 'puces',
 }
 
 // Données structurées complètes d'une page service (entreprise, note, service, offre, étapes, FAQ, fil d'Ariane)

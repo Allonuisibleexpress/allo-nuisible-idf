@@ -38,6 +38,11 @@ export const SAISONS_FAQ: Record<FamilleVille, { q: string; a: string }[]> = {
     { q: 'Les acariens meurent-ils en hiver ?', a: 'Non, ils vivent dans la literie et les textiles, à la température du logement. Aérer chaque jour et limiter l’humidité aide toute l’année.' },
     { q: 'Quand faire un traitement anti-acariens ?', a: 'À tout moment, mais beaucoup de familles le font avant l’hiver ou au moment où les symptômes reviennent.' },
   ],
+  puces: [
+    { q: 'Y a-t-il plus de puces en été ?', a: 'Oui : la chaleur et l’humidité accélèrent leur cycle. Les infestations deviennent souvent visibles à la fin de l’été et au début de l’automne.' },
+    { q: 'Les puces disparaissent-elles en hiver ?', a: 'Non. Dans un logement chauffé, elles continuent de se développer, et un adulte peut attendre longtemps dans son cocon.' },
+    { q: 'Pourquoi des puces au retour des vacances ?', a: 'Des adultes attendaient dans leurs cocons. Votre retour (chaleur, vibrations, gaz carbonique) déclenche leur sortie en masse.' },
+  ],
   frelons: [
     { q: 'Les frelons meurent-ils en hiver ?', a: 'La colonie disparaît à la fin de l’automne : seules les futures reines passent l’hiver à l’abri. Le nid est abandonné et ne sera pas réutilisé.' },
     { q: 'Quand les nids de frelons sont-ils les plus gros ?', a: 'À la fin de l’été et au début de l’automne : la colonie est alors à son maximum, et les insectes plus agressifs près du nid.' },

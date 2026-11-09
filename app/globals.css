@@ -152,3 +152,6 @@ body {
 .recit-centre ul, .recit-centre ol { display: inline-block; text-align: left; max-width: 100%; }
 .recit-centre table { text-align: left; }
 .recit-centre div[style*="display: flex"], .recit-centre div[style*="display:flex"] { justify-content: center; }
+
+/* Aucun débordement horizontal, même pendant les animations d’apparition (09/11/2026) */
+html, body { overflow-x: clip; }

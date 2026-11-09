@@ -143,6 +143,9 @@ export const FICHES: Fiche[] = [
     aspect: 'Brun-noir, aplatie sur les côtés, elle saute très haut et disparaît d’un bond.',
     signes: 'Piqûres groupées aux chevilles et aux mollets, animal qui se gratte, petits grains noirs dans son pelage ou son panier.',
     conseil: 'Traitez l’animal chez le vétérinaire en même temps que le logement, sinon les puces reviennent.',
+    prix: 'dès 120 € TTC',
+    service: { href: '/services/puces', label: 'Traitement des puces' },
+    guide: { href: '/blog/puces-tout-savoir', label: 'Tout savoir sur les puces' },
     photo: { src: '/identifier/ctenocephalides.jpg', credit: 'Erturac', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Flea.JPG' },
   },
   {

@@ -77,6 +77,17 @@ const SITUATIONS: Record<FamilleVille, { titre: (a: string) => string; liste: Si
       { t: (a) => `Procession au sol ${a}`, x: 'Une file de chenilles qui traverse le jardin : ne la touchez pas et éloignez enfants et animaux.' },
     ],
   },
+  puces: {
+    titre: (a) => `Puces ${a} : les situations les plus fréquentes`,
+    liste: [
+      { t: (a) => `Puces de parquet au retour de vacances ${a}`, x: 'Des adultes attendaient dans leurs cocons : la chaleur et les vibrations de votre retour les font sortir toutes ensemble.', lien: { href: '/blog/puces-tout-savoir', label: 'Les puces expliquées' } },
+      { t: (a) => `Puces sans animal ${a}`, x: 'Ancien occupant avec un animal, rongeurs, meuble d’occasion : les cocons peuvent attendre des semaines.' },
+      { t: (a) => `Puces du chat ou du chien ${a}`, x: 'Traitez l’animal chez le vétérinaire et le logement en même temps, sinon les puces reviennent.' },
+      { t: (a) => `Piqûres de puces aux chevilles ${a}`, x: 'Petits boutons groupés sur le bas des jambes, qui démangent : c’est le signe le plus courant.' },
+      { t: (a) => `Puces après un emménagement ${a}`, x: 'Si l’ancien occupant avait un animal, les cocons restés dans le parquet éclosent à votre arrivée.' },
+      { t: (a) => `Puces dans le canapé ${a}`, x: 'Les œufs tombent là où l’animal se couche : coussins, dessous et sol autour du canapé sont à traiter.' },
+    ],
+  },
   acariens: {
     titre: (a) => `Acariens ${a} : les situations les plus fréquentes`,
     liste: [

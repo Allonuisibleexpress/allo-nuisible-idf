@@ -7,7 +7,7 @@ const ACCENT = '#E8441A'
 
 export default function AvantApres() {
   return (
-    <section id="resultats" className="py-16 md:py-24 px-4 sm:px-6" style={{ background: '#080808' }}>
+    <section id="resultats" className="py-16 md:py-24 px-4 sm:px-6 overflow-x-clip" style={{ background: '#080808' }}>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
         {/* ─── Colonne texte ─── */}

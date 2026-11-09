@@ -95,6 +95,16 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
     ],
   },
   {
+    name: 'Puces',
+    icon: 'acariens',
+    href: '/services/puces',
+    tiers: [
+      { label: 'Appartement', price: '120', details: 'Sols, textiles et couchage de l\'animal' },
+      { label: 'Maison', price: null, details: 'Toutes les pièces, garage et véranda', highlight: true },
+      { label: 'Professionnels', price: null, details: 'Locations meublées, hôtels, pensions' },
+    ],
+  },
+  {
     name: 'Acariens',
     icon: 'acariens',
     href: '/services/acariens',

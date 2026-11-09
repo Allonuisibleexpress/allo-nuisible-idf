@@ -7,7 +7,7 @@ import { DONNEES_LOCALES, type DonneesLocales } from '@/lib/donnees-locales'
 
 const ACCENT = '#E8441A'
 
-export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'frelons' | 'commune'
+export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'frelons' | 'puces' | 'commune'
 
 const nf = (n: number) => n.toLocaleString('fr-FR')
 // Choix déterministe d'une variante de phrase, différent d'une ville et d'un service à l'autre
@@ -119,6 +119,10 @@ function habitat(d: DonneesLocales, s: ServiceLocal) {
       return dense
         ? pick(k, ['En appartement, une aération quotidienne et un taux d\'humidité entre 40 et 60 % (recommandation de l\'Assurance maladie) limitent la prolifération des acariens dans la literie.', 'Dans les logements collectifs, souvent moins ventilés, la literie et les textiles concentrent les acariens : aérez chaque jour, même en hiver.', 'Petites chambres, cuisine ouverte, linge qui sèche à l\'intérieur : en appartement, l\'humidité monte vite, et les acariens de la literie en profitent.', 'Dans un immeuble, la chambre est souvent la pièce la moins aérée : ouvrir les fenêtres dix minutes chaque matin aide à garder la literie plus saine.'])
         : pick(k, ['Dans une maison avec sous-sol, la chambre du rez-de-chaussée ou la pièce aménagée en bas est souvent la plus humide : c\'est là que les acariens prolifèrent en premier.', 'En maison, pensez aux chambres peu chauffées ou peu aérées, aux sous-sols aménagés et aux chambres d\'amis : l\'humidité y favorise les acariens.', 'Dans une maison, les pièces fermées une partie de l\'année gardent l\'humidité : aérez-les avant de les utiliser.'])
+    case 'puces':
+      return dense
+        ? pick(k, ['En appartement, les puces se cachent dans les fentes du parquet, les moquettes et le couchage de l\'animal : un ancien occupant avec un chat ou un chien peut avoir laissé des cocons.', 'En immeuble, les puces arrivent souvent avec un animal, un déménagement ou des rongeurs des caves : traiter l\'animal et le logement en même temps est indispensable.', 'Dans un appartement, les larves de puces fuient la lumière et s\'enfoncent sous les meubles et le long des plinthes : c\'est là que le traitement doit porter.'])
+        : pick(k, ['Autour des maisons, les puces viennent souvent du jardin : hérissons, chats errants ou rongeurs les déposent là où votre animal se couche.', 'En pavillon, le panier du chien, la niche, le garage et les tapis sont les premiers endroits à traiter contre les puces.', 'Dans une maison, une infestation de puces commence souvent après l\'été, quand l\'animal rentre davantage et que les œufs tombent sur les sols chauffés.'])
     case 'chenilles':
       return dense
         ? 'Même en ville, un seul pin dans une cour, un square ou une résidence peut accueillir des nids.'
@@ -181,6 +185,12 @@ function traitement(d: DonneesLocales, s: ServiceLocal, a: string) {
         `Acariens ${a} : vapeur sèche et cryogénie sans produit, ou pulvérisation acaricide professionnelle quand plusieurs pièces sont touchées. Dès 120 € TTC pour une chambre, garantie 1 an.`,
         `${majuscule(a)}, le traitement anti-acariens porte sur les matelas, sommiers, canapés, coussins et tapis : vapeur sèche, cryogénie ou acaricide professionnel, dès 120 € TTC, garantie 1 an.`,
         `Pour réduire les acariens ${a}, nous assainissons la literie et les textiles à la vapeur sèche ou à la cryogénie, sans produit, ou par pulvérisation acaricide. À partir de 120 € TTC.`,
+      ])
+    case 'puces':
+      return pick(k, [
+        `Contre les puces ${a}, nous traitons tout le logement avec un insecticide professionnel, en insistant sur les sols, les fentes et le couchage de l'animal, en lien avec le traitement vétérinaire. À partir de 120 € TTC, garantie 1 an.`,
+        `Puces ${a} : préparation du logement (aspiration, lavage à 60 °C), traitement professionnel des sols et des textiles, et second passage si besoin pour les puces qui sortent des cocons. Dès 120 € TTC, garantie 1 an.`,
+        `${majuscule(a)}, un traitement contre les puces réussit quand l'animal et le logement sont traités en même temps : nous nous occupons de la maison, votre vétérinaire de l'animal. À partir de 120 € TTC.`,
       ])
     case 'fourmis':
       return pick(k, [
@@ -280,6 +290,7 @@ const TITRES: Record<ServiceLocal, (a: string) => string> = {
   chenilles: (a) => `Chenilles processionnaires ${a} : notre intervention`,
   acariens: (a) => `Traitement des acariens ${a}`,
   fourmis: (a) => `Traitement des fourmis ${a}`,
+  puces: (a) => `Traitement des puces ${a}`,
   frelons: (a) => `Un nid de guêpes ou de frelons ${a} ? Notre intervention`,
   commune: (a) => `Nos traitements ${a}`,
 }

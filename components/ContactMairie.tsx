@@ -85,6 +85,16 @@ const TEXTES: Record<ServiceLocal, Texte> = {
       ],
     ],
   },
+  puces: {
+    nuisible: 'puces',
+    points: (a) => [
+      LOCATAIRE,
+      [
+        `Rongeurs dans les caves ou animaux errants qui apportent les puces : la mairie peut vous orienter vers le bon service ${a}.`,
+        `Si les puces viennent des parties communes ou de rongeurs de l’immeuble, prévenez le syndic, et au besoin la mairie ${a}.`,
+      ],
+    ],
+  },
   acariens: {
     nuisible: 'acariens',
     points: (a) => [

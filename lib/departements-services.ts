@@ -4,7 +4,7 @@
 import type { FamilleVille } from './services-ville'
 
 export type DepSlug = 'paris' | 'val-de-marne' | 'hauts-de-seine'
-export type ServiceDep = 'deratisation' | 'punaises' | 'frelons' | 'cafards' | 'souris'
+export type ServiceDep = 'deratisation' | 'punaises' | 'frelons' | 'cafards' | 'souris' | 'puces'
 
 export const DEPS: Record<DepSlug, { nom: string; code: string; dans: string; de: string; population: number; communes: string; zone: string }> = {
   paris: { nom: 'Paris', code: '75', dans: 'à Paris', de: 'de Paris', population: 2103778, communes: '20 arrondissements', zone: '/zones/paris' },
@@ -294,6 +294,75 @@ export const SERVICES_DEP: Record<ServiceDep, {
           { q: 'Intervenez-vous dans tout le 92 ?', a: 'Oui, dans les communes des Hauts-de-Seine, 7j/7.' },
           { q: 'Pouvez-vous intervenir la nuit dans un restaurant ?', a: 'Nous adaptons les horaires à votre activité pour ne pas gêner le service.' },
           { q: 'Combien de passages faut-il ?', a: 'Souvent deux, selon l’infestation : le technicien vous l’indique après l’inspection.' },
+        ],
+      },
+    },
+  },
+  puces: {
+    famille: 'puces', base: '/puces', label: 'Puces', motCle: 'Puces', h1: 'Traitement contre les puces', prix: '120 €', prixNum: '120',
+    prixNote: 'Appartement, sols et textiles traités. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
+    description: (dans, code) => `Puces ${dans} (${code}) : traitement du logement par un technicien certifié, en lien avec le vétérinaire. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+    etapes: [
+      ['Appel ou photo|Une photo des piqûres ou de l’insecte confirme qu’il s’agit de puces et fixe le prix.', 'Devis gratuit|Quelques questions sur le logement et vos animaux : vous avez le tarif tout de suite.'],
+      ['Préparation|Aspiration complète, lavage à 60 °C du couchage et des plaids, sols dégagés.', 'Avant le passage|Nous vous envoyons la liste simple des gestes à faire.'],
+      ['Traitement du logement|Insecticide professionnel sur les sols, les fentes, les textiles et les zones de repos de l’animal.', 'Traitement|Plinthes, dessous des meubles et couchage de l’animal en priorité.'],
+      ['Second passage et garantie|Les puces qui sortent des cocons sont touchées. Garantie 1 an.', 'Suivi|Aspiration quotidienne quelques semaines, second passage si besoin.'],
+    ],
+    tarifs: [
+      { label: 'Appartement', prix: 'dès 120 €', detail: 'Sols, textiles et couchage de l’animal' },
+      { label: 'Maison, grand logement', prix: 'sur devis', detail: 'Toutes les pièces, garage et véranda' },
+      { label: 'Local professionnel, location meublée', prix: 'sur devis', detail: 'Intervention planifiée, attestation' },
+    ],
+    contenu: {
+      paris: {
+        accroche: 'Parquets anciens, tapis, chiens en promenade dans les parcs : à Paris, les puces s’installent vite dans les appartements.',
+        paras: [
+          'À Paris, les **puces** arrivent surtout avec les **chiens et les chats**, lors des **déménagements** ou depuis les **caves** où vivent des rongeurs. Les œufs tombent sur les sols et les **larves** se cachent dans les **fentes des parquets anciens**, les **tapis** et sous les meubles.',
+          'Nous traitons les appartements des **20 arrondissements**, en lien avec le traitement vétérinaire de vos animaux, avec un **second passage** si besoin pour les puces qui sortent des cocons.',
+        ],
+        points: [
+          { t: 'Puces dans un parquet ancien à Paris', x: 'Les larves s’enfoncent dans les fentes : le traitement y est appliqué avec soin.' },
+          { t: 'Puces après un emménagement à Paris', x: 'Les cocons laissés par l’ancien occupant éclosent à votre arrivée.' },
+          { t: 'Puces sans animal, à Paris', x: 'Rongeurs des caves, meuble d’occasion : nous cherchons l’origine.' },
+        ],
+        faq: [
+          { q: 'Intervenez-vous dans tous les arrondissements ?', a: 'Oui, du 1er au 20e, 7j/7.' },
+          { q: 'Le propriétaire doit-il payer ?', a: 'Le logement loué doit être exempt de toute infestation d’espèces nuisibles et parasites (loi du 6 juillet 1989, article 6). Prévenez-le par écrit.' },
+          { q: 'Faut-il traiter l’animal aussi ?', a: 'Oui, chez le vétérinaire, en même temps que le logement : sinon les puces reviennent.' },
+        ],
+      },
+      'val-de-marne': {
+        accroche: 'Maisons avec jardin, bords de Marne, bois de Vincennes : dans le Val-de-Marne, nos animaux ramènent facilement des puces.',
+        paras: [
+          'Dans le Val-de-Marne, beaucoup de familles vivent en **pavillon avec jardin** ou promènent leur chien au **bois de Vincennes** et sur les **bords de Marne**. Hérissons, chats du voisinage et rongeurs déposent des puces que votre animal ramène à l’intérieur.',
+          'Basés à **Saint-Maurice**, nous intervenons dans tout le 94 : traitement du logement, du **garage** et des zones de repos de l’animal, en lien avec le vétérinaire.',
+        ],
+        points: [
+          { t: 'Puces dans un pavillon du Val-de-Marne', x: 'Toutes les pièces, le garage et la véranda sont traités.' },
+          { t: 'Puces au retour de vacances dans le 94', x: 'Maison restée fermée : les puces sortent des cocons à votre retour.' },
+          { t: 'Puces venues du jardin, dans le 94', x: 'Faune et chats errants : on limite leur accès et on traite la maison.' },
+        ],
+        faq: [
+          { q: 'Intervenez-vous partout dans le Val-de-Marne ?', a: 'Oui, dans les 47 communes, souvent le jour même.' },
+          { q: 'Faut-il traiter le jardin ?', a: 'Le plus important est la maison et l’animal. Au jardin, limitez l’accès des animaux errants.' },
+          { q: 'Le traitement est-il garanti ?', a: 'Oui, garanti 1 an.' },
+        ],
+      },
+      'hauts-de-seine': {
+        accroche: 'Bois de Boulogne, bords de Seine, grands appartements : dans les Hauts-de-Seine, les puces arrivent souvent avec nos animaux.',
+        paras: [
+          'Dans les Hauts-de-Seine, les promenades au **bois de Boulogne**, dans les **parcs** et le long de la **Seine** exposent les chiens aux puces. Dans les grands appartements, **tapis épais** et **parquets** offrent ensuite de nombreuses cachettes.',
+          'Nos techniciens interviennent dans les **communes du 92**, avec un traitement complet du logement et un **second passage** si nécessaire.',
+        ],
+        points: [
+          { t: 'Puces dans un grand appartement du 92', x: 'Tapis, parquets et canapés : traitement adapté aux matières.' },
+          { t: 'Puces du chien dans les Hauts-de-Seine', x: 'Vétérinaire pour l’animal, technicien pour la maison.' },
+          { t: 'Puces dans une location meublée du 92', x: 'Intervention entre deux locataires, attestation fournie.' },
+        ],
+        faq: [
+          { q: 'Intervenez-vous dans tout le 92 ?', a: 'Oui, dans les communes des Hauts-de-Seine, 7j/7.' },
+          { q: 'Le traitement abîme-t-il les tapis ?', a: 'Non, le produit est appliqué en fine couche. Le technicien signale toute matière fragile.' },
+          { q: 'Combien de passages faut-il ?', a: 'Souvent un traitement et un second passage, selon l’infestation.' },
         ],
       },
     },

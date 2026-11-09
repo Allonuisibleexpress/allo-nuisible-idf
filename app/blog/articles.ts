@@ -3902,6 +3902,149 @@ export const ARTICLES: Article[] = [
     ],
     cta: { title: 'Un nuisible chez vous ? Faites appel à un pro identifiable', text: "Devis gratuit et écrit, techniciens certifiés Certibiocide, protocole expliqué avant de commencer et garantie 1 an. Paris et Val-de-Marne, 7j/7." },
   },
+  {
+    slug: 'puces-tout-savoir',
+    title: "Puces dans la maison : d'où elles viennent, comment elles se propagent et comment s'en débarrasser pour de bon",
+    seoTitle: "Puces dans la maison : origine, cycle et traitement",
+    description: "Piqûres aux chevilles, chat qui se gratte, puces de parquet après les vacances ? Origine, transmission, cycle de vie, risques pour la santé et traitements qui marchent vraiment contre les puces.",
+    date: '2026-11-09',
+    category: 'Puces',
+    readMin: 11,
+    tldr: "Sur les chiens et les chats, plus de 90 % des puces sont des puces du chat : c'est aussi elle qui pique l'homme dans les logements, même sans chat. Une femelle pond environ 25 œufs par jour, qui tombent sur le sol, le couchage de l'animal, les tapis et les canapés. Larves et cocons vivent cachés dans la maison, et l'adulte peut attendre dans son cocon qu'un hôte passe : c'est l'origine des « puces de parquet » au retour de vacances. Pour s'en débarrasser, il faut traiter en même temps l'animal (chez le vétérinaire) et le logement, souvent en deux passages.",
+    service: { href: '/services/puces', label: 'Traitement des puces : devis gratuit' },
+    blocks: [
+      { t: 'p', x: "Des **piqûres groupées aux chevilles**, un **chat qui se gratte sans arrêt**, de **petites bêtes noires qui sautent** sur le parquet en rentrant de vacances... Les **puces** sont parmi les nuisibles les plus pénibles, parce qu'**on ne voit qu'une petite partie du problème**. Voici **tout ce qu'il faut savoir** : d'où elles viennent, comment elles se propagent, combien de temps elles vivent, ce qu'elles peuvent transmettre et **comment s'en débarrasser pour de bon**." },
+
+      { t: 'h2', x: "Reconnaître une puce en 10 secondes" },
+      { t: 'img', src: '/puces/puce-du-chat.jpg', alt: 'Puce du chat (Ctenocephalides felis) adulte, brun foncé, aplatie sur les côtés', legende: "La **puce du chat** (Ctenocephalides felis) : **brun-noir**, **aplatie sur les côtés**, **sans ailes**, avec de puissantes **pattes arrière** faites pour sauter.", credit: 'Erturac', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Flea.JPG' },
+      { t: 'ul', items: [
+        "**Taille** : 1 à 3 mm, à peine plus gros qu'une tête d'épingle.",
+        "**Couleur** : brun-rouge à noir.",
+        "**Forme** : aplatie sur les côtés, ce qui lui permet de filer entre les poils.",
+        "**Sans ailes**, mais **championne du saut** : une puce peut sauter jusqu'à **150 fois sa propre longueur**.",
+        "**Signe qui ne trompe pas** : des petits grains noirs dans le pelage ou sur le couchage. Posés sur un papier humide, ils laissent une **trace rouge** : ce sont des **excréments de puce**, faits de sang digéré.",
+      ] },
+      { t: 'p', x: "Une petite bête noire qui saute dans la maison ? Comparez-la avec nos fiches photo sur notre page [identifier un nuisible](/identifier-nuisible)." },
+
+      { t: 'h2', x: "Puce du chat, du chien, de l'homme : qui vous pique vraiment ?" },
+      { t: 'table', head: ['Espèce', 'Hôte principal', 'Ce qu’il faut savoir'], rows: [
+        ['Puce du chat (Ctenocephalides felis)', 'Chat, chien, et au moins 50 espèces de mammifères', 'Plus de 90 % des puces trouvées sur les chiens et les chats. C’est aussi elle qui pique l’homme dans les logements.'],
+        ['Puce du chien (Ctenocephalides canis)', 'Chien', 'Peu fréquente en France.'],
+        ['Puce de l’homme (Pulex irritans)', 'Homme, animaux', 'Devenue rare dans les logements.'],
+        ['Puce du rat (Xenopsylla cheopis)', 'Rats', 'Associée à des maladies comme le typhus murin.'],
+        ['Puce du hérisson (Archaeopsylla erinacei)', 'Hérisson', 'Peut passer sur un chien ou un chat au jardin.'],
+      ] },
+      { t: 'callout', tone: 'info', title: 'Pas de chat, mais des puces ?', x: "C'est fréquent. La puce du chat ne vit pas que sur les chats : elle peut venir d'un **ancien occupant avec un animal**, d'un **rongeur**, d'un **hérisson au jardin**, ou d'un **animal de passage**. Et si l'hôte disparaît, les cocons attendent dans le logement." },
+
+      { t: 'h2', x: "D'où viennent les puces ? Les 5 portes d'entrée" },
+      { t: 'ol', items: [
+        "**Votre chien ou votre chat** les ramène du jardin, d'une promenade, d'une pension ou du contact avec un autre animal. Une puce peut **changer d'hôte en une heure** à peine.",
+        "**Un ancien occupant avec un animal** : les cocons restés dans le parquet ou la moquette peuvent éclore des semaines plus tard, à votre arrivée.",
+        "**Les rongeurs** (rats, souris) et leurs puces, dans les caves, les combles ou les vides sanitaires.",
+        "**La faune du jardin** : hérissons, chats errants, renards près des maisons.",
+        "**Des textiles ou des meubles d'occasion** : un tapis ou un panier d'animal qui a hébergé des cocons.",
+      ] },
+
+      { t: 'h2', x: "Le cycle de vie des puces : pourquoi on n'en voit qu'une petite partie" },
+      { t: 'p', x: "La puce passe par **4 stades** : **œuf, larve, cocon (nymphe) et adulte**. Le piège, c'est que seul l'adulte vit sur l'animal. **Tous les autres stades vivent dans votre logement**, cachés dans le sol, les tapis et les meubles." },
+      { t: 'img', src: '/puces/oeuf-puce.jpg', alt: 'Œuf de puce du chat vu au microscope, avec une larve en formation', legende: "Un **œuf de puce du chat** au microscope (barre d'échelle : 0,25 mm). Les œufs mesurent environ **0,5 mm** et **ne collent pas** : ils tombent partout où l'animal se couche.", credit: 'Daniel J. Drew, Yale Peabody Museum', licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:Ctenocephalides_felis_(YPM_IZ_099582)_003.jpeg' },
+      { t: 'table', head: ['Stade', 'Où il vit', 'Durée'], rows: [
+        ['Œuf (0,5 mm)', 'Tombe au sol : couchage de l’animal, tapis, canapé', 'Éclosion en 32 heures à 32 °C, en 6 jours à 13 °C'],
+        ['Larve (jusqu’à 5 mm)', 'Cachée dans les fentes, sous les meubles, fuit la lumière', 'Environ 15 jours à 15-20 °C'],
+        ['Cocon (nymphe)', 'Collé aux fibres, couvert de poussière et de débris', 'Environ 20 jours à 15-20 °C avant les premières sorties'],
+        ['Adulte', 'Sur l’animal ou sur l’homme pour se nourrir', 'Peut attendre plusieurs semaines dans son cocon'],
+      ] },
+      { t: 'p', x: "Selon la température et l'humidité, **un cycle complet dure de 12 à 174 jours**. Plus il fait chaud et humide, plus il va vite : c'est pourquoi les infestations explosent en **fin d'été** et dans les **logements bien chauffés**." },
+      { t: 'img', src: '/puces/larve-puce.jpg', alt: 'Larve de puce du chat vue au microscope, blanche et allongée, sans pattes', legende: "Une **larve de puce** : blanche, sans pattes, couverte de soies. Elle ne pique pas : elle se nourrit des **excréments des adultes** et des débris dans la poussière.", credit: 'Daniel J. Drew, Yale Peabody Museum', licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:Ctenocephalides_felis_(YPM_IZ_099582)_004.jpeg' },
+
+      { t: 'h2', x: "Les « puces de parquet » au retour de vacances : le mystère expliqué" },
+      { t: 'p', x: "Vous rentrez après plusieurs semaines d'absence et, en quelques minutes, des dizaines de puces sautent sur vos jambes. Elles ne sont pas « nées du parquet » : ce sont des **adultes qui attendaient dans leurs cocons**. Faute d'hôte, ils patientent. **La chaleur du corps, les vibrations des pas et le gaz carbonique** que vous expirez déclenchent leur sortie, toutes en même temps." },
+      { t: 'p', x: "Une puce adulte qui ne trouve pas d'hôte peut aussi **ralentir son métabolisme** et jeûner **plusieurs mois** si la température et l'humidité lui conviennent." },
+
+      { t: 'h2', x: "Comment les puces se propagent dans toute la maison" },
+      { t: 'ul', items: [
+        "Une femelle pond **environ 25 œufs par jour**, et **1 000 à 2 000 au cours de sa vie**. Le pic de ponte a lieu la nuit, entre minuit et 3 heures.",
+        "Les œufs **ne collent pas** au pelage : ils **tombent** partout où l'animal dort, se couche ou se secoue.",
+        "Les larves **fuient la lumière** et s'enfoncent dans les **fentes du parquet**, les **moquettes**, **sous les canapés** et le long des **plinthes**.",
+        "En immeuble, une infestation peut passer d'un logement à l'autre par les **parties communes** et les **animaux** qui circulent.",
+      ] },
+
+      { t: 'h2', x: "Piqûres de puces : comment les reconnaître" },
+      { t: 'img', src: '/puces/piqures-puces.jpg', alt: 'Piqûres de puces sur la peau : petits boutons rouges groupés', legende: "Des **piqûres de puces** : petits boutons rouges, souvent **groupés ou en ligne**, qui **démangent fortement**.", credit: 'Wikimedia Commons', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Flea_bites.jpg' },
+      { t: 'ul', items: [
+        "**Où** : surtout aux **chevilles**, aux **mollets** et sur le bas des jambes, là où la puce arrive en sautant.",
+        "**Aspect** : petits boutons rouges avec un point central, souvent **par groupes de 2 ou 3**, parfois en ligne.",
+        "**Quand** : à toute heure, contrairement aux punaises de lit qui piquent la nuit.",
+        "**Attention au grattage** : les lésions grattées peuvent **s'infecter**.",
+      ] },
+      { t: 'p', x: "Piqûres au réveil, sur les bras et le dos ? Lisez plutôt notre guide [acariens ou punaises de lit](/blog/acariens-ou-punaises-de-lit)." },
+
+      { t: 'h2', x: "Ce que les puces peuvent faire si on ne traite pas" },
+      { t: 'ul', items: [
+        "**Une infestation qui grossit vite** : avec 25 œufs par jour et par femelle, quelques puces deviennent une colonie en quelques semaines.",
+        "**Allergie et dermatite** : la salive des puces est allergisante. Chez le chien et le chat, elle provoque des démangeaisons intenses et des lésions parfois sévères.",
+        "**Anémie chez les jeunes animaux** : lors d'une infestation massive, le sang prélevé peut affaiblir un chiot ou un chaton. On estime que 72 femelles prélèvent environ 1 ml de sang par jour.",
+        "**Un ver intestinal, le ténia Dipylidium caninum** : la puce en est le porteur. Le chien ou le chat s'infeste en avalant une puce en se léchant. Plus rarement, un jeune enfant peut l'avaler par accident.",
+        "**Des maladies, rares en France** : les puces peuvent transmettre des bactéries comme celles du **typhus murin** (Rickettsia typhi, surtout via les puces de rats), de la **fièvre boutonneuse à puces** (Rickettsia felis) ou de la **maladie des griffes du chat** (Bartonella henselae).",
+      ] },
+      { t: 'callout', tone: 'warn', title: 'Consultez si besoin', x: "Fièvre, ganglions ou piqûres qui s'infectent après une exposition aux puces : parlez-en à votre médecin. Pour votre animal, voyez votre vétérinaire." },
+
+      { t: 'h2', x: "Se débarrasser des puces : la méthode qui marche" },
+      { t: 'p', x: "La règle d'or : **traiter en même temps l'animal ET le logement**. Traiter seulement le chat laisse des milliers d'œufs, de larves et de cocons dans la maison. Traiter seulement la maison laisse les adultes sur l'animal, qui relancent tout." },
+      { t: 'h3', x: "1. L'animal, chez le vétérinaire" },
+      { t: 'p', x: "Demandez à votre vétérinaire un antiparasitaire adapté à **l'espèce et au poids** de votre animal, et traitez **tous les animaux** de la maison. Attention : **certains produits pour chiens sont dangereux pour les chats**." },
+      { t: 'h3', x: "2. Le logement, avant le traitement" },
+      { t: 'ul', items: [
+        "**Aspirez à fond** sols, tapis, canapés, plinthes et dessous de meubles, puis **jetez le sac** ou videz le bac dehors.",
+        "**Lavez à 60 °C** le couchage de l'animal, les plaids, les housses et le linge qui traîne au sol.",
+        "**Dégagez les sols** pour que le technicien accède partout.",
+      ] },
+      { t: 'h3', x: "3. Le traitement professionnel" },
+      { t: 'p', x: "Le technicien applique un **insecticide professionnel** sur les sols, les textiles et les zones où l'animal se couche, en insistant sur les **fentes**, les **plinthes** et le **dessous des meubles**. Les cocons protègent la nymphe : c'est pourquoi un **second passage** est souvent prévu pour toucher les puces qui sortent ensuite." },
+      { t: 'callout', tone: 'ok', title: 'Après le traitement', x: "Continuez à **passer l'aspirateur chaque jour** pendant quelques semaines : les vibrations font sortir les adultes encore dans leurs cocons, qui sont alors touchés par le traitement. Voir quelques puces les jours suivants est normal." },
+
+      { t: 'h2', x: "Les erreurs qui font revenir les puces" },
+      { t: 'ul', items: [
+        "**Ne traiter que l'animal**, ou **que la maison**.",
+        "**Oublier un animal** de la maison, ou arrêter son antiparasitaire trop tôt.",
+        "**Arrêter l'aspirateur** juste après le traitement.",
+        "**Utiliser un produit pour chien sur un chat** sans avis vétérinaire.",
+        "**Compter sur un seul diffuseur** acheté en magasin : il n'atteint pas les larves cachées sous les meubles et dans les fentes.",
+      ] },
+
+      { t: 'h2', x: "Prévenir le retour des puces" },
+      { t: 'ul', items: [
+        "**Traitez vos animaux toute l'année**, selon les conseils de votre vétérinaire.",
+        "**Lavez régulièrement** leur couchage à 60 °C.",
+        "**Aspirez souvent** là où ils dorment.",
+        "**Avant d'emménager**, demandez si l'ancien occupant avait un animal.",
+        "**Limitez l'accès** des rongeurs et des animaux errants : [dératisation](/services/deratisation), grilles de cave, vide sanitaire fermé.",
+      ] },
+
+      { t: 'h2', x: "Prix d'un traitement contre les puces" },
+      { t: 'table', head: ['Logement', 'Prix'], rows: [
+        ['Appartement', 'À partir de 120 € TTC'],
+        ['Maison, grand logement', 'Sur devis'],
+        ['Local professionnel, location meublée', 'Sur devis'],
+      ] },
+      { t: 'p', x: "Le **devis est gratuit** et le prix est fixé avant l'intervention. Nos traitements sont **garantis 1 an**. Voir notre page [traitement des puces](/services/puces)." },
+    ],
+    faq: [
+      { q: "Combien de temps vit une puce ?", a: "Son cycle complet dure de 12 à 174 jours selon la température et l'humidité. Un adulte peut attendre plusieurs semaines dans son cocon, et jeûner plusieurs mois s'il ne trouve pas d'hôte et que les conditions lui conviennent." },
+      { q: "Les puces peuvent-elles vivre sur l'homme ?", a: "La puce du chat pique l'homme, mais elle ne s'installe pas durablement sur lui : elle préfère les animaux à poils. C'est pour cela que les piqûres se concentrent sur les chevilles et les mollets." },
+      { q: "J'ai des puces mais pas d'animal, pourquoi ?", a: "Elles peuvent venir d'un ancien occupant avec un animal, de rongeurs, d'un hérisson au jardin ou d'un meuble d'occasion. Les cocons peuvent attendre dans le logement pendant des semaines avant d'éclore." },
+      { q: "Pourquoi j'ai encore des puces après le traitement ?", a: "Les cocons protègent les puces en formation. Elles continuent de sortir pendant quelques jours ou semaines et sont alors touchées par le traitement. Passez l'aspirateur chaque jour et respectez le second passage." },
+      { q: "Les puces transmettent-elles des maladies ?", a: "Elles peuvent transmettre un ténia (Dipylidium caninum) à l'animal, et plus rarement des bactéries comme celles du typhus murin ou de la maladie des griffes du chat. Ces maladies restent rares en France." },
+      { q: "Combien coûte un traitement contre les puces ?", a: "À partir de 120 € TTC pour un appartement. Pour une maison ou un local professionnel, le prix est fixé sur devis, gratuit, avant l'intervention." },
+    ],
+    sources: [
+      { label: 'Wikipédia, Ctenocephalides felis (puce du chat) : cycle, ponte, effets sur l’hôte', url: 'https://fr.wikipedia.org/wiki/Ctenocephalides_felis' },
+      { label: 'Wikipédia, Siphonaptera (puces) : saut, jeûne, maladies transmises', url: 'https://fr.wikipedia.org/wiki/Siphonaptera' },
+      { label: 'Parola P. et al., Les puces et les maladies transmises à l’homme, Médecine tropicale, 2006', url: 'https://www.jle.com/en/MedSanteTrop/2006/66.1/021-029%20Les%20puces%20et%20les%20maladies%20transmises%20%C3%A0%20l%27homme%20(Parola).pdf' },
+      { label: 'ESCCAP, guide sur les ectoparasites du chien et du chat', url: 'https://testweb.esccap.org/uploads/docs/0e55ps7k_0663_ESCCAP_MG3__FR_20201209.pdf' },
+    ],
+    cta: { title: 'Des puces chez vous ?', text: "Nos techniciens certifiés Certibiocide traitent tout le logement, en lien avec le traitement de vos animaux. Dès 120 € TTC, devis gratuit, garantie 1 an, Paris et Val-de-Marne, 7j/7." },
+  },
 ]
 
 export const getArticle = (slug: string) => ARTICLES.find((a) => a.slug === slug)

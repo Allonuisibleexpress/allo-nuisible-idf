@@ -21,6 +21,7 @@ import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
 import { VILLES_CAFARDS } from '@/lib/villes-cafards'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
+import { VILLES_PUCES } from '@/lib/villes-puces'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -29,7 +30,7 @@ const nf = (n: number) => n.toLocaleString('fr-FR')
 // Nuisibles concernés, avec photo (fiches de la page « Identifier un nuisible »)
 const NUISIBLES: Record<ServiceDep, string[]> = {
   deratisation: ['rat', 'souris'], souris: ['souris', 'rat'], punaises: ['punaise-de-lit', 'puce'],
-  cafards: ['blatte-germanique', 'blatte-orientale'], frelons: ['frelon-asiatique', 'frelon-europeen', 'guepe'],
+  cafards: ['blatte-germanique', 'blatte-orientale'], frelons: ['frelon-asiatique', 'frelon-europeen', 'guepe'], puces: ['puce', 'acarien'],
 }
 // Vraies photos de chantier (celles des pages services), par nuisible
 const CHANTIERS: Record<ServiceDep, PhotoKey[]> = {
@@ -38,6 +39,7 @@ const CHANTIERS: Record<ServiceDep, PhotoKey[]> = {
   punaises: ['vincennesMortes1', 'creteilLattes1', 'cryoFoyer', 'litCryo'],
   cafards: ['cafardsSol', 'cafardsTiroir', 'cafardsTiroir2', 'cafardsMeuble'],
   frelons: ['frelonsPerche', 'frelonsArbre', 'nidGuepes', 'toit'],
+  puces: [],
 }
 
 // À quelle saison ? (connaissances courantes, sans chiffre)
@@ -61,6 +63,11 @@ const SAISONS: Record<ServiceDep, (dans: string) => { t: string; x: string }[]> 
     { t: 'Été', x: `La chaleur les rend plus actifs et plus visibles ${dans}, même en journée.` },
     { t: 'Toute l’année', x: 'Dans les cuisines et les gaines chauffées, les blattes se reproduisent en continu.' },
     { t: 'Après des travaux', x: 'Un chantier dans l’immeuble peut les déloger et les faire passer chez vous.' },
+  ],
+  puces: (dans) => [
+    { t: 'Fin d’été', x: `La chaleur accélère leur cycle : c’est souvent à ce moment que les infestations deviennent visibles ${dans}.` },
+    { t: 'Retour de vacances', x: 'Des adultes attendaient dans leurs cocons et sortent à votre retour.' },
+    { t: 'Toute l’année', x: 'En logement chauffé, les puces se développent en toute saison.' },
   ],
   frelons: (dans) => [
     { t: 'Printemps', x: `Une reine seule fonde un petit nid ${dans}, souvent abrité : c’est le moment le plus simple pour le détruire.` },
@@ -95,6 +102,12 @@ const VARIANTES: Record<ServiceDep, (nom: string, code: string, dans: string) =>
     { t: `Désinsectisation blattes ${code}`, x: 'Blatte germanique en cuisine ou blatte orientale des caves : le traitement s’adapte à l’espèce.' },
     { t: `Plan de lutte anti-cafards ${code} pour les pros`, x: 'Restaurants, boulangeries, cuisines d’entreprise : passages hors service et attestation pour vos contrôles d’hygiène.' },
   ],
+  puces: (nom, code, dans) => [
+    { t: `Traitement puces ${code}`, x: `Insecticide professionnel sur les sols et les textiles, ${dans}, en lien avec le vétérinaire.` },
+    { t: `Société anti-puces ${nom}`, x: 'Une entreprise locale certifiée Certibiocide, avec des avis vérifiables et un devis gratuit.' },
+    { t: `Désinsectisation puces ${code}`, x: 'Œufs, larves et cocons vivent dans les sols : le traitement doit les atteindre, pas seulement les adultes.' },
+    { t: `Puces de parquet ${dans}`, x: 'Au retour de vacances ou après un emménagement : un traitement et un second passage règlent le problème.' },
+  ],
   souris: (nom, code, dans) => [
     { t: `Traitement souris ${code}`, x: `Pièges, pièges connectés ou postes sécurisés, puis colmatage des passages, ${dans}.` },
     { t: `Société anti-souris ${nom}`, x: 'Une entreprise locale certifiée Certibiocide, avec des avis vérifiables et un devis gratuit.' },
@@ -105,7 +118,7 @@ const VARIANTES: Record<ServiceDep, (nom: string, code: string, dans: string) =>
 
 const VILLES: Record<ServiceDep, { slug: string; nom: string }[]> = {
   punaises: VILLES_PUNAISES, deratisation: VILLES_DERATISATION, souris: VILLES_SOURIS, cafards: VILLES_CAFARDS,
-  frelons: VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)),
+  frelons: VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)), puces: VILLES_PUCES,
 }
 const villesDuDep = (s: ServiceDep, d: DepSlug) =>
   VILLES[s].filter((v) => codePostal(v.slug).startsWith(DEPS[d].code)).sort((a, b) => (REPERES[a.slug]?.km ?? 99) - (REPERES[b.slug]?.km ?? 99))
@@ -145,7 +158,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
       {
         '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: c.label, item: `${SITE_URL}${s === 'punaises' ? '/services/punaises-de-lit' : s === 'deratisation' || s === 'souris' ? '/services/deratisation' : s === 'cafards' ? '/services/cafards-blattes' : '/services/guepes-frelons'}` },
+          { '@type': 'ListItem', position: 2, name: c.label, item: `${SITE_URL}${s === 'punaises' ? '/services/punaises-de-lit' : s === 'puces' ? '/services/puces' : s === 'deratisation' || s === 'souris' ? '/services/deratisation' : s === 'cafards' ? '/services/cafards-blattes' : '/services/guepes-frelons'}` },
           { '@type': 'ListItem', position: 3, name: dep.nom, item: url },
         ],
       },
@@ -244,7 +257,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
-        <PhotosChantiers photos={CHANTIERS[s]} titre={`Nos chantiers ${s === 'frelons' ? 'de destruction de nids' : `de ${c.label.toLowerCase()}`} en photos`} intro={`Photos prises par nos techniciens lors de vraies interventions, en Île-de-France.`} fond="#0d0d0d" />
+        {CHANTIERS[s].length > 0 && <PhotosChantiers photos={CHANTIERS[s]} titre={`Nos chantiers ${s === 'frelons' ? 'de destruction de nids' : `de ${c.label.toLowerCase()}`} en photos`} intro={`Photos prises par nos techniciens lors de vraies interventions, en Île-de-France.`} fond="#0d0d0d" />}
 
         {/* ── SAISONS ── */}
         <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>

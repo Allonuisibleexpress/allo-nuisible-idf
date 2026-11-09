@@ -22,7 +22,33 @@ export type ProfilVille = {
 
 const cpTxt = (cp: string) => (cp ? ` (${cp})` : '')
 
-export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'acariens' | 'frelons', ProfilVille> = {
+export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'acariens' | 'frelons' | 'puces', ProfilVille> = {
+  puces: {
+    famille: 'puces', motCle: 'Puces', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
+    heroTitre: 'Traitement contre les puces', prix: '120 €', prixNum: '120',
+    prixNote: 'Appartement, sols et textiles traités. Devis gratuit.', offre: 'appartement, puces',
+    description: (a, cp) => `Puces ${a}${cpTxt(cp)} : traitement du logement par un technicien certifié, en lien avec le vétérinaire. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+    accroches: [
+      'Piqûres aux chevilles, animal qui se gratte ? Nous traitons tout le logement pendant que votre vétérinaire traite l’animal.',
+      'Les puces adultes ne sont qu’une petite partie du problème : œufs, larves et cocons vivent dans vos sols. C’est là que nous traitons.',
+      'Puces de parquet au retour de vacances ? Un traitement professionnel et un second passage règlent le problème.',
+      'Sans animal mais avec des puces ? Nous cherchons l’origine : ancien occupant, rongeurs ou jardin.',
+    ],
+    etapesTitre: (a) => `Comment nous éliminons les puces ${a}`,
+    etapes: [
+      ['Appel ou photo|Une photo des piqûres ou de l’insecte permet de confirmer qu’il s’agit de puces et de fixer le prix.', 'Devis gratuit|Quelques questions sur le logement et vos animaux : vous avez le tarif tout de suite.'],
+      ['Préparation|Aspiration complète, lavage à 60 °C du couchage et des plaids, sols dégagés : nous vous expliquons tout.', 'Avant le passage|Nous vous envoyons la liste simple des gestes à faire pour un traitement efficace.'],
+      ['Traitement du logement|Insecticide professionnel sur les sols, les fentes, les textiles et les zones de repos de l’animal.', 'Traitement|Le technicien insiste sur les plinthes, le dessous des meubles et le couchage de l’animal.'],
+      ['Second passage et garantie|Les puces qui sortent des cocons sont touchées. Garantie 1 an.', 'Suivi|Aspiration quotidienne quelques semaines, second passage si besoin, garantie d’un an.'],
+    ],
+    tarifsTitre: (a) => `Prix d’un traitement contre les puces ${a}`,
+    tarifsIntro: 'Le devis est gratuit et le prix est fixé avant l’intervention.',
+    tarifs: [
+      { label: 'Appartement', prix: 'dès 120 €', detail: 'Sols, textiles et couchage de l’animal' },
+      { label: 'Maison, grand logement', prix: 'sur devis', detail: 'Toutes les pièces, garage et véranda' },
+      { label: 'Local professionnel, location meublée', prix: 'sur devis', detail: 'Intervention planifiée, attestation' },
+    ],
+  },
   souris: {
     famille: 'souris', motCle: 'Souris', suffixes: [' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
     heroTitre: 'Traitement contre les souris', prix: '120 €', prixNum: '120',

@@ -11,6 +11,7 @@ import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
 import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 import { SERVICES_DEP, DEP_SLUGS } from '@/lib/departements-services'
+import { VILLES_PUCES } from '@/lib/villes-puces'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels']
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
-    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens',
+    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens', 'puces',
   ]
   const legacyPosts = ['punaise-colza-invasion-idf-2026']
 
@@ -59,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_FOURMIS.map((v) => `/fourmis/${v.slug}`), '/fourmis', ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`), ...VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)).map((v) => `/destruction-nid-frelon/${v.slug}`)].map((p) => ({
+    ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_FOURMIS.map((v) => `/fourmis/${v.slug}`), '/fourmis', ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`), ...VILLES_PUCES.map((v) => `/puces/${v.slug}`), ...VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)).map((v) => `/destruction-nid-frelon/${v.slug}`)].map((p) => ({
       url: `${BASE}${p}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
