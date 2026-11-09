@@ -38,10 +38,11 @@ const navLinks = [
   { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Services', href: '#services', dropdown: true },
   { label: 'Identifier un nuisible', court: 'Identifier', href: '/identifier-nuisible', external: true },
-  { label: 'Nos interventions', href: '/nos-interventions', external: true },
+  { label: 'Nos interventions', court: 'Chantiers', href: '/nos-interventions', external: true },
   { label: 'Tarifs', href: '/tarifs', external: true },
   { label: 'Blog', href: '/blog', external: true },
-  { label: 'Professionnels', href: '/professionnels', external: true },
+  { label: 'FAQ', href: '/faq', external: true },
+  { label: 'Professionnels', court: 'Pros', href: '/professionnels', external: true },
   { label: 'À Propos', href: '#apropos' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -196,7 +197,7 @@ export default function Navbar() {
                   href={link.href}
                   className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                 >
-                  {link.court ? (<><span className="2xl:hidden">{link.court}</span><span className="hidden 2xl:inline">{link.label}</span></>) : link.label}
+                  {link.court ? (<><span className="min-[1800px]:hidden">{link.court}</span><span className="hidden min-[1800px]:inline">{link.label}</span></>) : link.label}
                 </a>
               ) : (
                 <button
@@ -217,7 +218,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-white/80 hover:text-white text-sm transition-colors"
             >
               <Phone className="w-4 h-4 text-[#E8441A]" />
-              <span className="font-semibold hidden 2xl:inline whitespace-nowrap">07 68 07 72 19</span>
+              <span className="font-semibold hidden min-[1800px]:inline whitespace-nowrap">07 68 07 72 19</span>
             </a>
             <button
               onClick={() => {
