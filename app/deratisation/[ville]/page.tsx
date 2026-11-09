@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
+import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import BandeauDevis from '@/components/BandeauDevis'
@@ -172,6 +173,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         )}
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
+        <SituationsVille famille="deratisation" slug={v.slug} a={v.a} />
+
         <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe la dératisation ${v.a}`} etapes={ETAPES} />
 
         <TarifsVille titre={`Prix d’une dératisation ${v.a}`}

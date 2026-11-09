@@ -13,6 +13,7 @@ import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { SITE_URL, pageMetadata } from '@/lib/seo'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
+import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { PROFILS } from '@/lib/profils-ville'
@@ -204,6 +205,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         )}
 
         {/* Avis Google d'un client de cette ville pour ce nuisible, s'il y en a un */}
+        <SituationsVille famille={profil.famille} slug={v.slug} a={v.a} />
+
         <EtapesVille slug={v.slug} a={v.a} titre={profil.etapesTitre(v.a)} etapes={profil.etapes} />
 
         <TarifsVille titre={profil.tarifsTitre(v.a)} intro={profil.tarifsIntro} lignes={profil.tarifs}

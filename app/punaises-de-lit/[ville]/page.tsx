@@ -13,6 +13,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import AvisDefilants from '@/components/AvisDefilants'
+import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
@@ -170,6 +171,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
+
+        <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 
         <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe le traitement ${v.a}`} etapes={ETAPES} />
 
