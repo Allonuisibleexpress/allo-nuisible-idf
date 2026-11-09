@@ -1,3 +1,7 @@
+import FaqBloc from '@/components/FaqBloc'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
+import { REPERES } from '@/lib/reperes-villes'
+import { MAIRIES } from '@/lib/mairies'
 import { notFound } from 'next/navigation'
 import { Phone, ArrowRight, MapPin, Check } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -235,6 +239,13 @@ export default function CommunePage({ params }: { params: Params }) {
             </div>
           </div>
         </section>
+        <FaqBloc titre={`Nuisibles ${c.a} : vos questions`} items={[
+          { q: `Intervenez-vous ${c.a} le jour même ?`, a: `Très souvent, oui. ${REPERES[c.slug]?.km ? `${c.nom} est à ${REPERES[c.slug].km.toLocaleString('fr-FR')} km de notre base de Saint-Maurice, à vol d’oiseau.` : 'Notre base est à Saint-Maurice, tout près.'} Nous répondons 7j/7.` },
+          { q: `Quels nuisibles traitez-vous ${c.a} ?`, a: 'Rats et souris, punaises de lit, cafards, fourmis, guêpes et frelons, pigeons, chenilles processionnaires et acariens, chez les particuliers comme chez les professionnels.' },
+          { q: `Quel est le prix d’une intervention ${c.a} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour les rats, souris, cafards ou fourmis, 290 € pour les punaises de lit avec 2 passages. Devis gratuit.' },
+          { q: `Ma mairie peut-elle m’aider ${c.a} ?`, a: `${MAIRIES[c.slug]?.mairie ?? 'La mairie'} peut vous orienter pour les nuisibles sur l’espace public ou dans un immeuble entier. Pour un traitement chez vous, nous intervenons sur devis.` },
+          SAISONS_FAQ[(['deratisation', 'souris', 'punaises', 'frelons', 'fourmis'] as const)[c.slug.length % 5]][c.slug.length % 3],
+        ]} />
       </main>
       <Footer />
     </>

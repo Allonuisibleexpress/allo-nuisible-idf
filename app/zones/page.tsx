@@ -1,3 +1,4 @@
+import FaqBloc from '@/components/FaqBloc'
 import { Phone, ArrowRight, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -54,6 +55,12 @@ export default function ZonesPage() {
             </div>
           </div>
         </section>
+        <FaqBloc titre="Nos zones d’intervention : vos questions" items={[
+          { q: 'Où êtes-vous basés ?', a: 'À Saint-Maurice (94410), 6 bis rue du Val d’Osne. Nous intervenons principalement à Paris et dans le Val-de-Marne, et dans le reste de l’Île-de-France.' },
+          { q: 'Intervenez-vous en dehors du Val-de-Marne ?', a: 'Oui, à Paris, dans les Hauts-de-Seine et dans les autres départements d’Île-de-France, selon nos disponibilités.' },
+          { q: 'Vos prix changent-ils selon la ville ?', a: 'Nos prix de départ sont les mêmes à Paris et dans le Val-de-Marne. Le devis est gratuit et fixé avant l’intervention.' },
+          { q: 'Intervenez-vous le week-end ?', a: 'Oui, 7j/7, y compris le week-end et les jours fériés.' },
+        ]} />
       </main>
       <Footer />
     </>

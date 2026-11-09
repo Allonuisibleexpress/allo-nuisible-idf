@@ -1,5 +1,7 @@
 'use client'
 
+import { schemaService } from '@/components/ServicePageTemplate'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { useState, useEffect } from 'react'
 import {
   Phone, ShieldCheck, Star, ChevronDown, ArrowRight,
@@ -137,6 +139,19 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 /* ─────────────────────────── Page ─────────────────────────── */
+const FAQ_TOUT = [...faq, ...SAISONS_FAQ.frelons]
+const SCHEMA_FRELONS = schemaService({
+  heroTitle: 'Destruction de nid de guêpes et de frelons', heroHighlight: 'en Île-de-France', badge: 'Destruction de nid de frelons',
+  heroDescription: 'Frelon asiatique, frelon européen et guêpes : destruction du nid à la perche télescopique ou en hauteur. Dès 89 € TTC, 7j/7.',
+  metaTitle: 'Nid de guêpes ou de frelons : destruction en Île-de-France', pricing: [{ price: '89' }, { price: '149' }, { price: '199' }],
+  process: [
+    { title: 'Appel ou photo', text: 'Une photo du nid permet d’identifier l’espèce et l’accès, et de fixer le prix.' },
+    { title: 'Repérage et sécurisation', text: 'Zone tenue à distance, tenue de protection intégrale.' },
+    { title: 'Destruction du nid', text: 'Produit injecté au cœur du nid, à la perche télescopique si besoin.' },
+    { title: 'Conseils', text: 'Consignes pour les heures qui suivent et retrait du nid si nécessaire.' },
+  ],
+}, '/services/guepes-frelons', FAQ_TOUT)
+
 export default function GuêpesFrelonsPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => setModalOpen(true)
@@ -168,6 +183,7 @@ export default function GuêpesFrelonsPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FRELONS) }} />
       <QuickModal open={modalOpen} onClose={closeModal} />
 
       {/* ── Bouton flottant ── */}
@@ -680,7 +696,7 @@ export default function GuêpesFrelonsPage() {
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>
             <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
-              {faq.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
+              {FAQ_TOUT.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
             </div>
           </div>
         </section>

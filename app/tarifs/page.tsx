@@ -1,5 +1,6 @@
 'use client'
 
+import FaqBloc from '@/components/FaqBloc'
 import { Phone, CheckCircle, ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -215,6 +216,15 @@ export default function TarifsPage() {
             </div>
           </div>
         </section>
+        <FaqBloc titre="Nos tarifs : vos questions" items={[
+          { q: 'Le devis est-il vraiment gratuit ?', a: 'Oui, gratuit et sans engagement. Vous connaissez le prix avant toute intervention, par téléphone ou après une photo envoyée sur WhatsApp.' },
+          { q: 'Pourquoi des prix « à partir de » ?', a: 'Le prix dépend de la surface, de l’ampleur de l’infestation et de l’accès (hauteur d’un nid, nombre de pièces). Le prix de départ correspond au cas le plus simple ; le technicien confirme le tarif avant de commencer.' },
+          { q: 'Vos prix sont-ils TTC ?', a: 'Oui, tous les prix affichés sont TTC.' },
+          { q: 'Combien de passages sont inclus pour les punaises de lit ?', a: 'Deux passages sont toujours inclus, quelle que soit la méthode : insecticide, cryogénie, vapeur sèche ou protocole mixte.' },
+          { q: 'Vos traitements sont-ils garantis ?', a: 'Oui, nos interventions sont garanties 1 an : si les nuisibles reviennent, notre technicien revient.' },
+          { q: 'Les prix sont-ils les mêmes à Paris et dans le Val-de-Marne ?', a: 'Oui, nos prix de départ sont les mêmes à Paris et dans le Val-de-Marne.' },
+          { q: 'Qui paie le traitement dans un logement loué ?', a: 'Le logement loué doit être exempt de toute infestation d’espèces nuisibles et parasites (loi du 6 juillet 1989, article 6). Prévenez votre propriétaire par écrit dès les premiers signes.' },
+        ]} />
       </main>
       <Footer />
     </>

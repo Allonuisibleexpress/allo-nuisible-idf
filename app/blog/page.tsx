@@ -1,5 +1,6 @@
 'use client'
 
+import FaqBloc from '@/components/FaqBloc'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -70,6 +71,12 @@ export default function BlogPage() {
           </div>
         </section>
 
+        <FaqBloc titre="Le blog : vos questions" items={[
+          { q: 'Qui écrit les articles du blog ?', a: 'L’équipe technique d’Allo Nuisible IDF, à partir de ses interventions sur le terrain et de sources officielles citées en bas de chaque article.' },
+          { q: 'Les conseils du blog remplacent-ils un professionnel ?', a: 'Ils aident à comprendre et à réagir vite. Pour une infestation installée, un traitement professionnel reste le plus efficace.' },
+          { q: 'Comment savoir quel nuisible j’ai chez moi ?', a: 'Utilisez notre page « Identifier un nuisible » ou envoyez-nous une photo sur WhatsApp : un technicien vous répond gratuitement.' },
+          { q: 'Les récits d’intervention sont-ils réels ?', a: 'Oui, ils racontent de vraies interventions, avec les photos et vidéos de nos techniciens.' },
+        ]} />
       </main>
       <Footer />
     </>

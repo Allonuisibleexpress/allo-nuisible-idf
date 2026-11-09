@@ -1,5 +1,6 @@
 'use client'
 
+import FaqBloc from '@/components/FaqBloc'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -405,6 +406,11 @@ export default function PunaiseCorzaArticle() {
 
         </article>
 
+        <FaqBloc titre="Punaise de colza : vos questions" items={[
+          { q: 'La punaise de colza pique-t-elle ?', a: 'Non. Elle se nourrit de sève de plantes : elle ne pique pas l’homme ni les animaux.' },
+          { q: 'Combien de temps dure une invasion de punaises de colza ?', a: 'La vague passe en général d’elle-même en quelques jours à deux semaines, après les moissons de l’été.' },
+          { q: 'Que faire contre les punaises de colza ?', a: 'Fermer les ouvertures, poser des moustiquaires et aspirer celles qui entrent. Un traitement professionnel n’est utile qu’en cas d’invasion très massive.' },
+        ]} />
       </main>
       <Footer />
     </>

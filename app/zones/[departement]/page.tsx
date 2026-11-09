@@ -1,3 +1,5 @@
+import FaqBloc from '@/components/FaqBloc'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { notFound } from 'next/navigation'
 import { Phone, ArrowRight, MapPin, CheckCircle2 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -204,6 +206,15 @@ export default function DepartementPage({ params }: { params: { departement: str
             </div>
           </div>
         </section>
+        <FaqBloc titre={`Vos questions sur nos interventions ${d.dans}`} items={[
+          { q: `Intervenez-vous ${d.dans} ?`, a: `Oui. Depuis notre base de Saint-Maurice (94), nos techniciens interviennent ${d.dans}, 7j/7, ${['paris', 'val-de-marne', 'hauts-de-seine', 'seine-saint-denis'].includes(d.slug) ? 'souvent le jour même' : 'dans les meilleurs délais'}.` },
+          { q: `Quels nuisibles traitez-vous ${d.dans} ?`, a: 'Rats et souris, punaises de lit, cafards, fourmis, guêpes et frelons, pigeons, chenilles processionnaires, acariens, ainsi que la désinfection des logements et des locaux.' },
+          { q: `Combien coûte une intervention ${d.dans} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour une dératisation, des cafards ou des fourmis, 290 € pour les punaises de lit (2 passages inclus). Le devis est gratuit.' },
+          { q: 'Le devis est-il gratuit et sans engagement ?', a: 'Oui. Vous connaissez le prix avant l’intervention, par téléphone ou après une photo envoyée sur WhatsApp.' },
+          { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, ils sont titulaires du Certibiocide, la certification obligatoire pour utiliser des produits biocides professionnels.' },
+          { q: `Des rats sur la voie publique ${d.dans} : qui contacter ?`, a: 'Sur l’espace public, c’est la mairie qui est compétente. Chez vous, dans votre jardin ou votre immeuble, nous intervenons sur devis.' },
+          SAISONS_FAQ.deratisation[d.slug.length % 3],
+        ]} />
       </main>
       <Footer />
     </>

@@ -1,6 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { NOTE_GOOGLE, FICHE_GOOGLE_URL } from '@/lib/avis-google'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
+import { CHAINE_YOUTUBE } from '@/lib/youtube'
 import {
   Phone, ShieldCheck, Clock, Star, ChevronDown, ArrowRight, CheckCircle, X,
   FlaskConical, Repeat, Store, Building2, MapPin, Lock, Zap, Microscope,
@@ -106,7 +110,51 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   )
 }
 
+// Famille « saisons » d'une page service, d'après son adresse
+const FAMILLE_SAISON: Record<string, keyof typeof SAISONS_FAQ> = {
+  'punaises-de-lit': 'punaises', 'cryogenie-punaises-de-lit': 'punaises', deratisation: 'deratisation', 'cafards-blattes': 'cafards',
+  fourmis: 'fourmis', 'guepes-frelons': 'frelons', 'chenilles-processionnaires': 'chenilles', acariens: 'acariens',
+}
+
+// Données structurées complètes d'une page service (entreprise, note, service, offre, étapes, FAQ, fil d'Ariane)
+export function schemaService(data: Pick<ServiceData, 'heroTitle' | 'heroHighlight' | 'heroDescription' | 'badge' | 'metaTitle' | 'process'> & { pricing: { price: string }[] }, chemin: string, faq: { q: string; a: string }[]) {
+  const url = `https://allonuisibleidf.fr${chemin}`
+  const nom = `${data.heroTitle} ${data.heroHighlight}`.replace(/\s+/g, ' ').trim()
+  const prix = data.pricing.map((t) => parseFloat(t.price.replace(',', '.'))).filter((n) => !isNaN(n))
+  const entreprise = {
+    '@type': 'LocalBusiness', '@id': 'https://allonuisibleidf.fr/#entreprise', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr',
+    telephone: '+33768077219', email: 'contact@allonuisibleidf.fr', priceRange: '€€', image: 'https://allonuisibleidf.fr/opengraph-image',
+    address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
+    geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
+    openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: NOTE_GOOGLE.note.replace(',', '.'), reviewCount: NOTE_GOOGLE.nombre, bestRating: 5 },
+    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'WebPage', '@id': `${url}#page`, url, name: data.metaTitle ?? nom, inLanguage: 'fr-FR', about: { '@id': `${url}#service` }, isPartOf: { '@type': 'WebSite', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr' } },
+      entreprise,
+      {
+        '@type': 'Service', '@id': `${url}#service`, name: nom, serviceType: data.badge || nom, url, description: data.heroDescription,
+        provider: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
+        areaServed: [{ '@type': 'City', name: 'Paris' }, { '@type': 'AdministrativeArea', name: 'Val-de-Marne' }, { '@type': 'AdministrativeArea', name: 'Hauts-de-Seine' }, { '@type': 'AdministrativeArea', name: 'Île-de-France' }],
+        ...(prix.length ? { offers: { '@type': 'AggregateOffer', priceCurrency: 'EUR', lowPrice: Math.min(...prix), offerCount: data.pricing.length, availability: 'https://schema.org/InStock' } } : {}),
+      },
+      { '@type': 'HowTo', name: `Comment se déroule notre intervention : ${nom}`, step: data.process.map((p, i) => ({ '@type': 'HowToStep', position: i + 1, name: p.title, text: p.text })) },
+      { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://allonuisibleidf.fr' },
+        { '@type': 'ListItem', position: 2, name: data.badge || nom, item: url },
+      ] },
+    ],
+  }
+}
+
 export default function ServicePageTemplate({ data }: { data: ServiceData }) {
+  const chemin = usePathname() ?? ''
+  const famille = FAMILLE_SAISON[chemin.split('/').pop() ?? '']
+  const faq = [...data.faq, ...(famille ? SAISONS_FAQ[famille].filter((f) => !data.faq.some((x) => x.q === f.q)) : [])]
   const [floatVisible, setFloatVisible] = useState(false)
 
   useEffect(() => {
@@ -127,6 +175,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService(data, chemin, faq)) }} />
       {/* Bouton flottant */}
       <a
         href={PHONE_HREF}
@@ -456,7 +505,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <h2 className="text-2xl md:text-3xl font-black text-white">Questions fréquentes</h2>
             </div>
             <div className="space-y-3">
-              {data.faq.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
+              {faq.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
             </div>
           </div>
         </section>

@@ -1,5 +1,7 @@
 'use client'
 
+import { schemaService } from '@/components/ServicePageTemplate'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { useState, useEffect } from 'react'
 import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
 import { Phone, ShieldCheck, ChevronDown, X } from 'lucide-react'
@@ -36,6 +38,27 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 /* ── Page ── */
+const FAQ_FOURMIS = [
+                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles. La reine, en sécurité dans le nid, continue de pondre et la colonie se reconstitue. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
+                { q: 'La fourmi pharaon est-elle dangereuse ?', a: "Oui, particulièrement en milieu hospitalier et pour les personnes immunodéprimées : elle peut transporter des bactéries pathogènes. En appartement, elle s'installe derrière les plinthes et dans les circuits électriques. Un pulvérisateur classique aggrave la situation en dispersant la colonie." },
+                { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans l'année, nous revenons gratuitement." },
+                { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
+                { q: 'Quelle différence entre fourmis charpentières et termites ?', a: "Les fourmis charpentières creusent le bois pour nidifier mais ne le mangent pas (contrairement aux termites). Vous trouverez de la sciure fine (frass) sous les zones touchées. Le traitement est différent : injection en galeries + insecticide de contact. Si vous avez un doute, appelez pour une inspection." },
+                { q: 'Intervenez-vous le week-end et en soirée ?', a: "Oui, 7j/7 y compris week-ends et jours fériés. Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Appelez le 07 68 07 72 19 pour un créneau rapide." },
+]
+const FAQ_FOURMIS_TOUT = [...FAQ_FOURMIS, ...SAISONS_FAQ.fourmis]
+const SCHEMA_FOURMIS = schemaService({
+  heroTitle: 'Traitement des fourmis', heroHighlight: 'en Île-de-France', badge: 'Traitement des fourmis',
+  heroDescription: 'Gel appât professionnel qui atteint la reine, traitement du nid, injection dans le bois pour les fourmis charpentières. Dès 120 € TTC, garantie 1 an.',
+  metaTitle: 'Traitement fourmis en Île-de-France, garanti 1 an', pricing: [{ price: '120' }],
+  process: [
+    { title: 'Identification', text: 'Le technicien reconnaît l’espèce et suit les pistes jusqu’au nid.' },
+    { title: 'Traitement de la colonie', text: 'Gel appât sur les pistes ou traitement direct du nid, pour atteindre la reine.' },
+    { title: 'Colmatage et conseils', text: 'Joints, seuils et rangement de la nourriture pour éviter le retour.' },
+    { title: 'Suivi et garantie', text: 'Passage de contrôle si besoin, garantie 1 an.' },
+  ],
+}, '/services/fourmis', FAQ_FOURMIS_TOUT)
+
 export default function FourmisPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [floatVisible, setFloatVisible] = useState(false)
@@ -64,6 +87,7 @@ export default function FourmisPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_FOURMIS) }} />
       <QuickModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
       {/* ── Bouton flottant ── */}
@@ -411,14 +435,7 @@ export default function FourmisPage() {
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>
             <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
-              {[
-                { q: 'Pourquoi les fourmis reviennent-elles après un spray ?', a: "Le spray ne tue que les ouvrières visibles. La reine, en sécurité dans le nid, continue de pondre et la colonie se reconstitue. Seul le gel appât professionnel «effet domino» atteint la reine via les ouvrières elles-mêmes." },
-                { q: 'La fourmi pharaon est-elle dangereuse ?', a: "Oui, particulièrement en milieu hospitalier et pour les personnes immunodéprimées : elle peut transporter des bactéries pathogènes. En appartement, elle s'installe derrière les plinthes et dans les circuits électriques. Un pulvérisateur classique aggrave la situation en dispersant la colonie." },
-                { q: 'Combien de temps dure l\'effet du traitement ?', a: "Le gel appât agit sous 48–72h sur les fourmis visibles et sous 2–3 semaines sur la colonie entière. La barrière rémanente protège pendant 2 à 3 mois. En cas de réapparition dans l'année, nous revenons gratuitement." },
-                { q: 'Le traitement est-il dangereux pour mes enfants et animaux ?', a: "Non. Nos produits sont homologués et appliqués en très petites quantités aux endroits ciblés, hors de portée des enfants et animaux. Nous indiquons un délai de précaution de 1 à 2h après application, le temps que le gel sèche." },
-                { q: 'Quelle différence entre fourmis charpentières et termites ?', a: "Les fourmis charpentières creusent le bois pour nidifier mais ne le mangent pas (contrairement aux termites). Vous trouverez de la sciure fine (frass) sous les zones touchées. Le traitement est différent : injection en galeries + insecticide de contact. Si vous avez un doute, appelez pour une inspection." },
-                { q: 'Intervenez-vous le week-end et en soirée ?', a: "Oui, 7j/7 y compris week-ends et jours fériés. Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Appelez le 07 68 07 72 19 pour un créneau rapide." },
-              ].map(({ q, a }) => <FAQItem key={q} q={q} a={a} />)}
+              {FAQ_FOURMIS_TOUT.map(({ q, a }) => <FAQItem key={q} q={q} a={a} />)}
             </div>
           </div>
         </section>

@@ -1,3 +1,4 @@
+import FaqBloc from '@/components/FaqBloc'
 import { Phone, ArrowRight, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -142,6 +143,12 @@ export default function NosInterventionsPage() {
             <Phone className="w-5 h-5" /> 07 68 07 72 19
           </a>
         </section>
+        <FaqBloc titre="Nos interventions en images : vos questions" items={[
+          { q: 'Ces photos et vidéos sont-elles réelles ?', a: 'Oui. Elles ont été prises par nos techniciens lors de vraies interventions, en Île-de-France. Les données de localisation sont retirées pour protéger nos clients.' },
+          { q: 'Où peut-on voir d’autres chantiers ?', a: 'Sur notre fiche Google, notre chaîne YouTube et dans les récits d’intervention de notre blog.' },
+          { q: 'Peut-on voir un chantier près de chez soi ?', a: 'Nos pages ville présentent, quand nous en avons, un chantier réalisé dans la commune.' },
+          { q: 'Comment obtenir un devis pour un cas similaire ?', a: 'Appelez le 07 68 07 72 19 ou envoyez une photo sur WhatsApp : le devis est gratuit.' },
+        ]} />
       </main>
       <Footer />
     </>
