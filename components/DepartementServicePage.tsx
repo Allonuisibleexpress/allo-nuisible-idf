@@ -11,6 +11,9 @@ import { DEPS, SERVICES_DEP, DEP_SLUGS, type DepSlug, type ServiceDep } from '@/
 import { codePostal } from '@/lib/codes-postaux'
 import { REPERES } from '@/lib/reperes-villes'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
+import CarteDepartement from '@/components/CarteDepartement'
+import { ficheParId } from '@/lib/identifier-nuisibles'
+import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
@@ -20,6 +23,40 @@ import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 const nf = (n: number) => n.toLocaleString('fr-FR')
+
+// Nuisibles concernés, avec photo (fiches de la page « Identifier un nuisible »)
+const NUISIBLES: Record<ServiceDep, string[]> = {
+  deratisation: ['rat', 'souris'], souris: ['souris', 'rat'], punaises: ['punaise-de-lit', 'puce'],
+  cafards: ['blatte-germanique', 'blatte-orientale'], frelons: ['frelon-asiatique', 'frelon-europeen', 'guepe'],
+}
+// À quelle saison ? (connaissances courantes, sans chiffre)
+const SAISONS: Record<ServiceDep, (dans: string) => { t: string; x: string }[]> = {
+  deratisation: (dans) => [
+    { t: 'Automne et hiver', x: `Les rats et les souris cherchent la chaleur des bâtiments ${dans} : caves, cuisines, combles.` },
+    { t: 'Printemps', x: 'Période de reproduction : une petite population peut vite grossir si on attend.' },
+    { t: 'Toute l’année', x: 'Travaux, chantiers et égouts déplacent les colonies : un rat peut apparaître à tout moment.' },
+  ],
+  souris: (dans) => [
+    { t: 'Automne', x: `Dès les premiers froids, les souris entrent dans les logements ${dans} par les moindres interstices.` },
+    { t: 'Hiver', x: 'Elles restent au chaud dans les cloisons et les combles : c’est là qu’on les entend gratter.' },
+    { t: 'Toute l’année', x: 'En immeuble chauffé, elles peuvent rester actives en toute saison.' },
+  ],
+  punaises: (dans) => [
+    { t: 'Après les vacances', x: `Les retours de voyage ramènent souvent des punaises de lit ${dans}, dans les valises et le linge.` },
+    { t: 'Toute l’année', x: 'Dans un logement chauffé, elles se reproduisent en toute saison : il n’y a pas de période creuse.' },
+    { t: 'À chaque déménagement', x: 'Cartons, meubles d’occasion et literie peuvent les transporter d’un logement à l’autre.' },
+  ],
+  cafards: (dans) => [
+    { t: 'Été', x: `La chaleur les rend plus actifs et plus visibles ${dans}, même en journée.` },
+    { t: 'Toute l’année', x: 'Dans les cuisines et les gaines chauffées, les blattes se reproduisent en continu.' },
+    { t: 'Après des travaux', x: 'Un chantier dans l’immeuble peut les déloger et les faire passer chez vous.' },
+  ],
+  frelons: (dans) => [
+    { t: 'Printemps', x: `Une reine seule fonde un petit nid ${dans}, souvent abrité : c’est le moment le plus simple pour le détruire.` },
+    { t: 'Fin d’été', x: 'La colonie est à son maximum : nids volumineux et insectes plus agressifs.' },
+    { t: 'Hiver', x: 'Le nid est abandonné et ne sera pas réutilisé : il n’est généralement plus nécessaire de le détruire.' },
+  ],
+}
 
 // Variantes de recherche (« traitement souris 75 », « société de dératisation Val-de-Marne »…) en intertitres
 const VARIANTES: Record<ServiceDep, (nom: string, code: string, dans: string) => { t: string; x: string }[]> = {
@@ -80,6 +117,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
   const autresServices = (Object.keys(SERVICES_DEP) as ServiceDep[]).filter((x) => x !== s)
   const faq = [
     ...ct.faq,
+    ...SAISONS_FAQ[c.famille],
     { q: `Combien coûte ${s === 'frelons' ? 'la destruction d’un nid' : `un traitement ${c.label.toLowerCase()}`} ${dep.dans} ?`, a: `À partir de ${c.prix} TTC, ${c.prixNote.replace(' Devis gratuit.', '').toLowerCase()} Le devis est gratuit et le prix est fixé avant l’intervention.` },
     { q: `Vos techniciens sont-ils certifiés ${dep.dans} ?`, a: 'Oui, nos techniciens sont titulaires du Certibiocide, la certification obligatoire pour utiliser des produits biocides professionnels.' },
   ]
@@ -169,6 +207,47 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
+        {/* ── NUISIBLES CONCERNÉS ── */}
+        <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Les nuisibles que nous traitons {dep.dans}</h2>
+            <p className="text-white/55 mb-10">Les reconnaître, c’est déjà choisir le bon traitement.</p>
+            <div className={`grid gap-4 text-left ${NUISIBLES[s].length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+              {NUISIBLES[s].map((id) => {
+                const f = ficheParId(id)
+                return (
+                  <figure key={id} className="rounded-2xl overflow-hidden" style={card}>
+                    <img src={f.photo.src} alt={`${f.nom} (${f.latin}), nuisible traité ${dep.dans}`} loading="lazy" width={480} height={320} className="w-full h-52 object-cover" />
+                    <figcaption className="p-5">
+                      <h3 className="text-white font-black text-lg">{f.nom} {dep.dans}</h3>
+                      <p className="text-white/45 text-sm italic mb-2">{f.latin} · {f.taille}</p>
+                      <p className="text-white/70 text-sm leading-relaxed mb-2">{f.aspect}</p>
+                      <p className="text-white/60 text-sm leading-relaxed"><strong className="text-white">Indices : </strong>{f.signes}</p>
+                      <p className="text-[10px] text-white/35 mt-3">Photo : <a href={f.photo.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{f.photo.credit}</a>, {f.photo.licence}</p>
+                    </figcaption>
+                  </figure>
+                )
+              })}
+            </div>
+            <a href="/identifier-nuisible" className="inline-flex items-center gap-1 text-sm font-bold mt-6" style={{ color: ACCENT }}>Identifier un autre nuisible <ArrowRight className="w-4 h-4" /></a>
+          </div>
+        </section>
+
+        {/* ── SAISONS ── */}
+        <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-10">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>à quelle saison ?</span></h2>
+            <div className="grid md:grid-cols-3 gap-4 text-left">
+              {SAISONS[s](dep.dans).map((x) => (
+                <div key={x.t} className="rounded-2xl p-6" style={card}>
+                  <h3 className="text-white font-black mb-2">{x.t}</h3>
+                  <p className="text-white/65 text-sm leading-relaxed">{x.x}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── VARIANTES DE RECHERCHE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
           <div className="max-w-5xl mx-auto text-center">
@@ -185,11 +264,13 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         </section>
 
         {/* ── VILLES ── */}
-        {villes.length > 0 && (
-          <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
+        <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>trouvez votre ville</span></h2>
-              <p className="text-white/55 mb-10">{villes.length} {d === 'paris' ? 'arrondissements' : 'villes'} avec une page dédiée, du plus proche au plus éloigné de notre base de Saint-Maurice.</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>{villes.length > 0 ? 'trouvez votre ville' : 'notre zone d’intervention'}</span></h2>
+              <p className="text-white/55 mb-8">{villes.length > 0 ? `${villes.length} ${d === 'paris' ? 'arrondissements' : 'villes'} avec une page dédiée, du plus proche au plus éloigné de notre base de Saint-Maurice. Cliquez sur la carte ou sur la liste.` : `Nous intervenons dans ${d === 'paris' ? 'tous les arrondissements' : 'toutes les communes'} ${dep.de}, sur devis gratuit.`}</p>
+              <div className="mb-10">
+                <CarteDepartement dep={d} base={c.base} avecPage={villes.map((v) => v.slug)} titre={`Carte : ${c.label.toLowerCase()} ${dep.dans}`} legende={villes.length > 0 ? 'Ville avec une page dédiée (cliquable)' : 'Toutes les communes sont desservies'} zone={villes.length === 0} />
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
                 {villes.map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="group rounded-xl px-4 py-3 hover:bg-white/[0.06]" style={card}>
@@ -200,7 +281,6 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               </div>
             </div>
           </section>
-        )}
 
         <SituationsVille famille={c.famille} slug={`dep-${d}`} a={dep.dans} />
 

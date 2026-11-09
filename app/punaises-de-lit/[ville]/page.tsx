@@ -8,6 +8,7 @@ import { avecPrix } from '@/components/PrixGros'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
+import { saisonVille } from '@/lib/saisons-faq'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -96,7 +97,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   // Encadré « en attendant » et questions générales en alternance d'une ville à l'autre
   const avecEncadre = rang % 2 === 0
   const generalesFaq = v.faq.filter((f) => !v.faq.slice(0, v.faq.length - 2).includes(f))
-  const faq = [...v.faq.slice(0, v.faq.length - 2), generalesFaq[rang % generalesFaq.length]]
+  const faq = [...v.faq.slice(0, v.faq.length - 2), generalesFaq[rang % generalesFaq.length], saisonVille('punaises', v.slug)]
   const enBref = [enBrefComplet[0], ...[...generales.slice(db), ...generales.slice(0, db)].slice(0, 3)]
 
   const jsonLd = {

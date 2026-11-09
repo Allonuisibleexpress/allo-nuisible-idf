@@ -17,6 +17,7 @@ import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { PROFILS } from '@/lib/profils-ville'
+import { saisonVille } from '@/lib/saisons-faq'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
 // Même structure que /punaises-de-lit/[ville] : En bref (GEO), contexte, méthodes, guides, FAQ, E-E-A-T, maillage.
@@ -117,7 +118,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   // FAQ : la question propre à la ville, puis 2 questions générales en rotation
   const generales = v.faq.slice(1)
   const d = rang % Math.max(1, generales.length)
-  const faq = [v.faq[0], ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2)]
+  const profilFaq = PROFILS[serviceLocal(c.pilier.href) as keyof typeof PROFILS]
+  const faq = [v.faq[0], ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), saisonVille(profilFaq.famille, v.slug)]
   const db = rang % Math.max(1, c.enBref.length)
   const enBref = [`Intervention ${v.a} (${v.departement}, ${v.code}) et dans les communes voisines : ${v.proches.slice(0, 4).join(', ')}.`, ...[...c.enBref.slice(db), ...c.enBref.slice(0, db)].slice(0, 3)]
   const maj = new Date(c.maj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })

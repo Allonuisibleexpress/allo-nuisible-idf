@@ -10,6 +10,7 @@ import AvisDefilants from '@/components/AvisDefilants'
 import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
+import { saisonVille } from '@/lib/saisons-faq'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -74,6 +75,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
+  const faq = [...v.faq, saisonVille('deratisation', v.slug)]
   const enBref = [
     v.code === '75'
       ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`
@@ -100,7 +102,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
       },
       {
         '@type': 'FAQPage',
-        mainEntity: v.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+        mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -251,7 +253,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-8 text-center">Vos questions sur la dératisation {v.a}</h2>
             <div className="space-y-3">
-              {v.faq.map((f) => (
+              {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
                     {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
