@@ -13,6 +13,7 @@ import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { SITE_URL, pageMetadata } from '@/lib/seo'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
+import GalerieChantiersVille from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
@@ -216,6 +217,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
         <AvisDefilants depart={rang + 3} />
+        <GalerieChantiersVille famille={profil.famille} slug={v.slug} a={v.a} />
 
         {/* ── CONTENU DÉTAILLÉ ── */}
         {sections && (

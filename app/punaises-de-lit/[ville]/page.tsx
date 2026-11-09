@@ -16,6 +16,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import AvisDefilants from '@/components/AvisDefilants'
+import GalerieChantiersVille from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
@@ -193,6 +194,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
         <AvisDefilants depart={rang} />
+        <GalerieChantiersVille famille="punaises" slug={v.slug} a={v.a} exclure={CHANTIERS_PUNAISES_VILLE[v.slug]?.photos ?? []} />
 
         {/* Vrai chantier dans cette ville, en vidéo */}
         {CHANTIERS_PUNAISES_VILLE[v.slug] && (

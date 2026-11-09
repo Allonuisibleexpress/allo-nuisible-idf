@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
+import GalerieChantiersVille from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
@@ -194,6 +195,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         {avisVille('deratisation', v.slug).length > 0 && <AvisGoogle ordre={avisVille('deratisation', v.slug)} />}
         <AvisDefilants depart={rang + 7} />
+        <GalerieChantiersVille famille="deratisation" slug={v.slug} a={v.a} exclure={v.slug === CHANTIER_DIOGENE.ville ? CHANTIER_DIOGENE.photos : []} />
 
         {/* Vrai chantier dans cette ville, en photo et vidéos */}
         {v.slug === CHANTIER_DIOGENE.ville && (
