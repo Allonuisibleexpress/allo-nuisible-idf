@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
+import { DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -28,10 +30,11 @@ const PHONE_HREF = 'tel:+33768077219'
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return VILLES_PUNAISES.map((v) => ({ ville: v.slug }))
+  return [...VILLES_PUNAISES.map((v) => ({ ville: v.slug })), ...DEP_SLUGS.map((d) => ({ ville: d }))]
 }
 
 export function generateMetadata({ params }: { params: { ville: string } }) {
+  if (estDep(params.ville)) return metaDep('punaises', params.ville)
   const v = getVillePunaises(params.ville)
   if (!v) return {}
   const cp = codePostal(v.slug)
@@ -68,6 +71,7 @@ const CACHETTES = [
 ]
 
 export default function PunaisesVillePage({ params }: { params: { ville: string } }) {
+  if (estDep(params.ville)) return <DepartementServicePage s="punaises" d={params.ville} />
   const v = getVillePunaises(params.ville)
   if (!v) notFound()
   const avisLocaux = avisVille('punaises', v.slug)

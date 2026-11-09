@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
+import { DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { villesVoisines } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -30,10 +32,11 @@ const PHONE_HREF = 'tel:+33768077219'
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return VILLES_DERATISATION.map((v) => ({ ville: v.slug }))
+  return [...VILLES_DERATISATION.map((v) => ({ ville: v.slug })), ...DEP_SLUGS.map((d) => ({ ville: d }))]
 }
 
 export function generateMetadata({ params }: { params: { ville: string } }) {
+  if (estDep(params.ville)) return metaDep('deratisation', params.ville)
   const v = getVilleDeratisation(params.ville)
   if (!v) return {}
   const cp = codePostal(v.slug)
@@ -61,6 +64,7 @@ const ETAPES = [
 ]
 
 export default function DeratisationVillePage({ params }: { params: { ville: string } }) {
+  if (estDep(params.ville)) return <DepartementServicePage s="deratisation" d={params.ville} />
   const v = getVilleDeratisation(params.ville)
   if (!v) notFound()
 

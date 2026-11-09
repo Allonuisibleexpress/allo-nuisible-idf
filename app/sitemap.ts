@@ -10,6 +10,7 @@ import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
 import { VILLES_ACARIENS } from '@/lib/villes-acariens'
+import { SERVICES_DEP, DEP_SLUGS } from '@/lib/departements-services'
 
 const BASE = 'https://allonuisibleidf.fr'
 
@@ -63,6 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    // Pages service + département (/deratisation/val-de-marne…)
+    ...(Object.values(SERVICES_DEP).flatMap((s) => DEP_SLUGS.map((d) => `${s.base}/${d}`))).map((p) => ({
+      url: `${BASE}${p}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     })),
     ...ARTICLES.map((a) => ({
       url: `${BASE}/blog/${a.slug}`,
