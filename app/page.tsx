@@ -8,11 +8,13 @@ import QuiSommesNous from '@/components/QuiSommesNous'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import PhotosChantiers from '@/components/PhotosChantiers'
-import AvisGoogle from '@/components/AvisGoogle'
+import AvisDefilants from '@/components/AvisDefilants'
+import AccueilVilles from '@/components/AccueilVilles'
+import { CHAINE_YOUTUBE } from '@/lib/youtube'
 
 export const metadata = pageMetadata({
-  title: 'Lutte contre les nuisibles 7j/7 en Île-de-France',
-  description: 'Rats, cafards, punaises de lit, guêpes : techniciens certifiés Certibiocide, intervention le jour même en Île-de-France, 7j/7. Devis gratuit.',
+  title: 'Allo Nuisible IDF : dératisation, punaises de lit 7j/7',
+  description: 'Dératisation, punaises de lit, cafards, nids de frelons à Paris et en Val-de-Marne. Techniciens Certibiocide basés à Saint-Maurice, 7j/7. Devis gratuit, garantie 1 an.',
   path: '',
 })
 
@@ -43,13 +45,26 @@ const localBusiness = {
     opens: '00:00',
     closes: '23:59',
   },
+  priceRange: '€€',
+  sameAs: ['https://maps.google.com/?cid=11887181769674817823', CHAINE_YOUTUBE],
   knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
 }
+
+const FAQ_ACCUEIL = [
+  { q: 'Combien coûte une dératisation ?', a: 'À partir de 120 € TTC pour un appartement, rats ou souris, avec postes sécurisés ou pièges et colmatage des accès. Commerces et copropriétés : sur devis. Le devis est gratuit.' },
+  { q: 'Quel est le prix d’un traitement contre les punaises de lit ?', a: 'À partir de 290 € TTC pour un studio ou un T1, deux passages inclus, par insecticide, cryogénie ou vapeur sèche. Pour un logement plus grand, le prix est fixé après inspection.' },
+  { q: 'Pouvez-vous intervenir le jour même ?', a: 'Oui, très souvent. Nous répondons 7j/7 et intervenons rapidement à Paris et dans le Val-de-Marne, depuis notre base de Saint-Maurice.' },
+  { q: 'Vos traitements sont-ils garantis ?', a: 'Oui, nos interventions sont garanties 1 an : si les nuisibles reviennent, notre technicien revient sans supplément.' },
+  { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, nos techniciens sont titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides et des raticides professionnels.' },
+  { q: 'Dans quelles villes intervenez-vous ?', a: 'À Paris et dans tout le Val-de-Marne : Saint-Maurice, Maisons-Alfort, Charenton-le-Pont, Créteil, Vincennes, Saint-Maur-des-Fossés, Ivry-sur-Seine et bien d’autres, ainsi que dans une partie de l’Île-de-France.' },
+]
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQ_ACCUEIL.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
 
 export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main>
         <Hero />
@@ -98,11 +113,31 @@ export default function Home() {
           </div>
         </section>
 
+        <AccueilVilles />
         <QuiSommesNous />
         <PourquoiNous />
         <AvantApres />
         <PhotosChantiers photos={['cryoFoyer', 'litCryo', 'nidGuepes', 'toit']} />
-        <AvisGoogle fond="#111" />
+        <AvisDefilants fond="#111" />
+
+        {/* FAQ */}
+        <section className="py-16 md:py-24 px-4" style={{ background: '#0d0d0d' }}>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 text-center">Vos questions, <span style={{ color: '#E8441A' }}>nos réponses</span></h2>
+            <p className="text-white/55 text-center mb-10">Prix, délais, garantie : l’essentiel avant d’appeler.</p>
+            <div className="space-y-3">
+              {FAQ_ACCUEIL.map((f) => (
+                <details key={f.q} className="group rounded-xl px-5 py-4" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
+                    {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <Contact />
       </main>
       <Footer />

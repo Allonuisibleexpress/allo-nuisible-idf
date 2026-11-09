@@ -33,13 +33,13 @@ export default function Hero() {
 
         {/* H1 */}
         <h1 className="hero-2 font-black text-white tracking-tight mb-6" style={{ fontSize: 'clamp(2.4rem, 6.2vw, 4.75rem)', lineHeight: 1 }}>
-          Votre spécialiste <span className="whitespace-nowrap">anti-nuisibles</span>{' '}
-          <span style={{ color: ACCENT }}>en <span className="whitespace-nowrap">Île-de-France.</span></span>
+          Votre expert <span className="whitespace-nowrap">anti-nuisibles</span>{' '}
+          <span style={{ color: ACCENT }}>à Paris et en <span className="whitespace-nowrap">Île-de-France.</span></span>
         </h1>
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
-          Dératisation, désinsectisation et désinfection{' '}
-          <strong className="text-white font-bold">7j/7</strong>, à Paris et dans toute la région.
+          <strong className="text-white font-bold">Dératisation</strong>, <strong className="text-white font-bold">punaises de lit</strong>, <strong className="text-white font-bold">cafards</strong>, <strong className="text-white font-bold">nids de frelons</strong> et pigeons : nos techniciens certifiés, basés à Saint-Maurice (94), interviennent{' '}
+          <strong className="text-white font-bold">7j/7</strong>, souvent le jour même. Devis gratuit, garantie 1 an.
         </p>
 
         {/* ── Bouton "lava" — numéro ── */}
