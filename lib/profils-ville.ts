@@ -24,10 +24,10 @@ const cpTxt = (cp: string) => (cp ? ` (${cp})` : '')
 
 export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'acariens' | 'frelons' | 'puces', ProfilVille> = {
   puces: {
-    famille: 'puces', motCle: 'Puces', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
+    famille: 'puces', motCle: 'Puces', suffixes: [' : traitement dès 120 €, garanti 1 an', ' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
     heroTitre: 'Traitement contre les puces', prix: '120 €', prixNum: '120',
     prixNote: 'Appartement, sols et textiles traités. Devis gratuit.', offre: 'appartement, puces',
-    description: (a, cp) => `Puces ${a}${cpTxt(cp)} : traitement du logement par un technicien certifié, en lien avec le vétérinaire. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+    description: (a, cp) => `Piqûres aux chevilles ${a}${cpTxt(cp)} ? Nous traitons œufs, larves et cocons, pas seulement les puces visibles. Dès 120 €, garanti 1 an.`,
     accroches: [
       'Piqûres aux chevilles, animal qui se gratte ? Nous traitons tout le logement pendant que votre vétérinaire traite l’animal.',
       'Les puces adultes ne sont qu’une petite partie du problème : œufs, larves et cocons vivent dans vos sols. C’est là que nous traitons.',

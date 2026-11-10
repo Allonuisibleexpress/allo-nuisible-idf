@@ -46,6 +46,8 @@ export type Ville = {
   contexte: string[]
   proches: string[]
   faq: { q: string; a: string }[]
+  // Questions supplémentaires propres à la ville
+  faqPlus?: { q: string; a: string }[]
 }
 
 export type VilleServiceConfig = {
@@ -68,6 +70,18 @@ export type VilleServiceConfig = {
   sections?: { titre: string; paras: string[]; table?: { head: string[]; rows: string[][] }; liste?: string[] }[]
   protocole?: { titre: string; etapes: { titre: string; texte: string }[] }
   publics?: { titre: string; cartes: { titre: string; texte: string }[] }
+  // Contenu approfondi en rotation (protocole détaillé, cycle, prévention de la récidive, FAQ élargie), 10/11/2026
+  approfondi?: {
+    protocoleTitre: (a: string) => string
+    protocoleIntro: string[]
+    etapes: string[][] // pour chaque étape, plusieurs variantes « Titre|texte »
+    cycleTitre: (a: string) => string
+    cycle: string[][] // paragraphes, plusieurs variantes chacun
+    recidiveTitre: (a: string) => string
+    recidiveIntro: string[]
+    recidive: string[] // conseils, 6 affichés par page en rotation
+    faqPool: { q: string; a: string }[] // 4 questions par page en rotation
+  }
   centre?: boolean // page entièrement centrée (règle de l'utilisateur pour les nouvelles pages)
 }
 
@@ -120,7 +134,12 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   const generales = v.faq.slice(1)
   const d = rang % Math.max(1, generales.length)
   const profilFaq = PROFILS[serviceLocal(c.pilier.href) as keyof typeof PROFILS]
-  const faq = [v.faq[0], ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), saisonVille(profilFaq.famille, v.slug)]
+  // Variante déterministe selon la ville (k) et la position (i)
+  const hv = v.slug.split('').reduce((h, ch) => (h * 33 + ch.charCodeAt(0)) >>> 0, 7)
+  const pick = <T,>(l: T[], i: number) => l[((hv >>> (i % 7) * 3) + i * 5 + rang) % l.length]
+  const ap = c.approfondi
+  const poolFaq = ap ? tourne(ap.faqPool, (hv % ap.faqPool.length)).slice(0, 4) : []
+  const faq = [v.faq[0], ...(v.faqPlus ?? []), ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), ...poolFaq, saisonVille(profilFaq.famille, v.slug)]
   const db = rang % Math.max(1, c.enBref.length)
   const enBref = [`Intervention ${v.a} (${v.departement}, ${v.code}) et dans les communes voisines : ${v.proches.slice(0, 4).join(', ')}.`, ...[...c.enBref.slice(db), ...c.enBref.slice(0, db)].slice(0, 3)]
   const maj = new Date(c.maj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -330,6 +349,53 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               )}
             </div>
           </section>
+        )}
+
+        {/* ── CONTENU APPROFONDI ── */}
+        {ap && (
+          <>
+            <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 text-center leading-tight">{ap.protocoleTitre(v.a)}</h2>
+                <p className="text-white/60 mb-8 max-w-3xl mx-auto text-center leading-relaxed">{inline(pick(ap.protocoleIntro, 1))}</p>
+                <ol className="space-y-4">
+                  {ap.etapes.map((variantes, i) => {
+                    const [t, x] = pick(variantes, i + 2).split('|')
+                    return (
+                      <li key={i} className="flex gap-4 rounded-2xl p-5" style={card}>
+                        <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>
+                        <div>
+                          <h3 className="font-black text-white mb-1">{t}</h3>
+                          <p className="text-white/65 text-sm leading-relaxed">{inline(x)}</p>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ol>
+              </div>
+            </section>
+            <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center leading-tight">{ap.cycleTitre(v.a)}</h2>
+                <div className="space-y-4 text-white/65 leading-relaxed">
+                  {ap.cycle.map((variantes, i) => <p key={i}>{inline(pick(variantes, i + 9))}</p>)}
+                </div>
+              </div>
+            </section>
+            <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-4 text-center leading-tight">{ap.recidiveTitre(v.a)}</h2>
+                <p className="text-white/60 mb-8 max-w-3xl mx-auto text-center leading-relaxed">{inline(pick(ap.recidiveIntro, 4))}</p>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {tourne(ap.recidive, hv % ap.recidive.length).slice(0, 6).map((t) => (
+                    <li key={t} className="flex items-start gap-3 rounded-xl p-4 text-sm text-white/75 leading-relaxed" style={card}>
+                      <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} /><span>{inline(t)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          </>
         )}
 
         {/* ── GUIDES ── */}

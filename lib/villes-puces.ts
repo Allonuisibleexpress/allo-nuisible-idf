@@ -1,7 +1,8 @@
-// Pages « Puces à [ville] » (/puces/[ville]) : 24 villes (10 du 94, 8 arrondissements de Paris, 6 du 92), 09/11/2026.
+// Pages « Puces à [ville] » (/puces/[ville]) : 40 villes (18 du 94, 12 arrondissements de Paris, 10 du 92). 24 le 09/11/2026, 16 ajoutées le 10/11/2026.
 // Sources du cycle et des risques : Wikipédia (Ctenocephalides felis, Siphonaptera), Parola 2006, ESCCAP (cités sur /blog/puces-tout-savoir).
 // Prix aligné sur Allo Nuisible Express : dès 120 € TTC. Pas de chiffre inventé, pas de tiret long, rien de « naturel » ou « sans danger ».
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { PUCES_APPROFONDI } from './puces-approfondi'
 
 export const CONFIG_PUCES: VilleServiceConfig = {
   basePath: '/puces',
@@ -53,6 +54,7 @@ export const CONFIG_PUCES: VilleServiceConfig = {
   maj: '2026-11-09',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Puces dans d’autres villes',
+  approfondi: PUCES_APPROFONDI,
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -70,14 +72,42 @@ const DEP: Record<Dep, { departement: string; zone: (s: string) => string }> = {
   '92': { departement: 'Hauts-de-Seine', zone: () => '/zones/hauts-de-seine' },
 }
 
-const ville = (nom: string, a: string, slug: string, code: Dep, contexte: string[], proches: string[], faq: { q: string; a: string }): VillePuces => ({
+const ville = (nom: string, a: string, slug: string, code: Dep, contexte: string[], proches: string[], faq: { q: string; a: string }, faqPlus?: { q: string; a: string }[]): VillePuces => ({
   slug, nom, a, code,
   departement: DEP[code].departement,
   zoneHref: DEP[code].zone(slug),
   title: `Puces ${nom}`,
   description: `Puces ${a} : traitement du logement par un technicien certifié, en lien avec le vétérinaire. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
-  contexte, proches, faq: [faq, ...FAQ_COMMUNE(a)],
+  contexte: [...contexte, ...(CONTEXTE_PLUS[slug] ? [CONTEXTE_PLUS[slug]] : [])], proches, faq: [faq, ...FAQ_COMMUNE(a)], faqPlus,
 })
+
+// Un paragraphe de plus, propre à chaque ville (10/11/2026)
+const CONTEXTE_PLUS: Record<string, string> = {
+  'saint-maurice': 'Autre situation fréquente à Saint-Maurice : les **résidences proches des établissements de soins** et des grands parcs accueillent beaucoup de visiteurs et d’animaux. Une seule puce qui descend d’un chien dans un hall suffit parfois à lancer une infestation dans un appartement voisin.',
+  'maisons-alfort': 'Maisons-Alfort a une particularité : la ville accueille **l’École nationale vétérinaire d’Alfort**, et beaucoup d’habitants y font soigner leurs animaux. C’est une bonne habitude : le traitement de l’animal par un vétérinaire est **la moitié du travail** contre les puces.',
+  'charenton-le-pont': 'À Charenton, les **petites surfaces** se traitent vite, mais demandent de la rigueur : dans un deux-pièces, le panier de l’animal est souvent à deux pas du lit. Nous traitons alors la **chambre en priorité**, avec ses plinthes et le dessous du sommier.',
+  'vincennes': 'Beaucoup de Vincennois nous appellent en pensant à des **punaises de lit**, avant de découvrir qu’il s’agit de puces : les piqûres ne sont pas au même endroit. Les puces piquent **le bas des jambes**, les punaises plutôt les bras et le cou.',
+  'saint-maur-des-fosses': 'Dans les **grandes maisons saint-mauriennes**, les puces s’installent parfois dans des pièces peu fréquentées : buanderie, chambre d’amis, sous-sol où dort le chien l’hiver. L’inspection de ces pièces évite qu’un foyer oublié ne relance tout.',
+  'creteil': 'Près du **lac de Créteil** et des espaces verts, les chiens se promènent beaucoup. Pensez à vérifier leur pelage au retour, surtout **à la base de la queue**, la zone préférée des puces.',
+  'ivry-sur-seine': 'Dans les **ateliers et lofts** reconvertis d’Ivry, les grandes surfaces au sol en béton ou en parquet brut offrent aux larves de nombreuses fissures. Le technicien adapte le traitement à ces sols particuliers.',
+  'vitry-sur-seine': 'Le **parc des Lilas** et les jardins partagés de Vitry sont très fréquentés par les chiens et par les chats du quartier. En été, c’est un lieu d’échange de puces entre animaux : un antiparasitaire régulier est la meilleure protection.',
+  'fontenay-sous-bois': 'À Fontenay-sous-Bois, les maisons avec **sous-sol** sont nombreuses. Un chat qui y dort l’hiver peut y laisser des milliers d’œufs, qui deviennent des puces dès que la maison est chauffée.',
+  'nogent-sur-marne': 'Les **résidences secondaires** et les logements fermés longtemps, nombreux en bord de Marne, sont typiques des infestations « surprise » : personne n’a rien vu, puis toute la famille est piquée le soir même du retour.',
+  'paris-12': 'Dans le 12e, les **appartements haussmanniens** avec moquettes anciennes ou tapis épais sont des refuges idéaux pour les larves. Nous insistons sur les bords des tapis, où la poussière s’accumule.',
+  'paris-11': 'Les **colocations** sont nombreuses dans le 11e : quand un colocataire arrive avec son animal, les puces peuvent toucher tout l’appartement. Le traitement porte alors sur toutes les pièces communes.',
+  'paris-15': 'Dans le 15e, beaucoup de familles partent en **vacances d’été** avec le chien et confient le chat. Au retour, les puces en cocon sortent toutes en même temps : c’est le moment où nous recevons le plus d’appels.',
+  'paris-17': 'Les **nouveaux immeubles des Batignolles** n’échappent pas aux puces : un logement neuf n’est pas protégé, puisque ce sont les animaux qui les apportent, pas le bâtiment.',
+  'paris-18': 'Sur la **butte Montmartre**, les maisons anciennes à étages et les ateliers d’artistes ont des planchers en bois très fendus : un terrain parfait pour les larves, qui demandent un traitement minutieux.',
+  'paris-20': 'Dans le 20e, les **jardins partagés** et les cours d’immeubles attirent les chats du quartier. Les puces qu’ils perdent peuvent remonter sur votre animal, puis entrer chez vous.',
+  'paris-13': 'Dans les **tours du quartier asiatique** et des Olympiades, les logements sont souvent bien chauffés et isolés : le cycle des puces y est rapide, et une petite infestation grossit vite si l’on attend.',
+  'paris-19': 'Près du **bassin de la Villette**, de nombreux habitants ont des chiens de grande taille. Plus l’animal est grand, plus il disperse d’œufs dans le logement : son couchage doit être lavé souvent.',
+  'boulogne-billancourt': 'Dans les **maisons des années 1930** de Boulogne, les parquets en chêne à lames fines et les escaliers en bois cachent de nombreuses fentes : le technicien y applique le produit avec précision.',
+  'issy-les-moulineaux': 'Les **bureaux et espaces de coworking** d’Issy qui acceptent les chiens peuvent aussi être touchés. Nous intervenons en dehors des heures de travail, avec une attestation pour le gestionnaire.',
+  'levallois-perret': 'À Levallois, les **parkings souterrains** et les caves partagées peuvent abriter des rongeurs, et donc leurs puces. Quand plusieurs voisins se plaignent, nous cherchons cette cause commune.',
+  'neuilly-sur-seine': 'Les **personnels de maison** et gardiens d’immeubles sont souvent les premiers à remarquer les piqûres. Un signalement rapide permet de traiter avant que toutes les pièces soient touchées.',
+  'courbevoie': 'À Courbevoie, les **locations de courte durée** proches de La Défense voient passer beaucoup de voyageurs, parfois avec leur animal. Un traitement entre deux séjours évite les avis négatifs et les remboursements.',
+  'asnieres-sur-seine': 'Asnières abrite le célèbre **cimetière des chiens**, symbole d’un lien ancien entre la ville et les animaux de compagnie. Aujourd’hui encore, beaucoup de foyers en ont un, et les puces y sont un souci fréquent.',
+}
 
 export const VILLES_PUCES: VillePuces[] = [
   // ── Val-de-Marne ──
@@ -203,6 +233,119 @@ export const VILLES_PUCES: VillePuces[] = [
     'Nous traitons le logement et vous conseillons pour éviter le retour : antiparasitaire régulier, lavage du couchage, aspiration.',
   ], ['Courbevoie', 'Gennevilliers', 'Clichy', 'Colombes'],
   { q: 'Mon chat a des puces : faut-il traiter toute la maison ?', a: 'Oui, les œufs tombent partout où il se couche. Traiter seulement le chat laisse des milliers d’œufs, de larves et de cocons dans la maison.' }),
+  // ── Nouvelles villes du 10/11/2026 ──
+  ville('Champigny-sur-Marne', 'à Champigny-sur-Marne', 'champigny-sur-marne', '94', [
+    'Champigny-sur-Marne est l’une des plus grandes villes du Val-de-Marne, avec de **nombreux pavillons et jardins** le long de la Marne. Chats du voisinage, hérissons et rongeurs y circulent : votre animal peut y ramasser des puces à chaque sortie.',
+    'Dans une maison campinoise, les puces s’installent souvent **là où l’animal passe l’hiver** : garage, buanderie, sous-sol, véranda. Notre technicien traite ces pièces en plus des pièces de vie.',
+    'Dans les **grands ensembles** comme dans les résidences récentes, les puces arrivent aussi avec les **déménagements** : un logement occupé auparavant par un animal peut cacher des cocons dans les sols.',
+  ], ['Saint-Maur-des-Fossés', 'Chennevières-sur-Marne', 'Le Perreux-sur-Marne', 'Villiers-sur-Marne'],
+  { q: 'Mon chat sort dans le jardin : comment éviter qu’il ramène des puces ?', a: 'Un antiparasitaire prescrit par le vétérinaire, renouvelé toute l’année, est la meilleure protection. Vérifiez aussi son pelage à la base de la queue et lavez régulièrement son couchage.' },
+  [{ q: 'Faut-il traiter le garage où dort mon chien ?', a: 'Oui : si l’animal y dort, des œufs et des larves s’y trouvent. Le technicien traite le sol du garage et le couchage avec le reste de la maison.' }]),
+  ville('Joinville-le-Pont', 'à Joinville-le-Pont', 'joinville-le-pont', '94', [
+    'Joinville-le-Pont, entre la **Marne** et le **bois de Vincennes**, est une ville de promeneurs et de chiens. Les bords de Marne, les guinguettes et les sentiers du bois sont autant d’occasions pour une puce de monter sur votre animal.',
+    'Les **petites maisons** et les immeubles bas de Joinville ont souvent des **parquets anciens** : c’est dans leurs fentes que les larves se cachent et se transforment en cocons.',
+    'Notre base de Saint-Maurice est à quelques minutes : nous intervenons à Joinville **très rapidement**, souvent le jour même.',
+  ], ['Saint-Maurice', 'Saint-Maur-des-Fossés', 'Nogent-sur-Marne', 'Champigny-sur-Marne'],
+  { q: 'Pouvez-vous venir le jour même à Joinville-le-Pont ?', a: 'Très souvent, oui : notre base est à Saint-Maurice, juste à côté. Appelez le 07 68 07 72 19 pour connaître la disponibilité du jour.' },
+  [{ q: 'Pourquoi je suis piqué et pas mon conjoint ?', a: 'C’est fréquent : les puces piquent plus volontiers certaines personnes, et toutes les peaux ne réagissent pas de la même façon. Une seule personne piquée suffit à confirmer l’infestation.' }]),
+  ville('Alfortville', 'à Alfortville', 'alfortville', '94', [
+    'Alfortville, posée entre la **Seine** et la **Marne**, est une ville dense d’**appartements** et de petites maisons. Les puces y arrivent surtout avec les chiens et les chats, mais aussi par les **caves d’immeubles** où vivent parfois des rongeurs.',
+    'Dans un appartement, le cycle des puces est rapide : le **chauffage** et l’humidité accélèrent la transformation des larves. Plus on attend, plus il y a de cocons à traiter.',
+    'Nous intervenons dans tous les quartiers, du nord de la ville aux bords de Seine, et coordonnons avec le bailleur quand plusieurs logements sont touchés.',
+  ], ['Maisons-Alfort', 'Vitry-sur-Seine', 'Créteil', 'Choisy-le-Roi'],
+  { q: 'Mes voisins ont aussi des puces : est-ce lié ?', a: 'C’est possible si la cause est commune, par exemple des rongeurs dans les caves. Prévenez le bailleur ou le syndic : un traitement coordonné évite les allers-retours.' },
+  [{ q: 'Les puces peuvent-elles passer d’un appartement à l’autre ?', a: 'Rarement seules, mais un animal, un visiteur ou des rongeurs peuvent les transporter. Le traitement de votre logement vous protège ; la recherche de la cause protège l’immeuble.' }]),
+  ville('Villejuif', 'à Villejuif', 'villejuif', '94', [
+    'Villejuif compte de grands **parcs départementaux** et de nombreux quartiers résidentiels. Les chiens s’y promènent beaucoup, et les puces font souvent le trajet jusqu’à l’appartement avec eux.',
+    'Avec les **nouveaux quartiers** construits autour des gares, beaucoup d’habitants emménagent. Si l’ancien occupant avait un animal, des cocons peuvent attendre dans les sols : les premières piqûres arrivent alors quelques jours après l’emménagement.',
+    'Nous traitons le logement, recherchons l’origine des puces et vous expliquons comment éviter leur retour.',
+  ], ['Vitry-sur-Seine', 'Le Kremlin-Bicêtre', 'Cachan', 'L’Haÿ-les-Roses'],
+  { q: 'Je viens d’emménager à Villejuif et je suis piqué : que faire ?', a: 'Prévenez votre propriétaire par écrit, avec des photos. Un logement loué doit être exempt d’infestation de nuisibles (loi du 6 juillet 1989). Un traitement du logement règle le problème.' },
+  [{ q: 'Les puces peuvent-elles venir des cartons de déménagement ?', a: 'C’est possible si les cartons ont été stockés dans une cave avec des rongeurs ou dans un logement infesté. Ouvrez-les plutôt dans une pièce sans tapis et aspirez ensuite.' }]),
+  ville('Le Perreux-sur-Marne', 'au Perreux-sur-Marne', 'le-perreux-sur-marne', '94', [
+    'Le Perreux-sur-Marne est une ville de **maisons et de jardins**, sur les bords de Marne. Chats et chiens y vivent souvent entre intérieur et extérieur, et les puces suivent le même chemin.',
+    'Dans les **maisons de caractère** perreuxiennes, les parquets anciens, les escaliers en bois et les tapis épais offrent aux larves d’innombrables cachettes. Le traitement doit être précis, pièce par pièce.',
+    'Au retour de vacances, une maison restée fermée peut révéler une infestation spectaculaire : ce sont les puces qui attendaient dans leur cocon.',
+  ], ['Nogent-sur-Marne', 'Bry-sur-Marne', 'Champigny-sur-Marne', 'Neuilly-Plaisance'],
+  { q: 'Peut-on traiter une maison entière au Perreux ?', a: 'Oui : toutes les pièces fréquentées par l’animal, mais aussi le garage, la véranda et le sous-sol si besoin. Le prix est fixé sur devis gratuit après quelques questions.' },
+  [{ q: 'Mon escalier en bois peut-il abriter des puces ?', a: 'Oui, les jointures des marches et les bords de la moquette d’escalier sont des cachettes fréquentes pour les larves. Le technicien les traite avec soin.' }]),
+  ville('Choisy-le-Roi', 'à Choisy-le-Roi', 'choisy-le-roi', '94', [
+    'Choisy-le-Roi, sur les bords de **Seine**, mêle grandes résidences et quartiers pavillonnaires. Les puces y apparaissent souvent à la **fin de l’été**, quand les animaux rentrent davantage dans la maison.',
+    'Dans les maisons avec jardin, les **chats errants** et les rongeurs peuvent laisser des puces près des portes et des abris. Votre animal les ramène ensuite à l’intérieur.',
+    'Nous traitons le logement et vous laissons un plan simple pour les semaines suivantes : aspiration, lavage, antiparasitaire.',
+  ], ['Vitry-sur-Seine', 'Thiais', 'Orly', 'Alfortville'],
+  { q: 'Pourquoi les puces apparaissent-elles à la fin de l’été ?', a: 'La chaleur et l’humidité de l’été accélèrent le cycle : les œufs pondus en juillet et en août donnent des adultes quelques semaines plus tard. L’infestation devient alors visible.' },
+  [{ q: 'Mon chat a des puces mais pas moi : faut-il traiter ?', a: 'Oui, car les œufs tombent dans le logement. Si l’on attend, les larves deviennent adultes et finissent par piquer aussi les occupants.' }]),
+  ville('Le Kremlin-Bicêtre', 'au Kremlin-Bicêtre', 'le-kremlin-bicetre', '94', [
+    'Le Kremlin-Bicêtre, aux portes de Paris, est une petite ville **très dense**, faite surtout d’appartements. Les puces s’y installent dans les **fentes du parquet**, les tapis et autour du couchage des animaux.',
+    'La présence de nombreux **étudiants** et de logements meublés entraîne beaucoup de déménagements : un locataire peut hériter des puces de l’occupant précédent sans le savoir.',
+    'Nous intervenons rapidement et traitons même les **petits logements** avec un protocole complet.',
+  ], ['Gentilly', 'Villejuif', 'Ivry-sur-Seine', 'Paris 13e'],
+  { q: 'Un studio peut-il être traité rapidement ?', a: 'Oui, un studio se traite vite, à condition que le sol soit dégagé et aspiré avant le passage. Le prix commence à 120 € TTC.' },
+  [{ q: 'Je loue un meublé : qui doit payer le traitement ?', a: 'Si les puces étaient là à votre arrivée, prévenez immédiatement le propriétaire par écrit. Nous remettons une attestation d’intervention utile pour votre démarche.' }]),
+  ville('Saint-Mandé', 'à Saint-Mandé', 'saint-mande', '94', [
+    'Saint-Mandé est collée au **bois de Vincennes** : les promenades de chiens y sont quotidiennes, et le bois abrite une faune qui porte ses propres puces.',
+    'Les **immeubles anciens** et les appartements familiaux saint-mandéens ont souvent de beaux parquets à lames : leurs fentes sont la cachette préférée des larves et des cocons.',
+    'Notre base de Saint-Maurice est toute proche : intervention rapide, souvent dans la journée.',
+  ], ['Vincennes', 'Paris 12e', 'Saint-Maurice', 'Montreuil'],
+  { q: 'Mon chien a-t-il attrapé ses puces au bois de Vincennes ?', a: 'C’est possible : les puces passent facilement d’un animal à l’autre et la faune du bois en porte aussi. Un antiparasitaire régulier, prescrit par le vétérinaire, protège votre chien toute l’année.' },
+  [{ q: 'Peut-on traiter un parquet ancien sans l’abîmer ?', a: 'Oui, le produit est appliqué en fine couche et ne mouille pas le bois. Le technicien vous signale toute finition fragile avant de commencer.' }]),
+  ville('Paris 5e', 'à Paris 5e', 'paris-5', '75', [
+    'Dans le **5e arrondissement**, autour du **Jardin des Plantes** et du **Quartier latin**, les immeubles anciens aux parquets usés offrent aux puces de nombreuses cachettes.',
+    'Avec ses nombreux **étudiants** et ses chambres de service, l’arrondissement connaît beaucoup de changements de locataires : les cocons laissés par l’animal d’un ancien occupant peuvent éclore à votre arrivée.',
+    'Nous intervenons dans tout l’arrondissement, y compris dans les **chambres sous les toits**, et adaptons le traitement aux petites surfaces.',
+  ], ['Paris 13e', 'Paris 6e', 'Paris 4e', 'Paris 14e'],
+  { q: 'Peut-on traiter une chambre de bonne contre les puces ?', a: 'Oui, même une petite surface est traitée avec un protocole complet : sol, plinthes, lit et textiles. Le prix commence à 120 € TTC.' },
+  [{ q: 'Les puces peuvent-elles venir des greniers ou des toits ?', a: 'Oui, si des oiseaux ou des rongeurs y nichent. Dans les derniers étages, nous vérifions cette piste quand il n’y a pas d’animal dans le logement.' }]),
+  ville('Paris 10e', 'à Paris 10e', 'paris-10', '75', [
+    'Le **10e arrondissement**, entre le **canal Saint-Martin** et les grandes gares, est un quartier très vivant où chiens et promeneurs se croisent sans cesse. Une puce peut changer d’hôte en un instant.',
+    'Les **immeubles anciens** et les appartements traversants du 10e ont souvent des parquets fatigués, avec des fentes larges : les larves y trouvent tout ce qu’il leur faut.',
+    'Nous intervenons dans tout l’arrondissement et coordonnons avec le gardien ou le syndic si les parties communes sont concernées.',
+  ], ['Paris 9e', 'Paris 11e', 'Paris 18e', 'Paris 19e'],
+  { q: 'Les puces peuvent-elles venir des parties communes ?', a: 'C’est possible si un animal y dort ou si des rongeurs vivent dans les caves. Dans ce cas, nous recommandons un traitement coordonné avec le syndic.' },
+  [{ q: 'Je travaille toute la journée : pouvez-vous intervenir tôt ou tard ?', a: 'Oui, nous intervenons 7j/7 et adaptons l’horaire. Il faut simplement prévoir de quitter le logement le temps indiqué après le traitement.' }]),
+  ville('Paris 14e', 'à Paris 14e', 'paris-14', '75', [
+    'Le **14e arrondissement**, avec le **parc Montsouris** et ses villas et maisons de ville, compte beaucoup de familles avec animaux. Les puces y sont un souci fréquent, surtout à la fin de l’été.',
+    'Dans les **maisons et ateliers** du 14e, les planchers en bois et les tapis épais accueillent larves et cocons. Le technicien traite chaque niveau, de la cave au dernier étage si besoin.',
+    'Nous intervenons rapidement dans tout l’arrondissement, avec un second passage si les puces continuent de sortir des cocons.',
+  ], ['Paris 15e', 'Paris 13e', 'Paris 6e', 'Montrouge'],
+  { q: 'Les puces peuvent-elles venir du parc Montsouris ?', a: 'Les parcs fréquentés par de nombreux chiens et par des animaux sauvages favorisent le passage de puces d’un animal à l’autre. Un antiparasitaire régulier protège votre chien.' },
+  [{ q: 'Faut-il traiter la cave de ma maison de ville ?', a: 'Si votre animal y descend ou si des rongeurs y vivent, oui. Le technicien vous le dit pendant l’inspection.' }]),
+  ville('Paris 16e', 'à Paris 16e', 'paris-16', '75', [
+    'Le **16e arrondissement**, entre le **bois de Boulogne** et la Seine, compte de grands appartements avec **tapis précieux**, moquettes et parquets anciens : autant de refuges pour les larves de puces.',
+    'Les promenades au bois sont quotidiennes pour beaucoup de chiens de l’arrondissement. Une puce qui monte au retour peut pondre de nombreux œufs dans le logement dès les jours suivants.',
+    'Nous intervenons avec discrétion, adaptons le traitement aux matières délicates et vous remettons une **attestation** si besoin.',
+  ], ['Paris 17e', 'Paris 15e', 'Boulogne-Billancourt', 'Neuilly-sur-Seine'],
+  { q: 'Le traitement est-il adapté aux tapis anciens ?', a: 'Oui, le produit est appliqué en fine couche. Pour les pièces fragiles ou de valeur, le technicien vous propose la meilleure approche avant de commencer.' },
+  [{ q: 'Pouvez-vous intervenir de façon discrète ?', a: 'Oui : horaires adaptés à votre emploi du temps, intervention organisée avec votre gardien ou votre personnel de maison, et attestation remise si besoin.' }]),
+  ville('Clichy', 'à Clichy', 'clichy', '92', [
+    'Clichy, aux portes du **17e arrondissement**, est une ville dense d’appartements et d’anciens ateliers. Les puces s’y installent surtout là où vivent les animaux, mais aussi dans les logements qui changent souvent d’occupants.',
+    'Les **parcs** et les bords de Seine sont très fréquentés par les chiens : une puce peut y passer d’un animal à l’autre en quelques secondes.',
+    'Nous intervenons rapidement et traitons tout le logement, avec un second passage si besoin.',
+  ], ['Levallois-Perret', 'Asnières-sur-Seine', 'Paris 17e', 'Saint-Ouen'],
+  { q: 'Combien coûte un traitement contre les puces à Clichy ?', a: 'À partir de 120 € TTC pour un appartement. Pour une maison ou un local, le prix est fixé sur devis gratuit avant l’intervention.' },
+  [{ q: 'Que faire en attendant le technicien ?', a: 'Aspirez tout le logement, jetez le sac dehors, lavez à 60 °C le couchage de l’animal et les plaids, et prenez rendez-vous chez le vétérinaire.' }]),
+  ville('Rueil-Malmaison', 'à Rueil-Malmaison', 'rueil-malmaison', '92', [
+    'Rueil-Malmaison est une ville verte, avec le **parc de Bois-Préau**, la **forêt de la Malmaison** et de nombreux **pavillons avec jardin**. Chats et chiens y vivent dehors une partie de la journée, et ramènent parfois des puces.',
+    'Dans les maisons, les puces se cachent souvent dans des endroits inattendus : **niche**, **abri de jardin**, **voiture**, **véranda**. Le technicien inspecte tous les lieux de repos de l’animal.',
+    'Hérissons, renards et rongeurs du voisinage portent aussi des puces : nous vous conseillons pour limiter leur accès autour de la maison.',
+  ], ['Nanterre', 'Suresnes', 'Garches', 'Bougival'],
+  { q: 'Les hérissons du jardin peuvent-ils donner des puces à mon chien ?', a: 'Les hérissons portent leurs propres puces, qui peuvent passer occasionnellement sur un chien ou un chat. Un antiparasitaire régulier protège votre animal.' },
+  [{ q: 'Faut-il traiter la voiture ?', a: 'Si votre chien y voyage souvent, oui : les œufs tombent sur les sièges et les tapis. Aspirez soigneusement et demandez conseil au technicien.' }]),
+  ville('Colombes', 'à Colombes', 'colombes', '92', [
+    'Colombes mêle **quartiers pavillonnaires** et grands immeubles, avec beaucoup de familles et d’animaux de compagnie. Les puces y sont fréquentes, surtout entre la fin de l’été et l’automne.',
+    'Dans les pavillons, les chats qui sortent ramènent des puces du jardin et du voisinage. Dans les appartements, elles arrivent avec les chiens ou au moment d’un **emménagement**.',
+    'Nous traitons le logement, recherchons la cause et vous expliquons comment éviter la récidive.',
+  ], ['Asnières-sur-Seine', 'Bois-Colombes', 'La Garenne-Colombes', 'Courbevoie'],
+  { q: 'Pourquoi les puces reviennent-elles chaque automne ?', a: 'Souvent parce que l’animal n’est pas protégé toute l’année, ou parce que des cocons restés dans la maison éclosent quand le chauffage reprend. Un antiparasitaire continu et un traitement complet du logement règlent le problème.' },
+  [{ q: 'Les puces survivent-elles au froid ?', a: 'Dehors, le froid les ralentit. Dans un logement chauffé, elles continuent leur cycle tout l’hiver.' }]),
+  ville('Montrouge', 'à Montrouge', 'montrouge', '92', [
+    'Montrouge, aux portes du **14e arrondissement**, est l’une des villes les plus denses de France. En appartement, les puces se cachent dans les **fentes du parquet**, les **tapis** et autour du couchage de l’animal.',
+    'Avec ses nombreux **jeunes couples** et familles qui emménagent, Montrouge connaît beaucoup de déménagements : des cocons laissés par l’animal d’un ancien occupant peuvent éclore à votre arrivée.',
+    'Nous intervenons rapidement depuis notre base du Val-de-Marne et adaptons le traitement à chaque logement.',
+  ], ['Paris 14e', 'Malakoff', 'Châtillon', 'Bagneux'],
+  { q: 'Combien de temps après le traitement peut-on revenir chez soi ?', a: 'Après le temps d’absence indiqué par le technicien, puis une bonne aération. Il vous donne l’heure précise à la fin de l’intervention.' },
+  [{ q: 'Mon bébé rampe au sol : est-ce compatible avec le traitement ?', a: 'Oui, avec des précautions : respectez le temps d’absence et l’aération, et suivez les consignes du technicien sur les zones à éviter les premiers jours.' }]),
 ]
 
 export function getVillePuces(slug: string) {
