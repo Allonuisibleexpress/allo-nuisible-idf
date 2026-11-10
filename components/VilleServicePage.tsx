@@ -5,6 +5,7 @@ import { avecPrix, premierPrix, EtiquettePrix } from '@/components/PrixGros'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import ContexteLocal from '@/components/ContexteLocal'
+import { PucesBloc1, PucesBloc2, melange } from '@/components/PucesVilleExtra'
 import ContactMairie from '@/components/ContactMairie'
 import type { ServiceLocal } from '@/components/ContexteLocal'
 import AvisGoogle from '@/components/AvisGoogle'
@@ -136,9 +137,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   const profilFaq = PROFILS[serviceLocal(c.pilier.href) as keyof typeof PROFILS]
   // Variante déterministe selon la ville (k) et la position (i)
   const hv = v.slug.split('').reduce((h, ch) => (h * 33 + ch.charCodeAt(0)) >>> 0, 7)
-  const pick = <T,>(l: T[], i: number) => l[((hv >>> (i % 7) * 3) + i * 5 + rang) % l.length]
+  const pick = <T,>(l: T[], i: number) => l[melange((hv ^ Math.imul(i + 3, 0x9e3779b1)) >>> 0) % l.length]
   const ap = c.approfondi
-  const poolFaq = ap ? tourne(ap.faqPool, (hv % ap.faqPool.length)).slice(0, 4) : []
+  const poolFaq = ap ? tourne(ap.faqPool, melange(hv + 17) % ap.faqPool.length).slice(0, 4) : []
   const faq = [v.faq[0], ...(v.faqPlus ?? []), ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), ...poolFaq, saisonVille(profilFaq.famille, v.slug)]
   const db = rang % Math.max(1, c.enBref.length)
   const enBref = [`Intervention ${v.a} (${v.departement}, ${v.code}) et dans les communes voisines : ${v.proches.slice(0, 4).join(', ')}.`, ...[...c.enBref.slice(db), ...c.enBref.slice(0, db)].slice(0, 3)]
@@ -218,6 +219,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+        {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}
         {serviceLocal(c.pilier.href) === 'souris' && VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
@@ -387,7 +389,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-4 text-center leading-tight">{ap.recidiveTitre(v.a)}</h2>
                 <p className="text-white/60 mb-8 max-w-3xl mx-auto text-center leading-relaxed">{inline(pick(ap.recidiveIntro, 4))}</p>
                 <ul className="grid sm:grid-cols-2 gap-3">
-                  {tourne(ap.recidive, hv % ap.recidive.length).slice(0, 6).map((t) => (
+                  {tourne(ap.recidive, melange(hv + 29) % ap.recidive.length).slice(0, 6).map((t) => (
                     <li key={t} className="flex items-start gap-3 rounded-xl p-4 text-sm text-white/75 leading-relaxed" style={card}>
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} /><span>{inline(t)}</span>
                     </li>
@@ -397,6 +399,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             </section>
           </>
         )}
+
+        {sl === 'puces' && <PucesBloc2 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* ── GUIDES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>

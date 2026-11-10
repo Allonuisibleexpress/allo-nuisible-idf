@@ -187,11 +187,16 @@ export function AutresServicesVille({ nom, a, liens }: { nom: string; a: string;
 export function schemaPrestataire() {
   return {
     '@type': 'LocalBusiness',
+    '@id': 'https://allonuisibleidf.fr/#entreprise',
     name: 'Allo Nuisible IDF',
     url: 'https://allonuisibleidf.fr',
     telephone: '+33768077219',
     priceRange: '€€',
+    image: 'https://allonuisibleidf.fr/opengraph-image',
     address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
+    // Vraie note de la fiche Google (lib/avis-google.ts)
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: NOTE_GOOGLE.note.replace(',', '.'), reviewCount: NOTE_GOOGLE.nombre, bestRating: 5 },
+    sameAs: [FICHE_GOOGLE_URL],
   }
 }
 export function schemaOffre(prix: string, libelle: string) {
