@@ -362,7 +362,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 <p className="text-white/60 mb-8 max-w-3xl mx-auto text-center leading-relaxed">{inline(pick(ap.protocoleIntro, 1))}</p>
                 <ol className="space-y-4">
                   {ap.etapes.map((variantes, i) => {
-                    const [t, x] = pick(variantes, i + 2).split('|')
+                    const [t, x] = pick(variantes, i + 2).replaceAll('{a}', v.a).split('|')
                     return (
                       <li key={i} className="flex gap-4 rounded-2xl p-5" style={card}>
                         <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-black text-white" style={{ background: ACCENT }}>{i + 1}</span>
@@ -380,7 +380,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center leading-tight">{ap.cycleTitre(v.a)}</h2>
                 <div className="space-y-4 text-white/65 leading-relaxed">
-                  {ap.cycle.map((variantes, i) => <p key={i}>{inline(pick(variantes, i + 9))}</p>)}
+                  {ap.cycle.map((variantes, i) => <p key={i}>{inline(pick(variantes, i + 9).replaceAll('{a}', v.a))}</p>)}
                 </div>
               </div>
             </section>
