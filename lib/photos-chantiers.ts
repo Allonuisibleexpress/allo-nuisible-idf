@@ -175,6 +175,31 @@ export const PHOTOS_CHANTIERS = {
     alt: 'Trou de rat creusé dans l’angle d’un mur, au-dessus de la plinthe, avec débris au sol',
     legende: 'Trou creusé dans l’angle, au-dessus de la plinthe (Maisons-Alfort, 94)',
   },
+  frelonsNacelle1: {
+    src: '/chantiers/frelons-nacelle-champigny-1.jpg',
+    alt: 'Technicien en tenue de protection dans un camion nacelle, perche dirigée vers un nid de frelons asiatiques à 12 mètres de haut',
+    legende: 'Nid de frelons asiatiques à 12 m de haut, traité depuis notre camion nacelle (Champigny-sur-Marne, 94)',
+  },
+  frelonsNacelle2: {
+    src: '/chantiers/frelons-nacelle-champigny-2.jpg',
+    alt: 'Technicien dans la nacelle levant la perche télescopique vers le haut d’un grand cèdre',
+    legende: 'La perche télescopique depuis la nacelle, au pied du cèdre (Champigny-sur-Marne, 94)',
+  },
+  frelonsNacelle3: {
+    src: '/chantiers/frelons-nacelle-champigny-3.jpg',
+    alt: 'Grand cèdre avec la nacelle levée à mi-hauteur pour atteindre un nid de frelons asiatiques',
+    legende: 'Vue d’ensemble : le cèdre et la nacelle déployée (Champigny-sur-Marne, 94)',
+  },
+  diogeneCrottes: {
+    src: '/chantiers/diogene-crottes-rat-etagere.jpg',
+    alt: 'Étagère d’armoire de garage couverte de crottes de rat, avant nettoyage',
+    legende: 'Crottes de rat sur une étagère du garage, avant nettoyage (Maisons-Alfort, 94)',
+  },
+  diogeneNettoyage: {
+    src: '/chantiers/diogene-nettoyage-maison.jpg',
+    alt: 'Technicien en combinaison nettoyant le sol carrelé d’une maison après le débarras',
+    legende: 'Nettoyage et désinfection de la maison après le débarras (Maisons-Alfort, 94)',
+  },
 } satisfies Record<string, PhotoChantier>
 
 export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
@@ -183,8 +208,9 @@ export type PhotoKey = keyof typeof PHOTOS_CHANTIERS
 export const CHANTIER_DIOGENE = {
   ville: 'maisons-alfort',
   article: '/blog/deratisation-logement-syndrome-diogene',
-  photos: ['ratDiogene', 'trouRat1', 'trouRat3'] as PhotoKey[],
+  photos: ['ratDiogene', 'diogeneCrottes', 'trouRat1', 'trouRat3', 'diogeneNettoyage'] as PhotoKey[],
   videos: [
+    { src: '/chantiers/diogene-avant-apres-maisons-alfort.mp4', legende: 'Avant / après : du logement envahi au garage vidé et rincé (Maisons-Alfort, 94)', banniere: true, apercu: 3 },
     { src: '/chantiers/rats-diogene-video-1.mp4', legende: 'Ramassage d’un rat, placé dans un bac fermé (Maisons-Alfort, 94)' },
     { src: '/chantiers/rats-diogene-video-2.mp4', legende: 'Rats ramassés deux jours après la pose des postes (Maisons-Alfort, 94)' },
     { src: '/chantiers/rats-trous-cloison-video.mp4', legende: 'Retour sur le chantier : les trous laissés par les rats, avant rebouchage (Maisons-Alfort, 94)' },
@@ -199,8 +225,9 @@ export const MEDIAS_DERATISATION = {
 
 // Médias guêpes et frelons, et pigeons (photos de la fiche Google)
 export const MEDIAS_FRELONS = {
-  photos: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[],
+  photos: ['frelonsNacelle1', 'frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[],
   videos: [
+    { src: '/chantiers/frelons-nacelle-champigny-sur-marne.mp4', legende: 'Nid de frelons asiatiques à 12 m : intervention au camion nacelle (Champigny-sur-Marne, 94)', banniere: true, apercu: 2 },
     { src: '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4', legende: 'Nid de frelons dans une cheminée, sur la toiture (Nogent-sur-Marne, 94)', banniere: true },
     { src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true },
   ],
@@ -240,5 +267,17 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
     video: { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Punaises mortes au sol : résultat du premier passage, avant le deuxième (Paris 12e)', banniere: true },
     article: '/blog/punaises-de-lit-paris-12-grosse-infestation',
+  },
+}
+
+// Vrais chantiers mis en avant sur la page nuisible + ville où ils ont eu lieu (10/11/2026)
+export const CHANTIERS_VILLE: Record<string, Record<string, { titre: string; photos: PhotoKey[]; videos: { src: string; legende: string; banniere?: boolean; apercu?: number }[]; lien: { href: string; label: string } }>> = {
+  frelons: {
+    'champigny-sur-marne': {
+      titre: 'Notre chantier à Champigny-sur-Marne : un nid de frelons asiatiques à 12 m, traité au camion nacelle',
+      photos: ['frelonsNacelle1', 'frelonsNacelle2', 'frelonsNacelle3'],
+      videos: [MEDIAS_FRELONS.videos[0]],
+      lien: { href: '/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne', label: 'Lire le récit complet de l’intervention à la nacelle' },
+    },
   },
 }

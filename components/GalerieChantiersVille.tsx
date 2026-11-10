@@ -7,10 +7,10 @@ import type { FamilleVille } from '@/lib/services-ville'
 
 const POOL: Partial<Record<FamilleVille, PhotoKey[]>> = {
   punaises: ['vincennesMortes1', 'vincennesMortes2', 'creteilLattes1', 'creteilLattes2', 'cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
-  deratisation: ['ratDiogene', 'trouRat1', 'trouRat2', 'trouRat3', 'ratPiege', 'ratPlaque', 'rongeursGlu'],
+  deratisation: ['ratDiogene', 'diogeneCrottes', 'trouRat1', 'trouRat2', 'trouRat3', 'ratPiege', 'ratPlaque', 'rongeursGlu'],
   souris: ['sourisAirbnb', 'sourisGlu', 'rongeursGlu', 'ratPiege', 'trouRat1', 'ratPlaque'],
   cafards: ['cafardsSol', 'cafardsTiroir', 'cafardsTiroir2', 'cafardsMeuble'],
-  frelons: ['frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'frelonsAsiatiques', 'frelonsEcoleTech', 'frelonsEcoleNid', 'frelonsBuissonTech', 'nidGuepes', 'toit'],
+  frelons: ['frelonsNacelle1', 'frelonsNacelle3', 'frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'frelonsAsiatiques', 'frelonsEcoleTech', 'frelonsEcoleNid', 'frelonsBuissonTech', 'nidGuepes', 'toit'],
 }
 const LABEL: Partial<Record<FamilleVille, string>> = {
   punaises: 'de punaises de lit', deratisation: 'de dératisation', souris: 'contre les souris', cafards: 'contre les cafards', frelons: 'de destruction de nids',

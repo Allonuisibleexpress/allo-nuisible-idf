@@ -14,7 +14,10 @@ import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { SITE_URL, pageMetadata } from '@/lib/seo'
 import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
-import GalerieChantiersVille from '@/components/GalerieChantiersVille'
+import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
+import { MiniaturesChantier } from '@/components/ContenuNuisible'
+import MediasChantier from '@/components/MediasChantier'
+import { CHANTIERS_VILLE } from '@/lib/photos-chantiers'
 import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
@@ -182,6 +185,18 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           fil={{ href: c.pilier.href, label: c.pilier.label }}
           prix={profil.prix} prixNote={profil.prixNote}
           accroche={`${phraseDistance(v.slug, v.nom)} ${profil.accroches[rang % profil.accroches.length]}`} />
+        {CHANTIERS_VILLE[sl]?.[v.slug] ? (
+          <MiniaturesChantier a={v.a} ancre="#chantier-en-images" photos={CHANTIERS_VILLE[sl][v.slug].photos} />
+        ) : (
+          <MiniaturesChantier a={v.a} photos={photosChantierVille(profil.famille, v.slug, [], 5)} />
+        )}
+        {CHANTIERS_VILLE[sl]?.[v.slug] && (
+          <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-5xl mx-auto">
+              <MediasChantier photos={CHANTIERS_VILLE[sl][v.slug].photos} videos={CHANTIERS_VILLE[sl][v.slug].videos} titre={CHANTIERS_VILLE[sl][v.slug].titre} lien={CHANTIERS_VILLE[sl][v.slug].lien} />
+            </div>
+          </section>
+        )}
 
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
