@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_PUNAISES, GUIDE_PUNAISES } from '@/lib/contenu-services/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
@@ -17,12 +18,12 @@ const data: ServiceData = {
     { price: 'Sur devis', label: 'T2 ou T3' },
     { price: 'Sur devis', label: 'Maison' },
   ],
-  trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', 'Protocole ANSES', 'Garantie 1 an'],
+  trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', '2 passages inclus', 'Garantie 1 an'],
   benefits: [
-    { icon: 'microscope', title: 'Insecticides de 4e génération', text: 'Les punaises de lit ont développé des résistances aux produits grand public. Nos biocides professionnels agissent sur le système nerveux et restent actifs plusieurs semaines après le passage.' },
+    { icon: 'microscope', title: 'Insecticides professionnels', text: 'Les punaises de lit ont développé des résistances aux produits grand public. Nos biocides professionnels agissent sur le système nerveux et restent actifs plusieurs semaines après le passage.' },
     { icon: 'thermo', title: 'Cryogénie et vapeur sèche', text: 'La neige carbonique (environ −78 °C) ou la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. Idéal pour matelas, sommiers, canapés et plinthes : le logement reste utilisable juste après.' },
     { icon: 'search', title: 'Inspection complète du logement', text: 'Matelas, sommier, cadre de lit, plinthes, prises électriques, meubles proches du lit : nos techniciens inspectent chaque recoin pour ne laisser aucun foyer sans traitement.' },
-    { icon: 'shield', title: 'Protocole ANSES validé', text: 'Notre protocole suit les recommandations officielles de l\'Agence nationale de sécurité sanitaire. Traitement de toutes les zones de vie, pas seulement le lit.' },
+    { icon: 'shield', title: 'Protocole complet, toutes les pièces', text: 'Notre protocole s\'appuie sur les recommandations officielles (ANSES, ministère de la Santé). Traitement de toutes les zones de vie, pas seulement le lit.' },
   ],
   process: [
     { title: 'Diagnostic téléphonique', text: 'Vous décrivez les symptômes (piqûres, taches, observations). Nous évaluons le niveau d\'infestation et confirmons le tarif. Devis gratuit, sans engagement.' },
@@ -30,6 +31,8 @@ const data: ServiceData = {
     { title: 'Traitement adapté à votre logement', text: 'Cryogénie ou vapeur sèche sur la literie, les meubles et les recoins, et insecticide rémanent de 4e génération sur les surfaces infestées et adjacentes. Après un traitement insecticide, vous quittez le logement 4 à 6 h.' },
     { title: 'Suivi & garantie', text: 'Retour sous 15 jours pour contrôle. En cas de réapparition dans le délai de garantie, intervention gratuite. Vous dormez tranquille.' },
   ],
+  methodes: METHODES_PUNAISES,
+  guide: GUIDE_PUNAISES,
   pricing: [
     {
       label: 'Studio',
@@ -81,7 +84,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Punaises de lit : traitement professionnel en Île-de-France',
+  title: 'Punaises de lit : traitement dès 290 €, 2 passages inclus',
   description: 'Cryogénie, vapeur sèche ou insecticide rémanent selon votre logement, par des techniciens certifiés. Résultat garanti, 7j/7, devis gratuit.',
   path: '/services/punaises-de-lit',
 })

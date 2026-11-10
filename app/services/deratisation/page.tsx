@@ -3,6 +3,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
 import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
+import { METHODES_DERATISATION, GUIDE_DERATISATION } from '@/lib/contenu-services/deratisation'
 
 const data: ServiceData = {
   badge: 'Rats · Souris · Ragondins · Particuliers, pros & copropriétés',
@@ -28,6 +29,8 @@ const data: ServiceData = {
     { title: 'Suivi & relevés réguliers', text: 'Retour sous 1 à 2 semaines pour relever les consommations, recharger les appâts et évaluer l\'efficacité. Ajustement du dispositif si nécessaire.' },
     { title: 'Colmatage & attestation', text: 'Identification et colmatage des points d\'entrée. Fourniture de l\'attestation d\'intervention et du rapport de suivi. Conseils préventifs pour éviter les réinfestations.' },
   ],
+  methodes: METHODES_DERATISATION,
+  guide: GUIDE_DERATISATION,
   pricing: [
     {
       label: 'Particulier',
@@ -78,7 +81,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Dératisation / Rongeurs : rats et souris en IDF, 7j/7',
+  title: 'Dératisation en Île-de-France dès 120 € : rats, souris',
   description: 'Rats ou souris ? Dératisation par des techniciens Certibiocide : postes sécurisés ou pièges connectés, colmatage, attestation pro. Devis gratuit.',
   path: '/services/deratisation',
 })

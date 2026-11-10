@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_CHENILLES, GUIDE_CHENILLES } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_CHENILLES, GUIDES_CHENILLES } from '@/lib/villes-chenilles'
 
@@ -27,6 +28,8 @@ const data: ServiceData = {
     { title: 'Écopièges et pièges', text: 'Pose d\'écopièges sur les troncs avant la descente des chenilles, et de pièges à phéromones l\'été pour limiter la ponte de l\'année suivante.' },
     { title: 'Conseils et suivi', text: 'Calendrier d\'intervention pour l\'année suivante, conseils de prévention (nichoirs à mésanges, choix des essences) et suivi des arbres.' },
   ],
+  methodes: METHODES_CHENILLES,
+  guide: GUIDE_CHENILLES,
   pricing: [
     { label: 'Jardin', price: '89', description: 'Nid accessible', features: ['Diagnostic', 'Retrait des nids', 'Écopièges si besoin', 'Conseils de prévention'] },
     { label: 'Grand terrain', price: '149', description: 'Nid en hauteur, perche télescopique', features: ['Diagnostic complet', 'Retrait des nids en hauteur', 'Écopièges et pièges à phéromones', 'Calendrier annuel'], highlight: true },
@@ -47,7 +50,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Chenilles processionnaires : retrait des nids, écopièges',
+  title: 'Chenilles processionnaires : nids retirés dès 89 €',
   description: 'Chenilles processionnaires du pin et du chêne : retrait des nids, écopièges, pièges à phéromones et prévention, par des techniciens équipés. Devis gratuit.',
   path: '/services/chenilles-processionnaires',
 })

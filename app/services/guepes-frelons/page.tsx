@@ -13,6 +13,8 @@ import { MEDIAS_FRELONS } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { MethodesDetaillees, GuideDetaille } from '@/components/MethodesService'
+import { METHODES_FRELONS, GUIDE_FRELONS } from '@/lib/contenu-services/fourmis-frelons'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 
 const PHONE = '07 68 07 72 19'
@@ -672,7 +674,11 @@ export default function GuêpesFrelonsPage() {
         {/* Vrais avis Google (lib/avis-google.ts) */}
         <AvisGoogle />
 
+        <MethodesDetaillees bloc={METHODES_FRELONS} />
+        <GuideDetaille guide={GUIDE_FRELONS} />
+
         {/* ══════════════════ FORMULAIRE DE RAPPEL ══════════════════ */}
+
         <section id="rappel" className="reveal py-14 md:py-18" style={{ background: '#0d0d0d' }}>
           <div className="max-w-xl mx-auto px-4 md:px-6">
             <div

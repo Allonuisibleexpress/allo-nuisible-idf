@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_DESINFECTION, GUIDE_DESINFECTION } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
 const data: ServiceData = {
@@ -24,6 +25,8 @@ const data: ServiceData = {
     { title: 'Traitement désinfectant', text: 'Application par pulvérisation, nébulisation ou brumisation selon la configuration. Traitement de toutes les surfaces, de l\'air ambiant et des zones difficiles d\'accès.' },
     { title: 'Ventilation & attestation', text: 'Temps de contact respecté selon le produit. Ventilation du local. Fourniture de l\'attestation d\'intervention et du rapport de désinfection.' },
   ],
+  methodes: METHODES_DESINFECTION,
+  guide: GUIDE_DESINFECTION,
   pricing: [
     {
       label: 'Logement',
@@ -57,7 +60,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Désinfection professionnelle avec attestation, Île-de-France',
+  title: 'Désinfection après nuisibles dès 150 €, attestation',
   description: 'Désinfection après infestation, sinistre ou contamination : bactéries, virus, moisissures. Attestation officielle fournie. Devis gratuit.',
   path: '/services/desinfection',
 })

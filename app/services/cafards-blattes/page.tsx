@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_CAFARDS, GUIDE_CAFARDS } from '@/lib/contenu-services/cafards'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_CAFARDS, GUIDES_CAFARDS } from '@/lib/villes-cafards'
 
@@ -25,6 +26,8 @@ const data: ServiceData = {
     { title: '2e passage : élimination des oothèques', text: 'Retour 2 à 3 semaines plus tard pour éliminer les jeunes blattes issues des cocons qui n\'avaient pas encore éclos. Cette étape est indispensable pour une éradication totale.' },
     { title: 'Attestation et garantie', text: 'Fourniture d\'une attestation d\'intervention pour vos obligations réglementaires. Garantie re-intervention si réapparition dans l\'année suivante.' },
   ],
+  methodes: METHODES_CAFARDS,
+  guide: GUIDE_CAFARDS,
   pricing: [
     {
       label: 'T1 ou T2',
@@ -65,7 +68,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Cafards et blattes : traitement en 2 passages, Île-de-France',
+  title: 'Cafards et blattes : traitement dès 120 €, 2 passages',
   description: 'Protocole en 2 passages : gel et insecticide professionnels, vapeur sèche ou cryogénie selon les pièces. Adapté aux cuisines et locaux pros.',
   path: '/services/cafards-blattes',
 })

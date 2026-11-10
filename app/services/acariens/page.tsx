@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_ACARIENS, GUIDE_ACARIENS } from '@/lib/contenu-services/acariens-puces'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 
@@ -29,6 +30,8 @@ const data: ServiceData = {
     { title: 'Traitement', text: 'Vapeur sèche, cryogénie ou pulvérisation acaricide selon les textiles, l\'importance du problème et vos préférences, pièce par pièce.' },
     { title: 'Conseils et suivi', text: 'Aération, taux d\'humidité, housses anti-acariens, entretien de la literie : nous vous expliquons comment éviter que la population ne se reforme.' },
   ],
+  methodes: METHODES_ACARIENS,
+  guide: GUIDE_ACARIENS,
   pricing: [
     { label: 'Une chambre', price: '120', description: 'Matelas, sommier, oreillers, à la vapeur sèche', features: ['Diagnostic', 'Vapeur sèche en profondeur', 'Conseils de prévention', 'Garantie 1 an'] },
     { label: 'Logement complet', price: 'Sur devis', description: 'Literie, canapés, tapis, rideaux', features: ['Toutes les pièces', 'Vapeur, cryogénie ou acaricide', 'Plan de prévention', 'Garantie 1 an'], highlight: true },
@@ -56,7 +59,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Traitement anti-acariens en Île-de-France, dès 120 €',
+  title: 'Traitement anti-acariens dès 120 € : vapeur, cryogénie',
   description: 'Acariens dans la literie, le canapé ou les tapis : vapeur sèche, cryogénie ou acaricide par des techniciens Certibiocide. Dès 120 € TTC, devis gratuit.',
   path: '/services/acariens',
 })

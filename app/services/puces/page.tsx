@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_PUCES, GUIDE_PUCES } from '@/lib/contenu-services/acariens-puces'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUCES } from '@/lib/villes-puces'
 
@@ -28,6 +29,8 @@ const data: ServiceData = {
     { title: 'Traitement', text: 'Insecticide professionnel sur les sols, les textiles et les zones de repos de l’animal, en insistant sur les fentes et le dessous des meubles.' },
     { title: 'Second passage et suivi', text: 'Aspiration quotidienne quelques semaines, second passage si besoin. Garantie 1 an.' },
   ],
+  methodes: METHODES_PUCES,
+  guide: GUIDE_PUCES,
   pricing: [
     { label: 'Appartement', price: '120', description: 'Sols, textiles et couchage de l’animal', features: ['Toutes les pièces', 'Insecticide professionnel', 'Conseils de préparation', 'Garantie 1 an'] },
     { label: 'Maison', price: 'Sur devis', description: 'Toutes les pièces, garage et véranda', features: ['Traitement complet', 'Second passage si besoin', 'Recherche de l’origine', 'Garantie 1 an'], highlight: true },
@@ -53,7 +56,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Traitement puces : logement traité dès 120 €, 7j/7',
+  title: 'Traitement puces dès 120 € : maison et appartement',
   description: 'Puces dans la maison, piqûres aux chevilles, puces de parquet : traitement du logement par des techniciens Certibiocide, en lien avec le vétérinaire. Dès 120 € TTC.',
   path: '/services/puces',
 })

@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_CRYOGENIE, GUIDE_CRYOGENIE } from '@/lib/contenu-services/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 
@@ -44,6 +45,8 @@ const data: ServiceData = {
       ['Insecticide', 'Produit professionnel appliqué par un technicien certifié Certibiocide', 'Infestations importantes, nombreuses pièces touchées'],
     ],
   },
+  methodes: METHODES_CRYOGENIE,
+  guide: GUIDE_CRYOGENIE,
   pricing: [
     {
       label: 'Studio',
@@ -97,7 +100,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Cryogénie punaises de lit : traitement sans insecticide',
+  title: 'Cryogénie punaises de lit dès 290 €, sans insecticide',
   description: 'Punaises de lit traitées par cryogénie (−78 °C) : œufs et adultes tués au contact, sans insecticide. 2 passages inclus dès 290 € TTC, garantie 1 an.',
   path: '/services/cryogenie-punaises-de-lit',
 })

@@ -8,6 +8,8 @@ import { Phone, ShieldCheck, ChevronDown, X } from 'lucide-react'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { MethodesDetaillees, GuideDetaille } from '@/components/MethodesService'
+import { METHODES_FOURMIS, GUIDE_FOURMIS } from '@/lib/contenu-services/fourmis-frelons'
 
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
@@ -372,7 +374,10 @@ export default function FourmisPage() {
           </div>
         </section>
 
+        <MethodesDetaillees bloc={METHODES_FOURMIS} />
+
         {/* ══════════════════ LOCALISATION ══════════════════ */}
+
         <section className="reveal py-14 md:py-20 px-4 md:px-6" style={{ background: '#080808' }}>
           <div className="max-w-4xl mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
@@ -429,7 +434,10 @@ export default function FourmisPage() {
           </div>
         </section>
 
+        <GuideDetaille guide={GUIDE_FOURMIS} fond="#0a0a0a" />
+
         {/* ══════════════════ FAQ ══════════════════ */}
+
         <section className="reveal py-12 lg:py-16" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto px-4">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>

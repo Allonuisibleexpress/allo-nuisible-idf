@@ -18,6 +18,7 @@ import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
+import { MethodesDetaillees, GuideDetaille, type BlocMethodes, type GuideService } from '@/components/MethodesService'
 import type { CleAvis } from '@/lib/avis-google'
 
 /** Icônes de bénéfices — clés sémantiques mappées vers Lucide (fallback emoji). */
@@ -69,6 +70,9 @@ export interface ServiceData {
   urgence?: { titre: string; texte: string }
   // Tableau comparatif affiché après le déroulé (ex. cryogénie, vapeur, insecticide)
   tableau?: { titre: string; intro?: string; head: string[]; rows: string[][] }
+  // Méthodes détaillées et guide long (contenu propre, lib/contenu-services/)
+  methodes?: BlocMethodes
+  guide?: GuideService
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
@@ -377,6 +381,8 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </section>
 
         {/* ── TABLEAU COMPARATIF ── */}
+        {data.methodes && <MethodesDetaillees bloc={data.methodes} />}
+
         {data.tableau && (
           <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
             <div className="max-w-4xl mx-auto">
@@ -401,6 +407,8 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         )}
 
         {/* ── PRICING ── */}
+        {data.guide && <GuideDetaille guide={data.guide} />}
+
         <section className="py-16 md:py-24 px-4" style={{ background: '#080808' }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">

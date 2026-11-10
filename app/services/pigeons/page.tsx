@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { METHODES_PIGEONS, GUIDE_PIGEONS } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { MEDIAS_PIGEONS } from '@/lib/photos-chantiers'
 
@@ -25,6 +26,8 @@ const data: ServiceData = {
     { title: 'Installation professionnelle', text: 'Nos techniciens interviennent avec les équipements de sécurité requis pour le travail en hauteur (harnais, nacelle si nécessaire). Installation propre, rapide et discrète.' },
     { title: 'Garantie & suivi', text: 'Nos installations sont garanties contre les défauts de pose. En cas de contournement par les pigeons, nous revenons pour ajuster et compléter la protection.' },
   ],
+  methodes: METHODES_PIGEONS,
+  guide: GUIDE_PIGEONS,
   pricing: [
     {
       label: 'Rebord / Corniche',
@@ -63,7 +66,7 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Dépigeonnage : pics, filets et répulsifs en Île-de-France',
+  title: 'Dépigeonnage dès 150 € : pics et filets, balcons, IDF',
   description: 'Pics inox, filets sur mesure et dispositifs répulsifs pour protéger toits, rebords, balcons et façades, sans nuire aux oiseaux. Devis gratuit.',
   path: '/services/pigeons',
 })
