@@ -1,13 +1,19 @@
 import { notFound } from 'next/navigation'
+import LocalVille from '@/components/LocalVille'
+import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
+import { LOCAL_DERATISATION_75_92 } from '@/lib/local-deratisation-75-92'
+import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
+import ProtocoleCondense, { PROTOCOLE_DERATISATION } from '@/components/ProtocoleCondense'
+import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { villesVoisines } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
-import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import { HeroVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
-import GalerieChantiersVille from '@/components/GalerieChantiersVille'
+import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
@@ -125,6 +131,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           fil={{ href: '/services/deratisation', label: 'Dératisation' }}
           prix="120 €" prixNote="Appartement, rats ou souris. Devis gratuit."
           accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
+        <MiniaturesChantier a={v.a} photos={photosChantierVille('deratisation', v.slug, v.slug === CHANTIER_DIOGENE.ville ? CHANTIER_DIOGENE.photos : [], 5)} />
 
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
@@ -171,6 +178,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
+        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug]} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
@@ -182,7 +190,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
         <SituationsVille famille="deratisation" slug={v.slug} a={v.a} />
 
-        <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe la dératisation ${v.a}`} etapes={ETAPES} />
+        <ProtocoleCondense p={PROTOCOLE_DERATISATION} a={v.a} />
+
 
         <TarifsVille titre={`Prix d’une dératisation ${v.a}`}
           intro="Le devis est gratuit et le prix est fixé avant l’intervention. Rats ou souris, le tarif dépend du lieu et de l’ampleur."
@@ -208,28 +217,6 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </section>
         )}
 
-        {/* ── MÉTHODE ALTERNATIVE ── */}
-        <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Avec ou sans raticide : <span style={{ color: ACCENT }}>vous avez le choix</span></h2>
-            <p className="text-white/55 mb-2">
-              Postes d&apos;appâtage sécurisés ou pièges, toujours avec le colmatage des accès : la méthode est choisie selon le lieu et l&apos;infestation.
-            </p>
-            <div className="rounded-2xl p-6 mt-8 text-left" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>Méthode alternative</p>
-              <p className="text-lg font-black text-white mb-2">Le piège multicapture Ekomille {v.a}</p>
-              <p className="text-white/70 text-sm leading-relaxed mb-3">
-                La méthode la plus courante reste les postes d&apos;appâtage avec raticide. Si vous n&apos;en voulez pas : posé sur le passage le plus fréquenté et appâté avec des appâts alimentaires, Ekomille fait tomber le rongeur dans une cuve fermée où il reste.
-                Pas de cadavre dans la rue, au jardin ou dans une cloison, à portée des enfants et des chiens.
-              </p>
-              <a href="/blog/deratisation-sans-mort-aux-rats" className="text-sm font-bold underline" style={{ color: ACCENT }}>Comment fonctionne le piège Ekomille</a>
-            </div>
-            <p className="text-white/60 text-sm mt-8">
-              Pour aller plus loin : <a href="/services/deratisation" className="underline" style={{ color: ACCENT }}>notre page dératisation, rats et souris</a>.
-            </p>
-          </div>
-        </section>
-
         {/* ── GUIDES DU BLOG ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
@@ -247,6 +234,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </div>
           </div>
         </section>
+
+        <ContenuNuisible data={CONTENU_DERATISATION} slug={v.slug} a={v.a} nom={v.nom} partie={3} />
 
         <ContactMairie slug={v.slug} service="deratisation" a={v.a} />
 

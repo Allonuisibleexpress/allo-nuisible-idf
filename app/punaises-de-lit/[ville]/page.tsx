@@ -1,11 +1,17 @@
 import { notFound } from 'next/navigation'
+import LocalVille from '@/components/LocalVille'
+import { LOCAL_PUNAISES_94 } from '@/lib/local-punaises-94'
+import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
+import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
+import ProtocoleCondense, { PROTOCOLE_PUNAISES } from '@/components/ProtocoleCondense'
+import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { villesVoisines, premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
-import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import { HeroVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
@@ -16,7 +22,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import AvisDefilants from '@/components/AvisDefilants'
-import GalerieChantiersVille from '@/components/GalerieChantiersVille'
+import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
@@ -138,6 +144,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           fil={{ href: '/services/punaises-de-lit', label: 'Punaises de lit' }}
           prix="290 €" prixNote="Studio ou T1, 2 passages inclus. Devis gratuit."
           accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
+        <MiniaturesChantier a={v.a} photos={photosChantierVille('punaises', v.slug, CHANTIERS_PUNAISES_VILLE[v.slug]?.photos ?? [], 5)} />
 
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
@@ -177,10 +184,12 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
+        <LocalVille nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug]} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 
-        <EtapesVille slug={v.slug} a={v.a} titre={`Comment se passe le traitement ${v.a}`} etapes={ETAPES} />
+        <ProtocoleCondense p={PROTOCOLE_PUNAISES} a={v.a} />
+
 
         <TarifsVille titre={`Prix d’un traitement punaises de lit ${v.a}`}
           intro="Deux passages toujours inclus, quelle que soit la méthode. Le devis est gratuit et le prix est fixé avant l’intervention."
@@ -206,58 +215,6 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           </section>
         )}
 
-        {/* ── TOUTES LES MÉTHODES ── */}
-        <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 text-center">Avec ou sans insecticide : <span style={{ color: ACCENT }}>nos méthodes {v.a}</span></h2>
-            <p className="text-white/55 mb-8 max-w-2xl mx-auto text-center">
-              Traitement insecticide professionnel ou sans insecticide, avec la cryogénie et la vapeur sèche : le technicien vous propose la méthode adaptée à votre logement et vous explique son choix avant d&apos;intervenir.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[...METHODES_PUNAISES.slice(rang % METHODES_PUNAISES.length), ...METHODES_PUNAISES.slice(0, rang % METHODES_PUNAISES.length)].slice(0, 3).map((m) => (
-                <a key={m.titre} href={`/blog/${m.guide}`} className="group rounded-2xl p-6 transition-colors hover:bg-white/[0.06]" style={card}>
-                  <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
-                    style={{ color: ACCENT, background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
-                  <h3 className="text-xl font-black text-white mb-2">{m.titre}</h3>
-                  <p className="text-white/65 text-sm leading-relaxed mb-3">{premierePhrase(m.texte)}</p>
-                  <span className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
-                    En savoir plus <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </a>
-              ))}
-            </div>
-
-            {/* Cryogénie : 5 formulations en rotation d'une ville à l'autre, lien vers la page dédiée */}
-            <p className="text-white/70 leading-relaxed mt-6 text-center">
-              {[
-                <>Vous préférez un traitement sans produit chimique ? La cryogénie, de la neige carbonique à environ −78 °C, tue les punaises et leurs œufs au contact. Voir notre <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>traitement des punaises de lit par cryogénie</a>, avec les vidéos de nos chantiers.</>,
-                <>Enfants en bas âge, animaux, personne fragile : {v.a}, nous pouvons traiter votre logement par cryogénie, sans insecticide. Découvrez <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>comment se déroule un traitement par cryogénie</a>.</>,
-                <>Sèche et précise, la cryogénie est notre méthode de choix pour les fentes, les cadres de lit et le mobilier : elle ne laisse aucun produit derrière elle. Tout savoir sur <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>notre traitement par cryogénie</a>.</>,
-                <>Hôtels, foyers, résidences : {v.a}, nous traitons chambre par chambre par cryogénie pour limiter la gêne des occupants. Voir notre page <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>cryogénie et punaises de lit</a>.</>,
-                <>Le froid comme arme : la neige carbonique tue au contact, puis un second passage traite les éclosions. Notre page <a href="/services/cryogenie-punaises-de-lit" className="underline" style={{ color: ACCENT }}>cryogénie</a> détaille la méthode, les prix et nos chantiers en vidéo.</>,
-              ][rang % 5]}
-            </p>
-
-            {avecEncadre && (
-            <div className="rounded-2xl p-6 mt-6" style={card}>
-              <h3 className="text-lg font-black text-white mb-3 text-center">En attendant le technicien : 3 gestes utiles</h3>
-              <p className="text-white/60 text-sm mb-3">Recommandé par le site du gouvernement stop-punaises.gouv.fr, pour le linge et les effets personnels :</p>
-              <ul className="space-y-2">
-                {[
-                  'Lavage en machine à 60 °C pendant 1 heure.',
-                  'Ou sèche-linge à la plus haute température pendant au moins 30 minutes.',
-                  'Ou congélateur, dans un sac fermé, pendant 72 heures.',
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-sm text-white/75">
-                    <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />{t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            )}
-          </div>
-        </section>
-
         {/* ── GUIDES DU BLOG ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
@@ -278,6 +235,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             </p>
           </div>
         </section>
+
+        <ContenuNuisible data={CONTENU_PUNAISES} slug={v.slug} a={v.a} nom={v.nom} partie={3} />
 
         <ContactMairie slug={v.slug} service="punaises" a={v.a} />
 

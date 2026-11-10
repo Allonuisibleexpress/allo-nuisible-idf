@@ -16,15 +16,23 @@ const LABEL: Partial<Record<FamilleVille, string>> = {
   punaises: 'de punaises de lit', deratisation: 'de dératisation', souris: 'contre les souris', cafards: 'contre les cafards', frelons: 'de destruction de nids',
 }
 
-export default function GalerieChantiersVille({ famille, slug, a, exclure = [] }: { famille: FamilleVille; slug: string; a: string; exclure?: PhotoKey[] }) {
+// Photos de chantier montrées pour une ville (rotation selon la ville), réutilisées en miniatures sous le haut de page
+export function photosChantierVille(famille: FamilleVille, slug: string, exclure: PhotoKey[] = [], n = 4): PhotoKey[] {
   const pool = (POOL[famille] ?? []).filter((p) => !exclure.includes(p))
-  if (pool.length < 2) return null
+  if (pool.length < 2) return []
   const h = slug.split('').reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 13)
   const d = h % pool.length
-  const photos = [...pool.slice(d), ...pool.slice(0, d)].slice(0, 4)
+  return [...pool.slice(d), ...pool.slice(0, d)].slice(0, n)
+}
+
+export default function GalerieChantiersVille({ famille, slug, a, exclure = [] }: { famille: FamilleVille; slug: string; a: string; exclure?: PhotoKey[] }) {
+  const photos = photosChantierVille(famille, slug, exclure)
+  if (!photos.length) return null
   return (
+    <div id="nos-chantiers" className="scroll-mt-20">
     <PhotosChantiers photos={photos} fond="#0b0b0b"
       titre={`Nos chantiers ${LABEL[famille] ?? ''} en Île-de-France`}
       intro={`Photos prises par nos techniciens sur de vraies interventions, près de chez vous. Chaque légende indique la ville du chantier. Nous intervenons ${a} avec les mêmes méthodes.`} />
+    </div>
   )
 }

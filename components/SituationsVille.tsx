@@ -6,6 +6,8 @@ import type { FamilleVille } from '@/lib/services-ville'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
+import { melange } from '@/components/PucesVilleExtra'
+
 const h = (s: string) => s.split('').reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 17)
 
 type Situation = { t: (a: string) => string; x: string; lien?: { href: string; label: string } }
@@ -115,8 +117,9 @@ export default function SituationsVille({ famille, slug, a }: { famille: Famille
   const d = SITUATIONS[famille]
   const k = h(slug + famille)
   const n = d.liste.length
-  const depart = k % n
-  const choix = [...d.liste.slice(depart), ...d.liste.slice(0, depart)].slice(0, 4)
+  // Mélange propre à chaque ville (et non 4 situations consécutives) : deux villes partagent rarement les mêmes cas
+  void n
+  const choix = d.liste.map((x, i) => [melange((k ^ Math.imul(i + 1, 0x9e3779b1)) >>> 0), x] as const).sort((p, q) => p[0] - q[0]).slice(0, 4).map((e) => e[1])
   return (
     <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
       <div className="max-w-5xl mx-auto text-center">

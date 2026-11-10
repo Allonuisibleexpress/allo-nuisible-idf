@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/lib/seo'
 import { METHODES_PUNAISES, GUIDE_PUNAISES } from '@/lib/contenu-services/punaises'
+import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
@@ -33,6 +34,7 @@ const data: ServiceData = {
   ],
   methodes: METHODES_PUNAISES,
   guide: GUIDE_PUNAISES,
+  contenu: CONTENU_PUNAISES,
   pricing: [
     {
       label: 'Studio',

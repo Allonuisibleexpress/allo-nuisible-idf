@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
 import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
@@ -31,6 +32,7 @@ const data: ServiceData = {
   ],
   methodes: METHODES_DERATISATION,
   guide: GUIDE_DERATISATION,
+  contenu: CONTENU_DERATISATION,
   pricing: [
     {
       label: 'Particulier',
