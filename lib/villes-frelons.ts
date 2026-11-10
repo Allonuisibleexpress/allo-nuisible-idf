@@ -9,7 +9,8 @@
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 
 // Mise en ligne progressive pour Google (demandée le 08/11/2026) : 5 villes d'abord, les autres dans la semaine.
-export const FRELONS_VILLES_INDEXEES: string[] = ['saint-maurice', 'nogent-sur-marne', 'vincennes', 'saint-maur-des-fosses', 'champigny-sur-marne']
+export const FRELONS_VILLES_INDEXEES: string[] = ['saint-maurice', 'nogent-sur-marne', 'vincennes', 'saint-maur-des-fosses', 'champigny-sur-marne', // 08/11
+  'creteil', 'maisons-alfort', 'charenton-le-pont', 'fontenay-sous-bois', 'le-perreux-sur-marne'] // 10/11 ; le 12/11 : joinville-le-pont, saint-mande, alfortville, ivry-sur-seine, paris-12
 export const frelonsIndexee = (slug: string) => FRELONS_VILLES_INDEXEES.includes(slug)
 
 export const SOURCES_FRELONS = [
