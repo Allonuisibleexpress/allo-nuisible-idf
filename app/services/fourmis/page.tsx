@@ -195,7 +195,7 @@ export default function FourmisPage() {
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
                 <span className="text-white font-semibold">4,8/5</span>
-                <span className="text-white/40 text-sm hidden sm:inline">· 57 avis</span>
+                <span className="text-white/40 text-sm hidden sm:inline">· 59 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
