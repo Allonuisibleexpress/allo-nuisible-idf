@@ -96,11 +96,11 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil }
       {PHOTOS_MAIRIES[slug] && (
         <figure className="mt-10 lg:mt-0 max-w-md mx-auto lg:max-w-none w-full">
           <div className="relative rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.55)' }}>
-            <img src={PHOTOS_MAIRIES[slug].src} alt={`${MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}, façade`} width={760} height={900}
+            <img src={PHOTOS_MAIRIES[slug].src} alt={PHOTOS_MAIRIES[slug].lieu ? `${PHOTOS_MAIRIES[slug].lieu} : ${titre.toLowerCase()} ${a} par Allo Nuisible IDF` : `${MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}, façade`} width={760} height={900}
               className="w-full h-64 sm:h-80 lg:h-[440px] object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 p-5 text-left" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.85))' }}>
               <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Nous intervenons {a}</p>
-              <p className="text-white font-black text-lg leading-tight">{MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}</p>
+              <p className="text-white font-black text-lg leading-tight">{PHOTOS_MAIRIES[slug].lieu ?? MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}</p>
             </div>
           </div>
           <figcaption className="text-[10px] text-white/35 mt-2 text-center lg:text-right">

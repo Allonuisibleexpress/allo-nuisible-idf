@@ -1,6 +1,11 @@
 // Photos des mairies (Wikimedia Commons, licences libres), affichées en haut des pages ville + nuisible.
-// Vérifiées une à une le 08/11/2026. Pas de photo fiable trouvée pour Créteil, Nanterre et Puteaux.
-export const PHOTOS_MAIRIES: Record<string, { src: string; credit: string; licence: string; page: string }> = {
+// Vérifiées une à une le 08/11/2026.
+// Créteil, Nanterre, Puteaux (11/11/2026) : hôtels de ville récents encore protégés par le droit d'auteur de l'architecte
+// (pas de liberté de panorama commerciale en France) : on montre un autre lieu emblématique, libre de droits, nommé dans « lieu ».
+export const PHOTOS_MAIRIES: Record<string, { src: string; credit: string; licence: string; page: string; lieu?: string }> = {
+  'creteil': { src: '/mairies/creteil.jpg', credit: 'Paul Fleury', licence: 'CC BY 3.0', page: 'https://commons.wikimedia.org/wiki/File:Le_lac_de_Cr%C3%A9teil_-_panoramio_(5).jpg', lieu: 'Le lac de Créteil' },
+  'nanterre': { src: '/mairies/nanterre.jpg', credit: 'Benjamin Smith', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Nanterre_-_Mairie_du_Parc_-_9.JPG', lieu: 'La Mairie du Parc de Nanterre' },
+  'puteaux': { src: '/mairies/puteaux.jpg', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:%C3%89glise_Notre_Dame_Piti%C3%A9_-_Puteaux_(FR92)_-_2023-09-16_-_1.jpg', lieu: 'L’église Notre-Dame-de-Pitié de Puteaux' },
   'ablon-sur-seine': { src: '/mairies/ablon-sur-seine.jpg', credit: "Chabe01", licence: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Mairie_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_1.jpg" },
   'alfortville': { src: '/mairies/alfortville.jpg', credit: "Chabe01", licence: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:Mairie_-_Alfortville_(FR94)_-_2023-01-07_-_1.jpg" },
   'antony': { src: '/mairies/antony.jpg', credit: "Chabe01", licence: "CC BY-SA 4.0", page: "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ville_-_Antony_(FR92)_-_2023-03-19_-_1.jpg" },
