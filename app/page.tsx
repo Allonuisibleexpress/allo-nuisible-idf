@@ -13,8 +13,8 @@ import AccueilVilles from '@/components/AccueilVilles'
 import { CHAINE_YOUTUBE } from '@/lib/youtube'
 
 export const metadata = pageMetadata({
-  title: 'Allo Nuisible IDF : dératisation, punaises de lit 7j/7',
-  description: 'Dératisation, punaises de lit, cafards, frelons à Paris et en Île-de-France. Techniciens Certibiocide à Saint-Maurice, 7j/7. Devis gratuit, garantie 1 an.',
+  title: 'Allo Nuisible IDF : punaises de lit, rats, cafards 7j/7',
+  description: 'Punaises de lit, rats, cafards, frelons à Paris et en Île-de-France. Basés à Saint-Maurice, près de Maisons-Alfort et Charenton : 7j/7, devis gratuit.',
   path: '',
 })
 

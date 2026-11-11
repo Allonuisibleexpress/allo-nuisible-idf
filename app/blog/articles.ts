@@ -95,8 +95,8 @@ export const ARTICLES: Article[] = [
   {
     slug: 'lerot-grenier-combles',
     title: "Bruits la nuit dans le grenier ? Le lérot, ce « rongeur masqué » qui hiberne chez vous",
-    seoTitle: "Bruits la nuit dans le grenier ? C'est peut-être un lérot",
-    description: "Galopades au grenier la nuit, masque noir, queue touffue ? C'est sans doute un lérot. Comment le reconnaître, ce que dit la loi et comment l'écarter.",
+    seoTitle: "Lérot dans le grenier : le reconnaître et l'éloigner",
+    description: "Galopades la nuit dans les combles, masque noir, queue touffue : c'est un lérot. Le distinguer d'un rat, ce que dit la loi et comment l'éloigner.",
     date: '2026-09-23',
     category: 'Rongeurs',
     readMin: 7,
@@ -217,7 +217,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'souris-par-ou-entrent-elles',
     title: "Souris dans la maison : par où entrent-elles ? Le test du crayon qui vous le dit tout de suite",
-    seoTitle: "Souris : par où entrent-elles ? (le test du crayon)",
+    seoTitle: "Par où entrent les souris ? 8 accès à boucher avant l'hiver",
     description: "Une souris passe par un trou de 6 mm, la largeur d'un crayon. Les 8 points d'entrée à vérifier cet automne et comment les boucher sans erreur.",
     date: '2026-09-23',
     category: 'Rongeurs',
@@ -750,7 +750,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'rat-vide-sanitaire',
     title: "Rats dans le vide sanitaire : comment ils entrent sous votre maison et comment les en chasser",
-    seoTitle: "Rat dans le vide sanitaire : comment il entre et le chasser",
+    seoTitle: 'Rat dans le vide sanitaire : signes, accès et solutions',
     description: "Bruits sous le plancher, terriers autour de la maison ? Pourquoi le surmulot s'installe dans le vide sanitaire, comment le traiter et fermer ses accès.",
     date: '2026-10-30',
     category: 'Rongeurs',
@@ -1103,7 +1103,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'chenilles-processionnaires-cycle-dangers',
     title: "Chenilles processionnaires : un danger pour vos enfants et vos animaux ? Cycle de vie et bons réflexes",
-    seoTitle: "Chenilles processionnaires : dangers, cycle et bons réflexes",
+    seoTitle: 'Chenilles processionnaires : dangers pour vous et le chien',
     description: "Processionnaire du pin ou du chêne : comment elles vivent, pourquoi elles avancent en file, les dangers des poils urticants et les bons réflexes en cas de contact.",
     date: '2026-10-31',
     category: 'Chenilles processionnaires',
@@ -1233,8 +1233,8 @@ export const ARTICLES: Article[] = [
   {
     slug: 'rat-mode-de-vie',
     title: "Le rat : comment il vit, mange et se cache chez nous (ce qu'il faut savoir pour s'en débarrasser)",
-    seoTitle: "Rat : mode de vie, habitudes et comportement du surmulot",
-    description: "Où vit le rat, que mange-t-il, quand sort-il ? Mode de vie du surmulot et du rat noir, colonie, terriers, nage : tout pour mieux s'en protéger.",
+    seoTitle: "Surmulot (rat d'égout) : mode de vie, terriers, colonie",
+    description: "Le surmulot, ou rat d'égout, vit en colonie, nage et creuse des terriers. Où il niche, ce qu'il mange, quand il sort et comment l'empêcher d'entrer.",
     date: '2026-10-31',
     category: 'Rongeurs',
     readMin: 7,
@@ -1287,7 +1287,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'reproduction-des-rats',
     title: "Reproduction des rats : pourquoi une colonie explose si vite (et pourquoi il faut agir tout de suite)",
-    seoTitle: "Reproduction des rats : pourquoi une colonie explose si vite",
+    seoTitle: 'Reproduction du rat : combien de petits, à quel rythme ?',
     description: "Combien de petits par portée, combien de portées par an, à quel âge un rat se reproduit-il ? Les chiffres officiels et ce qu'ils changent pour agir vite.",
     date: '2026-10-31',
     category: 'Rongeurs',
@@ -1340,7 +1340,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'nourrir-oiseaux-pigeons-attire-rats',
     title: "Nourrir les oiseaux attire les rats : l'erreur que font beaucoup de jardiniers (et les bons gestes)",
-    seoTitle: "Nourrir les oiseaux attire les rats : les bons gestes",
+    seoTitle: 'Graines pour oiseaux et rats : nourrir sans les attirer',
     description: "Les graines jetées au sol pour les oiseaux ou les pigeons nourrissent aussi les rats. Ce que dit la loi et comment nourrir les oiseaux sans les attirer.",
     date: '2026-10-31',
     category: 'Rongeurs',
@@ -1677,7 +1677,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'acariens-humidite-maison',
     title: "Acariens et humidité : le bon taux à viser chez vous pour les faire disparaître",
-    seoTitle: "Acariens et humidité : le bon taux pour les faire reculer",
+    seoTitle: 'Acariens et humidité : le taux idéal (40 à 60 %) chez vous',
     description: "Les acariens aiment la chaleur et l'humidité. Le taux conseillé par l'Assurance maladie, comment le mesurer et 6 gestes pour assainir votre logement.",
     date: '2026-10-31',
     category: 'Acariens',
@@ -1856,7 +1856,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'comment-attrape-t-on-des-punaises-de-lit',
     title: "Comment attrape-t-on des punaises de lit ? Les 7 situations à risque (et comment s'en protéger)",
-    seoTitle: "Comment attrape-t-on des punaises de lit ? 7 situations",
+    seoTitle: 'Comment attrape-t-on des punaises de lit ? Les 7 causes',
     description: "Hôtel, Airbnb, meubles d'occasion, voisinage, linge partagé : les 7 façons d'attraper des punaises de lit et les gestes de prévention qui marchent vraiment.",
     date: '2026-11-01',
     category: 'Punaises de lit',
@@ -1949,7 +1949,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'traiter-vetements-punaises-de-lit',
     title: "Punaises de lit : comment traiter vos vêtements sans les ramener partout (60 °C, sèche-linge, congélateur)",
-    seoTitle: "Punaises de lit : traiter ses vêtements à 60 °C ou au froid",
+    seoTitle: 'Punaises de lit et vêtements : 60 °C, froid ou sèche-linge',
     description: "Vêtements et linge infestés : lavage à 60 °C, sèche-linge 30 min ou congélateur à -20 °C. Comment chaque méthode tue les punaises de lit, et nos solutions.",
     date: '2026-11-01',
     category: 'Punaises de lit',
@@ -2025,8 +2025,8 @@ export const ARTICLES: Article[] = [
   {
     slug: 'anthrenes-origine-traitement',
     title: "Anthrènes : ces petits insectes qui dévorent vos tapis et vêtements, d'où viennent-ils et comment s'en débarrasser ?",
-    seoTitle: "Anthrènes : d'où viennent-ils et comment s'en débarrasser",
-    description: "Petits coléoptères tachetés, larves velues qui trouent laine et tapis : d'où viennent les anthrènes, comment les traiter et les méthodes sans insecticide.",
+    seoTitle: "Anthrènes : larves dans les tapis, comment s'en débarrasser",
+    description: "Petits coléoptères tachetés, larves velues qui trouent laine et tapis : reconnaître l'anthrène, trouver la source et s'en débarrasser durablement.",
     date: '2026-11-01',
     category: 'Insectes',
     readMin: 7,
