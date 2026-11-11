@@ -72,6 +72,7 @@ export type VilleServiceConfig = {
   certification: string
   autresTitre: string
   // Contenu éditorial détaillé (texte, tableaux, listes) affiché après le contexte local
+  sectionsParPage?: number // nombre de sections affichées par page (1 par défaut), 11/11/2026
   sections?: { titre: string; paras: string[]; table?: { head: string[]; rows: string[][] }; liste?: string[] }[]
   protocole?: { titre: string; etapes: { titre: string; texte: string }[] }
   publics?: { titre: string; cartes: { titre: string; texte: string }[] }
@@ -123,7 +124,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
   // évite que toutes les pages villes répètent le même texte.
   const rang = Math.max(0, villes.findIndex((x) => x.slug === v.slug))
-  const sections = c.sections ? [c.sections[rang % c.sections.length]] : undefined
+  const nbSections = Math.min(c.sectionsParPage ?? 1, c.sections?.length ?? 0)
+  const sections = c.sections ? Array.from({ length: nbSections }, (_, i) => c.sections![(rang + i * 3) % c.sections!.length]).filter((x, i, l) => l.indexOf(x) === i) : undefined
   // Encadré de conseils et cartes « publics » en alternance d'une ville à l'autre
   const avecEncadre = rang % 2 === 0
   // Blocs communs en rotation : chaque page n'en montre qu'une partie, différente de ses voisines

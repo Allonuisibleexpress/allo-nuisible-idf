@@ -5,6 +5,8 @@
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_ACARIENS_GC } from '@/lib/local-acariens-gc'
+import { LOCAL_ACARIENS_94 } from '@/lib/local-acariens-94'
+import { ACARIENS_APPROFONDI } from '@/lib/acariens-approfondi'
 
 const AMELI = 'https://www.ameli.fr/assure/sante/themes/allergie/vivre-allergique'
 
@@ -79,6 +81,60 @@ export const CONFIG_ACARIENS: VilleServiceConfig = {
         "**Ne jamais aérer en hiver** : quelques minutes par jour suffisent à renouveler l'air.",
       ],
     },
+    {
+      titre: 'Acariens, punaises de lit, puces ou gale : ne pas confondre',
+      paras: [
+        "Beaucoup de personnes nous appellent pour des « acariens » alors qu'il s'agit d'un autre problème, et inversement. Les signes ne sont pas les mêmes, et le traitement non plus.",
+      ],
+      table: {
+        head: ['Problème', 'Ce que l\'on remarque', 'Ce qu\'il faut faire'],
+        rows: [
+          ['Acariens de la poussière', 'Aucune piqûre ; nez bouché, éternuements, yeux qui grattent, surtout au réveil ou en faisant le lit', 'Traiter la literie et les textiles, réduire l\'humidité, consulter un médecin en cas de symptômes'],
+          ['Punaises de lit', 'Piqûres souvent en ligne sur les bras, le cou, le dos ; petites taches noires sur le matelas', 'Voir notre [traitement des punaises de lit](/services/punaises-de-lit)'],
+          ['Puces', 'Piqûres groupées sur les chevilles et les mollets ; animal qui se gratte', 'Traiter l\'animal chez le vétérinaire et le logement : voir notre [traitement des puces](/services/puces)'],
+          ['Gale', 'Démangeaisons intenses, surtout la nuit, chez plusieurs personnes du foyer', 'Consulter un médecin : la gale se soigne par un traitement médical'],
+        ],
+      },
+    },
+    {
+      titre: 'Qui a le plus besoin d\'un traitement anti-acariens ?',
+      paras: [
+        "Les acariens vivent dans tous les logements, mais ils ne gênent pas tout le monde de la même façon. Le traitement est surtout utile dans ces situations :",
+      ],
+      liste: [
+        "**Une personne allergique aux acariens** dans le foyer, avec un diagnostic posé par un médecin ou un allergologue.",
+        "**L'arrivée d'un bébé** : beaucoup de parents veulent une chambre assainie, avec une literie traitée sans produit.",
+        "**Un matelas ou un canapé d'occasion**, ou une literie qui a déjà servi à d'autres personnes.",
+        "**Une location meublée**, un gîte ou une chambre d'hôtes, entre deux occupants.",
+        "**Un logement resté humide** après un dégât des eaux, une infiltration ou une longue période fermée.",
+        "**Les crèches, assistantes maternelles, résidences seniors et hôtels**, qui accueillent des publics sensibles.",
+      ],
+    },
+    {
+      titre: 'Literie : traiter, protéger ou remplacer ?',
+      paras: [
+        "Il n'est pas toujours nécessaire de changer son matelas. Voici comment nous vous conseillons, élément par élément :",
+      ],
+      table: {
+        head: ['Élément', 'Notre conseil'],
+        rows: [
+          ['Matelas', 'Traitement en profondeur à la vapeur sèche, puis housse anti-acariens intégrale. Remplacement seulement s\'il est très ancien ou abîmé.'],
+          ['Sommier tapissier', 'Traité avec le matelas : c\'est un réservoir souvent oublié.'],
+          ['Oreillers et couettes', 'Lavage à 60 °C si l\'étiquette le permet, sinon traitement sur place et housses intégrales.'],
+          ['Canapé en tissu', 'Vapeur sèche ou cryogénie selon le tissu, coussins compris.'],
+          ['Tapis et moquettes', 'Vapeur sèche en profondeur, puis aspiration régulière avec filtre HEPA.'],
+          ['Peluches', 'Lavage à 60 °C ou passage au congélateur, puis lavage. Limiter leur nombre dans le lit.'],
+          ['Rideaux et tentures', 'Lavage selon l\'étiquette, ou traitement sur place sans les décrocher.'],
+        ],
+      },
+    },
+    {
+      titre: 'Locataire, propriétaire, hôte : qui fait quoi ?',
+      paras: [
+        "Les acariens étant présents dans tous les logements, leur traitement est en général **à la charge de l'occupant**. En revanche, si l'humidité qui les fait proliférer vient d'un **défaut du logement** (infiltration, ventilation hors service, remontées d'humidité), la réparation revient au **propriétaire** : signalez-le par écrit.",
+        "Pour une **location meublée** ou une **location de courte durée**, c'est à l'exploitant de fournir une literie propre. Un traitement régulier des matelas et des canapés, avec une **attestation**, est un bon argument auprès des voyageurs allergiques.",
+      ],
+    },
   ],
   protocole: {
     titre: 'Notre intervention contre les acariens',
@@ -110,10 +166,12 @@ export const CONFIG_ACARIENS: VilleServiceConfig = {
     { label: 'Assurance maladie (ameli.fr), vivre au quotidien avec une allergie', url: AMELI },
     { label: 'Règlement (UE) n° 528/2012 sur les produits biocides (EUR-Lex)', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32012R0528' },
   ],
-  maj: '2026-10-31',
+  maj: '2026-11-11',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des produits acaricides professionnels.',
   autresTitre: 'Acariens dans d\'autres villes',
-  local: LOCAL_ACARIENS_GC,
+  local: { ...LOCAL_ACARIENS_94, ...LOCAL_ACARIENS_GC },
+  approfondi: ACARIENS_APPROFONDI,
+  sectionsParPage: 3,
   localTitre: (a, nom) => `Acariens ${a} : ce qui est propre à ${nom}`,
 }
 
