@@ -47,7 +47,7 @@ export function Scanner() {
         <span className={`${coin} scan-coin bottom-0 left-0 border-r-0 border-t-0 rounded-bl-xl`} style={{ borderColor: ACCENT }} />
         <span className={`${coin} scan-coin bottom-0 right-0 border-l-0 border-t-0 rounded-br-xl`} style={{ borderColor: ACCENT }} />
         <div className="relative w-full h-full rounded-xl overflow-hidden" style={{ background: '#111' }}>
-          <img key={f.id} src={f.photo.src} alt="" className="scan-img w-full h-full object-cover" style={{ filter: trouve ? 'none' : 'grayscale(0.6) brightness(0.75)', transition: 'filter .4s' }} />
+          <img key={f.id} src={f.photo.src} alt={`${f.nom} (${f.latin}) en photo`} className="scan-img w-full h-full object-cover" style={{ filter: trouve ? 'none' : 'grayscale(0.6) brightness(0.75)', transition: 'filter .4s' }} />
           <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '100% 6px' }} />
           <div className="scan-ligne absolute left-0 right-0 h-[3px]" style={{ background: ACCENT, boxShadow: `0 0 12px 3px ${ACCENT}, 0 0 28px 8px rgba(232,68,26,0.45)` }} />
         </div>

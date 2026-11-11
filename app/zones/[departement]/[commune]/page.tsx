@@ -62,6 +62,7 @@ export default function CommunePage({ params }: { params: Params }) {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://allonuisibleidf.fr' },{ '@type': 'ListItem', position: 2, name: 'Zones d’intervention', item: 'https://allonuisibleidf.fr/zones' },{ '@type': 'ListItem', position: 3, name: 'Val-de-Marne', item: 'https://allonuisibleidf.fr/zones/val-de-marne' },{ '@type': 'ListItem', position: 4, name: c.nom, item: `https://allonuisibleidf.fr/zones/val-de-marne/${c.slug}` }] }) }} />
       <Navbar />
       <main>
         {/* ── HERO ── */}

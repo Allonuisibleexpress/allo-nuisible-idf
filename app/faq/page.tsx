@@ -11,7 +11,7 @@ const ACCENT = '#E8441A'
 
 export const metadata = pageMetadata({
   title: `FAQ nuisibles : ${NB_QUESTIONS} réponses de nos techniciens`,
-  description: 'Prix, devis, garantie, méthodes (insecticide, vapeur sèche, cryogénie), rats, punaises de lit, cafards, frelons, saisons : toutes les réponses de nos techniciens certifiés.',
+  description: 'Prix, garantie, méthodes (insecticide, vapeur sèche, cryogénie), rats, punaises de lit, cafards, frelons : les réponses de nos techniciens certifiés.',
   path: '/faq',
 })
 

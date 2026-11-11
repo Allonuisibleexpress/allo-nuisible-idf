@@ -79,7 +79,7 @@ export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'a
     famille: 'cafards', motCle: 'Cafards', suffixes: [' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
     heroTitre: 'Traitement des cafards', prix: '120 €', prixNum: '120',
     prixNote: 'T1 ou T2, gel appât professionnel. Devis gratuit.', offre: 'T1 ou T2, cafards',
-    description: (a, cp) => `Cafards et blattes ${a}${cpTxt(cp)} : gel appât, insecticide ou vapeur sèche par un technicien certifié. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+    description: (a, cp) => `Cafards et blattes ${a}${cpTxt(cp)} : gel appât, insecticide ou vapeur sèche, technicien certifié. Dès 120 € TTC, devis gratuit, garanti 1 an.`,
     accroches: [
       'Cafards dans la cuisine ou la salle de bain ? Nous traitons les cachettes, pas seulement les insectes visibles.',
       'Gel appât, insecticide ciblé ou vapeur sèche : un technicien certifié choisit le traitement adapté à votre logement.',
@@ -131,7 +131,7 @@ export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'a
     famille: 'chenilles', motCle: 'Chenilles processionnaires', suffixes: [' : traitement', ''],
     heroTitre: 'Chenilles processionnaires', prix: '89 €', prixNum: '89',
     prixNote: 'Nid accessible, retrait et destruction. Devis gratuit.', offre: 'nid accessible, chenilles processionnaires',
-    description: (a, cp) => `Chenilles processionnaires ${a}${cpTxt(cp)} : retrait des nids, écopièges et pièges à phéromones. Dès 89 € TTC, devis gratuit, intervention rapide.`,
+    description: (a, cp) => `Chenilles processionnaires ${a}${cpTxt(cp)} : retrait des nids, écopièges, pièges à phéromones. Dès 89 € TTC, devis gratuit, 7j/7.`,
     accroches: [
       'Leurs poils sont très urticants pour les enfants et les chiens : ne touchez jamais un nid ni une procession.',
       'Retrait des nids en hauteur, écopièges et pièges à phéromones : nous protégeons votre jardin sur la durée.',

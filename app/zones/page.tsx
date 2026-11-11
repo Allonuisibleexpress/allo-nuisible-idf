@@ -5,6 +5,8 @@ import Footer from '@/components/Footer'
 import { pageMetadata } from '@/lib/seo'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
 import { premierePhrase } from '@/lib/maillage'
+import { SERVICES_DEP, DEPS, DEP_SLUGS, type ServiceDep } from '@/lib/departements-services'
+import { villesDuDepartement } from '@/lib/services-ville'
 
 const ACCENT = '#E8441A'
 
@@ -17,6 +19,7 @@ export const metadata = pageMetadata({
 export default function ZonesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://allonuisibleidf.fr' },{ '@type': 'ListItem', position: 2, name: 'Zones d’intervention', item: 'https://allonuisibleidf.fr/zones' }] }) }} />
       <Navbar />
       <main>
         <section className="relative pt-10 md:pt-14 pb-16 px-4" style={{ background: '#080808' }}>
@@ -55,10 +58,38 @@ export default function ZonesPage() {
             </div>
           </div>
         </section>
+        {/* ── PAGES PAR NUISIBLE ET PAR DÉPARTEMENT (11/11/2026) ── */}
+        <section className="py-16 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-4">Votre nuisible, <span style={{ color: ACCENT }}>votre département</span></h2>
+            <p className="text-white/65 max-w-3xl mx-auto mb-4 leading-relaxed">
+              Rats, punaises de lit, cafards, frelons : les nuisibles ne sont pas les mêmes dans un immeuble ancien de Paris, une résidence de ville nouvelle ou une maison en bordure de champs.
+              Chaque département a donc ses pages, avec les situations les plus fréquentes, nos méthodes et nos prix.
+            </p>
+            <p className="text-white/50 max-w-3xl mx-auto mb-10 text-sm">
+              Le devis est gratuit et nos prix de départ sont les mêmes partout en Île-de-France. Basés à Saint-Maurice, nous intervenons 7j/7.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+              {DEP_SLUGS.map((dep) => (
+                <div key={dep} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <p className="text-white font-black mb-1">{DEPS[dep].nom} <span style={{ color: ACCENT }}>({DEPS[dep].code})</span></p>
+                  <p className="text-white/45 text-xs mb-3">{villesDuDepartement(DEPS[dep].code).length} {dep === 'paris' ? 'arrondissements' : 'villes'} avec des pages dédiées</p>
+                  <ul className="space-y-1.5">
+                    {(Object.keys(SERVICES_DEP) as ServiceDep[]).map((sv) => (
+                      <li key={sv}><a href={`${SERVICES_DEP[sv].base}/${dep}`} className="text-sm text-white/75 hover:text-white inline-flex items-center gap-1.5">
+                        <ArrowRight className="w-3.5 h-3.5" style={{ color: ACCENT }} />{SERVICES_DEP[sv].label} {DEPS[dep].dans}
+                      </a></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         <FaqBloc titre="Nos zones d’intervention : vos questions" items={[
-          { q: 'Où êtes-vous basés ?', a: 'À Saint-Maurice (94410), 6 bis rue du Val d’Osne. Nous intervenons principalement à Paris et dans le Val-de-Marne, et dans le reste de l’Île-de-France.' },
+          { q: 'Où êtes-vous basés ?', a: 'À Saint-Maurice (94410), 6 bis rue du Val d’Osne. Nous intervenons à Paris, dans le Val-de-Marne, les Hauts-de-Seine, l’Essonne, les Yvelines, la Seine-et-Marne et le reste de l’Île-de-France.' },
           { q: 'Intervenez-vous en dehors du Val-de-Marne ?', a: 'Oui, à Paris, dans les Hauts-de-Seine et dans les autres départements d’Île-de-France, selon nos disponibilités.' },
-          { q: 'Vos prix changent-ils selon la ville ?', a: 'Nos prix de départ sont les mêmes à Paris et dans le Val-de-Marne. Le devis est gratuit et fixé avant l’intervention.' },
+          { q: 'Vos prix changent-ils selon la ville ?', a: 'Nos prix de départ sont les mêmes partout en Île-de-France. Le devis est gratuit et fixé avant l’intervention.' },
           { q: 'Intervenez-vous le week-end ?', a: 'Oui, 7j/7, y compris le week-end et les jours fériés.' },
         ]} />
       </main>

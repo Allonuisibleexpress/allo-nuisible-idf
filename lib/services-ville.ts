@@ -28,3 +28,16 @@ const FAMILLES: { id: FamilleVille; base: string; label: string; prix: string; s
 export function autresServicesVille(slug: string, sauf: FamilleVille) {
   return FAMILLES.filter((f) => f.id !== sauf && f.slugs.includes(slug)).map((f) => ({ href: `${f.base}/${slug}`, label: f.label, prix: f.prix }))
 }
+
+// Toutes les pages nuisible + ville d'une ville (pages /zones, 11/11/2026)
+export function pagesVille(slug: string) {
+  return FAMILLES.filter((f) => f.slugs.includes(slug)).map((f) => ({ href: `${f.base}/${slug}`, label: f.label }))
+}
+
+// Villes d'un département ayant au moins une page nuisible + ville, triées par nom
+export function villesDuDepartement(code: string) {
+  const toutes = [...VILLES_DERATISATION, ...VILLES_PUNAISES, ...VILLES_SOURIS, ...VILLES_CAFARDS, ...VILLES_FOURMIS, ...VILLES_PUCES, ...VILLES_ACARIENS, ...VILLES_CHENILLES]
+  const vues = new Map<string, string>()
+  for (const v of toutes) if (v.code === code && !vues.has(v.slug)) vues.set(v.slug, v.nom)
+  return Array.from(vues.entries()).map(([slug, nom]) => ({ slug, nom, pages: pagesVille(slug) })).sort((a, b) => a.nom.localeCompare(b.nom, 'fr', { numeric: true }))
+}

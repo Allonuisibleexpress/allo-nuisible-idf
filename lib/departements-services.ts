@@ -2,19 +2,23 @@
 // Contenu propre à chaque combinaison (aucune copie d'un autre site). Pas de chiffre inventé : populations Insee
 // (geo.api.gouv.fr), prix alignés sur /tarifs. Pas de tiret long, pas de « naturel », « écologique », « sans danger ».
 import type { FamilleVille } from './services-ville'
+import { CONTENU_GC } from './departements-services-gc'
 
-export type DepSlug = 'paris' | 'val-de-marne' | 'hauts-de-seine'
+export type DepSlug = 'paris' | 'val-de-marne' | 'hauts-de-seine' | 'essonne' | 'yvelines' | 'seine-et-marne'
 export type ServiceDep = 'deratisation' | 'punaises' | 'frelons' | 'cafards' | 'souris' | 'puces'
 
 export const DEPS: Record<DepSlug, { nom: string; code: string; dans: string; de: string; population: number; communes: string; zone: string }> = {
   paris: { nom: 'Paris', code: '75', dans: 'à Paris', de: 'de Paris', population: 2103778, communes: '20 arrondissements', zone: '/zones/paris' },
   'val-de-marne': { nom: 'Val-de-Marne', code: '94', dans: 'dans le Val-de-Marne', de: 'du Val-de-Marne', population: 1426929, communes: '47 communes', zone: '/zones/val-de-marne' },
   'hauts-de-seine': { nom: 'Hauts-de-Seine', code: '92', dans: 'dans les Hauts-de-Seine', de: 'des Hauts-de-Seine', population: 1654712, communes: '36 communes', zone: '/zones/hauts-de-seine' },
+  essonne: { nom: 'Essonne', code: '91', dans: 'dans l’Essonne', de: 'de l’Essonne', population: 1338485, communes: '194 communes', zone: '/zones/essonne' },
+  yvelines: { nom: 'Yvelines', code: '78', dans: 'dans les Yvelines', de: 'des Yvelines', population: 1485086, communes: '259 communes', zone: '/zones/yvelines' },
+  'seine-et-marne': { nom: 'Seine-et-Marne', code: '77', dans: 'en Seine-et-Marne', de: 'de la Seine-et-Marne', population: 1468108, communes: '507 communes', zone: '/zones/seine-et-marne' },
 }
 export const DEP_SLUGS = Object.keys(DEPS) as DepSlug[]
 export const estDep = (s: string): s is DepSlug => s in DEPS
 
-type Contenu = { accroche: string; paras: string[]; points: { t: string; x: string }[]; faq: { q: string; a: string }[] }
+export type Contenu = { accroche: string; paras: string[]; points: { t: string; x: string }[]; faq: { q: string; a: string }[] }
 
 export const SERVICES_DEP: Record<ServiceDep, {
   famille: FamilleVille; base: string; label: string; motCle: string; h1: string; prix: string; prixNum: string; prixNote: string
@@ -25,7 +29,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   deratisation: {
     famille: 'deratisation', base: '/deratisation', label: 'Dératisation', motCle: 'Dératisation', h1: 'Dératisation', prix: '120 €', prixNum: '120',
     prixNote: 'Appartement, rats ou souris. Devis gratuit.', suffixes: [' : rats et souris, intervention 7j/7', ' : intervention 7j/7', ' : rats et souris', ''],
-    description: (dans, code) => `Dératisation ${dans} (${code}) : rats et souris, postes sécurisés ou pièges, accès rebouchés par un technicien certifié. Dès 120 € TTC, devis gratuit, 7j/7.`,
+    description: (dans, code) => `Dératisation ${dans} (${code}) : rats et souris, postes sécurisés ou pièges, accès rebouchés. Technicien certifié, dès 120 € TTC, devis gratuit, 7j/7.`,
     etapes: [
       ['Appel ou photo|Une photo des crottes ou des dégâts suffit souvent à savoir s’il s’agit de rats ou de souris. Vous avez le prix tout de suite.', 'Devis gratuit|Vous décrivez le lieu, nous vous annonçons le tarif avant de nous déplacer.'],
       ['Diagnostic|Le technicien identifie l’espèce (surmulot, rat noir, souris), les couloirs de passage et les points d’entrée.', 'Recherche des accès|Gaines, passages de tuyaux, bas de portes, grilles : chaque entrée possible est repérée.'],
@@ -38,6 +42,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'Copropriété, contrat annuel', prix: 'sur devis', detail: 'Parties communes, passages réguliers' },
     ],
     contenu: {
+      ...CONTENU_GC.deratisation, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Caves, cours d’immeuble, locaux poubelles, restaurants : à Paris, les rats et les souris trouvent partout de quoi se nourrir et se cacher.',
         paras: [
@@ -107,6 +112,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'T4, maison ou forte infestation', prix: 'sur devis', detail: 'Prix confirmé après inspection' },
     ],
     contenu: {
+      ...CONTENU_GC.punaises, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Hôtels, locations meublées, transports, immeubles anciens : Paris est l’un des endroits où les punaises de lit voyagent le plus facilement.',
         paras: [
@@ -176,6 +182,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'Nid difficile d’accès', prix: 'dès 199 €', detail: 'Toiture, combles, cheminée. Nacelle : sur devis' },
     ],
     contenu: {
+      ...CONTENU_GC.frelons, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Arbres d’alignement, cours intérieures, balcons, toits : à Paris aussi, les frelons et les guêpes installent leurs nids.',
         paras: [
@@ -245,6 +252,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'Local professionnel', prix: 'sur devis', detail: 'Restaurant, commerce, attestation fournie' },
     ],
     contenu: {
+      ...CONTENU_GC.cafards, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Cuisines, colonnes d’eau, gaines techniques et commerces de bouche : à Paris, les cafards passent facilement d’un logement à l’autre.',
         paras: [
@@ -314,6 +322,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'Local professionnel, location meublée', prix: 'sur devis', detail: 'Intervention planifiée, attestation' },
     ],
     contenu: {
+      ...CONTENU_GC.puces, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Parquets anciens, tapis, chiens en promenade dans les parcs : à Paris, les puces s’installent vite dans les appartements.',
         paras: [
@@ -383,6 +392,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
       { label: 'Copropriété, contrat annuel', prix: 'sur devis', detail: 'Parties communes, passages réguliers' },
     ],
     contenu: {
+      ...CONTENU_GC.souris, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
       paris: {
         accroche: 'Cloisons, faux plafonds, cuisines : à Paris, les souris passent d’un appartement à l’autre par les moindres interstices.',
         paras: [

@@ -8,6 +8,9 @@ import { PestIcon, type PestKey } from '@/components/PestIcons'
 import { pageMetadata } from '@/lib/seo'
 import { DEPARTEMENTS_IDF, SERVICES, getDepartement, type ServiceSlug } from '@/lib/departements'
 import { COMMUNES_94 } from '@/lib/communes94'
+import { DEPARTEMENTS_APPROFONDI } from '@/lib/departements-approfondi'
+import { SERVICES_DEP, DEPS, estDep, type ServiceDep } from '@/lib/departements-services'
+import { villesDuDepartement } from '@/lib/services-ville'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -30,9 +33,13 @@ export default function DepartementPage({ params }: { params: { departement: str
   if (!d) notFound()
 
   const autres = DEPARTEMENTS_IDF.filter((x) => x.slug !== d.slug)
+  const approfondi = DEPARTEMENTS_APPROFONDI[d.slug] ?? []
+  const pagesDep = estDep(d.slug) ? (Object.keys(SERVICES_DEP) as ServiceDep[]).map((s) => ({ href: `${SERVICES_DEP[s].base}/${d.slug}`, label: `${SERVICES_DEP[s].label} ${DEPS[d.slug as keyof typeof DEPS].dans}` })) : []
+  const villesPages = d.slug === 'val-de-marne' ? [] : villesDuDepartement(d.code)
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://allonuisibleidf.fr' },{ '@type': 'ListItem', position: 2, name: 'Zones d’intervention', item: 'https://allonuisibleidf.fr/zones' },{ '@type': 'ListItem', position: 3, name: d.nom, item: `https://allonuisibleidf.fr/zones/${d.slug}` }] }) }} />
       <Navbar />
       <main>
         {/* ── HERO ── */}
@@ -142,6 +149,59 @@ export default function DepartementPage({ params }: { params: { departement: str
             </div>
           </div>
         </section>
+
+        {/* ── CONTENU DÉTAILLÉ (11/11/2026) ── */}
+        {approfondi.map((sec, i) => (
+          <section key={sec.titre} className="py-14 md:py-20 px-4" style={{ background: i % 2 ? '#0d0d0d' : '#0a0a0a' }}>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{sec.titre}</h2>
+              {sec.paras.map((p) => (
+                <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4">
+                  {p.split(/(\*\*[^*]+\*\*)/g).map((m, k) => (m.startsWith('**') ? <strong key={k} className="text-white">{m.slice(2, -2)}</strong> : m))}
+                </p>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {/* ── PAGES NUISIBLE + DÉPARTEMENT ── */}
+        {pagesDep.length > 0 && (
+          <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Nos pages par nuisible {d.dans}</h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {pagesDep.map((x) => (
+                  <a key={x.href} href={x.href} className="flex items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-white/85 text-sm font-semibold transition-colors hover:bg-white/[0.07]"
+                    style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    {x.label} <ArrowRight className="w-4 h-4" style={{ color: ACCENT }} />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── VILLES AVEC DES PAGES DÉDIÉES ── */}
+        {villesPages.length > 0 && (
+          <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">{d.slug === 'paris' ? 'Nos pages par arrondissement' : `Nos pages par ville ${d.dans}`}</h2>
+              <p className="text-white/55 mb-8 text-center">{villesPages.length} {d.slug === 'paris' ? 'arrondissements' : 'villes'} avec des pages dédiées, nuisible par nuisible.</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {villesPages.map((v) => (
+                  <div key={v.slug} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <p className="text-white font-black mb-2 flex items-center gap-1.5"><MapPin className="w-4 h-4" style={{ color: ACCENT }} />{v.nom}</p>
+                    <ul className="flex flex-wrap gap-1.5">
+                      {v.pages.map((x) => (
+                        <li key={x.href}><a href={x.href} className="inline-block text-xs text-white/70 hover:text-white rounded-full px-2.5 py-1" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>{x.label}</a></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── COMMUNES ── */}
         <section className="py-16 md:py-20 px-4" style={{ background: '#111' }}>

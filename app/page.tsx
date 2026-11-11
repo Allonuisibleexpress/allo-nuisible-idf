@@ -14,7 +14,7 @@ import { CHAINE_YOUTUBE } from '@/lib/youtube'
 
 export const metadata = pageMetadata({
   title: 'Allo Nuisible IDF : dératisation, punaises de lit 7j/7',
-  description: 'Dératisation, punaises de lit, cafards, nids de frelons à Paris et en Val-de-Marne. Techniciens Certibiocide basés à Saint-Maurice, 7j/7. Devis gratuit, garantie 1 an.',
+  description: 'Dératisation, punaises de lit, cafards, frelons à Paris et en Île-de-France. Techniciens Certibiocide à Saint-Maurice, 7j/7. Devis gratuit, garantie 1 an.',
   path: '',
 })
 
