@@ -9,6 +9,7 @@ import NextImage from 'next/image'
 import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
+import { ImageCycle } from '@/components/CyclePunaises'
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }))
@@ -28,7 +29,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       url,
       type: 'article',
       locale: 'fr_FR',
-      images: [OG_IMAGE],
+      images: [a.ogImage ? { url: a.ogImage, width: 1600, height: 1000, alt: a.seoTitle } : OG_IMAGE],
     },
   }
 }
@@ -104,6 +105,8 @@ function renderBlock(b: Block, idx: number) {
         </div>
       )
     }
+    case 'cycle':
+      return <div key={k} style={{ margin: '12px 0 32px', width: 'min(1100px, calc(100vw - 32px))', position: 'relative', left: '50%', transform: 'translateX(-50%)' }}><ImageCycle /></div>
     case 'img':
       return (
         <figure key={k} style={{ margin: '8px auto 28px', maxWidth: '520px', textAlign: 'center' }}>

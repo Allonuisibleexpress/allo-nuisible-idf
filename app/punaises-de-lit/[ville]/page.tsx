@@ -5,6 +5,7 @@ import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
 import { LOCAL_PUNAISES_GC } from '@/lib/local-punaises-gc'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
 import ProtocoleCondense, { PROTOCOLE_PUNAISES } from '@/components/ProtocoleCondense'
+import CyclePunaises from '@/components/CyclePunaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
@@ -189,6 +190,22 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 
+        <CyclePunaises a={v.a} titre={[
+          `Punaises de lit ${v.a} : les 7 stades en images`,
+          `De l’œuf à l’adulte : traquez la punaise de lit ${v.a}`,
+          `Punaises de lit ${v.a} : reconnaissez-les à chaque âge`,
+          `Œuf, larve, adulte : démasquez la punaise de lit ${v.a}`,
+          `Punaises de lit ${v.a} : les 7 stades à repérer`,
+          `Punaises de lit ${v.a} : de l’œuf invisible à l’adulte`,
+        ][Math.max(0, VILLES_PUNAISES.findIndex((x) => x.slug === v.slug)) % 6]} texte={[
+          `Les œufs éclosent en 7 à 15 jours : d’où nos 2 passages ${v.a}.`,
+          `Une larve de 1,5 mm devient adulte après 5 mues, chacune précédée d’un repas de sang.`,
+          `Repérer les larves pâles tôt ${v.a} évite qu’une infestation ne s’installe.`,
+          `Entre 21 et 27 °C, il faut environ un mois de l’œuf à l’adulte.`,
+          `Une femelle pond 200 à 500 œufs dans sa vie : chaque stade compte.`,
+          `Des mues vides près du lit ? Des larves grandissent ${v.a}.`,
+          `Les adultes mesurent 5 à 7 mm, les plus jeunes larves à peine 1,5 mm.`,
+        ][Math.max(0, VILLES_PUNAISES.findIndex((x) => x.slug === v.slug)) % 7]} />
         <ProtocoleCondense p={PROTOCOLE_PUNAISES} a={v.a} />
 
 

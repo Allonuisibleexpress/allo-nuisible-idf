@@ -75,6 +75,8 @@ export interface ServiceData {
   methodes?: BlocMethodes
   // Protocole complet (observation, méthodes, signes, risques, erreurs, garantie, qui paie), 10/11/2026
   contenu?: ContenuFamille
+  // Bloc libre affiché après le déroulé de l'intervention (ex. infographie du cycle des punaises, 11/11/2026)
+  apresProcess?: React.ReactNode
   guide?: GuideService
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
@@ -384,6 +386,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         </section>
 
         {/* ── TABLEAU COMPARATIF ── */}
+        {data.apresProcess}
         {data.contenu && <ContenuNuisible data={data.contenu} slug="ile-de-france" a="en Île-de-France" nom="Île-de-France" partie={1} />}
         {data.methodes && !data.contenu && <MethodesDetaillees bloc={data.methodes} />}
 

@@ -12,6 +12,7 @@ export type Block =
   | { t: 'callout'; tone: 'warn' | 'ok' | 'info'; title: string; x: string }
   | { t: 'table'; head: string[]; rows: string[][] }
   | { t: 'img'; src: string; alt: string; legende: string; credit: string; licence: string; page: string } // photo libre (Wikimedia), crédit affiché
+  | { t: 'cycle' } // infographie du cycle de vie de la punaise de lit (components/CyclePunaises)
 
 export interface Article {
   slug: string
@@ -31,9 +32,89 @@ export interface Article {
   faq: { q: string; a: string }[]
   sources: { label: string; url: string }[]
   cta: { title: string; text: string }
+  ogImage?: string // image de partage propre à l'article (sinon image du site)
 }
 
 export const ARTICLES: Article[] = [
+  // Cycle de vie de la punaise de lit (11/11/2026) ───────────────────
+  {
+    slug: 'cycle-de-vie-punaise-de-lit',
+    title: "Cycle de vie de la punaise de lit : les 7 stades, de l'œuf invisible à l'adulte qui pond 500 œufs (en images)",
+    seoTitle: "Cycle de vie de la punaise de lit : 7 stades en images",
+    description: "Œuf, 5 larves, adulte : taille, couleur et durée de chaque stade de la punaise de lit en infographie. Par nos techniciens à Paris et en Île-de-France.",
+    date: '2026-11-11',
+    category: 'Punaises de lit',
+    readMin: 9,
+    ogImage: '/infographies/cycle-punaise-de-lit.jpg',
+    tldr: "Une punaise de lit passe par 7 étapes : un œuf d'environ 1 mm qui éclot en 7 à 15 jours, 5 stades larvaires de 1,5 à 4,5 mm qui durent chacun 3 à 15 jours, puis l'adulte de 5 à 7 mm, qui vit 6 à 24 mois. Il faut un repas de sang avant chaque mue. Dans de bonnes conditions (21 à 27 °C), il faut environ un mois de l'œuf à l'adulte. C'est ce cycle qui explique pourquoi un traitement sérieux comprend toujours 2 passages.",
+    service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit : 2 passages, dès 290 €' },
+    blocks: [
+      { t: 'p', x: "On imagine souvent la punaise de lit comme un petit insecte brun, de la taille d'un pépin de pomme. C'est vrai pour l'adulte. Mais la plupart des punaises d'une infestation ne ressemblent pas à ça : ce sont des **œufs** presque invisibles et des **larves** pâles, parfois à peine plus grosses qu'une tête d'épingle. Savoir les reconnaître, c'est repérer une infestation plus tôt, et comprendre pourquoi un [traitement des punaises de lit](/services/punaises-de-lit) bien fait se déroule toujours en plusieurs temps." },
+      { t: 'p', x: "Voici le cycle complet, stade par stade, avec la taille et la durée de chaque étape. Les chiffres viennent de sources reconnues (Agence américaine de protection de l'environnement, Université du Kentucky, CDC, travaux de l'entomologiste Pascal Delaunay), citées en bas de page." },
+      { t: 'cycle' },
+      { t: 'h2', x: "Les 7 stades de la punaise de lit en un coup d'œil" },
+      { t: 'table', head: ['Stade', 'Taille', 'Aspect', 'Durée'], rows: [
+        ['Œuf', 'environ 1 mm', 'blanc nacré, ovale, collé en petits paquets', '7 à 15 jours avant l\'éclosion'],
+        ['Stade 1', '1,5 mm', 'couleur paille, presque transparent', '3 à 15 jours'],
+        ['Stade 2', '2 mm', 'pâle, rougeâtre après un repas', '3 à 15 jours'],
+        ['Stade 3', '2,5 mm', 'brun clair', '3 à 15 jours'],
+        ['Stade 4', '3 mm', 'brun', '3 à 15 jours'],
+        ['Stade 5', '4,5 mm', 'brun plus foncé', '3 à 15 jours'],
+        ['Adulte', '5 à 7 mm', 'brun-rouge, plat et ovale à jeun', 'vit 6 à 24 mois'],
+      ] },
+      { t: 'p', x: "Les durées sont des fourchettes : elles dépendent surtout de la **température** et de l'**accès à un repas de sang**. Dans un logement chauffé, avec un occupant qui dort dans le lit chaque nuit, le cycle va vite. Dans un logement froid ou inoccupé, il ralentit beaucoup." },
+      { t: 'h2', x: "L'œuf : 1 mm, presque invisible… et le plus coriace" },
+      { t: 'p', x: "L'œuf de punaise de lit mesure **environ 1 mm**. Il est **blanc nacré**, de forme ovale, et la femelle le **colle** dans des recoins sombres : coutures du matelas, lattes et angles du sommier, fentes de la tête de lit, arrière des plinthes, cadres de tableaux. Les œufs sont souvent pondus en petits groupes." },
+      { t: 'p', x: "Ils **éclosent en 7 à 15 jours**, environ une semaine à température ambiante. Comme ils sont collés et protégés par leur coque, ce sont les plus difficiles à atteindre : c'est la raison principale des **2 passages** de notre traitement. Le premier tue les punaises présentes et une grande partie des œufs ; le second élimine les jeunes punaises sorties des œufs entre-temps." },
+      { t: 'callout', tone: 'info', title: 'Comment les repérer', x: "Avec une lampe torche, inspectez les coutures du matelas et les angles du sommier : de petits grains blancs alignés ou groupés, de la taille d'une tête d'épingle, peuvent être des œufs. Des coques vides, translucides, indiquent que des œufs ont déjà éclos." },
+      { t: 'h2', x: "Les 5 larves : minuscules, pâles… et déjà affamées" },
+      { t: 'p', x: "À la sortie de l'œuf, la jeune punaise (on parle de **larve** ou de **nymphe**) ressemble à un adulte en miniature, mais en **pâle**, couleur paille, presque transparente. Elle mesure **1,5 mm**. Pour grandir, elle doit **muer** cinq fois, et chaque mue exige un **repas de sang**." },
+      { t: 'ul', items: [
+        "**Stade 1 (1,5 mm)** : couleur paille, très difficile à voir sur un drap clair. Après un repas, son abdomen devient rouge vif et elle est plus facile à repérer.",
+        "**Stade 2 (2 mm)** : un peu plus grande, toujours pâle.",
+        "**Stade 3 (2,5 mm)** : elle commence à brunir. Jusqu'à ce stade, les jeunes punaises sont fragiles et supportent moins bien le manque de nourriture.",
+        "**Stade 4 (3 mm)** : brune, de plus en plus semblable à l'adulte.",
+        "**Stade 5 (4,5 mm)** : presque la taille d'un adulte ; après une dernière mue, elle devient adulte et peut se reproduire.",
+      ] },
+      { t: 'p', x: "Chaque stade dure **3 à 15 jours**. Entre deux stades, la larve laisse derrière elle sa **mue**, une petite enveloppe vide et translucide : en trouver dans les recoins du lit est un signe d'infestation active, avec des punaises en pleine croissance." },
+      { t: 'callout', tone: 'warn', title: 'Pourquoi les larves piquent aussi', x: "Toutes les larves se nourrissent de sang, dès le premier stade. Une infestation avec beaucoup de larves peut donc provoquer beaucoup de piqûres, même si vous ne voyez presque aucune punaise adulte." },
+      { t: 'h2', x: "La punaise adulte : 5 à 7 mm et des centaines d'œufs" },
+      { t: 'p', x: "L'adulte mesure **5 à 7 mm**. À jeun, il est **plat, ovale et brun-rouge**, ce qui lui permet de se glisser dans une fente de la largeur d'une carte de crédit. Après un repas, il gonfle et s'allonge. Il pique la nuit, puis retourne se cacher près du lit pour digérer." },
+      { t: 'p', x: "Une punaise adulte vit **6 à 24 mois** selon les sources et les conditions, et une femelle pond **200 à 500 œufs** au cours de sa vie. Les adultes peuvent survivre **plusieurs mois sans repas de sang** : un logement vide n'est donc pas forcément débarrassé de ses punaises." },
+      { t: 'h2', x: "De l'œuf à l'adulte en un mois : pourquoi tout va si vite" },
+      { t: 'p', x: "Selon l'Université du Kentucky, entre **21 et 27 °C**, avec un accès régulier à un repas de sang, une punaise peut devenir adulte **en un mois environ**. Il peut donc y avoir plusieurs générations par an dans un logement chauffé. Au froid, ou sans hôte, le développement est beaucoup plus lent. Le cycle complet, d'un œuf à l'œuf suivant, est souvent estimé entre **40 et 70 jours**." },
+      { t: 'p', x: "Concrètement : quelques punaises arrivées dans une valise peuvent, en quelques semaines, donner une infestation installée dans tout le lit, puis dans la chambre et les pièces voisines. C'est pourquoi il faut agir dès les premiers signes. Dans les **logements chauffés de Paris et d'Île-de-France**, les punaises se développent **toute l'année, hiver compris** : il n'y a pas de « saison creuse ». Voir aussi [comment on attrape des punaises de lit](/blog/comment-attrape-t-on-des-punaises-de-lit)." },
+      { t: 'h2', x: "Pourquoi 2 passages ? Ce que le cycle impose au traitement" },
+      { t: 'ol', items: [
+        "**Deux passages, toujours** : les œufs sont le stade le plus résistant. Le second passage, environ deux semaines plus tard, touche les larves écloses après le premier. Notre [traitement des punaises de lit](/services/punaises-de-lit) inclut toujours ces 2 passages, dès 290 € TTC.",
+        "**Traiter tous les recoins** : œufs et larves sont cachés au plus près du lit. Le technicien inspecte coutures, sommier, plinthes, prises et meubles proches.",
+        "**Choisir la bonne méthode** : la [cryogénie](/services/cryogenie-punaises-de-lit) et la [vapeur sèche](/blog/vapeur-seche-punaises-de-lit) tuent au contact tous les stades atteints, sans produit ; l'[insecticide professionnel](/blog/insecticide-punaises-de-lit) agit plusieurs semaines sur les larves qui sortent des œufs. On les combine souvent.",
+        "**Traiter le linge** : lavage à 60 °C, sèche-linge au moins 30 minutes ou congélateur 72 heures en sac fermé, comme le recommande le site officiel stop-punaises.gouv.fr. Voir [traiter ses vêtements](/blog/traiter-vetements-punaises-de-lit).",
+        "**Ne pas changer de chambre** : les punaises suivent l'occupant et colonisent la nouvelle pièce.",
+      ] },
+      { t: 'h2', x: "Larve de punaise, puce ou acarien : ne vous trompez pas" },
+      { t: 'p', x: "Une jeune punaise de lit, pâle et minuscule, peut être confondue avec d'autres petites bêtes. La punaise de lit **ne saute pas** et **ne vole pas** : elle marche. Une puce saute ; un acarien de la poussière est invisible à l'œil nu et ne pique pas. Voir notre article [acariens ou punaises de lit ?](/blog/acariens-ou-punaises-de-lit) et notre [traitement des puces](/services/puces)." },
+      { t: 'h2', x: "Punaises de lit à Paris et en Île-de-France : on intervient 7j/7" },
+      { t: 'p', x: "Depuis Saint-Maurice, nous traitons les punaises de lit à [Paris](/punaises-de-lit/paris), dans le [Val-de-Marne](/punaises-de-lit/val-de-marne), les [Hauts-de-Seine](/punaises-de-lit/hauts-de-seine), l'[Essonne](/punaises-de-lit/essonne), les [Yvelines](/punaises-de-lit/yvelines) et la [Seine-et-Marne](/punaises-de-lit/seine-et-marne), par exemple à [Maisons-Alfort](/punaises-de-lit/maisons-alfort), [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont), [Créteil](/punaises-de-lit/creteil), [Vincennes](/punaises-de-lit/vincennes), [Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine) ou [Paris 12e](/punaises-de-lit/paris-12)." },
+    ],
+    faq: [
+      { q: "Combien de temps une punaise de lit met-elle pour devenir adulte ?", a: "Environ un mois entre 21 et 27 °C avec des repas réguliers, selon l'Université du Kentucky. Au froid ou sans hôte, c'est beaucoup plus long." },
+      { q: "Combien de stades larvaires a la punaise de lit ?", a: "Cinq stades, de 1,5 à 4,5 mm, chacun durant 3 à 15 jours. La larve doit prendre un repas de sang avant chaque mue." },
+      { q: "En combien de temps éclosent les œufs ?", a: "En 7 à 15 jours, environ une semaine à température ambiante." },
+      { q: "Les larves de punaises de lit piquent-elles ?", a: "Oui, dès le premier stade : elles se nourrissent de sang pour grandir." },
+      { q: "Combien d'œufs pond une punaise de lit ?", a: "Une femelle pond 200 à 500 œufs au cours de sa vie." },
+      { q: "Pourquoi faut-il deux passages ?", a: "Les œufs sont le stade le plus résistant. Le second passage élimine les jeunes punaises sorties des œufs après le premier." },
+      { q: "Une punaise de lit peut-elle survivre sans manger ?", a: "Oui, l'adulte peut survivre plusieurs mois sans repas de sang, et encore plus longtemps au froid." },
+    ],
+    sources: [
+      { label: 'EPA, Bed Bugs: appearance and life cycle (tailles des stades)', url: 'https://www.epa.gov/bedbugs/bed-bugs-appearance-and-life-cycle' },
+      { label: 'Université du Kentucky, Bed bugs (ENTFACT-636)', url: 'https://entomology.mgcafe.uky.edu/ef636' },
+      { label: 'CDC, About bed bugs', url: 'https://www.cdc.gov/bed-bugs/about/index.html' },
+      { label: 'Wikipédia, Punaise de lit (d’après P. Delaunay 2015 et Reinhardt & Siva-Jothy 2007)', url: 'https://fr.wikipedia.org/wiki/Punaise_de_lit' },
+      { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' },
+    ],
+    cta: { title: 'Des punaises de lit, à quelque stade que ce soit ?', text: "Diagnostic, traitement en 2 passages (cryogénie, vapeur sèche ou insecticide), garantie 1 an. Dès 290 € TTC, devis gratuit, 7j/7." },
+  },
   // 1 ─────────────────────────────────────────────────────────────
   {
     slug: 'rat-dans-les-toilettes',

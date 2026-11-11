@@ -134,6 +134,7 @@ export const LOCAL_PUNAISES_94: Record<string, string[]> = {
   'chennevieres-sur-marne': [
     'Chennevières-sur-Marne, sur le coteau de la Marne, est surtout **pavillonnaire**, avec quelques grands ensembles. Les punaises y sont souvent découvertes tard, dans des chambres d’amis ou de grands enfants.',
     'Une inspection complète de la maison évite de traiter une seule chambre et de voir l’infestation revenir depuis une autre.',
+    'Dans les maisons à étage du **plateau** et des pentes qui descendent vers la Marne, l’escalier, les têtes de lit en tissu et les canapés-lits des pièces du bas sont des relais fréquents : les punaises y attendent qu’on vienne s’asseoir ou dormir, puis remontent vers les chambres.',
   ],
   'chevilly-larue': [
     'Chevilly-Larue, entre Rungis et l’A6, accueille de nombreux **hôtels et travailleurs** liés au marché international et à l’aéroport. Les punaises de lit s’y déplacent avec les bagages.',

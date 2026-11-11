@@ -2,6 +2,7 @@ import { pageMetadata } from '@/lib/seo'
 import { METHODES_PUNAISES, GUIDE_PUNAISES } from '@/lib/contenu-services/punaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
+import CyclePunaises from '@/components/CyclePunaises'
 import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
 const data: ServiceData = {
@@ -32,6 +33,7 @@ const data: ServiceData = {
     { title: 'Traitement adapté à votre logement', text: 'Cryogénie ou vapeur sèche sur la literie, les meubles et les recoins, et insecticide rémanent de 4e génération sur les surfaces infestées et adjacentes. Après un traitement insecticide, vous quittez le logement 4 heures en moyenne.' },
     { title: 'Suivi & garantie', text: 'Retour sous 15 jours pour contrôle. En cas de réapparition dans le délai de garantie, intervention gratuite. Vous dormez tranquille.' },
   ],
+  apresProcess: <CyclePunaises />,
   methodes: METHODES_PUNAISES,
   guide: GUIDE_PUNAISES,
   contenu: CONTENU_PUNAISES,
