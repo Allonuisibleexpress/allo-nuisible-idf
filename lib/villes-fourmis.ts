@@ -5,6 +5,7 @@
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { LOCAL_FOURMIS_GC } from '@/lib/local-fourmis-gc'
 
 export const SOURCES_FOURMIS = [
   { label: 'FREDON Centre-Val de Loire, fourmis invasives', url: 'https://fredon.fr/cvl/sites/default/files/Dossier%20technique/Fourmis%20invasives.pdf' },
@@ -116,6 +117,8 @@ export const CONFIG_FOURMIS: VilleServiceConfig = {
   maj: '2026-11-06',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Fourmis dans d\'autres villes',
+  local: LOCAL_FOURMIS_GC,
+  localTitre: (a, nom) => `Fourmis ${a} : ce qui est propre à ${nom}`,
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -127,6 +130,18 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleFourmis = Ville & { title: string }
 
+
+// Villes de l'Essonne, de la Seine-et-Marne et des Yvelines (11/11/2026)
+type Dep = { code: string; departement: string; zoneHref: string }
+const D91: Dep = { code: '91', departement: 'Essonne', zoneHref: '/zones/essonne' }
+const D77: Dep = { code: '77', departement: 'Seine-et-Marne', zoneHref: '/zones/seine-et-marne' }
+const D78: Dep = { code: '78', departement: 'Yvelines', zoneHref: '/zones/yvelines' }
+const vf = (nom: string, a: string, slug: string, dep: Dep, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleFourmis => ({
+  slug, nom, a, ...dep,
+  title: `Fourmis ${a} (${dep.code}) : traitement et nid`,
+  description: `Fourmis ${a} : identification de l'espèce, gel appât qui atteint la reine, sans pulvérisation. Dès 120 € TTC, devis gratuit.`,
+  contexte, proches, faq: [faq, ...FAQ_COMMUNE(a)],
+})
 
 export const VILLES_FOURMIS: VilleFourmis[] = [
   {
@@ -765,6 +780,157 @@ export const VILLES_FOURMIS: VilleFourmis[] = [
     proches: ['Villeneuve-Saint-Georges', 'Limeil-Brévannes', 'Créteil', 'Bonneuil-sur-Marne'],
     faq: [{ q: 'Je suis locataire : qui doit traiter les fourmis ?', a: 'Prévenez votre propriétaire ou votre bailleur par écrit, surtout si les fourmis viennent des murs ou des parties communes. Le logement loué doit être exempt d\'espèces nuisibles. Nous pouvons fournir un compte rendu.' }, ...FAQ_COMMUNE('à Valenton')],
   },
+  // ── Essonne, Seine-et-Marne, Yvelines (11/11/2026) ──
+  vf("Évry-Courcouronnes", "à Évry-Courcouronnes", 'evry-courcouronnes', D91, [
+    "À Évry-Courcouronnes, les dalles, les jardinières en béton et les joints des passerelles abritent des nids de fourmis noires, qui entrent dans les logements du rez-de-chaussée et des premiers étages au printemps.",
+    "Dans les grandes résidences chauffées toute l'année, on rencontre parfois la fourmi pharaon, minuscule et jaune pâle, qui circule par les gaines et les colonnes. Elle se traite uniquement à l'appât : un spray la fait se disperser en plusieurs colonies.",
+  ], ["Ris-Orangis", "Corbeil-Essonnes", "Lisses", "Bondoufle"],
+  { q: "Des fourmis minuscules et jaunes dans ma salle de bains : qu'est-ce que c'est ?", a: "Probablement la fourmi pharaon, fréquente dans les immeubles chauffés. Elle a plusieurs reines et se divise si on la dérange avec un insecticide en spray. Il faut un appât professionnel, posé sur ses pistes, et un ou deux passages de contrôle." }),
+  vf("Corbeil-Essonnes", "à Corbeil-Essonnes", 'corbeil-essonnes', D91, [
+    "À Corbeil-Essonnes, les vieux murs en pierre, les jardins en pente et les bords de la Seine et de l'Essonne offrent aux fourmis noires des jardins de nombreux sites de nidification, tout contre les maisons.",
+    "Les colonnes de fourmis entrent par les seuils, les fissures du carrelage et les joints de fenêtres. Nous suivons la piste jusqu'au nid et posons un gel appât que les ouvrières rapportent à la reine.",
+  ], ["Évry-Courcouronnes", "Saint-Germain-lès-Corbeil", "Villabé", "Le Coudray-Montceaux"],
+  { q: "Les fourmis sortent d'un mur en pierre : faut-il le démonter ?", a: "Non. L'appât est déposé sur la piste, au plus près de la fissure : les ouvrières l'emportent dans le nid, où il atteint la reine. Une fois la colonie éteinte, on peut rejointoyer la fissure." }),
+  vf("Massy", "à Massy", 'massy', D91, [
+    "À Massy, les pavillons de Villaine, des Graviers ou de Vilmorin ont des jardins et des terrasses où la fourmi noire niche sous les dalles. Au printemps, elle suit les plinthes jusqu'à la cuisine.",
+    "Dans les immeubles récents du quartier Atlantis, les fourmis passent par les gaines techniques et les joints de carrelage. Le traitement à l'appât, sans pulvérisation, convient aux logements habités.",
+  ], ["Palaiseau", "Antony", "Wissous", "Chilly-Mazarin"],
+  { q: "Des fourmis sous ma terrasse en dalles : faut-il tout soulever ?", a: "Non. On localise les sorties de nid entre les dalles et on y dépose un appât ou un traitement ciblé. Les ouvrières font le reste en le rapportant à la reine." }),
+  vf("Savigny-sur-Orge", "à Savigny-sur-Orge", 'savigny-sur-orge', D91, [
+    "Savigny-sur-Orge est une ville de pavillons avec jardin, au bord de l'Orge. Les fourmis noires y nichent dans les pelouses, les bordures et sous les terrasses, puis entrent dans les maisons dès les beaux jours.",
+    "Les vérandas et les cuisines ouvertes sur le jardin sont les premières touchées. Un appât posé sur la piste atteint le nid, même s'il est dehors.",
+  ], ["Viry-Châtillon", "Morsang-sur-Orge", "Juvisy-sur-Orge", "Épinay-sur-Orge"],
+  { q: "Pourquoi les fourmis entrent-elles par la véranda ?", a: "La véranda chauffe vite au soleil et touche le jardin : les fourmis entrent par les joints du seuil et des montants. Le nid est souvent juste dehors, sous une dalle ou dans une bordure." }),
+  vf("Palaiseau", "à Palaiseau", 'palaiseau', D91, [
+    "À Palaiseau, les maisons de la vallée de l'Yvette et de Lozère ont des jardins en pente, des murets et des boiseries : des endroits où les fourmis noires et parfois les fourmis charpentières installent leurs nids.",
+    "La fourmi charpentière, plus grosse et noire, creuse le bois humide des terrasses, des poutres et des encadrements. Sa présence demande de chercher le bois abîmé en plus de traiter le nid.",
+  ], ["Massy", "Orsay", "Igny", "Villebon-sur-Yvette"],
+  { q: "De grosses fourmis noires et de la sciure près d'une poutre : est-ce grave ?", a: "Ce sont probablement des fourmis charpentières, qui creusent le bois humide. Elles ne mangent pas le bois, mais elles l'évident. Il faut traiter le nid et vérifier l'origine de l'humidité." }),
+  vf("Athis-Mons", "à Athis-Mons", 'athis-mons', D91, [
+    "À Athis-Mons, entre le coteau de la Seine et le plateau près d'Orly, les pavillons avec jardin accueillent des fourmis noires qui entrent dans les cuisines au printemps et en été.",
+    "Pour les entreprises et les entrepôts proches de l'aéroport, des fourmis dans une zone de stockage alimentaire doivent être traitées vite, avec un appât et une attestation d'intervention.",
+  ], ["Paray-Vieille-Poste", "Juvisy-sur-Orge", "Morangis", "Ablon-sur-Seine"],
+  { q: "Des fourmis dans un local alimentaire : pouvez-vous intervenir sans fermer ?", a: "Oui. L'appât en gel est posé en petites gouttes dans les fentes, hors des surfaces de préparation, sans pulvérisation. L'activité continue et une attestation vous est remise." }),
+  vf("Sainte-Geneviève-des-Bois", "à Sainte-Geneviève-des-Bois", 'sainte-genevieve-des-bois', D91, [
+    "Sainte-Geneviève-des-Bois compte de nombreux pavillons avec pelouse et potager. Les fourmis noires y forment de grosses colonies, qui entrent dans les maisons par les seuils et les fissures des dalles.",
+    "Les pucerons des arbres fruitiers et des rosiers nourrissent ces colonies tout l'été. Traiter le nid, et limiter les pucerons, évite qu'elles reviennent l'année suivante.",
+  ], ["Saint-Michel-sur-Orge", "Fleury-Mérogis", "Morsang-sur-Orge", "Villemoisson-sur-Orge"],
+  { q: "Les fourmis et les pucerons sont-ils liés ?", a: "Oui. Les fourmis élèvent les pucerons pour le miellat sucré qu'ils produisent, et les protègent. Beaucoup de pucerons au jardin signifie souvent une grosse colonie de fourmis tout près." }),
+  vf("Vigneux-sur-Seine", "à Vigneux-sur-Seine", 'vigneux-sur-seine', D91, [
+    "À Vigneux-sur-Seine, les fourmis noires nichent dans les jardins des pavillons et les espaces verts des résidences, puis entrent dans les logements du rez-de-chaussée par les seuils et les joints.",
+    "Dans les immeubles chauffés, une infestation de fourmis pharaon peut toucher plusieurs logements. Il faut alors traiter avec le bailleur, logement par logement, à l'appât.",
+  ], ["Draveil", "Montgeron", "Athis-Mons", "Juvisy-sur-Orge"],
+  { q: "Les fourmis passent d'un appartement à l'autre : que faire ?", a: "Prévenez le bailleur ou le syndic : il faut traiter tous les logements touchés en même temps, sinon la colonie se déplace. L'appât professionnel est la seule méthode efficace dans ce cas." }),
+  vf("Ris-Orangis", "à Ris-Orangis", 'ris-orangis', D91, [
+    "À Ris-Orangis, les maisons proches du bois de Saint-Eutrope et des parcs ont des jardins où les fourmis noires nichent sous les dalles, les bordures et les tas de bois.",
+    "Les nouveaux logements des bords de Seine ne sont pas épargnés : les fourmis entrent par les joints de façade et les passages de gaines au rez-de-chaussée.",
+  ], ["Évry-Courcouronnes", "Grigny", "Draveil", "Bondoufle"],
+  { q: "Les fourmis reviennent chaque printemps : pourquoi ?", a: "Parce que le nid n'a jamais été atteint : le spray tue les ouvrières visibles, pas la reine. Un appât rapporté au nid règle le problème à la source." }),
+  vf("Viry-Châtillon", "à Viry-Châtillon", 'viry-chatillon', D91, [
+    "À Viry-Châtillon, les jardins des coteaux de l'Orge et les abords des lacs abritent de nombreuses colonies de fourmis noires, très actives d'avril à septembre.",
+    "Elles entrent dans les maisons par les seuils, les joints de carrelage et les fissures des murs. Nous suivons la piste, identifions l'espèce et posons l'appât au bon endroit.",
+  ], ["Grigny", "Savigny-sur-Orge", "Juvisy-sur-Orge", "Morsang-sur-Orge"],
+  { q: "Des fourmis volantes dans la maison : faut-il s'inquiéter ?", a: "Ce sont les reines et les mâles qui sortent pour s'accoupler, souvent par temps chaud et orageux. Si elles sortent de l'intérieur de la maison, un nid est installé dans un mur ou un plancher : il faut le traiter." }),
+  vf("Meaux", "à Meaux", 'meaux', D77, [
+    "À Meaux, les maisons du centre ancien et les pavillons des quartiers périphériques voient arriver les fourmis noires dès les premières chaleurs. Elles suivent les plinthes jusqu'à la cuisine, attirées par le sucre.",
+    "Les commerces de bouche du centre doivent agir vite : une piste de fourmis en boutique se traite à l'appât, sans pulvérisation près des denrées.",
+  ], ["Trilport", "Nanteuil-lès-Meaux", "Chauconin-Neufmontiers", "Mareuil-lès-Meaux"],
+  { q: "Des fourmis dans ma boulangerie : comment traiter sans risque pour les produits ?", a: "Avec un gel appât posé dans les fentes et sur les pistes, loin des plans de travail. Il n'y a pas de pulvérisation. Nous remettons une attestation pour vos contrôles." }),
+  vf("Chelles", "à Chelles", 'chelles', D77, [
+    "À Chelles, les pavillons des bords de Marne et les maisons anciennes autour de l'abbaye ont des jardins où les fourmis noires nichent sous les terrasses et les murets.",
+    "Dans les maisons anciennes, les fourmis empruntent les fissures des murs et les vides sous les planchers. Le gel appât, posé sur leur passage, atteint le nid sans démolir.",
+  ], ["Vaires-sur-Marne", "Gagny", "Montfermeil", "Brou-sur-Chantereine"],
+  { q: "Les fourmis sortent du plancher : y a-t-il un nid dessous ?", a: "Souvent oui, dans le vide sous le plancher ou dans un mur. L'appât est déposé au plus près de la sortie : les ouvrières le rapportent au nid sans qu'il faille soulever le parquet." }),
+  vf("Melun", "à Melun", 'melun', D77, [
+    "À Melun, les immeubles anciens du centre et les maisons des coteaux voient les fourmis noires entrer par les cours, les seuils et les joints de façade dès le printemps.",
+    "Dans les résidences de Montaigu ou de l'Almont, chauffées en continu, les fourmis pharaon peuvent s'installer dans les gaines. Elles demandent un traitement à l'appât coordonné avec le bailleur.",
+  ], ["Dammarie-lès-Lys", "Le Mée-sur-Seine", "Vaux-le-Pénil", "Rubelles"],
+  { q: "Pourquoi le spray aggrave-t-il les fourmis pharaon ?", a: "Dérangée, la colonie se divise : chaque reine part avec des ouvrières fonder une nouvelle colonie. On passe d'un nid à plusieurs. Seul l'appât, rapporté et partagé, atteint toutes les reines." }),
+  vf("Pontault-Combault", "à Pontault-Combault", 'pontault-combault', D77, [
+    "À Pontault-Combault, les pavillons en lisière des bois ont des jardins où les fourmis noires forment de grosses colonies. Elles entrent dans les cuisines par les seuils et les passages de tuyaux.",
+    "Les maisons avec terrasse en bois peuvent aussi abriter des fourmis charpentières, qui creusent le bois humide. Le technicien vérifie les lames et les poutres.",
+  ], ["Roissy-en-Brie", "Émerainville", "Ozoir-la-Ferrière", "Le Plessis-Trévise"],
+  { q: "Des fourmis dans ma terrasse en bois : faut-il la changer ?", a: "Pas forcément. On traite d'abord le nid, puis on vérifie les lames : seules celles qui sont creusées ou pourries doivent être remplacées. L'humidité doit aussi être corrigée." }),
+  vf("Savigny-le-Temple", "à Savigny-le-Temple", 'savigny-le-temple', D77, [
+    "À Savigny-le-Temple, les maisons récentes des lotissements ont des jardins neufs et des dallages où les fourmis s'installent vite. Elles entrent par les joints entre la dalle et les murs.",
+    "Le traitement vise la reine : appât sur la piste, et traitement ciblé des sorties de nid au jardin si elles sont visibles.",
+  ], ["Cesson", "Nandy", "Vert-Saint-Denis", "Saint-Pierre-du-Perray"],
+  { q: "Ma maison est neuve et j'ai déjà des fourmis : est-ce normal ?", a: "Oui, c'est fréquent. Les terrassements remuent les colonies, qui s'installent dans les remblais autour de la maison et entrent par les joints de dalle. Un traitement à l'appât règle le problème." }),
+  vf("Bussy-Saint-Georges", "à Bussy-Saint-Georges", 'bussy-saint-georges', D77, [
+    "À Bussy-Saint-Georges, les maisons de ville et les résidences récentes ont des jardins et des espaces verts où les fourmis noires nichent. Les chantiers voisins les dérangent et les poussent vers les bâtiments.",
+    "En appartement, elles entrent par les joints de façade, les menuiseries et les gaines du rez-de-chaussée. Le gel appât, posé discrètement, convient aux familles avec enfants.",
+  ], ["Bussy-Saint-Martin", "Collégien", "Montévrain", "Jossigny"],
+  { q: "Le traitement contre les fourmis est-il compatible avec des enfants ?", a: "Oui. Le gel appât est posé en petites gouttes dans des fentes inaccessibles, sans pulvérisation dans les pièces. Le technicien vous indique où il est posé." }),
+  vf("Champs-sur-Marne", "à Champs-sur-Marne", 'champs-sur-marne', D77, [
+    "À Champs-sur-Marne, les pavillons proches du parc du château et des bords de Marne ont de grands jardins où les fourmis noires sont nombreuses en été.",
+    "Les résidences étudiantes et les bâtiments de la Cité Descartes peuvent connaître des fourmis dans les cuisines collectives. Nous traitons à l'appât, avec un suivi si besoin.",
+  ], ["Noisiel", "Torcy", "Noisy-le-Grand", "Émerainville"],
+  { q: "Des fourmis dans une cuisine collective : comment éviter le retour ?", a: "Après le traitement à l'appât, la règle est simple : vaisselle faite, plans de travail nettoyés, poubelles fermées et aucun aliment sucré laissé à l'air libre." }),
+  vf("Villeparisis", "à Villeparisis", 'villeparisis', D77, [
+    "À Villeparisis, les pavillons avec jardin et les bords du canal de l'Ourcq offrent aux fourmis noires de nombreux sites de nidification. Elles entrent dans les maisons par les seuils et les fissures des dalles.",
+    "Dans les maisons avec sous-sol, les fourmis remontent parfois par les gaines et les cloisons. Nous suivons la piste depuis la cuisine jusqu'à son origine.",
+  ], ["Mitry-Mory", "Claye-Souilly", "Vaujours", "Courtry"],
+  { q: "Les fourmis viennent du sous-sol : est-ce possible ?", a: "Oui, une colonie peut nicher dans les fondations, une cloison ou un vide sous dalle, et remonter par les gaines. On suit la piste et on dépose l'appât au plus près." }),
+  vf("Dammarie-lès-Lys", "à Dammarie-lès-Lys", 'dammarie-les-lys', D77, [
+    "À Dammarie-lès-Lys, entre les bords de Seine, le parc de l'abbaye du Lys et la forêt toute proche, les fourmis noires sont très présentes dans les jardins et entrent dans les maisons au printemps.",
+    "Dans les résidences de la Plaine du Lys, les fourmis circulent par les gaines. Le traitement doit couvrir les logements touchés, en accord avec le bailleur.",
+  ], ["Melun", "Le Mée-sur-Seine", "Boissise-le-Roi", "Chartrettes"],
+  { q: "Combien de temps après le traitement les fourmis disparaissent-elles ?", a: "Les ouvrières continuent de venir quelques jours : elles emportent l'appât au nid. C'est normal, il ne faut pas les tuer ni nettoyer l'appât. La piste s'éteint ensuite progressivement." }),
+  vf("Combs-la-Ville", "à Combs-la-Ville", 'combs-la-ville', D77, [
+    "À Combs-la-Ville, les jardins de la vallée de l'Yerres et des quartiers pavillonnaires accueillent de nombreuses colonies de fourmis noires, très actives aux beaux jours.",
+    "Les maisons anciennes du bas de la ville, plus humides, peuvent attirer des fourmis charpentières dans les boiseries. Le technicien identifie l'espèce avant de traiter.",
+  ], ["Moissy-Cramayel", "Quincy-sous-Sénart", "Brie-Comte-Robert", "Lieusaint"],
+  { q: "Comment différencier une fourmi charpentière d'une fourmi noire ?", a: "La charpentière est bien plus grosse, souvent plus d'un centimètre, et laisse de la sciure près du bois qu'elle creuse. La fourmi noire des jardins est petite et suit des pistes vers la nourriture sucrée." }),
+  vf("Versailles", "à Versailles", 'versailles', D78, [
+    "À Versailles, les immeubles anciens et les hôtels particuliers ont des cours, des jardins et des boiseries où les fourmis s'installent. Elles suivent les plinthes et les parquets jusqu'aux cuisines.",
+    "Dans les maisons de Porchefontaine, Montreuil ou Clagny, les jardins abritent la fourmi noire, qui entre au printemps par les seuils et les fenêtres basses.",
+  ], ["Le Chesnay-Rocquencourt", "Viroflay", "Saint-Cyr-l'École", "Buc"],
+  { q: "Des fourmis dans un parquet ancien : faut-il le déposer ?", a: "Non. L'appât est déposé au bord des lames, là où les fourmis sortent. Les ouvrières le rapportent au nid, sous le parquet ou dans le mur." }),
+  vf("Sartrouville", "à Sartrouville", 'sartrouville', D78, [
+    "À Sartrouville, les pavillons avec jardin de la boucle de Seine accueillent beaucoup de fourmis noires. Elles entrent dans les cuisines par les seuils et les passages de tuyaux.",
+    "Dans les résidences du Plateau, les fourmis du rez-de-chaussée viennent souvent des espaces verts au pied des immeubles. L'appât posé sur la piste atteint le nid dehors.",
+  ], ["Houilles", "Montesson", "Maisons-Laffitte", "Cormeilles-en-Parisis"],
+  { q: "Le nid est dehors : pourquoi traiter dedans ?", a: "Parce que c'est sur la piste, à l'intérieur, que les ouvrières prennent l'appât. Elles le rapportent au nid, même dehors. On peut aussi traiter directement le nid s'il est visible." }),
+  vf("Saint-Germain-en-Laye", "à Saint-Germain-en-Laye", 'saint-germain-en-laye', D78, [
+    "À Saint-Germain-en-Laye, les maisons en lisière de forêt et les jardins des quartiers résidentiels abritent fourmis noires et parfois fourmis charpentières, attirées par le bois.",
+    "Dans le centre, les immeubles anciens ont des cours et des caves d'où les fourmis montent par les gaines. Le traitement à l'appât se fait sans gêner les occupants.",
+  ], ["Le Pecq", "Chambourcy", "Mareil-Marly", "Poissy"],
+  { q: "La forêt voisine envoie-t-elle des fourmis dans ma maison ?", a: "Les fourmis rousses des bois restent en forêt. Celles qui entrent dans les maisons sont surtout des fourmis noires des jardins ou des charpentières qui nichent près de la maison. On identifie l'espèce avant de traiter." }),
+  vf("Mantes-la-Jolie", "à Mantes-la-Jolie", 'mantes-la-jolie', D78, [
+    "À Mantes-la-Jolie, les fourmis noires nichent dans les jardins du centre ancien et les espaces verts des résidences, puis entrent dans les logements du rez-de-chaussée.",
+    "Dans les immeubles chauffés du Val Fourré, les fourmis pharaon peuvent toucher plusieurs étages. Il faut un traitement à l'appât coordonné avec le bailleur.",
+  ], ["Mantes-la-Ville", "Buchelay", "Limay", "Magnanville"],
+  { q: "Le bailleur doit-il payer le traitement contre les fourmis ?", a: "Si l'infestation touche les parties communes ou plusieurs logements, c'est en général au bailleur d'organiser le traitement. Pour un seul logement, cela dépend du bail. Nous pouvons établir un devis à lui transmettre." }),
+  vf("Poissy", "à Poissy", 'poissy', D78, [
+    "À Poissy, les pavillons et les jardins des quartiers résidentiels accueillent fourmis noires et fourmis des gazons, qui entrent dans les maisons dès le printemps.",
+    "Dans les sites d'entreprise et les restaurants, une piste de fourmis doit être traitée vite. Le gel appât permet de le faire sans arrêter l'activité.",
+  ], ["Saint-Germain-en-Laye", "Carrières-sous-Poissy", "Villennes-sur-Seine", "Orgeval"],
+  { q: "Des fourmis dans la pelouse : faut-il traiter ?", a: "Seulement si elles gênent ou entrent dans la maison. Un nid dans la pelouse loin de la maison n'est pas un problème. S'il touche la terrasse ou les murs, on le traite." }),
+  vf("Conflans-Sainte-Honorine", "à Conflans-Sainte-Honorine", 'conflans-sainte-honorine', D78, [
+    "À Conflans-Sainte-Honorine, les maisons du coteau ont des jardins en terrasses, des murets en pierre et des escaliers où les fourmis noires nichent en grand nombre.",
+    "Elles entrent dans les maisons par les fissures des murs anciens et les seuils. Nous suivons la piste et posons un appât au plus près du nid.",
+  ], ["Andrésy", "Maurecourt", "Herblay-sur-Seine", "Achères"],
+  { q: "Les fourmis abîment-elles les murets en pierre ?", a: "Elles creusent la terre et le mortier tendre entre les pierres, sans les détruire. Mais un nid dans un muret contre la maison est une porte d'entrée : il faut le traiter." }),
+  vf("Trappes", "à Trappes", 'trappes', D78, [
+    "À Trappes, les fourmis noires nichent dans les espaces verts des résidences et les jardins des pavillons. Elles entrent dans les logements du rez-de-chaussée par les seuils et les joints.",
+    "Dans les immeubles chauffés, les fourmis pharaon peuvent s'installer dans les gaines. Le traitement à l'appât doit être coordonné avec le bailleur pour atteindre toutes les reines.",
+  ], ["Élancourt", "Montigny-le-Bretonneux", "Plaisir", "La Verrière"],
+  { q: "Des fourmis dans un appartement en étage : d'où viennent-elles ?", a: "Souvent d'un nid dans les gaines techniques ou les murs, parfois du pied de l'immeuble. Les fourmis pharaon, elles, vivent entièrement à l'intérieur des bâtiments chauffés." }),
+  vf("Les Mureaux", "aux Mureaux", 'les-mureaux', D78, [
+    "Aux Mureaux, les pavillons des bords de Seine et les espaces verts des quartiers accueillent de nombreuses colonies de fourmis noires, qui entrent dans les cuisines au printemps.",
+    "Dans les résidences, les fourmis du rez-de-chaussée viennent souvent des pieds d'immeuble. L'appât, posé sur la piste intérieure, atteint le nid dehors.",
+  ], ["Meulan-en-Yvelines", "Ecquevilly", "Verneuil-sur-Seine", "Bouafle"],
+  { q: "Le vinaigre ou le citron suffisent-ils contre les fourmis ?", a: "Ils effacent la piste odorante quelques heures, mais ne touchent pas le nid. Les fourmis trouvent vite un autre chemin. Pour une colonie installée, il faut atteindre la reine." }),
+  vf("Houilles", "à Houilles", 'houilles', D78, [
+    "À Houilles, les maisons en meulière ont des cours et des jardins où les fourmis noires nichent sous les dalles et dans les joints des murs.",
+    "Dans les maisons mitoyennes, une colonie peut traverser le mur commun. Nous suivons la piste et traitons le nid ; prévenir le voisin évite qu'elle revienne de l'autre côté.",
+  ], ["Sartrouville", "Carrières-sur-Seine", "Bezons", "Chatou"],
+  { q: "Les fourmis viennent de chez le voisin : que faire ?", a: "L'appât fonctionne quand même : les ouvrières le rapportent au nid, même de l'autre côté du mur. Si le nid est chez le voisin et très actif, le traiter des deux côtés est plus sûr." }),
+  vf("Montigny-le-Bretonneux", "à Montigny-le-Bretonneux", 'montigny-le-bretonneux', D78, [
+    "À Montigny-le-Bretonneux, les maisons de ville et les résidences entourées d'espaces verts voient les fourmis noires entrer par les seuils et les joints de façade dès le printemps.",
+    "Pour les bureaux et commerces du centre, une piste de fourmis en salle de pause se traite à l'appât, hors des heures d'ouverture si besoin.",
+  ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
+  { q: "Des fourmis dans nos bureaux : intervenez-vous le soir ?", a: "Oui, le soir ou tôt le matin. Le gel appât ne dégage pas d'odeur et ne demande pas de libérer les locaux." }),
 ]
 
 export function getVilleFourmis(slug: string) {

@@ -19,6 +19,7 @@ import { MiniaturesChantier } from '@/components/ContenuNuisible'
 import MediasChantier from '@/components/MediasChantier'
 import { CHANTIERS_VILLE } from '@/lib/photos-chantiers'
 import SituationsVille from '@/components/SituationsVille'
+import LocalVille from '@/components/LocalVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { PROFILS } from '@/lib/profils-ville'
@@ -86,6 +87,9 @@ export type VilleServiceConfig = {
     recidive: string[] // conseils, 6 affichés par page en rotation
     faqPool: { q: string; a: string }[] // 4 questions par page en rotation
   }
+  // Contenu local rédigé à la main, propre à chaque ville (bloc « Spécial ville », comme les pages dératisation), 11/11/2026
+  local?: Record<string, string[]>
+  localTitre?: (a: string, nom: string) => string
   centre?: boolean // page entièrement centrée (règle de l'utilisateur pour les nouvelles pages)
 }
 
@@ -234,6 +238,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+        <LocalVille nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={c.local?.[v.slug]} />
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}

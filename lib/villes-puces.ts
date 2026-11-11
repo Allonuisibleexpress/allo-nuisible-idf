@@ -3,6 +3,7 @@
 // Prix aligné sur Allo Nuisible Express : dès 120 € TTC. Pas de chiffre inventé, pas de tiret long, rien de « naturel » ou « sans danger ».
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { PUCES_APPROFONDI } from './puces-approfondi'
+import { LOCAL_PUCES_GC } from './local-puces-gc'
 
 export const CONFIG_PUCES: VilleServiceConfig = {
   basePath: '/puces',
@@ -54,6 +55,8 @@ export const CONFIG_PUCES: VilleServiceConfig = {
   maj: '2026-11-09',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Puces dans d’autres villes',
+  local: LOCAL_PUCES_GC,
+  localTitre: (a, nom) => `Puces ${a} : ce qui est propre à ${nom}`,
   approfondi: PUCES_APPROFONDI,
 }
 
@@ -65,11 +68,14 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VillePuces = Ville & { title: string }
 
-type Dep = '94' | '75' | '92'
+type Dep = '94' | '75' | '92' | '91' | '77' | '78'
 const DEP: Record<Dep, { departement: string; zone: (s: string) => string }> = {
   '94': { departement: 'Val-de-Marne', zone: (s) => `/zones/val-de-marne/${s}` },
   '75': { departement: 'Paris', zone: () => '/zones/paris' },
   '92': { departement: 'Hauts-de-Seine', zone: () => '/zones/hauts-de-seine' },
+  '91': { departement: 'Essonne', zone: () => '/zones/essonne' },
+  '77': { departement: 'Seine-et-Marne', zone: () => '/zones/seine-et-marne' },
+  '78': { departement: 'Yvelines', zone: () => '/zones/yvelines' },
 }
 
 const ville = (nom: string, a: string, slug: string, code: Dep, contexte: string[], proches: string[], faq: { q: string; a: string }, faqPlus?: { q: string; a: string }[]): VillePuces => ({
@@ -346,6 +352,157 @@ export const VILLES_PUCES: VillePuces[] = [
   ], ['Paris 14e', 'Malakoff', 'Châtillon', 'Bagneux'],
   { q: 'Combien de temps après le traitement peut-on revenir chez soi ?', a: 'Après le temps d’absence indiqué par le technicien, puis une bonne aération. Il vous donne l’heure précise à la fin de l’intervention.' },
   [{ q: 'Mon bébé rampe au sol : est-ce compatible avec le traitement ?', a: 'Oui, avec des précautions : respectez le temps d’absence et l’aération, et suivez les consignes du technicien sur les zones à éviter les premiers jours.' }]),
+  // ── Essonne, Seine-et-Marne, Yvelines (11/11/2026) ──
+  ville("Évry-Courcouronnes", "à Évry-Courcouronnes", 'evry-courcouronnes', '91', [
+    "À Évry-Courcouronnes, la plupart des infestations de puces partent d'un chien ou d'un chat de la maison, parfois d'un animal adopté récemment. Dans les grandes résidences, elles peuvent aussi venir des caves, où vivent rongeurs et chats errants.",
+    "Nous traitons le logement entier, sols, plinthes, canapés et dessous des lits, pendant que votre vétérinaire traite l'animal. Un second passage élimine les puces sorties des cocons entre-temps.",
+  ], ["Ris-Orangis", "Corbeil-Essonnes", "Lisses", "Bondoufle"],
+  { q: "Je viens d'adopter un chat et j'ai des puces : est-ce lié ?", a: "Très souvent, oui. Un animal adopté ou recueilli peut arriver avec des puces. Faites-le traiter par le vétérinaire dès les premiers jours, et si vous êtes piqué, faites traiter le logement avant que les œufs n'éclosent partout." }),
+  ville("Corbeil-Essonnes", "à Corbeil-Essonnes", 'corbeil-essonnes', '91', [
+    "À Corbeil-Essonnes, les maisons anciennes aux planchers en bois et aux tomettes disjointes offrent aux larves de puces des fentes où se cacher. Le traitement doit atteindre ces interstices, pas seulement les surfaces.",
+    "Dans les logements remis en location après une longue vacance, les puces affamées sautent sur les premiers occupants : un traitement avant l'emménagement évite les mauvaises surprises.",
+  ], ["Évry-Courcouronnes", "Saint-Germain-lès-Corbeil", "Villabé", "Le Coudray-Montceaux"],
+  { q: "Je suis piqué en entrant dans un logement vide : pourquoi ?", a: "Les puces peuvent attendre plusieurs mois dans leur cocon. Les vibrations des pas les réveillent, et elles sautent sur la première personne qui passe. Un traitement du logement vide règle le problème." }),
+  ville("Massy", "à Massy", 'massy', '91', [
+    "À Massy, les pavillons avec jardin voient souvent les chiens et chats rapporter des puces de l'extérieur, en particulier en fin d'été et à l'automne, quand elles sont les plus nombreuses.",
+    "En appartement, l'infestation se concentre là où dort l'animal : panier, canapé, tapis. Nous traitons ces zones en priorité, puis tout le logement.",
+  ], ["Palaiseau", "Antony", "Wissous", "Chilly-Mazarin"],
+  { q: "Pourquoi plus de puces à l'automne ?", a: "Les puces se multiplient pendant les mois chauds et atteignent leur maximum en fin d'été. Dans les logements chauffés, elles continuent de se développer tout l'hiver. C'est souvent à l'automne qu'on remarque les premières piqûres." }),
+  ville("Savigny-sur-Orge", "à Savigny-sur-Orge", 'savigny-sur-orge', '91', [
+    "À Savigny-sur-Orge, ville de pavillons et de jardins, les puces arrivent souvent par un chat qui sort, ou par des hérissons et des rongeurs qui passent dans le jardin.",
+    "Le traitement couvre la maison et, si besoin, les lieux où dort l'animal dehors : niche, abri de jardin, véranda.",
+  ], ["Viry-Châtillon", "Morsang-sur-Orge", "Juvisy-sur-Orge", "Épinay-sur-Orge"],
+  { q: "Faut-il traiter le jardin contre les puces ?", a: "En général non : le soleil et la pluie limitent les puces dehors. On traite les lieux abrités où dort l'animal (niche, abri, véranda). Le jardin se traite seulement en cas de forte infestation à l'ombre." }),
+  ville("Palaiseau", "à Palaiseau", 'palaiseau', '91', [
+    "À Palaiseau, les logements étudiants et les colocations changent souvent d'occupants. Un animal qui a vécu dans le logement avant vous peut avoir laissé des œufs et des cocons dans la moquette.",
+    "Dans les maisons de la vallée de l'Yvette, les chats qui chassent dans les jardins et les bois rapportent régulièrement des puces à la maison.",
+  ], ["Massy", "Orsay", "Igny", "Villebon-sur-Yvette"],
+  { q: "Des puces dans un logement étudiant sans animal : comment est-ce possible ?", a: "L'ancien occupant avait peut-être un animal. Les cocons peuvent rester des mois dans une moquette ou un canapé. Prévenez le propriétaire ou le gestionnaire : un traitement du logement est nécessaire." }),
+  ville("Athis-Mons", "à Athis-Mons", 'athis-mons', '91', [
+    "À Athis-Mons, nous traitons aussi bien des pavillons du coteau que des appartements de résidences. Dans les deux cas, le point de départ est presque toujours un animal de la maison.",
+    "Pour les chambres d'hôtel et les locations proches de l'aéroport, un traitement rapide entre deux séjours, avec attestation, protège les clients suivants.",
+  ], ["Paray-Vieille-Poste", "Juvisy-sur-Orge", "Morangis", "Ablon-sur-Seine"],
+  { q: "Un client se plaint de piqûres dans ma location : que faire ?", a: "Bloquez la chambre et faites-la inspecter. Puces ou punaises de lit ne se traitent pas de la même façon. Nous identifions l'insecte, traitons entre deux séjours et remettons une attestation." }),
+  ville("Sainte-Geneviève-des-Bois", "à Sainte-Geneviève-des-Bois", 'sainte-genevieve-des-bois', '91', [
+    "À Sainte-Geneviève-des-Bois, les nombreux chats des pavillons circulent de jardin en jardin. Un seul chat infesté peut apporter des puces dans plusieurs maisons voisines.",
+    "Les puces s'installent surtout là où l'animal se repose : coussin de fenêtre, canapé, panier. Le traitement cible ces zones et toutes les pièces où il circule.",
+  ], ["Saint-Michel-sur-Orge", "Fleury-Mérogis", "Morsang-sur-Orge", "Villemoisson-sur-Orge"],
+  { q: "Mon chat est traité mais j'ai encore des puces : pourquoi ?", a: "Le traitement du chat tue les puces adultes qui montent sur lui, mais les œufs, larves et cocons restent dans la maison. Il faut aussi traiter le logement, sinon de nouvelles puces sortent pendant des semaines." }),
+  ville("Vigneux-sur-Seine", "à Vigneux-sur-Seine", 'vigneux-sur-seine', '91', [
+    "À Vigneux-sur-Seine, dans les résidences, des puces peuvent venir des caves et des locaux où passent rongeurs et chats errants. Plusieurs voisins piqués en même temps doivent faire penser à une cause commune.",
+    "Dans les pavillons, la source est le plus souvent un animal de la maison. Le traitement associe vétérinaire, traitement du logement et aspiration quotidienne.",
+  ], ["Draveil", "Montgeron", "Athis-Mons", "Juvisy-sur-Orge"],
+  { q: "Plusieurs voisins sont piqués : faut-il prévenir le bailleur ?", a: "Oui. Si plusieurs logements sont touchés, la cause est peut-être dans les parties communes (rongeurs, chats dans les caves). Le bailleur doit la faire traiter ; chaque logement est ensuite traité." }),
+  ville("Ris-Orangis", "à Ris-Orangis", 'ris-orangis', '91', [
+    "À Ris-Orangis, les chiens qui se promènent dans les bois de Saint-Eutrope et de l'Épine peuvent rapporter des puces, comme des tiques. Un contrôle du pelage au retour de promenade est une bonne habitude.",
+    "À la maison, les puces pondent sur l'animal, et les œufs tombent partout où il passe. C'est pourquoi le traitement couvre tout le logement, pas seulement son panier.",
+  ], ["Évry-Courcouronnes", "Grigny", "Draveil", "Bondoufle"],
+  { q: "Comment vérifier si mon chien a des puces ?", a: "Passez un peigne fin dans le pelage, surtout à la base de la queue, et tapotez-le sur un papier blanc mouillé. Des points noirs qui deviennent rouges sont des déjections de puces." }),
+  ville("Viry-Châtillon", "à Viry-Châtillon", 'viry-chatillon', '91', [
+    "À Viry-Châtillon, les maisons avec jardin près des lacs et de l'Orge voient passer chats, hérissons et rongeurs, qui sèment des puces autour des terrasses et des abris.",
+    "Quand un animal de la maison les rapporte à l'intérieur, elles se multiplient vite dans les tapis et les canapés. Le traitement en deux passages règle l'ensemble du cycle.",
+  ], ["Grigny", "Savigny-sur-Orge", "Juvisy-sur-Orge", "Morsang-sur-Orge"],
+  { q: "Pourquoi faut-il deux passages ?", a: "Le produit ne traverse pas les cocons. Les puces qui en sortent après le premier passage sont touchées par le produit restant, puis le second passage termine le travail. C'est ce qui évite les rechutes." }),
+  ville("Meaux", "à Meaux", 'meaux', '77', [
+    "À Meaux, nous intervenons dans les appartements du centre comme dans les pavillons des quartiers périphériques. Les puces arrivent le plus souvent avec un chat ou un chien de la maison.",
+    "Dans les maisons de bourg et les fermes des environs, les chats de grange et les rongeurs entretiennent parfois des puces dans les dépendances : elles doivent être traitées avec la maison.",
+  ], ["Trilport", "Nanteuil-lès-Meaux", "Chauconin-Neufmontiers", "Mareuil-lès-Meaux"],
+  { q: "Les puces de chat piquent-elles les humains ?", a: "Oui. La puce du chat, la plus courante, pique aussi le chien et l'homme, surtout aux chevilles et aux jambes. Elle ne vit pas sur l'homme, mais elle le pique quand l'animal n'est pas là." }),
+  ville("Chelles", "à Chelles", 'chelles', '77', [
+    "À Chelles, les pavillons des bords de Marne et leurs jardins voient passer chats et hérissons. Les chiens et chats de la maison ramènent les puces à l'intérieur, où elles se multiplient.",
+    "Les maisons anciennes, avec parquets et tapis, gardent bien les larves dans les fentes. Nous traitons ces zones avec soin, et l'aspiration quotidienne fait le reste.",
+  ], ["Vaires-sur-Marne", "Gagny", "Montfermeil", "Brou-sur-Chantereine"],
+  { q: "L'aspirateur suffit-il contre les puces ?", a: "Il est très utile, car il ramasse œufs et larves et ses vibrations font sortir les puces des cocons. Mais seul, il ne suffit pas. Videz le sac dehors après chaque passage." }),
+  ville("Melun", "à Melun", 'melun', '77', [
+    "À Melun, les immeubles anciens du centre ont des parquets et des moquettes où les puces se cachent. Les résidences plus récentes connaissent parfois des puces venues des caves.",
+    "Nous traitons le logement en deux passages et vous expliquons comment préparer l'intervention : sols dégagés, linge de l'animal lavé à 60 °C, aspiration.",
+  ], ["Dammarie-lès-Lys", "Le Mée-sur-Seine", "Vaux-le-Pénil", "Rubelles"],
+  { q: "Comment préparer mon logement avant le traitement ?", a: "Dégagez les sols, lavez à 60 °C le linge de l'animal et les plaids, passez l'aspirateur partout, y compris sous les meubles. Le technicien vous donne la liste complète à la prise de rendez-vous." }),
+  ville("Pontault-Combault", "à Pontault-Combault", 'pontault-combault', '77', [
+    "À Pontault-Combault, les maisons en lisière des bois accueillent des chiens qui se promènent en forêt et des chats qui chassent. Ils rapportent régulièrement des puces, surtout de l'été à l'automne.",
+    "Le traitement couvre la maison et les lieux de repos de l'animal (niche, garage, véranda). Votre vétérinaire traite l'animal en même temps.",
+  ], ["Roissy-en-Brie", "Émerainville", "Ozoir-la-Ferrière", "Le Plessis-Trévise"],
+  { q: "Les puces vivent-elles dans la voiture ?", a: "Oui, si le chien y voyage souvent. Les œufs tombent sur les sièges et les tapis. Aspirez soigneusement la voiture et lavez la couverture du chien en même temps que le traitement de la maison." }),
+  ville("Savigny-le-Temple", "à Savigny-le-Temple", 'savigny-le-temple', '77', [
+    "À Savigny-le-Temple, les familles avec chiens et chats sont nombreuses dans les lotissements. Une infestation de puces commence souvent dans la chambre d'un enfant où dort le chat.",
+    "Nous traitons toutes les pièces où l'animal circule, avec un produit adapté aux logements habités, et vous indiquons le temps d'absence nécessaire.",
+  ], ["Cesson", "Nandy", "Vert-Saint-Denis", "Saint-Pierre-du-Perray"],
+  { q: "Combien de temps faut-il quitter le logement ?", a: "En moyenne 4 heures, le temps que le produit sèche. Le technicien vous confirme la durée le jour du traitement. Les animaux et les enfants reviennent une fois les sols secs et la pièce aérée." }),
+  ville("Bussy-Saint-Georges", "à Bussy-Saint-Georges", 'bussy-saint-georges', '77', [
+    "À Bussy-Saint-Georges, les appartements récents ont souvent du parquet stratifié et peu de moquette, ce qui facilite le traitement. Les puces se cachent alors dans les canapés, les tapis et les plinthes.",
+    "Les chiens qui se promènent dans les parcs et les bois voisins sont la principale source. Le traitement de l'animal par le vétérinaire est indispensable.",
+  ], ["Bussy-Saint-Martin", "Collégien", "Montévrain", "Jossigny"],
+  { q: "Les puces vivent-elles dans un parquet stratifié ?", a: "Moins que dans une moquette, mais les larves se glissent dans les joints et sous les plinthes. Le traitement vise ces zones, et l'aspiration des joints est importante." }),
+  ville("Champs-sur-Marne", "à Champs-sur-Marne", 'champs-sur-marne', '77', [
+    "À Champs-sur-Marne, les étudiants de la Cité Descartes changent souvent de logement. Les puces laissées par l'animal d'un ancien locataire peuvent attendre dans une moquette et piquer les nouveaux occupants.",
+    "Dans les pavillons proches du parc et des bords de Marne, les chats qui sortent rapportent les puces. Le traitement associe vétérinaire et traitement du logement.",
+  ], ["Noisiel", "Torcy", "Noisy-le-Grand", "Émerainville"],
+  { q: "Qui paie le traitement des puces à l'entrée dans un logement ?", a: "Si l'infestation existait avant votre arrivée, c'est au bailleur de remettre un logement sans nuisibles. Signalez-le par écrit dès les premières piqûres. Nous pouvons établir un devis à lui transmettre." }),
+  ville("Villeparisis", "à Villeparisis", 'villeparisis', '77', [
+    "À Villeparisis, les pavillons avec jardin et les chats qui circulent de maison en maison expliquent la plupart des infestations. Les hérissons et les rongeurs des jardins entretiennent aussi des puces dehors.",
+    "À l'intérieur, nous traitons sols, canapés et lieux de repos de l'animal en deux passages, avec garantie d'un an.",
+  ], ["Mitry-Mory", "Claye-Souilly", "Vaujours", "Courtry"],
+  { q: "Les hérissons transmettent-ils des puces ?", a: "Ils ont leurs propres puces, qui piquent peu les animaux domestiques. Mais un jardin fréquenté par des animaux sauvages entretient souvent des puces de chat. Le vétérinaire protège votre animal toute l'année." }),
+  ville("Dammarie-lès-Lys", "à Dammarie-lès-Lys", 'dammarie-les-lys', '77', [
+    "À Dammarie-lès-Lys, les chiens qui se promènent en forêt et au bord de la Seine rapportent puces et tiques. Les maisons avec jardin sont les plus touchées en fin d'été.",
+    "Dans les résidences, des puces venant des caves ou d'un logement voisin peuvent toucher plusieurs appartements. Le bailleur doit alors coordonner le traitement.",
+  ], ["Melun", "Le Mée-sur-Seine", "Boissise-le-Roi", "Chartrettes"],
+  { q: "Les puces transmettent-elles des maladies à mon animal ?", a: "Elles peuvent lui transmettre un ver intestinal, le ténia, et provoquer une allergie aux piqûres. Votre vétérinaire vous conseille un traitement adapté, en même temps que le traitement du logement." }),
+  ville("Combs-la-Ville", "à Combs-la-Ville", 'combs-la-ville', '77', [
+    "À Combs-la-Ville, les maisons de la vallée de l'Yerres ont souvent un jardin et un animal. Les puces se développent surtout dans les pièces chauffées où l'animal dort.",
+    "Nous intervenons en deux passages, et vous indiquons les gestes qui accélèrent le résultat : aspiration chaque jour, linge lavé à 60 °C, traitement vétérinaire.",
+  ], ["Moissy-Cramayel", "Quincy-sous-Sénart", "Brie-Comte-Robert", "Lieusaint"],
+  { q: "Le lavage à 60 °C tue-t-il les puces ?", a: "Oui, il tue tous les stades : œufs, larves, cocons et adultes. Lavez à 60 °C la couverture de l'animal, les plaids et les housses de coussins avant le traitement." }),
+  ville("Versailles", "à Versailles", 'versailles', '78', [
+    "À Versailles, les appartements anciens ont des parquets à larges lames et des tapis épais, où les larves de puces se cachent dans les fentes. Le traitement doit aller jusque dans ces interstices.",
+    "Dans les maisons des quartiers résidentiels, les chats et chiens qui sortent au jardin sont la principale source. Le vétérinaire et notre traitement agissent ensemble.",
+  ], ["Le Chesnay-Rocquencourt", "Viroflay", "Saint-Cyr-l'École", "Buc"],
+  { q: "Le traitement abîme-t-il les parquets anciens ?", a: "Non. Le produit est pulvérisé en fine couche et sèche rapidement, sans tacher. Pour les parquets cirés ou fragiles, le technicien adapte la méthode et vous prévient avant." }),
+  ville("Sartrouville", "à Sartrouville", 'sartrouville', '78', [
+    "À Sartrouville, dans les pavillons avec jardin, les chats qui sortent ramènent des puces, surtout de l'été à l'automne. Dans les résidences du Plateau, les caves sont une autre source possible.",
+    "Nous traitons tout le logement en deux passages, en lien avec votre vétérinaire, avec une garantie d'un an.",
+  ], ["Houilles", "Montesson", "Maisons-Laffitte", "Cormeilles-en-Parisis"],
+  { q: "Les puces peuvent-elles venir de la cave ?", a: "Oui, si des rongeurs ou des chats errants y vivent. Les puces montent ensuite dans les logements. Il faut traiter la cave, éliminer les rongeurs, puis traiter les logements touchés." }),
+  ville("Saint-Germain-en-Laye", "à Saint-Germain-en-Laye", 'saint-germain-en-laye', '78', [
+    "À Saint-Germain-en-Laye, les chiens qui se promènent en forêt reviennent avec des puces et des tiques. Les maisons en lisière sont les plus exposées, de juin à octobre.",
+    "Dans les appartements du centre, les puces s'installent dans les tapis et les canapés où dort l'animal. Nous traitons l'ensemble du logement.",
+  ], ["Le Pecq", "Chambourcy", "Mareil-Marly", "Poissy"],
+  { q: "Faut-il traiter l'animal toute l'année ?", a: "C'est conseillé, car les logements chauffés permettent aux puces de se développer même en hiver. Votre vétérinaire vous indique le produit et le rythme adaptés." }),
+  ville("Mantes-la-Jolie", "à Mantes-la-Jolie", 'mantes-la-jolie', '78', [
+    "À Mantes-la-Jolie, dans les résidences du Val Fourré comme dans le centre ancien, les puces viennent le plus souvent d'un animal de la maison, parfois des caves où passent rongeurs et chats.",
+    "Pour les locataires, nous remettons une attestation d'intervention, utile pour les échanges avec le bailleur.",
+  ], ["Mantes-la-Ville", "Buchelay", "Limay", "Magnanville"],
+  { q: "Les puces peuvent-elles venir d'un logement voisin ?", a: "Oui, si un animal infesté vit à côté ou si les puces circulent par un palier commun. Si vous n'avez pas d'animal, cherchez une cause commune avec le bailleur." }),
+  ville("Poissy", "à Poissy", 'poissy', '78', [
+    "À Poissy, nous traitons aussi bien les maisons des quartiers résidentiels que les appartements du centre. Les chats et chiens de la maison sont presque toujours à l'origine des puces.",
+    "Le traitement vise les zones de repos de l'animal et tout le logement, en deux passages. Votre vétérinaire traite l'animal en même temps.",
+  ], ["Saint-Germain-en-Laye", "Carrières-sous-Poissy", "Villennes-sur-Seine", "Orgeval"],
+  { q: "Où se cachent les puces dans la maison ?", a: "Les adultes vivent sur l'animal. Les œufs tombent partout où il passe, et les larves se cachent à l'abri de la lumière : sous les meubles, dans les tapis, les fentes de parquet et les canapés." }),
+  ville("Conflans-Sainte-Honorine", "à Conflans-Sainte-Honorine", 'conflans-sainte-honorine', '78', [
+    "À Conflans-Sainte-Honorine, les maisons du coteau ont souvent un jardin et un animal qui sort. Les puces s'y développent surtout l'été, puis toute l'année dans la maison chauffée.",
+    "Sur les péniches-logements, un chien ou un chat peut aussi apporter des puces. Nous traitons les bateaux comme une maison, pièce par pièce.",
+  ], ["Andrésy", "Maurecourt", "Herblay-sur-Seine", "Achères"],
+  { q: "Traitez-vous les péniches contre les puces ?", a: "Oui. Le traitement se fait pièce par pièce, comme dans une maison, avec une attention aux recoins et aux tapis. Le temps d'absence est le même." }),
+  ville("Trappes", "à Trappes", 'trappes', '78', [
+    "À Trappes, dans les résidences comme dans les pavillons, une infestation de puces commence le plus souvent avec un chat ou un chien de la maison.",
+    "Si plusieurs logements sont piqués sans animal, une cause dans les caves ou les parties communes est probable : le bailleur doit être prévenu.",
+  ], ["Élancourt", "Montigny-le-Bretonneux", "Plaisir", "La Verrière"],
+  { q: "Je n'ai pas d'animal et j'ai des puces : est-ce possible ?", a: "Oui : ancien animal du logement, rongeurs dans les caves, chats errants près des fenêtres. Le technicien recherche la source pour éviter que les puces reviennent." }),
+  ville("Les Mureaux", "aux Mureaux", 'les-mureaux', '78', [
+    "Aux Mureaux, les pavillons des bords de Seine et du parc de Bécheville voient leurs chats et chiens rapporter des puces du jardin. Dans les résidences, les caves sont une autre source.",
+    "Nous traitons le logement en deux passages et vous accompagnons avec des conseils clairs pour éviter le retour.",
+  ], ["Meulan-en-Yvelines", "Ecquevilly", "Verneuil-sur-Seine", "Bouafle"],
+  { q: "Les puces reviennent-elles après le traitement ?", a: "Pas si l'animal est traité et les consignes suivies. Si elles réapparaissent dans l'année, notre garantie s'applique : nous repassons sans frais." }),
+  ville("Houilles", "à Houilles", 'houilles', '78', [
+    "À Houilles, les maisons en meulière avec jardin accueillent beaucoup de chats, qui circulent de cour en cour. Les puces passent ainsi d'une maison à l'autre.",
+    "Dans ces maisons anciennes, les planchers et les escaliers en bois gardent les larves dans leurs fentes. Le traitement atteint ces zones, en deux passages.",
+  ], ["Sartrouville", "Carrières-sur-Seine", "Bezons", "Chatou"],
+  { q: "Faut-il traiter l'escalier et les marches en bois ?", a: "Oui, si l'animal y passe ou y dort. Les larves se cachent dans les fentes et sous les nez de marche. Le technicien les inclut dans le traitement." }),
+  ville("Montigny-le-Bretonneux", "à Montigny-le-Bretonneux", 'montigny-le-bretonneux', '78', [
+    "À Montigny-le-Bretonneux, les familles avec animaux sont nombreuses dans les maisons de ville. Une infestation de puces se repère souvent aux piqûres sur les chevilles des enfants.",
+    "Nous traitons toutes les pièces fréquentées par l'animal, et vous indiquons le temps d'absence et les gestes à suivre après le passage.",
+  ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
+  { q: "Les piqûres sur les chevilles sont-elles des puces ?", a: "Très souvent. Les puces sautent depuis le sol et piquent le bas des jambes, souvent en petites séries. Les punaises de lit piquent plutôt les bras, le cou et le dos pendant la nuit." }),
 ]
 
 export function getVillePuces(slug: string) {

@@ -4,6 +4,7 @@
 // Règles : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { LOCAL_ACARIENS_GC } from '@/lib/local-acariens-gc'
 
 const AMELI = 'https://www.ameli.fr/assure/sante/themes/allergie/vivre-allergique'
 
@@ -112,6 +113,8 @@ export const CONFIG_ACARIENS: VilleServiceConfig = {
   maj: '2026-10-31',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des produits acaricides professionnels.',
   autresTitre: 'Acariens dans d\'autres villes',
+  local: LOCAL_ACARIENS_GC,
+  localTitre: (a, nom) => `Acariens ${a} : ce qui est propre à ${nom}`,
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -123,15 +126,21 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VilleAcariens = Ville & { title: string }
 
-const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleAcariens => {
-  const titres = [`Traitement anti-acariens ${a} (94)`, `Acariens ${a} (94) : traitement`, `Acariens ${a}`]
+// Val-de-Marne par défaut ; Essonne, Seine-et-Marne, Yvelines via dep (11/11/2026)
+type Dep = { code: string; departement: string; zoneHref: string }
+const D91: Dep = { code: '91', departement: 'Essonne', zoneHref: '/zones/essonne' }
+const D77: Dep = { code: '77', departement: 'Seine-et-Marne', zoneHref: '/zones/seine-et-marne' }
+const D78: Dep = { code: '78', departement: 'Yvelines', zoneHref: '/zones/yvelines' }
+const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }, dep?: Dep): VilleAcariens => {
+  const code = dep?.code ?? '94'
+  const titres = [`Traitement anti-acariens ${a} (${code})`, `Acariens ${a} (${code}) : traitement`, `Acariens ${a}`]
   return {
     slug,
     nom,
     a,
-    code: '94',
-    departement: 'Val-de-Marne',
-    zoneHref: `/zones/val-de-marne/${slug}`,
+    code,
+    departement: dep?.departement ?? 'Val-de-Marne',
+    zoneHref: dep?.zoneHref ?? `/zones/val-de-marne/${slug}`,
     title: titres.find((x) => x.length <= 60) ?? titres[2],
     description: `Acariens ${a} : literie, canapés et tapis traités à la vapeur sèche, en cryogénie ou à l'acaricide. Dès 120 € TTC, devis gratuit.`,
     contexte,
@@ -223,6 +232,157 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
     'Nous intervenons rapidement pour traiter la literie, les canapés et les tapis, avec la méthode adaptée à chaque textile, et nous restons disponibles pour un contrôle.',
   ], ['Charenton-le-Pont', 'Maisons-Alfort', 'Joinville-le-Pont', 'Saint-Maur-des-Fossés'],
   { q: 'Pouvez-vous intervenir rapidement à Saint-Maurice ?', a: 'Oui, notre siège est au 6 bis rue du Val d\'Osne. Appelez le 07 68 07 72 19 : nous fixons un rendez-vous, souvent dans la journée ou le lendemain.' }),
+  // ── Essonne, Seine-et-Marne, Yvelines (11/11/2026) ──
+  ville("Évry-Courcouronnes", "à Évry-Courcouronnes", 'evry-courcouronnes', [
+    "À Évry-Courcouronnes, beaucoup de logements sont des appartements de grands ensembles, bien chauffés et parfois peu ventilés. Chaleur et humidité réunies, c'est le terrain idéal des acariens dans les matelas et les canapés.",
+    "La ville accueille aussi l'université d'Évry et de nombreux étudiants en logement meublé. Un traitement du matelas à l'arrivée, puis une housse intégrale, protège les personnes allergiques.",
+  ], ["Ris-Orangis", "Corbeil-Essonnes", "Lisses", "Bondoufle"],
+  { q: "Mon enfant tousse la nuit : les acariens peuvent-ils en être la cause ?", a: "Les acariens sont une cause fréquente d'allergie respiratoire, avec toux et nez bouché la nuit. Seul un médecin peut le confirmer. En parallèle, un traitement de la literie et de la chambre réduit fortement l'exposition." }, D91),
+  ville("Corbeil-Essonnes", "à Corbeil-Essonnes", 'corbeil-essonnes', [
+    "À Corbeil-Essonnes, les maisons anciennes près de la Seine et de l'Essonne sont parfois humides, avec des murs en pierre qui gardent la fraîcheur. Les acariens profitent de cette humidité dans la literie et les tapis.",
+    "Nous traitons les matelas, oreillers, canapés et tapis à la vapeur sèche, et nous vous indiquons comment réduire l'humidité de la pièce.",
+  ], ["Évry-Courcouronnes", "Saint-Germain-lès-Corbeil", "Villabé", "Le Coudray-Montceaux"],
+  { q: "Ma maison est humide près de la rivière : que faire contre les acariens ?", a: "Aérez chaque jour, chauffez sans surchauffer (autour de 19 °C dans les chambres) et visez une humidité entre 40 et 60 %. Un déshumidificateur aide dans les pièces les plus humides. Le traitement de la literie fait le reste." }, D91),
+  ville("Massy", "à Massy", 'massy', [
+    "À Massy, les appartements récents du quartier Atlantis sont très isolés et étanches. Sans aération régulière, l'humidité de la cuisine, des douches et du linge reste à l'intérieur et nourrit les acariens.",
+    "Dans les pavillons, ce sont plutôt les chambres d'enfants avec moquette et peluches qui concentrent les acariens. Nous traitons literie, textiles et moquettes.",
+  ], ["Palaiseau", "Antony", "Wissous", "Chilly-Mazarin"],
+  { q: "Un logement bien isolé a-t-il plus d'acariens ?", a: "Il peut en avoir plus s'il est mal aéré, car l'humidité reste piégée. Vérifiez que la VMC fonctionne et ouvrez les fenêtres quelques minutes chaque jour, même en hiver." }, D91),
+  ville("Savigny-sur-Orge", "à Savigny-sur-Orge", 'savigny-sur-orge', [
+    "À Savigny-sur-Orge, les pavillons ont souvent une chambre au rez-de-jardin ou au sous-sol, plus fraîche et plus humide. C'est là que les acariens se développent le plus dans les matelas.",
+    "Nous traitons la literie et les textiles à la vapeur sèche, et vous conseillons sur l'aération et le chauffage de ces pièces.",
+  ], ["Viry-Châtillon", "Morsang-sur-Orge", "Juvisy-sur-Orge", "Épinay-sur-Orge"],
+  { q: "La vapeur sèche mouille-t-elle le matelas ?", a: "Non. La vapeur sèche contient très peu d'eau et sort à haute température. Elle tue les acariens en surface et en profondeur sans détremper le matelas, qui sèche en peu de temps." }, D91),
+  ville("Palaiseau", "à Palaiseau", 'palaiseau', [
+    "À Palaiseau, étudiants et chercheurs du plateau de Saclay louent souvent des logements meublés. Un matelas qui a déjà servi peut contenir beaucoup d'acariens : le traiter à l'arrivée est utile pour les personnes allergiques.",
+    "Dans la vallée de l'Yvette, les maisons des coteaux boisés sont parfois humides. La literie et les canapés y demandent une attention particulière.",
+  ], ["Massy", "Orsay", "Igny", "Villebon-sur-Yvette"],
+  { q: "Faut-il traiter un matelas de location meublée ?", a: "Si vous êtes allergique, oui. Un traitement à la vapeur sèche ou en cryogénie, puis une housse anti-acariens intégrale, vous protège sans changer le matelas." }, D91),
+  ville("Athis-Mons", "à Athis-Mons", 'athis-mons', [
+    "À Athis-Mons, nous traitons aussi bien des maisons du coteau, parfois anciennes et humides, que des appartements de résidences bien chauffés. Les acariens se plaisent dans les deux.",
+    "Pour les hôtels et meublés de courte durée proches de l'aéroport, un traitement régulier des matelas et des canapés améliore le confort des clients allergiques.",
+  ], ["Paray-Vieille-Poste", "Juvisy-sur-Orge", "Morangis", "Ablon-sur-Seine"],
+  { q: "Traitez-vous les literies d'hôtel contre les acariens ?", a: "Oui. Nous traitons matelas, oreillers, têtes de lit en tissu et fauteuils, chambre par chambre, entre deux séjours. Le traitement à la vapeur sèche permet de relouer rapidement." }, D91),
+  ville("Sainte-Geneviève-des-Bois", "à Sainte-Geneviève-des-Bois", 'sainte-genevieve-des-bois', [
+    "À Sainte-Geneviève-des-Bois, les familles vivent souvent en pavillon, avec moquette dans les chambres et canapés en tissu au salon. Ce sont les principaux réservoirs d'acariens de la maison.",
+    "Nous traitons literie, canapés, moquettes et tapis, et vous aidons à choisir des gestes simples : lavage à 60 °C, housses, aération.",
+  ], ["Saint-Michel-sur-Orge", "Fleury-Mérogis", "Morsang-sur-Orge", "Villemoisson-sur-Orge"],
+  { q: "Faut-il enlever la moquette contre les acariens ?", a: "Ce n'est pas obligatoire, mais un sol dur se nettoie mieux. Si vous gardez la moquette, aspirez-la souvent avec un filtre HEPA et faites-la traiter à la vapeur sèche." }, D91),
+  ville("Vigneux-sur-Seine", "à Vigneux-sur-Seine", 'vigneux-sur-seine', [
+    "À Vigneux-sur-Seine, la proximité de la Seine et des lacs peut rendre l'air plus humide, surtout dans les rez-de-chaussée. Les acariens y prolifèrent dans les matelas et les canapés.",
+    "Dans les appartements, le séchage du linge à l'intérieur augmente encore l'humidité. Nous traitons la literie et vous conseillons sur l'aération.",
+  ], ["Draveil", "Montgeron", "Athis-Mons", "Juvisy-sur-Orge"],
+  { q: "Sécher le linge dans l'appartement favorise-t-il les acariens ?", a: "Oui, il fait monter l'humidité de la pièce. Si vous n'avez pas d'autre solution, séchez-le dans une pièce aérée, loin des chambres, et ouvrez la fenêtre." }, D91),
+  ville("Ris-Orangis", "à Ris-Orangis", 'ris-orangis', [
+    "À Ris-Orangis, les logements récents des bords de Seine sont bien isolés, ce qui demande une aération régulière. Dans les pavillons proches des bois, ce sont les chambres plus fraîches qui sont concernées.",
+    "Nous traitons la literie, les canapés et les tapis à la vapeur sèche, en cryogénie ou à l'acaricide selon le cas.",
+  ], ["Évry-Courcouronnes", "Grigny", "Draveil", "Bondoufle"],
+  { q: "Vapeur sèche, cryogénie ou acaricide : que choisir ?", a: "La vapeur sèche et la cryogénie n'utilisent aucun insecticide et conviennent à la literie et aux textiles. L'acaricide est utile pour les grandes surfaces et les infestations importantes. Le technicien vous conseille selon votre logement." }, D91),
+  ville("Viry-Châtillon", "à Viry-Châtillon", 'viry-chatillon', [
+    "À Viry-Châtillon, entre les lacs, l'Orge et la Seine, l'humidité de l'air est souvent élevée. Les acariens profitent des chambres peu aérées et de la literie ancienne.",
+    "Nous traitons matelas, oreillers, canapés et peluches, puis vous expliquons comment garder une humidité raisonnable dans les chambres.",
+  ], ["Grigny", "Savigny-sur-Orge", "Juvisy-sur-Orge", "Morsang-sur-Orge"],
+  { q: "Les peluches des enfants contiennent-elles des acariens ?", a: "Oui, beaucoup. Lavez-les à 60 °C ou placez-les 24 heures au congélateur, puis lavez-les pour éliminer les acariens morts et leurs déjections. Limitez leur nombre dans le lit." }, D91),
+  ville("Meaux", "à Meaux", 'meaux', [
+    "À Meaux, les maisons anciennes du centre et des bords de Marne sont parfois humides, avec des murs épais qui gardent la fraîcheur. Les acariens s'y développent dans la literie et les tapis.",
+    "Dans les appartements des grands quartiers, bien chauffés, ce sont surtout les matelas et les canapés qui sont concernés. Nous traitons ces textiles et donnons des conseils d'aération.",
+  ], ["Trilport", "Nanteuil-lès-Meaux", "Chauconin-Neufmontiers", "Mareuil-lès-Meaux"],
+  { q: "Quelle température dans la chambre contre les acariens ?", a: "Autour de 19 °C. Une chambre trop chauffée et peu aérée favorise les acariens. Aérez quelques minutes chaque jour, même en hiver." }, D77),
+  ville("Chelles", "à Chelles", 'chelles', [
+    "À Chelles, les pavillons des bords de Marne et les maisons anciennes peuvent souffrir d'humidité, surtout au rez-de-chaussée. Les acariens y prolifèrent dans les matelas et les canapés.",
+    "Nous traitons literie et textiles à la vapeur sèche, et vous indiquons comment repérer et réduire l'humidité de la maison.",
+  ], ["Vaires-sur-Marne", "Gagny", "Montfermeil", "Brou-sur-Chantereine"],
+  { q: "Comment savoir si mon logement est trop humide ?", a: "Un hygromètre, vendu en magasin de bricolage, indique le taux d'humidité. Au-delà de 60 % de façon durable, les acariens se développent mieux. Buée sur les vitres et odeur de renfermé sont aussi des signes." }, D77),
+  ville("Melun", "à Melun", 'melun', [
+    "À Melun, les immeubles anciens du centre et de l'île Saint-Étienne ont des appartements avec moquettes et tentures, qui retiennent les acariens. Les résidences plus récentes sont, elles, parfois mal ventilées.",
+    "Nous traitons matelas, canapés, moquettes et rideaux, et vous conseillons pour limiter le retour des acariens.",
+  ], ["Dammarie-lès-Lys", "Le Mée-sur-Seine", "Vaux-le-Pénil", "Rubelles"],
+  { q: "Les rideaux contiennent-ils des acariens ?", a: "Oui, surtout les rideaux épais et les voilages qui touchent le sol. Lavez-les régulièrement à la température indiquée, ou faites-les traiter à la vapeur sèche avec le reste du logement." }, D77),
+  ville("Pontault-Combault", "à Pontault-Combault", 'pontault-combault', [
+    "À Pontault-Combault, les maisons en lisière des bois peuvent être plus humides, surtout en automne et en hiver. Les acariens se développent alors dans la literie et les canapés.",
+    "Nous traitons la maison pièce par pièce, en commençant par les chambres, puis le salon et les tapis.",
+  ], ["Roissy-en-Brie", "Émerainville", "Ozoir-la-Ferrière", "Le Plessis-Trévise"],
+  { q: "Les animaux de compagnie favorisent-ils les acariens ?", a: "Leurs squames nourrissent les acariens, surtout si l'animal dort sur le canapé ou le lit. Lavez souvent son panier et ses couvertures, et faites traiter les textiles qu'il fréquente." }, D77),
+  ville("Savigny-le-Temple", "à Savigny-le-Temple", 'savigny-le-temple', [
+    "À Savigny-le-Temple, les maisons récentes des lotissements sont bien isolées et chauffées. Sans aération quotidienne, l'humidité reste dans les chambres et favorise les acariens.",
+    "Pour les enfants allergiques, nous traitons en priorité la chambre : matelas, oreillers, peluches et tapis.",
+  ], ["Cesson", "Nandy", "Vert-Saint-Denis", "Saint-Pierre-du-Perray"],
+  { q: "Une housse anti-acariens est-elle utile ?", a: "Oui, une housse intégrale qui entoure tout le matelas et l'oreiller limite le contact avec les acariens. Elle complète le traitement, sans le remplacer." }, D77),
+  ville("Bussy-Saint-Georges", "à Bussy-Saint-Georges", 'bussy-saint-georges', [
+    "À Bussy-Saint-Georges, les logements récents sont isolés et équipés de VMC. Quand la ventilation est encrassée ou coupée, l'humidité monte et les acariens se développent.",
+    "Nous traitons la literie et les textiles, et vous rappelons les gestes utiles : nettoyer les bouches de VMC, aérer, laver le linge de lit à 60 °C.",
+  ], ["Bussy-Saint-Martin", "Collégien", "Montévrain", "Jossigny"],
+  { q: "La VMC joue-t-elle un rôle contre les acariens ?", a: "Oui. Elle évacue l'humidité. Des bouches encrassées ou une VMC arrêtée laissent l'humidité monter. Nettoyez les bouches régulièrement et ne les bouchez jamais." }, D77),
+  ville("Champs-sur-Marne", "à Champs-sur-Marne", 'champs-sur-marne', [
+    "À Champs-sur-Marne, les étudiants de la Cité Descartes occupent souvent des chambres meublées dont le matelas a déjà servi. Pour les allergiques, un traitement à l'arrivée est utile.",
+    "Dans les pavillons proches des bords de Marne, l'humidité peut être plus élevée au rez-de-chaussée. La literie et les canapés y sont traités en priorité.",
+  ], ["Noisiel", "Torcy", "Noisy-le-Grand", "Émerainville"],
+  { q: "Combien de temps dure un traitement anti-acariens ?", a: "Pour un appartement, comptez en général une à deux heures selon le nombre de matelas et de canapés. Avec la vapeur sèche, vous pouvez utiliser la literie le soir même." }, D77),
+  ville("Villeparisis", "à Villeparisis", 'villeparisis', [
+    "À Villeparisis, les pavillons avec sous-sol ou rez-de-jardin ont parfois des chambres plus humides. C'est là que les acariens sont les plus nombreux.",
+    "Nous traitons matelas, canapés et tapis, et vous conseillons pour assainir les pièces les plus humides.",
+  ], ["Mitry-Mory", "Claye-Souilly", "Vaujours", "Courtry"],
+  { q: "Faut-il changer son matelas à cause des acariens ?", a: "Pas forcément. Un traitement en profondeur, puis une housse intégrale, suffit souvent. Un matelas très ancien et abîmé peut en revanche mériter d'être remplacé." }, D77),
+  ville("Dammarie-lès-Lys", "à Dammarie-lès-Lys", 'dammarie-les-lys', [
+    "À Dammarie-lès-Lys, la proximité de la Seine et de la forêt peut rendre certaines maisons plus humides, surtout en automne. Les acariens s'y développent dans la literie.",
+    "Dans les appartements de la Plaine du Lys, bien chauffés, une aération régulière et un traitement des textiles réduisent nettement les acariens.",
+  ], ["Melun", "Le Mée-sur-Seine", "Boissise-le-Roi", "Chartrettes"],
+  { q: "Les acariens disparaissent-ils en hiver ?", a: "Non. Dans un logement chauffé, ils vivent toute l'année. Ils sont souvent plus nombreux à l'automne, quand on chauffe et qu'on aère moins." }, D77),
+  ville("Combs-la-Ville", "à Combs-la-Ville", 'combs-la-ville', [
+    "À Combs-la-Ville, les maisons proches de l'Yerres sont parfois humides, surtout au rez-de-chaussée. Les acariens profitent de cette humidité dans les matelas et les canapés.",
+    "Nous traitons literie et textiles à la vapeur sèche ou en cryogénie, puis vous conseillons pour garder une humidité raisonnable.",
+  ], ["Moissy-Cramayel", "Quincy-sous-Sénart", "Brie-Comte-Robert", "Lieusaint"],
+  { q: "La cryogénie est-elle adaptée aux canapés ?", a: "Oui. La neige carbonique tue les acariens par le froid, sans eau ni insecticide, ce qui convient aux tissus fragiles et aux canapés. Le technicien vérifie le tissu avant de traiter." }, D77),
+  ville("Versailles", "à Versailles", 'versailles', [
+    "À Versailles, les appartements anciens ont souvent des tapis, des tentures, des fauteuils et des canapés en tissu, où les acariens s'accumulent au fil des années.",
+    "Nous traitons ces textiles avec soin, à la vapeur sèche ou en cryogénie selon les matières, sans abîmer les tissus anciens.",
+  ], ["Le Chesnay-Rocquencourt", "Viroflay", "Saint-Cyr-l'École", "Buc"],
+  { q: "Pouvez-vous traiter des fauteuils anciens contre les acariens ?", a: "Oui. Pour les tissus anciens ou fragiles, la cryogénie est souvent préférable, car elle n'apporte ni chaleur ni humidité. Le technicien teste d'abord une zone discrète." }, D78),
+  ville("Sartrouville", "à Sartrouville", 'sartrouville', [
+    "À Sartrouville, les pavillons des bords de Seine peuvent être plus humides, et les chambres au rez-de-jardin plus fraîches. Les acariens s'y développent dans la literie.",
+    "Dans les résidences du Plateau, ce sont surtout les chambres d'enfants et les canapés qui demandent un traitement.",
+  ], ["Houilles", "Montesson", "Maisons-Laffitte", "Cormeilles-en-Parisis"],
+  { q: "À quelle fréquence laver le linge de lit ?", a: "Chaque semaine, à 60 °C si le tissu le permet. Les couettes et oreillers se lavent plus rarement, mais régulièrement, ou se traitent à la vapeur sèche." }, D78),
+  ville("Saint-Germain-en-Laye", "à Saint-Germain-en-Laye", 'saint-germain-en-laye', [
+    "À Saint-Germain-en-Laye, les maisons en lisière de forêt sont parfois humides, surtout en automne. Les acariens se plaisent dans la literie et les textiles de ces maisons.",
+    "Dans les appartements anciens du centre, tapis et canapés en tissu concentrent les acariens. Nous les traitons avec la literie.",
+  ], ["Le Pecq", "Chambourcy", "Mareil-Marly", "Poissy"],
+  { q: "Les acariens sont-ils visibles à l'œil nu ?", a: "Non, ils mesurent moins d'un demi-millimètre. On les repère par leurs effets : allergies, nez bouché, toux la nuit ou au réveil, yeux qui grattent." }, D78),
+  ville("Mantes-la-Jolie", "à Mantes-la-Jolie", 'mantes-la-jolie', [
+    "À Mantes-la-Jolie, dans les appartements des résidences comme dans les maisons du centre ancien, l'humidité et le chauffage favorisent les acariens dans la literie.",
+    "Nous traitons matelas, oreillers et canapés, et vous indiquons les gestes simples qui limitent leur retour.",
+  ], ["Mantes-la-Ville", "Buchelay", "Limay", "Magnanville"],
+  { q: "Les plantes vertes favorisent-elles les acariens ?", a: "Beaucoup de plantes dans une chambre augmentent l'humidité. Mieux vaut les placer dans les pièces de vie et garder la chambre la plus sèche et aérée possible." }, D78),
+  ville("Poissy", "à Poissy", 'poissy', [
+    "À Poissy, les maisons proches de la Seine et les rez-de-chaussée peuvent être humides. Les acariens y sont plus nombreux dans les matelas et les canapés.",
+    "Nous traitons la literie, les canapés et les tapis, en commençant par la chambre des personnes allergiques.",
+  ], ["Saint-Germain-en-Laye", "Carrières-sous-Poissy", "Villennes-sur-Seine", "Orgeval"],
+  { q: "L'aspirateur suffit-il contre les acariens ?", a: "Il retire une partie des acariens et de leurs déjections, surtout avec un filtre HEPA, mais pas ceux qui vivent au cœur du matelas. Le traitement en profondeur reste nécessaire." }, D78),
+  ville("Conflans-Sainte-Honorine", "à Conflans-Sainte-Honorine", 'conflans-sainte-honorine', [
+    "À Conflans-Sainte-Honorine, les maisons proches de la Seine et de l'Oise, comme les péniches-logements, connaissent une humidité plus élevée. Les acariens y prolifèrent dans la literie.",
+    "Sur les bateaux, les matelas et banquettes sont souvent en mousse et peu aérés : un traitement à la vapeur sèche et une bonne ventilation font la différence.",
+  ], ["Andrésy", "Maurecourt", "Herblay-sur-Seine", "Achères"],
+  { q: "Traitez-vous la literie d'une péniche ?", a: "Oui. Nous traitons matelas, banquettes et coussins à bord, à la vapeur sèche. Une bonne ventilation de la cabine limite ensuite l'humidité." }, D78),
+  ville("Trappes", "à Trappes", 'trappes', [
+    "À Trappes, dans les appartements bien chauffés des résidences, les acariens se développent dans les matelas et les canapés, surtout si les pièces sont peu aérées.",
+    "Nous traitons la literie et les textiles, et vous aidons à repérer les sources d'humidité (linge qui sèche, ventilation bouchée).",
+  ], ["Élancourt", "Montigny-le-Bretonneux", "Plaisir", "La Verrière"],
+  { q: "Les acariens viennent-ils d'un défaut du logement ?", a: "Ils sont présents dans tous les logements. Mais une humidité excessive, due à une infiltration ou une ventilation hors service, les fait proliférer. Signalez ce type de défaut à votre bailleur." }, D78),
+  ville("Les Mureaux", "aux Mureaux", 'les-mureaux', [
+    "Aux Mureaux, les logements proches de la Seine et les rez-de-chaussée peuvent être plus humides. La literie et les canapés y accueillent beaucoup d'acariens.",
+    "Pour les familles avec enfants allergiques, nous traitons en priorité les chambres et donnons des conseils adaptés.",
+  ], ["Meulan-en-Yvelines", "Ecquevilly", "Verneuil-sur-Seine", "Bouafle"],
+  { q: "Le traitement est-il possible avec un bébé à la maison ?", a: "Oui. La vapeur sèche et la cryogénie n'utilisent aucun insecticide. Le lit et la chambre du bébé peuvent être traités, et utilisés une fois secs et aérés." }, D78),
+  ville("Houilles", "à Houilles", 'houilles', [
+    "À Houilles, les maisons en meulière ont des murs épais qui peuvent garder l'humidité, surtout au rez-de-chaussée et au sous-sol. Les acariens s'y développent dans la literie.",
+    "Nous traitons matelas, canapés et tapis, et vous conseillons pour assainir les pièces les plus humides de la maison.",
+  ], ["Sartrouville", "Carrières-sur-Seine", "Bezons", "Chatou"],
+  { q: "Un déshumidificateur est-il utile contre les acariens ?", a: "Oui, dans une pièce qui reste au-dessus de 60 % d'humidité. Il aide à revenir entre 40 et 60 %, la fourchette conseillée par l'Assurance maladie." }, D78),
+  ville("Montigny-le-Bretonneux", "à Montigny-le-Bretonneux", 'montigny-le-bretonneux', [
+    "À Montigny-le-Bretonneux, les maisons de ville et les appartements sont bien isolés et chauffés. Sans aération régulière, l'humidité reste dans les chambres et les acariens prolifèrent.",
+    "Nous traitons la literie et les textiles de toute la maison, et vous rappelons les gestes simples d'entretien.",
+  ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
+  { q: "Faut-il traiter toute la maison ou seulement les chambres ?", a: "Les chambres d'abord, car on y passe le plus de temps. Les canapés, fauteuils et tapis du salon sont aussi des réservoirs : on les traite si la personne allergique les utilise beaucoup." }, D78),
 ]
 
 export function getVilleAcariens(slug: string) {

@@ -4,6 +4,7 @@
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { LOCAL_SOURIS_GC } from '@/lib/local-souris-gc'
 
 export const GUIDES_SOURIS: Record<string, string> = {
   'souris-par-ou-entrent-elles': 'Souris : par où entrent-elles ?',
@@ -129,6 +130,8 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
   maj: '2026-10-31',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des rodenticides professionnels.',
   autresTitre: 'Souris dans d\'autres villes',
+  local: LOCAL_SOURIS_GC,
+  localTitre: (a, nom) => `Souris ${a} : ce qui est propre à ${nom}`,
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -201,6 +204,10 @@ const ville = (nom: string, a: string, slug: string, contexte: string[], proches
   proches,
   faq: [faq, ...FAQ_COMMUNE(a)],
 })
+
+const D91: Dep = { code: '91', departement: 'Essonne', zoneHref: '/zones/essonne' }
+const D77: Dep = { code: '77', departement: 'Seine-et-Marne', zoneHref: '/zones/seine-et-marne' }
+const D78: Dep = { code: '78', departement: 'Yvelines', zoneHref: '/zones/yvelines' }
 
 export const VILLES_SOURIS: VilleSouris[] = [
   ville('Vincennes', 'à Vincennes', 'vincennes', [
@@ -466,6 +473,197 @@ export const VILLES_SOURIS: VilleSouris[] = [
     'Prévenez votre propriétaire ou votre syndic dès les premières traces : le traitement des parties communes leur revient.',
   ], ['Villeneuve-Saint-Georges', 'Limeil-Brévannes', 'Créteil', 'Bonneuil-sur-Marne'],
   { q: 'Locataire : faut-il prévenir le propriétaire ?', a: 'Oui, dès les premières traces. Selon l\'origine, le traitement peut lui revenir, et les parties communes relèvent du bailleur ou du syndic. Nous fournissons un rapport utile pour ces démarches.' }),
+  // ── Essonne, Seine-et-Marne, Yvelines (11/11/2026) ──
+  ville("Évry-Courcouronnes", "à Évry-Courcouronnes", 'evry-courcouronnes', [
+    "À Évry-Courcouronnes, les grandes résidences des Pyramides, du Canal ou des Épinettes sont reliées par des sous-sols, des parkings et des vide-ordures : les souris y circulent d'un bâtiment à l'autre sans jamais sortir à l'air libre.",
+    "Le centre commercial, les restaurants et les bureaux du quartier de la préfecture reçoivent des livraisons tous les jours. Pour ces professionnels, nous posons des pièges connectés et remettons une attestation après chaque passage.",
+    "Dans les pavillons de Courcouronnes, plus proches des parcs des Coquibus et des Loges, c'est plutôt le mulot qui entre au garage à l'automne : on l'identifie avant de choisir le dispositif.",
+  ], ["Ris-Orangis", "Corbeil-Essonnes", "Lisses", "Bondoufle"],
+  { q: "Des souris dans le parking de ma résidence à Évry : qui intervient ?", a: "Le parking et les caves sont des parties communes : le traitement est commandé par le bailleur ou le syndic. Signalez les traces par écrit, et si les souris montent dans votre logement, nous pouvons traiter l'appartement et remettre un rapport au gestionnaire." },
+  D91),
+  ville("Corbeil-Essonnes", "à Corbeil-Essonnes", 'corbeil-essonnes', [
+    "Corbeil-Essonnes a gardé beaucoup de maisons et d'immeubles anciens le long de la Seine et de la rivière Essonne, avec des caves voûtées et des murs en pierre aux joints creusés : autant de passages pour les souris.",
+    "Les anciens sites industriels et les berges proches leur offrent des abris l'été ; dès les premiers froids, elles se rapprochent des logements par les soupiraux et les passages de canalisations.",
+    "Dans ces bâtis anciens, le colmatage compte autant que le piégeage : nous rebouchons les joints et les trous au mortier et à la laine d'acier, là où la mousse expansive serait rongée en quelques nuits.",
+  ], ["Évry-Courcouronnes", "Saint-Germain-lès-Corbeil", "Villabé", "Le Coudray-Montceaux"],
+  { q: "Ma cave voûtée a des trous partout : peut-on vraiment la fermer aux souris ?", a: "Oui, en traitant les points de passage les plus utilisés : soupirail, arrivées de tuyaux, porte et joints creusés. Le technicien les repère grâce aux traces et aux crottes, puis les referme avec du mortier et de la grille métallique." },
+  D91),
+  ville("Massy", "à Massy", 'massy', [
+    "Massy réunit deux visages : les grands ensembles et le quartier Atlantis autour des gares TGV et RER, et les zones pavillonnaires de Villaine ou des Graviers. Les souris s'installent dans les deux, mais pas de la même manière.",
+    "En immeuble, elles montent des locaux poubelles et des parkings par les gaines techniques. En pavillon, elles entrent par le garage ou le sous-sol, souvent depuis les jardins et les talus le long des voies ferrées.",
+    "Pour les commerces et restaurants du centre et d'Atlantis, nous proposons un suivi par pièges connectés, avec relevé des captures et attestation pour les contrôles d'hygiène.",
+  ], ["Palaiseau", "Antony", "Wissous", "Chilly-Mazarin"],
+  { q: "J'habite près des voies ferrées à Massy : est-ce pour ça que j'ai des souris ?", a: "Les talus et délaissés ferroviaires abritent des rongeurs, qui se rapprochent des maisons en hiver. Ce n'est pas une fatalité : un piégeage sur les passages et la fermeture des accès du garage et du sous-sol suffisent dans la plupart des cas." },
+  D91),
+  ville("Savigny-sur-Orge", "à Savigny-sur-Orge", 'savigny-sur-orge', [
+    "Savigny-sur-Orge est une ville très pavillonnaire, bordée par l'Orge et ses espaces verts. Les souris et les mulots y vivent dans les jardins et les berges, puis entrent dans les maisons à l'automne par les garages, les sous-sols et les vides sanitaires.",
+    "Dans ces maisons, elles s'installent vite dans les doublages et les combles, où l'on entend des grattements la nuit. Nous localisons les passages, posons pièges ou postes sécurisés et refermons les entrées.",
+  ], ["Viry-Châtillon", "Morsang-sur-Orge", "Juvisy-sur-Orge", "Épinay-sur-Orge"],
+  { q: "J'entends gratter dans le plafond la nuit : souris ou loir ?", a: "Les souris font de petits grattements rapides et laissent des crottes de quelques millimètres. Le lérot, présent dans les jardins de l'Essonne, est plus bruyant et fréquente surtout les combles. Une photo des crottes nous permet de trancher." },
+  D91),
+  ville("Palaiseau", "à Palaiseau", 'palaiseau', [
+    "À Palaiseau, les maisons de Lozère et de la vallée de l'Yvette côtoient les résidences récentes du plateau de Saclay et les logements étudiants. Les souris profitent des jardins, des coteaux boisés et des chantiers pour se rapprocher des bâtiments.",
+    "Dans les bâtiments neufs, les gaines et passages de réseaux sont parfois mal rebouchés après les travaux : c'est par là que les souris entrent dès le premier hiver. Nous les repérons et les fermons après le piégeage.",
+    "Pour les résidences étudiantes et les laboratoires, les pièges connectés permettent un suivi sans multiplier les visites.",
+  ], ["Massy", "Orsay", "Igny", "Villebon-sur-Yvette"],
+  { q: "Un logement neuf peut-il déjà avoir des souris ?", a: "Oui. Les passages de gaines, de tuyaux et les vides techniques laissés ouverts après le chantier sont des entrées idéales. Si vous êtes dans l'année de parfait achèvement, signalez-le aussi au promoteur." },
+  D91),
+  ville("Athis-Mons", "à Athis-Mons", 'athis-mons', [
+    "Athis-Mons s'étend des bords de Seine au plateau qui touche l'aéroport d'Orly. Entre les pavillons du coteau, les résidences et les zones d'activités, les souris trouvent partout abri et nourriture.",
+    "Les entrepôts et locaux d'entreprises proches de l'aéroport nous appellent pour un suivi régulier : postes d'appâtage sécurisés en périphérie, pièges près des stocks et compte rendu à chaque passage.",
+    "Chez les particuliers, ce sont surtout les garages et les sous-sols qui servent de porte d'entrée, avec des souris qui remontent ensuite jusqu'à la cuisine.",
+  ], ["Paray-Vieille-Poste", "Juvisy-sur-Orge", "Morangis", "Ablon-sur-Seine"],
+  { q: "Proposez-vous un contrat de suivi pour un entrepôt ?", a: "Oui. Nous posons un réseau de postes sécurisés et de pièges, numérotés sur un plan, et nous passons à intervalles réguliers. Chaque visite donne lieu à un compte rendu, utile pour vos audits et vos clients." },
+  D91),
+  ville("Sainte-Geneviève-des-Bois", "à Sainte-Geneviève-des-Bois", 'sainte-genevieve-des-bois', [
+    "Sainte-Geneviève-des-Bois compte de nombreux pavillons avec jardin, autour de l'Orge et de la Boële. Les souris y entrent par les portes de garage mal jointes, les grilles d'aération et les passages de tuyaux du sous-sol.",
+    "Composts, mangeoires à oiseaux et sacs de graines stockés au garage les attirent près des maisons. Quelques rangements, ajoutés au piégeage et au colmatage, évitent qu'elles reviennent l'hiver suivant.",
+  ], ["Saint-Michel-sur-Orge", "Fleury-Mérogis", "Morsang-sur-Orge", "Villemoisson-sur-Orge"],
+  { q: "Les graines pour oiseaux attirent-elles les souris ?", a: "Oui, beaucoup. Les graines tombées au sol et les sacs entamés au garage les nourrissent tout l'hiver. Stockez-les dans un bac métallique fermé et ramassez ce qui tombe sous la mangeoire." },
+  D91),
+  ville("Vigneux-sur-Seine", "à Vigneux-sur-Seine", 'vigneux-sur-seine', [
+    "À Vigneux-sur-Seine, entre la Seine, les plans d'eau du Port-aux-Cerises et les grandes résidences de la Croix-Blanche, les souris trouvent des abris tout près des logements.",
+    "En résidence, elles circulent par les caves, les vide-ordures et les gaines. Nous traitons le logement touché et conseillons le bailleur sur les parties communes, sans quoi elles reviennent d'un appartement voisin.",
+    "Dans les pavillons, la fermeture du garage et du sous-sol suffit souvent à stopper les entrées une fois les souris présentes éliminées.",
+  ], ["Draveil", "Montgeron", "Athis-Mons", "Juvisy-sur-Orge"],
+  { q: "Je suis locataire et j'ai des souris : à qui m'adresser ?", a: "Prévenez votre bailleur par écrit, surtout si les souris viennent des parties communes. Nous pouvons intervenir dans le logement et vous remettre un rapport décrivant les accès, utile pour la suite avec le bailleur." },
+  D91),
+  ville("Ris-Orangis", "à Ris-Orangis", 'ris-orangis', [
+    "Ris-Orangis s'étire des bords de Seine jusqu'au plateau du Moulin à Vent, avec ses résidences, ses pavillons et les bois de Saint-Eutrope et de l'Épine tout proches. Souris et mulots passent facilement des bois aux jardins, puis aux maisons.",
+    "Les nouveaux quartiers, comme les Docks de Ris au bord de la Seine, ne sont pas épargnés : les souris y entrent par les gaines techniques et les locaux à vélos.",
+  ], ["Évry-Courcouronnes", "Grigny", "Draveil", "Bondoufle"],
+  { q: "J'habite près d'un bois : faut-il traiter toute l'année ?", a: "Non. On traite l'infestation en cours, puis on ferme les accès. Ensuite, une vigilance à l'automne suffit : bas de porte, garage fermé, nourriture rangée. Un suivi régulier n'est utile que si les entrées ne peuvent pas être toutes fermées." },
+  D91),
+  ville("Viry-Châtillon", "à Viry-Châtillon", 'viry-chatillon', [
+    "Viry-Châtillon est bordée par la Seine, l'Orge et les lacs, avec des pavillons sur les coteaux et des résidences en centre-ville. Près de l'eau, souris et rats se côtoient : le technicien commence toujours par identifier le rongeur.",
+    "Dans les maisons, les souris entrent surtout par les sous-sols et les garages. Nous posons des pièges ou des postes verrouillés et nous bouchons les passages avec des matériaux qu'elles ne rongent pas.",
+  ], ["Grigny", "Savigny-sur-Orge", "Juvisy-sur-Orge", "Morsang-sur-Orge"],
+  { q: "Comment savoir si c'est une souris ou un rat près des lacs ?", a: "Les crottes de souris font quelques millimètres et sont pointues, celles du rat sont bien plus grosses. Le rat laisse aussi des traces grasses le long des murs. Envoyez-nous une photo : nous adaptons le dispositif." },
+  D91),
+  ville("Meaux", "à Meaux", 'meaux', [
+    "À Meaux, le centre ancien autour de la cathédrale et de la Marne compte des immeubles aux caves anciennes, tandis que Beauval et Pierre-Collinet réunissent de grandes résidences. Dans les deux cas, les souris suivent les caves et les gaines.",
+    "Entourée de grandes cultures, la ville voit aussi les mulots se rapprocher des pavillons après les moissons et à l'arrivée du froid. Garages, abris de jardin et cuisines sont alors les premiers visités.",
+    "Pour les commerces de bouche du centre et les restaurants, nous mettons en place des pièges connectés et une attestation d'intervention.",
+  ], ["Trilport", "Nanteuil-lès-Meaux", "Chauconin-Neufmontiers", "Mareuil-lès-Meaux"],
+  { q: "Pourquoi plus de souris en septembre-octobre à Meaux ?", a: "Les champs autour de la ville sont moissonnés et labourés : souris et mulots perdent leur abri et leur nourriture et cherchent un refuge chaud. C'est le moment de vérifier bas de portes, soupiraux et passages de tuyaux." },
+  D77),
+  ville("Chelles", "à Chelles", 'chelles', [
+    "Chelles mêle pavillons des bords de Marne, quartiers anciens autour de l'abbaye et résidences près de la gare. Les souris s'installent dans les sous-sols des pavillons comme dans les caves des immeubles.",
+    "Près du canal et de la Marne, les rongeurs trouvent abri dans la végétation des berges. Quand il fait froid, ils remontent vers les maisons les plus proches par les garages et les vides sanitaires.",
+  ], ["Vaires-sur-Marne", "Gagny", "Montfermeil", "Brou-sur-Chantereine"],
+  { q: "Faut-il un traitement différent pour un vide sanitaire ?", a: "Le vide sanitaire est souvent la zone de passage principale. On y place des postes sécurisés ou des pièges, puis on ferme les grilles et les trappes avec un grillage fin. C'est souvent ce qui règle le problème dans les pavillons." },
+  D77),
+  ville("Melun", "à Melun", 'melun', [
+    "Melun, préfecture de Seine-et-Marne, compte un centre ancien sur l'île Saint-Étienne et les rives de la Seine, et des quartiers plus récents comme Montaigu ou l'Almont. Les souris y circulent par les caves et les réseaux techniques des immeubles.",
+    "Les administrations, les commerces et les restaurants du centre ont besoin d'une intervention discrète : nous passons hors des heures d'ouverture et remettons une attestation.",
+    "Dans les pavillons des coteaux, les entrées se font surtout par le garage et les passages de canalisations, que nous fermons une fois les souris éliminées.",
+  ], ["Dammarie-lès-Lys", "Le Mée-sur-Seine", "Vaux-le-Pénil", "Rubelles"],
+  { q: "Pouvez-vous intervenir en dehors des heures d'ouverture d'un commerce ?", a: "Oui. Nous intervenons tôt le matin, le soir ou le week-end pour ne pas gêner l'activité. Les pièges connectés limitent ensuite les passages tout en gardant une trace des captures." },
+  D77),
+  ville("Pontault-Combault", "à Pontault-Combault", 'pontault-combault', [
+    "Pontault-Combault est une grande ville pavillonnaire en lisière de bois, avec des zones commerciales le long de la RN4. Les souris et les mulots entrent dans les maisons dès les premiers froids, par les garages et les sous-sols.",
+    "Dans les zones commerciales, les stocks et les réserves attirent les rongeurs : nous proposons un réseau de postes sécurisés et un suivi régulier avec compte rendu.",
+  ], ["Roissy-en-Brie", "Émerainville", "Ozoir-la-Ferrière", "Le Plessis-Trévise"],
+  { q: "Mon chien risque-t-il quelque chose avec les postes d'appâtage ?", a: "Non, s'ils sont posés par un professionnel : les postes sont verrouillés et l'appât est fixé à l'intérieur. Votre chien ne peut ni l'atteindre ni l'emporter. Nous pouvons aussi utiliser uniquement des pièges, sans produit." },
+  D77),
+  ville("Savigny-le-Temple", "à Savigny-le-Temple", 'savigny-le-temple', [
+    "Savigny-le-Temple, ville nouvelle de Sénart, est faite de lotissements, de résidences et de nombreux espaces verts autour du parc des Tourailles. Les souris passent des haies et des noues aux garages des maisons.",
+    "Dans les maisons récentes, les entrées se font par les passages de gaines, les coffres de volets et les portes de garage. Nous traitons, puis nous fermons ces points faibles avec des matériaux qu'elles ne rongent pas.",
+  ], ["Cesson", "Nandy", "Vert-Saint-Denis", "Saint-Pierre-du-Perray"],
+  { q: "Les souris peuvent-elles passer par un coffre de volet roulant ?", a: "Oui, si le coffre communique avec le doublage du mur. Elles grimpent facilement sur un crépi et entrent par les ouvertures du coffre. Un passage obstrué avec une grille fine règle le problème." },
+  D77),
+  ville("Bussy-Saint-Georges", "à Bussy-Saint-Georges", 'bussy-saint-georges', [
+    "Bussy-Saint-Georges est une ville récente de Marne-la-Vallée, faite de résidences, de maisons de ville et de parcs. Les chantiers encore nombreux dérangent les rongeurs, qui cherchent alors refuge dans les bâtiments voisins.",
+    "Dans les immeubles récents, les souris passent par les gaines techniques, les parkings et les locaux poubelles. Nous traitons le logement et signalons au syndic les accès à fermer dans les parties communes.",
+  ], ["Bussy-Saint-Martin", "Collégien", "Montévrain", "Jossigny"],
+  { q: "Un chantier voisin peut-il amener des souris chez moi ?", a: "Oui. Les terrassements et démolitions chassent les rongeurs de leurs abris, et ils se réfugient dans les bâtiments les plus proches. Fermez bien garage et sous-sol pendant les travaux, et faites traiter dès les premières traces." },
+  D77),
+  ville("Champs-sur-Marne", "à Champs-sur-Marne", 'champs-sur-marne', [
+    "À Champs-sur-Marne, la Cité Descartes réunit universités, écoles et logements étudiants, à côté de quartiers pavillonnaires et du parc du château. Les souris profitent des cuisines collectives et des locaux de stockage.",
+    "Pour les résidences étudiantes et les établissements, nous proposons des pièges connectés et un suivi régulier. Chez les particuliers, piégeage, postes sécurisés et fermeture des accès.",
+  ], ["Noisiel", "Torcy", "Noisy-le-Grand", "Émerainville"],
+  { q: "Des souris dans une résidence étudiante : que faire ?", a: "Prévenez le gestionnaire de la résidence, rangez toute la nourriture dans des boîtes fermées et ne laissez rien traîner dans la cuisine commune. Le traitement doit couvrir les logements touchés et les parties communes en même temps." },
+  D77),
+  ville("Villeparisis", "à Villeparisis", 'villeparisis', [
+    "Villeparisis est une ville surtout pavillonnaire, traversée par le canal de l'Ourcq et proche des grandes plaines agricoles. Les souris et les mulots s'approchent des maisons quand les champs voisins sont labourés.",
+    "Les sous-sols et les garages des pavillons sont leurs principaux points d'entrée. Une fois la population éliminée, nous fermons ces accès avec du grillage métallique et du mortier.",
+  ], ["Mitry-Mory", "Claye-Souilly", "Vaujours", "Courtry"],
+  { q: "Faut-il jeter l'isolant du garage après des souris ?", a: "Si l'isolant est souillé de crottes et d'urine ou creusé de galeries, il vaut mieux le remplacer sur la zone touchée. Le technicien vous indique ce qui peut être conservé." },
+  D77),
+  ville("Dammarie-lès-Lys", "à Dammarie-lès-Lys", 'dammarie-les-lys', [
+    "Dammarie-lès-Lys, voisine de Melun, compte des pavillons, des résidences comme celles de la Plaine du Lys et une grande zone commerciale. La forêt de Fontainebleau et les bords de Seine sont tout proches.",
+    "Les souris entrent dans les maisons par les garages et les sous-sols, surtout à l'automne. Dans les résidences, elles circulent par les caves et les gaines : nous traitons le logement et signalons les accès au bailleur.",
+  ], ["Melun", "Le Mée-sur-Seine", "Boissise-le-Roi", "Chartrettes"],
+  { q: "La forêt voisine attire-t-elle les souris ?", a: "La forêt abrite surtout des mulots et des campagnols, qui restent dehors la majeure partie de l'année. Ils entrent dans les maisons proches quand il fait froid, par les garages et les soupiraux. Le traitement est le même." },
+  D77),
+  ville("Combs-la-Ville", "à Combs-la-Ville", 'combs-la-ville', [
+    "Combs-la-Ville, dans la vallée de l'Yerres, compte de nombreux pavillons avec jardin et quelques résidences. Les berges de l'Yerres et les espaces boisés hébergent souris et mulots, qui se rapprochent des maisons en hiver.",
+    "Dans les maisons, nous recherchons le point d'entrée (garage, vide sanitaire, passage de canalisation), posons pièges ou postes sécurisés, puis refermons ce passage.",
+  ], ["Moissy-Cramayel", "Quincy-sous-Sénart", "Brie-Comte-Robert", "Lieusaint"],
+  { q: "Combien de passages faut-il pour une maison ?", a: "En général une pose, puis un ou deux contrôles selon les captures. Le colmatage se fait une fois la population éliminée, pour ne pas enfermer de souris dans les murs." },
+  D77),
+  ville("Versailles", "à Versailles", 'versailles', [
+    "À Versailles, les hôtels particuliers et immeubles anciens de Notre-Dame et de Saint-Louis ont des caves profondes, des planchers en bois et des gaines anciennes : des circuits idéaux pour les souris, d'un étage à l'autre.",
+    "Les commerces de bouche autour du marché Notre-Dame et les nombreux restaurants du centre reçoivent beaucoup de livraisons. Nous proposons des pièges connectés avec suivi et attestation, sans gêner l'activité.",
+    "Dans les quartiers pavillonnaires de Porchefontaine ou de Montreuil, les souris arrivent plutôt des jardins et des bois voisins, et entrent par les garages et les sous-sols.",
+  ], ["Le Chesnay-Rocquencourt", "Viroflay", "Saint-Cyr-l'École", "Buc"],
+  { q: "Des souris sous un parquet ancien : comment les atteindre ?", a: "Elles circulent dans le vide entre les solives. On place les pièges ou les postes sur leurs passages visibles (plinthes, trappes, placards) et l'on bouche les accès au mortier et à la laine d'acier, sans démonter le parquet." },
+  D78),
+  ville("Sartrouville", "à Sartrouville", 'sartrouville', [
+    "Sartrouville s'étend dans une boucle de la Seine, du Plateau aux quartiers pavillonnaires des bords du fleuve. Les souris entrent dans les maisons par les sous-sols et les garages, nombreux dans les pavillons de la ville.",
+    "Dans les résidences du Plateau ou des Indes, elles circulent par les vide-ordures, les caves et les gaines. Un traitement efficace associe le logement et les parties communes.",
+  ], ["Houilles", "Montesson", "Maisons-Laffitte", "Cormeilles-en-Parisis"],
+  { q: "Les souris remontent-elles par le vide-ordures ?", a: "Oui, c'est un passage classique : elles trouvent de la nourriture au local poubelles et montent par la gaine. Le bailleur doit faire traiter ce local, et les trappes doivent bien fermer dans les logements." },
+  D78),
+  ville("Saint-Germain-en-Laye", "à Saint-Germain-en-Laye", 'saint-germain-en-laye', [
+    "Saint-Germain-en-Laye borde une grande forêt domaniale. Les mulots et les souris qui y vivent se rapprochent des maisons de Fourqueux, du Bel-Air ou de la Lisière Pereire à l'automne.",
+    "Dans le centre historique, les immeubles anciens et les commerces de bouche autour du château offrent caves, faux plafonds et réserves. Nous y intervenons discrètement, avec des pièges ou des postes sécurisés et le colmatage des accès.",
+  ], ["Le Pecq", "Chambourcy", "Mareil-Marly", "Poissy"],
+  { q: "Une maison en lisière de forêt est-elle plus exposée ?", a: "Oui, surtout à l'automne et en hiver. Gardez les portes de garage fermées, posez des bas de porte et ne stockez pas de nourriture pour animaux au garage. En cas de traces, un piégeage rapide évite l'installation d'une colonie." },
+  D78),
+  ville("Mantes-la-Jolie", "à Mantes-la-Jolie", 'mantes-la-jolie', [
+    "À Mantes-la-Jolie, les grandes résidences du Val Fourré et les immeubles du Vieux-Mantes ont des caves et des locaux poubelles où les souris s'installent, puis montent par les gaines techniques.",
+    "Nous travaillons avec les locataires, les bailleurs et les syndics : traitement des logements touchés, conseils pour les parties communes et rapport d'intervention.",
+    "Près de la Seine et de l'île aux Dames, on rencontre aussi le rat : le technicien identifie le rongeur avant de choisir pièges ou postes.",
+  ], ["Mantes-la-Ville", "Buchelay", "Limay", "Magnanville"],
+  { q: "Pouvez-vous faire un rapport pour mon bailleur ?", a: "Oui. Le rapport indique les traces observées, les points d'entrée, le traitement réalisé et ce qui relève des parties communes. Il vous aide à faire intervenir le bailleur si les souris viennent des caves ou des gaines." },
+  D78),
+  ville("Poissy", "à Poissy", 'poissy', [
+    "Poissy réunit le centre ancien autour de la collégiale, des quartiers résidentiels comme la Coudraie ou Saint-Exupéry et de grandes zones d'activité. Les souris s'installent dans les caves anciennes comme dans les sous-sols récents.",
+    "Les bords de Seine et la forêt de Saint-Germain voisine abritent des rongeurs qui se rapprochent des maisons en hiver. Le garage reste la porte d'entrée la plus fréquente.",
+  ], ["Saint-Germain-en-Laye", "Carrières-sous-Poissy", "Villennes-sur-Seine", "Orgeval"],
+  { q: "Les souris abîment-elles les voitures au garage ?", a: "Oui, elles grignotent les câbles et font parfois leur nid dans le compartiment moteur ou le filtre d'habitacle, surtout si la voiture roule peu. Traiter le garage et le fermer protège aussi le véhicule." },
+  D78),
+  ville("Conflans-Sainte-Honorine", "à Conflans-Sainte-Honorine", 'conflans-sainte-honorine', [
+    "Conflans-Sainte-Honorine, au confluent de la Seine et de l'Oise, est la capitale de la batellerie. Ses maisons anciennes sur le coteau et ses quais offrent caves, murets et jardins en terrasses aux souris.",
+    "Dans les pavillons du Colas ou des Champs Dufour, elles entrent par les garages et les sous-sols. Nous piégeons, puis fermons les accès avec du mortier et du grillage métallique.",
+  ], ["Andrésy", "Maurecourt", "Herblay-sur-Seine", "Achères"],
+  { q: "Des souris dans un bateau-logement : intervenez-vous ?", a: "Oui. Sur une péniche, nous posons des pièges sans produit dans les cales et la cuisine, et nous repérons les passages par les amarres et les ouvertures. Le principe reste le même : piéger, puis fermer les accès." },
+  D78),
+  ville("Trappes", "à Trappes", 'trappes', [
+    "Trappes, à Saint-Quentin-en-Yvelines, compte de grandes résidences, des pavillons et une large zone d'activités. Dans les immeubles, les souris passent par les caves, les vide-ordures et les gaines.",
+    "Les locaux d'entreprises et les entrepôts proches de la gare et de la RN10 bénéficient d'un suivi par postes sécurisés et pièges, avec compte rendu à chaque passage.",
+  ], ["Élancourt", "Montigny-le-Bretonneux", "Plaisir", "La Verrière"],
+  { q: "Le raticide du commerce suffit-il contre les souris ?", a: "Rarement. Posé en vrac, il est dangereux pour les enfants et les animaux, et il ne règle pas les entrées. Un professionnel utilise des postes verrouillés au bon endroit, et ferme les accès." },
+  D78),
+  ville("Les Mureaux", "aux Mureaux", 'les-mureaux', [
+    "Aux Mureaux, les quartiers de la Vigne Blanche, des Musiciens ou des Bougimonts réunissent de grandes résidences, tandis que les pavillons s'étendent vers la Seine et le parc de Bécheville.",
+    "Les souris profitent des berges et des espaces verts, puis entrent dans les immeubles par les caves et les locaux poubelles. Nous traitons les logements touchés et signalons les parties communes à traiter au bailleur.",
+  ], ["Meulan-en-Yvelines", "Ecquevilly", "Verneuil-sur-Seine", "Bouafle"],
+  { q: "Les souris sont-elles dangereuses pour un bébé ?", a: "Elles peuvent souiller les surfaces et les aliments. Rangez les biberons et la nourriture dans des boîtes fermées, nettoyez avec des gants et faites traiter : nous utilisons des pièges sans produit ou des postes verrouillés hors de portée." },
+  D78),
+  ville("Houilles", "à Houilles", 'houilles', [
+    "Houilles est une ville très pavillonnaire, avec des maisons anciennes en meulière, des caves et de petits jardins. Les souris y entrent par les soupiraux, les portes de cave et les passages de canalisations.",
+    "Les maisons mitoyennes posent un problème particulier : les souris passent d'une maison à l'autre par les combles et les murs communs. Prévenir les voisins permet de traiter en même temps.",
+  ], ["Sartrouville", "Carrières-sur-Seine", "Bezons", "Chatou"],
+  { q: "Ma maison est mitoyenne : faut-il traiter chez le voisin ?", a: "Si les souris passent par le mur commun ou les combles, oui, idéalement en même temps. Sinon, nous fermons les passages de votre côté pour qu'elles ne reviennent pas." },
+  D78),
+  ville("Montigny-le-Bretonneux", "à Montigny-le-Bretonneux", 'montigny-le-bretonneux', [
+    "Montigny-le-Bretonneux, cœur de Saint-Quentin-en-Yvelines, réunit résidences, maisons de ville, bureaux et le centre commercial autour de la gare. Les souris trouvent dans les parkings et les locaux techniques des passages vers les logements.",
+    "Près du bassin et des espaces verts, mulots et souris se rapprochent des maisons en hiver. Pour les bureaux et commerces, les pièges connectés permettent un suivi sans gêner l'activité.",
+  ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
+  { q: "Des souris dans nos bureaux : pouvez-vous intervenir le soir ?", a: "Oui. Nous intervenons hors des heures de travail et posons des pièges connectés qui signalent chaque capture. Le gestionnaire reçoit un compte rendu à chaque passage." },
+  D78),
 ]
 
 export function getVilleSouris(slug: string) {
