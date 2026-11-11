@@ -106,6 +106,7 @@ export const LOCAL_DERATISATION_94: Record<string, string[]> = {
   'villeneuve-saint-georges': [
     'Villeneuve-Saint-Georges, au confluent de la **Seine et de l’Yerres**, est exposée aux crues. Quand l’eau monte, les rats quittent les berges et cherchent refuge dans les caves et les maisons.',
     'Après une crue, faites inspecter votre sous-sol : c’est le moment où les rongeurs s’y installent.',
+    'Le quartier du centre ancien, au pied du coteau, garde des maisons de bourg sur caves : leurs soupiraux et leurs murs en pierre sont des points d’entrée à vérifier un par un.',
   ],
   'l-hay-les-roses': [
     'L’Haÿ-les-Roses, ville résidentielle connue pour sa **roseraie**, compte beaucoup de jardins. Les rats bruns y creusent près des composts et des abris.',
@@ -126,6 +127,9 @@ export const LOCAL_DERATISATION_94: Record<string, string[]> = {
   'orly': [
     'Orly, avec son aéroport, ses zones d’activités et ses grands ensembles, connaît une présence régulière de rongeurs autour des **sites logistiques et des locaux poubelles**.',
     'Pour les professionnels, nous proposons un suivi régulier avec rapport à chaque passage.',
+    'Dans les quartiers des Navigateurs et de la Pierre-au-Prêtre, les résidences ont des locaux poubelles et des caves que nous traitons avec les bailleurs, avant d’intervenir dans les logements.',
+    'La ville est traversée par la ligne C du RER et la ligne 14 du métro arrive à l’aéroport : les nombreux chantiers liés aux transports ont bousculé les rongeurs, qui cherchent de nouveaux abris dans les bâtiments voisins.',
+    'Le vieil Orly, autour de l’église Saint-Germain, garde des maisons anciennes avec jardins et dépendances : les rats y entrent par les caves et les appentis, que le technicien inspecte un par un.',
   ],
   'arcueil': [
     'Arcueil, traversée par l’**aqueduc** et par la vallée de la Bièvre, compte des maisons anciennes aux caves humides, appréciées des rats.',

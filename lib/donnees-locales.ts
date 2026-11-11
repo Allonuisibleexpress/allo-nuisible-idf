@@ -4740,5 +4740,1203 @@ export const DONNEES_LOCALES: Record<string, DonneesLocales> = {
    "Malabry",
    "Voltaire"
   ]
+ },
+
+ "evry-courcouronnes": {
+  "slug": "evry-courcouronnes",
+  "nom": "Évry-Courcouronnes",
+  "paris": false,
+  "population": 66919,
+  "surfaceKm2": 13.09,
+  "densite": 5112,
+  "cp": [
+   "91000",
+   "91080"
+  ],
+  "distParis": 26,
+  "direction": "sud",
+  "gares": [
+   "Le Bras de Fer",
+   "Évry - Courcouronnes",
+   "Évry Val de Seine",
+   "Traité de Rome",
+   "Bois Briard",
+   "Évry-Courcouronnes T12"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc des Coquibus",
+   "Parc Henri Fabre",
+   "Parc des Loges",
+   "La pinède",
+   "Parc du Rondeau"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Ris-Orangis",
+   "Corbeil-Essonnes",
+   "Lisses",
+   "Bondoufle"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Courcouronnes",
+   "Droits de l'Homme",
+   "Le Canal",
+   "Les Epinettes",
+   "Les Grands Coquibus",
+   "Champtier du Coq"
+  ]
+ },
+ "corbeil-essonnes": {
+  "slug": "corbeil-essonnes",
+  "nom": "Corbeil-Essonnes",
+  "paris": false,
+  "population": 54471,
+  "surfaceKm2": 11.02,
+  "densite": 4943,
+  "cp": [
+   "91100"
+  ],
+  "distParis": 30,
+  "direction": "sud",
+  "gares": [
+   "Corbeil-Essonnes",
+   "Moulin Galant",
+   "Essonnes Robinson"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [
+   "L'Essonne",
+   "La Seine"
+  ],
+  "verts": [
+   "Parc Aimé Césaire",
+   "Square Dalimier",
+   "Parc Chantemerle",
+   "Square Aristide Briand",
+   "Square Saint-Léonard"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Évry-Courcouronnes",
+   "Saint-Germain-lès-Corbeil",
+   "Villabé",
+   "Le Coudray-Montceaux"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "massy": {
+  "slug": "massy",
+  "nom": "Massy",
+  "paris": false,
+  "population": 51729,
+  "surfaceKm2": 9.4,
+  "densite": 5503,
+  "cp": [
+   "91300"
+  ],
+  "distParis": 15.7,
+  "direction": "sud-ouest",
+  "gares": [
+   "Massy-Verrières",
+   "Massy-TGV",
+   "Massy-Palaiseau",
+   "Massy-Europe"
+  ],
+  "lignes": [
+   "RER B",
+   "RER C"
+  ],
+  "eaux": [
+   "La Bièvre",
+   "Rû des Gains"
+  ],
+  "verts": [
+   "Centre de Loisirs Mermoz",
+   "Parc Urbain Georges Brassens",
+   "Parc Saint-Marc",
+   "Parc Ampère",
+   "Parc Guyot"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Palaiseau",
+   "Antony",
+   "Wissous",
+   "Chilly-Mazarin"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Les Champarts",
+   "Vilmorin",
+   "Les Peupliers",
+   "Atlantis",
+   "Villaine",
+   "Les Graviers"
+  ]
+ },
+ "savigny-sur-orge": {
+  "slug": "savigny-sur-orge",
+  "nom": "Savigny-sur-Orge",
+  "paris": false,
+  "population": 37601,
+  "surfaceKm2": 6.97,
+  "densite": 5395,
+  "cp": [
+   "91600"
+  ],
+  "distParis": 19.1,
+  "direction": "sud",
+  "gares": [
+   "Savigny-sur-Orge"
+  ],
+  "lignes": [
+   "RER C"
+  ],
+  "eaux": [
+   "L'Orge",
+   "L'Yvette"
+  ],
+  "verts": [
+   "Parc du pré aux bœufs",
+   "Square Capitaine Jean D’Hers",
+   "Parc de Champagne",
+   "Square Albert 1er",
+   "Parc"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Viry-Châtillon",
+   "Morsang-sur-Orge",
+   "Juvisy-sur-Orge",
+   "Épinay-sur-Orge"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "palaiseau": {
+  "slug": "palaiseau",
+  "nom": "Palaiseau",
+  "paris": false,
+  "population": 37471,
+  "surfaceKm2": 11.66,
+  "densite": 3214,
+  "cp": [
+   "91120"
+  ],
+  "distParis": 18.1,
+  "direction": "sud-ouest",
+  "gares": [
+   "Palaiseau",
+   "Palaiseau - Villebon",
+   "Lozère"
+  ],
+  "lignes": [
+   "RER B"
+  ],
+  "eaux": [
+   "L'Yvette"
+  ],
+  "verts": [
+   "Parc Pierre et Marie Curie",
+   "Square public des Prés",
+   "Parc Jean-Pierre Chabrol",
+   "Square des Champs Frétauts",
+   "Square de la rue de Paris"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Massy",
+   "Orsay",
+   "Igny",
+   "Villebon-sur-Yvette"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Lozère",
+   "La Troche",
+   "Rocher de Lozère",
+   "Les Joncherettes",
+   "La Vauve - École Polytechnique"
+  ]
+ },
+ "athis-mons": {
+  "slug": "athis-mons",
+  "nom": "Athis-Mons",
+  "paris": false,
+  "population": 36613,
+  "surfaceKm2": 8.61,
+  "densite": 4252,
+  "cp": [
+   "91200"
+  ],
+  "distParis": 16.6,
+  "direction": "sud",
+  "gares": [
+   "Athis-Mons"
+  ],
+  "lignes": [
+   "RER C"
+  ],
+  "eaux": [
+   "L'Orge",
+   "La Seine"
+  ],
+  "verts": [
+   "Parc d'Ozonville",
+   "Parc de la résidence Saint-Jean-Baptiste de la Salle",
+   "Square de l'Aunette",
+   "Square Joséphine Baker",
+   "Square Ariane"
+  ],
+  "jardins": 5,
+  "voisines": [
+   "Paray-Vieille-Poste",
+   "Juvisy-sur-Orge",
+   "Morangis",
+   "Ablon-sur-Seine"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "sainte-genevieve-des-bois": {
+  "slug": "sainte-genevieve-des-bois",
+  "nom": "Sainte-Geneviève-des-Bois",
+  "paris": false,
+  "population": 35438,
+  "surfaceKm2": 9.38,
+  "densite": 3778,
+  "cp": [
+   "91700"
+  ],
+  "distParis": 23.8,
+  "direction": "sud",
+  "gares": [
+   "Sainte-Geneviève-des-Bois"
+  ],
+  "lignes": [
+   "RER C"
+  ],
+  "eaux": [
+   "L'Orge",
+   "La Boële"
+  ],
+  "verts": [
+   "Jardin Public",
+   "Parc Penafiel",
+   "Parc Pierre",
+   "Parc des Mares Yvon",
+   "Parc naturel du Perray"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Saint-Michel-sur-Orge",
+   "Fleury-Mérogis",
+   "Morsang-sur-Orge",
+   "Villemoisson-sur-Orge"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "vigneux-sur-seine": {
+  "slug": "vigneux-sur-seine",
+  "nom": "Vigneux-sur-Seine",
+  "paris": false,
+  "population": 31466,
+  "surfaceKm2": 8.97,
+  "densite": 3508,
+  "cp": [
+   "91270"
+  ],
+  "distParis": 18,
+  "direction": "sud",
+  "gares": [
+   "Vigneux-sur-Seine"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc du Gros Buisson",
+   "Parc des Rives de l'Oly",
+   "Base de loisirs du Port-aux-Cerises"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Draveil",
+   "Montgeron",
+   "Athis-Mons",
+   "Juvisy-sur-Orge"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "ris-orangis": {
+  "slug": "ris-orangis",
+  "nom": "Ris-Orangis",
+  "paris": false,
+  "population": 31189,
+  "surfaceKm2": 8.36,
+  "densite": 3731,
+  "cp": [
+   "91130"
+  ],
+  "distParis": 23.8,
+  "direction": "sud",
+  "gares": [
+   "Ris-Orangis",
+   "Orangis - Bois de l'Épine",
+   "Grand Bourg",
+   "Bois de Saint-Eutrope"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc de Trousseau",
+   "Parc de la Theuillerie",
+   "Parc de la Cité des Oiseaux",
+   "Parc Fromont",
+   "Lac des Docks de Ris"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Évry-Courcouronnes",
+   "Grigny",
+   "Draveil",
+   "Bondoufle"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Le Moulin A Vent",
+   "Les Alcools",
+   "Les Hameaux de la Roche",
+   "Ris Ideal"
+  ]
+ },
+ "viry-chatillon": {
+  "slug": "viry-chatillon",
+  "nom": "Viry-Châtillon",
+  "paris": false,
+  "population": 30838,
+  "surfaceKm2": 6.12,
+  "densite": 5039,
+  "cp": [
+   "91170"
+  ],
+  "distParis": 21.2,
+  "direction": "sud",
+  "gares": [
+   "Viry-Châtillon",
+   "Côteaux de l'Orge",
+   "Amédée Gordini"
+  ],
+  "lignes": [
+   "RER C",
+   "RER D"
+  ],
+  "eaux": [
+   "Bras de l'Orge",
+   "L'Orge",
+   "La Seine"
+  ],
+  "verts": [
+   "Parc du pré aux bœufs",
+   "Parc du PiedeFer",
+   "Parc André Leblanc",
+   "Square Ibrahim Diarra",
+   "Parc Duparchy"
+  ],
+  "jardins": 4,
+  "voisines": [
+   "Grigny",
+   "Savigny-sur-Orge",
+   "Juvisy-sur-Orge",
+   "Morsang-sur-Orge"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "meaux": {
+  "slug": "meaux",
+  "nom": "Meaux",
+  "paris": false,
+  "population": 56905,
+  "surfaceKm2": 15.37,
+  "densite": 3702,
+  "cp": [
+   "77100"
+  ],
+  "distParis": 41.8,
+  "direction": "est",
+  "gares": [
+   "Meaux"
+  ],
+  "lignes": [
+   "TRAIN P"
+  ],
+  "eaux": [
+   "Canal Cornillon",
+   "Canal de Chalifert",
+   "La Marne"
+  ],
+  "verts": [
+   "Square Georges Brassens",
+   "Parc Chenonceau",
+   "Jardin Bossuet",
+   "Jardin des Trinitaires",
+   "Parc du Pâtis"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Trilport",
+   "Nanteuil-lès-Meaux",
+   "Chauconin-Neufmontiers",
+   "Mareuil-lès-Meaux"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "chelles": {
+  "slug": "chelles",
+  "nom": "Chelles",
+  "paris": false,
+  "population": 54620,
+  "surfaceKm2": 16,
+  "densite": 3414,
+  "cp": [
+   "77500"
+  ],
+  "distParis": 18.1,
+  "direction": "est",
+  "gares": [
+   "Chelles Gournay"
+  ],
+  "lignes": [
+   "RER E",
+   "TRAIN P"
+  ],
+  "eaux": [
+   "La Marne",
+   "Bras des Ablettes",
+   "Canal de Chelles"
+  ],
+  "verts": [
+   "Parc Jean-Pierre Jousseaume",
+   "Base de loisirs de l'Île de Vaires",
+   "Square Armand Lanoux",
+   "Square (rond-point - rue de Fresnes)"
+  ],
+  "jardins": 1,
+  "voisines": [
+   "Vaires-sur-Marne",
+   "Gagny",
+   "Montfermeil",
+   "Brou-sur-Chantereine"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Alsace-Lorraine",
+   "Les Abbesses",
+   "Résistance",
+   "Belle-Île",
+   "Les Bords de Marne",
+   "Victor Hugo",
+   "Pasteur",
+   "Périchelles"
+  ]
+ },
+ "melun": {
+  "slug": "melun",
+  "nom": "Melun",
+  "paris": false,
+  "population": 45995,
+  "surfaceKm2": 8,
+  "densite": 5749,
+  "cp": [
+   "77000"
+  ],
+  "distParis": 41.4,
+  "direction": "sud-est",
+  "gares": [
+   "Melun"
+  ],
+  "lignes": [
+   "RER D",
+   "TRAIN R"
+  ],
+  "eaux": [
+   "L'Almont",
+   "La Seine",
+   "Ru de Rubelles"
+  ],
+  "verts": [
+   "Parc de la Mairie",
+   "Parc de Breuil",
+   "Le Parc aux Conifères",
+   "Jardin du Palais",
+   "Parc de Crema"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Dammarie-lès-Lys",
+   "Le Mée-sur-Seine",
+   "Vaux-le-Pénil",
+   "Rubelles"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Montaigu",
+   "Mézereaux",
+   "Quartier de l'Almont"
+  ]
+ },
+ "pontault-combault": {
+  "slug": "pontault-combault",
+  "nom": "Pontault-Combault",
+  "paris": false,
+  "population": 39096,
+  "surfaceKm2": 13.57,
+  "densite": 2881,
+  "cp": [
+   "77340"
+  ],
+  "distParis": 20.8,
+  "direction": "est",
+  "gares": [
+   "Émerainville - Pontault-Combault"
+  ],
+  "lignes": [
+   "RER E"
+  ],
+  "eaux": [],
+  "verts": [
+   "Les Jardins d'Aimé",
+   "Parc de l’Hôtel de Ville"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Roissy-en-Brie",
+   "Émerainville",
+   "Ozoir-la-Ferrière",
+   "Le Plessis-Trévise"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "savigny-le-temple": {
+  "slug": "savigny-le-temple",
+  "nom": "Savigny-le-Temple",
+  "paris": false,
+  "population": 31148,
+  "surfaceKm2": 12.02,
+  "densite": 2591,
+  "cp": [
+   "77176"
+  ],
+  "distParis": 34.4,
+  "direction": "sud-est",
+  "gares": [
+   "Savigny-le-Temple - Nandy"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc des Tourailles"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Cesson",
+   "Nandy",
+   "Vert-Saint-Denis",
+   "Saint-Pierre-du-Perray"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "bussy-saint-georges": {
+  "slug": "bussy-saint-georges",
+  "nom": "Bussy-Saint-Georges",
+  "paris": false,
+  "population": 27498,
+  "surfaceKm2": 15.28,
+  "densite": 1800,
+  "cp": [
+   "77600"
+  ],
+  "distParis": 26.3,
+  "direction": "est",
+  "gares": [
+   "Bussy-Saint-Georges"
+  ],
+  "lignes": [
+   "RER A"
+  ],
+  "eaux": [
+   "Ru de la Butte de Vaux",
+   "Ru de la Brosse",
+   "La Gondoire"
+  ],
+  "verts": [
+   "Parc du Génitoy",
+   "Jardins du Partage et des Savoirs",
+   "Parc culturel de Rentilly - Michel Chartier"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Bussy-Saint-Martin",
+   "Collégien",
+   "Montévrain",
+   "Jossigny"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "champs-sur-marne": {
+  "slug": "champs-sur-marne",
+  "nom": "Champs-sur-Marne",
+  "paris": false,
+  "population": 27451,
+  "surfaceKm2": 7.68,
+  "densite": 3574,
+  "cp": [
+   "77420"
+  ],
+  "distParis": 17.7,
+  "direction": "est",
+  "gares": [
+   "Noisy - Champs"
+  ],
+  "lignes": [
+   "RER A"
+  ],
+  "eaux": [
+   "Bras Saint-Gervais",
+   "La Marne"
+  ],
+  "verts": [
+   "La demi-lune",
+   "La coulée verte",
+   "Parc de Noisiel",
+   "Square des Bouleaux"
+  ],
+  "jardins": 1,
+  "voisines": [
+   "Noisiel",
+   "Torcy",
+   "Noisy-le-Grand",
+   "Émerainville"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Cité Descartes",
+   "Centre Ville",
+   "Les Deux Parcs",
+   "Pablo Picasso"
+  ]
+ },
+ "villeparisis": {
+  "slug": "villeparisis",
+  "nom": "Villeparisis",
+  "paris": false,
+  "population": 26946,
+  "surfaceKm2": 8.34,
+  "densite": 3231,
+  "cp": [
+   "77270"
+  ],
+  "distParis": 21.6,
+  "direction": "nord-est",
+  "gares": [
+   "Villeparisis - Mitry-le-Neuf"
+  ],
+  "lignes": [
+   "RER B"
+  ],
+  "eaux": [
+   "Canal de l'Ourcq"
+  ],
+  "verts": [
+   "Parc Honoré de Balzac",
+   "Parc François Mitterrand"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Mitry-Mory",
+   "Claye-Souilly",
+   "Vaujours",
+   "Courtry"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "dammarie-les-lys": {
+  "slug": "dammarie-les-lys",
+  "nom": "Dammarie-les-Lys",
+  "paris": false,
+  "population": 23559,
+  "surfaceKm2": 10.25,
+  "densite": 2298,
+  "cp": [
+   "77190"
+  ],
+  "distParis": 42.8,
+  "direction": "sud-est",
+  "gares": [
+   "Vosves"
+  ],
+  "lignes": [
+   "TRAIN R"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc de l'Abbaye du Lys",
+   "Parc de Farcy",
+   "Parc du Château Soubiran",
+   "Parc de Bel Ombre",
+   "Parc du Château Gaillard"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Melun",
+   "Le Mée-sur-Seine",
+   "Boissise-le-Roi",
+   "Chartrettes"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "combs-la-ville": {
+  "slug": "combs-la-ville",
+  "nom": "Combs-la-Ville",
+  "paris": false,
+  "population": 23350,
+  "surfaceKm2": 14.52,
+  "densite": 1608,
+  "cp": [
+   "77380"
+  ],
+  "distParis": 27.3,
+  "direction": "sud-est",
+  "gares": [
+   "Combs-la-Ville - Quincy"
+  ],
+  "lignes": [
+   "RER D"
+  ],
+  "eaux": [
+   "L'Yerres"
+  ],
+  "verts": [
+   "Parc de l'Abreuvoir",
+   "Parc Municipal Arthur Chaussy",
+   "Parc Jacques Chirac",
+   "Parc Central",
+   "La Clavellière"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Moissy-Cramayel",
+   "Quincy-sous-Sénart",
+   "Brie-Comte-Robert",
+   "Lieusaint"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "sartrouville": {
+  "slug": "sartrouville",
+  "nom": "Sartrouville",
+  "paris": false,
+  "population": 52763,
+  "surfaceKm2": 8.47,
+  "densite": 6229,
+  "cp": [
+   "78500"
+  ],
+  "distParis": 15.8,
+  "direction": "nord-ouest",
+  "gares": [
+   "Sartrouville"
+  ],
+  "lignes": [
+   "RER A",
+   "TRAIN L"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc Youri Gagarine",
+   "Parc du Dispensaire",
+   "Square Dijou",
+   "Parc du 18 juin 1940",
+   "Parc Guériot"
+  ],
+  "jardins": 2,
+  "voisines": [
+   "Houilles",
+   "Montesson",
+   "Maisons-Laffitte",
+   "Cormeilles-en-Parisis"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Le Plateau",
+   "Les Dix Arpents",
+   "La Plaine",
+   "Les Richebourgs",
+   "La Croix Blanche",
+   "La Vaudoire",
+   "L'Union",
+   "Le Fresnay Vieux-Pays"
+  ]
+ },
+ "mantes-la-jolie": {
+  "slug": "mantes-la-jolie",
+  "nom": "Mantes-la-Jolie",
+  "paris": false,
+  "population": 43526,
+  "surfaceKm2": 9.43,
+  "densite": 4616,
+  "cp": [
+   "78200"
+  ],
+  "distParis": 50.7,
+  "direction": "ouest",
+  "gares": [
+   "Mantes-la-Jolie"
+  ],
+  "lignes": [
+   "TRAIN J",
+   "TRAIN N"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Square Brieussel Bourgeois",
+   "Square Gabrielle d'Estrées",
+   "Parc du château",
+   "Esplanade Vaucouleurs",
+   "Bois de la Butte Verte"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Mantes-la-Ville",
+   "Buchelay",
+   "Limay",
+   "Magnanville"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Les Martraits",
+   "Le Val Fourré",
+   "Gassicourt",
+   "Vieux-Mantes",
+   "Les Cordeliers",
+   "Centre-ville",
+   "Les Physiciens",
+   "Les Écrivains"
+  ]
+ },
+ "poissy": {
+  "slug": "poissy",
+  "nom": "Poissy",
+  "paris": false,
+  "population": 40983,
+  "surfaceKm2": 12.88,
+  "densite": 3182,
+  "cp": [
+   "78300"
+  ],
+  "distParis": 25.1,
+  "direction": "ouest",
+  "gares": [
+   "Poissy"
+  ],
+  "lignes": [
+   "RER A",
+   "TRAIN J"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Square des frères Rose",
+   "Parc Meissonier",
+   "Square Léon-Deliance",
+   "Square André-Diez",
+   "Parc forestier de la Charmille"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Saint-Germain-en-Laye",
+   "Carrières-sous-Poissy",
+   "Villennes-sur-Seine",
+   "Orgeval"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Poncy",
+   "Les Sablons",
+   "La Bruyère",
+   "Saint-Exupéry",
+   "La Coudraie",
+   "L'Abbaye",
+   "Noailles"
+  ]
+ },
+ "conflans-sainte-honorine": {
+  "slug": "conflans-sainte-honorine",
+  "nom": "Conflans-Sainte-Honorine",
+  "paris": false,
+  "population": 36958,
+  "surfaceKm2": 9.88,
+  "densite": 3741,
+  "cp": [
+   "78700"
+  ],
+  "distParis": 24.5,
+  "direction": "nord-ouest",
+  "gares": [
+   "Conflans-Fin-d'Oise",
+   "Conflans-Sainte-Honorine"
+  ],
+  "lignes": [
+   "RER A",
+   "TRAIN J",
+   "TRAIN L"
+  ],
+  "eaux": [
+   "L'Oise",
+   "La Seine"
+  ],
+  "verts": [
+   "Parc du Prieuré",
+   "Square de Ramsgate",
+   "Parc du Cèdre",
+   "Square Maurice-Chaval"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Andrésy",
+   "Maurecourt",
+   "Herblay-sur-Seine",
+   "Achères"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Les Champs Dufour",
+   "Le Colas",
+   "Le Court Goujon",
+   "Cité Paul Brard",
+   "Cité Bleue",
+   "Cité Escale",
+   "Plateau du Moulin"
+  ]
+ },
+ "trappes": {
+  "slug": "trappes",
+  "nom": "Trappes",
+  "paris": false,
+  "population": 34689,
+  "surfaceKm2": 13.69,
+  "densite": 2534,
+  "cp": [
+   "78190"
+  ],
+  "distParis": 27.6,
+  "direction": "ouest",
+  "gares": [
+   "Trappes"
+  ],
+  "lignes": [
+   "TRAIN N",
+   "TRAIN U"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc de la Plaine de Neauphle",
+   "Parc du cèdre",
+   "Parc des Bateleurs",
+   "Île de loisirs de Saint-Quentin-en-Yvelines",
+   "Square Léo Lagrange"
+  ],
+  "jardins": 1,
+  "voisines": [
+   "Élancourt",
+   "Montigny-le-Bretonneux",
+   "Plaisir",
+   "La Verrière"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "les-mureaux": {
+  "slug": "les-mureaux",
+  "nom": "Les Mureaux",
+  "paris": false,
+  "population": 34632,
+  "surfaceKm2": 12.37,
+  "densite": 2800,
+  "cp": [
+   "78130"
+  ],
+  "distParis": 35.4,
+  "direction": "nord-ouest",
+  "gares": [
+   "Les Mureaux"
+  ],
+  "lignes": [
+   "TRAIN J"
+  ],
+  "eaux": [
+   "La Seine"
+  ],
+  "verts": [
+   "Parc des Marroniers",
+   "Parc de l'Oseraie",
+   "Parc de Becheville",
+   "Parc du Moulin de Sautour",
+   "Base de loisirs du Val-de-Seine"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Meulan-en-Yvelines",
+   "Ecquevilly",
+   "Verneuil-sur-Seine",
+   "Bouafle"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": [
+   "Apremont",
+   "La Vigne Blanche",
+   "Les Bougimonts",
+   "Les Musiciens",
+   "Comtesse",
+   "Les Marcheurs"
+  ]
+ },
+ "houilles": {
+  "slug": "houilles",
+  "nom": "Houilles",
+  "paris": false,
+  "population": 33983,
+  "surfaceKm2": 4.48,
+  "densite": 7585,
+  "cp": [
+   "78800"
+  ],
+  "distParis": 14.4,
+  "direction": "nord-ouest",
+  "gares": [
+   "Houilles Carrières-sur-Seine"
+  ],
+  "lignes": [
+   "RER A",
+   "TRAIN L"
+  ],
+  "eaux": [],
+  "verts": [
+   "Parc Charles de Gaulle",
+   "Parc Victorien Chausse",
+   "Square Saint-Nicolas",
+   "Sanisette Chien"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Sartrouville",
+   "Carrières-sur-Seine",
+   "Bezons",
+   "Chatou"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
+ },
+ "montigny-le-bretonneux": {
+  "slug": "montigny-le-bretonneux",
+  "nom": "Montigny-le-Bretonneux",
+  "paris": false,
+  "population": 32465,
+  "surfaceKm2": 10.7,
+  "densite": 3034,
+  "cp": [
+   "78180"
+  ],
+  "distParis": 25.5,
+  "direction": "ouest",
+  "gares": [
+   "Saint-Quentin-en-Yvelines"
+  ],
+  "lignes": [
+   "RER C",
+   "TRAIN N",
+   "TRAIN U"
+  ],
+  "eaux": [],
+  "verts": [
+   "Square de la Culotte",
+   "Parc public Érasme",
+   "Parc des Sources de la Bièvre",
+   "Square Carnac",
+   "Île de loisirs de Saint-Quentin-en-Yvelines"
+  ],
+  "jardins": 0,
+  "voisines": [
+   "Guyancourt",
+   "Voisins-le-Bretonneux",
+   "Trappes",
+   "Élancourt"
+  ],
+  "pinsHa": 0,
+  "osm": true,
+  "quartiers": []
  }
 }

@@ -55,6 +55,7 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
   'massy': [
     'Le quartier **Atlantis**, autour des gares TGV et RER, a vu naître de nombreux immeubles neufs, mais les chantiers successifs ont dérangé les rongeurs, qui cherchent de nouveaux abris dans les parkings et les locaux techniques.',
     'Dans les quartiers pavillonnaires de **Vilgénis** ou du **centre-ville**, les souris entrent par les vides sanitaires à l’automne. Nous traitons et bouchons les accès pour une protection durable.',
+    'Les restaurants et hôtels du quartier des gares accueillent beaucoup de voyageurs : leurs cuisines et leurs réserves demandent un plan de lutte suivi, avec postes numérotés.',
   ],
   'savigny-sur-orge': [
     'Savigny-sur-Orge compte de nombreux **pavillons avec jardin** le long de l’**Orge** et sur le coteau. Les rats bruns vivent dans les berges boisées et remontent vers les composts, les poulaillers et les abris.',
@@ -79,6 +80,7 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
   'ris-orangis': [
     'Ris-Orangis s’étire le long de la **Seine**, avec ses berges, ses parcs et ses quartiers pavillonnaires. Le quartier du **Plateau** et ses résidences concentrent la plupart des appels pour des rats dans les caves.',
     'Près des anciens bâtiments industriels réhabilités et des nouveaux quartiers, les chantiers dérangent les rongeurs, qui cherchent refuge dans les sous-sols voisins.',
+    'Les commerces et restaurants du centre, autour de la place du marché, ont des réserves et des poubelles à surveiller : un suivi régulier évite que les rats s’y installent.',
   ],
   'viry-chatillon': [
     'Viry-Châtillon est bordée par la **Seine**, l’**Orge** et ses **lacs**. Les jardins des pavillons du bord de l’eau sont les plus exposés aux rats bruns, surtout lors des montées des eaux.',
@@ -126,6 +128,9 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
   'dammarie-les-lys': [
     'Dammarie-lès-Lys borde la **Seine** face à Melun, avec des quartiers comme la **Plaine du Lys** et ses résidences. Les caves et locaux poubelles sont les premiers lieux à traiter.',
     'Vers le sud, la ville s’ouvre sur les bois en direction de la **forêt de Fontainebleau** : les maisons de ces quartiers voient arriver souris et mulots avec le froid.',
+    'Le parc de l’abbaye du Lys et les grands espaces verts de la ville abritent des rongeurs qui se rapprochent des maisons voisines à l’automne.',
+    'Les entreprises de la zone d’activités du Bréau et les commerces du centre peuvent bénéficier d’un suivi régulier, avec postes numérotés et rapport à chaque passage.',
+    'Dans les maisons des bords de Seine, vers Boissise-le-Roi, les garages et les abris de jardin servent souvent de stockage de bois ou de grain : des lieux que les rongeurs adorent, à ranger en hauteur et dans des contenants fermés.',
   ],
   'combs-la-ville': [
     'Combs-la-Ville est traversée par la vallée de l’**Yerres**, avec ses berges boisées et ses moulins. Les maisons proches de la rivière sont exposées aux rats bruns, surtout lors des crues.',

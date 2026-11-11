@@ -9,6 +9,7 @@ export const LOCAL_PUNAISES_75: Record<string, string[]> = {
     'Dans ces petits espaces, les punaises passent vite du lit aux plinthes et aux meubles : le traitement doit couvrir toute la pièce, pas seulement le matelas.',
     'Beaucoup d’appartements du Sentier servent aussi de bureau : le canapé-lit du salon et le fauteuil de travail font partie des zones inspectées, pas seulement la chambre.',
     'Entre la rue Saint-Denis et la rue Réaumur, les vieux immeubles du Sentier ont des escaliers étroits : nous montons le matériel de cryogénie à la main, sans gêner les voisins ni les commerces du rez-de-chaussée.',
+    'Autour de la rue Montorgueil, beaucoup d’appartements sont loués à la semaine à des touristes : un contrôle entre deux séjours, avec attestation, évite les mauvaises surprises.',
   ],
   'paris-3': [
     'Dans le Haut-Marais, les **immeubles anciens à poutres et parquets** sont superbes mais pleins de fentes. Les punaises s’y installent entre les lames et derrière les boiseries.',

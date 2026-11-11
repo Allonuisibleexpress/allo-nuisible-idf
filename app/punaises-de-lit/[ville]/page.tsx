@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_PUNAISES_94 } from '@/lib/local-punaises-94'
 import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
+import { LOCAL_PUNAISES_GC } from '@/lib/local-punaises-gc'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
 import ProtocoleCondense, { PROTOCOLE_PUNAISES } from '@/components/ProtocoleCondense'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
@@ -184,7 +185,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
-        <LocalVille nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug]} />
+        <LocalVille nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug]} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 

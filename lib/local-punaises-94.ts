@@ -159,6 +159,7 @@ export const LOCAL_PUNAISES_94: Record<string, string[]> = {
   'le-plessis-trevise': [
     'Le Plessis-Trévise, ville verte et **pavillonnaire**, compte beaucoup de maisons familiales. Les punaises s’installent d’abord dans la chambre de celui qui a ramené le bagage, puis gagnent les autres pièces.',
     'Le technicien inspecte la maison entière pour savoir jusqu’où elles sont allées, avant de choisir la méthode.',
+    'Les maisons du Plessis-Trévise ont souvent de grands jardins et une chambre d’amis au rez-de-chaussée : elle est inspectée même si personne n’y signale de piqûres.',
   ],
   'limeil-brevannes': [
     'Limeil-Brévannes accueille un grand **hôpital** et de nombreux quartiers résidentiels récents. Le personnel soignant et les visiteurs y circulent beaucoup.',
@@ -227,6 +228,7 @@ export const LOCAL_PUNAISES_94: Record<string, string[]> = {
     'Villeneuve-Saint-Georges, au confluent de la Seine et de l’Yerres, compte beaucoup d’**immeubles anciens** et de logements loués. Les punaises s’y installent dans les vieux parquets et derrière les plinthes.',
     'Dans ces logements, le technicien retire souvent une plinthe pour vérifier l’espace derrière, avant de traiter les sols et le couchage.',
     'Près de la gare de Villeneuve-Saint-Georges, nous intervenons aussi dans des hôtels et des foyers, avec une organisation chambre par chambre.',
+    'Les résidences du quartier du Plateau, sur les hauteurs, accueillent beaucoup de familles : un signalement rapide au bailleur évite qu’une infestation gagne toute la cage d’escalier.',
   ],
   'villiers-sur-marne': [
     'Villiers-sur-Marne, desservie par le RER E, mêle **pavillons et résidences récentes**. Les navetteurs et les familles y rapportent parfois des punaises du travail ou d’un voyage.',

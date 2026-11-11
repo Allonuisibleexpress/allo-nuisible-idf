@@ -54,7 +54,7 @@ export const METHODES_PUNAISES: BlocMethodes = {
       etapes: [
         'Pulvérisation ciblée des **fentes, plinthes, cadres de lit, dessous de meubles** et zones de passage.',
         'Respect des **doses** et des précautions inscrites sur l’étiquette du produit.',
-        'Vous quittez le logement **4 à 6 heures**, puis vous aérez avant de revenir.',
+        'Vous quittez le logement **4 heures en moyenne**, puis vous aérez avant de revenir.',
         'Second passage pour toucher les punaises écloses après le premier.',
       ],
       pourquoi: 'L’effet **rémanent** atteint les punaises qui sortent après le passage, y compris celles des cachettes inaccessibles.',

@@ -42,7 +42,7 @@ export const METHODES_PUNAISES = [
   {
     titre: 'Insecticide professionnel',
     tag: 'Traitement choc',
-    texte: 'Pour les infestations importantes : insecticide rémanent sur les zones infestées et voisines, par un technicien Certibiocide. Absence de 4 à 6 heures, puis passage de contrôle.',
+    texte: 'Pour les infestations importantes : insecticide rémanent sur les zones infestées et voisines, par un technicien Certibiocide. Absence de 4 heures en moyenne, puis passage de contrôle.',
     guide: 'insecticide-punaises-de-lit',
   },
 ]
@@ -1024,7 +1024,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
     proches: ['Marolles-en-Brie', 'Limeil-Brévannes', 'Sucy-en-Brie', 'Villecresnes'],
     guides: ['punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit'],
     faq: [
-      { q: 'Combien de temps faut-il quitter le logement ?', a: 'Avec la cryogénie et la vapeur sèche, vous pouvez rester ou revenir juste après. Avec un insecticide, comptez 4 à 6 heures d\'absence, puis une bonne aération avant de réoccuper les pièces.' },
+      { q: 'Combien de temps faut-il quitter le logement ?', a: 'Avec la cryogénie et la vapeur sèche, vous pouvez rester ou revenir juste après. Avec un insecticide, comptez 4 heures en moyenne d\'absence, puis une bonne aération avant de réoccuper les pièces.' },
       ...FAQ_COMMUNE('à Boissy-Saint-Léger'),
     ],
   },
@@ -1428,6 +1428,877 @@ export const VILLES_PUNAISES: VillePunaises[] = [
       ...FAQ_COMMUNE('à Villiers-sur-Marne'),
     ],
   },
+  // ── Essonne, Seine-et-Marne, Yvelines : 10 plus grandes villes de chaque département (11/11/2026) ──
+  {
+      "slug": "versailles",
+      "nom": "Versailles",
+      "a": "à Versailles",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Versailles (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Versailles : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Versailles accueille chaque jour des visiteurs du monde entier, et de nombreux hôtels et locations meublées autour du château. Les punaises de lit voyagent dans les valises et s'installent dans les chambres, puis dans les logements des habitants.",
+          "Dans les appartements anciens des quartiers Notre-Dame et Saint-Louis, les parquets et les boiseries offrent beaucoup de cachettes : le traitement doit être minutieux, couture par couture et latte par latte."
+      ],
+      "proches": [
+          "Le Chesnay-Rocquencourt",
+          "Viroflay",
+          "Saint-Cyr-l’École",
+          "Buc"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide"
+      ],
+      "faq": [
+        {"q": "Les hôtels de Versailles peuvent-ils traiter une chambre rapidement ?", "a": "Oui. Avec la cryogénie, la chambre est traitée sans produit et peut être relouée rapidement. Nous remettons une attestation d'intervention."},
+        ...FAQ_COMMUNE("à Versailles"),
+      ]
+    },
+  {
+      "slug": "sartrouville",
+      "nom": "Sartrouville",
+      "a": "à Sartrouville",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Sartrouville (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Sartrouville : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Sartrouville compte de grandes résidences et de nombreux pavillons, avec beaucoup de navetteurs qui prennent le RER A chaque jour. Les punaises de lit voyagent dans les sacs et les vêtements avant de s'installer près des lits.",
+          "Dans les résidences, une infestation peut passer d'un logement à l'autre par les gaines et les plinthes : prévenir rapidement le bailleur permet de traiter les logements voisins en même temps."
+      ],
+      "proches": [
+          "Houilles",
+          "Montesson",
+          "Maisons-Laffitte",
+          "Cormeilles-en-Parisis"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "insecticide-punaises-de-lit",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Faut-il prévenir les voisins en cas de punaises de lit à Sartrouville ?", "a": "C'est conseillé en immeuble : les punaises circulent par les gaines et les cloisons. Un traitement coordonné évite les réinfestations."},
+        ...FAQ_COMMUNE("à Sartrouville"),
+      ]
+    },
+  {
+      "slug": "saint-germain-en-laye",
+      "nom": "Saint-Germain-en-Laye",
+      "a": "à Saint-Germain-en-Laye",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Saint-Germain-en-Laye (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Saint-Germain-en-Laye : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Saint-Germain-en-Laye attire touristes, étudiants et familles, avec de nombreuses locations meublées dans le centre historique. Les grands appartements anciens, aux parquets et aux boiseries anciennes, offrent beaucoup de cachettes aux punaises.",
+          "Pour les meubles anciens et les matières délicates, la cryogénie et la vapeur sèche permettent de traiter en profondeur sans abîmer le bois ni les tissus."
+      ],
+      "proches": [
+          "Le Pecq",
+          "Chambourcy",
+          "Mareil-Marly",
+          "Poissy"
+      ],
+      "guides": [
+          "cryogenie-punaises-de-lit",
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-airbnb-location-courte-duree"
+      ],
+      "faq": [
+        {"q": "Peut-on traiter un lit ancien contre les punaises sans l'abîmer ?", "a": "Oui. La cryogénie ne mouille pas et n'utilise aucun produit : elle atteint les assemblages et les fentes du bois sans l'endommager."},
+        ...FAQ_COMMUNE("à Saint-Germain-en-Laye"),
+      ]
+    },
+  {
+      "slug": "mantes-la-jolie",
+      "nom": "Mantes-la-Jolie",
+      "a": "à Mantes-la-Jolie",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Mantes-la-Jolie (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Mantes-la-Jolie : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Mantes-la-Jolie compte de grands quartiers d'habitat collectif, comme le Val Fourré, où une infestation peut gagner plusieurs logements d'un même immeuble. Les familles nombreuses ont souvent beaucoup de lits à inspecter.",
+          "Nous travaillons avec les familles comme avec les bailleurs, et remettons une attestation d'intervention utile pour les démarches entre locataire et propriétaire."
+      ],
+      "proches": [
+          "Mantes-la-Ville",
+          "Buchelay",
+          "Limay",
+          "Magnanville"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "terre-de-diatomee-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Mon bailleur doit-il payer le traitement à Mantes-la-Jolie ?", "a": "Si les punaises étaient là à votre arrivée, le logement n'était pas décent : prévenez-le par écrit. Notre attestation vous aide dans vos démarches."},
+        ...FAQ_COMMUNE("à Mantes-la-Jolie"),
+      ]
+    },
+  {
+      "slug": "poissy",
+      "nom": "Poissy",
+      "a": "à Poissy",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Poissy (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Poissy : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Poissy accueille de nombreux salariés et intérimaires, parfois logés en foyer ou en meublé, ainsi que des familles dans les quartiers résidentiels. Les logements partagés sont particulièrement exposés aux punaises.",
+          "Dans les foyers et résidences, nous traitons chambre par chambre avec une organisation qui permet de continuer à loger les occupants."
+      ],
+      "proches": [
+          "Saint-Germain-en-Laye",
+          "Carrières-sous-Poissy",
+          "Villennes-sur-Seine",
+          "Orgeval"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "insecticide-punaises-de-lit",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Un foyer de travailleurs à Poissy peut-il être traité sans fermer ?", "a": "Oui, en organisant le traitement chambre par chambre. La cryogénie permet de remettre une chambre en service rapidement."},
+        ...FAQ_COMMUNE("à Poissy"),
+      ]
+    },
+  {
+      "slug": "conflans-sainte-honorine",
+      "nom": "Conflans-Sainte-Honorine",
+      "a": "à Conflans-Sainte-Honorine",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Conflans-Sainte-Honorine (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Conflans-Sainte-Honorine : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "À Conflans-Sainte-Honorine, beaucoup de familles vivent en pavillon ou en petit immeuble, et les punaises arrivent le plus souvent avec un voyage, un séjour à l'hôtel ou un meuble d'occasion.",
+          "Dans une maison, toutes les chambres où quelqu'un a dormi depuis le début des piqûres doivent être inspectées, y compris le canapé du salon."
+      ],
+      "proches": [
+          "Andrésy",
+          "Maurecourt",
+          "Herblay-sur-Seine",
+          "Achères"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "vapeur-seche-punaises-de-lit",
+          "terre-de-diatomee-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "J'ai acheté un lit d'occasion à Conflans et je suis piqué : que faire ?", "a": "Ne déplacez pas le lit et appelez-nous : les meubles d'occasion sont une source fréquente de punaises. Le technicien inspecte le lit et la chambre."},
+        ...FAQ_COMMUNE("à Conflans-Sainte-Honorine"),
+      ]
+    },
+  {
+      "slug": "trappes",
+      "nom": "Trappes",
+      "a": "à Trappes",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Trappes (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Trappes : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Trappes compte beaucoup de logements collectifs où vivent des familles nombreuses. Quand une infestation démarre dans un logement, elle peut vite toucher les voisins par les gaines et les cloisons.",
+          "Nous traitons avec les familles et les bailleurs, et nous laissons une fiche de préparation simple pour que le traitement soit efficace dès le premier passage."
+      ],
+      "proches": [
+          "Élancourt",
+          "Montigny-le-Bretonneux",
+          "Plaisir",
+          "La Verrière"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Combien de lits faut-il traiter dans une famille nombreuse ?", "a": "Tous les lits des pièces touchées, et souvent ceux des pièces voisines. Le technicien les inspecte un par un, matelas d'appoint compris."},
+        ...FAQ_COMMUNE("à Trappes"),
+      ]
+    },
+  {
+      "slug": "les-mureaux",
+      "nom": "Les Mureaux",
+      "a": "aux Mureaux",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit aux Mureaux (78) : cryogénie, vapeur",
+      "description": "Punaises de lit aux Mureaux : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Aux Mureaux, beaucoup de familles vivent en résidence, et les punaises de lit passent facilement d'un logement à l'autre si personne ne prévient. Les lits superposés et les matelas d'appoint sont des cachettes fréquentes.",
+          "Nous proposons le traitement insecticide comme les méthodes sans insecticide, selon le logement et la présence de jeunes enfants."
+      ],
+      "proches": [
+          "Meulan-en-Yvelines",
+          "Ecquevilly",
+          "Verneuil-sur-Seine",
+          "Bouafle"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit",
+          "insecticide-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Peut-on traiter une chambre d'enfant sans insecticide aux Mureaux ?", "a": "Oui, avec la cryogénie et la vapeur sèche : aucun produit n'est déposé et la chambre est utilisable le soir même."},
+        ...FAQ_COMMUNE("aux Mureaux"),
+      ]
+    },
+  {
+      "slug": "houilles",
+      "nom": "Houilles",
+      "a": "à Houilles",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Houilles (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Houilles : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Houilles est une ville de pavillons et de petits immeubles, avec beaucoup de navetteurs qui partent chaque jour vers Paris et La Défense. Les punaises de lit voyagent dans les sacs, les valises et les vêtements.",
+          "Dans les pavillons, une infestation commence souvent dans une seule chambre : agir vite évite qu'elle gagne le reste de la maison."
+      ],
+      "proches": [
+          "Sartrouville",
+          "Carrières-sur-Seine",
+          "Bezons",
+          "Chatou"
+      ],
+      "guides": [
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "punaises-de-lit-airbnb-location-courte-duree"
+      ],
+      "faq": [
+        {"q": "Je prends les transports tous les jours à Houilles : comment éviter les punaises ?", "a": "Posez votre sac loin du lit en rentrant, lavez à 60 °C les vêtements portés lors d'un voyage, et inspectez votre valise après un séjour à l'hôtel."},
+        ...FAQ_COMMUNE("à Houilles"),
+      ]
+    },
+  {
+      "slug": "montigny-le-bretonneux",
+      "nom": "Montigny-le-Bretonneux",
+      "a": "à Montigny-le-Bretonneux",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Punaises de lit à Montigny-le-Bretonneux (78) : cryogénie, vapeur",
+      "description": "Punaises de lit à Montigny-le-Bretonneux : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Montigny-le-Bretonneux accueille de nombreux salariés en déplacement, des hôtels d'affaires et des résidences récentes. Les voyages professionnels sont une source fréquente de punaises dans les logements.",
+          "Pour les hôtels et résidences de services, nous intervenons rapidement, avec une attestation d'intervention pour le registre."
+      ],
+      "proches": [
+          "Guyancourt",
+          "Voisins-le-Bretonneux",
+          "Trappes",
+          "Élancourt"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit",
+          "vapeur-seche-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Un hôtel d'affaires à Montigny peut-il être traité discrètement ?", "a": "Oui : intervention aux heures creuses, chambre par chambre, avec la cryogénie pour relouer vite, et attestation remise à la direction."},
+        ...FAQ_COMMUNE("à Montigny-le-Bretonneux"),
+      ]
+    },
+  {
+      "slug": "evry-courcouronnes",
+      "nom": "Évry-Courcouronnes",
+      "a": "à Évry-Courcouronnes",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Évry-Courcouronnes (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Évry-Courcouronnes : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Évry-Courcouronnes accueille une université, de nombreux étudiants, des résidences et des grands ensembles. Les déménagements fréquents et les meubles qui circulent favorisent les punaises de lit.",
+          "Dans les résidences étudiantes et les colocations, toutes les chambres doivent être inspectées, même si un seul occupant est piqué."
+      ],
+      "proches": [
+          "Ris-Orangis",
+          "Corbeil-Essonnes",
+          "Lisses",
+          "Bondoufle"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Une résidence étudiante à Évry peut-elle être traitée chambre par chambre ?", "a": "Oui. Nous organisons l'intervention avec le gestionnaire, chambre par chambre, avec une attestation pour chaque logement traité."},
+        ...FAQ_COMMUNE("à Évry-Courcouronnes"),
+      ]
+    },
+  {
+      "slug": "corbeil-essonnes",
+      "nom": "Corbeil-Essonnes",
+      "a": "à Corbeil-Essonnes",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Corbeil-Essonnes (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Corbeil-Essonnes : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Corbeil-Essonnes compte un centre ancien aux immeubles anciens, et de grands quartiers d'habitat collectif. Les parquets fendus et les papiers peints décollés sont des cachettes classiques.",
+          "Le technicien vérifie les plinthes, les prises et le papier peint autour des lits avant de choisir la méthode adaptée."
+      ],
+      "proches": [
+          "Évry-Courcouronnes",
+          "Saint-Germain-lès-Corbeil",
+          "Villabé",
+          "Le Coudray-Montceaux"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide"
+      ],
+      "faq": [
+        {"q": "Les punaises peuvent-elles se cacher derrière le papier peint ?", "a": "Oui, surtout quand il est décollé près du lit. Le technicien vérifie ces zones et les traite avec le reste de la chambre."},
+        ...FAQ_COMMUNE("à Corbeil-Essonnes"),
+      ]
+    },
+  {
+      "slug": "massy",
+      "nom": "Massy",
+      "a": "à Massy",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Massy (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Massy : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Massy est un grand nœud de gares, avec le TGV et le RER : beaucoup de voyageurs y passent, et les hôtels du quartier Atlantis accueillent une clientèle d'affaires. Les punaises voyagent avec les bagages.",
+          "Dans les appartements neufs comme dans les pavillons, une infestation commence souvent après un voyage : agir vite simplifie le traitement."
+      ],
+      "proches": [
+          "Palaiseau",
+          "Antony",
+          "Wissous",
+          "Chilly-Mazarin"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit",
+          "insecticide-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Peut-on avoir des punaises dans un logement neuf à Massy ?", "a": "Oui : elles arrivent avec les occupants, leurs bagages et leurs meubles, pas avec le bâtiment. Un logement neuf n'est pas protégé."},
+        ...FAQ_COMMUNE("à Massy"),
+      ]
+    },
+  {
+      "slug": "savigny-sur-orge",
+      "nom": "Savigny-sur-Orge",
+      "a": "à Savigny-sur-Orge",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Savigny-sur-Orge (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Savigny-sur-Orge : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Savigny-sur-Orge est une ville de pavillons, où les punaises arrivent le plus souvent avec un voyage, une visite ou un meuble d'occasion. Elles s'installent d'abord dans la chambre de celui qui a rapporté le bagage.",
+          "Nous inspectons toute la maison pour savoir jusqu'où elles sont allées, puis nous traitons pièce par pièce."
+      ],
+      "proches": [
+          "Viry-Châtillon",
+          "Morsang-sur-Orge",
+          "Juvisy-sur-Orge",
+          "Épinay-sur-Orge"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "vapeur-seche-punaises-de-lit",
+          "terre-de-diatomee-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "La terre de diatomée suffit-elle contre les punaises ?", "a": "Non, seule elle ne règle pas une infestation installée et ne tue pas les œufs cachés. Elle peut au mieux compléter un traitement professionnel."},
+        ...FAQ_COMMUNE("à Savigny-sur-Orge"),
+      ]
+    },
+  {
+      "slug": "palaiseau",
+      "nom": "Palaiseau",
+      "a": "à Palaiseau",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Palaiseau (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Palaiseau : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Palaiseau accueille de grands établissements d'enseignement et de recherche, avec de nombreux étudiants et chercheurs logés en résidence ou en colocation. Les chambres changent souvent d'occupant.",
+          "Dans les maisons anciennes du centre, les parquets et les boiseries demandent un traitement minutieux au ras du sol."
+      ],
+      "proches": [
+          "Massy",
+          "Orsay",
+          "Igny",
+          "Villebon-sur-Yvette"
+      ],
+      "guides": [
+          "cryogenie-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "punaises-de-lit-airbnb-location-courte-duree"
+      ],
+      "faq": [
+        {"q": "Je suis étudiant à Palaiseau et je suis piqué la nuit : que faire ?", "a": "Prévenez le gestionnaire de votre résidence, ne changez pas de chambre et ne jetez pas le matelas. Une inspection confirme s'il s'agit de punaises."},
+        ...FAQ_COMMUNE("à Palaiseau"),
+      ]
+    },
+  {
+      "slug": "athis-mons",
+      "nom": "Athis-Mons",
+      "a": "à Athis-Mons",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Athis-Mons (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Athis-Mons : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Athis-Mons, voisine de l'aéroport d'Orly, accueille de nombreux personnels navigants et voyageurs, et des hôtels proches des pistes. Les punaises de lit circulent avec les bagages.",
+          "Dans les pavillons et résidences, nous traitons la chambre touchée et vérifions les pièces voisines, pour stopper l'infestation dès le départ."
+      ],
+      "proches": [
+          "Paray-Vieille-Poste",
+          "Juvisy-sur-Orge",
+          "Morangis",
+          "Ablon-sur-Seine"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide"
+      ],
+      "faq": [
+        {"q": "Je voyage souvent depuis Orly : comment ne pas ramener de punaises ?", "a": "Utilisez une housse de valise, ne posez pas vos bagages sur le lit de l'hôtel, et lavez vos vêtements à 60 °C au retour."},
+        ...FAQ_COMMUNE("à Athis-Mons"),
+      ]
+    },
+  {
+      "slug": "sainte-genevieve-des-bois",
+      "nom": "Sainte-Geneviève-des-Bois",
+      "a": "à Sainte-Geneviève-des-Bois",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Sainte-Geneviève-des-Bois (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Sainte-Geneviève-des-Bois : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Sainte-Geneviève-des-Bois est une ville surtout pavillonnaire, où les familles découvrent souvent les punaises après des vacances ou la visite de proches.",
+          "Les chambres d'amis peu utilisées sont des foyers fréquents : les punaises peuvent y attendre longtemps avant d'être découvertes."
+      ],
+      "proches": [
+          "Saint-Michel-sur-Orge",
+          "Fleury-Mérogis",
+          "Morsang-sur-Orge",
+          "Villemoisson-sur-Orge"
+      ],
+      "guides": [
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Les punaises peuvent-elles survivre dans une chambre inoccupée ?", "a": "Oui, elles peuvent jeûner longtemps. Une chambre d'amis inoccupée doit être inspectée avec le reste de la maison."},
+        ...FAQ_COMMUNE("à Sainte-Geneviève-des-Bois"),
+      ]
+    },
+  {
+      "slug": "vigneux-sur-seine",
+      "nom": "Vigneux-sur-Seine",
+      "a": "à Vigneux-sur-Seine",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Vigneux-sur-Seine (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Vigneux-sur-Seine : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Vigneux-sur-Seine compte de grandes résidences et des quartiers pavillonnaires. Dans les immeubles, une infestation peut se propager d'un étage à l'autre si elle n'est pas traitée rapidement.",
+          "Nous coordonnons le traitement avec les bailleurs quand plusieurs logements sont touchés, et nous laissons une fiche de préparation claire aux familles."
+      ],
+      "proches": [
+          "Draveil",
+          "Montgeron",
+          "Athis-Mons",
+          "Juvisy-sur-Orge"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Plusieurs voisins ont des punaises à Vigneux : que faire ?", "a": "Prévenez le bailleur ou le syndic : un traitement coordonné des logements touchés évite que les punaises circulent d'un appartement à l'autre."},
+        ...FAQ_COMMUNE("à Vigneux-sur-Seine"),
+      ]
+    },
+  {
+      "slug": "ris-orangis",
+      "nom": "Ris-Orangis",
+      "a": "à Ris-Orangis",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Ris-Orangis (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Ris-Orangis : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Ris-Orangis compte des résidences, des pavillons et quelques foyers, où les chambres changent souvent d'occupant. Les punaises de lit passent alors d'un résident à l'autre.",
+          "Pour les gestionnaires de foyers, nous intervenons chambre par chambre avec une attestation pour le registre."
+      ],
+      "proches": [
+          "Évry-Courcouronnes",
+          "Grigny",
+          "Draveil",
+          "Bondoufle"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit",
+          "insecticide-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Un gestionnaire de foyer à Ris-Orangis peut-il avoir un suivi ?", "a": "Oui, avec des inspections régulières et un traitement rapide des chambres signalées, pour éviter que l'infestation s'étende."},
+        ...FAQ_COMMUNE("à Ris-Orangis"),
+      ]
+    },
+  {
+      "slug": "viry-chatillon",
+      "nom": "Viry-Châtillon",
+      "a": "à Viry-Châtillon",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Punaises de lit à Viry-Châtillon (91) : cryogénie, vapeur",
+      "description": "Punaises de lit à Viry-Châtillon : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Viry-Châtillon mêle pavillons et résidences. Les familles nous appellent souvent après un retour de vacances, quand les piqûres apparaissent dans plusieurs chambres.",
+          "Au retour de voyage, défaire la valise dans la salle de bain et laver le linge à 60 °C limite beaucoup le risque."
+      ],
+      "proches": [
+          "Grigny",
+          "Savigny-sur-Orge",
+          "Juvisy-sur-Orge",
+          "Morsang-sur-Orge"
+      ],
+      "guides": [
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "punaises-de-lit-airbnb-location-courte-duree"
+      ],
+      "faq": [
+        {"q": "Pourquoi des punaises juste après les vacances à Viry-Châtillon ?", "a": "Elles voyagent dans les valises depuis un hôtel ou une location. Au retour, elles s'installent près du lit et pondent rapidement."},
+        ...FAQ_COMMUNE("à Viry-Châtillon"),
+      ]
+    },
+  {
+      "slug": "meaux",
+      "nom": "Meaux",
+      "a": "à Meaux",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Meaux (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Meaux : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Meaux, grande ville de Seine-et-Marne, compte un centre ancien, des hôtels et de grands quartiers d'habitat collectif. Les punaises de lit y circulent avec les voyageurs et les déménagements.",
+          "Dans les immeubles anciens du centre, les parquets et les plinthes sont des cachettes fréquentes, traitées avec soin au ras du sol."
+      ],
+      "proches": [
+          "Trilport",
+          "Nanteuil-lès-Meaux",
+          "Chauconin-Neufmontiers",
+          "Mareuil-lès-Meaux"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "cryogenie-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide"
+      ],
+      "faq": [
+        {"q": "Intervenez-vous pour les punaises de lit à Meaux ?", "a": "Oui, en Seine-et-Marne aussi. Appelez le 07 68 07 72 19 pour connaître la disponibilité ; le devis est gratuit."},
+        ...FAQ_COMMUNE("à Meaux"),
+      ]
+    },
+  {
+      "slug": "chelles",
+      "nom": "Chelles",
+      "a": "à Chelles",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Chelles (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Chelles : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Chelles est une grande ville pavillonnaire avec des résidences, proche de Paris par le RER E. Les navetteurs et les familles qui voyagent rapportent parfois des punaises dans leurs bagages.",
+          "Dans une maison, le traitement couvre la chambre touchée, les pièces voisines et le canapé si quelqu'un y a dormi."
+      ],
+      "proches": [
+          "Vaires-sur-Marne",
+          "Gagny",
+          "Montfermeil",
+          "Brou-sur-Chantereine"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "vapeur-seche-punaises-de-lit",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Faut-il traiter le canapé contre les punaises ?", "a": "Oui si quelqu'un y a dormi ou s'y repose souvent : les punaises suivent les personnes. La vapeur sèche traite les canapés en tissu en profondeur."},
+        ...FAQ_COMMUNE("à Chelles"),
+      ]
+    },
+  {
+      "slug": "melun",
+      "nom": "Melun",
+      "a": "à Melun",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Melun (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Melun : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Melun, préfecture, accueille de nombreux services publics, des hôtels et des logements loués meublés. Les punaises de lit voyagent avec les déplacements professionnels et les changements de locataires.",
+          "Pour les propriétaires de meublés, un traitement entre deux locations, avec attestation, protège en cas de litige."
+      ],
+      "proches": [
+          "Dammarie-lès-Lys",
+          "Le Mée-sur-Seine",
+          "Vaux-le-Pénil",
+          "Rubelles"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "insecticide-punaises-de-lit",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Je loue un meublé à Melun : comment éviter les punaises entre deux locataires ?", "a": "Faites inspecter le logement à chaque départ, et traitez rapidement en cas de doute. Notre attestation vous protège en cas de réclamation."},
+        ...FAQ_COMMUNE("à Melun"),
+      ]
+    },
+  {
+      "slug": "pontault-combault",
+      "nom": "Pontault-Combault",
+      "a": "à Pontault-Combault",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Pontault-Combault (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Pontault-Combault : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Pontault-Combault est une ville de pavillons et de résidences, où les punaises arrivent souvent avec un meuble d'occasion ou un retour de voyage.",
+          "Nous inspectons le lit, le sommier latte par latte, les plinthes et le canapé, puis nous choisissons la méthode avec vous."
+      ],
+      "proches": [
+          "Roissy-en-Brie",
+          "Émerainville",
+          "Ozoir-la-Ferrière",
+          "Le Plessis-Trévise"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "vapeur-seche-punaises-de-lit",
+          "terre-de-diatomee-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Les lattes du sommier peuvent-elles cacher des punaises ?", "a": "Oui, surtout dans les trous où elles s'emboîtent. Le technicien les démonte et les inspecte une par une."},
+        ...FAQ_COMMUNE("à Pontault-Combault"),
+      ]
+    },
+  {
+      "slug": "savigny-le-temple",
+      "nom": "Savigny-le-Temple",
+      "a": "à Savigny-le-Temple",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Savigny-le-Temple (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Savigny-le-Temple : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Savigny-le-Temple, ville récente de Sénart, accueille beaucoup de jeunes familles. Les punaises y arrivent avec les déménagements, les meubles d'occasion et les voyages.",
+          "Pour les chambres d'enfants, la cryogénie et la vapeur sèche permettent de traiter sans produit, avec un insecticide limité aux sols si nécessaire."
+      ],
+      "proches": [
+          "Cesson",
+          "Nandy",
+          "Vert-Saint-Denis",
+          "Saint-Pierre-du-Perray"
+      ],
+      "guides": [
+          "cryogenie-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "vapeur-seche-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Peut-on traiter les punaises avec un bébé à la maison ?", "a": "Oui. La cryogénie et la vapeur sèche ne déposent aucun produit ; le technicien adapte le protocole à la présence d'un bébé."},
+        ...FAQ_COMMUNE("à Savigny-le-Temple"),
+      ]
+    },
+  {
+      "slug": "bussy-saint-georges",
+      "nom": "Bussy-Saint-Georges",
+      "a": "à Bussy-Saint-Georges",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Bussy-Saint-Georges (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Bussy-Saint-Georges : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Bussy-Saint-Georges, proche des parcs de loisirs de Marne-la-Vallée et de nombreux hôtels, accueille beaucoup de voyageurs. Les punaises de lit circulent entre les hôtels et les logements.",
+          "Dans les logements neufs, elles arrivent avec les occupants et leurs bagages : un bâtiment récent n'est pas protégé."
+      ],
+      "proches": [
+          "Bussy-Saint-Martin",
+          "Collégien",
+          "Montévrain",
+          "Jossigny"
+      ],
+      "guides": [
+          "punaises-de-lit-airbnb-location-courte-duree",
+          "cryogenie-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide"
+      ],
+      "faq": [
+        {"q": "Les hôtels autour de Marne-la-Vallée sont-ils exposés aux punaises ?", "a": "Oui, comme tous les lieux qui accueillent beaucoup de voyageurs. Une intervention rapide et discrète, chambre par chambre, limite les dégâts."},
+        ...FAQ_COMMUNE("à Bussy-Saint-Georges"),
+      ]
+    },
+  {
+      "slug": "champs-sur-marne",
+      "nom": "Champs-sur-Marne",
+      "a": "à Champs-sur-Marne",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Champs-sur-Marne (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Champs-sur-Marne : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Champs-sur-Marne accueille la cité Descartes et ses nombreux étudiants, logés en résidence ou en colocation. Les matelas et les lits passent d'un occupant à l'autre, et les punaises suivent.",
+          "Dans les pavillons, les infestations démarrent le plus souvent après un voyage ou l'achat d'un meuble d'occasion."
+      ],
+      "proches": [
+          "Noisiel",
+          "Torcy",
+          "Noisy-le-Grand",
+          "Émerainville"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "terre-de-diatomee-punaises-de-lit",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Je suis étudiant à Champs-sur-Marne : qui paie le traitement ?", "a": "Dans une résidence, prévenez le gestionnaire. En location classique, si les punaises étaient là à votre arrivée, c'est en principe au bailleur."},
+        ...FAQ_COMMUNE("à Champs-sur-Marne"),
+      ]
+    },
+  {
+      "slug": "villeparisis",
+      "nom": "Villeparisis",
+      "a": "à Villeparisis",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Villeparisis (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Villeparisis : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Villeparisis est une ville surtout pavillonnaire, desservie par le RER B. Les familles découvrent souvent les punaises après des vacances ou la visite de proches venus avec leurs bagages.",
+          "Nous traitons la maison pièce par pièce et planifions le second passage dès la première intervention."
+      ],
+      "proches": [
+          "Mitry-Mory",
+          "Claye-Souilly",
+          "Vaujours",
+          "Courtry"
+      ],
+      "guides": [
+          "vapeur-seche-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "punaises-de-lit-airbnb-location-courte-duree"
+      ],
+      "faq": [
+        {"q": "Combien de temps entre les deux passages ?", "a": "En général 10 à 15 jours, le temps que les œufs éclosent. Le second passage élimine ces jeunes punaises avant qu'elles ne pondent."},
+        ...FAQ_COMMUNE("à Villeparisis"),
+      ]
+    },
+  {
+      "slug": "dammarie-les-lys",
+      "nom": "Dammarie-lès-Lys",
+      "a": "à Dammarie-lès-Lys",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Dammarie-lès-Lys (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Dammarie-lès-Lys : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Dammarie-lès-Lys compte des résidences et des pavillons, et les punaises de lit peuvent passer d'un logement à l'autre dans les immeubles. Les familles nombreuses ont souvent plusieurs chambres touchées.",
+          "Nous laissons une fiche de préparation simple : linge en sacs fermés, lavage à 60 °C, aucun déplacement de meubles entre les pièces."
+      ],
+      "proches": [
+          "Melun",
+          "Le Mée-sur-Seine",
+          "Boissise-le-Roi",
+          "Chartrettes"
+      ],
+      "guides": [
+          "insecticide-punaises-de-lit",
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Faut-il jeter le matelas en cas de punaises ?", "a": "Non, la plupart du temps il peut être traité. Le jeter dans l'escalier risque même de disperser les punaises dans l'immeuble."},
+        ...FAQ_COMMUNE("à Dammarie-lès-Lys"),
+      ]
+    },
+  {
+      "slug": "combs-la-ville",
+      "nom": "Combs-la-Ville",
+      "a": "à Combs-la-Ville",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Punaises de lit à Combs-la-Ville (77) : cryogénie, vapeur",
+      "description": "Punaises de lit à Combs-la-Ville : traitement insecticide ou cryogénie et vapeur sans insecticide. 2 passages inclus, dès 290 € TTC, garantie 1 an.",
+      "contexte": [
+          "Combs-la-Ville est une ville de pavillons, où les punaises arrivent généralement avec un bagage ou un meuble d'occasion. Elles s'installent d'abord dans une chambre avant de gagner les autres pièces.",
+          "Une inspection complète de la maison, chambre par chambre, évite d'oublier un foyer."
+      ],
+      "proches": [
+          "Moissy-Cramayel",
+          "Quincy-sous-Sénart",
+          "Brie-Comte-Robert",
+          "Lieusaint"
+      ],
+      "guides": [
+          "punaises-de-lit-sans-insecticide",
+          "cryogenie-punaises-de-lit",
+          "vapeur-seche-punaises-de-lit"
+      ],
+      "faq": [
+        {"q": "Comment savoir si les punaises ont gagné d'autres chambres ?", "a": "Le technicien inspecte chaque lit et chaque canapé, à la recherche de points noirs, de mues et d'œufs. C'est cette carte qui décide du traitement."},
+        ...FAQ_COMMUNE("à Combs-la-Ville"),
+      ]
+    },
 ]
 
 export function getVillePunaises(slug: string) {
