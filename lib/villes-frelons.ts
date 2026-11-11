@@ -11,7 +11,8 @@ import { LOCAL_FRELONS_GC } from '@/lib/local-frelons-gc'
 
 // Mise en ligne progressive pour Google (demandée le 08/11/2026) : 5 villes d'abord, les autres dans la semaine.
 export const FRELONS_VILLES_INDEXEES: string[] = ['saint-maurice', 'nogent-sur-marne', 'vincennes', 'saint-maur-des-fosses', 'champigny-sur-marne', // 08/11
-  'creteil', 'maisons-alfort', 'charenton-le-pont', 'fontenay-sous-bois', 'le-perreux-sur-marne'] // 10/11 ; le 12/11 : joinville-le-pont, saint-mande, alfortville, ivry-sur-seine, paris-12
+  'creteil', 'maisons-alfort', 'charenton-le-pont', 'fontenay-sous-bois', 'le-perreux-sur-marne', // 10/11
+  'joinville-le-pont', 'saint-mande', 'alfortville', 'ivry-sur-seine', 'paris-12'] // 12/11 ; 30 villes 91/77/78 encore en noindex
 export const frelonsIndexee = (slug: string) => FRELONS_VILLES_INDEXEES.includes(slug)
 
 export const SOURCES_FRELONS = [
