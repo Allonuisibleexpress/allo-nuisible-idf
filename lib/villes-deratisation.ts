@@ -1784,6 +1784,1057 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
       ...FAQ_COMMUNE('à Paris 19e'),
     ],
   },
+  // ── Essonne, Seine-et-Marne, Yvelines : 10 plus grandes villes de chaque département (10/11/2026) ──
+  {
+      "slug": "versailles",
+      "nom": "Versailles",
+      "a": "à Versailles",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Versailles (78), intervention 7j/7",
+      "description": "Rats et souris à Versailles : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Versailles, c'est le château et son parc, mais aussi des quartiers anciens comme Notre-Dame et Saint-Louis, avec leurs immeubles en pierre, leurs caves voûtées et leurs cours intérieures. Le marché Notre-Dame et les nombreux commerces de bouche attirent les rongeurs dans le centre.",
+          "Dans les maisons de Porchefontaine, Montreuil ou Clagny, les rats et les souris passent souvent par les jardins, les sous-sols et les passages de canalisations. Nous adaptons le dispositif à chaque bâtiment, de la cave d'immeuble au pavillon."
+      ],
+      "lieux": [
+          "Caves voûtées des immeubles anciens",
+          "Cours intérieures et locaux poubelles",
+          "Réserves des commerces de bouche",
+          "Sous-sols et jardins des pavillons"
+      ],
+      "proches": [
+          "Le Chesnay-Rocquencourt",
+          "Viroflay",
+          "Saint-Cyr-l’École",
+          "Buc"
+      ],
+      "guides": [
+          "rat-dans-les-murs-cloisons",
+          "restaurant-plan-lutte-nuisibles",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Les caves anciennes de Versailles attirent-elles les rats ?", "a": "Oui. Les caves voûtées en pierre ont souvent des fissures et des passages de canalisations anciens, par lesquels les rongeurs circulent d'un immeuble à l'autre. Une dératisation coordonnée par le syndic, avec colmatage, est la plus efficace."},
+        ...FAQ_COMMUNE("à Versailles"),
+      ]
+    },
+  {
+      "slug": "sartrouville",
+      "nom": "Sartrouville",
+      "a": "à Sartrouville",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Sartrouville (78), intervention 7j/7",
+      "description": "Rats et souris à Sartrouville : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Sartrouville, dans une boucle de la Seine, mêle grands ensembles, quartiers pavillonnaires et berges. Les rats bruns vivent le long du fleuve et dans les jardins, et gagnent les sous-sols et les garages à l'arrivée du froid.",
+          "Dans les résidences, les locaux poubelles et les parkings souterrains sont les premiers points à traiter. Dans les pavillons, nous inspectons les abris de jardin, les composts et les vides sanitaires."
+      ],
+      "lieux": [
+          "Berges de la Seine et jardins",
+          "Locaux poubelles des résidences",
+          "Parkings souterrains",
+          "Vides sanitaires des pavillons"
+      ],
+      "proches": [
+          "Houilles",
+          "Montesson",
+          "Maisons-Laffitte",
+          "Cormeilles-en-Parisis"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-vide-sanitaire",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Les crues de la Seine font-elles sortir les rats à Sartrouville ?", "a": "Oui, quand le fleuve monte, les rats quittent leurs terriers des berges et cherchent refuge dans les caves et les jardins proches. C'est souvent après ces épisodes que l'on nous appelle."},
+        ...FAQ_COMMUNE("à Sartrouville"),
+      ]
+    },
+  {
+      "slug": "saint-germain-en-laye",
+      "nom": "Saint-Germain-en-Laye",
+      "a": "à Saint-Germain-en-Laye",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Saint-Germain-en-Laye (78), intervention 7j/7",
+      "description": "Rats et souris à Saint-Germain-en-Laye : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Saint-Germain-en-Laye, avec son château, sa terrasse et sa forêt, compte un centre ancien dense en commerces et en restaurants, et de grandes maisons entourées de jardins. La forêt toute proche abrite aussi des rongeurs qui s'approchent des habitations à l'automne.",
+          "Dans le centre, les réserves des commerces et les caves d'immeubles sont les zones sensibles. Dans les quartiers résidentiels, ce sont les sous-sols, les garages et les dépendances."
+      ],
+      "lieux": [
+          "Réserves des commerces du centre",
+          "Caves d’immeubles anciens",
+          "Sous-sols et garages",
+          "Dépendances en lisière de forêt"
+      ],
+      "proches": [
+          "Le Pecq",
+          "Chambourcy",
+          "Mareil-Marly",
+          "Poissy"
+      ],
+      "guides": [
+          "restaurant-plan-lutte-nuisibles",
+          "rongeur-moteur-voiture-cables",
+          "lerot-grenier-combles"
+      ],
+      "faq": [
+        {"q": "La forêt de Saint-Germain amène-t-elle des rongeurs dans les maisons ?", "a": "Les maisons en lisière de forêt voient plus souvent des souris, des mulots et parfois des lérots entrer à l'automne. Boucher les accès des sous-sols et des combles est la meilleure prévention."},
+        ...FAQ_COMMUNE("à Saint-Germain-en-Laye"),
+      ]
+    },
+  {
+      "slug": "mantes-la-jolie",
+      "nom": "Mantes-la-Jolie",
+      "a": "à Mantes-la-Jolie",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Mantes-la-Jolie (78), intervention 7j/7",
+      "description": "Rats et souris à Mantes-la-Jolie : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Mantes-la-Jolie, au bord de la Seine, réunit un centre ancien autour de la collégiale et de grands quartiers d'habitat collectif comme le Val Fourré. Les rats y trouvent nourriture et abri dans les locaux poubelles, les caves et les espaces verts.",
+          "Nous intervenons pour les particuliers, les commerces et les bailleurs. Dans les grands ensembles, la dératisation des parties communes est souvent la première étape avant de traiter les logements."
+      ],
+      "lieux": [
+          "Locaux poubelles et vide-ordures",
+          "Caves des grands ensembles",
+          "Berges de la Seine",
+          "Réserves des commerces du centre"
+      ],
+      "proches": [
+          "Mantes-la-Ville",
+          "Buchelay",
+          "Limay",
+          "Magnanville"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats",
+          "deratisation-sans-mort-aux-rats"
+      ],
+      "faq": [
+        {"q": "Qui doit dératiser les caves d'une résidence à Mantes-la-Jolie ?", "a": "Les caves et locaux poubelles sont des parties communes : c'est au bailleur ou au syndic d'organiser la dératisation. Chaque logement touché est ensuite traité si besoin."},
+        ...FAQ_COMMUNE("à Mantes-la-Jolie"),
+      ]
+    },
+  {
+      "slug": "poissy",
+      "nom": "Poissy",
+      "a": "à Poissy",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Poissy (78), intervention 7j/7",
+      "description": "Rats et souris à Poissy : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Poissy s'étend le long de la Seine, entre son centre historique autour de la collégiale, ses quartiers résidentiels et ses grandes zones d'activités. Les berges et les jardins sont des lieux de vie pour les rats bruns.",
+          "Dans les pavillons proches de la Seine, les rats entrent souvent par les sous-sols et les garages. Pour les entreprises et commerces, nous proposons un suivi régulier avec registre."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Sous-sols et garages des pavillons",
+          "Zones d’activités et entrepôts",
+          "Caves du centre historique"
+      ],
+      "proches": [
+          "Saint-Germain-en-Laye",
+          "Carrières-sous-Poissy",
+          "Villennes-sur-Seine",
+          "Orgeval"
+      ],
+      "guides": [
+          "rat-vide-sanitaire",
+          "restaurant-plan-lutte-nuisibles",
+          "trou-dans-le-jardin"
+      ],
+      "faq": [
+        {"q": "Les entrepôts de Poissy peuvent-ils avoir un contrat de dératisation ?", "a": "Oui. Nous mettons en place des postes numérotés, des passages programmés et un rapport à chaque visite, utile lors des audits et des contrôles."},
+        ...FAQ_COMMUNE("à Poissy"),
+      ]
+    },
+  {
+      "slug": "conflans-sainte-honorine",
+      "nom": "Conflans-Sainte-Honorine",
+      "a": "à Conflans-Sainte-Honorine",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Conflans-Sainte-Honorine (78), intervention 7j/7",
+      "description": "Rats et souris à Conflans-Sainte-Honorine : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Conflans-Sainte-Honorine, capitale de la batellerie, est installée au confluent de la Seine et de l'Oise. Les quais, les péniches et les jardins des bords de l'eau sont des lieux où les rats trouvent eau et abri.",
+          "Les maisons du coteau et du centre ancien ont souvent des caves et des sous-sols par lesquels les rongeurs s'introduisent. Nous repérons les passages avant de poser le dispositif."
+      ],
+      "lieux": [
+          "Quais et berges de la Seine et de l’Oise",
+          "Caves du centre ancien",
+          "Jardins en coteau",
+          "Garages et sous-sols"
+      ],
+      "proches": [
+          "Andrésy",
+          "Maurecourt",
+          "Herblay-sur-Seine",
+          "Achères"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-dans-les-murs-cloisons",
+          "trou-dans-le-jardin"
+      ],
+      "faq": [
+        {"q": "Habiter près des quais à Conflans augmente-t-il le risque de rats ?", "a": "Les berges sont un milieu naturellement favorable au rat brun. Les maisons proches doivent surveiller les signes de passage et fermer soigneusement les accès aux caves."},
+        ...FAQ_COMMUNE("à Conflans-Sainte-Honorine"),
+      ]
+    },
+  {
+      "slug": "trappes",
+      "nom": "Trappes",
+      "a": "à Trappes",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Trappes (78), intervention 7j/7",
+      "description": "Rats et souris à Trappes : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Trappes, au cœur de Saint-Quentin-en-Yvelines, compte de nombreux logements collectifs, des zones d'activités et de grandes emprises ferroviaires. Les rongeurs circulent entre les voies, les locaux techniques et les espaces verts.",
+          "Dans les résidences, nous traitons en priorité les locaux poubelles, les caves et les parkings, en lien avec les bailleurs. Les commerces et entreprises peuvent bénéficier d'un suivi régulier."
+      ],
+      "lieux": [
+          "Locaux poubelles et parkings",
+          "Caves des résidences",
+          "Abords des voies ferrées",
+          "Zones d’activités"
+      ],
+      "proches": [
+          "Élancourt",
+          "Montigny-le-Bretonneux",
+          "Plaisir",
+          "La Verrière"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Les voies ferrées de Trappes favorisent-elles les rats ?", "a": "Les talus et emprises ferroviaires offrent des abris tranquilles aux rongeurs, qui se déplacent ensuite vers les logements et les commerces voisins. Fermer les accès des bâtiments proches est essentiel."},
+        ...FAQ_COMMUNE("à Trappes"),
+      ]
+    },
+  {
+      "slug": "les-mureaux",
+      "nom": "Les Mureaux",
+      "a": "aux Mureaux",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation aux Mureaux (78), intervention 7j/7",
+      "description": "Rats et souris aux Mureaux : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Les Mureaux, sur la rive gauche de la Seine, mêlent quartiers d'habitat collectif, pavillons et grandes zones industrielles. Les berges et les espaces verts abritent des rats bruns qui gagnent les bâtiments voisins.",
+          "Nous intervenons pour les familles, les bailleurs et les entreprises : postes sécurisés, recherche des accès et colmatage, avec un suivi adapté à chaque lieu."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Locaux poubelles des résidences",
+          "Zones industrielles",
+          "Jardins des pavillons"
+      ],
+      "proches": [
+          "Meulan-en-Yvelines",
+          "Ecquevilly",
+          "Verneuil-sur-Seine",
+          "Bouafle"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-vide-sanitaire",
+          "deratisation-sans-mort-aux-rats"
+      ],
+      "faq": [
+        {"q": "Comment savoir si les rats viennent des berges aux Mureaux ?", "a": "Les terriers au pied des haies, les coulées dans l'herbe vers la maison et les crottes près des abris de jardin sont des indices. Le technicien identifie le chemin et traite à la source."},
+        ...FAQ_COMMUNE("aux Mureaux"),
+      ]
+    },
+  {
+      "slug": "houilles",
+      "nom": "Houilles",
+      "a": "à Houilles",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Houilles (78), intervention 7j/7",
+      "description": "Rats et souris à Houilles : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Houilles est une ville surtout pavillonnaire, avec de nombreux jardins et des rues résidentielles proches de la gare. Les rats et les souris y entrent souvent par les vides sanitaires, les garages et les passages de tuyaux.",
+          "Dans le centre, les commerces et les petits immeubles ont des caves et des réserves à surveiller. Nous traitons et colmatons les accès pour que les rongeurs ne reviennent pas."
+      ],
+      "lieux": [
+          "Vides sanitaires des pavillons",
+          "Garages et abris de jardin",
+          "Caves des petits immeubles",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Sartrouville",
+          "Carrières-sur-Seine",
+          "Bezons",
+          "Chatou"
+      ],
+      "guides": [
+          "rat-vide-sanitaire",
+          "souris-par-ou-entrent-elles",
+          "rongeur-moteur-voiture-cables"
+      ],
+      "faq": [
+        {"q": "Pourquoi les souris entrent-elles dans les pavillons de Houilles en hiver ?", "a": "Elles cherchent la chaleur et la nourriture des maisons. Elles passent par des fentes de quelques millimètres : bas de portes, aérations, passages de tuyaux."},
+        ...FAQ_COMMUNE("à Houilles"),
+      ]
+    },
+  {
+      "slug": "montigny-le-bretonneux",
+      "nom": "Montigny-le-Bretonneux",
+      "a": "à Montigny-le-Bretonneux",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Montigny-le-Bretonneux (78), intervention 7j/7",
+      "description": "Rats et souris à Montigny-le-Bretonneux : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Montigny-le-Bretonneux, cœur de Saint-Quentin-en-Yvelines, compte des quartiers résidentiels récents, des immeubles de bureaux, un grand centre commercial et des espaces verts autour des bassins. Les rongeurs profitent des espaces verts et des locaux techniques.",
+          "Les résidences avec parkings souterrains et locaux poubelles sont les points d'entrée les plus fréquents. Pour les bureaux et commerces, nous proposons un suivi avec rapport."
+      ],
+      "lieux": [
+          "Parkings souterrains",
+          "Locaux poubelles",
+          "Espaces verts et bassins",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Guyancourt",
+          "Voisins-le-Bretonneux",
+          "Trappes",
+          "Élancourt"
+      ],
+      "guides": [
+          "restaurant-plan-lutte-nuisibles",
+          "souris-par-ou-entrent-elles",
+          "rat-dans-les-toilettes"
+      ],
+      "faq": [
+        {"q": "Un immeuble récent peut-il avoir des rats à Montigny ?", "a": "Oui : les rongeurs passent par les parkings, les locaux techniques et les gaines, même dans un bâtiment neuf. Le colmatage des passages autour des réseaux est déterminant."},
+        ...FAQ_COMMUNE("à Montigny-le-Bretonneux"),
+      ]
+    },
+  {
+      "slug": "evry-courcouronnes",
+      "nom": "Évry-Courcouronnes",
+      "a": "à Évry-Courcouronnes",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Évry-Courcouronnes (91), intervention 7j/7",
+      "description": "Rats et souris à Évry-Courcouronnes : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Évry-Courcouronnes, préfecture de l'Essonne, réunit des quartiers de grands ensembles, des pavillons, une université et de nombreux commerces autour de l'Agora. Les rongeurs s'installent dans les locaux poubelles, les parkings et les espaces verts.",
+          "Le long de la Seine et dans les parcs, les rats bruns trouvent eau et abri. Dans les résidences, nous traitons en priorité les parties communes, en lien avec les bailleurs et les syndics."
+      ],
+      "lieux": [
+          "Locaux poubelles et parkings",
+          "Espaces verts et bords de Seine",
+          "Caves des résidences",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Ris-Orangis",
+          "Corbeil-Essonnes",
+          "Lisses",
+          "Bondoufle"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Qui contacter pour des rats dans une résidence à Évry-Courcouronnes ?", "a": "Prévenez votre bailleur ou votre syndic : la dératisation des caves, parkings et locaux poubelles relève des parties communes. Nous intervenons ensuite dans les logements touchés."},
+        ...FAQ_COMMUNE("à Évry-Courcouronnes"),
+      ]
+    },
+  {
+      "slug": "corbeil-essonnes",
+      "nom": "Corbeil-Essonnes",
+      "a": "à Corbeil-Essonnes",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Corbeil-Essonnes (91), intervention 7j/7",
+      "description": "Rats et souris à Corbeil-Essonnes : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Corbeil-Essonnes est née au confluent de la Seine et de l'Essonne. Les quais, les anciens bâtiments industriels comme les Grands Moulins et le centre ancien offrent aux rats des berges et des caves où s'abriter.",
+          "Dans les quartiers pavillonnaires, les rongeurs passent par les jardins et les sous-sols. Nous repérons les accès, posons des postes sécurisés et colmatons."
+      ],
+      "lieux": [
+          "Quais de la Seine et de l’Essonne",
+          "Caves du centre ancien",
+          "Jardins et sous-sols",
+          "Locaux poubelles des résidences"
+      ],
+      "proches": [
+          "Évry-Courcouronnes",
+          "Saint-Germain-lès-Corbeil",
+          "Villabé",
+          "Le Coudray-Montceaux"
+      ],
+      "guides": [
+          "rat-dans-les-murs-cloisons",
+          "rat-compost",
+          "trou-dans-le-jardin"
+      ],
+      "faq": [
+        {"q": "Les rivières de Corbeil-Essonnes attirent-elles les rats ?", "a": "Oui, la Seine et l'Essonne offrent eau et terriers aux rats bruns. Les maisons proches des berges doivent surveiller leurs sous-sols et fermer les passages."},
+        ...FAQ_COMMUNE("à Corbeil-Essonnes"),
+      ]
+    },
+  {
+      "slug": "massy",
+      "nom": "Massy",
+      "a": "à Massy",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Massy (91), intervention 7j/7",
+      "description": "Rats et souris à Massy : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Massy, grand pôle de gares avec le TGV et le RER, compte des quartiers d'affaires récents comme Atlantis, des grands ensembles et des zones pavillonnaires. Les rongeurs circulent entre les chantiers, les parkings et les locaux techniques.",
+          "Dans les pavillons, les souris et les rats entrent par les vides sanitaires et les garages. Pour les immeubles et bureaux, nous traitons les parties communes avec un suivi régulier."
+      ],
+      "lieux": [
+          "Parkings et locaux techniques",
+          "Chantiers et terrains en travaux",
+          "Vides sanitaires des pavillons",
+          "Locaux poubelles"
+      ],
+      "proches": [
+          "Palaiseau",
+          "Antony",
+          "Wissous",
+          "Chilly-Mazarin"
+      ],
+      "guides": [
+          "rat-vide-sanitaire",
+          "souris-par-ou-entrent-elles",
+          "rongeur-moteur-voiture-cables"
+      ],
+      "faq": [
+        {"q": "Les chantiers de Massy font-ils fuir les rats vers les maisons ?", "a": "Les travaux dérangent les colonies installées dans le sol et les réseaux, qui cherchent de nouveaux abris dans les bâtiments voisins. Une intervention rapide évite qu'elles s'installent."},
+        ...FAQ_COMMUNE("à Massy"),
+      ]
+    },
+  {
+      "slug": "savigny-sur-orge",
+      "nom": "Savigny-sur-Orge",
+      "a": "à Savigny-sur-Orge",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Savigny-sur-Orge (91), intervention 7j/7",
+      "description": "Rats et souris à Savigny-sur-Orge : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Savigny-sur-Orge, dans la vallée de l'Orge, est une ville largement pavillonnaire, avec de nombreux jardins et des berges boisées. Les rats bruns vivent le long de la rivière et s'approchent des maisons, surtout à l'automne.",
+          "Nous inspectons les jardins, les abris, les composts et les sous-sols, puis nous traitons et fermons les accès pour une protection durable."
+      ],
+      "lieux": [
+          "Berges de l’Orge",
+          "Jardins et composts",
+          "Sous-sols et garages",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Viry-Châtillon",
+          "Morsang-sur-Orge",
+          "Juvisy-sur-Orge",
+          "Épinay-sur-Orge"
+      ],
+      "guides": [
+          "rat-compost",
+          "trou-dans-le-jardin",
+          "nourrir-oiseaux-pigeons-attire-rats"
+      ],
+      "faq": [
+        {"q": "Un compost attire-t-il les rats à Savigny-sur-Orge ?", "a": "Un compost ouvert ou mal entretenu est une source de nourriture et de chaleur. Un composteur fermé, sans restes de viande ni de pain, limite fortement le risque."},
+        ...FAQ_COMMUNE("à Savigny-sur-Orge"),
+      ]
+    },
+  {
+      "slug": "palaiseau",
+      "nom": "Palaiseau",
+      "a": "à Palaiseau",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Palaiseau (91), intervention 7j/7",
+      "description": "Rats et souris à Palaiseau : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Palaiseau s'étend du centre ancien, avec ses maisons en pierre, jusqu'au plateau de Saclay et ses grands établissements d'enseignement et de recherche. Les quartiers pavillonnaires et boisés sont exposés aux rongeurs des jardins et des bois.",
+          "Dans les maisons anciennes, les caves et les murs en pierre offrent de nombreux passages. Nous les repérons avant de poser un dispositif adapté."
+      ],
+      "lieux": [
+          "Caves des maisons anciennes",
+          "Jardins et lisières de bois",
+          "Sous-sols et garages",
+          "Résidences étudiantes et locaux techniques"
+      ],
+      "proches": [
+          "Massy",
+          "Orsay",
+          "Igny",
+          "Villebon-sur-Yvette"
+      ],
+      "guides": [
+          "rat-dans-les-murs-cloisons",
+          "lerot-grenier-combles",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Les maisons en pierre de Palaiseau sont-elles plus exposées aux rongeurs ?", "a": "Les murs anciens ont souvent des joints abîmés et des cavités par lesquels souris et rats circulent. Le colmatage au mortier ou à la laine d'acier est alors indispensable."},
+        ...FAQ_COMMUNE("à Palaiseau"),
+      ]
+    },
+  {
+      "slug": "athis-mons",
+      "nom": "Athis-Mons",
+      "a": "à Athis-Mons",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Athis-Mons (91), intervention 7j/7",
+      "description": "Rats et souris à Athis-Mons : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Athis-Mons, entre la Seine et le plateau d'Orly, compte des quartiers pavillonnaires en coteau, des résidences et des zones d'activités proches de l'aéroport. Les rongeurs passent des espaces verts et des berges aux habitations.",
+          "Dans les pavillons, nous traitons les jardins, les sous-sols et les garages. Pour les entreprises de la zone aéroportuaire, nous proposons un suivi régulier."
+      ],
+      "lieux": [
+          "Coteaux et jardins",
+          "Berges de la Seine",
+          "Zones d’activités",
+          "Sous-sols des pavillons"
+      ],
+      "proches": [
+          "Paray-Vieille-Poste",
+          "Juvisy-sur-Orge",
+          "Morangis",
+          "Ablon-sur-Seine"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-vide-sanitaire",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Faut-il traiter le jardin contre les rats à Athis-Mons ?", "a": "Si des terriers sont actifs, oui : des postes sécurisés au jardin, hors de portée des animaux, réduisent la population avant qu'elle n'entre dans la maison."},
+        ...FAQ_COMMUNE("à Athis-Mons"),
+      ]
+    },
+  {
+      "slug": "sainte-genevieve-des-bois",
+      "nom": "Sainte-Geneviève-des-Bois",
+      "a": "à Sainte-Geneviève-des-Bois",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Sainte-Geneviève-des-Bois (91), intervention 7j/7",
+      "description": "Rats et souris à Sainte-Geneviève-des-Bois : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Sainte-Geneviève-des-Bois est une ville verte et largement pavillonnaire, entourée de bois et de parcs. Les souris et les rats des espaces verts gagnent les maisons à l'arrivée du froid.",
+          "Nous inspectons les sous-sols, les garages, les combles et les abris de jardin, et nous adaptons le dispositif à la présence d'enfants et d'animaux."
+      ],
+      "lieux": [
+          "Lisières de bois et parcs",
+          "Sous-sols et garages",
+          "Combles et isolation",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Saint-Michel-sur-Orge",
+          "Fleury-Mérogis",
+          "Morsang-sur-Orge",
+          "Villemoisson-sur-Orge"
+      ],
+      "guides": [
+          "lerot-grenier-combles",
+          "souris-par-ou-entrent-elles",
+          "rongeur-moteur-voiture-cables"
+      ],
+      "faq": [
+        {"q": "Des bruits dans les combles à Sainte-Geneviève-des-Bois : rats, souris ou lérot ?", "a": "Les trois sont possibles près des bois. Les crottes, l'heure des bruits et les dégâts permettent au technicien d'identifier l'animal et de choisir la bonne méthode."},
+        ...FAQ_COMMUNE("à Sainte-Geneviève-des-Bois"),
+      ]
+    },
+  {
+      "slug": "vigneux-sur-seine",
+      "nom": "Vigneux-sur-Seine",
+      "a": "à Vigneux-sur-Seine",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Vigneux-sur-Seine (91), intervention 7j/7",
+      "description": "Rats et souris à Vigneux-sur-Seine : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Vigneux-sur-Seine, entre la Seine, ses lacs et la forêt de Sénart, compte des quartiers d'habitat collectif et des zones pavillonnaires. L'eau et les espaces boisés offrent aux rongeurs de nombreux abris.",
+          "Dans les résidences, les caves et locaux poubelles sont traités avec les bailleurs. Dans les maisons, nous inspectons les jardins et les sous-sols."
+      ],
+      "lieux": [
+          "Bords de Seine et des lacs",
+          "Caves et locaux poubelles",
+          "Lisière de la forêt de Sénart",
+          "Jardins et sous-sols"
+      ],
+      "proches": [
+          "Draveil",
+          "Montgeron",
+          "Athis-Mons",
+          "Juvisy-sur-Orge"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats"
+      ],
+      "faq": [
+        {"q": "Les lacs de Vigneux attirent-ils les rats ?", "a": "Les plans d'eau et leurs berges sont des milieux favorables au rat brun. Les habitations proches doivent fermer les accès aux caves et éviter de laisser de la nourriture dehors."},
+        ...FAQ_COMMUNE("à Vigneux-sur-Seine"),
+      ]
+    },
+  {
+      "slug": "ris-orangis",
+      "nom": "Ris-Orangis",
+      "a": "à Ris-Orangis",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Ris-Orangis (91), intervention 7j/7",
+      "description": "Rats et souris à Ris-Orangis : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Ris-Orangis, au bord de la Seine, mêle grands ensembles, quartiers pavillonnaires et parcs. Les rats bruns des berges et des espaces verts trouvent refuge dans les caves et les locaux poubelles.",
+          "Nous intervenons pour les particuliers et les bailleurs : traitement des parties communes, puis des logements, et colmatage des accès."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Caves et locaux poubelles",
+          "Parcs et espaces verts",
+          "Sous-sols des pavillons"
+      ],
+      "proches": [
+          "Évry-Courcouronnes",
+          "Grigny",
+          "Draveil",
+          "Bondoufle"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "rat-vide-sanitaire",
+          "deratisation-sans-mort-aux-rats"
+      ],
+      "faq": [
+        {"q": "Peut-on dératiser sans raticide à Ris-Orangis ?", "a": "Oui, en méthode alternative, avec le piège multicapture Ekomille posé sur le passage des rongeurs. La méthode la plus courante reste les postes d'appâtage sécurisés."},
+        ...FAQ_COMMUNE("à Ris-Orangis"),
+      ]
+    },
+  {
+      "slug": "viry-chatillon",
+      "nom": "Viry-Châtillon",
+      "a": "à Viry-Châtillon",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Viry-Châtillon (91), intervention 7j/7",
+      "description": "Rats et souris à Viry-Châtillon : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Viry-Châtillon, entre la Seine, l'Orge et ses étangs, compte des quartiers pavillonnaires, des résidences et des espaces verts. L'eau omniprésente favorise la présence de rats bruns.",
+          "Dans les pavillons proches des berges, nous traitons les jardins et les sous-sols. Dans les résidences, nous intervenons sur les caves et locaux poubelles."
+      ],
+      "lieux": [
+          "Berges de la Seine et de l’Orge",
+          "Bords des étangs",
+          "Caves des résidences",
+          "Jardins et sous-sols"
+      ],
+      "proches": [
+          "Grigny",
+          "Savigny-sur-Orge",
+          "Juvisy-sur-Orge",
+          "Morsang-sur-Orge"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "rat-vide-sanitaire"
+      ],
+      "faq": [
+        {"q": "Des trous dans le jardin à Viry-Châtillon : rat ou taupe ?", "a": "Un trou net de quelques centimètres avec une coulée vers une haie ou un abri est souvent celui d'un rat. Une taupe laisse plutôt des monticules de terre. Le technicien fait la différence sur place."},
+        ...FAQ_COMMUNE("à Viry-Châtillon"),
+      ]
+    },
+  {
+      "slug": "meaux",
+      "nom": "Meaux",
+      "a": "à Meaux",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Meaux (77), intervention 7j/7",
+      "description": "Rats et souris à Meaux : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Meaux, au bord de la Marne, réunit un centre historique autour de la cathédrale et de la cité épiscopale, des quartiers d'habitat collectif comme Beauval et Pierre-Collinet, et des zones pavillonnaires. Les berges et les caves anciennes attirent les rongeurs.",
+          "Dans le centre, les commerces et restaurants demandent un suivi régulier. Dans les résidences, nous traitons les parties communes avec les bailleurs."
+      ],
+      "lieux": [
+          "Berges de la Marne",
+          "Caves du centre historique",
+          "Locaux poubelles des résidences",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Trilport",
+          "Nanteuil-lès-Meaux",
+          "Chauconin-Neufmontiers",
+          "Mareuil-lès-Meaux"
+      ],
+      "guides": [
+          "restaurant-plan-lutte-nuisibles",
+          "rat-dans-les-murs-cloisons",
+          "reproduction-des-rats"
+      ],
+      "faq": [
+        {"q": "Intervenez-vous jusqu'à Meaux ?", "a": "Oui, nous intervenons en Seine-et-Marne, notamment à Meaux. Le délai dépend du planning du jour : appelez le 07 68 07 72 19 pour connaître la disponibilité."},
+        ...FAQ_COMMUNE("à Meaux"),
+      ]
+    },
+  {
+      "slug": "chelles",
+      "nom": "Chelles",
+      "a": "à Chelles",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Chelles (77), intervention 7j/7",
+      "description": "Rats et souris à Chelles : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Chelles, entre la Marne et la montagne de Chelles, est une grande ville pavillonnaire avec des quartiers de résidences. Les rats bruns des berges et des jardins s'approchent des maisons, surtout à l'automne.",
+          "Nous inspectons les sous-sols, les garages et les jardins, puis nous posons un dispositif sécurisé et colmatons les accès."
+      ],
+      "lieux": [
+          "Berges de la Marne",
+          "Jardins et composts",
+          "Sous-sols et garages",
+          "Locaux poubelles des résidences"
+      ],
+      "proches": [
+          "Vaires-sur-Marne",
+          "Gagny",
+          "Montfermeil",
+          "Brou-sur-Chantereine"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-vide-sanitaire",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Les rats de la Marne remontent-ils jusqu'aux maisons de Chelles ?", "a": "Oui, surtout quand l'eau monte ou quand le froid arrive. Les maisons proches des berges doivent surveiller leurs sous-sols et fermer les passages."},
+        ...FAQ_COMMUNE("à Chelles"),
+      ]
+    },
+  {
+      "slug": "melun",
+      "nom": "Melun",
+      "a": "à Melun",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Melun (77), intervention 7j/7",
+      "description": "Rats et souris à Melun : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Melun, préfecture de la Seine-et-Marne, s'est construite autour de l'île Saint-Étienne, sur la Seine. Le centre ancien, ses caves et ses commerces, ainsi que les berges, sont des zones où les rats s'installent.",
+          "Dans les quartiers résidentiels, nous traitons les sous-sols, les jardins et les locaux poubelles, avec un colmatage adapté à chaque bâtiment."
+      ],
+      "lieux": [
+          "Quais de la Seine",
+          "Caves du centre ancien",
+          "Réserves des commerces",
+          "Locaux poubelles"
+      ],
+      "proches": [
+          "Dammarie-les-Lys",
+          "Le Mée-sur-Seine",
+          "Vaux-le-Pénil",
+          "Rubelles"
+      ],
+      "guides": [
+          "rat-dans-les-murs-cloisons",
+          "restaurant-plan-lutte-nuisibles",
+          "rat-dans-les-toilettes"
+      ],
+      "faq": [
+        {"q": "Les commerces du centre de Melun ont-ils des obligations contre les rats ?", "a": "Les établissements alimentaires doivent maîtriser les nuisibles. Nous mettons en place un plan de lutte avec postes numérotés et rapport à chaque passage."},
+        ...FAQ_COMMUNE("à Melun"),
+      ]
+    },
+  {
+      "slug": "pontault-combault",
+      "nom": "Pontault-Combault",
+      "a": "à Pontault-Combault",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Pontault-Combault (77), intervention 7j/7",
+      "description": "Rats et souris à Pontault-Combault : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Pontault-Combault est une ville surtout pavillonnaire, avec de nombreux jardins, des zones commerciales et des espaces boisés. Les souris et les rats y entrent par les garages, les vides sanitaires et les passages de tuyaux.",
+          "Dans les zones commerciales, nous proposons un suivi régulier. Chez les particuliers, nous traitons et colmatons pour une protection durable."
+      ],
+      "lieux": [
+          "Vides sanitaires",
+          "Garages et abris de jardin",
+          "Zones commerciales",
+          "Lisières boisées"
+      ],
+      "proches": [
+          "Roissy-en-Brie",
+          "Émerainville",
+          "Ozoir-la-Ferrière",
+          "Le Plessis-Trévise"
+      ],
+      "guides": [
+          "rat-vide-sanitaire",
+          "rongeur-moteur-voiture-cables",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Des câbles de voiture rongés à Pontault-Combault : est-ce un rat ?", "a": "Rats, souris et fouines peuvent ronger les câbles d'un moteur. Les traces et le lieu de stationnement aident à identifier l'animal ; pour les rongeurs, nous traitons le garage et ses abords."},
+        ...FAQ_COMMUNE("à Pontault-Combault"),
+      ]
+    },
+  {
+      "slug": "savigny-le-temple",
+      "nom": "Savigny-le-Temple",
+      "a": "à Savigny-le-Temple",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Savigny-le-Temple (77), intervention 7j/7",
+      "description": "Rats et souris à Savigny-le-Temple : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Savigny-le-Temple, ville de Sénart, compte des quartiers récents, des pavillons et des espaces boisés. Les rongeurs des bois et des champs voisins s'approchent des habitations à l'automne.",
+          "Nous traitons les maisons, les résidences et les locaux d'activités, en repérant d'abord les accès : garages, aérations, passages de réseaux."
+      ],
+      "lieux": [
+          "Lisières boisées",
+          "Garages et sous-sols",
+          "Locaux poubelles",
+          "Aérations et passages de réseaux"
+      ],
+      "proches": [
+          "Cesson",
+          "Nandy",
+          "Vert-Saint-Denis",
+          "Saint-Pierre-du-Perray"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "lerot-grenier-combles",
+          "trou-dans-le-jardin"
+      ],
+      "faq": [
+        {"q": "Pourquoi plus de souris à Savigny-le-Temple à l'automne ?", "a": "Les champs et les bois voisins se vident après les récoltes et avec le froid : les souris cherchent un abri chauffé. C'est le moment de vérifier les bas de portes et les aérations."},
+        ...FAQ_COMMUNE("à Savigny-le-Temple"),
+      ]
+    },
+  {
+      "slug": "bussy-saint-georges",
+      "nom": "Bussy-Saint-Georges",
+      "a": "à Bussy-Saint-Georges",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Bussy-Saint-Georges (77), intervention 7j/7",
+      "description": "Rats et souris à Bussy-Saint-Georges : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Bussy-Saint-Georges, ville de Marne-la-Vallée, compte de nombreux quartiers récents, des résidences avec parkings souterrains et des espaces verts. Même dans le neuf, les rongeurs passent par les locaux techniques et les réseaux.",
+          "Nous intervenons pour les particuliers, les copropriétés et les commerces, avec un traitement des parties communes et un colmatage des passages."
+      ],
+      "lieux": [
+          "Parkings souterrains",
+          "Locaux techniques et poubelles",
+          "Espaces verts",
+          "Garages des maisons"
+      ],
+      "proches": [
+          "Bussy-Saint-Martin",
+          "Collégien",
+          "Montévrain",
+          "Jossigny"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "souris-par-ou-entrent-elles",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Un logement neuf à Bussy-Saint-Georges peut-il avoir des rongeurs ?", "a": "Oui. Les rongeurs utilisent les gaines, les parkings et les passages de réseaux, même dans les bâtiments récents. Le colmatage autour des tuyaux est souvent la clé."},
+        ...FAQ_COMMUNE("à Bussy-Saint-Georges"),
+      ]
+    },
+  {
+      "slug": "champs-sur-marne",
+      "nom": "Champs-sur-Marne",
+      "a": "à Champs-sur-Marne",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Champs-sur-Marne (77), intervention 7j/7",
+      "description": "Rats et souris à Champs-sur-Marne : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Champs-sur-Marne, avec son château, son parc et la cité Descartes, mêle pavillons, résidences étudiantes et bords de Marne. Les rongeurs des berges et du parc s'approchent des bâtiments.",
+          "Nous traitons les maisons, les résidences et les locaux, avec une attention particulière aux caves, aux parkings et aux jardins."
+      ],
+      "lieux": [
+          "Bords de Marne",
+          "Résidences et parkings",
+          "Jardins des pavillons",
+          "Locaux techniques"
+      ],
+      "proches": [
+          "Noisiel",
+          "Torcy",
+          "Noisy-le-Grand",
+          "Émerainville"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-vide-sanitaire",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Intervenez-vous dans les résidences étudiantes de Champs-sur-Marne ?", "a": "Oui, pour les gestionnaires comme pour les étudiants. Le traitement des parties communes et des cuisines partagées est souvent prioritaire."},
+        ...FAQ_COMMUNE("à Champs-sur-Marne"),
+      ]
+    },
+  {
+      "slug": "villeparisis",
+      "nom": "Villeparisis",
+      "a": "à Villeparisis",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Villeparisis (77), intervention 7j/7",
+      "description": "Rats et souris à Villeparisis : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Villeparisis, traversée par le canal de l'Ourcq, est une ville pavillonnaire avec de nombreux jardins. Les berges du canal sont un milieu favorable aux rats bruns, qui gagnent les maisons voisines.",
+          "Nous inspectons les jardins, les composts, les sous-sols et les garages, puis nous traitons et fermons les accès."
+      ],
+      "lieux": [
+          "Berges du canal de l’Ourcq",
+          "Jardins et composts",
+          "Sous-sols et garages",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Mitry-Mory",
+          "Claye-Souilly",
+          "Vaujours",
+          "Courtry"
+      ],
+      "guides": [
+          "rat-compost",
+          "trou-dans-le-jardin",
+          "nourrir-oiseaux-pigeons-attire-rats"
+      ],
+      "faq": [
+        {"q": "Le canal de l'Ourcq attire-t-il les rats à Villeparisis ?", "a": "Oui, ses berges offrent eau et terriers. Les maisons proches doivent éviter de laisser de la nourriture dehors et surveiller les abris de jardin."},
+        ...FAQ_COMMUNE("à Villeparisis"),
+      ]
+    },
+  {
+      "slug": "dammarie-les-lys",
+      "nom": "Dammarie-lès-Lys",
+      "a": "à Dammarie-lès-Lys",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Dammarie-lès-Lys (77), intervention 7j/7",
+      "description": "Rats et souris à Dammarie-lès-Lys : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Dammarie-lès-Lys, sur les bords de Seine face à Melun, compte des quartiers d'habitat collectif, des pavillons et des zones d'activités. Les berges et les espaces verts abritent des rats bruns.",
+          "Dans les résidences, nous traitons les caves et les locaux poubelles avec les bailleurs ; dans les maisons, les jardins et les sous-sols."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Caves et locaux poubelles",
+          "Zones d’activités",
+          "Jardins des pavillons"
+      ],
+      "proches": [
+          "Melun",
+          "Le Mée-sur-Seine",
+          "Boissise-le-Roi",
+          "Chartrettes"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats",
+          "rat-vide-sanitaire"
+      ],
+      "faq": [
+        {"q": "Des rats dans les caves à Dammarie-lès-Lys : qui doit agir ?", "a": "Les caves sont des parties communes : c'est au bailleur ou au syndic d'organiser la dératisation. Nous intervenons rapidement sur demande."},
+        ...FAQ_COMMUNE("à Dammarie-lès-Lys"),
+      ]
+    },
+  {
+      "slug": "combs-la-ville",
+      "nom": "Combs-la-Ville",
+      "a": "à Combs-la-Ville",
+      "code": "77",
+      "departement": "Seine-et-Marne",
+      "zoneHref": "/zones/seine-et-marne",
+      "title": "Dératisation à Combs-la-Ville (77), intervention 7j/7",
+      "description": "Rats et souris à Combs-la-Ville : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Combs-la-Ville, dans la vallée de l'Yerres, est une ville largement pavillonnaire avec des berges boisées et des parcs. Les rats et les souris des bords de rivière s'approchent des maisons.",
+          "Nous inspectons les jardins, les sous-sols et les garages, et posons un dispositif adapté à la présence d'enfants et d'animaux."
+      ],
+      "lieux": [
+          "Berges de l’Yerres",
+          "Jardins et parcs",
+          "Sous-sols et garages",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Moissy-Cramayel",
+          "Quincy-sous-Sénart",
+          "Brie-Comte-Robert",
+          "Lieusaint"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "deratisation-sans-mort-aux-rats"
+      ],
+      "faq": [
+        {"q": "Avec un chien, peut-on dératiser le jardin à Combs-la-Ville ?", "a": "Oui. Les postes sont verrouillés et inaccessibles aux animaux ; en alternative, nous pouvons utiliser le piège Ekomille, sans raticide."},
+        ...FAQ_COMMUNE("à Combs-la-Ville"),
+      ]
+    }
 ]
 
 export function getVilleDeratisation(slug: string) {

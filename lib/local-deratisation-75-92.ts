@@ -72,6 +72,7 @@ export const LOCAL_DERATISATION_75_92: Record<string, string[]> = {
     'Le 17e arrondissement, autour du **parc Clichy-Batignolles** et des voies ferrées, connaît de nombreux chantiers et espaces verts, où les rongeurs s’installent.',
     'Les immeubles neufs ne sont pas à l’abri : les rongeurs passent par les parkings et les locaux techniques.',
     'Le long des voies ferrées de Saint-Lazare et dans les rues commerçantes comme Lévis, les rongeurs trouvent nourriture et abris : les restaurants y font souvent appel à nous.',
+    'Dans le quartier des Épinettes, beaucoup de petits immeubles anciens ont gardé leurs caves et leurs courettes : nous y intervenons souvent à la demande de copropriétés entières, avec un passage dans chaque cave.',
   ],
   'paris-18': [
     'Le 18e arrondissement, de Montmartre à la Chapelle, compte des **immeubles anciens**, des marchés et beaucoup de commerces. Les rats y trouvent nourriture et abri.',
@@ -85,6 +86,7 @@ export const LOCAL_DERATISATION_75_92: Record<string, string[]> = {
     'Le 20e arrondissement, entre **Belleville** et le Père-Lachaise, mêle immeubles anciens, cours et grands ensembles, où les rongeurs circulent.',
     'Les cours intérieures et les locaux poubelles sont souvent le point de départ : nous les traitons en premier.',
     'Autour du marché de Belleville et des nombreuses épiceries, les réserves alimentaires attirent les rongeurs : les commerçants ont intérêt à un suivi régulier.',
+    'À Ménilmontant et à Gambetta, beaucoup d’immeubles faubouriens ont des cours pavées avec des regards d’égout : ce sont des points d’entrée directs depuis le réseau, à surveiller et à protéger par des grilles adaptées.',
   ],
   'boulogne-billancourt': [
     'Boulogne-Billancourt, entre la **Seine** et le bois de Boulogne, voit les rongeurs remonter des berges et des espaces verts vers les immeubles.',
@@ -146,6 +148,7 @@ export const LOCAL_DERATISATION_75_92: Record<string, string[]> = {
     'Nous repérons les terriers et les accès aux sous-sols avant de traiter.',
     'Les maisons en coteau de Suresnes ont souvent des caves enterrées sur un côté : c’est par là que les rats bruns entrent le plus souvent, via les soupiraux.',
     'Autour du marché Caron et des commerces du centre-ville, les réserves alimentaires et les caves anciennes demandent un suivi attentif, que nous proposons sous forme de contrat.',
+    'Dans la cité-jardins de Suresnes, les pavillons et petits immeubles entourés de verdure sont exposés aux rongeurs des jardins : un repérage des terriers et des soupiraux permet de traiter à la source.',
   ],
   'meudon': [
     'Meudon, entre la **forêt** et la Seine, compte beaucoup de maisons avec jardin. Les rongeurs du bois s’approchent des habitations à l’arrivée du froid.',
@@ -168,6 +171,7 @@ export const LOCAL_DERATISATION_75_92: Record<string, string[]> = {
     'Châtillon, sur un plateau résidentiel, compte des pavillons et des résidences. Les rongeurs s’installent dans les jardins et les vides sanitaires.',
     'Nous inspectons les points d’entrée des maisons et les abords avant de poser le dispositif.',
     'Les pavillons de Châtillon ont souvent des jardins en terrasse : les rats creusent sous les dalles et derrière les murets, que le technicien inspecte un par un.',
+    'Autour du fort de Châtillon et des grands espaces verts du plateau, les rongeurs trouvent des abris tranquilles. Les résidences voisines doivent surveiller leurs locaux poubelles et leurs caves.',
   ],
   'chatenay-malabry': [
     'Châtenay-Malabry, avec la **Vallée-aux-Loups** et la coulée verte, compte beaucoup d’espaces boisés. Les rongeurs s’approchent des maisons et des résidences.',

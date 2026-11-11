@@ -1,4 +1,4 @@
-// Coordonnées des mairies (Paris par arrondissement, Hauts-de-Seine, Val-de-Marne).
+// Coordonnées des mairies (Paris par arrondissement, Hauts-de-Seine, Val-de-Marne, et 30 villes du 91, 77, 78 le 10/11/2026).
 // Source : Annuaire de l'administration, service-public.fr (api-lannuaire.service-public.fr), relevé le 06/11/2026.
 // Généré automatiquement : ne pas modifier à la main.
 
@@ -108,4 +108,34 @@ export const MAIRIES: Record<string, Mairie> = {
   "villiers-sur-marne": {"mairie": "Mairie de Villiers-sur-Marne", "adresse": "5 rue Léon-Dauer, 94350 Villiers-sur-Marne", "tel": "01 49 41 38 38", "site": "https://www.villiers94.fr", "dep": "94"},
   "vincennes": {"mairie": "Mairie de Vincennes", "adresse": "53 bis rue de Fontenay, 94300 Vincennes", "tel": "01 43 98 65 00", "site": "https://www.vincennes.fr/", "dep": "94"},
   "vitry-sur-seine": {"mairie": "Mairie de Vitry-sur-Seine", "adresse": "2 avenue Youri-Gagarine, 94407 Vitry-sur-Seine Cedex", "tel": "01 46 82 80 00", "site": "https://www.vitry94.fr", "dep": "94"},
+  "evry-courcouronnes": {"mairie": "Mairie d'Évry-Courcouronnes", "adresse": "Place des Droits-de-l'Homme-et-du-Citoyen, 91011 Évry-Courcouronnes", "tel": "01 69 36 66 66", "site": "https://www.evrycourcouronnes.fr", "dep": "91"},
+  "corbeil-essonnes": {"mairie": "Mairie de Corbeil-Essonnes", "adresse": "2 place Galignani, 91108 Corbeil-Essonnes", "tel": "01 60 89 71 79", "site": "https://www.corbeil-essonnes.fr/", "dep": "91"},
+  "massy": {"mairie": "Mairie de Massy", "adresse": "1 avenue du Général-de-Gaulle, 91300 Massy", "tel": "01 60 13 30 00", "site": "https://www.ville-massy.fr/", "dep": "91"},
+  "savigny-sur-orge": {"mairie": "Mairie de Savigny-sur-Orge", "adresse": "48 avenue Charles-de-Gaulle, 91600 Savigny-sur-Orge", "tel": "01 69 54 40 00", "site": "https://www.savigny.org/", "dep": "91"},
+  "palaiseau": {"mairie": "Mairie de Palaiseau", "adresse": "91 rue de Paris, 91120 Palaiseau", "tel": "01 69 31 93 00", "site": "https://www.ville-palaiseau.fr/", "dep": "91"},
+  "athis-mons": {"mairie": "Mairie d'Athis-Mons", "adresse": "Place du Général-de-Gaulle, 91200 Athis-Mons", "tel": "01 69 54 54 54", "site": "https://www.mairie-athis-mons.fr/", "dep": "91"},
+  "sainte-genevieve-des-bois": {"mairie": "Mairie de Sainte-Geneviève-des-Bois", "adresse": "Place Roger-Perriaud, 91700 Sainte-Geneviève-des-Bois", "tel": "01 69 46 80 00", "site": "https://www.sgdb91.com/", "dep": "91"},
+  "vigneux-sur-seine": {"mairie": "Mairie de Vigneux-sur-Seine", "adresse": "75 rue Pierre-Marin, 91270 Vigneux-sur-Seine", "tel": "01 69 83 56 00", "site": "https://www.vigneux91.fr", "dep": "91"},
+  "ris-orangis": {"mairie": "Mairie de Ris-Orangis", "adresse": "Place du Général-de-Gaulle, 91130 Ris-Orangis", "tel": "01 69 02 52 52", "site": "https://www.mairie-ris-orangis.fr/", "dep": "91"},
+  "viry-chatillon": {"mairie": "Mairie de Viry-Châtillon", "adresse": "1 place de la République, 91178 Viry-Châtillon", "tel": "01 69 12 62 12", "site": "http://www.viry-chatillon.fr", "dep": "91"},
+  "meaux": {"mairie": "Mairie de Meaux", "adresse": "2 place Jacques-Chirac, 77100 Meaux", "tel": "01 60 09 97 00", "site": "https://www.ville-meaux.fr/", "dep": "77"},
+  "chelles": {"mairie": "Mairie de Chelles", "adresse": "Parc du Souvenir-Émile-Fouchard, 77500 Chelles", "tel": "01 64 72 84 84", "site": "https://www.chelles.fr/", "dep": "77"},
+  "melun": {"mairie": "Mairie de Melun", "adresse": "16 rue Paul-Doumer, 77000 Melun", "tel": "01 64 52 33 03", "site": "https://www.ville-melun.fr/", "dep": "77"},
+  "pontault-combault": {"mairie": "Mairie de Pontault-Combault", "adresse": "107 avenue de la République, 77340 Pontault-Combault", "tel": "01 70 05 47 00", "site": "https://www.pontault-combault.fr", "dep": "77"},
+  "savigny-le-temple": {"mairie": "Mairie de Savigny-le-Temple", "adresse": "1 place François-Mitterrand, 77176 Savigny-le-Temple", "tel": "01 64 10 18 00", "site": "https://www.savigny-le-temple.fr/", "dep": "77"},
+  "bussy-saint-georges": {"mairie": "Mairie de Bussy-Saint-Georges", "adresse": "1 Place de la Mairie, 77600 Bussy-Saint-Georges", "tel": "01 87 94 24 24", "site": "https://www.bussysaintgeorges.fr/", "dep": "77"},
+  "champs-sur-marne": {"mairie": "Mairie de Champs-sur-Marne", "adresse": "Mail Jean-Ferrat, 77420 Champs-sur-Marne", "tel": "01 64 73 48 48", "site": "https://www.ville-champssurmarne.fr/", "dep": "77"},
+  "villeparisis": {"mairie": "Mairie de Villeparisis", "adresse": "32 rue de Ruzé, 77270 Villeparisis", "tel": "01 64 67 52 00", "site": "https://villeparisis.fr/", "dep": "77"},
+  "dammarie-les-lys": {"mairie": "Mairie de Dammarie-les-Lys", "adresse": "26 rue Charles-de-Gaulle, 77190 Dammarie-les-Lys", "tel": "01 79 76 96 00", "site": "https://mairie-dammarie-les-lys.fr/fr", "dep": "77"},
+  "combs-la-ville": {"mairie": "Mairie de Combs-la-Ville", "adresse": "Esplanade Charles-de-Gaulle, 77300 Combs-la-Ville", "tel": "01 64 13 16 00", "site": "https://www.combs-la-ville.fr/11/accueil.htm", "dep": "77"},
+  "versailles": {"mairie": "Mairie de Versailles", "adresse": "4 avenue de Paris, 78000 Versailles", "tel": "01 30 97 80 00", "site": "https://www.versailles.fr/", "dep": "78"},
+  "sartrouville": {"mairie": "Mairie de Sartrouville", "adresse": "2 rue Buffon, 78500 Sartrouville", "tel": "01 30 86 39 00", "site": "https://www.sartrouville.fr/", "dep": "78"},
+  "saint-germain-en-laye": {"mairie": "Mairie de Saint-Germain-en-Laye", "adresse": "16 rue de Pontoise, 78100 Saint-Germain-en-Laye", "tel": "01 30 87 20 00", "site": "https://www.saintgermainenlaye.fr/", "dep": "78"},
+  "mantes-la-jolie": {"mairie": "Mairie de Mantes-la-Jolie", "adresse": "31 rue Gambetta, 78200 Mantes-la-Jolie", "tel": "01 34 78 81 00", "site": "https://www.manteslajolie.fr/", "dep": "78"},
+  "poissy": {"mairie": "Mairie de Poissy", "adresse": "Place de la République, 78303 Poissy Cedex", "tel": "01 39 22 56 40", "site": "https://www.ville-poissy.fr/", "dep": "78"},
+  "conflans-sainte-honorine": {"mairie": "Mairie de Conflans-Sainte-Honorine", "adresse": "63 rue Maurice-Berteaux, 78700 Conflans-Sainte-Honorine", "tel": "01 34 90 89 89", "site": "https://www.conflans-sainte-honorine.fr/", "dep": "78"},
+  "trappes": {"mairie": "Mairie de Trappes", "adresse": "1 place de la République, 78190 Trappes", "tel": "01 30 69 17 00", "site": "https://www.trappes.fr", "dep": "78"},
+  "les-mureaux": {"mairie": "Mairie des Mureaux", "adresse": "Place de la Libération, 78135 Les Mureaux Cedex", "tel": "01 30 91 37 37", "site": "https://www.lesmureaux.fr/", "dep": "78"},
+  "houilles": {"mairie": "Mairie de Houilles", "adresse": "16 rue Gambetta, 78800 Houilles", "tel": "01 30 86 32 32", "site": "https://www.ville-houilles.fr", "dep": "78"},
+  "montigny-le-bretonneux": {"mairie": "Mairie de Montigny-le-Bretonneux", "adresse": "66 rue de la Mare-aux-Carats, 78180 Montigny-le-Bretonneux", "tel": "01 39 30 31 32", "site": "http://www.montigny78.fr", "dep": "78"},
 }

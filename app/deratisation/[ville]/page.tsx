@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
 import { LOCAL_DERATISATION_75_92 } from '@/lib/local-deratisation-75-92'
+import { LOCAL_DERATISATION_GC } from '@/lib/local-deratisation-gc'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
 import ProtocoleCondense, { PROTOCOLE_DERATISATION } from '@/components/ProtocoleCondense'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
@@ -178,7 +179,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug]} />
+        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug]} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
