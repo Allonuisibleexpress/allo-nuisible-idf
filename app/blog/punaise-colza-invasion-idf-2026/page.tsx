@@ -224,7 +224,7 @@ export default function PunaiseCorzaArticle() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '12px' }}>Durée avant disparition</td>
-                  <td style={{ padding: '12px', color: '#22c55e' }}>10–15 jours (naturelle)</td>
+                  <td style={{ padding: '12px', color: '#22c55e' }}>10 à 15 jours (départ spontané)</td>
                   <td style={{ padding: '12px', color: '#E8441A' }}>Mois/années sans traitement</td>
                 </tr>
               </tbody>
