@@ -275,13 +275,20 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
 }
 
 // Vrais chantiers mis en avant sur la page nuisible + ville où ils ont eu lieu (10/11/2026)
-export const CHANTIERS_VILLE: Record<string, Record<string, { titre: string; photos: PhotoKey[]; videos: { src: string; legende: string; banniere?: boolean; apercu?: number }[]; lien: { href: string; label: string } }>> = {
+export const CHANTIERS_VILLE: Record<string, Record<string, { titre: string; photos: PhotoKey[]; videos: { src: string; legende: string; banniere?: boolean; apercu?: number }[]; lien?: { href: string; label: string } }>> = {
   frelons: {
     'champigny-sur-marne': {
       titre: 'Notre chantier à Champigny-sur-Marne : un nid de frelons asiatiques à 12 m, traité au camion nacelle',
       photos: ['frelonsNacelle1', 'frelonsNacelle2', 'frelonsNacelle3'],
       videos: [MEDIAS_FRELONS.videos[0]],
       lien: { href: '/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne', label: 'Lire le récit complet de l’intervention à la nacelle' },
+    },
+  },
+  chenilles: {
+    versailles: {
+      titre: 'Vidéo à Versailles : nids de chenilles processionnaires décrochés à la perche, jusqu’au sommet des cèdres',
+      photos: [],
+      videos: [{ src: '/chantiers/chenilles-processionnaires-retrait-nids-video.mp4', legende: 'Retrait des nids à la perche télescopique, dans un pin puis dans des cèdres (Versailles, 78)', banniere: true, apercu: 3 }],
     },
   },
 }

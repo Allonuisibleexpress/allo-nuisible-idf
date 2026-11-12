@@ -30,10 +30,10 @@ const data: ServiceData = {
   ],
   chantier: {
     videos: [
-      { src: '/chantiers/chenilles-processionnaires-retrait-nids-video.mp4', legende: 'Retrait de nids de chenilles processionnaires à la perche télescopique, dans un pin puis dans des cèdres, avec le commentaire du technicien', banniere: true, apercu: 3 },
+      { src: '/chantiers/chenilles-processionnaires-retrait-nids-video.mp4', legende: 'Versailles (78) : retrait de nids de chenilles processionnaires à la perche télescopique, dans un pin puis dans des cèdres, avec le commentaire du technicien', banniere: true, apercu: 3 },
     ],
-    titre: 'Notre intervention chenilles processionnaires en vidéo',
-    vignettes: 'Retrait des nids en vidéo',
+    titre: 'En vidéo à Versailles (78) : nids de chenilles processionnaires retirés en hauteur, sans nacelle',
+    vignettes: 'Nos nids retirés à Versailles, en vidéo',
   },
   methodes: METHODES_CHENILLES,
   guide: GUIDE_CHENILLES,
