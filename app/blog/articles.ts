@@ -42,20 +42,22 @@ export const ARTICLES: Article[] = [
   // Guide « Rat ou souris : comment reconnaître le rongeur » (12/11/2026) ───────────────────
   {
     slug: 'rat-ou-souris-comment-reconnaitre',
-    title: "Rat ou souris : comment reconnaître le rongeur (et quel animal se cache dans vos murs ou vos combles)",
-    seoTitle: "Rat ou souris ? 7 indices pour reconnaître le rongeur",
-    description: "Crottes, bruits, traces, dégâts, odeur : 7 indices et un test en 4 questions pour savoir si vous avez un rat, une souris, un lérot ou une fouine.",
+    title: "Rat ou souris ? Comment les reconnaître et savoir lequel se cache chez vous (test en 4 questions + 7 indices)",
+    seoTitle: "Rat ou souris ? Comment les reconnaître : 7 indices + test",
+    description: "Crottes de rat ou de souris, bruits dans les murs, traces, dégâts : 7 indices et un test gratuit pour savoir quel rongeur est chez vous et quoi faire.",
     date: '2026-11-12',
     category: 'Rongeurs',
     readMin: 10,
     tldr: "Pour savoir si vous avez un rat ou une souris, regardez d'abord les crottes : 3 à 6 mm (un grain de riz) pour une souris, 6 à 12 mm et pointues pour un rat noir, environ 2 cm et arrondies pour un surmulot. Écoutez ensuite : la souris fait de tout petits trottinements, le rat des bruits plus appuyés. Dans les combles, des cavalcades bruyantes du printemps à l'automne qui s'arrêtent l'hiver font penser à un lérot ou un loir ; de gros bruits, des cris et une forte odeur, à une fouine.",
     service: { href: '/services/deratisation', label: 'Dératisation rats et souris, dès 120 €' },
     blocks: [
-      { t: 'p', x: "Vous entendez gratter la nuit, vous trouvez des crottes dans un placard, un sac de croquettes est percé ? Avant de choisir un traitement, il faut savoir qui est là. Un rat, une souris, un lérot et une fouine ne se traitent pas de la même façon. Commencez par notre test, puis vérifiez avec les 7 indices." },
+      { t: 'p', x: "Vous entendez gratter la nuit dans le plafond, vous trouvez des crottes dans un placard, un sac de croquettes est percé ? Avant de choisir un traitement, il faut savoir **quel rongeur est chez vous** : rat ou souris, et quel rat. Un surmulot, un rat noir, une souris, un lérot ou une fouine ne se traitent pas de la même façon. Commencez par notre test, puis vérifiez avec les 7 indices. Nos techniciens font ce diagnostic chaque semaine lors de nos [dératisations en Île-de-France](/services/deratisation)." },
+      { t: 'h2', x: "Rat ou souris : comment savoir lequel vous avez ?" },
+      { t: 'p', x: "La différence entre un rat et une souris se voit d'abord à la **taille des crottes**, puis au **bruit**, à l'**endroit** où ils vivent et aux **dégâts**. Une souris est petite, discrète et vit près de la cuisine. Un rat est plus gros, plus bruyant, et arrive le plus souvent par la cave, les canalisations ou la toiture. Faites le test ci-dessous : il vous oriente en moins d'une minute." },
       { t: 'quiz' },
 
-      { t: 'h2', x: "Comment reconnaître un rongeur chez soi : les 7 indices" },
-      { t: 'h3', x: "Indice n° 1 : les crottes, le signe le plus fiable" },
+      { t: 'h2', x: "Comment reconnaître un rongeur chez soi : les 7 signes de présence" },
+      { t: 'h3', x: "Indice n° 1 : crotte de rat ou crotte de souris, le signe le plus fiable" },
       { t: 'p', x: "Les crottes sont l'indice le plus sûr, car leur taille ne trompe pas. Posez une pièce de 1 € à côté et comparez avec notre échelle." },
       { t: 'crottes' },
       { t: 'ul', items: [
@@ -65,8 +67,8 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'callout', tone: 'warn', title: 'Ramassez-les avec précaution', x: "Ne balayez jamais des crottes de rongeurs à sec : leurs déjections et leur urine peuvent transmettre des maladies, comme la leptospirose. Gants, humidification, puis lavage des mains." },
 
-      { t: 'h3', x: "Indice n° 2 : les bruits dans les murs et les plafonds" },
-      { t: 'p', x: "La nuit, chaque animal a sa signature sonore. De tout petits bruits qui courent font penser à une souris ; des bruits plus appuyés, à un rat ; de grosses cavalcades et des cris, à un lérot, un loir ou une fouine. Pour le lérot, vous pouvez écouter de vrais enregistrements." },
+      { t: 'h3', x: "Indice n° 2 : les bruits dans les murs, les cloisons et le plafond" },
+      { t: 'p', x: "La nuit, chaque animal a sa signature sonore. De tout petits bruits qui courent dans le plafond font penser à une souris ; des bruits plus appuyés et un bruit de rongement, à un rat ; de grosses cavalcades et des cris, à un lérot, un loir ou une fouine. Pour le lérot, vous pouvez écouter de vrais enregistrements. Pour aller plus loin : [rat dans les murs ou les cloisons](/blog/rat-dans-les-murs-cloisons) et [rats dans les combles](/blog/rats-dans-les-combles)." },
       { t: 'bruits' },
 
       { t: 'h3', x: "Indice n° 3 : la taille et l'allure de l'animal" },
@@ -77,13 +79,13 @@ export const ARTICLES: Article[] = [
         ['Allure', 'Petite, tête fine, grandes oreilles', 'Fin, grandes oreilles, museau pointu', 'Trapu, petites oreilles, museau arrondi'],
         ['Pelage', 'Gris, ventre plus clair', 'Noir à noisette, dessous plus clair', 'Brun-gris, ventre plus clair'],
       ] },
-      { t: 'p', x: "Règle simple : un animal de plus de 10 cm sans la queue n'est pas une souris. Un jeune rat peut ressembler à une souris, mais il a une tête plus grosse et des pattes plus grandes par rapport à son corps." },
+      { t: 'p', x: "Règle simple : un animal de plus de 10 cm sans la queue n'est pas une souris. Un jeune rat peut ressembler à une souris, mais il a une tête plus grosse et des pattes plus grandes par rapport à son corps. Pour tout savoir sur le rat brun, voyez notre article [le rat : mode de vie et comportement](/blog/rat-mode-de-vie)." },
 
       { t: 'h3', x: "Indice n° 4 : les traces de passage" },
       { t: 'p', x: "Les rongeurs empruntent toujours les mêmes chemins, le long des murs. Avec le temps, le pelage gras des rats laisse des **traînées sombres** au bas des murs, autour des trous et sur les poutres. Dans la poussière ou la farine, on voit aussi des **empreintes** et la trace de la queue. Les souris laissent des traces plus fines et moins marquées." },
 
       { t: 'h3', x: "Indice n° 5 : les dégâts et le grignotage" },
-      { t: 'p', x: "Les deux rongent pour user leurs dents, qui poussent toute leur vie. La souris grignote de petits trous nets dans les emballages, le carton et les sacs. Le rat fait des dégâts plus gros : bois, plinthes, gaines électriques, tuyaux en plastique, parfois câbles de voiture. Des fils dénudés sont un risque d'incendie." },
+      { t: 'p', x: "Les deux rongent pour user leurs dents, qui poussent toute leur vie. La souris grignote de petits trous nets dans les emballages, le carton et les sacs. Le rat fait des dégâts plus gros : bois, plinthes, gaines électriques, tuyaux en plastique, parfois câbles de voiture. Des fils dénudés sont un risque d'incendie. Les câbles de voiture rongés ont plusieurs coupables possibles : voir [rat, souris ou fouine sous le capot](/blog/rongeur-moteur-voiture-cables)." },
 
       { t: 'h3', x: "Indice n° 6 : l'odeur" },
       { t: 'p', x: "Une forte odeur d'urine, âcre, qui rappelle l'ammoniac, signale souvent une présence installée de souris dans un endroit fermé. Une odeur de mort dans une cloison peut venir d'un rongeur mort. Une odeur très forte et persistante dans les combles, avec des restes de nourriture, fait plutôt penser à une fouine." },
@@ -91,7 +93,8 @@ export const ARTICLES: Article[] = [
       { t: 'h3', x: "Indice n° 7 : l'endroit et le moment" },
       { t: 'ul', items: [
         "**Cuisine, placards, étages** : souris le plus souvent.",
-        "**Cave, sous-sol, jardin, toilettes** : surmulot, qui vit au sol et dans les réseaux.",
+        "**Cave, sous-sol, jardin, toilettes** : surmulot, qui vit au sol et dans les réseaux. Voir [rat dans les toilettes](/blog/rat-dans-les-toilettes) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).",
+        "**Jardin, compost, terriers au pied des murs** : surmulot ou campagnol. Voir [trou dans le jardin : rat, campagnol ou taupe ?](/blog/trou-dans-le-jardin) et [rats dans le compost](/blog/rat-compost).",
         "**Combles, toiture, faux plafonds** : rat noir, lérot, loir ou fouine.",
         "**Silence total en hiver** dans les combles : lérot ou loir, qui hibernent.",
       ] },
@@ -116,6 +119,8 @@ export const ARTICLES: Article[] = [
         ['Traitement', 'Postes ou pièges à l\'intérieur, colmatage des petites ouvertures', 'Postes sécurisés, pièges, colmatage des accès en cave et réseaux'],
       ] },
 
+      { t: 'h2', x: "Pourquoi il ne faut pas attendre" },
+      { t: 'p', x: "Une souris est adulte à 5 ou 6 semaines et peut avoir jusqu'à 8 portées par an ; un surmulot, 4 à 7 portées de 6 à 12 petits. Quelques semaines suffisent pour passer de quelques individus à une infestation. Voir notre article sur la [reproduction des rats](/blog/reproduction-des-rats). Les rongeurs transmettent aussi des maladies, comme la leptospirose, et rongent les câbles électriques." },
       { t: 'h2', x: "Une fois l'animal identifié, que faire ?" },
       { t: 'ol', items: [
         "**Retirez la nourriture accessible** : aliments en boîtes fermées, croquettes rangées, poubelles fermées.",
@@ -123,12 +128,23 @@ export const ARTICLES: Article[] = [
         "**Envoyez-nous une photo** des crottes ou des dégâts sur WhatsApp : nous confirmons l'animal et vous donnons le prix.",
         "**Faites traiter puis boucher les accès** : sans colmatage, d'autres rongeurs reviennent. Voir notre [dératisation](/services/deratisation), dès 120 €, garantie 1 an.",
       ] },
+      { t: 'p', x: "Les souris passent par des ouvertures minuscules : voir [souris, par où entrent-elles ?](/blog/souris-par-ou-entrent-elles). Vous préférez éviter le raticide ? Voir [dératisation sans mort-aux-rats](/blog/deratisation-sans-mort-aux-rats). Et pour éviter les mauvaises surprises, lisez [les arnaques à la dératisation](/blog/arnaques-deratisation-nuisibles)." },
+      { t: 'h2', x: "Dératisation et traitement des souris près de chez vous" },
+      { t: 'p', x: "Nous intervenons 7j/7 dans toute l'Île-de-France, depuis notre base de Saint-Maurice (94) : [dératisation à Paris](/deratisation/paris), [dans le Val-de-Marne](/deratisation/val-de-marne), [dans les Hauts-de-Seine](/deratisation/hauts-de-seine), [en Essonne](/deratisation/essonne), [dans les Yvelines](/deratisation/yvelines) et [en Seine-et-Marne](/deratisation/seine-et-marne)." },
+      { t: 'p', x: "Uniquement des souris ? Voir nos pages [souris dans le Val-de-Marne](/souris/val-de-marne), [souris à Paris](/souris/paris), [souris à Créteil](/souris/creteil), [souris à Vincennes](/souris/vincennes), [souris à Saint-Maur-des-Fossés](/souris/saint-maur-des-fosses) ou [souris à Paris 12e](/souris/paris-12). Des rats ? Voir par exemple [dératisation à Créteil](/deratisation/creteil), [à Vitry-sur-Seine](/deratisation/vitry-sur-seine), [à Champigny-sur-Marne](/deratisation/champigny-sur-marne), [à Montreuil](/deratisation/montreuil) ou [à Boulogne-Billancourt](/deratisation/boulogne-billancourt). Tous nos tarifs sont sur la page [prix](/tarifs)." },
+      { t: 'p', x: "Pour connaître tous les rongeurs de la maison et du jardin (mulot, lérot, loir, campagnol, ragondin…) et les animaux qu'on confond avec eux, comme la fouine, voyez notre [guide des rongeurs](/blog/guide-des-rongeurs)." },
     ],
     faq: [
       { q: 'Comment savoir si c\'est un rat ou une souris ?', a: 'Les crottes sont le meilleur indice : 3 à 6 mm pour une souris, 6 à 12 mm et pointues pour un rat noir, environ 2 cm et arrondies pour un surmulot. Le bruit aide aussi : tout petits trottinements pour la souris, bruits plus appuyés pour le rat.' },
+      { q: 'Quelle est la différence entre une crotte de rat et une crotte de souris ?', a: 'La taille : une crotte de souris fait 3 à 6 mm, comme un grain de riz ; une crotte de rat fait de 6 mm (rat noir) à environ 2 cm (surmulot), comme un raisin sec. Les crottes de souris sont dispersées, celles du surmulot regroupées.' },
       { q: 'Quel animal fait du bruit dans les combles la nuit ?', a: 'Souris, rat noir, lérot, loir ou fouine. Si le bruit s\'arrête en hiver, c\'est souvent un lérot ou un loir, qui hibernent. De gros bruits avec des cris et une forte odeur font penser à une fouine.' },
       { q: 'Les souris font-elles du bruit ?', a: 'Peu : de petits grattements et trottinements, surtout la nuit. La plupart de leurs cris sont des ultrasons que nous n\'entendons pas.' },
-      { q: 'Un rat peut-il passer par les toilettes ?', a: 'Oui, le surmulot vit dans les réseaux d\'égout et peut remonter par les canalisations. Voir notre article sur le rat dans les toilettes.' },
+      { q: 'Comment savoir si j\'ai des rats dans les murs ?', a: 'Grattements et rongement la nuit dans les cloisons, odeur d\'urine, traînées sombres au bas des murs, crottes près des plinthes. Un rat mort dans une cloison donne aussi une forte odeur.' },
+      { q: 'Un rat peut-il passer par les toilettes ?', a: 'Oui, le surmulot vit dans les réseaux d\'égout et peut remonter par les canalisations. Un clapet anti-retour limite ce risque.' },
+      { q: 'Une souris toute seule, est-ce grave ?', a: 'Rarement seule : une souris aperçue signale souvent un groupe. Elle est adulte à 5 ou 6 semaines et peut avoir jusqu\'à 8 portées par an, il vaut donc mieux agir vite.' },
+      { q: 'Par où entrent les souris ?', a: 'Par les passages de tuyaux, les gaines électriques, les bas de portes et de très petites ouvertures. Il faut les boucher avec un matériau qu\'elles ne peuvent pas ronger.' },
+      { q: 'Combien coûte une dératisation contre les rats ou les souris ?', a: 'Chez Allo Nuisible IDF, dès 120 € TTC pour un appartement, rats ou souris, avec devis gratuit et garantie 1 an. Commerces et copropriétés sur devis.' },
+      { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Non. Les postes d\'appâtage sont verrouillés et inaccessibles aux enfants et aux animaux, et les pièges ne diffusent aucun produit.' },
     ],
     sources: [
       { label: 'Office français de la biodiversité, fiche Rat surmulot', url: 'https://ofb.gouv.fr/especes/rat-surmulot-rattus-norvegicus' },
