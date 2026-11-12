@@ -12,6 +12,7 @@ export const YOUTUBE_VIDEOS: Record<string, string> = {
   '/chantiers/frelons-asiatiques-nid-video.mp4': 'nWg6ElvfdUc',
   '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4': '1EjWa9lK0u0',
   '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4': 'DzsEaDJASno',
+  '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4': 'Xa4WFvJn4Sk',
 }
 
 export const lienYoutube = (src: string) => (YOUTUBE_VIDEOS[src] ? `https://www.youtube.com/shorts/${YOUTUBE_VIDEOS[src]}` : null)
