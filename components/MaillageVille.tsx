@@ -21,10 +21,10 @@ const DEPS: Record<string, { slug: string; dans: string }> = {
 const BASES_DEP = ['/deratisation', '/punaises-de-lit', '/destruction-nid-frelon', '/cafards', '/puces', '/souris']
 const DEP_PAGES = ['75', '94', '92', '91', '78', '77']
 
-export const THEME_BLOG: Record<string, string> = {
-  '/deratisation': 'Rongeurs', '/souris': 'Rongeurs', '/punaises-de-lit': 'Punaises de lit', '/cafards': 'Cafards',
-  '/fourmis': 'Fourmis', '/puces': 'Puces', '/acariens': 'Acariens', '/chenilles-processionnaires': 'Chenilles processionnaires',
-  '/destruction-nid-frelon': 'Guêpes et frelons',
+export const THEME_BLOG: Record<string, string[]> = {
+  '/deratisation': ['Rongeurs'], '/souris': ['Rongeurs'], '/punaises-de-lit': ['Punaises de lit', 'Insectes'], '/cafards': ['Cafards', 'Insectes'],
+  '/fourmis': ['Fourmis', 'Insectes'], '/puces': ['Puces'], '/acariens': ['Acariens', 'Insectes'], '/chenilles-processionnaires': ['Chenilles processionnaires'],
+  '/destruction-nid-frelon': ['Guêpes et frelons'],
 }
 
 function h(s: string) { let x = 0; for (const c of s) x = (x * 31 + c.charCodeAt(0)) >>> 0; return x }
@@ -35,8 +35,8 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
   const dep = DEPS[code]
   const pageDep = dep && depLien && BASES_DEP.includes(basePath) && DEP_PAGES.includes(code) ? `${basePath}/${dep.slug}` : null
   const theme = THEME_BLOG[basePath]
-  const articles = ARTICLES.filter((x) => x.category === theme).sort((x, y) => x.slug.localeCompare(y.slug))
-  const n = Math.min(6, articles.length)
+  const articles = ARTICLES.filter((x) => (theme ?? []).includes(x.category)).sort((x, y) => x.slug.localeCompare(y.slug))
+  const n = Math.min(9, articles.length)
   const d = articles.length ? h(slug) % articles.length : 0
   const choix = [...articles.slice(d), ...articles.slice(0, d)].slice(0, n)
   if (!dep && !choix.length) return null
@@ -56,6 +56,14 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
                 Tous nos services {dep.dans} <ArrowRight className="w-4 h-4" />
               </a>
             </div>
+            {BASES_DEP.includes(basePath) && (
+              <p className="text-white/50 text-sm mt-5">
+                {mot} dans les autres départements :{' '}
+                {DEP_PAGES.filter((k) => k !== code).map((k, i, l) => (
+                  <span key={k}><a href={`${basePath}/${DEPS[k].slug}`} className="underline hover:text-white">{DEPS[k].dans.replace(/^(à|dans les|dans le|dans l’|en) /, '')}</a>{i < l.length - 1 ? ', ' : '.'}</span>
+                ))}
+              </p>
+            )}
           </div>
         )}
         {choix.length > 0 && (

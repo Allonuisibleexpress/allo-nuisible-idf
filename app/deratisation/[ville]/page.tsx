@@ -91,7 +91,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   if (!v) notFound()
 
   const url = `${SITE_URL}/deratisation/${v.slug}`
-  // Maillage (12/11/2026) : les 10 villes les plus proches qui ont une page dératisation, + la page département
+  // Maillage (12/11/2026) : les 16 villes les plus proches avec une page dératisation (20 liens reçus minimum), + la page département
   const autres = voisinesGaranties(VILLES_DERATISATION, v.slug)
   const DEP_PAGE: Record<string, [string, string]> = { '75': ['paris', 'à Paris'], '94': ['val-de-marne', 'dans le Val-de-Marne'], '92': ['hauts-de-seine', 'dans les Hauts-de-Seine'], '91': ['essonne', 'en Essonne'], '78': ['yvelines', 'dans les Yvelines'], '77': ['seine-et-marne', 'en Seine-et-Marne'] }
   const depPage = DEP_PAGE[v.code]

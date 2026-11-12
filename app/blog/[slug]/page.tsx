@@ -27,7 +27,7 @@ function prochesArticle(a: (typeof ARTICLES)[number]) {
   return [...autres.filter((x) => x.category === a.category), ...autres.filter((x) => x.category !== a.category && x.service.href === a.service.href), ...autres.filter((x) => x.category !== a.category && x.service.href !== a.service.href)].map((x) => x.slug)
 }
 function articlesLies(slug: string) {
-  const m = maillageGaranti(ARTICLES, (x) => prochesArticle(x).slice(0, 6), prochesArticle, 10, 14)
+  const m = maillageGaranti(ARTICLES, (x) => prochesArticle(x).slice(0, 8), prochesArticle, 15, 16)
   return (m.get(slug) ?? []).map((s) => ARTICLES.find((x) => x.slug === s)!).filter(Boolean)
 }
 

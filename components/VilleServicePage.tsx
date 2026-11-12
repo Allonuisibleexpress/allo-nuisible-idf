@@ -122,7 +122,7 @@ function inline(text: string) {
 
 export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: Ville[]; c: VilleServiceConfig }) {
   const url = `${SITE_URL}${c.basePath}/${v.slug}`
-  // Maillage (12/11/2026) : les 12 villes les plus proches qui ont une page pour ce nuisible
+  // Maillage (12/11/2026) : les 16 villes les plus proches pour ce nuisible, 20 liens reçus minimum par page
   const autres = voisinesGaranties(villes, v.slug)
   // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
   // évite que toutes les pages villes répètent le même texte.

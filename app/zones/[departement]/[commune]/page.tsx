@@ -47,7 +47,7 @@ export default function CommunePage({ params }: { params: Params }) {
   const secteur = SECTEURS[c.secteur]
   // 6 communes du même secteur au plus, en rotation, pour ne pas répéter la même liste sur chaque page
   // Maillage (12/11/2026) : 8 communes les plus proches, et chaque commune reçoit au moins 10 liens
-  const voisines = voisinesGaranties(COMMUNES_94, c.slug, 8)
+  const voisines = voisinesGaranties(COMMUNES_94, c.slug, 10, 15)
   // 2 méthodes détaillées par commune, en rotation dans le secteur ; les autres en simple lien
   const rang = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug))
   const ordre = [...secteur.ordre.slice(rang % secteur.ordre.length), ...secteur.ordre.slice(0, rang % secteur.ordre.length)].slice(0, 2)

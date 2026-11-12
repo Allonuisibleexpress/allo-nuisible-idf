@@ -89,7 +89,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   const avisLocaux = avisVille('punaises', v.slug)
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
-  // Maillage (12/11/2026) : les 12 villes les plus proches avec une page punaises
+  // Maillage (12/11/2026) : les 16 villes les plus proches avec une page punaises, 20 liens reçus minimum
   const autres = voisinesGaranties(VILLES_PUNAISES, v.slug)
   const maj = new Date(MAJ_PUNAISES).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
