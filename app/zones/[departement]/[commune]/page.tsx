@@ -18,6 +18,7 @@ import { getVilleChenilles } from '@/lib/villes-chenilles'
 import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import { getVilleAcariens } from '@/lib/villes-acariens'
+import { GUIDE_ZONES_94 } from '@/lib/guide-zones-94'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -57,8 +58,16 @@ export default function CommunePage({ params }: { params: Params }) {
   const villeSouris = getVilleSouris(c.slug)
   const villeChenilles = getVilleChenilles(c.slug)
   const villeAcariens = getVilleAcariens(c.slug)
-  // Paragraphe propre à la commune, repris de sa page service la plus détaillée
-  const local = (villeDerat ?? villeChenilles ?? villePunaises)?.contexte[0]
+  // Texte propre à la page zone (12/11/2026) : plus aucun paragraphe repris des pages spécialisées
+  const guide = GUIDE_ZONES_94[c.slug]
+  const pagesVilleListe = [
+    villeDerat && { href: `/deratisation/${c.slug}`, label: `Dératisation ${c.a}`, sous: 'Rats et souris, dès 120 €' },
+    villeSouris && { href: `/souris/${c.slug}`, label: `Souris ${c.a}`, sous: 'Uniquement des souris, dès 120 €' },
+    villePunaises && { href: `/punaises-de-lit/${c.slug}`, label: `Punaises de lit ${c.a}`, sous: '2 passages inclus, dès 290 €' },
+    villeCafards && { href: `/cafards/${c.slug}`, label: `Cafards ${c.a}`, sous: 'Blattes, dès 120 €' },
+    villeChenilles && { href: `/chenilles-processionnaires/${c.slug}`, label: `Chenilles processionnaires ${c.a}`, sous: 'Retrait des nids, dès 89 €' },
+    villeAcariens && { href: `/acariens/${c.slug}`, label: `Acariens ${c.a}`, sous: 'Literie et textiles, dès 120 €' },
+  ].filter(Boolean) as { href: string; label: string; sous: string }[]
 
   return (
     <>
@@ -86,7 +95,6 @@ export default function CommunePage({ params }: { params: Params }) {
             {[secteur.intro(c.nom)[rang % 2]].map((p) => (
               <p key={p.slice(0, 24)} className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{p}</p>
             ))}
-            {local && <p className="text-base text-white/55 max-w-2xl mx-auto mb-3 leading-relaxed">{local}</p>}
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-4">
               <a href={PHONE_HREF}
                 className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
@@ -104,6 +112,37 @@ export default function CommunePage({ params }: { params: Params }) {
             </p>
           </div>
         </section>
+
+        {/* ── PAGE D'ACCUEIL DE LA VILLE : texte local + aiguillage vers les pages spécialisées (12/11/2026) ── */}
+        {(guide || pagesVilleListe.length > 0) && (
+          <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
+            <div className="max-w-3xl mx-auto text-center">
+              {guide && (
+                <>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Spécial {c.nom}</p>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">Les nuisibles {c.a} : <span style={{ color: ACCENT }}>ce que nous rencontrons</span></h2>
+                  <div className="space-y-4 text-white/70 leading-relaxed text-base md:text-lg text-left md:text-center">
+                    {guide.map((p, i) => <p key={i}>{p.split(/(\*\*[^*]+\*\*)/g).map((m, j) => (m.startsWith('**') ? <strong key={j} className="text-white font-bold">{m.slice(2, -2)}</strong> : m))}</p>)}
+                  </div>
+                </>
+              )}
+              {pagesVilleListe.length > 0 && (
+                <div className="mt-10">
+                  <h3 className="text-lg md:text-xl font-black text-white mb-2">Nos pages spécialisées {c.a}</h3>
+                  <p className="text-white/50 text-sm mb-5">Chaque nuisible a sa page détaillée : méthode, prix, protocole et questions fréquentes.</p>
+                  <div className="grid sm:grid-cols-2 gap-3 text-left">
+                    {pagesVilleListe.map((l) => (
+                      <a key={l.href} href={l.href} className="group flex items-center justify-between gap-3 rounded-xl px-5 py-4 hover:bg-white/[0.06]" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span><span className="block text-white font-bold">{l.label}</span><span className="block text-sm" style={{ color: ACCENT }}>{l.sous}</span></span>
+                        <ArrowRight className="w-4 h-4 text-white/50 group-hover:translate-x-0.5 transition-transform" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* ── MÉTHODES PRIORITAIRES DU SECTEUR ── */}
         <section className="py-16 md:py-20 px-4" style={{ background: '#0d0d0d' }}>

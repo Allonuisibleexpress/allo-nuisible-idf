@@ -9,7 +9,8 @@ import CyclePunaises from '@/components/CyclePunaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
-import { villesVoisines, premierePhrase } from '@/lib/maillage'
+import { plusProches } from '@/lib/centres-villes'
+import { premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
@@ -87,7 +88,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   const avisLocaux = avisVille('punaises', v.slug)
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
-  const autres = villesVoisines(VILLES_PUNAISES, v)
+  // Maillage (12/11/2026) : les 12 villes les plus proches avec une page punaises
+  const autres = plusProches(VILLES_PUNAISES, v.slug, 12)
   const maj = new Date(MAJ_PUNAISES).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
@@ -311,11 +313,15 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
+              Nous intervenons aussi à{' '}
+              {v.proches.map((n, i) => {
+                const p = VILLES_PUNAISES.find((x) => x.nom === n)
+                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`/punaises-de-lit/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
+              })}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>
             </p>
             <div className="mt-10">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Punaises de lit dans d&apos;autres villes</p>
+              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Punaises de lit près de {v.nom}</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {autres.map((x) => (
                   <a key={x.slug} href={`/punaises-de-lit/${x.slug}`}

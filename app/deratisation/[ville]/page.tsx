@@ -248,8 +248,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center">Nos guides pour tout comprendre sur les rats</h2>
-            <div className="grid sm:grid-cols-3 gap-3">
-              {v.guides.map((g) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {[...v.guides.slice(0, 2), 'rat-ou-souris-comment-reconnaitre' as const, 'guide-des-rongeurs' as const].map((g) => (
                 <a key={g} href={`/blog/${g}`} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
                   <BookOpen className="w-5 h-5 mb-3" style={{ color: ACCENT }} />
                   <p className="text-white font-bold text-sm leading-snug mb-2">{GUIDES_RONGEURS[g]}</p>

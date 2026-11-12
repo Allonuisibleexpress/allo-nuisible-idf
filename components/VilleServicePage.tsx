@@ -1,5 +1,6 @@
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
-import { villesVoisines, premierePhrase } from '@/lib/maillage'
+import { plusProches } from '@/lib/centres-villes'
+import { premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
 import { avecPrix, premierPrix, EtiquettePrix } from '@/components/PrixGros'
 import BandeauDevis from '@/components/BandeauDevis'
@@ -120,7 +121,8 @@ function inline(text: string) {
 
 export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: Ville[]; c: VilleServiceConfig }) {
   const url = `${SITE_URL}${c.basePath}/${v.slug}`
-  const autres = villesVoisines(villes, v)
+  // Maillage (12/11/2026) : les 12 villes les plus proches qui ont une page pour ce nuisible
+  const autres = plusProches(villes, v.slug, 12)
   // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
   // évite que toutes les pages villes répètent le même texte.
   const rang = Math.max(0, villes.findIndex((x) => x.slug === v.slug))
@@ -497,7 +499,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
+              Nous intervenons aussi à{' '}
+              {v.proches.map((n, i) => {
+                const p = villes.find((x) => x.nom === n)
+                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`${c.basePath}/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
+              })}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>
             </p>
             <div className="mt-10">

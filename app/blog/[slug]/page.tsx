@@ -10,6 +10,34 @@ import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import { ImageCycle } from '@/components/CyclePunaises'
+import { VILLES_PUNAISES } from '@/lib/villes-punaises'
+import { VILLES_CAFARDS } from '@/lib/villes-cafards'
+import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
+import { VILLES_PUCES } from '@/lib/villes-puces'
+import { VILLES_ACARIENS } from '@/lib/villes-acariens'
+import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
+import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
+import { plusProches } from '@/lib/centres-villes'
+
+// Maillage blog → pages ville du même nuisible (12/11/2026) : 16 villes autour de notre base de Saint-Maurice
+const VILLES_PAR_THEME: Record<string, { base: string; mot: string; villes: { slug: string; nom: string }[] }> = {
+  'Punaises de lit': { base: '/punaises-de-lit', mot: 'Punaises de lit', villes: VILLES_PUNAISES },
+  'Cafards': { base: '/cafards', mot: 'Cafards', villes: VILLES_CAFARDS },
+  'Fourmis': { base: '/fourmis', mot: 'Fourmis', villes: VILLES_FOURMIS },
+  'Puces': { base: '/puces', mot: 'Puces', villes: VILLES_PUCES },
+  'Acariens': { base: '/acariens', mot: 'Acariens', villes: VILLES_ACARIENS },
+  'Chenilles processionnaires': { base: '/chenilles-processionnaires', mot: 'Chenilles', villes: VILLES_CHENILLES },
+  'Guêpes et frelons': { base: '/destruction-nid-frelon', mot: 'Nid de frelons', villes: VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)) },
+}
+function villesTheme(cat: string) {
+  const t = VILLES_PAR_THEME[cat]
+  if (!t) return null
+  const base = t.villes.find((v) => v.slug === 'saint-maurice')
+  return { ...t, liste: [...(base ? [base] : []), ...plusProches(t.villes, 'saint-maurice', base ? 15 : 16)] }
+}
+import IdentifierRongeur from '@/components/blog/IdentifierRongeur'
+import EchelleCrottes from '@/components/blog/EchelleCrottes'
+import BruitsRongeurs from '@/components/blog/BruitsRongeurs'
 
 // Maillage blog → pages dératisation par ville (12/11/2026) : sur chaque article rongeurs,
 // les départements et les villes où nos pages sont déjà vues par Google.
@@ -113,6 +141,12 @@ function renderBlock(b: Block, idx: number) {
     }
     case 'cycle':
       return <div key={k} style={{ margin: '12px 0 32px', width: 'min(1100px, calc(100vw - 32px))', position: 'relative', left: '50%', transform: 'translateX(-50%)' }}><ImageCycle /></div>
+    case 'quiz':
+      return <IdentifierRongeur key={k} />
+    case 'crottes':
+      return <EchelleCrottes key={k} />
+    case 'bruits':
+      return <BruitsRongeurs key={k} animaux={b.animaux} />
     case 'img':
       return (
         <figure key={k} style={{ margin: '8px auto 28px', maxWidth: '520px', textAlign: 'center' }}>
@@ -306,6 +340,42 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               </div>
             </section>
           )}
+
+          {/* Pages ville du même nuisible */}
+          {(() => {
+            const t = villesTheme(a.category)
+            if (!t) return null
+            return (
+              <section style={{ marginTop: '48px', textAlign: 'center' }}>
+                <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 26px)', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{t.mot} : nos pages près de chez vous</h2>
+                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginBottom: '16px' }}>Prix, méthode et délai d'intervention dans votre ville.</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+                  {t.liste.map((v) => (
+                    <a key={v.slug} href={`${t.base}/${v.slug}`} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', padding: '6px 13px', borderRadius: '99px', border: '1px solid rgba(255,255,255,0.14)', textDecoration: 'none' }}>{v.nom}</a>
+                  ))}
+                </div>
+              </section>
+            )
+          })()}
+
+          {/* À lire aussi : articles du même thème (maillage blog, 12/11/2026) */}
+          {(() => {
+            const lies = ARTICLES.filter((x) => x.slug !== a.slug && x.category === a.category).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
+            if (!lies.length) return null
+            return (
+              <section style={{ marginTop: '48px' }}>
+                <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 26px)', fontWeight: 800, color: '#fff', marginBottom: '16px', textAlign: 'center' }}>À lire aussi sur le même sujet</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+                  {lies.map((x) => (
+                    <a key={x.slug} href={`/blog/${x.slug}`} style={{ display: 'block', padding: '14px 16px', borderRadius: '12px', background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 700, lineHeight: 1.4 }}>
+                      {x.seoTitle}
+                      <span style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#E8441A', marginTop: '6px' }}>Lire l'article →</span>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )
+          })()}
 
           {/* CTA */}
           <section style={{ background: 'rgba(232, 68, 26, 0.1)', border: '2px solid rgba(232, 68, 26, 0.3)', borderRadius: '18px', padding: '36px', marginTop: '56px', textAlign: 'center' }}>

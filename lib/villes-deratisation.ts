@@ -26,6 +26,8 @@ export const GUIDES_RONGEURS: Record<string, string> = {
   'nourrir-oiseaux-pigeons-attire-rats': 'Nourrir les oiseaux attire les rats',
   'rat-compost': 'Rats dans le compost',
   'trou-dans-le-jardin': 'Trou dans le jardin : rat, campagnol ou taupe ?',
+  'guide-des-rongeurs': 'Le guide des rongeurs : tout savoir sur 15 animaux',
+  'rat-ou-souris-comment-reconnaitre': 'Rat ou souris : comment reconnaître le rongeur',
 }
 
 export type VilleDeratisation = {

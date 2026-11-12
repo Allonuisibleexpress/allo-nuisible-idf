@@ -135,6 +135,13 @@ export const CENTRES: Record<string, [number, number]> = {
   'viry-chatillon': [48.6662, 2.3758],
   'vitry-sur-seine': [48.7893, 2.3951],
   'wissous': [48.7308, 2.3278],
+  'la-queue-en-brie': [48.7769, 2.5855],
+  'mandres-les-roses': [48.7068, 2.5477],
+  'marolles-en-brie': [48.7385, 2.5539],
+  'noiseau': [48.7757, 2.556],
+  'ormesson-sur-marne': [48.7873, 2.5371],
+  'perigny': [48.6974, 2.562],
+  'villecresnes': [48.7221, 2.5328],
 }
 
 function km(a: [number, number], b: [number, number]) {
