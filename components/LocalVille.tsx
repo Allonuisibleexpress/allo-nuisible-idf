@@ -13,7 +13,9 @@ export default function LocalVille({ titre, nom, paras }: { titre: string; nom: 
         <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>Spécial {nom}</p>
         <h2 className="text-2xl md:text-3xl font-black text-white mb-6 text-center leading-tight">{titre}</h2>
         <div className="space-y-4 text-white/70 leading-relaxed text-base md:text-lg">
-          {paras.map((p, i) => <p key={i}>{g(p)}</p>)}
+          {paras.map((p, i) => p.startsWith('### ')
+            ? <h3 key={i} className="text-xl md:text-2xl font-black text-white pt-4 text-center leading-snug">{g(p.slice(4))}</h3>
+            : <p key={i}>{g(p)}</p>)}
         </div>
       </div>
     </section>

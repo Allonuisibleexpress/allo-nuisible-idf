@@ -83,6 +83,8 @@ export interface ServiceData {
     villes?: { title: string; links: Array<{ href: string; label: string }> }
     guides?: { title: string; links: Array<{ href: string; label: string }> }
     souris?: { title: string; links: Array<{ href: string; label: string }> }
+    // Blocs ajoutés par lib/maillage-services.ts (départements, articles, autres services)
+    extra?: Array<{ title: string; links: Array<{ href: string; label: string }> }>
   }
 }
 
@@ -493,7 +495,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         {data.related && (
           <section className="py-16 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-              {[data.related.villes, data.related.guides, data.related.souris].filter(Boolean).map((bloc) => (
+              {[data.related.villes, data.related.guides, data.related.souris, ...(data.related.extra ?? [])].filter(Boolean).map((bloc) => (
                 <div key={bloc!.title}>
                   <h2 className="text-xl md:text-2xl font-black text-white mb-5">{bloc!.title}</h2>
                   <ul className="space-y-2">

@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_PUNAISES, GUIDE_PUNAISES } from '@/lib/contenu-services/punaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -82,6 +83,7 @@ const data: ServiceData = {
     vignettes: 'Nos chantiers en vidéo',
   },
   related: {
+    extra: maillageService('/services/punaises-de-lit'),
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, { href: '/blog/punaises-de-lit-creteil-sommier-lattes', label: 'Chantier à Créteil : punaises dans les sommiers' }, { href: '/blog/punaises-de-lit-paris-12-grosse-infestation', label: 'Chantier à Paris 12e : résultat du premier passage' }, { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Chantier à L’Haÿ-les-Roses : cryogénie sur un sommier' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
   },

@@ -4,6 +4,7 @@
 // Sources des faits sur les espèces : FREDON, Futura-Sciences (Tapinoma magnum), OFEV (Suisse), Espace pour la vie (Montréal), canton de Genève.
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
+import { LOCAL_FOURMIS_94 } from '@/lib/local-fourmis-94'
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_FOURMIS_GC } from '@/lib/local-fourmis-gc'
 
@@ -117,8 +118,8 @@ export const CONFIG_FOURMIS: VilleServiceConfig = {
   maj: '2026-11-06',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Fourmis dans d\'autres villes',
-  local: LOCAL_FOURMIS_GC,
-  localTitre: (a, nom) => `Fourmis ${a} : ce qui est propre à ${nom}`,
+  local: { ...LOCAL_FOURMIS_94, ...LOCAL_FOURMIS_GC },
+  localTitre: (a, nom) => `Fourmis ${a} : d’où elles viennent et comment s’en débarrasser à ${nom}`,
 }
 
 const FAQ_COMMUNE = (a: string) => [

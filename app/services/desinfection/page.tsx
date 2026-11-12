@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_DESINFECTION, GUIDE_DESINFECTION } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 
@@ -49,6 +50,7 @@ const data: ServiceData = {
       cta: 'Devis urgent disponible',
     },
   ],
+  related: { extra: maillageService('/services/desinfection') },
   faq: [
     { q: 'Dans quels cas faut-il désinfecter un logement ?', a: 'Après une infestation de nuisibles (rongeurs, cafards), après un décès ou une situation de grande insalubrité, après une contamination bactérienne ou virale, après un dégât des eaux avec moisissures, ou dans le cadre d\'une remise en état post-sinistre.' },
     { q: 'Quelle différence entre désinfection et désinsectisation ?', a: 'La désinsectisation élimine les insectes. La désinfection traite les agents pathogènes (bactéries, virus, champignons) présents sur les surfaces et dans l\'air. Les deux peuvent être combinées.' },

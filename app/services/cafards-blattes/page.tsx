@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_CAFARDS, GUIDE_CAFARDS } from '@/lib/contenu-services/cafards'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_CAFARDS, GUIDES_CAFARDS } from '@/lib/villes-cafards'
@@ -61,6 +62,7 @@ const data: ServiceData = {
     { q: 'Êtes-vous conformes aux normes HACCP pour les restaurants ?', a: 'Oui. Nos techniciens sont formés aux exigences HACCP et utilisent des produits homologués pour les locaux alimentaires. Nous fournissons les attestations et rapports d\'intervention requis pour vos contrôles sanitaires.' },
   ],
   related: {
+    extra: maillageService('/services/cafards-blattes'),
     villes: { title: 'Cafards par ville', links: VILLES_CAFARDS.map((v) => ({ href: `/cafards/${v.slug}`, label: `Cafards ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides', links: Object.entries(GUIDES_CAFARDS).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },
   },

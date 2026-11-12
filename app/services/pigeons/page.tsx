@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_PIGEONS, GUIDE_PIGEONS } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { MEDIAS_PIGEONS } from '@/lib/photos-chantiers'
@@ -55,6 +56,7 @@ const data: ServiceData = {
     titre: 'Un de nos chantiers : balcon envahi par les pigeons',
     vignettes: 'Notre chantier balcon en photos',
   },
+  related: { extra: maillageService('/services/pigeons') },
   faq: [
     { q: 'Les pics anti-pigeons font-ils mal aux oiseaux ?', a: 'Non. Les pics empêchent physiquement les pigeons de se poser sans les blesser. Ils ne constituent pas de piège et n\'infligent aucune douleur. C\'est une méthode 100% humaine et légale.' },
     { q: 'Les fientes de pigeons sont-elles dangereuses ?', a: 'Oui. Les fientes de pigeon peuvent transmettre la salmonellose, la psittacose et des champignons pathogènes (Cryptococcus, Histoplasma). Elles sont aussi très corrosives pour les façades, toitures et véhicules.' },

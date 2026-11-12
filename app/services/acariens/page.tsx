@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_ACARIENS, GUIDE_ACARIENS } from '@/lib/contenu-services/acariens-puces'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_ACARIENS } from '@/lib/villes-acariens'
@@ -46,6 +47,7 @@ const data: ServiceData = {
     { q: 'Combien coûte un traitement anti-acariens ?', a: 'À partir de 120 € TTC pour une chambre traitée à la vapeur sèche. Pour un logement complet ou un professionnel, le prix est établi sur place, selon les pièces et les textiles à traiter. Le devis est gratuit.' },
   ],
   related: {
+    extra: maillageService('/services/acariens'),
     villes: { title: 'Traitement des acariens par ville', links: VILLES_ACARIENS.map((v) => ({ href: `/acariens/${v.slug}`, label: `Acariens ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides sur les acariens', links: [
       { href: '/blog/acariens-matelas', label: 'Acariens dans le matelas : 7 gestes' },

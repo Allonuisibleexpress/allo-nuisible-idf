@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_CHENILLES, GUIDE_CHENILLES } from '@/lib/contenu-services/exterieur'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_CHENILLES, GUIDES_CHENILLES } from '@/lib/villes-chenilles'
@@ -50,6 +51,7 @@ const data: ServiceData = {
     { q: 'Que faire en cas de contact avec une chenille ?', a: 'Ne vous frottez pas, rincez abondamment la peau à l\'eau, changez de vêtements et lavez-les. En cas de réaction aux yeux, de gêne respiratoire ou de réaction importante, consultez un médecin ou appelez un centre antipoison.' },
   ],
   related: {
+    extra: maillageService('/services/chenilles-processionnaires'),
     villes: { title: 'Chenilles processionnaires par ville', links: VILLES_CHENILLES.map((v) => ({ href: `/chenilles-processionnaires/${v.slug}`, label: `Chenilles processionnaires ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides', links: Object.entries(GUIDES_CHENILLES).map(([slug, label]) => ({ href: `/blog/${slug}`, label })) },
   },

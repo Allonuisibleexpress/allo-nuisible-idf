@@ -1,6 +1,7 @@
 // Pages « Puces à [ville] » (/puces/[ville]) : 40 villes (18 du 94, 12 arrondissements de Paris, 10 du 92). 24 le 09/11/2026, 16 ajoutées le 10/11/2026.
 // Sources du cycle et des risques : Wikipédia (Ctenocephalides felis, Siphonaptera), Parola 2006, ESCCAP (cités sur /blog/puces-tout-savoir).
 // Prix aligné sur Allo Nuisible Express : dès 120 € TTC. Pas de chiffre inventé, pas de tiret long, rien de « naturel » ou « sans danger ».
+import { LOCAL_PUCES_IDF } from '@/lib/local-puces-idf'
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { PUCES_APPROFONDI } from './puces-approfondi'
 import { LOCAL_PUCES_GC } from './local-puces-gc'
@@ -55,8 +56,8 @@ export const CONFIG_PUCES: VilleServiceConfig = {
   maj: '2026-11-09',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Puces dans d’autres villes',
-  local: LOCAL_PUCES_GC,
-  localTitre: (a, nom) => `Puces ${a} : ce qui est propre à ${nom}`,
+  local: { ...LOCAL_PUCES_IDF, ...LOCAL_PUCES_GC },
+  localTitre: (a, nom) => `Puces ${a} : piqûres, causes et solutions à ${nom}`,
   approfondi: PUCES_APPROFONDI,
 }
 

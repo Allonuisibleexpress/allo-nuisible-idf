@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
@@ -75,6 +76,7 @@ const data: ServiceData = {
     { q: 'Proposez-vous des contrats de dératisation annuels ?', a: 'Oui. Nous proposons des contrats mensuels, trimestriels ou annuels pour les professionnels et les copropriétés, avec visites programmées, relevés et rapports d\'intervention fournis à chaque passage.' },
   ],
   related: {
+    extra: maillageService('/services/deratisation'),
     villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.a} (${v.code})` })) },
     guides: { title: 'Nos guides sur les rongeurs', links: [...Object.entries(GUIDES_RONGEURS).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
     souris: { title: 'Souris par ville', links: VILLES_SOURIS.map((v) => ({ href: `/souris/${v.slug}`, label: `Souris ${v.a} (${v.code})` })) },

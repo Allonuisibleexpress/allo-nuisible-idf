@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_PUCES, GUIDE_PUCES } from '@/lib/contenu-services/acariens-puces'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUCES } from '@/lib/villes-puces'
@@ -45,6 +46,7 @@ const data: ServiceData = {
     { q: 'Combien coûte un traitement contre les puces ?', a: 'À partir de 120 € TTC pour un appartement. Pour une maison ou un professionnel, le prix est fixé sur devis, gratuit.' },
   ],
   related: {
+    extra: maillageService('/services/puces'),
     villes: { title: 'Traitement des puces par ville', links: VILLES_PUCES.map((v) => ({ href: `/puces/${v.slug}`, label: `Puces ${v.a} (${v.code})` })) },
     guides: { title: 'Pour tout comprendre', links: [
       { href: '/blog/puces-tout-savoir', label: 'Puces : origine, cycle de vie et traitement' },

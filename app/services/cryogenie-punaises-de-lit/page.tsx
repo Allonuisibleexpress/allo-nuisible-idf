@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import { maillageService } from '@/lib/maillage-services'
 import { METHODES_CRYOGENIE, GUIDE_CRYOGENIE } from '@/lib/contenu-services/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
@@ -87,6 +88,7 @@ const data: ServiceData = {
     { q: 'Cryogénie ou insecticide : que choisir ?', a: 'La cryogénie convient aux lieux sensibles et aux infestations localisées. Pour une infestation importante, on passe au protocole mixte ou à l\'insecticide. Le technicien vous conseille après l\'inspection.' },
   ],
   related: {
+    extra: maillageService('/services/cryogenie-punaises-de-lit'),
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
     guides: { title: 'Pour aller plus loin', links: [
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },

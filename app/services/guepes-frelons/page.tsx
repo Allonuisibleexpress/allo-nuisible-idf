@@ -1,5 +1,7 @@
 'use client'
 
+import BlocsMaillage from '@/components/BlocsMaillage'
+import { MAILLAGE_STATIQUE } from '@/lib/maillage-services-statique'
 import { schemaService } from '@/components/ServicePageTemplate'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { useState, useEffect } from 'react'
@@ -760,6 +762,7 @@ export default function GuêpesFrelonsPage() {
 
       </main>
 
+      <BlocsMaillage blocs={MAILLAGE_STATIQUE.guepes} />
       <Footer />
     </>
   )
