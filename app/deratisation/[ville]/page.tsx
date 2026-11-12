@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import DeratEco from '@/components/DeratEco'
 import { VILLES_PUCES } from '@/lib/villes-puces'
 import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
@@ -215,9 +216,6 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: ACCENT }}>souris {v.a}</a>.
           </p>
         )}
-        <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-          Vous ne voulez pas de raticide {v.a} ? Découvrez notre <a href="/services/deratisation-ecologique" className="underline font-bold" style={{ color: ACCENT }}>dératisation écologique, sans raticide ni poison</a>.
-        </p>
         {VILLES_PUCES.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
             Rats et souris transportent des puces, qui peuvent rester après leur départ : voir notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>puces {v.a}</a>.
@@ -228,6 +226,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <SituationsVille famille="deratisation" slug={v.slug} a={v.a} />
 
         <ProtocoleCondense p={PROTOCOLE_DERATISATION} a={v.a} />
+        <DeratEco a={v.a} />
 
 
         <TarifsVille titre={`Prix d’une dératisation ${v.a}`}

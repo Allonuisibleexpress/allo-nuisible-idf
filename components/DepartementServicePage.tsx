@@ -1,5 +1,6 @@
 import CyclePunaises from '@/components/CyclePunaises'
 // Page « service + département » (/deratisation/val-de-marne…), même style que les pages ville (modèle du 09/11/2026).
+import DeratEco from '@/components/DeratEco'
 import { Phone, Camera, Star, ShieldCheck, Clock, BadgeCheck, MapPin, ArrowRight, Check } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -313,6 +314,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
 
         {s === 'punaises' && <CyclePunaises a={dep.dans} titre={`Punaises de lit ${dep.dans} : les 7 stades à reconnaître`} />}
         <EtapesVille slug={d + s} a={dep.dans} titre={`${s === 'frelons' ? 'Destruction de nid' : c.label} ${dep.dans} : comment nous intervenons`} etapes={c.etapes} />
+        {s === 'deratisation' && <DeratEco a={dep.dans} />}
 
         <TarifsVille titre={`Prix ${s === 'frelons' ? 'd’une destruction de nid de frelons' : `${c.label.toLowerCase()}`} ${dep.code} : tarifs ${dep.dans}`} intro="Le devis est gratuit et le prix est fixé avant l’intervention, le même dans tout le département." lignes={c.tarifs} note="Prix TTC. Garantie 1 an sur nos traitements." />
 

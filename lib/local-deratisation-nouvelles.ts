@@ -15,6 +15,7 @@ export const LOCAL_DERATISATION_NOUVELLES: Record<string, string[]> = {
     "Autour de la **porte de Bagnolet** et de la station **Gallieni**, les grands ensembles, les parkings et les centres commerciaux concentrent les déchets alimentaires. Les locaux poubelles et les parkings souterrains sont les premiers points à traiter.",
     "Sur les hauteurs, vers les **Malassis** et le **parc Jean-Moulin-Les Guilands**, l’habitat devient plus pavillonnaire. Les rats creusent dans les jardins et les souris entrent par les sous-sols et les garages.",
     "Bagnolet touche directement le 20e arrondissement : les rongeurs ne connaissent pas les limites de commune, et nous intervenons des deux côtés.",
+    "Dans les immeubles anciens du bas de Bagnolet, proches de la rue Sadi-Carnot et de la mairie, les caves et les cours sont reliées : nous traitons tout le sous-sol avec le syndic, puis nous fermons les passages entre les bâtiments pour que les rats ne reviennent pas.",
   ],
   'les-lilas': [
     "Les Lilas couvre à peine plus d’un kilomètre carré, avec une forte densité. Autour de la **mairie** et de la station **Mairie des Lilas**, les immeubles et les commerces se suivent : caves, réserves et poubelles sont les points sensibles.",

@@ -1,4 +1,5 @@
 import { pageMetadata } from '@/lib/seo'
+import DeratEco from '@/components/DeratEco'
 import { maillageService } from '@/lib/maillage-services'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -34,6 +35,7 @@ const data: ServiceData = {
   methodes: METHODES_DERATISATION,
   guide: GUIDE_DERATISATION,
   contenu: CONTENU_DERATISATION,
+  apresProcess: <DeratEco />,
   pricing: [
     {
       label: 'Particulier',

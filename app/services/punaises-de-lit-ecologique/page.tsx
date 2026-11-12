@@ -2,10 +2,8 @@
 // « Écologique » est toujours défini sur la page : aucun insecticide ni produit chimique déposé (cryogénie, vapeur sèche, froid).
 // Mot-clé visé : « punaises de lit traitement écologique / sans produit chimique » (la page cryogénie vise « cryogénie punaises de lit »).
 import { pageMetadata } from '@/lib/seo'
-import { maillageService } from '@/lib/maillage-services'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import ArticleService from '@/components/ArticleService'
-import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 
 const ARTICLE = [
   { h: 'Traitement écologique des punaises de lit : ce que cela veut dire chez nous', p: [
@@ -81,8 +79,7 @@ const data: ServiceData = {
     { q: 'Pourquoi deux passages ?', a: 'Sans produit, il n’y a pas d’effet qui dure : un œuf non touché éclot en une à deux semaines. Le second passage élimine ces jeunes punaises avant qu’elles ne pondent.' },
   ],
   related: {
-    extra: maillageService('/services/punaises-de-lit-ecologique'),
-    villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
+    villes: { title: 'Traitement sans produit chimique : nos départements', links: [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']].map(([d, n]) => ({ href: `/punaises-de-lit/${d}`, label: `Punaises de lit : ${n}` })) },
     guides: { title: 'Pour aller plus loin', links: [
       { href: '/services/cryogenie-punaises-de-lit', label: 'Cryogénie punaises de lit : la méthode en détail' },
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
