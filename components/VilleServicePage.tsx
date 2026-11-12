@@ -92,6 +92,8 @@ export type VilleServiceConfig = {
   }
   // Contenu local rédigé à la main, propre à chaque ville (bloc « Spécial ville », comme les pages dératisation), 11/11/2026
   local?: Record<string, string[]>
+  // Fiche nuisible générée à partir des données de la ville (lib/fiche-nuisible.ts)
+  fiche?: (v: { slug: string; nom: string; a: string; code: string }, voisines: { slug: string; nom: string }[]) => string[]
   localTitre?: (a: string, nom: string) => string
   centre?: boolean // page entièrement centrée (règle de l'utilisateur pour les nouvelles pages)
 }
@@ -243,7 +245,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
-        <LocalVille nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={c.local?.[v.slug]} />
+        <LocalVille nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}

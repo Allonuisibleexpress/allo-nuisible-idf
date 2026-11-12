@@ -2,7 +2,12 @@
 const ACCENT = '#E8441A'
 
 function g(t: string) {
-  return t.split(/(\*\*[^*]+\*\*)/g).map((m, i) => (m.startsWith('**') ? <strong key={i} className="text-white font-bold">{m.slice(2, -2)}</strong> : m))
+  return t.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((m, i) => {
+    if (m.startsWith('**')) return <strong key={i} className="text-white font-bold">{m.slice(2, -2)}</strong>
+    const l = m.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if (l) return <a key={i} href={l[2]} className="font-bold underline" style={{ color: ACCENT }}>{l[1]}</a>
+    return m
+  })
 }
 
 export default function LocalVille({ titre, nom, paras }: { titre: string; nom: string; paras?: string[] }) {
