@@ -1,3 +1,4 @@
+import { CHAINE_YOUTUBE } from '@/lib/youtube'
 // Blocs communs aux pages service + ville (refonte du 08/11/2026) : haut de page, étapes d'intervention,
 // tarifs, autres services dans la même ville. Formulations en rotation d'une ville à l'autre (similarité ≤ 0,50).
 import { Phone, Camera, Star, ShieldCheck, Clock, BadgeCheck, ArrowRight, MapPin } from 'lucide-react'
@@ -204,7 +205,13 @@ export function schemaPrestataire() {
     address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
     // Vraie note de la fiche Google (lib/avis-google.ts)
     aggregateRating: { '@type': 'AggregateRating', ratingValue: NOTE_GOOGLE.note.replace(',', '.'), reviewCount: NOTE_GOOGLE.nombre, bestRating: 5 },
-    sameAs: [FICHE_GOOGLE_URL],
+    // Mêmes informations que le schéma de l'accueil (12/11/2026) : position, horaires, zone, chaîne YouTube
+    geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
+    hasMap: FICHE_GOOGLE_URL,
+    areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+    openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
+    knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
+    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
   }
 }
 export function schemaOffre(prix: string, libelle: string) {

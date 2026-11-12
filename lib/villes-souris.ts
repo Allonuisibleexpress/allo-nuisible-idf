@@ -5,6 +5,7 @@
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_SOURIS_GC } from '@/lib/local-souris-gc'
+import { LOCAL_SOURIS_94 } from '@/lib/local-souris-94'
 
 export const GUIDES_SOURIS: Record<string, string> = {
   'souris-par-ou-entrent-elles': 'Souris : par où entrent-elles ?',
@@ -130,7 +131,7 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
   maj: '2026-10-31',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des rodenticides professionnels.',
   autresTitre: 'Souris dans d\'autres villes',
-  local: LOCAL_SOURIS_GC,
+  local: { ...LOCAL_SOURIS_94, ...LOCAL_SOURIS_GC },
   localTitre: (a, nom) => `Souris ${a} : ce qui est propre à ${nom}`,
 }
 

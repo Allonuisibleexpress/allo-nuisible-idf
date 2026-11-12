@@ -361,6 +361,163 @@ export const GUIDE_DERATISATION: Record<string, GuideVille> = {
       { q: 'Combien coûte une dératisation à Paris 20e ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris, devis gratuit.' },
     ],
   },
+  'chatenay-malabry': {
+    titre: 'Dératisation à Châtenay-Malabry : comment se débarrasser des rats et des souris ?',
+    intro: 'Châtenay-Malabry compte **35 825 habitants** sur **6,37 km²** (Insee). Entre la **Vallée-aux-Loups**, le parc de Sceaux tout proche et la forêt de Verrières au sud, c’est l’une des villes les plus vertes des Hauts-de-Seine. Ce cadre boisé explique la majorité des appels : souris et mulots dans les maisons, rats dans les jardins et les résidences.',
+    sections: [
+      { h: 'Pourquoi les rongeurs entrent-ils dans les maisons à Châtenay ?', p: [
+        'Les quartiers en lisière de bois, autour de la **Vallée-aux-Loups** et du **parc boisé**, voient arriver souris, mulots et parfois lérots dès l’automne : ils quittent la végétation pour les sous-sols, les garages et les combles. Les maisons anciennes, avec leurs soupiraux et leurs murs en pierre, offrent de nombreux passages.',
+        'Dans les jardins, les composts, les abris et les tas de bois servent d’abri aux rats. Les mangeoires à oiseaux et la nourriture des animaux laissée dehors attirent aussi les rongeurs sans qu’on y pense.',
+      ] },
+      { h: 'La Butte Rouge et les résidences : traiter les parties communes', p: [
+        'La **cité-jardin de la Butte Rouge**, l’un des grands ensembles historiques des Hauts-de-Seine, et les résidences de la ville ont des caves et des locaux poubelles où les rongeurs s’installent. La dératisation des parties communes revient au bailleur ou au syndic : c’est par là qu’il faut commencer pour que les logements restent protégés.',
+      ] },
+      { h: 'Quelles méthodes utilisons-nous à Châtenay-Malabry ?', p: [
+        'Postes d’appâtage verrouillés hors de portée des enfants et des animaux, pièges mécaniques, ou **piège Ekomille sans raticide** pour les familles qui préfèrent éviter le produit. Dans tous les cas, nous cherchons les points d’entrée et nous les bouchons : sans colmatage, d’autres rongeurs reviennent du bois voisin.',
+      ] },
+    ],
+    faq: [
+      { q: 'Pourquoi ai-je des souris à l’automne à Châtenay-Malabry ?', a: 'Les maisons proches des bois et des parcs voient les souris et mulots entrer quand le froid arrive. Il faut traiter et boucher les accès des sous-sols, garages et combles.' },
+      { q: 'Intervenez-vous à la Butte Rouge ?', a: 'Oui, pour les bailleurs comme pour les locataires. Les parties communes sont traitées avec le bailleur, puis les logements qui le demandent.' },
+    ],
+  },
+  'chatillon': {
+    titre: 'Dératisation à Châtillon : rats ou souris, comment s’en débarrasser ?',
+    intro: 'Châtillon compte **36 705 habitants** sur **2,92 km²** (Insee), soit plus de **12 500 habitants au km²**. Ville dense, au terminus de la **ligne 13** et traversée par le **tram T6**, elle mêle immeubles, résidences et quartiers pavillonnaires sur le plateau.',
+    sections: [
+      { h: 'Où trouve-t-on des rongeurs à Châtillon ?', p: [
+        'Dans les immeubles du centre et autour de **Châtillon-Montrouge**, ce sont surtout les caves, les locaux poubelles et les parkings souterrains. Les souris montent ensuite dans les étages par les gaines.',
+        'Dans les quartiers pavillonnaires comme les **Sablons** ou **Guynemer**, les rats creusent dans les jardins et les souris entrent par les sous-sols et les garages. Le **parc André-Malraux** et le **parc des Pierrettes** apportent de la verdure, mais aussi des abris pour les rongeurs.',
+      ] },
+      { h: 'Les chantiers déplacent-ils les rats ?', p: [
+        'Oui. Les grands travaux, comme ceux qui ont accompagné l’arrivée du tram T6 et les nouveaux quartiers, dérangent les rongeurs installés dans le sol et les réseaux. Ils cherchent alors de nouveaux abris dans les immeubles et maisons voisins. C’est souvent dans ces périodes que les appels augmentent.',
+      ] },
+      { h: 'Notre intervention à Châtillon', p: [
+        'Diagnostic des accès, postes sécurisés ou pièges, colmatage et contrôle. Pour les copropriétés, le syndic reçoit un rapport avec le plan des postes. Devis gratuit avant le déplacement, dès 120 € TTC pour un appartement.',
+      ] },
+    ],
+    faq: [
+      { q: 'Des souris dans mon appartement à Châtillon : faut-il traiter l’immeuble ?', a: 'Souvent oui, car les souris circulent par les gaines et les caves. Nous traitons votre logement et conseillons au syndic de traiter les parties communes.' },
+      { q: 'Combien coûte une dératisation à Châtillon ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris. Le devis est gratuit et donné avant l’intervention.' },
+    ],
+  },
+  'clamart': {
+    titre: 'Dératisation à Clamart : le guide pour les maisons, les résidences et les commerces',
+    intro: 'Clamart compte **58 576 habitants** sur **8,76 km²** (Insee). La ville s’étend du centre et de la gare jusqu’au **Petit-Clamart**, avec la **forêt de Meudon** et le **bois de Verrières** à ses portes. Les rongeurs y viennent autant des espaces boisés que des réseaux urbains.',
+    sections: [
+      { h: 'Pourquoi des rongeurs près des bois de Clamart ?', p: [
+        'Les maisons en lisière de forêt voient arriver souris, mulots et parfois lérots dès l’automne. Ils entrent par les soupiraux, les garages, les passages de tuyaux et la toiture. Les quartiers pavillonnaires du **Jardin Parisien** ou de **Percy** sont les plus concernés.',
+      ] },
+      { h: 'Les résidences et le centre-ville', p: [
+        'Autour de la **gare de Clamart**, du centre et des grandes résidences du **Petit-Clamart**, ce sont les caves, les locaux poubelles et les parkings qui attirent les rats. Les commerces de bouche et les restaurants demandent un suivi régulier, avec registre et attestation.',
+        'Avec les trams **T6** et **T10**, de nouveaux quartiers se sont construits : les chantiers déplacent les rongeurs vers les bâtiments voisins.',
+      ] },
+      { h: 'Que faire si vous entendez du bruit dans les combles ?', p: [
+        'Petits trottinements : souvent des souris. Cavalcades et petits cris du printemps à l’automne, puis silence en hiver : plutôt un lérot, fréquent près des bois. Notre guide [rat ou souris](/blog/rat-ou-souris-comment-reconnaitre) aide à faire la différence. Dans tous les cas, nous identifions l’animal avant de traiter.',
+      ] },
+    ],
+    faq: [
+      { q: 'Les maisons près de la forêt de Meudon ont-elles plus de souris ?', a: 'Oui, surtout à l’automne. Les souris et mulots quittent les bois pour les sous-sols et les garages. Il faut traiter et boucher les accès.' },
+      { q: 'Intervenez-vous au Petit-Clamart ?', a: 'Oui, dans tout Clamart : maisons, résidences, commerces. Devis gratuit avant l’intervention.' },
+    ],
+  },
+  'gennevilliers': {
+    titre: 'Dératisation à Gennevilliers : port, zones d’activités et quartiers d’habitation',
+    intro: 'Gennevilliers compte **50 979 habitants** sur **11,63 km²** (Insee). La ville accueille le **port de Gennevilliers**, le plus grand port fluvial d’Île-de-France, et de vastes zones d’activités au bord de la **Seine**. Entrepôts, quais et denrées font de la dératisation un enjeu permanent pour les entreprises comme pour les habitants.',
+    sections: [
+      { h: 'Entreprises et entrepôts : pourquoi un plan de lutte ?', p: [
+        'Dans les zones portuaires et industrielles, les rats trouvent eau, abri et nourriture. Une intervention ponctuelle ne suffit pas : nous mettons en place des **postes numérotés**, des passages programmés et un **registre** à jour, utile lors des audits et contrôles sanitaires.',
+      ] },
+      { h: 'Les quartiers d’habitation : Grésillons, Luth, Agnettes', p: [
+        'Dans les quartiers du **Luth**, des **Agnettes** ou des **Grésillons**, les grandes résidences ont des caves, des vide-ordures et des locaux poubelles où les rongeurs s’installent. La dératisation des parties communes, organisée par le bailleur, est la première étape.',
+        'Le **village Chandon** et les secteurs plus anciens ont des maisons avec jardin : rats dans les jardins, souris dans les sous-sols.',
+      ] },
+      { h: 'Le parc des Chanteraines et les berges', p: [
+        'Le grand **parc des Chanteraines** et les berges de la Seine sont des milieux où vivent les surmulots. Les immeubles et maisons proches doivent surveiller leurs caves et leurs jardins, surtout après les crues.',
+      ] },
+    ],
+    faq: [
+      { q: 'Faites-vous des contrats pour les entreprises du port de Gennevilliers ?', a: 'Oui : postes numérotés, passages programmés, registre et attestation à chaque visite.' },
+      { q: 'Je suis locataire aux Agnettes, qui doit dératiser ?', a: 'Les parties communes relèvent du bailleur. Prévenez-le ; nous pouvons intervenir à sa demande, puis dans votre logement si besoin.' },
+    ],
+  },
+  'meudon': {
+    titre: 'Dératisation à Meudon : de la forêt aux bords de Seine, nos solutions',
+    intro: 'Meudon compte **46 334 habitants** sur **9,94 km²** (Insee). La **forêt domaniale de Meudon** couvre une grande partie de son territoire, de **Meudon-la-Forêt** au plateau de **Bellevue**, jusqu’au **Bas-Meudon** en bord de Seine. Chaque secteur a ses rongeurs.',
+    sections: [
+      { h: 'Meudon-la-Forêt et Bellevue : souris, mulots et lérots', p: [
+        'Les maisons et résidences en lisière de forêt voient arriver souris, mulots et lérots à l’automne. Les lérots, qui hibernent, font du bruit dans les combles du printemps à l’automne puis se taisent l’hiver : c’est un indice précieux pour les reconnaître.',
+      ] },
+      { h: 'Le Bas-Meudon et les bords de Seine : les surmulots', p: [
+        'Près de la **Seine**, autour de **Meudon-sur-Seine** et des anciens sites industriels, ce sont les surmulots (rats d’égout) qui dominent. Ils remontent par les réseaux, les caves et les jardins, surtout après les crues.',
+      ] },
+      { h: 'Le centre et Val-Fleury : immeubles et commerces', p: [
+        'Dans le centre et autour de la gare de **Meudon-Val-Fleury**, les immeubles, les commerces et les restaurants demandent un traitement des caves et des réserves, avec un suivi pour les professionnels.',
+        'Partout, nous cherchons les points d’entrée et nous les bouchons après traitement : c’est ce qui évite le retour des rongeurs venus de la forêt ou du fleuve.',
+      ] },
+    ],
+    faq: [
+      { q: 'Du bruit dans le grenier à Meudon, qui s’arrête en hiver : qu’est-ce que c’est ?', a: 'Souvent un lérot ou un loir, qui hibernent. Près de la forêt, c’est fréquent. Nous identifions l’animal et fermons les accès par la toiture.' },
+      { q: 'Intervenez-vous au Bas-Meudon ?', a: 'Oui, dans tout Meudon, du Bas-Meudon à Meudon-la-Forêt. Devis gratuit avant l’intervention.' },
+    ],
+  },
+  'montrouge': {
+    titre: 'Dératisation à Montrouge : une ville très dense, une méthode adaptée',
+    intro: 'Montrouge compte **46 324 habitants** sur seulement **2,07 km²** (Insee), soit plus de **22 300 habitants au km²** : c’est l’une des villes les plus denses de France. Immeubles serrés, commerces au rez-de-chaussée, caves reliées : ici, un rongeur ne touche presque jamais un seul logement.',
+    sections: [
+      { h: 'Pourquoi les rats passent-ils d’un immeuble à l’autre à Montrouge ?', p: [
+        'Dans les rues autour de la **mairie** et de l’avenue de la République, beaucoup d’immeubles ont des caves voisines, séparées par des murs anciens percés pour les réseaux. Les rats et les souris circulent par ces passages. C’est pourquoi nous traitons tout le sous-sol et bouchons les communications entre caves.',
+      ] },
+      { h: 'Commerces, restaurants et marchés', p: [
+        'Les commerces de bouche au rez-de-chaussée attirent les rongeurs, qui montent ensuite vers les logements. Pour les restaurants et boutiques, nous proposons un contrat avec passages programmés et attestation.',
+      ] },
+      { h: 'Jardins partagés et parcs', p: [
+        'Avec 6 jardins partagés recensés sur OpenStreetMap et des parcs comme le **parc Jean-Loup-Metton**, Montrouge cultive au pied des immeubles. Composts et récoltes doivent être protégés pour ne pas attirer les rats.',
+      ] },
+    ],
+    faq: [
+      { q: 'Pourquoi les rats reviennent-ils dans mon immeuble à Montrouge ?', a: 'Parce que les caves communiquent avec les immeubles voisins. Sans colmatage, de nouveaux rongeurs arrivent. Nous traitons et bouchons les passages.' },
+      { q: 'Quel est le prix d’une dératisation à Montrouge ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris. Copropriétés et commerces sur devis.' },
+    ],
+  },
+  'paris-4': {
+    titre: 'Dératisation à Paris 4e : le Marais, les îles et les quais',
+    intro: 'Le 4e arrondissement compte **27 332 habitants** sur **1,6 km²** (Insee). Il réunit le **Marais**, l’**île de la Cité**, l’**île Saint-Louis**, l’Hôtel de Ville et une partie de la **Bastille**. Immeubles anciens, caves voûtées, restaurants nombreux et quais de Seine : un terrain très favorable aux rats.',
+    sections: [
+      { h: 'Pourquoi tant de rats dans le Marais ?', p: [
+        'Les immeubles anciens du Marais ont des **caves voûtées** profondes, souvent reliées entre elles et aux réseaux. Les rats y circulent sans être vus. Les restaurants, boulangeries et épiceries fines, très nombreux, produisent chaque soir des déchets alimentaires qui les attirent.',
+      ] },
+      { h: 'Les îles et les quais de Seine', p: [
+        'Sur l’**île Saint-Louis**, l’**île de la Cité** et le long des quais, les surmulots vivent près de l’eau et remontent vers les immeubles par les caves et les réseaux. Les rez-de-chaussée et les commerces des quais sont les premiers touchés.',
+      ] },
+      { h: 'Copropriétés anciennes : notre méthode', p: [
+        'Dans les copropriétés du 4e, nous commençons par les caves et les cours, avec le syndic. Les postes sont discrets et verrouillés, les passages bouchés au mortier ou au grillage métallique. Le syndic reçoit un rapport à chaque passage.',
+      ] },
+    ],
+    faq: [
+      { q: 'Des rats dans la cave de mon immeuble dans le Marais : qui doit agir ?', a: 'La cave est une partie commune : c’est au syndic d’organiser la dératisation. Nous intervenons à sa demande avec un rapport.' },
+      { q: 'Intervenez-vous pour les restaurants du 4e ?', a: 'Oui, avec un contrat de suivi, des postes numérotés et une attestation à chaque passage.' },
+    ],
+  },
+  'puteaux': {
+    titre: 'Dératisation à Puteaux : de La Défense aux bords de Seine',
+    intro: 'Puteaux compte **44 002 habitants** sur **3,19 km²** (Insee). La ville abrite une partie du quartier d’affaires de **La Défense**, l’**île de Puteaux** et de longs quais de Seine. Tours, parkings souterrains, restaurants et immeubles anciens : chaque secteur a ses rongeurs.',
+    sections: [
+      { h: 'La Défense : un sous-sol à surveiller', p: [
+        'Sous la dalle de La Défense, les parkings, les locaux techniques et les réserves des restaurants forment un immense sous-sol. Pour les gestionnaires et commerces, nous posons des **postes numérotés** et assurons des passages réguliers avec registre.',
+      ] },
+      { h: 'Les bords de Seine et l’île de Puteaux', p: [
+        'Le long des quais et sur l’**île de Puteaux**, les surmulots vivent près de l’eau. Les immeubles proches, autour des quartiers **Seine** et **Wilson**, voient les rats entrer par les caves et les parkings.',
+      ] },
+      { h: 'Le vieux Puteaux et les résidences', p: [
+        'Dans le centre ancien, autour de la **République** et du **parc Lebaudy**, les immeubles ont des caves et des cours où les rongeurs circulent. Avec 7 jardins partagés recensés sur OpenStreetMap, la ville cultive aussi au pied des immeubles : composts à protéger.',
+      ] },
+    ],
+    faq: [
+      { q: 'Intervenez-vous à La Défense côté Puteaux ?', a: 'Oui, pour les copropriétés, gestionnaires et commerces, avec postes numérotés et suivi.' },
+      { q: 'Combien coûte une dératisation à Puteaux ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris, devis gratuit.' },
+    ],
+  },
 }
 
 // Sections complémentaires (12/11/2026) : prévention adaptée au bâti de la ville et situations typiques rencontrées.
