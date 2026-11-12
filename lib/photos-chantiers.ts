@@ -264,8 +264,8 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     article: '/blog/punaises-de-lit-vincennes-punaises-mortes',
   },
   'champigny-sur-marne': {
-    titre: 'Notre chantier à Champigny-sur-Marne : cryogénie dans un établissement pour jeunes enfants',
-    video: { src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4', legende: 'Établissement scolaire accueillant des enfants en bas âge, infesté de punaises de lit : traitement sans produit chimique (cryogénie) sur les lits à barreaux (Champigny-sur-Marne, 94)', banniere: true, apercu: 6 },
+    titre: 'Vidéo à Champigny-sur-Marne : punaises de lit éliminées par le froid (−78 °C) dans un établissement de tout-petits, sans produit chimique',
+    video: { src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4', legende: 'Champigny-sur-Marne (94) : établissement scolaire accueillant des enfants en bas âge, infesté de punaises de lit. Traitement sans produit chimique (cryogénie) sur les lits à barreaux, à Champigny-sur-Marne.', banniere: true, apercu: 6 },
   },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',
