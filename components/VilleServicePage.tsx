@@ -244,9 +244,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}
-        {serviceLocal(c.pilier.href) === 'souris' && VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
+        {VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-            Des rats plutôt que des souris ? Voir notre page <a href={`/deratisation/${v.slug}`} className="underline" style={{ color: ACCENT }}>dératisation {v.a}</a>.
+            {serviceLocal(c.pilier.href) === 'souris' ? 'Des rats plutôt que des souris ?' : `Des rats ou des souris ${v.a} aussi ?`} Voir notre page <a href={`/deratisation/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>dératisation {v.a}</a>, rats et souris dès 120 €.
           </p>
         )}
 

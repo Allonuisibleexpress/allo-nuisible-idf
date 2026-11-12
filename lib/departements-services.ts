@@ -27,8 +27,8 @@ export const SERVICES_DEP: Record<ServiceDep, {
   contenu: Record<DepSlug, Contenu>
 }> = {
   deratisation: {
-    famille: 'deratisation', base: '/deratisation', label: 'Dératisation', motCle: 'Dératisation', h1: 'Dératisation', prix: '120 €', prixNum: '120',
-    prixNote: 'Appartement, rats ou souris. Devis gratuit.', suffixes: [' : rats et souris, intervention 7j/7', ' : intervention 7j/7', ' : rats et souris', ''],
+    famille: 'deratisation', base: '/deratisation', label: 'Dératisation', motCle: 'Dératisation', h1: 'Dératisation des rats et souris', prix: '120 €', prixNum: '120',
+    prixNote: 'Appartement, rats ou souris. Devis gratuit.', suffixes: [' : rats et souris dès 120 €, 7j/7', ' : rats et souris dès 120 €', ' : rats, souris dès 120 €', ' dès 120 €'],
     description: (dans, code) => `Dératisation ${dans} (${code}) : rats et souris, postes sécurisés ou pièges, accès rebouchés. Technicien certifié, dès 120 € TTC, devis gratuit, 7j/7.`,
     etapes: [
       ['Appel ou photo|Une photo des crottes ou des dégâts suffit souvent à savoir s’il s’agit de rats ou de souris. Vous avez le prix tout de suite.', 'Devis gratuit|Vous décrivez le lieu, nous vous annonçons le tarif avant de nous déplacer.'],

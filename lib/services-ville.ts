@@ -14,7 +14,7 @@ export type FamilleVille = 'punaises' | 'deratisation' | 'souris' | 'cafards' | 
 
 const FAMILLES: { id: FamilleVille; base: string; label: string; prix: string; slugs: string[] }[] = [
   { id: 'punaises', base: '/punaises-de-lit', label: 'Punaises de lit', prix: 'dès 290 €', slugs: VILLES_PUNAISES.map((v) => v.slug) },
-  { id: 'deratisation', base: '/deratisation', label: 'Dératisation (rats)', prix: 'dès 120 €', slugs: VILLES_DERATISATION.map((v) => v.slug) },
+  { id: 'deratisation', base: '/deratisation', label: 'Dératisation rats et souris', prix: 'dès 120 €', slugs: VILLES_DERATISATION.map((v) => v.slug) },
   { id: 'souris', base: '/souris', label: 'Souris', prix: 'dès 120 €', slugs: VILLES_SOURIS.map((v) => v.slug) },
   { id: 'cafards', base: '/cafards', label: 'Cafards et blattes', prix: 'dès 120 €', slugs: VILLES_CAFARDS.map((v) => v.slug) },
   { id: 'fourmis', base: '/fourmis', label: 'Fourmis', prix: 'dès 120 €', slugs: VILLES_FOURMIS.map((v) => v.slug) },

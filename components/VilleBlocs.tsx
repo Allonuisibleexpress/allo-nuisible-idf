@@ -33,9 +33,10 @@ export function titreGoogle(motCle: string, nom: string, slug: string, suffixes:
   return (suffixes.map((s) => base + s).find((t) => t.length <= 60)) ?? base
 }
 
-export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil }: {
+export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj }: {
   slug: string; nom: string; a: string; titre: string; accroche: string; prix: string; prixNote: string
   fil: { href: string; label: string }
+  maj?: string // date de mise à jour affichée sous le titre (signature de l'équipe technique)
 }) {
   const cp = codePostal(slug)
   const pop = REPERES[slug]?.population
@@ -59,6 +60,13 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil }
           {titre} <span style={{ color: ACCENT }}>{a}</span>
         </h1>
         {cp && <p className="text-white/45 font-bold tracking-widest mb-6">{cp}{pop ? ` · ${nf(pop)} habitants` : ''}</p>}
+        {maj && (
+          <p className="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs text-white/55 -mt-3 mb-6">
+            <BadgeCheck className="w-3.5 h-3.5" style={{ color: ACCENT }} />
+            <span>Rédigé par l&apos;équipe technique Allo Nuisible IDF, techniciens certifiés Certibiocide</span>
+            <span className="text-white/30">·</span><span>Mis à jour le {maj}</span>
+          </p>
+        )}
 
         <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-7">{accroche}</p>
 

@@ -3,7 +3,7 @@
 // GEO : bloc « En bref » factuel + FAQ balisée. E-E-A-T : auteur, certification, date, sources vérifiées.
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel » ni « sans danger ».
 
-export const MAJ_DERATISATION = '2026-10-30'
+export const MAJ_DERATISATION = '2026-11-12'
 
 export const SOURCES_DERATISATION = [
   { label: 'Santé publique France, leptospirose', url: 'https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-transmissibles-de-l-animal-a-l-homme/leptospirose' },
@@ -2833,6 +2833,777 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
       "faq": [
         {"q": "Avec un chien, peut-on dératiser le jardin à Combs-la-Ville ?", "a": "Oui. Les postes sont verrouillés et inaccessibles aux animaux ; en alternative, nous pouvons utiliser le piège Ekomille, sans raticide."},
         ...FAQ_COMMUNE("à Combs-la-Ville"),
+      ]
+    },
+  // ── Villes où seul un concurrent avait une page (93, 92, 94, 91, 95, 78), 12/11/2026 ──
+  {
+      "slug": "montreuil",
+      "nom": "Montreuil",
+      "a": "à Montreuil",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Montreuil (93), rats et souris",
+      "description": "Rats et souris à Montreuil : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Montreuil, aux portes de Paris, est l'une des plus grandes villes de Seine-Saint-Denis. Le Bas-Montreuil mêle immeubles anciens, anciens ateliers et cours intérieures ; le Haut-Montreuil, plus vert, compte de nombreux pavillons, des cités et les anciens murs à pêches. Les rongeurs trouvent partout de quoi s'abriter.",
+          "Dans les immeubles, nous traitons les caves et les locaux poubelles en lien avec le syndic ou le bailleur. Dans les pavillons, nous inspectons les jardins, les composts, les sous-sols et les garages, puis nous bouchons les accès."
+      ],
+      "lieux": [
+          "Caves et cours du Bas-Montreuil",
+          "Jardins et murs à pêches du Haut-Montreuil",
+          "Locaux poubelles des résidences",
+          "Réserves des commerces et marchés"
+      ],
+      "proches": [
+          "Bagnolet",
+          "Vincennes",
+          "Fontenay-sous-Bois",
+          "Romainville"
+      ],
+      "guides": [
+          "rat-compost",
+          "rat-dans-les-murs-cloisons",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Les murs à pêches et les jardins du Haut-Montreuil attirent-ils les rats ?", "a": "Les jardins, composts et vergers offrent nourriture et abri aux rongeurs. Les maisons voisines doivent fermer leurs composts, ranger la nourriture des animaux et boucher les accès aux sous-sols."},
+        ...FAQ_COMMUNE("à Montreuil"),
+      ]
+    },
+  {
+      "slug": "pantin",
+      "nom": "Pantin",
+      "a": "à Pantin",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Pantin (93), rats et souris",
+      "description": "Rats et souris à Pantin : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Pantin, entre Paris et Bobigny, est traversée par le canal de l'Ourcq. Anciens sites industriels transformés en bureaux et en logements, immeubles de faubourg, résidences et pavillons : la ville a beaucoup changé, mais l'eau du canal et les réseaux restent des couloirs pour les rats.",
+          "Nous traitons les caves, les parkings et les locaux poubelles des résidences, ainsi que les commerces et restaurants, avec un rapport après chaque passage."
+      ],
+      "lieux": [
+          "Berges du canal de l’Ourcq",
+          "Caves et parkings des résidences",
+          "Locaux poubelles",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Le Pré-Saint-Gervais",
+          "Bobigny",
+          "Aubervilliers",
+          "Les Lilas"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "rat-vide-sanitaire",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Le canal de l'Ourcq amène-t-il des rats à Pantin ?", "a": "Les berges du canal sont un milieu favorable aux surmulots. Les immeubles proches doivent surveiller leurs caves et parkings, et fermer les accès par les réseaux."},
+        ...FAQ_COMMUNE("à Pantin"),
+      ]
+    },
+  {
+      "slug": "bagnolet",
+      "nom": "Bagnolet",
+      "a": "à Bagnolet",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Bagnolet (93), rats et souris",
+      "description": "Rats et souris à Bagnolet : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Bagnolet, à la porte de Paris, réunit des quartiers d'habitat collectif, des immeubles plus anciens et de nombreux pavillons sur ses hauteurs. Les grands axes, les centres commerciaux et les résidences offrent aux rongeurs nourriture et abri.",
+          "Nous commençons toujours par les parties communes dans les résidences, puis les logements touchés. Dans les maisons, nous contrôlons jardins, sous-sols et garages."
+      ],
+      "lieux": [
+          "Locaux poubelles et vide-ordures",
+          "Caves des résidences",
+          "Jardins des pavillons",
+          "Abords des centres commerciaux"
+      ],
+      "proches": [
+          "Montreuil",
+          "Les Lilas",
+          "Romainville",
+          "Paris 20e"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "rat-dans-les-murs-cloisons",
+          "reproduction-des-rats"
+      ],
+      "faq": [
+        {"q": "Qui doit dératiser une résidence à Bagnolet ?", "a": "Les caves et les locaux poubelles sont des parties communes : c'est au bailleur ou au syndic d'organiser la dératisation. Les logements sont traités ensuite si besoin."},
+        ...FAQ_COMMUNE("à Bagnolet"),
+      ]
+    },
+  {
+      "slug": "les-lilas",
+      "nom": "Les Lilas",
+      "a": "aux Lilas",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation aux Lilas (93), rats et souris",
+      "description": "Rats et souris aux Lilas : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Les Lilas est une petite ville dense, collée au 19e et au 20e arrondissement, avec des immeubles, des résidences et de nombreuses maisons de ville. Les caves, les cours et les jardins sont les endroits où l'on trouve des rongeurs.",
+          "Dans une ville aussi resserrée, les rongeurs passent facilement d'un bâtiment à l'autre : nous cherchons toujours le point d'entrée avant de traiter."
+      ],
+      "lieux": [
+          "Caves des immeubles",
+          "Cours intérieures",
+          "Jardins des maisons de ville",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Bagnolet",
+          "Romainville",
+          "Le Pré-Saint-Gervais",
+          "Paris 20e"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "rats-dans-les-combles",
+          "rat-dans-les-murs-cloisons"
+      ],
+      "faq": [
+        {"q": "Des souris dans une maison de ville aux Lilas : par où entrent-elles ?", "a": "Le plus souvent par les sous-sols, les soupiraux, les passages de tuyaux et les bas de portes. Nous traitons et bouchons ces accès."},
+        ...FAQ_COMMUNE("aux Lilas"),
+      ]
+    },
+  {
+      "slug": "bobigny",
+      "nom": "Bobigny",
+      "a": "à Bobigny",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Bobigny (93), rats et souris",
+      "description": "Rats et souris à Bobigny : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Bobigny, préfecture de la Seine-Saint-Denis, est une ville de grands ensembles, d'équipements publics et de quartiers pavillonnaires, traversée par le canal de l'Ourcq. Les rongeurs y trouvent abri dans les caves, les locaux poubelles et le long du canal.",
+          "Nous intervenons pour les particuliers, les bailleurs, les commerces et les établissements, avec un rapport à chaque passage."
+      ],
+      "lieux": [
+          "Berges du canal de l’Ourcq",
+          "Caves et locaux poubelles des cités",
+          "Jardins des pavillons",
+          "Abords des marchés et commerces"
+      ],
+      "proches": [
+          "Pantin",
+          "Drancy",
+          "Noisy-le-Sec",
+          "Romainville"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "reproduction-des-rats",
+          "rat-vide-sanitaire"
+      ],
+      "faq": [
+        {"q": "Les grands ensembles de Bobigny ont-ils plus de rats ?", "a": "Les locaux poubelles et vide-ordures des grandes résidences concentrent la nourriture, ce qui attire les rats. Une dératisation régulière des parties communes, organisée par le bailleur, est la base de la prévention."},
+        ...FAQ_COMMUNE("à Bobigny"),
+      ]
+    },
+  {
+      "slug": "aulnay-sous-bois",
+      "nom": "Aulnay-sous-Bois",
+      "a": "à Aulnay-sous-Bois",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Aulnay-sous-Bois (93), rats et souris",
+      "description": "Rats et souris à Aulnay-sous-Bois : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Aulnay-sous-Bois est une grande ville de Seine-Saint-Denis, avec au sud de nombreux quartiers pavillonnaires et au nord de grands ensembles. Les jardins, les parcs et les résidences offrent aux rats et aux souris de nombreux abris.",
+          "Dans les maisons, nous inspectons les jardins, les sous-sols et les garages. Dans les résidences, nous traitons les parties communes avec le bailleur."
+      ],
+      "lieux": [
+          "Jardins et abris des pavillons",
+          "Sous-sols et garages",
+          "Locaux poubelles des résidences",
+          "Abords des parcs"
+      ],
+      "proches": [
+          "Sevran",
+          "Villepinte",
+          "Le Blanc-Mesnil",
+          "Bondy"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "rongeur-moteur-voiture-cables"
+      ],
+      "faq": [
+        {"q": "Des rats dans mon jardin à Aulnay-sous-Bois : que faire ?", "a": "Retirez la nourriture accessible (compost ouvert, graines, croquettes), repérez les terriers au pied des murs et faites poser des postes sécurisés. Nous bouchons ensuite les accès vers la maison."},
+        ...FAQ_COMMUNE("à Aulnay-sous-Bois"),
+      ]
+    },
+  {
+      "slug": "livry-gargan",
+      "nom": "Livry-Gargan",
+      "a": "à Livry-Gargan",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Livry-Gargan (93), rats et souris",
+      "description": "Rats et souris à Livry-Gargan : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Livry-Gargan est une ville très pavillonnaire de l'est de la Seine-Saint-Denis, avec de grands jardins et des espaces boisés à proximité. Les rats et les souris y vivent surtout dans les jardins, les sous-sols et les garages.",
+          "Nous adaptons le dispositif à chaque maison, avec des postes verrouillés ou un piège sans raticide pour les familles avec enfants et animaux."
+      ],
+      "lieux": [
+          "Jardins et composts",
+          "Sous-sols et garages",
+          "Abris de jardin et tas de bois",
+          "Bords du lac et des parcs"
+      ],
+      "proches": [
+          "Sevran",
+          "Clichy-sous-Bois",
+          "Les Pavillons-sous-Bois",
+          "Vaujours"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "lerot-grenier-combles",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Peut-on dératiser un jardin à Livry-Gargan sans raticide ?", "a": "Oui, avec le piège Ekomille ou des pièges mécaniques. Nous choisissons la méthode avec vous selon la présence d'enfants et d'animaux."},
+        ...FAQ_COMMUNE("à Livry-Gargan"),
+      ]
+    },
+  {
+      "slug": "epinay-sur-seine",
+      "nom": "Épinay-sur-Seine",
+      "a": "à Épinay-sur-Seine",
+      "code": "93",
+      "departement": "Seine-Saint-Denis",
+      "zoneHref": "/zones/seine-saint-denis",
+      "title": "Dératisation à Épinay-sur-Seine (93), rats et souris",
+      "description": "Rats et souris à Épinay-sur-Seine : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Épinay-sur-Seine s'étend le long de la Seine, avec des quartiers d'habitat collectif comme Orgemont, un centre-ville rénové et des pavillons. Les berges et les résidences sont les lieux où les rats sont le plus présents.",
+          "Nous traitons les caves, les parkings et les locaux poubelles des résidences avec les bailleurs, et les maisons proches des berges."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Caves et parkings des résidences",
+          "Locaux poubelles",
+          "Jardins des pavillons"
+      ],
+      "proches": [
+          "Saint-Denis",
+          "Villetaneuse",
+          "Deuil-la-Barre",
+          "Enghien-les-Bains"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "rat-vide-sanitaire",
+          "reproduction-des-rats"
+      ],
+      "faq": [
+        {"q": "Les crues de la Seine font-elles sortir les rats à Épinay ?", "a": "Oui, quand le fleuve monte, les rats quittent leurs terriers des berges et cherchent refuge dans les caves et les jardins proches. C'est souvent après ces épisodes que l'on nous appelle."},
+        ...FAQ_COMMUNE("à Épinay-sur-Seine"),
+      ]
+    },
+  {
+      "slug": "malakoff",
+      "nom": "Malakoff",
+      "a": "à Malakoff",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à Malakoff (92), rats et souris",
+      "description": "Rats et souris à Malakoff : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Malakoff, collée au 14e arrondissement, est une petite ville dense, faite d'immeubles, d'anciens ateliers et de maisons avec jardin. Les caves, les cours et les jardins sont les lieux où l'on trouve des rongeurs.",
+          "Nous traitons les parties communes avec le syndic, et les maisons en inspectant le jardin, le sous-sol et les accès."
+      ],
+      "lieux": [
+          "Caves des immeubles",
+          "Cours et anciens ateliers",
+          "Jardins des maisons",
+          "Réserves des commerces"
+      ],
+      "proches": [
+          "Vanves",
+          "Montrouge",
+          "Châtillon",
+          "Clamart"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "rat-dans-les-murs-cloisons",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Des rats dans la cour de mon immeuble à Malakoff : qui doit agir ?", "a": "La cour et les caves sont des parties communes : c'est au syndic d'organiser la dératisation. Nous intervenons à sa demande avec un rapport."},
+        ...FAQ_COMMUNE("à Malakoff"),
+      ]
+    },
+  {
+      "slug": "vanves",
+      "nom": "Vanves",
+      "a": "à Vanves",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à Vanves (92), rats et souris",
+      "description": "Rats et souris à Vanves : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Vanves, entre Paris 15e, Issy-les-Moulineaux et Malakoff, est une petite ville dense, avec des immeubles, des résidences et des maisons sur les hauteurs. Les caves et les jardins sont les principaux points de passage des rongeurs.",
+          "Nous commençons par repérer les accès, puis nous traitons et bouchons les passages trouvés."
+      ],
+      "lieux": [
+          "Caves des immeubles",
+          "Locaux poubelles",
+          "Jardins des maisons",
+          "Abords des parcs"
+      ],
+      "proches": [
+          "Issy-les-Moulineaux",
+          "Malakoff",
+          "Clamart",
+          "Paris 15e"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "rats-dans-les-combles",
+          "rat-dans-les-toilettes"
+      ],
+      "faq": [
+        {"q": "Des souris dans mon appartement à Vanves : faut-il traiter tout l'immeuble ?", "a": "Souvent oui : les souris circulent par les gaines et les caves. Nous traitons votre logement et conseillons au syndic de traiter les parties communes pour éviter le retour."},
+        ...FAQ_COMMUNE("à Vanves"),
+      ]
+    },
+  {
+      "slug": "sceaux",
+      "nom": "Sceaux",
+      "a": "à Sceaux",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à Sceaux (92), rats et souris",
+      "description": "Rats et souris à Sceaux : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Sceaux est une ville résidentielle du sud des Hauts-de-Seine, connue pour son grand parc et son château. Les maisons avec jardin, les résidences et le centre commerçant sont les lieux où l'on rencontre des rongeurs.",
+          "Les maisons proches du parc voient surtout des souris et des mulots à l'automne ; dans le centre, ce sont les commerces et les caves qui demandent un suivi."
+      ],
+      "lieux": [
+          "Jardins des maisons",
+          "Sous-sols et garages",
+          "Commerces de la rue Houdan",
+          "Abords du parc"
+      ],
+      "proches": [
+          "Antony",
+          "Bourg-la-Reine",
+          "Fontenay-aux-Roses",
+          "Châtenay-Malabry"
+      ],
+      "guides": [
+          "lerot-grenier-combles",
+          "trou-dans-le-jardin",
+          "souris-par-ou-entrent-elles"
+      ],
+      "faq": [
+        {"q": "Le parc de Sceaux amène-t-il des rongeurs dans les maisons ?", "a": "Les maisons en bordure du parc voient plus souvent des souris, des mulots et parfois des lérots entrer à l'automne. Boucher les accès des sous-sols et des combles est la meilleure prévention."},
+        ...FAQ_COMMUNE("à Sceaux"),
+      ]
+    },
+  {
+      "slug": "bourg-la-reine",
+      "nom": "Bourg-la-Reine",
+      "a": "à Bourg-la-Reine",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à Bourg-la-Reine (92), rats et souris",
+      "description": "Rats et souris à Bourg-la-Reine : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Bourg-la-Reine, entre Sceaux, Antony et Cachan, est une ville résidentielle traversée par la RN 20, avec des immeubles le long des grands axes et de nombreuses maisons avec jardin. Les rongeurs fréquentent les jardins comme les caves.",
+          "Nous inspectons les jardins, les sous-sols et les parties communes, puis nous posons un dispositif adapté et bouchons les accès."
+      ],
+      "lieux": [
+          "Jardins et composts",
+          "Sous-sols des maisons",
+          "Caves des immeubles",
+          "Commerces le long de la RN 20"
+      ],
+      "proches": [
+          "Sceaux",
+          "Antony",
+          "Cachan",
+          "L'Haÿ-les-Roses"
+      ],
+      "guides": [
+          "rat-compost",
+          "souris-par-ou-entrent-elles",
+          "rat-vide-sanitaire"
+      ],
+      "faq": [
+        {"q": "Un rat dans le jardin à Bourg-la-Reine : faut-il s'inquiéter ?", "a": "Un rat aperçu signale souvent un terrier à proximité. Retirez la nourriture accessible et faites poser des postes sécurisés avant qu'il n'entre dans la maison."},
+        ...FAQ_COMMUNE("à Bourg-la-Reine"),
+      ]
+    },
+  {
+      "slug": "fontenay-aux-roses",
+      "nom": "Fontenay-aux-Roses",
+      "a": "à Fontenay-aux-Roses",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à Fontenay-aux-Roses (92), rats et souris",
+      "description": "Rats et souris à Fontenay-aux-Roses : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Fontenay-aux-Roses est une ville résidentielle des Hauts-de-Seine, sur un plateau, avec des résidences, des immeubles et de nombreuses maisons avec jardin. La Coulée verte et les parcs y offrent abri aux rongeurs.",
+          "Nous traitons les maisons, les résidences et les commerces, avec des postes sécurisés ou un piège sans raticide."
+      ],
+      "lieux": [
+          "Jardins des maisons",
+          "Bords de la Coulée verte",
+          "Caves des résidences",
+          "Commerces du centre"
+      ],
+      "proches": [
+          "Sceaux",
+          "Châtillon",
+          "Clamart",
+          "Bagneux"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "lerot-grenier-combles"
+      ],
+      "faq": [
+        {"q": "La Coulée verte attire-t-elle les rats à Fontenay-aux-Roses ?", "a": "Les espaces verts linéaires comme la Coulée verte servent de couloir aux rongeurs. Les maisons et résidences voisines doivent surveiller leurs jardins et leurs sous-sols."},
+        ...FAQ_COMMUNE("à Fontenay-aux-Roses"),
+      ]
+    },
+  {
+      "slug": "la-garenne-colombes",
+      "nom": "La Garenne-Colombes",
+      "a": "à La Garenne-Colombes",
+      "code": "92",
+      "departement": "Hauts-de-Seine",
+      "zoneHref": "/zones/hauts-de-seine",
+      "title": "Dératisation à La Garenne-Colombes (92), rats et souris",
+      "description": "Rats et souris à La Garenne-Colombes : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "La Garenne-Colombes, toute proche de La Défense, est une ville résidentielle avec beaucoup de pavillons, des immeubles et un centre commerçant. Les jardins, les caves et les commerces sont les lieux où l'on trouve des rongeurs.",
+          "Nous inspectons jardins, sous-sols et parties communes, puis nous posons un dispositif adapté et bouchons les accès."
+      ],
+      "lieux": [
+          "Jardins des pavillons",
+          "Sous-sols et garages",
+          "Caves des immeubles",
+          "Commerces du centre"
+      ],
+      "proches": [
+          "Colombes",
+          "Bois-Colombes",
+          "Courbevoie",
+          "Nanterre"
+      ],
+      "guides": [
+          "souris-par-ou-entrent-elles",
+          "rongeur-moteur-voiture-cables",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Des câbles de voiture rongés à La Garenne-Colombes : est-ce un rat ?", "a": "Souvent un rat ou une souris, parfois une fouine. Une photo des dégâts et des traces nous permet de vous répondre et de proposer le bon traitement."},
+        ...FAQ_COMMUNE("à La Garenne-Colombes"),
+      ]
+    },
+  {
+      "slug": "ablon-sur-seine",
+      "nom": "Ablon-sur-Seine",
+      "a": "à Ablon-sur-Seine",
+      "code": "94",
+      "departement": "Val-de-Marne",
+      "zoneHref": "/zones/val-de-marne",
+      "title": "Dératisation à Ablon-sur-Seine (94), rats et souris",
+      "description": "Rats et souris à Ablon-sur-Seine : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Ablon-sur-Seine est une petite commune du Val-de-Marne au bord de la Seine, faite surtout de maisons avec jardin. Les berges du fleuve et les jardins sont les lieux où vivent les rats.",
+          "Nous inspectons les jardins, les sous-sols et les garages, et posons un dispositif adapté à la présence d'enfants et d'animaux."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Jardins et composts",
+          "Sous-sols et garages",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Villeneuve-le-Roi",
+          "Athis-Mons",
+          "Vigneux-sur-Seine",
+          "Orly"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "rat-vide-sanitaire"
+      ],
+      "faq": [
+        {"q": "Les crues de la Seine amènent-elles des rats à Ablon ?", "a": "Oui, quand le fleuve monte, les rats des berges cherchent refuge dans les jardins, les sous-sols et les garages proches. Nous intervenons rapidement après ces épisodes."},
+        ...FAQ_COMMUNE("à Ablon-sur-Seine"),
+      ]
+    },
+  {
+      "slug": "rungis",
+      "nom": "Rungis",
+      "a": "à Rungis",
+      "code": "94",
+      "departement": "Val-de-Marne",
+      "zoneHref": "/zones/val-de-marne",
+      "title": "Dératisation à Rungis (94), rats et souris",
+      "description": "Rats et souris à Rungis : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Rungis est connue pour son marché international, le plus grand marché de produits frais au monde, et pour ses zones d'activités. La commune elle-même compte aussi des quartiers résidentiels avec maisons et jardins.",
+          "Pour les entreprises alimentaires et les entrepôts, nous mettons en place des plans de lutte avec postes numérotés et registre. Pour les particuliers, nous traitons maisons et jardins."
+      ],
+      "lieux": [
+          "Entrepôts et quais de chargement",
+          "Zones d’activités",
+          "Jardins des maisons",
+          "Locaux poubelles"
+      ],
+      "proches": [
+          "Chevilly-Larue",
+          "Thiais",
+          "Wissous",
+          "Fresnes"
+      ],
+      "guides": [
+          "restaurant-plan-lutte-nuisibles",
+          "rat-dans-les-murs-cloisons",
+          "trou-dans-le-jardin"
+      ],
+      "faq": [
+        {"q": "Faites-vous des contrats de dératisation pour les entreprises de Rungis ?", "a": "Oui. Nous posons des postes numérotés, assurons des passages programmés et remettons un rapport à chaque visite, utile pour les audits et contrôles sanitaires."},
+        ...FAQ_COMMUNE("à Rungis"),
+      ]
+    },
+  {
+      "slug": "paray-vieille-poste",
+      "nom": "Paray-Vieille-Poste",
+      "a": "à Paray-Vieille-Poste",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Paray-Vieille-Poste (91), rats et souris",
+      "description": "Rats et souris à Paray-Vieille-Poste : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Paray-Vieille-Poste, au nord de l'Essonne, touche l'aéroport d'Orly. La commune est surtout faite de pavillons avec jardin, à côté de grandes zones d'activités.",
+          "Nous traitons les maisons, les jardins et les entreprises, avec des postes sécurisés ou un piège sans raticide."
+      ],
+      "lieux": [
+          "Jardins des pavillons",
+          "Sous-sols et garages",
+          "Zones d’activités",
+          "Abris de jardin"
+      ],
+      "proches": [
+          "Athis-Mons",
+          "Orly",
+          "Wissous",
+          "Morangis"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "rat-compost",
+          "rongeur-moteur-voiture-cables"
+      ],
+      "faq": [
+        {"q": "Des souris dans le garage à Paray-Vieille-Poste : que faire ?", "a": "Rangez les aliments et graines dans des bacs fermés et faites traiter le garage. Nous posons des postes sécurisés et bouchons les accès depuis le jardin."},
+        ...FAQ_COMMUNE("à Paray-Vieille-Poste"),
+      ]
+    },
+  {
+      "slug": "wissous",
+      "nom": "Wissous",
+      "a": "à Wissous",
+      "code": "91",
+      "departement": "Essonne",
+      "zoneHref": "/zones/essonne",
+      "title": "Dératisation à Wissous (91), rats et souris",
+      "description": "Rats et souris à Wissous : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Wissous, au nord de l'Essonne, garde un centre de village avec des maisons anciennes, entouré de quartiers pavillonnaires, de champs et de zones d'activités. Les rongeurs viennent des champs et des jardins.",
+          "Nous traitons maisons, jardins et entreprises, et bouchons les accès vers les habitations."
+      ],
+      "lieux": [
+          "Maisons anciennes du centre",
+          "Jardins et potagers",
+          "Bordures des champs",
+          "Zones d’activités"
+      ],
+      "proches": [
+          "Antony",
+          "Massy",
+          "Chilly-Mazarin",
+          "Paray-Vieille-Poste"
+      ],
+      "guides": [
+          "lerot-grenier-combles",
+          "trou-dans-le-jardin",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Les champs autour de Wissous amènent-ils des souris ?", "a": "Oui, après les récoltes et à l'arrivée du froid, souris et mulots quittent les champs et s'approchent des maisons. Boucher les accès des sous-sols et des combles est la meilleure prévention."},
+        ...FAQ_COMMUNE("à Wissous"),
+      ]
+    },
+  {
+      "slug": "bezons",
+      "nom": "Bezons",
+      "a": "à Bezons",
+      "code": "95",
+      "departement": "Val-d'Oise",
+      "zoneHref": "/zones/val-d-oise",
+      "title": "Dératisation à Bezons (95), rats et souris",
+      "description": "Rats et souris à Bezons : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Bezons, dans le Val-d'Oise, est installée au bord de la Seine, face à Colombes et Nanterre. Résidences, immeubles et pavillons se partagent la ville, et les berges sont un lieu de vie pour les rats.",
+          "Nous traitons les parties communes avec les bailleurs et syndics, et les maisons proches des berges."
+      ],
+      "lieux": [
+          "Berges de la Seine",
+          "Caves et locaux poubelles",
+          "Jardins des pavillons",
+          "Commerces du centre"
+      ],
+      "proches": [
+          "Argenteuil",
+          "Houilles",
+          "Colombes",
+          "Carrières-sur-Seine"
+      ],
+      "guides": [
+          "rat-dans-les-toilettes",
+          "rat-compost",
+          "reproduction-des-rats"
+      ],
+      "faq": [
+        {"q": "Les rats de la Seine entrent-ils dans les maisons à Bezons ?", "a": "Les maisons proches des berges sont plus exposées, surtout après les crues. Il faut surveiller les sous-sols et les jardins et boucher les accès."},
+        ...FAQ_COMMUNE("à Bezons"),
+      ]
+    },
+  {
+      "slug": "goussainville",
+      "nom": "Goussainville",
+      "a": "à Goussainville",
+      "code": "95",
+      "departement": "Val-d'Oise",
+      "zoneHref": "/zones/val-d-oise",
+      "title": "Dératisation à Goussainville (95), rats et souris",
+      "description": "Rats et souris à Goussainville : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Goussainville, dans l'est du Val-d'Oise, est proche de l'aéroport de Roissy-Charles-de-Gaulle. La ville compte de nombreux pavillons, des résidences et, au nord, le Vieux-Pays. Les champs voisins et les jardins abritent des rongeurs.",
+          "Nous intervenons pour les particuliers, les bailleurs et les entreprises, avec des postes sécurisés et un colmatage des accès."
+      ],
+      "lieux": [
+          "Jardins des pavillons",
+          "Maisons anciennes du Vieux-Pays",
+          "Caves et locaux poubelles",
+          "Bordures des champs"
+      ],
+      "proches": [
+          "Louvres",
+          "Roissy-en-France",
+          "Gonesse",
+          "Le Thillay"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "lerot-grenier-combles",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Les champs autour de Goussainville amènent-ils des rongeurs ?", "a": "Oui, souris et mulots quittent les champs après les récoltes et à l'automne pour s'approcher des maisons. Il faut boucher les accès des sous-sols et des combles."},
+        ...FAQ_COMMUNE("à Goussainville"),
+      ]
+    },
+  {
+      "slug": "pontoise",
+      "nom": "Pontoise",
+      "a": "à Pontoise",
+      "code": "95",
+      "departement": "Val-d'Oise",
+      "zoneHref": "/zones/val-d-oise",
+      "title": "Dératisation à Pontoise (95), rats et souris",
+      "description": "Rats et souris à Pontoise : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Pontoise, ville historique au bord de l'Oise, a un centre ancien perché, avec des maisons et immeubles en pierre, des caves profondes et des ruelles. Les berges de l'Oise et les jardins abritent aussi des rats.",
+          "Dans le centre ancien, le repérage des accès par les caves est l'étape essentielle. Dans les maisons, nous traitons jardins et sous-sols."
+      ],
+      "lieux": [
+          "Caves du centre ancien",
+          "Berges de l’Oise",
+          "Jardins des maisons",
+          "Commerces et restaurants"
+      ],
+      "proches": [
+          "Cergy",
+          "Saint-Ouen-l’Aumône",
+          "Osny",
+          "Éragny"
+      ],
+      "guides": [
+          "rat-dans-les-murs-cloisons",
+          "rat-vide-sanitaire",
+          "restaurant-plan-lutte-nuisibles"
+      ],
+      "faq": [
+        {"q": "Les caves anciennes de Pontoise attirent-elles les rats ?", "a": "Oui. Les caves en pierre ont souvent des fissures et des passages anciens par lesquels les rongeurs circulent d'un bâtiment à l'autre. Une dératisation avec colmatage est la plus efficace."},
+        ...FAQ_COMMUNE("à Pontoise"),
+      ]
+    },
+  {
+      "slug": "elancourt",
+      "nom": "Élancourt",
+      "a": "à Élancourt",
+      "code": "78",
+      "departement": "Yvelines",
+      "zoneHref": "/zones/yvelines",
+      "title": "Dératisation à Élancourt (78), rats et souris",
+      "description": "Rats et souris à Élancourt : postes sécurisés, pièges, recherche et colmatage des accès. Techniciens Certibiocide, devis gratuit, garantie 1 an.",
+      "contexte": [
+          "Élancourt, dans l'agglomération de Saint-Quentin-en-Yvelines, réunit un vieux village, des quartiers pavillonnaires, des résidences et de grands espaces verts, dont la colline d'Élancourt. Les rongeurs y vivent dans les jardins et les espaces boisés.",
+          "Nous traitons maisons, résidences et entreprises, avec des postes sécurisés ou un piège sans raticide."
+      ],
+      "lieux": [
+          "Jardins des pavillons",
+          "Abords des espaces verts et bois",
+          "Caves et locaux poubelles des résidences",
+          "Zones d’activités"
+      ],
+      "proches": [
+          "Maurepas",
+          "Trappes",
+          "Plaisir",
+          "La Verrière"
+      ],
+      "guides": [
+          "trou-dans-le-jardin",
+          "lerot-grenier-combles",
+          "rat-compost"
+      ],
+      "faq": [
+        {"q": "Les espaces verts d'Élancourt amènent-ils des souris dans les maisons ?", "a": "Les maisons proches des bois et de la colline voient plus souvent des souris et des mulots à l'automne. Boucher les accès des sous-sols et des combles est la meilleure prévention."},
+        ...FAQ_COMMUNE("à Élancourt"),
       ]
     }
 ]

@@ -11,6 +11,12 @@ import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import { ImageCycle } from '@/components/CyclePunaises'
 
+// Maillage blog → pages dératisation par ville (12/11/2026) : sur chaque article rongeurs,
+// les départements et les villes où nos pages sont déjà vues par Google.
+const RONGEURS = /(^|-)(rats?|souris|rongeurs?|lerot|deratisation|mulot|campagnol)(-|$)/
+const DERAT_DEPS: [string, string][] = [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']]
+const DERAT_VILLES: [string, string][] = [['charenton-le-pont', 'Charenton-le-Pont'], ['cachan', 'Cachan'], ['courbevoie', 'Courbevoie'], ['colombes', 'Colombes'], ['clichy', 'Clichy'], ['antony', 'Antony'], ['issy-les-moulineaux', 'Issy-les-Moulineaux'], ['rueil-malmaison', 'Rueil-Malmaison'], ['maisons-alfort', 'Maisons-Alfort'], ['asnieres-sur-seine', 'Asnières-sur-Seine'], ['paris-12', 'Paris 12e'], ['paris-20', 'Paris 20e'], ['saint-maurice', 'Saint-Maurice'], ['creteil', 'Créteil'], ['saint-maur-des-fosses', 'Saint-Maur-des-Fossés'], ['vitry-sur-seine', 'Vitry-sur-Seine']]
+
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }))
 }
@@ -281,6 +287,24 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 ))}
               </ul>
             </div>
+          )}
+
+          {/* Dératisation par ville (articles rongeurs) */}
+          {(RONGEURS.test(a.slug) || a.service.href.includes('deratisation')) && (
+            <section style={{ marginTop: '48px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 26px)', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Dératisation dans votre ville, dès 120 €</h2>
+              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginBottom: '18px' }}>Rats ou souris chez vous ? Choisissez votre ville ou votre département.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginBottom: '12px' }}>
+                {DERAT_DEPS.map(([s, n]) => (
+                  <a key={s} href={`/deratisation/${s}`} style={{ fontSize: '13px', fontWeight: 700, color: '#fff', padding: '7px 14px', borderRadius: '99px', background: 'rgba(232,68,26,0.15)', border: '1px solid rgba(232,68,26,0.4)', textDecoration: 'none' }}>Dératisation {n}</a>
+                ))}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+                {DERAT_VILLES.map(([s, n]) => (
+                  <a key={s} href={`/deratisation/${s}`} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.75)', padding: '6px 13px', borderRadius: '99px', border: '1px solid rgba(255,255,255,0.14)', textDecoration: 'none' }}>Dératisation {n}</a>
+                ))}
+              </div>
+            </section>
           )}
 
           {/* CTA */}

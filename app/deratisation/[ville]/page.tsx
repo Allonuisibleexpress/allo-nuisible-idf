@@ -3,16 +3,17 @@ import LocalVille from '@/components/LocalVille'
 import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
 import { LOCAL_DERATISATION_75_92 } from '@/lib/local-deratisation-75-92'
 import { LOCAL_DERATISATION_GC } from '@/lib/local-deratisation-gc'
+import { LOCAL_DERATISATION_NOUVELLES } from '@/lib/local-deratisation-nouvelles'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
 import ProtocoleCondense, { PROTOCOLE_DERATISATION } from '@/components/ProtocoleCondense'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
-import { villesVoisines } from '@/lib/maillage'
+import { plusProches } from '@/lib/centres-villes'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
-import { HeroVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import { HeroVille, TarifsVille, AutresServicesVille, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
 import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
 import SituationsVille from '@/components/SituationsVille'
@@ -23,6 +24,8 @@ import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
 import ContexteLocal from '@/components/ContexteLocal'
+import GuideVille from '@/components/GuideVille'
+import { GUIDE_DERATISATION, GUIDE_PLUS } from '@/lib/guide-deratisation-villes'
 import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
@@ -49,7 +52,16 @@ export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVilleDeratisation(params.ville)
   if (!v) return {}
   const cp = codePostal(v.slug)
-  const title = titreGoogle('Dératisation', v.nom, v.slug, [' : intervention 7j/7', ' : rats et souris', ' : dès 120 €', ''])
+  // Titre (12/11/2026) : structure d'Express (rats et souris + prix) avec un argument en plus (7j/7) quand il tient en 60 caractères.
+  // Ordre de repli : argument, puis code postal, puis département ; jamais sans « rats et souris » ni « dès 120 € ».
+  const dep = cp ? cp.slice(0, 2) : ''
+  const titres = [
+    ...(cp ? [`Dératisation ${v.nom} (${dep}) : rats et souris dès 120 €, 7j/7`] : []),
+    `Dératisation ${v.nom} : rats et souris dès 120 €, 7j/7`,
+    ...(cp ? [`Dératisation ${v.nom} (${cp}) : rats et souris dès 120 €`, `Dératisation ${v.nom} (${dep}) : rats et souris dès 120 €`] : []),
+    `Dératisation ${v.nom} : rats et souris dès 120 €`,
+  ]
+  const title = titres.find((t) => t.length <= 60) ?? `Dératisation ${v.nom} : rats, souris dès 120 €`
   const description = `Dératisation ${v.a}${cp ? ` (${cp})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
   return pageMetadata({ title, description, path: `/deratisation/${v.slug}` })
 }
@@ -78,12 +90,15 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   if (!v) notFound()
 
   const url = `${SITE_URL}/deratisation/${v.slug}`
-  const autres = villesVoisines(VILLES_DERATISATION, v)
+  // Maillage (12/11/2026) : les 10 villes les plus proches qui ont une page dératisation, + la page département
+  const autres = plusProches(VILLES_DERATISATION, v.slug, 12)
+  const DEP_PAGE: Record<string, [string, string]> = { '75': ['paris', 'à Paris'], '94': ['val-de-marne', 'dans le Val-de-Marne'], '92': ['hauts-de-seine', 'dans les Hauts-de-Seine'], '91': ['essonne', 'en Essonne'], '78': ['yvelines', 'dans les Yvelines'], '77': ['seine-et-marne', 'en Seine-et-Marne'] }
+  const depPage = DEP_PAGE[v.code]
   const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
-  const faq = [...v.faq, saisonVille('deratisation', v.slug)]
+  const faq = [...v.faq, ...(GUIDE_DERATISATION[v.slug]?.faq ?? []), saisonVille('deratisation', v.slug)]
   const enBref = [
     v.code === '75'
       ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`
@@ -109,6 +124,16 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         offers: schemaOffre('120', 'appartement, rats ou souris'),
       },
       {
+        '@type': 'WebPage',
+        '@id': url,
+        url,
+        name: `Dératisation des rats et souris ${v.a}`,
+        dateModified: MAJ_DERATISATION,
+        inLanguage: 'fr-FR',
+        author: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
+        about: { '@type': 'Thing', name: 'Dératisation' },
+      },
+      {
         '@type': 'FAQPage',
         mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       },
@@ -128,8 +153,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <main>
-        <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Dératisation"
-          fil={{ href: '/services/deratisation', label: 'Dératisation' }}
+        <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Dératisation des rats et souris"
+          fil={{ href: '/services/deratisation', label: 'Dératisation' }} maj={maj}
           prix="120 €" prixNote="Appartement, rats ou souris. Devis gratuit."
           accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
         <MiniaturesChantier a={v.a} photos={photosChantierVille('deratisation', v.slug, v.slug === CHANTIER_DIOGENE.ville ? CHANTIER_DIOGENE.photos : [], 5)} />
@@ -179,7 +204,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug]} />
+        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug]} />
+        <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
@@ -293,20 +319,32 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
+              Nous intervenons aussi à{' '}
+              {v.proches.map((n, i) => {
+                const p = VILLES_DERATISATION.find((x) => x.nom === n)
+                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`/deratisation/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
+              })}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Voir la zone {v.departement}</a>
             </p>
-            <div className="mt-10">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Dératisation dans d&apos;autres villes</p>
+            <div className="mt-12">
+              <h3 className="text-lg md:text-xl font-black text-white mb-2">Dératisation près de {v.nom}</h3>
+              <p className="text-white/50 text-sm mb-5">Les villes voisines où nous intervenons pour les rats et les souris, même prix dès 120 €.</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {autres.map((x) => (
                   <a key={x.slug} href={`/deratisation/${x.slug}`}
-                    className="text-sm text-white/70 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
+                    className="text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
-                    {x.nom} ({x.code})
+                    Dératisation {x.nom}
                   </a>
                 ))}
               </div>
+              {depPage && (
+                <p className="mt-6 text-sm">
+                  <a href={`/deratisation/${depPage[0]}`} className="font-bold underline" style={{ color: ACCENT }}>Toutes nos villes : dératisation {depPage[1]}</a>
+                  {' · '}
+                  <a href="/services/deratisation" className="underline text-white/60 hover:text-white">Dératisation en Île-de-France</a>
+                </p>
+              )}
             </div>
           </div>
         </section>
