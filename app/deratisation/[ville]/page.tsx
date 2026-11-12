@@ -11,7 +11,7 @@ import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisibl
 import ProtocoleCondense, { PROTOCOLE_DERATISATION } from '@/components/ProtocoleCondense'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
-import { DEP_SLUGS, estDep } from '@/lib/departements-services'
+import { DEP_SLUGS, estDep, filDepartement } from '@/lib/departements-services'
 import { voisinesGaranties } from '@/lib/centres-villes'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -93,10 +93,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   if (!v) notFound()
 
   const url = `${SITE_URL}/deratisation/${v.slug}`
-  // Maillage (12/11/2026) : les 16 villes les plus proches avec une page dératisation (20 liens reçus minimum), + la page département
+  const filDep = filDepartement('/deratisation', v.code)
+  // Maillage (13/11/2026) : les 12 villes les plus proches avec une page dératisation
   const autres = voisinesGaranties(VILLES_DERATISATION, v.slug)
-  const DEP_PAGE: Record<string, [string, string]> = { '75': ['paris', 'à Paris'], '94': ['val-de-marne', 'dans le Val-de-Marne'], '92': ['hauts-de-seine', 'dans les Hauts-de-Seine'], '91': ['essonne', 'en Essonne'], '78': ['yvelines', 'dans les Yvelines'], '77': ['seine-et-marne', 'en Seine-et-Marne'] }
-  const depPage = DEP_PAGE[v.code]
   const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
@@ -145,7 +144,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
           { '@type': 'ListItem', position: 2, name: 'Dératisation', item: `${SITE_URL}/services/deratisation` },
-          { '@type': 'ListItem', position: 3, name: v.nom, item: url },
+          ...(filDep ? [{ '@type': 'ListItem', position: 3, name: filDep.label, item: `${SITE_URL}${filDep.href}` }] : []),
+          { '@type': 'ListItem', position: filDep ? 4 : 3, name: v.nom, item: url },
         ],
       },
     ],
@@ -157,7 +157,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
       <Navbar />
       <main>
         <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Dératisation des rats et souris"
-          fil={{ href: '/services/deratisation', label: 'Dératisation' }} maj={maj}
+          fil={{ href: '/services/deratisation', label: 'Dératisation' }} dep={filDep} maj={maj}
           prix="120 €" prixNote="Appartement, rats ou souris. Devis gratuit."
           accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
         <MiniaturesChantier a={v.a} photos={photosChantierVille('deratisation', v.slug, v.slug === CHANTIER_DIOGENE.ville ? CHANTIER_DIOGENE.photos : [], 5)} />
@@ -207,8 +207,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-        <LocalVille nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug]} />
-        <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} />
+        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug]} />
+        <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
@@ -329,11 +329,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à{' '}
-              {v.proches.map((n, i) => {
-                const p = VILLES_DERATISATION.find((x) => x.nom === n)
-                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`/deratisation/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
-              })}.{' '}
+              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Voir la zone {v.departement}</a>
             </p>
             <div className="mt-12">
@@ -348,13 +344,6 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                   </a>
                 ))}
               </div>
-              {depPage && (
-                <p className="mt-6 text-sm">
-                  <a href={`/deratisation/${depPage[0]}`} className="font-bold underline" style={{ color: ACCENT }}>Toutes nos villes : dératisation {depPage[1]}</a>
-                  {' · '}
-                  <a href="/services/deratisation" className="underline text-white/60 hover:text-white">Dératisation en Île-de-France</a>
-                </p>
-              )}
             </div>
           </div>
         </section>

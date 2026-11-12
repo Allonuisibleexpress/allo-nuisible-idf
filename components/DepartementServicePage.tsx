@@ -1,3 +1,4 @@
+import { ARTICLES } from '@/app/blog/articles'
 import CyclePunaises from '@/components/CyclePunaises'
 // Page « service + département » (/deratisation/val-de-marne…), même style que les pages ville (modèle du 09/11/2026).
 import DeratEco from '@/components/DeratEco'
@@ -140,6 +141,9 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
   const villes = villesDuDep(s, d)
   const url = `${SITE_URL}${c.base}/${d}`
   const autresDeps = DEP_SLUGS.filter((x) => x !== d)
+  // Articles du blog sur le même nuisible (13/11/2026)
+  const CAT: Record<string, string> = { deratisation: 'Rongeurs', souris: 'Rongeurs', punaises: 'Punaises de lit', frelons: 'Guêpes et frelons', cafards: 'Cafards', puces: 'Puces' }
+  const articlesDep = ARTICLES.filter((x) => x.category === CAT[s]).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
   const autresServices = (Object.keys(SERVICES_DEP) as ServiceDep[]).filter((x) => x !== s)
   const faq = [
     ...ct.faq,
@@ -357,6 +361,22 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         </section>
 
         {/* ── MAILLAGE ── */}
+        {articlesDep.length > 0 && (
+          <section className="py-14 md:py-16 px-4" style={{ background: '#0a0a0a' }}>
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-xl md:text-2xl font-black text-white mb-2">{c.label} : nos articles pour aller plus loin</h2>
+              <p className="text-white/50 text-sm mb-6">Conseils et retours de terrain de nos techniciens {dep.dans}.</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-left">
+                {articlesDep.map((x) => (
+                  <a key={x.slug} href={`/blog/${x.slug}`} className="rounded-xl p-4 hover:bg-white/[0.06]" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <span className="block text-white font-bold text-sm leading-snug mb-1">{x.seoTitle}</span>
+                    <span className="text-xs font-bold" style={{ color: ACCENT }}>Lire l’article →</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
         <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-black text-white mb-6">{c.label} {dep.dans} ? Appelez-nous</h2>

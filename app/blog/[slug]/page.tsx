@@ -18,17 +18,9 @@ import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { plusProches } from '@/lib/centres-villes'
-import { maillageGaranti } from '@/lib/maillage'
-
-// « À lire aussi » (12/11/2026) : même thème d'abord, puis même service, puis les plus récents ;
-// chaque article reçoit au moins 10 liens d'autres articles.
-function prochesArticle(a: (typeof ARTICLES)[number]) {
-  const autres = ARTICLES.filter((x) => x.slug !== a.slug).sort((x, y) => y.date.localeCompare(x.date))
-  return [...autres.filter((x) => x.category === a.category), ...autres.filter((x) => x.category !== a.category && x.service.href === a.service.href), ...autres.filter((x) => x.category !== a.category && x.service.href !== a.service.href)].map((x) => x.slug)
-}
-function articlesLies(slug: string) {
-  const m = maillageGaranti(ARTICLES, (x) => prochesArticle(x).slice(0, 8), prochesArticle, 15, 16)
-  return (m.get(slug) ?? []).map((s) => ARTICLES.find((x) => x.slug === s)!).filter(Boolean)
+// « À lire aussi » (13/11/2026) : uniquement des articles du même sujet, les plus récents d'abord.
+function articlesLies(slug: string, cat: string) {
+  return ARTICLES.filter((x) => x.slug !== slug && x.category === cat).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
 }
 
 // Maillage blog → pages ville du même nuisible (12/11/2026) : 16 villes autour de notre base de Saint-Maurice
@@ -372,7 +364,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {/* À lire aussi : articles du même thème (maillage blog, 12/11/2026) */}
           {(() => {
-            const lies: { slug: string; seoTitle: string }[] = [...articlesLies(a.slug), ...(a.category === 'Insectes' || a.category === 'Punaises de lit' ? [{ slug: 'punaise-colza-invasion-idf-2026', seoTitle: 'Punaise de colza : l\'invasion estivale en Île-de-France' }] : [])]
+            const lies: { slug: string; seoTitle: string }[] = [...articlesLies(a.slug, a.category), ...(a.category === 'Insectes' ? [{ slug: 'punaise-colza-invasion-idf-2026', seoTitle: 'Punaise de colza : l\'invasion estivale en Île-de-France' }] : [])]
             if (!lies.length) return null
             return (
               <section style={{ marginTop: '48px' }}>

@@ -447,3 +447,13 @@ export const SERVICES_DEP: Record<ServiceDep, {
     },
   },
 }
+
+// Fil d'Ariane hiérarchique (13/11/2026) : Accueil › Service › Département › Ville.
+// Uniquement pour les familles qui ont une page par département et les 6 départements concernés.
+const BASES_AVEC_DEP = ['/deratisation', '/punaises-de-lit', '/destruction-nid-frelon', '/cafards', '/puces', '/souris']
+const CODE_VERS_DEP: Record<string, DepSlug> = { '75': 'paris', '94': 'val-de-marne', '92': 'hauts-de-seine', '91': 'essonne', '78': 'yvelines', '77': 'seine-et-marne' }
+export function filDepartement(base: string, code: string): { href: string; label: string } | undefined {
+  const d = CODE_VERS_DEP[code]
+  if (!d || !BASES_AVEC_DEP.includes(base) || !(d in DEPS)) return undefined
+  return { href: `${base}/${d}`, label: DEPS[d].nom }
+}

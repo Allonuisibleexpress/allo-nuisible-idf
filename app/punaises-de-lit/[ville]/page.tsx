@@ -9,7 +9,7 @@ import ProtocoleCondense, { PROTOCOLE_PUNAISES } from '@/components/ProtocoleCon
 import CyclePunaises from '@/components/CyclePunaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
-import { DEP_SLUGS, estDep } from '@/lib/departements-services'
+import { filDepartement, DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { voisinesGaranties } from '@/lib/centres-villes'
 import { premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
@@ -89,6 +89,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   const avisLocaux = avisVille('punaises', v.slug)
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
+  const filDep = filDepartement('/punaises-de-lit', v.code)
   // Maillage (12/11/2026) : les 16 villes les plus proches avec une page punaises, 20 liens reçus minimum
   const autres = voisinesGaranties(VILLES_PUNAISES, v.slug)
   const maj = new Date(MAJ_PUNAISES).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -134,7 +135,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
           { '@type': 'ListItem', position: 2, name: 'Punaises de lit', item: `${SITE_URL}/services/punaises-de-lit` },
-          { '@type': 'ListItem', position: 3, name: v.nom, item: url },
+          ...(filDep ? [{ '@type': 'ListItem', position: 3, name: filDep.label, item: `${SITE_URL}${filDep.href}` }] : []),
+          { '@type': 'ListItem', position: filDep ? 4 : 3, name: v.nom, item: url },
         ],
       },
     ],
@@ -146,7 +148,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
       <Navbar />
       <main>
         <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Traitement punaises de lit"
-          fil={{ href: '/services/punaises-de-lit', label: 'Punaises de lit' }}
+          fil={{ href: '/services/punaises-de-lit', label: 'Punaises de lit' }} dep={filDep}
           prix="290 €" prixNote="Studio ou T1, 2 passages inclus. Devis gratuit."
           accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
         <MiniaturesChantier a={v.a} photos={photosChantierVille('punaises', v.slug, CHANTIERS_PUNAISES_VILLE[v.slug]?.photos ?? [], 5)} />
@@ -189,7 +191,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
-        <LocalVille nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug]} />
+        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug]} />
         <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
           Bébé, enfants, animaux ou personnes fragiles {v.a} ? Découvrez notre <a href="/services/punaises-de-lit-ecologique" className="underline font-bold" style={{ color: ACCENT }}>traitement écologique des punaises de lit, sans produit chimique</a>.
         </p>
@@ -318,11 +320,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à{' '}
-              {v.proches.map((n, i) => {
-                const p = VILLES_PUNAISES.find((x) => x.nom === n)
-                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`/punaises-de-lit/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
-              })}.{' '}
+              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>
             </p>
             <div className="mt-10">

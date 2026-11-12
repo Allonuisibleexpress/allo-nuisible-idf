@@ -6,73 +6,12 @@ export const MAILLAGE_STATIQUE: Record<string, { title: string; links: { href: s
    "title": "Tous nos articles : fourmis",
    "links": [
     {
-     "href": "/blog/punaises-des-bois-maison",
-     "label": "Punaises des bois dans la maison : comment s'en débarrasser"
-    },
-    {
      "href": "/blog/fourmis-tout-savoir-mode-de-vie-reproduction",
      "label": "Fourmis : mode de vie, reproduction, espèces et traitement"
     },
     {
-     "href": "/blog/mites-vetements-origine-traitement-prevention",
-     "label": "Mites des vêtements : d'où viennent-elles, comment en finir"
-    },
-    {
-     "href": "/blog/mites-alimentaires-cuisine",
-     "label": "Mites alimentaires dans la cuisine : d'où viennent-elles ?"
-    },
-    {
-     "href": "/blog/anthrenes-origine-traitement",
-     "label": "Anthrènes : larves dans les tapis, comment s'en débarrasser"
-    },
-    {
      "href": "/blog/tapinoma-magnum-fourmi-invasive",
      "label": "Tapinoma magnum : la fourmi invasive qui arrive au nord"
-    }
-   ]
-  },
-  {
-   "title": "Nos autres services",
-   "links": [
-    {
-     "href": "/services/deratisation",
-     "label": "Dératisation rats et souris"
-    },
-    {
-     "href": "/services/punaises-de-lit",
-     "label": "Punaises de lit"
-    },
-    {
-     "href": "/services/cryogenie-punaises-de-lit",
-     "label": "Cryogénie punaises de lit"
-    },
-    {
-     "href": "/services/cafards-blattes",
-     "label": "Cafards et blattes"
-    },
-    {
-     "href": "/services/puces",
-     "label": "Puces"
-    },
-    {
-     "href": "/services/acariens",
-     "label": "Acariens"
-    },
-    {
-     "href": "/services/chenilles-processionnaires",
-     "label": "Chenilles processionnaires"
-    },
-    {
-     "href": "/services/guepes-frelons",
-     "label": "Guêpes et frelons"
-    },
-    {
-     "href": "/services/pigeons",
-     "label": "Pigeons"
-    },
-    {
-     "href": "/services/desinfection",
-     "label": "Désinfection"
     }
    ]
   }
@@ -239,51 +178,6 @@ export const MAILLAGE_STATIQUE: Record<string, { title: string; links: { href: s
     {
      "href": "/blog/nid-de-frelon-en-hiver",
      "label": "Nid de frelon en hiver : faut-il vraiment le détruire ?"
-    }
-   ]
-  },
-  {
-   "title": "Nos autres services",
-   "links": [
-    {
-     "href": "/services/deratisation",
-     "label": "Dératisation rats et souris"
-    },
-    {
-     "href": "/services/punaises-de-lit",
-     "label": "Punaises de lit"
-    },
-    {
-     "href": "/services/cryogenie-punaises-de-lit",
-     "label": "Cryogénie punaises de lit"
-    },
-    {
-     "href": "/services/cafards-blattes",
-     "label": "Cafards et blattes"
-    },
-    {
-     "href": "/services/puces",
-     "label": "Puces"
-    },
-    {
-     "href": "/services/fourmis",
-     "label": "Fourmis"
-    },
-    {
-     "href": "/services/acariens",
-     "label": "Acariens"
-    },
-    {
-     "href": "/services/chenilles-processionnaires",
-     "label": "Chenilles processionnaires"
-    },
-    {
-     "href": "/services/pigeons",
-     "label": "Pigeons"
-    },
-    {
-     "href": "/services/desinfection",
-     "label": "Désinfection"
     }
    ]
   }

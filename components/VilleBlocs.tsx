@@ -34,10 +34,11 @@ export function titreGoogle(motCle: string, nom: string, slug: string, suffixes:
   return (suffixes.map((s) => base + s).find((t) => t.length <= 60)) ?? base
 }
 
-export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj }: {
+export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj, dep }: {
   slug: string; nom: string; a: string; titre: string; accroche: string; prix: string; prixNote: string
   fil: { href: string; label: string }
   maj?: string // date de mise à jour affichée sous le titre (signature de l'équipe technique)
+  dep?: { href: string; label: string } // niveau département du fil d'Ariane
 }) {
   const cp = codePostal(slug)
   const pop = REPERES[slug]?.population
@@ -49,6 +50,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         <nav className="text-xs text-white/40 mb-5" aria-label="Fil d'Ariane">
           <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
           <a href={fil.href} className="hover:text-white/70">{fil.label}</a>{' / '}
+          {dep && <><a href={dep.href} className="hover:text-white/70">{dep.label}</a>{' / '}</>}
           <span className="text-white/60">{nom}</span>
         </nav>
 

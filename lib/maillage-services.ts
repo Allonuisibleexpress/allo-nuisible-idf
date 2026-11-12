@@ -10,10 +10,10 @@ const SERVICES: { path: string; base?: string; nom: string; themes: string[] }[]
   { path: '/services/cryogenie-punaises-de-lit', base: '/punaises-de-lit', nom: 'Punaises de lit', themes: ['Punaises de lit'] },
   { path: '/services/punaises-de-lit-ecologique', base: '/punaises-de-lit', nom: 'Punaises de lit', themes: ['Punaises de lit'] },
   { path: '/services/deratisation-ecologique', base: '/deratisation', nom: 'Dératisation', themes: ['Rongeurs'] },
-  { path: '/services/cafards-blattes', base: '/cafards', nom: 'Cafards', themes: ['Cafards', 'Insectes'] },
-  { path: '/services/puces', base: '/puces', nom: 'Puces', themes: ['Puces', 'Insectes'] },
-  { path: '/services/fourmis', nom: 'Fourmis', themes: ['Fourmis', 'Insectes'] },
-  { path: '/services/acariens', nom: 'Acariens', themes: ['Acariens', 'Insectes'] },
+  { path: '/services/cafards-blattes', base: '/cafards', nom: 'Cafards', themes: ['Cafards'] },
+  { path: '/services/puces', base: '/puces', nom: 'Puces', themes: ['Puces'] },
+  { path: '/services/fourmis', nom: 'Fourmis', themes: ['Fourmis'] },
+  { path: '/services/acariens', nom: 'Acariens', themes: ['Acariens'] },
   { path: '/services/chenilles-processionnaires', nom: 'Chenilles processionnaires', themes: ['Chenilles processionnaires'] },
   { path: '/services/guepes-frelons', base: '/destruction-nid-frelon', nom: 'Nid de frelons', themes: ['Guêpes et frelons'] },
   { path: '/services/pigeons', nom: 'Pigeons', themes: ['Pigeons'] },
@@ -26,6 +26,20 @@ const LABELS: Record<string, string> = {
   '/services/chenilles-processionnaires': 'Chenilles processionnaires', '/services/guepes-frelons': 'Guêpes et frelons', '/services/pigeons': 'Pigeons', '/services/desinfection': 'Désinfection',
 }
 
+// Liens ciblés vers des sujets voisins (13/11/2026) : seulement quand le rapport est direct pour le lecteur
+const VOISINS: Record<string, Bloc> = {
+  '/services/punaises-de-lit': { title: 'Ne pas confondre avec la punaise de lit', links: [
+    { href: '/blog/punaises-des-bois-maison', label: 'Punaises des bois dans la maison : comment s’en débarrasser' },
+    { href: '/blog/punaise-colza-invasion-idf-2026', label: 'Punaise de colza : l’invasion estivale en Île-de-France' } ] },
+  '/services/acariens': { title: 'Les autres nuisibles des textiles', links: [
+    { href: '/blog/mites-vetements-origine-traitement-prevention', label: 'Mites des vêtements : d’où viennent-elles, comment en finir' },
+    { href: '/blog/anthrenes-origine-traitement', label: 'Anthrènes : larves dans les tapis, comment s’en débarrasser' } ] },
+  '/services/cafards-blattes': { title: 'Dans la cuisine, pensez aussi aux mites', links: [
+    { href: '/blog/mites-alimentaires-cuisine', label: 'Mites alimentaires dans la cuisine : d’où viennent-elles ?' } ] },
+  '/services/deratisation': { title: 'Avant de choisir une entreprise', links: [
+    { href: '/blog/arnaques-deratisation-nuisibles', label: 'Arnaque dératisation : les 8 pièges à éviter' } ] },
+}
+
 export function maillageService(path: string): Bloc[] {
   const s = SERVICES.find((x) => x.path === path)
   if (!s) return []
@@ -33,6 +47,6 @@ export function maillageService(path: string): Bloc[] {
   if (s.base) blocs.push({ title: `${s.nom} par département`, links: DEPS.map(([d, n]) => ({ href: `${s.base}/${d}`, label: `${s.nom} : ${n}` })) })
   const articles = ARTICLES.filter((a) => s.themes.includes(a.category)).sort((a, b) => b.date.localeCompare(a.date))
   if (articles.length) blocs.push({ title: `Tous nos articles : ${s.nom.toLowerCase()}`, links: articles.map((a) => ({ href: `/blog/${a.slug}`, label: a.seoTitle })) })
-  blocs.push({ title: 'Nos autres services', links: Object.entries(LABELS).filter(([p]) => p !== path).map(([p, l]) => ({ href: p, label: l })) })
+  if (VOISINS[path]) blocs.push(VOISINS[path])
   return blocs
 }

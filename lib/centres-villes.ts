@@ -165,8 +165,8 @@ export function plusProches<T extends { slug: string }>(liste: T[], slug: string
 // Voisines garanties : les 12 plus proches, plus les villes isolées dont c'est l'une des plus proches,
 // pour que chaque page ville reçoive au moins 10 liens de pages du même nuisible.
 import { maillageGaranti } from './maillage'
-export function voisinesGaranties<T extends { slug: string }>(liste: T[], slug: string, n = 16, min = 20): T[] {
-  const m = maillageGaranti(liste, (x) => plusProches(liste, x.slug, n).map((y) => y.slug), (x) => plusProches(liste, x.slug, liste.length).map((y) => y.slug), min, n + 8)
+export function voisinesGaranties<T extends { slug: string }>(liste: T[], slug: string, n = 12, min = 12): T[] {
+  const m = maillageGaranti(liste, (x) => plusProches(liste, x.slug, n).map((y) => y.slug), (x) => plusProches(liste, x.slug, liste.length).map((y) => y.slug), min, n + 4)
   const bySlug = new Map(liste.map((x) => [x.slug, x]))
   return (m.get(slug) ?? []).map((s) => bySlug.get(s)).filter(Boolean) as T[]
 }

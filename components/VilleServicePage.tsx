@@ -1,3 +1,4 @@
+import { filDepartement } from '@/lib/departements-services'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import { VILLES_PUCES } from '@/lib/villes-puces'
 import MaillageVille from '@/components/MaillageVille'
@@ -125,6 +126,7 @@ function inline(text: string) {
 
 export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: Ville[]; c: VilleServiceConfig }) {
   const url = `${SITE_URL}${c.basePath}/${v.slug}`
+  const filDep = filDepartement(c.basePath, v.code)
   // Maillage (12/11/2026) : les 16 villes les plus proches pour ce nuisible, 20 liens reçus minimum par page
   const autres = voisinesGaranties(villes, v.slug)
   // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
@@ -182,7 +184,8 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
           { '@type': 'ListItem', position: 2, name: c.pilier.label, item: `${SITE_URL}${c.pilier.href}` },
-          { '@type': 'ListItem', position: 3, name: v.nom, item: url },
+          ...(filDep ? [{ '@type': 'ListItem', position: 3, name: filDep.label, item: `${SITE_URL}${filDep.href}` }] : []),
+          { '@type': 'ListItem', position: filDep ? 4 : 3, name: v.nom, item: url },
         ],
       },
     ],
@@ -194,7 +197,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
       <Navbar />
       <main className={c.centre ? 'recit-centre' : undefined}>
         <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre={profil.heroTitre}
-          fil={{ href: c.pilier.href, label: c.pilier.label }}
+          fil={{ href: c.pilier.href, label: c.pilier.label }} dep={filDep}
           prix={profil.prix} prixNote={profil.prixNote}
           accroche={`${phraseDistance(v.slug, v.nom)} ${profil.accroches[rang % profil.accroches.length]}`} />
         {CHANTIERS_VILLE[sl]?.[v.slug] ? (
@@ -246,7 +249,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
-        <LocalVille nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
+        <LocalVille slug={v.slug} base={c.basePath} nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}
@@ -509,11 +512,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <p className="text-white/45 text-sm mt-8">
-              Nous intervenons aussi à{' '}
-              {v.proches.map((n, i) => {
-                const p = villes.find((x) => x.nom === n)
-                return <span key={n}>{i > 0 ? ', ' : ''}{p ? <a href={`${c.basePath}/${p.slug}`} className="underline hover:text-white">{n}</a> : n}</span>
-              })}.{' '}
+              Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>
             </p>
             <div className="mt-10">

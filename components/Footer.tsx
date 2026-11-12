@@ -28,13 +28,6 @@ const services = [
 ]
 
 
-const DERAT_FOOTER: [string, string][] = [
-  ['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne'], ['hauts-de-seine', 'Hauts-de-Seine'], ['essonne', 'Essonne'], ['yvelines', 'Yvelines'], ['seine-et-marne', 'Seine-et-Marne'],
-  ['saint-maurice', 'Saint-Maurice'], ['charenton-le-pont', 'Charenton-le-Pont'], ['maisons-alfort', 'Maisons-Alfort'], ['creteil', 'Créteil'], ['saint-maur-des-fosses', 'Saint-Maur-des-Fossés'],
-  ['champigny-sur-marne', 'Champigny-sur-Marne'], ['vitry-sur-seine', 'Vitry-sur-Seine'], ['cachan', 'Cachan'], ['montreuil', 'Montreuil'], ['paris-12', 'Paris 12e'], ['paris-20', 'Paris 20e'],
-  ['antony', 'Antony'], ['issy-les-moulineaux', 'Issy-les-Moulineaux'], ['clichy', 'Clichy'], ['courbevoie', 'Courbevoie'], ['colombes', 'Colombes'], ['asnieres-sur-seine', 'Asnières-sur-Seine'], ['rueil-malmaison', 'Rueil-Malmaison'],
-]
-
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
@@ -139,18 +132,6 @@ export default function Footer() {
               </p>
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* Maillage dératisation par ville, présent sur toutes les pages (12/11/2026) */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-center">
-          <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">Dératisation rats et souris par ville</p>
-          <nav aria-label="Dératisation par ville" className="flex flex-wrap justify-center gap-x-4 gap-y-1.5">
-            {DERAT_FOOTER.map(([s, n]) => (
-              <a key={s} href={`/deratisation/${s}`} className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors">Dératisation {n}</a>
-            ))}
-          </nav>
         </div>
       </div>
 

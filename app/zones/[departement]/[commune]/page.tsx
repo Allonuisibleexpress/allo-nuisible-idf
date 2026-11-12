@@ -19,6 +19,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import { getVilleAcariens } from '@/lib/villes-acariens'
 import { GUIDE_ZONES_94 } from '@/lib/guide-zones-94'
+import { texteRiche } from '@/lib/liens-contextuels'
 import { voisinesGaranties } from '@/lib/centres-villes'
 
 const ACCENT = '#E8441A'
@@ -60,6 +61,7 @@ export default function CommunePage({ params }: { params: Params }) {
   const villeAcariens = getVilleAcariens(c.slug)
   // Texte propre à la page zone (12/11/2026) : plus aucun paragraphe repris des pages spécialisées
   const guide = GUIDE_ZONES_94[c.slug]
+  const ctxLiens = { slug: c.slug, deja: new Set<string>() }
   const pagesVilleListe = [
     villeDerat && { href: `/deratisation/${c.slug}`, label: `Dératisation ${c.a}`, sous: 'Rats et souris, dès 120 €' },
     villeSouris && { href: `/souris/${c.slug}`, label: `Souris ${c.a}`, sous: 'Uniquement des souris, dès 120 €' },
@@ -122,7 +124,7 @@ export default function CommunePage({ params }: { params: Params }) {
                   <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Spécial {c.nom}</p>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">Les nuisibles {c.a} : <span style={{ color: ACCENT }}>ce que nous rencontrons</span></h2>
                   <div className="space-y-4 text-white/70 leading-relaxed text-base md:text-lg text-left md:text-center">
-                    {guide.map((p, i) => <p key={i}>{p.split(/(\*\*[^*]+\*\*)/g).map((m, j) => (m.startsWith('**') ? <strong key={j} className="text-white font-bold">{m.slice(2, -2)}</strong> : m))}</p>)}
+                    {guide.map((p, i) => <p key={i}>{texteRiche(p, ctxLiens, `z${i}`)}</p>)}
                   </div>
                 </>
               )}
