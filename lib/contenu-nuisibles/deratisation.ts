@@ -57,7 +57,7 @@ export const CONTENU_DERATISATION: ContenuFamille = {
           ['Si vous ne voulez pas de mort-aux-rats, nous posons un **piège multicapture Ekomille** sur le **passage le plus fréquenté**, avec des **appâts alimentaires**. Le rongeur tombe dans une **cuve fermée** et y reste.', 'En **méthode alternative**, le piège Ekomille capture plusieurs rongeurs à la suite, **sans raticide**. Il est posé sur le trajet le plus emprunté, repéré pendant l’observation.'],
           ['Le rat ne va pas mourir dans la rue ou dans une cloison, **hors de portée des chiens et des enfants**. Une version connectée permet de suivre les captures.', 'Avantage : pas de cadavre dans un mur, pas de produit accessible aux animaux. La version connectée **signale les captures** à distance.'],
         ],
-        lien: { href: '/blog/deratisation-sans-mort-aux-rats', label: 'Dératisation sans mort-aux-rats : le guide' },
+        lien: { href: '/services/deratisation-ecologique', label: 'Dératisation écologique, sans raticide' },
       },
       {
         nom: 'Pièges mécaniques',

@@ -85,7 +85,7 @@ const data: ServiceData = {
   related: {
     extra: maillageService('/services/punaises-de-lit'),
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
-    guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, { href: '/blog/punaises-de-lit-creteil-sommier-lattes', label: 'Chantier à Créteil : punaises dans les sommiers' }, { href: '/blog/punaises-de-lit-paris-12-grosse-infestation', label: 'Chantier à Paris 12e : résultat du premier passage' }, { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Chantier à L’Haÿ-les-Roses : cryogénie sur un sommier' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
+    guides: { title: 'Nos guides sur les punaises de lit', links: [{ href: '/services/punaises-de-lit-ecologique', label: 'Traitement écologique, sans produit chimique' }, { href: '/services/cryogenie-punaises-de-lit', label: 'Notre traitement par cryogénie, en vidéos' }, { href: '/blog/punaises-de-lit-creteil-sommier-lattes', label: 'Chantier à Créteil : punaises dans les sommiers' }, { href: '/blog/punaises-de-lit-paris-12-grosse-infestation', label: 'Chantier à Paris 12e : résultat du premier passage' }, { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Chantier à L’Haÿ-les-Roses : cryogénie sur un sommier' }, ...Object.entries(GUIDES_PUNAISES).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
   },
   ctaTitle: 'Des punaises de lit ?\nOn intervient dès aujourd\'hui.',
 }

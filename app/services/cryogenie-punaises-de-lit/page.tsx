@@ -92,6 +92,7 @@ const data: ServiceData = {
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
     guides: { title: 'Pour aller plus loin', links: [
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
+      { href: '/services/punaises-de-lit-ecologique', label: 'Punaises de lit : traitement écologique, sans produit chimique' },
       { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : comment ça marche, efficacité et limites' },
       { href: '/blog/cryogenie-punaises-de-lit-sommier', label: 'Récit : cryogénie sur un sommier à L’Haÿ-les-Roses (94)' },
       { href: '/blog/cryogenie-punaises-de-lit-foyer-enfants', label: 'Récit : cryogénie dans un foyer pour enfants' },

@@ -190,6 +190,9 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
         <LocalVille nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug]} />
+        <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
+          Bébé, enfants, animaux ou personnes fragiles {v.a} ? Découvrez notre <a href="/services/punaises-de-lit-ecologique" className="underline font-bold" style={{ color: ACCENT }}>traitement écologique des punaises de lit, sans produit chimique</a>.
+        </p>
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 

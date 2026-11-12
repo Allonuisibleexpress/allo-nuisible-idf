@@ -8,6 +8,8 @@ const SERVICES: { path: string; base?: string; nom: string; themes: string[] }[]
   { path: '/services/deratisation', base: '/deratisation', nom: 'Dératisation', themes: ['Rongeurs'] },
   { path: '/services/punaises-de-lit', base: '/punaises-de-lit', nom: 'Punaises de lit', themes: ['Punaises de lit'] },
   { path: '/services/cryogenie-punaises-de-lit', base: '/punaises-de-lit', nom: 'Punaises de lit', themes: ['Punaises de lit'] },
+  { path: '/services/punaises-de-lit-ecologique', base: '/punaises-de-lit', nom: 'Punaises de lit', themes: ['Punaises de lit'] },
+  { path: '/services/deratisation-ecologique', base: '/deratisation', nom: 'Dératisation', themes: ['Rongeurs'] },
   { path: '/services/cafards-blattes', base: '/cafards', nom: 'Cafards', themes: ['Cafards', 'Insectes'] },
   { path: '/services/puces', base: '/puces', nom: 'Puces', themes: ['Puces', 'Insectes'] },
   { path: '/services/fourmis', nom: 'Fourmis', themes: ['Fourmis', 'Insectes'] },
@@ -19,7 +21,7 @@ const SERVICES: { path: string; base?: string; nom: string; themes: string[] }[]
 ]
 const DEPS: [string, string][] = [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']]
 const LABELS: Record<string, string> = {
-  '/services/deratisation': 'Dératisation rats et souris', '/services/punaises-de-lit': 'Punaises de lit', '/services/cryogenie-punaises-de-lit': 'Cryogénie punaises de lit',
+  '/services/deratisation': 'Dératisation rats et souris', '/services/punaises-de-lit': 'Punaises de lit', '/services/cryogenie-punaises-de-lit': 'Cryogénie punaises de lit', '/services/punaises-de-lit-ecologique': 'Punaises de lit : traitement écologique', '/services/deratisation-ecologique': 'Dératisation écologique sans raticide',
   '/services/cafards-blattes': 'Cafards et blattes', '/services/puces': 'Puces', '/services/fourmis': 'Fourmis', '/services/acariens': 'Acariens',
   '/services/chenilles-processionnaires': 'Chenilles processionnaires', '/services/guepes-frelons': 'Guêpes et frelons', '/services/pigeons': 'Pigeons', '/services/desinfection': 'Désinfection',
 }
