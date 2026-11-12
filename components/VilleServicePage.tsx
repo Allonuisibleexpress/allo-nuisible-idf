@@ -1,4 +1,5 @@
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
+import { VILLES_PUCES } from '@/lib/villes-puces'
 import MaillageVille from '@/components/MaillageVille'
 import { voisinesGaranties } from '@/lib/centres-villes'
 import { premierePhrase } from '@/lib/maillage'
@@ -252,6 +253,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
             {serviceLocal(c.pilier.href) === 'souris' ? 'Des rats plutôt que des souris ?' : `Des rats ou des souris ${v.a} aussi ?`} Voir notre page <a href={`/deratisation/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>dératisation {v.a}</a>, rats et souris dès 120 €.
+          </p>
+        )}
+        {serviceLocal(c.pilier.href) === 'souris' && VILLES_PUCES.some((x) => x.slug === v.slug) && (
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
+            Les souris transportent des puces : si vous êtes piqué, voir aussi notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>puces {v.a}</a>.
           </p>
         )}
 

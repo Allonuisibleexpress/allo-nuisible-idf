@@ -50,7 +50,7 @@ export function ficheFourmis(v: V, voisines: Voisine[]): string[] {
   ]
 }
 
-export function fichePuces(v: V, voisines: Voisine[], derat: boolean): string[] {
+export function fichePuces(v: V, voisines: Voisine[], derat: boolean, souris = false): string[] {
   const d = DONNEES_LOCALES[v.slug]
   const h = habitat(v)
   const verts = d?.verts?.slice(0, 2) ?? []
@@ -61,6 +61,9 @@ export function fichePuces(v: V, voisines: Voisine[], derat: boolean): string[] 
     `Des piqûres groupées par trois ou quatre sur les chevilles, un chat ou un chien qui se gratte, des petits points noirs dans son panier : ce sont les signes d’une **infestation de puces**. ${h.phrase} Avant notre passage : **aspirez** soigneusement sols, plinthes, canapé et tapis puis jetez le sac, **lavez** le linge de lit et les coussins à haute température, et faites traiter l’animal par votre **vétérinaire** le même jour. Évitez les bombes anti-puces du commerce, qui ne touchent pas les larves cachées dans les joints de parquet.`,
     `### Puces dans un logement sans animal ${v.a} : d’où viennent-elles ?`,
     `C’est plus fréquent qu’on ne le pense. Les puces peuvent avoir été laissées par un **ancien occupant** et son animal : leurs cocons attendent parfois longtemps qu’un nouvel hôte arrive. Elles peuvent aussi venir d’une **cave** fréquentée par des rongeurs : quand les rats ou les souris disparaissent, leurs puces cherchent un autre hôte et montent vers les logements.${derat ? ` Si vous avez aussi des rongeurs, voyez notre page [dératisation ${v.a}](/deratisation/${v.slug}).` : ''}${verts.length ? ` Enfin, les chiens promenés dans les espaces verts comme ${liste(verts)} peuvent ramener des puces.` : ''}`,
+    `### Rats, souris, fouines : quand les animaux sauvages amènent des puces ${v.a}`,
+    `Les puces ne viennent pas seulement du chat ou du chien. Les **rats**, les **souris** et la **fouine** (qui n’est pas un rongeur mais un petit carnivore de la famille de la belette) portent eux aussi des puces. Quand ils s’installent dans une cave, des combles ou un vide sanitaire, leurs puces se multiplient dans leur nid. Si l’animal meurt, est chassé ou piégé, ses puces cherchent aussitôt un nouvel hôte : elles descendent alors vers les pièces habitées et piquent les occupants. C’est une cause fréquente de **puces sans animal domestique**.`,
+    `C’est pourquoi nous traitons toujours les deux problèmes ensemble : éliminer les rongeurs et boucher leurs accès, puis traiter les puces.${derat ? ` Voir notre page [dératisation ${v.a}](/deratisation/${v.slug})` : ' Voir notre page [dératisation en Île-de-France](/services/deratisation)'}${souris ? ` et notre page [souris ${v.a}](/souris/${v.slug})` : ''}. Pour savoir quel animal vit chez vous, lisez [rat ou souris : comment les reconnaître](/blog/rat-ou-souris-comment-reconnaitre) et notre [guide des rongeurs](/blog/guide-des-rongeurs), qui présente aussi la fouine et le lérot.`,
     `### Traitement anti-puces ${v.a} : prix, délai et garantie`,
     `Notre traitement contre les puces ${v.a} commence **dès 120 € TTC**, avec un devis gratuit et une **garantie d’un an**. Le technicien traite toutes les pièces où l’animal circule, avec un insecticide professionnel qui agit aussi sur les larves. Nous intervenons dans tous les quartiers${quartiers.length ? `, de ${liste(quartiers)}` : ''}, 7j/7. Pour comprendre le cycle de la puce et pourquoi un second passage est parfois utile, lisez [tout savoir sur les puces](/blog/puces-tout-savoir).`,
     `### Puces près de ${v.nom} : nos autres villes`,

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { VILLES_PUCES } from '@/lib/villes-puces'
 import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
@@ -212,6 +213,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
             Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: ACCENT }}>souris {v.a}</a>.
+          </p>
+        )}
+        {VILLES_PUCES.some((x) => x.slug === v.slug) && (
+          <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
+            Rats et souris transportent des puces, qui peuvent rester après leur départ : voir notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>puces {v.a}</a>.
           </p>
         )}
 
