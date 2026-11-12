@@ -19,6 +19,7 @@ import ContexteLocal from '@/components/ContexteLocal'
 import ContactMairie from '@/components/ContactMairie'
 import { getVilleAcariens } from '@/lib/villes-acariens'
 import { GUIDE_ZONES_94 } from '@/lib/guide-zones-94'
+import { voisinesGaranties } from '@/lib/centres-villes'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -45,9 +46,8 @@ export default function CommunePage({ params }: { params: Params }) {
 
   const secteur = SECTEURS[c.secteur]
   // 6 communes du même secteur au plus, en rotation, pour ne pas répéter la même liste sur chaque page
-  const memeSecteur = COMMUNES_94.filter((x) => x.secteur === c.secteur && x.slug !== c.slug)
-  const decalage = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug)) % Math.max(1, memeSecteur.length)
-  const voisines = [...memeSecteur.slice(decalage), ...memeSecteur.slice(0, decalage)].slice(0, 6)
+  // Maillage (12/11/2026) : 8 communes les plus proches, et chaque commune reçoit au moins 10 liens
+  const voisines = voisinesGaranties(COMMUNES_94, c.slug, 8)
   // 2 méthodes détaillées par commune, en rotation dans le secteur ; les autres en simple lien
   const rang = Math.max(0, COMMUNES_94.findIndex((x) => x.slug === c.slug))
   const ordre = [...secteur.ordre.slice(rang % secteur.ordre.length), ...secteur.ordre.slice(0, rang % secteur.ordre.length)].slice(0, 2)
@@ -262,7 +262,7 @@ export default function CommunePage({ params }: { params: Params }) {
             </a>
             <div className="mt-14">
               <p className="text-white/40 text-xs uppercase tracking-widest mb-4">
-                Nous intervenons aussi dans le secteur {secteur.nom}
+                Nous intervenons aussi près de {c.nom}
               </p>
               <div className="flex flex-wrap justify-center gap-2">
                 {voisines.map((v) => (

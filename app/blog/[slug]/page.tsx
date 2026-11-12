@@ -18,6 +18,18 @@ import { VILLES_ACARIENS } from '@/lib/villes-acariens'
 import { VILLES_CHENILLES } from '@/lib/villes-chenilles'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { plusProches } from '@/lib/centres-villes'
+import { maillageGaranti } from '@/lib/maillage'
+
+// « À lire aussi » (12/11/2026) : même thème d'abord, puis même service, puis les plus récents ;
+// chaque article reçoit au moins 10 liens d'autres articles.
+function prochesArticle(a: (typeof ARTICLES)[number]) {
+  const autres = ARTICLES.filter((x) => x.slug !== a.slug).sort((x, y) => y.date.localeCompare(x.date))
+  return [...autres.filter((x) => x.category === a.category), ...autres.filter((x) => x.category !== a.category && x.service.href === a.service.href), ...autres.filter((x) => x.category !== a.category && x.service.href !== a.service.href)].map((x) => x.slug)
+}
+function articlesLies(slug: string) {
+  const m = maillageGaranti(ARTICLES, (x) => prochesArticle(x).slice(0, 6), prochesArticle, 10, 14)
+  return (m.get(slug) ?? []).map((s) => ARTICLES.find((x) => x.slug === s)!).filter(Boolean)
+}
 
 // Maillage blog → pages ville du même nuisible (12/11/2026) : 16 villes autour de notre base de Saint-Maurice
 const VILLES_PAR_THEME: Record<string, { base: string; mot: string; villes: { slug: string; nom: string }[] }> = {
@@ -360,11 +372,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {/* À lire aussi : articles du même thème (maillage blog, 12/11/2026) */}
           {(() => {
-            const lies = ARTICLES.filter((x) => x.slug !== a.slug && x.category === a.category).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
+            const lies: { slug: string; seoTitle: string }[] = [...articlesLies(a.slug), ...(a.category === 'Insectes' || a.category === 'Punaises de lit' ? [{ slug: 'punaise-colza-invasion-idf-2026', seoTitle: 'Punaise de colza : l\'invasion estivale en Île-de-France' }] : [])]
             if (!lies.length) return null
             return (
               <section style={{ marginTop: '48px' }}>
-                <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 26px)', fontWeight: 800, color: '#fff', marginBottom: '16px', textAlign: 'center' }}>À lire aussi sur le même sujet</h2>
+                <h2 style={{ fontSize: 'clamp(20px, 3.5vw, 26px)', fontWeight: 800, color: '#fff', marginBottom: '16px', textAlign: 'center' }}>À lire aussi</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
                   {lies.map((x) => (
                     <a key={x.slug} href={`/blog/${x.slug}`} style={{ display: 'block', padding: '14px 16px', borderRadius: '12px', background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 700, lineHeight: 1.4 }}>

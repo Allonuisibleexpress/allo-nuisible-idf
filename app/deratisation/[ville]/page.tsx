@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
 import { LOCAL_DERATISATION_75_92 } from '@/lib/local-deratisation-75-92'
@@ -9,7 +10,7 @@ import ProtocoleCondense, { PROTOCOLE_DERATISATION } from '@/components/Protocol
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
-import { plusProches } from '@/lib/centres-villes'
+import { voisinesGaranties } from '@/lib/centres-villes'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
@@ -91,7 +92,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
   const url = `${SITE_URL}/deratisation/${v.slug}`
   // Maillage (12/11/2026) : les 10 villes les plus proches qui ont une page dératisation, + la page département
-  const autres = plusProches(VILLES_DERATISATION, v.slug, 12)
+  const autres = voisinesGaranties(VILLES_DERATISATION, v.slug)
   const DEP_PAGE: Record<string, [string, string]> = { '75': ['paris', 'à Paris'], '94': ['val-de-marne', 'dans le Val-de-Marne'], '92': ['hauts-de-seine', 'dans les Hauts-de-Seine'], '91': ['essonne', 'en Essonne'], '78': ['yvelines', 'dans les Yvelines'], '77': ['seine-et-marne', 'en Seine-et-Marne'] }
   const depPage = DEP_PAGE[v.code]
   const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -307,6 +308,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </div>
         </section>
 
+        <MaillageVille basePath="/deratisation" mot="Dératisation" code={v.code} slug={v.slug} a={v.a} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'deratisation')} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}

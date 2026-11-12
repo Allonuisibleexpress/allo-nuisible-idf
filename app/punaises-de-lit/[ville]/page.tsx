@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_PUNAISES_94 } from '@/lib/local-punaises-94'
 import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
@@ -9,7 +10,7 @@ import CyclePunaises from '@/components/CyclePunaises'
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import DepartementServicePage, { metaDep } from '@/components/DepartementServicePage'
 import { DEP_SLUGS, estDep } from '@/lib/departements-services'
-import { plusProches } from '@/lib/centres-villes'
+import { voisinesGaranties } from '@/lib/centres-villes'
 import { premierePhrase } from '@/lib/maillage'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -89,7 +90,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
   const url = `${SITE_URL}/punaises-de-lit/${v.slug}`
   // Maillage (12/11/2026) : les 12 villes les plus proches avec une page punaises
-  const autres = plusProches(VILLES_PUNAISES, v.slug, 12)
+  const autres = voisinesGaranties(VILLES_PUNAISES, v.slug)
   const maj = new Date(MAJ_PUNAISES).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
@@ -301,6 +302,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           </div>
         </section>
 
+        <MaillageVille basePath="/punaises-de-lit" mot="Punaises de lit" code={v.code} slug={v.slug} a={v.a} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'punaises')} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}

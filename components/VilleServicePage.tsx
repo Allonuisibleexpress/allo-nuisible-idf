@@ -1,5 +1,6 @@
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
-import { plusProches } from '@/lib/centres-villes'
+import MaillageVille from '@/components/MaillageVille'
+import { voisinesGaranties } from '@/lib/centres-villes'
 import { premierePhrase } from '@/lib/maillage'
 import Navbar from '@/components/Navbar'
 import { avecPrix, premierPrix, EtiquettePrix } from '@/components/PrixGros'
@@ -122,7 +123,7 @@ function inline(text: string) {
 export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: Ville[]; c: VilleServiceConfig }) {
   const url = `${SITE_URL}${c.basePath}/${v.slug}`
   // Maillage (12/11/2026) : les 12 villes les plus proches qui ont une page pour ce nuisible
-  const autres = plusProches(villes, v.slug, 12)
+  const autres = voisinesGaranties(villes, v.slug)
   // Une seule section détaillée par ville, différente d'une ville à l'autre (le guide complet est sur la page service) :
   // évite que toutes les pages villes répètent le même texte.
   const rang = Math.max(0, villes.findIndex((x) => x.slug === v.slug))
@@ -487,6 +488,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           </div>
         </section>
 
+        <MaillageVille basePath={c.basePath} mot={c.titre} code={v.code} slug={v.slug} a={v.a} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, profil.famille)} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}
