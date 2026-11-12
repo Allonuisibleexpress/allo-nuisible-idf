@@ -6,6 +6,8 @@
 // Prix alignés sur /tarifs : 89 € (accessible), 149 € (perche), 199 € (toiture, combles, cheminée), nacelle sur devis.
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
+import { LOCAL_FRELONS_94 } from '@/lib/local-frelons-94'
+import { ficheFrelons } from '@/lib/fiche-nuisible'
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_FRELONS_GC } from '@/lib/local-frelons-gc'
 
@@ -127,7 +129,8 @@ export const CONFIG_FRELONS: VilleServiceConfig = {
   maj: '2026-11-08',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Destruction de nids dans les villes voisines',
-  local: LOCAL_FRELONS_GC,
+  local: { ...LOCAL_FRELONS_94, ...LOCAL_FRELONS_GC },
+  fiche: (v, vs) => ficheFrelons(v, vs.filter((x) => frelonsIndexee(x.slug))),
   localTitre: (a, nom) => `Frelons et guêpes ${a} : ce qui est propre à ${nom}`,
 }
 

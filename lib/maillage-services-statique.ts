@@ -79,6 +79,92 @@ export const MAILLAGE_STATIQUE: Record<string, { title: string; links: { href: s
  ],
  "guepes": [
   {
+   "title": "Destruction de nid de frelons par ville",
+   "links": [
+    {
+     "href": "/destruction-nid-frelon/saint-maurice",
+     "label": "Nid de frelons à Saint-Maurice"
+    },
+    {
+     "href": "/destruction-nid-frelon/creteil",
+     "label": "Nid de frelons à Créteil"
+    },
+    {
+     "href": "/destruction-nid-frelon/vincennes",
+     "label": "Nid de frelons à Vincennes"
+    },
+    {
+     "href": "/destruction-nid-frelon/saint-maur-des-fosses",
+     "label": "Nid de frelons à Saint-Maur-des-Fossés"
+    },
+    {
+     "href": "/destruction-nid-frelon/champigny-sur-marne",
+     "label": "Nid de frelons à Champigny-sur-Marne"
+    },
+    {
+     "href": "/destruction-nid-frelon/nogent-sur-marne",
+     "label": "Nid de frelons à Nogent-sur-Marne"
+    },
+    {
+     "href": "/destruction-nid-frelon/maisons-alfort",
+     "label": "Nid de frelons à Maisons-Alfort"
+    },
+    {
+     "href": "/destruction-nid-frelon/charenton-le-pont",
+     "label": "Nid de frelons à Charenton-le-Pont"
+    },
+    {
+     "href": "/destruction-nid-frelon/fontenay-sous-bois",
+     "label": "Nid de frelons à Fontenay-sous-Bois"
+    },
+    {
+     "href": "/destruction-nid-frelon/le-perreux-sur-marne",
+     "label": "Nid de frelons à Le Perreux-sur-Marne"
+    },
+    {
+     "href": "/destruction-nid-frelon/joinville-le-pont",
+     "label": "Nid de frelons à Joinville-le-Pont"
+    },
+    {
+     "href": "/destruction-nid-frelon/saint-mande",
+     "label": "Nid de frelons à Saint-Mandé"
+    },
+    {
+     "href": "/destruction-nid-frelon/alfortville",
+     "label": "Nid de frelons à Alfortville"
+    },
+    {
+     "href": "/destruction-nid-frelon/ivry-sur-seine",
+     "label": "Nid de frelons à Ivry-sur-Seine"
+    },
+    {
+     "href": "/destruction-nid-frelon/paris-12",
+     "label": "Nid de frelons à Paris 12e"
+    }
+   ]
+  },
+  {
+   "title": "Frelons et guêpes : nos guides complets",
+   "links": [
+    {
+     "href": "/blog/frelon-europeen-tout-savoir",
+     "label": "Frelon européen : taille, nid, piqûre, tout savoir"
+    },
+    {
+     "href": "/blog/frelon-asiatique-tout-savoir",
+     "label": "Frelon asiatique : tout savoir, dangers et nids géants"
+    },
+    {
+     "href": "/blog/guepes-tout-savoir",
+     "label": "Guêpes : pourquoi elles deviennent si agressives en été"
+    },
+    {
+     "href": "/blog/nid-de-frelon-en-hiver",
+     "label": "Nid de frelon en hiver : que faire ?"
+    }
+   ]
+  },
+  {
    "title": "Nid de frelons par département",
    "links": [
     {

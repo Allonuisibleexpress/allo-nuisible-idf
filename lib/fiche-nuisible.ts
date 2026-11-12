@@ -70,3 +70,23 @@ export function fichePuces(v: V, voisines: Voisine[], derat: boolean, souris = f
     `Nous traitons aussi les puces à ${liensVoisines('/puces', voisines)}.${dep ? ` Toutes nos villes ${dep[1]} : [puces ${dep[1]}](/puces/${dep[0]}).` : ''} Voir aussi notre page [traitement des puces en Île-de-France](/services/puces).`,
   ]
 }
+
+export function ficheFrelons(v: V, voisines: Voisine[]): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const h = habitat(v)
+  const verts = d?.verts?.slice(0, 2) ?? []
+  const eau = d?.eaux?.[0]
+  const dep = DEP[v.code]
+  return [
+    `### Frelon européen ou frelon asiatique ${v.a} : comment savoir ?`,
+    `Le **frelon européen** est brun-roux et jaune, gros (20 à 25 mm pour une ouvrière), et vole aussi **la nuit**, attiré par les fenêtres éclairées. Le **frelon asiatique** est plus petit, très sombre, avec un seul anneau orangé et des **pattes jaunes** au bout ; il construit souvent son nid **très haut dans les arbres**. Une photo sur WhatsApp nous suffit pour vous répondre. Tout savoir : [frelon européen](/blog/frelon-europeen-tout-savoir), [frelon asiatique](/blog/frelon-asiatique-tout-savoir), [guêpes](/blog/guepes-tout-savoir).`,
+    `### Où trouve-t-on les nids de frelons ${v.a} ?`,
+    `${h.phrase} ${h.dense ? 'Ici, les nids se cachent surtout dans les coffres de volets roulants, les combles, les cheminées, les balcons peu utilisés et les arbres des cours et des squares.' : 'Ici, les nids se trouvent surtout dans les haies, les arbres des jardins, les abris, les combles et sous les avant-toits.'}${verts.length ? ` Les grands arbres d’espaces verts comme ${liste(verts)} accueillent aussi des nids de frelons asiatiques, parfois repérés seulement à l’automne, quand les feuilles tombent.` : ''}${eau ? ` Près de ${eau.replace(/^(La |Le |L’|L')/, (m) => m.toLowerCase())}, les frelons trouvent de l’eau en abondance pour construire leur nid.` : ''}`,
+    `### Un nid de frelons ${v.a} : que faire en attendant notre passage ?`,
+    `Restez à distance, ne bouchez pas l’entrée et n’arrosez pas le nid ${v.a} : les frelons défendent vivement ses abords. Éloignez enfants et animaux. En cas de piqûres multiples ou de gonflement du visage, appelez le **15** ou le **112**.`,
+    `### Destruction de nid de frelons ${v.a} : prix, délai et méthode`,
+    `Nous détruisons les nids de frelons et de guêpes ${v.a} **dès 89 € TTC** pour un nid accessible, **149 €** à la perche, **199 €** en toiture, combles ou cheminée, nacelle sur devis, avec un devis donné avant le déplacement. Voir notre service [destruction de nids de guêpes et frelons](/services/guepes-frelons) et notre article [nid de frelon en hiver](/blog/nid-de-frelon-en-hiver).`,
+    `### Nids de frelons près de ${v.nom} : nos autres villes`,
+    `Nous intervenons aussi à ${liensVoisines('/destruction-nid-frelon', voisines)}.${dep ? ` Toutes nos villes ${dep[1]} : [destruction de nid de frelons ${dep[1]}](/destruction-nid-frelon/${dep[0]}).` : ''} Nos chantiers en images : [nid de 12 mètres en nacelle à Champigny](/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne), [nid dans une cheminée à Nogent](/blog/nid-frelons-cheminee-nogent-sur-marne).`,
+  ]
+}
