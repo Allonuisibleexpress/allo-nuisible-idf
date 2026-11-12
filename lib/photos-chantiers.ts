@@ -268,8 +268,8 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     video: { src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4', legende: 'Champigny-sur-Marne (94) : établissement scolaire accueillant des enfants en bas âge, infesté de punaises de lit. Traitement sans produit chimique (cryogénie) sur les lits à barreaux, à Champigny-sur-Marne.', banniere: true, apercu: 6 },
   },
   'paris-16': {
-    titre: 'Vidéo choc à Paris 16e : des punaises de lit vivantes filmées en gros plan, du matelas jusqu’au sommier',
-    video: { src: '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4', legende: 'Paris 16e (75016) : infestation massive de punaises de lit. Punaises vivantes et gorgées de sang filmées en gros plan sur le matelas, puis traitement du matelas et du sommier, à Paris 16e.', banniere: true, apercu: 27.2 },
+    titre: 'Énorme infestation de punaises de lit à Paris 16e : la vidéo choc, punaises vivantes en gros plan du matelas au sommier',
+    video: { src: '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4', legende: 'Paris 16e (75016) : énorme infestation de punaises de lit. Punaises vivantes et gorgées de sang filmées en gros plan sur le matelas, puis traitement du matelas et du sommier, à Paris 16e.', banniere: true, apercu: 27.2 },
   },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',

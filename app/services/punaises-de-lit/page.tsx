@@ -72,7 +72,7 @@ const data: ServiceData = {
   chantier: {
     photos: ['creteilLattes1', 'cryoFoyer'],
     videos: [
-      { src: '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4', legende: 'Paris 16e : punaises de lit vivantes filmées en gros plan, puis matelas et sommier traités', banniere: true, apercu: 27.2 },
+      { src: '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4', legende: 'Paris 16e : énorme infestation, punaises de lit vivantes filmées en gros plan, puis matelas et sommier traités', banniere: true, apercu: 27.2 },
       { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Créteil (94) : punaises localisées dans les lattes du sommier', banniere: true },
       { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Paris 12e : punaises mortes au sol après le premier passage', banniere: true },
       { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'L’Haÿ-les-Roses (94) : cryogénie sur un sommier, sans produit chimique', banniere: true },
