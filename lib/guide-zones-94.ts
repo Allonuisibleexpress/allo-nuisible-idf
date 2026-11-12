@@ -159,4 +159,84 @@ export const GUIDE_ZONES_94: Record<string, string[]> = {
     'Avec plus de 43 % de logements sociaux selon l’inventaire SRU, la ville compte de nombreuses résidences où punaises de lit et cafards sont les premiers motifs d’intervention.',
     'Les 11 jardins partagés et les grands parcs, comme celui des **Lilas**, attirent rongeurs et guêpes ; les pavillons du **coteau** voient des souris à l’automne.',
   ],
+  'ablon-sur-seine': [
+    'Ablon-sur-Seine est une petite ville de 5 988 habitants (Insee), au bord de la **Seine** et de son **écluse**. Les maisons proches du fleuve voient des rats remonter après les crues, et les jardins accueillent souris et mulots.',
+    'La commune est surtout pavillonnaire : les grands jardins, comme autour du **parc des Sœurs** ou du **parc Dréher**, sont propices aux nids de guêpes et de frelons du printemps à l’automne.',
+    'Les maisons anciennes du centre ont des caves et des combles où s’installent souris et parfois lérots ; nous vérifions toujours les accès.',
+  ],
+  'chennevieres-sur-marne': [
+    'Chennevières-sur-Marne domine la Marne depuis ses coteaux. Les maisons du **Moulin** et des **Coteaux** voient souris et rats dans les jardins et les sous-sols ; celles proches des bords de Marne, des rats après les crues.',
+    'Le quartier du **Bois l’Abbé** et ses résidences sont le principal secteur des appels pour punaises de lit et cafards, à traiter en coordination avec le bailleur.',
+    'La **plaine des Bordes** et le parc du **château de Retz** apportent de grands espaces verts, où guêpes et frelons nichent l’été.',
+  ],
+  'chevilly-larue': [
+    'Chevilly-Larue est voisine du **marché de Rungis** et de ses zones d’activités alimentaires : les rongeurs y trouvent nourriture et abri, et les entreprises demandent un suivi régulier.',
+    'L’arrivée du **métro 14** et du **tram 7** transforme la ville ; les chantiers déplacent rats et souris vers les maisons et immeubles voisins.',
+    'Avec 4 jardins partagés et le **parc du Petit-le-Roy**, les guêpes et frelons sont fréquents dans les jardins à la belle saison.',
+  ],
+  'fresnes': [
+    'Fresnes est traversée par la **Bièvre**, avec le **parc des Prés de la Bièvre** et le **parc des Aulnes**. Ces espaces humides et verts attirent rongeurs, guêpes et moustiques.',
+    'Les quartiers pavillonnaires, de la **Peupleraie** à la **Vallée aux Renards**, voient surtout souris et frelons ; les résidences, punaises de lit et cafards.',
+    'Le grand domaine de la maison d’arrêt occupe une partie de la ville : ses abords végétalisés sont aussi des réservoirs de rongeurs pour les maisons voisines.',
+  ],
+  'gentilly': [
+    'Gentilly tient sur 1,18 km² (Insee), avec une forte densité. Les immeubles du **Plateau** et de la **Reine Blanche** se touchent : punaises de lit, cafards et souris passent d’un logement à l’autre.',
+    'Le quartier du **Chaperon Vert**, avec ses grandes résidences, demande des traitements coordonnés avec le bailleur.',
+    'Collée à Paris et au parc Montsouris tout proche, la ville voit aussi des rats dans les cours et les caves des immeubles anciens.',
+  ],
+  'ivry-sur-seine': [
+    'Ivry-sur-Seine compte 65 064 habitants (Insee) et se transforme vite, notamment à **Ivry Port**. Les démolitions d’anciens entrepôts et les chantiers chassent rats et souris vers les immeubles voisins.',
+    'Avec plus de 44 % de logements sociaux selon l’inventaire SRU, la ville compte beaucoup de résidences, où punaises de lit et cafards sont les premiers motifs d’appel.',
+    'Plus de 150 restaurants recensés sur OpenStreetMap et les bords de **Seine** font aussi de la ville un secteur à suivre pour les rongeurs.',
+  ],
+  'l-hay-les-roses': [
+    'L’Haÿ-les-Roses est célèbre pour sa **Roseraie**. Les quartiers pavillonnaires qui l’entourent voient guêpes et frelons dans les jardins, et souris dans les maisons à l’automne.',
+    'L’arrivée du **métro 14** a amené de nouveaux quartiers ; les chantiers déplacent les rongeurs vers les bâtiments voisins.',
+    'Les résidences de la **Vallée aux Renards** et du centre voient surtout punaises de lit et cafards, à traiter logement par logement et dans les parties communes.',
+  ],
+  'la-queue-en-brie': [
+    'La Queue-en-Brie, 12 241 habitants (Insee), mêle village ancien, quartiers pavillonnaires et bois. Les maisons proches des **bois des Friches** voient arriver souris, mulots et lérots dès l’automne.',
+    'L’IGN y recense environ 2,6 hectares de pins : les chenilles processionnaires sont à surveiller de la fin de l’hiver au printemps.',
+    'Les 4 jardins partagés et les grands jardins sont propices aux nids de guêpes et de frelons.',
+  ],
+  'le-kremlin-bicetre': [
+    'Le Kremlin-Bicêtre est une petite ville dense, collée à Paris, autour de l’**hôpital de Bicêtre**. Les immeubles serrés favorisent la propagation des punaises de lit et des cafards d’un logement à l’autre.',
+    'Les commerces et restaurants de l’avenue de Fontainebleau attirent les rongeurs vers les rez-de-chaussée et les caves.',
+    'Avec les **métros 7 et 14**, la ville est très bien desservie : nous y intervenons souvent le jour même.',
+  ],
+  'orly': [
+    'Orly s’étend du **Vieil Orly** jusqu’à l’aéroport et la Seine. Les grandes résidences de **Pierre au Prêtre** ou des **Navigateurs** voient surtout punaises de lit et cafards.',
+    'Le Vieil Orly et les maisons anciennes ont des caves et des combles où s’installent souris et rats ; les bords de Seine voient des rats après les crues.',
+    'Les zones d’activités proches de l’aéroport accueillent entrepôts et commerces, pour lesquels nous proposons des plans de lutte avec registre.',
+  ],
+  'ormesson-sur-marne': [
+    'Ormesson-sur-Marne, 10 977 habitants (Insee), est une ville de maisons et de jardins, bordée par le **parc départemental du Morbras**.',
+    'Les jardins arborés y favorisent les nids de guêpes et de frelons, et les maisons en bordure du parc voient souris et mulots entrer à l’automne.',
+    'Les maisons anciennes ont des combles et des caves où les rongeurs s’installent : nous repérons toujours les accès avant de traiter.',
+  ],
+  'perigny': [
+    'Périgny est un village de 2 724 habitants (Insee), au bord de l’**Yerres**, entouré de champs. Après les récoltes, souris et mulots entrent dans les maisons, les granges et les garages.',
+    'Les jardins et vergers accueillent guêpes et frelons, avec des nids parfois installés dans les dépendances.',
+    'Nous intervenons à Périgny depuis Saint-Maurice, avec un devis donné avant le déplacement.',
+  ],
+  'rungis': [
+    'Rungis est connue pour son **marché international**, avec ses entrepôts et ses quais de livraison. Pour ces professionnels de l’alimentaire, la lutte contre les rongeurs est permanente : postes numérotés, passages programmés et registre.',
+    'Le village de Rungis, autour du **parc du Château**, est résidentiel : souris dans les maisons à l’automne, guêpes et frelons dans les jardins.',
+    'Nous intervenons pour les entreprises comme pour les particuliers, avec un devis avant le déplacement.',
+  ],
+  'saint-maurice': [
+    'Saint-Maurice est notre base, entre le **bois de Vincennes**, la **Marne** et le **canal de Saint-Maur**. Nous connaissons chaque quartier, du **Plateau** à **Gravelle**.',
+    'Les immeubles et résidences voient surtout punaises de lit, cafards et souris ; les bords de Marne, des rats ; les jardins, guêpes et frelons à la belle saison.',
+    'Notre proximité permet d’intervenir très vite et de revenir facilement pour les contrôles.',
+  ],
+  'valenton': [
+    'Valenton est entourée de grands parcs départementaux, comme la **Plage Bleue** et le **Champ Saint-Julien**. Ces espaces verts amènent rongeurs, guêpes et frelons près des habitations.',
+    'Les quartiers du **Val Pompadour** et les résidences voient surtout punaises de lit et cafards, à traiter en coordination avec le bailleur.',
+    'Avec l’arrivée du **Câble 1**, la ville est mieux reliée ; nous y intervenons rapidement depuis Saint-Maurice.',
+  ],
+  'vincennes': [
+    'Vincennes compte 48 193 habitants sur 1,9 km² (Insee), l’une des plus fortes densités d’Île-de-France. Les immeubles anciens se touchent : punaises de lit et souris passent d’un logement à l’autre.',
+    'En bordure du **bois de Vincennes** et du château, les immeubles voient arriver souris et rats dans les caves et les rez-de-chaussée.',
+    'Trois marchés et plus de 120 restaurants recensés sur OpenStreetMap font aussi des commerces un point sensible, à suivre régulièrement.',
+  ],
 }
