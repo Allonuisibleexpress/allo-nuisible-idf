@@ -28,6 +28,13 @@ const data: ServiceData = {
     { title: 'Écopièges et pièges', text: 'Pose d\'écopièges sur les troncs avant la descente des chenilles, et de pièges à phéromones l\'été pour limiter la ponte de l\'année suivante.' },
     { title: 'Conseils et suivi', text: 'Calendrier d\'intervention pour l\'année suivante, conseils de prévention (nichoirs à mésanges, choix des essences) et suivi des arbres.' },
   ],
+  chantier: {
+    videos: [
+      { src: '/chantiers/chenilles-processionnaires-retrait-nids-video.mp4', legende: 'Retrait de nids de chenilles processionnaires à la perche télescopique, dans un pin puis dans des cèdres, avec le commentaire du technicien', banniere: true, apercu: 3 },
+    ],
+    titre: 'Notre intervention chenilles processionnaires en vidéo',
+    vignettes: 'Retrait des nids en vidéo',
+  },
   methodes: METHODES_CHENILLES,
   guide: GUIDE_CHENILLES,
   pricing: [

@@ -4,6 +4,7 @@ import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTempla
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 
 const VIDEOS_CRYO = [
+  { src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4', legende: 'Champigny-sur-Marne (94) : établissement scolaire accueillant des enfants en bas âge, infesté de punaises de lit, traité sans produit chimique (cryogénie)', banniere: true, apercu: 6 },
   { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'L’Haÿ-les-Roses (94) : cryogénie sur un sommier, sans produit chimique', banniere: true },
   { src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4', legende: 'Cryogénie dans une chambre de foyer' },
   { src: '/chantiers/cryogenie-punaises-foyer-video-2.mp4', legende: 'Traitement le long du mobilier et des plinthes' },

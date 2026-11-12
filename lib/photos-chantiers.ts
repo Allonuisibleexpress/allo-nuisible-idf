@@ -235,7 +235,7 @@ export const MEDIAS_FRELONS = {
 export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }
 
 // Vrais chantiers de punaises de lit, affichés sur la page de la ville où ils ont eu lieu (03/11/2026)
-export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean; apercu?: number }; article: string }> = {
+export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: PhotoKey[]; video: { src: string; legende: string; banniere: boolean; apercu?: number }; article?: string }> = {
   creteil: {
     titre: 'Notre chantier à Créteil : punaises localisées dans les sommiers',
     photos: ['creteilLattes1'],
@@ -262,6 +262,10 @@ export const CHANTIERS_PUNAISES_VILLE: Record<string, { titre: string; photos?: 
     photos: ['vincennesMortes1', 'vincennesMortes2'],
     video: { src: '/chantiers/punaises-vincennes-punaises-mortes-hd.mp4', legende: '10 jours après notre passage : le sol couvert de punaises de lit mortes (Vincennes, 94)', banniere: true, apercu: 13 },
     article: '/blog/punaises-de-lit-vincennes-punaises-mortes',
+  },
+  'champigny-sur-marne': {
+    titre: 'Notre chantier à Champigny-sur-Marne : cryogénie dans un établissement pour jeunes enfants',
+    video: { src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4', legende: 'Établissement scolaire accueillant des enfants en bas âge, infesté de punaises de lit : traitement sans produit chimique (cryogénie) sur les lits à barreaux (Champigny-sur-Marne, 94)', banniere: true, apercu: 6 },
   },
   'paris-12': {
     titre: 'Notre chantier à Paris 12e : le résultat du premier passage',

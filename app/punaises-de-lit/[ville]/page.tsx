@@ -228,7 +228,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-3xl mx-auto">
               <MediasChantier photos={CHANTIERS_PUNAISES_VILLE[v.slug].photos} videos={[CHANTIERS_PUNAISES_VILLE[v.slug].video]} titre={CHANTIERS_PUNAISES_VILLE[v.slug].titre}
-                lien={{ href: CHANTIERS_PUNAISES_VILLE[v.slug].article, label: 'Lire le récit de l’intervention' }} />
+                lien={CHANTIERS_PUNAISES_VILLE[v.slug].article ? { href: CHANTIERS_PUNAISES_VILLE[v.slug].article!, label: 'Lire le récit de l’intervention' } : undefined} />
             </div>
           </section>
         )}
