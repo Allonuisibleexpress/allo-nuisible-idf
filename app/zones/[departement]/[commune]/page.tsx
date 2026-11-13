@@ -82,7 +82,7 @@ export default function CommunePage({ params }: { params: Params }) {
             background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
           }} />
           <div className="relative max-w-4xl mx-auto text-center">
-            <nav className="text-xs text-white/40 mb-5" aria-label="Fil d'Ariane">
+            <nav className="text-xs text-white/60 mb-5" aria-label="Fil d'Ariane">
               <a href="/zones" className="hover:text-white/70">Zones</a>{' / '}
               <a href={`/zones/${DEPT_SLUG}`} className="hover:text-white/70">Val-de-Marne (94)</a>{' / '}
               <span className="text-white/60">{c.nom}</span>
@@ -109,7 +109,7 @@ export default function CommunePage({ params }: { params: Params }) {
                 Devis gratuit <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-white/40 text-xs tracking-wide">
+            <p className="text-white/60 text-xs tracking-wide">
               Intervention possible le jour même {c.a} · Certibiocide · Garantie 1 an
             </p>
           </div>
@@ -184,7 +184,7 @@ export default function CommunePage({ params }: { params: Params }) {
                 )
               })}
             </div>
-            <p className="text-white/45 text-sm mt-8">
+            <p className="text-white/60 text-sm mt-8">
               Nous intervenons aussi {c.a} pour :{' '}
               {autres.map((k, i) => (
                 <span key={k}>
@@ -263,7 +263,7 @@ export default function CommunePage({ params }: { params: Params }) {
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <div className="mt-14">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-4">
                 Nous intervenons aussi près de {c.nom}
               </p>
               <div className="flex flex-wrap justify-center gap-2">

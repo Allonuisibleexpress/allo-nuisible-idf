@@ -48,7 +48,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.18) 0%, transparent 65%)' }} />
       <div className={`relative mx-auto ${PHOTOS_MAIRIES[slug] ? 'max-w-6xl lg:grid lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-10 lg:items-center' : 'max-w-4xl'}`}>
       <div className="text-center">
-        <nav className="text-xs text-white/40 mb-5" aria-label="Fil d'Ariane">
+        <nav className="text-xs text-white/60 mb-5" aria-label="Fil d'Ariane">
           <a href="/" className="hover:text-white/70">Accueil</a>{' / '}
           <a href={fil.href} className="hover:text-white/70">{fil.label}</a>{' / '}
           {dep && <><a href={dep.href} className="hover:text-white/70">{dep.label}</a>{' / '}</>}
@@ -63,12 +63,12 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
           {titre} <span style={{ color: ACCENT }}>{a}</span>
         </h1>
-        {cp && <p className="text-white/45 font-bold tracking-widest mb-6">{cp}{pop ? ` · ${nf(pop)} habitants` : ''}</p>}
+        {cp && <p className="text-white/60 font-bold tracking-widest mb-6">{cp}{pop ? ` · ${nf(pop)} habitants` : ''}</p>}
         {maj && (
           <p className="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs text-white/55 -mt-3 mb-6">
             <BadgeCheck className="w-3.5 h-3.5" style={{ color: ACCENT }} />
             <span>Rédigé par <strong className="text-white/80">Houssem Hattab</strong>, gérant d&apos;Allo Nuisible IDF, avec nos techniciens certifiés Certibiocide</span>
-            <span className="text-white/30">·</span><span>Mis à jour le {maj}</span>
+            <span className="text-white/60">·</span><span>Mis à jour le {maj}</span>
           </p>
         )}
 
@@ -115,7 +115,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
               <p className="text-white font-black text-lg leading-tight">{PHOTOS_MAIRIES[slug].lieu ?? MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}</p>
             </div>
           </div>
-          <figcaption className="text-[10px] text-white/35 mt-2 text-center lg:text-right">
+          <figcaption className="text-[10px] text-white/60 mt-2 text-center lg:text-right">
             Photo : <a href={PHOTOS_MAIRIES[slug].page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{PHOTOS_MAIRIES[slug].credit}</a>, {PHOTOS_MAIRIES[slug].licence}
           </figcaption>
         </figure>

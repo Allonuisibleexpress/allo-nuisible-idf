@@ -29,7 +29,7 @@ function Figure({ p, a, entier = false }: { p: Photo; a: string; entier?: boolea
       <img src={p.src} alt={`${p.alt} (illustration, puces ${a})`} loading="lazy" className={`w-full h-48 md:h-56 ${entier ? 'object-contain bg-[#f2efe9] p-2' : 'object-cover bg-white/5'}`} />
       <figcaption className="p-3 text-xs text-white/65 leading-relaxed text-center">
         <span className="block text-white/85 font-semibold">{p.legende}</span>
-        <a href={p.page} target="_blank" rel="noopener nofollow" className="underline text-white/40">Photo : {p.credit}, {p.licence}</a>
+        <a href={p.page} target="_blank" rel="noopener nofollow" className="underline text-white/60">Photo : {p.credit}, {p.licence}</a>
       </figcaption>
     </figure>
   )
@@ -118,7 +118,7 @@ export function PucesBloc1({ slug, a, nom }: { slug: string; a: string; nom: str
                 <div className="p-5 flex-1">
                   <h3 className="font-black text-white mb-2">{e.titre}</h3>
                   <p className="text-white/65 text-sm leading-relaxed">{g(remplir(e.textes[ordre[i]], a, nom))}</p>
-                  <a href={PHOTOS[e.cle].page} target="_blank" rel="noopener nofollow" className="block mt-3 text-[11px] underline text-white/35">Photo : {PHOTOS[e.cle].credit}, {PHOTOS[e.cle].licence}</a>
+                  <a href={PHOTOS[e.cle].page} target="_blank" rel="noopener nofollow" className="block mt-3 text-[11px] underline text-white/60">Photo : {PHOTOS[e.cle].credit}, {PHOTOS[e.cle].licence}</a>
                 </div>
               </div>
             ))}
@@ -249,7 +249,7 @@ export function PucesBloc2({ slug, a, nom }: { slug: string; a: string; nom: str
               </div>
             ))}
           </div>
-          <p className="text-white/40 text-xs mt-5 text-center">Informations générales, qui ne remplacent pas un conseil juridique. Source : loi n° 89-462 du 6 juillet 1989, article 6, sur Légifrance.</p>
+          <p className="text-white/60 text-xs mt-5 text-center">Informations générales, qui ne remplacent pas un conseil juridique. Source : loi n° 89-462 du 6 juillet 1989, article 6, sur Légifrance.</p>
         </div>
       </section>
     </>

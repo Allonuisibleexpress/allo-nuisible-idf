@@ -181,7 +181,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         <section className="relative pt-10 md:pt-14 pb-12 px-4 overflow-hidden" style={{ background: '#080808' }}>
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.18) 0%, transparent 65%)' }} />
           <div className="relative max-w-4xl mx-auto text-center">
-            <nav className="text-xs text-white/40 mb-5" aria-label="Fil d'Ariane">
+            <nav className="text-xs text-white/60 mb-5" aria-label="Fil d'Ariane">
               <a href="/" className="hover:text-white/70">Accueil</a>{' / '}<span className="text-white/60">{c.label} {dep.nom}</span>
             </nav>
             <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 text-sm" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}>
@@ -191,7 +191,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
               {c.h1} <span style={{ color: ACCENT }}>{dep.dans}</span>
             </h1>
-            <p className="text-white/45 font-bold tracking-widest mb-6">{dep.code} · {dep.communes} · {nf(dep.population)} habitants</p>
+            <p className="text-white/60 font-bold tracking-widest mb-6">{dep.code} · {dep.communes} · {nf(dep.population)} habitants</p>
             <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-7">{ct.accroche} {d === 'val-de-marne' ? 'Notre base est à Saint-Maurice, au cœur du département.' : 'Notre base est à Saint-Maurice (94), tout près.'}</p>
             <div className="flex flex-wrap justify-center items-center gap-3 mb-7">
               <span className="inline-flex items-baseline gap-2 rounded-2xl px-5 py-3" style={{ background: 'rgba(232,68,26,0.12)', border: '1.5px solid rgba(232,68,26,0.45)' }}>
@@ -250,10 +250,10 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                     <img src={f.photo.src} alt={`${f.nom} (${f.latin}), nuisible traité ${dep.dans}`} loading="lazy" width={480} height={320} className="w-full h-52 object-cover" />
                     <figcaption className="p-5">
                       <h3 className="text-white font-black text-lg">{f.nom} {dep.dans}</h3>
-                      <p className="text-white/45 text-sm italic mb-2">{f.latin} · {f.taille}</p>
+                      <p className="text-white/60 text-sm italic mb-2">{f.latin} · {f.taille}</p>
                       <p className="text-white/70 text-sm leading-relaxed mb-2">{f.aspect}</p>
                       <p className="text-white/60 text-sm leading-relaxed"><strong className="text-white">Indices : </strong>{f.signes}</p>
-                      <p className="text-[10px] text-white/35 mt-3">Photo : <a href={f.photo.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{f.photo.credit}</a>, {f.photo.licence}</p>
+                      <p className="text-[10px] text-white/60 mt-3">Photo : <a href={f.photo.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{f.photo.credit}</a>, {f.photo.licence}</p>
                     </figcaption>
                   </figure>
                 )
@@ -307,7 +307,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 {villes.map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="group rounded-xl px-4 py-3 hover:bg-white/[0.06]" style={card}>
                     <span className="block text-white font-bold text-sm">{c.label} {v.nom}</span>
-                    <span className="block text-white/45 text-xs">{codePostal(v.slug)} · {REPERES[v.slug]?.km ? `${REPERES[v.slug].km.toLocaleString('fr-FR')} km` : 'notre base'}</span>
+                    <span className="block text-white/60 text-xs">{codePostal(v.slug)} · {REPERES[v.slug]?.km ? `${REPERES[v.slug].km.toLocaleString('fr-FR')} km` : 'notre base'}</span>
                   </a>
                 ))}
               </div>
@@ -352,7 +352,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <div className="space-y-3">
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
-                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span></summary>
+                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
               ))}
@@ -385,13 +385,13 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             </a>
             <div className="grid sm:grid-cols-2 gap-6 mt-12 text-left">
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-3">{c.label} dans les autres départements</p>
+                <p className="text-white/60 text-xs uppercase tracking-widest mb-3">{c.label} dans les autres départements</p>
                 <div className="flex flex-wrap gap-2">
                   {autresDeps.map((x) => <a key={x} href={`${c.base}/${x}`} className="text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>{c.label} {DEPS[x].nom}</a>)}
                 </div>
               </div>
               <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Nos autres services {dep.dans}</p>
+                <p className="text-white/60 text-xs uppercase tracking-widest mb-3">Nos autres services {dep.dans}</p>
                 <div className="flex flex-wrap gap-2">
                   {autresServices.map((x) => <a key={x} href={`${SERVICES_DEP[x].base}/${d}`} className="text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>{SERVICES_DEP[x].label} {dep.nom}</a>)}
                 </div>

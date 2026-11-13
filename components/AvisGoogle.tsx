@@ -28,7 +28,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
                   </div>
                   <figcaption>
                     <p className="font-black text-white text-sm leading-none mb-1">{a.auteur}</p>
-                    <p className="text-white/40 text-xs">{a.sujet} · {a.mois ?? 'septembre 2026'}</p>
+                    <p className="text-white/60 text-xs">{a.sujet} · {a.mois ?? 'septembre 2026'}</p>
                   </figcaption>
                 </div>
                 <p className="text-yellow-400 text-xs mb-3" aria-label="5 étoiles sur 5">★★★★★</p>

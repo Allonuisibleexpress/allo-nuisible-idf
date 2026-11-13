@@ -135,7 +135,7 @@ export default function GlobalRdvButton() {
           >
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
               aria-label="Fermer"
             >
               <X size={20} />
@@ -245,7 +245,7 @@ export default function GlobalRdvButton() {
                     {loading ? 'Envoi en cours…' : 'Confirmer la demande'}
                   </button>
 
-                  <p className="text-center text-white/30 text-xs">ou appelez directement le</p>
+                  <p className="text-center text-white/60 text-xs">ou appelez directement le</p>
                   <a
                     href={PHONE_HREF}
                     className="flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm text-white transition-all duration-200 hover:opacity-80"

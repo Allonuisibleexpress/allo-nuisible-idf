@@ -74,7 +74,7 @@ export default function NosInterventionsPage() {
               {rubriques.map((r) => (
                 <a key={r.id} href={`#${r.id}`} className="text-sm font-bold text-white px-4 py-2 rounded-full transition-colors hover:bg-white/10"
                   style={{ border: '1px solid rgba(255,255,255,0.18)' }}>
-                  {r.titre} <span className="text-white/45">({r.chantiers.length})</span>
+                  {r.titre} <span className="text-white/60">({r.chantiers.length})</span>
                 </a>
               ))}
             </nav>
@@ -106,7 +106,7 @@ export default function NosInterventionsPage() {
                             style={{ background: 'rgba(232,68,26,0.15)', border: '1px solid rgba(232,68,26,0.45)' }}>
                             <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{(LIEUX[a.slug] ?? SECTEUR).nom}
                           </a>
-                          <span className="text-[11px] font-bold tracking-widest uppercase text-white/45">
+                          <span className="text-[11px] font-bold tracking-widest uppercase text-white/60">
                             {r.titre} · {new Date(a.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
                           </span>
                         </div>

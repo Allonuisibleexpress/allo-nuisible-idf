@@ -60,7 +60,7 @@ export default function Hero() {
             <Phone style={{ width: '0.72em', height: '0.72em', flexShrink: 0, position: 'relative', zIndex: 1 }} />
             <span style={{ position: 'relative', zIndex: 1 }}>{PHONE}</span>
           </a>
-          <p className="text-white/40 text-xs tracking-widest uppercase mt-4">
+          <p className="text-white/60 text-xs tracking-widest uppercase mt-4">
             Appel gratuit · Réponse sous 5 min · 7j/7
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function Hero() {
             <span className="font-black text-base" style={{ background: 'linear-gradient(90deg,#4285F4,#EA4335,#FBBC05,#34A853)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>G</span>
             <span className="tracking-tight text-sm" style={{ color: '#facc15' }}>★★★★★</span>
             <span className="text-white font-bold text-sm">4,8</span>
-            <span className="text-white/40 text-sm hidden sm:inline">· 59 avis</span>
+            <span className="text-white/60 text-sm hidden sm:inline">· 59 avis</span>
           </div>
           <div className="w-px self-stretch bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2 px-5 py-3.5">

@@ -95,7 +95,7 @@ export default function IdentifierNuisiblePage() {
         {/* ── HERO ── */}
         <section className="pt-10 md:pt-14 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs text-white/45 mb-5"><a href="/" className="hover:text-white">Accueil</a> / Identifier un nuisible</p>
+            <p className="text-xs text-white/60 mb-5"><a href="/" className="hover:text-white">Accueil</a> / Identifier un nuisible</p>
             <Scanner />
             <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <Search className="w-3.5 h-3.5" />Identification gratuite
@@ -114,7 +114,7 @@ export default function IdentifierNuisiblePage() {
                 <Camera className="w-5 h-5" />Envoyer une photo sur WhatsApp
               </a>
             </div>
-            <p className="text-white/45 text-sm mt-4">Gratuit, sans engagement, réponse d’un technicien certifié Certibiocide.</p>
+            <p className="text-white/60 text-sm mt-4">Gratuit, sans engagement, réponse d’un technicien certifié Certibiocide.</p>
           </div>
         </section>
 
@@ -218,7 +218,7 @@ export default function IdentifierNuisiblePage() {
             <div className="space-y-3">
               {FAQ.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
-                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span></summary>
+                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
               ))}

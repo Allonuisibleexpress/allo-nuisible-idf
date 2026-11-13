@@ -74,7 +74,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                 Demander un devis gratuit <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-white/40 text-xs tracking-wide">
+            <p className="text-white/60 text-xs tracking-wide">
               Intervention possible le jour même {d.dans} · Devis gratuit · Garantie 1 an
             </p>
           </div>
@@ -253,7 +253,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
             <div className="mt-14">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Nous intervenons aussi</p>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-4">Nous intervenons aussi</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {autres.map((x) => (
                   <a key={x.slug} href={`/zones/${x.slug}`}

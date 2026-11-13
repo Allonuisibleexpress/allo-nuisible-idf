@@ -156,7 +156,7 @@ function renderBlock(b: Block, idx: number) {
         <figure key={k} style={{ margin: '8px auto 28px', maxWidth: '520px', textAlign: 'center' }}>
           <img src={b.src} alt={b.alt} loading="lazy" style={{ width: '100%', borderRadius: '14px', display: 'block' }} />
           <figcaption style={{ fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', marginTop: '10px' }}>{inline(b.legende, k)}</figcaption>
-          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '4px' }}>
+          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', marginTop: '4px' }}>
             Photo : {b.credit}, <a href={b.page} target="_blank" rel="noopener noreferrer nofollow" style={{ textDecoration: 'underline' }}>{b.licence}</a>, Wikimedia Commons
           </p>
         </figure>

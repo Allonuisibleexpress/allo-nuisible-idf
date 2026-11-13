@@ -94,7 +94,7 @@ export default function NosNuisibles() {
             >
               À la traque<br className="hidden sm:block" /> des indésirables
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.875rem', maxWidth: '22rem' }}>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', maxWidth: '22rem' }}>
               Chaque nuisible a son protocole. Nos techniciens certifiés interviennent le jour même.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function NosNuisibles() {
                 <p className="font-black text-white text-sm leading-tight mb-1.5 group-hover:text-[#E8441A] transition-colors duration-200">
                   {name}
                 </p>
-                <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.75rem', lineHeight: 1.5 }}>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', lineHeight: 1.5 }}>
                   {desc}
                 </p>
               </div>

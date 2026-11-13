@@ -103,7 +103,7 @@ export default function Home() {
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les nuisibles reviennent, on revient sans frais.
               </p>
-              <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
                 Toute intervention est garantie 1 an. En cas de réapparition, notre technicien revient sans aucun supplément.
               </p>
               <a href="tel:+33768077219"
@@ -131,7 +131,7 @@ export default function Home() {
               {FAQ_ACCUEIL.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
-                    {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                    {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>

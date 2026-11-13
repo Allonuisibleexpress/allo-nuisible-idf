@@ -53,7 +53,7 @@ function StatCard({
       <div className="text-2xl font-black text-[#1a1a1a] tabular-nums">
         {target === null ? suffix : `${count}${suffix}`}
       </div>
-      <div className="text-xs text-gray-500 mt-0.5 leading-tight">{label}</div>
+      <div className="text-xs text-gray-400 mt-0.5 leading-tight">{label}</div>
     </div>
   )
 }
@@ -96,12 +96,12 @@ export default function QuiSommesNous() {
               <div className="w-12 h-1 bg-[#E8441A] mt-5 rounded-full" />
             </div>
 
-            <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+            <p className="text-gray-400 text-base lg:text-lg leading-relaxed">
               <span className="font-bold text-[#1a1a1a]">Allo Nuisible IDF</span> est née en Île-de-France
               il y a plus de 3 ans. Nos techniciens, certifiés Certibiocide (habilitation délivrée par
               l&apos;État), interviennent dans <strong>toute l&apos;Île-de-France</strong>.
             </p>
-            <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+            <p className="text-gray-400 text-base lg:text-lg leading-relaxed">
               Disponibles <strong>24h/24 et 7j/7</strong>, nous intervenons avec rigueur, discrétion et
               efficacité pour vous garantir des <strong>résultats durables</strong>. Chaque intervention est
               pensée sur mesure, en privilégiant des solutions performantes, respectueuses de votre
@@ -149,7 +149,7 @@ export default function QuiSommesNous() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#1a1a1a]">Certifié CERTIBIOCIDE</div>
-                    <div className="text-xs text-gray-500">Agrément État Français</div>
+                    <div className="text-xs text-gray-400">Agrément État Français</div>
                   </div>
                 </div>
               </div>

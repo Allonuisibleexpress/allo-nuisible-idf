@@ -155,3 +155,24 @@ body {
 
 /* Aucun débordement horizontal, même pendant les animations d’apparition (09/11/2026) */
 html, body { overflow-x: clip; }
+
+/* Accessibilité (13/11/2026) */
+/* Boutons orange avec texte blanc : orange un peu plus foncé pour un contraste de 4,8:1 (norme WCAG AA).
+   L'orange des titres et liens sur fond noir (#E8441A, 5:1) ne change pas. */
+[style*="background:#E8441A"],
+.bg-\[\#E8441A\] {
+  background-color: #D23C14 !important;
+}
+/* Zones à toucher d'au moins 24 px : fil d'Ariane et petits liens du pied de page */
+nav[aria-label="Fil d'Ariane"] a {
+  display: inline-block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+footer a.text-xs,
+footer a.text-sm {
+  display: inline-block;
+  min-height: 24px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}

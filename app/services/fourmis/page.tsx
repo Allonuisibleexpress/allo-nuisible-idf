@@ -187,7 +187,7 @@ export default function FourmisPage() {
                 <Phone style={{ width: '0.75em', height: '0.75em', flexShrink: 0, position: 'relative', zIndex: 1, color: '#0d0000' }} />
                 <span style={{ position: 'relative', zIndex: 1 }}>07 68 07 72 19</span>
               </a>
-              <p className="text-white/30 text-xs tracking-widest uppercase mt-4">
+              <p className="text-white/60 text-xs tracking-widest uppercase mt-4">
                 Appel gratuit · Réponse sous 5 min · 7j/7
               </p>
             </div>
@@ -197,7 +197,7 @@ export default function FourmisPage() {
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
                 <span className="text-white font-semibold">4,8/5</span>
-                <span className="text-white/40 text-sm hidden sm:inline">· 59 avis</span>
+                <span className="text-white/60 text-sm hidden sm:inline">· 59 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
@@ -225,7 +225,7 @@ export default function FourmisPage() {
                 WhatsApp
               </a>
             </div>
-            <p className="text-white/30 text-sm">
+            <p className="text-white/60 text-sm">
               Rappel sous 5 min · Prix confirmé · Résultat garanti · RC Pro
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function FourmisPage() {
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les fourmis reviennent, on revient sans frais.
               </p>
-              <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
                 Toute intervention est garantie. En cas de réapparition après les passages effectués, notre technicien revient : seuls les frais de déplacement vous sont facturés, le traitement est offert.
               </p>
               <a
@@ -309,7 +309,7 @@ export default function FourmisPage() {
                   <div>
                     <div className="text-[11px] font-bold mb-1 uppercase tracking-widest" style={{ color: ant.color }}>{ant.danger}</div>
                     <h3 className="text-white font-black text-lg leading-tight">{ant.name}</h3>
-                    <p className="text-white/30 text-xs italic">{ant.latin}</p>
+                    <p className="text-white/60 text-xs italic">{ant.latin}</p>
                   </div>
                   <ul className="space-y-1.5 flex-1">
                     {ant.signs.map((s) => (
@@ -320,8 +320,8 @@ export default function FourmisPage() {
                     ))}
                   </ul>
                   <div className="pt-3 space-y-1" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                    <p className="text-white/40 text-xs"><span className="text-white/60 font-semibold">Traitement :</span> {ant.traitement}</p>
-                    <p className="text-white/40 text-xs"><span className="text-white/60 font-semibold">Saison :</span> {ant.saison}</p>
+                    <p className="text-white/60 text-xs"><span className="text-white/60 font-semibold">Traitement :</span> {ant.traitement}</p>
+                    <p className="text-white/60 text-xs"><span className="text-white/60 font-semibold">Saison :</span> {ant.saison}</p>
                   </div>
                 </div>
               ))}
@@ -363,12 +363,12 @@ export default function FourmisPage() {
                     <X className="w-3 h-3 text-red-400" />
                   </div>
                   <p className="font-bold text-white text-sm mb-2">{title}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 rounded-xl px-5 py-4" style={{ background: 'rgba(232,68,26,0.06)', border: '1px solid rgba(232,68,26,0.16)' }}>
-              <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem' }}>Un technicien certifié règle le problème définitivement : gel appât professionnel + barrière rémanente.</p>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem' }}>Un technicien certifié règle le problème définitivement : gel appât professionnel + barrière rémanente.</p>
               <a href={PHONE_HREF} className="shrink-0 inline-flex items-center gap-2 font-bold text-white px-5 py-2.5 rounded-lg text-sm" style={{ background: ACCENT }}>
                 <Phone className="w-3.5 h-3.5" /> Appeler maintenant
               </a>
@@ -384,7 +384,7 @@ export default function FourmisPage() {
           <div className="max-w-4xl mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les fourmis ?</h2>
-            <p className="mb-6" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.65 }}>
+            <p className="mb-6" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65 }}>
               Les fourmis s&apos;installent dans des endroits difficiles d&apos;accès, proches de la nourriture ou de l&apos;humidité. Elles peuvent nidifier à l&apos;intérieur comme à l&apos;extérieur et traverser les murs par les moindres fissures. Chaque emplacement demande un protocole de traitement adapté.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-10">
@@ -397,7 +397,7 @@ export default function FourmisPage() {
             <div className="relative rounded-2xl p-7 md:p-10 text-center overflow-hidden" style={{ background: 'rgba(232,68,26,0.06)', border: '1px solid rgba(232,68,26,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.3),inset 0 1px 0 rgba(232,68,26,0.1)' }}>
               <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
               <p className="font-black text-white text-xl md:text-2xl mb-2">Des fourmis chez vous ? Appelez maintenant.</p>
-              <p className="mb-7" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8125rem' }}>Rappel sous 5 min · Devis gratuit · Résultat garanti · RC Pro incluse</p>
+              <p className="mb-7" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem' }}>Rappel sous 5 min · Devis gratuit · Résultat garanti · RC Pro incluse</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 font-bold text-white px-8 py-4 rounded-xl text-sm" style={{ background: ACCENT, boxShadow: '0 4px 20px rgba(232,68,26,0.28)' }}>
                   <Phone className="w-4 h-4" />{PHONE}
@@ -526,7 +526,7 @@ function CallbackForm() {
           <span className="text-2xl text-green-400">✓</span>
         </div>
         <p className="font-black text-white text-lg">Demande envoyée !</p>
-        <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem' }}>Nous vous rappelons sous 5 minutes.</p>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>Nous vous rappelons sous 5 minutes.</p>
       </div>
     )
   }
@@ -566,7 +566,7 @@ function CallbackForm() {
       <button type="submit" disabled={loading} className="w-full font-bold text-white py-4 rounded-xl text-sm uppercase tracking-wider transition-all hover:opacity-90 disabled:opacity-60" style={{ background: ACCENT }}>
         {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
       </button>
-      <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.7rem', textAlign: 'center' }}>
+      <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', textAlign: 'center' }}>
         * Champs obligatoires. Vos données restent confidentielles
       </p>
     </form>
@@ -603,7 +603,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const lbl: React.CSSProperties = {
     display: 'block', fontSize: '0.7rem', fontWeight: 700,
     letterSpacing: '0.08em', textTransform: 'uppercase',
-    color: 'rgba(255,255,255,0.45)', marginBottom: '0.4rem',
+    color: 'rgba(255,255,255,0.6)', marginBottom: '0.4rem',
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -654,7 +654,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
             </button>
           </div>
           <h3 className="text-2xl font-black text-white leading-tight">Prendre rendez-vous</h3>
-          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Confirmation sous 5 minutes · 7j/7</p>
+          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Confirmation sous 5 minutes · 7j/7</p>
         </div>
 
         {submitted ? (
@@ -663,7 +663,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
               <span className="text-2xl text-green-400">✓</span>
             </div>
             <p className="font-black text-white text-lg">Demande envoyée !</p>
-            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>On vous rappelle sous 5 minutes.</p>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>On vous rappelle sous 5 minutes.</p>
             <button type="button" onClick={handleClose} className="mt-2 text-sm font-bold px-6 py-3 rounded-xl" style={{ background: ACCENT, color: '#fff' }}>
               Fermer
             </button>

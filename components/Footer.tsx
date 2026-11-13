@@ -138,15 +138,15 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-gray-500 text-xs text-center sm:text-left">
+          <p className="text-gray-400 text-xs text-center sm:text-left">
             © 2026 Allo Nuisible IDF. Tous droits réservés
           </p>
           <div className="flex items-center gap-4">
-            <a href="/mentions-legales" className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors">
+            <a href="/mentions-legales" className="text-gray-400 hover:text-[#E8441A] text-xs transition-colors">
               Mentions légales
             </a>
-            <span className="text-gray-600">·</span>
-            <a href="/politique-de-confidentialite" className="text-gray-500 hover:text-[#E8441A] text-xs transition-colors">
+            <span className="text-gray-400">·</span>
+            <a href="/politique-de-confidentialite" className="text-gray-400 hover:text-[#E8441A] text-xs transition-colors">
               Politique de confidentialité
             </a>
           </div>

@@ -19,7 +19,7 @@ export default function AvantApres() {
             La différence,<br />
             <span style={{ color: ACCENT }}>en un glissement.</span>
           </h2>
-          <p className="mt-5 text-white/45 leading-relaxed" style={{ fontSize: '1.03rem', maxWidth: '30rem' }}>
+          <p className="mt-5 text-white/60 leading-relaxed" style={{ fontSize: '1.03rem', maxWidth: '30rem' }}>
             Nos interventions parlent d&apos;elles-mêmes. Glissez le curseur pour découvrir un
             chantier réel&nbsp;: avant l&apos;intervention, puis après le passage de nos techniciens
             certifiés.
@@ -46,12 +46,12 @@ export default function AvantApres() {
           <div className="mt-9 flex gap-8">
             <div>
               <div className="font-black text-white" style={{ fontSize: '2rem', lineHeight: 1 }}>+1 500</div>
-              <div className="text-white/35 text-xs font-semibold mt-1.5 uppercase tracking-wider">Interventions</div>
+              <div className="text-white/60 text-xs font-semibold mt-1.5 uppercase tracking-wider">Interventions</div>
             </div>
             <div className="w-px self-stretch" style={{ background: 'rgba(255,255,255,0.1)' }} />
             <div>
-              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: ACCENT }}>4,8<span className="text-white/40 text-lg">/5</span></div>
-              <div className="text-white/35 text-xs font-semibold mt-1.5 uppercase tracking-wider">Note Google</div>
+              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: ACCENT }}>4,8<span className="text-white/60 text-lg">/5</span></div>
+              <div className="text-white/60 text-xs font-semibold mt-1.5 uppercase tracking-wider">Note Google</div>
             </div>
           </div>
         </div>

@@ -192,9 +192,9 @@ export default function TarifsPage() {
                       )}
                       <p className="text-white/50 text-xs font-semibold mb-1.5 uppercase tracking-wide">{label}</p>
                       <p className="font-black mb-1.5" style={{ fontSize: '1.75rem', color: highlight ? ACCENT : '#fff', lineHeight: 1 }}>
-                        {price ? (<><span className="text-white/45 text-sm font-semibold">dès </span>{price} €<span className="text-base">{unit}</span></>) : <span className="text-2xl">Sur devis</span>}
+                        {price ? (<><span className="text-white/60 text-sm font-semibold">dès </span>{price} €<span className="text-base">{unit}</span></>) : <span className="text-2xl">Sur devis</span>}
                       </p>
-                      <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', lineHeight: 1.5 }}>{details}</p>
+                      <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', lineHeight: 1.5 }}>{details}</p>
                     </div>
                   ))}
                 </div>
@@ -204,7 +204,7 @@ export default function TarifsPage() {
 
           {/* Note bas */}
           <div className="max-w-3xl mx-auto mt-10 rounded-2xl px-6 py-5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
-            <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem', lineHeight: 1.75 }}>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.75 }}>
               Prix TTC indicatifs « à partir de ». Le prix exact est établi sur place par le technicien, selon la superficie et le niveau d'infestation, puis confirmé par un devis écrit et gratuit avant l'intervention. Paiement possible par CB, virement ou espèces.
             </p>
           </div>

@@ -34,7 +34,7 @@ export default function FaqPage() {
       <main style={{ background: '#080808' }}>
         <section className="pt-10 md:pt-14 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs text-white/45 mb-5"><a href="/" className="hover:text-white">Accueil</a> / FAQ</p>
+            <p className="text-xs text-white/60 mb-5"><a href="/" className="hover:text-white">Accueil</a> / FAQ</p>
             <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <HelpCircle className="w-3.5 h-3.5" />Questions fréquentes
             </p>

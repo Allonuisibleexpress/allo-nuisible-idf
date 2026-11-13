@@ -274,7 +274,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
-                    {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                    {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
@@ -296,7 +296,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                 </p>
               </div>
             </div>
-            <p className="text-white/45 text-xs uppercase tracking-widest mb-2">Sources</p>
+            <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Sources</p>
             <ul className="space-y-1">
               {SOURCES_PUNAISES.map((s) => (
                 <li key={s.url}>
@@ -319,12 +319,12 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
-            <p className="text-white/45 text-sm mt-8">
+            <p className="text-white/60 text-sm mt-8">
               Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>
             </p>
             <div className="mt-10">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Punaises de lit près de {v.nom}</p>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-4">Punaises de lit près de {v.nom}</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {autres.map((x) => (
                   <a key={x.slug} href={`/punaises-de-lit/${x.slug}`}

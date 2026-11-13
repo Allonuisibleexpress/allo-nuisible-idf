@@ -73,7 +73,7 @@ function Photo({ f, h = 'h-44' }: { f: Fiche; h?: string }) {
     <figure>
       <img src={f.photo.src} alt={`${f.nom} (${f.latin}) en photo`} loading="lazy" width={480} height={320}
         className={`w-full ${h} rounded-t-2xl ${fondBlanc ? 'object-contain bg-white p-2' : 'object-cover'}`} />
-      <figcaption className="px-5 pt-1.5 text-[10px] text-white/35 leading-snug text-left">
+      <figcaption className="px-5 pt-1.5 text-[10px] text-white/60 leading-snug text-left">
         Photo : <a href={f.photo.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{f.photo.credit}</a>, {f.photo.licence}
       </figcaption>
     </figure>
@@ -89,7 +89,7 @@ function CarteFiche({ f }: { f: Fiche }) {
           <h3 className="text-white font-black text-lg leading-tight">{f.nom}</h3>
           <Badge f={f} />
         </div>
-        <p className="text-white/45 text-sm italic mb-3">{f.latin}</p>
+        <p className="text-white/60 text-sm italic mb-3">{f.latin}</p>
         <p className="flex items-center gap-1.5 text-xs text-white/70 mb-3"><Ruler className="w-3.5 h-3.5" style={{ color: ACCENT }} />{f.taille}</p>
         <p className="text-white/80 text-sm leading-relaxed mb-2">{f.aspect}</p>
         <p className="text-white/60 text-sm leading-relaxed mb-3"><strong className="text-white">Indices : </strong>{f.signes}</p>
@@ -212,7 +212,7 @@ export function Galerie() {
   return (
     <div>
       <div className="max-w-xl mx-auto mb-5 relative">
-        <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
+        <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-white/60" />
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher : cafard, bête argentée, pinces..."
           className="w-full rounded-full pl-12 pr-4 py-3.5 text-white placeholder-white/35 outline-none focus:ring-2"
           style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)' }} aria-label="Rechercher un nuisible" />

@@ -16,7 +16,7 @@ export default function FaqBloc({ titre, intro, items, fond = '#111', schema = t
           {items.map((f) => (
             <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
               <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
-                {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
               </summary>
               <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
             </details>

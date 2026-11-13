@@ -139,7 +139,7 @@ function Carte({ e }: { e: Espece }) {
         <figure className="-mx-6 -mt-6 mb-4">
           <img src={PHOTOS[e.latin].src} alt={`${e.nom} (${e.latin}) en photo`} loading="lazy" width={520} height={390}
             className={`w-full h-44 rounded-t-2xl ${/April Nobile|AntWeb/.test(PHOTOS[e.latin].credit) ? 'object-contain bg-white p-2' : 'object-cover'}`} />
-          <figcaption className="px-6 pt-1.5 text-[10px] text-white/35 leading-snug">
+          <figcaption className="px-6 pt-1.5 text-[10px] text-white/60 leading-snug">
             {PHOTOS[e.latin].legende ? `${PHOTOS[e.latin].legende}. ` : ''}Photo : <a href={PHOTOS[e.latin].page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{PHOTOS[e.latin].credit}</a>, {PHOTOS[e.latin].licence}
           </figcaption>
         </figure>
@@ -148,7 +148,7 @@ function Carte({ e }: { e: Espece }) {
         <span style={{ color: ACCENT }}><IconFourmi className="w-7 h-7 flex-shrink-0" /></span>
         <div>
           <h3 className="text-white font-black text-lg leading-tight">{e.nom}</h3>
-          <p className="text-white/45 text-sm italic">{e.latin}</p>
+          <p className="text-white/60 text-sm italic">{e.latin}</p>
         </div>
       </div>
       <p className="text-white/80 text-sm leading-relaxed mb-2">{e.aspect}</p>
@@ -215,7 +215,7 @@ export default function FourmisTypesPage() {
         {/* ── HERO ── */}
         <section className="pt-10 md:pt-14 pb-12 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs text-white/45 mb-5">
+            <p className="text-xs text-white/60 mb-5">
               <a href="/" className="hover:text-white">Accueil</a> / <a href="/services/fourmis" className="hover:text-white">Fourmis</a> / Types de fourmis
             </p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
@@ -304,7 +304,7 @@ export default function FourmisTypesPage() {
               {FAQ.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
-                    {f.q}<span className="text-white/40 group-open:rotate-45 transition-transform">+</span>
+                    {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
@@ -323,7 +323,7 @@ export default function FourmisTypesPage() {
                 <p className="text-white/55 text-sm">Techniciens titulaires du Certibiocide. Mis à jour le 6 novembre 2026.</p>
               </div>
             </div>
-            <p className="text-white/45 text-xs uppercase tracking-widest mb-2">Sources</p>
+            <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Sources</p>
             <ul className="space-y-1">
               {SOURCES_FOURMIS.map((s) => (
                 <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="text-white/60 text-sm underline hover:text-white">{s.label}</a></li>

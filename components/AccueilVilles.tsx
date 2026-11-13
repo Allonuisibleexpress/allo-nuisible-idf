@@ -43,9 +43,9 @@ export default function AccueilVilles({ nombre = 12 }: { nombre?: number }) {
             <div key={s} className="rounded-2xl p-5" style={card}>
               <p className="flex items-center gap-2 text-white font-black text-lg mb-1">
                 <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{noms.get(s)}
-                <span className="text-white/40 text-sm font-bold">{codePostal(s)}</span>
+                <span className="text-white/60 text-sm font-bold">{codePostal(s)}</span>
               </p>
-              <p className="text-white/45 text-xs mb-3">{s === 'saint-maurice' ? 'Notre base' : `À ${REPERES[s]?.km.toLocaleString('fr-FR')} km de notre base`}</p>
+              <p className="text-white/60 text-xs mb-3">{s === 'saint-maurice' ? 'Notre base' : `À ${REPERES[s]?.km.toLocaleString('fr-FR')} km de notre base`}</p>
               <div className="flex flex-wrap gap-1.5">
                 {FAMILLES.filter((f) => f.slugs.includes(s)).map((f) => (
                   <a key={f.base} href={`${f.base}/${s}`} className="text-xs font-bold text-white/85 hover:text-white rounded-full px-3 py-1.5 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.14)' }}>

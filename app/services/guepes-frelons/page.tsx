@@ -284,7 +284,7 @@ export default function GuêpesFrelonsPage() {
                 <Phone style={{ width: '0.75em', height: '0.75em', flexShrink: 0, position: 'relative', zIndex: 1, color: '#0d0000' }} />
                 <span style={{ position: 'relative', zIndex: 1 }}>07 68 07 72 19</span>
               </a>
-              <p className="text-white/30 text-xs tracking-widest uppercase mt-4">
+              <p className="text-white/60 text-xs tracking-widest uppercase mt-4">
                 Appel gratuit · Réponse sous 5 min · 7j/7
               </p>
             </div>
@@ -293,8 +293,8 @@ export default function GuêpesFrelonsPage() {
             <div className="max-w-2xl mx-auto mb-10">
               <div className="relative rounded-2xl flex flex-col items-center text-center" style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.18)', padding: 'clamp(20px,3vw,32px) clamp(24px,4vw,48px)' }}>
                 <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(232,68,26,0.7),transparent)' }} />
-                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'rgba(255,255,255,0.45)', letterSpacing: '.1em' }}>Tarification</p>
-                <p className="font-black text-white mb-2" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)' }}><span className="text-white/45 text-base font-semibold">à partir de </span>89 €</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '.1em' }}>Tarification</p>
+                <p className="font-black text-white mb-2" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)' }}><span className="text-white/60 text-base font-semibold">à partir de </span>89 €</p>
                 <p className="text-white/55 text-sm leading-relaxed">Nid accessible dès 89 €, en hauteur dès 149 €,<br />difficile d&apos;accès dès 199 €. Nacelle : sur devis. Prix TTC.</p>
               </div>
               <p className="mt-4 text-center"><span className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: '#E8441A', color: '#fff' }}>Devis gratuit destruction de nid</span></p>
@@ -306,7 +306,7 @@ export default function GuêpesFrelonsPage() {
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
                 <span className="text-white font-semibold">4,8/5</span>
-                <span className="text-white/40 text-sm hidden sm:inline">· 59 avis</span>
+                <span className="text-white/60 text-sm hidden sm:inline">· 59 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
@@ -334,7 +334,7 @@ export default function GuêpesFrelonsPage() {
                 WhatsApp
               </a>
             </div>
-            <p className="text-white/30 text-sm">
+            <p className="text-white/60 text-sm">
               Rappel sous 5 min · Devis offert · Résultat garanti · RC Pro
             </p>
           </div>
@@ -371,7 +371,7 @@ export default function GuêpesFrelonsPage() {
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
                 Si les nuisibles reviennent, on revient sans frais.
               </p>
-              <p style={{ color: 'rgba(255,255,255,.4)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
                 Toute intervention est garantie 1 an. En cas de réapparition, notre technicien revient sans aucun supplément.
               </p>
               <a
@@ -404,7 +404,7 @@ export default function GuêpesFrelonsPage() {
                     <Icon className="w-4 h-4" style={{ color: ACCENT }} />
                   </div>
                   <p className="font-bold text-white text-sm mb-2">{title}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
                 </div>
               ))}
             </div>
@@ -513,7 +513,7 @@ export default function GuêpesFrelonsPage() {
                 >
                   <p className="text-3xl md:text-4xl font-black text-white leading-none mb-2">{val}</p>
                   <div className="w-[18px] h-[2px] mx-auto mb-2.5 rounded-full" style={{ background: ACCENT }} />
-                  <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.7rem', lineHeight: 1.5 }}>{label}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', lineHeight: 1.5 }}>{label}</p>
                 </div>
               ))}
             </div>
@@ -550,7 +550,7 @@ export default function GuêpesFrelonsPage() {
                       <X className="w-3 h-3 text-red-400" />
                     </div>
                     <p className="font-bold text-white text-sm mb-2">{title}</p>
-                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
                   </div>
                 ))}
               </div>
@@ -558,7 +558,7 @@ export default function GuêpesFrelonsPage() {
                 className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 rounded-xl px-5 py-4"
                 style={{ background: `rgba(232,68,26,0.06)`, border: `1px solid rgba(232,68,26,0.16)` }}
               >
-                <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem' }}>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem' }}>
                   Un technicien certifié règle le problème définitivement, en une seule visite.
                 </p>
                 <a
@@ -592,7 +592,7 @@ export default function GuêpesFrelonsPage() {
                   </div>
                   <div className="pt-2.5">
                     <p className="font-bold text-white text-sm mb-1.5">{title}</p>
-                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
                   </div>
                 </div>
               ))}
@@ -623,7 +623,7 @@ export default function GuêpesFrelonsPage() {
             {/* Emplacements */}
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les nids ?</h2>
-            <p className="mb-6" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.65 }}>
+            <p className="mb-6" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65 }}>
               Guêpes et frelons s&apos;installent dans des endroits souvent difficiles d&apos;accès : sous la toiture,
               dans une cheminée ou un volet roulant, sur un mur ou une façade, dans un arbre ou une haie,
               et parfois directement sous terre. Chaque emplacement demande un protocole spécifique.
@@ -647,7 +647,7 @@ export default function GuêpesFrelonsPage() {
             >
               <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
               <p className="font-black text-white text-xl md:text-2xl mb-2">Un nid chez vous ? Appelez maintenant.</p>
-              <p className="mb-7" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8125rem' }}>
+              <p className="mb-7" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem' }}>
                 Rappel sous 5 min · Devis gratuit · Résultat garanti · RC Pro incluse
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -833,7 +833,7 @@ function CallbackForm() {
           <span className="text-2xl text-green-400">✓</span>
         </div>
         <p className="font-black text-white text-lg">Demande envoyée !</p>
-        <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem' }}>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>
           Nous vous rappelons sous 5 minutes.
         </p>
       </div>
@@ -907,7 +907,7 @@ function CallbackForm() {
       >
         {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
       </button>
-      <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.7rem', textAlign: 'center' }}>
+      <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', textAlign: 'center' }}>
         * Champs obligatoires. Vos données restent confidentielles
       </p>
     </form>
@@ -938,7 +938,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     fontWeight: 700,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',
-    color: 'rgba(255,255,255,0.45)',
+    color: 'rgba(255,255,255,0.6)',
     marginBottom: '0.4rem',
   }
 
@@ -995,7 +995,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
             </button>
           </div>
           <h3 className="text-2xl font-black text-white leading-tight">Prendre rendez-vous</h3>
-          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Confirmation sous 5 minutes · 7j/7</p>
+          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.6)' }}>Confirmation sous 5 minutes · 7j/7</p>
         </div>
 
         {submitted ? (
@@ -1004,7 +1004,7 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
               <span className="text-2xl text-green-400">✓</span>
             </div>
             <p className="font-black text-white text-lg">Demande envoyée !</p>
-            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>On vous rappelle sous 5 minutes.</p>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>On vous rappelle sous 5 minutes.</p>
             <button type="button" onClick={handleClose} className="mt-2 text-sm font-bold px-6 py-3 rounded-xl" style={{ background: ACCENT, color: '#fff' }}>
               Fermer
             </button>

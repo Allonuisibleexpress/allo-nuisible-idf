@@ -13,7 +13,7 @@ export function ImageCycle({ sources = true }: { sources?: boolean }) {
         <img src="/infographies/cycle-punaise-de-lit.svg" alt={ALT} width={1600} height={1000} loading="lazy"
           className="w-full h-auto rounded-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }} />
       </picture>
-      {sources && <figcaption className="text-[11px] text-white/40 mt-2 text-center">
+      {sources && <figcaption className="text-[11px] text-white/60 mt-2 text-center">
         Sources : EPA, Université du Kentucky, Wikipédia (P. Delaunay 2015 ; Reinhardt &amp; Siva-Jothy 2007), CDC. Dessins à l’échelle.
       </figcaption>}
     </figure>

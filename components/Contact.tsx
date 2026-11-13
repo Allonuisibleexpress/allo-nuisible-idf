@@ -92,7 +92,7 @@ export default function Contact() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
             Prendre rendez-vous
           </h2>
-          <p className="text-gray-500 text-base mt-4 max-w-xl mx-auto">
+          <p className="text-gray-400 text-base mt-4 max-w-xl mx-auto">
             Décrivez votre problème, notre équipe vous rappelle sous 30 minutes.
           </p>
           <div className="w-16 h-1 bg-[#E8441A] mx-auto mt-5 rounded-full" />
@@ -108,7 +108,7 @@ export default function Contact() {
                     <CheckCircle2 className="w-10 h-10 text-green-500" />
                   </div>
                   <h3 className="text-2xl font-black text-[#1a1a1a]">Demande envoyée !</h3>
-                  <p className="text-gray-500 max-w-sm">
+                  <p className="text-gray-400 max-w-sm">
                     Merci pour votre message. Notre équipe vous contactera dans les plus brefs délais.
                   </p>
                   <button
@@ -257,7 +257,7 @@ export default function Contact() {
                     ) : (
                       <p className="font-bold text-[#1a1a1a] text-sm">{value}</p>
                     )}
-                    {sub && <p className="text-gray-500 text-xs mt-0.5">{sub}</p>}
+                    {sub && <p className="text-gray-400 text-xs mt-0.5">{sub}</p>}
                   </div>
                 </div>
               </div>

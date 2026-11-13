@@ -308,13 +308,13 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                     <div className="absolute inset-x-0 top-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
                     {/^\d+$/.test(price) ? (
                       <>
-                        <p className="text-white/45 text-[11px] font-semibold mb-1">à partir de</p>
+                        <p className="text-white/60 text-[11px] font-semibold mb-1">à partir de</p>
                         <p className="text-3xl font-black text-white leading-none mb-1">{price} €</p>
                       </>
                     ) : (
                       <p className="text-3xl font-black text-white leading-none mb-1">Sur devis</p>
                     )}
-                    <p className="text-white/45 text-[11px]">{label}</p>
+                    <p className="text-white/60 text-[11px]">{label}</p>
                   </div>
                 ))}
               </div>
@@ -352,7 +352,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                       {BIcon ? <BIcon className="w-6 h-6" strokeWidth={2} /> : <span className="text-2xl">{icon}</span>}
                     </div>
                     <p className="font-black text-white text-base mb-2.5">{title}</p>
-                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
                   </div>
                 )
               })}
@@ -379,7 +379,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   </div>
                   <div className="pt-2">
                     <p className="font-black text-white mb-2">{title}</p>
-                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
                   </div>
                 </div>
               ))}
@@ -424,7 +424,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Devis gratuit</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Devis sur mesure, sans surprise</h2>
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9375rem' }}>Devis gratuit confirmé avant intervention · RC Pro incluse</p>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Devis gratuit confirmé avant intervention · RC Pro incluse</p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
               {data.pricing.map((tier) => (
@@ -447,15 +447,15 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   <div className="flex items-baseline gap-1 mb-1">
                     {/^\d+$/.test(tier.price) ? (
                       <>
-                        <span className="text-white/45 text-sm font-semibold">à partir de</span>
+                        <span className="text-white/60 text-sm font-semibold">à partir de</span>
                         <span className="text-4xl font-black" style={{ color: tier.highlight ? ACCENT : '#fff' }}>{tier.price} €</span>
-                        {tier.unit && <span className="text-white/45 text-sm">{tier.unit}</span>}
+                        {tier.unit && <span className="text-white/60 text-sm">{tier.unit}</span>}
                       </>
                     ) : (
                       <span className="text-4xl font-black" style={{ color: tier.highlight ? ACCENT : '#fff' }}>Sur devis</span>
                     )}
                   </div>
-                  <p className="text-white/40 text-xs mb-5 leading-relaxed">{tier.description}</p>
+                  <p className="text-white/60 text-xs mb-5 leading-relaxed">{tier.description}</p>
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {tier.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
@@ -554,7 +554,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <p className="text-white/40 text-xs mt-6">RC Pro · Certibiocide · Garantie 1 an</p>
+            <p className="text-white/60 text-xs mt-6">RC Pro · Certibiocide · Garantie 1 an</p>
           </div>
         </section>
 

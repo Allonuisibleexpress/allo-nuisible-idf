@@ -377,7 +377,7 @@ export default function Navbar() {
               }}>
               WhatsApp
             </a>
-            <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: '10px', textAlign: 'center', marginTop: 4 }}>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '10px', textAlign: 'center', marginTop: 4 }}>
               Devis gratuit · Réponse sous 5 min · 7j/7
             </p>
           </div>

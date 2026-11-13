@@ -39,7 +39,7 @@ export default function ZonesPage() {
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="flex items-center justify-between mb-2">
                     <h2 className="text-xl font-black text-white">{d.nom} <span style={{ color: ACCENT }}>({d.code})</span></h2>
-                    <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
                   </div>
                   <p className="text-white/65 text-sm leading-relaxed mb-3">{premierePhrase(d.intro[0])}</p>
                   <p className="text-white/55 text-sm flex items-start gap-1.5">
@@ -73,7 +73,7 @@ export default function ZonesPage() {
               {DEP_SLUGS.map((dep) => (
                 <div key={dep} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <p className="text-white font-black mb-1">{DEPS[dep].nom} <span style={{ color: ACCENT }}>({DEPS[dep].code})</span></p>
-                  <p className="text-white/45 text-xs mb-3">{villesDuDepartement(DEPS[dep].code).length} {dep === 'paris' ? 'arrondissements' : 'villes'} avec des pages dédiées</p>
+                  <p className="text-white/60 text-xs mb-3">{villesDuDepartement(DEPS[dep].code).length} {dep === 'paris' ? 'arrondissements' : 'villes'} avec des pages dédiées</p>
                   <ul className="space-y-1.5">
                     {(Object.keys(SERVICES_DEP) as ServiceDep[]).map((sv) => (
                       <li key={sv}><a href={`${SERVICES_DEP[sv].base}/${dep}`} className="text-sm text-white/75 hover:text-white inline-flex items-center gap-1.5">

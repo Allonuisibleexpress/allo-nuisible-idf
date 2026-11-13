@@ -78,7 +78,7 @@ export default function IdentifierRongeur() {
             <a href={R[top].href} style={{ background: ACCENT, color: '#fff', fontWeight: 800, fontSize: '14px', padding: '12px 22px', borderRadius: '10px', textDecoration: 'none' }}>{R[top].lien}</a>
             <a href="tel:+33768077219" style={{ color: '#fff', fontWeight: 700, fontSize: '14px', padding: '12px 22px', borderRadius: '10px', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.25)' }}>Un doute ? 07 68 07 72 19</a>
           </div>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginTop: '14px' }}>Ce test donne une orientation. Une photo des crottes sur WhatsApp nous permet de confirmer.</p>
+          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '14px' }}>Ce test donne une orientation. Une photo des crottes sur WhatsApp nous permet de confirmer.</p>
           <button type="button" onClick={() => setRep([])} style={{ marginTop: '8px', background: 'none', border: 0, color: 'rgba(255,255,255,0.55)', fontSize: '13px', cursor: 'pointer', textDecoration: 'underline' }}>Recommencer le test</button>
         </div>
       )}

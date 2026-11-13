@@ -218,7 +218,7 @@ export default function ContenuNuisible({ data, slug, a, nom, partie }: { data: 
             ))}
           </div>
           {!complet && <p className="text-center mt-6"><a href={q.lien} className="text-sm font-bold underline" style={{ color: ACCENT }}>Le détail, cas par cas →</a></p>}
-          <p className="text-white/40 text-xs mt-5 text-center">{q.note}</p>
+          <p className="text-white/60 text-xs mt-5 text-center">{q.note}</p>
         </div>
       </section>
     </>

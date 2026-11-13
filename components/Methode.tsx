@@ -101,7 +101,7 @@ export default function Methode() {
                     <h3 className="font-black text-xl text-[#1a1a1a] mb-3 group-hover:text-[#E8441A] transition-colors duration-200">
                       {step.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </div>

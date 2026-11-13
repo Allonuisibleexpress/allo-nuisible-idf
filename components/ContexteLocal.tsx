@@ -315,7 +315,7 @@ export default function ContexteLocal({ slug, service, a }: { slug: string; serv
             {p}
           </p>
         ))}
-        <p className="text-white/35 text-xs mt-5">
+        <p className="text-white/60 text-xs mt-5">
           Sources : Insee, population municipale et quartiers IRIS (geo.api.gouv.fr, data.iledefrance.fr){zr && !d.paris ? ' ; ministère du Logement, inventaire SRU 2025' : ''} ; Île-de-France Mobilités, gares et stations ; OpenStreetMap, cours d&apos;eau, espaces verts{zr ? ', marchés et commerces' : ''}{service === 'chenilles' && d.pinsHa ? ' ; IGN, inventaire forestier' : ''}.
         </p>
       </div>

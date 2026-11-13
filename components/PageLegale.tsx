@@ -9,7 +9,7 @@ export default function PageLegale({ titre, maj, children }: { titre: string; ma
       <main style={{ background: '#0d0d0d' }} className="px-4 pt-12 pb-20">
         <article className="max-w-3xl mx-auto text-white/75 leading-relaxed [&_h2]:text-white [&_h2]:font-black [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:mt-10 [&_h2]:mb-3 [&_p]:mb-3 [&_ul]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1 [&_a]:underline [&_a]:text-[#E8441A] [&_strong]:text-white">
           <h1 className="text-3xl md:text-4xl font-black text-white mb-2">{titre}</h1>
-          <p className="text-white/45 text-sm">Dernière mise à jour : {maj}</p>
+          <p className="text-white/60 text-sm">Dernière mise à jour : {maj}</p>
           {children}
         </article>
       </main>

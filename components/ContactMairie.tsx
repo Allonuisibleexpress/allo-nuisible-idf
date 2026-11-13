@@ -184,7 +184,7 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
                 <ExternalLink className="w-4 h-4 flex-shrink-0" />Site de la mairie
               </a>
             )}
-            <p className="text-white/35 text-xs mt-4">
+            <p className="text-white/60 text-xs mt-4">
               Source : <a href="https://lannuaire.service-public.fr/" target="_blank" rel="noopener noreferrer nofollow" className="underline">Annuaire service-public.fr</a>
               {service !== 'chenilles' && service !== 'frelons' && (
                 <> · <a href={LOI_1989} target="_blank" rel="noopener noreferrer nofollow" className="underline">Loi du 6 juillet 1989</a></>

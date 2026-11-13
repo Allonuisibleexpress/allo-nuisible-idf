@@ -82,7 +82,7 @@ export default function ProfessionnelsPage() {
                 WhatsApp pro
               </a>
             </div>
-            <p className="text-white/30 text-xs">Intervention possible le soir et le week-end · Urgences gérées sous 2h</p>
+            <p className="text-white/60 text-xs">Intervention possible le soir et le week-end · Urgences gérées sous 2h</p>
           </div>
         </section>
 
@@ -114,7 +114,7 @@ export default function ProfessionnelsPage() {
                     <Icon className="w-5 h-5" strokeWidth={2} />
                   </div>
                   <p className="font-black text-white text-sm mb-2">{name}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
                 </div>
               ))}
             </div>
@@ -136,7 +136,7 @@ export default function ProfessionnelsPage() {
                     <Icon className="w-5 h-5" style={{ color: ACCENT }} />
                   </div>
                   <p className="font-black text-white mb-2.5">{title}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>{text}</p>
                 </div>
               ))}
             </div>
@@ -149,7 +149,7 @@ export default function ProfessionnelsPage() {
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Contrats de maintenance</p>
               <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Protégez votre établissement toute l&apos;année</h2>
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9375rem' }}>Tous les contrats incluent attestations, rapports et registres de suivi</p>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Tous les contrats incluent attestations, rapports et registres de suivi</p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
               {contracts.map((c) => (
@@ -169,7 +169,7 @@ export default function ProfessionnelsPage() {
                   )}
                   <p className="font-black text-white text-sm mb-1 uppercase tracking-wider">{c.label}</p>
                   <p className="text-3xl font-black mb-1" style={{ color: c.highlight ? ACCENT : '#fff' }}>{c.price}</p>
-                  <p className="text-white/40 text-xs mb-5 leading-relaxed">{c.description}</p>
+                  <p className="text-white/60 text-xs mb-5 leading-relaxed">{c.description}</p>
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {c.features.map((f) => (
                       <li key={f} className="flex items-center gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
@@ -204,7 +204,7 @@ export default function ProfessionnelsPage() {
               ].map(({ q, a }) => (
                 <div key={q} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
                   <p className="font-black text-white text-sm mb-2">{q}</p>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.875rem', lineHeight: 1.7 }}>{a}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.7 }}>{a}</p>
                 </div>
               ))}
             </div>
