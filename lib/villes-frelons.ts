@@ -1,6 +1,6 @@
 // Pages « Destruction de nid de frelons et guêpes à [ville] » (/destruction-nid-frelon/[ville]).
 // 15 villes autour de Saint-Maurice jusqu'à Paris 12e, choisies avec l'utilisateur le 08/11/2026.
-// INDEXATION REPORTÉE : pages en noindex et absentes du sitemap tant que FRELONS_VILLES_INDEXEES vaut false
+// Indexation progressive : seules les villes de FRELONS_VILLES_INDEXEES sont indexables (toutes depuis le 13/11/2026)
 // (l'utilisateur veut qu'elles soient indexées plus tard).
 // Cocon : pilier /services/guepes-frelons, guides du blog (frelon asiatique, guêpes, frelon européen, nid en hiver).
 // Prix alignés sur /tarifs : 89 € (accessible), 149 € (perche), 199 € (toiture, combles, cheminée), nacelle sur devis.
@@ -14,7 +14,14 @@ import { LOCAL_FRELONS_GC } from '@/lib/local-frelons-gc'
 // Mise en ligne progressive pour Google (demandée le 08/11/2026) : 5 villes d'abord, les autres dans la semaine.
 export const FRELONS_VILLES_INDEXEES: string[] = ['saint-maurice', 'nogent-sur-marne', 'vincennes', 'saint-maur-des-fosses', 'champigny-sur-marne', // 08/11
   'creteil', 'maisons-alfort', 'charenton-le-pont', 'fontenay-sous-bois', 'le-perreux-sur-marne', // 10/11
-  'joinville-le-pont', 'saint-mande', 'alfortville', 'ivry-sur-seine', 'paris-12'] // 12/11 ; 30 villes 91/77/78 encore en noindex
+  'joinville-le-pont', 'saint-mande', 'alfortville', 'ivry-sur-seine', 'paris-12', // 12/11
+  // 13/11 : les 30 villes de l'Essonne, de la Seine-et-Marne et des Yvelines ouvertes à Google (accord de l'utilisateur)
+  'evry-courcouronnes', 'corbeil-essonnes', 'massy', 'savigny-sur-orge', 'palaiseau', 'athis-mons',
+  'sainte-genevieve-des-bois', 'vigneux-sur-seine', 'ris-orangis', 'viry-chatillon', 'meaux', 'chelles',
+  'melun', 'pontault-combault', 'savigny-le-temple', 'bussy-saint-georges', 'champs-sur-marne', 'villeparisis',
+  'dammarie-les-lys', 'combs-la-ville', 'versailles', 'sartrouville', 'saint-germain-en-laye', 'mantes-la-jolie',
+  'poissy', 'conflans-sainte-honorine', 'trappes', 'les-mureaux', 'houilles', 'montigny-le-bretonneux',
+]
 export const frelonsIndexee = (slug: string) => FRELONS_VILLES_INDEXEES.includes(slug)
 
 export const SOURCES_FRELONS = [
