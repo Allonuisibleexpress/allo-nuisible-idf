@@ -36,6 +36,7 @@ export const LOCAL_PUNAISES_GC: Record<string, string[]> = {
     'La gare de Trappes, sur les lignes N et U, voit passer chaque jour beaucoup de navetteurs. Les punaises voyagent dans les sacs : poser le sien loin du lit en rentrant est un réflexe utile.',
     'Les familles de Trappes qui hébergent des proches pour quelques semaines ont intérêt à vérifier le couchage d’appoint après leur départ : c’est souvent là que les premières punaises se cachent.',
     'Le quartier de la gare de Trappes, en pleine transformation, accueille de nouveaux immeubles : les familles qui emménagent ont intérêt à inspecter leur literie avant le déménagement.',
+    'Un sommier, un canapé ou une tête de lit récupéré d’occasion à Trappes ou à Élancourt ? Avant de le monter dans l’appartement, passez une lampe le long des coutures, des agrafes et des jonctions du bois : des points noirs ou des mues brunes suffisent à le refuser. En cas de doute, envoyez-nous une photo.',
   ],
   'les-mureaux': [
     'Dans les résidences de la **Vigne Blanche** et des **Musiciens**, une infestation peut se propager par les gaines et les cloisons : un signalement rapide au bailleur évite qu’elle gagne tout l’immeuble.',

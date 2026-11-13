@@ -13,6 +13,7 @@ import { filDepartement, DEP_SLUGS, estDep } from '@/lib/departements-services'
 import { voisinesGaranties } from '@/lib/centres-villes'
 import { premierePhrase } from '@/lib/maillage'
 import { fichePunaises } from '@/lib/fiche-nuisible'
+import CryoPunaisesLien from '@/components/CryoPunaisesLien'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import { avecPrix } from '@/components/PrixGros'
@@ -193,9 +194,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
         <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...fichePunaises(v, autres)]} />
-        <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-          Bébé, enfants, animaux ou personnes fragiles {v.a} ? Découvrez notre <a href="/services/punaises-de-lit-ecologique" className="underline font-bold" style={{ color: ACCENT }}>traitement écologique des punaises de lit, sans produit chimique</a>.
-        </p>
+        <CryoPunaisesLien a={v.a} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
 

@@ -26,6 +26,7 @@ import { VILLES_CAFARDS } from '@/lib/villes-cafards'
 import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { VILLES_PUCES } from '@/lib/villes-puces'
 
+import CryoPunaisesLien from '@/components/CryoPunaisesLien'
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 const nf = (n: number) => n.toLocaleString('fr-FR')
@@ -317,6 +318,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         <SituationsVille famille={c.famille} slug={`dep-${d}`} a={dep.dans} />
 
         {s === 'punaises' && <CyclePunaises a={dep.dans} titre={`Punaises de lit ${dep.dans} : les 7 stades à reconnaître`} />}
+        {s === 'punaises' && <CryoPunaisesLien a={dep.dans} />}
         <EtapesVille slug={d + s} a={dep.dans} titre={`${s === 'frelons' ? 'Destruction de nid' : c.label} ${dep.dans} : comment nous intervenons`} etapes={c.etapes} />
         {s === 'deratisation' && <DeratEco a={dep.dans} />}
 
