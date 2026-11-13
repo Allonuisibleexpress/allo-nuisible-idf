@@ -90,3 +90,51 @@ export function ficheFrelons(v: V, voisines: Voisine[]): string[] {
     `Nous intervenons aussi à ${liensVoisines('/destruction-nid-frelon', voisines)}.${dep ? ` Toutes nos villes ${dep[1]} : [destruction de nid de frelons ${dep[1]}](/destruction-nid-frelon/${dep[0]}).` : ''} Nos chantiers en images : [nid de 12 mètres en nacelle à Champigny](/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne), [nid dans une cheminée à Nogent](/blog/nid-frelons-cheminee-nogent-sur-marne).`,
   ]
 }
+
+function nomLigne(l: string) {
+  const [t, n] = l.split(' ')
+  if (t === 'METRO') return `la ligne ${n} du métro`
+  if (t === 'RER') return `le RER ${n}`
+  if (t === 'TRAIN') return `la ligne ${n} du Transilien`
+  if (t === 'TRAM') return `le tramway T${n}`
+  if (t === 'CABLE') return 'le téléphérique Câble 1'
+  if (t === 'ORLYVAL') return 'l’Orlyval'
+  return 'le funiculaire de Montmartre'
+}
+
+// Fiche punaises de lit (13/11/2026) : transports, immeuble, hôtels, erreurs à éviter, durée.
+// Données réelles : gares et lignes (Île-de-France Mobilités), Insee, inventaire SRU, hôtels recensés sur OpenStreetMap.
+export function fichePunaises(v: V, voisines: Voisine[]): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const h = habitat(v)
+  const gares = (d?.gares ?? []).filter((g, i, t) => t.indexOf(g) === i && !t.some((x) => x !== g && x.includes(g))).slice(0, 3)
+  const lignes = (d?.lignes ?? []).filter((l) => !l.startsWith('FUNI')).slice(0, 4).map(nomLigne)
+  const quartiers = d?.quartiers?.slice(0, 4) ?? []
+  const hotels = d?.poi?.hotels ?? 0
+  const dep = DEP[v.code]
+  const out: string[] = []
+  if (gares.length || lignes.length) {
+    out.push(
+      `### Punaises de lit et transports ${v.a}`,
+      `${gares.length ? `Gares ${v.a} : ${liste(gares)}.` : ''}${lignes.length ? ` Lignes : ${liste(lignes)}.` : ''} Les punaises de lit ne sautent pas et ne volent pas : elles voyagent **dans les sacs et les vêtements**. Voir [punaises de lit dans les transports en commun](/blog/punaises-de-lit-transports-en-commun).`,
+    )
+  }
+  if (d) {
+    const sru = d.sru ? `, dont ${d.sru.taux} de logements sociaux selon l’inventaire SRU` : ''
+    out.push(
+      `### Punaises de lit ${h.dense ? 'en immeuble' : 'en maison et en immeuble'} ${v.a}`,
+      `${v.nom} compte ${nf(d.population)} habitants sur ${String(d.surfaceKm2).replace('.', ',')} km² (Insee)${sru}.${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''} ${h.dense || d.sru ? 'Les punaises passent d’un appartement à l’autre par les **gaines** et les **prises** : prévenez votre bailleur ou votre syndic.' : 'Traitez toutes les pièces où quelqu’un dort : les punaises gagnent vite les chambres voisines.'}`,
+    )
+  }
+  if (hotels > 0) {
+    out.push(
+      `### Hôtels et locations courte durée ${v.a}`,
+      `OpenStreetMap recense ${hotels > 1 ? `${nf(hotels)} hôtels` : 'un hôtel'} à ${v.nom}. Pour un hôtel ou un meublé loué à la nuit ${v.a}, nous traitons chambre par chambre : voir [punaises de lit en location courte durée](/blog/punaises-de-lit-airbnb-location-courte-duree).`,
+    )
+  }
+  out.push(
+    `### Punaises de lit près de ${v.nom}`,
+    `Nous traitons aussi les punaises de lit à ${liensVoisines('/punaises-de-lit', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/punaises-de-lit/${dep[0]})` : ''}.`,
+  )
+  return out
+}

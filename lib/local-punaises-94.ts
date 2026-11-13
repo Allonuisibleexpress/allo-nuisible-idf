@@ -22,6 +22,7 @@ export const LOCAL_PUNAISES_94: Record<string, string[]> = {
     'Santeny est un petit village résidentiel du plateau briard, fait surtout de **maisons individuelles**. Une infestation de punaises y surprend toujours, car on l’associe à la ville. Pourtant, il suffit d’un séjour à l’hôtel ou d’un meuble acheté d’occasion.',
     'Nous venons depuis Saint-Maurice et organisons l’intervention pour traiter toute la maison en une fois, avec le second passage déjà planifié.',
     'Les familles santenoises qui reçoivent souvent des invités ont intérêt à inspecter la chambre d’amis après chaque séjour : c’est là que les infestations commencent le plus souvent.',
+    'Avec la **forêt domaniale de Notre-Dame** en bordure de la commune, beaucoup de Santenois trouvent à l’automne des insectes sur leurs façades et leurs fenêtres. Ce ne sont presque jamais des punaises de lit, qui vivent uniquement à l’intérieur, près des dormeurs : ce sont des [punaises des bois](/blog/punaises-des-bois-maison), sans danger et qui ne piquent pas. En cas de doute, envoyez-nous une photo.',
   ],
   'vincennes': [
     'À Vincennes, les **immeubles anciens à parquet** dominent. Les punaises s’y glissent entre les lames et derrière les plinthes, ce qui demande un traitement minutieux au ras du sol, en plus du couchage.',
