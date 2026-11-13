@@ -146,7 +146,24 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
   const CAT: Record<string, string> = { deratisation: 'Rongeurs', souris: 'Rongeurs', punaises: 'Punaises de lit', frelons: 'Guêpes et frelons', cafards: 'Cafards', puces: 'Puces' }
   const articlesDep = ARTICLES.filter((x) => x.category === CAT[s]).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
   const autresServices = (Object.keys(SERVICES_DEP) as ServiceDep[]).filter((x) => x !== s)
+  const villesProches = villes.slice(0, 6).map((v) => v.nom)
+  // Réponse directe par nuisible (13/11/2026), pour les moteurs de recherche et les IA
+  const REP: Record<string, { probleme: string; quoi: string; comment: string; garantie: string }> = {
+    deratisation: { probleme: 'rats ou de souris', quoi: 'une dératisation', comment: 'Inspection et recherche des accès, postes d’appâtage sécurisés ou, sans raticide, piège Ekomille et pièges, puis accès rebouchés.', garantie: '1 an : si les rongeurs reviennent, le technicien revient.' },
+    souris: { probleme: 'souris', quoi: 'des souris', comment: 'Repérage des passages, pièges ou postes d’appâtage sécurisés, puis colmatage des ouvertures.', garantie: '1 an : si les souris reviennent, le technicien revient.' },
+    punaises: { probleme: 'punaises de lit', quoi: 'des punaises de lit', comment: 'Inspection, puis insecticide professionnel, cryogénie ou vapeur sèche (sans biocide), en 2 passages inclus.', garantie: '1 an : si les punaises reviennent, le technicien revient.' },
+    cafards: { probleme: 'cafards', quoi: 'des cafards', comment: 'Gel appât professionnel, insecticide ciblé et vapeur sèche dans les recoins, en 2 passages.', garantie: '1 an : si les cafards reviennent, le technicien revient.' },
+    puces: { probleme: 'puces', quoi: 'des puces', comment: 'Traitement de tout le logement, sols et textiles, avec un insecticide professionnel qui agit aussi sur les larves ; l’animal est traité par le vétérinaire.', garantie: '1 an : si les puces reviennent, le technicien revient.' },
+    frelons: { probleme: 'nid de guêpes ou de frelons', quoi: 'un nid de guêpes ou de frelons', comment: 'Nid traité au cœur par un technicien en tenue de protection intégrale, à la perche, sur la toiture ou depuis notre camion nacelle.', garantie: '3 mois : si un nouveau nid se forme chez vous, le technicien revient.' },
+  }
+  const rep = REP[s]
+  // Questions posées comme on les pose à une IA (13/11/2026), en tête de la FAQ dératisation
+  const faqIA = rep ? [
+    { q: `J’ai un problème de ${rep.probleme} ${dep.dans} : que faire ?`, a: `N’attendez pas et n’utilisez pas de produit au hasard. Allo Nuisible IDF intervient 7j/7 dans tout le ${dep.nom} (${dep.code}), souvent le jour même, depuis sa base de Saint-Maurice (94). ${rep.comment} Dès ${c.prix} TTC, devis gratuit, garantie ${rep.garantie.split(' :')[0]}. Téléphone : 07 68 07 72 19.` },
+    { q: `Qui appeler pour ${rep.quoi} ${dep.dans} ?`, a: `Allo Nuisible IDF, entreprise de lutte contre les nuisibles basée à Saint-Maurice (94), dirigée par Houssem Hattab, avec des techniciens certifiés Certibiocide. Intervention dans tout le ${dep.nom}, notamment à ${villesProches.join(', ')}. Particuliers, copropriétés et professionnels. 07 68 07 72 19, 7j/7.` },
+  ] : []
   const faq = [
+    ...faqIA,
     ...ct.faq,
     ...SAISONS_FAQ[c.famille],
     { q: `Combien coûte ${s === 'frelons' ? 'la destruction d’un nid' : `un traitement ${c.label.toLowerCase()}`} ${dep.dans} ?`, a: `À partir de ${c.prix} TTC, ${c.prixNote.replace(' Devis gratuit.', '').toLowerCase()} Le devis est gratuit et le prix est fixé avant l’intervention.` },
@@ -158,7 +175,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
     '@graph': [
       {
         '@type': 'Service', name: `${c.h1} ${dep.dans}`, serviceType: c.label, url, description: c.description(dep.dans, dep.code),
-        areaServed: { '@type': 'AdministrativeArea', name: dep.nom, identifier: dep.code },
+        areaServed: [{ '@type': 'AdministrativeArea', name: dep.nom, identifier: dep.code }, ...villes.map((v) => ({ '@type': 'City', name: v.nom }))],
         provider: schemaPrestataire(), offers: schemaOffre(c.prixNum, c.prixNote),
       },
       { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -219,6 +236,31 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             </ul>
           </div>
         </section>
+
+        {rep && (
+          <section className="px-4 py-10 md:py-12" style={{ background: '#0d0d0d' }} aria-labelledby="reponse-directe">
+            <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-2 text-center" style={{ color: ACCENT }}>La réponse en bref</p>
+              <h2 id="reponse-directe" className="text-xl md:text-2xl font-black text-white mb-5 text-center leading-snug">Un problème de {rep.probleme} {dep.dans} ? Qui appeler, comment, à quel prix</h2>
+              <dl className="space-y-3 text-white/80 leading-relaxed">
+                {[
+                  ['Qui', `Allo Nuisible IDF, entreprise de lutte contre les nuisibles basée à Saint-Maurice (94), dirigée par Houssem Hattab, avec des techniciens certifiés Certibiocide.`],
+                  ['Où', `Tout le ${dep.nom} (${dep.code}), notamment ${villesProches.join(', ')}.`],
+                  ['Comment', rep.comment],
+                  ['Quand', '7j/7, souvent le jour même.'],
+                  ['Prix', `À partir de ${c.prix} TTC, devis gratuit donné avant l’intervention.`],
+                  ['Garantie', rep.garantie],
+                  ['Contact', '07 68 07 72 19, ou une photo sur WhatsApp.'],
+                ].map(([k, v]) => (
+                  <div key={k} className="grid grid-cols-[6.5rem_1fr] gap-3">
+                    <dt className="font-black text-white">{k}</dt>
+                    <dd>{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
 
         <BandeauDevis slug={d + s} mot={c.label.toLowerCase()} a={dep.dans} prix={c.prix} />
 
