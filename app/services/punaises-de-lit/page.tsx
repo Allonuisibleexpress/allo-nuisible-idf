@@ -23,7 +23,7 @@ const data: ServiceData = {
     { price: 'Sur devis', label: 'T2 ou T3' },
     { price: 'Sur devis', label: 'Maison' },
   ],
-  trustBar: ['Certibiocide', 'Résultat garanti', 'Discrétion totale', '2 passages inclus', 'Garantie 1 an'],
+  trustBar: ['Certibiocide', 'Résultat garanti', 'Devis gratuit', '2 passages inclus', 'Garantie 1 an'],
   benefits: [
     { icon: 'microscope', title: 'Insecticides professionnels', text: 'Les punaises de lit ont développé des résistances aux produits grand public. Nos biocides professionnels agissent sur le système nerveux et restent actifs plusieurs semaines après le passage.' },
     { icon: 'thermo', title: 'Cryogénie et vapeur sèche', text: 'La neige carbonique (environ −78 °C) ou la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. Idéal pour matelas, sommiers, canapés et plinthes : le logement reste utilisable juste après.' },
@@ -75,7 +75,7 @@ const data: ServiceData = {
   faq: [
     { q: 'Comment savoir si j\'ai des punaises de lit ?', a: 'Les signes typiques : piqûres en ligne ou en grappe au réveil, petites taches de sang sur les draps, points noirs (excréments) sur le matelas ou le sommier, et parfois une légère odeur sucrée. Les punaises se cachent dans les coutures du matelas, le sommier, les plinthes.' },
     { q: 'Les punaises de lit arrivent-elles de l\'extérieur ?', a: 'Oui. Elles voyagent dans les bagages, vêtements, meubles d\'occasion et literies. Hôtels, transports en commun, déménagements : tout objet infesté peut introduire des punaises dans votre logement. Elles ne volent pas mais se déplacent très rapidement.' },
-    { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Dans la grande majorité des cas, oui. Notre protocole combine insecticide rémanent et traitement de toutes les zones. Pour les fortes infestations, une seconde intervention peut être nécessaire, incluse dans notre garantie.' },
+    { q: 'Le traitement est-il efficace en une seule intervention ?', a: 'Non, et c’est pour cela que nos deux passages sont toujours inclus dans le prix. Le premier élimine les punaises présentes ; le second, 10 à 15 jours plus tard, élimine les jeunes punaises sorties des œufs entre-temps, avant qu’elles ne pondent. C’est ce second passage qui rend le traitement durable, avec une garantie d’un an.' },
     { q: 'Faut-il jeter le matelas ?', a: 'Pas forcément. Un matelas peut être traité efficacement. Notre technicien évalue sur place. Si le matelas est trop endommagé ou infesté en profondeur, il vous le signalera. Dans la plupart des cas, le traitement suffit.' },
     { q: 'Proposez-vous un traitement sans insecticide ?', a: 'Oui. La cryogénie (neige carbonique, environ −78 °C) et la vapeur sèche à très haute température tuent les punaises et leurs œufs au contact, sans produit chimique. L\'insecticide rémanent, lui, continue d\'agir après le passage. Selon l\'infestation, le technicien vous propose l\'une, l\'autre ou les deux.' },
     { q: 'Faut-il quitter le logement pendant le traitement ?', a: 'Avec un traitement insecticide, oui, pendant 4 heures en moyenne, animaux domestiques compris. Avec la cryogénie ou la vapeur sèche, ce n\'est pas nécessaire. Nos techniciens vous donnent toutes les instructions de préparation avant l\'intervention.' },
