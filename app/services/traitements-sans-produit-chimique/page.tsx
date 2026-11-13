@@ -6,6 +6,7 @@
 import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import ArticleService from '@/components/ArticleService'
+import ChoixEcologique from '@/components/ChoixEcologique'
 
 const ARTICLE = [
   { h: 'Traitement écologique des nuisibles : notre définition', p: [
@@ -65,6 +66,7 @@ const data: ServiceData = {
       ['Pigeons', 'Pics inox, filets, dispositifs électriques', 'Dépigeonnage'],
     ],
   },
+  apresHero: <ChoixEcologique />,
   apresProcess: <ArticleService blocs={ARTICLE} />,
   pricing: [
     { label: 'Punaises de lit', price: '290', description: 'Studio, traitement écologique', features: ['Cryogénie et vapeur sèche', '2 passages inclus', 'Aucun produit chimique', 'Garantie 1 an'], highlight: true },

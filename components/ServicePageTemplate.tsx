@@ -77,6 +77,8 @@ export interface ServiceData {
   contenu?: ContenuFamille
   // Bloc libre affiché après le déroulé de l'intervention (ex. infographie du cycle des punaises, 11/11/2026)
   apresProcess?: React.ReactNode
+  // Bloc affiché juste sous le haut de page (ex. choix du nuisible sur la page Écologique)
+  apresHero?: React.ReactNode
   // Sous-titres H2 propres à la page (13/11/2026) ; sans ce champ, les titres habituels restent affichés
   titres?: { benefits?: string; process?: string; pricing?: string; faq?: string }
   // Vidéos déjà présentées en détail dans le contenu (VideosDetaillees) : pas de galerie en bas de page
@@ -325,6 +327,8 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             )}
           </div>
         </section>
+
+        {data.apresHero}
 
         {/* ── TRUST BAR ── */}
         <div style={{ background: ACCENT }}>
