@@ -3,7 +3,7 @@
 // garantie, « qui doit agir et qui paie ». Une seule version rédigée de chaque texte, identique d'une ville
 // à l'autre (c'est notre protocole) ; l'unicité des pages vient du contenu local. Données : lib/contenu-nuisibles/.
 import NextImage from 'next/image'
-import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
+import { PHOTOS_CHANTIERS, mini, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -233,7 +233,7 @@ export function MiniaturesChantier({ photos, a, ancre = '#nos-chantiers' }: { ph
       <a href={ancre} className="max-w-3xl mx-auto flex items-center justify-center gap-2.5 flex-wrap no-underline">
         {photos.slice(0, 5).map((k) => (
           <span key={k} className="relative block w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden flex-shrink-0" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
-            <NextImage src={PHOTOS_CHANTIERS[k].src} alt={PHOTOS_CHANTIERS[k].alt} fill sizes="64px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[k] as PhotoChantier).cadrage }} />
+            <NextImage src={mini(PHOTOS_CHANTIERS[k].src)} alt={PHOTOS_CHANTIERS[k].alt} fill sizes="64px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[k] as PhotoChantier).cadrage }} />
           </span>
         ))}
         <span className="text-xs md:text-sm font-bold underline underline-offset-2" style={{ color: ACCENT }}>Voir nos vrais chantiers en photos ↓</span>

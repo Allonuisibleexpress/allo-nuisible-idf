@@ -296,3 +296,6 @@ export const CHANTIERS_VILLE: Record<string, Record<string, { titre: string; pho
     },
   },
 }
+
+// Miniature légère (288 px, public/chantiers/mini) pour les petites vignettes en haut de page (13/11/2026)
+export const mini = (src: string) => (/\.jpe?g$/i.test(src) ? src.replace('/chantiers/', '/chantiers/mini/') : src)
