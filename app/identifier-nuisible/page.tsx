@@ -225,7 +225,7 @@ export default function IdentifierNuisiblePage() {
             </div>
             <div className="flex items-start gap-3 mt-8 rounded-2xl p-5" style={card}>
               <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
-              <p className="text-white/60 text-sm">Rédigé par l’équipe technique d’Allo Nuisible IDF, techniciens titulaires du Certibiocide. Photos : Wikimedia Commons, auteurs et licences indiqués sous chaque photo.</p>
+              <p className="text-white/60 text-sm">Rédigé par Houssem Hattab, gérant d’Allo Nuisible IDF, et nos techniciens titulaires du Certibiocide. Photos : Wikimedia Commons, auteurs et licences indiqués sous chaque photo.</p>
             </div>
           </div>
         </section>

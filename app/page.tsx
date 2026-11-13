@@ -1,3 +1,4 @@
+import { GERANT } from '@/lib/seo'
 import { pageMetadata } from '@/lib/seo'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
@@ -47,6 +48,7 @@ const localBusiness = {
   },
   priceRange: '€€',
   sameAs: ['https://maps.google.com/?cid=11887181769674817823', CHAINE_YOUTUBE],
+  employee: GERANT,
   knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
 }
 

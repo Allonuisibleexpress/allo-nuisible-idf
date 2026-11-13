@@ -319,7 +319,7 @@ export default function FourmisTypesPage() {
             <div className="flex items-start gap-3 mb-4">
               <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
               <div>
-                <p className="text-white font-bold">Rédigé par l&apos;équipe technique d&apos;Allo Nuisible IDF</p>
+                <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
                 <p className="text-white/55 text-sm">Techniciens titulaires du Certibiocide. Mis à jour le 6 novembre 2026.</p>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { GERANT } from '@/lib/seo'
 import { CHAINE_YOUTUBE } from '@/lib/youtube'
 // Blocs communs aux pages service + ville (refonte du 08/11/2026) : haut de page, étapes d'intervention,
 // tarifs, autres services dans la même ville. Formulations en rotation d'une ville à l'autre (similarité ≤ 0,50).
@@ -66,7 +67,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         {maj && (
           <p className="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs text-white/55 -mt-3 mb-6">
             <BadgeCheck className="w-3.5 h-3.5" style={{ color: ACCENT }} />
-            <span>Rédigé par l&apos;équipe technique Allo Nuisible IDF, techniciens certifiés Certibiocide</span>
+            <span>Rédigé par <strong className="text-white/80">Houssem Hattab</strong>, gérant d&apos;Allo Nuisible IDF, avec nos techniciens certifiés Certibiocide</span>
             <span className="text-white/30">·</span><span>Mis à jour le {maj}</span>
           </p>
         )}
@@ -214,6 +215,7 @@ export function schemaPrestataire() {
     openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
     knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
     sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
+    employee: GERANT,
   }
 }
 export function schemaOffre(prix: string, libelle: string) {

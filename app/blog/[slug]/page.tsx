@@ -202,7 +202,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         datePublished: a.date,
         dateModified: a.date,
         inLanguage: 'fr-FR',
-        author: { '@type': 'Organization', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr' },
+        author: { '@type': 'Person', name: 'Houssem Hattab', jobTitle: 'Gérant', worksFor: { '@type': 'Organization', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr' } },
         publisher: { '@type': 'Organization', name: 'Allo Nuisible IDF' },
         mainEntityOfPage: url,
         abstract: a.tldr,
@@ -244,7 +244,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#E8441A', marginBottom: '12px' }}>{a.category}</p>
             <h1 style={{ fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: 900, color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>{a.title}</h1>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
-              <span>Par les techniciens certifiés Certibiocide</span>
+              <span>Par Houssem Hattab, gérant, et nos techniciens certifiés Certibiocide</span>
               <span>·</span>
               <time dateTime={a.date}>{new Date(a.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
               <span>·</span>
@@ -298,7 +298,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <div style={{ borderLeft: '3px solid #E8441A', background: 'rgba(255,255,255,0.03)', borderRadius: '0 12px 12px 0', padding: '22px 24px', marginTop: '48px', marginBottom: '8px' }}>
             <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: '#E8441A', marginBottom: '12px' }}>Ce qu'on observe sur le terrain</p>
             <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.85)', fontStyle: 'italic', marginBottom: '12px' }}>« {a.terrain} »</p>
-            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: 0 }}>L'équipe Allo Nuisible IDF, techniciens certifiés Certibiocide en Île-de-France</p>
+            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Houssem Hattab, gérant d'Allo Nuisible IDF, et nos techniciens certifiés Certibiocide en Île-de-France</p>
           </div>
           )}
 

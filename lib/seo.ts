@@ -23,3 +23,13 @@ export function pageMetadata({ title, description, path }: { title: string; desc
     },
   }
 }
+
+// Gérant de la société (13/11/2026), affiché comme auteur des pages et déclaré à Google
+export const GERANT_NOM = 'Houssem Hattab'
+export const GERANT = {
+  '@type': 'Person',
+  '@id': 'https://allonuisibleidf.fr/#gerant',
+  name: GERANT_NOM,
+  jobTitle: 'Gérant',
+  worksFor: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
+}
