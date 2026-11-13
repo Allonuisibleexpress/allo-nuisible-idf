@@ -4,6 +4,7 @@
 // Règles : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { ficheAcariens } from '@/lib/fiche-nuisible'
 import { LOCAL_ACARIENS_GC } from '@/lib/local-acariens-gc'
 import { LOCAL_ACARIENS_94 } from '@/lib/local-acariens-94'
 import { ACARIENS_APPROFONDI } from '@/lib/acariens-approfondi'
@@ -12,6 +13,7 @@ const AMELI = 'https://www.ameli.fr/assure/sante/themes/allergie/vivre-allergiqu
 
 export const CONFIG_ACARIENS: VilleServiceConfig = {
   basePath: '/acariens',
+  fiche: (v, vs) => ficheAcariens(v, vs),
   titre: 'Acariens',
   serviceType: 'Traitement anti-acariens',
   pilier: { href: '/services/acariens', label: 'Acariens', lien: 'notre traitement anti-acariens' },

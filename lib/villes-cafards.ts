@@ -4,6 +4,7 @@
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { ficheCafards } from '@/lib/fiche-nuisible'
 
 export const GUIDES_CAFARDS: Record<string, string> = {
   'gel-anti-cafard-ne-marche-pas': 'Gel anti-cafard inefficace : 5 raisons',
@@ -12,6 +13,7 @@ export const GUIDES_CAFARDS: Record<string, string> = {
 
 export const CONFIG_CAFARDS: VilleServiceConfig = {
   basePath: '/cafards',
+  fiche: (v, vs) => ficheCafards(v, vs),
   titre: 'Cafards',
   serviceType: 'Traitement des cafards et blattes',
   pilier: { href: '/services/cafards-blattes', label: 'Cafards et blattes', lien: 'notre traitement des cafards et blattes en Île-de-France' },

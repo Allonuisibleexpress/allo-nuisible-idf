@@ -138,3 +138,76 @@ export function fichePunaises(v: V, voisines: Voisine[]): string[] {
   )
   return out
 }
+
+// Fiche cafards (13/11/2026) : immeuble (Insee, SRU, quartiers), commerces et restaurants (OpenStreetMap), villes voisines.
+export function ficheCafards(v: V, voisines: Voisine[]): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const dep = DEP[v.code]
+  const out: string[] = []
+  if (d) {
+    const quartiers = d.quartiers?.slice(0, 4) ?? []
+    const sru = d.sru ? `, dont ${d.sru.taux} de logements sociaux selon l’inventaire SRU` : ''
+    out.push(
+      `### Cafards en immeuble ${v.a} : gaines, colonnes et vide-ordures`,
+      `${v.nom} compte ${nf(d.population)} habitants sur ${String(d.surfaceKm2).replace('.', ',')} km² (Insee)${sru}.${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''} La **blatte germanique** remonte d’un logement à l’autre par les **gaines techniques**, les **colonnes d’eau** et les **vide-ordures** : traiter seulement son appartement laisse souvent revenir les cafards. Prévenez votre bailleur ou votre syndic.`,
+    )
+    const p = d.poi
+    if (p && (p.resto > 0 || p.commercesAlim > 0)) {
+      const bits = [p.resto > 0 ? `${nf(p.resto)} restaurants et cafés` : '', p.commercesAlim > 0 ? `${nf(p.commercesAlim)} commerces alimentaires` : ''].filter(Boolean)
+      out.push(
+        `### Restaurants et commerces ${v.a} : cafards et hygiène`,
+        `OpenStreetMap recense ${liste(bits)} à ${v.nom}${p.marches?.length ? `, ainsi que ${liste(p.marches.slice(0, 2).map((m) => (/^march/i.test(m) ? `le ${m}` : `le marché ${m}`)))}` : ''}. Pour un professionnel de l’alimentation ${v.a}, nous organisons l’intervention selon vos horaires, avec un plan de lutte et une **attestation** pour vos contrôles d’hygiène : voir [notre offre professionnels](/professionnels).`,
+      )
+    }
+  }
+  out.push(
+    `### Cafards près de ${v.nom}`,
+    `Nous traitons aussi les cafards à ${liensVoisines('/cafards', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/cafards/${dep[0]})` : ''}.`,
+  )
+  return out
+}
+
+// Fiche chenilles processionnaires (13/11/2026) : pins (IGN BD Forêt V2), espaces verts (OpenStreetMap), quartiers, villes voisines.
+export function ficheChenilles(v: V, voisines: Voisine[]): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const dep = DEP[v.code]
+  const out: string[] = []
+  if (d) {
+    const verts = d.verts?.slice(0, 3) ?? []
+    const ha = d.pinsHa ?? 0
+    out.push(
+      `### Pins et chênes ${v.a} : les arbres à surveiller`,
+      `${ha >= 1 ? `La BD Forêt de l’IGN recense environ **${nf(Math.round(ha))} ha de forêts de pins** sur la commune de ${v.nom}.` : `La BD Forêt de l’IGN ne recense pas de forêt de pins à ${v.nom} : les nids se trouvent surtout sur des pins isolés, dans les jardins, les résidences et les alignements.`}${verts.length ? ` Espaces verts recensés sur OpenStreetMap : ${liste(verts)}.` : ''} Voir [processionnaire du pin](/blog/chenille-processionnaire-du-pin).`,
+    )
+    const quartiers = d.quartiers?.slice(0, 4) ?? []
+    out.push(
+      `### Chenilles, chiens et enfants ${v.a}`,
+      `${quartiers.length ? `Quartiers où nous intervenons : ${liste(quartiers)}. ` : ''}Gardez **chiens** et enfants loin des processions : les poils urticants restent actifs même dans un nid vide. Voir [cycle et dangers des chenilles processionnaires](/blog/chenilles-processionnaires-cycle-dangers).`,
+    )
+  }
+  out.push(
+    `### Chenilles processionnaires près de ${v.nom}`,
+    `Nous intervenons aussi à ${liensVoisines('/chenilles-processionnaires', voisines)}${dep ? `. Tous nos services ${dep[1]} : [la page du département](/zones/${dep[0]})` : ''}.`,
+  )
+  return out
+}
+
+// Fiche acariens (13/11/2026) : logement (Insee, SRU, quartiers) et villes voisines.
+export function ficheAcariens(v: V, voisines: Voisine[]): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const dep = DEP[v.code]
+  const out: string[] = []
+  if (d) {
+    const quartiers = d.quartiers?.slice(0, 4) ?? []
+    const sru = d.sru ? `, dont ${d.sru.taux} de logements sociaux selon l’inventaire SRU` : ''
+    out.push(
+      `### Acariens et humidité dans les logements ${v.a}`,
+      `${v.nom} compte ${nf(d.population)} habitants sur ${String(d.surfaceKm2).replace('.', ',')} km² (Insee)${sru}.${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''} Les acariens prolifèrent quand l’air reste **chaud et humide** : chambre peu aérée, linge qui sèche à l’intérieur, ventilation bouchée. Aérer chaque jour et viser une chambre autour de 19 °C limite leur développement. Voir [acariens et humidité dans la maison](/blog/acariens-humidite-maison).`,
+    )
+  }
+  out.push(
+    `### Acariens près de ${v.nom}`,
+    `Nous traitons aussi les acariens à ${liensVoisines('/acariens', voisines)}${dep ? `. Tous nos services ${dep[1]} : [la page du département](/zones/${dep[0]})` : ''}.`,
+  )
+  return out
+}

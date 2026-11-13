@@ -5,6 +5,7 @@
 // Règles CLAUDE.md : pas de chiffre inventé, pas de tiret long, pas de « naturel », « bio », « écologique », « sans danger ».
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { ficheChenilles } from '@/lib/fiche-nuisible'
 
 export const GUIDES_CHENILLES: Record<string, string> = {
   'chenilles-processionnaires-cycle-dangers': 'Chenilles processionnaires : cycle de vie et dangers',
@@ -13,6 +14,7 @@ export const GUIDES_CHENILLES: Record<string, string> = {
 
 export const CONFIG_CHENILLES: VilleServiceConfig = {
   basePath: '/chenilles-processionnaires',
+  fiche: (v, vs) => ficheChenilles(v, vs),
   titre: 'Chenilles processionnaires',
   serviceType: 'Traitement des chenilles processionnaires',
   pilier: { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires', lien: 'notre service contre les chenilles processionnaires' },
@@ -281,6 +283,7 @@ export const VILLES_CHENILLES: VilleChenilles[] = [
   villeLocale("Massy", "à Massy", 'massy', '91', [
     "Massy compte des quartiers pavillonnaires plantés et de grands parcs, avec des pins noirs et des cèdres d'ornement dans de nombreux jardins. Ce sont les arbres préférés de la processionnaire du pin.",
     "Dans les résidences récentes du quartier Atlantis comme dans les jardins plus anciens, nous intervenons à la perche télescopique, sans abîmer l'arbre.",
+    "Un nid dans un arbre public, au parc Georges-Brassens, au parc Saint-Marc ou le long d'une rue de Massy ? C'est à la commune d'intervenir : signalez-le aux services techniques de la mairie. Dans votre jardin, c'est à vous ; dans une résidence, c'est au syndic de faire traiter les arbres.",
   ], ["Palaiseau", "Antony", "Wissous", "Chilly-Mazarin"],
   { q: "Peut-on traiter un pin sans le couper à Massy ?", a: "Oui. Les nids sont coupés au bout des branches, à la perche, sans abattre l'arbre. Un collier piège protège ensuite le tronc." }),
   villeLocale("Savigny-sur-Orge", "à Savigny-sur-Orge", 'savigny-sur-orge', '91', [
