@@ -31,8 +31,30 @@ export function phraseDistance(slug: string, nom: string) {
 
 export function titreGoogle(motCle: string, nom: string, slug: string, suffixes: string[]) {
   const cp = codePostal(slug)
-  const base = `${motCle} ${nom}${cp ? ` (${cp})` : ''}`
-  return (suffixes.map((s) => base + s).find((t) => t.length <= 60)) ?? base
+  const court = nom.replace(/^Saint-/, 'St-').replace(/^Sainte-/, 'Ste-').replace(/-Saint-/g, '-St-').replace(/-Sainte-/g, '-Ste-')
+  // 13/11/2026 : le prix (premier complément) passe avant le code postal complet. Pour les noms longs, on essaie
+  // le département seul, puis l'abréviation St-/Ste- (titre Google uniquement) avant de retirer le prix.
+  const bases = [
+    `${motCle} ${nom}${cp ? ` (${cp})` : ''}`,
+    ...(cp ? [`${motCle} ${nom} (${cp.slice(0, 2)})`] : []),
+    `${motCle} ${nom}`,
+    ...(court !== nom ? [`${motCle} ${court}${cp ? ` (${cp.slice(0, 2)})` : ''}`] : []),
+  ]
+  for (const s of suffixes) {
+    const t = bases.map((b) => b + s).find((x) => x.length <= 60)
+    if (t) return t
+  }
+  return bases[bases.length - 1]
+}
+
+// Description Google de 160 caractères au plus (13/11/2026) : on retire d'abord les compléments les moins utiles.
+export function descriptionCourte(d: string) {
+  if (d.length <= 160) return d
+  for (const r of [', devis gratuit', ' TTC', ', 7j/7']) {
+    d = d.replace(r, '')
+    if (d.length <= 160) return d
+  }
+  return d
 }
 
 export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj, dep, garantie = '1 an' }: {
@@ -207,8 +229,8 @@ export function schemaPrestataire() {
     priceRange: '€€',
     image: 'https://allonuisibleidf.fr/opengraph-image',
     address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
-    // Vraie note de la fiche Google (lib/avis-google.ts)
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: NOTE_GOOGLE.note.replace(',', '.'), reviewCount: NOTE_GOOGLE.nombre, bestRating: 5 },
+    // Pas d'aggregateRating (13/11/2026) : la note vient de la fiche Google, et Google interdit de reprendre dans les
+    // données structurées des avis recueillis sur un autre site. La note reste affichée en clair sur la page, avec le lien.
     // Mêmes informations que le schéma de l'accueil (12/11/2026) : position, horaires, zone, chaîne YouTube
     geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
     hasMap: FICHE_GOOGLE_URL,

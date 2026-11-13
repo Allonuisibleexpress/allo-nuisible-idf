@@ -7,6 +7,15 @@ const ACCENT = '#E8441A'
 
 export type VideoChantier = { src: string; legende: string; banniere?: boolean; apercu?: number; poster?: string } // apercu : seconde affichée en vignette // banniere : logo déjà incrusté dans la vidéo // poster : image légère (public/chantiers/posters) affichée avant la lecture
 
+// Image d'aperçu d'une vidéo de chantier (13/11/2026) : sans elle, le navigateur téléchargeait la vidéo entière
+// à l'ouverture de la page (6 Mo sur certaines pages ville). Toutes les vidéos de public/chantiers ont leur image
+// dans public/chantiers/posters (même nom, en .jpg) : en ajouter une pour chaque nouvelle vidéo.
+export function posterVideo(v: { src: string; poster?: string }): string | undefined {
+  if (v.poster) return v.poster
+  const m = v.src.match(/^\/chantiers\/([^/]+)\.mp4$/)
+  return m ? `/chantiers/posters/${m[1]}.jpg` : undefined
+}
+
 // Petit logo de l'entreprise en bas à droite des photos et vidéos
 export function Filigrane({ bas = 8 }: { bas?: number }) {
   return (
@@ -52,7 +61,7 @@ export default function MediasChantier({
         {videos.map((v) => (
           <figure key={v.src} style={{ margin: 0 }}>
             <div style={tuile}>
-              <video src={v.poster ? v.src : `${v.src}#t=${v.apercu ?? 0.5}`} poster={v.poster} controls muted playsInline preload={v.poster ? 'none' : 'metadata'} aria-label={v.legende}
+              <video src={v.src} poster={posterVideo(v)} controls muted playsInline preload="none" aria-label={v.legende}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               {/* La bannière « Allo Nuisible IDF » est incrustée dans toutes les vidéos (règle absolue) */}
             </div>

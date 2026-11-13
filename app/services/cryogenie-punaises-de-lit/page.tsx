@@ -128,7 +128,7 @@ const data: ServiceData = {
 
 export const metadata = pageMetadata({
   title: 'Traitement punaises de lit écologique : cryogénie dès 290 €',
-  description: 'Traitement écologique des punaises de lit, sans biocide ni produit chimique : cryogénie à −78 °C, œufs tués au contact. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
+  description: 'Traitement écologique des punaises de lit sans biocide : cryogénie à −78 °C, œufs tués au contact. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
   path: '/services/cryogenie-punaises-de-lit',
 })
 

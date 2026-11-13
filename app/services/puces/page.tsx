@@ -59,7 +59,7 @@ const data: ServiceData = {
 
 export const metadata = pageMetadata({
   title: 'Traitement puces dès 120 € : maison et appartement',
-  description: 'Puces dans la maison, piqûres aux chevilles, puces de parquet : traitement du logement par des techniciens Certibiocide, en lien avec le vétérinaire. Dès 120 € TTC.',
+  description: 'Puces dans la maison, piqûres aux chevilles : traitement du logement par des techniciens Certibiocide, en lien avec le vétérinaire. Dès 120 € TTC.',
   path: '/services/puces',
 })
 

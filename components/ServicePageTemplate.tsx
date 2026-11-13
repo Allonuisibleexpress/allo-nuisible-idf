@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { NOTE_GOOGLE, FICHE_GOOGLE_URL } from '@/lib/avis-google'
+import { FICHE_GOOGLE_URL } from '@/lib/avis-google'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { CHAINE_YOUTUBE } from '@/lib/youtube'
 import {
@@ -144,7 +144,8 @@ export function schemaService(data: Pick<ServiceData, 'heroTitle' | 'heroHighlig
     address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
     geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
     openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: NOTE_GOOGLE.note.replace(',', '.'), reviewCount: NOTE_GOOGLE.nombre, bestRating: 5 },
+    // Pas d'aggregateRating (13/11/2026) : la note vient de la fiche Google, et Google interdit de reprendre dans les
+    // données structurées des avis recueillis sur un autre site. La note reste affichée en clair sur la page, avec le lien.
     sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
   }
   return {

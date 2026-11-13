@@ -16,7 +16,7 @@ import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 import { SITE_URL, pageMetadata } from '@/lib/seo'
-import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
+import { HeroVille, EtapesVille, TarifsVille, AutresServicesVille, titreGoogle, descriptionCourte, phraseDistance, schemaPrestataire, schemaOffre } from '@/components/VilleBlocs'
 import AvisDefilants from '@/components/AvisDefilants'
 import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
 import { MiniaturesChantier } from '@/components/ContenuNuisible'
@@ -105,7 +105,7 @@ export type VilleServiceConfig = {
 export function metaVille(v: Ville, c: VilleServiceConfig) {
   const p = PROFILS[serviceLocal(c.pilier.href) as keyof typeof PROFILS]
   const title = titreGoogle(p.motCle, v.nom, v.slug, p.suffixes)
-  return pageMetadata({ title, description: p.description(v.a, codePostal(v.slug)), path: `${c.basePath}/${v.slug}` })
+  return pageMetadata({ title, description: descriptionCourte(p.description(v.a, codePostal(v.slug))), path: `${c.basePath}/${v.slug}` })
 }
 
 // Texte riche : **gras** et [ancre](/lien)

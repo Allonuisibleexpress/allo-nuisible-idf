@@ -42,9 +42,11 @@ const VOISINS: Record<string, Bloc> = {
 // Pages écologiques (13/11/2026, maillage demandé par l'utilisateur) : chaque service qui a une méthode sans biocide
 // renvoie vers la page centrale « Écologique » et, s'il existe, vers sa propre page écologique.
 const HUB_ECO = { href: '/services/traitements-sans-produit-chimique', label: 'Tous nos traitements écologiques, sans produit chimique' }
+const CANIN = { href: '/blog/detection-canine-punaises-de-lit', label: 'Détection canine des punaises de lit : fiabilité réelle et limites' }
 const ECO: Record<string, Bloc> = {
   '/services/punaises-de-lit': { title: 'Version écologique, sans insecticide', links: [
-    { href: '/services/cryogenie-punaises-de-lit', label: 'Punaises de lit : traitement écologique par cryogénie à −78 °C' }, HUB_ECO ] },
+    { href: '/services/cryogenie-punaises-de-lit', label: 'Punaises de lit : traitement écologique par cryogénie à −78 °C' }, HUB_ECO, CANIN ] },
+  '/services/cryogenie-punaises-de-lit': { title: 'Localiser les punaises sans produit', links: [ CANIN, HUB_ECO ] },
   '/services/deratisation': { title: 'Version écologique, sans raticide', links: [
     { href: '/services/deratisation-ecologique', label: 'Dératisation écologique : pièges sans poison et accès rebouchés' }, HUB_ECO ] },
   '/services/acariens': { title: 'Traiter sans produit', links: [ HUB_ECO ] },
