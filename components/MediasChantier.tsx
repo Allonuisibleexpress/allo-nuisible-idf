@@ -5,7 +5,7 @@ import { CHAINE_YOUTUBE, lienYoutube } from '@/lib/youtube'
 
 const ACCENT = '#E8441A'
 
-export type VideoChantier = { src: string; legende: string; banniere?: boolean; apercu?: number } // apercu : seconde affichée en vignette // banniere : logo déjà incrusté dans la vidéo
+export type VideoChantier = { src: string; legende: string; banniere?: boolean; apercu?: number; poster?: string } // apercu : seconde affichée en vignette // banniere : logo déjà incrusté dans la vidéo // poster : image légère (public/chantiers/posters) affichée avant la lecture
 
 // Petit logo de l'entreprise en bas à droite des photos et vidéos
 export function Filigrane({ bas = 8 }: { bas?: number }) {
@@ -52,7 +52,7 @@ export default function MediasChantier({
         {videos.map((v) => (
           <figure key={v.src} style={{ margin: 0 }}>
             <div style={tuile}>
-              <video src={`${v.src}#t=${v.apercu ?? 0.5}`} controls muted playsInline preload="metadata" aria-label={v.legende}
+              <video src={v.poster ? v.src : `${v.src}#t=${v.apercu ?? 0.5}`} poster={v.poster} controls muted playsInline preload={v.poster ? 'none' : 'metadata'} aria-label={v.legende}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               {/* La bannière « Allo Nuisible IDF » est incrustée dans toutes les vidéos (règle absolue) */}
             </div>

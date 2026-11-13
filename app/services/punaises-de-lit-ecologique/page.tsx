@@ -100,7 +100,7 @@ const data: ServiceData = {
       { href: '/services/traitements-sans-produit-chimique', label: 'Tous nos traitements sans produit chimique' },
       { href: '/services/cryogenie-punaises-de-lit', label: 'Cryogénie punaises de lit : la méthode en détail' },
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
-      { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : comment ça marche, efficacité et limites' },
+      { href: '/blog/cryogenie-punaises-de-lit', label: 'Le froid tue-t-il les punaises de lit ? Cryogénie et congélateur' },
       { href: '/blog/cryogenie-punaises-de-lit-foyer-enfants', label: 'Récit : cryogénie dans un foyer pour enfants' },
       { href: '/blog/traiter-vetements-punaises-de-lit', label: 'Traiter ses vêtements contre les punaises de lit' },
       { href: '/blog/cycle-de-vie-punaise-de-lit', label: 'Cycle de vie de la punaise de lit en images' },

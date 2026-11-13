@@ -28,8 +28,10 @@ export default function VignettesChantier({
       ))}
       {videos.map((v) => (
         <span key={v.src} style={tuile}>
-          <video src={`${v.src}#t=${v.apercu ?? 0.5}`} muted playsInline preload="metadata" aria-label={v.legende}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          {v.poster
+            ? <img src={v.poster} alt={v.legende} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            : <video src={`${v.src}#t=${v.apercu ?? 0.5}`} muted playsInline preload="metadata" aria-label={v.legende}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />}
           <span aria-hidden="true" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ width: '26px', height: '26px', borderRadius: '50%', background: 'rgba(0,0,0,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '11px', paddingLeft: '2px' }}>▶</span>
           </span>

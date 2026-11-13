@@ -77,6 +77,10 @@ export interface ServiceData {
   contenu?: ContenuFamille
   // Bloc libre affiché après le déroulé de l'intervention (ex. infographie du cycle des punaises, 11/11/2026)
   apresProcess?: React.ReactNode
+  // Sous-titres H2 propres à la page (13/11/2026) ; sans ce champ, les titres habituels restent affichés
+  titres?: { benefits?: string; process?: string; pricing?: string; faq?: string }
+  // Vidéos déjà présentées en détail dans le contenu (VideosDetaillees) : pas de galerie en bas de page
+  galerieDansContenu?: boolean
   guide?: GuideService
   // Maillage du cocon sémantique : pages villes et guides du blog liés à ce service
   related?: {
@@ -236,7 +240,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
 
               {/* Titre */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-                {data.heroTitle}<br />
+                {data.heroTitle}{' '}<br />
                 <span style={{ color: ACCENT }}>{data.heroHighlight}</span>
               </h1>
               {data.urgence && (
@@ -339,7 +343,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Pourquoi nous choisir</p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">Ce qui nous distingue</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">{data.titres?.benefits ?? 'Ce qui nous distingue'}</h2>
             </div>
             <div className={`grid ${data.benefits.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-5`}>
               {data.benefits.map(({ icon, title, text }) => {
@@ -365,7 +369,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Déroulé</p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">Comment ça se passe ?</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">{data.titres?.process ?? 'Comment ça se passe ?'}</h2>
             </div>
             <div className="space-y-0">
               {data.process.map(({ title, text }, i) => (
@@ -423,7 +427,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Devis gratuit</p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Devis sur mesure, sans surprise</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{data.titres?.pricing ?? 'Devis sur mesure, sans surprise'}</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Devis gratuit confirmé avant intervention · RC Pro incluse</p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
@@ -483,7 +487,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <AvisGoogle ordre={data.avis} />
 
         {data.photos && !data.chantier && <PhotosChantiers photos={data.photos} fond="#0d0d0d" />}
-        {data.chantier && (
+        {data.chantier && !data.galerieDansContenu && (
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-3xl mx-auto">
               <MediasChantier photos={data.chantier.photos} videos={data.chantier.videos} titre={data.chantier.titre} lien={data.chantier.lien} />
@@ -520,7 +524,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>FAQ</p>
-              <h2 className="text-2xl md:text-3xl font-black text-white">Questions fréquentes</h2>
+              <h2 className="text-2xl md:text-3xl font-black text-white">{data.titres?.faq ?? 'Questions fréquentes'}</h2>
             </div>
             <div className="space-y-3">
               {faq.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
