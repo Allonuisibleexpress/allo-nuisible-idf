@@ -1271,7 +1271,7 @@ export const ARTICLES: Article[] = [
         ['Vapeur sèche', 'Vapeur à très haute température, très peu d\'eau', 'Coutures de matelas, canapés, rideaux, moquettes', 'Lente, à éviter sur les matériaux sensibles à la chaleur'],
         ['Aspiration', 'Retire les insectes et les œufs visibles', 'Partout, en complément', 'Ne suffit jamais seule'],
       ] },
-      { t: 'p', x: "Pour aller plus loin : [la cryogénie contre les punaises de lit](/blog/cryogenie-punaises-de-lit) et [la vapeur sèche](/blog/vapeur-seche-punaises-de-lit)." },
+      { t: 'p', x: "Pour aller plus loin : [la cryogénie contre les punaises de lit](/blog/cryogenie-punaises-de-lit) et [la vapeur sèche](/blog/vapeur-seche-punaises-de-lit). Notre offre : [traitement des punaises de lit écologique par cryogénie](/services/cryogenie-punaises-de-lit), et [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique)." },
       { t: 'h2', x: "Ce que vous pouvez faire vous-même dès ce soir" },
       { t: 'p', x: "Le gouvernement recommande, pour le linge et les effets personnels, l'une de ces trois méthodes :" },
       { t: 'ol', items: [
@@ -1999,7 +1999,7 @@ export const ARTICLES: Article[] = [
         "**Pose des pièges** sur les passages, hors de portée des enfants et des animaux.",
         "**Contrôle** et ajustement aux passages suivants.",
       ] },
-      { t: 'p', x: "Notre [dératisation](/services/deratisation) est à partir de 120 € TTC, avec un devis gratuit établi sur place et une garantie 1 an. Pour mieux connaître l'ennemi, lisez notre article sur le [mode de vie du rat](/blog/rat-mode-de-vie)." },
+      { t: 'p', x: "Notre [dératisation](/services/deratisation) est à partir de 120 € TTC, avec un devis gratuit établi sur place et une garantie 1 an. Sans aucun raticide : voir notre [dératisation écologique](/services/deratisation-ecologique) et [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique). Pour mieux connaître l'ennemi, lisez notre article sur le [mode de vie du rat](/blog/rat-mode-de-vie)." },
     ],
     faq: [
       { q: "Qu'est-ce que le piège Ekomille ?", a: "Un appareil électromécanique de capture multiple et continue des rats et des souris, qui fonctionne avec des appâts alimentaires. C'est une méthode alternative aux postes avec raticide, qui restent la méthode la plus courante. Le rongeur tombe dans une cuve fermée contenant un liquide de conservation et reste dans l'appareil, au lieu de mourir dans la rue ou dans une cloison." },

@@ -234,6 +234,7 @@ export default function IdentifierNuisiblePage() {
         <section className="py-14 px-4 text-center" style={{ background: '#0d0d0d' }}>
           <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Toujours un doute ? <span style={{ color: ACCENT }}>On l’identifie pour vous</span></h2>
           <p className="text-white/65 mb-6">Envoyez une photo ou appelez : réponse gratuite d’un technicien, devis gratuit si un traitement est nécessaire, 7j/7.</p>
+          <p className="text-white/65 mb-6 -mt-3">Vous préférez éviter les produits chimiques ? Voir <a href="/services/traitements-sans-produit-chimique" className="font-bold underline" style={{ color: '#3FB27F' }}>nos traitements écologiques, sans biocide</a>.</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a href="https://wa.me/33768077219?text=Bonjour%2C%20voici%20une%20photo%20du%20nuisible%20trouv%C3%A9%20chez%20moi%20%3A" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl hover:brightness-110" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Camera className="w-5 h-5" />Envoyer une photo sur WhatsApp
