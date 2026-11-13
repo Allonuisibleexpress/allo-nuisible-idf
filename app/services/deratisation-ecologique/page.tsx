@@ -28,6 +28,15 @@ const ARTICLE = [
   { h: 'Le colmatage : la base d’une dératisation écologique', p: [
     'Un rat passe par une ouverture à peine plus grande qu’une pièce de monnaie, une souris par un trou encore plus petit. Nous bouchons les passages de canalisations, les bas de portes, les soupiraux et les grilles abîmées avec des matériaux que les rongeurs ne peuvent pas ronger : **grillage métallique fin**, **laine d’acier**, **mortier**. Sans colmatage, d’autres rongeurs reviennent, quel que soit le traitement.',
   ] },
+  { h: 'Piège à rat sans poison : quel dispositif selon le lieu ?', p: [
+    '- **Appartement, cuisine, placards** : pièges mécaniques type tapette et pièges électriques en boîtes fermées, le long des murs et derrière l’électroménager.',
+    '- **Cave, jardin, cour, local poubelles** : le **piège Ekomille** sur le passage principal des surmulots, souvent près d’une canalisation ou d’un terrier.',
+    '- **Faux plafonds, gaines, locaux techniques** : plaques de glu dans des endroits fermés et contrôlés, qui servent aussi à repérer les passages.',
+    '- **Restaurant, commerce, copropriété, entrepôt** : **pièges connectés**, qui signalent chaque capture à distance et permettent un suivi précis, utile pour vos registres.',
+  ] },
+  { h: 'Dératisation sans raticide pour crèches, écoles, restaurants et copropriétés', p: [
+    'Dans les lieux qui accueillent des enfants, du public ou des denrées alimentaires, un poste de raticide demande des précautions strictes. Sans raticide, il n’y a aucun appât toxique à surveiller : les pièges sont fermés, posés hors de portée et relevés lors de passages programmés, avec un compte rendu à la direction ou au syndic. Voir aussi notre page [professionnels](/professionnels).',
+  ] },
   { h: 'Une dératisation sans raticide est-elle aussi rapide ?', p: [
     'Pour une **petite ou moyenne infestation**, oui, surtout quand le colmatage est bien fait. Pour une **infestation importante**, la capture prend plus de temps qu’un raticide et demande des passages de suivi. Après le diagnostic, nous vous disons honnêtement si une dératisation sans raticide suffit dans votre cas.',
   ] },
@@ -53,6 +62,19 @@ const data: ServiceData = {
     { icon: 'search', title: 'Un diagnostic honnête', text: 'Nous vous disons si une dératisation sans raticide suffit dans votre cas, selon l’espèce et l’ampleur.' },
   ],
   process: ETAPES_DERAT_ECO.slice(0, 4).map((e) => ({ title: e.titre, text: e.texte.split(/(?<=[.!?])\s/)[0] })),
+  tableau: {
+    titre: 'Dératisation écologique ou classique : le comparatif',
+    intro: 'Les deux méthodes commencent par la même inspection et le même rebouchage des accès. Ce qui change, c’est le moyen d’éliminer les rongeurs.',
+    head: ['', 'Dératisation écologique', 'Dératisation classique'],
+    rows: [
+      ['Produit utilisé', 'Aucun raticide ni poison', 'Raticide en postes d’appâtage sécurisés'],
+      ['Dispositifs', 'Ekomille, pièges connectés, électriques, tapettes, plaques de glu', 'Postes d’appâtage, parfois complétés par des pièges'],
+      ['Rongeur mort dans une cloison', 'Non, il reste dans le piège', 'Possible, avec une odeur pendant plusieurs semaines'],
+      ['Enfants et animaux', 'Aucun appât toxique', 'Postes fermés, précautions à respecter'],
+      ['Infestation importante', 'Plus long, suivi renforcé', 'Souvent plus rapide'],
+      ['Garantie', '1 an', '1 an'],
+    ],
+  },
   apresProcess: <><DeratEco complet /><ArticleService blocs={ARTICLE} /></>,
   pricing: [
     { label: 'Appartement', price: 'Sur devis', description: 'Souris ou rats, petite surface', features: ['Pièges mécaniques', 'Colmatage des accès', 'Sans raticide', 'Garantie 1 an'] },
@@ -66,11 +88,13 @@ const data: ServiceData = {
     { q: 'Une dératisation sans raticide est-elle efficace ?', a: 'Oui pour les petites et moyennes infestations, surtout avec un bon colmatage. Pour une infestation importante, la capture prend plus de temps et demande un suivi : nous vous le disons après le diagnostic.' },
     { q: 'Pourquoi éviter le raticide avec des animaux ?', a: 'Un chien ou un chat peut consommer un rongeur empoisonné. La faune du jardin (fouines, rapaces) aussi. Sans raticide, ce risque disparaît.' },
     { q: 'Combien coûte une dératisation écologique ?', a: 'Le prix dépend du lieu, de l’espèce et de l’ampleur. Le devis est gratuit et donné avant l’intervention ; garantie 1 an.' },
+    { q: 'Quel piège à rat sans poison est le plus efficace ?', a: 'Cela dépend du lieu : le piège Ekomille pour les surmulots en cave ou au jardin, les tapettes et pièges électriques en boîtes pour les souris dans un appartement, les pièges connectés pour un suivi à distance dans un commerce ou une copropriété. Le colmatage des accès reste indispensable dans tous les cas.' },
     { q: 'Faut-il quitter le logement ?', a: 'Non. Les pièges ne diffusent aucun produit ; ils sont placés hors de portée des enfants et des animaux.' },
   ],
   related: {
     villes: { title: 'Dératisation sans raticide : nos départements', links: [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']].map(([d, n]) => ({ href: `/deratisation/${d}`, label: `Dératisation : ${n}` })) },
     guides: { title: 'Pour aller plus loin', links: [
+      { href: '/services/traitements-sans-produit-chimique', label: 'Tous nos traitements sans produit chimique' },
       { href: '/services/deratisation', label: 'Dératisation : toutes nos méthodes' },
       { href: '/blog/deratisation-sans-mort-aux-rats', label: 'Dératisation sans mort-aux-rats : méthodes alternatives' },
       { href: '/blog/rat-ou-souris-comment-reconnaitre', label: 'Rat ou souris ? Comment les reconnaître' },

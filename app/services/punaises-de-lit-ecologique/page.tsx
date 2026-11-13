@@ -27,6 +27,12 @@ const ARTICLE = [
     '- **Second passage** 10 à 15 jours plus tard : sans produit, il n’y a pas d’effet qui dure ; ce passage élimine les punaises sorties des œufs qui auraient échappé au premier.',
     '- **Garantie 1 an** : si les punaises reviennent, nous revenons.',
   ] },
+  { h: 'Punaises de lit sans produit : bébé, femme enceinte, animaux', p: [
+    'Avec un **nourrisson**, pendant une **grossesse**, chez une personne **asthmatique** ou avec des **chats, chiens, oiseaux ou poissons**, beaucoup de familles ne veulent pas d’insecticide dans la chambre. La cryogénie et la vapeur sèche ne laissent aucun résidu : vous pouvez réutiliser la pièce dès la fin du passage, une fois les insectes morts aspirés. Pensez simplement à mettre les aquariums et les cages hors de la pièce pendant l’intervention, à cause du bruit et du CO2 libéré.',
+  ] },
+  { h: 'Hôtel, crèche, foyer, EHPAD : traiter les punaises de lit sans fermer', p: [
+    'Dans un établissement, le traitement sans produit permet de traiter **chambre par chambre** et de remettre la chambre en service rapidement, sans délai d’aération lié à un insecticide. Nous établissons un planning avec la direction, traitons les chambres touchées et leurs voisines, et remettons un **compte rendu** après chaque passage. Voir notre page [professionnels](/professionnels).',
+  ] },
   { h: 'Un traitement écologique est-il aussi efficace qu’un insecticide ?', p: [
     'Oui pour les **infestations localisées et moyennes**, à condition de respecter le protocole : deux passages, préparation du linge, aspiration. La limite, c’est l’absence d’effet rémanent : un œuf que le jet n’a pas touché éclora. C’est pourquoi le second passage est indispensable.',
     'Pour une **infestation très importante**, dans de nombreuses pièces, nous vous dirons honnêtement si un traitement sans produit suffit, ou s’il vaut mieux un traitement classique : voir [toutes nos méthodes contre les punaises de lit](/services/punaises-de-lit).',
@@ -63,6 +69,16 @@ const data: ServiceData = {
     { title: 'Cryogénie et vapeur', text: 'Pièce par pièce, au plus près des coutures, fentes et jonctions, puis aspiration des insectes morts.' },
     { title: 'Second passage', text: '10 à 15 jours plus tard, pour les punaises sorties des œufs. Garantie 1 an.' },
   ],
+  tableau: {
+    titre: 'Cryogénie, vapeur sèche, chambre froide : que traiter avec quoi ?',
+    head: ['Méthode', 'Température', 'Idéale pour'],
+    rows: [
+      ['Cryogénie', 'Environ −78 °C', 'Sommier, fentes, cadres de lit, plinthes, meubles, prises et recoins'],
+      ['Vapeur sèche', 'Très haute température', 'Matelas, canapés, fauteuils, rideaux, têtes de lit capitonnées'],
+      ['Chambre froide', '−20 °C, au moins 72 heures', 'Objets et textiles qui ne se lavent pas : chaussures, sacs, livres, peluches'],
+      ['Lavage', '60 °C ou plus', 'Draps, linge de lit, vêtements'],
+    ],
+  },
   apresProcess: <ArticleService blocs={ARTICLE} />,
   pricing: [
     { label: 'Studio', price: '290', description: 'Une pièce principale', features: ['2 passages inclus', 'Cryogénie et vapeur sèche', 'Aucun produit chimique', 'Garantie 1 an'] },
@@ -81,6 +97,7 @@ const data: ServiceData = {
   related: {
     villes: { title: 'Traitement sans produit chimique : nos départements', links: [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']].map(([d, n]) => ({ href: `/punaises-de-lit/${d}`, label: `Punaises de lit : ${n}` })) },
     guides: { title: 'Pour aller plus loin', links: [
+      { href: '/services/traitements-sans-produit-chimique', label: 'Tous nos traitements sans produit chimique' },
       { href: '/services/cryogenie-punaises-de-lit', label: 'Cryogénie punaises de lit : la méthode en détail' },
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
       { href: '/blog/cryogenie-punaises-de-lit', label: 'Cryogénie : comment ça marche, efficacité et limites' },

@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels']
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
-    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens', 'puces', 'punaises-de-lit-ecologique', 'deratisation-ecologique',
+    'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens', 'puces', 'punaises-de-lit-ecologique', 'deratisation-ecologique', 'traitements-sans-produit-chimique',
   ]
   const legacyPosts = ['punaise-colza-invasion-idf-2026']
 

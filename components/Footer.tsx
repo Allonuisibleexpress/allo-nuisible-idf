@@ -25,6 +25,7 @@ const services = [
   { label: 'Désinfection', href: '/services/desinfection' },
   { label: 'Chenilles processionnaires', href: '/services/chenilles-processionnaires' },
   { label: 'Acariens', href: '/services/acariens' },
+  { label: 'Traitements sans produit chimique', href: '/services/traitements-sans-produit-chimique' },
 ]
 
 
