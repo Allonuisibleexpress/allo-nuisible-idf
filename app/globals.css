@@ -209,3 +209,18 @@ footer a.text-sm {
 @media (prefers-reduced-motion: reduce) {
   .onglet-eco, .onglet-eco::after { animation: none; }
 }
+
+/* Boutons de contact (appel, WhatsApp, devis/contact) : même contour jaune lumineux que l'onglet « Écologique » (13/11/2026).
+   Anneau dessiné en box-shadow (aucun changement de taille ni de position des boutons). Les liens texte simples ne sont pas touchés. */
+:is(a[href^="tel:"], a[href*="wa.me"], a[href*="#contact"], button.contact-brille):is([class*="rounded"], [style*="border-radius"], [style*="borderRadius"]) {
+  animation: contact-brille 1.6s ease-in-out infinite;
+}
+@keyframes contact-brille {
+  0%, 100% { box-shadow: 0 0 0 2px #F5C518, 0 0 8px rgba(255,212,59,0.55), 0 0 14px rgba(255,212,59,0.2); }
+  50%      { box-shadow: 0 0 0 2px #FFE97A, 0 0 16px rgba(255,220,80,0.95), 0 0 30px rgba(255,212,59,0.55); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(a[href^="tel:"], a[href*="wa.me"], a[href*="#contact"], button.contact-brille):is([class*="rounded"], [style*="border-radius"], [style*="borderRadius"]) {
+    animation: none; box-shadow: 0 0 0 2px #F5C518, 0 0 10px rgba(255,212,59,0.6);
+  }
+}

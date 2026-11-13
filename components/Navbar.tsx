@@ -139,7 +139,7 @@ export default function Navbar() {
         transition: 'background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl 2xl:max-w-[1500px] min-[1800px]:max-w-[1760px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between py-2.5 lg:py-3" style={{ position: 'relative' }}>
 
           {/* Logo */}
@@ -153,7 +153,7 @@ export default function Navbar() {
               alt="Allo Nuisible IDF"
               width={130}
               height={44}
-              className="object-contain"
+              className="object-contain w-[112px] min-[380px]:w-[130px] h-auto"
               priority
             />
           </button>
@@ -221,7 +221,7 @@ export default function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className={`${['Accueil', 'À Propos'].includes(link.label) ? 'hidden xl:inline-block ' : ''}text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200`}
+                  className={`${['Accueil', 'À Propos'].includes(link.label) ? 'hidden 2xl:inline-block ' : link.label === 'Contact' ? 'hidden xl:inline-block ' : ''}text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200`}
                 >
                   {link.label}
                 </button>
@@ -246,7 +246,7 @@ export default function Navbar() {
                   scrollTo('#contact')
                 }
               }}
-              className="bg-[#E8441A] hover:bg-[#d03a15] text-white font-bold text-sm px-5 py-2.5 rounded-full uppercase tracking-wider whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#E8441A]/30"
+              className="contact-brille bg-[#E8441A] hover:bg-[#d03a15] text-white font-bold text-sm px-5 py-2.5 rounded-full uppercase tracking-wider whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#E8441A]/30"
             >
               DEVIS GRATUIT
             </button>
@@ -260,7 +260,7 @@ export default function Navbar() {
             <a
               href="tel:+33768077219"
               aria-label="Appeler"
-              className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
+              className="hidden min-[360px]:flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
             >
               <Phone className="w-5 h-5" style={{ color: '#E8441A' }} />
             </a>
