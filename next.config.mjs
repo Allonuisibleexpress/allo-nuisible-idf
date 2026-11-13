@@ -29,6 +29,8 @@ const nextConfig = {
       },
       // Page « Rongeurs » fusionnée avec « Dératisation » (même requête, une seule page)
       { source: '/services/rongeurs', destination: '/services/deratisation', permanent: true },
+      // Page « Punaises de lit : traitement écologique » fusionnée avec la page cryogénie (13/11/2026, même requête)
+      { source: '/services/punaises-de-lit-ecologique', destination: '/services/cryogenie-punaises-de-lit', permanent: true },
     ]
   },
 }

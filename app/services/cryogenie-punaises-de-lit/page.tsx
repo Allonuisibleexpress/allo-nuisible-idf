@@ -1,6 +1,7 @@
 // Cryogénie des punaises de lit : page refaite le 13/11/2026 (demande de l'utilisateur : « le top du top », un maximum de termes,
 // titre principal « traitement punaises de lit écologique, sans biocide, cryogénie », vidéos de chantier détaillées).
 // « Écologique » = sans biocide, défini sur la page (lib/contenu-services/cryogenie.ts). Contenu et sources : même fichier.
+// 13/11/2026 : l'ancienne page /services/punaises-de-lit-ecologique est fusionnée ici (redirection permanente dans next.config.mjs).
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -8,10 +9,10 @@ import ArticleService from '@/components/ArticleService'
 import VideosDetaillees from '@/components/VideosDetaillees'
 import TableauComparatif from '@/components/TableauComparatif'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
-import { CRYO_PARTIE_1, CRYO_PARTIE_2, CRYO_VIDEOS, CRYO_VIDEOS_INTRO, CRYO_FAQ } from '@/lib/contenu-services/cryogenie'
+import { CRYO_PARTIE_1, CRYO_PARTIE_2, CRYO_VIDEOS, CRYO_VIDEOS_INTRO, CRYO_FAQ, CRYO_OUTILS } from '@/lib/contenu-services/cryogenie'
 
 const COMPARATIF = {
-  titre: 'Cryogénie, vapeur sèche ou insecticide : le comparatif',
+  titre: 'Traitement écologique ou insecticide : le comparatif',
   intro: 'Le technicien choisit avec vous selon le logement et l’infestation, et peut combiner plusieurs méthodes.',
   head: ['Méthode', 'Comment elle agit', 'Idéale pour'],
   rows: [
@@ -24,30 +25,32 @@ const COMPARATIF = {
 
 // Le comparatif s'affiche juste avant « Quel est le traitement le plus efficace »
 const COUPE = CRYO_PARTIE_2.findIndex((b) => b.h.startsWith('Quel est le traitement'))
+// Le tableau des outils suit la section « Traitement écologique des punaises de lit, sans produit chimique »
+const COUPE_1 = CRYO_PARTIE_1.findIndex((b) => b.h.startsWith('Traitement écologique des punaises de lit, sans produit chimique')) + 1
 
 const data: ServiceData = {
-  badge: 'Écologique (sans biocide) · Cryogénie · Cryogénisation · −78 °C · Garantie 1 an',
-  devis: 'Devis gratuit cryogénie punaises de lit',
+  badge: 'Traitement écologique (sans biocide) · Cryogénie · Vapeur sèche · Chambre froide · Garantie 1 an',
+  devis: 'Devis gratuit traitement écologique des punaises de lit',
   heroTitle: 'Traitement punaises de lit écologique',
   heroHighlight: 'Sans biocide, par cryogénie à −78 °C',
-  heroDescription: 'Écologique, c’est-à-dire sans biocide : la cryogénie (ou cryogénisation) tue les punaises de lit et leurs œufs par le froid. De la neige carbonique à environ −78 °C est projetée sur la literie, le mobilier et chaque recoin, sans insecticide ni résidu. À Paris et en Île-de-France, 2 passages inclus dès 290 €, garantie 1 an. Nos chantiers en vidéo sur cette page.',
+  heroDescription: 'Écologique, c’est-à-dire sans biocide : la cryogénie (ou cryogénisation) tue les punaises de lit et leurs œufs par le froid. De la neige carbonique à environ −78 °C est projetée sur la literie, le mobilier et chaque recoin, sans insecticide ni résidu, complétée si besoin par la vapeur sèche et notre chambre froide à −20 °C. À Paris et en Île-de-France, 2 passages inclus dès 290 €, garantie 1 an. Nos chantiers en vidéo sur cette page.',
   heroPrices: [
     { price: '290', label: 'Studio' },
     { price: 'Sur devis', label: 'Appartement' },
     { price: 'Sur devis', label: 'Établissement' },
   ],
-  trustBar: ['Sans biocide ni insecticide', '−78 °C au contact', 'Œufs compris', '2 passages inclus', 'Garantie 1 an'],
+  trustBar: ['Traitement écologique', 'Sans biocide ni insecticide', '−78 °C au contact', 'Œufs compris', '2 passages inclus', 'Garantie 1 an'],
   titres: {
-    benefits: 'Pourquoi choisir la cryogénie contre les punaises de lit ?',
-    process: 'Cryogénie des punaises de lit : le déroulé en 5 étapes',
-    pricing: 'Nos formules de cryogénie, devis gratuit',
+    benefits: 'Pourquoi choisir un traitement écologique par cryogénie ?',
+    process: 'Traitement écologique des punaises de lit : le déroulé en 5 étapes',
+    pricing: 'Nos formules de traitement écologique, devis gratuit',
     faq: 'Cryogénie et traitement écologique des punaises de lit : vos questions',
   },
   benefits: [
     { icon: 'thermo', title: '−78 °C : œufs et adultes tués au contact', text: 'La neige carbonique crée un choc thermique qui tue les punaises adultes, les larves et les œufs là où le jet les touche.' },
-    { icon: 'health', title: 'Aucun biocide chez vous', text: 'Ni insecticide, ni résidu : la solution choisie avec un bébé, une femme enceinte, une personne âgée ou des animaux, et dans les établissements.' },
+    { icon: 'health', title: 'Écologique : aucun biocide chez vous', text: 'Ni insecticide, ni résidu : le traitement écologique choisi avec un bébé, une femme enceinte, une personne âgée ou des animaux, et dans les établissements.' },
     { icon: 'search', title: 'Jusque dans les moindres fentes', text: 'Coutures et étiquettes du matelas, lattes, tête de lit, jonctions des meubles, plinthes : le jet va là où se cachent les punaises.' },
-    { icon: 'wind', title: 'Rien n’est mouillé', text: 'La neige carbonique passe directement à l’état de gaz : le matelas, le sommier et le parquet restent secs.' },
+    { icon: 'wind', title: 'Rien n’est mouillé', text: 'La neige carbonique passe directement à l’état de gaz : le matelas, le sommier et le parquet restent secs. La vapeur sèche et la chambre froide complètent le traitement.' },
     { icon: 'shield', title: 'Sécurité maîtrisée', text: 'La pièce est libérée pendant le traitement puis aérée : le CO2 ne doit pas s’accumuler dans une pièce occupée.' },
     { icon: 'repeat', title: '2 passages, garantie 1 an', text: 'Le second passage, 10 à 15 jours plus tard, traite les punaises écloses entre-temps. Si elles reviennent dans l’année, nous revenons.' },
   ],
@@ -60,9 +63,11 @@ const data: ServiceData = {
   ],
   apresProcess: (
     <>
-      <ArticleService blocs={CRYO_PARTIE_1} />
+      <ArticleService blocs={CRYO_PARTIE_1.slice(0, COUPE_1)} />
+      <TableauComparatif {...CRYO_OUTILS} />
+      <ArticleService blocs={CRYO_PARTIE_1.slice(COUPE_1)} />
       <VideosDetaillees
-        titre="Nos chantiers de cryogénie en vidéo : ce que nous avons fait"
+        titre="Nos chantiers de traitement écologique en vidéo : la cryogénie sur le terrain"
         intro={CRYO_VIDEOS_INTRO}
         videos={CRYO_VIDEOS}
         photos={['cryoFoyer', 'cryoSalle', 'litCryo']}
@@ -77,13 +82,13 @@ const data: ServiceData = {
       label: 'Studio',
       price: '290',
       description: 'Une pièce principale',
-      features: ['2 passages inclus', 'Cryogénie sur literie et mobilier', 'Aspiration des insectes morts', 'Sans biocide', 'Garantie 1 an'],
+      features: ['2 passages inclus', 'Cryogénie sur literie et mobilier', 'Aspiration des insectes morts', 'Écologique : sans biocide', 'Garantie 1 an'],
     },
     {
       label: 'Appartement ou maison',
       price: 'Sur devis',
       description: 'Plusieurs pièces touchées',
-      features: ['2 passages inclus', 'Toutes les pièces touchées', 'Cryogénie et vapeur sèche', 'Conseils pour le linge', 'Garantie 1 an'],
+      features: ['2 passages inclus', 'Toutes les pièces touchées', 'Cryogénie et vapeur sèche', 'Chambre froide pour les objets', 'Conseils pour le linge', 'Garantie 1 an'],
       highlight: true,
     },
     {
@@ -98,16 +103,15 @@ const data: ServiceData = {
   chantier: {
     photos: ['cryoFoyer', 'cryoSalle', 'litCryo'],
     videos: CRYO_VIDEOS.map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
-    titre: 'Nos chantiers de cryogénie en images',
-    vignettes: 'Nos 6 chantiers en vidéo',
+    titre: 'Nos chantiers de traitement écologique en images',
+    vignettes: 'Nos 6 chantiers de traitement écologique en vidéo',
   },
   galerieDansContenu: true,
   faq: CRYO_FAQ,
   related: {
     extra: maillageService('/services/cryogenie-punaises-de-lit'),
-    villes: { title: 'Cryogénie des punaises de lit : nos villes', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
+    villes: { title: 'Traitement écologique des punaises de lit : nos villes', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },
     guides: { title: 'Pour aller plus loin', links: [
-      { href: '/services/punaises-de-lit-ecologique', label: 'Punaises de lit : traitement écologique, sans produit chimique' },
       { href: '/services/traitements-sans-produit-chimique', label: 'Tous nos traitements sans produit chimique' },
       { href: '/services/punaises-de-lit', label: 'Punaises de lit : toutes nos méthodes' },
       { href: '/blog/cryogenie-punaises-de-lit', label: 'Le froid tue-t-il les punaises de lit ?' },
@@ -119,12 +123,12 @@ const data: ServiceData = {
       { href: '/blog/cycle-de-vie-punaise-de-lit', label: 'Cycle de vie de la punaise de lit en images' },
     ] },
   },
-  ctaTitle: 'Des punaises de lit, sans biocide ?\nOn les traite par le froid.',
+  ctaTitle: 'Un traitement écologique, sans biocide ?\nOn traite vos punaises de lit par le froid.',
 }
 
 export const metadata = pageMetadata({
   title: 'Traitement punaises de lit écologique : cryogénie dès 290 €',
-  description: 'Traitement écologique des punaises de lit, sans biocide : cryogénie à −78 °C, œufs tués au contact, sans insecticide. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
+  description: 'Traitement écologique des punaises de lit, sans biocide ni produit chimique : cryogénie à −78 °C, œufs tués au contact. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
   path: '/services/cryogenie-punaises-de-lit',
 })
 

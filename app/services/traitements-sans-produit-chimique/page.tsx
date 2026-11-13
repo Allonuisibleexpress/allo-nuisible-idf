@@ -13,7 +13,7 @@ const ARTICLE = [
     'Ce n’est pas possible pour tous les nuisibles ni pour toutes les infestations. Cette page présente les cas où nous savons le faire, et ceux où un produit reste nécessaire.',
   ] },
   { h: 'Punaises de lit : cryogénie, vapeur sèche et chambre froide', p: [
-    'La **cryogénie** projette de la neige carbonique à environ **−78 °C** sur le sommier, les fentes et le mobilier ; la **vapeur sèche** traite le matelas, les canapés et les rideaux ; notre **chambre froide à −20 °C** reçoit les objets qui ne se lavent pas. Deux passages sont inclus, dès 290 €. Voir le [traitement écologique des punaises de lit](/services/punaises-de-lit-ecologique) et la [cryogénie en détail](/services/cryogenie-punaises-de-lit).',
+    'La **cryogénie** projette de la neige carbonique à environ **−78 °C** sur le sommier, les fentes et le mobilier ; la **vapeur sèche** traite le matelas, les canapés et les rideaux ; notre **chambre froide à −20 °C** reçoit les objets qui ne se lavent pas. Deux passages sont inclus, dès 290 €. Voir notre page [traitement écologique des punaises de lit par cryogénie](/services/cryogenie-punaises-de-lit), avec nos chantiers en vidéo.',
   ] },
   { h: 'Dératisation sans raticide : pièges et accès rebouchés', p: [
     'Inspection, **rebouchage des accès**, puis **piège Ekomille**, pièges connectés, pièges électriques, tapettes en boîtes sécurisées ou plaques de glu, et fermeture des derniers passages à la fin. Aucun poison chez vous, et pas de rongeur qui meurt dans une cloison. Voir la [dératisation écologique sans raticide](/services/deratisation-ecologique).',
@@ -58,7 +58,7 @@ const data: ServiceData = {
     titre: 'Nuisible par nuisible : la méthode sans produit',
     head: ['Nuisible', 'Méthode sans biocide', 'Page dédiée'],
     rows: [
-      ['Punaises de lit', 'Cryogénie, vapeur sèche, chambre froide −20 °C', 'Traitement écologique des punaises de lit'],
+      ['Punaises de lit', 'Cryogénie, vapeur sèche, chambre froide −20 °C', 'Traitement écologique par cryogénie'],
       ['Rats et souris', 'Ekomille, pièges connectés, électriques, tapettes, accès rebouchés', 'Dératisation écologique'],
       ['Chenilles processionnaires', 'Retrait des nids, écopièges', 'Chenilles processionnaires'],
       ['Acariens', 'Vapeur sèche, cryogénie', 'Traitement des acariens'],
@@ -81,8 +81,7 @@ const data: ServiceData = {
   ],
   related: {
     guides: { title: 'Nos pages sans produit chimique', links: [
-      { href: '/services/punaises-de-lit-ecologique', label: 'Punaises de lit : traitement écologique' },
-      { href: '/services/cryogenie-punaises-de-lit', label: 'Cryogénie punaises de lit' },
+      { href: '/services/cryogenie-punaises-de-lit', label: 'Punaises de lit : traitement écologique par cryogénie' },
       { href: '/services/deratisation-ecologique', label: 'Dératisation écologique sans raticide' },
       { href: '/blog/deratisation-sans-mort-aux-rats', label: 'Dératisation sans mort-aux-rats' },
       { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires' },

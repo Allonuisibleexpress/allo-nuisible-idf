@@ -12,37 +12,58 @@ type Bloc = { h: string; p: string[] }
 
 // ── Partie 1 : avant les vidéos ──────────────────────────────────────────────
 export const CRYO_PARTIE_1: Bloc[] = [
-  { h: 'Cryogénie des punaises de lit : le traitement par le froid à −78 °C', p: [
+  { h: 'Cryogénie des punaises de lit : le traitement écologique par le froid à −78 °C', p: [
     'La **cryogénie des punaises de lit** est un **traitement par le froid**. Notre technicien projette de la **neige carbonique**, à environ **−78 °C**, sur toutes les cachettes des punaises : coutures du matelas, sommier, lattes, cadre de lit, meubles, plinthes. Au contact, ce froid extrême provoque un **choc thermique** qui tue les **punaises adultes**, les **larves** et les **œufs**.',
-    'C’est un **traitement anti punaises de lit sans insecticide** : aucun produit chimique n’est pulvérisé, rien ne reste sur vos meubles, votre literie ou vos sols. Chez Allo Nuisible IDF, c’est notre méthode de référence pour **éliminer les punaises de lit sans produit**, à **Paris** et dans toute l’**Île-de-France**, **dès 290 € TTC, deux passages inclus**, avec une **garantie d’un an**.',
+    'C’est un **traitement anti punaises de lit écologique**, c’est-à-dire **sans biocide** : aucun insecticide ni produit chimique n’est pulvérisé, rien ne reste sur vos meubles, votre literie ou vos sols. Chez Allo Nuisible IDF, c’est notre méthode de référence pour **éliminer les punaises de lit sans produit**, notre **traitement écologique** de référence, à **Paris** et dans toute l’**Île-de-France**, **dès 290 € TTC, deux passages inclus**, avec une **garantie d’un an**.',
   ] },
   { h: 'Traitement punaises de lit écologique : ce que veut dire « écologique » ici', p: [
     'Sur cette page, **écologique veut dire sans biocide** : ni insecticide, ni répulsif, ni aucun autre produit biocide n’est utilisé chez vous. La cryogénie remplit cette condition, puisqu’elle n’agit que par le **froid**.',
-    'Nous n’employons pas ce mot pour dire que la méthode n’a aucun impact : elle utilise du **dioxyde de carbone** en bouteille et du matériel. Nous l’employons pour une seule raison, précise et vérifiable : **aucun biocide** n’est déposé dans votre logement. Pour un protocole complet sans produit chimique, qui associe cryogénie, vapeur sèche et chambre froide, voir aussi notre page [punaises de lit : traitement écologique](/services/punaises-de-lit-ecologique) et [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique).',
+    'Nous n’employons pas ce mot pour dire que la méthode n’a aucun impact : elle utilise du **dioxyde de carbone** en bouteille et du matériel. Nous l’employons pour une seule raison, précise et vérifiable : **aucun biocide** n’est déposé dans votre logement. Notre traitement écologique des punaises de lit associe la **cryogénie**, la **vapeur sèche** et notre **chambre froide à −20 °C** : tout est expliqué ci-dessous. Pour les autres nuisibles, voir [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique).',
+  ] },
+  { h: 'Traitement écologique des punaises de lit, sans produit chimique : cryogénie, vapeur sèche, chambre froide', p: [
+    'Notre **traitement des punaises de lit sans produit chimique** repose sur la **température**, et non sur un insecticide. Chaque outil a son rôle :',
+    '- **La cryogénie**, le cœur du traitement : la neige carbonique à environ −78 °C atteint les fentes, le sommier, les lattes, les meubles, les plinthes et le contour des prises.',
+    '- **La vapeur sèche** : une vapeur à très haute température pour les grandes surfaces textiles, comme le matelas, le canapé, les fauteuils, les rideaux ou une tête de lit capitonnée.',
+    '- **Notre chambre froide à −20 °C**, pendant au moins 72 heures : pour les objets et textiles qui ne se lavent pas, comme les chaussures, les sacs, les livres ou les peluches.',
+    '- **Le lavage à plus de 60 °C** : pour les draps, le linge de lit et les vêtements.',
+    'C’est la solution recherchée par les familles avec un **bébé**, une **femme enceinte**, des **personnes âgées** ou des **animaux**, par les **crèches**, les **écoles**, les **foyers**, les **hôtels** et les **EHPAD**, et par toutes les personnes qui ne veulent simplement **aucun produit** chez elles.',
   ] },
   { h: 'Neige carbonique : d’où vient le froid à −78 °C ?', p: [
     'La **neige carbonique** est du **dioxyde de carbone (CO2) à l’état solide**. Notre appareil part de CO2 liquide, stocké sous pression dans une bouteille. À la sortie de la lance, ce liquide se détend brutalement et se transforme en fines particules de neige très froide. À la pression de l’air, la neige carbonique se maintient autour de **−78 °C**.',
     'Elle a une particularité : elle se **sublime**, c’est-à-dire qu’elle passe directement de l’état solide à l’état de gaz, **sans fondre**. Résultat : **rien ne mouille**, ni le matelas, ni le sommier, ni le parquet. Le gaz se dissipe à l’aération et il ne reste **aucun résidu** sur les surfaces. Le nuage blanc que vous voyez sur nos vidéos, c’est cette neige qui retombe puis disparaît.',
   ] },
-  { h: 'Pourquoi le froid extrême tue les punaises de lit et leurs œufs', p: [
+  { h: 'Pourquoi le froid extrême tue les punaises de lit et leurs œufs, sans insecticide', p: [
     'Une punaise de lit ne craint pas un froid modéré. Ouvrir les fenêtres en hiver ou laisser une chambre sans chauffage ne la tue pas : la température ne descend ni assez bas, ni assez longtemps. Ce qui la tue, c’est un froid **intense et brutal**. Au contact de la neige carbonique, l’eau contenue dans l’insecte gèle en un instant et ses tissus sont détruits.',
     'Les **œufs** sont le vrai défi de tout traitement : minuscules, collés dans les fentes, les coutures et les jonctions, ils sont difficiles à atteindre. Le froid les tue **comme les adultes**, à une condition : que le jet les **touche**. C’est pour cela que notre technicien passe lentement, au plus près des surfaces, fente par fente, et qu’un **second passage** est toujours prévu.',
     'Autre atout : le froid n’est pas une substance. Les punaises ne peuvent pas y devenir **résistantes**. Or l’**ANSES** explique la hausse des infestations par l’essor des voyages et par une **résistance croissante des punaises aux insecticides**.',
   ] },
-  { h: 'Cryogénie ou cryogénisation : la même méthode', p: [
+  { h: 'Cryogénie ou cryogénisation : la même méthode écologique', p: [
     '**Cryogénie**, **cryogénisation**, **traitement cryogénique**, **traitement à la neige carbonique** ou **traitement thermique par le froid** : ces mots désignent tous la même méthode contre les punaises de lit. Dans le métier, on entend surtout « cryogénisation » ; nous disons plus volontiers « cryogénie ».',
     'Attention en revanche à la **congélation** : mettre des vêtements au congélateur est une autre technique, utile pour les petits objets mais impossible pour un lit ou une pièce (voir plus bas). Ce qui fait l’efficacité d’une cryogénie, ce n’est pas le mot, c’est le **protocole** : inspection, traitement minutieux, deux passages et garantie.',
   ] },
 ]
 
+// Tableau affiché juste après la section « sans produit chimique »
+export const CRYO_OUTILS = {
+  titre: 'Traitement écologique : que traiter avec quoi ? Cryogénie, vapeur sèche, chambre froide',
+  intro: 'Les quatre outils de notre traitement écologique des punaises de lit, sans biocide.',
+  head: ['Méthode', 'Température', 'Idéale pour'],
+  rows: [
+    ['Cryogénie', 'Environ −78 °C', 'Sommier, lattes, fentes, cadres de lit, plinthes, meubles, contour des prises et recoins'],
+    ['Vapeur sèche', 'Très haute température', 'Matelas, canapés, fauteuils, rideaux, têtes de lit capitonnées'],
+    ['Chambre froide', '−20 °C, au moins 72 heures', 'Objets et textiles qui ne se lavent pas : chaussures, sacs, livres, peluches'],
+    ['Lavage', 'Plus de 60 °C', 'Draps, linge de lit, vêtements'],
+  ],
+}
+
 // ── Vidéos de chantier détaillées ────────────────────────────────────────────
-export const CRYO_VIDEOS_INTRO = 'Ces vidéos ont été tournées par nos techniciens sur de **vrais chantiers de cryogénie** en Île-de-France. Pour chacune, voici le contexte, ce que nous avons fait et ce que l’on voit à l’écran. La bannière « Allo Nuisible IDF » est incrustée dans toutes nos vidéos.'
+export const CRYO_VIDEOS_INTRO = 'Ces vidéos ont été tournées par nos techniciens sur de **vrais chantiers de traitement écologique par cryogénie**, sans biocide, en Île-de-France. Pour chacune, voici le contexte, ce que nous avons fait et ce que l’on voit à l’écran. La bannière « Allo Nuisible IDF » est incrustée dans toutes nos vidéos.'
 
 export const CRYO_VIDEOS: VideoDetaillee[] = [
   {
     src: '/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4',
     poster: '/chantiers/posters/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.jpg',
-    titre: 'Champigny-sur-Marne : cryogénie des lits à barreaux d’un établissement pour tout-petits',
+    titre: 'Champigny-sur-Marne : traitement écologique des lits à barreaux d’un établissement pour tout-petits',
     lieu: 'Champigny-sur-Marne (94)',
     legende: 'Cryogénie des punaises de lit sur des lits à barreaux, dans un établissement accueillant des enfants en bas âge, à Champigny-sur-Marne',
     texte: [
@@ -61,7 +82,7 @@ export const CRYO_VIDEOS: VideoDetaillee[] = [
   {
     src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4',
     poster: '/chantiers/posters/cryogenie-cadre-lit-lattes-video.jpg',
-    titre: 'L’Haÿ-les-Roses : le sommier à lattes traité par cryogénie, latte par latte',
+    titre: 'L’Haÿ-les-Roses : le sommier à lattes traité par cryogénie, sans biocide, latte par latte',
     lieu: 'L’Haÿ-les-Roses (94)',
     legende: 'Cryogénie sur un sommier à lattes et son cadre métallique, sans produit chimique, à L’Haÿ-les-Roses',
     texte: [
@@ -80,7 +101,7 @@ export const CRYO_VIDEOS: VideoDetaillee[] = [
   {
     src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4',
     poster: '/chantiers/posters/cryogenie-punaises-foyer-video-1.jpg',
-    titre: 'Foyer pour enfants handicapés, chambre 213 : le sommier traité sans produit chimique',
+    titre: 'Foyer pour enfants handicapés, chambre 213 : un traitement écologique, sans produit chimique',
     lieu: 'Foyer pour enfants, Île-de-France',
     legende: 'Cryogénie des punaises de lit dans une chambre d’un foyer pour enfants handicapés',
     texte: [
@@ -137,7 +158,7 @@ export const CRYO_VIDEOS: VideoDetaillee[] = [
   {
     src: '/chantiers/punaises-ivry-lit-medicalise-video.mp4',
     poster: '/chantiers/posters/punaises-ivry-lit-medicalise-video.jpg',
-    titre: 'Ivry-sur-Seine : énorme infestation chez une dame âgée, traitée sans insecticide',
+    titre: 'Ivry-sur-Seine : énorme infestation chez une dame âgée, traitement écologique sans insecticide',
     lieu: 'Ivry-sur-Seine (94)',
     legende: 'Énorme infestation de punaises de lit autour d’un lit médicalisé à Ivry-sur-Seine, avant le traitement par cryogénie et vapeur sèche',
     texte: [
@@ -157,7 +178,15 @@ export const CRYO_VIDEOS: VideoDetaillee[] = [
 
 // ── Partie 2 : après les vidéos ──────────────────────────────────────────────
 export const CRYO_PARTIE_2: Bloc[] = [
-  { h: 'Comment se déroule une cryogénie des punaises de lit chez vous', p: [
+  { h: 'Reconnaître les punaises de lit avant un traitement écologique', p: [
+    'Avant toute cryogénie, il faut être sûr qu’il s’agit bien de **punaises de lit**. Les signes typiques :',
+    '- **Des piqûres groupées ou alignées** au réveil, sur les bras, les jambes ou le cou.',
+    '- **De petits points noirs** (déjections) sur le matelas, le sommier ou les draps, comme sur notre vidéo de la chambre 321.',
+    '- **Des mues brunes**, l’enveloppe que la larve laisse à chaque stade.',
+    '- **Des insectes plats et bruns** de 5 à 7 mm à l’âge adulte, cachés dans les coutures, les fentes et les jonctions.',
+    'Notre infographie du [cycle de vie de la punaise de lit](/blog/cycle-de-vie-punaise-de-lit) montre les 7 stades, de l’œuf d’environ 1 mm à l’adulte. Un doute ? Notre page [identifier un nuisible](/identifier-nuisible) vous aide, ou envoyez-nous une photo.',
+  ] },
+  { h: 'Comment se déroule le traitement écologique par cryogénie chez vous', p: [
     '### 1. Le diagnostic et le devis gratuit',
     'Vous nous décrivez la situation par téléphone ou sur WhatsApp, photos à l’appui : piqûres au réveil, points noirs sur le matelas, insectes. Nous confirmons qu’il s’agit bien de punaises de lit et vous donnons le **prix avant de nous déplacer**.',
     '### 2. L’inspection, pièce par pièce',
@@ -173,7 +202,7 @@ export const CRYO_PARTIE_2: Bloc[] = [
     '### 7. La garantie 1 an',
     'Si les punaises de lit reviennent dans l’année, **nous revenons**.',
   ] },
-  { h: 'Matelas, sommier, canapé : ce que la cryogénie peut traiter', p: [
+  { h: 'Matelas, sommier, canapé : ce que le traitement écologique peut traiter', p: [
     '### Le matelas',
     'La cryogénie traite le matelas **sans le mouiller** : coutures, passepoils, étiquette, poignées, coins, puis la face cachée une fois le matelas relevé. Une **housse anti-punaises** posée après le traitement enferme les éventuelles survivantes.',
     '### Le sommier et le cadre de lit',
@@ -187,11 +216,11 @@ export const CRYO_PARTIE_2: Bloc[] = [
     '### Ce que l’on ne traite pas au froid',
     'Les **appareils électroniques** (ordinateurs, téléphones, téléviseurs), les **écrans**, le **verre** et certaines surfaces fragiles craignent le choc thermique et la condensation : ils sont écartés et inspectés à part.',
   ] },
-  { h: 'Faut-il jeter son matelas avant une cryogénie ?', p: [
+  { h: 'Faut-il jeter son matelas avant un traitement écologique ?', p: [
     '**Non, dans la grande majorité des cas.** Un matelas infesté **se traite** : la cryogénie atteint les coutures et les passepoils, la vapeur sèche complète sur le tissu. Le jeter coûte cher et peut **répandre les punaises** dans l’escalier, l’ascenseur ou les parties communes pendant le transport.',
     'Si vous devez vraiment vous en séparer (matelas très abîmé, infestation massive), emballez-le entièrement dans un film plastique avant de le sortir, et rendez-le inutilisable pour que personne ne le récupère.',
   ] },
-  { h: 'Préparer son logement avant la cryogénie : la liste complète', p: [
+  { h: 'Préparer son logement avant le traitement écologique : la liste complète', p: [
     'Une bonne préparation fait gagner du temps et rend le traitement plus efficace. L’**ANSES** rappelle qu’avant tout traitement, il faut **nettoyer, aspirer et ranger** la pièce infestée. Voici ce que nous vous demandons :',
     '- **Le linge de lit et les vêtements** : en sacs fermés, puis lavés à plus de 60 °C. Gardez-les fermés jusqu’au second passage.',
     '- **Le sol autour des lits** : dégagé, sans cartons, sacs ni piles de vêtements.',
@@ -221,21 +250,21 @@ export const CRYO_PARTIE_2: Bloc[] = [
     '### Chiens, chats et autres animaux',
     'Les animaux quittent la pièce pendant le traitement et reviennent après l’aération. Aucun produit ne reste sur le sol ni sur leur couchage. Si votre animal a des puces, voir notre page [traitement des puces](/services/puces).',
   ] },
-  { h: 'La cryogénie est-elle efficace ? Ses limites, sans détour', p: [
+  { h: 'Un traitement écologique est-il efficace ? Les limites de la cryogénie, sans détour', p: [
     '**Oui**, la cryogénie tue les punaises de lit et leurs œufs **au contact**. Mais comme toute méthode, elle a des limites, et nous préférons vous les dire avant :',
     '- **Pas d’effet qui dure** : une fois le froid dissipé, rien ne protège la pièce. Une punaise cachée hors d’atteinte survit, d’où le second passage.',
     '- **Le jet doit tout atteindre** : une pièce très encombrée ralentit le travail et laisse des cachettes. La préparation est indispensable.',
     '- **Une infestation très importante** (nombreuses pièces, plusieurs logements) demande parfois de combiner la cryogénie avec la vapeur sèche, voire un insecticide ciblé : c’est notre **protocole mixte**.',
     '- **Le temps** : une cryogénie demande plus de minutie qu’une pulvérisation. C’est ce soin qui fait son efficacité.',
-    'Notre engagement : après l’inspection, nous vous disons **honnêtement** si la cryogénie seule suffit dans votre cas.',
+    'Notre engagement : après l’inspection, nous vous disons **honnêtement** si le traitement écologique seul suffit dans votre cas.',
   ] },
-  { h: 'Cryogénie ou vapeur sèche : laquelle choisir contre les punaises de lit ?', p: [
+  { h: 'Cryogénie ou vapeur sèche : quel traitement écologique choisir contre les punaises de lit ?', p: [
     '### La cryogénie : la précision, sans humidité',
     'Idéale pour les fentes, les cadres de lit, les lattes, le mobilier, le contour des prises, et partout où l’on ne veut pas d’humidité.',
     '### La vapeur sèche : la chaleur pour les grands textiles',
     'Plus rapide sur un canapé en tissu, un matelas épais, des rideaux ou une tête de lit capitonnée. Elle tue au contact par la chaleur. Voir [vapeur sèche contre les punaises de lit](/blog/vapeur-seche-punaises-de-lit).',
     '### Les deux ensemble',
-    'Sur beaucoup de chantiers, nous **combinons les deux** : le froid pour le mobilier et les fentes, la vapeur pour les grandes surfaces textiles. C’est ce que nous avons fait à Ivry-sur-Seine.',
+    'Sur beaucoup de chantiers, nous **combinons les deux**, et le traitement reste **écologique** : le froid pour le mobilier et les fentes, la vapeur pour les grandes surfaces textiles. C’est ce que nous avons fait à Ivry-sur-Seine.',
   ] },
   { h: 'Quel est le traitement le plus efficace contre les punaises de lit ?', p: [
     'Il n’existe pas de solution miracle. Selon une enquête Ipsos pour l’**ANSES**, **11 % des foyers français** ont été infestés par des punaises de lit entre 2017 et 2022. L’ANSES recommande une **lutte intégrée** : des actions mécaniques (ranger, nettoyer, aspirer), des actions par la chaleur (lavage à 60 °C, appareils à vapeur) ou par le froid, et de **privilégier les méthodes non chimiques**.',
@@ -257,8 +286,8 @@ export const CRYO_PARTIE_2: Bloc[] = [
     '- **Les insecticides professionnels**, appliqués par un technicien certifié Certibiocide, quand l’infestation l’exige.',
     'La [terre de diatomée](/blog/terre-de-diatomee-punaises-de-lit) agit lentement et ne suffit pas seule contre une infestation installée.',
   ] },
-  { h: 'Prix d’une cryogénie des punaises de lit en Île-de-France', p: [
-    'Notre traitement des punaises de lit par cryogénie commence **à partir de 290 € TTC** pour un studio, **deux passages inclus**, avec une **garantie d’un an**. Pour un appartement plus grand, une maison ou un établissement, le prix est donné **sur devis gratuit**, avant toute intervention. Voir aussi [tous nos tarifs](/tarifs).',
+  { h: 'Prix du traitement écologique des punaises de lit en Île-de-France', p: [
+    'Notre **traitement écologique des punaises de lit** par cryogénie commence **à partir de 290 € TTC** pour un studio, **deux passages inclus**, avec une **garantie d’un an**. Pour un appartement plus grand, une maison ou un établissement, le prix est donné **sur devis gratuit**, avant toute intervention. Voir aussi [tous nos tarifs](/tarifs).',
     '### Ce qui fait varier le prix',
     '- Le **nombre de pièces** touchées et de **lits** à traiter.',
     '- L’**encombrement** des pièces : plus il y a d’objets, plus le traitement est long.',
@@ -275,22 +304,22 @@ export const CRYO_PARTIE_2: Bloc[] = [
     'Comptez en général **plusieurs heures pour un appartement**, selon le nombre de pièces, de lits et de meubles. Une chambre bien préparée se traite bien plus vite qu’une pièce encombrée. Le traitement comprend **deux passages**, à **10 à 15 jours d’intervalle**.',
     'Pourquoi cet intervalle ? Il laisse aux œufs non atteints le temps d’éclore, et permet de traiter les jeunes punaises **avant qu’elles ne deviennent adultes et ne pondent**. Voir notre infographie du [cycle de vie de la punaise de lit](/blog/cycle-de-vie-punaise-de-lit).',
   ] },
-  { h: 'Cryogénie des punaises de lit en hôtel, crèche, foyer et EHPAD', p: [
-    'Dans un établissement, la cryogénie a deux atouts : **aucun produit** là où dorment des enfants, des résidents ou des clients, et des chambres **réutilisables dès l’aération**, sans délai lié à un insecticide.',
+  { h: 'Traitement écologique des punaises de lit en hôtel, crèche, foyer et EHPAD', p: [
+    'Dans un établissement, le traitement écologique par cryogénie a deux atouts : **aucun biocide** là où dorment des enfants, des résidents ou des clients, et des chambres **réutilisables dès l’aération**, sans délai lié à un insecticide.',
     '- **Diagnostic** des chambres touchées et des chambres voisines, plan de l’étage à l’appui.',
     '- **Planning chambre par chambre**, organisé avec la direction pour limiter la gêne.',
     '- **Compte rendu** remis après chaque passage.',
     '- **Second passage** et **garantie 1 an**.',
     'C’est ainsi que nous avons traité un **établissement de tout-petits à Champigny-sur-Marne** et un **foyer pour enfants handicapés** (vidéos ci-dessus). Voir notre page [professionnels](/professionnels), et nos récits sur les [locations courte durée](/blog/punaises-de-lit-airbnb-location-courte-duree) et sur [un hôtel de Paris 1er](/blog/punaises-de-lit-introuvables-goulotte-hotel).',
   ] },
-  { h: 'Cryogénie des punaises de lit à Paris et en Île-de-France', p: [
-    'Depuis notre base de **Saint-Maurice (94)**, nous intervenons **7j/7** à **Paris** et dans toute l’Île-de-France : [punaises de lit à Paris](/punaises-de-lit/paris), [dans le Val-de-Marne](/punaises-de-lit/val-de-marne), [dans les Hauts-de-Seine](/punaises-de-lit/hauts-de-seine), [en Essonne](/punaises-de-lit/essonne), [dans les Yvelines](/punaises-de-lit/yvelines) et [en Seine-et-Marne](/punaises-de-lit/seine-et-marne).',
+  { h: 'Traitement écologique des punaises de lit à Paris et en Île-de-France', p: [
+    'Depuis notre base de **Saint-Maurice (94)**, nous réalisons le **traitement écologique des punaises de lit** **7j/7** à **Paris** et dans toute l’Île-de-France : [punaises de lit à Paris](/punaises-de-lit/paris), [dans le Val-de-Marne](/punaises-de-lit/val-de-marne), [dans les Hauts-de-Seine](/punaises-de-lit/hauts-de-seine), [en Essonne](/punaises-de-lit/essonne), [dans les Yvelines](/punaises-de-lit/yvelines) et [en Seine-et-Marne](/punaises-de-lit/seine-et-marne).',
     'Nos chantiers de cryogénie filmés : [Champigny-sur-Marne](/punaises-de-lit/champigny-sur-marne), [L’Haÿ-les-Roses](/punaises-de-lit/l-hay-les-roses) et [Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine). Nous traitons aussi par cryogénie à [Paris 12e](/punaises-de-lit/paris-12), [Paris 16e](/punaises-de-lit/paris-16), [Vincennes](/punaises-de-lit/vincennes), [Créteil](/punaises-de-lit/creteil), [Saint-Maur-des-Fossés](/punaises-de-lit/saint-maur-des-fosses) et dans toutes nos villes (liste complète plus bas).',
   ] },
-  { h: 'Pourquoi nous confier votre cryogénie', p: [
+  { h: 'Pourquoi nous confier votre traitement écologique', p: [
     '- **Une entreprise d’Île-de-France**, basée à Saint-Maurice et dirigée par son gérant, Houssem Hattab.',
     '- **Des techniciens certifiés Certibiocide**, formés à toutes les méthodes : cryogénie, vapeur sèche et insecticide. Nous choisissons la méthode selon votre cas.',
-    '- **De vrais chantiers filmés** : Champigny-sur-Marne, L’Haÿ-les-Roses, Ivry-sur-Seine et un foyer pour enfants.',
+    '- **De vrais chantiers de traitement écologique filmés** : Champigny-sur-Marne, L’Haÿ-les-Roses, Ivry-sur-Seine et un foyer pour enfants.',
     '- **Plus de 1 500 clients** accompagnés.',
     '- **Un prix annoncé avant de venir**, deux passages inclus, garantie 1 an.',
   ] },
@@ -306,7 +335,9 @@ export const CRYO_PARTIE_2: Bloc[] = [
 export const CRYO_FAQ: { q: string; a: string }[] = [
   { q: 'Est-ce que le froid tue les punaises de lit ?', a: 'Oui, si le froid est assez intense ou assez long. La neige carbonique à environ −78 °C les tue au contact, œufs compris. Au congélateur, il faut 72 heures pour les vêtements et les petits objets. Une chambre sans chauffage en hiver, en revanche, ne suffit pas.' },
   { q: 'Comment fonctionne le traitement par cryogénisation contre les punaises de lit ?', a: 'Le technicien projette de la neige carbonique (CO2 à environ −78 °C) sur toutes les cachettes : matelas, sommier, meubles, plinthes. Le choc thermique tue les punaises et leurs œufs au contact, puis la neige se transforme en gaz, sans eau ni résidu. Un second passage suit 10 à 15 jours plus tard.' },
-  { q: 'Un traitement écologique des punaises de lit, c’est quoi ?', a: 'Chez nous, écologique veut dire sans biocide : aucun insecticide ni produit chimique déposé chez vous. La cryogénie remplit cette condition puisqu’elle n’agit que par le froid. Nous ne prétendons pas pour autant qu’elle n’a aucun impact : elle utilise du CO2 et du matériel.' },
+  { q: 'Existe-t-il un traitement écologique contre les punaises de lit ?', a: 'Oui. Chez nous, écologique veut dire sans biocide : la cryogénie (froid à environ −78 °C) et la vapeur sèche tuent les punaises et leurs œufs au contact, et notre chambre froide à −20 °C traite les objets. Aucun insecticide ni produit chimique n’est déposé. Nous ne prétendons pas pour autant que la méthode n’a aucun impact : elle utilise du CO2 et du matériel.' },
+  { q: 'Un traitement sans produit chimique est-il aussi efficace qu’un insecticide ?', a: 'Oui pour les infestations localisées et moyennes, avec deux passages et une bonne préparation du linge. Pour une infestation très importante, nous vous dirons honnêtement si un traitement classique ou un protocole mixte est préférable.' },
+  { q: 'À quoi sert votre chambre froide à −20 °C ?', a: 'À traiter les objets et textiles qui ne se lavent pas et ne supportent pas la chaleur : chaussures, sacs, livres, peluches. Ils y restent au moins 72 heures.' },
   { q: 'La cryogénie tue-t-elle les œufs de punaises de lit ?', a: 'Oui, au contact : le choc thermique tue les œufs comme les adultes. C’est pourquoi le jet doit atteindre chaque recoin, et pourquoi un second passage traite ceux qui auraient échappé au premier.' },
   { q: 'Combien coûte une cryogénie des punaises de lit ?', a: 'À partir de 290 € TTC pour un studio, deux passages inclus et garantie 1 an. Pour un appartement plus grand, une maison ou un établissement, le prix est donné sur devis gratuit, avant l’intervention.' },
   { q: 'Combien de passages faut-il ?', a: 'Deux, à 10 à 15 jours d’intervalle, tous deux compris dans le prix. La cryogénie n’a pas d’effet qui dure : le second passage élimine les jeunes punaises sorties des œufs non atteints, avant qu’elles ne pondent.' },
