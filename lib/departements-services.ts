@@ -29,7 +29,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   deratisation: {
     famille: 'deratisation', base: '/deratisation', label: 'Dératisation', motCle: 'Dératisation', h1: 'Dératisation des rats et souris', prix: '120 €', prixNum: '120',
     prixNote: 'Appartement, rats ou souris. Devis gratuit.', suffixes: [' : rats et souris dès 120 €, 7j/7', ' : rats et souris dès 120 €', ' : rats, souris dès 120 €', ' dès 120 €'],
-    description: (dans, code) => `Dératisation ${dans} (${code}) : rats et souris, postes sécurisés ou pièges, accès rebouchés. Technicien certifié, dès 120 € TTC, devis gratuit, 7j/7.`,
+    description: (dans, code) => `Dératisation ${dans} (${code}) : rats et souris, postes sécurisés ou pièges, accès bouchés. Technicien certifié, dès 120 € TTC, devis gratuit, 7j/7.`,
     etapes: [
       ['Appel ou photo|Une photo des crottes ou des dégâts suffit souvent à savoir s’il s’agit de rats ou de souris. Vous avez le prix tout de suite.', 'Devis gratuit|Vous décrivez le lieu, nous vous annonçons le tarif avant de nous déplacer.'],
       ['Diagnostic|Le technicien identifie l’espèce (surmulot, rat noir, souris), les couloirs de passage et les points d’entrée.', 'Recherche des accès|Gaines, passages de tuyaux, bas de portes, grilles : chaque entrée possible est repérée.'],
@@ -98,7 +98,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   },
   punaises: {
     famille: 'punaises', base: '/punaises-de-lit', label: 'Punaises de lit', motCle: 'Punaises de lit', h1: 'Traitement punaises de lit', prix: '290 €', prixNum: '290',
-    prixNote: 'Studio ou T1, 2 passages inclus. Devis gratuit.', suffixes: [' : traitement dès 290 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
+    prixNote: 'Studio ou T1, 2 passages inclus. Devis gratuit.', suffixes: [' : traitement dès 290 €, 7j/7', ' : traitement dès 290 €', ' : dès 290 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
     description: (dans, code) => `Punaises de lit ${dans} (${code}) : insecticide, cryogénie ou vapeur sèche. 2 passages dès 290 € TTC, devis gratuit, garantie 1 an, 7j/7.`,
     etapes: [
       ['Appel ou photo|Une photo de l’insecte ou des piqûres : nous confirmons qu’il s’agit de punaises et vous donnons le prix.', 'Devis gratuit|Quelques questions sur votre logement : vous connaissez le tarif avant tout déplacement.'],
@@ -168,7 +168,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   },
   frelons: {
     famille: 'frelons', base: '/destruction-nid-frelon', label: 'Nid de frelons', motCle: 'Destruction nid de frelon', h1: 'Destruction de nid de frelons', prix: '89 €', prixNum: '89',
-    prixNote: 'Nid accessible. Perche dès 149 €, toiture dès 199 €.', suffixes: [' : dès 89 €, 7j/7', ' : 7j/7', ''],
+    prixNote: 'Nid accessible. Perche dès 149 €, toiture dès 199 €.', suffixes: [' : dès 89 €, 7j/7', ' : dès 89 €', ' : 7j/7', ''],
     description: (dans, code) => `Destruction de nid de frelons ou de guêpes ${dans} (${code}) : frelon asiatique et européen, nid en hauteur à la perche. Dès 89 € TTC, 7j/7.`,
     etapes: [
       ['Appel ou photo|Une photo, même de loin, permet d’identifier l’espèce et l’accès au nid, et de fixer le prix.', 'Devis gratuit|Hauteur et emplacement du nid : vous avez le tarif avant notre venue.'],
@@ -238,7 +238,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   },
   cafards: {
     famille: 'cafards', base: '/cafards', label: 'Cafards', motCle: 'Cafards', h1: 'Traitement des cafards', prix: '120 €', prixNum: '120',
-    prixNote: 'T1 ou T2, gel appât professionnel. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
+    prixNote: 'T1 ou T2, gel appât professionnel. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
     description: (dans, code) => `Cafards et blattes ${dans} (${code}) : gel appât, insecticide ou vapeur sèche par un technicien certifié. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
     etapes: [
       ['Appel ou photo|Blatte germanique ou orientale ? Une photo suffit souvent à l’identifier et à fixer le prix.', 'Devis gratuit|Vous décrivez le logement, nous vous annonçons le tarif tout de suite.'],
@@ -308,7 +308,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   },
   puces: {
     famille: 'puces', base: '/puces', label: 'Puces', motCle: 'Puces', h1: 'Traitement contre les puces', prix: '120 €', prixNum: '120',
-    prixNote: 'Appartement, sols et textiles traités. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
+    prixNote: 'Appartement, sols et textiles traités. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
     description: (dans, code) => `Puces ${dans} (${code}) : traitement du logement par un technicien certifié, en lien avec le vétérinaire. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
     etapes: [
       ['Appel ou photo|Une photo des piqûres ou de l’insecte confirme qu’il s’agit de puces et fixe le prix.', 'Devis gratuit|Quelques questions sur le logement et vos animaux : vous avez le tarif tout de suite.'],
@@ -378,7 +378,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
   },
   souris: {
     famille: 'souris', base: '/souris', label: 'Souris', motCle: 'Souris', h1: 'Traitement contre les souris', prix: '120 €', prixNum: '120',
-    prixNote: 'Appartement, pièges ou postes sécurisés. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
+    prixNote: 'Appartement, pièges ou postes sécurisés. Devis gratuit.', suffixes: [' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : dès 120 €, 7j/7', ' : traitement 7j/7', ' : traitement', ''],
     description: (dans, code) => `Souris ${dans} (${code}) : pièges, postes sécurisés et accès rebouchés par un technicien certifié. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
     etapes: [
       ['Appel ou photo|Une photo des crottes ou des dégâts suffit souvent : souris ou rat, nous vous le disons et vous donnons le prix.', 'Devis gratuit|Quelques questions sur le logement et vous connaissez le tarif.'],

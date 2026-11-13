@@ -70,6 +70,7 @@ export const LOCAL_PUNAISES_GC: Record<string, string[]> = {
     'Les **pavillons du coteau** et des bords de l’**Orge** ont souvent plusieurs chambres à l’étage : nous les inspectons toutes, même celles qui semblent épargnées.',
     'La **gare RER C** de Savigny voit passer beaucoup de navetteurs : poser son sac loin du lit en rentrant est un bon réflexe pour limiter les risques.',
     'Les familles de Savigny-sur-Orge qui reçoivent de la famille pour les fêtes nous appellent parfois en janvier : un canapé convertible sorti pour l’occasion peut cacher des punaises venues avec les bagages.',
+    'Entre l’**Orge** et l’**Yvette**, beaucoup de maisons de Savigny-sur-Orge ont une **chambre d’amis** ou un **sous-sol aménagé** peu utilisés. Des punaises arrivées avec un visiteur peuvent y attendre longtemps le prochain dormeur : avant de prêter la chambre, soulevez le matelas et regardez les coutures et les lattes.',
   ],
   'palaiseau': [
     'Sur le **plateau de Saclay**, les résidences étudiantes de l’**École polytechnique** et des écoles voisines accueillent des étudiants du monde entier, qui voyagent beaucoup : les punaises peuvent arriver dans leurs bagages.',

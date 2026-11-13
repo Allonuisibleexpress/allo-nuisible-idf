@@ -4,13 +4,15 @@ import { METHODES_PUNAISES, GUIDE_PUNAISES } from '@/lib/contenu-services/punais
 import { CONTENU_PUNAISES } from '@/lib/contenu-nuisibles/punaises'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import CyclePunaises from '@/components/CyclePunaises'
+import VideosDetaillees from '@/components/VideosDetaillees'
+import { PUNAISES_VIDEOS, PUNAISES_VIDEOS_INTRO } from '@/lib/contenu-services/videos-chantiers'
 import { VILLES_PUNAISES, GUIDES_PUNAISES } from '@/lib/villes-punaises'
 
 const data: ServiceData = {
   badge: 'Urgence 7j/7 · Cryogénie · Vapeur sèche · Insecticide',
   devis: 'Devis gratuit punaises de lit',
   heroTitle: 'Traitement punaises de lit',
-  heroHighlight: 'Éradication totale',
+  heroHighlight: 'Paris et Île-de-France, dès 290 €',
   heroDescription: 'Deux approches professionnelles, choisies selon votre logement : cryogénie ou vapeur sèche, sans produit, et insecticide rémanent longue durée. Souvent, on combine les deux.',
   urgence: {
     titre: 'Urgence punaises de lit : intervention possible le jour même, 7j/7',
@@ -34,7 +36,17 @@ const data: ServiceData = {
     { title: 'Traitement adapté à votre logement', text: 'Cryogénie ou vapeur sèche sur la literie, les meubles et les recoins, et insecticide rémanent de 4e génération sur les surfaces infestées et adjacentes. Après un traitement insecticide, vous quittez le logement 4 heures en moyenne.' },
     { title: 'Suivi & garantie', text: 'Retour sous 15 jours pour contrôle. En cas de réapparition dans le délai de garantie, intervention gratuite. Vous dormez tranquille.' },
   ],
-  apresProcess: <CyclePunaises />,
+  apresProcess: (
+    <>
+      <CyclePunaises />
+      <VideosDetaillees
+        titre="Nos chantiers de punaises de lit en vidéo : ce que nous avons fait"
+        intro={PUNAISES_VIDEOS_INTRO}
+        videos={PUNAISES_VIDEOS}
+        photos={['creteilLattes1', 'cryoFoyer', 'litEnfant']}
+      />
+    </>
+  ),
   methodes: METHODES_PUNAISES,
   guide: GUIDE_PUNAISES,
   contenu: CONTENU_PUNAISES,
@@ -72,16 +84,11 @@ const data: ServiceData = {
   photos: ['cryoFoyer', 'cryoSalle', 'litCryo', 'litEnfant'],
   chantier: {
     photos: ['creteilLattes1', 'cryoFoyer'],
-    videos: [
-      { src: '/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4', legende: 'Paris 16e : énorme infestation, punaises de lit vivantes filmées en gros plan, puis matelas et sommier traités', banniere: true, apercu: 27.2 },
-      { src: '/chantiers/punaises-creteil-lattes-video.mp4', legende: 'Créteil (94) : punaises localisées dans les lattes du sommier', banniere: true },
-      { src: '/chantiers/punaises-paris-12-infestation-video.mp4', legende: 'Paris 12e : punaises mortes au sol après le premier passage', banniere: true },
-      { src: '/chantiers/cryogenie-cadre-lit-lattes-video.mp4', legende: 'L’Haÿ-les-Roses (94) : cryogénie sur un sommier, sans produit chimique', banniere: true },
-      { src: '/chantiers/cryogenie-punaises-foyer-video-1.mp4', legende: 'Cryogénie dans un foyer pour enfants' },
-    ],
+    videos: PUNAISES_VIDEOS.slice(0, 5).map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
     titre: 'Nos chantiers de punaises de lit en images',
     vignettes: 'Nos chantiers en vidéo',
   },
+  galerieDansContenu: true,
   related: {
     extra: maillageService('/services/punaises-de-lit'),
     villes: { title: 'Punaises de lit par ville', links: VILLES_PUNAISES.map((v) => ({ href: `/punaises-de-lit/${v.slug}`, label: `Punaises de lit ${v.a} (${v.code})` })) },

@@ -52,7 +52,14 @@ export function generateMetadata({ params }: { params: { ville: string } }) {
   const v = getVillePunaises(params.ville)
   if (!v) return {}
   const cp = codePostal(v.slug)
-  const title = titreGoogle('Punaises de lit', v.nom, v.slug, [' : traitement dès 290 €', ' : traitement 7j/7', ' : traitement', ''])
+  // 13/11/2026 : le prix dans tous les titres ; sans le code postal quand il ne tient pas en 60 caractères
+  const titres = [
+    `Punaises de lit ${v.nom}${cp ? ` (${cp})` : ''} : traitement dès 290 €`,
+    `Punaises de lit ${v.nom}${cp ? ` (${cp})` : ''} : dès 290 €`,
+    `Punaises de lit ${v.nom} : traitement dès 290 €`,
+    `Punaises de lit ${v.nom} : dès 290 €`,
+  ]
+  const title = titres.find((t) => t.length <= 60) ?? titreGoogle('Punaises de lit', v.nom, v.slug, [' : traitement dès 290 €', ' : dès 290 €', ''])
   const description = `Punaises de lit ${v.a}${cp ? ` (${cp})` : ''} : insecticide, cryogénie ou vapeur sèche. 2 passages dès 290 € TTC, devis gratuit, garantie 1 an, 7j/7.`
   return pageMetadata({ title, description, path: `/punaises-de-lit/${v.slug}` })
 }

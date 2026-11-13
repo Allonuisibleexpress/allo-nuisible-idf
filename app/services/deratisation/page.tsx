@@ -7,12 +7,14 @@ import { CHANTIER_DIOGENE, MEDIAS_DERATISATION } from '@/lib/photos-chantiers'
 import { VILLES_DERATISATION, GUIDES_RONGEURS } from '@/lib/villes-deratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
 import { METHODES_DERATISATION, GUIDE_DERATISATION } from '@/lib/contenu-services/deratisation'
+import VideosDetaillees from '@/components/VideosDetaillees'
+import { DERAT_VIDEOS, DERAT_VIDEOS_INTRO } from '@/lib/contenu-services/videos-chantiers'
 
 const data: ServiceData = {
   badge: 'Rats · Souris · Ragondins · Particuliers, pros & copropriétés',
   devis: 'Devis gratuit dératisation',
-  heroTitle: 'Dératisation professionnelle',
-  heroHighlight: 'Rats et souris',
+  heroTitle: 'Dératisation rats et souris',
+  heroHighlight: 'Paris et Île-de-France, dès 120 €',
   heroDescription: 'Rats, souris ou ragondins : élimination des rongeurs par des techniciens Certibiocide, avec recherche et colmatage des accès. Postes d\'appâtage sécurisés, pièges connectés ou, en méthode alternative, piège multicapture Ekomille sans raticide, attestations pour professionnels, contrats de maintenance.',
   heroPrices: [
     { price: '120', label: 'Particulier' },
@@ -35,7 +37,17 @@ const data: ServiceData = {
   methodes: METHODES_DERATISATION,
   guide: GUIDE_DERATISATION,
   contenu: CONTENU_DERATISATION,
-  apresProcess: <DeratEco />,
+  apresProcess: (
+    <>
+      <DeratEco />
+      <VideosDetaillees
+        titre="Notre chantier de dératisation en vidéo : ce que nous avons fait"
+        intro={DERAT_VIDEOS_INTRO}
+        videos={DERAT_VIDEOS}
+        photos={MEDIAS_DERATISATION.photos}
+      />
+    </>
+  ),
   pricing: [
     {
       label: 'Particulier',
@@ -62,10 +74,11 @@ const data: ServiceData = {
   photos: ['ratDiogene'],
   chantier: {
     photos: MEDIAS_DERATISATION.photos,
-    videos: MEDIAS_DERATISATION.videos,
+    videos: DERAT_VIDEOS.map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
     titre: 'Nos chantiers de dératisation en images',
     lien: { href: CHANTIER_DIOGENE.article, label: 'Lire le récit d’un chantier : logement très encombré à Maisons-Alfort' },
   },
+  galerieDansContenu: true,
   faq: [
     { q: 'Comment savoir si j\'ai des rats ou des souris ?', a: 'Crottes allongées et grandes : rats. Petites et pointues : souris. Autres signes : traces de grignotage sur les câbles, les emballages ou les menuiseries, bruits la nuit dans les cloisons, traces de passage grasses le long des murs.' },
     { q: 'Les rongeurs sont-ils dangereux pour la santé ?', a: 'Oui. Rats et souris peuvent transmettre des maladies, dont la leptospirose, par leurs déjections et leur urine. Ils peuvent aussi provoquer des incendies en rongeant les câbles électriques.' },

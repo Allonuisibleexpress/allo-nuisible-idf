@@ -65,8 +65,12 @@ export function generateMetadata({ params }: { params: { ville: string } }) {
     ...(cp ? [`Dératisation ${v.nom} (${cp}) : rats et souris dès 120 €`, `Dératisation ${v.nom} (${dep}) : rats et souris dès 120 €`] : []),
     `Dératisation ${v.nom} : rats et souris dès 120 €`,
   ]
-  const title = titres.find((t) => t.length <= 60) ?? `Dératisation ${v.nom} : rats, souris dès 120 €`
-  const description = `Dératisation ${v.a}${cp ? ` (${cp})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
+  // 13/11/2026 : noms très longs, « Saint » et « Sainte » abrégés dans le titre seulement (le texte garde le nom complet)
+  const court = v.nom.replace(/\bSainte-/g, 'Ste-').replace(/\bSaint-/g, 'St-')
+  titres.push(`Dératisation ${v.nom} : rats, souris dès 120 €`, `Dératisation ${court} : rats et souris dès 120 €`, `Dératisation ${court} : rats, souris dès 120 €`)
+  const title = titres.find((t) => t.length <= 60) ?? `Dératisation ${court} : rats, souris dès 120 €`
+  const desc = `Dératisation ${v.a}${cp ? ` (${cp})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
+  const description = desc.length <= 160 ? desc : desc.replace(', 7j/7.', '.')
   return pageMetadata({ title, description, path: `/deratisation/${v.slug}` })
 }
 
