@@ -58,6 +58,7 @@ export const LOCAL_FRELONS_GC: Record<string, string[]> = {
   'pontault-combault': [
     'Pontault-Combault est bordée par les **bois Notre-Dame** et de **Pontault**. Les maisons en lisière sont très exposées aux frelons asiatiques, qui nichent en hauteur dans les chênes.',
     'Dans les **pavillons**, les guêpes s’installent sous les tuiles, dans les haies et les abris de jardin. Les nids souterrains, dans les pelouses, sont aussi fréquents.',
+    'Autour du **parc de l’Hôtel de Ville** et des **Jardins d’Aimé**, grands arbres et massifs sont à surveiller dès le printemps : une reine peut y fonder un nid primaire, à l’abri d’un muret ou d’une haie. Près de la gare d’**Émerainville–Pontault-Combault** (RER E), les commerces et leurs terrasses attirent les guêpes en fin d’été.',
   ],
   'savigny-le-temple': [
     'Savigny-le-Temple, ville nouvelle de **Sénart**, compte beaucoup de maisons récentes avec **volets roulants** et avant-toits, où les guêpes s’installent chaque été.',
@@ -74,6 +75,7 @@ export const LOCAL_FRELONS_GC: Record<string, string[]> = {
   'villeparisis': [
     'Villeparisis est traversée par le **canal de l’Ourcq**, bordé d’arbres. Les frelons asiatiques y nichent et chassent le long de l’eau.',
     'Les **pavillons** de la ville, très nombreux, voient chaque été des nids de guêpes sous les toits, dans les haies et parfois dans le sol.',
+    'Les parcs **Honoré-de-Balzac** et **François-Mitterrand** offrent de grands arbres où les nids de frelons asiatiques passent inaperçus jusqu’à la chute des feuilles. Autour de la gare **Villeparisis–Mitry-le-Neuf** (RER B), les avant-toits des commerces et des immeubles abritent aussi des nids de guêpes.',
   ],
   'dammarie-les-lys': [
     'Dammarie-lès-Lys est voisine de la **forêt de Fontainebleau** et compte le grand parc de l’**abbaye du Lys**. Ces espaces boisés sont propices aux nids de frelons asiatiques.',
@@ -95,6 +97,7 @@ export const LOCAL_FRELONS_GC: Record<string, string[]> = {
   'saint-germain-en-laye': [
     'Saint-Germain-en-Laye borde une grande **forêt domaniale**, et ses quartiers résidentiels sont très arborés. Les frelons asiatiques y trouvent de nombreux sites de nid en hauteur.',
     'Le **centre historique** compte des toitures anciennes et des immeubles à corniches où les guêpes nichent. Les nids proches des terrasses de café et des commerces sont traités en priorité.',
+    'Le **Domaine national** et le **parc forestier du Champ Millet** réunissent de très grands arbres, et la BD Forêt de l’IGN recense environ **67 ha de pins** sur la commune : autant de supports pour des nids de frelons asiatiques en hauteur. Pour un nid hors de portée d’une échelle, nous venons avec notre camion nacelle.',
   ],
   'mantes-la-jolie': [
     'Mantes-la-Jolie est bordée par la **Seine** et l’**île aux Dames**, avec de grands arbres le long des berges. Les frelons asiatiques y nichent chaque année.',

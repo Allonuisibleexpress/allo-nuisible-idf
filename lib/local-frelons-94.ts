@@ -56,6 +56,7 @@ export const LOCAL_FRELONS_94: Record<string, string[]> = {
   'ivry-sur-seine': [
     'Ivry-sur-Seine se transforme vite : les chantiers d’**Ivry Port** et les nouveaux immeubles laissent des recoins (échafaudages, coffrages, toitures) où les guêpes s’installent en été.',
     'Les arbres du **parc des Cormailles** et des bords de **Seine** accueillent des nids de frelons asiatiques, parfois repérés seulement à l’automne.',
+    'Les promenades plantées des **Petits Bois** et **du Fort** forment des couloirs d’arbres au cœur de la ville : haies et arbustes peuvent abriter des nids de guêpes au printemps, les grands arbres des nids de frelons asiatiques en fin d’été. Dans les immeubles, ce sont surtout les coffres de volets roulants et les balcons peu utilisés qu’il faut surveiller.',
   ],
   'paris-12': [
     'Dans le 12e, les nids de frelons asiatiques se trouvent dans les grands arbres du **bois de Vincennes**, du **parc de Bercy** et de la **Coulée verte**, parfois au-dessus des cours d’immeubles.',

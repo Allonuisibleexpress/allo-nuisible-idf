@@ -1,8 +1,8 @@
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata({
-  title: 'Nid de guêpes ou de frelons détruit dès 89 €, 7j/7',
-  description: 'Nid de guêpes ou de frelons asiatiques ? Ne le touchez pas. Un technicien équipé peut intervenir le jour même, 7j/7. Devis gratuit.',
+  title: 'Destruction nid de frelons et guêpes dès 89 €, 7j/7',
+  description: 'Destruction de nid de frelons asiatiques, européens et de guêpes à Paris et en Île-de-France : perche, toiture, nacelle. Dès 89 €, 7j/7, vidéos de chantier.',
   path: '/services/guepes-frelons',
 })
 

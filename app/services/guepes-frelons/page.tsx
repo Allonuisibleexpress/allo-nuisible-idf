@@ -9,7 +9,9 @@ import {
   Phone, ShieldCheck, Star, ChevronDown, ArrowRight,
   AlertTriangle, Clock, FileText, Briefcase, RefreshCw, X
 } from 'lucide-react'
-import MediasChantier from '@/components/MediasChantier'
+import ArticleService from '@/components/ArticleService'
+import VideosDetaillees from '@/components/VideosDetaillees'
+import { FRELONS_ARTICLE, FRELONS_VIDEOS, FRELONS_VIDEOS_INTRO, FRELONS_FAQ_PLUS } from '@/lib/contenu-services/frelons'
 import VignettesChantier from '@/components/VignettesChantier'
 import { MEDIAS_FRELONS } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
@@ -27,11 +29,11 @@ const ACCENT = '#E8441A'
 const faq = [
   {
     q: 'Comment reconnaître un nid de guêpes ou de frelons ?',
-    a: "Un nid de guêpes ressemble à une boule grise en papier mâché, souvent suspendu sous un avant-toit, dans un grenier ou un arbre. Il peut atteindre 40 à 60 cm de diamètre en plein été. Le nid de frelon européen est similaire mais plus volumineux, avec une ouverture latérale. Le nid de frelon asiatique (Vespa velutina) est en forme de poire et peut dépasser 80 cm, installé en hauteur dans les arbres. Contactez Allo Nuisible IDF dès que vous repérez un nid en Île-de-France.",
+    a: "Un nid de guêpes ressemble à une boule grise en papier mâché, souvent suspendu sous un avant-toit, dans un grenier ou un arbre. Il grossit tout l'été. Le nid de frelon européen est similaire mais plus volumineux, avec une ouverture latérale. Le nid de frelon asiatique (Vespa velutina) est en forme de poire, souvent installé en hauteur dans les arbres, et atteint sa taille maximale en fin de saison. Contactez Allo Nuisible IDF dès que vous repérez un nid en Île-de-France.",
   },
   {
     q: "Comment distinguer un frelon européen d'un frelon asiatique ?",
-    a: "Le frelon européen (Vespa crabro) mesure 25 à 35 mm, avec un abdomen jaune et brun et une tête jaune-rouge. Le frelon asiatique (Vespa velutina) mesure 25 à 30 mm, avec un corps presque entièrement noir, un segment abdominal orange et des pattes jaunes aux extrémités. Le frelon asiatique est plus agressif près de son nid et menace directement les colonies d'abeilles. Allo Nuisible IDF identifie l'espèce gratuitement et adapte son protocole en conséquence.",
+    a: "Le frelon européen (Vespa crabro) est le plus grand : 20 à 25 mm pour une ouvrière, 30 à 35 mm pour une reine, avec un abdomen jaune et brun et une tête jaune-roux. Le frelon asiatique (Vespa velutina) est plus petit, avec un corps presque entièrement noir, un segment abdominal orange et des pattes jaunes aux extrémités. Le frelon asiatique est plus agressif près de son nid et menace directement les colonies d'abeilles. Allo Nuisible IDF identifie l'espèce gratuitement et adapte son protocole en conséquence.",
   },
   {
     q: "Quel est le tarif pour la destruction d'un nid de guêpes ?",
@@ -39,23 +41,23 @@ const faq = [
   },
   {
     q: "Peut-on détruire un nid de guêpes soi-même ?",
-    a: "Non, c'est fortement déconseillé. Un nid d'été peut abriter entre 2 000 et 10 000 individus qui attaquent massivement en cas de menace. Les piqûres multiples peuvent provoquer un choc anaphylactique, potentiellement fatal même sans allergie connue. Les méthodes maison (eau bouillante, fumée, bombe insecticide du commerce) sont inefficaces et dangereuses. Nos techniciens disposent de combinaisons intégrales et d'insecticides foudroyants professionnels.",
+    a: "Non, c'est fortement déconseillé. Un nid d'été abrite des milliers d'insectes, qui attaquent en groupe en cas de menace. Des piqûres multiples peuvent provoquer une réaction toxique grave, même sans allergie. Ameli conseille de rester à 5 mètres du nid et de ne pas tenter de le détruire soi-même. Les méthodes maison (eau bouillante, fumée, bombe insecticide du commerce) sont inefficaces et dangereuses. Nos techniciens disposent de combinaisons intégrales et d'insecticides foudroyants professionnels.",
   },
   {
     q: "Les guêpes reviennent-elles après la destruction du nid ?",
-    a: "Après intervention, les guêpes en vol peuvent tourner autour de l'emplacement 24 à 48 heures, mais sans reine la colonie meurt en quelques jours. Le produit rémanent appliqué lors de notre passage élimine les dernières individus de retour. L'année suivante, une nouvelle reine pourrait choisir le même endroit, mais c'est rare. Nous proposons un traitement préventif pour éviter toute réinstallation.",
+    a: "Après intervention, les guêpes en vol peuvent tourner autour de l'emplacement 24 à 48 heures, mais sans reine la colonie meurt en quelques jours. Le produit rémanent appliqué lors de notre passage élimine les derniers individus de retour. L'année suivante, une nouvelle reine pourrait choisir le même endroit, mais c'est rare. Nous proposons un traitement préventif pour éviter toute réinstallation.",
   },
   {
     q: "À quelle période les guêpes sont-elles le plus agressives ?",
-    a: "Les guêpes sont les plus dangereuses entre juillet et septembre, quand les colonies atteignent leur pic (5 000 à 10 000 individus). En fin d'été, les ouvrières s'activent à la recherche de sucre et s'approchent facilement des repas en extérieur, des boissons et des poubelles. Le meilleur moment pour agir reste le printemps (avril-mai), quand le nid ne contient encore que la reine et quelques ouvrières. Nous intervenons à toute période en Île-de-France.",
+    a: "Les guêpes sont les plus dangereuses entre juillet et septembre, quand les colonies sont au plus fort. En fin d'été, les ouvrières s'activent à la recherche de sucre et s'approchent facilement des repas en extérieur, des boissons et des poubelles. Le meilleur moment pour agir reste le printemps (avril-mai), quand le nid ne contient encore que la reine et quelques ouvrières. Nous intervenons à toute période en Île-de-France.",
   },
   {
     q: "Que faire en cas de piqûre de frelon asiatique ?",
-    a: "Retirez le dard si visible, désinfectez, appliquez du froid pour limiter le gonflement, prenez un antihistaminique si disponible. Surveillez les 30 minutes suivantes : gonflement du visage ou de la gorge, difficultés respiratoires, vertiges ou chute de tension sont des signaux d'alarme : appelez le 15 (SAMU) immédiatement. Plus de 5 piqûres simultanées nécessitent aussi une consultation urgente, même sans allergie connue.",
+    a: "Contrairement à l'abeille, le frelon ne laisse pas son dard. Ameli conseille d'ôter vos bagues si la piqûre est à la main, de désinfecter à l'eau et au savon puis avec un antiseptique, d'appliquer de la glace enveloppée dans un tissu, de prendre du paracétamol en cas de douleur, de vérifier votre vaccination contre le tétanos et de rester au calme 30 minutes. Appelez le 15 ou le 112 en cas de piqûres multiples, de piqûre dans la bouche ou la gorge, de gêne respiratoire, de gonflement du visage ou de malaise.",
   },
   {
     q: 'Pompiers ou exterminateur : qui appeler pour un nid de guêpes ?',
-    a: "Les pompiers n'interviennent plus gratuitement pour les nids de guêpes depuis 2014, sauf danger immédiat dans un espace public. Un professionnel comme Allo Nuisible IDF reste la solution la plus fiable : intervention le jour même en Île-de-France, équipement adapté, produit rémanent et garantie de résultat.",
+    a: "Les pompiers n'interviennent en général plus pour détruire les nids de guêpes ou de frelons chez les particuliers, sauf danger immédiat. Ameli conseille de signaler un nid à la mairie ou à l'organisme qui anime la lutte contre le frelon asiatique dans le département. Pour un nid chez vous, un professionnel comme Allo Nuisible IDF intervient le jour même en Île-de-France, avec un équipement adapté.",
   },
 ]
 
@@ -74,7 +76,7 @@ const garanties = [
   {
     icon: FileText,
     title: 'Technicien Certibiocide',
-    text: `Certification reconnue par le Ministère de l'Agriculture. Seuls les professionnels agréés utilisent les biocides professionnels.`,
+    text: `Certificat individuel obligatoire pour utiliser les biocides professionnels, délivré par le ministère chargé de l'environnement.`,
   },
   {
     icon: Phone,
@@ -104,15 +106,15 @@ const timeline = [
 /* ─────────────────────────── Sections texte ─────────────────── */
 const sections = [
   {
-    title: 'Pourquoi confier la destruction à un professionnel ?',
-    content: "Détruire un nid de guêpes ou de frelons sans équipement adéquat est une prise de risque inutile. Les piqûres en masse peuvent provoquer un choc anaphylactique même chez une personne non allergique. Le frelon asiatique (Vespa velutina), de plus en plus présent en Île-de-France, est particulièrement agressif à l'approche de son nid. Nos techniciens interviennent en combinaison intégrale avec du matériel d'accès en hauteur pour garantir la sécurité de tous.",
+    title: 'Piqûres de frelons et de guêpes : pourquoi ne jamais approcher le nid',
+    content: "Détruire un nid de guêpes ou de frelons sans équipement adéquat est une prise de risque inutile. Des piqûres en masse peuvent provoquer une réaction toxique grave, même chez une personne non allergique. Le frelon asiatique (Vespa velutina), de plus en plus présent en Île-de-France, est particulièrement agressif à l'approche de son nid. Nos techniciens interviennent en combinaison intégrale avec du matériel d'accès en hauteur pour garantir la sécurité de tous.",
   },
   {
-    title: "Comment se passe concrètement l'intervention ?",
+    title: 'Destruction de nid : les 4 étapes de notre technicien',
     content: "1. Identification précise du nid et de l'espèce (guêpe, frelon européen ou asiatique). 2. Sécurisation du périmètre autour du nid. 3. Injection d'insecticide foudroyant directement dans le nid via une perche télescopique ou un accès en hauteur. 4. Retrait du nid si l'emplacement le permet. L'ensemble dure généralement entre 30 et 60 minutes.",
   },
   {
-    title: 'Quel est le bon moment pour intervenir ?',
+    title: 'Nid primaire au printemps, colonie en été : le bon moment pour agir',
     content: "Au printemps, les nids primaires ont la taille d'une balle de golf, c'est la fenêtre idéale pour intervenir rapidement et à moindre coût. En été, les colonies atteignent leur pleine taille et peuvent compter des milliers d'individus. N'essayez jamais de les approcher seul. Contactez-nous pour une intervention sécurisée partout en Île-de-France.",
   },
 ]
@@ -143,11 +145,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 /* ─────────────────────────── Page ─────────────────────────── */
-const FAQ_TOUT = [...faq, ...SAISONS_FAQ.frelons]
+const FAQ_TOUT = [...faq, ...FRELONS_FAQ_PLUS, ...SAISONS_FAQ.frelons.filter((f) => !faq.some((x) => x.q === f.q))]
 const SCHEMA_FRELONS = schemaService({
   heroTitle: 'Destruction de nid de guêpes et de frelons', heroHighlight: 'en Île-de-France', badge: 'Destruction de nid de frelons',
   heroDescription: 'Frelon asiatique, frelon européen et guêpes : destruction du nid à la perche télescopique ou en hauteur. Dès 89 € TTC, 7j/7.',
-  metaTitle: 'Nid de guêpes ou de frelons : destruction en Île-de-France', pricing: [{ price: '89' }, { price: '149' }, { price: '199' }],
+  metaTitle: 'Destruction nid de frelons et guêpes dès 89 €, 7j/7', pricing: [{ price: '89' }, { price: '149' }, { price: '199' }],
   process: [
     { title: 'Appel ou photo', text: 'Une photo du nid permet d’identifier l’espèce et l’accès, et de fixer le prix.' },
     { title: 'Repérage et sécurisation', text: 'Zone tenue à distance, tenue de protection intégrale.' },
@@ -240,14 +242,15 @@ export default function GuêpesFrelonsPage() {
           <div className="relative w-full max-w-5xl mx-auto text-center">
 
             {/* Titre */}
-            <h1 className="hero-2 font-black text-white leading-none tracking-tight mb-8" style={{ fontSize: 'clamp(3rem, 9vw, 7rem)' }}>
-              Ne touchez pas{' '}
-              <em className="not-italic" style={{ color: ACCENT }}>à ce nid.</em>
+            <p className="hero-2 font-black uppercase tracking-[.14em] mb-4" style={{ color: ACCENT, fontSize: 'clamp(0.85rem, 2vw, 1.05rem)' }}>Ne touchez pas à ce nid.</p>
+            <h1 className="hero-2 font-black text-white leading-[1.05] tracking-tight mb-8" style={{ fontSize: 'clamp(2.3rem, 6.5vw, 5.2rem)' }}>
+              Destruction de nid de frelons et de guêpes{' '}
+              <em className="not-italic block" style={{ color: ACCENT }}>dès 89 €, 7j/7</em>
             </h1>
 
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
-              Une attaque de frelons peut provoquer un{' '}
-              <strong style={{ color: ACCENT }}>choc anaphylactique</strong>, même sans allergie.
+              Frelon asiatique, frelon européen ou guêpes : une attaque peut provoquer une{' '}
+              <strong style={{ color: ACCENT }}>réaction grave</strong>, même sans allergie.
               Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Résultat garanti.
             </p>
 
@@ -391,7 +394,7 @@ export default function GuêpesFrelonsPage() {
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8">
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Nos garanties</p>
-              <h2 className="text-xl md:text-2xl font-black text-white">Pourquoi faire appel à un professionnel ?</h2>
+              <h2 className="text-xl md:text-2xl font-black text-white">Destruction de nid de frelons : pourquoi faire appel à un professionnel ?</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-3">
               {garanties.map(({ icon: Icon, title, text }) => (
@@ -411,12 +414,19 @@ export default function GuêpesFrelonsPage() {
           </div>
         </section>
 
-        {/* Galerie : vraies photos de chantier (lib/photos-chantiers.ts) */}
-        <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#111' }}>
+        {/* Vidéos de chantier détaillées (13/11/2026) : contexte, ce que nous avons fait, ce que l'on voit */}
+        <VideosDetaillees
+          titre="Destruction de nids de frelons et de guêpes en vidéo : ce que nous avons fait"
+          intro={FRELONS_VIDEOS_INTRO}
+          videos={FRELONS_VIDEOS}
+          photos={MEDIAS_FRELONS.photos}
+        />
+
+        {/* Guides, villes et récits de chantier */}
+        <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
-            <MediasChantier photos={MEDIAS_FRELONS.photos} videos={MEDIAS_FRELONS.videos} titre="Nos chantiers guêpes et frelons en images" />
             {/* Guide complet du blog sur le frelon asiatique */}
-            <a href="/blog/frelon-asiatique-tout-savoir" className="block mt-10 rounded-2xl p-6 md:p-8 text-center transition-all hover:brightness-110"
+            <a href="/blog/frelon-asiatique-tout-savoir" className="block rounded-2xl p-6 md:p-8 text-center transition-all hover:brightness-110"
               style={{ background: 'rgba(232,68,26,0.08)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#E8441A' }}>Le guide complet</p>
               <p className="text-white text-xl md:text-2xl font-black leading-tight mb-3">Frelon asiatique : tout savoir sur ce redoutable prédateur</p>
@@ -490,9 +500,9 @@ export default function GuêpesFrelonsPage() {
                     N&apos;intervenez jamais seul, c&apos;est dangereux
                   </p>
                   <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.65 }}>
-                    Un nid d&apos;été peut renfermer jusqu&apos;à{' '}
-                    <strong style={{ color: 'rgba(255,255,255,0.85)' }}>10 000 individus</strong>.
-                    Une attaque collective peut déclencher un choc anaphylactique, même chez une personne
+                    Un nid d&apos;été peut renfermer{' '}
+                    <strong style={{ color: 'rgba(255,255,255,0.85)' }}>des milliers d&apos;individus</strong>.
+                    Une attaque collective peut provoquer une réaction toxique grave, même chez une personne
                     non allergique. Le frelon asiatique est particulièrement agressif à proximité de son nid.
                   </p>
                 </div>
@@ -574,7 +584,7 @@ export default function GuêpesFrelonsPage() {
 
             {/* Timeline */}
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Déroulé</p>
-            <h2 className="text-xl md:text-2xl font-black text-white mb-7">Comment se déroule l&apos;intervention ?</h2>
+            <h2 className="text-xl md:text-2xl font-black text-white mb-7">Destruction d&apos;un nid de frelons ou de guêpes : le déroulé</h2>
             <div className="space-y-0 mb-14">
               {timeline.map(({ num, title, text }, i) => (
                 <div key={num} className="flex gap-5 pb-8 relative">
@@ -600,11 +610,11 @@ export default function GuêpesFrelonsPage() {
 
             {/* Quand intervenir */}
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Calendrier</p>
-            <h2 className="text-xl md:text-2xl font-black text-white mb-6">Quand intervenir ?</h2>
+            <h2 className="text-xl md:text-2xl font-black text-white mb-6">Nid de frelons ou de guêpes : quand le faire détruire ?</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(34,197,94,0.65),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Printemps (mars–juin) : idéal</p>
+                <p className="font-bold text-white text-sm mb-2">Printemps, de mars à juin : idéal</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Le nid est encore petit (taille d&apos;une balle de golf). L&apos;intervention est plus rapide, moins coûteuse.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>C&apos;est le meilleur moment pour agir.</strong>
@@ -612,7 +622,7 @@ export default function GuêpesFrelonsPage() {
               </div>
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(251,146,60,0.07)', border: '1px solid rgba(251,146,60,0.2)' }}>
                 <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(90deg,transparent,rgba(251,146,60,0.8),transparent)' }} />
-                <p className="font-bold text-white text-sm mb-2">Été (juillet–septembre) : urgent</p>
+                <p className="font-bold text-white text-sm mb-2">Été, de juillet à septembre : urgent</p>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
                   Le nid peut atteindre la taille d&apos;un ballon de foot et contenir des milliers d&apos;individus.{' '}
                   <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Appelez immédiatement, chaque heure compte.</strong>
@@ -622,7 +632,7 @@ export default function GuêpesFrelonsPage() {
 
             {/* Emplacements */}
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
-            <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les nids ?</h2>
+            <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les nids de frelons et de guêpes ?</h2>
             <p className="mb-6" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65 }}>
               Guêpes et frelons s&apos;installent dans des endroits souvent difficiles d&apos;accès : sous la toiture,
               dans une cheminée ou un volet roulant, sur un mur ou une façade, dans un arbre ou une haie,
@@ -678,6 +688,7 @@ export default function GuêpesFrelonsPage() {
 
         <MethodesDetaillees bloc={METHODES_FRELONS} />
         <GuideDetaille guide={GUIDE_FRELONS} />
+        <ArticleService blocs={FRELONS_ARTICLE} />
 
         {/* ══════════════════ FORMULAIRE DE RAPPEL ══════════════════ */}
 
@@ -702,7 +713,7 @@ export default function GuêpesFrelonsPage() {
         <section className="reveal py-12 lg:py-16" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto px-4">
             <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>
-            <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
+            <h2 className="text-2xl font-black text-white mb-8">Nid de frelons et de guêpes : vos questions</h2>
             <div className="space-y-3">
               {FAQ_TOUT.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
             </div>

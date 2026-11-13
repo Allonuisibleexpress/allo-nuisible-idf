@@ -227,9 +227,9 @@ export const MEDIAS_DERATISATION = {
 export const MEDIAS_FRELONS = {
   photos: ['frelonsNacelle1', 'frelonsPerche', 'frelonsPorte', 'frelonsArbre', 'nidGuepes', 'toit'] as PhotoKey[],
   videos: [
-    { src: '/chantiers/frelons-nacelle-champigny-sur-marne.mp4', legende: 'Nid de frelons asiatiques à 12 m : intervention au camion nacelle (Champigny-sur-Marne, 94)', banniere: true, apercu: 2 },
-    { src: '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4', legende: 'Nid de frelons dans une cheminée, sur la toiture (Nogent-sur-Marne, 94)', banniere: true },
-    { src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true },
+    { src: '/chantiers/frelons-nacelle-champigny-sur-marne.mp4', legende: 'Nid de frelons asiatiques à 12 m : intervention au camion nacelle (Champigny-sur-Marne, 94)', banniere: true, apercu: 2, poster: '/chantiers/posters/frelons-nacelle-champigny-sur-marne.jpg' },
+    { src: '/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4', legende: 'Nid de frelons dans une cheminée, sur la toiture (Nogent-sur-Marne, 94)', banniere: true, poster: '/chantiers/posters/frelons-cheminee-nogent-sur-marne-video.jpg' },
+    { src: '/chantiers/guepes-gretz-armainvilliers-nid-video.mp4', legende: 'Nid de guêpes dans un abri de jardin (Gretz-Armainvilliers, 77)', banniere: true, poster: '/chantiers/posters/guepes-gretz-armainvilliers-nid-video.jpg' },
   ],
 }
 export const MEDIAS_PIGEONS = { photos: ['balconEncombre', 'balcon'] as PhotoKey[] }

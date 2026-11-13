@@ -74,14 +74,38 @@ export function fichePuces(v: V, voisines: Voisine[], derat: boolean, souris = f
 export function ficheFrelons(v: V, voisines: Voisine[]): string[] {
   const d = DONNEES_LOCALES[v.slug]
   const h = habitat(v)
-  const verts = d?.verts?.slice(0, 2) ?? []
   const eau = d?.eaux?.[0]
+  const eaux = d?.eaux?.slice(0, 2) ?? []
+  const grandsVerts = d?.verts?.slice(0, 4) ?? []
+  const quartiers = d?.quartiers?.slice(0, 4) ?? []
+  const p = d?.poi
+  const jardins = d?.jardins ?? 0
   const dep = DEP[v.code]
+  const extra: string[] = []
+  if (grandsVerts.length || eaux.length) {
+    extra.push(
+      `### Grands arbres, parcs et berges ${v.a} : les nids de frelons asiatiques`,
+      `${grandsVerts.length ? `Espaces verts recensés ${v.a} (OpenStreetMap) : ${liste(grandsVerts)}.` : ''}${eau ? ` Près de ${eau.replace(/^(La |Le |L’|L')/, (m) => m.toLowerCase())}${eaux.length > 1 ? ` et de ${eaux[1].replace(/^(La |Le |L’|L')/, (m) => m.toLowerCase())}` : ''}, les frelons trouvent de l’eau en abondance pour construire leur nid.` : ''} Au printemps, la reine du **frelon asiatique** fonde un petit **nid primaire** à l’abri ; en été, la colonie construit un **nid secondaire** en hauteur, souvent à la cime des grands arbres, qui n’apparaît qu’à la chute des feuilles. Voir notre chantier : [énorme nid de frelons asiatiques dans un arbre](/blog/enorme-nid-frelons-asiatiques-arbre).`,
+    )
+  }
+  if (p && p.resto > 0) {
+    extra.push(
+      `### Guêpes et terrasses ${v.a}`,
+      `OpenStreetMap recense ${nf(p.resto)} restaurants et cafés à ${v.nom}. En fin d’été, les **guêpes** cherchent le sucre : boissons, fruits et desserts des terrasses les attirent. Un nid dans une jardinière, un store ou un coffre de volet roulant près d’une terrasse se traite vite : voir [les guêpes, tout savoir](/blog/guepes-tout-savoir).`,
+    )
+  }
+  if (jardins > 0) {
+    extra.push(
+      `### Jardins partagés et haies ${v.a}`,
+      `OpenStreetMap recense ${jardins > 1 ? `${jardins} jardins partagés` : 'un jardin partagé'} à ${v.nom}. Haies, abris à outils et composteurs y abritent parfois des nids de guêpes : regardez avant de tailler. Voir [nids dans les buissons et les haies](/blog/nids-frelons-buissons-haies-intervention).`,
+    )
+  }
   return [
     `### Frelon européen ou frelon asiatique ${v.a} : comment savoir ?`,
     `Le **frelon européen** est brun-roux et jaune, gros (20 à 25 mm pour une ouvrière), et vole aussi **la nuit**, attiré par les fenêtres éclairées. Le **frelon asiatique** est plus petit, très sombre, avec un seul anneau orangé et des **pattes jaunes** au bout ; il construit souvent son nid **très haut dans les arbres**. Une photo sur WhatsApp nous suffit pour vous répondre. Tout savoir : [frelon européen](/blog/frelon-europeen-tout-savoir), [frelon asiatique](/blog/frelon-asiatique-tout-savoir), [guêpes](/blog/guepes-tout-savoir).`,
     `### Où trouve-t-on les nids de frelons ${v.a} ?`,
-    `${h.phrase} ${h.dense ? 'Ici, les nids se cachent surtout dans les coffres de volets roulants, les combles, les cheminées, les balcons peu utilisés et les arbres des cours et des squares.' : 'Ici, les nids se trouvent surtout dans les haies, les arbres des jardins, les abris, les combles et sous les avant-toits.'}${verts.length ? ` Les grands arbres d’espaces verts comme ${liste(verts)} accueillent aussi des nids de frelons asiatiques, parfois repérés seulement à l’automne, quand les feuilles tombent.` : ''}${eau ? ` Près de ${eau.replace(/^(La |Le |L’|L')/, (m) => m.toLowerCase())}, les frelons trouvent de l’eau en abondance pour construire leur nid.` : ''}`,
+    `${h.phrase} ${h.dense ? 'Ici, les nids se cachent surtout dans les coffres de volets roulants, les combles, les cheminées, les balcons peu utilisés et les arbres des cours et des squares.' : 'Ici, les nids se trouvent surtout dans les haies, les arbres des jardins, les abris, les combles et sous les avant-toits.'}${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''}`,
+    ...extra,
     `### Un nid de frelons ${v.a} : que faire en attendant notre passage ?`,
     `Restez à distance, ne bouchez pas l’entrée et n’arrosez pas le nid ${v.a} : les frelons défendent vivement ses abords. Éloignez enfants et animaux. En cas de piqûres multiples ou de gonflement du visage, appelez le **15** ou le **112**.`,
     `### Destruction de nid de frelons ${v.a} : prix, délai et méthode`,
