@@ -46,7 +46,7 @@ export const FRELONS_ARTICLE: Bloc[] = [
     '- **149 € TTC** : nid traité à la perche télescopique.',
     '- **199 € TTC** : nid en toiture, dans les combles ou dans une cheminée.',
     '- **Sur devis** : intervention avec notre camion nacelle.',
-    'Le prix est confirmé **avant le déplacement**, sur description ou photo du nid. Voir aussi [tous nos tarifs](/tarifs).',
+    'Le prix est confirmé **avant le déplacement**, sur description ou photo du nid. Chaque destruction de nid est **garantie 3 mois** : si un nouveau nid se forme chez vous dans les 3 mois, nous revenons sans frais. Voir aussi [tous nos tarifs](/tarifs).',
   ] },
   { h: 'Piqûre de frelon ou de guêpe : les bons réflexes', p: [
     'Ameli rappelle que les guêpes et les frelons ont un comportement plus offensif que les abeilles, et que seules les femelles piquent. Pour une piqûre sans signe de gravité, Ameli conseille de :',
@@ -180,6 +180,7 @@ export const FRELONS_VIDEOS: VideoDetaillee[] = [
 
 export const FRELONS_FAQ_PLUS: { q: string; a: string }[] = [
   { q: 'Combien coûte la destruction d’un nid de frelons ?', a: 'Dès 89 € TTC pour un nid accessible, 149 € à la perche télescopique, 199 € en toiture, dans les combles ou dans une cheminée, et sur devis avec notre camion nacelle. Le prix est confirmé avant le déplacement.' },
+  { q: 'La destruction d’un nid de frelons est-elle garantie ?', a: 'Oui, 3 mois : si un nouveau nid se forme chez vous dans les 3 mois suivant notre passage, notre technicien revient sans frais. Et si une activité persiste au-delà de 48 heures après le traitement, nous revenons aussi.' },
   { q: 'Les pièges à frelons sont-ils efficaces ?', a: 'Ameli déconseille les pièges bouteille : ils tuent de nombreux autres insectes et n’ont quasiment aucun impact sur le nid visé. Seule la destruction du nid règle le problème.' },
   { q: 'Faut-il détruire un nid de frelons européens ?', a: 'Seulement s’il gêne : près d’une porte, d’une fenêtre, d’un passage ou d’un lieu fréquenté par des enfants. Le frelon européen est considéré comme une espèce utile ; loin de tout passage, on peut laisser son nid.' },
   { q: 'Un nid de frelons asiatiques à 12 mètres, c’est possible à détruire ?', a: 'Oui. Quand le nid est hors de portée d’une échelle, nous venons avec notre camion nacelle, comme à Champigny-sur-Marne pour un nid au sommet d’un cèdre. Intervention sur devis.' },

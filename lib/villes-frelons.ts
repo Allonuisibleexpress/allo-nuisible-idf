@@ -26,6 +26,7 @@ export const SOURCES_FRELONS = [
 
 export const CONFIG_FRELONS: VilleServiceConfig = {
   basePath: '/destruction-nid-frelon',
+  garantie: '3 mois', // demandé par l'utilisateur le 13/11/2026
   titre: 'Destruction de nid de frelons et guêpes',
   centre: true,
   serviceType: 'Destruction de nid de guêpes et de frelons',

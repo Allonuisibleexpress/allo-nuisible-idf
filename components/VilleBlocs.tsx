@@ -35,8 +35,9 @@ export function titreGoogle(motCle: string, nom: string, slug: string, suffixes:
   return (suffixes.map((s) => base + s).find((t) => t.length <= 60)) ?? base
 }
 
-export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj, dep }: {
+export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, maj, dep, garantie = '1 an' }: {
   slug: string; nom: string; a: string; titre: string; accroche: string; prix: string; prixNote: string
+  garantie?: string // 13/11/2026 : 3 mois pour les nids de guêpes et de frelons, 1 an ailleurs
   fil: { href: string; label: string }
   maj?: string // date de mise à jour affichée sous le titre (signature de l'équipe technique)
   dep?: { href: string; label: string } // niveau département du fil d'Ariane
@@ -96,7 +97,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
           {[
             { i: Clock, t: '7j/7, souvent le jour même' },
             { i: BadgeCheck, t: 'Techniciens Certibiocide' },
-            { i: ShieldCheck, t: 'Garantie 1 an' },
+            { i: ShieldCheck, t: `Garantie ${garantie}` },
             { i: MapPin, t: `Basés à ${REPERES[slug]?.km ? `${km(REPERES[slug].km)} km` : 'Saint-Maurice'}` },
           ].map(({ i: I, t }) => (
             <li key={t} className="flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs md:text-sm font-bold text-white/85" style={card}>

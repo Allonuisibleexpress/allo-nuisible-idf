@@ -104,7 +104,7 @@ export default function Home() {
                 Si les nuisibles reviennent, on revient sans frais.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
-                Toute intervention est garantie 1 an. En cas de réapparition, notre technicien revient sans aucun supplément.
+                Toute intervention est garantie 1 an (3 mois pour la destruction d’un nid de guêpes ou de frelons). En cas de réapparition, notre technicien revient sans aucun supplément.
               </p>
               <a href="tel:+33768077219"
                 className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full text-sm"

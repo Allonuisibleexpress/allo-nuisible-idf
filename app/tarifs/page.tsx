@@ -120,7 +120,7 @@ const guarantees = [
   'Devis gratuit confirmé avant intervention',
   'Tarif annoncé = tarif final, sans surprise',
   'RC Pro incluse sur toutes les interventions',
-  'Garantie 1 an',
+  'Garantie 1 an (3 mois pour les nids de guêpes et de frelons)',
   'Re-intervention gratuite si réapparition',
   'Intervention 7j/7 soirs et week-ends',
 ]

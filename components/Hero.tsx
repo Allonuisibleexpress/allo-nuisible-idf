@@ -39,7 +39,7 @@ export default function Hero() {
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
           <strong className="text-white font-bold">Dératisation</strong>, <strong className="text-white font-bold">punaises de lit</strong>, <strong className="text-white font-bold">cafards</strong>, <strong className="text-white font-bold">nids de frelons</strong> et pigeons : nos techniciens certifiés, basés à Saint-Maurice (94), interviennent{' '}
-          <strong className="text-white font-bold">7j/7</strong>, souvent le jour même. Devis gratuit, garantie 1 an.
+          <strong className="text-white font-bold">7j/7</strong>, souvent le jour même. Devis gratuit, garantie jusqu’à 1 an.
         </p>
 
         {/* ── Bouton "lava" — numéro ── */}
@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="w-px self-stretch bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2 px-5 py-3.5">
             <ShieldCheck className="w-4 h-4" style={{ color: ACCENT }} />
-            <span className="text-white/80 text-sm font-medium">Garantie 1 an</span>
+            <span className="text-white/80 text-sm font-medium">Garantie jusqu’à 1 an</span>
           </div>
         </div>
 

@@ -61,6 +61,7 @@ export type Ville = {
 
 export type VilleServiceConfig = {
   basePath: string // '/cafards'
+  garantie?: string // durée de garantie affichée ('3 mois' pour les frelons) ; 1 an par défaut
   titre: string // « Cafards » (début du H1)
   serviceType: string
   pilier: { href: string; label: string; lien: string } // fil d'Ariane et lien vers la page service
@@ -198,7 +199,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
       <main className={c.centre ? 'recit-centre' : undefined}>
         <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre={profil.heroTitre}
           fil={{ href: c.pilier.href, label: c.pilier.label }} dep={filDep}
-          prix={profil.prix} prixNote={profil.prixNote}
+          prix={profil.prix} prixNote={profil.prixNote} garantie={c.garantie}
           accroche={`${phraseDistance(v.slug, v.nom)} ${profil.accroches[rang % profil.accroches.length]}`} />
         {CHANTIERS_VILLE[sl]?.[v.slug] ? (
           <MiniaturesChantier a={v.a} ancre="#chantier-en-images" photos={CHANTIERS_VILLE[sl][v.slug].photos} />
@@ -270,7 +271,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         <EtapesVille slug={v.slug} a={v.a} titre={profil.etapesTitre(v.a)} etapes={profil.etapes} />
 
         <TarifsVille titre={profil.tarifsTitre(v.a)} intro={profil.tarifsIntro} lignes={profil.tarifs}
-          note="Prix TTC. Garantie 1 an sur nos traitements, devis gratuit." />
+          note={`Prix TTC. Garantie ${c.garantie ?? '1 an'} sur nos traitements, devis gratuit.`} />
 
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}
         <AvisDefilants depart={rang + 3} />

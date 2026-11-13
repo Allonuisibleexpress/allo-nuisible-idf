@@ -211,7 +211,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               </a>
             </div>
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-3xl mx-auto">
-              {[{ i: Clock, t: '7j/7, souvent le jour même' }, { i: BadgeCheck, t: 'Techniciens Certibiocide' }, { i: ShieldCheck, t: 'Garantie 1 an' }, { i: MapPin, t: `Tout le ${dep.code}` }].map(({ i: I, t }) => (
+              {[{ i: Clock, t: '7j/7, souvent le jour même' }, { i: BadgeCheck, t: 'Techniciens Certibiocide' }, { i: ShieldCheck, t: `Garantie ${s === 'frelons' ? '3 mois' : '1 an'}` }, { i: MapPin, t: `Tout le ${dep.code}` }].map(({ i: I, t }) => (
                 <li key={t} className="flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs md:text-sm font-bold text-white/85" style={card}>
                   <I className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{t}
                 </li>
@@ -322,7 +322,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         <EtapesVille slug={d + s} a={dep.dans} titre={`${s === 'frelons' ? 'Destruction de nid' : c.label} ${dep.dans} : comment nous intervenons`} etapes={c.etapes} />
         {s === 'deratisation' && <DeratEco a={dep.dans} />}
 
-        <TarifsVille titre={`Prix ${s === 'frelons' ? 'd’une destruction de nid de frelons' : `${c.label.toLowerCase()}`} ${dep.code} : tarifs ${dep.dans}`} intro="Le devis est gratuit et le prix est fixé avant l’intervention, le même dans tout le département." lignes={c.tarifs} note="Prix TTC. Garantie 1 an sur nos traitements." />
+        <TarifsVille titre={`Prix ${s === 'frelons' ? 'd’une destruction de nid de frelons' : `${c.label.toLowerCase()}`} ${dep.code} : tarifs ${dep.dans}`} intro="Le devis est gratuit et le prix est fixé avant l’intervention, le même dans tout le département." lignes={c.tarifs} note={`Prix TTC. Garantie ${s === 'frelons' ? '3 mois' : '1 an'} sur nos traitements.`} />
 
         <AvisDefilants depart={(d.length + s.length) * 3} />
 
@@ -335,7 +335,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 ['Une entreprise locale', `Basés à Saint-Maurice (94), nous connaissons ${d === 'val-de-marne' ? 'chaque commune du département' : `${dep.nom} et ses quartiers`}.`],
                 ['Techniciens certifiés', 'Tous titulaires du Certibiocide, la certification obligatoire pour les produits professionnels.'],
                 ['Prix clair', `Devis gratuit et prix fixé avant l’intervention, dès ${c.prix} TTC.`],
-                ['Garantie 1 an', 'Si les nuisibles reviennent, notre technicien revient.'],
+                s === 'frelons' ? ['Garantie 3 mois', 'Si un nouveau nid se forme dans les 3 mois, notre technicien revient.'] : ['Garantie 1 an', 'Si les nuisibles reviennent, notre technicien revient.'],
               ].map(([t, x]) => (
                 <div key={t} className="rounded-2xl p-5" style={card}>
                   <Check className="w-5 h-5 mb-2" style={{ color: ACCENT }} />
