@@ -176,3 +176,36 @@ footer a.text-sm {
   padding-top: 3px;
   padding-bottom: 3px;
 }
+
+/* Onglet « Écologique » du menu (13/11/2026) : contour jaune lumineux qui brille sans arrêt */
+.onglet-eco {
+  position: relative;
+  border: 2px solid #FFD43B;
+  border-radius: 9999px;
+  background: rgba(63,178,127,0.10);
+  box-shadow: 0 0 8px rgba(255,212,59,0.7), inset 0 0 6px rgba(255,212,59,0.25);
+  animation: eco-brille 1.6s ease-in-out infinite;
+  overflow: hidden;
+}
+.onglet-eco::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255,240,180,0.45), transparent);
+  transform: skewX(-20deg);
+  animation: eco-reflet 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.onglet-eco:hover { background: rgba(63,178,127,0.2); }
+@keyframes eco-brille {
+  0%, 100% { box-shadow: 0 0 6px rgba(255,212,59,0.6), 0 0 12px rgba(255,212,59,0.25), inset 0 0 5px rgba(255,212,59,0.2); border-color: #F5C518; }
+  50%      { box-shadow: 0 0 14px rgba(255,220,80,1), 0 0 28px rgba(255,212,59,0.65), inset 0 0 9px rgba(255,220,80,0.4); border-color: #FFE97A; }
+}
+@keyframes eco-reflet {
+  0%, 50% { left: -60%; }
+  100%    { left: 130%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .onglet-eco, .onglet-eco::after { animation: none; }
+}

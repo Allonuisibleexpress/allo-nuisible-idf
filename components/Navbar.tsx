@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown, Phone } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone, Leaf } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
 /* Pages de service disponibles */
@@ -36,9 +36,13 @@ const services = [
   'Puces',
 ]
 
-const navLinks = [
+/* Onglet « Écologique » (13/11/2026, demandé par l'utilisateur) : page centrale des traitements sans biocide */
+const VERT = '#3FB27F'
+
+const navLinks: { label: string; href: string; court?: string; dropdown?: boolean; external?: boolean; eco?: boolean }[] = [
   { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Services', href: '#services', dropdown: true },
+  { label: 'Écologique', href: '/services/traitements-sans-produit-chimique', external: true, eco: true },
   { label: 'Identifier un nuisible', court: 'Identifier', href: '/identifier-nuisible', external: true },
   { label: 'Nos interventions', court: 'Chantiers', href: '/nos-interventions', external: true },
   { label: 'Tarifs', href: '/tarifs', external: true },
@@ -194,6 +198,17 @@ export default function Navbar() {
                   )}
                 </div>
               ) : link.external ? (
+                link.eco ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="onglet-eco inline-flex items-center gap-1.5 font-bold text-sm px-3 py-1.5 mx-1 whitespace-nowrap"
+                  style={{ color: VERT }}
+                >
+                  <Leaf className="w-4 h-4" aria-hidden="true" />
+                  {link.label}
+                </a>
+                ) : (
                 <a
                   key={link.label}
                   href={link.href}
@@ -201,6 +216,7 @@ export default function Navbar() {
                 >
                   {link.court ? (<><span className="min-[1800px]:hidden">{link.court}</span><span className="hidden min-[1800px]:inline">{link.label}</span></>) : link.label}
                 </a>
+                )
               ) : (
                 <button
                   key={link.label}
@@ -332,11 +348,16 @@ export default function Navbar() {
                   </>
                 ) : link.external ? (
                   <a href={link.href} onClick={() => setMenuOpen(false)} style={{
-                    display: 'block', padding: '15px 20px', textDecoration: 'none',
+                    display: 'flex', alignItems: 'center', padding: link.eco ? '12px 20px' : '15px 20px', textDecoration: 'none',
                     borderBottom: '1px solid rgba(255,255,255,0.06)',
-                    color: 'rgba(255,255,255,0.85)', fontSize: '0.9375rem', fontWeight: 600,
+                    color: link.eco ? VERT : 'rgba(255,255,255,0.85)', fontSize: '0.9375rem', fontWeight: link.eco ? 700 : 600,
                   }}>
-                    {link.label}
+                    {link.eco ? (
+                      <span className="onglet-eco" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px' }}>
+                        <Leaf style={{ width: 16, height: 16 }} aria-hidden="true" />
+                        {link.label}
+                      </span>
+                    ) : link.label}
                   </a>
                 ) : (
                   <button onClick={() => scrollTo(link.href)} style={{
