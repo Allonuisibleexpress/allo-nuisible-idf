@@ -6,6 +6,8 @@
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_SOURIS_GC } from '@/lib/local-souris-gc'
 import { LOCAL_SOURIS_94 } from '@/lib/local-souris-94'
+import { ficheSouris } from '@/lib/fiche-nuisible'
+import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 
 export const GUIDES_SOURIS: Record<string, string> = {
   'souris-par-ou-entrent-elles': 'Souris : par où entrent-elles ?',
@@ -17,6 +19,7 @@ export const GUIDES_SOURIS: Record<string, string> = {
 
 export const CONFIG_SOURIS: VilleServiceConfig = {
   basePath: '/souris',
+  fiche: (v, vs) => ficheSouris(v, vs, VILLES_DERATISATION.some((x) => x.slug === v.slug)),
   titre: 'Souris',
   serviceType: 'Traitement contre les souris',
   pilier: { href: '/services/deratisation', label: 'Rats et souris', lien: 'notre traitement des rats et souris en Île-de-France' },

@@ -29,6 +29,7 @@ export const LOCAL_DERATISATION_94: Record<string, string[]> = {
   'nogent-sur-marne': [
     'Nogent-sur-Marne, avec son port et ses berges, voit les rongeurs remonter de la Marne vers les jardins et les caves d’immeubles, surtout quand l’eau monte.',
     'Après des crues ou de fortes pluies, les rats quittent leurs terriers inondés : c’est souvent le moment où ils apparaissent dans les caves.',
+    'Sur les hauteurs, du côté des **Hauts de Nogent** et du **parc Watteau**, les maisons avec jardin voient plutôt des rats creuser sous les abris et les terrasses ; en centre-ville, autour de la **place Leclerc**, ce sont les caves et les locaux poubelles des immeubles que nous traitons.',
   ],
   'bry-sur-marne': [
     'Bry-sur-Marne, sur la rive de la Marne, est une commune de **maisons avec jardin**. Les rats y vivent souvent dehors, mais finissent par entrer par un garage ou un sous-sol.',

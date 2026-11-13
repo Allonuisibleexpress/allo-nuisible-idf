@@ -76,6 +76,7 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
   'vigneux-sur-seine': [
     'Entre les **lacs de Vigneux**, la **Seine** et la **forêt de Sénart**, la ville est entourée d’eau et de bois. Les rats bruns des berges et les rongeurs forestiers se rapprochent des habitations dès le froid.',
     'Dans le quartier de la **Croix-Blanche**, les résidences ont des caves et des locaux poubelles à traiter en coordination avec les bailleurs, avant d’intervenir dans les logements.',
+    'La base de loisirs du **Port-aux-Cerises** et le parc des **Rives de l’Oly** accueillent beaucoup de promeneurs aux beaux jours : poubelles pleines et restes de pique-nique y nourrissent les rats, qui gagnent ensuite les jardins voisins. Autour de la gare du **RER D**, les commerces ont intérêt à fermer leurs bacs à ordures.',
   ],
   'ris-orangis': [
     'Ris-Orangis s’étire le long de la **Seine**, avec ses berges, ses parcs et ses quartiers pavillonnaires. Le quartier du **Plateau** et ses résidences concentrent la plupart des appels pour des rats dans les caves.',
@@ -113,6 +114,7 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
   'bussy-saint-georges': [
     'Bussy-Saint-Georges a beaucoup grandi ces dernières années, avec de nombreux **quartiers neufs** et des chantiers encore en cours. Les travaux poussent les rongeurs des champs vers les bâtiments récents.',
     'Les résidences avec **parkings souterrains** et les commerces du centre-ville sont les lieux où nous intervenons le plus. Même un immeuble neuf peut être touché par les passages de réseaux.',
+    'Autour du **parc du Génitoy** et le long du **ru de la Brosse** et de la **Gondoire**, berges et bassins offrent eau et abri aux surmulots : les maisons qui bordent ces espaces verts découvrent parfois des terriers au fond du jardin. Près de la gare du **RER A**, ce sont les commerces et leurs locaux poubelles qu’il faut surveiller.',
   ],
   'champs-sur-marne': [
     'Champs-sur-Marne accueille la **cité Descartes**, pôle universitaire et scientifique, et son célèbre **château** entouré d’un grand parc. Les résidences étudiantes et les cuisines partagées demandent une hygiène rigoureuse pour éviter les rongeurs.',
@@ -131,9 +133,11 @@ export const LOCAL_DERATISATION_GC: Record<string, string[]> = {
     'Le parc de l’abbaye du Lys et les grands espaces verts de la ville abritent des rongeurs qui se rapprochent des maisons voisines à l’automne.',
     'Les entreprises de la zone d’activités du Bréau et les commerces du centre peuvent bénéficier d’un suivi régulier, avec postes numérotés et rapport à chaque passage.',
     'Dans les maisons des bords de Seine, vers Boissise-le-Roi, les garages et les abris de jardin servent souvent de stockage de bois ou de grain : des lieux que les rongeurs adorent, à ranger en hauteur et dans des contenants fermés.',
+    'Près de la gare de **Vosves**, sur la ligne R du Transilien, et dans les parcs de **Farcy**, de **Bel Ombre** et du **château Soubiran**, corbeilles et massifs sont des points de passage pour les rongeurs : les jardins qui les bordent sont à surveiller dès l’automne.',
   ],
   'combs-la-ville': [
     'Combs-la-Ville est traversée par la vallée de l’**Yerres**, avec ses berges boisées et ses moulins. Les maisons proches de la rivière sont exposées aux rats bruns, surtout lors des crues.',
     'Les quartiers pavillonnaires, comme celui du **Bois l’Évêque**, voient surtout des souris entrer par les garages et les sous-sols. Une inspection des bas de portes et des aérations évite bien des soucis.',
+    'Les parcs de l’**Abreuvoir**, **Arthur-Chaussy** et **Jacques-Chirac** sont des lieux de promenade où corbeilles et restes de pique-nique attirent les rongeurs. Près de la gare de **Combs-la-Ville–Quincy** (RER D), les commerces de bouche gagnent à fermer leurs bacs et à contrôler leurs réserves, surtout l’hiver.',
   ],
 }

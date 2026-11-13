@@ -122,6 +122,6 @@ export const LOCAL_ACARIENS_GC: Record<string, string[]> = {
   ],
   'montigny-le-bretonneux': [
     'Montigny-le-Bretonneux est organisée autour de **bassins** et de **plans d’eau**, avec des logements souvent récents et bien isolés. La ventilation y est essentielle.',
-    'Les **maisons de ville**, nombreuses, ont des chambres à l’étage bien chauffées. Garder la chambre autour de 19 °C et l’aérer chaque jour limite les acariens.',
+    'Les **maisons de ville**, nombreuses, ont des chambres à l’étage bien chauffées. Garder la chambre sous 20 °C et l’aérer chaque jour, comme le conseille Ameli, limite les acariens.',
   ],
 }

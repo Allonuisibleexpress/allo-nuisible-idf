@@ -302,7 +302,7 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
     "À Corbeil-Essonnes, les maisons anciennes près de la Seine et de l'Essonne sont parfois humides, avec des murs en pierre qui gardent la fraîcheur. Les acariens profitent de cette humidité dans la literie et les tapis.",
     "Nous traitons les matelas, oreillers, canapés et tapis à la vapeur sèche, et nous vous indiquons comment réduire l'humidité de la pièce.",
   ], ["Évry-Courcouronnes", "Saint-Germain-lès-Corbeil", "Villabé", "Le Coudray-Montceaux"],
-  { q: "Ma maison est humide près de la rivière : que faire contre les acariens ?", a: "Aérez chaque jour, chauffez sans surchauffer (autour de 19 °C dans les chambres) et visez une humidité entre 40 et 60 %. Un déshumidificateur aide dans les pièces les plus humides. Le traitement de la literie fait le reste." }, D91),
+  { q: "Ma maison est humide près de la rivière : que faire contre les acariens ?", a: "Aérez chaque jour, chauffez sans surchauffer (moins de 20 °C, selon Ameli) et visez une humidité entre 40 et 60 %. Un déshumidificateur aide dans les pièces les plus humides. Le traitement de la literie fait le reste." }, D91),
   ville("Massy", "à Massy", 'massy', [
     "À Massy, les appartements récents du quartier Atlantis sont très isolés et étanches. Sans aération régulière, l'humidité de la cuisine, des douches et du linge reste à l'intérieur et nourrit les acariens.",
     "Dans les pavillons, ce sont plutôt les chambres d'enfants avec moquette et peluches qui concentrent les acariens. Nous traitons literie, textiles et moquettes.",
@@ -347,7 +347,7 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
     "À Meaux, les maisons anciennes du centre et des bords de Marne sont parfois humides, avec des murs épais qui gardent la fraîcheur. Les acariens s'y développent dans la literie et les tapis.",
     "Dans les appartements des grands quartiers, bien chauffés, ce sont surtout les matelas et les canapés qui sont concernés. Nous traitons ces textiles et donnons des conseils d'aération.",
   ], ["Trilport", "Nanteuil-lès-Meaux", "Chauconin-Neufmontiers", "Mareuil-lès-Meaux"],
-  { q: "Quelle température dans la chambre contre les acariens ?", a: "Autour de 19 °C. Une chambre trop chauffée et peu aérée favorise les acariens. Aérez quelques minutes chaque jour, même en hiver." }, D77),
+  { q: "Quelle température dans la chambre contre les acariens ?", a: "En dessous de 20 °C : Ameli conseille de ne pas surchauffer les pièces de vie et situe la température idéale entre 18 °C et 22 °C selon les pièces. Une chambre trop chauffée et peu aérée favorise les acariens. Aérez au moins 10 minutes par jour, même en hiver." }, D77),
   ville("Chelles", "à Chelles", 'chelles', [
     "À Chelles, les pavillons des bords de Marne et les maisons anciennes peuvent souffrir d'humidité, surtout au rez-de-chaussée. Les acariens y prolifèrent dans les matelas et les canapés.",
     "Nous traitons literie et textiles à la vapeur sèche, et vous indiquons comment repérer et réduire l'humidité de la maison.",

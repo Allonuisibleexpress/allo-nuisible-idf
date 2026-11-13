@@ -202,12 +202,97 @@ export function ficheAcariens(v: V, voisines: Voisine[]): string[] {
     const sru = d.sru ? `, dont ${d.sru.taux} de logements sociaux selon l’inventaire SRU` : ''
     out.push(
       `### Acariens et humidité dans les logements ${v.a}`,
-      `${v.nom} compte ${nf(d.population)} habitants sur ${String(d.surfaceKm2).replace('.', ',')} km² (Insee)${sru}.${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''} Les acariens prolifèrent quand l’air reste **chaud et humide** : chambre peu aérée, linge qui sèche à l’intérieur, ventilation bouchée. Aérer chaque jour et viser une chambre autour de 19 °C limite leur développement. Voir [acariens et humidité dans la maison](/blog/acariens-humidite-maison).`,
+      `${v.nom} compte ${nf(d.population)} habitants sur ${String(d.surfaceKm2).replace('.', ',')} km² (Insee)${sru}.${quartiers.length ? ` Quartiers où nous intervenons : ${liste(quartiers)}.` : ''} Les acariens prolifèrent quand l’air reste **chaud et humide** : chambre peu aérée, linge qui sèche à l’intérieur, ventilation bouchée. Ameli conseille d’**aérer au moins 10 minutes par jour**, de ne pas surchauffer (**moins de 20 °C** dans les pièces de vie) et de garder une **humidité entre 40 % et 60 %**. Voir [acariens et humidité dans la maison](/blog/acariens-humidite-maison).`,
     )
   }
   out.push(
     `### Acariens près de ${v.nom}`,
     `Nous traitons aussi les acariens à ${liensVoisines('/acariens', voisines)}${dep ? `. Tous nos services ${dep[1]} : [la page du département](/zones/${dep[0]})` : ''}.`,
+  )
+  return out
+}
+
+// Fiche dératisation (13/11/2026) : cours d'eau (OpenStreetMap), logement (Insee, SRU, quartiers), jardins partagés et
+// espaces verts (OpenStreetMap), commerces et restaurants (OpenStreetMap). Les villes voisines et la mairie ont déjà leur bloc
+// sur la page : elles ne sont pas répétées ici. Les mentions « souris » sont reliées à la page souris de la ville (texteRiche).
+const km2 = (d: { surfaceKm2: number }) => String(d.surfaceKm2).replace('.', ',')
+const marchesDe = (m: string[]) => liste(m.slice(0, 2).map((x) => (/^march/i.test(x) ? `le ${x}` : `le marché ${x}`)))
+
+export function ficheDeratisation(v: V): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  if (!d) return []
+  const out: string[] = []
+  const immeuble = d.densite > 9000 || !!d.sru
+  const eaux = d.eaux?.slice(0, 3) ?? []
+  const verts = d.verts?.slice(0, 3) ?? []
+  const quartiers = d.quartiers?.slice(0, 4) ?? []
+  if (eaux.length) {
+    out.push(
+      `### Rats ${v.a} : berges, égouts et canalisations`,
+      `Cours d’eau ${v.a} (OpenStreetMap) : ${liste(eaux)}. Le **surmulot**, ou rat d’égout, nage très bien : il vit dans les réseaux et le long des berges, puis remonte par les canalisations, les regards et les caves.`,
+    )
+  }
+  out.push(
+    `### Rats et souris ${immeuble ? 'en immeuble' : 'en maison et en immeuble'} ${v.a}`,
+    `${v.nom} : ${nf(d.population)} habitants sur ${km2(d)} km² (Insee)${d.sru ? `, dont ${d.sru.taux} de logements sociaux (inventaire SRU)` : ''}${quartiers.length ? ` ; quartiers : ${liste(quartiers)}` : ''}. ${immeuble
+      ? 'En immeuble, le rat occupe les **caves**, les **locaux poubelles** et les **vide-ordures**, tandis que la souris monte par les **gaines** jusqu’aux cuisines. Les parties communes sont à faire traiter par le syndic ou le bailleur.'
+      : 'En maison, le rat creuse au pied des murs, sous les abris de jardin et les terrasses ; la souris entre par le garage, le vide sanitaire ou les combles.'}`,
+  )
+  if (d.jardins > 0) {
+    out.push(
+      `### Jardins partagés et composteurs ${v.a}`,
+      `OpenStreetMap recense ${d.jardins > 1 ? `${d.jardins} jardins partagés` : 'un jardin partagé'} à ${v.nom}. Composteurs ouverts, restes de repas et graines attirent les rats : un **composteur fermé**, posé sur un grillage fin, les en éloigne.`,
+    )
+  }
+  if (verts.length) {
+    out.push(
+      `### Parcs et espaces verts ${v.a}`,
+      `Espaces verts recensés ${v.a} : ${liste(verts)}. Le surmulot creuse ses terriers près des points d’eau, des massifs et des corbeilles ; les jardins et les caves qui bordent ces espaces peuvent recevoir sa visite.`,
+    )
+  }
+  const p = d.poi
+  if (p && (p.resto > 0 || p.commercesAlim > 0)) {
+    const bits = [p.resto > 0 ? `${nf(p.resto)} restaurants et cafés` : '', p.commercesAlim > 0 ? `${nf(p.commercesAlim)} commerces alimentaires` : ''].filter(Boolean)
+    out.push(
+      `### Commerces et restaurants ${v.a} : la nourriture des rongeurs`,
+      `${v.nom} compte ${liste(bits)}${p.marches?.length ? `, ainsi que ${marchesDe(p.marches)}` : ''} (recensement OpenStreetMap). Réserves, locaux poubelles et arrière-cours sont les premiers endroits visités par les rats la nuit. Pour un professionnel, nous posons un **plan de lutte** avec registre et attestation : voir [professionnels](/professionnels).`,
+    )
+  }
+  return out
+}
+
+// Fiche souris (13/11/2026) : logement (Insee, SRU, quartiers), commerces (OpenStreetMap), souris ou rat, villes voisines.
+export function ficheSouris(v: V, voisines: Voisine[], derat: boolean): string[] {
+  const d = DONNEES_LOCALES[v.slug]
+  const dep = DEP[v.code]
+  const out: string[] = []
+  if (d) {
+    const immeuble = d.densite > 9000 || !!d.sru
+    const quartiers = d.quartiers?.slice(0, 4) ?? []
+    out.push(
+      `### Souris ${immeuble ? 'en appartement' : 'en maison et en appartement'} ${v.a}`,
+      `${nf(d.population)} habitants sur ${km2(d)} km² à ${v.nom} (Insee)${d.sru ? `, dont ${d.sru.taux} de logements sociaux (inventaire SRU)` : ''}${quartiers.length ? ` ; quartiers : ${liste(quartiers)}` : ''}. ${immeuble
+        ? 'En appartement, la souris circule dans les **gaines**, les **doublages** et les **colonnes** : elle passe d’un logement à l’autre et ressort derrière l’électroménager.'
+        : 'En maison, elle entre par le **garage**, le **vide sanitaire**, les **combles** ou une porte mal ajustée, surtout quand le froid arrive.'}`,
+    )
+    const p = d.poi
+    if (p && (p.resto > 0 || p.commercesAlim > 0)) {
+      const bits = [p.resto > 0 ? `${nf(p.resto)} restaurants et cafés` : '', p.commercesAlim > 0 ? `${nf(p.commercesAlim)} commerces alimentaires` : ''].filter(Boolean)
+      out.push(
+        `### Souris dans les commerces ${v.a}`,
+        `À ${v.nom}, OpenStreetMap recense ${liste(bits)}${p.marches?.length ? `, et ${marchesDe(p.marches)}` : ''}. Dans une réserve ou une cuisine professionnelle, une souris grignote les emballages et laisse des crottes partout : nous posons un **suivi avec registre**.`,
+      )
+    }
+  }
+  if (derat) {
+    out.push(
+      `### Souris ou rat ${v.a} ?`,
+      `Crottes de 3 à 6 mm et petits bruits légers : plutôt une souris. Crottes d’environ 2 cm, bruits lourds, cave ou jardin : plutôt un rat. Pour trancher, voir notre guide [rat ou souris : comment les reconnaître](/blog/rat-ou-souris-comment-reconnaitre).`,
+    )
+  }
+  out.push(
+    `### Souris près de ${v.nom}`,
+    `Nous traitons aussi les souris à ${liensVoisines('/souris', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/souris/${dep[0]})` : ''}.`,
   )
   return out
 }
