@@ -3328,6 +3328,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Si vous êtes voisin, bailleur, syndic ou proche, et qu'un logement très encombré pose un problème de rats, d'odeurs ou de sécurité, vous pouvez **alerter la mairie** de la commune, qui dispose souvent d'un service d'hygiène. Côté traitement, une entreprise de dératisation peut intervenir à la demande de la mairie, du bailleur, du syndic ou de la famille, comme nous l'avons fait ici." },
       { t: 'callout', tone: 'warn', title: 'À ne pas faire', x: "Vider soi-même un logement infesté sans protection. Toucher des rats morts à mains nues. Répandre de la mort-aux-rats achetée en magasin dans un logement encombré, où les appâts se perdent et peuvent être atteints par des animaux domestiques." },
       { t: 'p', x: "**Ce que nous proposons** : dératisation par des techniciens Certibiocide, postes sécurisés, ramassage, désinfection, colmatage et suivi, avec un compte rendu pour la mairie, le bailleur ou le syndic. Intervention possible en urgence partout en Île-de-France. Voir notre page [dératisation](/services/deratisation) et notre page [dératisation à Maisons-Alfort](/deratisation/maisons-alfort)." },
+      { t: 'p', x: "Dans le même secteur, à moins de 2 km de notre base : [tous nos services à Maisons-Alfort](/zones/val-de-marne/maisons-alfort), et la dératisation à [Saint-Maurice](/deratisation/saint-maurice), [Alfortville](/deratisation/alfortville), [Charenton-le-Pont](/deratisation/charenton-le-pont) et [Créteil](/deratisation/creteil)." },
     ],
     terrain: "Dans ce logement, nous avons ramassé une trentaine de rats deux jours après la mise en place du dispositif. Ce type de chantier montre à quel point l'ordre des opérations compte : si le débarras avait commencé avant la dératisation, une bonne partie de ces rats serait partie chez les voisins.",
     photos: CHANTIER_DIOGENE.photos,
@@ -3382,6 +3383,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'info', title: 'Prix', x: "Traitement contre les souris à partir de **120 € TTC**, devis gratuit, garantie 1 an." },
       { t: 'h2', x: "Nous intervenons aussi autour de Saint-Maur" },
       { t: 'p', x: "Depuis notre base de Saint-Maurice, nous traitons les souris dans tout le secteur : [Saint-Maur-des-Fossés](/souris/saint-maur-des-fosses), [Joinville-le-Pont](/souris/joinville-le-pont), [Créteil](/souris/creteil), [Champigny-sur-Marne](/zones/val-de-marne/champigny-sur-marne) et [Saint-Maurice](/souris/saint-maurice). Voir aussi notre guide : [par où entrent les souris ?](/blog/souris-par-ou-entrent-elles)" },
+      { t: 'p', x: "Dans le même secteur : [tous nos services à Saint-Maur-des-Fossés](/zones/val-de-marne/saint-maur-des-fosses), et les souris à [Saint-Maurice](/souris/saint-maurice), [Joinville-le-Pont](/souris/joinville-le-pont), [Créteil](/souris/creteil) et [Nogent-sur-Marne](/souris/nogent-sur-marne)." },
     ],
     faq: [
       { q: "Faut-il annuler les réservations pendant le traitement ?", a: "Rarement. Les dispositifs sont sécurisés et discrets. Nous planifions l'intervention entre deux séjours quand c'est possible." },
@@ -4005,6 +4007,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'callout', tone: 'info', title: 'Un premier diagnostic négatif ?', x: "Si les piqûres continuent, faites inspecter à nouveau. Les punaises se cachent dans des endroits très étroits, et une inspection rapide passe facilement à côté." },
       { t: 'p', x: "Nous intervenons à **Créteil** et dans tout le Val-de-Marne : voir notre page [punaises de lit à Créteil](/punaises-de-lit/creteil), notre service [punaises de lit](/services/punaises-de-lit) et, sans insecticide, notre [traitement par cryogénie](/services/cryogenie-punaises-de-lit)." },
+      { t: 'p', x: "Dans le même secteur, à moins de 4 km de notre base de Saint-Maurice : [tous nos services à Créteil](/zones/val-de-marne/creteil), et les punaises de lit à [Maisons-Alfort](/punaises-de-lit/maisons-alfort), [Saint-Maur-des-Fossés](/punaises-de-lit/saint-maur-des-fosses) et [Saint-Maurice](/punaises-de-lit/saint-maurice)." },
     ],
     faq: [
       { q: "Pourquoi une première société n'a-t-elle rien trouvé ?", a: "Les punaises se cachent dans des fentes très étroites : trous de lattes, vis, jonctions. Sans démonter et inspecter chaque partie du lit, on peut passer à côté." },
@@ -4431,6 +4434,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'callout', tone: 'info', title: "Les traces sur les murs", x: "Les taches noires restent après le traitement. Elles se nettoient avec de l'eau savonneuse ; sur un mur très marqué, un coup de peinture est parfois nécessaire." },
       { t: 'p', x: "Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an, intervention 7j/7. Voir notre page [punaises de lit à Vincennes](/punaises-de-lit/vincennes) et notre service [punaises de lit](/services/punaises-de-lit)." },
+      { t: 'p', x: "Dans le même secteur, à quelques minutes de notre base de Saint-Maurice : [tous nos services à Vincennes](/zones/val-de-marne/vincennes), et les punaises de lit à [Saint-Mandé](/punaises-de-lit/saint-mande), [Fontenay-sous-Bois](/punaises-de-lit/fontenay-sous-bois) et [Paris 12e](/punaises-de-lit/paris-12)." },
     ],
     faq: [
       { q: "Est-ce normal de voir autant de punaises mortes après le traitement ?", a: "Oui. Le traitement fait sortir les punaises de leurs cachettes, elles meurent à découvert. Plus l'infestation était forte, plus on en retrouve au sol." },
@@ -4478,6 +4482,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Combien coûte un traitement à Paris 12e ?" },
       { t: 'p', x: "Le traitement des punaises de lit commence à **290 € TTC** pour un studio ou un T1, **deux passages inclus**. Pour une grosse infestation, le prix dépend du nombre de pièces et du mobilier : il est fixé avant l'intervention, après un diagnostic gratuit." },
+      { t: 'p', x: "Dans le même secteur, de l'autre côté du bois de Vincennes : les punaises de lit à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont), [Saint-Mandé](/punaises-de-lit/saint-mande), [Vincennes](/punaises-de-lit/vincennes) et [Saint-Maurice](/punaises-de-lit/saint-maurice), notre base." },
     ],
     faq: [
       { q: "Pourquoi voit-on des punaises mortes au sol après le traitement ?", a: "Le produit agit au contact : les punaises sortent de leurs cachettes, sont touchées et meurent, souvent au sol ou le long des plinthes. C'est le signe que le traitement fonctionne." },
@@ -4659,6 +4664,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Notre intervention, pièce par pièce" },
       { t: 'p', x: "Face à une infestation de cette ampleur, le traitement porte sur **tout le logement**, pas seulement sur le lit : lit médicalisé, fauteuil, coussins, meubles proches, plinthes et fentes. Les textiles sont lavés à 60 °C ou passés au froid, et un **second passage** 10 à 15 jours plus tard élimine les punaises écloses entre-temps. Traitement des punaises de lit **à partir de 290 € TTC, 2 passages inclus**, garantie 1 an." },
       { t: 'p', x: "Intervention réalisée à **Ivry-sur-Seine (94)**. Voir notre page [punaises de lit à Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine), notre service [punaises de lit](/services/punaises-de-lit), et d'autres chantiers à [Créteil](/blog/punaises-de-lit-creteil-sommier-lattes) et à [L'Haÿ-les-Roses](/blog/cryogenie-punaises-de-lit-sommier)." },
+      { t: 'p', x: "Dans le même secteur : [tous nos services à Ivry-sur-Seine](/zones/val-de-marne/ivry-sur-seine), et les punaises de lit à [Vitry-sur-Seine](/punaises-de-lit/vitry-sur-seine), [Alfortville](/punaises-de-lit/alfortville) et [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont)." },
     ],
     faq: [
       { q: "Les punaises de lit sont-elles dangereuses pour une personne âgée ?", a: "Elles ne transmettent pas de maladie connue, mais des piqûres nombreuses et répétées peuvent provoquer démangeaisons, lésions de grattage, troubles du sommeil et anxiété. Chez une personne fragile, il faut agir vite et en parler à son médecin." },
