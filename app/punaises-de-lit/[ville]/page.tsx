@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_PUNAISES_94 } from '@/lib/local-punaises-94'
+import { LOCAL_POLE_PUNAISES } from '@/lib/local-pole'
 import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
 import { LOCAL_PUNAISES_GC } from '@/lib/local-punaises-gc'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
@@ -204,7 +205,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
-        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...fichePunaises(v, autres)]} />
+        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
         <CryoPunaisesLien a={v.a} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />

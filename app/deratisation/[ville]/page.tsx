@@ -4,6 +4,7 @@ import { VILLES_PUCES } from '@/lib/villes-puces'
 import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
 import { LOCAL_DERATISATION_94 } from '@/lib/local-deratisation-94'
+import { LOCAL_POLE_DERATISATION } from '@/lib/local-pole'
 import { LOCAL_DERATISATION_75_92 } from '@/lib/local-deratisation-75-92'
 import { LOCAL_DERATISATION_GC } from '@/lib/local-deratisation-gc'
 import { LOCAL_DERATISATION_NOUVELLES } from '@/lib/local-deratisation-nouvelles'
@@ -217,7 +218,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...ficheDeratisation(v)]} />
+        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
         <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
