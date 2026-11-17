@@ -22,6 +22,7 @@ import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocalePunaises } from '@/lib/faq-locale'
+import PoleSaintMaurice from '@/components/PoleSaintMaurice'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -317,6 +318,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           </div>
         </section>
 
+        <PoleSaintMaurice slug={v.slug} famille="punaises-de-lit" />
         <MaillageVille basePath="/punaises-de-lit" mot="Punaises de lit" code={v.code} slug={v.slug} a={v.a} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'punaises')} />
 

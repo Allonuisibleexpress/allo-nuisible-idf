@@ -29,6 +29,8 @@ import { codePostal } from '@/lib/codes-postaux'
 import { PROFILS } from '@/lib/profils-ville'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocaleFamille } from '@/lib/faq-locale'
+import PoleSaintMaurice from '@/components/PoleSaintMaurice'
+import type { Famille } from '@/lib/pole-saint-maurice'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
 // Même structure que /punaises-de-lit/[ville] : En bref (GEO), contexte, méthodes, guides, FAQ, E-E-A-T, maillage.
@@ -503,6 +505,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
           </div>
         </section>
 
+        <PoleSaintMaurice slug={v.slug} famille={c.basePath.slice(1) as Famille} />
         <MaillageVille basePath={c.basePath} mot={c.titre} code={v.code} slug={v.slug} a={v.a} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, profil.famille)} />
 

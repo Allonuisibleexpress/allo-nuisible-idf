@@ -21,6 +21,7 @@ import { getVilleAcariens } from '@/lib/villes-acariens'
 import { GUIDE_ZONES_94 } from '@/lib/guide-zones-94'
 import { texteRiche } from '@/lib/liens-contextuels'
 import { voisinesGaranties } from '@/lib/centres-villes'
+import PoleSaintMaurice from '@/components/PoleSaintMaurice'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -286,8 +287,12 @@ export default function CommunePage({ params }: { params: Params }) {
           { q: `Quels nuisibles traitez-vous ${c.a} ?`, a: 'Rats et souris, punaises de lit, cafards, fourmis, guêpes et frelons, pigeons, chenilles processionnaires et acariens, chez les particuliers comme chez les professionnels.' },
           { q: `Quel est le prix d’une intervention ${c.a} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour les rats, souris, cafards ou fourmis, 290 € pour les punaises de lit avec 2 passages. Devis gratuit.' },
           { q: `Ma mairie peut-elle m’aider ${c.a} ?`, a: `${MAIRIES[c.slug]?.mairie ?? 'La mairie'} peut vous orienter pour les nuisibles sur l’espace public ou dans un immeuble entier. Pour un traitement chez vous, nous intervenons sur devis.` },
+          { q: `Proposez-vous des traitements sans produit chimique ${c.a} ?`, a: 'Oui quand c’est possible : cryogénie et vapeur sèche contre les punaises de lit, pièges sans raticide et accès rebouchés contre les rongeurs, retrait des nids de chenilles, pics et filets contre les pigeons. Aucun biocide n’est alors déposé chez vous.' },
+          { q: `Proposez-vous la détection canine des punaises de lit ${c.a} ?`, a: 'Oui, sur devis : un chien dressé repère les punaises à l’odeur, utile quand l’infestation débute, avant un traitement ou pour le vérifier après.' },
+          { q: `Vos interventions ${c.a} sont-elles garanties ?`, a: 'Oui : garantie 1 an sur nos traitements, et 3 mois pour la destruction des nids de guêpes et de frelons. Le devis est gratuit et donné avant l’intervention.' },
           SAISONS_FAQ[(['deratisation', 'souris', 'punaises', 'frelons', 'fourmis'] as const)[c.slug.length % 5]][c.slug.length % 3],
         ]} />
+        <PoleSaintMaurice slug={c.slug} famille="zones" />
       </main>
       <Footer />
     </>

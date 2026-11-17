@@ -272,6 +272,7 @@ export default function DepartementPage({ params }: { params: { departement: str
           { q: `Combien coûte une intervention ${d.dans} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour une dératisation, des cafards ou des fourmis, 290 € pour les punaises de lit (2 passages inclus). Le devis est gratuit.' },
           { q: 'Le devis est-il gratuit et sans engagement ?', a: 'Oui. Vous connaissez le prix avant l’intervention, par téléphone ou après une photo envoyée sur WhatsApp.' },
           { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, ils sont titulaires du Certibiocide, la certification obligatoire pour utiliser des produits biocides professionnels.' },
+          { q: `Proposez-vous des traitements sans produit chimique ${d.dans} ?`, a: 'Oui quand c’est possible : cryogénie et vapeur sèche contre les punaises de lit, pièges sans raticide contre les rongeurs, retrait des nids de chenilles, pics et filets contre les pigeons. Détection canine des punaises de lit sur devis.' },
           { q: `Des rats sur la voie publique ${d.dans} : qui contacter ?`, a: 'Sur l’espace public, c’est la mairie qui est compétente. Chez vous, dans votre jardin ou votre immeuble, nous intervenons sur devis.' },
           SAISONS_FAQ.deratisation[d.slug.length % 3],
         ]} />
