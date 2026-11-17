@@ -28,6 +28,7 @@ import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { PROFILS } from '@/lib/profils-ville'
 import { saisonVille } from '@/lib/saisons-faq'
+import { faqLocaleFamille } from '@/lib/faq-locale'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
 // Même structure que /punaises-de-lit/[ville] : En bref (GEO), contexte, méthodes, guides, FAQ, E-E-A-T, maillage.
@@ -158,7 +159,9 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
   const pick = <T,>(l: T[], i: number) => l[melange((hv ^ Math.imul(i + 3, 0x9e3779b1)) >>> 0) % l.length]
   const ap = c.approfondi
   const poolFaq = ap ? tourne(ap.faqPool, melange(hv + 17) % ap.faqPool.length).slice(0, 4) : []
-  const faq = [v.faq[0], ...(v.faqPlus ?? []), ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), ...poolFaq, saisonVille(profilFaq.famille, v.slug)]
+  const faqBase = [v.faq[0], ...(v.faqPlus ?? []), ...[...generales.slice(d), ...generales.slice(0, d)].slice(0, 2), ...poolFaq, saisonVille(profilFaq.famille, v.slug)]
+  // 18/11/2026 : au moins 8 questions, complétées par des questions locales (lib/faq-locale.ts)
+  const faq = [...faqBase, ...faqLocaleFamille(v, profilFaq.famille, profilFaq.tarifs, faqBase)]
   const db = rang % Math.max(1, c.enBref.length)
   const enBref = [`Intervention ${v.a} (${v.departement}, ${v.code}) et dans les communes voisines : ${v.proches.slice(0, 4).join(', ')}.`, ...[...c.enBref.slice(db), ...c.enBref.slice(0, db)].slice(0, 3)]
   const maj = new Date(c.maj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })

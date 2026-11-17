@@ -24,6 +24,7 @@ import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
+import { faqLocaleDeratisation } from '@/lib/faq-locale'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -105,7 +106,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
-  const faq = [...v.faq, ...(GUIDE_DERATISATION[v.slug]?.faq ?? []), saisonVille('deratisation', v.slug)]
+  const faqBase = [...v.faq, ...(GUIDE_DERATISATION[v.slug]?.faq ?? []), saisonVille('deratisation', v.slug)]
+  // 18/11/2026 : 8 questions par page, les nouvelles construites sur les données locales de la ville (lib/faq-locale.ts)
+  const faq = [...faqBase, ...faqLocaleDeratisation(v, faqBase)]
   const enBref = [
     v.code === '75'
       ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`

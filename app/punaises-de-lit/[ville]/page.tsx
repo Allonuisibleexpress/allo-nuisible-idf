@@ -21,6 +21,7 @@ import { HeroVille, TarifsVille, AutresServicesVille, titreGoogle, phraseDistanc
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
+import { faqLocalePunaises } from '@/lib/faq-locale'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -119,7 +120,9 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
   // Encadré « en attendant » et questions générales en alternance d'une ville à l'autre
   const avecEncadre = rang % 2 === 0
   const generalesFaq = v.faq.filter((f) => !v.faq.slice(0, v.faq.length - 2).includes(f))
-  const faq = [...v.faq.slice(0, v.faq.length - 2), generalesFaq[rang % generalesFaq.length], saisonVille('punaises', v.slug)]
+  const faqBase = [...v.faq.slice(0, v.faq.length - 2), generalesFaq[rang % generalesFaq.length], saisonVille('punaises', v.slug)]
+  // 18/11/2026 : 8 questions par page, les nouvelles construites sur les données locales de la ville (lib/faq-locale.ts)
+  const faq = [...faqBase, ...faqLocalePunaises(v, faqBase)]
   const enBref = [enBrefComplet[0], ...[...generales.slice(db), ...generales.slice(0, db)].slice(0, 3)]
 
   const jsonLd = {
