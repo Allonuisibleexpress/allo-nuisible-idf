@@ -784,6 +784,8 @@ export const ARTICLES: Article[] = [
       ] },
     ],
     faq: [
+      { q: "Combien coûte une dératisation ?", a: "Chez Allo Nuisible IDF, à partir de 120 € TTC pour un appartement, rats ou souris, devis gratuit, garantie 1 an." },
+      { q: "Peut-on éliminer les rongeurs sans poison ?", a: "Oui : pièges mécaniques, électriques ou connectés, piège multicapture Ekomille, et rebouchage des accès. C'est notre dératisation sans raticide, sur devis." },
       { q: 'Comment savoir si j\'ai un rat ou une souris ?', a: 'Regardez les crottes : 3 à 6 mm pour une souris, 6 à 12 mm et pointues pour un rat noir, environ 2 cm et arrondies pour un surmulot. Une souris adulte ne dépasse pas 10 cm sans la queue.' },
       { q: 'Quels sont les rongeurs que l\'on trouve dans les maisons ?', a: 'Surtout la souris, le surmulot (rat d\'égout) et le rat noir. Le mulot entre à l\'automne, le lérot et le loir s\'installent dans les combles. Ragondin, rat musqué, campagnols et écureuil restent dehors.' },
       { q: 'La fouine est-elle un rongeur ?', a: 'Non. La fouine est un mustélidé, comme la belette et la martre. Elle peut s\'installer dans les combles, mais on ne la traite pas comme un rongeur : il faut boucher ses accès.' },
@@ -872,6 +874,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Depuis Saint-Maurice, nous traitons les punaises de lit à [Paris](/punaises-de-lit/paris), dans le [Val-de-Marne](/punaises-de-lit/val-de-marne), les [Hauts-de-Seine](/punaises-de-lit/hauts-de-seine), l'[Essonne](/punaises-de-lit/essonne), les [Yvelines](/punaises-de-lit/yvelines) et la [Seine-et-Marne](/punaises-de-lit/seine-et-marne), par exemple à [Maisons-Alfort](/punaises-de-lit/maisons-alfort), [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont), [Créteil](/punaises-de-lit/creteil), [Vincennes](/punaises-de-lit/vincennes), [Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine) ou [Paris 12e](/punaises-de-lit/paris-12)." },
     ],
     faq: [
+      { q: "Combien coûte un traitement contre les punaises de lit ?", a: "Chez Allo Nuisible IDF, à partir de 290 € TTC pour un studio, 2 passages inclus pour toucher les punaises sorties des œufs, garantie 1 an." },
       { q: "Combien de temps une punaise de lit met-elle pour devenir adulte ?", a: "Environ un mois entre 21 et 27 °C avec des repas réguliers, selon l'Université du Kentucky. Au froid ou sans hôte, c'est beaucoup plus long." },
       { q: "Combien de stades larvaires a la punaise de lit ?", a: "Cinq stades, de 1,5 à 4,5 mm, chacun durant 3 à 15 jours. La larve doit prendre un repas de sang avant chaque mue." },
       { q: "En combien de temps éclosent les œufs ?", a: "En 7 à 15 jours, environ une semaine à température ambiante." },
@@ -1547,6 +1550,9 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Besoin d'une intervention ? Notre [dératisation](/services/deratisation) commence par un diagnostic de toute la maison. Nous intervenons partout en Île-de-France, par exemple au [Vésinet](/deratisation/le-vesinet), à [Sucy-en-Brie](/deratisation/sucy-en-brie) ou à [Gif-sur-Yvette](/deratisation/gif-sur-yvette)." },
     ],
     faq: [
+      { q: "Combien coûte une dératisation des combles ?", a: "À partir de 120 € TTC chez Allo Nuisible IDF, devis gratuit, garantie 1 an. Le prix dépend de l'accès aux combles et des passages à reboucher." },
+      { q: "Pourquoi entend-on les rats surtout la nuit ?", a: "Les rats sont surtout actifs la nuit : c'est le moment où ils se déplacent et cherchent de la nourriture, d'où les grattements entendus au plafond." },
+      { q: "Le rat noir est-il différent du surmulot ?", a: "Oui : le rat noir est plus fin, meilleur grimpeur, et préfère les étages et les combles ; le surmulot, plus massif, vit plutôt au sol, dans les caves et les égouts." },
       { q: "Comment savoir si j'ai des rats ou des souris dans les combles ?", a: "Les déjections de rat sont plus grosses et en forme de fuseau, celles de souris petites et pointues. Les rats laissent aussi des traces grasses sur les poutres et font plus de bruit. Un technicien identifie l'espèce avant de traiter." },
       { q: "Les rats des combles sont-ils dangereux ?", a: "Ils peuvent transmettre la leptospirose par leur urine, souiller l'isolant et ronger les câbles électriques, avec un risque de court-circuit. Il ne faut pas les laisser s'installer." },
       { q: "Faut-il changer l'isolant après une dératisation ?", a: "Pas toujours, mais souvent. Un isolant souillé d'urine et de déjections, tassé ou creusé de galeries, isole moins bien et garde les odeurs. Le technicien vous dit ce qui peut être conservé." },
@@ -2053,6 +2059,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Intervention en urgence pour les locations courte durée, par exemple à [Charenton-le-Pont](/punaises-de-lit/charenton-le-pont)." },
     ],
     faq: [
+      { q: "Combien coûte un traitement des punaises de lit pour un logement en location courte durée ?", a: "Chez Allo Nuisible IDF, à partir de 290 € TTC pour un studio, 2 passages inclus, garantie 1 an. Le devis est gratuit et donné avant l'intervention." },
+      { q: "Peut-on traiter sans insecticide entre deux voyageurs ?", a: "Oui, par cryogénie et vapeur sèche : aucun produit n'est déposé, et le logement peut être aéré puis remis en location plus vite. Voir notre page cryogénie." },
       { q: "Combien de temps mon logement sera-t-il bloqué ?", a: "Le moins possible. La cryogénie et la vapeur sèche ne demandent aucune attente. Seule la barrière insecticide, très légère, demande un court temps de séchage, que le technicien vous indique. La durée de l'intervention dépend de la surface et de l'infestation." },
       { q: "Pourquoi ajouter une barrière insecticide ?", a: "La cryogénie et la vapeur tuent les punaises et les œufs au contact, mais n'agissent pas après le passage. La barrière, très légère et appliquée en très petite quantité sur les zones de passage, garde une action rémanente contre les punaises qui éclosent ensuite. Elle est renouvelée au deuxième passage." },
       { q: "Pouvez-vous intervenir en urgence ?", a: "Oui, une intervention le jour même est possible en Île-de-France, 7j/7. Appelez-nous dès le signalement du voyageur." },
@@ -2607,6 +2615,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Notre [dératisation](/services/deratisation) est à partir de 120 € TTC, avec un devis gratuit établi sur place et une garantie 1 an. Sans aucun raticide : voir notre [dératisation écologique](/services/deratisation-ecologique) et [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique). Pour mieux connaître l'ennemi, lisez notre article sur le [mode de vie du rat](/blog/rat-mode-de-vie)." },
     ],
     faq: [
+      { q: "Combien coûte une dératisation sans raticide ?", a: "Elle est établie sur devis gratuit chez Allo Nuisible IDF, selon la surface, les accès à reboucher et le nombre de pièges. Garantie 1 an." },
       { q: "Qu'est-ce que le piège Ekomille ?", a: "Un appareil électromécanique de capture multiple et continue des rats et des souris, qui fonctionne avec des appâts alimentaires. C'est une méthode alternative aux postes avec raticide, qui restent la méthode la plus courante. Le rongeur tombe dans une cuve fermée contenant un liquide de conservation et reste dans l'appareil, au lieu de mourir dans la rue ou dans une cloison." },
       { q: "Peut-on se débarrasser des rats sans mort-aux-rats ?", a: "Oui, dans la plupart des logements : colmatage des accès, clapet anti-retour, suppression de la nourriture, et pièges mécaniques, de capture ou connectés posés sur les passages." },
       { q: "La mort-aux-rats est-elle dangereuse pour mon chien ou mon chat ?", a: "Oui. Un animal peut s'intoxiquer en avalant l'appât ou en mangeant un rongeur empoisonné. En cas de doute, appelez votre vétérinaire en urgence." },
@@ -2827,6 +2836,9 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Nous intervenons dans tout Paris, par exemple dans le [12e arrondissement](/punaises-de-lit/paris-12), le [5e](/punaises-de-lit/paris-5) ou le [14e](/punaises-de-lit/paris-14), et dans le Val-de-Marne, comme à [Vincennes](/punaises-de-lit/vincennes). Pour tous les autres lieux à risque, lisez notre article [comment attrape-t-on des punaises de lit](/blog/comment-attrape-t-on-des-punaises-de-lit)." },
     ],
     faq: [
+      { q: "Combien coûte un traitement si j'ai ramené des punaises de lit ?", a: "À partir de 290 € TTC pour un studio, 2 passages inclus, garantie 1 an, à Paris et en Île-de-France. Devis gratuit." },
+      { q: "Faut-il traiter tout l'appartement après une seule punaise ?", a: "Pas forcément. Une inspection permet de savoir si la punaise a pondu. Si elle est restée sur un vêtement ou un sac, le lavage à 60 °C et une surveillance suffisent souvent." },
+      { q: "Proposez-vous une détection canine ?", a: "Oui, sur devis. Le chien aide à savoir où chercher, mais ce n'est qu'un diagnostic, pas un traitement." },
       { q: "Peut-on vraiment ramener des punaises de lit du cinéma ?", a: "C'est possible : une punaise peut monter dans un sac ou un vêtement posé sur un fauteuil infesté. Le risque reste limité si votre sac est fermé et posé sur vos genoux, et si vous lavez vos vêtements à 60 °C au moindre doute." },
       { q: "Les cinémas parisiens sont-ils infestés ?", a: "Non, il ne faut pas généraliser. Des cas ont été signalés dans certaines salles en 2023, et la Cinémathèque française a fermé quatre salles fin 2025 pour les traiter. Les salles concernées ont été traitées et contrôlées." },
       { q: "Comment traite-t-on les fauteuils d'un cinéma ?", a: "Par vapeur sèche pour les tissus et la mousse, et par cryogénie (neige carbonique à environ -78 °C) pour les mécanismes, les structures métalliques et les fentes. Ce sont deux méthodes sans insecticide, complétées par un contrôle, souvent avec un chien détecteur." },
@@ -3069,6 +3081,9 @@ export const ARTICLES: Article[] = [
     ],
     photos: ['cryoFoyer', 'cryoSalle'],
     faq: [
+      { q: "Combien coûte un traitement contre les punaises de lit ?", a: "Chez Allo Nuisible IDF, à partir de 290 € TTC pour un studio, 2 passages inclus, garantie 1 an. Devis gratuit." },
+      { q: "Peut-on traiter les vêtements fragiles sans les laver ?", a: "Oui, par la vapeur sèche ou la cryogénie, qui agissent par la chaleur ou le froid sans eau ni produit. Le technicien vérifie la matière avant." },
+      { q: "Où ranger les vêtements traités ?", a: "Dans des sacs fermés, à l'écart de la chambre, jusqu'à la fin du traitement, pour qu'ils ne soient pas à nouveau infestés." },
       { q: "Un lavage à 40 °C suffit-il contre les punaises de lit ?", a: "Ce n'est pas la température recommandée : stop-punaises.gouv.fr conseille 60 °C, la température testée comme efficace sur tous les stades, œufs compris. Si le vêtement ne supporte pas 60 °C, passez-le au moins 30 minutes au sèche-linge chaud ou au congélateur." },
       { q: "Combien de temps laisser les vêtements au congélateur ?", a: "Au moins 72 heures à -20 °C, selon les agences régionales de santé. Une exposition courte ne suffit pas : des œufs peuvent survivre à quelques heures de froid intense." },
       { q: "Le sèche-linge tue-t-il les œufs ?", a: "Oui, selon l'étude de Naylor et Boase (2010), un sèche-linge sur programme chaud pendant au moins 30 minutes tue tous les stades, œufs compris." },
@@ -3251,6 +3266,10 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Pour aller plus loin : [le cycle et les dangers des processionnaires](/blog/chenilles-processionnaires-cycle-dangers), [traitement et prévention](/blog/chenilles-processionnaires-traitement-prevention) et la [processionnaire du chêne](/blog/chenille-processionnaire-du-chene). Nous intervenons notamment à [Saint-Germain-en-Laye](/chenilles-processionnaires/saint-germain-en-laye), à [Versailles](/chenilles-processionnaires/versailles) et à [Saint-Maur-des-Fossés](/chenilles-processionnaires/saint-maur-des-fosses)." },
     ],
     faq: [
+      { q: "Combien coûte le retrait d'un nid de chenilles processionnaires ?", a: "Chez Allo Nuisible IDF, à partir de 89 € TTC pour un nid accessible et 149 € TTC pour un nid en hauteur à la perche, devis gratuit." },
+      { q: "Que faire si mon chien a touché une chenille ?", a: "Contactez immédiatement votre vétérinaire : le contact avec la langue ou la bouche est une urgence. Ne frottez pas la zone à mains nues." },
+      { q: "Quand faut-il retirer les nids ?", a: "En automne et en hiver, quand les nids sont bien visibles en haut des pins et avant les processions de la fin de l'hiver et du printemps." },
+      { q: "Intervenez-vous près de chez moi ?", a: "Oui, dans le Val-de-Marne, à Paris, dans les Hauts-de-Seine, l'Essonne, les Yvelines et la Seine-et-Marne, avec une tenue de protection contre les poils urticants." },
       { q: "À partir de quand les chenilles sont-elles dangereuses ?", a: "Dès leur troisième stade, souvent à partir de l'automne. Le risque est le plus fort en fin d'hiver et au printemps, au moment des processions, et les nids restent irritants même vides." },
       { q: "Faut-il couper le pin ?", a: "Non, en général. Le retrait des nids, les écopièges et les pièges à phéromones suffisent le plus souvent. L'abattage ne se justifie que si l'arbre est très affaibli ou s'il se trouve dans un lieu très sensible, comme une cour d'école." },
       { q: "Les écopièges suffisent-ils ?", a: "Ils capturent les chenilles qui descendent du tronc, mais pas les nids restés en hauteur ni les papillons. Ils sont plus efficaces associés au retrait des nids et aux pièges à phéromones." },
@@ -3412,6 +3431,9 @@ export const ARTICLES: Article[] = [
     photos: CHANTIER_DIOGENE.photos,
     videos: CHANTIER_DIOGENE.videos,
     faq: [
+      { q: "Combien coûte une dératisation dans un logement encombré ?", a: "Le prix dépend de la surface et de l'encombrement : il est établi sur devis gratuit après visite. La dératisation commence à 120 € TTC pour un appartement." },
+      { q: "Faites-vous aussi le nettoyage et la désinfection ?", a: "Oui : après la dératisation, nous pouvons organiser le débarras, le nettoyage et la désinfection du logement." },
+      { q: "Comment se protéger pendant le débarras ?", a: "Combinaison, gants, masque à cartouches et bottes : les crottes et l'urine de rats peuvent transmettre des maladies, comme la leptospirose." },
       { q: "Faut-il dératiser avant de vider un logement encombré ?", a: "Oui. Vider d'abord fait fuir les rats vers les logements voisins et expose les équipes. Et sans rats qui courent autour, le nettoyage se fait beaucoup plus tranquillement. On traite sur place, on attend que la population baisse, puis on débarrasse et on nettoie." },
       { q: "Combien de temps faut-il avant de pouvoir nettoyer ?", a: "Cela dépend de l'infestation. Les raticides professionnels agissent en quelques jours : dans ce chantier, les rats étaient très affaiblis deux jours après la pose. Le technicien vous dit quand le débarras peut commencer, et les postes restent en place pendant le nettoyage." },
       { q: "Qui paie la dératisation d'un logement en syndrome de Diogène ?", a: "Selon les cas, la mairie, le bailleur, le syndic ou la famille. Nous établissons un devis gratuit avant l'intervention et remettons un compte rendu après chaque passage." },
@@ -4171,6 +4193,9 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Par département : [Val-de-Marne](/destruction-nid-frelon/val-de-marne), [Paris](/destruction-nid-frelon/paris), [Hauts-de-Seine](/destruction-nid-frelon/hauts-de-seine), [Essonne](/destruction-nid-frelon/essonne), [Yvelines](/destruction-nid-frelon/yvelines), [Seine-et-Marne](/destruction-nid-frelon/seine-et-marne). Pour reconnaître les espèces, voir aussi le [frelon européen](/blog/frelon-europeen-tout-savoir), le [frelon asiatique](/blog/frelon-asiatique-tout-savoir) et les [guêpes](/blog/guepes-tout-savoir), et notre service [destruction de nids de guêpes et frelons](/services/guepes-frelons)." },
     ],
     faq: [
+      { q: "En combien de temps intervenez-vous pour un nid de guêpes ?", a: "En général sous 1 heure, 7j/7, à Paris et en Île-de-France. Perche jusqu'à 23 m, garantie 3 mois sur la destruction de nid." },
+      { q: "Que faire en cas de piqûre de guêpe ?", a: "Retirez-vous du nid, refroidissez la zone et surveillez. En cas de gonflement important, de gêne respiratoire ou de piqûres multiples, appelez le 15." },
+      { q: "Les guêpes reviennent-elles l'année suivante au même endroit ?", a: "Le nid n'est pas réutilisé, mais un endroit abrité (toiture, volet, haie) peut attirer une nouvelle reine au printemps suivant." },
       { q: "Pourquoi les guêpes sont-elles plus agressives en fin d'été ?", a: "La colonie est à son maximum et les ouvrières recherchent surtout du sucre : elles envahissent alors les tables, les fruits et les poubelles. Les nids sont aussi les plus gros et se défendent violemment." },
       { q: "Une guêpe peut-elle piquer plusieurs fois ?", a: "Oui. Contrairement à l'abeille, elle ne laisse pas son dard dans la peau et peut piquer plusieurs fois." },
       { q: "Un nid de guêpes est-il réutilisé l'année suivante ?", a: "Non. La colonie meurt en automne et seules les jeunes reines hibernent, ailleurs. Elles construiront un nouveau nid au printemps." },
@@ -4399,6 +4424,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Par département : [Val-de-Marne](/destruction-nid-frelon/val-de-marne), [Paris](/destruction-nid-frelon/paris), [Hauts-de-Seine](/destruction-nid-frelon/hauts-de-seine), [Essonne](/destruction-nid-frelon/essonne), [Yvelines](/destruction-nid-frelon/yvelines), [Seine-et-Marne](/destruction-nid-frelon/seine-et-marne). Pour reconnaître les espèces, voir aussi le [frelon européen](/blog/frelon-europeen-tout-savoir), le [frelon asiatique](/blog/frelon-asiatique-tout-savoir) et les [guêpes](/blog/guepes-tout-savoir), et notre service [destruction de nids de guêpes et frelons](/services/guepes-frelons)." },
     ],
     faq: [
+      { q: "En combien de temps intervenez-vous pour un nid de frelons asiatiques ?", a: "En général sous 1 heure, 7j/7, avec une perche jusqu'à 23 m et une nacelle si besoin. À partir de 89 € TTC, garantie 3 mois." },
+      { q: "Le nid en hiver est-il encore dangereux ?", a: "En hiver, le nid est en général abandonné : les ouvrières meurent et seules les futures reines hivernent ailleurs. Il n'est pas réutilisé." },
       { q: "Depuis quand le frelon asiatique est-il en France ?", a: "Depuis 2004 : il a été repéré pour la première fois dans le Lot-et-Garonne, probablement arrivé dans des poteries importées de Chine. Il est aujourd'hui présent dans toute la France métropolitaine." },
       { q: "Le frelon asiatique est-il dangereux pour l'homme ?", a: "Loin de son nid, il n'est pas agressif. Près du nid, il attaque en groupe : les piqûres multiples sont dangereuses, surtout pour les personnes allergiques. Restez à au moins 5 mètres d'un nid." },
       { q: "Pourquoi voit-on des nids énormes en automne ?", a: "Le nid grossit tout l'été et atteint sa taille maximale en fin de saison. En octobre et novembre, la chute des feuilles révèle des nids restés cachés tout l'été dans les arbres." },
@@ -4468,6 +4495,9 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'warn', title: 'Un doute ? Faites identifier l’insecte', x: "Une punaise de lit mal identifiée peut s'étendre à tout le logement en quelques semaines. Si vous avez des **piqûres**, envoyez-nous une **photo** de l'insecte : nous vous disons tout de suite de quoi il s'agit." },
     ],
     faq: [
+      { q: "Faut-il faire appel à un professionnel pour les punaises des bois ?", a: "Rarement. Elles ne piquent pas et ne se reproduisent pas dans la maison. Un aspirateur, des moustiquaires et le colmatage des fissures suffisent le plus souvent." },
+      { q: "Comment savoir si ce n'est pas une punaise de lit ?", a: "La punaise des bois est grande (plus d'un centimètre), en forme de bouclier, et vole. La punaise de lit mesure 4 à 7 mm, ne vole pas et vit cachée près du lit." },
+      { q: "Les punaises des bois abîment-elles la maison ?", a: "Non, elles ne rongent rien. Elles cherchent seulement un abri pour l'hiver et repartent au printemps." },
       { q: "Les punaises des bois piquent-elles ?", a: "Non. Elles se nourrissent de plantes et ne piquent ni l'homme ni les animaux. Si vous avez des piqûres, pensez plutôt aux punaises de lit." },
       { q: "Pourquoi y a-t-il des punaises des bois chez moi en automne ?", a: "Les adultes cherchent un abri sec et chaud pour passer l'hiver. Ils entrent par les fenêtres, les volets roulants, les joints abîmés et les passages de câbles." },
       { q: "Comment enlever l'odeur d'une punaise écrasée ?", a: "Aérez la pièce et lavez le tissu ou la surface à l'eau savonneuse. Pour éviter le problème, ramassez-les plutôt avec un aspirateur muni d'un bas nylon ou faites-les tomber dans un bocal d'eau savonneuse." },
@@ -4913,6 +4943,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Nos techniciens recherchent le foyer, traitent les placards, les plinthes et les tapis, et prennent en charge les textiles par vapeur sèche ou cryogénie. Nous intervenons dans tout le Val-de-Marne et à Paris." },
     ],
     faq: [
+      { q: "Comment savoir si ce sont des mites ou des anthrènes ?", a: "La larve de mite est blanchâtre, souvent dans un petit fourreau, et laisse des fils de soie. La larve d'anthrène est brune et velue. Voir notre page anthrènes." },
       { q: "Les mites piquent-elles ?", a: "Non. Ni le papillon ni la larve ne piquent. Si vous avez des piqûres la nuit, pensez plutôt aux punaises de lit." },
       { q: "Le papillon de la mite mange-t-il les vêtements ?", a: "Non. L'adulte mange peu ou pas du tout. Ce sont les larves qui trouent les textiles." },
       { q: "Pourquoi ai-je des mites alors que ma maison est propre ?", a: "Parce qu'elles arrivent surtout avec des textiles, des tapis ou des meubles d'occasion, ou depuis un vêtement oublié au fond d'un placard." },
@@ -5003,6 +5034,8 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Nous intervenons dans tout le Val-de-Marne et à Paris, pour les particuliers comme pour les cuisines professionnelles." },
     ],
     faq: [
+      { q: "Faut-il jeter tous les aliments ?", a: "Seulement ceux qui sont touchés (toiles, larves, petits trous dans les emballages). Les autres se rangent ensuite dans des boîtes hermétiques." },
+      { q: "Comment nettoyer un placard infesté ?", a: "Videz-le, aspirez les coins et les rainures des étagères, lavez à l'eau chaude savonneuse, séchez bien, puis rangez les aliments dans des bocaux fermés." },
       { q: "Les mites alimentaires sont-elles dangereuses ?", a: "Elles ne piquent pas et ne s'attaquent pas aux vêtements. Les aliments infestés, souillés par les fils et les déjections des larves, doivent en revanche être jetés." },
       { q: "D'où viennent-elles si ma cuisine est propre ?", a: "Presque toujours d'un aliment acheté déjà infesté : farine, céréales, fruits secs, épices ou graines pour animaux." },
       { q: "Pourquoi trouve-t-on des larves au plafond ?", a: "À maturité, les larves quittent les aliments pour se transformer dans un endroit abrité : angles du plafond, rainures et charnières des placards." },
@@ -5154,6 +5187,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Nous intervenons dans tout le Val-de-Marne et à Paris : retrouvez [la liste de nos villes](/fourmis#villes)." },
     ],
     faq: [
+      { q: "En combien de temps le traitement fait-il effet ?", a: "Avec un gel appât professionnel posé sur les pistes, le résultat se voit en général sous 48 heures, le temps que les ouvrières rapportent l'appât à la reine." },
       { q: "Pourquoi faut-il tuer la reine ?", a: "Parce que c'est elle qui pond. Tant qu'elle vit, la colonie remplace les ouvrières tuées. L'appât à action lente est rapporté au nid et atteint la reine." },
       { q: "Combien de temps vit une reine des fourmis ?", a: "De 5 à 20 ans selon les espèces, environ 20 ans chez la fourmi noire des jardins. Le record connu est de 28 ans et 8 mois, pour une reine de fourmi noire des jardins élevée en laboratoire." },
       { q: "Combien de temps vit une fourmi ouvrière ?", a: "De 3 semaines à 1 an, parfois jusqu'à 3 ans selon les espèces ; 1 à 2 ans chez la fourmi noire des jardins. Les mâles, eux, meurent peu après l'accouplement." },
@@ -5271,6 +5305,9 @@ export const ARTICLES: Article[] = [
       ] },
     ],
     faq: [
+      { q: "Combien coûte vraiment une dératisation ?", a: "Chez Allo Nuisible IDF, à partir de 120 € TTC pour un appartement, avec un devis gratuit donné avant l'intervention. Un prix annoncé très bas qui triple sur place est un signal d'alerte." },
+      { q: "Comment reconnaître un vrai professionnel ?", a: "Une adresse réelle, un numéro SIREN, des techniciens Certibiocide, un devis écrit avant l'intervention et des avis vérifiables. Allo Nuisible IDF est au 6 bis rue du Val d'Osne, à Saint-Maurice." },
+      { q: "Peut-on annuler après la signature à domicile ?", a: "Pour un contrat signé à domicile, la loi prévoit en général un délai de rétractation de 14 jours. Renseignez-vous auprès d'une association de consommateurs." },
       { q: "Un agent de la mairie peut-il m'obliger à signer un contrat de dératisation ?", a: "Non. Un agent public ne vous fait pas signer de contrat avec une entreprise privée. Si quelqu'un se présente ainsi, ne signez rien, demandez sa carte professionnelle et appelez vous-même la mairie. En cas de doute, signalez-le à la DGCCRF et portez plainte." },
       { q: "Est-ce normal de payer un acompte avant le traitement ?", a: "La DGCCRF conseille de ne rien payer tant que la prestation n'a pas été réalisée. Et si le contrat a été signé chez vous à la suite d'un démarchage, le professionnel ne peut recevoir aucun paiement avant 7 jours." },
       { q: "Comment vérifier qu'une entreprise de dératisation existe vraiment ?", a: "Recherchez son nom ou son SIRET sur annuaire-entreprises.data.gouv.fr. Vous y verrez sa date de création, son adresse et son activité. Vérifiez aussi qu'elle a une adresse réelle et des avis clients récents." },
