@@ -270,7 +270,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {/* Vidéos du chantier juste sous « En bref », puis les photos (19/11/2026) */}
           {a.videos && a.videos.length > 0 && (
-            <div style={{ marginBottom: '40px' }}><VideosEnHaut videos={a.videos} titre="Le chantier en vidéo" sansFond /></div>
+            <div style={{ marginBottom: '40px' }}><VideosEnHaut videos={a.videos} titre="Le chantier en vidéo" sansFond pageActuelle={`/blog/${a.slug}`} grand /></div>
           )}
           {(a.videos || a.mediasEnHaut) && a.photos && a.photos.length > 0 && (
             <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>

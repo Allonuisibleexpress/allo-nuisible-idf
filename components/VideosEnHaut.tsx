@@ -7,17 +7,19 @@ import { lienYoutube, YOUTUBE_VIDEOS, CHAINE_YOUTUBE } from '@/lib/youtube'
 
 const SITE = 'https://allonuisibleidf.fr'
 
-export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo', intro, fond = '#080808', lien, sansFond = false }: {
+export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo', intro, fond = '#080808', lien, sansFond = false, pageActuelle, grand = false }: {
   videos: (VideoChantier | { src: string; legende?: string; poster?: string })[]
   titre?: string
   intro?: string
   fond?: string
   lien?: { href: string; label: string }
   sansFond?: boolean
+  pageActuelle?: string // pas de lien vers la page où l'on se trouve déjà
+  grand?: boolean // vidéo plus grande (articles du blog)
 }) {
   if (!videos.length) return null
   const n = videos.length
-  const grille = n === 1 ? 'max-w-[340px]' : n === 2 ? 'max-w-[720px] sm:grid-cols-2' : 'max-w-5xl sm:grid-cols-2 lg:grid-cols-3'
+  const grille = n === 1 ? (grand ? 'max-w-[460px]' : 'max-w-[360px]') : n === 2 ? 'max-w-[720px] sm:grid-cols-2' : 'max-w-5xl sm:grid-cols-2 lg:grid-cols-3'
   const schema = {
     '@context': 'https://schema.org',
     '@graph': videos.map((v) => {
@@ -40,11 +42,11 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
       {intro && <p className="text-white/65 max-w-2xl mx-auto mb-2 leading-relaxed">{intro}</p>}
       <div className={`grid gap-5 mx-auto mt-7 ${grille}`}>
         {videos.map((v) => (
-          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} />
+          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} pageActuelle={pageActuelle} grand={grand && n === 1} />
         ))}
       </div>
       <p className="mt-6 text-sm">
-        {lien && <a href={lien.href} className="font-bold underline underline-offset-4 mr-4" style={{ color: '#E8441A' }}>{lien.label}</a>}
+        {lien && !videos.every((v) => ficheVideo(v.src).lien) && <a href={lien.href} className="font-bold underline underline-offset-4 mr-4" style={{ color: '#E8441A' }}>{lien.label}</a>}
         <a href={CHAINE_YOUTUBE} target="_blank" rel="noopener" className="font-bold underline underline-offset-4 text-white/70 hover:text-white">Toutes nos interventions sur YouTube</a>
       </p>
     </div>
