@@ -26,7 +26,7 @@ const DEP_PAGES = ['75', '94', '92', '91', '78', '77']
 export const THEME_BLOG: Record<string, string[]> = {
   '/deratisation': ['Rongeurs'], '/souris': ['Rongeurs'], '/punaises-de-lit': ['Punaises de lit'], '/cafards': ['Cafards'],
   '/fourmis': ['Fourmis'], '/puces': ['Puces'], '/acariens': ['Acariens'], '/chenilles-processionnaires': ['Chenilles processionnaires'],
-  '/destruction-nid-frelon': ['Guêpes et frelons'],
+  '/destruction-nid-frelon': ['Guêpes et frelons'], '/anthrenes': ['Insectes'],
 }
 
 function h(s: string) { let x = 0; for (const c of s) x = (x * 31 + c.charCodeAt(0)) >>> 0; return x }

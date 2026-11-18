@@ -1,7 +1,7 @@
 // Pôle « autour de Saint-Maurice » (18/11/2026, demande de l'utilisateur : maillage renforcé sur les villes à moins de 5 km
 // de la base, plus Villejuif). Liste des pages qui existent réellement (relevée sur le sitemap du 18/11/2026).
 // Toute nouvelle page dans ces villes doit être ajoutée ici pour entrer dans le maillage.
-export type Famille = 'punaises-de-lit' | 'deratisation' | 'souris' | 'cafards' | 'fourmis' | 'puces' | 'acariens' | 'destruction-nid-frelon' | 'chenilles-processionnaires' | 'zones'
+export type Famille = 'punaises-de-lit' | 'deratisation' | 'souris' | 'cafards' | 'fourmis' | 'puces' | 'acariens' | 'destruction-nid-frelon' | 'chenilles-processionnaires' | 'anthrenes' | 'zones'
 
 export const FAMILLES: Record<Famille, string> = {
   'punaises-de-lit': 'Punaises de lit',
@@ -13,10 +13,11 @@ export const FAMILLES: Record<Famille, string> = {
   acariens: 'Acariens',
   'destruction-nid-frelon': 'Nid de frelons',
   'chenilles-processionnaires': 'Chenilles processionnaires',
+  anthrenes: 'Anthrènes',
   zones: 'Tous nos services',
 }
 
-const TOUT: Famille[] = ['zones', 'deratisation', 'punaises-de-lit', 'cafards', 'souris', 'fourmis', 'acariens', 'puces', 'destruction-nid-frelon']
+const TOUT: Famille[] = ['zones', 'deratisation', 'punaises-de-lit', 'cafards', 'souris', 'fourmis', 'acariens', 'puces', 'destruction-nid-frelon', 'anthrenes']
 export const POLE: { slug: string; nom: string; km: number; pages: Famille[] }[] = [
   { slug: 'saint-maurice', nom: 'Saint-Maurice', km: 0, pages: TOUT },
   { slug: 'maisons-alfort', nom: 'Maisons-Alfort', km: 1.8, pages: TOUT },
@@ -32,7 +33,7 @@ export const POLE: { slug: string; nom: string; km: number; pages: Famille[] }[]
   { slug: 'saint-maur-des-fosses', nom: 'Saint-Maur-des-Fossés', km: 4.2, pages: [...TOUT, 'chenilles-processionnaires'] },
   { slug: 'fontenay-sous-bois', nom: 'Fontenay-sous-Bois', km: 4.3, pages: TOUT },
   { slug: 'vitry-sur-seine', nom: 'Vitry-sur-Seine', km: 4.7, pages: TOUT.filter((f) => f !== 'destruction-nid-frelon') },
-  { slug: 'villejuif', nom: 'Villejuif', km: 6.6, pages: ['zones', 'deratisation', 'punaises-de-lit', 'souris', 'fourmis', 'acariens', 'puces'] },
+  { slug: 'villejuif', nom: 'Villejuif', km: 6.6, pages: ['zones', 'deratisation', 'punaises-de-lit', 'souris', 'fourmis', 'acariens', 'puces', 'anthrenes'] },
 ]
 
 export function lienPole(f: Famille, slug: string) {

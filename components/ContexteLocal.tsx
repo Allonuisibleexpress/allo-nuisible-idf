@@ -7,7 +7,7 @@ import { DONNEES_LOCALES, type DonneesLocales } from '@/lib/donnees-locales'
 
 const ACCENT = '#E8441A'
 
-export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'frelons' | 'puces' | 'commune'
+export type ServiceLocal = 'deratisation' | 'punaises' | 'cafards' | 'souris' | 'chenilles' | 'acariens' | 'fourmis' | 'frelons' | 'puces' | 'anthrenes' | 'commune'
 
 const nf = (n: number) => n.toLocaleString('fr-FR')
 // Choix déterministe d'une variante de phrase, différent d'une ville et d'un service à l'autre
@@ -119,6 +119,10 @@ function habitat(d: DonneesLocales, s: ServiceLocal) {
       return dense
         ? pick(k, ['En appartement, une aération quotidienne et un taux d\'humidité entre 40 et 60 % (recommandation de l\'Assurance maladie) limitent la prolifération des acariens dans la literie.', 'Dans les logements collectifs, souvent moins ventilés, la literie et les textiles concentrent les acariens : aérez chaque jour, même en hiver.', 'Petites chambres, cuisine ouverte, linge qui sèche à l\'intérieur : en appartement, l\'humidité monte vite, et les acariens de la literie en profitent.', 'Dans un immeuble, la chambre est souvent la pièce la moins aérée : ouvrir les fenêtres dix minutes chaque matin aide à garder la literie plus saine.'])
         : pick(k, ['Dans une maison avec sous-sol, la chambre du rez-de-chaussée ou la pièce aménagée en bas est souvent la plus humide : c\'est là que les acariens prolifèrent en premier.', 'En maison, pensez aux chambres peu chauffées ou peu aérées, aux sous-sols aménagés et aux chambres d\'amis : l\'humidité y favorise les acariens.', 'Dans une maison, les pièces fermées une partie de l\'année gardent l\'humidité : aérez-les avant de les utiliser.'])
+    case 'anthrenes':
+      return dense
+        ? pick(k, ['En appartement, les larves d\'anthrènes se cachent sous les tapis, au fond des placards et le long des plinthes : c\'est là que nous cherchons le foyer en premier.', 'En immeuble ancien, les nids d\'oiseaux dans les combles et sur les corniches peuvent nourrir des anthrènes qui gagnent ensuite les appartements.'])
+        : pick(k, ['En maison, les combles et les nids d\'oiseaux sous la toiture sont la source la plus fréquente d\'anthrènes.', 'Autour des maisons, les jardins fleuris attirent les anthrènes adultes au printemps, qui entrent ensuite par les fenêtres pour pondre.'])
     case 'puces':
       return dense
         ? pick(k, ['En appartement, les puces se cachent dans les fentes du parquet, les moquettes et le couchage de l\'animal : un ancien occupant avec un chat ou un chien peut avoir laissé des cocons.', 'En immeuble, les puces arrivent souvent avec un animal, un déménagement ou des rongeurs des caves : traiter l\'animal et le logement en même temps est indispensable.', 'Dans un appartement, les larves de puces fuient la lumière et s\'enfoncent sous les meubles et le long des plinthes : c\'est là que le traitement doit porter.'])
@@ -185,6 +189,12 @@ function traitement(d: DonneesLocales, s: ServiceLocal, a: string) {
         `Acariens ${a} : vapeur sèche et cryogénie sans produit, ou pulvérisation acaricide professionnelle quand plusieurs pièces sont touchées. Dès 120 € TTC pour une chambre, garantie 1 an.`,
         `${majuscule(a)}, le traitement anti-acariens porte sur les matelas, sommiers, canapés, coussins et tapis : vapeur sèche, cryogénie ou acaricide professionnel, dès 120 € TTC, garantie 1 an.`,
         `Pour réduire les acariens ${a}, nous assainissons la literie et les textiles à la vapeur sèche ou à la cryogénie, sans produit, ou par pulvérisation acaricide. À partir de 120 € TTC.`,
+      ])
+    case 'anthrenes':
+      return pick(k, [
+        `Contre les anthrènes ${a}, nous cherchons d'abord le foyer (tapis, placard, literie en plumes, nid d'oiseaux), puis traitons par aspiration, vapeur sèche ou cryogénie, et pulvérisation ciblée si besoin. À partir de 120 € TTC, garantie 1 an.`,
+        `Anthrènes ${a} : recherche de la source, aspiration des plinthes et des bords de tapis, traitement des textiles avec ou sans insecticide. Dès 120 € TTC, devis gratuit, garantie 1 an.`,
+        `${majuscule(a)}, un traitement contre les anthrènes réussit quand le foyer est supprimé : tapis, dressing ou nid d'oiseaux. Nous traitons ensuite les textiles, dès 120 € TTC.`,
       ])
     case 'puces':
       return pick(k, [
@@ -291,6 +301,7 @@ const TITRES: Record<ServiceLocal, (a: string) => string> = {
   acariens: (a) => `Traitement des acariens ${a}`,
   fourmis: (a) => `Traitement des fourmis ${a}`,
   puces: (a) => `Traitement des puces ${a}`,
+  anthrenes: (a) => `Traitement des anthrènes ${a}`,
   frelons: (a) => `Un nid de guêpes ou de frelons ${a} ? Notre intervention`,
   commune: (a) => `Nos traitements ${a}`,
 }

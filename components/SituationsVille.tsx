@@ -90,6 +90,16 @@ const SITUATIONS: Record<FamilleVille, { titre: (a: string) => string; liste: Si
       { t: (a) => `Puces dans le canapé ${a}`, x: 'Les œufs tombent là où l’animal se couche : coussins, dessous et sol autour du canapé sont à traiter.' },
     ],
   },
+  anthrenes: {
+    titre: (a) => `Anthrènes ${a} : les situations les plus fréquentes`,
+    liste: [
+      { t: (a) => `Larves d’anthrènes sous le tapis ${a}`, x: 'Un tapis en laine jamais déplacé est le foyer le plus courant : on l’aspire des deux côtés et on le traite.', lien: { href: '/blog/cycle-de-vie-anthrene', label: 'Cycle de l’anthrène' } },
+      { t: (a) => `Pulls troués au fond du placard ${a}`, x: 'Les larves fuient la lumière : les lainages rangés sans être lavés sont leurs préférés.' },
+      { t: (a) => `Petits insectes ronds sur la fenêtre ${a}`, x: 'Des adultes sur les vitres au printemps signalent souvent des larves dans le logement.' },
+      { t: (a) => `Anthrènes dans le lit ${a}`, x: 'Couette ou oreillers en plumes : la larve velue n’est pas une punaise de lit, elle ne pique pas.', lien: { href: '/blog/anthrenes-origine-traitement', label: 'Anthrène ou punaise ?' } },
+      { t: (a) => `Nid d’oiseaux sous la toiture ${a}`, x: 'Un nid abandonné nourrit les larves pendant longtemps : il se retire hors période de nidification.' },
+    ],
+  },
   acariens: {
     titre: (a) => `Acariens ${a} : les situations les plus fréquentes`,
     liste: [

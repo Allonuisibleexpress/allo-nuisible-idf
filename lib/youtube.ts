@@ -16,3 +16,16 @@ export const YOUTUBE_VIDEOS: Record<string, string> = {
 }
 
 export const lienYoutube = (src: string) => (YOUTUBE_VIDEOS[src] ? `https://www.youtube.com/shorts/${YOUTUBE_VIDEOS[src]}` : null)
+
+// Page Facebook « Allo Nuisible IDF », créée le 14/11/2026 (bas de page de tout le site + données structurées sameAs).
+// Si une adresse courte (facebook.com/allonuisibleidf) est choisie plus tard, la changer ici uniquement.
+export const PAGE_FACEBOOK = 'https://www.facebook.com/profile.php?id=61596338559755'
+
+// Compte Instagram professionnel « allonuisibleidf », créé le 14/11/2026 (bas de page + données structurées sameAs).
+export const COMPTE_INSTAGRAM = 'https://www.instagram.com/allonuisibleidf/'
+
+// Compte Pinterest professionnel « allonuisibleidf », créé le 14/11/2026 (bas de page + données structurées sameAs).
+export const COMPTE_PINTEREST = 'https://www.pinterest.fr/allonuisibleidf/'
+
+// Compte TikTok « @allo.nuisible.idf », créé le 14/11/2026 (bas de page + données structurées sameAs).
+export const COMPTE_TIKTOK = 'https://www.tiktok.com/@allo.nuisible.idf'

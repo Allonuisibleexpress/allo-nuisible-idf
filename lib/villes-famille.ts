@@ -8,6 +8,7 @@ import { VILLES_FOURMIS } from './villes-fourmis'
 import { VILLES_PUCES } from './villes-puces'
 import { VILLES_ACARIENS } from './villes-acariens'
 import { VILLES_CHENILLES } from './villes-chenilles'
+import { VILLES_ANTHRENES } from './villes-anthrenes'
 import { VILLES_FRELONS, frelonsIndexee } from './villes-frelons'
 import { CENTRES } from './centres-villes'
 import { POLE } from './pole-saint-maurice'
@@ -24,6 +25,7 @@ export const VILLES_PAR_SERVICE: Record<string, V[]> = {
   '/puces': simple(VILLES_PUCES as any),
   '/acariens': simple(VILLES_ACARIENS as any),
   '/chenilles-processionnaires': simple(VILLES_CHENILLES as any),
+  '/anthrenes': simple(VILLES_ANTHRENES as any),
   '/destruction-nid-frelon': simple(VILLES_FRELONS as any).filter((v) => frelonsIndexee(v.slug)),
 }
 

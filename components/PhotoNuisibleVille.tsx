@@ -27,6 +27,10 @@ const PHOTOS: Record<string, { titre: string; photos: P[] }> = {
     { src: '/puces/puce-du-chat.jpg', alt: 'Puce du chat (Ctenocephalides felis)', legende: 'La **puce du chat** : 2 à 3 mm, brune, aplatie sur les côtés. C’est elle qu’on trouve sur la grande majorité des chats et des chiens.', credit: 'Erturac', licence: 'CC BY-SA 3.0', page: W + 'Flea.JPG' },
     { src: '/piqures/piqures-puces-jambe.jpg', alt: 'Piqûres de puces sur le bas de la jambe', legende: 'Les **piqûres de puces** : petites, groupées, surtout aux **chevilles et au bas des jambes**.', credit: 'Maslesha', licence: 'CC BY 4.0', page: W + 'Flea_Bites_on_the_Lower_Leg_02.jpg' },
   ] },
+  '/anthrenes': { titre: 'L’anthrène : la larve et l’adulte', photos: [
+    { src: '/anthrenes/larve-anthrene.jpg', alt: 'Larve d’anthrène brune et velue', legende: 'La **larve d’anthrène** : brune, **velue**, 4 à 5 mm. C’est elle qui troue la laine, les tapis et les plumes. Elle **ne pique pas**.', credit: 'Arnoldius', licence: 'CC BY-SA 4.0', page: W + 'Anthrenus_verbasci_(Larva).jpg' },
+    { src: '/anthrenes/anthrene-bigarre-adulte.jpg', alt: 'Anthrène bigarré adulte tacheté', legende: 'L’**adulte** : petit coléoptère **rond** de 2 à 4 mm, taché de blanc, brun et jaune. On le voit sur les **rebords de fenêtre** au printemps.', credit: 'Luis Fernández García', licence: 'CC BY-SA 4.0', page: W + 'Anthrenus_verbasci_20200524a.jpg' },
+  ] },
   '/acariens': { titre: 'L’acarien de la poussière', photos: [
     { src: '/identifier/dermatophagoides.jpg', alt: 'Acarien de la poussière (Dermatophagoides) au microscope', legende: 'L’**acarien de la poussière** vu au microscope : moins de 0,5 mm, invisible à l’œil nu. Il vit dans la literie, les tapis et les canapés.', credit: 'Gouvernement des États-Unis', licence: 'Domaine public', page: W + 'House_Dust_Mite.jpg' },
   ] },

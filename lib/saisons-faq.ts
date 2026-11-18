@@ -33,6 +33,11 @@ export const SAISONS_FAQ: Record<FamilleVille, { q: string; a: string }[]> = {
     { q: 'Quelle est la meilleure saison pour traiter ?', a: 'Pour le pin, en hiver, avant que les chenilles ne descendent. Les pièges à phéromones se posent en été, pour capturer les papillons.' },
     { q: 'Les poils sont-ils dangereux même en été ?', a: 'Oui : les poils urticants restent actifs longtemps dans les nids et au sol. Ne touchez jamais un nid, même vide.' },
   ],
+  anthrenes: [
+    { q: 'Quand voit-on des anthrènes dans la maison ?', a: 'Les adultes apparaissent surtout au printemps et au début de l’été, souvent sur les rebords de fenêtre. Les larves, elles, mangent toute l’année dans un logement chauffé.' },
+    { q: 'Des larves d’anthrènes en hiver, est-ce normal ?', a: 'Oui. Dans un logement chauffé, les larves continuent à se nourrir dans les tapis et les placards. C’est même un bon moment pour traiter, avant la sortie des adultes au printemps.' },
+    { q: 'Faut-il traiter les anthrènes avant le printemps ?', a: 'C’est conseillé : en traitant les larves en hiver, on évite que de nouveaux adultes sortent au printemps et pondent ailleurs dans la maison.' },
+  ],
   acariens: [
     { q: 'Y a-t-il plus d’acariens à l’automne ?', a: 'Beaucoup d’allergiques le ressentent : avec le chauffage et des fenêtres moins ouvertes, l’humidité intérieure et la poussière favorisent les acariens.' },
     { q: 'Les acariens meurent-ils en hiver ?', a: 'Non, ils vivent dans la literie et les textiles, à la température du logement. Aérer chaque jour et limiter l’humidité aide toute l’année.' },

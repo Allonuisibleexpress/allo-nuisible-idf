@@ -6,11 +6,12 @@ import { VILLES_SOURIS } from './villes-souris'
 import { VILLES_CAFARDS } from './villes-cafards'
 import { VILLES_FOURMIS } from './villes-fourmis'
 import { VILLES_ACARIENS } from './villes-acariens'
+import { VILLES_ANTHRENES } from './villes-anthrenes'
 import { VILLES_CHENILLES } from './villes-chenilles'
 import { VILLES_FRELONS, frelonsIndexee } from './villes-frelons'
 import { VILLES_PUCES } from './villes-puces'
 
-export type FamilleVille = 'punaises' | 'deratisation' | 'souris' | 'cafards' | 'fourmis' | 'acariens' | 'chenilles' | 'frelons' | 'puces'
+export type FamilleVille = 'punaises' | 'deratisation' | 'souris' | 'cafards' | 'fourmis' | 'acariens' | 'chenilles' | 'frelons' | 'puces' | 'anthrenes'
 
 const FAMILLES: { id: FamilleVille; base: string; label: string; prix: string; slugs: string[] }[] = [
   { id: 'punaises', base: '/punaises-de-lit', label: 'Punaises de lit', prix: 'dès 290 €', slugs: VILLES_PUNAISES.map((v) => v.slug) },
@@ -20,6 +21,7 @@ const FAMILLES: { id: FamilleVille; base: string; label: string; prix: string; s
   { id: 'fourmis', base: '/fourmis', label: 'Fourmis', prix: 'dès 120 €', slugs: VILLES_FOURMIS.map((v) => v.slug) },
   { id: 'puces', base: '/puces', label: 'Puces', prix: 'dès 120 €', slugs: VILLES_PUCES.map((v) => v.slug) },
   { id: 'acariens', base: '/acariens', label: 'Acariens', prix: 'dès 120 €', slugs: VILLES_ACARIENS.map((v) => v.slug) },
+  { id: 'anthrenes', base: '/anthrenes', label: 'Anthrènes', prix: 'dès 120 €', slugs: VILLES_ANTHRENES.map((v) => v.slug) },
   { id: 'chenilles', base: '/chenilles-processionnaires', label: 'Chenilles processionnaires', prix: 'dès 89 €', slugs: VILLES_CHENILLES.map((v) => v.slug) },
   { id: 'frelons', base: '/destruction-nid-frelon', label: 'Nid de frelons ou de guêpes', prix: 'dès 89 €', slugs: VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)).map((v) => v.slug) },
 ]

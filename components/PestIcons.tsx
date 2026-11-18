@@ -160,6 +160,20 @@ export function IconAcarien({ className, size }: IconProps) {
   )
 }
 
+// Anthrène : petit coléoptère rond et tacheté (18/11/2026)
+export function IconAnthrene({ className, size }: IconProps) {
+  return (
+    <svg {...base(size)} className={className} aria-hidden="true">
+      <ellipse cx="16" cy="18" rx="7.5" ry="8.5" />
+      <path d="M16 9.5v17" />
+      <path d="M13 8.2a3.2 3.2 0 0 1 6 0" />
+      <path d="M13.8 6.5l-2-2.5M18.2 6.5l2-2.5" />
+      <path d="M8.8 15l-3.3-1.8M8.5 19.5H5M9.2 23.5l-3 2M23.2 15l3.3-1.8M23.5 19.5H27M22.8 23.5l3 2" />
+      <circle cx="12.6" cy="15.5" r="1" /><circle cx="19.4" cy="15.5" r="1" /><circle cx="12.4" cy="21" r="1" /><circle cx="19.6" cy="21" r="1" />
+    </svg>
+  )
+}
+
 /* ── Registre / map (icônes utilitaires) ── */
 export function IconShieldCheck({ className, size }: IconProps) {
   return (
@@ -180,6 +194,7 @@ export const PEST_ICONS = {
   pigeons: IconPigeon,
   chenilles: IconChenille,
   acariens: IconAcarien,
+  anthrenes: IconAnthrene,
   deratisation: IconDeratisation,
   desinfection: IconDesinfection,
 } as const

@@ -95,6 +95,16 @@ const TEXTES: Record<ServiceLocal, Texte> = {
       ],
     ],
   },
+  anthrenes: {
+    nuisible: 'anthrènes',
+    points: (a) => [
+      [
+        `Nids d’oiseaux dans les parties communes, combles encombrés : pour un immeuble, le syndic ou le bailleur doit être prévenu, et la mairie peut vous orienter ${a}.`,
+        `Si la source se trouve dans les parties communes (combles, toiture, gaines), signalez-la au syndic ; la mairie peut vous orienter ${a}.`,
+      ],
+      ['Locataire : signalez par écrit au propriétaire une source située hors de votre logement (toiture, combles).'],
+    ],
+  },
   acariens: {
     nuisible: 'acariens',
     points: (a) => [

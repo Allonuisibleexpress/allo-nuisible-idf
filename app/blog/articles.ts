@@ -3095,7 +3095,7 @@ export const ARTICLES: Article[] = [
     readMin: 9,
     ogImage: '/anthrenes/larve-anthrene.jpg',
     tldr: "L'anthrène est un petit coléoptère de 2 à 4 mm, rond et tacheté. L'adulte est inoffensif et se nourrit de pollen au jardin, mais sa larve, brune et velue, ronge les fibres animales : laine, tapis, fourrure, plumes, soie, cuir. Il entre souvent par les fenêtres au printemps et pond près des textiles, des nids d'oiseaux ou des insectes morts. Le traitement associe une aspiration minutieuse, la recherche du foyer et une pulvérisation insecticide ciblée. En méthode alternative, la vapeur sèche et la cryogénie traitent les textiles sans insecticide.",
-    service: { href: '/services/desinfection', label: 'Désinfection et désinsectisation en Île-de-France' },
+    service: { href: '/services/anthrenes', label: 'Traitement des anthrènes en Île-de-France' },
     blocks: [
       { t: 'p', x: "De petits insectes ronds sur le rebord de la fenêtre, des trous dans un pull en laine, de minuscules « chenilles » poilues sous le lit ou le long des plinthes : ce sont souvent des **anthrènes**. On les confond facilement avec des mites ou des punaises de lit, mais ils n'ont rien à voir. Voici comment les reconnaître, d'où ils viennent et comment s'en débarrasser." },
       { t: 'h2', x: "Comment reconnaître un anthrène (et sa larve)" },
@@ -5588,7 +5588,7 @@ export const ARTICLES: Article[] = [
     readMin: 13,
     ogImage: '/anthrenes/cycle-anthrene-4-stades.jpg',
     tldr: "L'anthrène passe par 4 stades : l'œuf, minuscule et blanc, pondu près des fibres animales ; la larve velue (de 1 mm à 4 ou 5 mm), seule responsable des dégâts, qui mue de nombreuses fois ; la nymphe, formée à l'abri de la dernière peau de larve ; et l'adulte, petit coléoptère rond et tacheté de 2 à 4 mm, qui vit environ deux semaines et se nourrit de pollen. Le cycle de l'anthrène bigarré dure de 1 à 3 ans selon la température. Dans un logement chauffé, les larves mangent toute l'année : c'est ce qui explique la prolifération lente mais tenace. Pour l'arrêter, il faut trouver le foyer, aspirer, traiter les textiles par la chaleur ou le froid, et empêcher les adultes de pondre.",
-    service: { href: '/services/desinfection', label: 'Traitement des anthrènes en Île-de-France' },
+    service: { href: '/services/anthrenes', label: 'Traitement des anthrènes en Île-de-France' },
     blocks: [
       { t: 'p', x: "Des petits points tachetés sur le rebord de la fenêtre en juin. Des « chenilles » poilues sous le lit en novembre. Des trous dans le pull en laine rangé depuis l'hiver dernier. Ces trois indices racontent **une seule et même histoire** : celle du **cycle de vie de l'anthrène**. Comprendre ce cycle, c'est comprendre **pourquoi les anthrènes prolifèrent si discrètement** et **à quel moment on peut les arrêter**. Dans ce guide, nous vous montrons **chaque stade en photo**, avec sa taille, sa durée, l'endroit où il se cache, et le bon geste pour chacun." },
       { t: 'img', src: '/anthrenes/cycle-anthrene-4-stades.jpg', alt: "Les stades de l'anthrène côte à côte : adulte tacheté, nymphe dans la dernière peau de larve, nymphe blanche et larve velue", legende: "Le **cycle de l'anthrène** en une image, de gauche à droite : l'**adulte** tacheté, la **nymphe** encore à l'abri dans la dernière peau de la larve, la **nymphe** blanche sortie de cette peau, et la **larve velue**.", credit: 'CSIRO', licence: 'CC BY 3.0', page: 'https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_2027_Lifecycle_of_the_Carpet_Beetle.jpg' },

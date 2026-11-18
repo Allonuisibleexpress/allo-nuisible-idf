@@ -22,7 +22,7 @@ export type ProfilVille = {
 
 const cpTxt = (cp: string) => (cp ? ` (${cp})` : '')
 
-export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'acariens' | 'frelons' | 'puces', ProfilVille> = {
+export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'acariens' | 'frelons' | 'puces' | 'anthrenes', ProfilVille> = {
   puces: {
     famille: 'puces', motCle: 'Puces', suffixes: [' : traitement dès 120 €, garanti 1 an', ' : traitement dès 120 €, 7j/7', ' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
     heroTitre: 'Traitement contre les puces', prix: '120 €', prixNum: '120',
@@ -151,6 +151,33 @@ export const PROFILS: Record<'souris' | 'cafards' | 'fourmis' | 'chenilles' | 'a
       { label: 'Nid accessible', prix: 'dès 89 €', detail: 'Retrait et destruction du nid' },
       { label: 'Nid en hauteur', prix: 'dès 149 €', detail: 'Perche télescopique' },
       { label: 'Grand arbre, nacelle', prix: 'sur devis', detail: 'Selon la hauteur et le nombre de nids' },
+    ],
+  },
+  anthrenes: {
+    famille: 'anthrenes', motCle: 'Anthrènes', suffixes: [' : traitement dès 120 €', ' : traitement 7j/7', ' : traitement', ''],
+    heroTitre: 'Traitement contre les anthrènes', prix: '120 €', prixNum: '120',
+    prixNote: 'Recherche du foyer et traitement des textiles. Devis gratuit.', offre: 'traitement contre les anthrènes',
+    description: (a, cp) => `Anthrènes ${a}${cpTxt(cp)} : larves velues dans les tapis, placards et lainages. Foyer trouvé, traitement avec ou sans insecticide. Dès 120 € TTC.`,
+    accroches: [
+      'Larves velues sous le tapis, pulls troués, petits insectes ronds sur la fenêtre ? Nous trouvons le foyer et traitons.',
+      'Aspiration, vapeur sèche ou cryogénie sans produit, ou pulvérisation ciblée : la méthode s’adapte à vos textiles.',
+      'Seule la larve fait des dégâts : nous la cherchons sous les tapis, au fond des placards et le long des plinthes.',
+      'Tapis anciens, fourrures, dressings : nous traitons les pièces fragiles à la cryogénie, sans eau ni produit.',
+      'Un nid d’oiseaux sous la toiture peut nourrir les larves pendant des mois : nous vérifions la source avant de traiter.',
+    ],
+    etapesTitre: (a) => `Comment se passe un traitement contre les anthrènes ${a}`,
+    etapes: [
+      ['Photo|Vous nous envoyez une photo de l’insecte ou de la larve : nous confirmons et vous donnons le prix.', 'Devis gratuit|Pièces, tapis, placards, literie : vous connaissez le tarif à l’avance.'],
+      ['Recherche du foyer|Tapis, dressing, literie en plumes, combles : le technicien trouve d’où viennent les larves.', 'Diagnostic|Le technicien repère la source et les textiles touchés.'],
+      ['Traitement|Aspiration, vapeur sèche ou cryogénie, et pulvérisation ciblée sur les plinthes si besoin.', 'Traitement des textiles|La chaleur ou le froid atteignent les larves et les œufs au cœur des fibres.'],
+      ['Prévention|Lainages rangés propres, moustiquaires, nids abandonnés retirés : nous vous laissons les bons gestes.', 'Conseils|Sans supprimer la source, les anthrènes reviennent : nous vous expliquons quoi faire.', 'Après le passage|Aspirez régulièrement plinthes et bords de tapis : c’est le geste qui prolonge le résultat.'],
+    ],
+    tarifsTitre: (a) => `Prix d’un traitement contre les anthrènes ${a}`,
+    tarifsIntro: 'Le devis est gratuit et le prix est fixé avant l’intervention.',
+    tarifs: [
+      { label: 'Une pièce', prix: 'dès 120 €', detail: 'Recherche du foyer, aspiration, traitement des textiles' },
+      { label: 'Logement complet', prix: 'sur devis', detail: 'Plusieurs pièces, tapis, dressings, combles' },
+      { label: 'Professionnels', prix: 'sur devis', detail: 'Boutiques, hôtels, collections' },
     ],
   },
   acariens: {

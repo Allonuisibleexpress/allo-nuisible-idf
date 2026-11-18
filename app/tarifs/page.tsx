@@ -114,6 +114,16 @@ const services: { name: string; icon: string; href: string; tiers: { label: stri
       { label: 'Professionnels', price: null, details: 'Hôtels, crèches, locations meublées' },
     ],
   },
+  {
+    name: 'Anthrènes',
+    icon: 'anthrenes',
+    href: '/services/anthrenes',
+    tiers: [
+      { label: 'Une pièce', price: '120', details: 'Recherche du foyer et traitement des textiles' },
+      { label: 'Logement complet', price: null, details: 'Plusieurs pièces, tapis, dressings, combles', highlight: true },
+      { label: 'Professionnels', price: null, details: 'Boutiques, hôtels, collections' },
+    ],
+  },
 ]
 
 const guarantees = [

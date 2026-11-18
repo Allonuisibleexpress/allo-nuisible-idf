@@ -13,6 +13,7 @@ const SERVICES: { path: string; base?: string; nom: string; themes: string[] }[]
   { path: '/services/puces', base: '/puces', nom: 'Puces', themes: ['Puces'] },
   { path: '/services/fourmis', nom: 'Fourmis', themes: ['Fourmis'] },
   { path: '/services/acariens', nom: 'Acariens', themes: ['Acariens'] },
+  { path: '/services/anthrenes', nom: 'Anthrènes', themes: ['Insectes'] },
   { path: '/services/chenilles-processionnaires', nom: 'Chenilles processionnaires', themes: ['Chenilles processionnaires'] },
   { path: '/services/guepes-frelons', base: '/destruction-nid-frelon', nom: 'Nid de frelons', themes: ['Guêpes et frelons'] },
   { path: '/services/pigeons', nom: 'Pigeons', themes: ['Pigeons'] },
@@ -32,7 +33,7 @@ const VOISINS: Record<string, Bloc> = {
     { href: '/blog/punaise-colza-invasion-idf-2026', label: 'Punaise de colza : l’invasion estivale en Île-de-France' } ] },
   '/services/acariens': { title: 'Les autres nuisibles des textiles', links: [
     { href: '/blog/mites-vetements-origine-traitement-prevention', label: 'Mites des vêtements : d’où viennent-elles, comment en finir' },
-    { href: '/blog/anthrenes-origine-traitement', label: 'Anthrènes : larves dans les tapis, comment s’en débarrasser' } ] },
+    { href: '/blog/anthrenes-origine-traitement', label: 'Anthrène : photos de la larve et comment s’en débarrasser' } ] },
   '/services/cafards-blattes': { title: 'Dans la cuisine, pensez aussi aux mites', links: [
     { href: '/blog/mites-alimentaires-cuisine', label: 'Mites alimentaires dans la cuisine : d’où viennent-elles ?' } ] },
   '/services/deratisation': { title: 'Avant de choisir une entreprise', links: [

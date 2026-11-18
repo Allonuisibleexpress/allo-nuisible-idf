@@ -18,6 +18,7 @@ const servicePages: Record<string, string> = {
   'Désinfection':      '/services/desinfection',
   'Chenilles processionnaires': '/services/chenilles-processionnaires',
   'Acariens':          '/services/acariens',
+  'Anthrènes':         '/services/anthrenes',
   'Puces':             '/services/puces',
 }
 
@@ -33,6 +34,7 @@ const services = [
   'Désinfection',
   'Chenilles processionnaires',
   'Acariens',
+  'Anthrènes',
   'Puces',
 ]
 

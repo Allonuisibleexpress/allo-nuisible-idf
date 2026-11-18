@@ -153,9 +153,10 @@ type Tarif = { label: string; prix: string; detail: string }
 const NOMS: Record<string, { de: string; les: string }> = {
   souris: { de: 'souris', les: 'les souris' }, cafards: { de: 'cafards', les: 'les cafards' }, fourmis: { de: 'fourmis', les: 'les fourmis' },
   chenilles: { de: 'chenilles processionnaires', les: 'les chenilles processionnaires' }, frelons: { de: 'nid de frelons ou de guêpes', les: 'les nids de frelons et de guêpes' },
-  puces: { de: 'puces', les: 'les puces' }, acariens: { de: 'acariens', les: 'les acariens' },
+  puces: { de: 'puces', les: 'les puces' }, acariens: { de: 'acariens', les: 'les acariens' }, anthrenes: { de: 'anthrènes', les: 'les anthrènes' },
 }
 const SPECIFIQUES: Record<string, (v: V) => QR[]> = {
+  anthrenes: (v) => [{ q: choix(v.slug, 'an1', [`Comment reconnaître une larve d’anthrène ${v.a} ?`, `À quoi ressemble une larve d’anthrène ${v.a} ?`]), a: choix(v.slug, 'an2', [`Elle est brune, velue, allongée, et mesure 4 à 5 mm en fin de croissance, avec des touffes de poils à l’arrière. Elle laisse de petites peaux vides en muant.`, `C’est une petite larve brune couverte de poils, de 4 à 5 mm au maximum, qui se cache sous les tapis et au fond des placards et laisse des mues velues.`]) }],
   souris: (v) => [
     { q: `Une seule souris ${v.a}, faut-il traiter ?`, a: choix(v.slug, 's1', [`Mieux vaut agir vite : là où l’on voit une souris, il y en a souvent d’autres, et elles se reproduisent rapidement.`, `Oui, sans attendre : une souris aperçue en signale souvent d’autres dans les cloisons ou les placards.`]) },
     { q: `Par où les souris entrent-elles dans un logement ${v.a} ?`, a: `Par les passages de tuyaux, les gaines, les bas de porte, les aérations et les fissures. Le technicien les repère et les rebouche : sans cela, d’autres souris reviennent.` },
@@ -181,6 +182,7 @@ const SPECIFIQUES: Record<string, (v: V) => QR[]> = {
   acariens: (v) => [{ q: `Comment limiter le retour des acariens ${v.a} ?`, a: `Ameli conseille d’aérer au moins 10 minutes par jour, de garder moins de 20 °C dans les pièces de vie et une humidité entre 40 % et 60 %.` }],
 }
 const ATTENTE: Record<string, string[]> = {
+  anthrenes: [`Aspirez les bords de tapis et les plinthes, videz l’aspirateur dehors et rangez les lainages propres dans des housses fermées en attendant le technicien.`],
   souris: [`Rangez la nourriture et les croquettes dans des boîtes fermées et notez où vous voyez des crottes.`, `Fermez les aliments, sortez les poubelles le soir et ne bouchez pas un trou si une souris est peut-être encore à l’intérieur.`],
   cafards: [`Ne laissez ni vaisselle sale ni miettes la nuit, et n’utilisez jamais d’insecticide interdit acheté en ligne.`, `Fermez les aliments et évitez les bombes insecticides : elles dispersent les cafards sans atteindre leurs cachettes.`],
   fourmis: [`Ne détruisez pas les pistes avant notre passage : elles mènent au nid, où le gel appât doit être rapporté.`, `Rangez sucre et miettes, mais laissez les pistes en place : elles nous guident vers la colonie.`, `Évitez les bombes insecticides : elles tuent quelques ouvrières mais pas la reine, et la colonie se déplace.`],
