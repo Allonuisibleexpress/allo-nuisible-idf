@@ -30,6 +30,7 @@ import { PROFILS } from '@/lib/profils-ville'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocaleFamille } from '@/lib/faq-locale'
 import PoleSaintMaurice from '@/components/PoleSaintMaurice'
+import { LOCAL_POLE_FAMILLES } from '@/lib/local-pole-familles'
 import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import type { Famille } from '@/lib/pole-saint-maurice'
 
@@ -257,7 +258,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
         <PhotoNuisibleVille basePath={c.basePath} a={v.a} />
-        <LocalVille slug={v.slug} base={c.basePath} nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
+        <LocalVille slug={v.slug} base={c.basePath} nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(LOCAL_POLE_FAMILLES[c.basePath]?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 
         {/* Rats aussi ? page dératisation de la même ville */}
