@@ -6,6 +6,9 @@ import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import ArticleService from '@/components/ArticleService'
 import DeratEco from '@/components/DeratEco'
+import ReponseEcologique from '@/components/ReponseEcologique'
+import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
+import { POLE } from '@/lib/pole-saint-maurice'
 import { ETAPES_DERAT_ECO } from '@/lib/intervention-derat-eco'
 
 const ARTICLE = [
@@ -75,6 +78,7 @@ const data: ServiceData = {
       ['Garantie', '1 an', '1 an'],
     ],
   },
+  apresHero: <ReponseEcologique type="derat" />,
   apresProcess: <><DeratEco complet /><ArticleService blocs={ARTICLE} /></>,
   pricing: [
     { label: 'Appartement', price: 'Sur devis', description: 'Souris ou rats, petite surface', features: ['Pièges mécaniques', 'Colmatage des accès', 'Sans raticide', 'Garantie 1 an'] },
@@ -102,7 +106,16 @@ const data: ServiceData = {
       { href: '/blog/guide-des-rongeurs', label: 'Le guide des rongeurs' },
       { href: '/blog/souris-par-ou-entrent-elles', label: 'Souris : par où entrent-elles ?' },
       { href: '/blog/rat-mode-de-vie', label: 'Le rat : mode de vie et comportement' },
+      { href: '/blog/rat-compost', label: 'Rats et compost : les éviter sans poison' },
+      { href: '/blog/nourrir-oiseaux-pigeons-attire-rats', label: 'Nourrir les oiseaux sans attirer les rats' },
     ] },
+    // Maillage vers les pages ville (18/11/2026) : villes autour de Saint-Maurice, puis Paris et Hauts-de-Seine
+    vedette: { title: 'Dératisation sans raticide autour de Saint-Maurice', links: POLE.filter((v) => v.pages.includes('deratisation')).map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.nom} (${v.km === 0 ? 'notre base' : `${String(v.km).replace('.', ',')} km`})` })) },
+    extra: [
+      { title: 'Dératisation à Paris', links: VILLES_DERATISATION.filter((v) => v.code === '75').map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.nom}` })) },
+      { title: 'Dératisation dans les Hauts-de-Seine', links: VILLES_DERATISATION.filter((v) => v.code === '92').map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.nom}` })) },
+      { title: 'Dératisation dans le Val-de-Marne', links: VILLES_DERATISATION.filter((v) => v.code === '94' && !POLE.some((p) => p.slug === v.slug)).map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.nom}` })) },
+    ],
   },
   ctaTitle: 'Des rats ou des souris, sans raticide ?\nOn intervient rapidement.',
 }

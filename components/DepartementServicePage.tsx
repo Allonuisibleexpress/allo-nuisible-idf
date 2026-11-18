@@ -138,6 +138,7 @@ export function metaDep(s: ServiceDep, d: DepSlug) {
 }
 
 import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
+import LienEcologique from '@/components/LienEcologique'
 import { villesPoleService } from '@/lib/villes-famille'
 
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
@@ -395,6 +396,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         </section>
 
         <PhotoNuisibleVille basePath={c.base} a={dep.dans} />
+        <div className="px-4 pt-4" style={{ background: '#0b0b0b' }}><LienEcologique basePath={c.base} slug={d} a={dep.dans} /></div>
 
         {pole.length > 0 && (
           <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>

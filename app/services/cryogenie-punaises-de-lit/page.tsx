@@ -2,6 +2,7 @@
 // titre principal « traitement punaises de lit écologique, sans biocide, cryogénie », vidéos de chantier détaillées).
 // « Écologique » = sans biocide, défini sur la page (lib/contenu-services/cryogenie.ts). Contenu et sources : même fichier.
 // 13/11/2026 : l'ancienne page /services/punaises-de-lit-ecologique est fusionnée ici (redirection permanente dans next.config.mjs).
+import ReponseEcologique from '@/components/ReponseEcologique'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -61,6 +62,7 @@ const data: ServiceData = {
     { title: 'Aspiration et aération', text: 'Les insectes morts sont aspirés, la pièce est aérée : vous pouvez revenir, sans délai lié à un produit.' },
     { title: 'Second passage et garantie', text: 'Retour 10 à 15 jours plus tard pour les punaises écloses entre-temps, avant qu’elles ne pondent. Garantie 1 an.' },
   ],
+  apresHero: <ReponseEcologique type="punaises" />,
   apresProcess: (
     <>
       <ArticleService blocs={CRYO_PARTIE_1.slice(0, COUPE_1)} />

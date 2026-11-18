@@ -4,6 +4,7 @@
 import { ARTICLES } from '@/app/blog/articles'
 import { ArrowRight, BookOpen, MapPin } from 'lucide-react'
 import { villesDuDepartement, villesPoleService } from '@/lib/villes-famille'
+import LienEcologique from '@/components/LienEcologique'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -49,6 +50,7 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
   return (
     <section className="py-14 md:py-16 px-4" style={{ background: '#0a0a0a' }}>
       <div className="max-w-5xl mx-auto text-center">
+        <LienEcologique basePath={basePath} slug={slug} a={a} />
         {dep && (
           <div className="mb-10">
             <h2 className="text-xl md:text-2xl font-black text-white mb-4">{mot} {dep.dans} : toutes nos villes</h2>

@@ -8,6 +8,8 @@ import { pageMetadata } from '@/lib/seo'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
 import ArticleService from '@/components/ArticleService'
 import ChoixEcologique from '@/components/ChoixEcologique'
+import ReponseEcologique from '@/components/ReponseEcologique'
+import { POLE, lienPole } from '@/lib/pole-saint-maurice'
 
 const ARTICLE = [
   { h: 'Traitement écologique des nuisibles : notre définition', p: [
@@ -50,6 +52,8 @@ const ARTICLE = [
     'Retrait et destruction des nids, écopièges autour des troncs, pièges à phéromones et calendrier de surveillance. **Dès 89 €** pour un nid accessible, **dès 149 €** pour un nid en hauteur à la perche télescopique. Voir [chenilles processionnaires](/services/chenilles-processionnaires).',
     '### Acariens : vapeur sèche et cryogénie',
     'Matelas, oreillers, canapés, tapis et rideaux sont traités par **vapeur sèche** ou par **cryogénie**, sans produit. Une pulvérisation acaricide reste possible si vous la choisissez. Pour limiter leur retour, Ameli conseille d’**aérer au moins 10 minutes par jour**, de garder **moins de 20 °C** dans les pièces de vie et une **humidité entre 40 % et 60 %**. **Dès 120 €**. Voir [traitement des acariens](/services/acariens).',
+    '### Anthrènes : aspiration, vapeur sèche et cryogénie',
+    'Les larves d’anthrènes rongent la laine, les tapis, les plumes et la fourrure. Après avoir trouvé le **foyer** (tapis, dressing, nid d’oiseaux), nous les éliminons par **aspiration**, **vapeur sèche** ou **cryogénie**, sans aucun produit : la chaleur et le froid sont efficaces contre les larves et les œufs. **Dès 120 €**, garantie 1 an. Voir [traitement des anthrènes](/services/anthrenes) et [le cycle de l’anthrène en photos](/blog/cycle-de-vie-anthrene).',
     '### Pigeons : pics, filets et dispositifs électriques',
     'Contre les pigeons, aucun produit : des **pics anti-pose en inox**, des **filets sur mesure** et des **dispositifs électriques** discrets empêchent les oiseaux de se poser et de nicher sur un balcon, un rebord ou une façade. **Dès 150 €** pour un balcon ou un rebord. Voir [dépigeonnage](/services/pigeons).',
   ] },
@@ -123,10 +127,11 @@ const data: ServiceData = {
       ['Rats et souris', 'Ekomille, pièges connectés, électriques, tapettes, accès rebouchés', 'Dératisation écologique'],
       ['Chenilles processionnaires', 'Retrait des nids, écopièges, pièges à phéromones', 'Chenilles processionnaires'],
       ['Acariens', 'Vapeur sèche, cryogénie', 'Traitement des acariens'],
+      ['Anthrènes', 'Aspiration, vapeur sèche, cryogénie', 'Traitement des anthrènes'],
       ['Pigeons', 'Pics inox, filets, dispositifs électriques', 'Dépigeonnage'],
     ],
   },
-  apresHero: <ChoixEcologique />,
+  apresHero: <><ReponseEcologique type="hub" /><ChoixEcologique /></>,
   apresProcess: <ArticleService blocs={ARTICLE} />,
   pricing: [
     { label: 'Punaises de lit', price: '290', description: 'Studio, traitement écologique', features: ['Cryogénie et vapeur sèche', '2 passages inclus', 'Aucun produit chimique', 'Garantie 1 an'], highlight: true },
@@ -146,6 +151,9 @@ const data: ServiceData = {
     { q: 'La détection canine est-elle une méthode écologique ?', a: 'Oui, le chien ne dépose aucun produit. Nous la proposons, sur devis. Mais c’est un diagnostic, pas un traitement : il localise les punaises de lit, et chaque signalement se confirme à l’œil avant de traiter.' },
     { q: 'Les ultrasons sont-ils une solution écologique contre les rats ?', a: 'Leur efficacité dans la durée n’est pas démontrée. Ils ne remplacent ni le colmatage des accès ni un vrai traitement par pièges.' },
     { q: 'Le traitement écologique est-il garanti ?', a: 'Oui, nos traitements sont garantis 1 an. Si les nuisibles reviennent dans ce délai, nous revenons.' },
+    { q: 'Quelle entreprise fait de la dératisation écologique en Île-de-France ?', a: 'Allo Nuisible IDF, basée à Saint-Maurice (94), propose une dératisation sans raticide ni poison (piège Ekomille, pièges connectés, électriques ou mécaniques, colmatage des accès) à Paris, dans le Val-de-Marne, les Hauts-de-Seine et toute l’Île-de-France, 7j/7.' },
+    { q: 'Qui traite les punaises de lit de façon écologique à Paris ?', a: 'Allo Nuisible IDF traite les punaises de lit par cryogénie (environ −78 °C) et vapeur sèche, sans insecticide, à Paris, dans le Val-de-Marne et les Hauts-de-Seine. Dès 290 € TTC, 2 passages inclus, garantie 1 an.' },
+    { q: 'Existe-t-il un traitement écologique contre les anthrènes ?', a: 'Oui : aspiration minutieuse, vapeur sèche et cryogénie, sans aucun produit, après avoir trouvé le foyer (tapis, dressing, nid d’oiseaux). La chaleur et le froid sont efficaces contre les larves et les œufs. Dès 120 € TTC.' },
     { q: 'Intervenez-vous dans toute l’Île-de-France ?', a: 'Oui, 7j/7, à Paris, dans le Val-de-Marne, les Hauts-de-Seine, l’Essonne, les Yvelines et la Seine-et-Marne. Notre base est à Saint-Maurice (94).' },
   ],
   related: {
@@ -159,7 +167,15 @@ const data: ServiceData = {
       { href: '/services/chenilles-processionnaires', label: 'Chenilles processionnaires' },
       { href: '/services/acariens', label: 'Traitement des acariens' },
       { href: '/services/pigeons', label: 'Dépigeonnage' },
+      { href: '/services/anthrenes', label: 'Traitement des anthrènes, avec ou sans produit' },
+      { href: '/blog/cycle-de-vie-anthrene', label: 'Cycle de l’anthrène : méthodes écologiques' },
+      { href: '/blog/cryogenie-punaises-de-lit', label: 'Le froid tue-t-il les punaises de lit ?' },
     ] },
+    extra: [
+      { title: 'Dératisation écologique près de chez vous', links: POLE.filter((v) => v.pages.includes('deratisation')).map((v) => ({ href: lienPole('deratisation', v.slug), label: `Dératisation ${v.nom}` })) },
+      { title: 'Punaises de lit, traitement écologique possible', links: POLE.filter((v) => v.pages.includes('punaises-de-lit')).map((v) => ({ href: lienPole('punaises-de-lit', v.slug), label: `Punaises de lit ${v.nom}` })) },
+      { title: 'Acariens et anthrènes, sans produit', links: [...POLE.filter((v) => v.pages.includes('acariens')).map((v) => ({ href: lienPole('acariens', v.slug), label: `Acariens ${v.nom}` })), ...POLE.filter((v) => v.pages.includes('anthrenes')).slice(0, 8).map((v) => ({ href: lienPole('anthrenes', v.slug), label: `Anthrènes ${v.nom}` }))] },
+    ],
   },
   ctaTitle: 'Un nuisible, sans produit chimique ?\nOn vous dit si c’est possible.',
 }
