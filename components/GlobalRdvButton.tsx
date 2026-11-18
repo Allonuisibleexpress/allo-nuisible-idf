@@ -149,18 +149,18 @@ export default function GlobalRdvButton() {
                   </svg>
                 </div>
                 <p className="text-white font-bold text-lg mb-2">Demande envoyée !</p>
-                <p className="text-white/50 text-sm">Nous vous rappelons dans les plus brefs délais.</p>
+                <p className="text-white/60 text-sm">Nous vous rappelons dans les plus brefs délais.</p>
                 <button onClick={closeModal} className="mt-6 text-sm font-semibold px-6 py-2.5 rounded-full text-white" style={{ background: ACCENT }}>Fermer</button>
               </div>
             ) : (
               <>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Rendez-vous</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#F0562A' }}>Rendez-vous</p>
                 <h3 className="text-white font-black text-xl mb-5">Demande d&apos;intervention</h3>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-white/50 text-xs mb-1.5">Nom</label>
+                      <label className="block text-white/60 text-xs mb-1.5">Nom</label>
                       <input
                         name="nom"
                         placeholder="Dupont"
@@ -169,7 +169,7 @@ export default function GlobalRdvButton() {
                       />
                     </div>
                     <div>
-                      <label className="block text-white/50 text-xs mb-1.5">Téléphone *</label>
+                      <label className="block text-white/60 text-xs mb-1.5">Téléphone *</label>
                       <input
                         name="telephone"
                         type="tel"
@@ -182,7 +182,7 @@ export default function GlobalRdvButton() {
                   </div>
 
                   <div>
-                    <label className="block text-white/50 text-xs mb-1.5">Email *</label>
+                    <label className="block text-white/60 text-xs mb-1.5">Email *</label>
                     <input
                       name="email"
                       type="email"
@@ -194,7 +194,7 @@ export default function GlobalRdvButton() {
                   </div>
 
                   <div>
-                    <label className="block text-white/50 text-xs mb-2">Type de nuisible *</label>
+                    <label className="block text-white/60 text-xs mb-2">Type de nuisible *</label>
                     <div className="grid grid-cols-3 gap-2">
                       {NUISIBLES.map((n) => (
                         <button
@@ -212,12 +212,12 @@ export default function GlobalRdvButton() {
                         </button>
                       ))}
                     </div>
-                    {nuisibleError && <p className="text-xs mt-1.5" style={{ color: ACCENT }}>Veuillez sélectionner un nuisible.</p>}
+                    {nuisibleError && <p className="text-xs mt-1.5" style={{ color: '#F0562A' }}>Veuillez sélectionner un nuisible.</p>}
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-white/50 text-xs mb-1.5">Ville</label>
+                      <label className="block text-white/60 text-xs mb-1.5">Ville</label>
                       <input
                         name="ville"
                         placeholder="Paris, Versailles, Créteil…"
@@ -226,7 +226,7 @@ export default function GlobalRdvButton() {
                       />
                     </div>
                     <div>
-                      <label className="block text-white/50 text-xs mb-1.5">Situation</label>
+                      <label className="block text-white/60 text-xs mb-1.5">Situation</label>
                       <input
                         name="situation"
                         placeholder="Maison, appartement…"
@@ -251,7 +251,7 @@ export default function GlobalRdvButton() {
                     className="flex items-center justify-center gap-2 py-3 rounded-full font-bold text-sm text-white transition-all duration-200 hover:opacity-80"
                     style={{ border: `1px solid rgba(232,68,26,0.4)` }}
                   >
-                    <Phone size={14} style={{ color: ACCENT }} />
+                    <Phone size={14} style={{ color: '#F0562A' }} />
                     07 68 07 72 19
                   </a>
                 </form>

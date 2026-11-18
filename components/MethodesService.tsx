@@ -44,7 +44,7 @@ export function MethodesDetaillees({ bloc, fond = '#0a0a0a' }: { bloc: BlocMetho
     <section id="methodes" className="py-16 md:py-24 px-4 scroll-mt-20" style={{ background: fond }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: ACCENT }}>Nos méthodes en détail</span>
+          <span className="text-xs font-bold tracking-widest uppercase" style={{ color: '#F0562A' }}>Nos méthodes en détail</span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mt-3 mb-4 leading-tight">{bloc.titre}</h2>
           <p className="text-white/60 max-w-3xl mx-auto leading-relaxed">{enGras(bloc.intro)}</p>
         </div>
@@ -60,7 +60,7 @@ export function MethodesDetaillees({ bloc, fond = '#0a0a0a' }: { bloc: BlocMetho
               </div>
               <div className="grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-6">
                 <div className="rounded-2xl p-5 md:p-6" style={{ background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                  <p className="text-sm font-black uppercase tracking-wider mb-4" style={{ color: ACCENT }}>Comment notre technicien procède</p>
+                  <p className="text-sm font-black uppercase tracking-wider mb-4" style={{ color: '#F0562A' }}>Comment notre technicien procède</p>
                   <ol className="space-y-3">
                     {m.etapes.map((e, j) => (
                       <li key={j} className="flex gap-3 text-sm text-white/70 leading-relaxed">

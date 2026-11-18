@@ -52,7 +52,7 @@ export default function IdentifierRongeur() {
 
   return (
     <div style={box} id="test">
-      <p style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.08em', color: ACCENT, textAlign: 'center', marginBottom: '6px' }}>Test en 4 questions</p>
+      <p style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.08em', color: '#F0562A', textAlign: 'center', marginBottom: '6px' }}>Test en 4 questions</p>
       <p style={{ fontSize: '20px', fontWeight: 800, color: '#fff', textAlign: 'center', marginBottom: '18px' }}>Quel animal est chez moi ?</p>
       {!fini ? (
         <div>
@@ -72,7 +72,7 @@ export default function IdentifierRongeur() {
         </div>
       ) : (
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '22px', fontWeight: 900, color: ACCENT, marginBottom: '10px' }}>{R[top].nom}</p>
+          <p style={{ fontSize: '22px', fontWeight: 900, color: '#F0562A', marginBottom: '10px' }}>{R[top].nom}</p>
           <p style={{ fontSize: '15px', lineHeight: 1.65, color: 'rgba(255,255,255,0.82)', maxWidth: '560px', margin: '0 auto 18px' }}>{R[top].texte}</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
             <a href={R[top].href} style={{ background: ACCENT, color: '#fff', fontWeight: 800, fontSize: '14px', padding: '12px 22px', borderRadius: '10px', textDecoration: 'none' }}>{R[top].lien}</a>

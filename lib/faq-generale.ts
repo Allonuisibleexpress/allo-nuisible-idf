@@ -45,6 +45,10 @@ export const FAQ_GENERALE: Rubrique[] = [
       { q: 'Comment savoir si j’ai des rats ou des souris ?', a: 'Les crottes de rat mesurent 1 à 2 cm, celles de souris 3 à 6 mm. Une photo nous permet de vous le dire.' },
       { q: 'Par où entrent les souris ?', a: 'Par des ouvertures minuscules : passages de tuyaux, bas de portes, gaines électriques. Un trou de la taille d’un crayon leur suffit.' },
       { q: 'Peut-on dératiser sans mort-aux-rats ?', a: 'Oui, avec des pièges mécaniques ou connectés, ou le piège multicapture Ekomille, toujours associés au colmatage des accès.' },
+      { q: 'Les rats transmettent-ils des maladies ?', a: 'Oui, surtout la leptospirose, par contact de la peau abîmée avec de l’eau ou un sol souillés par leur urine. La transmission reste rare selon la Ville de Paris ; Santé publique France a recensé 441 cas en 2024 dans l’Hexagone et en Corse.' },
+      { q: 'À quelle vitesse les rats se reproduisent-ils ?', a: 'La femelle surmulot peut se reproduire dès 8 semaines et avoir 3 à 5 portées par an (Ville de Paris). D’où l’intérêt d’agir dès les premiers signes.' },
+      { q: 'Combien de temps dure une dératisation ?', a: 'En général 2 à 4 semaines : le rat se méfie des objets nouveaux et met plusieurs jours avant de toucher aux appâts. Le technicien revient contrôler jusqu’à l’arrêt des consommations.' },
+      { q: 'Un chat suffit-il contre les rats ?', a: 'Non. Selon la Ville de Paris, un chat peut s’attaquer à de jeunes rats, pas aux adultes, et sa nourriture laissée dehors attire les rongeurs.' },
     ],
   },
   {
@@ -52,7 +56,11 @@ export const FAQ_GENERALE: Rubrique[] = [
     items: [
       { q: 'Comment reconnaître des punaises de lit ?', a: 'Piqûres groupées ou en ligne au réveil, petits points noirs dans les coutures du matelas, traces de sang sur les draps. L’adulte mesure 5 à 7 mm, plat et brun-rouge.' },
       { q: 'Faut-il jeter son matelas ?', a: 'En général non : un matelas se traite. Ne le déplacez pas dans une autre pièce avant le traitement, vous étendriez l’infestation.' },
-      { q: 'Comment traiter ses vêtements ?', a: 'Lavage à 60 °C, sèche-linge à haute température ou passage au congélateur dans un sac fermé.' },
+      { q: 'Comment traiter ses vêtements ?', a: 'Lavage à 60 °C, sèche-linge au moins 30 minutes à la plus haute température, ou 72 heures au congélateur dans un sac fermé (stop-punaises.gouv.fr).' },
+      { q: 'Les punaises de lit transmettent-elles des maladies ?', a: 'Non, selon l’ANSES. Leurs piqûres causent démangeaisons, parfois des allergies, et des troubles du sommeil.' },
+      { q: 'Les punaises de lit sautent-elles ou volent-elles ?', a: 'Ni l’un ni l’autre : elles marchent. Elles voyagent surtout dans les bagages, vêtements et meubles d’occasion.' },
+      { q: 'Les bombes anti-punaises du commerce marchent-elles ?', a: 'Non. Le site officiel stop-punaises.gouv.fr les juge inefficaces et risquées pour la santé ; elles dispersent les punaises dans les autres pièces.' },
+      { q: 'Combien de temps pour se débarrasser des punaises de lit ?', a: 'Avec un professionnel, 2 à 4 semaines (2 passages à 10 à 15 jours d’écart). Selon l’ANSES, deux tiers des foyers touchés en viennent à bout en moins de 2 mois.' },
     ],
   },
   {

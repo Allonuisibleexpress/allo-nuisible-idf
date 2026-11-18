@@ -140,7 +140,7 @@ export default function SituationsVille({ famille, slug, a }: { famille: Famille
               <h3 className="text-lg font-black text-white mb-2">{s.t(a)}</h3>
               <p className="text-white/65 text-sm leading-relaxed">{s.x}</p>
               {s.lien && (
-                <a href={s.lien.href} className="inline-flex items-center gap-1 text-sm font-bold mt-3" style={{ color: ACCENT }}>
+                <a href={s.lien.href} className="inline-flex items-center gap-1 text-sm font-bold mt-3" style={{ color: '#F0562A' }}>
                   {s.lien.label} <ArrowRight className="w-4 h-4" />
                 </a>
               )}

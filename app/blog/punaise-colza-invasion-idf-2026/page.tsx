@@ -23,7 +23,7 @@ export default function PunaiseCorzaArticle() {
               <Link href="/blog" style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#E8441A',
+                color: '#F0562A',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -37,7 +37,7 @@ export default function PunaiseCorzaArticle() {
               fontWeight: 700,
               letterSpacing: '.12em',
               textTransform: 'uppercase',
-              color: '#E8441A',
+              color: '#F0562A',
               marginBottom: '12px',
             }}>
               Guide
@@ -78,7 +78,7 @@ export default function PunaiseCorzaArticle() {
             padding: '24px',
             marginBottom: '48px',
           }}>
-            <h2 style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#E8441A', marginBottom: '12px' }}>EN BREF</h2>
+            <h2 style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#F0562A', marginBottom: '12px' }}>EN BREF</h2>
             <p style={{ fontSize: '14px', lineHeight: 1.7, color: 'rgba(255,255,255,0.85)' }}>
               La punaise de colza (Eurydema oleracea) est un petit insecte noir de 8 mm qui envahit massivement les façades et intérieurs d'Île-de-France après la moisson du colza (juillet-août). Complètement inoffensive : ne pique pas, ne transmet aucune maladie, n'endommage rien. La vague passe seule en 10 à 15 jours, accélérée par pluie et baisse des températures. Prévention efficace : fermeture des ouvertures, moustiquaires, aspiration, eau savonneuse. Traitement professionnel indispensable seulement en cas d'invasion massive (façade recouverte &gt; 60 %), sinon, c'est une arnaque commerciale.
             </p>
@@ -203,29 +203,29 @@ export default function PunaiseCorzaArticle() {
                 <tr style={{ borderBottom: '2px solid rgba(232, 68, 26, 0.3)' }}>
                   <th style={{ padding: '12px', textAlign: 'left', fontWeight: 700, color: '#fff' }}>Critère</th>
                   <th style={{ padding: '12px', textAlign: 'left', fontWeight: 700, color: '#22c55e' }}>Punaise de colza ✅</th>
-                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 700, color: '#E8441A' }}>Punaise de lit ⚠️</th>
+                  <th style={{ padding: '12px', textAlign: 'left', fontWeight: 700, color: '#F0562A' }}>Punaise de lit ⚠️</th>
                 </tr>
               </thead>
               <tbody>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '12px' }}>Piqûre humain</td>
                   <td style={{ padding: '12px', color: '#22c55e' }}>Non</td>
-                  <td style={{ padding: '12px', color: '#E8441A' }}>Oui (sang)</td>
+                  <td style={{ padding: '12px', color: '#F0562A' }}>Oui (sang)</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '12px' }}>Maladie transmise</td>
                   <td style={{ padding: '12px', color: '#22c55e' }}>Aucune</td>
-                  <td style={{ padding: '12px', color: '#E8441A' }}>Aucune mais nuisance massive</td>
+                  <td style={{ padding: '12px', color: '#F0562A' }}>Aucune mais nuisance massive</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '12px' }}>Où on la trouve</td>
                   <td style={{ padding: '12px', color: '#22c55e' }}>Façades, fenêtres, groupes</td>
-                  <td style={{ padding: '12px', color: '#E8441A' }}>Lit, matelas, coutures</td>
+                  <td style={{ padding: '12px', color: '#F0562A' }}>Lit, matelas, coutures</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '12px' }}>Durée avant disparition</td>
                   <td style={{ padding: '12px', color: '#22c55e' }}>10 à 15 jours (départ spontané)</td>
-                  <td style={{ padding: '12px', color: '#E8441A' }}>Mois/années sans traitement</td>
+                  <td style={{ padding: '12px', color: '#F0562A' }}>Mois/années sans traitement</td>
                 </tr>
               </tbody>
             </table>
@@ -300,7 +300,7 @@ export default function PunaiseCorzaArticle() {
           <p style={{
             fontSize: '13px',
             fontWeight: 600,
-            color: '#E8441A',
+            color: '#F0562A',
             background: 'rgba(232, 68, 26, 0.1)',
             border: '1px solid rgba(232, 68, 26, 0.25)',
             borderRadius: '8px',
@@ -361,7 +361,7 @@ export default function PunaiseCorzaArticle() {
                 borderRadius: '12px',
                 padding: '16px',
               }}>
-                <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#E8441A', marginBottom: '8px' }}>
+                <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#F0562A', marginBottom: '8px' }}>
                   {item.q}
                 </h4>
                 <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>

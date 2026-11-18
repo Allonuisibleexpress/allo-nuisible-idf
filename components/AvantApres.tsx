@@ -12,12 +12,12 @@ export default function AvantApres() {
 
         {/* ─── Colonne texte ─── */}
         <div className="reveal-left order-2 lg:order-1">
-          <p className="text-xs font-black uppercase tracking-[.18em] mb-4" style={{ color: ACCENT }}>
+          <p className="text-xs font-black uppercase tracking-[.18em] mb-4" style={{ color: '#F0562A' }}>
             Résultats réels
           </p>
           <h2 className="font-black text-white leading-[1.05]" style={{ fontSize: 'clamp(1.9rem,4.4vw,3rem)' }}>
             La différence,<br />
-            <span style={{ color: ACCENT }}>en un glissement.</span>
+            <span style={{ color: '#F0562A' }}>en un glissement.</span>
           </h2>
           <p className="mt-5 text-white/60 leading-relaxed" style={{ fontSize: '1.03rem', maxWidth: '30rem' }}>
             Nos interventions parlent d&apos;elles-mêmes. Glissez le curseur pour découvrir un
@@ -34,7 +34,7 @@ export default function AvantApres() {
             ].map((t) => (
               <div key={t} className="flex items-center gap-3">
                 <span className="flex-shrink-0 flex items-center justify-center w-7 h-7 rounded-lg"
-                  style={{ background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.2)', color: ACCENT }}>
+                  style={{ background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.2)', color: '#F0562A' }}>
                   <IconShieldCheck size={16} />
                 </span>
                 <span className="text-white/70 text-sm font-medium">{t}</span>
@@ -50,7 +50,7 @@ export default function AvantApres() {
             </div>
             <div className="w-px self-stretch" style={{ background: 'rgba(255,255,255,0.1)' }} />
             <div>
-              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: ACCENT }}>4,8<span className="text-white/60 text-lg">/5</span></div>
+              <div className="font-black" style={{ fontSize: '2rem', lineHeight: 1, color: '#F0562A' }}>4,8<span className="text-white/60 text-lg">/5</span></div>
               <div className="text-white/60 text-xs font-semibold mt-1.5 uppercase tracking-wider">Note Google</div>
             </div>
           </div>

@@ -64,10 +64,10 @@ export default function PourquoiNous() {
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14 animate-on-scroll">
-          <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Nos engagements</p>
+          <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Nos engagements</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
             Pourquoi faire appel à{' '}
-            <span className="text-[#E8441A]">Allo Nuisible IDF</span> ?
+            <span className="text-[#F0562A]">Allo Nuisible IDF</span> ?
           </h2>
           <div className="w-16 h-1 bg-[#E8441A] mx-auto mt-5 rounded-full" />
         </div>
@@ -85,12 +85,12 @@ export default function PourquoiNous() {
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-xl bg-[#E8441A]/15 group-hover:bg-[#E8441A] border border-[#E8441A]/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#E8441A]/30">
                   <Icon
-                    className="w-5 h-5 text-[#E8441A] group-hover:text-white transition-colors duration-300"
+                    className="w-5 h-5 text-[#F0562A] group-hover:text-white transition-colors duration-300"
                     strokeWidth={2}
                   />
                 </div>
 
-                <h3 className="font-black text-white text-base mb-2 group-hover:text-[#E8441A] transition-colors duration-200">
+                <h3 className="font-black text-white text-base mb-2 group-hover:text-[#F0562A] transition-colors duration-200">
                   {reason.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{reason.desc}</p>

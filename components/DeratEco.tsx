@@ -54,7 +54,7 @@ export default function DeratEco({ a, complet = false }: { a?: string; complet?:
               Comparer avec la dératisation classique <ArrowRight className="w-4 h-4" />
             </a>
           )}
-          <a href="/blog/deratisation-sans-mort-aux-rats" className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold" style={{ border: '1px solid rgba(255,255,255,0.15)', color: ACCENT }}>
+          <a href="/blog/deratisation-sans-mort-aux-rats" className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold" style={{ border: '1px solid rgba(255,255,255,0.15)', color: '#F0562A' }}>
             Le guide : dératiser sans mort-aux-rats <ArrowRight className="w-4 h-4" />
           </a>
         </div>

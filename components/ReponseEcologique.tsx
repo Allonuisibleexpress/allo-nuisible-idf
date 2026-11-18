@@ -51,7 +51,7 @@ export default function ReponseEcologique({ type }: { type: 'hub' | 'derat' | 'p
             </div>
           ))}
         </div>
-        <p className="text-center text-sm text-white/60 mt-6">Une question précise ? Appelez le <a href="tel:+33768077219" className="font-bold" style={{ color: ACCENT }}>07 68 07 72 19</a> ou envoyez une photo sur WhatsApp : devis gratuit.</p>
+        <p className="text-center text-sm text-white/60 mt-6">Une question précise ? Appelez le <a href="tel:+33768077219" className="font-bold" style={{ color: '#F0562A' }}>07 68 07 72 19</a> ou envoyez une photo sur WhatsApp : devis gratuit.</p>
       </div>
     </section>
   )

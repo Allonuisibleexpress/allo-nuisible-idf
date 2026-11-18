@@ -75,21 +75,21 @@ export default function Entreprise() {
                   <div className="flex items-center justify-center gap-4">
                     <div className="text-center">
                       <div className="w-10 h-10 bg-[#E8441A]/20 rounded-full mx-auto flex items-center justify-center border border-[#E8441A]/30">
-                        <Search className="w-5 h-5 text-[#E8441A]" />
+                        <Search className="w-5 h-5 text-[#F0562A]" />
                       </div>
                       <p className="text-gray-400 text-xs mt-1">Inspection</p>
                     </div>
-                    <div className="text-[#E8441A] text-xl font-black">→</div>
+                    <div className="text-[#F0562A] text-xl font-black">→</div>
                     <div className="text-center">
                       <div className="w-10 h-10 bg-[#E8441A]/20 rounded-full mx-auto flex items-center justify-center border border-[#E8441A]/30">
-                        <ClipboardList className="w-5 h-5 text-[#E8441A]" />
+                        <ClipboardList className="w-5 h-5 text-[#F0562A]" />
                       </div>
                       <p className="text-gray-400 text-xs mt-1">Rapport</p>
                     </div>
-                    <div className="text-[#E8441A] text-xl font-black">→</div>
+                    <div className="text-[#F0562A] text-xl font-black">→</div>
                     <div className="text-center">
                       <div className="w-10 h-10 bg-[#E8441A]/20 rounded-full mx-auto flex items-center justify-center border border-[#E8441A]/30">
-                        <Award className="w-5 h-5 text-[#E8441A]" />
+                        <Award className="w-5 h-5 text-[#F0562A]" />
                       </div>
                       <p className="text-gray-400 text-xs mt-1">Certifié</p>
                     </div>
@@ -110,7 +110,7 @@ export default function Entreprise() {
           {/* Right — text */}
           <div className="order-1 lg:order-2 space-y-6 animate-on-scroll animate-on-scroll-delay-2">
             <div>
-              <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Solutions Pro</p>
+              <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Solutions Pro</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
                 Nuisibles en Entreprise ?
               </h2>
@@ -128,7 +128,7 @@ export default function Entreprise() {
               {points.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#E8441A]/15 border border-[#E8441A]/30 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-4 h-4 text-[#E8441A]" />
+                    <Icon className="w-4 h-4 text-[#F0562A]" />
                   </div>
                   <span className="text-gray-300 text-sm">{text}</span>
                 </li>

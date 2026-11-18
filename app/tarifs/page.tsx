@@ -149,10 +149,10 @@ export default function TarifsPage() {
           <div className="relative max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style={{ background: 'rgba(232,68,26,0.12)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs font-black tracking-widest uppercase" style={{ color: ACCENT }}>Prix TTC · Devis gratuit · Sans engagement</span>
+              <span className="text-xs font-black tracking-widest uppercase" style={{ color: '#F0562A' }}>Prix TTC · Devis gratuit · Sans engagement</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-4 tracking-tight">
-              Nos <span style={{ color: ACCENT }}>tarifs</span>
+              Nos <span style={{ color: '#F0562A' }}>tarifs</span>
             </h1>
             <p className="text-lg text-white/55 mb-8 leading-relaxed max-w-xl mx-auto">
               Prix de départ TTC pour chaque nuisible. Le prix exact est confirmé par un devis gratuit avant toute intervention, sans frais cachés.
@@ -183,12 +183,12 @@ export default function TarifsPage() {
                 {/* Header service */}
                 <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="flex items-center gap-3">
-                    <span className="flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0" style={{ background: 'rgba(232,68,26,0.09)', border: '1px solid rgba(232,68,26,0.18)', color: ACCENT }}>
+                    <span className="flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0" style={{ background: 'rgba(232,68,26,0.09)', border: '1px solid rgba(232,68,26,0.18)', color: '#F0562A' }}>
                       <PestIcon name={icon as PestKey} size={22} />
                     </span>
                     <h2 className="font-black text-white text-base">{name}</h2>
                   </div>
-                  <a href={href} className="flex items-center gap-1.5 text-xs font-bold transition-all hover:opacity-80" style={{ color: ACCENT }}>
+                  <a href={href} className="flex items-center gap-1.5 text-xs font-bold transition-all hover:opacity-80" style={{ color: '#F0562A' }}>
                     Voir la page <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -200,7 +200,7 @@ export default function TarifsPage() {
                       {highlight && (
                         <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
                       )}
-                      <p className="text-white/50 text-xs font-semibold mb-1.5 uppercase tracking-wide">{label}</p>
+                      <p className="text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wide">{label}</p>
                       <p className="font-black mb-1.5" style={{ fontSize: '1.75rem', color: highlight ? ACCENT : '#fff', lineHeight: 1 }}>
                         {price ? (<><span className="text-white/60 text-sm font-semibold">dès </span>{price} €<span className="text-base">{unit}</span></>) : <span className="text-2xl">Sur devis</span>}
                       </p>
@@ -227,7 +227,7 @@ export default function TarifsPage() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">Devis gratuit en 5 minutes</h2>
             <p className="text-white/75 text-base mb-10">Tarif confirmé avant intervention · 7j/7 soirs et week-ends · Île-de-France</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 bg-white font-black px-9 py-4 rounded-2xl hover:scale-105 transition-all text-sm" style={{ color: ACCENT }}>
+              <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 bg-white font-black px-9 py-4 rounded-2xl hover:scale-105 transition-all text-sm" style={{ color: '#B8330D' }}>
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
               <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold px-9 py-4 rounded-2xl border-2 border-white/80 text-white hover:bg-white/10 transition-all text-sm">

@@ -32,7 +32,7 @@ export default function BandeauDevis({ slug, mot, a, prix }: { slug: string; mot
         <p className="text-white/75 md:text-lg leading-relaxed mb-6">{texte}</p>
         {prix && (
           <p className="text-white/80 font-bold mb-6">
-            À partir de <span className="font-black text-3xl md:text-4xl align-middle" style={{ color: ACCENT }}>{prix}</span> TTC
+            À partir de <span className="font-black text-3xl md:text-4xl align-middle" style={{ color: '#F0562A' }}>{prix}</span> TTC
           </p>
         )}
         <a href="tel:+33768077219" className="inline-flex items-center gap-2 font-black text-white px-7 py-4 rounded-2xl text-base md:text-lg" style={{ background: ACCENT, boxShadow: '0 6px 24px rgba(232,68,26,0.35)' }}>

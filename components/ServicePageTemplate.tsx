@@ -241,18 +241,18 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 backdropFilter: 'blur(10px)',
               }}>
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: ACCENT }}>{data.badge}</span>
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: '#F0562A' }}>{data.badge}</span>
               </div>
 
               {/* Titre */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-5 tracking-tight">
                 {data.heroTitle}{' '}<br />
-                <span style={{ color: ACCENT }}>{data.heroHighlight}</span>
+                <span style={{ color: '#F0562A' }}>{data.heroHighlight}</span>
               </h1>
               {data.urgence && (
                 <div className="max-w-2xl mx-auto mb-6 rounded-2xl px-5 py-4 flex items-start gap-3 text-left"
                   style={{ background: 'rgba(232,68,26,0.14)', border: '1px solid rgba(232,68,26,0.5)' }}>
-                  <Clock className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: ACCENT }} />
+                  <Clock className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: '#F0562A' }} />
                   <div>
                     <p className="font-black text-white text-base md:text-lg leading-snug">{data.urgence.titre}</p>
                     <p className="text-white/70 text-sm mt-1">{data.urgence.texte}</p>
@@ -279,7 +279,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 </a>
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 font-bold text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
-                  style={{ background: '#25D366', boxShadow: '0 6px 28px rgba(37,211,102,0.3)' }}
+                  style={{ background: '#0E7A3E', boxShadow: '0 6px 28px rgba(37,211,102,0.3)' }}
                 >
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
@@ -354,7 +354,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <section className="py-16 md:py-24 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Pourquoi nous choisir</p>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Pourquoi nous choisir</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">{data.titres?.benefits ?? 'Ce qui nous distingue'}</h2>
             </div>
             <div className={`grid ${data.benefits.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-5`}>
@@ -364,7 +364,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   <div key={title} className="group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
                     style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105"
-                      style={{ background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.2)', color: ACCENT }}>
+                      style={{ background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.2)', color: '#F0562A' }}>
                       {BIcon ? <BIcon className="w-6 h-6" strokeWidth={2} /> : <span className="text-2xl">{icon}</span>}
                     </div>
                     <p className="font-black text-white text-base mb-2.5">{title}</p>
@@ -380,7 +380,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <section className="py-16 md:py-24 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Déroulé</p>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Déroulé</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white">{data.titres?.process ?? 'Comment ça se passe ?'}</h2>
             </div>
             <div className="space-y-0">
@@ -416,12 +416,12 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <div className="overflow-x-auto rounded-2xl" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <table className="w-full text-sm">
                   <thead>
-                    <tr>{data.tableau.head.map((h) => <th key={h} className="text-left font-bold px-4 py-3" style={{ color: ACCENT }}>{h}</th>)}</tr>
+                    <tr>{data.tableau.head.map((h, j) => <th key={h || j} scope="col" className="text-left font-bold px-4 py-3" style={{ color: '#F0562A' }}>{h || <span className="sr-only">Critère</span>}</th>)}</tr>
                   </thead>
                   <tbody>
                     {data.tableau.rows.map((r) => (
                       <tr key={r[0]} className="border-t border-white/10">
-                        {r.map((cell, j) => <td key={j} className={`px-4 py-3 align-top ${j === 0 ? 'text-white font-bold' : 'text-white/70'}`}>{cell}</td>)}
+                        {r.map((cell, j) => j === 0 ? <th key={j} scope="row" className="px-4 py-3 align-top text-left text-white font-bold">{cell}</th> : <td key={j} className="px-4 py-3 align-top text-white/70">{cell}</td>)}
                       </tr>
                     ))}
                   </tbody>
@@ -438,7 +438,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <section className="py-16 md:py-24 px-4" style={{ background: '#080808' }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Devis gratuit</p>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Devis gratuit</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{data.titres?.pricing ?? 'Devis sur mesure, sans surprise'}</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Devis gratuit confirmé avant intervention · RC Pro incluse</p>
             </div>
@@ -475,7 +475,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {tier.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: ACCENT }} />
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#F0562A' }} />
                         {f}
                       </li>
                     ))}
@@ -520,7 +520,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                         <a href={l.href}
                           className="flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-white/80 hover:text-white text-sm font-semibold transition-colors hover:bg-white/[0.06]"
                           style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                          {l.label}<ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />
+                          {l.label}<ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />
                         </a>
                       </li>
                     ))}
@@ -535,7 +535,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <section className="py-16 md:py-24 px-4" style={{ background: '#111' }}>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>FAQ</p>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>FAQ</p>
               <h2 className="text-2xl md:text-3xl font-black text-white">{data.titres?.faq ?? 'Questions fréquentes'}</h2>
             </div>
             <div className="space-y-3">
@@ -562,7 +562,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href={PHONE_HREF}
                 className="inline-flex items-center gap-2.5 bg-white font-black px-9 py-4 rounded-2xl hover:bg-gray-50 transition-all hover:scale-105 text-sm"
-                style={{ color: ACCENT, boxShadow: '0 8px 24px rgba(0,0,0,0.2)' }}>
+                style={{ color: '#B8330D', boxShadow: '0 8px 24px rgba(0,0,0,0.2)' }}>
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
               <a href={WA} target="_blank" rel="noopener noreferrer"

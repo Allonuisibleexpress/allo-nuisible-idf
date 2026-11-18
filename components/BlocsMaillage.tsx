@@ -13,7 +13,7 @@ export default function BlocsMaillage({ blocs }: { blocs: { title: string; links
               {b.links.map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-white/80 hover:text-white text-sm font-semibold transition-colors hover:bg-white/[0.06]" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    {l.label}<ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />
+                    {l.label}<ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />
                   </a>
                 </li>
               ))}

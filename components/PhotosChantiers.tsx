@@ -20,7 +20,7 @@ export default function PhotosChantiers({
     <section className="py-14 md:py-20 px-4" style={{ background: fond }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>Sur le terrain</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A' }}>Sur le terrain</p>
           <h2 className="text-2xl md:text-3xl font-black text-white mb-3">{titre}</h2>
           <p className="text-white/55 text-sm max-w-xl mx-auto">{intro}</p>
         </div>

@@ -16,10 +16,10 @@ export default function OpengraphImage() {
           color: '#fff', fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ fontSize: 34, fontWeight: 700, color: '#E8441A', letterSpacing: 2 }}>ALLO NUISIBLE IDF</div>
+        <div style={{ fontSize: 34, fontWeight: 700, color: '#F0562A', letterSpacing: 2 }}>ALLO NUISIBLE IDF</div>
         <div style={{ fontSize: 72, fontWeight: 900, lineHeight: 1.05, marginTop: 24 }}>Votre spécialiste</div>
         <div style={{ fontSize: 72, fontWeight: 900, lineHeight: 1.05 }}>anti-nuisibles</div>
-        <div style={{ fontSize: 72, fontWeight: 900, lineHeight: 1.05, color: '#E8441A' }}>en Île-de-France.</div>
+        <div style={{ fontSize: 72, fontWeight: 900, lineHeight: 1.05, color: '#F0562A' }}>en Île-de-France.</div>
         <div style={{ fontSize: 34, marginTop: 40, color: 'rgba(255,255,255,0.8)' }}>Intervention le jour même, 7j/7 · 07 68 07 72 19</div>
       </div>
     ),

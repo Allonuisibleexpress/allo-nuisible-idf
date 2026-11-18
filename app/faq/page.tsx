@@ -35,11 +35,11 @@ export default function FaqPage() {
         <section className="pt-10 md:pt-14 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs text-white/60 mb-5"><a href="/" className="hover:text-white">Accueil</a> / FAQ</p>
-            <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
+            <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: '#F0562A', background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <HelpCircle className="w-3.5 h-3.5" />Questions fréquentes
             </p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-              Nuisibles : <span style={{ color: ACCENT }}>{NB_QUESTIONS} réponses de nos techniciens</span>
+              Nuisibles : <span style={{ color: '#F0562A' }}>{NB_QUESTIONS} réponses de nos techniciens</span>
             </h1>
             <p className="text-lg text-white/65 max-w-2xl mx-auto mb-8 leading-relaxed">
               Prix, garantie, méthodes de traitement, rats, punaises de lit, cafards, frelons, saisons : tout ce qu’on nous demande au téléphone, expliqué simplement.

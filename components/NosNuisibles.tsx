@@ -84,7 +84,7 @@ export default function NosNuisibles() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>
+          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>
             Nos interventions
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -126,7 +126,7 @@ export default function NosNuisibles() {
               {urgency && (
                 <span
                   className="absolute top-3 right-3 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded"
-                  style={{ background: 'rgba(232,68,26,0.18)', color: ACCENT }}
+                  style={{ background: 'rgba(232,68,26,0.18)', color: '#FF8A65' }}
                 >
                   {urgency}
                 </span>
@@ -138,7 +138,7 @@ export default function NosNuisibles() {
                 style={{
                   background: 'rgba(232,68,26,0.09)',
                   border: '1px solid rgba(232,68,26,0.18)',
-                  color: ACCENT,
+                  color: '#F0562A',
                 }}
               >
                 <PestIcon name={icon} size={26} />
@@ -146,7 +146,7 @@ export default function NosNuisibles() {
 
               {/* Text */}
               <div className="flex-1">
-                <p className="font-black text-white text-sm leading-tight mb-1.5 group-hover:text-[#E8441A] transition-colors duration-200">
+                <p className="font-black text-white text-sm leading-tight mb-1.5 group-hover:text-[#F0562A] transition-colors duration-200">
                   {name}
                 </p>
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', lineHeight: 1.5 }}>
@@ -156,8 +156,8 @@ export default function NosNuisibles() {
 
               {/* Lien */}
               <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-1 group-hover:translate-y-0">
-                <span className="text-[11px] font-bold" style={{ color: ACCENT }}>Voir la page</span>
-                <ArrowRight className="w-3 h-3" style={{ color: ACCENT }} />
+                <span className="text-[11px] font-bold" style={{ color: '#F0562A' }}>Voir la page</span>
+                <ArrowRight className="w-3 h-3" style={{ color: '#F0562A' }} />
               </div>
             </a>
           ))}

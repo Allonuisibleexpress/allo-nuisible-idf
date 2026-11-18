@@ -145,7 +145,7 @@ function Carte({ e }: { e: Espece }) {
         </figure>
       )}
       <div className="flex items-start gap-3 mb-3">
-        <span style={{ color: ACCENT }}><IconFourmi className="w-7 h-7 flex-shrink-0" /></span>
+        <span style={{ color: '#F0562A' }}><IconFourmi className="w-7 h-7 flex-shrink-0" /></span>
         <div>
           <h3 className="text-white font-black text-lg leading-tight">{e.nom}</h3>
           <p className="text-white/60 text-sm italic">{e.latin}</p>
@@ -154,12 +154,12 @@ function Carte({ e }: { e: Espece }) {
       <p className="text-white/80 text-sm leading-relaxed mb-2">{e.aspect}</p>
       <p className="text-white/60 text-sm leading-relaxed mb-4">{e.ou}</p>
       <p className="inline-flex items-center gap-1.5 self-start text-xs font-bold px-3 py-1.5 rounded-full mb-3"
-        style={e.plusieurs ? { background: 'rgba(232,68,26,0.15)', color: ACCENT, border: '1px solid rgba(232,68,26,0.45)' } : { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.75)' }}>
+        style={e.plusieurs ? { background: 'rgba(232,68,26,0.15)', color: '#F0562A', border: '1px solid rgba(232,68,26,0.45)' } : { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.75)' }}>
         <Crown className="w-3.5 h-3.5" />{e.reines}
       </p>
       <p className="text-white/70 text-sm leading-relaxed"><strong className="text-white">Traitement : </strong>{e.traitement}</p>
       {e.lien && (
-        <a href={e.lien.href} className="inline-flex items-center gap-1 text-sm font-bold mt-3" style={{ color: ACCENT }}>
+        <a href={e.lien.href} className="inline-flex items-center gap-1 text-sm font-bold mt-3" style={{ color: '#F0562A' }}>
           {e.lien.label} <ArrowRight className="w-4 h-4" />
         </a>
       )}
@@ -222,7 +222,7 @@ export default function FourmisTypesPage() {
               <a href="/" className="hover:text-white">Accueil</a> / <a href="/services/fourmis" className="hover:text-white">Fourmis</a> / Types de fourmis
             </p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-              Les types de fourmis <span style={{ color: ACCENT }}>en Île-de-France</span>
+              Les types de fourmis <span style={{ color: '#F0562A' }}>en Île-de-France</span>
             </h1>
             <p className="text-lg text-white/65 max-w-2xl mx-auto mb-8 leading-relaxed">
               Fourmi noire des jardins, fourmi pharaon, fourmi charpentière, fourmis rouges, fourmis envahissantes : reconnaître l&apos;espèce, c&apos;est savoir comment l&apos;éliminer.
@@ -238,7 +238,7 @@ export default function FourmisTypesPage() {
         {/* ── LA REINE ── */}
         <section className="pb-14 px-4">
           <div className="max-w-4xl mx-auto rounded-3xl p-7 md:p-10" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
-            <p className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-3" style={{ color: ACCENT }}><Crown className="w-4 h-4" />La règle d&apos;or</p>
+            <p className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#F0562A' }}><Crown className="w-4 h-4" />La règle d&apos;or</p>
             <h2 className="text-2xl md:text-3xl font-black text-white mb-4">Pour se débarrasser des fourmis, il faut tuer la reine</h2>
             <p className="text-white/75 leading-relaxed mb-3">
               Les fourmis que vous voyez sont des <strong className="text-white">ouvrières</strong>. La <strong className="text-white">reine</strong> reste cachée dans le nid et pond pendant des années : tant qu&apos;elle vit, la colonie remplace les ouvrières tuées. C&apos;est pour cela que les sprays, le vinaigre ou la craie ne règlent jamais le problème.
@@ -271,7 +271,7 @@ export default function FourmisTypesPage() {
                   {[...MAISON, ...JARDIN, ...ENVAHISSANTES].filter((e) => !e.latin.startsWith('Formica')).map((e) => (
                     <tr key={e.latin} style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
                       <td className="p-4 text-white font-bold">{e.nom}</td>
-                      <td className="p-4" style={e.plusieurs ? { color: ACCENT } : undefined}>{e.reines}</td>
+                      <td className="p-4" style={e.plusieurs ? { color: '#F0562A' } : undefined}>{e.reines}</td>
                       <td className="p-4">{e.traitement}</td>
                     </tr>
                   ))}
@@ -279,7 +279,7 @@ export default function FourmisTypesPage() {
               </table>
             </div>
             <p className="text-white/60 text-sm mt-6">
-              Pour tout comprendre (mode de vie, reproduction, origine), lisez notre guide <a href="/blog/fourmis-tout-savoir-mode-de-vie-reproduction" className="underline" style={{ color: ACCENT }}>tout savoir sur les fourmis</a>. Voir aussi notre <a href="/services/fourmis" className="underline" style={{ color: ACCENT }}>traitement des fourmis en Île-de-France</a>, dès 120 € TTC, garantie 1 an.
+              Pour tout comprendre (mode de vie, reproduction, origine), lisez notre guide <a href="/blog/fourmis-tout-savoir-mode-de-vie-reproduction" className="underline" style={{ color: '#F0562A' }}>tout savoir sur les fourmis</a>. Voir aussi notre <a href="/services/fourmis" className="underline" style={{ color: '#F0562A' }}>traitement des fourmis en Île-de-France</a>, dès 120 € TTC, garantie 1 an.
             </p>
           </div>
         </section>
@@ -292,7 +292,7 @@ export default function FourmisTypesPage() {
             <div className="flex flex-wrap gap-2">
               {VILLES_FOURMIS.map((v) => (
                 <a key={v.slug} href={`/fourmis/${v.slug}`} className="inline-flex items-center gap-1.5 text-sm text-white/80 px-3 py-2 rounded-full hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />Fourmis {v.a}
+                  <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />Fourmis {v.a}
                 </a>
               ))}
             </div>
@@ -320,7 +320,7 @@ export default function FourmisTypesPage() {
         <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={card}>
             <div className="flex items-start gap-3 mb-4">
-              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
+              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
               <div>
                 <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
                 <p className="text-white/55 text-sm">Techniciens titulaires du Certibiocide. Mis à jour le 6 novembre 2026.</p>

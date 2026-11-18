@@ -30,7 +30,7 @@ function g(t: string) {
     if (m.startsWith('**')) out.push(<strong key={i} className="text-white font-bold">{m.slice(2, -2)}</strong>)
     else if (m.startsWith('[')) {
       const r = m.match(/\[([^\]]+)\]\(([^)]+)\)/)!
-      out.push(<a key={i} href={r[2]} className="underline font-semibold" style={{ color: ACCENT }}>{r[1]}</a>)
+      out.push(<a key={i} href={r[2]} className="underline font-semibold" style={{ color: '#F0562A' }}>{r[1]}</a>)
     } else out.push(m)
   })
   return out
@@ -120,12 +120,12 @@ export default function ContenuNuisible({ data, slug, a, nom, partie }: { data: 
                         <div className="relative w-full h-44">
                           <NextImage src={PHOTOS_CHANTIERS[it.lien.photo].src} alt={PHOTOS_CHANTIERS[it.lien.photo].alt} fill sizes="260px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[it.lien.photo] as PhotoChantier).cadrage }} />
                         </div>
-                        <p className="p-3 text-sm font-bold text-center group-hover:underline" style={{ color: ACCENT }}>{it.lien.label} →</p>
+                        <p className="p-3 text-sm font-bold text-center group-hover:underline" style={{ color: '#F0562A' }}>{it.lien.label} →</p>
                       </a>
                     )}
                   </div>
                   {it.lien && !it.lien.photo && (
-                    <a href={it.lien.href} className="inline-block mt-4 text-sm font-bold underline" style={{ color: ACCENT }}>{it.lien.label} →</a>
+                    <a href={it.lien.href} className="inline-block mt-4 text-sm font-bold underline" style={{ color: '#F0562A' }}>{it.lien.label} →</a>
                   )}
                 </article>
               ))}
@@ -199,7 +199,7 @@ export default function ContenuNuisible({ data, slug, a, nom, partie }: { data: 
 
       <section className="py-12 md:py-16 px-4" style={{ background: '#101010' }}>
         <div className="max-w-4xl mx-auto rounded-3xl p-7 md:p-10 text-center" style={{ background: 'linear-gradient(135deg, rgba(232,68,26,0.22), rgba(232,68,26,0.06))', border: '1px solid rgba(232,68,26,0.4)' }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Prévention du retour</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Prévention du retour</p>
           <p className="text-2xl md:text-3xl font-black text-white leading-snug">{g(r(c(data.garantie.accroches, 120)))}</p>
           <p className="text-white/65 mt-4 max-w-2xl mx-auto text-sm md:text-base">{g(r(data.garantie.texte))}</p>
         </div>
@@ -217,7 +217,7 @@ export default function ContenuNuisible({ data, slug, a, nom, partie }: { data: 
               </div>
             ))}
           </div>
-          {!complet && <p className="text-center mt-6"><a href={q.lien} className="text-sm font-bold underline" style={{ color: ACCENT }}>Le détail, cas par cas →</a></p>}
+          {!complet && <p className="text-center mt-6"><a href={q.lien} className="text-sm font-bold underline" style={{ color: '#F0562A' }}>Le détail, cas par cas →</a></p>}
           <p className="text-white/60 text-xs mt-5 text-center">{q.note}</p>
         </div>
       </section>
@@ -236,7 +236,7 @@ export function MiniaturesChantier({ photos, a, ancre = '#nos-chantiers' }: { ph
             <NextImage src={mini(PHOTOS_CHANTIERS[k].src)} alt={PHOTOS_CHANTIERS[k].alt} fill sizes="64px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[k] as PhotoChantier).cadrage }} />
           </span>
         ))}
-        <span className="text-xs md:text-sm font-bold underline underline-offset-2" style={{ color: ACCENT }}>Voir nos vrais chantiers en photos ↓</span>
+        <span className="text-xs md:text-sm font-bold underline underline-offset-2" style={{ color: '#F0562A' }}>Voir nos vrais chantiers en photos ↓</span>
       </a>
     </div>
   )

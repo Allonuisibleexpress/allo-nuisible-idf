@@ -9,28 +9,28 @@ const steps = [
     icon: Phone,
     title: 'Contact',
     desc: 'Disponibles 7j/7 et 24h/24 pour répondre à vos questions et vous orienter vers la meilleure solution.',
-    color: '#E8441A',
+    color: '#F0562A',
   },
   {
     number: '02',
     icon: Search,
     title: 'Inspection',
     desc: 'Inspection complète de vos locaux, diagnostic précis de l\'infestation et devis gratuit sur place.',
-    color: '#E8441A',
+    color: '#F0562A',
   },
   {
     number: '03',
     icon: Wrench,
     title: 'Traitement',
     desc: 'Traitement ciblé, efficace et respectueux de l\'environnement avec des produits homologués.',
-    color: '#E8441A',
+    color: '#F0562A',
   },
   {
     number: '04',
     icon: ClipboardCheck,
     title: 'Suivi',
     desc: 'Suivi post-traitement rigoureux avec intervention rapide garantie en cas de récidive.',
-    color: '#E8441A',
+    color: '#F0562A',
   },
 ]
 
@@ -57,9 +57,9 @@ export default function Methode() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll">
-          <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Notre processus</p>
+          <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Notre processus</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
-            La méthode <span className="text-[#E8441A]">Allo Nuisible</span>
+            La méthode <span className="text-[#F0562A]">Allo Nuisible</span>
           </h2>
           <div className="w-16 h-1 bg-[#E8441A] mx-auto mt-5 rounded-full" />
         </div>
@@ -87,18 +87,18 @@ export default function Methode() {
                   <div className="p-6 lg:p-7">
                     {/* Step number + icon */}
                     <div className="flex items-center justify-between mb-5">
-                      <div className="text-5xl font-black text-[#E8441A]/10 leading-none select-none group-hover:text-[#E8441A]/20 transition-colors duration-300">
+                      <div className="text-5xl font-black text-[#F0562A]/10 leading-none select-none group-hover:text-[#F0562A]/20 transition-colors duration-300">
                         {step.number}
                       </div>
                       <div className="w-14 h-14 rounded-xl bg-[#E8441A]/10 group-hover:bg-[#E8441A] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#E8441A]/30">
                         <Icon
-                          className="w-6 h-6 text-[#E8441A] group-hover:text-white transition-colors duration-300"
+                          className="w-6 h-6 text-[#F0562A] group-hover:text-white transition-colors duration-300"
                           strokeWidth={1.8}
                         />
                       </div>
                     </div>
 
-                    <h3 className="font-black text-xl text-[#1a1a1a] mb-3 group-hover:text-[#E8441A] transition-colors duration-200">
+                    <h3 className="font-black text-xl text-[#1a1a1a] mb-3 group-hover:text-[#F0562A] transition-colors duration-200">
                       {step.title}
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>

@@ -100,11 +100,11 @@ export default function IdentifierNuisiblePage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs text-white/60 mb-5"><a href="/" className="hover:text-white">Accueil</a> / Identifier un nuisible</p>
             <Scanner />
-            <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
+            <p className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase px-3 py-1.5 rounded-full mb-5" style={{ color: '#F0562A', background: 'rgba(232,68,26,0.1)', border: '1px solid rgba(232,68,26,0.35)' }}>
               <Search className="w-3.5 h-3.5" />Identification gratuite
             </p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-              Quelle est cette bête ? <span style={{ color: ACCENT }}>Identifiez votre nuisible en 30 secondes</span>
+              Quelle est cette bête ? <span style={{ color: '#F0562A' }}>Identifiez votre nuisible en 30 secondes</span>
             </h1>
             <p className="text-lg text-white/65 max-w-2xl mx-auto mb-7 leading-relaxed">
               Des <strong className="text-white">piqûres au réveil</strong>, des <strong className="text-white">crottes dans le placard</strong>, une <strong className="text-white">bête qui file sous l’évier</strong> ? Menez l’enquête avec notre test, démasquez les sosies et comparez <strong className="text-white">{FICHES.length} nuisibles en photo</strong>.
@@ -124,7 +124,7 @@ export default function IdentifierNuisiblePage() {
         {/* ── TEST ── */}
         <section id="test" className="py-12 md:py-16 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Le test du détective : <span style={{ color: ACCENT }}>2 ou 3 questions, un verdict</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Le test du détective : <span style={{ color: '#F0562A' }}>2 ou 3 questions, un verdict</span></h2>
             <p className="text-white/60 mb-8">Partez de ce que vous avez constaté. Pas besoin d’avoir vu la bête.</p>
             <Detective />
           </div>
@@ -133,11 +133,11 @@ export default function IdentifierNuisiblePage() {
         {/* ── RÉFLEXES ── */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Avant tout : <span style={{ color: ACCENT }}>les 4 réflexes</span> pour une identification sûre</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">Avant tout : <span style={{ color: '#F0562A' }}>les 4 réflexes</span> pour une identification sûre</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {REFLEXES.map((r) => (
                 <div key={r.titre} className="rounded-2xl p-5" style={card}>
-                  <r.icon className="w-7 h-7 mx-auto mb-3" style={{ color: ACCENT }} />
+                  <r.icon className="w-7 h-7 mx-auto mb-3" style={{ color: '#F0562A' }} />
                   <p className="text-white font-black mb-1">{r.titre}</p>
                   <p className="text-white/60 text-sm leading-relaxed">{r.texte}</p>
                 </div>
@@ -149,7 +149,7 @@ export default function IdentifierNuisiblePage() {
         {/* ── PIQÛRES ET CROTTES ── */}
         <section className="py-12 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Qui vous a piqué ? <span style={{ color: ACCENT }}>Le tableau qui tranche</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Qui vous a piqué ? <span style={{ color: '#F0562A' }}>Le tableau qui tranche</span></h2>
             <p className="text-white/60 text-center mb-6">L’endroit et l’heure des piqûres trahissent presque toujours le coupable.</p>
             <div className="overflow-x-auto rounded-2xl mb-12" style={card}>
               <table className="w-full text-sm text-left">
@@ -164,7 +164,7 @@ export default function IdentifierNuisiblePage() {
               </table>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Des crottes ? <span style={{ color: ACCENT }}>Voici qui est passé</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Des crottes ? <span style={{ color: '#F0562A' }}>Voici qui est passé</span></h2>
             <p className="text-white/60 text-center mb-6">Ne les touchez jamais à mains nues : utilisez des gants.</p>
             <div className="overflow-x-auto rounded-2xl" style={card}>
               <table className="w-full text-sm text-left">
@@ -184,7 +184,7 @@ export default function IdentifierNuisiblePage() {
         {/* ── SOSIES ── */}
         <section className="py-12 md:py-16 px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Les sosies <span style={{ color: ACCENT }}>qui trompent tout le monde</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">Les sosies <span style={{ color: '#F0562A' }}>qui trompent tout le monde</span></h2>
             <p className="text-white/60 text-center mb-8">Ces confusions sont les plus fréquentes au téléphone. Elles changent tout au traitement.</p>
             <div className="space-y-8">
               {SOSIES.map((s) => (
@@ -194,7 +194,7 @@ export default function IdentifierNuisiblePage() {
                     {s.lignes.map((l) => (
                       <a key={l[0]} href={l[3]} className="rounded-2xl p-5 block hover:-translate-y-0.5 transition text-center" style={card}>
                         <p className="text-white font-black mb-1">{l[0]}</p>
-                        <p className="text-sm mb-1" style={{ color: ACCENT }}>{l[1]}</p>
+                        <p className="text-sm mb-1" style={{ color: '#F0562A' }}>{l[1]}</p>
                         <p className="text-white/60 text-sm">{l[2]}</p>
                       </a>
                     ))}
@@ -208,7 +208,7 @@ export default function IdentifierNuisiblePage() {
         {/* ── GALERIE ── */}
         <section id="fiches" className="py-12 md:py-16 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Les {FICHES.length} nuisibles <span style={{ color: ACCENT }}>les plus courants en Île-de-France</span>, en photo</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Les {FICHES.length} nuisibles <span style={{ color: '#F0562A' }}>les plus courants en Île-de-France</span>, en photo</h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto">Filtrez par pièce ou tapez ce que vous avez vu. Chaque fiche indique la taille, les indices, le niveau d’urgence et le bon réflexe.</p>
             <Galerie />
           </div>
@@ -227,7 +227,7 @@ export default function IdentifierNuisiblePage() {
               ))}
             </div>
             <div className="flex items-start gap-3 mt-8 rounded-2xl p-5" style={card}>
-              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
+              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
               <p className="text-white/60 text-sm">Rédigé par Houssem Hattab, gérant d’Allo Nuisible IDF, et nos techniciens titulaires du Certibiocide. Photos : Wikimedia Commons, auteurs et licences indiqués sous chaque photo.</p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function IdentifierNuisiblePage() {
 
         {/* ── CTA ── */}
         <section className="py-14 px-4 text-center" style={{ background: '#0d0d0d' }}>
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Toujours un doute ? <span style={{ color: ACCENT }}>On l’identifie pour vous</span></h2>
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Toujours un doute ? <span style={{ color: '#F0562A' }}>On l’identifie pour vous</span></h2>
           <p className="text-white/65 mb-6">Envoyez une photo ou appelez : réponse gratuite d’un technicien, devis gratuit si un traitement est nécessaire, 7j/7.</p>
           <p className="text-white/65 mb-6 -mt-3">Vous préférez éviter les produits chimiques ? Voir <a href="/services/traitements-sans-produit-chimique" className="font-bold underline" style={{ color: '#3FB27F' }}>nos traitements écologiques, sans biocide</a>.</p>
           <div className="flex flex-wrap justify-center gap-3">

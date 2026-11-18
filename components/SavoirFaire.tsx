@@ -47,9 +47,9 @@ export default function SavoirFaire() {
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
         <div className="text-center mb-14 animate-on-scroll">
-          <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Notre expertise</p>
+          <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Notre expertise</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
-            Le savoir <span className="text-[#E8441A]">Allo Nuisible</span>
+            Le savoir <span className="text-[#F0562A]">Allo Nuisible</span>
           </h2>
           <div className="w-16 h-1 bg-[#E8441A] mx-auto mt-5 rounded-full" />
         </div>
@@ -67,7 +67,7 @@ export default function SavoirFaire() {
                 <div className="relative">
                   <div className="w-20 h-20 rounded-full border-2 border-[#E8441A] flex items-center justify-center group-hover:bg-[#E8441A] transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#E8441A]/20">
                     <Icon
-                      className="w-8 h-8 text-[#E8441A] group-hover:text-white transition-colors duration-300"
+                      className="w-8 h-8 text-[#F0562A] group-hover:text-white transition-colors duration-300"
                       strokeWidth={1.5}
                     />
                   </div>

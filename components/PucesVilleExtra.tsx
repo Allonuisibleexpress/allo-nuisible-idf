@@ -152,7 +152,7 @@ export function PucesBloc1({ slug, a, nom }: { slug: string; a: string; nom: str
           <h3 className="text-xl md:text-2xl font-black text-white mt-14 mb-5 text-center">{melange(h + 43) % 2 ? `Puce, punaise de lit ou acarien ${a} : comment ne pas se tromper ?` : `Piqûres ${a} : puce, punaise de lit ou acarien ?`}</h3>
           <div className="overflow-x-auto rounded-2xl" style={card}>
             <table className="w-full text-sm min-w-[520px]">
-              <thead><tr>{['', 'Puce', 'Punaise de lit', 'Acarien'].map((x) => <th key={x} className="text-left font-bold px-4 py-3" style={{ color: ACCENT }}>{x}</th>)}</tr></thead>
+              <thead><tr>{['', 'Puce', 'Punaise de lit', 'Acarien'].map((x, j) => <th key={x || j} scope="col" className="text-left font-bold px-4 py-3" style={{ color: '#F0562A' }}>{x || <span className="sr-only">Critère</span>}</th>)}</tr></thead>
               <tbody className="text-white/70">
                 {(melange(h + 41) % 2 === 0 ? [
                   ['Taille', 'Quelques millimètres', 'Environ la taille d’un pépin de pomme', 'Microscopique'],
@@ -205,7 +205,7 @@ export function PucesBloc2({ slug, a, nom }: { slug: string; a: string; nom: str
       <section className="py-12 md:py-16 px-4" style={{ background: '#0b0b0b' }}>
         <div className="max-w-5xl mx-auto">
           <div className="rounded-3xl p-7 md:p-10 text-center" style={{ background: 'linear-gradient(135deg, rgba(232,68,26,0.22), rgba(232,68,26,0.06))', border: '1px solid rgba(232,68,26,0.4)' }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Prévention du retour</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Prévention du retour</p>
             <p className="text-2xl md:text-3xl font-black text-white leading-snug max-w-3xl mx-auto">{g(accroche)}</p>
             <p className="text-white/65 mt-4 max-w-2xl mx-auto text-sm md:text-base">{g(remplir('Notre traitement des puces {a} est **garanti un an**. En échange, suivez nos conseils : vétérinaire, aspiration quotidienne, lavage à 60 °C.', a, nom))}</p>
           </div>

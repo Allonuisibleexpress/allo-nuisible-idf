@@ -73,6 +73,95 @@ export const GUIDE_DERATISATION: Record<string, GuideVille> = {
     ],
   },
 
+  'villejuif': {
+    titre: 'Dératisation à Villejuif : le guide complet, du plateau aux Hautes-Bruyères',
+    intro: 'Villejuif compte **60 183 habitants** sur **5,28 km²** (Insee), soit environ **11 400 habitants au km²**. La ville occupe un plateau entre la vallée de la Bièvre et celle de la Seine, traversé par la **ligne 7**, la **ligne 14** et le **tram 7**. Grands chantiers, résidences, pavillons et deux grands hôpitaux : à Villejuif, les rongeurs trouvent des situations très variées.',
+    sections: [
+      { h: 'Chantiers du métro : pourquoi les rats sortent', p: [
+        'Le prolongement de la **ligne 14** jusqu’à la gare **Villejuif-Institut Gustave-Roussy**, ouverte en 2024, et le chantier de la **ligne 15** ont remué le sous-sol pendant des années. Quand on creuse, on détruit des terriers et on coupe des réseaux : les surmulots se déplacent alors vers les caves, les parkings et les jardins voisins.',
+        'Dans les rues proches des chantiers et des nouvelles constructions, nous voyons souvent des rats apparaître d’un coup dans une résidence qui n’en avait jamais eu. Le bon réflexe est d’agir vite, avant qu’ils ne s’installent et ne se reproduisent.',
+      ] },
+      { h: 'Hautes-Bruyères, Lion d’Or, Esselières : les quartiers et leurs rongeurs', p: [
+        'Autour du **parc départemental des Hautes-Bruyères**, les pavillons et les jardins voient surtout des souris et des mulots à l’automne, et des rats qui creusent sous les abris et les composts. Le **parc du 8-Mai-1945** et le **parc des Lilas** sont aussi des zones de passage.',
+        'Dans les grandes résidences du **Lion d’Or**, des **Esselières** ou du quartier **Lebon**, le problème part presque toujours des locaux poubelles et des caves. Nous commençons par les parties communes avec le bailleur ou le syndic, puis traitons les logements touchés.',
+      ] },
+      { h: 'Pavillons du plateau : par où entrent rats et souris', p: [
+        'Dans les maisons de Villejuif, les souris entrent par les passages de tuyaux, les bas de portes de garage et les grilles d’aération abîmées. Une souris se faufile par une ouverture d’environ 6 mm, un rat par un trou d’environ 2 cm.',
+        'Notre technicien fait le tour de la maison, repère chaque accès, pose des postes verrouillés ou des pièges, puis **rebouche les passages** (laine d’acier, mortier, grilles). C’est le colmatage qui évite le retour.',
+      ] },
+      { h: 'Commerces et restauration près des hôpitaux', p: [
+        'Avec l’**Institut Gustave-Roussy** et l’**hôpital Paul-Guiraud**, Villejuif accueille chaque jour beaucoup de visiteurs et de salariés. Les commerces de bouche et restaurants qui les servent doivent pouvoir prouver leur lutte contre les nuisibles : nous proposons un contrat de suivi avec registre et attestation à chaque passage.',
+      ] },
+      { h: 'Notre délai à Villejuif', p: [
+        'Villejuif est à environ **6,6 km** de notre base de Saint-Maurice. Nous y intervenons 7j/7, souvent le jour même, dès **120 € TTC** pour un appartement, avec devis gratuit et garantie 1 an.',
+      ] },
+    ],
+    faq: [
+      { q: 'Des rats sont apparus depuis les travaux du métro à Villejuif : est-ce lié ?', a: 'Souvent, oui. Les grands chantiers souterrains détruisent des terriers et déplacent les surmulots vers les immeubles et les jardins voisins. Il faut repérer leurs accès et les traiter rapidement, avant qu’ils ne se reproduisent.' },
+      { q: 'Qui doit payer la dératisation d’une résidence à Villejuif ?', a: 'Les caves, parkings et locaux poubelles sont des parties communes : c’est au bailleur ou au syndic d’organiser la dératisation. Dans votre logement, le propriétaire doit fournir un logement exempt de nuisibles, sauf négligence prouvée de l’occupant.' },
+      { q: 'Combien coûte une dératisation à Villejuif ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris. Pour une maison avec jardin ou une résidence, le prix dépend de la surface et du nombre de postes : devis gratuit avant le déplacement.' },
+    ],
+  },
+
+  'vincennes': {
+    titre: 'Dératisation à Vincennes : le guide complet, du château au bois',
+    intro: 'Vincennes compte **48 193 habitants** sur **1,9 km²** (Insee), soit plus de **25 000 habitants au km²** : c’est l’une des communes les plus denses de France. Immeubles anciens serrés, caves voûtées, cours intérieures, commerces de bouche et, juste à côté, les **995 hectares du bois de Vincennes** : tout ce qu’il faut aux rats pour se nourrir et s’abriter.',
+    sections: [
+      { h: 'Le bois de Vincennes, réservoir de rongeurs aux portes de la ville', p: [
+        'Le bois touche Vincennes sur tout son côté sud. Les rats et les souris y vivent toute l’année et se rapprochent des immeubles quand la nourriture se fait rare, surtout à l’automne et en hiver. Les rues qui longent le bois, autour du **château** et de l’avenue de Paris, sont les premières concernées.',
+        'Un rat qui arrive du bois cherche d’abord un soupirail mal fermé, une grille de cave abîmée ou une porte de local poubelles laissée ouverte. C’est là que notre technicien commence son inspection.',
+      ] },
+      { h: 'Caves voûtées et cours intérieures : le cœur du problème', p: [
+        'Une grande partie des immeubles de Vincennes date du XIXe siècle et du début du XXe. Leurs **caves voûtées** communiquent souvent d’un bâtiment à l’autre, les joints sont dégradés et les anciennes descentes en fonte laissent des passages. Un rat peut traverser plusieurs immeubles sans jamais sortir.',
+        'Dans ces copropriétés, traiter un seul lot ne sert à rien : nous intervenons dans les **parties communes** avec le syndic (caves, cours, local poubelles), nous posons des postes verrouillés et numérotés, puis nous **rebouchons les accès**. Le syndic reçoit un plan des postes et un compte rendu à chaque passage.',
+      ] },
+      { h: 'Marchés, restaurants et commerces : un suivi régulier', p: [
+        'Vincennes a trois marchés, **place Carnot**, **rue de Fontenay** et **place Diderot**, et OpenStreetMap y recense environ **128 restaurants** et **47 commerces alimentaires**, surtout autour de la rue du Midi et de la rue de Fontenay. Les réserves en sous-sol et les bacs à déchets attirent les rongeurs.',
+        'Pour les professionnels, nous proposons un **contrat de dératisation** avec passages programmés, registre et attestation, à présenter en cas de contrôle sanitaire.',
+      ] },
+      { h: 'Rat ou souris dans votre appartement à Vincennes', p: [
+        'Dans les étages, ce sont surtout des **souris**, qui montent par les gaines techniques et les passages de tuyaux : petites crottes de 3 à 6 mm, emballages grignotés, grattements la nuit. Au rez-de-chaussée et en cave, c’est plutôt le **surmulot** : crottes plus grosses, traces grasses le long des murs, terriers dans les cours.',
+      ] },
+      { h: 'Notre délai à Vincennes', p: [
+        'Vincennes est à environ **3 km** de notre base de Saint-Maurice, de l’autre côté du bois. C’est l’une des villes où nous arrivons le plus vite, souvent dans la journée, 7j/7. Dès **120 € TTC** pour un appartement, devis gratuit, garantie 1 an.',
+      ] },
+    ],
+    faq: [
+      { q: 'Les rats du bois de Vincennes peuvent-ils entrer dans mon immeuble ?', a: 'Oui, surtout dans les rues qui longent le bois. Ils passent par les soupiraux, les grilles de caves abîmées et les locaux poubelles. Le repérage et le colmatage de ces accès sont aussi importants que le traitement.' },
+      { q: 'Mon immeuble ancien à Vincennes a des caves communes : faut-il tout traiter ?', a: 'Oui. Les caves voûtées communiquent souvent entre elles : si seul un logement est traité, les rongeurs reviennent par les parties communes. La dératisation des caves est organisée par le syndic et payée par la copropriété.' },
+      { q: 'En combien de temps intervenez-vous à Vincennes ?', a: 'Notre base est à Saint-Maurice, à environ 3 km : nous intervenons très souvent le jour même, 7j/7, dès 120 € TTC pour un appartement.' },
+    ],
+  },
+
+  'paris-16': {
+    titre: 'Dératisation à Paris 16e : le guide complet, de Passy à Auteuil',
+    intro: 'Le 16e arrondissement compte **159 386 habitants** sur **16,4 km²** (Insee), bois de Boulogne compris. C’est l’arrondissement le plus vert de Paris, bordé par la Seine à l’est et le **bois de Boulogne** à l’ouest, avec des immeubles haussmanniens, des hôtels particuliers, des villas et des maisons avec jardin. Les rongeurs y trouvent à la fois des espaces verts et des sous-sols profonds.',
+    sections: [
+      { h: 'Bois de Boulogne, Bagatelle, Ranelagh : les rongeurs à la lisière', p: [
+        'Le **bois de Boulogne**, le **parc de Bagatelle** et le **jardin du Ranelagh** abritent rats, souris et mulots. Les immeubles et maisons de la **porte Dauphine**, de la **Muette** et d’**Auteuil** qui donnent sur ces espaces verts voient plus souvent des rongeurs dans les jardins, les caves et les garages, surtout à l’arrivée du froid.',
+      ] },
+      { h: 'Villas et maisons avec jardin à Auteuil', p: [
+        'Les **villas d’Auteuil** et les maisons avec jardin demandent un traitement intérieur et extérieur : postes verrouillés le long des murs, contrôle des soupiraux, des regards et des abris de jardin, recherche des terriers sous les dalles et les massifs.',
+        'Avec des enfants ou des animaux, nous utilisons des postes fermés à clé, ou en méthode alternative le **piège Ekomille sans raticide**, posé sur le passage le plus fréquenté. Nous intervenons en véhicule banalisé, avec discrétion.',
+      ] },
+      { h: 'Immeubles haussmanniens de Passy et Chaillot', p: [
+        'À **Passy**, au **Trocadéro** et à **Chaillot**, les immeubles haussmanniens ont des caves profondes, des loges, des cours et des parkings souterrains. Les rats remontent des réseaux et des quais de Seine par les canalisations et les grilles. Les souris, elles, montent dans les étages par les gaines et les cuisines.',
+        'Nous travaillons avec les syndics et les gardiens : traitement des parties communes, postes numérotés, plan et compte rendu, puis traitement des appartements touchés.',
+      ] },
+      { h: 'Restaurants et hôtels du 16e', p: [
+        'Le 16e accueille de nombreux restaurants et hôtels, autour du Trocadéro, de Passy et de la place Victor-Hugo. Pour ces établissements, nous proposons un **contrat de suivi** avec passages programmés, registre et attestation, et des interventions en dehors des heures d’ouverture.',
+      ] },
+      { h: 'Délai et prix dans le 16e', p: [
+        'Avec le **RER C**, les **lignes 2, 6, 9 et 10** et le **tram 3b**, nos techniciens rejoignent tout l’arrondissement, 7j/7, souvent dans la journée. Dès **120 € TTC** pour un appartement ; pour une maison avec jardin, devis gratuit selon la surface. Garantie 1 an.',
+      ] },
+    ],
+    faq: [
+      { q: 'J’habite près du bois de Boulogne : est-ce normal d’avoir des rats ?', a: 'Les immeubles et maisons en lisière des grands espaces verts sont plus exposés, surtout en automne et en hiver. La solution passe par le colmatage des accès (soupiraux, grilles, passages de tuyaux) et un traitement adapté.' },
+      { q: 'Pouvez-vous intervenir discrètement dans le 16e ?', a: 'Oui, nos techniciens interviennent en véhicule banalisé et à l’heure qui vous convient, y compris tôt le matin ou en soirée pour les commerces et hôtels.' },
+      { q: 'Combien coûte une dératisation à Paris 16e ?', a: 'Dès 120 € TTC pour un appartement, rats ou souris. Pour une maison avec jardin, une villa ou un immeuble, le prix dépend de la surface et du nombre de postes : devis gratuit avant le déplacement.' },
+    ],
+  },
+
   'courbevoie': {
     titre: 'Dératisation à Courbevoie : le guide complet, de La Défense à Bécon',
     intro: 'Avec **82 902 habitants** sur **4,16 km²** (Insee), Courbevoie dépasse les **19 900 habitants au km²**, l’une des densités les plus fortes des Hauts-de-Seine. Entre les tours de La Défense, les bords de Seine et les rues de Bécon, la ville réunit tout ce qui attire les rongeurs : réseaux profonds, parkings souterrains, restaurants et immeubles reliés entre eux.',
@@ -241,6 +330,14 @@ export const GUIDE_DERATISATION: Record<string, GuideVille> = {
       ] },
       { h: 'Quartiers collectifs', p: [
         'Dans les résidences du **Plateau** ou de **Fouilleuse**, la dératisation commence par les caves et les locaux poubelles, avec le bailleur ou le syndic.',
+        'Nous remettons au gestionnaire un plan des postes numérotés et un compte rendu à chaque passage : c’est la preuve que la dératisation est suivie, utile en assemblée générale ou face à un locataire.',
+      ] },
+      { h: 'Rats, souris ou lérot : qui fait du bruit dans vos combles ?', p: [
+        'À Rueil, les bruits dans les combles ne viennent pas toujours d’un rat. Le **lérot**, petit rongeur au masque noir, s’installe parfois dans les greniers des maisons proches des bois, surtout à l’automne. On ne le traite pas comme un rat : la bonne solution est de boucher les accès une fois qu’il est sorti.',
+        'Rats et souris, eux, laissent des crottes, des traces de grignotage et des odeurs d’urine. Notre technicien identifie l’animal avant de choisir la méthode.',
+      ] },
+      { h: 'Délai et prix à Rueil-Malmaison', p: [
+        'Rueil est à environ **20 km** de notre base. Nous y intervenons 7j/7 sur rendez-vous, souvent dans la journée. Dès **120 € TTC** pour un appartement ; pour une maison avec jardin, devis gratuit selon la surface. Garantie 1 an.',
       ] },
     ],
     faq: [
@@ -351,8 +448,15 @@ export const GUIDE_DERATISATION: Record<string, GuideVille> = {
       { h: 'Notre méthode dans le 20e', p: [
         'Diagnostic, repérage des passages, postes verrouillés ou pièges, colmatage des accès, contrôle. Dans un arrondissement aussi dense, le colmatage est indispensable : sans lui, les rats reviennent des immeubles voisins.',
       ] },
+      { h: 'Gambetta, Pyrénées, Jourdain : commerces et marchés', p: [
+        'Autour de **Gambetta**, de la rue des **Pyrénées** et du **Jourdain**, les rez-de-chaussée commerciaux sont nombreux : boulangeries, épiceries, restaurants. Leurs réserves en sous-sol communiquent souvent avec les caves des immeubles. Un rat repéré dans une réserve se retrouve vite dans les parties communes.',
+        'Pour les commerçants du 20e, nous proposons un contrat avec passages programmés, un registre et une attestation, utiles lors d’un contrôle sanitaire.',
+      ] },
+      { h: 'Rats ou souris dans le 20e : comment les reconnaître', p: [
+        'Le **surmulot** (rat d’égout) vit dans les caves, les cours et les réseaux : crottes de 1 à 2 cm, terriers au pied des murs, traces grasses le long des plinthes. La **souris** monte dans les étages par les gaines : petites crottes de 3 à 6 mm, emballages grignotés dans les placards. Le traitement n’est pas le même, d’où le diagnostic avant toute pose.',
+      ] },
       { h: 'Délai et prix', p: [
-        'Nous intervenons dans le 20e 7j/7, souvent le jour même. Dès 120 € TTC pour un appartement, devis gratuit avant le déplacement.',
+        'Nous intervenons dans le 20e 7j/7, souvent le jour même : métro **1, 2, 3, 9, 11** et tram **3b** desservent tout l’arrondissement. Dès 120 € TTC pour un appartement, devis gratuit avant le déplacement, garantie 1 an.',
       ] },
     ],
     faq: [

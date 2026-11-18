@@ -8,7 +8,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
     <section className="py-16 md:py-24 px-4" style={{ background: fond }}>
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Avis Google</p>
+          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Avis Google</p>
           <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Ce que disent nos clients</h2>
           <p className="text-white/60 text-sm">
             <span className="text-yellow-400">★★★★★</span>{' '}

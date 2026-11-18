@@ -63,9 +63,9 @@ export default function NosInterventionsPage() {
       <main style={{ background: '#080808' }}>
         <section className="pt-10 md:pt-14 pb-10 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: ACCENT }}>Sur le terrain</p>
+            <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: '#F0562A' }}>Sur le terrain</p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-              Nos interventions <span style={{ color: ACCENT }}>en images</span>
+              Nos interventions <span style={{ color: '#F0562A' }}>en images</span>
             </h1>
             <p className="text-lg text-white/65 max-w-2xl mx-auto mb-8 leading-relaxed">
               Photos et vidéos prises par nos techniciens sur de vrais chantiers, en Île-de-France. Sous chaque intervention, le récit complet de ce que nous avons fait.
@@ -87,10 +87,10 @@ export default function NosInterventionsPage() {
             <div className="max-w-5xl mx-auto">
               {/* En-tête de rubrique, centré */}
               <div className="text-center mb-10">
-                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: ACCENT }}>Nos chantiers</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#F0562A' }}>Nos chantiers</p>
                 <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{r.titre}</h2>
                 <a href={r.service} className="inline-flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-full transition-colors hover:bg-white/10"
-                  style={{ color: ACCENT, border: '1px solid rgba(232,68,26,0.4)' }}>
+                  style={{ color: '#F0562A', border: '1px solid rgba(232,68,26,0.4)' }}>
                   Découvrir notre service <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -105,7 +105,7 @@ export default function NosInterventionsPage() {
                         <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
                           <a href={(LIEUX[a.slug] ?? SECTEUR).href} className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full text-white transition-colors hover:bg-white/10"
                             style={{ background: 'rgba(232,68,26,0.15)', border: '1px solid rgba(232,68,26,0.45)' }}>
-                            <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{(LIEUX[a.slug] ?? SECTEUR).nom}
+                            <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{(LIEUX[a.slug] ?? SECTEUR).nom}
                           </a>
                           <span className="text-[11px] font-bold tracking-widest uppercase text-white/60">
                             {r.titre} · {new Date(a.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -115,7 +115,7 @@ export default function NosInterventionsPage() {
                           <a href={`/blog/${a.slug}`} className="hover:underline underline-offset-4">{titre}</a>
                         </h3>
                         {accroche && (
-                          <p className="text-base md:text-lg font-bold leading-snug mb-4" style={{ color: ACCENT }}>
+                          <p className="text-base md:text-lg font-bold leading-snug mb-4" style={{ color: '#F0562A' }}>
                             {accroche.charAt(0).toUpperCase() + accroche.slice(1)}
                           </p>
                         )}

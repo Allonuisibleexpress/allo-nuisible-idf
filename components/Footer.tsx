@@ -40,7 +40,7 @@ export default function Footer() {
       <div style={{ background: '#E8441A' }}>
         <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
           <p className="text-white font-black text-xl md:text-2xl uppercase tracking-wide">Devis gratuit et sans engagement</p>
-          <a href="tel:+33768077219" className="inline-flex items-center gap-2 bg-white font-black px-6 py-3 rounded-full text-base md:text-lg" style={{ color: '#E8441A' }}>
+          <a href="tel:+33768077219" className="inline-flex items-center gap-2 bg-white font-black px-6 py-3 rounded-full text-base md:text-lg" style={{ color: '#B8330D' }}>
             <Phone className="w-5 h-5" /> 07 68 07 72 19
           </a>
         </div>
@@ -62,17 +62,17 @@ export default function Footer() {
               radicales et durables, disponibles 7j/7 et 24h/24.
             </p>
             <div className="space-y-2">
-              <a href="tel:+33768077219" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
-                <Phone className="w-4 h-4 text-[#E8441A]" />
+              <a href="tel:+33768077219" className="flex items-center gap-2 text-gray-400 hover:text-[#F0562A] text-sm transition-colors group">
+                <Phone className="w-4 h-4 text-[#F0562A]" />
                 <span className="group-hover:underline">07 68 07 72 19</span>
               </a>
-              <a href="mailto:contact@allonuisibleidf.fr" className="flex items-center gap-2 text-gray-400 hover:text-[#E8441A] text-sm transition-colors group">
-                <Mail className="w-4 h-4 text-[#E8441A]" />
+              <a href="mailto:contact@allonuisibleidf.fr" className="flex items-center gap-2 text-gray-400 hover:text-[#F0562A] text-sm transition-colors group">
+                <Mail className="w-4 h-4 text-[#F0562A]" />
                 <span className="group-hover:underline">contact@allonuisibleidf.fr</span>
               </a>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
-                <a href="https://maps.google.com/?cid=11887181769674817823" target="_blank" rel="noopener noreferrer" className="hover:text-[#E8441A] hover:underline">6 bis Rue du Val d&apos;Osne, 94410 Saint-Maurice</a>
+                <MapPin className="w-4 h-4 text-[#F0562A] flex-shrink-0" />
+                <a href="https://maps.google.com/?cid=11887181769674817823" target="_blank" rel="noopener noreferrer" className="hover:text-[#F0562A] hover:underline">6 bis Rue du Val d&apos;Osne, 94410 Saint-Maurice</a>
               </div>
             </div>
             {/* Réseaux sociaux (14/11/2026) : page Facebook, comptes Instagram, Pinterest et TikTok, chaîne YouTube et fiche Google */}
@@ -100,15 +100,15 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
+            <h2 className="text-white font-bold text-sm uppercase tracking-widest mb-5">
               Liens rapides
-            </h4>
+            </h2>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#E8441A] text-sm transition-colors hover:translate-x-1 inline-flex items-center gap-1.5 group"
+                    className="text-gray-400 hover:text-[#F0562A] text-sm transition-colors hover:translate-x-1 inline-flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#E8441A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
@@ -120,13 +120,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Nos services</h4>
+            <h2 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Nos services</h2>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
                   <a
                     href={s.href}
-                    className="text-gray-400 hover:text-[#E8441A] text-sm transition-colors group inline-flex items-center gap-1.5"
+                    className="text-gray-400 hover:text-[#F0562A] text-sm transition-colors group inline-flex items-center gap-1.5"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#E8441A] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {s.label}
@@ -138,20 +138,20 @@ export default function Footer() {
 
           {/* Zones */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Zones couvertes</h4>
+            <h2 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Zones couvertes</h2>
             <div className="flex flex-wrap gap-2">
               {DEPARTEMENTS_IDF.map((d) => (
                 <a
                   key={d.slug}
                   href={`/zones/${d.slug}`}
-                  className="text-gray-400 text-xs bg-white/5 border border-white/10 hover:border-[#E8441A]/40 hover:text-[#E8441A] rounded-full px-2.5 py-1 transition-colors"
+                  className="text-gray-400 text-xs bg-white/5 border border-white/10 hover:border-[#F0562A]/40 hover:text-[#F0562A] rounded-full px-2.5 py-1 transition-colors"
                 >
                   {d.nom} ({d.code})
                 </a>
               ))}
             </div>
             <a href="/zones" className="block mt-4 p-3 bg-[#E8441A]/10 border border-[#E8441A]/20 hover:bg-[#E8441A]/15 rounded-xl transition-colors">
-              <p className="text-[#E8441A] text-xs font-semibold">
+              <p className="text-[#FF7A52] text-xs font-semibold">
                 Toutes nos zones d&apos;intervention en Île-de-France
               </p>
             </a>
@@ -166,11 +166,11 @@ export default function Footer() {
             © 2026 Allo Nuisible IDF. Tous droits réservés
           </p>
           <div className="flex items-center gap-4">
-            <a href="/mentions-legales" className="text-gray-400 hover:text-[#E8441A] text-xs transition-colors">
+            <a href="/mentions-legales" className="text-gray-400 hover:text-[#F0562A] text-xs transition-colors">
               Mentions légales
             </a>
             <span className="text-gray-400">·</span>
-            <a href="/politique-de-confidentialite" className="text-gray-400 hover:text-[#E8441A] text-xs transition-colors">
+            <a href="/politique-de-confidentialite" className="text-gray-400 hover:text-[#F0562A] text-xs transition-colors">
               Politique de confidentialité
             </a>
           </div>

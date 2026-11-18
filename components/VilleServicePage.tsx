@@ -124,7 +124,7 @@ function inline(text: string) {
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) out.push(text.slice(last, m.index))
     if (m[1]) out.push(<strong key={i++} className="text-white font-bold">{m[1]}</strong>)
-    else out.push(<a key={i++} href={m[3]} className="underline" style={{ color: ACCENT }}>{m[2]}</a>)
+    else out.push(<a key={i++} href={m[3]} className="underline" style={{ color: '#F0562A' }}>{m[2]}</a>)
     last = re.lastIndex
   }
   if (last < text.length) out.push(text.slice(last))
@@ -225,11 +225,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: '#F0562A' }}>En bref</p>
             <ul className="space-y-2">
               {enBref.map((t) => (
                 <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
+                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: '#F0562A' }} /><span>{avecPrix(t)}</span>
                 </li>
               ))}
             </ul>
@@ -246,7 +246,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.titre} {v.a} : <span style={{ color: ACCENT }}>ce que nous constatons</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.titre} {v.a} : <span style={{ color: '#F0562A' }}>ce que nous constatons</span></h2>
             {v.contexte.map((p) => (
               <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>
             ))}
@@ -254,11 +254,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             <ul className="grid sm:grid-cols-2 gap-3 text-left">
               {cachettes.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
-                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{l}
+                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{l}
                 </li>
               ))}
             </ul>
-            {rang % 2 === 1 && <p className="text-white/50 text-sm mt-4">{c.cachettes.signes}</p>}
+            {rang % 2 === 1 && <p className="text-white/60 text-sm mt-4">{c.cachettes.signes}</p>}
           </div>
         </section>
 
@@ -270,12 +270,12 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* Rats aussi ? page dératisation de la même ville */}
         {VILLES_DERATISATION.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-            {serviceLocal(c.pilier.href) === 'souris' ? 'Des rats plutôt que des souris ?' : `Des rats ou des souris ${v.a} aussi ?`} Voir notre page <a href={`/deratisation/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>dératisation {v.a}</a>, rats et souris dès 120 €.
+            {serviceLocal(c.pilier.href) === 'souris' ? 'Des rats plutôt que des souris ?' : `Des rats ou des souris ${v.a} aussi ?`} Voir notre page <a href={`/deratisation/${v.slug}`} className="underline font-bold" style={{ color: '#F0562A' }}>dératisation {v.a}</a>, rats et souris dès 120 €.
           </p>
         )}
         {serviceLocal(c.pilier.href) === 'souris' && VILLES_PUCES.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-            Les souris transportent des puces : si vous êtes piqué, voir aussi notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>puces {v.a}</a>.
+            Les souris transportent des puces : si vous êtes piqué, voir aussi notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: '#F0562A' }}>puces {v.a}</a>.
           </p>
         )}
 
@@ -305,12 +305,14 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                     <div className="overflow-x-auto rounded-2xl mt-2" style={card}>
                       <table className="w-full text-sm">
                         <thead>
-                          <tr>{s.table.head.map((h) => <th key={h} className="text-left font-bold px-4 py-3" style={{ color: ACCENT }}>{h}</th>)}</tr>
+                          <tr>{s.table.head.map((h, j) => <th key={h || j} scope="col" className="text-left font-bold px-4 py-3" style={{ color: '#F0562A' }}>{h || <span className="sr-only">Critère</span>}</th>)}</tr>
                         </thead>
                         <tbody>
                           {s.table.rows.map((r) => (
                             <tr key={r[0]} className="border-t border-white/10">
-                              {r.map((cell, j) => <td key={j} className={`px-4 py-3 align-top ${j === 0 ? 'text-white font-bold' : 'text-white/70'}`}>{inline(cell)}</td>)}
+                              {r.map((cell, j) => j === 0
+                                ? <th key={j} scope="row" className="px-4 py-3 align-top text-left text-white font-bold">{inline(cell)}</th>
+                                : <td key={j} className="px-4 py-3 align-top text-white/70">{inline(cell)}</td>)}
                             </tr>
                           ))}
                         </tbody>
@@ -321,7 +323,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                     <ul className="space-y-2 mt-2">
                       {s.liste.map((t) => (
                         <li key={t.slice(0, 30)} className="flex items-start gap-2.5 text-white/75 leading-relaxed">
-                          <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{inline(t)}</span>
+                          <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: '#F0562A' }} /><span>{inline(t)}</span>
                         </li>
                       ))}
                     </ul>
@@ -330,7 +332,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               ))}
               {rang % 2 === 0 && <p className="text-white/55 text-sm text-center">
                 Espèces, causes, risques et erreurs à éviter : tout est détaillé sur{' '}
-                <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
+                <a href={c.pilier.href} className="underline" style={{ color: '#F0562A' }}>{c.pilier.lien}</a>.
               </p>}
             </div>
           </section>
@@ -339,14 +341,14 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         {/* ── MÉTHODES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 text-center">Nos méthodes {v.a} : <span style={{ color: ACCENT }}>avec ou sans produit</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 text-center">Nos méthodes {v.a} : <span style={{ color: '#F0562A' }}>avec ou sans produit</span></h2>
             <p className="text-white/55 mb-8 max-w-2xl mx-auto text-center">{introMethodes}</p>
             <div className="grid sm:grid-cols-2 gap-4">
               {methodes.map((m) => {
                 const contenu = (
                   <>
                     <span className="inline-block text-[11px] font-bold uppercase tracking-widest rounded-full px-2.5 py-1 mb-3"
-                      style={{ color: ACCENT, background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
+                      style={{ color: '#F0562A', background: 'rgba(232,68,26,0.12)' }}>{m.tag}</span>
                     <h3 className="text-xl font-black text-white mb-2">{m.titre}</h3>
                     <p className="text-white/65 text-sm leading-relaxed">{premierePhrase(m.texte)}</p>
                   </>
@@ -365,7 +367,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               <ul className="space-y-2">
                 {c.encadre.items.map((t) => (
                   <li key={t} className="flex items-start gap-2 text-sm text-white/75">
-                    <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />{t}
+                    <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#F0562A' }} />{t}
                   </li>
                 ))}
               </ul>
@@ -373,10 +375,10 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             )}
             {c.alternative && !avecEncadre && (
               <div className="rounded-2xl p-6 mt-6" style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.35)' }}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>{c.alternative.surtitre}</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A' }}>{c.alternative.surtitre}</p>
                 <p className="text-lg font-black text-white mb-2">{c.alternative.titre}</p>
                 <p className="text-white/70 text-sm leading-relaxed mb-3">{c.alternative.texte}</p>
-                <a href={c.alternative.href} className="text-sm font-bold underline" style={{ color: ACCENT }}>{c.alternative.lien}</a>
+                <a href={c.alternative.href} className="text-sm font-bold underline" style={{ color: '#F0562A' }}>{c.alternative.lien}</a>
               </div>
             )}
           </div>
@@ -442,7 +444,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {tourne(ap.recidive, melange(hv + 29) % ap.recidive.length).slice(0, 6).map((t) => (
                     <li key={t} className="flex items-start gap-3 rounded-xl p-4 text-sm text-white/75 leading-relaxed" style={card}>
-                      <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} /><span>{inline(t)}</span>
+                      <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#F0562A' }} /><span>{inline(t)}</span>
                     </li>
                   ))}
                 </ul>
@@ -460,16 +462,16 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             <div className="grid sm:grid-cols-3 gap-3">
               {c.guides.map((g) => (
                 <a key={g.href} href={g.href} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
-                  <BookOpen className="w-5 h-5 mb-3" style={{ color: ACCENT }} />
+                  <BookOpen className="w-5 h-5 mb-3" style={{ color: '#F0562A' }} />
                   <p className="text-white font-bold text-sm leading-snug mb-2">{g.label}</p>
-                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: ACCENT }}>
+                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: '#F0562A' }}>
                     Lire <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </a>
               ))}
             </div>
             <p className="text-white/60 text-sm mt-6 text-center">
-              Voir aussi <a href={c.pilier.href} className="underline" style={{ color: ACCENT }}>{c.pilier.lien}</a>.
+              Voir aussi <a href={c.pilier.href} className="underline" style={{ color: '#F0562A' }}>{c.pilier.lien}</a>.
             </p>
           </div>
         </section>
@@ -497,7 +499,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={card}>
             <div className="flex items-start gap-3 mb-4">
-              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
+              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
               <div>
                 <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
                 <p className="text-white/55 text-sm">{c.certification} Mis à jour le {maj}.</p>

@@ -35,7 +35,7 @@ export const DANGERS: Record<Danger, { label: string; couleur: string; fond: str
   inoffensif: { label: 'Inoffensif', couleur: '#4ade80', fond: 'rgba(74,222,128,0.12)' },
   genant: { label: 'Gênant', couleur: '#facc15', fond: 'rgba(250,204,21,0.12)' },
   traiter: { label: 'À traiter', couleur: '#fb923c', fond: 'rgba(251,146,60,0.14)' },
-  urgent: { label: 'Agir vite', couleur: '#ef4444', fond: 'rgba(239,68,68,0.14)' },
+  urgent: { label: 'Agir vite', couleur: '#f87171', fond: 'rgba(239,68,68,0.14)' },
 }
 
 const W = 'https://commons.wikimedia.org/wiki/File:'

@@ -65,6 +65,14 @@ export const LOCAL_PUNAISES_94: Record<string, string[]> = {
   'ivry-sur-seine': [
     'Ivry-sur-Seine mêle immeubles anciens, logements neufs et résidences pour personnes âgées. Nous y avons traité une infestation très importante **autour d’un lit médicalisé** : les punaises s’étaient installées dans les mécanismes et les barrières du lit.',
     'Dans ces situations, le technicien adapte son intervention à la personne : cryogénie sur le matériel médical, insecticide sur les sols et les plinthes, et organisation avec la famille ou les aidants.',
+    '### Punaises de lit dans les résidences d’Ivry : traiter le logement et les voisins',
+    'Ivry-sur-Seine compte **65 064 habitants** (Insee) et **12 535 logements sociaux**, soit **44,15 %** des résidences principales (inventaire SRU). Dans ces grands ensembles, de la **cité Pierre-et-Marie-Curie** à **Gagarine** ou **Monmousseau**, les punaises de lit passent d’un appartement à l’autre par les gaines techniques, les colonnes d’eau et les plinthes communes.',
+    'Quand un locataire nous appelle, nous lui conseillons de prévenir le bailleur : depuis la loi ELAN, le logement doit être exempt de nuisibles, et un traitement isolé, sans contrôle des logements voisins, laisse souvent revenir les insectes quelques semaines plus tard. Nous remettons un rapport d’intervention qui sert de preuve auprès du bailleur.',
+    '### Ivry Port, centre-ville, Petit Ivry : les situations que nous rencontrons',
+    'Autour d’**Ivry Port** et des nouveaux quartiers près de la Seine, beaucoup de logements neufs sont loués meublés ou occupés par de jeunes actifs qui déménagent souvent. Un meuble d’occasion, un matelas récupéré ou une valise au retour de voyage suffisent à apporter quelques punaises.',
+    'Dans le **centre-ville** et au **Petit Ivry**, les immeubles plus anciens ont des parquets à lames et des moulures où les œufs se cachent : le technicien retire les plinthes si nécessaire et traite les lames une à une. OpenStreetMap recense aussi **19 hôtels** et environ **150 restaurants** à Ivry : pour ces professionnels, nous proposons une inspection discrète des chambres et un traitement sans fermer l’établissement.',
+    '### Délai à Ivry-sur-Seine',
+    'Notre base de Saint-Maurice est à environ **4 km**. Avec le **RER C**, la **ligne 7** et le **tram 9**, nos techniciens arrivent vite, souvent le jour même, pour une inspection, une cryogénie ou un traitement complet en **2 passages**, garantis 1 an.',
   ],
   'maisons-alfort': [
     'Maisons-Alfort compte de nombreux **immeubles des années 1960 à 1980** et des pavillons. Dans les immeubles, les punaises circulent par les gaines électriques et les passages de canalisations.',

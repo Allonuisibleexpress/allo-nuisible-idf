@@ -26,8 +26,8 @@ export default function AvisDefilants({ depart = 0, fond = '#0d0d0d' }: { depart
         @media (prefers-reduced-motion: reduce) { .avis-piste { animation: none } }
       `}</style>
       <div className="text-center px-4 mb-10">
-        <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Satisfaction client</p>
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Ils nous ont fait confiance, <span style={{ color: ACCENT }}>ils en parlent</span></h2>
+        <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Satisfaction client</p>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Ils nous ont fait confiance, <span style={{ color: '#F0562A' }}>ils en parlent</span></h2>
         <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/70 text-sm hover:text-white">
           <span className="flex text-yellow-400">{[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}</span>
           <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur {NOTE_GOOGLE.nombre} avis Google, reproduits mot pour mot

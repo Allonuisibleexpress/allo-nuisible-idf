@@ -7,7 +7,7 @@ export function avecPrix(text: string) {
   const parts = text.split(RE)
   return parts.map((p, i) =>
     i % 2 === 1 ? (
-      <strong key={i} className="font-black whitespace-nowrap" style={{ color: ACCENT, fontSize: '1.35em', lineHeight: 1.2 }}>{p}</strong>
+      <strong key={i} className="font-black whitespace-nowrap" style={{ color: '#F0562A', fontSize: '1.35em', lineHeight: 1.2 }}>{p}</strong>
     ) : (
       p
     ),
@@ -29,7 +29,7 @@ export function EtiquettePrix({ prix }: { prix: string | null }) {
     <p className="mb-4">
       <span className="inline-flex items-baseline gap-2 rounded-2xl px-5 py-3" style={{ background: 'rgba(232,68,26,0.12)', border: '1.5px solid rgba(232,68,26,0.4)' }}>
         <span className="text-white/80 font-bold text-sm md:text-base">À partir de</span>
-        <span className="font-black text-3xl md:text-4xl" style={{ color: ACCENT }}>{prix}</span>
+        <span className="font-black text-3xl md:text-4xl" style={{ color: '#F0562A' }}>{prix}</span>
         <span className="text-white/80 font-bold text-sm md:text-base">TTC</span>
       </span>
       <span className="inline-block align-middle ml-2 mt-2 font-black uppercase tracking-wide text-sm md:text-base px-4 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>Devis gratuit</span>

@@ -179,18 +179,18 @@ export default function ContactMairie({ slug, service, a }: { slug: string; serv
           <div className="md:col-span-2 rounded-2xl overflow-hidden self-start" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="p-6">
             <p className="flex items-center gap-2 text-white font-bold mb-4">
-              <Landmark className="w-5 h-5 flex-shrink-0" style={{ color: ACCENT }} />{m.mairie}
+              <Landmark className="w-5 h-5 flex-shrink-0" style={{ color: '#F0562A' }} />{m.mairie}
             </p>
             <p className="flex items-start gap-2 text-white/70 text-sm mb-3">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />{m.adresse}
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#F0562A' }} />{m.adresse}
             </p>
             {m.tel && (
               <a href={telHref} className="flex items-center gap-2 text-white/70 text-sm mb-3 hover:text-white">
-                <Phone className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{m.tel}
+                <Phone className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{m.tel}
               </a>
             )}
             {m.site && (
-              <a href={m.site} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-2 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={m.site} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center gap-2 text-sm font-bold" style={{ color: '#F0562A' }}>
                 <ExternalLink className="w-4 h-4 flex-shrink-0" />Site de la mairie
               </a>
             )}

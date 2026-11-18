@@ -90,16 +90,16 @@ function CarteFiche({ f }: { f: Fiche }) {
           <Badge f={f} />
         </div>
         <p className="text-white/60 text-sm italic mb-3">{f.latin}</p>
-        <p className="flex items-center gap-1.5 text-xs text-white/70 mb-3"><Ruler className="w-3.5 h-3.5" style={{ color: ACCENT }} />{f.taille}</p>
+        <p className="flex items-center gap-1.5 text-xs text-white/70 mb-3"><Ruler className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{f.taille}</p>
         <p className="text-white/80 text-sm leading-relaxed mb-2">{f.aspect}</p>
         <p className="text-white/60 text-sm leading-relaxed mb-3"><strong className="text-white">Indices : </strong>{f.signes}</p>
         <p className="text-sm leading-relaxed mb-4 rounded-xl px-3 py-2" style={{ background: 'rgba(232,68,26,0.08)', color: 'rgba(255,255,255,0.8)' }}>
-          <strong style={{ color: ACCENT }}>Bon réflexe : </strong>{f.conseil}
+          <strong style={{ color: '#F0562A' }}>Bon réflexe : </strong>{f.conseil}
         </p>
         <div className="mt-auto space-y-2">
           {f.prix && <p className="text-white font-black">Traitement {f.prix}</p>}
           <div className="flex flex-wrap gap-x-4 gap-y-1">
-            {f.service && <a href={f.service.href} className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: ACCENT }}>{f.service.label} <ArrowRight className="w-4 h-4" /></a>}
+            {f.service && <a href={f.service.href} className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: '#F0562A' }}>{f.service.label} <ArrowRight className="w-4 h-4" /></a>}
             {f.guide && <a href={f.guide.href} className="inline-flex items-center gap-1 text-sm font-bold text-white/75 hover:text-white">{f.guide.label} <ArrowRight className="w-4 h-4" /></a>}
           </div>
         </div>
@@ -144,7 +144,7 @@ export function Detective() {
       {!verdict ? (
         <>
           <h3 className="text-xl md:text-2xl font-black text-white mb-1 text-center">{etape.question}</h3>
-          {etape.aide && <p className="text-white/50 text-sm mb-5 text-center">{etape.aide}</p>}
+          {etape.aide && <p className="text-white/60 text-sm mb-5 text-center">{etape.aide}</p>}
           <div className={`grid gap-2.5 ${etape.choix.length > 4 ? 'sm:grid-cols-2' : 'sm:grid-cols-2'} mt-4`}>
             {etape.choix.map((c) => (
               <button key={c.label} onClick={() => choisir(c.suite, c.verdict)}
@@ -157,7 +157,7 @@ export function Detective() {
         </>
       ) : (
         <div>
-          <p className="text-xs font-black uppercase tracking-widest mb-2 text-center" style={{ color: ACCENT }}>Notre verdict</p>
+          <p className="text-xs font-black uppercase tracking-widest mb-2 text-center" style={{ color: '#F0562A' }}>Notre verdict</p>
           <h3 className="text-xl md:text-2xl font-black text-white mb-5 text-center">
             {verdict.length === 1 ? 'C’est très probablement :' : 'Les suspects les plus probables :'}
           </h3>
@@ -172,9 +172,9 @@ export function Detective() {
                       <p className="text-white font-black text-lg">{f.nom}</p><Badge f={f} />
                     </div>
                     <p className="text-white/70 text-sm mb-2">{f.aspect}</p>
-                    <p className="text-white/85 text-sm mb-3"><strong style={{ color: ACCENT }}>Bon réflexe : </strong>{f.conseil}</p>
+                    <p className="text-white/85 text-sm mb-3"><strong style={{ color: '#F0562A' }}>Bon réflexe : </strong>{f.conseil}</p>
                     {f.prix && <p className="text-white font-black text-sm mb-2">Traitement {f.prix}</p>}
-                    <a href={`#${f.id}`} className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: ACCENT }}>Voir la fiche complète <ArrowRight className="w-4 h-4" /></a>
+                    <a href={`#${f.id}`} className="inline-flex items-center gap-1 text-sm font-bold" style={{ color: '#F0562A' }}>Voir la fiche complète <ArrowRight className="w-4 h-4" /></a>
                   </div>
                 </div>
               )

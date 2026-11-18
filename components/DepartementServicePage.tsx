@@ -213,14 +213,14 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               <strong className="text-white">{NOTE_GOOGLE.note}/5</strong><span className="text-white/60">sur {NOTE_GOOGLE.nombre} avis Google</span>
             </a>
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
-              {c.h1} <span style={{ color: ACCENT }}>{dep.dans}</span>
+              {c.h1} <span style={{ color: '#F0562A' }}>{dep.dans}</span>
             </h1>
             <p className="text-white/60 font-bold tracking-widest mb-6">{dep.code} · {dep.communes} · {nf(dep.population)} habitants</p>
             <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-7">{ct.accroche} {d === 'val-de-marne' ? 'Notre base est à Saint-Maurice, au cœur du département.' : 'Notre base est à Saint-Maurice (94), tout près.'}</p>
             <div className="flex flex-wrap justify-center items-center gap-3 mb-7">
               <span className="inline-flex items-baseline gap-2 rounded-2xl px-5 py-3" style={{ background: 'rgba(232,68,26,0.12)', border: '1.5px solid rgba(232,68,26,0.45)' }}>
                 <span className="text-white/80 font-bold text-sm">À partir de</span>
-                <span className="font-black text-4xl" style={{ color: ACCENT }}>{c.prix}</span>
+                <span className="font-black text-4xl" style={{ color: '#F0562A' }}>{c.prix}</span>
                 <span className="text-white/80 font-bold text-sm">TTC</span>
               </span>
               <span className="text-white/70 text-sm font-bold max-w-[13rem] text-left leading-snug">{c.prixNote}</span>
@@ -236,7 +236,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <ul className="grid grid-cols-2 md:grid-cols-4 gap-2.5 max-w-3xl mx-auto">
               {[{ i: Clock, t: '7j/7, souvent le jour même' }, { i: BadgeCheck, t: 'Techniciens Certibiocide' }, { i: ShieldCheck, t: `Garantie ${s === 'frelons' ? '3 mois' : '1 an'}` }, { i: MapPin, t: `Tout le ${dep.code}` }].map(({ i: I, t }) => (
                 <li key={t} className="flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs md:text-sm font-bold text-white/85" style={card}>
-                  <I className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{t}
+                  <I className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{t}
                 </li>
               ))}
             </ul>
@@ -246,7 +246,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {rep && (
           <section className="px-4 py-10 md:py-12" style={{ background: '#0d0d0d' }} aria-labelledby="reponse-directe">
             <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
-              <p className="text-xs font-black uppercase tracking-[.15em] mb-2 text-center" style={{ color: ACCENT }}>La réponse en bref</p>
+              <p className="text-xs font-black uppercase tracking-[.15em] mb-2 text-center" style={{ color: '#F0562A' }}>La réponse en bref</p>
               <h2 id="reponse-directe" className="text-xl md:text-2xl font-black text-white mb-5 text-center leading-snug">Un problème de {rep.probleme} {dep.dans} ? Qui appeler, comment, à quel prix</h2>
               <dl className="space-y-3 text-white/80 leading-relaxed">
                 {[
@@ -273,7 +273,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── CONTEXTE DÉPARTEMENT ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>ce qu’il faut savoir</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>ce qu’il faut savoir</span></h2>
             {ct.paras.map((p) => <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>)}
             <div className="grid md:grid-cols-3 gap-4 mt-10 text-left">
               {ct.points.map((p) => (
@@ -308,7 +308,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 )
               })}
             </div>
-            <a href="/identifier-nuisible" className="inline-flex items-center gap-1 text-sm font-bold mt-6" style={{ color: ACCENT }}>Identifier un autre nuisible <ArrowRight className="w-4 h-4" /></a>
+            <a href="/identifier-nuisible" className="inline-flex items-center gap-1 text-sm font-bold mt-6" style={{ color: '#F0562A' }}>Identifier un autre nuisible <ArrowRight className="w-4 h-4" /></a>
           </div>
         </section>
 
@@ -317,7 +317,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── SAISONS ── */}
         <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-10">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>à quelle saison ?</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-10">{c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>à quelle saison ?</span></h2>
             <div className="grid md:grid-cols-3 gap-4 text-left">
               {SAISONS[s](dep.dans).map((x) => (
                 <div key={x.t} className="rounded-2xl p-6" style={card}>
@@ -332,7 +332,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── VARIANTES DE RECHERCHE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0a0a0a' }}>
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-10">{c.label} {dep.code} : <span style={{ color: ACCENT }}>une entreprise locale à votre service</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-10">{c.label} {dep.code} : <span style={{ color: '#F0562A' }}>une entreprise locale à votre service</span></h2>
             <div className="grid sm:grid-cols-2 gap-4 text-left">
               {VARIANTES[s](dep.nom, dep.code, dep.dans).map((v) => (
                 <div key={v.t} className="rounded-2xl p-6" style={card}>
@@ -347,7 +347,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── VILLES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans} : <span style={{ color: ACCENT }}>{villes.length > 0 ? 'trouvez votre ville' : 'notre zone d’intervention'}</span></h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>{villes.length > 0 ? 'trouvez votre ville' : 'notre zone d’intervention'}</span></h2>
               <p className="text-white/55 mb-8">{villes.length > 0 ? `${villes.length} ${d === 'paris' ? 'arrondissements' : 'villes'} avec une page dédiée, du plus proche au plus éloigné de notre base de Saint-Maurice. Cliquez sur la carte ou sur la liste.` : `Nous intervenons dans ${d === 'paris' ? 'tous les arrondissements' : 'toutes les communes'} ${dep.de}, sur devis gratuit.`}</p>
               <div className="mb-10">
                 <CarteDepartement dep={d} base={c.base} avecPage={villes.map((v) => v.slug)} titre={`Carte : ${c.label.toLowerCase()} ${dep.dans}`} legende={villes.length > 0 ? 'Ville avec une page dédiée (cliquable)' : 'Toutes les communes sont desservies'} zone={villes.length === 0} />
@@ -386,7 +386,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 s === 'frelons' ? ['Garantie 3 mois', 'Si un nouveau nid se forme dans les 3 mois, notre technicien revient.'] : ['Garantie 1 an', 'Si les nuisibles reviennent, notre technicien revient.'],
               ].map(([t, x]) => (
                 <div key={t} className="rounded-2xl p-5" style={card}>
-                  <Check className="w-5 h-5 mb-2" style={{ color: ACCENT }} />
+                  <Check className="w-5 h-5 mb-2" style={{ color: '#F0562A' }} />
                   <h3 className="text-white font-black mb-1">{t}</h3>
                   <p className="text-white/60 text-sm leading-relaxed">{x}</p>
                 </div>
@@ -435,12 +435,12 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           <section className="py-14 md:py-16 px-4" style={{ background: '#0a0a0a' }}>
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-xl md:text-2xl font-black text-white mb-2">{c.label} : nos articles pour aller plus loin</h2>
-              <p className="text-white/50 text-sm mb-6">Conseils et retours de terrain de nos techniciens {dep.dans}.</p>
+              <p className="text-white/60 text-sm mb-6">Conseils et retours de terrain de nos techniciens {dep.dans}.</p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-left">
                 {articlesDep.map((x) => (
                   <a key={x.slug} href={`/blog/${x.slug}`} className="rounded-xl p-4 hover:bg-white/[0.06]" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <span className="block text-white font-bold text-sm leading-snug mb-1">{x.seoTitle}</span>
-                    <span className="text-xs font-bold" style={{ color: ACCENT }}>Lire l’article →</span>
+                    <span className="text-xs font-bold" style={{ color: '#F0562A' }}>Lire l’article →</span>
                   </a>
                 ))}
               </div>
@@ -467,7 +467,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 </div>
               </div>
             </div>
-            <a href={dep.zone} className="inline-flex items-center gap-1 text-sm font-bold mt-8" style={{ color: ACCENT }}>Tous nos services {dep.dans} <ArrowRight className="w-4 h-4" /></a>
+            <a href={dep.zone} className="inline-flex items-center gap-1 text-sm font-bold mt-8" style={{ color: '#F0562A' }}>Tous nos services {dep.dans} <ArrowRight className="w-4 h-4" /></a>
           </div>
         </section>
       </main>

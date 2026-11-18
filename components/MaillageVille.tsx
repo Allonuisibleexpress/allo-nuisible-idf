@@ -67,14 +67,14 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
             {memeDep.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-black text-white mb-2">{mot} {dep.dans} : nos {memeDep.length} autres villes</h3>
-                <p className="text-white/50 text-sm mb-4">Classées de la plus proche à la plus éloignée {a}. Même protocole, même garantie, même délai d’intervention.</p>
+                <p className="text-white/60 text-sm mb-4">Classées de la plus proche à la plus éloignée {a}. Même protocole, même garantie, même délai d’intervention.</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {memeDep.map((v, i) => (
                     <a key={v.slug} href={`${basePath}/${v.slug}`} className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold text-white/80 hover:text-white transition-colors"
                       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      {i < 8 && <MapPin className="w-3 h-3" style={{ color: ACCENT }} />}
+                      {i < 8 && <MapPin className="w-3 h-3" style={{ color: '#F0562A' }} />}
                       {i < 8 ? `${mot} ${v.nom}` : v.nom}
-                      <span className="text-white/40">{kmTxt(v.km)}</span>
+                      <span className="text-white/60">{kmTxt(v.km)}</span>
                     </a>
                   ))}
                 </div>
@@ -109,13 +109,13 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
         {choix.length > 0 && (
           <>
             <h2 className="text-xl md:text-2xl font-black text-white mb-2">{mot} : nos articles pour aller plus loin</h2>
-            <p className="text-white/50 text-sm mb-6">Conseils et retours de terrain de nos techniciens, utiles {a} comme partout en Île-de-France.</p>
+            <p className="text-white/60 text-sm mb-6">Conseils et retours de terrain de nos techniciens, utiles {a} comme partout en Île-de-France.</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-left">
               {choix.map((x) => (
                 <a key={x.slug} href={`/blog/${x.slug}`} className="group rounded-xl p-4 hover:bg-white/[0.06]" style={card}>
-                  <BookOpen className="w-4 h-4 mb-2" style={{ color: ACCENT }} />
+                  <BookOpen className="w-4 h-4 mb-2" style={{ color: '#F0562A' }} />
                   <span className="block text-white font-bold text-sm leading-snug mb-1">{x.seoTitle}</span>
-                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: ACCENT }}>Lire l’article <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" /></span>
+                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: '#F0562A' }}>Lire l’article <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" /></span>
                 </a>
               ))}
             </div>

@@ -15,7 +15,7 @@ export default function PoleSaintMaurice({ slug, famille }: { slug: string; fami
   return (
     <section className="py-14 px-4" style={{ background: '#0b0b0b', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Notre secteur</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Notre secteur</p>
         <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Allo Nuisible IDF autour de Saint-Maurice</h2>
         <p className="text-white/65 max-w-2xl mx-auto mb-8">
           {ici.km === 0

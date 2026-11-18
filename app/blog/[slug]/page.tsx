@@ -86,7 +86,7 @@ function inline(text: string, keyBase: string) {
       nodes.push(<strong key={`${keyBase}-b${i}`} style={{ color: '#fff', fontWeight: 700 }}>{m[1]}</strong>)
     } else {
       nodes.push(
-        <Link key={`${keyBase}-l${i}`} href={m[3]} style={{ color: '#E8441A', textDecoration: 'underline', textUnderlineOffset: '2px' }}>
+        <Link key={`${keyBase}-l${i}`} href={m[3]} style={{ color: '#F0562A', textDecoration: 'underline', textUnderlineOffset: '2px' }}>
           {m[2]}
         </Link>
       )
@@ -114,7 +114,7 @@ function renderBlock(b: Block, idx: number) {
         <ul key={k} style={{ marginBottom: '18px', paddingLeft: '4px', listStyle: 'none' }}>
           {b.items.map((it, j) => (
             <li key={j} style={{ ...P, marginBottom: '10px', display: 'flex', gap: '12px' }}>
-              <span style={{ color: '#E8441A', fontWeight: 900, flexShrink: 0 }}>•</span>
+              <span style={{ color: '#F0562A', fontWeight: 900, flexShrink: 0 }}>•</span>
               <span>{inline(it, `${k}-${j}`)}</span>
             </li>
           ))}
@@ -125,7 +125,7 @@ function renderBlock(b: Block, idx: number) {
         <ol key={k} style={{ marginBottom: '18px', paddingLeft: '4px', listStyle: 'none', counterReset: 'li' }}>
           {b.items.map((it, j) => (
             <li key={j} style={{ ...P, marginBottom: '12px', display: 'flex', gap: '14px' }}>
-              <span style={{ color: '#E8441A', fontWeight: 800, flexShrink: 0, minWidth: '24px' }}>{j + 1}.</span>
+              <span style={{ color: '#F0562A', fontWeight: 800, flexShrink: 0, minWidth: '24px' }}>{j + 1}.</span>
               <span>{inline(it, `${k}-${j}`)}</span>
             </li>
           ))}
@@ -169,7 +169,7 @@ function renderBlock(b: Block, idx: number) {
             <thead>
               <tr>
                 {b.head.map((h, j) => (
-                  <th key={j} style={{ textAlign: 'left', padding: '12px 14px', color: '#E8441A', fontWeight: 700, background: 'rgba(232, 68, 26, 0.08)', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>{h}</th>
+                  <th key={j} style={{ textAlign: 'left', padding: '12px 14px', color: '#F0562A', fontWeight: 700, background: 'rgba(232, 68, 26, 0.08)', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -240,9 +240,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <section style={{ paddingTop: '120px', paddingBottom: '40px', background: 'linear-gradient(135deg, #0a0a0a 0%, rgba(232, 68, 26, 0.05) 100%)', borderBottom: '1px solid rgba(232, 68, 26, 0.15)' }}>
           <div className="max-w-3xl mx-auto px-4 recit-centre">
             <div style={{ marginBottom: '20px' }}>
-              <Link href="/blog" style={{ fontSize: '12px', fontWeight: 600, color: '#E8441A', textDecoration: 'none' }}>← Retour au blog</Link>
+              <Link href="/blog" style={{ fontSize: '12px', fontWeight: 600, color: '#F0562A', textDecoration: 'none' }}>← Retour au blog</Link>
             </div>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#E8441A', marginBottom: '12px' }}>{a.category}</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#F0562A', marginBottom: '12px' }}>{a.category}</p>
             <h1 style={{ fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: 900, color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>{a.title}</h1>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
               <span>Par Houssem Hattab, gérant, et nos techniciens certifiés Certibiocide</span>
@@ -264,7 +264,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
           {/* EN BREF */}
           <section style={{ background: 'rgba(232, 68, 26, 0.08)', border: '1px solid rgba(232, 68, 26, 0.25)', borderRadius: '16px', padding: '24px', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: '#E8441A', marginBottom: '12px' }}>En bref</h2>
+            <h2 style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: '#F0562A', marginBottom: '12px' }}>En bref</h2>
             <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', margin: 0 }}>{a.tldr}</p>
           </section>
 
@@ -301,7 +301,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           {/* Ce qu'on observe sur le terrain (uniquement si un vrai retour d'expérience est fourni) */}
           {a.terrain && (
           <div style={{ borderLeft: '3px solid #E8441A', background: 'rgba(255,255,255,0.03)', borderRadius: '0 12px 12px 0', padding: '22px 24px', marginTop: '48px', marginBottom: '8px' }}>
-            <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: '#E8441A', marginBottom: '12px' }}>Ce qu'on observe sur le terrain</p>
+            <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: '#F0562A', marginBottom: '12px' }}>Ce qu'on observe sur le terrain</p>
             <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.85)', fontStyle: 'italic', marginBottom: '12px' }}>« {a.terrain} »</p>
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Houssem Hattab, gérant d'Allo Nuisible IDF, et nos techniciens certifiés Certibiocide en Île-de-France</p>
           </div>
@@ -378,7 +378,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   {lies.map((x) => (
                     <a key={x.slug} href={`/blog/${x.slug}`} style={{ display: 'block', padding: '14px 16px', borderRadius: '12px', background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 700, lineHeight: 1.4 }}>
                       {x.seoTitle}
-                      <span style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#E8441A', marginTop: '6px' }}>Lire l'article →</span>
+                      <span style={{ display: 'block', fontSize: '12px', fontWeight: 500, color: '#F0562A', marginTop: '6px' }}>Lire l'article →</span>
                     </a>
                   ))}
                 </div>

@@ -6,8 +6,8 @@ export function enrichi(t: string) {
     if (m.startsWith('**')) return <strong key={i} className="text-white font-bold">{m.slice(2, -2)}</strong>
     const l = m.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
     if (l) return l[2].startsWith('http')
-      ? <a key={i} href={l[2]} target="_blank" rel="noopener" className="font-bold underline" style={{ color: ACCENT }}>{l[1]}</a>
-      : <a key={i} href={l[2]} className="font-bold underline" style={{ color: ACCENT }}>{l[1]}</a>
+      ? <a key={i} href={l[2]} target="_blank" rel="noopener" className="font-bold underline" style={{ color: '#F0562A' }}>{l[1]}</a>
+      : <a key={i} href={l[2]} className="font-bold underline" style={{ color: '#F0562A' }}>{l[1]}</a>
     return m
   })
 }
@@ -22,7 +22,7 @@ export default function ArticleService({ blocs }: { blocs: { h: string; p: strin
               {b.p.map((p, i) => p.startsWith('### ')
                 ? <h3 key={i} className="text-xl md:text-2xl font-black text-white pt-4 text-center leading-snug">{p.slice(4)}</h3>
                 : p.startsWith('- ')
-                ? <p key={i} className="pl-5 relative"><span className="absolute left-0 font-black" style={{ color: ACCENT }}>•</span>{enrichi(p.slice(2))}</p>
+                ? <p key={i} className="pl-5 relative"><span className="absolute left-0 font-black" style={{ color: '#F0562A' }}>•</span>{enrichi(p.slice(2))}</p>
                 : <p key={i}>{enrichi(p)}</p>)}
             </div>
           </div>

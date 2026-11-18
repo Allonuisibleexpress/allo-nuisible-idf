@@ -18,9 +18,9 @@ function Stades() {
   return (
     <section className="py-16 px-4" style={{ background: '#0b0b0b' }}>
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#E8441A' }}>Cycle de vie</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Cycle de vie</p>
         <h2 className="text-2xl md:text-4xl font-black text-white mb-3">Les 4 stades de l’anthrène en photos</h2>
-        <p className="text-white/60 max-w-2xl mx-auto mb-10">Le cycle de l’anthrène bigarré dure de 1 à 3 ans selon la température. Dans un logement chauffé, les larves mangent toute l’année. <a href="/blog/cycle-de-vie-anthrene" className="underline font-bold" style={{ color: '#E8441A' }}>Le cycle complet expliqué</a></p>
+        <p className="text-white/60 max-w-2xl mx-auto mb-10">Le cycle de l’anthrène bigarré dure de 1 à 3 ans selon la température. Dans un logement chauffé, les larves mangent toute l’année. <a href="/blog/cycle-de-vie-anthrene" className="underline font-bold" style={{ color: '#F0562A' }}>Le cycle complet expliqué</a></p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
           {STADES.map((s) => (
             <figure key={s.titre} className="rounded-2xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -28,7 +28,7 @@ function Stades() {
               <figcaption className="p-4">
                 <p className="text-white font-black mb-1">{s.titre}</p>
                 <p className="text-sm text-white/70 leading-relaxed">{s.texte}</p>
-                <p className="text-[11px] text-white/40 mt-2">Photo : {s.credit}, <a href={s.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{s.licence}</a>, Wikimedia Commons</p>
+                <p className="text-[11px] text-white/60 mt-2">Photo : {s.credit}, <a href={s.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{s.licence}</a>, Wikimedia Commons</p>
               </figcaption>
             </figure>
           ))}

@@ -74,15 +74,15 @@ export default function Home() {
         <Hero />
         <NosNuisibles />
 
-        {/* Bande orange */}
-        <div style={{ background: '#E8441A' }}>
+        {/* Bande orange (foncée pour le contraste du texte blanc, 19/11/2026) */}
+        <div style={{ background: '#B8330D' }}>
           <div className="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
             <span className="text-white font-black text-xl">+1 500 clients</span>
-            <span className="hidden sm:inline text-white/50">·</span>
-            <span className="text-white/85 font-medium text-sm">satisfaits en Île-de-France</span>
-            <span className="hidden sm:inline text-white/50">·</span>
+            <span className="hidden sm:inline text-white/60">·</span>
+            <span className="text-white font-medium text-sm">satisfaits en Île-de-France</span>
+            <span className="hidden sm:inline text-white/60">·</span>
             <span className="text-white font-bold text-sm">Note Google 4,8/5</span>
-            <span className="hidden sm:inline text-white/50">·</span>
+            <span className="hidden sm:inline text-white/60">·</span>
             <span className="text-white font-bold text-sm">7j/7 · 24h/24</span>
           </div>
         </div>
@@ -96,10 +96,10 @@ export default function Home() {
               background: 'rgba(232,68,26,0.05)', border: '1.5px solid rgba(232,68,26,0.25)',
             }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,#E8441A,transparent)' }} />
-              <p style={{ color: '#E8441A', fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
+              <p style={{ color: '#FF7A52', fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 Garantie résultat
               </p>
-              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: '#E8441A', lineHeight: 0.88, marginBottom: '14px' }}>
+              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: '#F0562A', lineHeight: 0.88, marginBottom: '14px' }}>
                 1 an
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
@@ -127,7 +127,7 @@ export default function Home() {
         {/* FAQ */}
         <section className="py-16 md:py-24 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 text-center">Vos questions, <span style={{ color: '#E8441A' }}>nos réponses</span></h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 text-center">Vos questions, <span style={{ color: '#F0562A' }}>nos réponses</span></h2>
             <p className="text-white/55 text-center mb-10">Prix, délais, garantie : l’essentiel avant d’appeler.</p>
             <div className="space-y-3">
               {FAQ_ACCUEIL.map((f) => (

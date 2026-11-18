@@ -25,9 +25,9 @@ export default function CyclePunaises({ a, titre, texte }: { a?: string; titre?:
   return (
     <section id="cycle" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0a0a0a' }}>
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>En images</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>En images</p>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
-          {titre ?? <>Œuf, larve, adulte : <span style={{ color: ACCENT }}>reconnaissez la punaise de lit à chaque stade</span></>}
+          {titre ?? <>Œuf, larve, adulte : <span style={{ color: '#F0562A' }}>reconnaissez la punaise de lit à chaque stade</span></>}
         </h2>
         <p className="text-white/65 max-w-3xl mx-auto mb-8 leading-relaxed">
           {texte ?? `Un œuf éclot en 7 à 15 jours, puis la larve passe par 5 stades avant de devenir adulte, avec un repas de sang avant chaque mue. C’est pour toucher les punaises sorties des œufs après le premier passage que notre traitement${a ? ` ${a}` : ''} prévoit toujours 2 passages.`}

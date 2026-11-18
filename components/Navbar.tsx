@@ -173,7 +173,7 @@ export default function Navbar() {
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
                   <button
-                    className="flex items-center gap-1 text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
+                    className="flex items-center gap-1 text-white/90 hover:text-[#F0562A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                   >
                     {link.label}
@@ -192,7 +192,7 @@ export default function Navbar() {
                           <span className="w-1.5 h-1.5 rounded-full bg-[#E8441A] flex-shrink-0" />
                           {service}
                           {servicePages[service] && (
-                            <span className="ml-auto text-[10px] text-[#E8441A] font-semibold uppercase tracking-wider">Voir</span>
+                            <span className="ml-auto text-[10px] text-[#F0562A] font-semibold uppercase tracking-wider">Voir</span>
                           )}
                         </button>
                       ))}
@@ -214,7 +214,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
+                  className="text-white/90 hover:text-[#F0562A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                 >
                   {link.court ? (<><span className="min-[1800px]:hidden">{link.court}</span><span className="hidden min-[1800px]:inline">{link.label}</span></>) : link.label}
                 </a>
@@ -223,7 +223,7 @@ export default function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className={`${['Accueil', 'À Propos'].includes(link.label) ? 'hidden 2xl:inline-block ' : link.label === 'Contact' ? 'hidden xl:inline-block ' : ''}text-white/90 hover:text-[#E8441A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200`}
+                  className={`${['Accueil', 'À Propos'].includes(link.label) ? 'hidden 2xl:inline-block ' : link.label === 'Contact' ? 'hidden xl:inline-block ' : ''}text-white/90 hover:text-[#F0562A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200`}
                 >
                   {link.label}
                 </button>
@@ -237,7 +237,7 @@ export default function Navbar() {
               href="tel:+33768077219"
               className="flex items-center gap-2 text-white/80 hover:text-white text-sm transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#E8441A]" />
+              <Phone className="w-4 h-4 text-[#F0562A]" />
               <span className="font-semibold hidden min-[1800px]:inline whitespace-nowrap">07 68 07 72 19</span>
             </a>
             <button
@@ -264,7 +264,7 @@ export default function Navbar() {
               aria-label="Appeler"
               className="hidden min-[360px]:flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
             >
-              <Phone className="w-5 h-5" style={{ color: '#E8441A' }} />
+              <Phone className="w-5 h-5" style={{ color: '#F0562A' }} />
             </a>
             <button
               className="flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
@@ -323,7 +323,7 @@ export default function Navbar() {
                     }}>
                       {link.label}
                       <ChevronDown style={{
-                        width: 16, height: 16, color: '#E8441A', flexShrink: 0,
+                        width: 16, height: 16, color: '#F0562A', flexShrink: 0,
                         transform: mobileDropdownOpen ? 'rotate(180deg)' : 'none',
                         transition: 'transform 0.2s',
                       }} />

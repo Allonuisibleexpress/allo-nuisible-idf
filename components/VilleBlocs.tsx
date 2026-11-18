@@ -85,12 +85,12 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         </a>
 
         <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
-          {titre} <span style={{ color: ACCENT }}>{a}</span>
+          {titre} <span style={{ color: '#F0562A' }}>{a}</span>
         </h1>
         {cp && <p className="text-white/60 font-bold tracking-widest mb-6">{cp}{pop ? ` · ${nf(pop)} habitants` : ''}</p>}
         {maj && (
           <p className="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs text-white/55 -mt-3 mb-6">
-            <BadgeCheck className="w-3.5 h-3.5" style={{ color: ACCENT }} />
+            <BadgeCheck className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />
             <span>Rédigé par <strong className="text-white/80">Houssem Hattab</strong>, gérant d&apos;Allo Nuisible IDF, avec nos techniciens certifiés Certibiocide</span>
             <span className="text-white/60">·</span><span>Mis à jour le {maj}</span>
           </p>
@@ -101,7 +101,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         <div className="flex flex-wrap justify-center items-center gap-3 mb-7">
           <span className="inline-flex items-baseline gap-2 rounded-2xl px-5 py-3" style={{ background: 'rgba(232,68,26,0.12)', border: '1.5px solid rgba(232,68,26,0.45)' }}>
             <span className="text-white/80 font-bold text-sm">À partir de</span>
-            <span className="font-black text-4xl" style={{ color: ACCENT }}>{prix}</span>
+            <span className="font-black text-4xl" style={{ color: '#F0562A' }}>{prix}</span>
             <span className="text-white/80 font-bold text-sm">TTC</span>
           </span>
           <span className="text-white/70 text-sm font-bold max-w-[13rem] text-left leading-snug">{prixNote}</span>
@@ -124,7 +124,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
             { i: MapPin, t: `Basés à ${REPERES[slug]?.km ? `${km(REPERES[slug].km)} km` : 'Saint-Maurice'}` },
           ].map(({ i: I, t }) => (
             <li key={t} className="flex items-center justify-center gap-2 rounded-xl px-3 py-2.5 text-xs md:text-sm font-bold text-white/85" style={card}>
-              <I className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{t}
+              <I className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{t}
             </li>
           ))}
         </ul>
@@ -135,7 +135,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
             <img src={PHOTOS_MAIRIES[slug].src} alt={PHOTOS_MAIRIES[slug].lieu ? `${PHOTOS_MAIRIES[slug].lieu} : ${titre.toLowerCase()} ${a} par Allo Nuisible IDF` : `${MAIRIES[slug]?.mairie ?? `Mairie ${deVille(nom)}`}, façade`} width={760} height={900}
               className="w-full h-64 sm:h-80 lg:h-[440px] object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 p-5 text-left" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.85))' }}>
-              <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Nous intervenons {a}</p>
+              <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: '#F0562A' }}>Nous intervenons {a}</p>
               <p className="text-white font-black text-lg leading-tight">{PHOTOS_MAIRIES[slug].lieu ?? MAIRIES[slug]?.mairie ?? `Mairie ${deVille(nom)}`}</p>
             </div>
           </div>
@@ -186,7 +186,7 @@ export function TarifsVille({ titre, intro, lignes, note }: { titre: string; int
                 <p className="text-white font-black">{l.label}</p>
                 <p className="text-white/55 text-sm">{l.detail}</p>
               </div>
-              <p className="font-black text-xl md:text-2xl whitespace-nowrap" style={{ color: ACCENT }}>{l.prix}</p>
+              <p className="font-black text-xl md:text-2xl whitespace-nowrap" style={{ color: '#F0562A' }}>{l.prix}</p>
             </div>
           ))}
         </div>
@@ -208,9 +208,9 @@ export function AutresServicesVille({ nom, a, liens }: { nom: string; a: string;
             <a key={l.href} href={l.href} className="group flex items-center justify-between gap-3 rounded-xl px-5 py-4 text-left hover:bg-white/[0.06]" style={card}>
               <span>
                 <span className="block text-white font-bold">{l.label} {a}</span>
-                <span className="block text-sm" style={{ color: ACCENT }}>{l.prix} TTC</span>
+                <span className="block text-sm" style={{ color: '#F0562A' }}>{l.prix} TTC</span>
               </span>
-              <ArrowRight className="w-4 h-4 text-white/50 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-white/60 group-hover:translate-x-0.5 transition-transform" />
             </a>
           ))}
         </div>

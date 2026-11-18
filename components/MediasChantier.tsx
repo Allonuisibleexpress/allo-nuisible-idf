@@ -20,7 +20,7 @@ export function posterVideo(v: { src: string; poster?: string }): string | undef
 export function Filigrane({ bas = 8 }: { bas?: number }) {
   return (
     <span aria-hidden="true" style={{ position: 'absolute', right: '8px', bottom: `${bas}px`, pointerEvents: 'none', fontSize: '10px', fontWeight: 800, color: 'rgba(255,255,255,0.85)', background: 'rgba(0,0,0,0.45)', padding: '2px 6px', borderRadius: '6px', textShadow: '0 1px 2px rgba(0,0,0,0.6)', whiteSpace: 'nowrap' }}>
-      Allo Nuisible <span style={{ color: ACCENT }}>IDF</span>
+      Allo Nuisible <span style={{ color: '#F0562A' }}>IDF</span>
     </span>
   )
 }
@@ -40,11 +40,11 @@ export default function MediasChantier({
   legendes?: boolean // false sur les pages ville : évite de répéter le même texte sur des dizaines de pages
 }) {
   const tuile = { position: 'relative' as const, aspectRatio: '3/4', borderRadius: '12px', overflow: 'hidden', background: '#1a1a1a' }
-  const lienYt = { display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '6px', fontSize: '13px', fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: '2px' }
+  const lienYt = { display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '6px', fontSize: '13px', fontWeight: 700, color: '#F0562A', textDecoration: 'underline', textUnderlineOffset: '2px' }
   const legende = { fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginTop: '6px', lineHeight: 1.4 }
   return (
     <div>
-      {titre && <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: ACCENT, marginBottom: '12px' }}>{titre}</p>}
+      {titre && <p style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: '#F0562A', marginBottom: '12px' }}>{titre}</p>}
       <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(3, photos.length + videos.length)}, minmax(0, 1fr))`, gap: '10px', maxWidth: photos.length + videos.length === 1 ? '420px' : photos.length + videos.length === 2 ? '560px' : undefined, margin: '0 auto' }}>
         {photos.map((cle) => {
           const p = PHOTOS_CHANTIERS[cle]
@@ -83,7 +83,7 @@ export default function MediasChantier({
       )}
       {lien && (
         <p style={{ fontSize: '14px', marginTop: '12px' }}>
-          <a href={lien.href} style={{ color: ACCENT, fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '2px' }}>{lien.label}</a>
+          <a href={lien.href} style={{ color: '#F0562A', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '2px' }}>{lien.label}</a>
         </p>
       )}
     </div>

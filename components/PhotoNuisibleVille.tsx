@@ -53,7 +53,7 @@ export default function PhotoNuisibleVille({ basePath, a }: { basePath: string; 
   return (
     <section className="py-14 px-4" style={{ background: '#0b0b0b' }}>
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Identifier le nuisible</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Identifier le nuisible</p>
         <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{d.titre} {a}</h2>
         <div className={`grid gap-6 ${d.photos.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
           {d.photos.map((p) => (
@@ -61,12 +61,12 @@ export default function PhotoNuisibleVille({ basePath, a }: { basePath: string; 
               <img src={p.src} alt={p.alt} loading="lazy" className="w-full object-cover" style={{ aspectRatio: '4 / 3' }} />
               <figcaption className="p-4">
                 <p className="text-sm text-white/75 leading-relaxed">{gras(p.legende)}</p>
-                <p className="text-[11px] text-white/45 mt-2">Photo : {p.credit}, <a href={p.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{p.licence}</a>, Wikimedia Commons</p>
+                <p className="text-[11px] text-white/60 mt-2">Photo : {p.credit}, <a href={p.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{p.licence}</a>, Wikimedia Commons</p>
               </figcaption>
             </figure>
           ))}
         </div>
-        <a href="/identifier-nuisible" className="inline-block mt-6 text-sm font-bold" style={{ color: ACCENT }}>Un doute sur l’insecte ? Notre guide pour identifier un nuisible</a>
+        <a href="/identifier-nuisible" className="inline-block mt-6 text-sm font-bold" style={{ color: '#F0562A' }}>Un doute sur l’insecte ? Notre guide pour identifier un nuisible</a>
       </div>
     </section>
   )

@@ -37,7 +37,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
   const contenu = (
     <div className="max-w-5xl mx-auto text-center">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <p className="text-xs font-black uppercase tracking-[.15em] mb-2" style={{ color: '#E8441A' }}>Vraies interventions, filmées par nos techniciens</p>
+      <p className="text-xs font-black uppercase tracking-[.15em] mb-2" style={{ color: '#F0562A' }}>Vraies interventions, filmées par nos techniciens</p>
       {titre && <h2 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">{titre}</h2>}
       {intro && <p className="text-white/65 max-w-2xl mx-auto mb-2 leading-relaxed">{intro}</p>}
       <div className={`grid gap-5 mx-auto mt-7 ${grille}`}>
@@ -46,7 +46,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
         ))}
       </div>
       <p className="mt-6 text-sm">
-        {lien && !videos.every((v) => ficheVideo(v.src).lien) && <a href={lien.href} className="font-bold underline underline-offset-4 mr-4" style={{ color: '#E8441A' }}>{lien.label}</a>}
+        {lien && !videos.every((v) => ficheVideo(v.src).lien) && <a href={lien.href} className="font-bold underline underline-offset-4 mr-4" style={{ color: '#F0562A' }}>{lien.label}</a>}
         <a href={CHAINE_YOUTUBE} target="_blank" rel="noopener" className="font-bold underline underline-offset-4 text-white/70 hover:text-white">Toutes nos interventions sur YouTube</a>
       </p>
     </div>

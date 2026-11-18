@@ -90,7 +90,7 @@ export default function CommunePage({ params }: { params: Params }) {
             </nav>
             <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6 tracking-tight">
               Nuisibles {c.a.split(' ')[0]}{' '}
-              <span style={{ color: ACCENT }} className={c.nom.length <= 18 ? 'whitespace-nowrap' : undefined}>{c.a.split(' ').slice(1).join(' ')}</span>
+              <span style={{ color: '#F0562A' }} className={c.nom.length <= 18 ? 'whitespace-nowrap' : undefined}>{c.a.split(' ').slice(1).join(' ')}</span>
             </h1>
             <p className="text-lg text-white/75 max-w-2xl mx-auto mb-4 leading-relaxed">
               Traitements professionnels chimiques ou sans produit (cryogénie, vapeur sèche, pièges connectés), selon votre situation.
@@ -122,8 +122,8 @@ export default function CommunePage({ params }: { params: Params }) {
             <div className="max-w-3xl mx-auto text-center">
               {guide && (
                 <>
-                  <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Spécial {c.nom}</p>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">Les nuisibles {c.a} : <span style={{ color: ACCENT }}>ce que nous rencontrons</span></h2>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Spécial {c.nom}</p>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 leading-tight">Les nuisibles {c.a} : <span style={{ color: '#F0562A' }}>ce que nous rencontrons</span></h2>
                   <div className="space-y-4 text-white/70 leading-relaxed text-base md:text-lg text-left md:text-center">
                     {guide.map((p, i) => <p key={i}>{texteRiche(p, ctxLiens, `z${i}`)}</p>)}
                   </div>
@@ -132,12 +132,12 @@ export default function CommunePage({ params }: { params: Params }) {
               {pagesVilleListe.length > 0 && (
                 <div className="mt-10">
                   <h3 className="text-lg md:text-xl font-black text-white mb-2">Nos pages spécialisées {c.a}</h3>
-                  <p className="text-white/50 text-sm mb-5">Chaque nuisible a sa page détaillée : méthode, prix, protocole et questions fréquentes.</p>
+                  <p className="text-white/60 text-sm mb-5">Chaque nuisible a sa page détaillée : méthode, prix, protocole et questions fréquentes.</p>
                   <div className="grid sm:grid-cols-2 gap-3 text-left">
                     {pagesVilleListe.map((l) => (
                       <a key={l.href} href={l.href} className="group flex items-center justify-between gap-3 rounded-xl px-5 py-4 hover:bg-white/[0.06]" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                        <span><span className="block text-white font-bold">{l.label}</span><span className="block text-sm" style={{ color: ACCENT }}>{l.sous}</span></span>
-                        <ArrowRight className="w-4 h-4 text-white/50 group-hover:translate-x-0.5 transition-transform" />
+                        <span><span className="block text-white font-bold">{l.label}</span><span className="block text-sm" style={{ color: '#F0562A' }}>{l.sous}</span></span>
+                        <ArrowRight className="w-4 h-4 text-white/60 group-hover:translate-x-0.5 transition-transform" />
                       </a>
                     ))}
                   </div>
@@ -165,7 +165,7 @@ export default function CommunePage({ params }: { params: Params }) {
                   <article key={k} className="rounded-2xl p-6 md:p-7"
                     style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(232,68,26,0.12)', color: ACCENT }}>
+                      <span className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(232,68,26,0.12)', color: '#F0562A' }}>
                         <PestIcon name={SERVICES[m.service].icon as PestKey} size={26} />
                       </span>
                       <h3 className="text-lg md:text-xl font-black text-white">{m.titre}</h3>
@@ -174,11 +174,11 @@ export default function CommunePage({ params }: { params: Params }) {
                     <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 mb-4">
                       {m.points.map((pt) => (
                         <li key={pt} className="flex items-start gap-2 text-sm text-white/75">
-                          <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />{pt}
+                          <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#F0562A' }} />{pt}
                         </li>
                       ))}
                     </ul>
-                    <a href={`/services/${m.service === 'rongeurs' ? 'deratisation' : m.service}`} className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
+                    <a href={`/services/${m.service === 'rongeurs' ? 'deratisation' : m.service}`} className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: '#F0562A' }}>
                       En savoir plus <ArrowRight className="w-4 h-4" />
                     </a>
                   </article>
@@ -195,32 +195,32 @@ export default function CommunePage({ params }: { params: Params }) {
               ))}
             </p>
             {villeDerat && (
-              <a href={`/deratisation/${villeDerat.slug}`} className="inline-flex items-center gap-1.5 mt-4 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/deratisation/${villeDerat.slug}`} className="inline-flex items-center gap-1.5 mt-4 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Tout savoir sur la dératisation {villeDerat.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
             {villePunaises && (
-              <a href={`/punaises-de-lit/${villePunaises.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/punaises-de-lit/${villePunaises.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Tout savoir sur les punaises de lit {villePunaises.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
             {villeCafards && (
-              <a href={`/cafards/${villeCafards.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/cafards/${villeCafards.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Tout savoir sur les cafards {villeCafards.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
             {villeSouris && (
-              <a href={`/souris/${villeSouris.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/souris/${villeSouris.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Tout savoir sur les souris {villeSouris.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
             {villeChenilles && (
-              <a href={`/chenilles-processionnaires/${villeChenilles.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/chenilles-processionnaires/${villeChenilles.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Tout savoir sur les chenilles processionnaires {villeChenilles.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
             {villeAcariens && (
-              <a href={`/acariens/${villeAcariens.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/acariens/${villeAcariens.slug}`} className="flex items-center gap-1.5 mt-3 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Traitement anti-acariens {villeAcariens.a} <ArrowRight className="w-4 h-4" />
               </a>
             )}
@@ -272,11 +272,11 @@ export default function CommunePage({ params }: { params: Params }) {
                   <a key={v.slug} href={`/zones/${DEPT_SLUG}/${v.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
-                    <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{v.nom}
+                    <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{v.nom}
                   </a>
                 ))}
               </div>
-              <a href={`/zones/${DEPT_SLUG}`} className="inline-block mt-6 text-sm font-bold" style={{ color: ACCENT }}>
+              <a href={`/zones/${DEPT_SLUG}`} className="inline-block mt-6 text-sm font-bold" style={{ color: '#F0562A' }}>
                 Toutes les communes du Val-de-Marne
               </a>
             </div>

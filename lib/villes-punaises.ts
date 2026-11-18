@@ -11,6 +11,8 @@ export const SOURCES_PUNAISES = [
 ]
 
 export const GUIDES_PUNAISES: Record<string, string> = {
+  'piqures-de-punaises-de-lit': 'Piqûres de punaises de lit : photos et reconnaissance',
+  'insecticide-interdit-sniper-1000-danger': 'Sniper 1000 et insecticides interdits : le danger',
   'punaises-de-lit-sans-insecticide': 'Punaises de lit sans insecticide : les méthodes',
   'cryogenie-punaises-de-lit': 'Cryogénie : principe et limites',
   'vapeur-seche-punaises-de-lit': 'Vapeur sèche : efficacité et limites',
@@ -63,7 +65,7 @@ export type VillePunaises = {
 }
 
 const FAQ_COMMUNE = (a: string) => [
-  { q: `Combien coûte un traitement des punaises de lit ${a} ?`, a: 'Le prix dépend de la surface, du nombre de pièces touchées et de la méthode choisie (cryogénie, vapeur sèche, protocole mixte ou insecticide). Le devis est gratuit et vous le connaissez avant toute intervention.' },
+  { q: `Combien coûte un traitement des punaises de lit ${a} ?`, a: 'À partir de 290 € TTC pour un studio ou un T1, 2 passages et garantie 1 an inclus. Le prix dépend ensuite de la surface, du nombre de pièces touchées et de la méthode choisie (cryogénie, vapeur sèche, protocole mixte ou insecticide). Le devis est gratuit et vous le connaissez avant toute intervention.' },
   { q: 'Quelle méthode choisir ?', a: 'Pour une infestation limitée, la cryogénie et la vapeur sèche permettent de traiter sans produit. Le protocole mixte ajoute une barrière très légère qui continue d\'agir. Pour une infestation importante, l\'insecticide professionnel reste le traitement le plus radical. Le technicien vous conseille après inspection.' },
 ]
 

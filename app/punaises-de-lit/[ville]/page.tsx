@@ -172,11 +172,11 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: '#F0562A' }}>En bref</p>
             <ul className="space-y-2">
               {enBref.map((t) => (
                 <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
+                  <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: '#F0562A' }} /><span>{avecPrix(t)}</span>
                 </li>
               ))}
             </ul>
@@ -194,7 +194,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Punaises de lit {v.a} : <span style={{ color: ACCENT }}>ce que nous voyons sur le terrain</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Punaises de lit {v.a} : <span style={{ color: '#F0562A' }}>ce que nous voyons sur le terrain</span></h2>
             {v.contexte.map((p) => (
               <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
             ))}
@@ -202,11 +202,11 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             <ul className="grid sm:grid-cols-2 gap-3">
               {CACHETTES.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
-                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{l}
+                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{l}
                 </li>
               ))}
             </ul>
-            <p className="text-white/50 text-sm mt-4 text-center">
+            <p className="text-white/60 text-sm mt-4 text-center">
               Signes fréquents : piqûres groupées au réveil, petites taches noires ou de sang sur les draps, insectes bruns dans les coutures.
             </p>
           </div>
@@ -269,16 +269,16 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             <div className="grid sm:grid-cols-3 gap-3">
               {v.guides.map((g) => (
                 <a key={g} href={`/blog/${g}`} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
-                  <BookOpen className="w-5 h-5 mb-3" style={{ color: ACCENT }} />
+                  <BookOpen className="w-5 h-5 mb-3" style={{ color: '#F0562A' }} />
                   <p className="text-white font-bold text-sm leading-snug mb-2">{GUIDES_PUNAISES[g]}</p>
-                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: ACCENT }}>
+                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: '#F0562A' }}>
                     Lire le guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </a>
               ))}
             </div>
             <p className="text-white/60 text-sm mt-6 text-center">
-              Voir aussi notre <a href="/services/punaises-de-lit" className="underline" style={{ color: ACCENT }}>traitement des punaises de lit en Île-de-France</a>.
+              Voir aussi notre <a href="/services/punaises-de-lit" className="underline" style={{ color: '#F0562A' }}>traitement des punaises de lit en Île-de-France</a>.
             </p>
           </div>
         </section>
@@ -308,7 +308,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={card}>
             <div className="flex items-start gap-3 mb-4">
-              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
+              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
               <div>
                 <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
                 <p className="text-white/55 text-sm">

@@ -56,7 +56,7 @@ export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo',
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>{surtitre}</p>
+          <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>{surtitre}</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-4">{titre}</h2>
           <p className="text-white/70 leading-relaxed max-w-3xl mx-auto text-base md:text-lg">{enrichi(intro)}</p>
         </div>
@@ -65,20 +65,20 @@ export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo',
             <article key={v.src} className="grid md:grid-cols-[260px_1fr] gap-6 md:gap-8 items-start rounded-2xl p-5 md:p-7" style={card}>
               <div className="mx-auto w-full max-w-[280px]">
                 {renvoiHaut ? (
-                  <a href="#videos-chantier" className="group relative block rounded-[22px] overflow-hidden" style={{ aspectRatio: '9 / 16', border: '1px solid rgba(255,255,255,0.12)' }} aria-label={`Voir la vidéo : ${v.titre}`}>
-                    <img src={v.poster} alt={v.legende} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                  <a href="#videos-chantier" className="group relative block rounded-[22px] overflow-hidden" style={{ aspectRatio: '9 / 16', border: '1px solid rgba(255,255,255,0.12)' }}>
+                    <img src={v.poster} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                     <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.75) 100%)' }} />
                     <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full group-hover:scale-110 transition-transform" style={{ background: 'rgba(255,255,255,0.92)' }}>
-                      <Play className="w-6 h-6 ml-0.5" style={{ color: ACCENT, fill: ACCENT }} aria-hidden="true" />
+                      <Play className="w-6 h-6 ml-0.5" style={{ color: '#F0562A', fill: ACCENT }} aria-hidden="true" />
                     </span>
-                    <span className="absolute bottom-3 left-0 right-0 text-center text-xs font-bold text-white">{v.lieu} · voir la vidéo en haut</span>
+                    <span className="absolute bottom-3 left-0 right-0 text-center text-xs font-bold text-white">{v.lieu} · voir la vidéo en haut<span className="sr-only"> : {v.titre}</span></span>
                   </a>
                 ) : (
                   <VideoCarte src={v.src} poster={v.poster} fiche={{ ...ficheVideo(v.src, v.legende), duree: Math.round(v.duree) }} youtube={lienYoutube(v.src) ?? undefined} />
                 )}
               </div>
               <div>
-                <p className="text-xs font-black uppercase tracking-[.12em] mb-2 text-center md:text-left" style={{ color: ACCENT }}>Vidéo {i + 1} · {v.lieu}</p>
+                <p className="text-xs font-black uppercase tracking-[.12em] mb-2 text-center md:text-left" style={{ color: '#F0562A' }}>Vidéo {i + 1} · {v.lieu}</p>
                 <h3 className="text-xl md:text-2xl font-black text-white leading-snug mb-4 text-center md:text-left">{v.titre}</h3>
                 <div className="space-y-3 text-white/70 leading-relaxed">
                   {v.texte.map((t, j) => <p key={j}>{enrichi(t)}</p>)}
@@ -87,12 +87,12 @@ export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo',
                 <ul className="space-y-1.5">
                   {v.voit.map((x) => (
                     <li key={x} className="pl-5 relative text-white/70 text-sm leading-relaxed">
-                      <span className="absolute left-0 font-black" style={{ color: ACCENT }}>•</span>{enrichi(x)}
+                      <span className="absolute left-0 font-black" style={{ color: '#F0562A' }}>•</span>{enrichi(x)}
                     </li>
                   ))}
                 </ul>
                 {v.lien && (
-                  <a href={v.lien.href} className="inline-flex items-center gap-1.5 mt-5 text-sm font-bold underline underline-offset-2" style={{ color: ACCENT }}>
+                  <a href={v.lien.href} className="inline-flex items-center gap-1.5 mt-5 text-sm font-bold underline underline-offset-2" style={{ color: '#F0562A' }}>
                     {v.lien.label} <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                 )}

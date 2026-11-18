@@ -37,7 +37,7 @@ export default function VignettesChantier({
           </span>
         </span>
       ))}
-      <span style={{ fontSize: '13px', fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: '2px' }}>{texte} ↓</span>
+      <span style={{ fontSize: '13px', fontWeight: 700, color: '#F0562A', textDecoration: 'underline', textUnderlineOffset: '2px' }}>{texte} ↓</span>
     </a>
   )
 }

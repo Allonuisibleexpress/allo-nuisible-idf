@@ -179,11 +179,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
           <div className="max-w-3xl mx-auto">
             <div className="rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: '#F0562A' }}>En bref</p>
               <ul className="space-y-2">
                 {enBref.map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-white/85 text-sm md:text-base leading-relaxed">
-                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: ACCENT }} /><span>{avecPrix(t)}</span>
+                    <Check className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: '#F0562A' }} /><span>{avecPrix(t)}</span>
                   </li>
                 ))}
               </ul>
@@ -201,7 +201,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* ── CONTEXTE LOCAL ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Rats et souris {v.a} : <span style={{ color: ACCENT }}>ce que nous constatons</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Rats et souris {v.a} : <span style={{ color: '#F0562A' }}>ce que nous constatons</span></h2>
             {v.contexte.map((p) => (
               <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
             ))}
@@ -209,11 +209,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             <ul className="grid sm:grid-cols-2 gap-3">
               {v.lieux.map((l) => (
                 <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
-                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{l}
+                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{l}
                 </li>
               ))}
             </ul>
-            <p className="text-white/50 text-sm mt-4 text-center">
+            <p className="text-white/60 text-sm mt-4 text-center">
               Indices fréquents : déjections, traces de grignotage, bruits la nuit dans les cloisons, terriers au pied des murs.
             </p>
           </div>
@@ -227,12 +227,12 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-            Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: ACCENT }}>souris {v.a}</a>.
+            Uniquement des souris ? Voir notre page <a href={`/souris/${v.slug}`} className="underline" style={{ color: '#F0562A' }}>souris {v.a}</a>.
           </p>
         )}
         {VILLES_PUCES.some((x) => x.slug === v.slug) && (
           <p className="max-w-4xl mx-auto px-4 -mt-6 mb-10 text-sm text-white/60 text-center">
-            Rats et souris transportent des puces, qui peuvent rester après leur départ : voir notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: ACCENT }}>puces {v.a}</a>.
+            Rats et souris transportent des puces, qui peuvent rester après leur départ : voir notre page <a href={`/puces/${v.slug}`} className="underline font-bold" style={{ color: '#F0562A' }}>puces {v.a}</a>.
           </p>
         )}
 
@@ -274,9 +274,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {[...v.guides.slice(0, 2), 'rat-ou-souris-comment-reconnaitre' as const, 'guide-des-rongeurs' as const].map((g) => (
                 <a key={g} href={`/blog/${g}`} className="group rounded-xl p-5 transition-colors hover:bg-white/[0.06]" style={card}>
-                  <BookOpen className="w-5 h-5 mb-3" style={{ color: ACCENT }} />
+                  <BookOpen className="w-5 h-5 mb-3" style={{ color: '#F0562A' }} />
                   <p className="text-white font-bold text-sm leading-snug mb-2">{GUIDES_RONGEURS[g]}</p>
-                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: ACCENT }}>
+                  <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: '#F0562A' }}>
                     Lire le guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </a>
@@ -310,7 +310,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={card}>
             <div className="flex items-start gap-3 mb-4">
-              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: ACCENT }} />
+              <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
               <div>
                 <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
                 <p className="text-white/55 text-sm">
@@ -349,7 +349,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </p>
             <div className="mt-12">
               <h3 className="text-lg md:text-xl font-black text-white mb-2">Dératisation près de {v.nom}</h3>
-              <p className="text-white/50 text-sm mb-5">Les villes voisines où nous intervenons pour les rats et les souris, même prix dès 120 €.</p>
+              <p className="text-white/60 text-sm mb-5">Les villes voisines où nous intervenons pour les rats et les souris, même prix dès 120 €.</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {autres.map((x) => (
                   <a key={x.slug} href={`/deratisation/${x.slug}`}

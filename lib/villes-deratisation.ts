@@ -47,7 +47,7 @@ export type VilleDeratisation = {
 }
 
 const FAQ_COMMUNE = (a: string) => [
-  { q: `Combien coûte une dératisation ${a} ?`, a: 'Le prix dépend du type de lieu (maison, appartement, commerce, copropriété), de l\'infestation et du nombre de passages. Le devis est gratuit et vous le connaissez avant toute intervention.' },
+  { q: `Combien coûte une dératisation ${a} ?`, a: 'À partir de 120 € TTC pour un appartement. Le prix dépend ensuite du type de lieu (maison, appartement, commerce, copropriété), de l\'infestation et du nombre de passages. Le devis est gratuit et vous le connaissez avant toute intervention.' },
   { q: 'Faut-il quitter le logement pendant la dératisation ?', a: 'Non, dans la plupart des cas. Les postes d\'appâtage sont verrouillés et inaccessibles aux enfants et aux animaux, et les pièges mécaniques ou connectés ne diffusent aucun produit.' },
 ]
 

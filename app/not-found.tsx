@@ -30,9 +30,9 @@ export default function NotFound() {
             background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
           }} />
           <div className="relative max-w-3xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Erreur 404</p>
+            <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#F0562A' }}>Erreur 404</p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-5">
-              Cette page est <span style={{ color: ACCENT }}>introuvable</span>
+              Cette page est <span style={{ color: '#F0562A' }}>introuvable</span>
             </h1>
             <p className="text-white/65 text-lg leading-relaxed mb-10">
               Le lien est peut-être ancien ou mal recopié. Pas d&apos;inquiétude : voici nos principaux services, ou appelez-nous directement.
@@ -43,7 +43,7 @@ export default function NotFound() {
                 <a key={l.href} href={l.href}
                   className="flex items-center gap-2.5 rounded-xl px-4 py-3.5 text-white/85 text-sm font-semibold transition-colors hover:bg-white/[0.07] text-left"
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <span style={{ color: ACCENT }}><PestIcon name={l.icon} size={22} /></span>
+                  <span style={{ color: '#F0562A' }}><PestIcon name={l.icon} size={22} /></span>
                   {l.label}
                 </a>
               ))}

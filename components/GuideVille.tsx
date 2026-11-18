@@ -10,7 +10,7 @@ export default function GuideVille({ guide, nom, plus = [], slug }: { guide?: G;
   return (
     <section id="guide-local" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0a0a0a' }}>
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>Le guide {nom}</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: '#F0562A' }}>Le guide {nom}</p>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center leading-tight">{guide.titre}</h2>
         <p className="text-white/75 leading-relaxed text-base md:text-lg mb-10 text-center">{texteRiche(guide.intro, ctx, 'intro')}</p>
         <div className="space-y-10">

@@ -30,7 +30,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         aria-expanded={open}
       >
         <span>{q}</span>
-        <ChevronDown className={`w-5 h-5 flex-shrink-0 ml-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} style={{ color: ACCENT }} />
+        <ChevronDown className={`w-5 h-5 flex-shrink-0 ml-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} style={{ color: '#F0562A' }} />
       </button>
       <div className={`faq-body${open ? ' open' : ''}`}>
         <div className="px-5 pb-5 pt-3 text-sm text-gray-400 leading-relaxed border-t border-white/5">
@@ -149,14 +149,14 @@ export default function FourmisPage() {
             {/* Titre */}
             <h1 className="hero-2 font-black text-white leading-none tracking-tight mb-8" style={{ fontSize: 'clamp(3rem, 9vw, 7rem)' }}>
               Les fourmis ont{' '}
-              <em className="not-italic" style={{ color: ACCENT }}>envahi votre logement.</em>
+              <em className="not-italic" style={{ color: '#F0562A' }}>envahi votre logement.</em>
             </h1>
 
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Tant que la reine pond, la colonie se reconstitue.{' '}
-              <strong style={{ color: ACCENT }}>Nos techniciens ciblent le nid entier</strong>{' '}
+              <strong style={{ color: '#F0562A' }}>Nos techniciens ciblent le nid entier</strong>{' '}
               et interviennent 7j/7 en Île-de-France, avec une garantie 1 an.{' '}
-              <strong style={{ color: ACCENT }}>Devis et déplacement gratuits.</strong>
+              <strong style={{ color: '#F0562A' }}>Devis et déplacement gratuits.</strong>
             </p>
 
             {/* ── NUMÉRO — bouton lava ── */}
@@ -201,12 +201,12 @@ export default function FourmisPage() {
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
-                <ShieldCheck className="w-4 h-4" style={{ color: ACCENT }} />
+                <ShieldCheck className="w-4 h-4" style={{ color: '#F0562A' }} />
                 <span className="text-white/80">Certibiocide</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
-                <Phone className="w-4 h-4" style={{ color: ACCENT }} />
+                <Phone className="w-4 h-4" style={{ color: '#F0562A' }} />
                 <span className="text-white/80">Sans engagement</span>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function FourmisPage() {
               <button type="button" onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-125" style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
                 Prendre rendez-vous
               </button>
-              <a href="https://wa.me/33768077219" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-110" style={{ background: '#25D366', color: '#fff', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
+              <a href="https://wa.me/33768077219" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-110" style={{ background: '#0E7A3E', color: '#fff', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.118 1.528 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 01-5.002-1.368l-.36-.214-3.735.885.944-3.619-.235-.372A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
                 WhatsApp
               </a>
@@ -247,10 +247,10 @@ export default function FourmisPage() {
               <div style={{ width: '62px', height: '62px', background: 'rgba(232,68,26,0.11)', border: '1.5px solid rgba(232,68,26,0.3)', borderRadius: '16px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
                 <ShieldCheck style={{ width: '26px', height: '26px', stroke: ACCENT, fill: 'none' }} />
               </div>
-              <p style={{ color: ACCENT, fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
+              <p style={{ color: '#F0562A', fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 Garantie résultat
               </p>
-              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: ACCENT, lineHeight: 0.88, marginBottom: '14px' }}>
+              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: '#F0562A', lineHeight: 0.88, marginBottom: '14px' }}>
                 1 an
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
@@ -279,7 +279,7 @@ export default function FourmisPage() {
           <div className="max-w-xl mx-auto px-4 md:px-6">
             <div className="relative rounded-2xl p-7 md:p-10 overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Rappel gratuit</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Rappel gratuit</p>
               <h2 className="text-xl md:text-2xl font-black text-white mb-1.5">Vous préférez qu&apos;on vous rappelle ?</h2>
               <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.38)' }}>
                 Réponse sous 5 minutes · Sans engagement
@@ -294,14 +294,14 @@ export default function FourmisPage() {
         <section className="reveal py-14 md:py-20 px-4 md:px-6" style={{ background: '#0a0a0a' }}>
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Identification</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Identification</p>
               <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Quelle espèce a envahi votre logement ?</h2>
-              <p className="text-white/50 max-w-2xl mx-auto">Chaque espèce a un comportement et un traitement différent. Une mauvaise identification = un traitement inefficace.</p>
+              <p className="text-white/60 max-w-2xl mx-auto">Chaque espèce a un comportement et un traitement différent. Une mauvaise identification = un traitement inefficace.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { name: 'Fourmi noire des jardins', latin: 'Lasius niger', danger: '●● Modéré', color: '#888', signs: ['Pistes continues vers la cuisine', 'Nid sous dalles ou au pied des murs', 'Attirées par sucre et miettes'], traitement: 'Gel appât + barrière rémanente', saison: 'Mars – Octobre' },
-                { name: 'Fourmi charpentière', latin: 'Camponotus sp.', danger: '●●● Élevé', color: ACCENT, signs: ['Sciure fine (frass) près des bois', 'Galeries dans charpente / parquet', 'Grandes fourmis noires (8–15 mm)'], traitement: 'Injection en galeries + insecticide', saison: 'Avril – Septembre', alert: true },
+                { name: 'Fourmi charpentière', latin: 'Camponotus sp.', danger: '●●● Élevé', color: '#F0562A', signs: ['Sciure fine (frass) près des bois', 'Galeries dans charpente / parquet', 'Grandes fourmis noires (8–15 mm)'], traitement: 'Injection en galeries + insecticide', saison: 'Avril – Septembre', alert: true },
                 { name: 'Fourmi pharaon', latin: 'Monomorium pharaonis', danger: '●●● Critique', color: '#C00000', signs: ['Très petite (1,5–2 mm), jaune pâle', 'Nids multiples derrière plinthes', "Présente toute l'année en appartement"], traitement: 'Gel appât exclusivement', saison: "Toute l'année", alert: true },
                 { name: 'Fourmi de feu', latin: 'Solenopsis invicta', danger: '●●●● Urgent', color: '#BE0800', signs: ['Piqûres douloureuses, pustules blanches', 'Monticules de terre dans jardins', 'Espèce invasive signalée en IDF'], traitement: 'Protocole renforcé · signalement DDPP', saison: 'Printemps – Été', alert: true },
               ].map((ant) => (
@@ -348,9 +348,9 @@ export default function FourmisPage() {
         <section className="reveal py-14 md:py-20 px-4 md:px-6" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Erreur fréquente</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Erreur fréquente</p>
               <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Pourquoi traiter seul ne fonctionne pas</h2>
-              <p className="text-white/50 max-w-2xl mx-auto">Les fourmis que vous voyez ne sont que des ouvrières. La reine et le couvain restent cachés dans le nid.</p>
+              <p className="text-white/60 max-w-2xl mx-auto">Les fourmis que vous voyez ne sont que des ouvrières. La reine et le couvain restent cachés dans le nid.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-3 mb-6">
               {[
@@ -382,7 +382,7 @@ export default function FourmisPage() {
 
         <section className="reveal py-14 md:py-20 px-4 md:px-6" style={{ background: '#080808' }}>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Localisations</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les fourmis ?</h2>
             <p className="mb-6" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65 }}>
               Les fourmis s&apos;installent dans des endroits difficiles d&apos;accès, proches de la nourriture ou de l&apos;humidité. Elles peuvent nidifier à l&apos;intérieur comme à l&apos;extérieur et traverser les murs par les moindres fissures. Chaque emplacement demande un protocole de traitement adapté.
@@ -413,7 +413,7 @@ export default function FourmisPage() {
         {/* ══════════════════ CALENDRIER ══════════════════ */}
         <section className="reveal py-14 md:py-20 px-4 md:px-6" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Saisonnalité</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Saisonnalité</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-6">Quand intervenir ?</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)' }}>
@@ -442,7 +442,7 @@ export default function FourmisPage() {
 
         <section className="reveal py-12 lg:py-16" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto px-4">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>FAQ</p>
             <h2 className="text-2xl font-black text-white mb-8">Questions fréquentes</h2>
             <div className="space-y-3">
               {FAQ_FOURMIS_TOUT.map(({ q, a }) => <FAQItem key={q} q={q} a={a} />)}
@@ -463,10 +463,10 @@ export default function FourmisPage() {
             </h2>
             <p className="text-white/80 text-base mb-8">Intervention 7j/7 en Île-de-France. Devis gratuit, résultat garanti.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2 bg-white font-black px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 text-sm" style={{ color: ACCENT }}>
+              <a href={PHONE_HREF} className="inline-flex items-center gap-2 bg-white font-black px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 text-sm" style={{ color: '#B8330D' }}>
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
-              <button type="button" onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white font-bold px-8 py-4 rounded-full transition-all text-sm hover:text-[#E8441A]">
+              <button type="button" onClick={() => setModalOpen(true)} className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white font-bold px-8 py-4 rounded-full transition-all text-sm hover:text-[#F0562A]">
                 Envoyer un message
               </button>
             </div>

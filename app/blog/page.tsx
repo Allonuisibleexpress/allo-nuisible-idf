@@ -39,7 +39,7 @@ export default function BlogPage() {
         {/* Hero */}
         <section style={{ paddingTop: '120px', paddingBottom: '60px', background: 'linear-gradient(135deg, #0a0a0a 0%, rgba(232, 68, 26, 0.03) 100%)', borderBottom: '1px solid rgba(232, 68, 26, 0.15)' }}>
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#E8441A', marginBottom: '12px' }}>Expertise & conseils</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#F0562A', marginBottom: '12px' }}>Expertise & conseils</p>
             <h1 style={{ fontSize: 'clamp(32px, 8vw, 56px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, marginBottom: '16px' }}>Blog anti-nuisibles</h1>
             <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
               Guides complets, conseils de terrain et actualités sur les nuisibles en Île-de-France. Rédigé par nos techniciens certifiés Certibiocide.
@@ -54,17 +54,17 @@ export default function BlogPage() {
               <Link key={article.slug} href={`/blog/${article.slug}`} className="group">
                 <article
                   style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '26px', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(232, 68, 26, 0.2)', transition: 'all 0.3s ease', cursor: 'pointer' }}
-                  className="hover:bg-white/5 hover:border-[#E8441A]/40 hover:shadow-lg hover:shadow-[#E8441A]/10"
+                  className="hover:bg-white/5 hover:border-[#F0562A]/40 hover:shadow-lg hover:shadow-[#F0562A]/10"
                 >
                   <div style={{ display: 'flex', gap: '12px', marginBottom: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#E8441A', background: 'rgba(232, 68, 26, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>{article.category}</span>
+                    <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#F0562A', background: 'rgba(232, 68, 26, 0.15)', padding: '4px 10px', borderRadius: '6px' }}>{article.category}</span>
                     <time style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.5)' }}>
                       {new Date(article.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </time>
                   </div>
-                  <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#fff', marginBottom: '12px', lineHeight: 1.3 }} className="group-hover:text-[#E8441A]">{article.title}</h2>
+                  <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#fff', marginBottom: '12px', lineHeight: 1.3 }} className="group-hover:text-[#F0562A]">{article.title}</h2>
                   <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)', lineHeight: 1.6, flexGrow: 1 }}>{article.description}</p>
-                  <span style={{ fontSize: '13px', fontWeight: 600, color: '#E8441A', marginTop: '18px' }}>Lire l'article →</span>
+                  <span style={{ fontSize: '13px', fontWeight: 600, color: '#F0562A', marginTop: '18px' }}>Lire l'article →</span>
                 </article>
               </Link>
             ))}

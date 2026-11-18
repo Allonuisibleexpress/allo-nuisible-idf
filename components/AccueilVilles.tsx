@@ -8,6 +8,7 @@ import { VILLES_CAFARDS } from '@/lib/villes-cafards'
 import { VILLES_FOURMIS } from '@/lib/villes-fourmis'
 import { REPERES } from '@/lib/reperes-villes'
 import { codePostal } from '@/lib/codes-postaux'
+import { DERAT_DEMANDEES, PUNAISES_DEMANDEES } from '@/lib/villes-demandees'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -31,9 +32,9 @@ export default function AccueilVilles({ nombre = 12 }: { nombre?: number }) {
   return (
     <section className="py-16 md:py-24 px-4" style={{ background: '#0b0b0b' }}>
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: ACCENT }}>Près de chez vous</p>
+        <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Près de chez vous</p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-          Dératisation et punaises de lit <span style={{ color: ACCENT }}>dans votre ville</span>
+          Dératisation et punaises de lit <span style={{ color: '#F0562A' }}>dans votre ville</span>
         </h2>
         <p className="text-white/60 max-w-2xl mx-auto mb-10">
           Basés à <strong className="text-white">Saint-Maurice (94)</strong>, nous intervenons chaque jour à Paris et dans tout le Val-de-Marne. Choisissez votre ville et votre nuisible.
@@ -42,7 +43,7 @@ export default function AccueilVilles({ nombre = 12 }: { nombre?: number }) {
           {villes.map((s) => (
             <div key={s} className="rounded-2xl p-5" style={card}>
               <p className="flex items-center gap-2 text-white font-black text-lg mb-1">
-                <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: ACCENT }} />{noms.get(s)}
+                <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{noms.get(s)}
                 <span className="text-white/60 text-sm font-bold">{codePostal(s)}</span>
               </p>
               <p className="text-white/60 text-xs mb-3">{s === 'saint-maurice' ? 'Notre base' : `À ${REPERES[s]?.km.toLocaleString('fr-FR')} km de notre base`}</p>
@@ -56,7 +57,17 @@ export default function AccueilVilles({ nombre = 12 }: { nombre?: number }) {
             </div>
           ))}
         </div>
-        <a href="/zones/val-de-marne" className="inline-flex items-center gap-2 font-bold mt-8" style={{ color: ACCENT }}>
+        <div className="mt-10 max-w-4xl mx-auto">
+          <p className="text-white font-black text-lg mb-4">Les interventions les plus demandées</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[...DERAT_DEMANDEES, ...PUNAISES_DEMANDEES].map((l) => (
+              <a key={l.href} href={l.href} className="text-sm font-bold text-white/85 hover:text-white rounded-full px-4 py-2 hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.14)' }}>
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <a href="/zones/val-de-marne" className="inline-flex items-center gap-2 font-bold mt-8" style={{ color: '#F0562A' }}>
           Toutes nos villes d’intervention <ArrowRight className="w-4 h-4" />
         </a>
       </div>

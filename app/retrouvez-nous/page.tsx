@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 
 const LIENS = [
   { href: 'https://maps.google.com/?cid=11887181769674817823', label: 'Google Maps : notre fiche et nos avis' },
+  { href: 'https://www.facebook.com/profile.php?id=61596338559755', label: 'Facebook : notre page' },
+  { href: 'https://www.instagram.com/allonuisibleidf/', label: 'Instagram : nos chantiers en photos et vidéos' },
+  { href: 'https://www.pinterest.fr/allonuisibleidf/', label: 'Pinterest : photos de chantiers et conseils' },
+  { href: 'https://www.tiktok.com/@allo.nuisible.idf', label: 'TikTok : nos interventions en vidéo' },
   { href: 'https://www.youtube.com/@allonuisibleidf', label: 'YouTube : nos interventions en vidéo' },
   { href: 'https://deratiseurs.nosavis.com/', label: 'Deratiseurs.NosAvis.com : annuaire des dératiseurs' },
 ]
@@ -28,7 +32,7 @@ export default function RetrouvezNous() {
         <ul className="space-y-4">
           {LIENS.map((l) => (
             <li key={l.href}>
-              <a href={l.href} target="_blank" rel="noopener" className="underline underline-offset-4 font-bold" style={{ color: '#E8441A' }}>{l.label}</a>
+              <a href={l.href} target="_blank" rel="noopener" className="underline underline-offset-4 font-bold" style={{ color: '#F0562A' }}>{l.label}</a>
             </li>
           ))}
         </ul>

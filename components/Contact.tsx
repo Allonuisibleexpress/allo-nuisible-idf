@@ -88,7 +88,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14 animate-on-scroll">
-          <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Contactez-nous</p>
+          <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Contactez-nous</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
             Prendre rendez-vous
           </h2>
@@ -123,9 +123,11 @@ export default function Contact() {
                   {/* Name row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Prénom *</label>
+                      <label htmlFor="devis-prenom" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Prénom *</label>
                       <input
                         type="text"
+                        id="devis-prenom"
+                        autoComplete="given-name"
                         name="prenom"
                         required
                         value={formData.prenom}
@@ -135,9 +137,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Nom *</label>
+                      <label htmlFor="devis-nom" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Nom *</label>
                       <input
                         type="text"
+                        id="devis-nom"
+                        autoComplete="family-name"
                         name="nom"
                         required
                         value={formData.nom}
@@ -151,9 +155,11 @@ export default function Contact() {
                   {/* Contact row */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Téléphone *</label>
+                      <label htmlFor="devis-telephone" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Téléphone *</label>
                       <input
                         type="tel"
+                        id="devis-telephone"
+                        autoComplete="tel"
                         name="telephone"
                         required
                         value={formData.telephone}
@@ -163,9 +169,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Email</label>
+                      <label htmlFor="devis-email" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Email</label>
                       <input
                         type="email"
+                        id="devis-email"
+                        autoComplete="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
@@ -178,8 +186,9 @@ export default function Contact() {
                   {/* Nuisible + Ville */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Type de nuisible *</label>
+                      <label htmlFor="devis-nuisible" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Type de nuisible *</label>
                       <select
+                        id="devis-nuisible"
                         name="nuisible"
                         required
                         value={formData.nuisible}
@@ -193,9 +202,11 @@ export default function Contact() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Ville *</label>
+                      <label htmlFor="devis-ville" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Ville *</label>
                       <input
                         type="text"
+                        id="devis-ville"
+                        autoComplete="address-level2"
                         name="ville"
                         required
                         value={formData.ville}
@@ -208,8 +219,9 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Message</label>
+                    <label htmlFor="devis-message" className="block text-sm font-semibold text-[#1a1a1a] mb-1.5">Message</label>
                     <textarea
+                      id="devis-message"
                       name="message"
                       rows={4}
                       value={formData.message}
@@ -246,12 +258,12 @@ export default function Contact() {
               >
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 bg-[#E8441A]/10 group-hover:bg-[#E8441A] rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200">
-                    <Icon className="w-5 h-5 text-[#E8441A] group-hover:text-white transition-colors duration-200" />
+                    <Icon className="w-5 h-5 text-[#F0562A] group-hover:text-white transition-colors duration-200" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">{label}</p>
                     {href ? (
-                      <a href={href} className="font-bold text-[#1a1a1a] hover:text-[#E8441A] transition-colors text-sm">
+                      <a href={href} className="font-bold text-[#1a1a1a] hover:text-[#F0562A] transition-colors text-sm">
                         {value}
                       </a>
                     ) : (
@@ -274,7 +286,7 @@ export default function Contact() {
               </p>
               <a
                 href="tel:+33768077219"
-                className="inline-flex items-center gap-2 bg-white text-[#E8441A] font-black text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-[#B8330D] font-black text-sm px-4 py-2 rounded-full hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 07 68 07 72 19

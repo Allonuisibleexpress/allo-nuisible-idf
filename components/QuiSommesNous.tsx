@@ -49,7 +49,7 @@ function StatCard({
 
   return (
     <div className="text-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
-      <Icon className="w-5 h-5 text-[#E8441A] mx-auto mb-2" />
+      <Icon className="w-5 h-5 text-[#F0562A] mx-auto mb-2" />
       <div className="text-2xl font-black text-[#1a1a1a] tabular-nums">
         {target === null ? suffix : `${count}${suffix}`}
       </div>
@@ -89,7 +89,7 @@ export default function QuiSommesNous() {
           {/* Left — text */}
           <div className="space-y-6 animate-on-scroll">
             <div>
-              <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-3">Notre histoire</p>
+              <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-3">Notre histoire</p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-tight">
                 Qui sommes-nous ?
               </h2>
@@ -128,13 +128,13 @@ export default function QuiSommesNous() {
           <div className="animate-on-scroll animate-on-scroll-delay-2">
             <div className="relative">
               <div className="rounded-3xl bg-[#1a1a1a] p-8 sm:p-10">
-                <p className="text-[#E8441A] font-semibold text-sm uppercase tracking-widest mb-2">Zones d&apos;intervention</p>
+                <p className="text-[#F0562A] font-semibold text-sm uppercase tracking-widest mb-2">Zones d&apos;intervention</p>
                 <p className="text-white text-2xl font-black leading-tight mb-6">Toute l&apos;Île-de-France</p>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
                   {DEPARTEMENTS_IDF.map((d) => (
                     <li key={d.slug}>
                       <a href={`/zones/${d.slug}`} className="flex items-center gap-2 text-white/85 hover:text-white text-sm sm:text-base transition-colors">
-                        <MapPin className="w-4 h-4 text-[#E8441A] flex-shrink-0" />
+                        <MapPin className="w-4 h-4 text-[#F0562A] flex-shrink-0" />
                         {d.nom} ({d.code})
                       </a>
                     </li>
@@ -145,7 +145,7 @@ export default function QuiSommesNous() {
               <div className="relative mt-4 inline-block bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-[#E8441A]/10 rounded-full flex items-center justify-center">
-                    <Award className="w-5 h-5 text-[#E8441A]" />
+                    <Award className="w-5 h-5 text-[#F0562A]" />
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#1a1a1a]">Certifié CERTIBIOCIDE</div>

@@ -41,7 +41,7 @@ export default function BruitsRongeurs({ animaux }: { animaux?: string[] }) {
           <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.55)', margin: 0 }}><strong style={{ color: 'rgba(255,255,255,0.75)' }}>Où :</strong> {b.ou}<br /><strong style={{ color: 'rgba(255,255,255,0.75)' }}>Quand :</strong> {b.quand}</p>
           {b.sons?.map((s) => (
             <div key={s.src} style={{ marginTop: '12px' }}>
-              <p style={{ fontSize: '13px', fontWeight: 700, color: ACCENT, margin: '0 0 6px' }}>Écouter : {s.legende}</p>
+              <p style={{ fontSize: '13px', fontWeight: 700, color: '#F0562A', margin: '0 0 6px' }}>Écouter : {s.legende}</p>
               <audio controls preload="none" src={s.src} style={{ width: '100%' }} />
               <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', margin: '4px 0 0' }}>Enregistrement : {s.credit}, <a href={s.page} target="_blank" rel="noopener noreferrer nofollow" style={{ textDecoration: 'underline' }}>CC BY-SA 4.0</a>, Wikimedia Commons</p>
             </div>

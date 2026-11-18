@@ -10,12 +10,12 @@ export default function TableauComparatif({ titre, intro, head, rows }: { titre:
         <div className="overflow-x-auto rounded-2xl" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <table className="w-full text-sm">
             <thead>
-              <tr>{head.map((h) => <th key={h} className="text-left font-bold px-4 py-3" style={{ color: ACCENT }}>{h}</th>)}</tr>
+              <tr>{head.map((h, j) => <th key={h || j} scope="col" className="text-left font-bold px-4 py-3" style={{ color: '#F0562A' }}>{h || <span className="sr-only">Critère</span>}</th>)}</tr>
             </thead>
             <tbody>
               {rows.map((r) => (
                 <tr key={r[0]} className="border-t border-white/10">
-                  {r.map((cell, j) => <td key={j} className={`px-4 py-3 align-top ${j === 0 ? 'text-white font-bold' : 'text-white/70'}`}>{cell}</td>)}
+                  {r.map((cell, j) => j === 0 ? <th key={j} scope="row" className="px-4 py-3 align-top text-left text-white font-bold">{cell}</th> : <td key={j} className="px-4 py-3 align-top text-white/70">{cell}</td>)}
                 </tr>
               ))}
             </tbody>

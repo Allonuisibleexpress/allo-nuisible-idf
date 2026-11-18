@@ -133,7 +133,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <span>{q}</span>
         <ChevronDown
-          className={`w-5 h-5 text-[#E8441A] flex-shrink-0 ml-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-[#F0562A] flex-shrink-0 ml-3 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
         />
       </button>
       <div className={`faq-body${open ? ' open' : ''}`}>
@@ -243,15 +243,15 @@ export default function GuêpesFrelonsPage() {
           <div className="relative w-full max-w-5xl mx-auto text-center">
 
             {/* Titre */}
-            <p className="hero-2 font-black uppercase tracking-[.14em] mb-4" style={{ color: ACCENT, fontSize: 'clamp(0.85rem, 2vw, 1.05rem)' }}>Ne touchez pas à ce nid.</p>
+            <p className="hero-2 font-black uppercase tracking-[.14em] mb-4" style={{ color: '#F0562A', fontSize: 'clamp(0.85rem, 2vw, 1.05rem)' }}>Ne touchez pas à ce nid.</p>
             <h1 className="hero-2 font-black text-white leading-[1.05] tracking-tight mb-8" style={{ fontSize: 'clamp(2.3rem, 6.5vw, 5.2rem)' }}>
               Destruction de nid de frelons et de guêpes{' '}
-              <em className="not-italic block" style={{ color: ACCENT }}>dès 89 €, 7j/7</em>
+              <em className="not-italic block" style={{ color: '#F0562A' }}>dès 89 €, 7j/7</em>
             </h1>
 
             <p className="hero-3 text-white/65 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.25rem)' }}>
               Frelon asiatique, frelon européen ou guêpes : une attaque peut provoquer une{' '}
-              <strong style={{ color: ACCENT }}>réaction grave</strong>, même sans allergie.
+              <strong style={{ color: '#F0562A' }}>réaction grave</strong>, même sans allergie.
               Nos techniciens peuvent intervenir le jour même partout en Île-de-France. Résultat garanti.
             </p>
 
@@ -314,12 +314,12 @@ export default function GuêpesFrelonsPage() {
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
-                <ShieldCheck className="w-4 h-4" style={{ color: ACCENT }} />
+                <ShieldCheck className="w-4 h-4" style={{ color: '#F0562A' }} />
                 <span className="text-white/80">Certibiocide</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
-                <Phone className="w-4 h-4" style={{ color: ACCENT }} />
+                <Phone className="w-4 h-4" style={{ color: '#F0562A' }} />
                 <span className="text-white/80">Sans engagement</span>
               </div>
             </div>
@@ -333,7 +333,7 @@ export default function GuêpesFrelonsPage() {
               <button type="button" onClick={openModal} className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-125" style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
                 Prendre rendez-vous
               </button>
-              <a href="https://wa.me/33768077219" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-110" style={{ background: '#25D366', color: '#fff', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
+              <a href="https://wa.me/33768077219" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-bold rounded-xl transition-all hover:brightness-110" style={{ background: '#0E7A3E', color: '#fff', boxShadow: '0 4px 20px rgba(37,211,102,0.3)', padding: 'clamp(14px,2vw,18px) clamp(24px,4vw,40px)', fontSize: 'clamp(0.9rem,1.6vw,1.1rem)' }}>
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.118 1.528 5.845L0 24l6.335-1.502A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 01-5.002-1.368l-.36-.214-3.735.885.944-3.619-.235-.372A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
                 WhatsApp
               </a>
@@ -368,11 +368,11 @@ export default function GuêpesFrelonsPage() {
                 <ShieldCheck style={{ width: '26px', height: '26px', stroke: ACCENT, fill: 'none' }} />
               </div>
               {/* Label */}
-              <p style={{ color: ACCENT, fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
+              <p style={{ color: '#F0562A', fontSize: '10.5px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '8px' }}>
                 Garantie résultat
               </p>
               {/* Grand "3 mois" */}
-              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: ACCENT, lineHeight: 0.88, marginBottom: '14px' }}>
+              <div style={{ fontSize: 'clamp(56px,15vw,88px)', fontWeight: 900, color: '#F0562A', lineHeight: 0.88, marginBottom: '14px' }}>
                 3 mois
               </div>
               <p style={{ color: 'white', fontSize: '17px', fontWeight: 800, marginBottom: '10px', lineHeight: 1.35 }}>
@@ -397,7 +397,7 @@ export default function GuêpesFrelonsPage() {
         <section className="reveal py-12 md:py-16" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Nos garanties</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Nos garanties</p>
               <h2 className="text-xl md:text-2xl font-black text-white">Destruction de nid de frelons : pourquoi faire appel à un professionnel ?</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-3">
@@ -408,7 +408,7 @@ export default function GuêpesFrelonsPage() {
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                 >
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ background: `rgba(232,68,26,0.1)` }}>
-                    <Icon className="w-4 h-4" style={{ color: ACCENT }} />
+                    <Icon className="w-4 h-4" style={{ color: '#F0562A' }} />
                   </div>
                   <p className="font-bold text-white text-sm mb-2">{title}</p>
                   <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{text}</p>
@@ -433,7 +433,7 @@ export default function GuêpesFrelonsPage() {
             {/* Guide complet du blog sur le frelon asiatique */}
             <a href="/blog/frelon-asiatique-tout-savoir" className="block rounded-2xl p-6 md:p-8 text-center transition-all hover:brightness-110"
               style={{ background: 'rgba(232,68,26,0.08)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#E8441A' }}>Le guide complet</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A' }}>Le guide complet</p>
               <p className="text-white text-xl md:text-2xl font-black leading-tight mb-3">Frelon asiatique : tout savoir sur ce redoutable prédateur</p>
               <p className="text-white/65 text-sm leading-relaxed mb-4 max-w-xl mx-auto">
                 D&apos;où il vient, ce qu&apos;il aime, pourquoi il tourne autour de vos arbres, pourquoi ses nids sont <strong className="text-white">énormes en automne</strong> et comment <strong className="text-white">ne jamais vous faire attaquer</strong>.
@@ -446,7 +446,7 @@ export default function GuêpesFrelonsPage() {
                 ['/blog/frelon-europeen-tout-savoir', 'Frelon européen', 'Le géant qui vole même la nuit : dangereux ou pas ?'],
               ].map(([href, k, t]) => (
                 <a key={href} href={href} className="block rounded-2xl p-5 text-center transition-all hover:brightness-110" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,68,26,0.25)' }}>
-                  <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#E8441A' }}>Guide {k}</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#F0562A' }}>Guide {k}</p>
                   <p className="text-white font-bold leading-snug">{t}</p>
                 </a>
               ))}
@@ -462,7 +462,7 @@ export default function GuêpesFrelonsPage() {
               </div>
             </div>
             <p className="text-center text-sm mt-4">
-              <a href="/blog/nid-de-frelon-en-hiver" className="underline underline-offset-2" style={{ color: '#E8441A' }}>Nid de frelon en hiver : faut-il vraiment le détruire ?</a>
+              <a href="/blog/nid-de-frelon-en-hiver" className="underline underline-offset-2" style={{ color: '#F0562A' }}>Nid de frelon en hiver : faut-il vraiment le détruire ?</a>
             </p>
             <p className="text-white/70 text-sm font-bold mt-8 mb-3 text-center">Le récit de nos interventions :</p>
             <ul className="space-y-2 text-sm text-center">
@@ -474,7 +474,7 @@ export default function GuêpesFrelonsPage() {
                 ['/blog/nids-frelons-buissons-haies-intervention', 'Nids de frelons dans des haies, dont une école'],
                 ['/blog/nid-guepes-sous-tuile-essonne', 'Nid de guêpes sous une tuile en Essonne'],
               ].map(([href, label]) => (
-                <li key={href}><a href={href} className="underline underline-offset-2" style={{ color: '#E8441A' }}>{label}</a></li>
+                <li key={href}><a href={href} className="underline underline-offset-2" style={{ color: '#F0562A' }}>{label}</a></li>
               ))}
             </ul>
           </div>
@@ -588,7 +588,7 @@ export default function GuêpesFrelonsPage() {
             </div>
 
             {/* Timeline */}
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Déroulé</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Déroulé</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-7">Destruction d&apos;un nid de frelons ou de guêpes : le déroulé</h2>
             <div className="space-y-0 mb-14">
               {timeline.map(({ num, title, text }, i) => (
@@ -614,7 +614,7 @@ export default function GuêpesFrelonsPage() {
             </div>
 
             {/* Quand intervenir */}
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Calendrier</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Calendrier</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-6">Nid de frelons ou de guêpes : quand le faire détruire ?</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               <div className="relative rounded-xl p-5 overflow-hidden" style={{ background: 'rgba(34,197,94,0.07)', border: '1px solid rgba(34,197,94,0.2)' }}>
@@ -636,7 +636,7 @@ export default function GuêpesFrelonsPage() {
             </div>
 
             {/* Emplacements */}
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Localisations</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Localisations</p>
             <h2 className="text-xl md:text-2xl font-black text-white mb-3">Où se trouvent les nids de frelons et de guêpes ?</h2>
             <p className="mb-6" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65 }}>
               Guêpes et frelons s&apos;installent dans des endroits souvent difficiles d&apos;accès : sous la toiture,
@@ -704,7 +704,7 @@ export default function GuêpesFrelonsPage() {
               style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg,transparent,${ACCENT},transparent)` }} />
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>Rappel gratuit</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>Rappel gratuit</p>
               <h2 className="text-xl md:text-2xl font-black text-white mb-1.5">Vous préférez qu&apos;on vous rappelle ?</h2>
               <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.38)' }}>
                 Réponse sous 5 minutes · Devis gratuit · Sans engagement
@@ -717,7 +717,7 @@ export default function GuêpesFrelonsPage() {
         {/* ══════════════════ FAQ ══════════════════ */}
         <section className="reveal py-12 lg:py-16" style={{ background: '#0d0d0d' }}>
           <div className="max-w-3xl mx-auto px-4">
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT, letterSpacing: '.1em' }}>FAQ</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#F0562A', letterSpacing: '.1em' }}>FAQ</p>
             <h2 className="text-2xl font-black text-white mb-8">Nid de frelons et de guêpes : vos questions</h2>
             <div className="space-y-3">
               {FAQ_TOUT.map(({ q, a }) => <FaqItem key={q} q={q} a={a} />)}
@@ -759,7 +759,7 @@ export default function GuêpesFrelonsPage() {
               <a
                 href={PHONE_HREF}
                 className="inline-flex items-center gap-2 bg-white font-black px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 text-sm"
-                style={{ color: ACCENT }}
+                style={{ color: '#B8330D' }}
               >
                 <Phone className="w-4 h-4" />
                 {PHONE}
@@ -767,7 +767,7 @@ export default function GuêpesFrelonsPage() {
               <button
                 type="button"
                 onClick={openModal}
-                className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white font-bold px-8 py-4 rounded-full transition-all text-sm hover:text-[#E8441A]"
+                className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white font-bold px-8 py-4 rounded-full transition-all text-sm hover:text-[#F0562A]"
               >
                 Envoyer un message
                 <ArrowRight className="w-4 h-4" />

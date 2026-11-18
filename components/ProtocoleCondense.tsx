@@ -33,7 +33,7 @@ export default function ProtocoleCondense({ p, a }: { p: Protocole; a: string })
                   <div>
                     <h3 className="font-black text-white text-lg mb-1.5">{r(e.titre)}</h3>
                     <p className="text-white/70 text-sm md:text-base leading-relaxed">{g(r(e.texte))}</p>
-                    {e.lien && !e.lien.photo && <a href={e.lien.href} className="inline-block mt-2 text-sm font-bold underline" style={{ color: ACCENT }}>{e.lien.label} →</a>}
+                    {e.lien && !e.lien.photo && <a href={e.lien.href} className="inline-block mt-2 text-sm font-bold underline" style={{ color: '#F0562A' }}>{e.lien.label} →</a>}
                   </div>
                 </div>
                 {e.lien?.photo && (
@@ -41,7 +41,7 @@ export default function ProtocoleCondense({ p, a }: { p: Protocole; a: string })
                     <div className="relative w-full h-36">
                       <NextImage src={PHOTOS_CHANTIERS[e.lien.photo].src} alt={PHOTOS_CHANTIERS[e.lien.photo].alt} fill sizes="220px" style={{ objectFit: 'cover', objectPosition: (PHOTOS_CHANTIERS[e.lien.photo] as PhotoChantier).cadrage }} />
                     </div>
-                    <p className="p-2.5 text-xs font-bold text-center group-hover:underline" style={{ color: ACCENT }}>{e.lien.label} →</p>
+                    <p className="p-2.5 text-xs font-bold text-center group-hover:underline" style={{ color: '#F0562A' }}>{e.lien.label} →</p>
                   </a>
                 )}
               </div>

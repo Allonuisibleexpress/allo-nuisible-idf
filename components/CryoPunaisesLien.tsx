@@ -10,7 +10,7 @@ export default function CryoPunaisesLien({ a }: { a: string }) {
         <p className="text-white/70 leading-relaxed">
           Traitement écologique, <strong className="text-white">sans biocide</strong> : neige carbonique à <strong className="text-white">−78 °C</strong>, punaises et œufs tués au contact, dès 290 €.
         </p>
-        <a href="/services/cryogenie-punaises-de-lit" className="inline-block mt-4 font-bold underline underline-offset-2" style={{ color: ACCENT }}>
+        <a href="/services/cryogenie-punaises-de-lit" className="inline-block mt-4 font-bold underline underline-offset-2" style={{ color: '#F0562A' }}>
           Traitement écologique par cryogénie : déroulé, efficacité et prix
         </a>
       </div>

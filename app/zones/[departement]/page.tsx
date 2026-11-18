@@ -48,12 +48,12 @@ export default function DepartementPage({ params }: { params: { departement: str
             background: 'radial-gradient(ellipse 90% 60% at 50% -10%, rgba(232,68,26,0.16) 0%, transparent 65%)',
           }} />
           <div className="relative max-w-4xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: ACCENT }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: '#F0562A' }}>
               Département {d.code} · Certibiocide · 7j/7
             </p>
             <h1 className="text-[2rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6 tracking-tight">
               Lutte <span className="whitespace-nowrap">anti-nuisibles</span><br />
-              <span style={{ color: ACCENT }}>
+              <span style={{ color: '#F0562A' }}>
                 {d.dans.slice(0, -d.nom.length)}<span className="whitespace-nowrap">{d.nom}</span>{' '}
                 <span className="whitespace-nowrap">({d.code})</span>
               </span>
@@ -95,13 +95,13 @@ export default function DepartementPage({ params }: { params: { departement: str
                   className="group rounded-2xl p-6 transition-colors hover:bg-white/[0.06]"
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(232,68,26,0.12)', color: ACCENT }}>
+                    <span className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(232,68,26,0.12)', color: '#F0562A' }}>
                       <PestIcon name={SERVICES[s.service].icon as PestKey} size={26} />
                     </span>
                     <h3 className="text-lg font-black text-white">{s.titre}</h3>
                   </div>
                   <p className="text-white/60 text-sm leading-relaxed mb-3">{s.texte}</p>
-                  <span className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: ACCENT }}>
+                  <span className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: '#F0562A' }}>
                     {SERVICES[s.service].nom} <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </a>
@@ -142,7 +142,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                 <a key={slug} href={`/services/${slug}`}
                   className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-white/85 text-sm font-semibold transition-colors hover:bg-white/[0.07]"
                   style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <span style={{ color: ACCENT }}><PestIcon name={SERVICES[slug].icon as PestKey} size={22} /></span>
+                  <span style={{ color: '#F0562A' }}><PestIcon name={SERVICES[slug].icon as PestKey} size={22} /></span>
                   {SERVICES[slug].nom}
                 </a>
               ))}
@@ -173,7 +173,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                 {pagesDep.map((x) => (
                   <a key={x.href} href={x.href} className="flex items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-white/85 text-sm font-semibold transition-colors hover:bg-white/[0.07]"
                     style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    {x.label} <ArrowRight className="w-4 h-4" style={{ color: ACCENT }} />
+                    {x.label} <ArrowRight className="w-4 h-4" style={{ color: '#F0562A' }} />
                   </a>
                 ))}
               </div>
@@ -190,7 +190,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {villesPages.map((v) => (
                   <div key={v.slug} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    <p className="text-white font-black mb-2 flex items-center gap-1.5"><MapPin className="w-4 h-4" style={{ color: ACCENT }} />{v.nom}</p>
+                    <p className="text-white font-black mb-2 flex items-center gap-1.5"><MapPin className="w-4 h-4" style={{ color: '#F0562A' }} />{v.nom}</p>
                     <ul className="flex flex-wrap gap-1.5">
                       {v.pages.map((x) => (
                         <li key={x.href}><a href={x.href} className="inline-block text-xs text-white/70 hover:text-white rounded-full px-2.5 py-1" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>{x.label}</a></li>
@@ -218,7 +218,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                       <a href={`/zones/val-de-marne/${c.slug}`}
                         className="inline-flex items-center gap-1.5 text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{c.nom}
+                        <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{c.nom}
                       </a>
                     </li>
                   ))}
@@ -231,7 +231,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                   {d.communes.map((c) => (
                     <li key={c} className="inline-flex items-center gap-1.5 text-sm text-white/75 rounded-full px-3.5 py-1.5"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <MapPin className="w-3.5 h-3.5" style={{ color: ACCENT }} />{c}
+                      <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{c}
                     </li>
                   ))}
                 </ul>
@@ -245,7 +245,7 @@ export default function DepartementPage({ params }: { params: { departement: str
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-black text-white mb-4">Un nuisible chez vous {d.dans} ?</h2>
             <p className="text-white/60 mb-8 flex items-center justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4" style={{ color: ACCENT }} /> Devis gratuit, intervention 7j/7
+              <CheckCircle2 className="w-4 h-4" style={{ color: '#F0562A' }} /> Devis gratuit, intervention 7j/7
             </p>
             <a href={PHONE_HREF}
               className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl transition-all hover:brightness-110"

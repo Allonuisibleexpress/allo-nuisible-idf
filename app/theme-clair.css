@@ -1,0 +1,70 @@
+/* Aperçu « fond blanc » (13/11/2026, demandé par l'utilisateur « juste pour voir »).
+   Inactif sur le site en ligne : la classe .theme-clair n'est ajoutée à <html> que si le site est construit
+   avec la variable APERCU_CLAIR=1 (voir app/layout.tsx). Les couleurs du site sont écrites dans le code
+   (styles en ligne) : cette feuille les remplace pour l'aperçu. */
+
+/* ── Fonds ── */
+.theme-clair body { background: #ffffff !important; color: #1a1a1a; }
+.theme-clair [style*="background:#0d0d0d"],
+.theme-clair [style*="background:#0a0a0a"],
+.theme-clair [style*="background:#0b0b0b"],
+.theme-clair [style*="background:#101010"] { background: #ffffff !important; }
+.theme-clair [style*="background:#080808"],
+.theme-clair [style*="background:#111"],
+.theme-clair [style*="background:#141414"],
+.theme-clair [style*="background:#161616"],
+.theme-clair [style*="background:#1a1a1a"],
+.theme-clair .bg-\[\#111\],
+.theme-clair .bg-\[\#1a1a1a\] { background: #f5f5f3 !important; }
+.theme-clair .bg-\[\#222\] { background: #ffffff !important; box-shadow: 0 12px 32px rgba(0,0,0,0.12) !important; }
+.theme-clair .border-\[\#333\] { border-color: rgba(0,0,0,0.1) !important; }
+
+/* Barre de menu */
+.theme-clair nav[style*="position:fixed"],
+.theme-clair .nav-scrolled { background: rgba(255,255,255,0.94) !important; border-bottom-color: rgba(0,0,0,0.08) !important; box-shadow: 0 2px 14px rgba(0,0,0,0.05); }
+.theme-clair img[src*="logo-transparent"] { content: url(/logo-clair.png); }
+
+/* Cartes et bordures translucides blanches → gris très léger */
+.theme-clair [style*="background:rgba(255,255,255,0.0"],
+.theme-clair [style*="background:rgba(255, 255, 255, 0.0"] { background: rgba(0,0,0,0.035) !important; }
+.theme-clair [style*="border:1px solid rgba(255,255,255"],
+.theme-clair [style*="border:1.5px solid rgba(255,255,255"] { border-color: rgba(0,0,0,0.1) !important; }
+.theme-clair [class*="border-white/"] { border-color: rgba(0,0,0,0.1) !important; }
+
+/* ── Textes ── */
+.theme-clair .text-white { color: #141414 !important; }
+.theme-clair [class*="text-white/"] { color: rgba(20,20,20,0.72) !important; }
+.theme-clair .text-gray-300,
+.theme-clair .text-gray-400 { color: #505050 !important; }
+.theme-clair [style*="color:#fff"],
+.theme-clair [style*="color:white"] { color: #141414 !important; }
+.theme-clair [style*="color:rgba(255,255,255"] { color: rgba(20,20,20,0.74) !important; }
+
+/* Textes blancs gardés sur les fonds orange et verts (boutons, bandeaux, appel à l'action) */
+.theme-clair [style*="background:#E8441A"],
+.theme-clair [style*="background:#E8441A"] *,
+.theme-clair .bg-\[\#E8441A\],
+.theme-clair .bg-\[\#E8441A\] *,
+.theme-clair [style*="background:#0E7A3E"],
+.theme-clair [style*="background:#0E7A3E"] * { color: #ffffff !important; }
+/* … sauf le bouton blanc posé sur un fond orange, qui garde son texte orange */
+.theme-clair [style*="background:#E8441A"] .bg-white,
+.theme-clair [style*="background:#E8441A"] .bg-white * { color: #D23C14 !important; }
+
+/* Bandeaux sur photo (en-têtes avec image de fond) : on garde le sombre d'origine */
+.theme-clair section:has(> div[style*="background-image:url"]) { background: #0d0d0d !important; }
+.theme-clair section:has(> div[style*="background-image:url"]) :is(.text-white, [style*="color:#fff"]) { color: #ffffff !important; }
+.theme-clair section:has(> div[style*="background-image:url"]) :is([class*="text-white/"], [style*="color:rgba(255,255,255"]) { color: rgba(255,255,255,0.78) !important; }
+
+/* Champs de formulaire */
+.theme-clair input,
+.theme-clair textarea,
+.theme-clair select { color: #141414 !important; }
+.theme-clair input::placeholder,
+.theme-clair textarea::placeholder { color: rgba(20,20,20,0.45) !important; }
+
+/* Voiles sombres en dégradé (haut de l'accueil, en-têtes) : retirés sur fond blanc, sauf sur les en-têtes avec photo */
+.theme-clair div[style*="linear-gradient"][style*="rgba(13,13,13"],
+.theme-clair div[style*="linear-gradient"][style*="rgba(8,8,8"],
+.theme-clair div[style*="linear-gradient"][style*="rgba(10,10,10"] { background: none !important; }
+.theme-clair section:has(> div[style*="background-image:url"]) div[style*="linear-gradient"] { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(13,13,13,0.3) 50%, rgba(13,13,13,0.92) 100%) !important; }
