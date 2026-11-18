@@ -151,6 +151,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Le **Sniper 1000 EC DDVP** et son équivalent le **Shooter 1000 EC DDVP** contiennent du **dichlorvos**, une substance de la famille des **organophosphorés**. Selon l'**ARS Île-de-France**, son usage dans les insecticides à usage ménager est **interdit en France depuis 2013**." },
       { t: 'p', x: "Ces produits sont surtout **ramenés de l'étranger** (hors Union européenne) puis revendus sur des **marchés**, dans des **bazars** et sur **Internet**, présentés comme radicaux contre les punaises de lit et les cafards (ARS Île-de-France). L'article sur Franconville indique qu'ils se vendent encore sous le manteau sur les marchés du Val-d'Oise." },
       { t: 'callout', tone: 'warn', title: "Ce que dit l'ARS Île-de-France", x: "Plusieurs **intoxications mortelles** liées à ce produit à base de dichlorvos ont été constatées en France et en Île-de-France. Son message est clair : n'utilisez pas ces produits, ils sont dangereux pour votre santé et interdits en France." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit adulte**, cible habituelle de ces produits interdits : contre elle, un traitement professionnel en **2 passages** reste la référence.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Quels sont les dangers d'un insecticide interdit ?" },
       { t: 'p', x: "Le dichlorvos est toxique par **trois voies** (ARS Île-de-France) :" },
       { t: 'ul', items: [
@@ -462,12 +463,14 @@ export const ARTICLES: Article[] = [
     readMin: 10,
     tldr: "Pour savoir si vous avez un rat ou une souris, regardez d'abord les crottes : 3 à 6 mm (un grain de riz) pour une souris, 6 à 12 mm et pointues pour un rat noir, environ 2 cm et arrondies pour un surmulot. Écoutez ensuite : la souris fait de tout petits trottinements, le rat des bruits plus appuyés. Dans les combles, des cavalcades bruyantes du printemps à l'automne qui s'arrêtent l'hiver font penser à un lérot ou un loir ; de gros bruits, des cris et une forte odeur, à une fouine.",
     service: { href: '/services/deratisation', label: 'Dératisation rats et souris, dès 120 €' },
+    photos: ['ratPiege', 'sourisGlu'],
     blocks: [
       { t: 'p', x: "Vous entendez gratter la nuit dans le plafond, vous trouvez des crottes dans un placard, un sac de croquettes est percé ? Avant de choisir un traitement, il faut savoir **quel rongeur est chez vous** : rat ou souris, et quel rat. Un surmulot, un rat noir, une souris, un lérot ou une fouine ne se traitent pas de la même façon. Commencez par notre test, puis vérifiez avec les 7 indices. Nos techniciens font ce diagnostic chaque semaine lors de nos [dératisations en Île-de-France](/services/deratisation)." },
       { t: 'h2', x: "Rat ou souris : comment savoir lequel vous avez ?" },
       { t: 'p', x: "La différence entre un rat et une souris se voit d'abord à la **taille des crottes**, puis au **bruit**, à l'**endroit** où ils vivent et aux **dégâts**. Une souris est petite, discrète et vit près de la cuisine. Un rat est plus gros, plus bruyant, et arrive le plus souvent par la cave, les canalisations ou la toiture. Faites le test ci-dessous : il vous oriente en moins d'une minute." },
       { t: 'quiz' },
 
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus dans l'herbe", legende: "Le **rat brun** (surmulot) : museau **arrondi**, petites oreilles, queue **plus courte que le corps**. Adulte, il est bien plus massif qu'une souris.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Comment reconnaître un rongeur chez soi : les 7 signes de présence" },
       { t: 'h3', x: "Indice n° 1 : crotte de rat ou crotte de souris, le signe le plus fiable" },
       { t: 'p', x: "Les crottes sont l'indice le plus sûr, car leur taille ne trompe pas. Posez une pièce de 1 € à côté et comparez avec notre échelle." },
@@ -521,6 +524,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'p', x: "Pour la fouine, le lérot et le loir, la solution principale est de fermer les accès à la toiture. Pour en savoir plus sur chaque animal, voyez notre [guide des rongeurs](/blog/guide-des-rongeurs) et notre article sur le [lérot dans le grenier](/blog/lerot-grenier-combles)." },
 
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus en gros plan", legende: "La **souris domestique** : museau **pointu**, **grandes oreilles**, queue **aussi longue que le corps**. Elle passe par un trou de la taille d'un stylo.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Rat ou souris : le comparatif en un coup d'œil" },
       { t: 'table', head: ['', 'Souris', 'Rat (surmulot ou rat noir)'], rows: [
         ['Crottes', '3 à 6 mm', '6 mm à 2 cm'],
@@ -580,6 +584,7 @@ export const ARTICLES: Article[] = [
     readMin: 15,
     tldr: "Le surmulot (rat d'égout) mesure 19 à 27 cm sans la queue et laisse des crottes d'environ 2 cm à bouts arrondis. Le rat noir est plus fin, avec une queue plus longue que le corps et des crottes pointues de 6 à 12 mm. La souris ne dépasse pas 10 cm et ses crottes font 3 à 6 mm. Le mulot, le campagnol, le lérot et le loir sont aussi des rongeurs. La fouine et le blaireau, eux, n'en sont pas : ce sont des mustélidés, de la famille de la belette. Une souris est adulte en 5 à 6 semaines, une fouine en 15 à 27 mois.",
     service: { href: '/services/deratisation', label: 'Dératisation rats et souris, dès 120 €' },
+    photos: ['ratPlaque', 'sourisAirbnb', 'trouRat1'],
     blocks: [
       { t: 'p', x: "Des crottes dans le placard, des bruits dans les combles, un trou dans le jardin : avant de traiter, il faut savoir à quel animal on a affaire. Un rat, une souris, un lérot et une fouine ne se combattent pas de la même façon, et certains sont protégés ou réglementés. Voici notre guide de 15 animaux que l'on rencontre en Île-de-France : 11 rongeurs et 4 animaux souvent confondus avec eux, avec des chiffres sourcés. Pour un diagnostic rapide entre rat et souris, voyez aussi notre guide [rat ou souris : comment reconnaître le rongeur](/blog/rat-ou-souris-comment-reconnaitre)." },
       { t: 'callout', tone: 'info', title: 'Fouine, blaireau, taupe et musaraigne ne sont pas des rongeurs', x: "On les confond souvent avec les rongeurs. Mais la fouine et le blaireau sont des **mustélidés**, de la même famille que la belette et la martre ; la taupe et la musaraigne sont des **insectivores**. Une dératisation ne les concerne pas : pour eux, la solution passe par la fermeture des accès ou des mesures au jardin." },
@@ -598,6 +603,7 @@ export const ARTICLES: Article[] = [
         "**Ragondin** : gros rongeur des berges, originaire d'Amérique du Sud.",
         "**Rat musqué** : rongeur des berges et des étangs, plus petit que le ragondin.",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** (surmulot), le rongeur le plus fréquent dans les caves, égouts et vides sanitaires d'Île-de-France.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "En bref : les intrus qu'on prend pour des rongeurs" },
       { t: 'ul', items: [
         "**Fouine** : mustélidé, elle s'installe dans les combles et sous les capots de voiture.",
@@ -626,6 +632,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'p', x: "Le critère le plus simple pour distinguer les deux rats : la **queue**. Chez le surmulot, elle est plus courte que le corps ; chez le rat noir, elle est toujours plus longue. Une souris adulte ne dépasse pas 10 cm sans la queue : un animal plus gros n'est pas une souris." },
 
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "La **souris domestique**, plus petite et plus discrète : on la trouve surtout dans les cuisines, faux plafonds et doublages.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Comparatif n° 2 : les crottes, la taille qui trahit l'animal" },
       { t: 'crottes' },
       { t: 'table', head: ['Animal', 'Taille des crottes', 'Forme et indices'], rows: [
@@ -812,6 +819,7 @@ export const ARTICLES: Article[] = [
     ogImage: '/infographies/cycle-punaise-de-lit.jpg',
     tldr: "Une punaise de lit passe par 7 étapes : un œuf d'environ 1 mm qui éclot en 7 à 15 jours, 5 stades larvaires de 1,5 à 4,5 mm qui durent chacun 3 à 15 jours, puis l'adulte de 5 à 7 mm, qui vit 6 à 24 mois. Il faut un repas de sang avant chaque mue. Dans de bonnes conditions (21 à 27 °C), il faut environ un mois de l'œuf à l'adulte. C'est ce cycle qui explique pourquoi un traitement sérieux comprend toujours 2 passages.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit : 2 passages, dès 290 €' },
+    photos: ['creteilLattes1', 'vincennesMortes2'],
     blocks: [
       { t: 'p', x: "On imagine souvent la punaise de lit comme un petit insecte brun, de la taille d'un pépin de pomme. C'est vrai pour l'adulte. Mais la plupart des punaises d'une infestation ne ressemblent pas à ça : ce sont des **œufs** presque invisibles et des **larves** pâles, parfois à peine plus grosses qu'une tête d'épingle. Savoir les reconnaître, c'est repérer une infestation plus tôt, et comprendre pourquoi un [traitement des punaises de lit](/services/punaises-de-lit) bien fait se déroule toujours en plusieurs temps." },
       { t: 'p', x: "Voici le cycle complet, stade par stade, avec la taille et la durée de chaque étape. Les chiffres viennent de sources reconnues (Agence américaine de protection de l'environnement, Université du Kentucky, CDC, travaux de l'entomologiste Pascal Delaunay), citées en bas de page." },
@@ -827,6 +835,7 @@ export const ARTICLES: Article[] = [
         ['Adulte', '5 à 7 mm', 'brun-rouge, plat et ovale à jeun', 'vit 6 à 24 mois'],
       ] },
       { t: 'p', x: "Les durées sont des fourchettes : elles dépendent surtout de la **température** et de l'**accès à un repas de sang**. Dans un logement chauffé, avec un occupant qui dort dans le lit chaque nuit, le cycle va vite. Dans un logement froid ou inoccupé, il ralentit beaucoup." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius en train de piquer", legende: "Une **punaise de lit adulte** gorgée de sang : 4 à 7 mm, brun-rouge. Chaque stade du cycle a besoin d'un repas de sang pour passer au suivant.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "L'œuf : 1 mm, presque invisible… et le plus coriace" },
       { t: 'p', x: "L'œuf de punaise de lit mesure **environ 1 mm**. Il est **blanc nacré**, de forme ovale, et la femelle le **colle** dans des recoins sombres : coutures du matelas, lattes et angles du sommier, fentes de la tête de lit, arrière des plinthes, cadres de tableaux. Les œufs sont souvent pondus en petits groupes." },
       { t: 'p', x: "Ils **éclosent en 7 à 15 jours**, environ une semaine à température ambiante. Comme ils sont collés et protégés par leur coque, ce sont les plus difficiles à atteindre : c'est la raison principale des **2 passages** de notre traitement. Le premier tue les punaises présentes et une grande partie des œufs ; le second élimine les jeunes punaises sorties des œufs entre-temps." },
@@ -842,6 +851,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'p', x: "Chaque stade dure **3 à 15 jours**. Entre deux stades, la larve laisse derrière elle sa **mue**, une petite enveloppe vide et translucide : en trouver dans les recoins du lit est un signe d'infestation active, avec des punaises en pleine croissance." },
       { t: 'callout', tone: 'warn', title: 'Pourquoi les larves piquent aussi', x: "Toutes les larves se nourrissent de sang, dès le premier stade. Une infestation avec beaucoup de larves peut donc provoquer beaucoup de piqûres, même si vous ne voyez presque aucune punaise adulte." },
+      { t: 'img', src: '/piqures/dejections-punaises-latte-sommier.jpg', alt: "Déjections noires de punaises de lit sur une latte de sommier", legende: "Les **déjections** (points noirs) sur une latte de sommier : elles montrent où les punaises se cachent et se reproduisent.", credit: "NY State IPM Program at Cornell University", licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Bed_Bug_Evidence.jpg' },
       { t: 'h2', x: "La punaise adulte : 5 à 7 mm et des centaines d'œufs" },
       { t: 'p', x: "L'adulte mesure **5 à 7 mm**. À jeun, il est **plat, ovale et brun-rouge**, ce qui lui permet de se glisser dans une fente de la largeur d'une carte de crédit. Après un repas, il gonfle et s'allonge. Il pique la nuit, puis retourne se cacher près du lit pour digérer." },
       { t: 'p', x: "Une punaise adulte vit **6 à 24 mois** selon les sources et les conditions, et une femelle pond **200 à 500 œufs** au cours de sa vie. Les adultes peuvent survivre **plusieurs mois sans repas de sang** : un logement vide n'est donc pas forcément débarrassé de ses punaises." },
@@ -890,6 +900,7 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Un rat peut remonter par les toilettes : le surmulot (Rattus norvegicus), le rat des égouts, nage, retient sa respiration et grimpe dans les colonnes d'évacuation jusqu'à la cuvette. Cela arrive surtout après de fortes pluies ou des travaux sur le réseau. Sur le moment : abattant fermé et lesté, porte de la pièce close. Durablement : un clapet anti-retour sur l'évacuation et une dératisation des réseaux et parties communes. Allo Nuisible IDF intervient 7j/7 en Île-de-France.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['trouRat2'],
     blocks: [
       { t: 'p', x: "Oui, **un rat peut sortir de vos toilettes**, et ce n'est pas une légende urbaine. Le coupable est presque toujours le **surmulot** (*Rattus norvegicus*), aussi appelé rat d'égout. Il vit dans les réseaux d'assainissement, nage très bien, retient sa respiration le temps de franchir le siphon et grimpe à l'intérieur des canalisations verticales. La cuvette n'est pour lui qu'une sortie de plus." },
       { t: 'callout', tone: 'warn', title: 'Pourquoi ne pas prendre ça à la légère', x: "Selon **Santé publique France**, la France compte en moyenne **300 à 600 cas de leptospirose par an**, en hausse depuis 2014, et **les rats en sont le principal réservoir animal**. La bactérie passe par leur urine, précisément ce qu'ils laissent sur la lunette et dans la salle de bain." },
@@ -901,6 +912,7 @@ export const ARTICLES: Article[] = [
         "**Travaux de voirie ou de réseau** à proximité : les colonies sont dérangées et se déplacent.",
         "**Canalisation fissurée ou regard mal fermé** dans l'immeuble : l'accès devient permanent, ce n'est plus un accident mais une route.",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** est celui des **égouts** : bon nageur, c'est lui qui peut remonter par les canalisations.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Rat dans la cuvette : les 4 gestes à faire tout de suite" },
       { t: 'ol', items: [
         "**Fermez l'abattant et lestez-le** (pack d'eau, seau rempli). Un rat soulève facilement un abattant léger.",
@@ -947,6 +959,7 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Le lérot (Eliomys quercinus) est un petit rongeur nocturne reconnaissable à son masque noir autour des yeux et à sa queue terminée par une touffe noir et blanc. Il s'installe dans les greniers et combles pour hiberner, d'octobre à avril environ, et fait beaucoup de bruit la nuit. Il ne figure pas sur la liste nationale des mammifères protégés (arrêté du 23 avril 2007), mais les raticides ne sont pas autorisés pour lui : la bonne méthode est l'exclusion, en bouchant les accès.",
     service: { href: '/services/deratisation', label: 'Traitement des rongeurs en Île-de-France' },
+    photos: ['trouRat3'],
     blocks: [
       { t: 'p', x: "Des **bruits de course au grenier la nuit**, des noyaux ou des fruits rongés retrouvés sous la charpente, un petit animal gris aux grands yeux cerclés de noir : c'est très probablement un **lérot** (*Eliomys quercinus*). Ce cousin du loir est fréquent dans les pavillons de grande couronne, près des jardins, vergers et bois." },
       { t: 'h2', x: "Comment reconnaître un lérot en 10 secondes ?" },
@@ -963,6 +976,7 @@ export const ARTICLES: Article[] = [
         ['Statut national', 'Non protégé', 'Non protégé', 'Non protégé'],
         ['Raticides autorisés', 'Non', 'Non', 'Oui'],
       ] },
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "Pour comparer : une **souris domestique**. Le lérot est plus grand, gris-brun, avec un **masque noir autour des yeux** et une **queue terminée en pinceau** noir et blanc.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Pourquoi il s'invite dans votre grenier à l'automne" },
       { t: 'p', x: "Le lérot **hiberne d'octobre ou novembre jusqu'à mars ou avril**, roulé en boule dans un nid, selon les observations naturalistes. Son sommeil n'est pas continu : il alterne de longues phases de torpeur et de courts réveils, surtout lors des redoux. Un grenier isolé, calme et hors gel est pour lui l'abri idéal, d'autant qu'il y trouve souvent de quoi faire son nid dans la laine de verre." },
       { t: 'h3', x: "Les dégâts qu'il peut causer" },
@@ -1013,6 +1027,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Des câbles rongés sous le capot viennent le plus souvent de rats, de souris ou d'une fouine (qui n'est pas un rongeur mais un petit carnivore). Les rongeurs laissent des crottes et font parfois un nid, la fouine laisse des durites mâchées et des traces de pattes. Les dégâts vont de quelques dizaines à plusieurs centaines d'euros et ne sont en général couverts qu'en assurance tous risques. La prévention passe par le garage, le traitement du parking et des abords.",
     service: { href: '/services/deratisation', label: 'Traitement des rongeurs en Île-de-France' },
+    photos: ['rongeursGlu'],
     blocks: [
       { t: 'p', x: "Un voyant moteur qui s'allume, une voiture qui refuse de démarrer après quelques jours d'immobilisation, et sous le capot : **des câbles grignotés**, de l'isolant arraché, parfois un nid de papier et de feuilles. Trois suspects reviennent presque toujours : **le rat, la souris et la fouine**." },
       { t: 'h2', x: "Qui a rongé vos câbles ? Les indices qui tranchent" },
@@ -1023,6 +1038,7 @@ export const ARTICLES: Article[] = [
         ['Traces', 'Traînées grasses', 'Peu visibles', 'Empreintes de pattes sur le capot'],
       ] },
       { t: 'callout', tone: 'info', title: 'Bon à savoir', x: "La **fouine n'est pas un rongeur** : c'est un mustélidé, un petit carnivore. Les raticides ne la concernent pas et une dératisation ne la fera pas partir. D'où l'intérêt de bien identifier l'auteur avant d'agir." },
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "Une **souris** : petite, elle se glisse dans le compartiment moteur et ronge les gaines des câbles.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Pourquoi votre moteur attire les rongeurs" },
       { t: 'ul', items: [
         "**La chaleur du moteur** : en automne et en hiver, un moteur tiède est un abri recherché.",
@@ -1032,6 +1048,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Réparations : qui paie la facture ?" },
       { t: 'p', x: "D'après les guides des assureurs (MAIF, Leocare), les dégâts de rongeurs vont **de quelques dizaines à plusieurs centaines d'euros** et ne sont généralement couverts que par une formule **tous risques**. En assurance au tiers, ils sont le plus souvent exclus. Prenez des photos des câbles et des crottes avant réparation : elles servent à la déclaration." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun**, l'autre suspect quand les câbles d'une voiture sont rongés, surtout près des égouts et des locaux poubelles.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Protéger votre voiture pour de bon : les solutions qui marchent" },
       { t: 'ol', items: [
         "**Traiter la source** : si les rongeurs vivent dans le parking souterrain, le box ou le jardin, la voiture sera réattaquée. C'est là qu'une [dératisation](/services/deratisation) agit.",
@@ -1069,10 +1086,12 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Une souris adulte passe par une ouverture d'environ 6 mm, le diamètre d'un crayon ; un rat par 2 cm. Seul son crâne limite le passage. Les entrées les plus fréquentes sont les passages de tuyaux et de gaines, le bas des portes, les bouches d'aération et le garage. On les bouche avec de la laine d'acier et un mastic, ou du grillage fin, jamais avec de la mousse expansive seule. Et on bouche après avoir éliminé les souris déjà à l'intérieur.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['sourisAirbnb', 'sourisGlu'],
     blocks: [
       { t: 'p', x: "**Une souris passe par un trou de 6 mm**, soit la largeur d'un crayon. Un rat passe par 2 cm, à peu près une pièce de 2 €. La raison est anatomique : seul le crâne est rigide, le reste du corps suit. Voilà pourquoi les souris réapparaissent chaque automne dans des maisons qui semblent pourtant « bien fermées »." },
       { t: 'h2', x: "Le test du crayon : vérifier un trou en 2 secondes" },
       { t: 'p', x: "Prenez un crayon de papier. **Si le crayon passe, une souris passe.** Faites le tour de la maison avec, en commençant par les endroits sombres et peu fréquentés. C'est la méthode la plus simple pour dresser la liste des trous à boucher." },
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "La **souris domestique** : son crâne souple lui permet de passer par une ouverture d'environ **6 mm**.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Les 8 entrées secrètes à vérifier en priorité" },
       { t: 'ol', items: [
         "**Passages de tuyaux** sous l'évier, derrière le lave-linge et le lave-vaisselle.",
@@ -1124,11 +1143,13 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "La terre de diatomée tue les punaises de lit par abrasion de leur cuticule puis déshydratation, mais lentement (plusieurs jours de contact), sans effet sur les œufs, et beaucoup moins bien en atmosphère humide. Elle peut compléter un traitement professionnel en poudrage fin dans les plinthes et interstices, jamais le remplacer. Utilisez uniquement une terre non calcinée, en couche invisible, et jamais sur le matelas ou l'oreiller.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    photos: ['creteilLattes2'],
     blocks: [
       { t: 'p', x: "La **terre de diatomée** est l'une des solutions « naturelles » les plus recommandées contre les punaises de lit. Elle agit réellement, mais pas comme on le croit : **elle ne tue pas vite, elle ne tue pas les œufs** et elle échoue souvent parce qu'elle est mal appliquée. Voici ce qu'il faut savoir avant d'en acheter un sac." },
       { t: 'callout', tone: 'info', title: "Le contexte en chiffres", x: "Selon l'**ANSES**, **11 % des ménages français** ont été infestés par les punaises de lit entre 2017 et 2022, pour un **coût moyen de 866 € par ménage**. Une bonne part de ce coût vient des tentatives ratées qui laissent l'infestation s'installer." },
       { t: 'h2', x: "Comment elle tue une punaise de lit" },
       { t: 'p', x: "Il s'agit de squelettes fossilisés d'algues microscopiques, réduits en poudre. Quand une punaise traverse cette poudre, les particules **rayent la couche cireuse de sa cuticule** et absorbent ses lipides. L'insecte se **déshydrate** progressivement et meurt. C'est une action mécanique, pas chimique : pas de résistance possible, mais un effet lent." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "Une **punaise de lit adulte** : elle reste cachée le jour, dans les lattes et les coutures, là où la poudre a du mal à l'atteindre.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Les 4 limites qu'on ne vous dit pas" },
       { t: 'ol', items: [
         "**Elle est lente** : il faut plusieurs jours de contact, pendant lesquels les punaises continuent de piquer et de pondre.",
@@ -1180,11 +1201,13 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Un gel anti-cafard échoue le plus souvent pour 5 raisons : des blattes germaniques devenues aversives au glucose (un trait génétique décrit dès 1993), un gel posé loin des cachettes, trop de nourriture concurrente, un insecticide en spray pulvérisé à côté qui fait fuir les blattes, et des oothèques (capsules d'œufs) qui continuent d'éclore. La solution : changer de matière active et de formule, poser en petits points près des refuges et suivre dans le temps.",
     service: { href: '/services/cafards-blattes', label: 'Traitement des cafards en Île-de-France' },
+    photos: ['cafardsTiroir', 'cafardsSol'],
     blocks: [
       { t: 'p', x: "Vous avez posé du **gel anti-cafard** comme indiqué, et deux semaines plus tard les blattes courent toujours dans la cuisine. Ce n'est pas forcément le produit qui est mauvais. Dans la grande majorité des cas, l'échec s'explique par **l'une des 5 raisons ci-dessous**, et la première surprend presque tout le monde." },
       { t: 'h2', x: "1. Vos blattes n'aiment plus le sucre (c'est génétique)" },
       { t: 'p', x: "En **1993**, des chercheurs ont décrit chez la **blatte germanique** (*Blattella germanica*) une **aversion au glucose** : certaines populations rejettent les aliments qui en contiennent, même en faible dose. Or beaucoup d'appâts utilisaient du glucose comme attractif. Les blattes qui le refusaient ont survécu et transmis ce trait. Des études publiées dans le Journal of Economic Entomology ont depuis montré que cette résistance comportementale se transmet d'une génération à l'autre." },
       { t: 'callout', tone: 'info', title: "Ce que ça change pour vous", x: "Si une marque de gel ne donne rien, **changez de produit** (autre matière active, autre base attractive) plutôt que d'en remettre davantage. Les professionnels font tourner les formules pour cette raison." },
+      { t: 'img', src: '/identifier/blattella.jpg', alt: "Blatte germanique Blattella germanica", legende: "La **blatte germanique** : 1 à 1,5 cm, **deux bandes sombres** sur le thorax. C'est elle qu'on trouve dans les cuisines et salles de bain.", credit: "Clemson University, USDA Cooperative Extension", licence: 'CC BY 3.0 US', page: 'https://commons.wikimedia.org/wiki/File:Blattella_germanica_1236168.jpg' },
       { t: 'h2', x: "2. Le gel est posé au mauvais endroit" },
       { t: 'p', x: "Une blatte germanique s'éloigne peu de son refuge. Un gel posé au milieu d'un plan de travail propre ne sera jamais trouvé. Il doit être **au plus près des cachettes** : charnières de placards, derrière le frigo, sous l'évier, autour du moteur du lave-vaisselle, dans les fentes de plinthes." },
       { t: 'h2', x: "3. Trop de nourriture concurrente" },
@@ -1242,6 +1265,7 @@ export const ARTICLES: Article[] = [
         "**Comportement** : très rapide, en **pistes denses** et continues, jour et nuit par temps doux.",
         "**Nids** : sous les dalles, pavés et bordures, avec de petits monticules de terre fine.",
       ] },
+      { t: 'img', src: '/fourmis/tapinoma-magnum.jpg', alt: "Fourmi Tapinoma du groupe nigerrimum, noire et brillante, vue de profil", legende: "Une **Tapinoma du groupe nigerrimum**, très proche de **Tapinoma magnum** : **noire et brillante**, de taille variable dans une même colonie. L'identification sûre de l'espèce se fait à la loupe par un spécialiste.", credit: "Estella Ortega", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Tapinoma-nigerrimum-side.jpg' },
       { t: 'h2', x: "Supercolonie : pourquoi elle est si difficile à éliminer" },
       { t: 'p', x: "Selon des chercheurs de l'**Université de Montpellier** (article publié dans *The Conversation*), les colonies observées sont constituées de **nombreux nids interconnectés** par des pistes permanentes, un réseau pouvant couvrir **plusieurs hectares**, avec des centaines de reines. Ces fourmis ont été repérées dès **2011** en France, en Allemagne et en Italie, et sont aujourd'hui signalées du pourtour méditerranéen jusqu'à la région nantaise et la frontière rhénane." },
       { t: 'callout', tone: 'warn', title: "Pourquoi les appâts du supermarché échouent", x: "Un appât classique élimine au mieux un nid. Avec des dizaines de nids reliés et des centaines de reines, **la colonie se réorganise en quelques jours**. Pulvériser un insecticide sur une piste fait même éclater les nids en de nouveaux foyers." },
@@ -1253,8 +1277,10 @@ export const ARTICLES: Article[] = [
         "**Soulèvement de pavés** et de dalles de terrasse.",
         "**Élevage de pucerons** dans le jardin et éviction des fourmis locales.",
       ] },
+      { t: 'img', src: '/fourmis/lasius-niger.jpg', alt: "Fourmi noire des jardins Lasius niger, souvent confondue avec Tapinoma", legende: "Pour comparer : la **fourmi noire des jardins** (Lasius niger), **mate** et sans odeur de beurre rance quand on l'écrase. C'est elle qu'on rencontre le plus souvent.", credit: "Katja Schulz from Washington, D. C., USA", licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Black_Garden_Ant_tending_Citrus_Mealybug_(16063538972).jpg' },
       { t: 'h2', x: "Comment elle arrive jusqu'à votre jardin" },
       { t: 'p', x: "Principalement par les **échanges commerciaux** : **plantes en pot, terre, matériaux de construction**. Un olivier ou un agrume acheté en pépinière du sud, une livraison de terre végétale ou de sable peuvent suffire à introduire une colonie. Avant de planter, **inspectez les mottes** : pistes de fourmis noires brillantes, odeur caractéristique." },
+      { t: 'img', src: '/fourmis/lasius-neglectus.jpg', alt: "Fourmi invasive des jardins Lasius neglectus vue de profil", legende: "**Lasius neglectus**, une autre fourmi **invasive à supercolonies** signalée en Europe : brun clair, elle aussi difficile à éliminer avec les appâts du commerce.", credit: "April Nobile", licence: 'CC BY 4.0', page: 'https://commons.wikimedia.org/wiki/File:Lasius_neglectus_casent0173143_profile_1.jpg' },
       { t: 'h2', x: "Le traitement qui fonctionne vraiment" },
       { t: 'ol', items: [
         "**Cartographier** tous les nids et pistes, y compris chez les voisins si la colonie déborde.",
@@ -1289,6 +1315,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Un nid de frelons asiatiques est abandonné à la fin de l'automne et n'est jamais réutilisé : les jeunes reines fécondées hivernent ailleurs et construisent un nouveau nid au printemps. Le détruire en plein hiver ne sert donc à rien, sauf à le décrocher. En revanche, un nid encore actif en septembre, octobre ou novembre produit les futures fondatrices : c'est la période où sa destruction a le plus d'impact. Le frelon asiatique est présent dans 96 départements.",
     service: { href: '/services/guepes-frelons', label: 'Destruction de nids de guêpes et frelons en Île-de-France' },
+    photos: ['frelonsAsiatiques'],
     blocks: [
       { t: 'p', x: "Les feuilles tombent et vous découvrez **une énorme boule en haut d'un arbre** : un nid de frelons asiatiques, invisible tout l'été. Faut-il le faire détruire ? **Tout dépend de la date.** Un nid détruit en octobre et un nid détruit en janvier n'ont pas du tout le même intérêt." },
       { t: 'h2', x: "La vie d'un nid de frelons asiatiques en un coup d'œil" },
@@ -1298,6 +1325,7 @@ export const ARTICLES: Article[] = [
         ['Septembre à novembre', 'Le nid produit mâles et futures reines', 'Oui, impact maximal'],
         ['Décembre à février', 'Le nid se vide, les ouvrières meurent', 'Inutile s\'il est vide'],
       ] },
+      { t: 'img', src: '/frelons/vespa-velutina.jpg', alt: "Frelon asiatique Vespa velutina", legende: "Le **frelon asiatique** : thorax noir, un seul anneau orangé, **pattes jaunes**. En hiver, seules les futures reines survivent, hors du nid.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Asian_hornet_(Vespa_velutina).jpg' },
       { t: 'h2', x: "En hiver, le nid est vide : il ne sera jamais réutilisé" },
       { t: 'p', x: "Les nids de frelons asiatiques **se vident progressivement à la fin de l'automne** et sont en général abandonnés en début d'année. Comme le rappelle le **Muséum national d'Histoire naturelle**, ils **ne sont pas réutilisés** : les jeunes reines fécondées quittent le nid, hivernent dans des abris (bois dégradé, interstices) et construiront un nid neuf au printemps, ailleurs. La vieille reine, les ouvrières et les mâles meurent." },
       { t: 'callout', tone: 'ok', title: "En pratique", x: "Un nid **sans aucune activité** en décembre ou janvier n'est pas une menace. Le faire « détruire » par un prestataire est une dépense inutile, sauf s'il faut le décrocher parce qu'il risque de tomber." },
@@ -1310,6 +1338,7 @@ export const ARTICLES: Article[] = [
         "Aucun mouvement pendant plusieurs jours doux, nid abîmé par le vent : il est probablement abandonné.",
       ] },
       { t: 'callout', tone: 'warn', title: "Ne l'approchez pas", x: "Un nid actif en octobre contient encore beaucoup de frelons défensifs. Ne tirez pas dessus, ne l'arrosez pas, ne le percez pas. Même un nid qui semble calme peut réagir aux vibrations." },
+      { t: 'img', src: '/frelons/vespa-crabro.jpg', alt: "Frelon européen Vespa crabro", legende: "Le **frelon européen**, brun-roux et jaune : son nid, lui aussi, est abandonné à l'arrivée du froid.", credit: "Didier Descouens", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Frelon_europeen.jpg' },
       { t: 'h2', x: "Et les nids de guêpes, même combat ?" },
       { t: 'p', x: "Le principe est le même : les nids de guêpes communes sont **annuels**, abandonnés en hiver et non réutilisés. Un vieux nid dans un grenier ou un cabanon peut être retiré sans risque en plein hiver s'il n'y a plus aucune activité." },
       { t: 'p', x: "Un doute sur l'activité d'un nid cet automne ? Envoyez une photo. Nous intervenons pour la [destruction de nids de guêpes et frelons en Île-de-France](/services/guepes-frelons), y compris en hauteur." },
@@ -1340,6 +1369,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Le pigeon biset ne figure pas sur la liste des oiseaux protégés (arrêté du 29 octobre 2009). Un nid vide peut être retiré sans difficulté, idéalement avant la ponte. Un nid avec œufs ou pigeonneaux ne doit pas être détruit : il faut attendre l'envol, environ un mois et demi après la ponte. Nourrir les pigeons est interdit par l'article 120 du règlement sanitaire départemental (contravention de 3e classe). Filets, pics et fils tendus empêchent le retour.",
     service: { href: '/services/pigeons', label: 'Anti-pigeons en Île-de-France' },
+    photos: ['balconEncombre', 'balcon'],
     blocks: [
       { t: 'p', x: "Un couple de pigeons a installé un **nid sur votre balcon**, dans une jardinière ou derrière le climatiseur. Vous avez le droit d'agir, mais **pas n'importe comment ni à n'importe quel moment**. Tout dépend de ce que contient le nid." },
       { t: 'h2', x: "Ce que dit la loi, en clair" },
@@ -1351,6 +1381,7 @@ export const ARTICLES: Article[] = [
         ['Nid avec pigeonneaux', 'Attendre l\'envol, puis retirer et protéger'],
       ] },
       { t: 'callout', tone: 'info', title: "Combien de temps attendre ?", x: "Comptez **environ un mois et demi entre la ponte et l'envol** des pigeonneaux. Profitez de ce délai pour préparer la pose de la protection, qui sera installée juste après leur départ, sinon le couple repondra au même endroit." },
+      { t: 'img', src: '/identifier/columba.jpg', alt: "Pigeon biset Columba livia", legende: "Le **pigeon biset**, celui des villes : il revient nicher là où il a déjà niché, d'où l'importance de nettoyer et de protéger le balcon.", credit: "Luc Viatour", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Columba_livia_Luc_Viatour.jpg' },
       { t: 'h2', x: "Nourrir les pigeons : interdit et sanctionné" },
       { t: 'p', x: "L'**article 120 du règlement sanitaire départemental** interdit de jeter ou déposer des graines ou de la nourriture susceptibles d'attirer les pigeons, sur la voie publique comme dans les cours et parties d'immeuble quand cela gêne le voisinage ou attire des rongeurs. L'infraction relève de la **contravention de 3e classe**, jusqu'à **450 €**. Si un voisin nourrit les pigeons, c'est souvent la vraie cause du problème : signalez-le au syndic ou à la mairie." },
       { t: 'h2', x: "Retirer un nid vide sans risque, étape par étape" },
@@ -1396,11 +1427,13 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Tout restaurant doit intégrer à son Plan de Maîtrise Sanitaire un plan de lutte contre les nuisibles documenté, en application du règlement (CE) n° 852/2004. L'obligation est de résultat : l'absence de nuisibles, pas seulement un contrat signé. Lors d'un contrôle de la DDPP, l'inspecteur vérifie le plan des postes, les rapports de passage, les fiches des produits et les actions correctives. En cas de manquement grave, la fermeture administrative est possible et le résultat est publié sur Alim'confiance.",
     service: { href: '/professionnels', label: 'Contrats nuisibles pour professionnels' },
+    photos: ['cafardsMeuble', 'ratPiege'],
     blocks: [
       { t: 'p', x: "Si vous tenez un **restaurant, une boulangerie ou un commerce de bouche** en Île-de-France, votre **plan de lutte contre les nuisibles** est l'un des premiers documents que l'inspecteur de la DDPP demandera. Ce n'est pas une formalité : c'est un point qui peut faire basculer un contrôle." },
       { t: 'h2', x: "D'où vient l'obligation ? Les textes en clair" },
       { t: 'p', x: "Du **règlement (CE) n° 852/2004** relatif à l'hygiène des denrées alimentaires, dit « paquet hygiène ». Son annexe II impose que les locaux permettent de bonnes pratiques d'hygiène, **notamment en luttant contre les nuisibles**. En pratique, cela se traduit par un plan de lutte intégré à votre **Plan de Maîtrise Sanitaire (PMS)**, au même titre que le nettoyage ou la maîtrise des températures." },
       { t: 'callout', tone: 'warn', title: "Obligation de résultat", x: "Avoir un contrat ne suffit pas. **Vous devez garantir l'absence de nuisibles.** Des crottes de souris sous un meuble ou des blattes dans un joint de chambre froide sont une non-conformité, même avec un prestataire qui passe tous les trimestres." },
+      { t: 'img', src: '/identifier/blattella.jpg', alt: "Blatte germanique Blattella germanica", legende: "La **blatte germanique**, nuisible numéro un des cuisines professionnelles : chaleur, humidité et nourriture lui conviennent.", credit: "Clemson University, USDA Cooperative Extension", licence: 'CC BY 3.0 US', page: 'https://commons.wikimedia.org/wiki/File:Blattella_germanica_1236168.jpg' },
       { t: 'h2', x: "Un contrat de dératisation est-il vraiment obligatoire ?" },
       { t: 'p', x: "Aucun texte n'impose de signer un contrat avec une entreprise précise, ni un nombre fixe de passages. Mais vous devez **prouver** que la lutte est organisée et efficace. Un contrat avec un prestataire certifié **Certibiocide**, qui fournit rapports et traçabilité, est de loin la manière la plus simple d'apporter cette preuve. La fréquence des passages se fixe selon le risque : activité, environnement, historique." },
       { t: 'h2', x: "Ce que l'inspecteur regarde dans votre classeur" },
@@ -1412,6 +1445,7 @@ export const ARTICLES: Article[] = [
         "**Le certificat Certibiocide** de l'entreprise intervenante.",
         "**L'état réel des locaux** : l'inspecteur regarde aussi derrière les équipements.",
       ] },
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "La **souris**, l'autre visiteur des réserves et des faux plafonds de restaurant.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "Ce que vous risquez en cas de contrôle" },
       { t: 'table', head: ['Constat', 'Suite possible'], rows: [
         ['Plan incomplet, pas de traces', 'Avertissement, mise en demeure'],
@@ -1457,6 +1491,7 @@ export const ARTICLES: Article[] = [
     readMin: 8,
     tldr: "Dans les combles, le rongeur le plus fréquent est le rat noir (Rattus rattus), excellent grimpeur, aussi appelé rat des greniers. On le repère aux bruits de course la nuit, aux déjections sur l'isolant et aux traces grasses sur les poutres. Le traitement associe un dispositif adapté (postes d'appâtage sécurisés ou pièges mécaniques et connectés), le colmatage des accès par la toiture et les gaines, puis le nettoyage et souvent le remplacement de l'isolant souillé.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['trouRat1', 'ratPlaque'],
     blocks: [
       { t: 'p', x: "Des grattements et des petites courses au-dessus du plafond, surtout la nuit : c'est le signe le plus courant d'un rongeur dans les combles. Le coupable est souvent le **rat noir** (*Rattus rattus*), un grimpeur agile qui préfère les hauteurs, d'où son surnom de **rat des greniers**. Son cousin le **surmulot** (*Rattus norvegicus*) vit plutôt en bas : caves, vides sanitaires, réseaux d'eaux usées. Avant de traiter, il faut donc savoir à qui l'on a affaire." },
       { t: 'h2', x: "Rat, souris ou lérot : qui fait ce bruit au-dessus de votre tête ?" },
@@ -1467,6 +1502,7 @@ export const ARTICLES: Article[] = [
         ['Lérot', 'Combles proches des bois, du printemps à l\'automne', 'Bruits très forts la nuit, masque noir autour des yeux'],
       ] },
       { t: 'p', x: "Le lérot ne se traite pas comme un rat : si vous avez un doute, lisez notre article sur [le lérot dans le grenier](/blog/lerot-grenier-combles). Pour les souris, voir [par où elles entrent](/blog/souris-par-ou-entrent-elles)." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun**. Dans les combles, on trouve aussi le **rat noir**, plus fin et meilleur grimpeur, et le **lérot**.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Les signes qui prouvent qu'un rat est là-haut" },
       { t: 'ul', items: [
         "**Bruits de course et de grattement**, surtout en début et en fin de nuit.",
@@ -1546,6 +1582,7 @@ export const ARTICLES: Article[] = [
         "**Gaines et passages de tuyaux** : ils relient la cuisine, la salle de bain, le vide sanitaire et les combles.",
       ] },
       { t: 'p', x: "Le rat noir y monte vers les [combles](/blog/rats-dans-les-combles), le surmulot y arrive souvent depuis le [vide sanitaire](/blog/rat-vide-sanitaire) ou les canalisations. Les souris, elles, passent par des ouvertures minuscules : voir [par où elles entrent](/blog/souris-par-ou-entrent-elles)." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** : il circule dans les doublages et les gaines techniques, d'où les grattements entendus la nuit.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Grattements, odeur, traces : les signes d'un rongeur dans les murs" },
       { t: 'ul', items: [
         "**Grattements localisés**, toujours au même endroit, surtout la nuit.",
@@ -1556,6 +1593,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Comment repérer exactement où il passe" },
       { t: 'p', x: "Le technicien commence par écouter et repérer où les bruits se concentrent, puis inspecte les **points bas** (plinthes, passages de tuyaux, arrière des meubles) et les **points hauts** (combles, gaines). Si besoin, une petite caméra d'inspection passée par un trou discret permet de voir l'intérieur de la cloison sans la démolir." },
+      { t: 'img', src: '/identifier/mus.jpg', alt: "Souris domestique Mus musculus", legende: "La **souris**, plus légère : ses bruits sont plus fins, des petits trottinements plutôt que des grattements lourds.", credit: "Ahunt", licence: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:House_mouse_(Mus_musculus)_2732.jpg' },
       { t: 'h2', x: "À quoi ressemble un trou de rat (photos à l'appui)" },
       { t: 'p', x: "Un trou de rat se trouve presque toujours **au ras du sol**, dans un **angle de mur**, le long d'une plinthe ou derrière un meuble ou un radiateur. Il fait souvent **quelques centimètres de diamètre**, avec des bords rongés ou effrités, des **traces grasses et sombres** autour (le pelage qui frotte) et parfois des déjections ou des débris de plâtre au sol. Les photos en fin d'article viennent d'un de nos chantiers à Maisons-Alfort." },
       { t: 'p', x: "Sur ce chantier, après la dératisation, chaque trou a été rebouché avec de la **laine d'acier** puis fermé par une **grille**. Voir le [récit complet du chantier de Maisons-Alfort](/blog/deratisation-logement-syndrome-diogene)." },
@@ -1604,6 +1642,7 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Le vide sanitaire, espace ventilé entre le sol et le plancher, attire surtout le surmulot (rat d'égout), un rongeur fouisseur qui aime l'humidité et suit les canalisations. Il entre par les grilles d'aération cassées, les passages de tuyaux, les fissures et les réseaux d'eaux usées. Le traitement associe un dispositif adapté (postes d'appâtage sécurisés ou pièges connectés, utiles car l'endroit est peu accessible), la pose de grilles anti-rongeurs qui gardent la ventilation, et parfois un clapet anti-retour.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['trouRat2', 'ratPiege'],
     blocks: [
       { t: 'p', x: "Le **vide sanitaire** est l'espace laissé entre le sol et le plancher du rez-de-chaussée. Il protège la maison de l'humidité et laisse passer les canalisations. Sombre, peu visité et souvent humide, c'est aussi un abri idéal pour le **surmulot** (*Rattus norvegicus*), le rat d'égout, un rongeur qui creuse et suit volontiers les réseaux d'eaux usées." },
       { t: 'h2', x: "Comment le rat se glisse sous votre maison" },
@@ -1614,6 +1653,7 @@ export const ARTICLES: Article[] = [
         "**Terriers** creusés le long de la maison, sous les fondations.",
         "**Réseaux d'eaux usées** : un regard mal fermé ou une canalisation fissurée ouvre un accès direct.",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** creuse des terriers et adore les **vides sanitaires** : sombres, calmes, proches des canalisations.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Les signes d'un rat sous le plancher" },
       { t: 'ul', items: [
         "**Bruits sous le plancher**, surtout la nuit.",
@@ -1667,6 +1707,7 @@ export const ARTICLES: Article[] = [
     readMin: 8,
     tldr: "On peut traiter des punaises de lit sans produit chimique. Les deux méthodes professionnelles sans biocide sont la cryogénie (neige carbonique à environ −78 °C) et la vapeur sèche à très haute température : elles tuent les punaises et leurs œufs au contact, sans résidu ni odeur, et le logement reste utilisable juste après. Elles se complètent par des gestes recommandés par le gouvernement : lavage du linge à 60 °C pendant 1 heure, sèche-linge au moins 30 minutes ou congélation 72 heures. Leur limite : aucun effet après le passage, d'où un traitement minutieux et un passage de contrôle.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    photos: ['cryoFoyer', 'litCryo'],
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Un traitement sans chimie', x: "Sans produit chimique · sans biocide · sans odeur · aucun résidu · logement utilisable tout de suite." },
       { t: 'p', x: "Beaucoup de familles veulent se débarrasser des punaises de lit **sans pulvériser de produit chimique** dans la chambre, surtout avec des enfants ou des animaux. Bonne nouvelle : c'est possible. Le site du gouvernement **stop-punaises.gouv.fr** rappelle d'ailleurs que les insecticides courants du commerce sont inefficaces contre les punaises. Les solutions sans produit, elles, existent et ont fait leurs preuves." },
@@ -1679,6 +1720,7 @@ export const ARTICLES: Article[] = [
         "**Aucun biocide** : ces méthodes agissent uniquement par le froid ou la chaleur.",
         "**Aucun biocide rejeté** dans l'air intérieur, les eaux usées ou l'environnement.",
       ] },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "Une **punaise de lit adulte**. La cryogénie et la vapeur sèche l'éliminent par le froid ou la chaleur, sans produit insecticide.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Les méthodes pro qui éliminent sans biocide" },
       { t: 'table', head: ['Méthode', 'Comment elle agit', 'Où l\'utiliser', 'Limite'], rows: [
         ['Cryogénie', 'Neige carbonique à environ −78 °C, choc thermique', 'Matelas, sommier, cadre de lit, plinthes, meubles', 'Aucun effet après le passage'],
@@ -1741,6 +1783,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "La **cryogénie** traite les punaises de lit par le **froid extrême**, sans aucun produit chimique. C'est l'une des deux grandes méthodes professionnelles sans biocide, avec [la vapeur sèche](/blog/vapeur-seche-punaises-de-lit)." },
       { t: 'h2', x: "Le froid tue-t-il vraiment les punaises de lit ?" },
       { t: 'p', x: "Oui, mais pas n'importe quel froid. Il faut soit un froid **intense**, comme la neige carbonique de la cryogénie, qui tue au contact en un instant, soit un froid **durable**, comme celui d'un congélateur, qui demande plusieurs jours. Un froid modéré ne fait que ralentir les punaises." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit adulte** : la neige carbonique la tue par le froid, au contact, sans insecticide.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Au congélateur : 72 heures pour les vêtements et les petits objets" },
       { t: 'p', x: "Le site officiel **stop-punaises.gouv.fr** conseille de **congeler 72 heures** les effets personnels qui ne passent pas en machine. L'**ANSES** précise que la congélation convient aux **vêtements et aux petits objets**, pas à une pièce entière. Mettez les objets dans un sac fermé avant de les placer au congélateur." },
       { t: 'h2', x: "Une chambre sans chauffage en hiver : inutile" },
@@ -1793,6 +1836,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "La **vapeur sèche** traite les punaises de lit par la **chaleur**, sans aucun produit chimique. Avec [la cryogénie](/blog/cryogenie-punaises-de-lit), c'est l'une des deux grandes méthodes professionnelles sans biocide." },
       { t: 'h2', x: "Le principe : une chaleur qui tue au contact" },
       { t: 'p', x: "Un générateur produit une vapeur à **très haute température**, avec **très peu d'eau** : d'où le nom de vapeur « sèche ». Projetée au plus près des surfaces, elle tue les punaises et leurs œufs par la chaleur. Elle pénètre dans les coutures, les plis et les fibres des tissus, là où les punaises se cachent." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** et ses œufs ne résistent pas à la **chaleur** de la vapeur sèche appliquée lentement au contact.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Là où elle est redoutable" },
       { t: 'ul', items: [
         "**Matelas**, surtout les coutures et le passepoil.",
@@ -1802,6 +1846,7 @@ export const ARTICLES: Article[] = [
       ] },
       { t: 'h2', x: "Pourquoi le geste du technicien fait toute la différence" },
       { t: 'p', x: "La vapeur perd très vite sa chaleur en s'éloignant de la buse. Pour être efficace, elle doit être appliquée **lentement, au contact des surfaces**, avec la bonne buse. Les nettoyeurs vapeur grand public sont souvent moins chauds en sortie et plus humides : ils risquent de mouiller le matelas sans atteindre toutes les punaises." },
+      { t: 'img', src: '/piqures/dejections-punaises-latte-sommier.jpg', alt: "Déjections de punaises de lit sur une latte de sommier", legende: "Les **points noirs** sur les lattes : c'est là qu'il faut passer la vapeur en priorité.", credit: "NY State IPM Program at Cornell University", licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Bed_Bug_Evidence.jpg' },
       { t: 'h2', x: "Ses atouts" },
       { t: 'ul', items: [
         "**Sans produit chimique** et sans biocide.",
@@ -1877,6 +1922,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Quand les punaises de lit ont gagné plusieurs pièces, se cachent dans les parquets, les plinthes et les prises, ou résistent à tout ce que vous avez essayé, il faut frapper fort. Le **traitement insecticide professionnel** est la méthode la plus radicale : il agit tout de suite et **continue d'agir après le passage**, ce qu'aucune méthode sans produit ne permet." },
       { t: 'h2', x: "Bombe du commerce ou produit pro : la vraie différence" },
       { t: 'p', x: "Le site du gouvernement **stop-punaises.gouv.fr** est clair : les insecticides courants du commerce sont inefficaces contre les punaises de lit. Elles ont développé des résistances, et les bombes aérosols les dispersent vers d'autres pièces. Les produits professionnels sont différents : leur utilisation est réservée aux techniciens titulaires du **Certibiocide**, qui choisissent la substance et la technique d'application selon les supports et l'infestation." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit adulte** : 4 à 7 mm, elle se cache dans les fentes où le produit doit être appliqué avec précision.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Quand l'insecticide est le bon choix" },
       { t: 'ul', items: [
         "**Infestation étendue**, dans plusieurs pièces.",
@@ -1952,11 +1998,13 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "En location courte durée, chaque nuit bloquée coûte des réservations. Contre les punaises de lit, nous utilisons un protocole mixte : cryogénie et vapeur sèche pour traiter la literie et les textiles sans produit, complétées par une légère barrière insecticide ciblée, appliquée seulement sur les zones de passage. Ce n'est pas un traitement chimique complet, mais cette barrière garde une action rémanente contre les punaises qui éclosent après le passage. Elle est renouvelée lors du deuxième passage. Le logement est relouable rapidement, après le court temps de séchage indiqué par le technicien.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    photos: ['litEnfant', 'creteilLattes1'],
     blocks: [
       { t: 'callout', tone: 'ok', title: 'Airbnb : protégez-vous des punaises de lit. Un traitement choc, efficace et urgent', x: "Intervention possible le jour même · cryogénie et vapeur sèche sur la literie et les textiles · légère barrière insecticide ciblée qui continue d'agir · renouvelée au deuxième passage." },
       { t: 'p', x: "Un voyageur vous envoie une photo de piqûres ou d'un petit insecte brun sur le matelas. Pour un propriétaire ou une conciergerie, l'urgence est double : **traiter vite**, et **ne pas bloquer le calendrier** plus longtemps que nécessaire. Un traitement insecticide complet impose de quitter le logement plusieurs heures puis d'aérer. Notre protocole pour les locations courte durée va plus vite : la **cryogénie** et la **vapeur sèche** traitent la literie et les textiles sans produit, et une **légère barrière insecticide**, appliquée uniquement sur les zones de passage, protège le logement après l'intervention." },
       { t: 'h2', x: "Pourquoi les locations courte durée sont en première ligne" },
       { t: 'p', x: "Les punaises de lit voyagent dans les **valises, les sacs et les vêtements**. Plus il y a de voyageurs qui se succèdent, plus le risque qu'un bagage en apporte augmente. Ce n'est pas une question de propreté : un logement impeccable peut être touché du jour au lendemain. Ce qui compte, c'est de réagir vite pour éviter qu'elles se propagent à tout le logement." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** voyage dans les valises : en location courte durée, chaque nouveau voyageur est une occasion d'en apporter.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Les bons réflexes dès le message du voyageur" },
       { t: 'ol', items: [
         "**Ne relouez pas avant le traitement** : un nouveau voyageur piqué, c'est un mauvais avis assuré.",
@@ -1979,6 +2027,7 @@ export const ARTICLES: Article[] = [
         ['Barrière insecticide ciblée', 'Le court temps de séchage indiqué par le technicien', 'Aucune odeur perceptible'],
         ['Insecticide sur tout le logement', 'Après 4 heures en moyenne d\'absence et une aération', 'Possible pendant quelques heures'],
       ] },
+      { t: 'img', src: '/piqures/piqures-punaises-poignet-en-ligne.jpg', alt: "Piqûres de punaises de lit alignées sur le poignet", legende: "Des piqûres **alignées** : c'est souvent la plainte d'un voyageur qui révèle le problème.", credit: "Oliver Arend", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Bed_bug_bites_around_left_wrist.jpg' },
       { t: 'h2', x: "Relouer sereinement, sans mauvaise surprise" },
       { t: 'p', x: "La cryogénie et la vapeur n'agissent **qu'au contact** : un œuf oublié peut éclore quelques jours plus tard. C'est le rôle de la **barrière insecticide rémanente** : elle continue d'agir sur ces nouvelles punaises après notre passage. Une fois le court temps de séchage indiqué par le technicien respecté, vous pouvez le préparer pour l'arrivée suivante. Pour relouer sans mauvaise surprise :" },
       { t: 'ul', items: [
@@ -2037,6 +2086,7 @@ export const ARTICLES: Article[] = [
         ['Période active', 'Automne et hiver, processions à la fin de l\'hiver', 'Printemps et été'],
         ['Où on les voit', 'En file au sol, en descendant de l\'arbre', 'En file sur le tronc'],
       ] },
+      { t: 'img', src: '/identifier/thaumetopoea.jpg', alt: "Procession de chenilles processionnaires du pin au sol", legende: "Une **procession** de chenilles processionnaires du pin : elles descendent de l'arbre **en file indienne** pour s'enterrer. Ne pas les toucher : leurs poils sont urticants.", credit: "Tuscia", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Thaumetopoea_Pityocampa_-_Procession.jpg' },
       { t: 'h2', x: "La processionnaire du pin, mois par mois" },
       { t: 'ol', items: [
         "**En été**, les papillons sortent du sol, s'accouplent et pondent sur les aiguilles des pins et des cèdres.",
@@ -2118,6 +2168,7 @@ export const ARTICLES: Article[] = [
       { t: 'h3', x: "Les mésanges, alliées du jardin" },
       { t: 'p', x: "Les mésanges consomment de nombreuses chenilles. Installer des **nichoirs** dans le jardin aide à limiter les populations sur la durée, sans aucune intervention." },
       { t: 'callout', tone: 'warn', title: 'Ce qu\'il ne faut pas faire', x: "Brûler un nid dans l'arbre : risque d'incendie et dispersion des poils urticants. Couper ou toucher un nid sans protection. Passer le jet d'eau ou la tondeuse sur une procession. Pulvériser un insecticide du commerce : il n'atteint pas l'intérieur du nid et disperse les chenilles." },
+      { t: 'img', src: '/identifier/thaumetopoea.jpg', alt: "Procession de chenilles processionnaires du pin", legende: "Les chenilles en **procession** au sol : c'est le moment où elles sont le plus visibles, et le plus dangereuses pour les enfants et les chiens.", credit: "Tuscia", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Thaumetopoea_Pityocampa_-_Procession.jpg' },
       { t: 'h2', x: "Le calendrier idéal, saison par saison" },
       { t: 'table', head: ['Saison', 'Processionnaire du pin', 'Processionnaire du chêne'], rows: [
         ['Été', 'Pièges à phéromones, nichoirs à mésanges', 'Retrait des nids, papillons et ponte'],
@@ -2158,6 +2209,7 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "En Île-de-France, le rat le plus courant est le surmulot (Rattus norvegicus), aussi appelé rat brun ou rat d'égout. Selon l'Office français de la biodiversité, il mesure 19 à 27 cm sans la queue, pèse 130 à 300 g, vit surtout la nuit, en groupes hiérarchisés pouvant réunir jusqu'à 200 individus, et mange de tout. Très bon nageur, il creuse des terriers près de l'eau, dans les jardins et au pied des murs.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['trouRat3', 'ratDiogene'],
     blocks: [
       { t: 'p', x: "On voit rarement un rat en plein jour, et c'est justement ce qui rend une infestation difficile à mesurer. Comprendre comment il vit aide à repérer les bons signes, à éviter de l'attirer et à choisir le bon traitement." },
       { t: 'h2', x: "Surmulot ou rat noir : lequel vit chez vous ?" },
@@ -2167,6 +2219,7 @@ export const ARTICLES: Article[] = [
         ['Talent', 'Creuse et nage', 'Grimpe'],
       ] },
       { t: 'p', x: "Le surmulot est de loin le plus fréquent. Le rat noir, excellent grimpeur, se rencontre surtout dans les combles : voir notre article sur les [rats dans les combles](/blog/rats-dans-les-combles)." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** : animal **nocturne**, méfiant face aux objets nouveaux, il suit toujours les mêmes chemins le long des murs.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Un animal de la nuit, presque invisible le jour" },
       { t: 'p', x: "Le surmulot est **actif principalement à partir de la tombée de la nuit**, selon l'OFB. Il passe la journée au terrier ou dans un abri, et sort pour se nourrir quand tout est calme. Voir un rat en plein jour est souvent mauvais signe : la population est importante, ou l'animal a été dérangé (travaux, crue, chantier)." },
       { t: 'h2', x: "Une vie en colonie, avec un chef" },
@@ -2225,6 +2278,7 @@ export const ARTICLES: Article[] = [
         ['Longévité', '2 ans, parfois 18 mois en milieu naturel'],
       ] },
       { t: 'p', x: "Source : fiche espèce de l'Office français de la biodiversité (OFB)." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** : sa reproduction rapide explique pourquoi une infestation s'aggrave vite si l'on attend.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Ce que peut donner une seule femelle" },
       { t: 'p', x: "Avec 4 à 7 portées de 3 à 12 petits, une seule femelle peut donner naissance **de 12 à 84 petits en un an**, selon les conditions. Et comme les jeunes sont capables de se reproduire dès 2 mois, les premières portées de l'année se reproduisent à leur tour avant la fin de l'année." },
       { t: 'callout', tone: 'warn', title: 'Pas de trêve en hiver', x: "Le surmulot n'a pas de saison de reproduction. Dans une cave chauffée, un vide sanitaire ou un égout, la colonie continue de grandir en plein hiver. L'automne et l'hiver sont aussi la période où les rongeurs cherchent à entrer dans les maisons." },
@@ -2299,11 +2353,13 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Le rat est omnivore et opportuniste : les graines tombées au sol sont pour lui un repas facile. Jeter des graines ou du pain dans le jardin, sur le balcon ou dans la cour attire donc les rats. Le règlement sanitaire départemental (article 120 à Paris) interdit d'ailleurs de déposer de la nourriture qui attire les pigeons, y compris dans les cours d'immeuble quand cela risque d'attirer les rongeurs.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['ratPlaque'],
     blocks: [
       { t: 'p', x: "Jeter du pain aux pigeons, remplir une mangeoire en hiver, laisser tomber des graines sous le poste de nourrissage : ce sont des gestes partis d'une bonne intention. Mais ce qui tombe au sol ne nourrit pas que les oiseaux." },
       { t: 'h2', x: "Pourquoi vos graines attirent les rats" },
       { t: 'p', x: "Le surmulot est **opportuniste et omnivore** (Office français de la biodiversité). Des graines au pied d'une mangeoire, du pain sur une pelouse ou une gamelle laissée dehors sont une source de nourriture régulière, au même endroit, chaque jour. Le rat l'apprend vite et installe son terrier à proximité." },
       { t: 'callout', tone: 'warn', title: 'Le pain, le pire choix', x: "Le pain n'est pas adapté aux oiseaux et, laissé au sol, il attire rats, pigeons et goélands. C'est l'une des premières choses que nous demandons d'arrêter quand nous trouvons des rats dans un jardin." },
+      { t: 'img', src: '/identifier/columba.jpg', alt: "Pigeon biset Columba livia", legende: "Le **pigeon biset** : le pain et les graines jetés pour lui finissent souvent au sol, à la portée des rats.", credit: "Luc Viatour", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Columba_livia_Luc_Viatour.jpg' },
       { t: 'h2', x: "Ce que dit la réglementation (et ce que vous risquez)" },
       { t: 'p', x: "Le règlement sanitaire départemental de Paris (article 120) interdit de **jeter ou de déposer des graines ou de la nourriture, en tous lieux publics, susceptibles d'attirer les animaux errants, notamment les chats ou les pigeons**. La même interdiction s'applique aux **voies privées, cours ou autres parties d'un immeuble** lorsque cette pratique risque de gêner le voisinage ou **d'attirer les rongeurs**." },
       { t: 'p', x: "Chaque département a son propre règlement sanitaire, avec des règles très proches. Pour votre commune, renseignez-vous auprès de la mairie. En copropriété, le règlement intérieur interdit aussi souvent de nourrir les pigeons depuis les balcons." },
@@ -2316,6 +2372,7 @@ export const ARTICLES: Article[] = [
         "**Rangez les sacs de graines** dans une boîte métallique fermée, pas dans le garage ouvert.",
         "**Ne nourrissez pas les pigeons** : c'est interdit et cela attire aussi les rats. Voir notre article sur les [pigeons sur le balcon](/blog/nid-de-pigeon-balcon-enlever).",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** vient se servir la nuit, là où l'on nourrit les oiseaux le jour.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Les autres buffets à volonté à surveiller" },
       { t: 'ul', items: [
         "**Le compost** ouvert ou qui reçoit des restes de repas : voir [rats dans le compost](/blog/rat-compost).",
@@ -2357,6 +2414,7 @@ export const ARTICLES: Article[] = [
         "**La chaleur** : la décomposition chauffe le tas, un abri idéal en hiver.",
         "**La tranquillité** : un tas jamais remué, au fond du jardin, contre une haie ou un mur, est un endroit parfait pour creuser un terrier.",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun**, attiré par les restes de nourriture et la chaleur d'un composteur mal fermé.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Les signes qu'ils s'y sont installés" },
       { t: 'ul', items: [
         "**Des trous et des galeries** dans le tas ou au pied du composteur.",
@@ -2437,6 +2495,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Un trou dans le jardin, au pied d'une haie, sous une dalle ou près du compost, est souvent l'œuvre d'un rongeur. S'il est rond, aux bords lisses et ouvert, c'est probablement un terrier de rat : le surmulot creuse dans le sol, au pied des haies, sous les dalles et les abris de jardin. Autres indices : de la terre fraîche devant l'entrée et souvent un chemin tassé dans l'herbe. Un terrier rebouché qui se rouvre le lendemain confirme une activité. Il ne faut pas le boucher sans traiter la colonie.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['trouRat1'],
     blocks: [
       { t: 'p', x: "Un trou qui apparaît au pied de la haie, sous la terrasse ou près du composteur : c'est souvent le signe d'un rongeur. Rat ou campagnol ? Et si ce n'était qu'une taupe ? Voici comment reconnaître l'animal, puis repérer un terrier de rat et savoir s'il est occupé." },
       { t: 'h2', x: "Où les rats creusent-ils leurs terriers ?" },
@@ -2448,6 +2507,7 @@ export const ARTICLES: Article[] = [
         "**Près du compost**, du poulailler ou des mangeoires.",
         "**Le long des murs** et des fondations.",
       ] },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** creuse des terriers d'environ **6 à 9 cm** d'entrée, souvent le long d'un mur, d'une haie ou sous une dalle.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Rat, taupe ou campagnol : comment les distinguer" },
       { t: 'table', head: ['Animal', 'Ce qu\'on voit', 'Indices'], rows: [
         ['Rat (surmulot)', 'Trou rond aux bords lisses, ouvert, souvent plusieurs entrées', 'Terre fraîche devant, chemin tassé, déjections en fuseau'],
@@ -2494,12 +2554,14 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "La mort-aux-rats (raticide) est un poison : mal utilisée, elle présente un risque pour les enfants, les chiens et les chats. On peut s'en passer dans la plupart des logements, en combinant plusieurs méthodes : boucher les accès, poser un clapet anti-retour, supprimer la nourriture, et utiliser des pièges mécaniques, de capture ou connectés. La méthode la plus courante reste le raticide en postes d'appâtage sécurisés ; comme méthode alternative, nous proposons le piège multicapture Ekomille : le rongeur, attiré par un appât alimentaire, tombe dans une cuve fermée et reste dans l'appareil, au lieu d'aller mourir dans la rue ou dans une cloison. Le raticide doit toujours être placé en postes verrouillés, par un professionnel certifié.",
     service: { href: '/services/deratisation', label: 'Dératisation en Île-de-France' },
+    photos: ['ratPiege', 'rongeursGlu'],
     blocks: [
       { t: 'p', x: "Un enfant qui marche à quatre pattes, un chien qui fouille partout, un chat qui chasse : quand on a des rats ou des souris, la première inquiétude est souvent la même. Faut-il vraiment mettre du poison ? Dans la majorité des cas, non." },
       { t: 'h2', x: "Pourquoi la mort-aux-rats inquiète autant" },
       { t: 'p', x: "Les raticides sont faits pour tuer des mammifères. Un enfant ou un animal domestique qui en avale peut être gravement intoxiqué. Un chien ou un chat peut aussi s'intoxiquer en mangeant un rongeur qui a consommé du poison." },
       { t: 'callout', tone: 'warn', title: 'L\'alerte de l\'ANSES', x: "En 2021, l'ANSES a rapporté le décès de deux très jeunes enfants après l'ingestion accidentelle d'un raticide interdit en France. Elle recommande de n'acheter que des produits autorisés, de les tenir hors de portée des enfants et de faire appel à une entreprise spécialisée en cas d'échec." },
       { t: 'p', x: "Le danger vient surtout des produits répandus en vrac : granulés au sol, pâte posée derrière un meuble, appâts achetés hors des circuits autorisés. C'est précisément ce que nous trouvons le plus souvent chez les particuliers qui ont essayé de se débrouiller seuls." },
+      { t: 'img', src: '/identifier/rattus.jpg', alt: "Rat brun Rattus norvegicus", legende: "Le **rat brun** : piégeage mécanique, rebouchage des accès et pièges multicaptures permettent de s'en débarrasser sans mort-aux-rats.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
       { t: 'h2', x: "Et la « dératisation écologique » ?" },
       { t: 'p', x: "C'est une recherche très fréquente. Le terme est séduisant mais imprécis : aucune méthode n'est sans impact, et la loi encadre strictement ce type d'allégation. Ce que la plupart des gens veulent dire, c'est une **dératisation sans poison**. C'est possible, et voici comment." },
       { t: 'h2', x: "Le piège multicapture Ekomille, sans raticide" },
@@ -2571,6 +2633,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Les acariens de la poussière vivent surtout dans la literie, où ils se nourrissent de nos peaux mortes. Pour en réduire la quantité dans un matelas, l'Assurance maladie conseille une housse anti-acariens qui l'enveloppe sur ses 6 faces, une aspiration régulière, un lavage fréquent du linge de lit à 60 °C et un sommier à lattes plutôt que tapissier. Un traitement à la vapeur sèche ou en cryogénie traite le matelas en profondeur, sans produit.",
     service: { href: '/services/acariens', label: 'Traitement anti-acariens en Île-de-France' },
+    photos: ['litEnfant'],
     blocks: [
       { t: 'p', x: "On passe environ un tiers de sa vie au lit, et les acariens aussi. Invisibles à l'œil nu, ils s'installent dans le matelas, les oreillers et la couette, où ils trouvent chaleur, humidité et nourriture. Pour une personne allergique, c'est souvent là que tout se joue." },
       { t: 'h2', x: "Pourquoi votre matelas est leur paradis" },
@@ -2580,6 +2643,7 @@ export const ARTICLES: Article[] = [
         "**L'humidité** de la transpiration et de la respiration.",
         "**L'abri** : l'épaisseur du matelas, rarement nettoyée en profondeur.",
       ] },
+      { t: 'img', src: '/identifier/dermatophagoides.jpg', alt: "Acarien de la poussière Dermatophagoides vu au microscope", legende: "Un **acarien de la poussière** vu au microscope : il mesure **moins de 0,5 mm**, invisible à l'œil nu. Il se nourrit des **squames** de peau, nombreuses dans la literie.", credit: "Gouvernement des États-Unis", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:House_Dust_Mite.jpg' },
       { t: 'h2', x: "7 gestes pour réduire les acariens du matelas" },
       { t: 'ol', items: [
         "**Posez une housse anti-acariens intégrale** : elle doit envelopper le matelas sur ses 6 faces et se fermer par une fermeture éclair, comme le recommande l'Assurance maladie. Même chose pour les oreillers et la couette.",
@@ -2622,6 +2686,7 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Les acariens de la poussière sont invisibles à l'œil nu et ne piquent pas : ils gênent surtout les personnes allergiques (nez qui coule, éternuements). Les punaises de lit, elles, se voient, piquent la nuit et laissent des petites taches noires ou de sang sur le matelas. Les traitements ne sont pas du tout les mêmes : bien identifier le problème évite de payer le mauvais.",
     service: { href: '/services/acariens', label: 'Traitement anti-acariens en Île-de-France' },
+    photos: ['creteilLattes1'],
     blocks: [
       { t: 'p', x: "Vous vous réveillez avec des démangeaisons ou des boutons, et vous pensez aux acariens ? Ou au contraire, vous craignez les punaises de lit ? La confusion est fréquente. Voici comment faire la différence." },
       { t: 'h2', x: "Le tableau pour ne plus confondre" },
@@ -2633,6 +2698,7 @@ export const ARTICLES: Article[] = [
         ['Qui est touché', 'Tous les logements, à des degrés divers', 'Un logement infesté, souvent après un voyage ou un meuble d\'occasion'],
       ] },
       { t: 'callout', tone: 'warn', title: 'Des boutons qui grattent ? Pensez d\'abord aux punaises', x: "Les acariens ne piquent pas. Si vous avez des piqûres au réveil, inspectez les coutures du matelas, le sommier et la tête de lit à la lampe : de petites taches noires ou des insectes bruns orientent vers les punaises de lit." },
+      { t: 'img', src: '/identifier/dermatophagoides.jpg', alt: "Acarien de la poussière vu au microscope", legende: "L'**acarien** : invisible à l'œil nu, il **ne pique pas**. Les gênes viennent de l'allergie à ses déjections.", credit: "Gouvernement des États-Unis", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:House_Dust_Mite.jpg' },
       { t: 'h2', x: "Le test à faire chez vous" },
       { t: 'ol', items: [
         "**Inspectez les coutures du matelas** et le dessous du sommier avec une lampe torche.",
@@ -2640,6 +2706,7 @@ export const ARTICLES: Article[] = [
         "**Cherchez de petites taches noires**, qui ne partent pas facilement, ou des traces de sang sur les draps.",
         "**Pas de traces, mais des symptômes respiratoires** au réveil ? Les acariens sont plus probables : parlez-en à votre médecin, qui peut confirmer une allergie.",
       ] },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** : visible (4 à 7 mm), elle **pique** pour se nourrir de sang et laisse des points noirs sur le matelas.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Deux traitements qui n'ont rien à voir" },
       { t: 'p', x: "**Contre les acariens**, on réduit leur nombre dans la literie et les textiles (vapeur sèche, cryogénie, acaricide) et on agit sur l'humidité : voir notre [traitement anti-acariens](/services/acariens) et nos conseils pour [le matelas](/blog/acariens-matelas)." },
       { t: 'p', x: "**Contre les punaises de lit**, il faut un protocole complet, sur tout le logement, avec en général deux passages. L'ANSES rappelle que ces infestations pèsent lourd sur le budget et la qualité de vie des ménages. Voir notre [traitement des punaises de lit](/services/punaises-de-lit)." },
@@ -2671,6 +2738,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Traiter la literie sans s'occuper de l'humidité, c'est comme vider une baignoire sans fermer le robinet. Les acariens se développent dans les intérieurs chauds et humides : maîtriser l'humidité est la meilleure façon de garder le résultat d'un traitement." },
       { t: 'h2', x: "Le bon taux d'humidité à viser" },
       { t: 'p', x: "Selon l'Assurance maladie, **le taux d'humidité idéal se situe entre 40 et 60 %**, avec une **température entre 18 et 22 °C** selon les pièces. Au-delà, les acariens se développent plus facilement, et les moisissures aussi." },
+      { t: 'img', src: '/identifier/dermatophagoides.jpg', alt: "Acarien de la poussière vu au microscope", legende: "L'**acarien de la poussière** prolifère quand l'air est **chaud et humide** : aérer et limiter l'humidité freine sa multiplication.", credit: "Gouvernement des États-Unis", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:House_Dust_Mite.jpg' },
       { t: 'h2', x: "Comment le mesurer facilement" },
       { t: 'p', x: "Un **hygromètre**, vendu en magasin de bricolage ou en ligne pour quelques euros, affiche le taux d'humidité d'une pièce. Placez-le dans la chambre, loin d'une fenêtre ou d'un radiateur, et regardez-le à différents moments de la journée, notamment le matin." },
       { t: 'h2', x: "D'où vient l'humidité chez vous ?" },
@@ -2717,12 +2785,14 @@ export const ARTICLES: Article[] = [
     readMin: 6,
     tldr: "Oui, une salle de cinéma peut héberger des punaises de lit : les fauteuils en tissu sont un endroit où des gens restent assis longtemps, ce qui les attire. Des cas ont été signalés à Paris en 2023, et la Cinémathèque française a fermé quatre salles fin 2025 pour traiter ses fauteuils. Le risque d'en ramener chez soi reste limité si l'on adopte quelques réflexes : sac fermé posé loin du sol, coup d'œil au siège, vêtements lavés à 60 °C au moindre doute.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    photos: ['vincennesMortes1'],
     blocks: [
       { t: 'p', x: "Depuis l'automne 2023, la question revient souvent : **peut-on attraper des punaises de lit au cinéma ?** La réponse est oui, c'est possible, mais il faut garder la mesure. Voici ce qui s'est réellement passé en Île-de-France, pourquoi une salle de cinéma peut être concernée, et les gestes simples pour ne rien ramener à la maison." },
       { t: 'h2', x: "Ce qui s'est vraiment passé dans les cinémas parisiens" },
       { t: 'p', x: "En septembre et octobre 2023, des spectateurs ont signalé des piqûres sur les réseaux sociaux après des séances dans plusieurs cinémas de Paris et de la petite couronne. Selon l'office du tourisme de Paris, les salles concernées ont déclenché leur procédure d'urgence et ont été traitées. Tous les signalements n'ont pas été confirmés, mais certains l'ont été." },
       { t: 'p', x: "Fin novembre 2025, la **Cinémathèque française**, dans le 12e arrondissement, a fermé quatre salles pendant environ un mois après de nouveaux signalements. D'après Sortiraparis, tous les fauteuils ont été démontés et traités un par un à la **vapeur sèche**, plusieurs fois, avec des contrôles par **chien détecteur** pour valider chaque étape." },
       { t: 'callout', tone: 'info', title: 'Ce n\'est pas une question de propreté', x: "Les punaises de lit ne se nourrissent que de sang. Une salle impeccable peut être touchée si un spectateur en apporte une dans son sac ou ses vêtements. C'est d'ailleurs ce que rappelait la Ville de Paris en 2023." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit adulte** : elle peut se cacher dans les coutures d'un fauteuil et repartir dans un sac ou un manteau.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Comment traite-t-on une salle entière ?" },
       { t: 'p', x: "Dans une salle, on ne peut pas se contenter de pulvériser un produit : il faut atteindre les punaises cachées au cœur de chaque fauteuil, sans abîmer les tissus et sans immobiliser la salle trop longtemps. C'est pourquoi la **vapeur sèche** et la **cryogénie**, deux méthodes **sans insecticide**, sont particulièrement adaptées. Elles se complètent :" },
       { t: 'ul', items: [
@@ -2783,11 +2853,13 @@ export const ARTICLES: Article[] = [
     readMin: 7,
     tldr: "Le risque d'attraper des punaises de lit dans les transports en commun existe, mais il dépend surtout de la durée du trajet. Dans le métro, le RER, le bus, le tramway ou le Transilien, les trajets sont courts et le risque est faible : en octobre 2023, le ministre des Transports indiquait qu'aucun des signalements vérifiés par la RATP et la SNCF n'avait été confirmé. Il est un peu plus élevé dans les trains de nuit, les cars longue distance et les longs vols, où l'on reste assis ou endormi des heures. Dans tous les cas, ce sont surtout les sacs et les valises qui ramènent les punaises chez soi.",
     service: { href: '/services/punaises-de-lit', label: 'Traitement des punaises de lit en Île-de-France' },
+    photos: ['vincennesMortes1'],
     blocks: [
       { t: 'p', x: "Une vidéo d'insecte sur un siège de RER ou de TGV, et c'est la panique. À l'automne 2023, les signalements de punaises de lit dans les transports se sont multipliés sur les réseaux sociaux. **Métro, RER, bus, tramway, train, car ou avion : qu'en est-il vraiment, et comment se protéger sans céder à la psychose ?**" },
       { t: 'h2', x: "Ce qu'ont dit la RATP et la SNCF" },
       { t: 'p', x: "Le 4 octobre 2023, le ministre des Transports a réuni les opérateurs. Selon ses déclarations, **une dizaine de signalements** avaient été faits à la RATP et **37** à la SNCF dans les semaines précédentes. Tous avaient été vérifiés, et **aucun n'avait été confirmé**. La RATP indiquait de son côté qu'aucun cas avéré n'avait été constaté dans le métro, le RER, le tramway et le bus, et la SNCF qu'aucun cas n'avait été confirmé à bord de ses TGV après inspection. Le ministre a demandé aux opérateurs de publier leurs données de signalement tous les trois mois." },
       { t: 'callout', tone: 'info', title: 'Ce qui compte : la durée et le sommeil', x: "Les punaises de lit se nourrissent sur une personne immobile, le plus souvent endormie, et vivent cachées tout près d'elle. Un trajet de vingt minutes, avec des voyageurs qui bougent sans cesse, ne leur offre pas ces conditions. Plus on reste longtemps assis, et a fortiori si l'on dort, plus le risque augmente." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "Une **punaise de lit** ne saute pas et ne vole pas : elle se déplace en s'accrochant aux **sacs, vêtements et bagages**.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Métro, bus, train : le risque transport par transport" },
       { t: 'table', head: ['Transport', 'Risque', 'Point de vigilance'], rows: [
         ['Métro, RER', 'Faible', 'Sièges en tissu, sac posé sur le siège voisin'],
@@ -2854,6 +2926,7 @@ export const ARTICLES: Article[] = [
         "**« Elles sautent d'une personne à l'autre. »** Faux : elles ne sautent pas et ne volent pas. Elles marchent, et voyagent cachées dans les affaires.",
         "**« Elles vivent sur nous, comme les poux. »** Faux : elles piquent puis retournent se cacher près du lit. Elles ne restent pas sur la peau.",
       ] },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** ne saute pas et ne vole pas : on la ramène dans un bagage, un meuble d'occasion ou des vêtements.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Les 7 situations où on les ramène chez soi" },
       { t: 'h3', x: "1. L'hôtel et la location de type Airbnb" },
       { t: 'p', x: "C'est la situation la plus fréquente. Une chambre d'hôtel ou un logement loué sur Airbnb peut être infesté par des punaises de lit, quel que soit son standing ou son prix : les voyageurs se succèdent, et il suffit d'une valise pour en apporter. C'est d'ailleurs ce que nous constatons le plus souvent en intervention : **beaucoup de nos clients ont ramené des punaises de lit chez eux après un séjour à Paris, en particulier dans un hôtel parisien**. Elles se glissent dans la valise ou les vêtements posés près du lit, puis s'installent dans votre logement." },
@@ -2900,6 +2973,7 @@ export const ARTICLES: Article[] = [
         "**Bouchez les fissures et les passages** autour des plinthes et des gaines si vous êtes en immeuble.",
       ] },
       { t: 'callout', tone: 'warn', title: 'Ce qui ne protège pas', x: "Les bombes et fumigènes insecticides du commerce, jugés inefficaces par stop-punaises.gouv.fr, qui dispersent les punaises. Les répulsifs pour la peau ne sont pas conçus pour éloigner les punaises de lit. Jeter son matelas sans traiter le reste du logement." },
+      { t: 'img', src: '/piqures/piqures-punaises-poignet-en-ligne.jpg', alt: "Piqûres de punaises de lit alignées sur le poignet", legende: "Souvent le premier signe : des piqûres **alignées** au réveil.", credit: "Oliver Arend", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Bed_bug_bites_around_left_wrist.jpg' },
       { t: 'h2', x: "Les signes qui doivent vous alerter" },
       { t: 'ul', items: [
         "**Des piqûres au réveil**, souvent groupées ou alignées, qui reviennent plusieurs jours de suite.",
@@ -2953,6 +3027,7 @@ export const ARTICLES: Article[] = [
         "**Séparez le linge propre du linge à traiter** : un vêtement traité ne doit pas retourner dans une armoire qui n'a pas été traitée.",
         "**Rangez le linge traité dans des sacs neufs fermés** jusqu'à la fin du traitement du logement.",
       ] },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** se cache aussi dans les coutures des vêtements : lavage à 60 °C ou passage au sèche-linge chaud.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "La solution qui marche : le lavage à 60 °C" },
       { t: 'p', x: "C'est la méthode recommandée par le gouvernement sur stop-punaises.gouv.fr, et elle est validée par la recherche : une étude publiée en 2010 dans le Journal of Economic Entomology (Naylor et Boase) a montré qu'un **lavage à 60 °C tue les punaises de lit à tous les stades**, œufs compris." },
       { t: 'h3', x: "Comment ça fonctionne" },
@@ -3131,6 +3206,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Un nid blanc comme de la barbe à papa en haut d'un pin, des chenilles qui avancent en file indienne sur le trottoir au printemps : c'est la **processionnaire du pin** (Thaumetopoea pityocampa). Depuis le décret n° 2022-686 du 25 avril 2022, elle fait partie, avec la processionnaire du chêne, des espèces dont la prolifération est reconnue nuisible à la santé humaine dans le code de la santé publique. Voici tout ce qu'il faut savoir pour s'en protéger." },
       { t: 'h2', x: "D'où vient-elle ?" },
       { t: 'p', x: "C'est une espèce d'origine **méditerranéenne**. Ses chenilles supportent mal les hivers trop froids, ce qui limitait autrefois sa présence au sud de la France. Selon les travaux de l'**INRAE**, elle progresse depuis plusieurs décennies vers le nord et en altitude, et le réchauffement du climat en est le principal moteur. Elle est aujourd'hui installée en Île-de-France, en particulier dans les parcs, les jardins et les forêts plantés de pins." },
+      { t: 'img', src: '/identifier/thaumetopoea.jpg', alt: "Procession de chenilles processionnaires du pin", legende: "La **chenille processionnaire du pin** en procession : la file peut compter plusieurs dizaines de chenilles.", credit: "Tuscia", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Thaumetopoea_Pityocampa_-_Procession.jpg' },
       { t: 'h2', x: "Son cycle de vie, saison par saison" },
       { t: 'ol', items: [
         "**L'été (juin à août)** : les papillons, nocturnes et discrets, sortent du sol. Ils ne vivent que quelques jours, le temps de s'accoupler. La femelle pond ses œufs en manchon autour d'une paire d'aiguilles de pin.",
@@ -3203,6 +3279,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Moins connue que sa cousine du pin, la **processionnaire du chêne** (Thaumetopoea processionea) n'est pas moins dangereuse. On la remarque souvent trop tard, en promenade en forêt ou en coupant du bois, quand les démangeaisons apparaissent. Comme la processionnaire du pin, elle est inscrite depuis le décret n° 2022-686 du 25 avril 2022 parmi les espèces dont la prolifération est nuisible à la santé humaine." },
       { t: 'h2', x: "D'où vient-elle ?" },
       { t: 'p', x: "Elle est présente depuis longtemps dans les forêts de chênes d'Europe, mais ses **pullulations** se sont multipliées ces dernières décennies, jusqu'au nord de l'Europe. On la rencontre dans les forêts, les parcs, les allées et les jardins plantés de chênes, y compris en Île-de-France." },
+      { t: 'img', src: '/identifier/thaumetopoea.jpg', alt: "Procession de chenilles processionnaires du pin, cousine de celle du chêne", legende: "Ici, la **processionnaire du pin**. Celle du **chêne** est très proche, mais elle se déplace en **rangs larges** sur le tronc et vit sur les chênes, pas sur les pins.", credit: "Tuscia", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Thaumetopoea_Pityocampa_-_Procession.jpg' },
       { t: 'h2', x: "Son cycle de vie, saison par saison" },
       { t: 'p', x: "Son cycle dure **un an**, et il est décalé par rapport à celui du pin :" },
       { t: 'ol', items: [
@@ -3748,6 +3825,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Cette fois, nos équipes sont intervenues **en Essonne (91)** pour un nid de **guêpes communes** installé **sous une tuile**. La hauteur ne nous arrête pas : la vidéo montre notre technicien sur l'échelle, en tenue complète, au niveau de la toiture." },
       { t: 'h2', x: "Pourquoi les guêpes adorent vos tuiles" },
       { t: 'p', x: "Au printemps, la **reine fondatrice**, qui a passé l'hiver à l'abri, sort quand les températures remontent et cherche un endroit pour construire son nid. Les espaces sous les tuiles lui offrent tout ce qu'elle cherche : **l'obscurité, la protection contre la pluie et un peu de chaleur** emmagasinée par la toiture. Elle construit seule les premières alvéoles avec du bois mâché, puis la colonie grandit au fil des semaines." },
+      { t: 'img', src: '/guepes/vespula-vulgaris.jpg', alt: "Guêpe commune Vespula vulgaris", legende: "La **guêpe commune** (Vespula vulgaris), celle qui niche sous les tuiles : corps **lisse, noir et jaune vif**, taille fine.", credit: "Magne Flåten", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Vespula_vulgaris-m.jpg' },
       { t: 'h2', x: "Jusqu'à quand dure la saison des guêpes ?" },
       { t: 'p', x: "En général **de mai à octobre**, avec un pic d'activité en plein été. C'est **en fin de saison** que les colonies sont les plus grosses et les plus défensives : mieux vaut ne pas attendre." },
       { t: 'h2', x: "Notre intervention en hauteur" },
@@ -3943,6 +4021,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Quand l'infestation est importante et touche plusieurs pièces, le **traitement insecticide** reste une solution efficace. C'est ce que nous avons réalisé dans cet appartement, en **deux étapes** le même jour." },
       { t: 'h2', x: "Étape 1 : la pulvérisation, cachette par cachette" },
       { t: 'p', x: "Le technicien, certifié **Certibiocide**, pulvérise un insecticide professionnel dans **tout l'appartement** : coutures des matelas, sommiers, cadres de lit, plinthes, prises, dessous des meubles. Ce sont les cachettes préférées des punaises." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "Une **punaise de lit adulte** : 4 à 7 mm, brun-rouge, corps plat.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Étape 2 : la nébulisation, jusque dans les recoins" },
       { t: 'p', x: "La **nébulisation** diffuse ensuite le produit en fines gouttelettes dans les pièces, pour atteindre les recoins que la pulvérisation ne touche pas directement." },
       { t: 'h2', x: "Après le traitement : les consignes" },
@@ -4461,6 +4540,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Une cliente de **Paris 12e** nous a appelés pour une **très grosse infestation** de punaises de lit dans son logement. Nous sommes intervenus **chez elle**, en urgence." },
       { t: 'h2', x: "Premier passage : pulvérisation puis nébulisation" },
       { t: 'p', x: "Le technicien, certifié **Certibiocide**, a réalisé un **traitement chimique professionnel** en deux temps : **pulvérisation** d'insecticide sur les zones de refuge (literie, sommier, plinthes, meubles, prises), puis **nébulisation**, qui diffuse le produit en fines gouttelettes pour atteindre les recoins. La cliente a quitté le logement le temps que le produit agisse." },
+      { t: 'img', src: '/piqures/dejections-punaises-latte-sommier.jpg', alt: "Déjections de punaises de lit sur une latte de sommier", legende: "Les **points noirs** sur les lattes : les déjections, signe d'une infestation installée.", credit: "NY State IPM Program at Cornell University", licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Bed_Bug_Evidence.jpg' },
       { t: 'h2', x: "Deuxième passage : le résultat en vidéo" },
       { t: 'p', x: "La vidéo a été tournée **à notre arrivée pour le deuxième passage**. Elle montre **le résultat du premier** : les punaises sont **mortes au sol**, sur le carrelage. Le deuxième passage traite à nouveau le logement pour éliminer les punaises écloses depuis, avant qu'elles ne deviennent adultes et ne pondent." },
       { t: 'h2', x: "Les signes d'une grosse infestation" },
@@ -4511,6 +4591,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Abris de jardin, remises, garages : les guêpes adorent les **petits bâtiments peu fréquentés**. Chez ce client de **Gretz-Armainvilliers (77)**, un **gros nid** s'était construit au plafond de son **petit abri de jardin**, au-dessus de l'entrée." },
       { t: 'h2', x: "Pourquoi les guêpes adorent les abris de jardin" },
       { t: 'p', x: "À l'abri de la pluie et du vent, rarement dérangées, elles y trouvent l'endroit idéal. Le nid grandit tout l'été, sans qu'on le remarque, jusqu'au jour où l'on ouvre la porte." },
+      { t: 'img', src: '/guepes/vespula-vulgaris.jpg', alt: "Guêpe commune Vespula vulgaris", legende: "La **guêpe commune** : noire et jaune vif, elle construit son nid en **papier gris** dans les cavités abritées.", credit: "Magne Flåten", licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Vespula_vulgaris-m.jpg' },
       { t: 'h2', x: "Notre intervention en vidéo" },
       { t: 'ol', items: [
         "**Sécurisation** de la zone et éloignement des occupants.",
@@ -4556,6 +4637,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Un va-et-vient de frelons au-dessus du toit, un bourdonnement dans le conduit : chez ce client de **Nogent-sur-Marne (94)**, les frelons avaient construit leur nid **dans une cheminée**. Un emplacement fréquent, et l'un des plus difficiles à traiter depuis l'intérieur de la maison." },
       { t: 'h2', x: "Pourquoi les frelons s'installent dans les cheminées" },
       { t: 'p', x: "Un conduit de cheminée peu utilisé offre exactement ce que recherche une colonie : un **abri sombre, sec et protégé** de la pluie et du vent, avec une ouverture en hauteur pour entrer et sortir. Le nid grandit à l'intérieur du conduit, souvent sans être visible." },
+      { t: 'img', src: '/frelons/vespa-velutina.jpg', alt: "Frelon asiatique Vespa velutina", legende: "Le **frelon asiatique** : thorax noir, un seul anneau orangé, **pattes jaunes** au bout.", credit: "Charles J. Sharp", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Asian_hornet_(Vespa_velutina).jpg' },
       { t: 'h2', x: "Notre intervention, perchés sur la toiture" },
       { t: 'ol', items: [
         "**Accès à la toiture** en sécurité, jusqu'à la souche de la cheminée.",
@@ -4604,6 +4686,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Un **sommier à lattes**, c'est le refuge préféré des punaises de lit : des dizaines de jonctions, de vis et de fentes, juste à côté de la personne qu'elles piquent. Sur ce chantier à **L'Haÿ-les-Roses (94)**, c'est dans le sommier qu'elles s'étaient installées, et nous les avons traitées **par cryogénie, sans aucun produit chimique**." },
       { t: 'h2', x: "Zéro produit chimique : le froid fait tout le travail" },
       { t: 'p', x: "La lance de cryogénie projette de la **neige carbonique, à environ −78 °C**. Le choc thermique **tue au contact** les punaises adultes, les larves et **les œufs**. Aucun insecticide n'est pulvérisé, rien ne reste sur le sommier ni dans l'air. La neige se transforme en gaz sans laisser d'eau : le bois et le métal ne sont pas mouillés, et la chambre peut être réutilisée après aération." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit adulte**, cible de la cryogénie : le froid de la neige carbonique la tue au contact, œufs compris.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Exceptionnellement, le client a regardé le traitement du sommier" },
       { t: 'p', x: "**Exceptionnellement, le client a regardé pendant le traitement du sommier** : on le voit sur la droite de la vidéo. Il a pu voir où se cachaient les punaises et comment chaque latte du sommier était traitée." },
       { t: 'h2', x: "Latte par latte, jusque dans les moindres fentes" },
@@ -4644,6 +4727,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Une infestation de **punaises de lit** hors norme. À **Ivry-sur-Seine (94)**, nous avons été appelés en urgence chez une **dame âgée** dont le logement était envahi : des punaises **sur le sol, autour du fauteuil, le long des plinthes**, et un coussin posé près de son **lit médicalisé** qui en était littéralement couvert. Piquée nuit après nuit, elle a eu des **problèmes sanguins** et a dû être **hospitalisée**. La vidéo a été tournée sur place, avec l'accord de l'occupante." },
       { t: 'h2', x: "Une contrainte absolue : aucun produit chimique" },
       { t: 'p', x: "Pour une personne âgée, affaiblie et appelée à revenir vivre dans ce logement, **il fallait à tout prix éviter les produits chimiques**. Nous avons donc traité **sans insecticide**, avec nos méthodes physiques : la **cryogénie** (neige carbonique à environ −78 °C) et la **vapeur sèche** à très haute température, qui tuent les punaises et leurs œufs **au contact**, sans laisser de résidu dans la chambre, sur le lit médicalisé ou dans l'air." },
+      { t: 'img', src: '/piqures/piqures-punaises-main.jpg', alt: "Piqûres de punaises de lit sur le dos de la main", legende: "Des **piqûres de punaises** sur le dos de la main : chez une personne âgée, elles passent parfois inaperçues longtemps.", credit: "KEBman", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Bedbug_bites_on_human_hand.jpg' },
       { t: 'h2', x: "Pourquoi une infestation peut devenir aussi grave chez une personne âgée" },
       { t: 'p', x: "Les punaises de lit ne viennent pas d'un manque de propreté : elles arrivent avec un bagage, un meuble ou un visiteur. Mais chez une personne âgée ou alitée, plusieurs choses les laissent proliférer sans que personne ne s'en aperçoive :" },
       { t: 'ul', items: [
@@ -4693,6 +4777,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "Vous traitez, vous retraitez, et les **punaises de lit** reviennent toujours ? C'est souvent qu'elles se cachent là où personne ne pense à regarder. La vidéo ci-dessus montre l'une de ces cachettes : une **goulotte électrique** au mur, ouverte par notre technicien. Le long du câble, on voit des punaises vivantes, leurs **mues** (les peaux qu'elles laissent en grandissant) et leurs déjections." },
       { t: 'h2', x: "Un hôtel où personne n'arrivait à les trouver" },
       { t: 'p', x: "Ce chantier se passe dans un **établissement hôtelier de Paris 1er**. Avant nous, **plusieurs sociétés** étaient déjà intervenues, sans jamais régler le problème : les clients continuaient à se faire piquer. Nous avons réalisé nos **deux passages** habituels, avec un **traitement aux produits chimiques** sur les lits, les matelas et le mobilier. Ils n'ont pas suffi, et notre technicien est revenu **une troisième fois**, bien décidé à trouver où elles se cachaient." },
+      { t: 'img', src: '/identifier/cimex.jpg', alt: "Punaise de lit adulte Cimex lectularius", legende: "La **punaise de lit** se glisse dans des fentes très fines : goulottes électriques, plinthes, prises.", credit: "CDC, Dr. Gary Alpert (Harvard University)", licence: 'Domaine public', page: 'https://commons.wikimedia.org/wiki/File:Adult_bed_bug,_Cimex_lectularius.jpg' },
       { t: 'h2', x: "Le troisième passage : on démonte tout" },
       { t: 'p', x: "Quand un traitement bien fait ne suffit pas, c'est que les punaises vivent dans un endroit que le produit n'atteint pas. Notre technicien a donc démonté, pièce par pièce :" },
       { t: 'ol', items: [
@@ -4746,6 +4831,7 @@ export const ARTICLES: Article[] = [
         ['Nymphe', 'Cocon de soie, souvent mêlé de fibres', 'Transformation en papillon'],
         ['Adulte', 'Petit papillon beige doré, ailes étroites', 'Se reproduit, mange peu ou pas du tout'],
       ] },
+      { t: 'img', src: '/identifier/tineola.jpg', alt: "Mite des vêtements Tineola bisselliella", legende: "La **mite des vêtements** (Tineola bisselliella) : petit papillon **doré**, qui fuit la lumière. Ce sont ses **larves** qui trouent la laine.", credit: "Olaf Leillinger", licence: 'CC BY-SA 2.5', page: 'https://commons.wikimedia.org/wiki/File:Tineola.bisselliella.7218.jpg' },
       { t: 'h2', x: "Comment elle vit (et ce qu'elle mange)" },
       { t: 'ul', items: [
         "**Les larves mangent de la kératine**, la protéine des poils, de la laine et des plumes : laine, cachemire, mohair, alpaga, soie, fourrure, feutre, plumes, tapis en laine. Le coton et le synthétique pur les intéressent peu, sauf s'ils sont mélangés à de la laine ou tachés.",
@@ -4764,6 +4850,7 @@ export const ARTICLES: Article[] = [
         "**Plus rarement, de l'extérieur** ou d'un logement voisin, par une fenêtre ou les gaines.",
       ] },
       { t: 'callout', tone: 'info', title: "Ce n'est pas une question de propreté", x: "Un logement bien tenu peut avoir des mites : il suffit d'un pull d'occasion ou d'un tapis ancien. En revanche, la poussière, les poils d'animaux et les vêtements rangés sales les aident à s'installer." },
+      { t: 'img', src: '/anthrenes/larve-anthrene.jpg', alt: "Larve d'anthrène brune et velue", legende: "Souvent confondue avec la mite : la **larve d'anthrène**, brune et velue, qui abîme aussi la laine et les tapis.", credit: "Arnoldius", licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Anthrenus_verbasci_(Larva).jpg' },
       { t: 'h2', x: "Les signes qui doivent vous alerter" },
       { t: 'ul', items: [
         "**Des trous** dans les lainages, souvent regroupés, ou des zones où le tissu est rasé.",
@@ -4855,6 +4942,7 @@ export const ARTICLES: Article[] = [
       { t: 'p', x: "De petits papillons qui volettent dans la cuisine le soir, des **fils de soie** dans un paquet de farine, de **petites chenilles** dans les rainures du placard ou au plafond : ce sont des **mites alimentaires**. Ce guide reprend tout : **d'où elles viennent**, comment elles vivent, **ce qui se passe si on ne traite pas**, comment **s'en débarrasser** et comment **ne plus jamais en avoir**. Elles ne touchent pas aux vêtements : pour les trous dans les pulls, voir [les mites des vêtements](/blog/mites-vetements-origine-traitement-prevention)." },
       { t: 'h2', x: "Qui sont ces papillons de la cuisine ?" },
       { t: 'p', x: "La plus courante est la **pyrale des fruits secs** (Plodia interpunctella), aussi appelée pyrale indienne de la farine. L'adulte est un petit papillon aux **ailes bicolores** : gris pâle près du corps, **brun cuivré** à l'extrémité. La larve est une petite chenille **blanchâtre ou jaunâtre**, à tête brune, qui atteint environ **8 à 10 mm**, selon la Commission canadienne des grains. On trouve aussi la **pyrale de la farine** (Ephestia kuehniella), aux ailes grises." },
+      { t: 'img', src: '/identifier/plodia.jpg', alt: "Mite alimentaire Plodia interpunctella", legende: "La **mite alimentaire** (Plodia interpunctella) : ailes **bicolores**, claires à la base et cuivrées au bout. Ses larves vivent dans les farines, céréales et fruits secs.", credit: "Uhw", licence: 'CC BY 4.0', page: 'https://commons.wikimedia.org/wiki/File:Dead_Plodia_interpunctella_(most_likely)_(3533).jpg' },
       { t: 'h2', x: "Comment elles vivent dans vos placards" },
       { t: 'ul', items: [
         "**La femelle pond directement sur la nourriture**, dans les paquets ou à proximité.",
@@ -4872,6 +4960,7 @@ export const ARTICLES: Article[] = [
         "**Légumes secs**, et surtout les **croquettes, graines pour oiseaux et aliments pour rongeurs**, souvent stockés longtemps en grands sacs ouverts.",
       ] },
       { t: 'callout', tone: 'info', title: "Le piège des graines pour animaux", x: "Les grands sacs de croquettes ou de graines pour oiseaux sont souvent le point de départ, car ils restent ouverts longtemps. Vérifiez-les en premier, même s'ils sont rangés hors de la cuisine." },
+      { t: 'img', src: '/identifier/sitophilus.jpg', alt: "Charançon du riz Sitophilus oryzae", legende: "Autre visiteur des placards : le **charançon**, petit coléoptère brun à long museau qui pond dans les grains de riz et de blé.", credit: "Manaaki Whenua, Landcare Research", licence: 'CC BY 4.0', page: 'https://commons.wikimedia.org/wiki/File:Sitophilus_oryzae_lateral.jpg' },
       { t: 'h2', x: "Les signes qui ne trompent pas" },
       { t: 'ul', items: [
         "**De petits papillons** dans la cuisine, surtout le soir, posés au plafond ou sur les murs.",
@@ -4943,6 +5032,7 @@ export const ARTICLES: Article[] = [
       { t: 'h2', x: "Qui sont vraiment les fourmis ?" },
       { t: 'p', x: "Les fourmis sont des **insectes sociaux** de l'ordre des hyménoptères, comme les guêpes et les abeilles. On compte **plus de 12 000 espèces décrites dans le monde** et **un peu plus de 200 en France métropolitaine**, selon l'Inventaire national du patrimoine naturel et les guides spécialisés. Seule une poignée d'entre elles entre dans nos logements." },
       { t: 'p', x: "Une fourmi seule ne survit pas longtemps : c'est la **colonie** qui compte. On parle souvent de « superorganisme » : chaque individu a un rôle, et la colonie fonctionne comme un seul être vivant, avec la reine comme cœur." },
+      { t: 'img', src: '/fourmis/lasius-niger.jpg', alt: "Fourmi noire des jardins Lasius niger élevant des cochenilles sur une tige", legende: "La **fourmi noire des jardins** (Lasius niger), la plus courante en Île-de-France : elle **élève des pucerons et des cochenilles** pour leur miellat, d'où ses pistes vers les plantes.", credit: "Katja Schulz from Washington, D. C., USA", licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Black_Garden_Ant_tending_Citrus_Mealybug_(16063538972).jpg' },
       { t: 'h2', x: "La colonie : qui fait quoi ?" },
       { t: 'table', head: ['Membre', 'Rôle', 'Ce qu\'il faut retenir'], rows: [
         ['La reine', 'Pond tous les œufs de la colonie', 'Elle vit plusieurs années. Tant qu\'elle est en vie, la colonie se reconstitue'],
@@ -4960,6 +5050,7 @@ export const ARTICLES: Article[] = [
         "**Elles ralentissent l'hiver.** Dehors, la colonie passe l'hiver au ralenti au fond du nid et repart au printemps. Les espèces qui vivent dans les bâtiments chauffés, comme la fourmi pharaon, restent actives toute l'année.",
         "**Elles sont utiles au jardin.** Elles aèrent le sol, dispersent des graines et mangent d'autres insectes. On ne les traite que lorsqu'elles entrent dans la maison ou nichent contre les murs.",
       ] },
+      { t: 'img', src: '/fourmis/monomorium-pharaonis.jpg', alt: "Fourmi pharaon Monomorium pharaonis vue de profil", legende: "La **fourmi pharaon** : minuscule (environ 2 mm), **jaune ambré**, elle niche **à l'intérieur** des bâtiments chauffés et compte **plusieurs reines** par colonie.", credit: "April Nobile", licence: 'CC BY 4.0', page: 'https://commons.wikimedia.org/wiki/File:Monomorium_pharaonis_casent0173986_profile_1.jpg' },
       { t: 'h2', x: "Comment se reproduisent-elles ?" },
       { t: 'h3', x: "1. Le vol nuptial" },
       { t: 'p', x: "Quelques jours par an, souvent au printemps ou en été par temps chaud et lourd, une colonie bien installée libère des **fourmis ailées** : des mâles et de futures reines. Ils s'envolent, parfois en même temps que les colonies voisines de la même espèce, et s'accouplent en vol ou au sol. C'est l'**essaimage**." },
@@ -4980,6 +5071,7 @@ export const ARTICLES: Article[] = [
       { t: 'callout', tone: 'warn', title: "Une reine peut vivre plus de 20 ans", x: "Les ouvrières que vous tuez seront remplacées en quelques semaines, mais la reine, elle, peut pondre pendant des années, voire des décennies. Tant qu'elle vit, la colonie revient chaque printemps. C'est pour cela que tout traitement efficace doit l'atteindre." },
       { t: 'h3', x: "Une reine ou plusieurs ?" },
       { t: 'p', x: "Beaucoup d'espèces n'ont **qu'une reine** par colonie. D'autres en ont **de nombreuses** : on les dit **polygynes**. C'est le cas de la fourmi pharaon, des fourmis rouges (Myrmica) et des fourmis envahissantes comme **Tapinoma magnum**. Leurs colonies peuvent se diviser : un groupe d'ouvrières part avec quelques reines et du couvain pour fonder un nouveau nid. C'est le **bouturage**, et c'est exactement ce qu'un spray provoque." },
+      { t: 'img', src: '/fourmis/camponotus-ligniperda.jpg', alt: "Fourmi charpentière Camponotus ligniperda vue de profil", legende: "Une **fourmi charpentière** (Camponotus) : grande, elle creuse ses galeries **dans le bois humide ou abîmé**. Des petits tas de sciure fine trahissent sa présence.", credit: "April Nobile", licence: 'CC BY 4.0', page: 'https://commons.wikimedia.org/wiki/File:Camponotus_ligniperda_casent0173649_profile_1.jpg' },
       { t: 'h2', x: "D'où viennent les fourmis de votre maison ?" },
       { t: 'ul', items: [
         "**Du jardin, de la cour ou de la terrasse** : la plupart des fourmis qui entrent nichent dehors, sous les dalles, au pied des murs, dans les pelouses ou les jardinières.",
@@ -5021,6 +5113,7 @@ export const ARTICLES: Article[] = [
         ['Fourmis rouges', 'Pelouses humides', 'Souvent plusieurs', 'Traitement du nid'],
         ['Tapinoma magnum', 'Jardins, terrasses, maisons', 'Très nombreuses', 'Appâts, plusieurs passages, action collective'],
       ] },
+      { t: 'img', src: '/fourmis/lasius-flavus.jpg', alt: "Fourmi jaune Lasius flavus en gros plan", legende: "La **fourmi jaune** (Lasius flavus) vit presque toujours **sous terre**, sous les pelouses : on la voit surtout au moment de l'**essaimage**, quand les ailés sortent.", credit: "AJC1 from UK", licence: 'CC BY-SA 2.0', page: 'https://commons.wikimedia.org/wiki/File:Angry_Ant_(Explored)_(31456859231).jpg' },
       { t: 'h2', x: "Sont-elles dangereuses ?" },
       { t: 'ul', items: [
         "**La plupart sont surtout gênantes** : elles souillent les aliments et le plan de travail, mais ne transmettent pas de maladie connue dans un logement ordinaire.",
@@ -5089,6 +5182,7 @@ export const ARTICLES: Article[] = [
     readMin: 9,
     tldr: "Rats, punaises de lit, cafards : la panique est le meilleur allié des escrocs. Les pièges les plus courants sont les faux agents « officiels », les prospectus aux couleurs de la mairie, le diagnostic par téléphone, l'infestation inventée, le prix qui explose sur place et le paiement réclamé avant l'intervention. Exigez un déplacement, un devis écrit et détaillé, un certificat Certibiocide et une facture. Ne payez jamais avant la fin de la prestation. En cas de problème : SignalConso.",
     service: { href: '/services/deratisation', label: 'Dératisation professionnelle : devis gratuit' },
+    photos: ['ratPiege', 'cafardsSol'],
     blocks: [
       { t: 'p', x: "Un **rat dans la cuisine**, des **piqûres au réveil**, des **cafards** sous l'évier : quand les nuisibles débarquent, on veut une solution **tout de suite**. C'est exactement sur cette **urgence** que comptent les **escrocs**. La **DGCCRF** (la répression des fraudes) le dit sans détour : la hausse des infestations de punaises de lit a « aiguisé l'appétit de personnes peu scrupuleuses ». Voici **les 8 pièges les plus courants** et **comment reconnaître un vrai professionnel** en quelques minutes." },
       { t: 'callout', tone: 'warn', title: 'La règle d’or', x: "**Ne payez jamais avant que l'intervention soit réalisée**, et **ne signez rien sous la pression**. Un professionnel sérieux vous laisse le temps de lire son devis." },
