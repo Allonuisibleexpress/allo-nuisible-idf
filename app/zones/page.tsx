@@ -91,6 +91,10 @@ export default function ZonesPage() {
           { q: 'Intervenez-vous en dehors du Val-de-Marne ?', a: 'Oui, à Paris, dans les Hauts-de-Seine et dans les autres départements d’Île-de-France, selon nos disponibilités.' },
           { q: 'Vos prix changent-ils selon la ville ?', a: 'Nos prix de départ sont les mêmes partout en Île-de-France. Le devis est gratuit et fixé avant l’intervention.' },
           { q: 'Intervenez-vous le week-end ?', a: 'Oui, 7j/7, y compris le week-end et les jours fériés.' },
+          { q: 'Intervenez-vous le jour même ?', a: 'Très souvent, surtout autour de notre base de Saint-Maurice : Maisons-Alfort, Charenton-le-Pont, Joinville-le-Pont, Vincennes, Créteil, Saint-Maur-des-Fossés. Pour un nid de frelons, l’intervention se fait en général sous 1 heure.' },
+          { q: 'Quels nuisibles traitez-vous dans ces villes ?', a: 'Rats et souris, punaises de lit, cafards, nids de guêpes et de frelons, fourmis, puces, acariens, anthrènes, chenilles processionnaires et pigeons.' },
+          { q: 'Les frais de déplacement sont-ils compris ?', a: 'Le prix est annoncé dans le devis gratuit, avant l’intervention : vous connaissez le montant à payer avant que le technicien ne commence.' },
+          { q: 'Comment trouver la page de ma ville ?', a: 'Choisissez votre département puis votre ville dans la liste de cette page, ou appelez le 07 68 07 72 19.' },
         ]} />
       </main>
       <Footer />

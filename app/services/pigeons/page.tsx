@@ -63,6 +63,9 @@ const data: ServiceData = {
     { q: 'Faut-il une autorisation pour installer un filet ?', a: 'En copropriété, une autorisation du syndic et du conseil syndical est généralement nécessaire. Nous pouvons vous fournir un dossier technique pour faciliter cette démarche.' },
     { q: 'Les dispositifs résistent-ils aux intempéries ?', a: 'Oui. Nos pics sont en acier inoxydable galvanisé résistant aux UV, à la pluie et au gel. Les filets sont en polypropylène traité anti-UV avec une durée de vie de 10 à 15 ans.' },
     { q: 'Combien de temps dure la pose ?', a: 'De 2 heures à une journée complète selon la surface à protéger. Nos équipes interviennent en hauteur avec les équipements de sécurité requis. Aucune nuisance pour les occupants.' },
+    { q: 'Combien coûte un dépigeonnage ?', a: 'À partir de 150 € TTC pour un balcon, devis gratuit. Les façades et grandes surfaces sont établies sur devis.' },
+    { q: 'Le dépigeonnage utilise-t-il des produits ?', a: 'Non : pics inox, filets et dispositifs électriques empêchent les pigeons de se poser et de nicher, sans aucun produit.' },
+    { q: 'Nettoyez-vous les fientes ?', a: 'Oui, le nettoyage et la désinfection du balcon ou de la surface peuvent être faits avant la pose des protections.' },
   ],
   ctaTitle: 'Des pigeons envahissants ?\nOn protège votre bien.',
 }

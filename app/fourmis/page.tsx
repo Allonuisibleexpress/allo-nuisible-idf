@@ -187,6 +187,9 @@ const FAQ = [
   { q: 'Que faire quand il y a plusieurs reines ?', a: 'Chez la fourmi pharaon, la fourmi Tapinoma ou les fourmis rouges, la colonie a de nombreuses reines et peut se diviser. Il faut un appât adapté, ne jamais pulvériser, et prévoir des passages de contrôle.' },
   { q: 'Combien de temps vit une reine des fourmis ?', a: 'De 5 à 20 ans selon les espèces, environ 20 ans chez la fourmi noire des jardins, contre 1 à 2 ans pour une ouvrière. C\'est pour cela qu\'une colonie revient chaque année tant que la reine n\'est pas atteinte.' },
   { q: 'Les fourmis volantes sont-elles une espèce à part ?', a: 'Non. Ce sont les futures reines et les mâles d\'une colonie, qui sortent quelques jours par an pour s\'accoupler. Si elles apparaissent à l\'intérieur, le nid est tout proche.' },
+  { q: 'Combien de temps faut-il pour se débarrasser des fourmis ?', a: 'Avec un gel appât professionnel posé sur les pistes, le résultat se voit en général sous 48 heures : les ouvrières rapportent l’appât à la reine et à la colonie.' },
+  { q: 'Combien coûte un traitement contre les fourmis ?', a: 'Chez Allo Nuisible IDF, à partir de 120 € TTC, devis gratuit, garantie 1 an, à Paris et en Île-de-France.' },
+  { q: 'Faut-il détruire la fourmilière du jardin ?', a: 'Pas forcément : les fourmis du jardin sont utiles. Le but est d’empêcher celles qui entrent dans la maison, en traitant leurs pistes et en rebouchant les fissures par où elles passent.' },
 ]
 
 export default function FourmisTypesPage() {

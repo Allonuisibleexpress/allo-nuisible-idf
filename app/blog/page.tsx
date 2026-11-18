@@ -76,6 +76,10 @@ export default function BlogPage() {
           { q: 'Les conseils du blog remplacent-ils un professionnel ?', a: 'Ils aident à comprendre et à réagir vite. Pour une infestation installée, un traitement professionnel reste le plus efficace.' },
           { q: 'Comment savoir quel nuisible j’ai chez moi ?', a: 'Utilisez notre page « Identifier un nuisible » ou envoyez-nous une photo sur WhatsApp : un technicien vous répond gratuitement.' },
           { q: 'Les récits d’intervention sont-ils réels ?', a: 'Oui, ils racontent de vraies interventions, avec les photos et vidéos de nos techniciens.' },
+          { q: 'Les articles citent-ils leurs sources ?', a: 'Oui : chaque article donne ses sources en bas de page (ANSES, ARS Île-de-France, Assurance maladie, Wikipédia, universités), et nous n’inventons aucun chiffre.' },
+          { q: 'Où trouver les photos de chaque stade d’un nuisible ?', a: 'Dans nos guides de cycle de vie : punaise de lit, puce, anthrène, avec une photo de chaque stade.' },
+          { q: 'Proposez-vous des solutions écologiques dans le blog ?', a: 'Oui : dératisation sans mort-aux-rats, punaises de lit sans insecticide, cryogénie, vapeur sèche. Écologique veut dire chez nous sans biocide déposé.' },
+          { q: 'Puis-je poser une question sur un article ?', a: 'Oui, appelez le 07 68 07 72 19 ou envoyez une photo sur WhatsApp : nous vous répondons gratuitement.' },
         ]} />
       </main>
       <Footer />

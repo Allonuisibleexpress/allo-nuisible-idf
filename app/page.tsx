@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 import PhotosChantiers from '@/components/PhotosChantiers'
 import AvisDefilants from '@/components/AvisDefilants'
 import AccueilVilles from '@/components/AccueilVilles'
-import { CHAINE_YOUTUBE } from '@/lib/youtube'
+import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
 
 export const metadata = pageMetadata({
   title: 'Allo Nuisible IDF : punaises de lit, rats, cafards 7j/7',
@@ -47,7 +47,7 @@ const localBusiness = {
     closes: '23:59',
   },
   priceRange: '€€',
-  sameAs: ['https://maps.google.com/?cid=11887181769674817823', CHAINE_YOUTUBE],
+  sameAs: ['https://maps.google.com/?cid=11887181769674817823', CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
   employee: GERANT,
   knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
 }
@@ -59,6 +59,8 @@ const FAQ_ACCUEIL = [
   { q: 'Vos traitements sont-ils garantis ?', a: 'Oui, nos interventions sont garanties 1 an : si les nuisibles reviennent, notre technicien revient sans supplément.' },
   { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, nos techniciens sont titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides et des raticides professionnels.' },
   { q: 'Dans quelles villes intervenez-vous ?', a: 'À Paris et dans tout le Val-de-Marne : Saint-Maurice, Maisons-Alfort, Charenton-le-Pont, Créteil, Vincennes, Saint-Maur-des-Fossés, Ivry-sur-Seine et bien d’autres, ainsi que dans une partie de l’Île-de-France.' },
+  { q: 'Proposez-vous des traitements écologiques, sans produit chimique ?', a: 'Oui, quand c’est possible : cryogénie et vapeur sèche contre les punaises de lit, dératisation sans raticide ni poison (pièges et colmatage des accès), vapeur sèche contre les acariens et les anthrènes. Écologique veut dire ici : aucun biocide déposé chez vous.' },
+  { q: 'Combien coûte la destruction d’un nid de guêpes ou de frelons ?', a: 'À partir de 89 € TTC, intervention en général sous 1 heure, perche jusqu’à 23 m. La destruction de nid est garantie 3 mois.' },
 ]
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FAQ_ACCUEIL.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
 

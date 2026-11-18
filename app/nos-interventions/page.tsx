@@ -148,6 +148,10 @@ export default function NosInterventionsPage() {
           { q: 'Où peut-on voir d’autres chantiers ?', a: 'Sur notre fiche Google, notre chaîne YouTube et dans les récits d’intervention de notre blog.' },
           { q: 'Peut-on voir un chantier près de chez soi ?', a: 'Nos pages ville présentent, quand nous en avons, un chantier réalisé dans la commune.' },
           { q: 'Comment obtenir un devis pour un cas similaire ?', a: 'Appelez le 07 68 07 72 19 ou envoyez une photo sur WhatsApp : le devis est gratuit.' },
+          { q: 'Pourquoi une bannière sur vos photos et vidéos ?', a: 'Pour montrer qu’il s’agit bien de nos chantiers : chaque photo et vidéo prise par nos techniciens porte la mention Allo Nuisible IDF.' },
+          { q: 'Quelles interventions montrez-vous ?', a: 'Punaises de lit traitées par cryogénie ou insecticide, rats et souris capturés, logements encombrés nettoyés, nids de frelons retirés à la perche ou à la nacelle, cafards, pigeons.' },
+          { q: 'Ajoutez-vous régulièrement de nouveaux chantiers ?', a: 'Oui, au fil de nos interventions, ici, dans les récits du blog et sur notre chaîne YouTube @allonuisibleidf.' },
+          { q: 'Vos interventions sont-elles garanties ?', a: 'Oui, 1 an pour tous les traitements et 3 mois pour la destruction de nids de guêpes et de frelons.' },
         ]} />
       </main>
       <Footer />

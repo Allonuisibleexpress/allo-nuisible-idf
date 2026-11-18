@@ -235,6 +235,9 @@ export default function ProfessionnelsPage() {
           { q: 'Pouvez-vous intervenir en dehors des heures d’ouverture ?', a: 'Oui, nous adaptons les horaires à votre activité, tôt le matin, en soirée ou le week-end.' },
           { q: 'Travaillez-vous avec les syndics de copropriété ?', a: 'Oui : parties communes, caves, locaux poubelles et coordination des traitements entre les logements.' },
           { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, tous sont titulaires du Certibiocide.' },
+          { q: 'Intervenez-vous dans les restaurants et commerces alimentaires ?', a: 'Oui : cafards, rats et souris, avec des passages réguliers, une attestation après chaque intervention et un traitement discret en dehors des heures d’ouverture.' },
+          { q: 'Pouvez-vous traiter un hôtel ou une location meublée contre les punaises de lit ?', a: 'Oui, chambre par chambre, avec inspection des chambres voisines. La cryogénie permet de traiter sans produit et de remettre la chambre en service rapidement. Deux passages inclus.' },
+          { q: 'Proposez-vous une dératisation sans raticide pour une école ou une crèche ?', a: 'Oui : pièges sans poison et colmatage des accès, avec suivi des captures. Le prix est établi sur devis gratuit.' },
         ]} />
       </main>
       <Footer />

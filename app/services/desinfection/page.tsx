@@ -57,6 +57,9 @@ const data: ServiceData = {
     { q: 'Faut-il quitter le logement pendant la désinfection ?', a: 'Oui, pendant la durée de l\'intervention et 2 à 4 heures après selon les produits. Les animaux domestiques doivent également quitter les lieux. Nos techniciens vous donnent le délai précis de réoccupation.' },
     { q: 'L\'attestation est-elle acceptée par les administrations ?', a: 'Oui. Nos techniciens sont certifiés Certibiocide et nos attestations sont conformes aux exigences réglementaires. Elles sont acceptées par les DDPP (anciens services vétérinaires), les inspections sanitaires et les assurances.' },
     { q: 'Intervenez-vous en urgence ?', a: 'Oui. Nous proposons des interventions urgentes pour les professionnels (restaurants sur fermeture administrative, contamination virale) dans des délais très courts, y compris le soir et le week-end.' },
+    { q: 'Désinfectez-vous un logement encombré ou insalubre ?', a: 'Oui, y compris les logements touchés par le syndrome de Diogène : débarras, nettoyage et désinfection, avec dératisation si des rongeurs sont présents.' },
+    { q: 'Combien coûte une désinfection ?', a: 'À partir de 150 € TTC, devis gratuit. Le prix dépend de la surface et de l’état du logement ou du local.' },
+    { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, ils sont titulaires du Certibiocide, obligatoire pour utiliser des produits biocides professionnels.' },
   ],
   ctaTitle: 'Besoin d\'une désinfection ?\nContactez-nous maintenant.',
 }

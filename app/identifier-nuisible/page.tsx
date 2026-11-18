@@ -71,6 +71,9 @@ const FAQ = [
   { q: 'Quelle petite bête argentée vit dans ma salle de bain ?', a: 'C’est presque toujours un poisson d’argent : gris argenté, en forme de goutte, avec trois filaments au bout du corps. Il est inoffensif mais signale un excès d’humidité.' },
   { q: 'Comment reconnaître un frelon asiatique ?', a: 'Il est noir avec un seul anneau orangé sur l’abdomen et le bout des pattes jaune. Le frelon européen, lui, est roux et jaune et plus gros. Dans les deux cas, ne vous approchez pas du nid.' },
   { q: 'L’identification est-elle vraiment gratuite ?', a: 'Oui. Envoyez une photo nette, si possible avec une pièce à côté pour l’échelle : un technicien vous dit de quoi il s’agit et si un traitement est utile. Sans engagement.' },
+  { q: 'Comment reconnaître une larve d’anthrène ?', a: 'Une petite larve brune et velue de 4 à 5 mm, avec des touffes de poils à l’arrière, sous les tapis ou au fond des placards. Elle ronge la laine mais ne pique pas.' },
+  { q: 'Rat ou souris : comment faire la différence ?', a: 'La souris a un museau pointu, de grandes oreilles et une queue aussi longue que le corps ; le rat est bien plus massif, avec un museau arrondi et de petites oreilles. Les crottes de rat sont aussi nettement plus grosses.' },
+  { q: 'Ce petit insecte qui saute, est-ce une puce ?', a: 'Probablement, surtout si vous avez des piqûres groupées aux chevilles ou un animal qui se gratte. La puce mesure 1 à 3 mm, elle est brune et aplatie sur les côtés.' },
 ]
 
 export default function IdentifierNuisiblePage() {

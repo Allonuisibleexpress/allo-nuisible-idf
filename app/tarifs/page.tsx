@@ -244,6 +244,7 @@ export default function TarifsPage() {
           { q: 'Vos traitements sont-ils garantis ?', a: 'Oui, nos interventions sont garanties 1 an : si les nuisibles reviennent, notre technicien revient.' },
           { q: 'Les prix sont-ils les mêmes à Paris et dans le Val-de-Marne ?', a: 'Oui, nos prix de départ sont les mêmes à Paris et dans le Val-de-Marne.' },
           { q: 'Qui paie le traitement dans un logement loué ?', a: 'Le logement loué doit être exempt de toute infestation d’espèces nuisibles et parasites (loi du 6 juillet 1989, article 6). Prévenez votre propriétaire par écrit dès les premiers signes.' },
+          { q: 'Le traitement écologique coûte-t-il plus cher ?', a: 'Le traitement écologique des punaises de lit par cryogénie commence au même prix, dès 290 € TTC avec 2 passages inclus. La dératisation sans raticide est établie sur devis gratuit, selon les accès à reboucher et le nombre de pièges.' },
         ]} />
       </main>
       <Footer />
