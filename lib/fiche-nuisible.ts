@@ -2,6 +2,7 @@
 // Chaque paragraphe s'appuie sur les données réelles de la ville (Insee, OpenStreetMap, inventaire SRU : lib/donnees-locales.ts)
 // et contient des liens internes (service, blog, villes voisines, département). Pas de chiffre inventé, pas de tiret long.
 import { DONNEES_LOCALES } from './donnees-locales'
+import { deVille } from '@/lib/elision'
 
 type V = { slug: string; nom: string; a: string; code: string }
 type Voisine = { slug: string; nom: string }
@@ -44,8 +45,8 @@ export function ficheFourmis(v: V, voisines: Voisine[]): string[] {
     `### Fourmis volantes ${v.a} : faut-il s’inquiéter ?`,
     `Les jours chauds et orageux de l’été, les colonies lâchent leurs **fourmis ailées** : c’est l’essaimage, le vol nuptial des futures reines. Des fourmis volantes dans la maison signalent un nid tout proche, souvent sous une terrasse, dans un mur ou sous un plancher. C’est le bon moment pour faire traiter la colonie.`,
     `### Traitement anti-fourmis ${v.a} : prix, délai et garantie`,
-    `Notre traitement contre les fourmis ${v.a} commence **dès 120 € TTC**, avec un devis gratuit donné avant le déplacement et une **garantie d’un an**. Nous intervenons dans tous les quartiers${quartiers.length ? `, de ${liste(quartiers)}` : ''}, 7j/7, souvent dans la semaine. Pour les copropriétés, restaurants et commerces, nous proposons un suivi avec attestation.`,
-    `### Fourmis près de ${v.nom} : nos autres villes`,
+    `Notre traitement contre les fourmis ${v.a} commence **dès 120 € TTC**, avec un devis gratuit donné avant le déplacement et une **garantie d’un an**. Nous intervenons dans tous les quartiers${quartiers.length ? `, notamment ${liste(quartiers)}` : ''}, 7j/7, souvent dans la semaine. Pour les copropriétés, restaurants et commerces, nous proposons un suivi avec attestation.`,
+    `### Fourmis près ${deVille(v.nom)} : nos autres villes`,
     `Nous traitons aussi les fourmis à ${liensVoisines('/fourmis', voisines)}.${dep ? ` Pour tous nos services ${dep[1]}, voir [la page du département](/zones/${dep[0]}).` : ''} Vous hésitez sur l’espèce ? Lisez notre article sur la [fourmi Tapinoma magnum](/blog/tapinoma-magnum-fourmi-invasive), souvent confondue avec les fourmis de jardin.`,
   ]
 }
@@ -65,8 +66,8 @@ export function fichePuces(v: V, voisines: Voisine[], derat: boolean, souris = f
     `Les puces ne viennent pas seulement du chat ou du chien. Les **rats**, les **souris** et la **fouine** (qui n’est pas un rongeur mais un petit carnivore de la famille de la belette) portent eux aussi des puces. Quand ils s’installent dans une cave, des combles ou un vide sanitaire, leurs puces se multiplient dans leur nid. Si l’animal meurt, est chassé ou piégé, ses puces cherchent aussitôt un nouvel hôte : elles descendent alors vers les pièces habitées et piquent les occupants. C’est une cause fréquente de **puces sans animal domestique**.`,
     `C’est pourquoi nous traitons toujours les deux problèmes ensemble : éliminer les rongeurs et boucher leurs accès, puis traiter les puces.${derat ? ` Voir notre page [dératisation ${v.a}](/deratisation/${v.slug})` : ' Voir notre page [dératisation en Île-de-France](/services/deratisation)'}${souris ? ` et notre page [souris ${v.a}](/souris/${v.slug})` : ''}. Pour savoir quel animal vit chez vous, lisez [rat ou souris : comment les reconnaître](/blog/rat-ou-souris-comment-reconnaitre) et notre [guide des rongeurs](/blog/guide-des-rongeurs), qui présente aussi la fouine et le lérot.`,
     `### Traitement anti-puces ${v.a} : prix, délai et garantie`,
-    `Notre traitement contre les puces ${v.a} commence **dès 120 € TTC**, avec un devis gratuit et une **garantie d’un an**. Le technicien traite toutes les pièces où l’animal circule, avec un insecticide professionnel qui agit aussi sur les larves. Nous intervenons dans tous les quartiers${quartiers.length ? `, de ${liste(quartiers)}` : ''}, 7j/7. Pour comprendre le cycle de la puce et pourquoi un second passage est parfois utile, lisez [tout savoir sur les puces](/blog/puces-tout-savoir).`,
-    `### Puces près de ${v.nom} : nos autres villes`,
+    `Notre traitement contre les puces ${v.a} commence **dès 120 € TTC**, avec un devis gratuit et une **garantie d’un an**. Le technicien traite toutes les pièces où l’animal circule, avec un insecticide professionnel qui agit aussi sur les larves. Nous intervenons dans tous les quartiers${quartiers.length ? `, notamment ${liste(quartiers)}` : ''}, 7j/7. Pour comprendre le cycle de la puce et pourquoi un second passage est parfois utile, lisez [tout savoir sur les puces](/blog/puces-tout-savoir).`,
+    `### Puces près ${deVille(v.nom)} : nos autres villes`,
     `Nous traitons aussi les puces à ${liensVoisines('/puces', voisines)}.${dep ? ` Toutes nos villes ${dep[1]} : [puces ${dep[1]}](/puces/${dep[0]}).` : ''} Voir aussi notre page [traitement des puces en Île-de-France](/services/puces).`,
   ]
 }
@@ -110,7 +111,7 @@ export function ficheFrelons(v: V, voisines: Voisine[]): string[] {
     `Restez à distance, ne bouchez pas l’entrée et n’arrosez pas le nid ${v.a} : les frelons défendent vivement ses abords. Éloignez enfants et animaux. En cas de piqûres multiples ou de gonflement du visage, appelez le **15** ou le **112**.`,
     `### Destruction de nid de frelons ${v.a} : prix, délai et méthode`,
     `Nous détruisons les nids de frelons et de guêpes ${v.a} **dès 89 € TTC** pour un nid accessible, **149 €** à la perche, **199 €** en toiture, combles ou cheminée, nacelle sur devis, avec un devis donné avant le déplacement et une **garantie de 3 mois** : si un nouveau nid se forme chez vous, nous revenons. Voir notre service [destruction de nids de guêpes et frelons](/services/guepes-frelons) et notre article [nid de frelon en hiver](/blog/nid-de-frelon-en-hiver).`,
-    `### Nids de frelons près de ${v.nom} : nos autres villes`,
+    `### Nids de frelons près ${deVille(v.nom)} : nos autres villes`,
     `Nous intervenons aussi à ${liensVoisines('/destruction-nid-frelon', voisines)}.${dep ? ` Toutes nos villes ${dep[1]} : [destruction de nid de frelons ${dep[1]}](/destruction-nid-frelon/${dep[0]}).` : ''} Nos chantiers en images : [nid de 12 mètres en nacelle à Champigny](/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne), [nid dans une cheminée à Nogent](/blog/nid-frelons-cheminee-nogent-sur-marne).`,
   ]
 }
@@ -157,7 +158,7 @@ export function fichePunaises(v: V, voisines: Voisine[]): string[] {
     )
   }
   out.push(
-    `### Punaises de lit près de ${v.nom}`,
+    `### Punaises de lit près ${deVille(v.nom)}`,
     `Nous traitons aussi les punaises de lit à ${liensVoisines('/punaises-de-lit', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/punaises-de-lit/${dep[0]})` : ''}.`,
   )
   return out
@@ -185,7 +186,7 @@ export function ficheCafards(v: V, voisines: Voisine[]): string[] {
     }
   }
   out.push(
-    `### Cafards près de ${v.nom}`,
+    `### Cafards près ${deVille(v.nom)}`,
     `Nous traitons aussi les cafards à ${liensVoisines('/cafards', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/cafards/${dep[0]})` : ''}.`,
   )
   return out
@@ -201,7 +202,7 @@ export function ficheChenilles(v: V, voisines: Voisine[]): string[] {
     const ha = d.pinsHa ?? 0
     out.push(
       `### Pins et chênes ${v.a} : les arbres à surveiller`,
-      `${ha >= 1 ? `La BD Forêt de l’IGN recense environ **${nf(Math.round(ha))} ha de forêts de pins** sur la commune de ${v.nom}.` : `La BD Forêt de l’IGN ne recense pas de forêt de pins à ${v.nom} : les nids se trouvent surtout sur des pins isolés, dans les jardins, les résidences et les alignements.`}${verts.length ? ` Espaces verts recensés sur OpenStreetMap : ${liste(verts)}.` : ''} Voir [processionnaire du pin](/blog/chenille-processionnaire-du-pin).`,
+      `${ha >= 1 ? `La BD Forêt de l’IGN recense environ **${nf(Math.round(ha))} ha de forêts de pins** sur la commune ${deVille(v.nom)}.` : `La BD Forêt de l’IGN ne recense pas de forêt de pins à ${v.nom} : les nids se trouvent surtout sur des pins isolés, dans les jardins, les résidences et les alignements.`}${verts.length ? ` Espaces verts recensés sur OpenStreetMap : ${liste(verts)}.` : ''} Voir [processionnaire du pin](/blog/chenille-processionnaire-du-pin).`,
     )
     const quartiers = d.quartiers?.slice(0, 4) ?? []
     out.push(
@@ -210,7 +211,7 @@ export function ficheChenilles(v: V, voisines: Voisine[]): string[] {
     )
   }
   out.push(
-    `### Chenilles processionnaires près de ${v.nom}`,
+    `### Chenilles processionnaires près ${deVille(v.nom)}`,
     `Nous intervenons aussi à ${liensVoisines('/chenilles-processionnaires', voisines)}${dep ? `. Tous nos services ${dep[1]} : [la page du département](/zones/${dep[0]})` : ''}.`,
   )
   return out
@@ -230,7 +231,7 @@ export function ficheAcariens(v: V, voisines: Voisine[]): string[] {
     )
   }
   out.push(
-    `### Acariens près de ${v.nom}`,
+    `### Acariens près ${deVille(v.nom)}`,
     `Nous traitons aussi les acariens à ${liensVoisines('/acariens', voisines)}${dep ? `. Tous nos services ${dep[1]} : [la page du département](/zones/${dep[0]})` : ''}.`,
   )
   return out
@@ -315,7 +316,7 @@ export function ficheSouris(v: V, voisines: Voisine[], derat: boolean): string[]
     )
   }
   out.push(
-    `### Souris près de ${v.nom}`,
+    `### Souris près ${deVille(v.nom)}`,
     `Nous traitons aussi les souris à ${liensVoisines('/souris', voisines)}${dep ? `, et dans toutes nos [villes ${dep[1]}](/souris/${dep[0]})` : ''}.`,
   )
   return out

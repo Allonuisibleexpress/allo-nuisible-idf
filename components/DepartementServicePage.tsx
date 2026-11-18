@@ -137,6 +137,9 @@ export function metaDep(s: ServiceDep, d: DepSlug) {
   return pageMetadata({ title: titreDep(s, d), description: c.description(dep.dans, dep.code), path: `${c.base}/${d}` })
 }
 
+import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
+import { villesPoleService } from '@/lib/villes-famille'
+
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
   const c = SERVICES_DEP[s], dep = DEPS[d], ct = c.contenu[d]
   const villes = villesDuDep(s, d)
@@ -144,9 +147,11 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
   const autresDeps = DEP_SLUGS.filter((x) => x !== d)
   // Articles du blog sur le même nuisible (13/11/2026)
   const CAT: Record<string, string> = { deratisation: 'Rongeurs', souris: 'Rongeurs', punaises: 'Punaises de lit', frelons: 'Guêpes et frelons', cafards: 'Cafards', puces: 'Puces' }
-  const articlesDep = ARTICLES.filter((x) => x.category === CAT[s]).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 6)
+  const articlesDep = ARTICLES.filter((x) => x.category === CAT[s]).sort((x, y) => y.date.localeCompare(x.date)).slice(0, 9)
   const autresServices = (Object.keys(SERVICES_DEP) as ServiceDep[]).filter((x) => x !== s)
   const villesProches = villes.slice(0, 6).map((v) => v.nom)
+  // Villes autour de notre base de Saint-Maurice (18/11/2026), mises en avant sur toutes les pages département
+  const pole = villesPoleService(c.base, '').filter((v) => !villes.some((x) => x.slug === v.slug))
   // Réponse directe par nuisible (13/11/2026), pour les moteurs de recherche et les IA
   const REP: Record<string, { probleme: string; quoi: string; comment: string; garantie: string }> = {
     deratisation: { probleme: 'rats ou de souris', quoi: 'une dératisation', comment: 'Inspection et recherche des accès, postes d’appâtage sécurisés ou, sans raticide, piège Ekomille et pièges, puis accès rebouchés.', garantie: '1 an : si les rongeurs reviennent, le technicien revient.' },
@@ -388,6 +393,25 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             </div>
           </div>
         </section>
+
+        <PhotoNuisibleVille basePath={c.base} a={dep.dans} />
+
+        {pole.length > 0 && (
+          <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-xl md:text-2xl font-black text-white mb-2">{c.label} autour de notre base de Saint-Maurice</h2>
+              <p className="text-white/55 text-sm mb-6">Nos techniciens partent de Saint-Maurice (94) : voici les villes les plus proches de notre base.</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {pole.map((v) => (
+                  <a key={v.slug} href={`${c.base}/${v.slug}`} className="rounded-full px-3.5 py-1.5 text-[13px] font-semibold hover:text-white transition-colors"
+                    style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
+                    {c.label} {v.nom}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>

@@ -78,6 +78,17 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
                 </div>
               </div>
             )}
+            <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+              {[
+                { href: '/tarifs', label: 'Nos tarifs' },
+                { href: '/nos-interventions', label: 'Nos interventions en images' },
+                { href: '/services/traitements-sans-produit-chimique', label: 'Traitements sans produit chimique' },
+                { href: '/identifier-nuisible', label: 'Identifier un nuisible' },
+                { href: '/faq', label: 'Questions fréquentes' },
+              ].map((l) => (
+                <a key={l.href} href={l.href} className="font-bold underline underline-offset-4 decoration-white/20 hover:decoration-white text-white/70 hover:text-white">{l.label}</a>
+              ))}
+            </div>
             {pole.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-black text-white mb-2">{mot} près de notre base de Saint-Maurice (94)</h3>

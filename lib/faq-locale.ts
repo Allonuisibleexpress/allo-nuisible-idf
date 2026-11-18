@@ -4,6 +4,7 @@
 // garantie 1 an, détection canine sur devis, base à Saint-Maurice, 7j/7). Pas de chiffre inventé, pas de tiret long.
 // Plusieurs tournures par question, choisies selon la ville, pour garder les pages différentes les unes des autres.
 import { DONNEES_LOCALES } from './donnees-locales'
+import { deVille } from '@/lib/elision'
 import { phraseDistance } from '@/components/VilleBlocs'
 
 type V = { slug: string; nom: string; a: string; code: string }
@@ -40,7 +41,7 @@ function quartiers(v: V, quoi: string): QR | null {
   if (!q.length) return null
   const vs = voisinesNoms(v, 2)
   return {
-    q: choix(v.slug, 'qq', [`Intervenez-vous dans tous les quartiers de ${v.nom} ?`, `Quels quartiers de ${v.nom} couvrez-vous ?`, `Venez-vous dans mon quartier ${v.a} ?`]),
+    q: choix(v.slug, 'qq', [`Intervenez-vous dans tous les quartiers ${deVille(v.nom)} ?`, `Quels quartiers ${deVille(v.nom)} couvrez-vous ?`, `Venez-vous dans mon quartier ${v.a} ?`]),
     a: `Oui, ${choix(v.slug, 'qa', ['dans toute la ville', 'partout dans la commune', 'dans tous les quartiers'])} pour ${quoi}, notamment ${liste(q)}${vs.length ? `, ainsi qu’à ${liste(vs)}` : ''}.`,
   }
 }
@@ -67,7 +68,7 @@ export function faqLocalePunaises(v: V, existantes: QR[], total = 8): QR[] {
   })
   const gares = (d?.gares ?? []).filter((g, i, t) => t.indexOf(g) === i).slice(0, 2)
   if (gares.length) add({
-    q: choix(v.slug, 'tq', [`Peut-on ramener des punaises de lit des transports ${v.a} ?`, `Les gares de ${v.nom} sont-elles un risque pour les punaises de lit ?`]),
+    q: choix(v.slug, 'tq', [`Peut-on ramener des punaises de lit des transports ${v.a} ?`, `Les gares ${deVille(v.nom)} sont-elles un risque pour les punaises de lit ?`]),
     a: `${gares.length > 1 ? `Les gares ${liste(gares)} voient passer` : `La gare ${gares[0]} voit passer`} beaucoup de voyageurs, mais les punaises de lit ne sautent pas et ne volent pas : elles se déplacent dans les sacs, les valises et les vêtements. Après un voyage, videz vos bagages loin du lit et lavez le linge à 60 °C.`,
   })
   const hotels = d?.poi?.hotels ?? 0
@@ -83,7 +84,7 @@ export function faqLocalePunaises(v: V, existantes: QR[], total = 8): QR[] {
   // Secours (petites villes sans données de quartiers, gares ou hôtels)
   const vs = voisinesNoms(v, 3)
   if (vs.length) add({
-    q: choix(v.slug, 'nq', [`Intervenez-vous aussi autour de ${v.nom} ?`, `Couvrez-vous les communes voisines de ${v.nom} ?`]),
+    q: choix(v.slug, 'nq', [`Intervenez-vous aussi autour ${deVille(v.nom)} ?`, `Couvrez-vous les communes voisines ${deVille(v.nom)} ?`]),
     a: `Oui, nous traitons aussi les punaises de lit à ${liste(vs)}, avec les mêmes méthodes et le même prix de départ.`,
   })
   add({
@@ -118,7 +119,7 @@ export function faqLocaleDeratisation(v: V, existantes: QR[], total = 8): QR[] {
   })
   const eaux = d?.eaux?.slice(0, 2) ?? []
   if (eaux.length && !dejaTraite(existantes, /berge|crue|seine|marne|canal|lac|rivi|étang|eau/i)) add({
-    q: `Les rats viennent-ils ${eaux.length > 1 ? `de ${liste(eaux)}` : `de ${eaux[0]}`} ?`,
+    q: `Les rats viennent-ils ${deVille(eaux.length > 1 ? liste(eaux) : eaux[0])} ?`,
     a: `C’est souvent le cas près de l’eau : le surmulot, ou rat d’égout, nage très bien, vit dans les réseaux et le long des berges, puis remonte par les canalisations, les regards et les caves.`,
   })
   const jardins = d?.jardins ?? 0
@@ -205,7 +206,7 @@ export function faqLocaleFamille(v: V, famille: string, tarifs: Tarif[] | undefi
   })
   const vs = voisinesNoms(v, 3)
   if (vs.length) add({
-    q: choix(v.slug, 'vq3', [`Intervenez-vous aussi autour de ${v.nom} ?`, `Couvrez-vous les communes voisines de ${v.nom} ?`]),
+    q: choix(v.slug, 'vq3', [`Intervenez-vous aussi autour ${deVille(v.nom)} ?`, `Couvrez-vous les communes voisines ${deVille(v.nom)} ?`]),
     a: choix(v.slug, 'va3', [`Oui, pour ${n.les}, nous intervenons aussi à ${liste(vs)}, avec les mêmes prix de départ.`, `Bien sûr : ${liste(vs)} font partie de notre secteur, aux mêmes conditions.`]),
   })
   const att = ATTENTE[famille]

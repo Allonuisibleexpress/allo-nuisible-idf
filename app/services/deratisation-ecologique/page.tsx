@@ -81,6 +81,7 @@ const data: ServiceData = {
     { label: 'Maison et jardin', price: 'Sur devis', description: 'Rats au jardin, caves, combles', features: ['Piège Ekomille', 'Colmatage des accès', 'Suivi jusqu’à la fin', 'Garantie 1 an'], highlight: true },
     { label: 'Établissement', price: 'Sur devis', description: 'École, crèche, restaurant, copropriété', features: ['Plan de lutte sans raticide', 'Registre et attestation', 'Passages programmés', 'Garantie 1 an'], cta: 'Demander un devis' },
   ],
+  photos: ['ratPiege', 'trouRat1', 'trouRat2', 'trouRat3'],
   faq: [
     { q: 'Existe-t-il une dératisation écologique ?', a: 'Oui : lors d’une dératisation, il est possible de ne pas utiliser de biocide. On inspecte le lieu, on rebouche les accès, on installe des dispositifs sans biocide (piège Ekomille, pièges connectés, électriques, mécaniques type tapette, plaques de glu), puis on ferme les derniers accès à la fin de l’intervention.' },
     { q: 'Quels pièges utilisez-vous sans raticide ?', a: 'Le piège Ekomille, des pièges connectés qui signalent les captures, des pièges électriques, des pièges mécaniques type tapette en boîtes sécurisées, et des plaques de glu posées dans des endroits fermés et contrôlés.' },

@@ -1,5 +1,6 @@
 import { GERANT } from '@/lib/seo'
-import { CHAINE_YOUTUBE } from '@/lib/youtube'
+import { deVille } from '@/lib/elision'
+import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
 // Blocs communs aux pages service + ville (refonte du 08/11/2026) : haut de page, étapes d'intervention,
 // tarifs, autres services dans la même ville. Formulations en rotation d'une ville à l'autre (similarité ≤ 0,50).
 import { Phone, Camera, Star, ShieldCheck, Clock, BadgeCheck, ArrowRight, MapPin } from 'lucide-react'
@@ -22,7 +23,7 @@ export function phraseDistance(slug: string, nom: string) {
   if (!r) return ''
   if (slug === 'saint-maurice') return `Notre base est à Saint-Maurice même : nous sommes vos voisins.`
   const v = [
-    `Notre base de Saint-Maurice n'est qu'à ${km(r.km)} km de ${nom} à vol d'oiseau.`,
+    `Notre base de Saint-Maurice n'est qu'à ${km(r.km)} km ${deVille(nom)} à vol d'oiseau.`,
     `${nom} se trouve à ${km(r.km)} km de notre base de Saint-Maurice, à vol d'oiseau.`,
     `Depuis Saint-Maurice, où nous sommes installés, ${nom} est à ${km(r.km)} km à vol d'oiseau.`,
   ]
@@ -131,11 +132,11 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
       {PHOTOS_MAIRIES[slug] && (
         <figure className="mt-10 lg:mt-0 max-w-md mx-auto lg:max-w-none w-full">
           <div className="relative rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.55)' }}>
-            <img src={PHOTOS_MAIRIES[slug].src} alt={PHOTOS_MAIRIES[slug].lieu ? `${PHOTOS_MAIRIES[slug].lieu} : ${titre.toLowerCase()} ${a} par Allo Nuisible IDF` : `${MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}, façade`} width={760} height={900}
+            <img src={PHOTOS_MAIRIES[slug].src} alt={PHOTOS_MAIRIES[slug].lieu ? `${PHOTOS_MAIRIES[slug].lieu} : ${titre.toLowerCase()} ${a} par Allo Nuisible IDF` : `${MAIRIES[slug]?.mairie ?? `Mairie ${deVille(nom)}`}, façade`} width={760} height={900}
               className="w-full h-64 sm:h-80 lg:h-[440px] object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 p-5 text-left" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.85))' }}>
               <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Nous intervenons {a}</p>
-              <p className="text-white font-black text-lg leading-tight">{PHOTOS_MAIRIES[slug].lieu ?? MAIRIES[slug]?.mairie ?? `Mairie de ${nom}`}</p>
+              <p className="text-white font-black text-lg leading-tight">{PHOTOS_MAIRIES[slug].lieu ?? MAIRIES[slug]?.mairie ?? `Mairie ${deVille(nom)}`}</p>
             </div>
           </div>
           <figcaption className="text-[10px] text-white/60 mt-2 text-center lg:text-right">
@@ -237,7 +238,7 @@ export function schemaPrestataire() {
     areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
     openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
     knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
-    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
+    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
     employee: GERANT,
   }
 }
