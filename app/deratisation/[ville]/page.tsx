@@ -38,6 +38,7 @@ import ContactMairie from '@/components/ContactMairie'
 import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import VignettesChantier from '@/components/VignettesChantier'
 import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
@@ -177,11 +178,6 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* En bref */}
         <section className="px-4 pb-4" style={{ background: '#080808' }}>
           <div className="max-w-3xl mx-auto">
-            {v.slug === CHANTIER_DIOGENE.ville && (
-              <div className="mb-8">
-                <VignettesChantier photos={CHANTIER_DIOGENE.photos} videos={CHANTIER_DIOGENE.videos} centre texte={`Notre dernier chantier ${v.a}`} />
-              </div>
-            )}
             <div className="rounded-2xl p-6 md:p-7" style={{ background: 'rgba(232,68,26,0.07)', border: '1px solid rgba(232,68,26,0.25)' }}>
               <p className="text-xs font-bold uppercase tracking-widest mb-3 text-center" style={{ color: ACCENT }}>En bref</p>
               <ul className="space-y-2">
@@ -194,6 +190,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </div>
           </div>
         </section>
+
+        {/* Vidéos du chantier, juste sous « En bref » (19/11/2026) */}
+        {v.slug === CHANTIER_DIOGENE.ville && (
+          <VideosEnHaut videos={CHANTIER_DIOGENE.videos} titre={`Notre dernier chantier ${v.a} en vidéo`} lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
+        )}
 
         <BandeauDevis slug={v.slug} mot="dératisation" a={v.a} prix="120 €" />
 
@@ -259,7 +260,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {v.slug === CHANTIER_DIOGENE.ville && (
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-3xl mx-auto">
-              <MediasChantier photos={CHANTIER_DIOGENE.photos} videos={CHANTIER_DIOGENE.videos}
+              <MediasChantier photos={CHANTIER_DIOGENE.photos}
                 titre={`Notre dernier chantier ${v.a} : logement très encombré`}
                 lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
             </div>

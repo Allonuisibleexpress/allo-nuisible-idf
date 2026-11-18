@@ -13,6 +13,7 @@ import ArticleService from '@/components/ArticleService'
 import VideosDetaillees from '@/components/VideosDetaillees'
 import { FRELONS_ARTICLE, FRELONS_VIDEOS, FRELONS_VIDEOS_INTRO, FRELONS_FAQ_PLUS } from '@/lib/contenu-services/frelons'
 import VignettesChantier from '@/components/VignettesChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import { MEDIAS_FRELONS } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import Navbar from '@/components/Navbar'
@@ -256,7 +257,7 @@ export default function GuêpesFrelonsPage() {
 
             {/* Miniatures de vrais chantiers */}
             <div className="hero-3 -mt-6 mb-10">
-              <VignettesChantier photos={MEDIAS_FRELONS.photos.slice(0, 2)} videos={MEDIAS_FRELONS.videos} centre texte="Nos nids retirés en photos et vidéo" />
+              <VignettesChantier photos={MEDIAS_FRELONS.photos.slice(0, 2)} centre texte="Nos nids retirés en photos et vidéo" />
             </div>
 
             {/* ── NUMÉRO — bouton lava ── */}
@@ -343,6 +344,9 @@ export default function GuêpesFrelonsPage() {
           </div>
         </section>
 
+        {/* Vidéos de chantier juste sous le haut de page (19/11/2026) */}
+        <VideosEnHaut videos={FRELONS_VIDEOS.map((v) => ({ src: v.src, legende: v.legende, poster: v.poster }))} titre="Nos nids de frelons et de guêpes en vidéo" />
+
         {/* ══════════════════ GARANTIE 3 MOIS ══════════════════ */}
         <section className="reveal" style={{ background: '#141414', padding: '52px 16px' }}>
           <div className="max-w-2xl mx-auto">
@@ -416,6 +420,7 @@ export default function GuêpesFrelonsPage() {
 
         {/* Vidéos de chantier détaillées (13/11/2026) : contexte, ce que nous avons fait, ce que l'on voit */}
         <VideosDetaillees
+          renvoiHaut
           titre="Destruction de nids de frelons et de guêpes en vidéo : ce que nous avons fait"
           intro={FRELONS_VIDEOS_INTRO}
           videos={FRELONS_VIDEOS}

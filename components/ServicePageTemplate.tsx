@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { FICHE_GOOGLE_URL } from '@/lib/avis-google'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
-import { CHAINE_YOUTUBE } from '@/lib/youtube'
+import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
 import {
   Phone, ShieldCheck, Clock, Star, ChevronDown, ArrowRight, CheckCircle, X,
   FlaskConical, Repeat, Store, Building2, MapPin, Lock, Zap, Microscope,
@@ -16,6 +16,7 @@ import Footer from '@/components/Footer'
 import PhotosChantiers from '@/components/PhotosChantiers'
 import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import { MethodesDetaillees, GuideDetaille, type BlocMethodes, type GuideService } from '@/components/MethodesService'
@@ -91,6 +92,8 @@ export interface ServiceData {
     souris?: { title: string; links: Array<{ href: string; label: string }> }
     // Blocs ajoutés par lib/maillage-services.ts (départements, articles, autres services)
     extra?: Array<{ title: string; links: Array<{ href: string; label: string }> }>
+    // Villes les plus demandées (17/11/2026), affichées en premier
+    vedette?: { title: string; links: Array<{ href: string; label: string }> }
   }
 }
 
@@ -146,7 +149,7 @@ export function schemaService(data: Pick<ServiceData, 'heroTitle' | 'heroHighlig
     openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
     // Pas d'aggregateRating (13/11/2026) : la note vient de la fiche Google, et Google interdit de reprendre dans les
     // données structurées des avis recueillis sur un autre site. La note reste affichée en clair sur la page, avec le lien.
-    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE],
+    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
   }
   return {
     '@context': 'https://schema.org',
@@ -261,7 +264,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               </p>
               {data.chantier && (
                 <div className="-mt-4 mb-8">
-                  <VignettesChantier photos={data.chantier.photos} videos={data.chantier.videos} centre texte={data.chantier.vignettes ?? 'Un de nos chantiers en images'} />
+                  <VignettesChantier photos={data.chantier.photos} centre texte={data.chantier.vignettes ?? 'Un de nos chantiers en images'} />
                 </div>
               )}
 
@@ -329,6 +332,10 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
           </div>
         </section>
 
+        {/* Vidéos de chantier juste sous le haut de page (19/11/2026) */}
+        {(data.chantier?.videos?.length ?? 0) > 0 && (
+          <VideosEnHaut videos={data.chantier!.videos!} titre={data.chantier!.titre} lien={data.chantier!.lien} />
+        )}
         {data.apresHero}
 
         {/* ── TRUST BAR ── */}
@@ -492,10 +499,10 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <AvisGoogle ordre={data.avis} />
 
         {data.photos && !data.chantier && <PhotosChantiers photos={data.photos} fond="#0d0d0d" />}
-        {data.chantier && !data.galerieDansContenu && (
+        {data.chantier && !data.galerieDansContenu && (data.chantier.photos?.length ?? 0) > 0 && (
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-3xl mx-auto">
-              <MediasChantier photos={data.chantier.photos} videos={data.chantier.videos} titre={data.chantier.titre} lien={data.chantier.lien} />
+              <MediasChantier photos={data.chantier.photos} titre={data.chantier.titre} lien={data.chantier.lien} />
             </div>
           </section>
         )}
@@ -504,7 +511,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         {data.related && (
           <section className="py-16 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
             <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-              {[data.related.villes, data.related.guides, data.related.souris, ...(data.related.extra ?? [])].filter(Boolean).map((bloc) => (
+              {[data.related.vedette, data.related.villes, data.related.guides, data.related.souris, ...(data.related.extra ?? [])].filter(Boolean).map((bloc) => (
                 <div key={bloc!.title}>
                   <h2 className="text-xl md:text-2xl font-black text-white mb-5">{bloc!.title}</h2>
                   <ul className="space-y-2">

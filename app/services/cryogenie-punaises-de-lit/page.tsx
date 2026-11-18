@@ -69,6 +69,7 @@ const data: ServiceData = {
       <TableauComparatif {...CRYO_OUTILS} />
       <ArticleService blocs={CRYO_PARTIE_1.slice(COUPE_1)} />
       <VideosDetaillees
+        renvoiHaut
         titre="Nos chantiers de traitement écologique en vidéo : la cryogénie sur le terrain"
         intro={CRYO_VIDEOS_INTRO}
         videos={CRYO_VIDEOS}

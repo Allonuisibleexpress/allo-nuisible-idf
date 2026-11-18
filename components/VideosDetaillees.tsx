@@ -4,6 +4,8 @@
 import { Youtube, Play, ArrowRight } from 'lucide-react'
 import { enrichi } from '@/components/ArticleService'
 import MediasChantier from '@/components/MediasChantier'
+import VideoCarte from '@/components/VideoCarte'
+import { ficheVideo } from '@/lib/videos-fiches'
 import { YOUTUBE_VIDEOS, lienYoutube } from '@/lib/youtube'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 
@@ -26,12 +28,13 @@ export type VideoDetaillee = {
 
 const texteBrut = (t: string) => t.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
 
-export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo', titre, intro, videos, photos }: {
+export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo', titre, intro, videos, photos, renvoiHaut = false }: {
   surtitre?: string
   titre: string
   intro: string
   videos: VideoDetaillee[]
   photos?: PhotoKey[]
+  renvoiHaut?: boolean // les vidéos sont déjà lisibles en haut de page (VideosEnHaut) : ici, simple aperçu qui y renvoie
 }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -60,20 +63,18 @@ export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo',
         <div className="space-y-10">
           {videos.map((v, i) => (
             <article key={v.src} className="grid md:grid-cols-[260px_1fr] gap-6 md:gap-8 items-start rounded-2xl p-5 md:p-7" style={card}>
-              <div className="mx-auto w-full max-w-[260px]">
-                <div style={{ position: 'relative', aspectRatio: '9 / 16', borderRadius: '14px', overflow: 'hidden', background: '#1a1a1a' }}>
-                  <video src={v.src} poster={v.poster} controls muted playsInline preload="none" aria-label={v.legende}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                </div>
-                <p className="text-xs text-white/60 mt-2 text-center inline-flex w-full justify-center items-center gap-1.5">
-                  <Play className="w-3 h-3" aria-hidden="true" /> {v.lieu} · {Math.round(v.duree)} secondes
-                </p>
-                {lienYoutube(v.src) && (
-                  <p className="text-center mt-1">
-                    <a href={lienYoutube(v.src)!} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 text-xs font-bold underline underline-offset-2" style={{ color: ACCENT }}>
-                      <Youtube className="w-3.5 h-3.5" aria-hidden="true" /> Voir sur YouTube
-                    </a>
-                  </p>
+              <div className="mx-auto w-full max-w-[280px]">
+                {renvoiHaut ? (
+                  <a href="#videos-chantier" className="group relative block rounded-[22px] overflow-hidden" style={{ aspectRatio: '9 / 16', border: '1px solid rgba(255,255,255,0.12)' }} aria-label={`Voir la vidéo : ${v.titre}`}>
+                    <img src={v.poster} alt={v.legende} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                    <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.75) 100%)' }} />
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full group-hover:scale-110 transition-transform" style={{ background: 'rgba(255,255,255,0.92)' }}>
+                      <Play className="w-6 h-6 ml-0.5" style={{ color: ACCENT, fill: ACCENT }} aria-hidden="true" />
+                    </span>
+                    <span className="absolute bottom-3 left-0 right-0 text-center text-xs font-bold text-white">{v.lieu} · voir la vidéo en haut</span>
+                  </a>
+                ) : (
+                  <VideoCarte src={v.src} poster={v.poster} fiche={{ ...ficheVideo(v.src, v.legende), duree: Math.round(v.duree) }} youtube={lienYoutube(v.src) ?? undefined} />
                 )}
               </div>
               <div>

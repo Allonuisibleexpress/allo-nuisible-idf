@@ -3,6 +3,7 @@ import { Phone, ArrowRight, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MediasChantier from '@/components/MediasChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import { pageMetadata } from '@/lib/seo'
 import { ARTICLES } from '@/app/blog/articles'
 
@@ -120,7 +121,7 @@ export default function NosInterventionsPage() {
                         )}
                         <p className="text-white/70 leading-relaxed">{a.tldr}</p>
                       </div>
-                      <MediasChantier photos={a.photos} videos={a.videos} titre="" />
+                      <>{(a.videos?.length ?? 0) > 0 && <VideosEnHaut videos={a.videos!} titre="" sansFond />}{(a.photos?.length ?? 0) > 0 && <MediasChantier photos={a.photos} titre="" />}</>
                       <div className="text-center mt-8">
                         <a href={`/blog/${a.slug}`} className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full transition-all hover:brightness-110"
                           style={{ background: ACCENT }}>

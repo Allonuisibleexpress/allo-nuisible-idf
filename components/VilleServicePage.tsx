@@ -21,6 +21,7 @@ import AvisDefilants from '@/components/AvisDefilants'
 import GalerieChantiersVille, { photosChantierVille } from '@/components/GalerieChantiersVille'
 import { MiniaturesChantier } from '@/components/ContenuNuisible'
 import MediasChantier from '@/components/MediasChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import { CHANTIERS_VILLE } from '@/lib/photos-chantiers'
 import SituationsVille from '@/components/SituationsVille'
 import LocalVille from '@/components/LocalVille'
@@ -213,10 +214,10 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         ) : (
           <MiniaturesChantier a={v.a} photos={photosChantierVille(profil.famille, v.slug, [], 5)} />
         )}
-        {CHANTIERS_VILLE[sl]?.[v.slug] && (
+        {(CHANTIERS_VILLE[sl]?.[v.slug]?.photos?.length ?? 0) > 0 && (
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-5xl mx-auto">
-              <MediasChantier photos={CHANTIERS_VILLE[sl][v.slug].photos} videos={CHANTIERS_VILLE[sl][v.slug].videos} titre={CHANTIERS_VILLE[sl][v.slug].titre} lien={CHANTIERS_VILLE[sl][v.slug].lien} />
+              <MediasChantier photos={CHANTIERS_VILLE[sl][v.slug].photos} titre={CHANTIERS_VILLE[sl][v.slug].titre} lien={CHANTIERS_VILLE[sl][v.slug].lien} />
             </div>
           </section>
         )}
@@ -234,6 +235,11 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             </ul>
           </div>
         </section>
+
+        {/* Vidéos de chantier juste sous « En bref » (19/11/2026) */}
+        {(CHANTIERS_VILLE[sl]?.[v.slug]?.videos?.length ?? 0) > 0 && (
+          <VideosEnHaut videos={CHANTIERS_VILLE[sl][v.slug].videos!} titre={`Notre chantier ${v.a} en vidéo`} lien={CHANTIERS_VILLE[sl][v.slug].lien} />
+        )}
 
         <BandeauDevis slug={v.slug} mot={MOT_DEVIS[sl]} a={v.a} prix={premierPrix(c.enBref) ?? PRIX_DEPART[sl] ?? null} />
 

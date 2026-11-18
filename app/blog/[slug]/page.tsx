@@ -9,6 +9,7 @@ import NextImage from 'next/image'
 import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import { ImageCycle } from '@/components/CyclePunaises'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_CAFARDS } from '@/lib/villes-cafards'
@@ -252,7 +253,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
             {(a.videos || a.mediasEnHaut) && (
               <div style={{ marginTop: '20px' }}>
-                <VignettesChantier photos={a.photos} videos={a.videos} centre={recit} texte="Photos et vidéos du chantier" />
+                <VignettesChantier photos={a.photos} centre={recit} texte="Photos du chantier" />
               </div>
             )}
           </div>
@@ -260,18 +261,22 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
         <article className="max-w-3xl mx-auto px-4 recit-centre" style={{ paddingTop: '48px', paddingBottom: '80px' }}>
 
-          {/* Le chantier en images, tout en haut : les clients veulent voir avant de lire */}
-          {(a.videos || a.mediasEnHaut) && (
-            <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>
-              <MediasChantier photos={a.photos} videos={a.videos} />
-            </div>
-          )}
 
           {/* EN BREF */}
           <section style={{ background: 'rgba(232, 68, 26, 0.08)', border: '1px solid rgba(232, 68, 26, 0.25)', borderRadius: '16px', padding: '24px', marginBottom: '48px' }}>
             <h2 style={{ fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', color: '#E8441A', marginBottom: '12px' }}>En bref</h2>
             <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', margin: 0 }}>{a.tldr}</p>
           </section>
+
+          {/* Vidéos du chantier juste sous « En bref », puis les photos (19/11/2026) */}
+          {a.videos && a.videos.length > 0 && (
+            <div style={{ marginBottom: '40px' }}><VideosEnHaut videos={a.videos} titre="Le chantier en vidéo" sansFond /></div>
+          )}
+          {(a.videos || a.mediasEnHaut) && a.photos && a.photos.length > 0 && (
+            <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>
+              <MediasChantier photos={a.photos} titre="Le chantier en photos" />
+            </div>
+          )}
 
           {a.blocks.map(renderBlock)}
 

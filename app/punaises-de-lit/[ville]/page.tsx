@@ -36,6 +36,7 @@ import GalerieChantiersVille, { photosChantierVille } from '@/components/Galerie
 import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
+import VideosEnHaut from '@/components/VideosEnHaut'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
@@ -182,6 +183,12 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           </div>
         </section>
 
+        {/* Vidéo du chantier dans cette ville, juste sous « En bref » (19/11/2026) */}
+        {CHANTIERS_PUNAISES_VILLE[v.slug] && (
+          <VideosEnHaut videos={[CHANTIERS_PUNAISES_VILLE[v.slug].video]} titre={`Notre chantier ${v.a} en vidéo`}
+            lien={CHANTIERS_PUNAISES_VILLE[v.slug].article ? { href: CHANTIERS_PUNAISES_VILLE[v.slug].article!, label: 'Lire le récit de l’intervention' } : undefined} />
+        )}
+
         <BandeauDevis slug={v.slug} mot="punaises de lit" a={v.a} prix="290 €" />
 
         {/* ── CONTEXTE LOCAL ── */}
@@ -246,10 +253,10 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         <GalerieChantiersVille famille="punaises" slug={v.slug} a={v.a} exclure={CHANTIERS_PUNAISES_VILLE[v.slug]?.photos ?? []} />
 
         {/* Vrai chantier dans cette ville, en vidéo */}
-        {CHANTIERS_PUNAISES_VILLE[v.slug] && (
+        {(CHANTIERS_PUNAISES_VILLE[v.slug]?.photos?.length ?? 0) > 0 && (
           <section id="chantier-en-images" className="py-14 md:py-20 px-4 scroll-mt-20" style={{ background: '#0d0d0d' }}>
             <div className="max-w-3xl mx-auto">
-              <MediasChantier photos={CHANTIERS_PUNAISES_VILLE[v.slug].photos} videos={[CHANTIERS_PUNAISES_VILLE[v.slug].video]} titre={CHANTIERS_PUNAISES_VILLE[v.slug].titre}
+              <MediasChantier photos={CHANTIERS_PUNAISES_VILLE[v.slug].photos} titre={CHANTIERS_PUNAISES_VILLE[v.slug].titre}
                 lien={CHANTIERS_PUNAISES_VILLE[v.slug].article ? { href: CHANTIERS_PUNAISES_VILLE[v.slug].article!, label: 'Lire le récit de l’intervention' } : undefined} />
             </div>
           </section>
