@@ -30,6 +30,7 @@ import { PROFILS } from '@/lib/profils-ville'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocaleFamille } from '@/lib/faq-locale'
 import PoleSaintMaurice from '@/components/PoleSaintMaurice'
+import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import type { Famille } from '@/lib/pole-saint-maurice'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
@@ -255,6 +256,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
         </section>
 
         <ContexteLocal slug={v.slug} service={serviceLocal(c.pilier.href)} a={v.a} />
+        <PhotoNuisibleVille basePath={c.basePath} a={v.a} />
         <LocalVille slug={v.slug} base={c.basePath} nom={v.nom} titre={c.localTitre ? c.localTitre(v.a, v.nom) : `${c.titre} ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(c.local?.[v.slug] ?? []), ...(c.fiche && (c.local?.[v.slug]?.length ?? 0) < 10 ? c.fiche(v, autres) : [])]} />
         {sl === 'puces' && <PucesBloc1 slug={v.slug} a={v.a} nom={v.nom} />}
 

@@ -24,6 +24,7 @@ import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocalePunaises } from '@/lib/faq-locale'
 import PoleSaintMaurice from '@/components/PoleSaintMaurice'
+import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -205,6 +206,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         </section>
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
+        <PhotoNuisibleVille basePath="/punaises-de-lit" a={v.a} />
         <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
         <CryoPunaisesLien a={v.a} />
 

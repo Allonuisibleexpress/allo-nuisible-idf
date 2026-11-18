@@ -2,7 +2,8 @@
 // 1. lien vers la page département du même nuisible (et vers la page zone du département) ;
 // 2. 6 articles du blog sur le même nuisible, en rotation d'une ville à l'autre pour que chaque article reçoive des liens.
 import { ARTICLES } from '@/app/blog/articles'
-import { ArrowRight, BookOpen } from 'lucide-react'
+import { ArrowRight, BookOpen, MapPin } from 'lucide-react'
+import { villesDuDepartement, villesPoleService } from '@/lib/villes-famille'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -40,10 +41,14 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
   const n = Math.min(6, articles.length)
   const d = articles.length ? h(slug) % articles.length : 0
   const choix = [...articles.slice(d), ...articles.slice(0, d)].slice(0, n)
+  // Toutes les villes du même service dans le département, les plus proches d'abord (les 8 premières avec le mot-clé complet)
+  const memeDep = villesDuDepartement(basePath, slug, code)
+  const pole = code !== '94' ? villesPoleService(basePath, slug).filter((v) => v.code !== code).slice(0, 8) : []
+  const kmTxt = (n: number) => (n < 100 ? ` · ${n.toFixed(1).replace('.', ',')} km` : '')
   if (!dep && !choix.length) return null
   return (
     <section className="py-14 md:py-16 px-4" style={{ background: '#0a0a0a' }}>
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center">
         {dep && (
           <div className="mb-10">
             <h2 className="text-xl md:text-2xl font-black text-white mb-4">{mot} {dep.dans} : toutes nos villes</h2>
@@ -57,6 +62,35 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
                 Tous nos services {dep.dans} <ArrowRight className="w-4 h-4" />
               </a>
             </div>
+            {memeDep.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-black text-white mb-2">{mot} {dep.dans} : nos {memeDep.length} autres villes</h3>
+                <p className="text-white/50 text-sm mb-4">Classées de la plus proche à la plus éloignée {a}. Même protocole, même garantie, même délai d’intervention.</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {memeDep.map((v, i) => (
+                    <a key={v.slug} href={`${basePath}/${v.slug}`} className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold text-white/80 hover:text-white transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      {i < 8 && <MapPin className="w-3 h-3" style={{ color: ACCENT }} />}
+                      {i < 8 ? `${mot} ${v.nom}` : v.nom}
+                      <span className="text-white/40">{kmTxt(v.km)}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+            {pole.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-black text-white mb-2">{mot} près de notre base de Saint-Maurice (94)</h3>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {pole.map((v) => (
+                    <a key={v.slug} href={`${basePath}/${v.slug}`} className="rounded-full px-3.5 py-1.5 text-[13px] font-semibold hover:text-white transition-colors"
+                      style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
+                      {v.nom}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
         {choix.length > 0 && (

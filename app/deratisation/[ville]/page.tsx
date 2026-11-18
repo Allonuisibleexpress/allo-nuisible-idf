@@ -27,6 +27,7 @@ import { codePostal } from '@/lib/codes-postaux'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocaleDeratisation } from '@/lib/faq-locale'
 import PoleSaintMaurice from '@/components/PoleSaintMaurice'
+import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import BandeauDevis from '@/components/BandeauDevis'
 import Footer from '@/components/Footer'
 import { pageMetadata, SITE_URL } from '@/lib/seo'
@@ -218,6 +219,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         </section>
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
+        <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
         <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
         <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
 
