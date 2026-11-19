@@ -40,6 +40,7 @@ import VideosEnHaut from '@/components/VideosEnHaut'
 import FaqLien from '@/components/FaqLien'
 import { existePage, depDeCode } from '@/lib/villes-famille'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
+import { videosProchesPunaises, mentionDistance, deVille } from '@/lib/videos-proches'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
 } from '@/lib/villes-punaises'
@@ -190,6 +191,16 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           <VideosEnHaut videos={[CHANTIERS_PUNAISES_VILLE[v.slug].video]} titre={`Notre chantier ${v.a} en vidéo`}
             lien={CHANTIERS_PUNAISES_VILLE[v.slug].article ? { href: CHANTIERS_PUNAISES_VILLE[v.slug].article!, label: 'Lire le récit de l’intervention' } : undefined} />
         )}
+        {/* Pas de vidéo tournée dans la ville : les chantiers les plus proches, lieu et distance indiqués (19/11/2026) */}
+        {!CHANTIERS_PUNAISES_VILLE[v.slug] && (() => {
+          const proches = videosProchesPunaises(v.slug)
+          if (!proches.length) return null
+          return (
+            <VideosEnHaut videos={proches} titre={`Punaises de lit : nos chantiers en vidéo près ${deVille(v.nom)}`}
+              intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici nos chantiers en vidéo les plus proches : la méthode est la même chez vous.`}
+              mentions={Object.fromEntries(proches.map((p) => [p.src, mentionDistance(p, v.nom)]))} />
+          )
+        })()}
 
         <BandeauDevis slug={v.slug} mot="punaises de lit" a={v.a} prix="290 €" />
 

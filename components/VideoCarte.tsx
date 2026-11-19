@@ -14,7 +14,7 @@ const THEMES: Record<FicheVideo['theme'], { bord: string; badge: string; texte: 
   vert: { bord: 'rgba(63,178,127,0.45)', badge: 'rgba(63,178,127,0.18)', texte: '#a8e6c8', halo: 'rgba(63,178,127,0.10)' },
 }
 
-export default function VideoCarte({ src, poster, fiche, youtube, pageActuelle, grand = false }: { src: string; poster?: string; fiche: FicheVideo; youtube?: string; pageActuelle?: string; grand?: boolean }) {
+export default function VideoCarte({ src, poster, fiche, youtube, pageActuelle, grand = false, mention }: { src: string; poster?: string; fiche: FicheVideo; youtube?: string; pageActuelle?: string; grand?: boolean; mention?: string }) {
   const lien = fiche.lien && fiche.lien.href !== pageActuelle ? fiche.lien : undefined
   const [lecture, setLecture] = useState(false)
   const t = THEMES[fiche.theme]
@@ -50,6 +50,9 @@ export default function VideoCarte({ src, poster, fiche, youtube, pageActuelle, 
         <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: t.texte }}>
           <MapPin className="w-3.5 h-3.5" aria-hidden="true" /> {fiche.lieu}
         </p>
+        {mention && (
+          <p className="text-xs font-bold rounded-lg px-3 py-2 mb-3" style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.12)' }}>{mention}</p>
+        )}
         <h3 className="text-white font-black text-lg leading-snug mb-2">{fiche.titre}</h3>
         {fiche.description && <p className="text-white/70 text-sm leading-relaxed">{fiche.description}</p>}
         {lien && (

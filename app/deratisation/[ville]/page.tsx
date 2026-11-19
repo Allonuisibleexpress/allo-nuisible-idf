@@ -39,6 +39,7 @@ import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import { distanceDe, mentionDistance, deVille } from '@/lib/videos-proches'
 import FaqLien from '@/components/FaqLien'
 import { existePage, depDeCode } from '@/lib/villes-famille'
 import DossierLocal from '@/components/DossierLocal'
@@ -201,6 +202,18 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {v.slug === CHANTIER_DIOGENE.ville && (
           <VideosEnHaut videos={CHANTIER_DIOGENE.videos} titre={`Notre dernier chantier ${v.a} en vidéo`} lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
         )}
+        {/* Autres villes : le chantier filmé le plus proche (Maisons-Alfort), lieu et distance indiqués (19/11/2026) */}
+        {v.slug !== CHANTIER_DIOGENE.ville && (() => {
+          const d = distanceDe(v.slug, CHANTIER_DIOGENE.ville)
+          if (d === null) return null
+          const vids = CHANTIER_DIOGENE.videos.slice(0, 2)
+          const m = mentionDistance({ ville: CHANTIER_DIOGENE.ville, distance: d }, v.nom)
+          return (
+            <VideosEnHaut videos={vids} titre={`Dératisation : notre chantier en vidéo près ${deVille(v.nom)}`}
+              intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici notre chantier filmé le plus proche, à Maisons-Alfort : la méthode est la même chez vous.`}
+              mentions={Object.fromEntries(vids.map((x) => [x.src, m]))} />
+          )
+        })()}
 
         <BandeauDevis slug={v.slug} mot="dératisation" a={v.a} prix="120 €" />
 

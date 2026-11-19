@@ -144,7 +144,7 @@ export const CENTRES: Record<string, [number, number]> = {
   'villecresnes': [48.7221, 2.5328],
 }
 
-function km(a: [number, number], b: [number, number]) {
+export function km(a: [number, number], b: [number, number]) {
   const r = (x: number) => (x * Math.PI) / 180
   const dl = r(b[0] - a[0]), dn = r(b[1] - a[1])
   return 2 * 6371 * Math.asin(Math.sqrt(Math.sin(dl / 2) ** 2 + Math.cos(r(a[0])) * Math.cos(r(b[0])) * Math.sin(dn / 2) ** 2))
