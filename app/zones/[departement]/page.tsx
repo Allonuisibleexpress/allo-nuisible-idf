@@ -11,6 +11,8 @@ import { COMMUNES_94 } from '@/lib/communes94'
 import { DEPARTEMENTS_APPROFONDI } from '@/lib/departements-approfondi'
 import { SERVICES_DEP, DEPS, estDep, type ServiceDep } from '@/lib/departements-services'
 import { villesDuDepartement } from '@/lib/services-ville'
+import ZonesNuisibles from '@/components/ZonesNuisibles'
+import { CONTENU_ZONES } from '@/lib/zones-departements-contenu'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -79,6 +81,9 @@ export default function DepartementPage({ params }: { params: { departement: str
             </p>
           </div>
         </section>
+
+        {/* ── NUISIBLE PAR NUISIBLE (19/11/2026) ── */}
+        <ZonesNuisibles slug={d.slug} code={d.code} nom={d.nom} dans={d.dans} />
 
         {/* ── SITUATIONS FRÉQUENTES ── */}
         <section className="py-16 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
@@ -275,6 +280,7 @@ export default function DepartementPage({ params }: { params: { departement: str
           { q: `Proposez-vous des traitements sans produit chimique ${d.dans} ?`, a: 'Oui quand c’est possible : cryogénie et vapeur sèche contre les punaises de lit, pièges sans raticide contre les rongeurs, retrait des nids de chenilles, pics et filets contre les pigeons. Détection canine des punaises de lit sur devis.' },
           { q: `Des rats sur la voie publique ${d.dans} : qui contacter ?`, a: 'Sur l’espace public, c’est la mairie qui est compétente. Chez vous, dans votre jardin ou votre immeuble, nous intervenons sur devis.' },
           SAISONS_FAQ.deratisation[d.slug.length % 3],
+          ...(CONTENU_ZONES[d.slug]?.faq ?? []),
         ]} />
       </main>
       <Footer />

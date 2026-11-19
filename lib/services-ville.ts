@@ -10,6 +10,7 @@ import { VILLES_ANTHRENES } from './villes-anthrenes'
 import { VILLES_CHENILLES } from './villes-chenilles'
 import { VILLES_FRELONS, frelonsIndexee } from './villes-frelons'
 import { VILLES_PUCES } from './villes-puces'
+import { CENTRES, km } from './centres-villes'
 
 export type FamilleVille = 'punaises' | 'deratisation' | 'souris' | 'cafards' | 'fourmis' | 'acariens' | 'chenilles' | 'frelons' | 'puces' | 'anthrenes'
 
@@ -42,4 +43,21 @@ export function villesDuDepartement(code: string) {
   const vues = new Map<string, string>()
   for (const v of toutes) if (v.code === code && !vues.has(v.slug)) vues.set(v.slug, v.nom)
   return Array.from(vues.entries()).map(([slug, nom]) => ({ slug, nom, pages: pagesVille(slug) })).sort((a, b) => a.nom.localeCompare(b.nom, 'fr', { numeric: true }))
+}
+
+// Pages nuisible + ville d'un département, famille par famille, de la plus proche de Saint-Maurice à la plus éloignée
+// (pages /zones/[département] refaites le 19/11/2026)
+export function villesFamilleDep(code: string): Record<FamilleVille, { slug: string; nom: string; href: string }[]> {
+  const base = CENTRES['saint-maurice']
+  const dist = (s: string) => (CENTRES[s] ? km(CENTRES[s], base) : 999)
+  const listes: Record<FamilleVille, { slug: string; nom: string; code: string }[]> = {
+    punaises: VILLES_PUNAISES, deratisation: VILLES_DERATISATION, souris: VILLES_SOURIS, cafards: VILLES_CAFARDS,
+    fourmis: VILLES_FOURMIS, puces: VILLES_PUCES, acariens: VILLES_ACARIENS, anthrenes: VILLES_ANTHRENES,
+    chenilles: VILLES_CHENILLES, frelons: VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)),
+  }
+  const r = {} as Record<FamilleVille, { slug: string; nom: string; href: string }[]>
+  for (const f of FAMILLES) {
+    r[f.id] = listes[f.id].filter((v) => v.code === code).sort((a, b) => dist(a.slug) - dist(b.slug)).map((v) => ({ slug: v.slug, nom: v.nom, href: `${f.base}/${v.slug}` }))
+  }
+  return r
 }
