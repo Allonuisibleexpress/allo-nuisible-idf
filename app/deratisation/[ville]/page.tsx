@@ -39,6 +39,10 @@ import AvisGoogle from '@/components/AvisGoogle'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import FaqLien from '@/components/FaqLien'
+import { existePage, depDeCode } from '@/lib/villes-famille'
+import DossierLocal from '@/components/DossierLocal'
+import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import VignettesChantier from '@/components/VignettesChantier'
 import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
@@ -64,7 +68,9 @@ export function generateMetadata({ params }: { params: { ville: string } }) {
   // Titre (12/11/2026) : structure d'Express (rats et souris + prix) avec un argument en plus (7j/7) quand il tient en 60 caractères.
   // Ordre de repli : argument, puis code postal, puis département ; jamais sans « rats et souris » ni « dès 120 € ».
   const dep = cp ? cp.slice(0, 2) : ''
+  // 19/11/2026 : le code postal complet passe en priorité, comme les premiers résultats Google (« Dératisation Ville (94410) »).
   const titres = [
+    ...(cp ? [`Dératisation ${v.nom} (${cp}) : rats et souris dès 120 €`, `Dératisation ${v.nom} (${cp}) : rats, souris dès 120 €`, `Dératisation ${v.nom} (${cp}) : dès 120 €, 7j/7`] : []),
     ...(cp ? [`Dératisation ${v.nom} (${dep}) : rats et souris dès 120 €, 7j/7`] : []),
     `Dératisation ${v.nom} : rats et souris dès 120 €, 7j/7`,
     ...(cp ? [`Dératisation ${v.nom} (${cp}) : rats et souris dès 120 €`, `Dératisation ${v.nom} (${dep}) : rats et souris dès 120 €`] : []),
@@ -221,7 +227,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
         <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
-        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Rats et souris ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
+        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Dératiseur ${v.a} : ce que nous savons de ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
+        {DOSSIERS_DERATISATION[v.slug] && <DossierLocal blocs={DOSSIERS_DERATISATION[v.slug]} surtitre={`Le dossier complet : dératisation ${v.a}`} />}
         <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
@@ -300,6 +307,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                     {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: `/deratisation/${v.slug}`, base: '/deratisation', slug: v.slug, a: v.a, dep: depDeCode(v.code), existe: existePage }} />
                 </details>
               ))}
             </div>

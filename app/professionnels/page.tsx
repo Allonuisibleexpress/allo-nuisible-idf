@@ -229,7 +229,7 @@ export default function ProfessionnelsPage() {
             </div>
           </div>
         </section>
-        <FaqBloc titre="Professionnels : vos questions" items={[
+        <FaqBloc page="/professionnels" titre="Professionnels : vos questions" items={[
           { q: 'Fournissez-vous une attestation d’intervention ?', a: 'Oui, une attestation est remise aux professionnels après chaque intervention, utile pour vos contrôles d’hygiène.' },
           { q: 'Proposez-vous des contrats annuels ?', a: 'Oui, pour les restaurants, commerces, copropriétés et bailleurs : passages réguliers, suivi des dispositifs et interventions d’urgence. Le tarif est établi sur devis.' },
           { q: 'Pouvez-vous intervenir en dehors des heures d’ouverture ?', a: 'Oui, nous adaptons les horaires à votre activité, tôt le matin, en soirée ou le week-end.' },

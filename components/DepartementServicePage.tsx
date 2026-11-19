@@ -129,8 +129,10 @@ const villesDuDep = (s: ServiceDep, d: DepSlug) =>
 
 export function titreDep(s: ServiceDep, d: DepSlug) {
   const c = SERVICES_DEP[s], dep = DEPS[d]
-  const base = `${c.motCle} ${dep.nom} (${dep.code})`
-  return c.suffixes.map((x) => base + x).find((t) => t.length <= 60) ?? base
+  // 19/11/2026 : « dératisation 94 » est une recherche fréquente : le numéro passe devant le nom (sauf Paris).
+  const bases = d === 'paris' ? [`${c.motCle} ${dep.nom} (${dep.code})`] : [`${c.motCle} ${dep.code} ${dep.nom}`, `${c.motCle} ${dep.nom} (${dep.code})`]
+  for (const b of bases) { const t = c.suffixes.map((x) => b + x).find((x) => x.length <= 60); if (t) return t }
+  return bases[0]
 }
 export function metaDep(s: ServiceDep, d: DepSlug) {
   const c = SERVICES_DEP[s], dep = DEPS[d]
@@ -139,6 +141,9 @@ export function metaDep(s: ServiceDep, d: DepSlug) {
 
 import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import LienEcologique from '@/components/LienEcologique'
+import DossierLocal from '@/components/DossierLocal'
+import FaqLien from '@/components/FaqLien'
+import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import { villesPoleService } from '@/lib/villes-famille'
 
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
@@ -395,6 +400,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
+        {s === 'deratisation' && DOSSIERS_DERATISATION[d] && <DossierLocal blocs={DOSSIERS_DERATISATION[d]} surtitre={`Le dossier complet : dératisation ${dep.dans}`} />}
         <PhotoNuisibleVille basePath={c.base} a={dep.dans} />
         <div className="px-4 pt-4" style={{ background: '#0b0b0b' }}><LienEcologique basePath={c.base} slug={d} a={dep.dans} /></div>
 
@@ -424,6 +430,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: `${c.base}/${d}`, base: c.base }} />
                 </details>
               ))}
             </div>

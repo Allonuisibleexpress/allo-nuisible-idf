@@ -822,8 +822,14 @@ export const ARTICLES: Article[] = [
         "**Près de chez vous** : dératisation à [Saint-Maurice](/deratisation/saint-maurice), [Maisons-Alfort](/deratisation/maisons-alfort), [Vincennes](/deratisation/vincennes), [Créteil](/deratisation/creteil), [Paris](/deratisation/paris), [Val-de-Marne](/deratisation/val-de-marne), [Hauts-de-Seine](/deratisation/hauts-de-seine) ; souris à [Saint-Maurice](/souris/saint-maurice) et [Vincennes](/souris/vincennes).",
         "**Nos chantiers** : [logement Diogène envahi par les rats](/blog/deratisation-logement-syndrome-diogene), [souris dans un Airbnb à Saint-Maur](/blog/souris-airbnb-saint-maur-des-fosses), [rat qui entrait par la cheminée](/blog/rat-cheminee-intervention), [rat capturé derrière l'électroménager](/blog/rat-piege-cuisine-electromenager).",
       ] },
+
     ],
     faq: [
+      { q: "Quel rongeur fait du bruit dans les combles la nuit ?", a: "Le plus souvent le rat noir, bon grimpeur, ou le lérot et le loir à l'automne. Le surmulot, plus lourd, vit plutôt au sol, dans les caves et les vides sanitaires. Les grattements lourds font penser au rat, les courses rapides au lérot ou au loir." },
+      { q: "Comment distinguer un lérot d'un loir ?", a: "Le lérot a un masque noir autour des yeux et une queue terminée par une touffe noir et blanc. Le loir gris est entièrement gris, avec une queue touffue sur toute sa longueur, et il est un peu plus grand." },
+      { q: "Quel est le plus gros rongeur d'Île-de-France ?", a: "Le ragondin, rongeur des berges originaire d'Amérique du Sud : 40 à 60 cm sans la queue et 5 à 9 kg. Le rat musqué, plus petit, vit lui aussi au bord de l'eau." },
+      { q: "Les crottes de rat sont-elles dangereuses ?", a: "Elles peuvent l'être : l'urine et les crottes de rat peuvent transmettre des maladies comme la leptospirose. Ne les touchez jamais à mains nues, ne balayez pas à sec, nettoyez avec des gants puis désinfectez." },
+      { q: "Comment trouver une entreprise de dératisation près de chez moi ?", a: "Allo Nuisible IDF est basée à Saint-Maurice (94) et intervient 7j/7 à Paris, dans le Val-de-Marne, les Hauts-de-Seine et toute l'Île-de-France, souvent le jour même autour de sa base. Chaque ville a sa page, avec les prix et les délais." },
       { q: "Combien coûte une dératisation ?", a: "Chez Allo Nuisible IDF, à partir de 120 € TTC pour un appartement, rats ou souris, devis gratuit, garantie 1 an." },
       { q: "Peut-on éliminer les rongeurs sans poison ?", a: "Oui : pièges mécaniques, électriques ou connectés, piège multicapture Ekomille, et rebouchage des accès. C'est notre dératisation sans raticide, sur devis." },
       { q: 'Comment savoir si j\'ai un rat ou une souris ?', a: 'Regardez les crottes : 3 à 6 mm pour une souris, 6 à 12 mm et pointues pour un rat noir, environ 2 cm et arrondies pour un surmulot. Une souris adulte ne dépasse pas 10 cm sans la queue.' },

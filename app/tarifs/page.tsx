@@ -236,7 +236,7 @@ export default function TarifsPage() {
             </div>
           </div>
         </section>
-        <FaqBloc titre="Nos tarifs : vos questions" items={[
+        <FaqBloc page="/tarifs" titre="Nos tarifs : vos questions" items={[
           { q: 'Le devis est-il vraiment gratuit ?', a: 'Oui, gratuit et sans engagement. Vous connaissez le prix avant toute intervention, par téléphone ou après une photo envoyée sur WhatsApp.' },
           { q: 'Pourquoi des prix « à partir de » ?', a: 'Le prix dépend de la surface, de l’ampleur de l’infestation et de l’accès (hauteur d’un nid, nombre de pièces). Le prix de départ correspond au cas le plus simple ; le technicien confirme le tarif avant de commencer.' },
           { q: 'Vos prix sont-ils TTC ?', a: 'Oui, tous les prix affichés sont TTC.' },

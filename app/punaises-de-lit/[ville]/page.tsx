@@ -37,6 +37,8 @@ import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import FaqLien from '@/components/FaqLien'
+import { existePage, depDeCode } from '@/lib/villes-famille'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
 import {
   VILLES_PUNAISES, GUIDES_PUNAISES, METHODES_PUNAISES, SOURCES_PUNAISES, MAJ_PUNAISES, getVillePunaises,
@@ -214,7 +216,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
         <PhotoNuisibleVille basePath="/punaises-de-lit" a={v.a} />
-        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce qui est propre à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
+        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce que nous voyons à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
         <CryoPunaisesLien a={v.a} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
@@ -298,6 +300,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
                     {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: `/punaises-de-lit/${v.slug}`, base: '/punaises-de-lit', slug: v.slug, a: v.a, dep: depDeCode(v.code), existe: existePage }} />
                 </details>
               ))}
             </div>

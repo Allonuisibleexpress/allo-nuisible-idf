@@ -51,3 +51,11 @@ export function villesPoleService(basePath: string, slug: string): V[] {
   const liste = VILLES_PAR_SERVICE[basePath] ?? []
   return POLE.map((p) => liste.find((v) => v.slug === p.slug)).filter((v): v is V => !!v && v.slug !== slug)
 }
+
+// Pour les liens de FAQ (19/11/2026) : une page ville existe-t-elle pour ce service ? Département d'un code postal.
+export const existePage = (base: string, slug: string) => (VILLES_PAR_SERVICE[base] ?? []).some((v) => v.slug === slug)
+const DEPS_CODE: Record<string, { slug: string; dans: string }> = {
+  '75': { slug: 'paris', dans: 'à Paris' }, '94': { slug: 'val-de-marne', dans: 'dans le Val-de-Marne' }, '92': { slug: 'hauts-de-seine', dans: 'dans les Hauts-de-Seine' },
+  '91': { slug: 'essonne', dans: 'en Essonne' }, '78': { slug: 'yvelines', dans: 'dans les Yvelines' }, '77': { slug: 'seine-et-marne', dans: 'en Seine-et-Marne' },
+}
+export const depDeCode = (code: string) => DEPS_CODE[code]

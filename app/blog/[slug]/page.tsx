@@ -10,6 +10,7 @@ import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import FaqLien from '@/components/FaqLien'
 import { ImageCycle } from '@/components/CyclePunaises'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
 import { VILLES_CAFARDS } from '@/lib/villes-cafards'
@@ -316,6 +317,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <div key={j} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '18px 20px' }}>
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>{f.q}</h3>
                 <p style={{ fontSize: '14px', lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: 0 }}>{f.a}</p>
+                <FaqLien q={f.q} a={f.a} ctx={{ page: `/blog/${a.slug}` }} />
               </div>
             ))}
           </div>

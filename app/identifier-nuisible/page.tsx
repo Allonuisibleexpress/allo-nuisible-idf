@@ -1,6 +1,7 @@
 // Page « Identifier un nuisible » (/identifier-nuisible) : test interactif, comparateurs de sosies, 28 fiches photo.
 // Vise « identifier un insecte », « quelle est cette bête », « reconnaître un nuisible ».
 import { Phone, Camera, ShieldCheck, Search, Clock, Hand, Ruler } from 'lucide-react'
+import FaqLien from '@/components/FaqLien'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Detective, Galerie, Scanner } from '@/components/IdentifierNuisible'
@@ -223,6 +224,7 @@ export default function IdentifierNuisiblePage() {
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: '/identifier-nuisible' }} />
                 </details>
               ))}
             </div>

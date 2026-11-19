@@ -3,7 +3,7 @@ const ACCENT = '#E8441A'
 type P = { src: string; alt: string; legende: string; credit: string; licence: string; page: string }
 const W = 'https://commons.wikimedia.org/wiki/File:'
 const PHOTOS: Record<string, { titre: string; photos: P[] }> = {
-  '/deratisation': { titre: 'Le rat brun : à quoi il ressemble', photos: [
+  '/deratisation': { titre: 'Rat ou souris : comment les reconnaître', photos: [
     { src: '/identifier/rattus.jpg', alt: 'Rat brun (Rattus norvegicus), le surmulot', legende: 'Le **rat brun** (surmulot) : museau arrondi, petites oreilles, queue plus courte que le corps. C’est le rat des caves, égouts et vides sanitaires.', credit: 'Charles J. Sharp', licence: 'CC BY-SA 4.0', page: W + 'Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
     { src: '/identifier/mus.jpg', alt: 'Souris domestique (Mus musculus)', legende: 'À ne pas confondre avec la **souris** : museau pointu, grandes oreilles, queue aussi longue que le corps.', credit: 'Ahunt', licence: 'CC0', page: W + 'House_mouse_(Mus_musculus)_2732.jpg' },
   ] },
@@ -11,7 +11,7 @@ const PHOTOS: Record<string, { titre: string; photos: P[] }> = {
     { src: '/identifier/mus.jpg', alt: 'Souris domestique (Mus musculus)', legende: 'La **souris domestique** : petite, museau pointu, grandes oreilles, queue aussi longue que le corps. Elle passe par un trou de la taille d’un stylo.', credit: 'Ahunt', licence: 'CC0', page: W + 'House_mouse_(Mus_musculus)_2732.jpg' },
     { src: '/identifier/rattus.jpg', alt: 'Rat brun (Rattus norvegicus)', legende: 'Pour comparer : le **rat brun**, bien plus massif, au museau arrondi et aux petites oreilles.', credit: 'Charles J. Sharp', licence: 'CC BY-SA 4.0', page: W + 'Brown_rat_(Rattus_norvegicus)_Drenthe_2.jpg' },
   ] },
-  '/punaises-de-lit': { titre: 'La punaise de lit et ses traces', photos: [
+  '/punaises-de-lit': { titre: 'Punaise de lit : comment la reconnaître', photos: [
     { src: '/identifier/cimex.jpg', alt: 'Punaise de lit adulte (Cimex lectularius) en train de piquer', legende: 'La **punaise de lit adulte** : 4 à 7 mm, corps plat brun-rouge. Elle ne vole pas et ne saute pas.', credit: 'CDC, Dr. Gary Alpert (Harvard University)', licence: 'Domaine public', page: W + 'Adult_bed_bug,_Cimex_lectularius.jpg' },
     { src: '/piqures/dejections-punaises-latte-sommier.jpg', alt: 'Déjections noires de punaises de lit sur une latte de sommier', legende: 'Les **points noirs** sur les lattes du sommier : ce sont leurs déjections, le signe le plus sûr.', credit: 'NY State IPM Program at Cornell University', licence: 'CC BY 2.0', page: W + 'Bed_Bug_Evidence.jpg' },
   ] },

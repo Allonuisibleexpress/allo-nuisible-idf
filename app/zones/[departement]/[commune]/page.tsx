@@ -1,4 +1,5 @@
 import FaqBloc from '@/components/FaqBloc'
+import { existePage } from '@/lib/villes-famille'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { REPERES } from '@/lib/reperes-villes'
 import { MAIRIES } from '@/lib/mairies'
@@ -282,7 +283,7 @@ export default function CommunePage({ params }: { params: Params }) {
             </div>
           </div>
         </section>
-        <FaqBloc titre={`Nuisibles ${c.a} : vos questions`} items={[
+        <FaqBloc ctx={{ page: `/zones/${params.departement}/${c.slug}`, slug: c.slug, a: c.a, existe: existePage }} titre={`Nuisibles ${c.a} : vos questions`} items={[
           { q: `Intervenez-vous ${c.a} le jour même ?`, a: `Très souvent, oui. ${REPERES[c.slug]?.km ? `${c.nom} est à ${REPERES[c.slug].km.toLocaleString('fr-FR')} km de notre base de Saint-Maurice, à vol d’oiseau.` : 'Notre base est à Saint-Maurice, tout près.'} Nous répondons 7j/7.` },
           { q: `Quels nuisibles traitez-vous ${c.a} ?`, a: 'Rats et souris, punaises de lit, cafards, fourmis, guêpes et frelons, pigeons, chenilles processionnaires et acariens, chez les particuliers comme chez les professionnels.' },
           { q: `Quel est le prix d’une intervention ${c.a} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour les rats, souris, cafards ou fourmis, 290 € pour les punaises de lit avec 2 passages. Devis gratuit.' },

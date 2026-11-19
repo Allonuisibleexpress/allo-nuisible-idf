@@ -22,6 +22,8 @@ import GalerieChantiersVille, { photosChantierVille } from '@/components/Galerie
 import { MiniaturesChantier } from '@/components/ContenuNuisible'
 import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import FaqLien from '@/components/FaqLien'
+import { existePage, depDeCode } from '@/lib/villes-famille'
 import { CHANTIERS_VILLE } from '@/lib/photos-chantiers'
 import SituationsVille from '@/components/SituationsVille'
 import LocalVille from '@/components/LocalVille'
@@ -489,6 +491,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
                     {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: `${c.basePath}/${v.slug}`, base: c.basePath, slug: v.slug, a: v.a, dep: depDeCode(v.code), existe: existePage }} />
                 </details>
               ))}
             </div>

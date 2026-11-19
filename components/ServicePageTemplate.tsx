@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import FaqLien from '@/components/FaqLien'
 import { FICHE_GOOGLE_URL } from '@/lib/avis-google'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
@@ -99,6 +100,7 @@ export interface ServiceData {
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
+  const page = usePathname()
   return (
     <div
       className="rounded-2xl overflow-hidden transition-all duration-200"
@@ -122,8 +124,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         </div>
       </button>
       {open && (
-        <div className="px-6 pb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+        <div className="px-6 pb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
           {a}
+          <div><FaqLien q={q} a={a} ctx={{ page }} /></div>
         </div>
       )}
     </div>

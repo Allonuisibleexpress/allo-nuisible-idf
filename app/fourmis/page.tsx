@@ -3,6 +3,7 @@
 // La page /services/fourmis reste la page « traitement des fourmis » (un mot-clé = une page).
 // Sources : FREDON, Futura-Sciences, OFEV (Suisse), canton de Genève, Espace pour la vie (Montréal).
 import { Phone, ArrowRight, MapPin, Crown, ShieldCheck } from 'lucide-react'
+import FaqLien from '@/components/FaqLien'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { IconFourmi } from '@/components/PestIcons'
@@ -310,6 +311,7 @@ export default function FourmisTypesPage() {
                     {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: '/fourmis' }} />
                 </details>
               ))}
             </div>

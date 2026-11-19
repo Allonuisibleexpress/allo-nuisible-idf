@@ -71,7 +71,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <FaqBloc titre="Le blog : vos questions" items={[
+        <FaqBloc page="/blog" titre="Le blog : vos questions" items={[
           { q: 'Qui écrit les articles du blog ?', a: 'Houssem Hattab, gérant d’Allo Nuisible IDF, et notre équipe technique, à partir de ses interventions sur le terrain et de sources officielles citées en bas de chaque article.' },
           { q: 'Les conseils du blog remplacent-ils un professionnel ?', a: 'Ils aident à comprendre et à réagir vite. Pour une infestation installée, un traitement professionnel reste le plus efficace.' },
           { q: 'Comment savoir quel nuisible j’ai chez moi ?', a: 'Utilisez notre page « Identifier un nuisible » ou envoyez-nous une photo sur WhatsApp : un technicien vous répond gratuitement.' },

@@ -1,4 +1,5 @@
 import { GERANT } from '@/lib/seo'
+import FaqLien from '@/components/FaqLien'
 import { pageMetadata } from '@/lib/seo'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
@@ -136,6 +137,7 @@ export default function Home() {
                     {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+                  <FaqLien q={f.q} a={f.a} ctx={{ page: '/' }} />
                 </details>
               ))}
             </div>

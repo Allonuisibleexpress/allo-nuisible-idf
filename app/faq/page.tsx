@@ -54,7 +54,7 @@ export default function FaqPage() {
 
         {FAQ_GENERALE.map((r, i) => (
           <div key={r.id} id={r.id} className="scroll-mt-20">
-            <FaqBloc titre={r.titre} items={r.items} fond={i % 2 ? '#0d0d0d' : '#111'} schema={false} />
+            <FaqBloc page="/faq" titre={r.titre} items={r.items} fond={i % 2 ? '#0d0d0d' : '#111'} schema={false} />
           </div>
         ))}
 

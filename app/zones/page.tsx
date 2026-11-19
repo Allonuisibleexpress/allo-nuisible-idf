@@ -86,7 +86,7 @@ export default function ZonesPage() {
             </div>
           </div>
         </section>
-        <FaqBloc titre="Nos zones d’intervention : vos questions" items={[
+        <FaqBloc page="/zones" titre="Nos zones d’intervention : vos questions" items={[
           { q: 'Où êtes-vous basés ?', a: 'À Saint-Maurice (94410), 6 bis rue du Val d’Osne. Nous intervenons à Paris, dans le Val-de-Marne, les Hauts-de-Seine, l’Essonne, les Yvelines, la Seine-et-Marne et le reste de l’Île-de-France.' },
           { q: 'Intervenez-vous en dehors du Val-de-Marne ?', a: 'Oui, à Paris, dans les Hauts-de-Seine et dans les autres départements d’Île-de-France, selon nos disponibilités.' },
           { q: 'Vos prix changent-ils selon la ville ?', a: 'Nos prix de départ sont les mêmes partout en Île-de-France. Le devis est gratuit et fixé avant l’intervention.' },

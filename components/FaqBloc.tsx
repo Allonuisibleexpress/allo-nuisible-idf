@@ -1,8 +1,10 @@
+import FaqLien from '@/components/FaqLien'
+import type { CtxFaq } from '@/lib/faq-liens'
 // Bloc FAQ réutilisable avec ses données structurées FAQPage (toutes les pages du site doivent avoir une FAQ, 09/11/2026).
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 
-export default function FaqBloc({ titre, intro, items, fond = '#111', schema = true }: {
-  titre: string; intro?: string; items: { q: string; a: string }[]; fond?: string; schema?: boolean
+export default function FaqBloc({ titre, intro, items, fond = '#111', schema = true, page, ctx }: {
+  titre: string; intro?: string; items: { q: string; a: string }[]; fond?: string; schema?: boolean; page?: string; ctx?: CtxFaq
 }) {
   if (!items.length) return null
   const jsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
@@ -19,6 +21,7 @@ export default function FaqBloc({ titre, intro, items, fond = '#111', schema = t
                 {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
               </summary>
               <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
+              <FaqLien q={f.q} a={f.a} ctx={{ page, ...ctx }} />
             </details>
           ))}
         </div>

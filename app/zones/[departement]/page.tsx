@@ -266,7 +266,7 @@ export default function DepartementPage({ params }: { params: { departement: str
             </div>
           </div>
         </section>
-        <FaqBloc titre={`Vos questions sur nos interventions ${d.dans}`} items={[
+        <FaqBloc page={`/zones/${params.departement}`} titre={`Vos questions sur nos interventions ${d.dans}`} items={[
           { q: `Intervenez-vous ${d.dans} ?`, a: `Oui. Depuis notre base de Saint-Maurice (94), nos techniciens interviennent ${d.dans}, 7j/7, ${['paris', 'val-de-marne', 'hauts-de-seine', 'seine-saint-denis'].includes(d.slug) ? 'souvent le jour même' : 'dans les meilleurs délais'}.` },
           { q: `Quels nuisibles traitez-vous ${d.dans} ?`, a: 'Rats et souris, punaises de lit, cafards, fourmis, guêpes et frelons, pigeons, chenilles processionnaires, acariens, ainsi que la désinfection des logements et des locaux.' },
           { q: `Combien coûte une intervention ${d.dans} ?`, a: 'À partir de 89 € TTC pour un nid de guêpes ou de frelons, 120 € pour une dératisation, des cafards ou des fourmis, 290 € pour les punaises de lit (2 passages inclus). Le devis est gratuit.' },
