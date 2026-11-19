@@ -169,7 +169,7 @@ function renderBlock(b: Block, idx: number) {
             <thead>
               <tr>
                 {b.head.map((h, j) => (
-                  <th key={j} style={{ textAlign: 'left', padding: '12px 14px', color: '#F0562A', fontWeight: 700, background: 'rgba(232, 68, 26, 0.08)', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>{h}</th>
+                  <th key={j} scope="col" style={{ textAlign: 'left', padding: '12px 14px', color: '#F0562A', fontWeight: 700, background: 'rgba(232, 68, 26, 0.08)', borderBottom: '1px solid rgba(255,255,255,0.12)' }}>{h || <span className="sr-only">Critère</span>}</th>
                 ))}
               </tr>
             </thead>
@@ -177,7 +177,9 @@ function renderBlock(b: Block, idx: number) {
               {b.rows.map((r, j) => (
                 <tr key={j}>
                   {r.map((c, ci) => (
-                    <td key={ci} style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.78)', borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: ci === 0 ? 600 : 400 }}>{c}</td>
+                    ci === 0
+                      ? <th key={ci} scope="row" style={{ textAlign: 'left', padding: '12px 14px', color: 'rgba(255,255,255,0.78)', borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: 600 }}>{c}</th>
+                      : <td key={ci} style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.78)', borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: 400 }}>{c}</td>
                   ))}
                 </tr>
               ))}

@@ -235,9 +235,11 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+33768077219"
+              aria-label="Appeler le 07 68 07 72 19"
+              title="Appeler le 07 68 07 72 19"
               className="flex items-center gap-2 text-white/80 hover:text-white text-sm transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#F0562A]" />
+              <Phone className="w-4 h-4 text-[#F0562A]" aria-hidden="true" />
               <span className="font-semibold hidden min-[1800px]:inline whitespace-nowrap">07 68 07 72 19</span>
             </a>
             <button
@@ -261,7 +263,7 @@ export default function Navbar() {
             </a>
             <a
               href="tel:+33768077219"
-              aria-label="Appeler"
+              aria-label="Appeler le 07 68 07 72 19"
               className="hidden min-[360px]:flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors"
             >
               <Phone className="w-5 h-5" style={{ color: '#F0562A' }} />

@@ -19,7 +19,7 @@ export const BRUITS: Record<string, Bruit> = {
 
 function Niveau({ n }: { n: number }) {
   return (
-    <span aria-label={`Intensité ${n} sur 5`} style={{ display: 'inline-flex', gap: '3px', alignItems: 'flex-end' }}>
+    <span role="img" aria-label={`Intensité ${n} sur 5`} style={{ display: 'inline-flex', gap: '3px', alignItems: 'flex-end' }}>
       {[1, 2, 3, 4, 5].map((i) => (
         <span key={i} style={{ width: '7px', height: `${6 + i * 4}px`, borderRadius: '2px', background: i <= n ? ACCENT : 'rgba(255,255,255,0.15)' }} />
       ))}
