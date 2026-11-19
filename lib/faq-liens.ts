@@ -32,6 +32,8 @@ const nuisibleDe = (t: string) => N.find((x) => x.re.test(t))
 
 // Sujets précis : reliés seulement si la famille correspond
 const RONGEURS = ['/deratisation', '/souris']
+// Familles qui ont une page par département (lib/departements-services.ts)
+const AVEC_DEP = ['/deratisation', '/punaises-de-lit', '/destruction-nid-frelon', '/cafards', '/puces', '/souris']
 const SUJETS: { re: RegExp; fam: string[]; href: string; label: string }[] = [
   { re: /voiture|câbles?|moteur|capot/, fam: RONGEURS, href: '/blog/rongeur-moteur-voiture-cables', label: 'Câbles de voiture rongés : que faire ?' },
   { re: /toilettes?|\bwc\b|cuvette|siphon/, fam: RONGEURS, href: '/blog/rat-dans-les-toilettes', label: 'Rat dans les toilettes : que faire ?' },
@@ -100,7 +102,7 @@ export function lienFaq(q: string, _rep: string, ctx: CtxFaq = {}): LienFaq | nu
   if (/professionnel|restaurant|attestation|copropriét|syndic|bailleur|hôtel|commerces?\b|contrat|immeuble/.test(t)) { const l = first({ href: '/professionnels', label: 'Nos interventions pour les professionnels' }); if (l) return l }
   // 7. Zone, quartiers, villes voisines, où vous trouver
   if (/quartiers?|villes? voisines|communes voisines|autour de|\bvilles?\b|secteur|département|où se trouve|où êtes|basés?/.test(t)) {
-    const l = first(fam && ctx.dep ? { href: `${fam}/${ctx.dep.slug}`, label: `${famN?.nom ?? 'Nos services'} ${ctx.dep.dans} : toutes nos villes` } : null, { href: '/zones', label: 'Nos zones d’intervention autour de Saint-Maurice' })
+    const l = first(fam && ctx.dep && AVEC_DEP.includes(fam) ? { href: `${fam}/${ctx.dep.slug}`, label: `${famN?.nom ?? 'Nos services'} ${ctx.dep.dans} : toutes nos villes` } : null, ctx.dep ? { href: `/zones/${ctx.dep.slug}`, label: `Tous nos services ${ctx.dep.dans}` } : null, { href: '/zones', label: 'Nos zones d’intervention autour de Saint-Maurice' })
     if (l) return l
   }
   // 8. Délai, urgence, jour même
