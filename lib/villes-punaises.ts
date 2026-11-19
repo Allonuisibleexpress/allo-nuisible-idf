@@ -1,3 +1,4 @@
+import { VILLES_PUNAISES_9293 } from './villes-punaises-92-93'
 // Pages « Punaises de lit à [ville] » (/punaises-de-lit/[ville]) : 5 villes du Val-de-Marne.
 // Cocon : pilier /services/punaises-de-lit, guides du blog punaises, pages communes du 94.
 // Toutes les méthodes : cryogénie, vapeur sèche, protocole mixte (barrière très légère), insecticide, gestes maison.
@@ -2301,6 +2302,7 @@ export const VILLES_PUNAISES: VillePunaises[] = [
         ...FAQ_COMMUNE("à Combs-la-Ville"),
       ]
     },
+  ...VILLES_PUNAISES_9293.map((v) => ({ ...v, faq: [...v.faq, ...FAQ_COMMUNE(v.a)] })),
 ]
 
 export function getVillePunaises(slug: string) {

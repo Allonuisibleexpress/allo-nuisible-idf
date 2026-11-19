@@ -3,6 +3,7 @@
 // Faits : Wikipédia (Anthrène des tapis, Varied carpet beetle). Prix aligné sur Allo Nuisible Express (anthrène 120 à 250 €) : dès 120 €.
 // « Écologique » employé seulement pour les méthodes sans biocide, toujours défini. Pas de tiret long, pas de chiffre inventé.
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
+import { LOCAL_LILAS, LILAS_PROCHES } from '@/lib/local-les-lilas'
 
 const WIKI_FR = 'https://fr.wikipedia.org/wiki/Anthr%C3%A8ne_des_tapis'
 const WIKI_EN = 'https://en.wikipedia.org/wiki/Varied_carpet_beetle'
@@ -133,6 +134,7 @@ export const CONFIG_ANTHRENES: VilleServiceConfig = {
   autresTitre: 'Anthrènes dans d’autres villes',
   sectionsParPage: 3,
   localTitre: (a, nom) => `Anthrènes ${a} : ce qui est propre à ${nom}`,
+  local: { 'les-lilas': LOCAL_LILAS.anthrenes },
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -147,6 +149,7 @@ type Dep = { code: string; departement: string; zoneHref: (slug: string) => stri
 const D94: Dep = { code: '94', departement: 'Val-de-Marne', zoneHref: (s) => `/zones/val-de-marne/${s}` }
 const D75: Dep = { code: '75', departement: 'Paris', zoneHref: () => '/zones/paris' }
 const D92: Dep = { code: '92', departement: 'Hauts-de-Seine', zoneHref: () => '/zones/hauts-de-seine' }
+const D93: Dep = { code: '93', departement: 'Seine-Saint-Denis', zoneHref: () => '/zones/seine-saint-denis' }
 
 const ville = (nom: string, a: string, slug: string, dep: Dep, contexte: string[], proches: string[], faq: { q: string; a: string }): VilleAnthrenes => {
   const titres = [`Anthrènes ${a} (${dep.code}) : traitement dès 120 €`, `Anthrènes ${a} (${dep.code}) : traitement`, `Anthrènes ${a}`]
@@ -321,6 +324,11 @@ export const VILLES_ANTHRENES: VilleAnthrenes[] = [
     "En appartement, nous traitons surtout tapis, placards et literie en plumes.",
   ], ['Meudon', 'Issy-les-Moulineaux', 'Châtillon', 'Le Plessis-Robinson'],
   { q: 'Quand faut-il traiter les anthrènes ?', a: 'Dès que vous voyez des larves velues, des mues ou des trous dans la laine. L’hiver est un bon moment : les larves sont regroupées près de leur nourriture et l’on évite la sortie des adultes au printemps.' }),
+  ville('Les Lilas', 'aux Lilas', 'les-lilas', D93, [
+    'Aux Lilas, les toitures des maisons de ville et des immeubles anciens abritent souvent des nids d’oiseaux, première source d’anthrènes. Les larves descendent ensuite vers les tapis, les parquets et les placards.',
+    'Nous cherchons d’abord le foyer, puis traitons avec ou sans insecticide selon les textiles et vos préférences. Les objets fragiles peuvent être traités par le froid.',
+  ], LILAS_PROCHES,
+  { q: 'Des petites bêtes rondes sur mes fenêtres au printemps : qu’est-ce que c’est ?', a: 'Probablement des anthrènes adultes, qui sortent vers la lumière. Leurs larves, elles, vivent cachées dans les tapis et les lainages. Faites chercher le foyer avant l’été.' }),
 ]
 
 export function getVilleAnthrenes(slug: string) {

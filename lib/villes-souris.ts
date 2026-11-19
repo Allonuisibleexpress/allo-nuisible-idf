@@ -6,6 +6,7 @@
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_SOURIS_GC } from '@/lib/local-souris-gc'
 import { LOCAL_SOURIS_94 } from '@/lib/local-souris-94'
+import { LOCAL_LILAS, LILAS_D93, LILAS_PROCHES } from '@/lib/local-les-lilas'
 import { ficheSouris } from '@/lib/fiche-nuisible'
 import { VILLES_DERATISATION } from '@/lib/villes-deratisation'
 
@@ -134,7 +135,7 @@ export const CONFIG_SOURIS: VilleServiceConfig = {
   maj: '2026-10-31',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des rodenticides professionnels.',
   autresTitre: 'Souris dans d\'autres villes',
-  local: { ...LOCAL_SOURIS_94, ...LOCAL_SOURIS_GC },
+  local: { ...LOCAL_SOURIS_94, ...LOCAL_SOURIS_GC, 'les-lilas': LOCAL_LILAS.souris },
   localTitre: (a, nom) => `Souris ${a} : ce qui est propre à ${nom}`,
 }
 
@@ -668,6 +669,11 @@ export const VILLES_SOURIS: VilleSouris[] = [
   ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
   { q: "Des souris dans nos bureaux : pouvez-vous intervenir le soir ?", a: "Oui. Nous intervenons hors des heures de travail et posons des pièges connectés qui signalent chaque capture. Le gestionnaire reçoit un compte rendu à chaque passage." },
   D78),
+  ville('Les Lilas', 'aux Lilas', 'les-lilas', [
+    'Aux Lilas, les maisons de ville, les caves voûtées et les petits immeubles anciens offrent aux souris de nombreux passages : joints de murs usés, planchers en bois, gaines et passages de tuyaux.',
+    'Nous repérons les accès, posons des pièges mécaniques ou des postes sécurisés et colmatons les trous. Le suivi est inclus, avec une garantie d’un an.',
+  ], LILAS_PROCHES,
+  { q: 'Les souris viennent-elles du fort de Romainville ?', a: 'Les espaces verts et les abords du fort, comme les parcs du plateau, abritent des rongeurs. Mais dans la plupart des cas, les souris d’une maison vivent déjà dans ses murs ou sa cave : il faut trouver leurs accès et les fermer.' }, LILAS_D93),
 ]
 
 export function getVilleSouris(slug: string) {

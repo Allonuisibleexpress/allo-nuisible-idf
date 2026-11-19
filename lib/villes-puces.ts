@@ -8,6 +8,7 @@ import { LOCAL_PUCES_IDF } from '@/lib/local-puces-idf'
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { PUCES_APPROFONDI } from './puces-approfondi'
 import { LOCAL_PUCES_GC } from './local-puces-gc'
+import { LOCAL_LILAS, LILAS_PROCHES } from '@/lib/local-les-lilas'
 
 export const CONFIG_PUCES: VilleServiceConfig = {
   basePath: '/puces',
@@ -59,7 +60,7 @@ export const CONFIG_PUCES: VilleServiceConfig = {
   maj: '2026-11-09',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Puces dans d’autres villes',
-  local: { ...LOCAL_PUCES_IDF, ...LOCAL_PUCES_GC },
+  local: { ...LOCAL_PUCES_IDF, ...LOCAL_PUCES_GC, 'les-lilas': LOCAL_LILAS.puces },
   localTitre: (a) => `Puces ${a} : piqûres, causes et solutions`,
   fiche: (v, vs) => fichePuces(v, vs, VILLES_DERATISATION.some((x) => x.slug === v.slug), VILLES_SOURIS.some((x) => x.slug === v.slug)),
   approfondi: PUCES_APPROFONDI,
@@ -73,11 +74,12 @@ const FAQ_COMMUNE = (a: string) => [
 
 export type VillePuces = Ville & { title: string }
 
-type Dep = '94' | '75' | '92' | '91' | '77' | '78'
+type Dep = '94' | '75' | '92' | '93' | '91' | '77' | '78'
 const DEP: Record<Dep, { departement: string; zone: (s: string) => string }> = {
   '94': { departement: 'Val-de-Marne', zone: (s) => `/zones/val-de-marne/${s}` },
   '75': { departement: 'Paris', zone: () => '/zones/paris' },
   '92': { departement: 'Hauts-de-Seine', zone: () => '/zones/hauts-de-seine' },
+  '93': { departement: 'Seine-Saint-Denis', zone: () => '/zones/seine-saint-denis' },
   '91': { departement: 'Essonne', zone: () => '/zones/essonne' },
   '77': { departement: 'Seine-et-Marne', zone: () => '/zones/seine-et-marne' },
   '78': { departement: 'Yvelines', zone: () => '/zones/yvelines' },
@@ -508,6 +510,11 @@ export const VILLES_PUCES: VillePuces[] = [
     "Nous traitons toutes les pièces fréquentées par l'animal, et vous indiquons le temps d'absence et les gestes à suivre après le passage.",
   ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
   { q: "Les piqûres sur les chevilles sont-elles des puces ?", a: "Très souvent. Les puces sautent depuis le sol et piquent le bas des jambes, souvent en petites séries. Les punaises de lit piquent plutôt les bras, le cou et le dos pendant la nuit." }),
+  ville('Les Lilas', 'aux Lilas', 'les-lilas', '93', [
+    'Aux Lilas, beaucoup de familles vivent avec chats et chiens, en appartement ou en maison de ville avec petit jardin. Les puces passent de l’animal aux tapis, aux canapés et aux fentes des parquets anciens.',
+    'Nous traitons le logement le même jour que votre animal est traité par le vétérinaire : sols, plinthes, fentes et textiles, avec les conseils pour les jours suivants.',
+  ], LILAS_PROCHES,
+  { q: 'J’emménage aux Lilas et je suis piqué aux chevilles : est-ce des puces ?', a: 'C’est probable si l’ancien occupant avait un animal : les cocons éclosent avec les vibrations des pas, parfois des semaines après. Un traitement du logement règle le problème, même sans animal chez vous.' }),
 ]
 
 export function getVillePuces(slug: string) {

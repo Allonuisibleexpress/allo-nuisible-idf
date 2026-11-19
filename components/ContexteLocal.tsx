@@ -254,7 +254,7 @@ function villeCourte(d: DonneesLocales, s: ServiceLocal, a = '') {
 
 // Version courte pour les punaises : pas de liste de lignes
 function transportsCourt(d: DonneesLocales) {
-  if (!d.gares.length) return null
+  if (!d.gares.length || !d.lignes.length) return null
   return `Le risque d'attraper des punaises de lit dans les transports, ici ${ligneLisible(d.lignes[0], true)}${d.lignes[1] ? ` ou ${ligneLisible(d.lignes[1], true)}` : ''}, reste faible : elles voyagent surtout dans les bagages, après un séjour à l'hôtel ou un voyage.`
 }
 

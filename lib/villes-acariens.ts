@@ -7,6 +7,7 @@ import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { ficheAcariens } from '@/lib/fiche-nuisible'
 import { LOCAL_ACARIENS_GC } from '@/lib/local-acariens-gc'
 import { LOCAL_ACARIENS_94 } from '@/lib/local-acariens-94'
+import { LOCAL_LILAS, LILAS_D93, LILAS_PROCHES } from '@/lib/local-les-lilas'
 import { ACARIENS_APPROFONDI } from '@/lib/acariens-approfondi'
 
 const AMELI = 'https://www.ameli.fr/assure/sante/themes/allergie/vivre-allergique'
@@ -171,7 +172,7 @@ export const CONFIG_ACARIENS: VilleServiceConfig = {
   maj: '2026-11-11',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des produits acaricides professionnels.',
   autresTitre: 'Acariens dans d\'autres villes',
-  local: { ...LOCAL_ACARIENS_94, ...LOCAL_ACARIENS_GC },
+  local: { ...LOCAL_ACARIENS_94, ...LOCAL_ACARIENS_GC, 'les-lilas': LOCAL_LILAS.acariens },
   approfondi: ACARIENS_APPROFONDI,
   sectionsParPage: 3,
   localTitre: (a, nom) => `Acariens ${a} : ce qui est propre à ${nom}`,
@@ -443,6 +444,11 @@ export const VILLES_ACARIENS: VilleAcariens[] = [
     "Nous traitons la literie et les textiles de toute la maison, et vous rappelons les gestes simples d'entretien.",
   ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
   { q: "Faut-il traiter toute la maison ou seulement les chambres ?", a: "Les chambres d'abord, car on y passe le plus de temps. Les canapés, fauteuils et tapis du salon sont aussi des réservoirs : on les traite si la personne allergique les utilise beaucoup." }, D78),
+  ville('Les Lilas', 'aux Lilas', 'les-lilas', [
+    'Aux Lilas, les immeubles anciens et les logements sur cour gardent parfois l’humidité, ce qui favorise les acariens dans la literie, les canapés et les tapis.',
+    'Nous traitons à la vapeur sèche, sans produit, ou en cryogénie, avec un acaricide ciblé seulement si nécessaire. Vous dormez dans votre lit le soir même.',
+  ], LILAS_PROCHES,
+  { q: 'Mon enfant est allergique aux acariens : par quoi commencer ?', a: 'Par la chambre : matelas, oreiller, couette et peluches. Un traitement à la vapeur sèche, puis des draps lavés à 60 °C chaque semaine et une chambre bien aérée réduisent fortement les acariens.' }, LILAS_D93),
 ]
 
 export function getVilleAcariens(slug: string) {

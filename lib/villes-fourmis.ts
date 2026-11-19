@@ -8,6 +8,7 @@ import { ficheFourmis } from '@/lib/fiche-nuisible'
 import { LOCAL_FOURMIS_94 } from '@/lib/local-fourmis-94'
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { LOCAL_FOURMIS_GC } from '@/lib/local-fourmis-gc'
+import { VILLES_FOURMIS_9293, LOCAL_FOURMIS_9293 } from '@/lib/villes-fourmis-92-93'
 
 export const SOURCES_FOURMIS = [
   { label: 'FREDON Centre-Val de Loire, fourmis invasives', url: 'https://fredon.fr/cvl/sites/default/files/Dossier%20technique/Fourmis%20invasives.pdf' },
@@ -119,7 +120,7 @@ export const CONFIG_FOURMIS: VilleServiceConfig = {
   maj: '2026-11-06',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Fourmis dans d\'autres villes',
-  local: { ...LOCAL_FOURMIS_94, ...LOCAL_FOURMIS_GC },
+  local: { ...LOCAL_FOURMIS_94, ...LOCAL_FOURMIS_GC, ...LOCAL_FOURMIS_9293 },
   localTitre: (a) => `Fourmis ${a} : d’où elles viennent et comment s’en débarrasser`,
   fiche: (v, vs) => ficheFourmis(v, vs),
 }
@@ -934,6 +935,7 @@ export const VILLES_FOURMIS: VilleFourmis[] = [
     "Pour les bureaux et commerces du centre, une piste de fourmis en salle de pause se traite à l'appât, hors des heures d'ouverture si besoin.",
   ], ["Guyancourt", "Voisins-le-Bretonneux", "Trappes", "Élancourt"],
   { q: "Des fourmis dans nos bureaux : intervenez-vous le soir ?", a: "Oui, le soir ou tôt le matin. Le gel appât ne dégage pas d'odeur et ne demande pas de libérer les locaux." }),
+  ...VILLES_FOURMIS_9293.map((v) => ({ ...v, faq: [...v.faq, ...FAQ_COMMUNE(v.a)] })),
 ]
 
 export function getVilleFourmis(slug: string) {

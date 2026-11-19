@@ -5,6 +5,8 @@
 
 import type { Ville, VilleServiceConfig } from '@/components/VilleServicePage'
 import { ficheCafards } from '@/lib/fiche-nuisible'
+import { LOCAL_CAFARDS_75 } from '@/lib/local-cafards-75'
+import { LOCAL_LILAS, LILAS_D93, LILAS_PROCHES } from '@/lib/local-les-lilas'
 
 export const GUIDES_CAFARDS: Record<string, string> = {
   'gel-anti-cafard-ne-marche-pas': 'Gel anti-cafard inefficace : 5 raisons',
@@ -120,6 +122,8 @@ export const CONFIG_CAFARDS: VilleServiceConfig = {
   maj: '2026-10-31',
   certification: 'Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des insecticides professionnels.',
   autresTitre: 'Cafards dans d\'autres villes',
+  local: { ...LOCAL_CAFARDS_75, 'les-lilas': LOCAL_LILAS.cafards },
+  localTitre: (a) => `Cafards ${a} : quartiers, immeubles et commerces`,
 }
 
 const FAQ_COMMUNE = (a: string) => [
@@ -134,6 +138,7 @@ export type VilleCafards = Ville & { title: string }
 
 // Val-de-Marne par défaut ; Paris passe { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }
 type Dep = { code: string; departement: string; zoneHref: string }
+const P75: Dep = { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }
 const ville = (nom: string, a: string, slug: string, contexte: string[], proches: string[], faq: { q: string; a: string }, dep?: Dep): VilleCafards => ({
   slug,
   nom,
@@ -223,6 +228,121 @@ export const VILLES_CAFARDS: VilleCafards[] = [
     'Dans les immeubles haussmanniens, les anciennes cuisines donnent souvent sur une courette et un escalier de service : vérifiez les passages de tuyaux sous l\'évier et derrière les meubles hauts, les blattes y circulent d\'un étage à l\'autre.',
   ], ['Saint-Mandé', 'Charenton-le-Pont', 'Vincennes', 'Paris 11e'],
   { q: 'Mon immeuble a un vide-ordures, est-ce un risque ?', a: 'Oui, les vide-ordures et locaux poubelles offrent chaleur et nourriture aux cafards, qui remontent ensuite par les gaines. Un traitement du local et des appartements touchés, puis un nettoyage régulier du conduit, limitent le problème.' }, { code: '75', departement: 'Paris', zoneHref: '/zones/paris' }),
+
+  // ── Paris : les 19 autres arrondissements (20/11/2026) ──
+  ville('Paris 1er', 'à Paris 1er', 'paris-1', [
+    'Au cœur de Paris, entre le Louvre et les Halles, le 1er arrondissement réunit restaurants, hôtels, bureaux et appartements anciens. Les cafards y vivent dans les sous-sols chauffés et remontent vers les cuisines par les colonnes d\'eau.',
+    'Restaurants, boulangeries et hôtels reçoivent une attestation d\'intervention. En appartement, le traitement se fait en 2 passages avec gel appât professionnel, insecticide ciblé si besoin, vapeur sèche ou cryogénie.',
+  ], ['Paris 2e', 'Paris 4e', 'Paris 8e', 'Paris 3e'],
+  { q: 'Mon pied-à-terre reste vide plusieurs semaines : que faire contre les cafards ?', a: 'Avant de partir, videz le réfrigérateur, sortez les poubelles et remplissez d\'eau les siphons. Posez deux ou trois pièges glu dans la cuisine : à votre retour, ils vous diront tout de suite si des blattes circulent.' }, P75),
+
+  ville('Paris 2e', 'à Paris 2e', 'paris-2', [
+    'Le 2e arrondissement, entre le Sentier, la Bourse et la rue Montorgueil, mêle bureaux, ateliers, commerces de bouche et logements anciens. Les cafards arrivent avec les livraisons et passent des réserves aux appartements par les gaines.',
+    'Nous traitons commerces, bureaux et logements, en 2 passages, avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie selon les pièces. Les commerces reçoivent une attestation pour leurs contrôles.',
+  ], ['Paris 1er', 'Paris 3e', 'Paris 9e', 'Paris 10e'],
+  { q: 'Des cafards dans mes bureaux du Sentier : faut-il fermer pendant le traitement ?', a: 'Non. Nous traitons en dehors des heures de travail, au gel appât posé dans les fentes et derrière les appareils de la tisanerie. Les salariés reprennent le lendemain matin normalement.' }, P75),
+
+  ville('Paris 3e', 'à Paris 3e', 'paris-3', [
+    'Dans le 3e arrondissement, les immeubles anciens du Haut Marais abritent appartements, galeries, ateliers et restaurants. Les blattes germaniques s\'y installent dans les cuisines et les salles de bain, et circulent par les colonnes d\'eau.',
+    'Le traitement se fait en 2 passages : gel appât professionnel dans les zones de passage, insecticide ciblé quand l\'infestation l\'exige, vapeur sèche ou cryogénie pour les pièces où l\'on veut éviter tout produit.',
+  ], ['Paris 4e', 'Paris 2e', 'Paris 11e', 'Paris 10e'],
+  { q: 'Peut-on traiter une cuisine sur mesure sans la démonter ?', a: 'Oui dans la plupart des cas. Le gel est posé dans les jointures, sous les plinthes de meubles et derrière l\'électroménager. Le technicien vous dit s\'il faut retirer une plinthe pour atteindre une cachette.' }, P75),
+
+  ville('Paris 4e', 'à Paris 4e', 'paris-4', [
+    'Du Marais à l\'île Saint-Louis, le 4e arrondissement compte des immeubles très anciens, des caves voûtées et beaucoup de restaurants. Les cafards profitent de la chaleur des cuisines et des réseaux d\'eau refaits par morceaux.',
+    'Nous intervenons chez les particuliers comme chez les restaurateurs, en 2 passages, avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Les horaires s\'adaptent à votre activité, sans majoration le soir ni le week-end.',
+  ], ['Paris 3e', 'Paris 1er', 'Paris 5e', 'Paris 11e'],
+  { q: 'Les caves voûtées du Marais attirent-elles les cafards ?', a: 'Oui, surtout la blatte orientale, qui aime les lieux frais et humides. Elle remonte ensuite par les canalisations. Aérer la cave, réparer les fuites et ne pas y stocker de cartons limite son installation.' }, P75),
+
+  ville('Paris 5e', 'à Paris 5e', 'paris-5', [
+    'Dans le Quartier latin, studios, chambres de bonne, résidences étudiantes et restaurants se partagent des immeubles anciens. Les blattes y circulent par les gaines et arrivent souvent avec des cartons ou des appareils d\'occasion.',
+    'Le traitement se fait en 2 passages : gel appât, insecticide ciblé si nécessaire, vapeur sèche ou cryogénie. Pour un studio, le prix de départ s\'applique, deuxième passage compris.',
+  ], ['Paris 6e', 'Paris 4e', 'Paris 13e', 'Paris 14e'],
+  { q: 'Je suis étudiant en chambre de bonne avec cuisine partagée : qui doit traiter ?', a: 'Prévenez le propriétaire ou le gestionnaire par écrit : si la cuisine est commune, c\'est à lui d\'organiser le traitement. Pour votre chambre seule, notre prix de départ vaut pour un studio, deux passages compris.' }, P75),
+
+  ville('Paris 6e', 'à Paris 6e', 'paris-6', [
+    'Saint-Germain-des-Prés, Odéon, Luxembourg : le 6e arrondissement compte de nombreux restaurants et commerces de bouche sous des immeubles anciens. Les cafards remontent des réserves chauffées vers les cuisines des appartements.',
+    'Nous traitons en 2 passages, avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. Les restaurants reçoivent une attestation et peuvent choisir un suivi régulier.',
+  ], ['Paris 5e', 'Paris 7e', 'Paris 14e', 'Paris 15e'],
+  { q: 'Les cafards peuvent-ils monter d\'un restaurant jusqu\'au 5e étage ?', a: 'Oui, par les colonnes d\'eau et les gaines. C\'est même un cas fréquent dans les immeubles anciens. Traiter le restaurant et les logements touchés en même temps évite les allers-retours.' }, P75),
+
+  ville('Paris 7e', 'à Paris 7e', 'paris-7', [
+    'Dans le 7e arrondissement, les grands appartements, les ministères et les commerces de la rue Cler partagent des immeubles anciens avec office, escalier de service et caves. Les cafards s\'installent surtout dans les cuisines et les réserves.',
+    'Le traitement se fait en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Nous intervenons avec discrétion et remettons un rapport écrit si le syndic en a besoin.',
+  ], ['Paris 6e', 'Paris 15e', 'Paris 8e', 'Paris 16e'],
+  { q: 'Peut-on faire intervenir le technicien sans prévenir tout l\'immeuble ?', a: 'Oui. Pour un logement isolé, l\'intervention est discrète. Si plusieurs logements sont touchés, en revanche, nous vous conseillons d\'en parler au syndic : un traitement coordonné est plus efficace.' }, P75),
+
+  ville('Paris 8e', 'à Paris 8e', 'paris-8', [
+    'Le 8e arrondissement concentre bureaux, hôtels, restaurants et grands appartements. Les cuisines professionnelles chauffent les sous-sols toute l\'année, et les blattes germaniques s\'y multiplient avant de gagner les étages.',
+    'Restaurants, hôtels et bureaux reçoivent une attestation d\'intervention et peuvent souscrire un suivi. En appartement, protocole en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie.',
+  ], ['Paris 17e', 'Paris 9e', 'Paris 16e', 'Paris 1er'],
+  { q: 'Un hôtel peut-il traiter une chambre sans la fermer longtemps ?', a: 'Oui. Le gel et la vapeur sèche ne demandent pas de quitter la pièce longtemps. Nous traitons la chambre et l\'office d\'étage entre deux clients, puis repassons 2 à 3 semaines plus tard.' }, P75),
+
+  ville('Paris 9e', 'à Paris 9e', 'paris-9', [
+    'Grands magasins, théâtres, bureaux, bars de Pigalle et commerces de la rue des Martyrs : le 9e arrondissement est dense et animé. Les cafards se plaisent dans les cuisines chaudes et passent des réserves aux logements par les colonnes.',
+    'Le traitement se fait en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. Les bars et restaurants sont traités après le service, sans majoration la nuit.',
+  ], ['Paris 10e', 'Paris 2e', 'Paris 8e', 'Paris 18e'],
+  { q: 'Des cafards dans la machine à glaçons ou le lave-vaisselle : que faire ?', a: 'Ne pulvérisez pas d\'aérosol dans l\'appareil. Le technicien traite le moteur et les recoins au gel et à la vapeur sèche, sans abîmer l\'appareil, puis vérifie au second passage.' }, P75),
+
+  ville('Paris 10e', 'à Paris 10e', 'paris-10', [
+    'Autour de la gare du Nord, de la gare de l\'Est et du canal Saint-Martin, le 10e arrondissement compte beaucoup d\'hôtels, de restaurants et d\'immeubles anciens. Les blattes arrivent avec les bagages et les livraisons, et s\'installent dans les cuisines.',
+    'Nous traitons hôtels, restaurants et appartements en 2 passages, avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Les professionnels reçoivent une attestation.',
+  ], ['Paris 9e', 'Paris 11e', 'Paris 19e', 'Paris 3e'],
+  { q: 'Mon immeuble a encore un vide-ordures : faut-il le faire traiter ?', a: 'Oui si des cafards sont signalés dans plusieurs logements. Le conduit et le local en bas d\'immeuble sont alors traités avec les appartements. Demandez au syndic de faire nettoyer le conduit régulièrement.' }, P75),
+
+  ville('Paris 11e', 'à Paris 11e', 'paris-11', [
+    'Le 11e arrondissement est très dense, avec des immeubles serrés, des bars, des restaurants et d\'anciens ateliers transformés en logements. Les cafards passent d\'un appartement à l\'autre par les gaines et les colonnes d\'eau.',
+    'Nous traitons en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. En copropriété, nous coordonnons le traitement des logements touchés avec le syndic.',
+  ], ['Paris 12e', 'Paris 20e', 'Paris 10e', 'Paris 3e'],
+  { q: 'J\'ai traité mon appartement mais les cafards reviennent de chez le voisin : que faire ?', a: 'Prévenez le syndic par écrit : quand les blattes viennent des gaines, seul un traitement coordonné des logements concernés règle le problème. Nous pouvons traiter plusieurs appartements le même jour.' }, P75),
+
+  ville('Paris 13e', 'à Paris 13e', 'paris-13', [
+    'Des tours des Olympiades aux maisons de la Butte-aux-Cailles, le 13e arrondissement est très varié. Dans les grands immeubles avec vide-ordures, les cafards circulent par les gaines ; dans les commerces de l\'avenue de Choisy, ils s\'installent dans les réserves.',
+    'Le traitement se fait en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Les commerces reçoivent une attestation et peuvent souscrire un suivi régulier.',
+  ], ['Paris 12e', 'Paris 5e', 'Paris 14e', 'Ivry-sur-Seine'],
+  { q: 'Dans une tour, faut-il traiter tout l\'immeuble ?', a: 'Pas toujours, mais il faut au moins traiter les logements touchés et ceux qui partagent la même gaine, ainsi que le local du vide-ordures. Le syndic ou le bailleur peut organiser cette intervention.' }, P75),
+
+  ville('Paris 14e', 'à Paris 14e', 'paris-14', [
+    'Le 14e arrondissement réunit Montparnasse, Alésia, la rue Daguerre et la Cité universitaire. Résidences étudiantes, immeubles anciens et grands ensembles des portes y sont touchés par les cafards, surtout dans les cuisines partagées.',
+    'Nous traitons en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Pour une résidence, le traitement de toutes les cuisines d\'un étage est souvent nécessaire.',
+  ], ['Paris 15e', 'Paris 13e', 'Paris 6e', 'Montrouge'],
+  { q: 'Dans une résidence étudiante, qui organise le traitement ?', a: 'Le gestionnaire de la résidence. Signalez-lui les cafards par écrit, en précisant la cuisine ou l\'étage concerné. Le traitement est plus efficace s\'il touche toutes les cuisines du niveau en même temps.' }, P75),
+
+  ville('Paris 15e', 'à Paris 15e', 'paris-15', [
+    'Arrondissement le plus peuplé de Paris, le 15e compte des tours du Front de Seine, des immeubles anciens autour de Convention et beaucoup de commerces de bouche. Les cafards y circulent par les gaines et les vide-ordures.',
+    'Le traitement se fait en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. Pour les familles avec enfants, le gel est posé hors de portée, uniquement dans les fentes.',
+  ], ['Paris 14e', 'Paris 7e', 'Paris 16e', 'Issy-les-Moulineaux'],
+  { q: 'Des cafards dans une tour du Front de Seine : par où arrivent-ils ?', a: 'Par les gaines techniques, les colonnes d\'eau et le vide-ordures, qui relient tous les étages. Signalez-le au syndic : un traitement coordonné des logements touchés et du local poubelles est le plus efficace.' }, P75),
+
+  ville('Paris 16e', 'à Paris 16e', 'paris-16', [
+    'Dans le 16e arrondissement, les grands appartements avec office, cuisine sur cour et chambres de service sont nombreux. Les cafards y passent par les colonnes d\'eau et s\'installent dans les cuisines, offices et buanderies.',
+    'Nous traitons en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Le devis tient compte de la surface et du nombre de pièces d\'eau, sans surprise.',
+  ], ['Paris 15e', 'Paris 17e', 'Paris 8e', 'Boulogne-Billancourt'],
+  { q: 'Faut-il traiter les chambres de service du dernier étage ?', a: 'Oui si elles ont un point d\'eau relié à la même colonne que la cuisine touchée. Les blattes y trouvent eau et chaleur. Le technicien les inspecte et vous dit si un traitement est utile.' }, P75),
+
+  ville('Paris 17e', 'à Paris 17e', 'paris-17', [
+    'Des Ternes aux Batignolles, le 17e arrondissement associe immeubles haussmanniens, commerces de bouche de la rue de Lévis et logements neufs de Clichy-Batignolles. Les cafards touchent surtout les cuisines d\'immeubles anciens et les réserves.',
+    'Le traitement se fait en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. Les commerces reçoivent une attestation pour leurs contrôles.',
+  ], ['Paris 8e', 'Paris 16e', 'Paris 18e', 'Levallois-Perret'],
+  { q: 'Des cafards dans un logement neuf, est-ce possible ?', a: 'Oui. Ils arrivent avec les cartons de déménagement, les livraisons ou des appareils d\'occasion. Une infestation prise tôt dans un logement récent se traite très bien en deux passages au gel.' }, P75),
+
+  ville('Paris 18e', 'à Paris 18e', 'paris-18', [
+    'De Montmartre à la Goutte d\'Or, le 18e arrondissement compte des immeubles anciens très denses, des commerces alimentaires, des hôtels et des locations meublées. Les cafards y circulent par les gaines et arrivent avec les marchandises.',
+    'Nous traitons en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Les commerçants et loueurs reçoivent une attestation et peuvent souscrire un suivi.',
+  ], ['Paris 17e', 'Paris 9e', 'Paris 19e', 'Paris 10e'],
+  { q: 'Je loue un meublé à Montmartre : comment traiter entre deux séjours ?', a: 'Nous intervenons dans le créneau libre, au gel et à la vapeur sèche, sans obliger à fermer longtemps. Le second passage se cale sur le planning suivant. Une attestation vous est remise.' }, P75),
+
+  ville('Paris 19e', 'à Paris 19e', 'paris-19', [
+    'Le 19e arrondissement mêle grands ensembles et tours autour de la place des Fêtes et de Flandre, immeubles récents le long du canal de l\'Ourcq et vieux immeubles de Belleville. Les cafards y circulent par les vide-ordures et les gaines.',
+    'Le traitement se fait en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. En résidence, nous coordonnons avec le bailleur ou le syndic le traitement des logements touchés et des locaux poubelles.',
+  ], ['Paris 20e', 'Paris 10e', 'Pantin', 'Les Lilas'],
+  { q: 'Mon bailleur social doit-il traiter les cafards ?', a: 'Signalez-lui le problème par écrit, avec des photos. Quand plusieurs logements sont touchés, le bailleur organise en général un traitement de la cage d\'escalier. Vous pouvez aussi faire traiter votre logement de votre côté.' }, P75),
+
+  ville('Paris 20e', 'à Paris 20e', 'paris-20', [
+    'Belleville, Ménilmontant, Saint-Blaise, porte de Bagnolet : le 20e arrondissement réunit grands ensembles, petits immeubles anciens et maisons de villas. Les blattes germaniques touchent les cuisines des tours, la blatte orientale les caves humides.',
+    'Nous traitons en 2 passages avec gel appât, insecticide ciblé, vapeur sèche ou cryogénie. Le technicien identifie d\'abord l\'espèce, car elles ne se cachent pas aux mêmes endroits.',
+  ], ['Paris 19e', 'Paris 11e', 'Bagnolet', 'Montreuil'],
+  { q: 'De gros cafards noirs sortent du siphon de la cave : qu\'est-ce que c\'est ?', a: 'Probablement la blatte orientale, qui vit dans les lieux frais et humides et remonte par les canalisations. Remplissez d\'eau les siphons peu utilisés et faites traiter la cave et ses accès.' }, P75),
 
   ville('Alfortville', 'à Alfortville', 'alfortville', [
     'Alfortville, à la confluence de la Seine et de la Marne, est une commune dense, faite surtout d\'immeubles et de résidences. Les blattes germaniques passent d\'un logement à l\'autre par les gaines techniques, les colonnes d\'eau et les passages de canalisations.',
@@ -448,6 +568,11 @@ export const VILLES_CAFARDS: VilleCafards[] = [
   ], ["Moissy-Cramayel", "Quincy-sous-Sénart", "Brie-Comte-Robert", "Lieusaint"],
   { q: "Combien coûte un traitement des cafards à Combs-la-Ville ?", a: "À partir de 120 € TTC pour un petit logement, deux passages inclus. Le devis est gratuit." },
   { code: '77', departement: 'Seine-et-Marne', zoneHref: '/zones/seine-et-marne' }),
+  ville('Les Lilas', 'aux Lilas', 'les-lilas', [
+    'Aux Lilas, petite ville très dense sur les hauteurs, à la limite du 19e et du 20e arrondissement, immeubles anciens, maisons de ville et commerces se serrent les uns contre les autres. Les cafards passent d’un logement à l’autre par les colonnes d’eau et les murs mitoyens.',
+    'Nous traitons en 2 passages avec gel appât professionnel, insecticide ciblé, vapeur sèche ou cryogénie. Les commerces de la rue de Paris reçoivent une attestation et peuvent souscrire un suivi régulier.',
+  ], LILAS_PROCHES,
+  { q: 'Des cafards dans une maison des Lilas avec sous-sol : est-ce normal ?', a: 'C’est fréquent : la blatte orientale aime les sous-sols humides et remonte par les canalisations. Réparez les fuites, remplissez d’eau les siphons peu utilisés et faites traiter le sous-sol en même temps que la cuisine.' }, LILAS_D93),
 ]
 
 export function getVilleCafards(slug: string) {

@@ -6,6 +6,7 @@ import { LOCAL_PUNAISES_94 } from '@/lib/local-punaises-94'
 import { LOCAL_POLE_PUNAISES } from '@/lib/local-pole'
 import { LOCAL_PUNAISES_75 } from '@/lib/local-punaises-75'
 import { LOCAL_PUNAISES_GC } from '@/lib/local-punaises-gc'
+import { LOCAL_PUNAISES_9293 } from '@/lib/villes-punaises-92-93'
 import ContenuNuisible, { MiniaturesChantier } from '@/components/ContenuNuisible'
 import ProtocoleCondense, { PROTOCOLE_PUNAISES } from '@/components/ProtocoleCondense'
 import CyclePunaises from '@/components/CyclePunaises'
@@ -230,7 +231,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
         <PhotoNuisibleVille basePath="/punaises-de-lit" a={v.a} />
-        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce que nous voyons à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
+        <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce que nous voyons à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? LOCAL_PUNAISES_9293[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
         {DOSSIERS_PUNAISES[v.slug] && <DossierLocal blocs={DOSSIERS_PUNAISES[v.slug]} surtitre={`Le dossier complet : punaises de lit ${v.a}`} />}
         <CryoPunaisesLien a={v.a} />
 
@@ -255,7 +256,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         <ProtocoleCondense p={PROTOCOLE_PUNAISES} a={v.a} />
 
 
-        <TarifsVille titre={`Prix d’un traitement punaises de lit ${v.a}`}
+        <TarifsVille titre={`Prix d’un traitement punaises de lit ${v.a}${codePostal(v.slug) ? ` (${codePostal(v.slug)})` : ''} : dès 290 €`}
           intro="Deux passages toujours inclus, quelle que soit la méthode. Le devis est gratuit et le prix est fixé avant l’intervention."
           lignes={[
             { label: 'Studio ou T1', prix: 'dès 290 €', detail: '2 passages, inspection de toutes les pièces' },

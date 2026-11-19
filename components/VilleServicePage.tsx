@@ -287,7 +287,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
 
         <EtapesVille slug={v.slug} a={v.a} titre={profil.etapesTitre(v.a)} etapes={profil.etapes} />
 
-        <TarifsVille titre={profil.tarifsTitre(v.a)} intro={profil.tarifsIntro} lignes={profil.tarifs}
+        <TarifsVille titre={`${profil.tarifsTitre(v.a)}${codePostal(v.slug) ? ` (${codePostal(v.slug)})` : ''}${(premierPrix(c.enBref) ?? PRIX_DEPART[sl]) ? ` : dès ${premierPrix(c.enBref) ?? PRIX_DEPART[sl]}` : ''}`} intro={profil.tarifsIntro} lignes={profil.tarifs}
           note={`Prix TTC. Garantie ${c.garantie ?? '1 an'} sur nos traitements, devis gratuit.`} />
 
         {avisLocaux.length > 0 && <AvisGoogle ordre={avisLocaux} />}

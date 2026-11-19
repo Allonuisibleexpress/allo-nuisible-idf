@@ -19,9 +19,13 @@ const PHOTOS: Record<string, { titre: string; photos: P[] }> = {
     { src: '/identifier/blattella.jpg', alt: 'Blatte germanique (Blattella germanica)', legende: 'La **blatte germanique** : 1 à 1,5 cm, deux bandes sombres sur le thorax. La plus fréquente dans les cuisines et salles de bain.', credit: 'Clemson University, USDA Cooperative Extension', licence: 'CC BY 3.0 US', page: W + 'Blattella_germanica_1236168.jpg' },
     { src: '/identifier/blatta.jpg', alt: 'Blatte orientale (Blatta orientalis)', legende: 'La **blatte orientale** : plus grande et noire, elle préfère les caves, sous-sols et canalisations.', credit: 'Alvesgaspar', licence: 'CC BY-SA 4.0', page: W + 'Cockroach_May_2007-1.jpg' },
   ] },
-  '/fourmis': { titre: 'Les fourmis les plus courantes', photos: [
+  '/fourmis': { titre: 'Quelle fourmi avez-vous ? Les 6 espèces les plus courantes', photos: [
     { src: '/fourmis/lasius-niger.jpg', alt: 'Fourmi noire des jardins (Lasius niger)', legende: 'La **fourmi noire des jardins** (Lasius niger), la plus répandue : elle entre au printemps pour chercher du sucre.', credit: 'Katja Schulz', licence: 'CC BY 2.0', page: W + 'Black_Garden_Ant_tending_Citrus_Mealybug_(16063538972).jpg' },
     { src: '/fourmis/monomorium-pharaonis.jpg', alt: 'Fourmi pharaon (Monomorium pharaonis)', legende: 'La **fourmi pharaon** : minuscule, jaune ambré, elle niche à l’intérieur des immeubles chauffés.', credit: 'April Nobile, AntWeb', licence: 'CC BY 4.0', page: W + 'Monomorium_pharaonis_casent0173986_profile_1.jpg' },
+    { src: '/fourmis/camponotus-ligniperda.jpg', alt: 'Fourmi charpentière (Camponotus ligniperda)', legende: 'La **fourmi charpentière** : grosse, noire et rouge, elle creuse le **bois humide** des terrasses, poutres et pergolas.', credit: 'April Nobile, AntWeb', licence: 'CC BY 4.0', page: W + 'Camponotus_ligniperda_casent0173649_profile_1.jpg' },
+    { src: '/fourmis/lasius-flavus.jpg', alt: 'Fourmi jaune des prés (Lasius flavus)', legende: 'La **fourmi jaune** des pelouses : elle vit presque toujours sous terre et forme les petits dômes de terre des jardins.', credit: 'AJC1', licence: 'CC BY-SA 2.0', page: W + 'Angry_Ant_(Explored)_(31456859231).jpg' },
+    { src: '/fourmis/myrmica-rubra.jpg', alt: 'Fourmi rouge (Myrmica rubra)', legende: 'La **fourmi rouge** (Myrmica) : brun-rouge, elle **pique** si on dérange son nid, souvent sous une pierre ou une dalle humide.', credit: 'AntWeb.org', licence: 'CC BY 4.0', page: W + 'Myrmica_rubra_casent0010684_profile_1.jpg' },
+    { src: '/fourmis/tetramorium-caespitum.jpg', alt: 'Fourmi des gazons (Tetramorium caespitum)', legende: 'La **fourmi des gazons** : petite et foncée, elle niche sous les **dalles de terrasse** et les pavés.', credit: 'AntWeb.org', licence: 'CC BY 4.0', page: W + 'Tetramorium_caespitum_casent0010669_profile_1.jpg' },
   ] },
   '/puces': { titre: 'La puce et ses piqûres', photos: [
     { src: '/puces/puce-du-chat.jpg', alt: 'Puce du chat (Ctenocephalides felis)', legende: 'La **puce du chat** : 2 à 3 mm, brune, aplatie sur les côtés. C’est elle qu’on trouve sur la grande majorité des chats et des chiens.', credit: 'Erturac', licence: 'CC BY-SA 3.0', page: W + 'Flea.JPG' },
@@ -55,7 +59,7 @@ export default function PhotoNuisibleVille({ basePath, a }: { basePath: string; 
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Identifier le nuisible</p>
         <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{d.titre} {a}</h2>
-        <div className={`grid gap-6 ${d.photos.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
+        <div className={`grid gap-6 ${d.photos.length > 4 ? 'sm:grid-cols-2 lg:grid-cols-3' : d.photos.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
           {d.photos.map((p) => (
             <figure key={p.src} className="rounded-2xl overflow-hidden text-left" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <img src={p.src} alt={p.alt} loading="lazy" className="w-full object-cover" style={{ aspectRatio: '4 / 3' }} />

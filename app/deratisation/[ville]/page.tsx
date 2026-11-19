@@ -265,7 +265,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <DeratEco a={v.a} />
 
 
-        <TarifsVille titre={`Prix d’une dératisation ${v.a}`}
+        <TarifsVille titre={`Prix d’une dératisation ${v.a}${codePostal(v.slug) ? ` (${codePostal(v.slug)})` : ""} : dès 120 €`}
           intro="Le devis est gratuit et le prix est fixé avant l’intervention. Rats ou souris, le tarif dépend du lieu et de l’ampleur."
           lignes={[
             { label: 'Appartement', prix: 'dès 120 €', detail: 'Rats ou souris, postes sécurisés ou pièges' },
