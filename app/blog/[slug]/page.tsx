@@ -44,6 +44,7 @@ function villesTheme(cat: string) {
 import IdentifierRongeur from '@/components/blog/IdentifierRongeur'
 import EchelleCrottes from '@/components/blog/EchelleCrottes'
 import BruitsRongeurs from '@/components/blog/BruitsRongeurs'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 // Maillage blog → pages dératisation par ville (12/11/2026) : sur chaque article rongeurs,
 // les départements et les villes où nos pages sont déjà vues par Google.
@@ -397,6 +398,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <p style={{ fontSize: '14px', fontWeight: 700, color: '#22c55e', marginBottom: '24px' }}>Aucune majoration la nuit, le week-end ni les jours fériés.</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="tel:+33768077219" style={{ display: 'inline-block', background: '#E8441A', color: '#fff', fontWeight: 800, fontSize: '14px', padding: '14px 28px', borderRadius: '10px', textDecoration: 'none' }}>Appeler : 07 68 07 72 19</a>
+<BoutonWhatsApp />
               <Link href={a.service.href} style={{ display: 'inline-block', background: 'transparent', color: '#fff', fontWeight: 700, fontSize: '14px', padding: '14px 28px', borderRadius: '10px', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.25)' }}>{a.service.label}</Link>
             </div>
           </section>

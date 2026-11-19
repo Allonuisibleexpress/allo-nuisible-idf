@@ -36,6 +36,7 @@ import PoleSaintMaurice from '@/components/PoleSaintMaurice'
 import { LOCAL_POLE_FAMILLES } from '@/lib/local-pole-familles'
 import PhotoNuisibleVille from '@/components/PhotoNuisibleVille'
 import type { Famille } from '@/lib/pole-saint-maurice'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 // Page « [service] à [ville] » commune aux cocons locaux (cafards, souris…).
 // Même structure que /punaises-de-lit/[ville] : En bref (GEO), contexte, méthodes, guides, FAQ, E-E-A-T, maillage.
@@ -532,6 +533,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
+<BoutonWhatsApp />
             <p className="text-white/60 text-sm mt-8">
               Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>

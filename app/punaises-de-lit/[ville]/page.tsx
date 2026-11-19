@@ -1,3 +1,4 @@
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 import { notFound } from 'next/navigation'
 import MaillageVille from '@/components/MaillageVille'
 import LocalVille from '@/components/LocalVille'
@@ -358,6 +359,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
+<BoutonWhatsApp />
             <p className="text-white/60 text-sm mt-8">
               Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Tous nos services {v.a}</a>

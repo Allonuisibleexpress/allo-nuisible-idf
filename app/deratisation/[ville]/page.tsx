@@ -1,3 +1,4 @@
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 import { notFound } from 'next/navigation'
 import DeratEco from '@/components/DeratEco'
 import { VILLES_PUCES } from '@/lib/villes-puces'
@@ -365,6 +366,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
+<BoutonWhatsApp />
             <p className="text-white/60 text-sm mt-8">
               Nous intervenons aussi à {v.proches.join(', ')}.{' '}
               <a href={v.zoneHref} className="underline hover:text-white">Voir la zone {v.departement}</a>

@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
 import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import FormulaireDemande from '@/components/FormulaireDemande'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 // Vrais liens (et non des boutons de défilement) : ils fonctionnent depuis toutes les pages du site.
 const quickLinks = [
@@ -36,6 +38,8 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
+    <>
+    <FormulaireDemande />
     <footer className="bg-[#111] text-white">
       {/* Bandeau « devis gratuit » présent sur toutes les pages du site */}
       <div style={{ background: '#E8441A' }}>
@@ -186,5 +190,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   )
 }

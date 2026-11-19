@@ -1,6 +1,7 @@
 // Bandeau « Devis gratuit » des pages ville (demande de l'utilisateur, 08/11/2026 : faire ressortir « devis gratuit »
 // avec le mot-clé du service). Formulations en rotation d'une ville à l'autre pour éviter le texte identique.
 import { Phone } from 'lucide-react'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 const ACCENT = '#E8441A'
 const h = (s: string) => s.split('').reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 3)
@@ -38,6 +39,7 @@ export default function BandeauDevis({ slug, mot, a, prix }: { slug: string; mot
         <a href="tel:+33768077219" className="inline-flex items-center gap-2 font-black text-white px-7 py-4 rounded-2xl text-base md:text-lg" style={{ background: ACCENT, boxShadow: '0 6px 24px rgba(232,68,26,0.35)' }}>
           <Phone className="w-5 h-5" /> Mon devis gratuit : 07 68 07 72 19
         </a>
+<BoutonWhatsApp />
       </div>
     </section>
   )

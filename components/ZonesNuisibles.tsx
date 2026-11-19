@@ -9,6 +9,7 @@ import { PestIcon, type PestKey } from '@/components/PestIcons'
 import { NUISIBLES_ZONES, CONTENU_ZONES } from '@/lib/zones-departements-contenu'
 import { SERVICES_DEP, estDep } from '@/lib/departements-services'
 import { villesFamilleDep } from '@/lib/services-ville'
+import { BoutonWhatsApp, LienWhatsApp } from '@/components/LienWhatsApp'
 
 const ICONES: Record<string, PestKey> = {
   rats: 'deratisation', souris: 'rongeurs', punaises: 'punaises-de-lit', cafards: 'cafards-blattes', fourmis: 'fourmis', frelons: 'guepes-frelons',
@@ -61,6 +62,7 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
               </div>
             ))}
           </dl>
+          <div className="text-center"><LienWhatsApp /></div>
           {c.population && <p className="text-white/60 text-xs mt-4 text-center">{nom} ({code}) : {c.population}.</p>}
         </div>
       </section>
@@ -153,6 +155,7 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
                     {n.titre} {dans} <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
                 )}
+                <BoutonWhatsApp sujet={`${n.nom} ${dans}`} texte="Photo sur WhatsApp" />
                 <a href={n.service} className="inline-flex items-center gap-2 font-bold text-white/90 text-sm px-5 py-3 rounded-xl" style={card}>
                   Notre service : {n.nom.toLowerCase()} <ArrowRight className="w-4 h-4" style={{ color: '#F0562A' }} aria-hidden="true" />
                 </a>

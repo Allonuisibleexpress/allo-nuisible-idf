@@ -13,6 +13,7 @@ import { SERVICES_DEP, DEPS, estDep, type ServiceDep } from '@/lib/departements-
 import { villesDuDepartement } from '@/lib/services-ville'
 import ZonesNuisibles from '@/components/ZonesNuisibles'
 import { CONTENU_ZONES } from '@/lib/zones-departements-contenu'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 const ACCENT = '#E8441A'
 const PHONE = '07 68 07 72 19'
@@ -70,6 +71,7 @@ export default function DepartementPage({ params }: { params: { departement: str
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
+<BoutonWhatsApp />
               <a href="/tarifs"
                 className="inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-125"
                 style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff' }}>
@@ -257,6 +259,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> {PHONE}
             </a>
+<BoutonWhatsApp />
             <div className="mt-14">
               <p className="text-white/60 text-xs uppercase tracking-widest mb-4">Nous intervenons aussi</p>
               <div className="flex flex-wrap justify-center gap-2">

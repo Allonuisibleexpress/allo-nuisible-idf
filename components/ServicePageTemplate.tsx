@@ -19,6 +19,7 @@ import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
 import EnBrefService from '@/components/EnBrefService'
+import { LienWhatsApp, BoutonWhatsApp } from '@/components/LienWhatsApp'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import { MethodesDetaillees, GuideDetaille, type BlocMethodes, type GuideService } from '@/components/MethodesService'
@@ -221,6 +222,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
         <Phone style={{ width: '1rem', height: '1rem', flexShrink: 0 }} />
         Appelez maintenant
       </a>
+<BoutonWhatsApp />
 
       <Navbar />
       <main>
@@ -281,6 +283,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                   <Phone className="w-4 h-4" />
                   {PHONE}
                 </a>
+<BoutonWhatsApp />
                 <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 font-bold text-white px-7 py-4 rounded-2xl text-sm transition-all hover:brightness-110"
                   style={{ background: '#0E7A3E', boxShadow: '0 6px 28px rgba(37,211,102,0.3)' }}
@@ -572,6 +575,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 style={{ color: '#B8330D', boxShadow: '0 8px 24px rgba(0,0,0,0.2)' }}>
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
+<BoutonWhatsApp />
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 font-bold px-9 py-4 rounded-2xl border-2 border-white/80 text-white hover:bg-white/10 transition-all text-sm">
                 WhatsApp <ArrowRight className="w-4 h-4" />

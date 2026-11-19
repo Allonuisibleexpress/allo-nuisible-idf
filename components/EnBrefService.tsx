@@ -1,6 +1,7 @@
 // Bloc « En bref » des pages service (19/11/2026) : questions courtes, réponses directes, faciles à citer
 // par le mode IA de Google et les moteurs à réponse. Données dans lib/en-bref-services.ts.
 import { EN_BREF_SERVICES } from '@/lib/en-bref-services'
+import { LienWhatsApp } from '@/components/LienWhatsApp'
 
 export default function EnBrefService({ cle }: { cle: string }) {
   const qr = EN_BREF_SERVICES[cle]
@@ -17,6 +18,7 @@ export default function EnBrefService({ cle }: { cle: string }) {
             </div>
           ))}
         </dl>
+        <div className="text-center"><LienWhatsApp /></div>
       </div>
     </section>
   )

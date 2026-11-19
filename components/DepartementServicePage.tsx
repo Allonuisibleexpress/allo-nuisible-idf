@@ -146,6 +146,7 @@ import FaqLien from '@/components/FaqLien'
 import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import { DOSSIERS_PUNAISES } from '@/lib/dossiers-punaises'
 import { villesPoleService } from '@/lib/villes-famille'
+import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 // 19/11/2026 (demande de l'utilisateur) : « traitement » + nuisible + lieu dans un sous-titre de chaque page
 const TRAITEMENT_DEP: Record<string, string> = {
@@ -241,6 +242,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               <a href="tel:+33768077219" className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl hover:brightness-110" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.45)' }}>
                 <Phone className="w-5 h-5" /> Devis gratuit : 07 68 07 72 19
               </a>
+<BoutonWhatsApp />
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 font-black text-white px-7 py-4 rounded-2xl hover:bg-white/10" style={{ border: '1px solid rgba(255,255,255,0.25)' }}>
                 <Camera className="w-5 h-5" /> Envoyer une photo sur WhatsApp
               </a>
@@ -468,6 +470,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <a href="tel:+33768077219" className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl hover:brightness-110" style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>
               <Phone className="w-5 h-5" /> 07 68 07 72 19
             </a>
+<BoutonWhatsApp />
             <div className="grid sm:grid-cols-2 gap-6 mt-12 text-left">
               <div>
                 <p className="text-white/60 text-xs uppercase tracking-widest mb-3">{c.label} dans les autres départements</p>
