@@ -20,8 +20,8 @@ export const CRYO_PARTIE_1: Bloc[] = [
     'Sur cette page, **écologique veut dire sans biocide** : ni insecticide, ni répulsif, ni aucun autre produit biocide n’est utilisé chez vous. La cryogénie remplit cette condition, puisqu’elle n’agit que par le **froid**.',
     'Nous n’employons pas ce mot pour dire que la méthode n’a aucun impact : elle utilise du **dioxyde de carbone** en bouteille et du matériel. Nous l’employons pour une seule raison, précise et vérifiable : **aucun biocide** n’est déposé dans votre logement. Notre traitement écologique des punaises de lit associe la **cryogénie**, la **vapeur sèche** et notre **chambre froide à −20 °C** : tout est expliqué ci-dessous. Pour les autres nuisibles, voir [tous nos traitements sans produit chimique](/services/traitements-sans-produit-chimique).',
   ] },
-  { h: 'Traitement écologique des punaises de lit, sans produit chimique : cryogénie, vapeur sèche, chambre froide', p: [
-    'Notre **traitement des punaises de lit sans produit chimique** repose sur la **température**, et non sur un insecticide. Chaque outil a son rôle :',
+  { h: 'Traitement des punaises de lit sans insecticide ni biocide : cryogénie, vapeur sèche, chambre froide', p: [
+    'Notre **traitement des punaises de lit sans insecticide ni biocide** n’utilise **aucun produit chimique** : pas d’insecticide, pas de répulsif, pas de poudre, pas de fumigène, aucun résidu laissé dans le logement. Il repose uniquement sur la **température** (le froid et la chaleur). Chaque outil a son rôle :',
     '- **La cryogénie**, le cœur du traitement : la neige carbonique à environ −78 °C atteint les fentes, le sommier, les lattes, les meubles, les plinthes et le contour des prises.',
     '- **La vapeur sèche** : une vapeur à très haute température pour les grandes surfaces textiles, comme le matelas, le canapé, les fauteuils, les rideaux ou une tête de lit capitonnée.',
     '- **Notre chambre froide à −20 °C**, pendant au moins 72 heures : pour les objets et textiles qui ne se lavent pas, comme les chaussures, les sacs, les livres ou les peluches.',

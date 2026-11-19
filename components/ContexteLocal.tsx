@@ -293,16 +293,16 @@ function zonesRisque(d: DonneesLocales, s: ServiceLocal, a: string) {
 }
 
 const TITRES: Record<ServiceLocal, (a: string) => string> = {
-  deratisation: (a) => `Entreprise de dératisation ${a} : notre intervention`,
+  deratisation: (a) => `Dératisation ${a} : traitement des rats et des souris`,
   punaises: (a) => `Traitement des punaises de lit ${a} : notre intervention`,
   cafards: (a) => `Traitement des cafards ${a}`,
   souris: (a) => `Traitement des souris ${a}`,
-  chenilles: (a) => `Chenilles processionnaires ${a} : notre intervention`,
+  chenilles: (a) => `Traitement des chenilles processionnaires ${a}`,
   acariens: (a) => `Traitement des acariens ${a}`,
   fourmis: (a) => `Traitement des fourmis ${a}`,
   puces: (a) => `Traitement des puces ${a}`,
   anthrenes: (a) => `Traitement des anthrènes ${a}`,
-  frelons: (a) => `Un nid de guêpes ou de frelons ${a} ? Notre intervention`,
+  frelons: (a) => `Destruction de nid de frelons et de guêpes ${a}`,
   commune: (a) => `Nos traitements ${a}`,
 }
 

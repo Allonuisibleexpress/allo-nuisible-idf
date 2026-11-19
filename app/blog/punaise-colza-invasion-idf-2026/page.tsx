@@ -361,9 +361,9 @@ export default function PunaiseCorzaArticle() {
                 borderRadius: '12px',
                 padding: '16px',
               }}>
-                <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#F0562A', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#F0562A', marginBottom: '8px' }}>
                   {item.q}
-                </h4>
+                </h3>
                 <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
                   {item.a}
                 </p>

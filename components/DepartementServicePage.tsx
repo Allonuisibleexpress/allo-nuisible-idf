@@ -147,6 +147,12 @@ import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import { DOSSIERS_PUNAISES } from '@/lib/dossiers-punaises'
 import { villesPoleService } from '@/lib/villes-famille'
 
+// 19/11/2026 (demande de l'utilisateur) : « traitement » + nuisible + lieu dans un sous-titre de chaque page
+const TRAITEMENT_DEP: Record<string, string> = {
+  deratisation: 'Dératisation et traitement des rats et souris', punaises: 'Traitement des punaises de lit', cafards: 'Traitement des cafards',
+  puces: 'Traitement des puces', souris: 'Traitement des souris', frelons: 'Destruction de nid de frelons et de guêpes',
+}
+
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
   const c = SERVICES_DEP[s], dep = DEPS[d], ct = c.contenu[d]
   const villes = villesDuDep(s, d)
@@ -279,7 +285,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── CONTEXTE DÉPARTEMENT ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>ce qu’il faut savoir</span></h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{TRAITEMENT_DEP[s] ?? c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>ce qu’il faut savoir</span></h2>
             {ct.paras.map((p) => <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>)}
             <div className="grid md:grid-cols-3 gap-4 mt-10 text-left">
               {ct.points.map((p) => (

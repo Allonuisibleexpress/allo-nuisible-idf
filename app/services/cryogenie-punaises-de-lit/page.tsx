@@ -27,13 +27,13 @@ const COMPARATIF = {
 // Le comparatif s'affiche juste avant « Quel est le traitement le plus efficace »
 const COUPE = CRYO_PARTIE_2.findIndex((b) => b.h.startsWith('Quel est le traitement'))
 // Le tableau des outils suit la section « Traitement écologique des punaises de lit, sans produit chimique »
-const COUPE_1 = CRYO_PARTIE_1.findIndex((b) => b.h.startsWith('Traitement écologique des punaises de lit, sans produit chimique')) + 1
+const COUPE_1 = CRYO_PARTIE_1.findIndex((b) => b.h.startsWith('Traitement des punaises de lit sans insecticide ni biocide')) + 1
 
 const data: ServiceData = {
   badge: 'Traitement écologique (sans biocide) · Cryogénie · Vapeur sèche · Chambre froide · Garantie 1 an',
   devis: 'Devis gratuit traitement écologique des punaises de lit',
   heroTitle: 'Traitement punaises de lit écologique',
-  heroHighlight: 'Sans biocide, par cryogénie à −78 °C',
+  heroHighlight: 'Sans insecticide, par cryogénie à −78 °C',
   heroDescription: 'Écologique, c’est-à-dire sans biocide : la cryogénie (ou cryogénisation) tue les punaises de lit et leurs œufs par le froid. De la neige carbonique à environ −78 °C est projetée sur la literie, le mobilier et chaque recoin, sans insecticide ni résidu, complétée si besoin par la vapeur sèche et notre chambre froide à −20 °C. À Paris et en Île-de-France, 2 passages inclus dès 290 €, garantie 1 an. Nos chantiers en vidéo sur cette page.',
   heroPrices: [
     { price: '290', label: 'Studio' },
@@ -130,8 +130,8 @@ const data: ServiceData = {
 }
 
 export const metadata = pageMetadata({
-  title: 'Traitement punaises de lit écologique : cryogénie dès 290 €',
-  description: 'Traitement écologique des punaises de lit sans biocide : cryogénie à −78 °C, œufs tués au contact. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
+  title: 'Punaises de lit sans insecticide : cryogénie écologique',
+  description: 'Traitement des punaises de lit sans insecticide ni biocide : cryogénie à −78 °C, œufs tués au contact. Paris et IDF, 2 passages dès 290 €, garantie 1 an.',
   path: '/services/cryogenie-punaises-de-lit',
 })
 
