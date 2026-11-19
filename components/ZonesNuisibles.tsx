@@ -1,7 +1,10 @@
 // Contenu nuisible par nuisible des pages /zones/[département] (19/11/2026) : En bref, sommaire, tableau des prix,
 // une section par nuisible (texte local, méthode, prix, liens vers la page département, les villes et les guides),
 // vrais chantiers du département. Données : lib/zones-departements-contenu.ts.
+import NextImage from 'next/image'
 import { ArrowRight, MapPin, BookOpen } from 'lucide-react'
+import { PHOTOS_CHANTIERS, type PhotoKey, type PhotoChantier } from '@/lib/photos-chantiers'
+import { Filigrane } from '@/components/MediasChantier'
 import { PestIcon, type PestKey } from '@/components/PestIcons'
 import { NUISIBLES_ZONES, CONTENU_ZONES } from '@/lib/zones-departements-contenu'
 import { SERVICES_DEP, estDep } from '@/lib/departements-services'
@@ -10,6 +13,24 @@ import { villesFamilleDep } from '@/lib/services-ville'
 const ICONES: Record<string, PestKey> = {
   rats: 'deratisation', souris: 'rongeurs', punaises: 'punaises-de-lit', cafards: 'cafards-blattes', fourmis: 'fourmis', frelons: 'guepes-frelons',
   chenilles: 'chenilles', pigeons: 'pigeons', puces: 'acariens', acariens: 'acariens', anthrenes: 'anthrenes', desinfection: 'desinfection',
+}
+// Vraies photos de chantier par nuisible (19/11/2026, demande de l'utilisateur : « rajoute des photos »).
+// 2 photos par section, choisies en tournant selon le département pour ne pas répéter les mêmes d'une page à l'autre.
+const PHOTOS: Partial<Record<string, PhotoKey[]>> = {
+  rats: ['trouRat1', 'ratPiege', 'ratPlaque', 'trouRat2', 'trouRat3', 'ratDiogene'],
+  souris: ['sourisGlu', 'sourisAirbnb', 'rongeursGlu'],
+  punaises: ['creteilLattes1', 'vincennesMortes1', 'litCryo', 'cryoFoyer', 'creteilLattes2', 'vincennesMortes2', 'litEnfant', 'cryoSalle'],
+  cafards: ['cafardsSol', 'cafardsTiroir', 'cafardsMeuble', 'cafardsTiroir2'],
+  frelons: ['frelonsPerche', 'frelonsArbre', 'frelonsNacelle1', 'frelonsPorte', 'nidGuepes', 'frelonsAsiatiques', 'frelonsBuissonTech', 'frelonsEcoleNid'],
+  pigeons: ['balconEncombre', 'balcon', 'toit'],
+  desinfection: ['diogeneNettoyage', 'diogeneCrottes'],
+}
+const ORDRE_DEP = ['paris', 'val-de-marne', 'hauts-de-seine', 'seine-saint-denis', 'essonne', 'yvelines', 'seine-et-marne', 'val-d-oise']
+function photosDe(cle: string, slug: string): PhotoKey[] {
+  const l = PHOTOS[cle] ?? []
+  if (l.length <= 2) return l
+  const k = Math.max(0, ORDRE_DEP.indexOf(slug)) * 2
+  return [l[k % l.length], l[(k + 1) % l.length]]
 }
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 const gras = (t: string) => t.split(/(\*\*[^*]+\*\*)/g).map((m, k) => (m.startsWith('**') ? <strong key={k} className="text-white">{m.slice(2, -2)}</strong> : m))
@@ -107,6 +128,22 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
               </span>
               <h2 className="text-2xl md:text-3xl font-black text-white mb-5">{n.titre} <span style={{ color: '#F0562A' }}>{dans}</span></h2>
               <p className="text-white/75 leading-relaxed mb-4">{gras(c.textes[n.cle])}</p>
+              {photosDe(n.cle, slug).length > 0 && (
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {photosDe(n.cle, slug).map((k) => {
+                    const ph: PhotoChantier = PHOTOS_CHANTIERS[k]
+                    return (
+                      <figure key={k} className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: '4/3', background: '#1a1a1a' }}>
+                        <NextImage src={ph.src} alt={ph.alt} fill sizes="(max-width: 768px) 50vw, 384px" className="object-cover" style={ph.cadrage ? { objectPosition: ph.cadrage } : undefined} />
+                        <figcaption className="absolute inset-x-0 bottom-0 text-white text-[11px] font-semibold leading-snug text-left" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)', padding: '24px 8px 8px' }}>
+                          {ph.legende}
+                        </figcaption>
+                        <Filigrane bas={34} />
+                      </figure>
+                    )
+                  })}
+                </div>
+              )}
               <p className="text-white/70 text-sm leading-relaxed mb-6">
                 <strong className="text-white">Notre méthode :</strong> {n.methode} <strong className="text-white">Prix : {n.prix} TTC</strong>, garantie {n.garantie}, devis gratuit.
               </p>
