@@ -5,7 +5,7 @@ import { ArrowRight, Award, Users, Clock, MapPin } from 'lucide-react'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
 
 const stats = [
-  { icon: Award, target: 3, suffix: '+', label: 'ans d\'activité', duration: 1200 },
+  { icon: Award, target: 5, suffix: '', label: 'ans d\'expérience', duration: 1200 },
   { icon: Users, target: 1500, suffix: '+', label: 'clients satisfaits', duration: 2000 },
   { icon: Clock, target: null, suffix: '24/7', label: 'disponibilité', duration: 0 },
 ]

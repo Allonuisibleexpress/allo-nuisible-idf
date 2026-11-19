@@ -31,5 +31,9 @@ export const GERANT = {
   '@id': 'https://allonuisibleidf.fr/#gerant',
   name: GERANT_NOM,
   jobTitle: 'Gérant',
+  url: 'https://allonuisibleidf.fr/qui-sommes-nous',
+  image: 'https://allonuisibleidf.fr/equipe/houssem-hattab-gerant.jpg',
+  description: 'Gérant d’Allo Nuisible IDF, entreprise de lutte contre les nuisibles basée à Saint-Maurice (94). 5 ans d’expérience en dératisation, désinsectisation et désinfection.',
+  knowsAbout: ['Dératisation', 'Punaises de lit', 'Cryogénie', 'Cafards', 'Nids de guêpes et de frelons', 'Lutte contre les nuisibles'],
   worksFor: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
 }

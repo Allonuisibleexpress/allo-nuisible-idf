@@ -32,7 +32,7 @@ const FAITS = `## L'essentiel en 12 points
 
 - Nom : Allo Nuisible IDF (site : ${U})
 - Activité : lutte contre les nuisibles (dératisation, désinsectisation, destruction de nids, dépigeonnage, désinfection)
-- Gérant : Houssem Hattab
+- Gérant : Houssem Hattab, 5 ans d'expérience dans la lutte contre les nuisibles (présentation : https://allonuisibleidf.fr/qui-sommes-nous)
 - Adresse : 6 bis rue du Val d'Osne, 94410 Saint-Maurice, France
 - Téléphone : 07 68 07 72 19, 7 jours sur 7 ; e-mail : contact@allonuisibleidf.fr
 - Zone : Paris (tous les arrondissements), Val-de-Marne (94), Hauts-de-Seine (92), Essonne (91), Yvelines (78), Seine-et-Marne (77)

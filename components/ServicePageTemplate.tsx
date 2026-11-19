@@ -18,6 +18,7 @@ import PhotosChantiers from '@/components/PhotosChantiers'
 import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import EnBrefService from '@/components/EnBrefService'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
 import { MethodesDetaillees, GuideDetaille, type BlocMethodes, type GuideService } from '@/components/MethodesService'
@@ -334,6 +335,9 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
             )}
           </div>
         </section>
+
+        {/* En bref : réponses directes pour le mode IA (19/11/2026), vidéos juste en dessous */}
+        <EnBrefService cle={chemin.split('/').pop() ?? ''} />
 
         {/* Vidéos de chantier juste sous le haut de page (19/11/2026) */}
         {(data.chantier?.videos?.length ?? 0) > 0 && (

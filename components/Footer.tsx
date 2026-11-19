@@ -12,6 +12,7 @@ const quickLinks = [
   { label: 'Tarifs', href: '/tarifs' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   { label: 'Zones d\'intervention', href: '/zones' },
   { label: 'Contact', href: '/#contact' },
 ]
