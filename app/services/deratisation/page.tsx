@@ -45,7 +45,7 @@ const data: ServiceData = {
         renvoiHaut
         titre="Notre chantier de dératisation en vidéo : ce que nous avons fait"
         intro={DERAT_VIDEOS_INTRO}
-        videos={DERAT_VIDEOS}
+        videos={[...DERAT_VIDEOS.filter((v) => !v.src.includes('avant-apres')), ...DERAT_VIDEOS.filter((v) => v.src.includes('avant-apres'))]} // 20/11 : les vidéos de rats d'abord, l'avant/après du logement en dernier
         photos={MEDIAS_DERATISATION.photos}
       />
     </>
@@ -76,7 +76,7 @@ const data: ServiceData = {
   photos: ['ratDiogene'],
   chantier: {
     photos: MEDIAS_DERATISATION.photos,
-    videos: DERAT_VIDEOS.map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
+    videos: DERAT_VIDEOS.filter((v) => !v.src.includes('avant-apres')).map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
     titre: 'Nos chantiers de dératisation en images',
     lien: { href: CHANTIER_DIOGENE.article, label: 'Lire le récit d’un chantier : logement très encombré à Maisons-Alfort' },
   },

@@ -200,13 +200,14 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         {/* Vidéos du chantier, juste sous « En bref » (19/11/2026) */}
         {v.slug === CHANTIER_DIOGENE.ville && (
-          <VideosEnHaut videos={CHANTIER_DIOGENE.videos} titre={`Notre dernier chantier ${v.a} en vidéo`} lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
+          <VideosEnHaut videos={[...CHANTIER_DIOGENE.videos.filter((x) => !x.src.includes('avant-apres')), ...CHANTIER_DIOGENE.videos.filter((x) => x.src.includes('avant-apres'))]} titre={`Notre dernier chantier ${v.a} en vidéo`} lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet de l’intervention' }} />
         )}
         {/* Autres villes : le chantier filmé le plus proche (Maisons-Alfort), lieu et distance indiqués (19/11/2026) */}
         {v.slug !== CHANTIER_DIOGENE.ville && (() => {
           const d = distanceDe(v.slug, CHANTIER_DIOGENE.ville)
           if (d === null) return null
-          const vids = CHANTIER_DIOGENE.videos.slice(0, 2)
+          // 20/11 : pas la vidéo avant/après du logement (demande de l'utilisateur), seulement les rats : ramassage + rats 2 jours après
+          const vids = CHANTIER_DIOGENE.videos.filter((x) => !x.src.includes('avant-apres')).slice(0, 2)
           const m = mentionDistance({ ville: CHANTIER_DIOGENE.ville, distance: d }, v.nom)
           return (
             <VideosEnHaut videos={vids} titre={`Dératisation : notre chantier en vidéo près ${deVille(v.nom)}`}
