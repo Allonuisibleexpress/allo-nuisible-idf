@@ -1180,7 +1180,6 @@ export const ARTICLES: Article[] = [
     ],
     sources: [
       { label: 'MAIF, dégâts de rongeurs et assurance auto', url: 'https://www.maif.fr/vehicule-mobilite/guide-assurance-auto/degats-rongeurs' },
-      { label: 'Leocare, voiture et rongeurs', url: 'https://leocare.eu/fr/blog/voiture-rongeurs-que-faire-cables-ronges/' },
     ],
     cta: { title: 'Rongeurs dans votre parking ou votre box ?', text: "On traite la source pour que vos câbles ne soient plus grignotés. Particuliers, copropriétés et entreprises en Île-de-France." },
   },
@@ -6405,7 +6404,7 @@ export const ARTICLES: Article[] = [
       { q: "Combien coûte un traitement contre les fourmis ?", a: "À partir de 120 € TTC en Île-de-France, selon l'espèce, la surface et le nombre de nids. Devis gratuit, garantie 1 an." },
     ],
     sources: [
-      { label: 'INPN (Muséum national d\'Histoire naturelle), fourmis de France métropolitaine', url: 'https://inpn.mnhn.fr/espece/cadre/192' },
+      { label: 'INPN, Inventaire national du patrimoine naturel (Muséum national d\'Histoire naturelle)', url: 'https://inpn.mnhn.fr/' },
       { label: 'Office fédéral de l\'environnement (Suisse), fourmis', url: 'https://www.bafu.admin.ch/fr/fourmis' },
       { label: 'Futura-Sciences, ce que l\'on sait de Tapinoma magnum', url: 'https://www.futura-sciences.com/planete/actualites/fourmis-ce-on-sait-tapinoma-magnum-fourmi-noire-brillante-envahit-europe-127295/' },
       { label: 'Canton de Genève, lutter contre la fourmi Tapinoma magnum', url: 'https://www.ge.ch/lutter-contre-fourmi-magnum-envahissante' },
@@ -6527,9 +6526,8 @@ export const ARTICLES: Article[] = [
       { label: 'GHR, Prestataires de dératisation : attention aux arnaques (2025)', url: 'https://www.ghr.fr/reglementation-fiscalite/hygiene/prestataires-de-deratisation-attention-aux-arnaques' },
       { label: 'UFC-Que Choisir, Dépannage à domicile : l’arnaque au prospectus', url: 'https://www.quechoisir.org/actualite-depannage-a-domicile-l-arnaque-au-prospectus-toujours-et-encore-n66179/' },
       { label: 'UFC-Que Choisir, Punaises de lit : les escrocs attaquent', url: 'https://www.quechoisir.org/actualite-punaises-de-lit-les-escrocs-attaquent-n112078' },
-      { label: 'Douane et DGCCRF, alerte sur l’insecticide interdit SNIPER (2024)', url: 'https://www.economie.gouv.fr/dgccrf/actualites/recrudescence-des-saisies-de-sniper-la-douane-et-la-dgccrf-alertent-les' },
+      { label: 'Douane et DGCCRF, alerte sur l’insecticide interdit SNIPER (2024)', url: 'https://www.economie.gouv.fr/dgccrf/actualites-dgccrf/recrudescence-des-saisies-de-sniper-la-douane-et-la-dgccrf-alertent-les-consommateurs-contre-cet-insecticide-interdit-car' },
       { label: 'Service-public.fr, Démarchage à domicile : règles à respecter', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F23224' },
-      { label: 'SignalConso, faire un signalement', url: 'https://signal.conso.gouv.fr/fr/services-aux-particuliers/faire-un-signalement' },
     ],
     cta: { title: 'Un nuisible chez vous ? Faites appel à un pro identifiable', text: "Devis gratuit et écrit, techniciens certifiés Certibiocide, protocole expliqué avant de commencer et garantie 1 an. Paris et Val-de-Marne, 7j/7." },
   },
