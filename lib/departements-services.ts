@@ -3,14 +3,16 @@
 // (geo.api.gouv.fr), prix alignés sur /tarifs. Pas de tiret long, pas de « naturel », « écologique », « sans danger ».
 import type { FamilleVille } from './services-ville'
 import { CONTENU_GC } from './departements-services-gc'
+import { CONTENU_93 } from './departements-services-93'
 
-export type DepSlug = 'paris' | 'val-de-marne' | 'hauts-de-seine' | 'essonne' | 'yvelines' | 'seine-et-marne'
+export type DepSlug = 'paris' | 'val-de-marne' | 'hauts-de-seine' | 'seine-saint-denis' | 'essonne' | 'yvelines' | 'seine-et-marne'
 export type ServiceDep = 'deratisation' | 'punaises' | 'frelons' | 'cafards' | 'souris' | 'puces'
 
 export const DEPS: Record<DepSlug, { nom: string; code: string; dans: string; de: string; population: number; communes: string; zone: string }> = {
   paris: { nom: 'Paris', code: '75', dans: 'à Paris', de: 'de Paris', population: 2103778, communes: '20 arrondissements', zone: '/zones/paris' },
   'val-de-marne': { nom: 'Val-de-Marne', code: '94', dans: 'dans le Val-de-Marne', de: 'du Val-de-Marne', population: 1426929, communes: '47 communes', zone: '/zones/val-de-marne' },
   'hauts-de-seine': { nom: 'Hauts-de-Seine', code: '92', dans: 'dans les Hauts-de-Seine', de: 'des Hauts-de-Seine', population: 1654712, communes: '36 communes', zone: '/zones/hauts-de-seine' },
+  'seine-saint-denis': { nom: 'Seine-Saint-Denis', code: '93', dans: 'en Seine-Saint-Denis', de: 'de la Seine-Saint-Denis', population: 1704316, communes: '39 communes', zone: '/zones/seine-saint-denis' },
   essonne: { nom: 'Essonne', code: '91', dans: 'dans l’Essonne', de: 'de l’Essonne', population: 1338485, communes: '194 communes', zone: '/zones/essonne' },
   yvelines: { nom: 'Yvelines', code: '78', dans: 'dans les Yvelines', de: 'des Yvelines', population: 1485086, communes: '259 communes', zone: '/zones/yvelines' },
   'seine-et-marne': { nom: 'Seine-et-Marne', code: '77', dans: 'en Seine-et-Marne', de: 'de la Seine-et-Marne', population: 1468108, communes: '507 communes', zone: '/zones/seine-et-marne' },
@@ -43,6 +45,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.deratisation, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.deratisation, // 20/11/2026
       paris: {
         accroche: 'Caves, cours d’immeuble, locaux poubelles, restaurants : à Paris, les rats et les souris trouvent partout de quoi se nourrir et se cacher.',
         paras: [
@@ -113,6 +116,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.punaises, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.punaises, // 20/11/2026
       paris: {
         accroche: 'Hôtels, locations meublées, transports, immeubles anciens : Paris est l’un des endroits où les punaises de lit voyagent le plus facilement.',
         paras: [
@@ -183,6 +187,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.frelons, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.frelons, // 20/11/2026
       paris: {
         accroche: 'Arbres d’alignement, cours intérieures, balcons, toits : à Paris aussi, les frelons et les guêpes installent leurs nids.',
         paras: [
@@ -253,6 +258,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.cafards, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.cafards, // 20/11/2026
       paris: {
         accroche: 'Cuisines, colonnes d’eau, gaines techniques et commerces de bouche : à Paris, les cafards passent facilement d’un logement à l’autre.',
         paras: [
@@ -323,6 +329,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.puces, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.puces, // 20/11/2026
       paris: {
         accroche: 'Parquets anciens, tapis, chiens en promenade dans les parcs : à Paris, les puces s’installent vite dans les appartements.',
         paras: [
@@ -393,6 +400,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
     ],
     contenu: {
       ...CONTENU_GC.souris, // Essonne, Yvelines, Seine-et-Marne (11/11/2026)
+      'seine-saint-denis': CONTENU_93.souris, // 20/11/2026
       paris: {
         accroche: 'Cloisons, faux plafonds, cuisines : à Paris, les souris passent d’un appartement à l’autre par les moindres interstices.',
         paras: [
@@ -451,7 +459,7 @@ export const SERVICES_DEP: Record<ServiceDep, {
 // Fil d'Ariane hiérarchique (13/11/2026) : Accueil › Service › Département › Ville.
 // Uniquement pour les familles qui ont une page par département et les 6 départements concernés.
 const BASES_AVEC_DEP = ['/deratisation', '/punaises-de-lit', '/destruction-nid-frelon', '/cafards', '/puces', '/souris']
-const CODE_VERS_DEP: Record<string, DepSlug> = { '75': 'paris', '94': 'val-de-marne', '92': 'hauts-de-seine', '91': 'essonne', '78': 'yvelines', '77': 'seine-et-marne' }
+const CODE_VERS_DEP: Record<string, DepSlug> = { '75': 'paris', '94': 'val-de-marne', '92': 'hauts-de-seine', '93': 'seine-saint-denis', '91': 'essonne', '78': 'yvelines', '77': 'seine-et-marne' }
 export function filDepartement(base: string, code: string): { href: string; label: string } | undefined {
   const d = CODE_VERS_DEP[code]
   if (!d || !BASES_AVEC_DEP.includes(base) || !(d in DEPS)) return undefined
