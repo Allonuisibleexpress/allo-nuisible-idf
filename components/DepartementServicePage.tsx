@@ -144,6 +144,7 @@ import LienEcologique from '@/components/LienEcologique'
 import DossierLocal from '@/components/DossierLocal'
 import FaqLien from '@/components/FaqLien'
 import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
+import { DOSSIERS_PUNAISES } from '@/lib/dossiers-punaises'
 import { villesPoleService } from '@/lib/villes-famille'
 
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
@@ -401,6 +402,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         </section>
 
         {s === 'deratisation' && DOSSIERS_DERATISATION[d] && <DossierLocal blocs={DOSSIERS_DERATISATION[d]} surtitre={`Le dossier complet : dératisation ${dep.dans}`} />}
+        {s === 'punaises' && DOSSIERS_PUNAISES[d] && <DossierLocal blocs={DOSSIERS_PUNAISES[d]} surtitre={`Le dossier complet : punaises de lit ${dep.dans}`} />}
         <PhotoNuisibleVille basePath={c.base} a={dep.dans} />
         <div className="px-4 pt-4" style={{ background: '#0b0b0b' }}><LienEcologique basePath={c.base} slug={d} a={dep.dans} /></div>
 

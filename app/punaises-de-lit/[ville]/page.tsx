@@ -37,6 +37,8 @@ import SituationsVille from '@/components/SituationsVille'
 import { avisVille } from '@/lib/avis-google'
 import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import DossierLocal from '@/components/DossierLocal'
+import { DOSSIERS_PUNAISES } from '@/lib/dossiers-punaises'
 import FaqLien from '@/components/FaqLien'
 import { existePage, depDeCode } from '@/lib/villes-famille'
 import { CHANTIERS_PUNAISES_VILLE } from '@/lib/photos-chantiers'
@@ -228,6 +230,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
         <ContexteLocal slug={v.slug} service="punaises" a={v.a} />
         <PhotoNuisibleVille basePath="/punaises-de-lit" a={v.a} />
         <LocalVille slug={v.slug} base="/punaises-de-lit" nom={v.nom} titre={`Punaises de lit ${v.a} : ce que nous voyons à ${v.nom}`} paras={[...(LOCAL_PUNAISES_94[v.slug] ?? LOCAL_PUNAISES_75[v.slug] ?? LOCAL_PUNAISES_GC[v.slug] ?? []), ...(LOCAL_POLE_PUNAISES[v.slug] ?? []), ...fichePunaises(v, autres)]} />
+        {DOSSIERS_PUNAISES[v.slug] && <DossierLocal blocs={DOSSIERS_PUNAISES[v.slug]} surtitre={`Le dossier complet : punaises de lit ${v.a}`} />}
         <CryoPunaisesLien a={v.a} />
 
         <SituationsVille famille="punaises" slug={v.slug} a={v.a} />
