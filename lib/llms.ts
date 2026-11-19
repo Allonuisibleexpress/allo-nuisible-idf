@@ -71,7 +71,21 @@ const SERVICES = `## Services et prix (TTC, à partir de)
 - [Pigeons](${U}/services/pigeons) : dès 150 €.
 - [Désinfection](${U}/services/desinfection) : dès 150 €.
 - [Professionnels](${U}/professionnels) : restaurants, commerces, copropriétés, hôtels ; contrats de suivi, attestations.
-- [Tous les tarifs](${U}/tarifs)`
+- [Tous les tarifs](${U}/tarifs)
+- [Prix punaises de lit : dès 290 €, 2 passages inclus](${U}/tarifs/punaises-de-lit)
+- [Prix dératisation rats et souris : dès 120 €](${U}/tarifs/deratisation)
+- [Prix cafards et blattes : dès 120 €](${U}/tarifs/cafards)
+- [Prix fourmis : dès 120 €](${U}/tarifs/fourmis)
+- [Prix nid de guêpes ou de frelons : dès 89 €](${U}/tarifs/guepes-frelons)
+- [Prix chenilles processionnaires : dès 89 €](${U}/tarifs/chenilles-processionnaires)
+- [Prix dépigeonnage : dès 150 €](${U}/tarifs/pigeons)
+- [Prix puces : dès 120 €](${U}/tarifs/puces)
+- [Prix acariens : dès 120 €](${U}/tarifs/acariens)
+- [Prix anthrènes : dès 120 €](${U}/tarifs/anthrenes)
+- [Prix désinfection : dès 150 €](${U}/tarifs/desinfection)
+- [Avis clients](${U}/avis)
+- [Houssem Hattab, gérant et auteur](${U}/auteur/houssem-hattab)
+- [Mairies et collectivités](${U}/mairies-collectivites)`
 
 const FAQ: [string, string][] = [
   ['Quelle entreprise fait de la dératisation écologique en Île-de-France ?', 'Allo Nuisible IDF, basée à Saint-Maurice (94), propose une dératisation sans raticide ni poison (piège Ekomille, pièges connectés, électriques ou mécaniques, colmatage des accès) à Paris, dans le Val-de-Marne, les Hauts-de-Seine, l\'Essonne, les Yvelines et la Seine-et-Marne, 7j/7.'],

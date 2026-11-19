@@ -19,11 +19,11 @@ export const metadata = pageMetadata({
 
 const GROUPES: { titre: string; intro: string; cles: CleAvis[]; liens: { href: string; label: string }[] }[] = [
   { titre: 'Avis sur nos traitements contre les punaises de lit', intro: 'Les punaises de lit demandent du sérieux : inspection, 2 passages, conseils de préparation. Voici ce qu’en disent nos clients.', cles: ['jo', 'lina'],
-    liens: [{ href: '/services/punaises-de-lit', label: 'Notre traitement des punaises de lit' }, { href: '/punaises-de-lit/vincennes', label: 'Punaises de lit à Vincennes' }, { href: '/tarifs', label: 'Prix d’un traitement des punaises de lit' }] },
+    liens: [{ href: '/services/punaises-de-lit', label: 'Notre traitement des punaises de lit' }, { href: '/punaises-de-lit/vincennes', label: 'Punaises de lit à Vincennes' }, { href: '/tarifs/punaises-de-lit', label: 'Prix d’un traitement des punaises de lit' }] },
   { titre: 'Avis sur nos interventions contre les souris et les rats', intro: 'Souris dans les combles, infestation importante, dératisation en 2 passages : la plupart de nos avis concernent les rongeurs.', cles: ['tarek', 'samy', 'said', 'lauren', 'pascal'],
-    liens: [{ href: '/services/deratisation', label: 'Notre dératisation' }, { href: '/souris/saint-maur-des-fosses', label: 'Souris à Saint-Maur-des-Fossés' }, { href: '/souris/saint-maurice', label: 'Souris à Saint-Maurice' }, { href: '/deratisation/vincennes', label: 'Dératisation à Vincennes' }, { href: '/tarifs', label: 'Prix d’une dératisation' }] },
+    liens: [{ href: '/services/deratisation', label: 'Notre dératisation' }, { href: '/souris/saint-maur-des-fosses', label: 'Souris à Saint-Maur-des-Fossés' }, { href: '/souris/saint-maurice', label: 'Souris à Saint-Maurice' }, { href: '/deratisation/vincennes', label: 'Dératisation à Vincennes' }, { href: '/tarifs/deratisation', label: 'Prix d’une dératisation' }] },
   { titre: 'Avis sur nos traitements contre les cafards', intro: 'Ce client avait des cafards qui arrivaient par les bouches d’aération. Il a publié ses photos avec son avis, que nous reprenons avec son accord.', cles: ['gaetan'],
-    liens: [{ href: '/services/cafards-blattes', label: 'Notre traitement des cafards' }, { href: '/tarifs', label: 'Prix d’un traitement des cafards' }] },
+    liens: [{ href: '/services/cafards-blattes', label: 'Notre traitement des cafards' }, { href: '/tarifs/cafards', label: 'Prix d’un traitement des cafards' }] },
   { titre: 'Avis sur la qualité de nos interventions', intro: 'Rapidité, explications, honnêteté : ce que nos clients retiennent au-delà du nuisible.', cles: ['christine', 'lisa'],
     liens: [{ href: '/qui-sommes-nous', label: 'Qui sommes-nous' }, { href: '/auteur/houssem-hattab', label: 'Houssem Hattab, gérant' }] },
 ]

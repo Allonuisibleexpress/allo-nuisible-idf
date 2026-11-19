@@ -3,6 +3,7 @@
 // Règle : on lit l'INTENTION de la question (jamais la réponse) ; mots entiers seulement ; un sujet précis n'est relié
 // qu'au bon nuisible ; pas de lien vers la page courante ; s'il n'y a pas de lien vraiment utile, aucun lien.
 // Fonction pure (client et serveur). L'existence d'une page ville est vérifiée par « existe » (lib/villes-famille).
+import { prixSlug, PRIX_LABELS } from './prix-liens'
 export type LienFaq = { href: string; label: string }
 export type CtxFaq = {
   page?: string // page courante
@@ -95,7 +96,10 @@ export function lienFaq(q: string, _rep: string, ctx: CtxFaq = {}): LienFaq | nu
     if (l) return l
   }
   // 4. Prix
-  if (/\bprix\b|coût|coûte|\btarifs?\b|\bdevis\b|\bcher\b|\bttc\b/.test(t)) { const l = first({ href: '/tarifs', label: 'Tous nos tarifs, nuisible par nuisible' }); if (l) return l }
+  if (/\bprix\b|coût|coûte|\btarifs?\b|\bdevis\b|\bcher\b|\bttc\b/.test(t)) {
+    const ps = prixSlug(nq?.base ?? fam ?? famN?.service ?? '')
+    const l = first(ps ? { href: `/tarifs/${ps}`, label: `Prix ${PRIX_LABELS[ps]} : le détail` } : null, { href: '/tarifs', label: 'Tous nos tarifs, nuisible par nuisible' }); if (l) return l
+  }
   // 5. Sujet précis, pour le bon nuisible
   for (const x of SUJETS) if (fam && x.fam.includes(fam) && x.re.test(t)) { const l = first({ href: x.href, label: x.label }); if (l) return l }
   // 6. Professionnels

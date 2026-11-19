@@ -1,3 +1,4 @@
+import { PAGES_PRIX } from '@/lib/prix-nuisibles'
 import type { MetadataRoute } from 'next'
 import { ARTICLES } from './blog/articles'
 import { DEPARTEMENTS_IDF } from '@/lib/departements'
@@ -19,7 +20,7 @@ const BASE = 'https://allonuisibleidf.fr'
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels', '/qui-sommes-nous', '/avis', '/auteur/houssem-hattab', '/mairies-collectivites']
+  const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels', '/qui-sommes-nous', '/avis', '/auteur/houssem-hattab', '/mairies-collectivites', ...PAGES_PRIX.map((p) => `/tarifs/${p.slug}`)]
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
     'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens', 'anthrenes', 'puces', 'deratisation-ecologique', 'traitements-sans-produit-chimique',

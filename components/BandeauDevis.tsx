@@ -2,6 +2,7 @@
 // avec le mot-clé du service). Formulations en rotation d'une ville à l'autre pour éviter le texte identique.
 import { Phone } from 'lucide-react'
 import { BoutonWhatsApp } from '@/components/LienWhatsApp'
+import { prixHref, PRIX_LABELS, prixSlug } from '@/lib/prix-liens'
 
 const ACCENT = '#E8441A'
 const h = (s: string) => s.split('').reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 3)
@@ -41,6 +42,9 @@ export default function BandeauDevis({ slug, mot, a, prix }: { slug: string; mot
           <Phone className="w-5 h-5" /> Mon devis gratuit : 07 68 07 72 19
         </a>
 <BoutonWhatsApp />
+        {prixHref(mot) && (
+          <p className="mt-6"><a href={prixHref(mot)!} className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>Prix {PRIX_LABELS[prixSlug(mot)!]} : ce qui est compris, ce qui fait varier le prix</a></p>
+        )}
       </div>
     </section>
   )

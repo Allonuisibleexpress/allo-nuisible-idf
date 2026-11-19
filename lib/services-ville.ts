@@ -61,3 +61,14 @@ export function villesFamilleDep(code: string): Record<FamilleVille, { slug: str
   }
   return r
 }
+
+// Toutes les villes d'une famille, des plus proches de Saint-Maurice aux plus éloignées (pages prix, 20/11/2026)
+export function villesFamille(famille: FamilleVille, n = 24) {
+  const f = FAMILLES.find((x) => x.id === famille)
+  if (!f) return []
+  const base = CENTRES['saint-maurice']
+  const toutes = [...VILLES_PUNAISES, ...VILLES_DERATISATION, ...VILLES_SOURIS, ...VILLES_CAFARDS, ...VILLES_FOURMIS, ...VILLES_PUCES, ...VILLES_ACARIENS, ...VILLES_ANTHRENES, ...VILLES_CHENILLES, ...VILLES_FRELONS]
+  const noms = new Map(toutes.map((v) => [v.slug, v.nom]))
+  return f.slugs.map((s) => ({ slug: s, nom: noms.get(s) ?? s, href: `${f.base}/${s}`, d: CENTRES[s] ? km(CENTRES[s], base) : 999 }))
+    .sort((a, b) => a.d - b.d).slice(0, n)
+}

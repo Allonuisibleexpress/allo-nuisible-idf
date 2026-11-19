@@ -19,6 +19,7 @@ import MediasChantier, { type VideoChantier } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
 import EnBrefService from '@/components/EnBrefService'
+import { prixHref } from '@/lib/prix-liens'
 import { LienWhatsApp, BoutonWhatsApp } from '@/components/LienWhatsApp'
 import type { PhotoKey } from '@/lib/photos-chantiers'
 import AvisGoogle from '@/components/AvisGoogle'
@@ -451,6 +452,7 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
               <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Devis gratuit</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{data.titres?.pricing ?? 'Devis sur mesure, sans surprise'}</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Devis gratuit confirmé avant intervention · RC Pro incluse</p>
+              {prixHref(chemin) && <p className="mt-3"><a href={prixHref(chemin)!} className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>Voir tous les prix en détail : ce qui est compris, ce qui fait varier le prix, qui paie</a></p>}
             </div>
             <div className="grid md:grid-cols-3 gap-5">
               {data.pricing.map((tier) => (

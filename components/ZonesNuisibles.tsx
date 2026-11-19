@@ -10,6 +10,7 @@ import { NUISIBLES_ZONES, CONTENU_ZONES } from '@/lib/zones-departements-contenu
 import { SERVICES_DEP, estDep } from '@/lib/departements-services'
 import { villesFamilleDep } from '@/lib/services-ville'
 import { BoutonWhatsApp, LienWhatsApp } from '@/components/LienWhatsApp'
+import { prixHref } from '@/lib/prix-liens'
 
 const ICONES: Record<string, PestKey> = {
   rats: 'deratisation', souris: 'rongeurs', punaises: 'punaises-de-lit', cafards: 'cafards-blattes', fourmis: 'fourmis', frelons: 'guepes-frelons',
@@ -105,7 +106,7 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
                   return (
                     <tr key={n.cle} className="border-t border-white/10 text-white/80">
                       <th scope="row" className="px-4 py-3 font-bold text-white"><a href={`#${n.cle}`} className="hover:underline">{n.nom}</a></th>
-                      <td className="px-4 py-3">{n.prix}</td>
+                      <td className="px-4 py-3">{prixHref(n.service) ? <a href={prixHref(n.service)!} className="underline underline-offset-2">{n.prix}</a> : n.prix}</td>
                       <td className="px-4 py-3">{n.garantie}</td>
                       <td className="px-4 py-3"><a href={h} className="underline underline-offset-2" style={{ color: '#F0562A' }}>{n.titre} {pageDep(n) ? dans : ''}</a></td>
                     </tr>

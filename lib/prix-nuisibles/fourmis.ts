@@ -1,0 +1,110 @@
+import type { PagePrix } from './types'
+
+export const PRIX_FOURMIS: PagePrix = {
+  slug: 'fourmis',
+  nom: 'fourmis',
+  titreSeo: 'Prix traitement fourmis : dès 120 €, sous 48 h (2026)',
+  description: 'Combien coûte un traitement contre les fourmis en Île-de-France ? Appartement dès 120 € TTC, maison et charpentières sur devis, intervention sous 48 h.',
+  h1: 'Prix d’un traitement contre les fourmis en Île-de-France',
+  prixDes: '120 €',
+  garantie: '1 an',
+  service: '/services/fourmis',
+  famille: 'fourmis',
+  intro: [
+    'Un traitement contre les fourmis coûte **dès 120 € TTC** chez Allo Nuisible IDF pour un appartement. Pour une maison avec jardin, des fourmis charpentières dans le bois ou une supercolonie, le prix est donné **sur devis gratuit**. Nous intervenons en général **sous 48 heures**, sans majoration le week-end ni les jours fériés.',
+    'Avec les fourmis, la question du prix se résume souvent à une autre question : **avez-vous atteint la reine ?** Tant qu’elle vit, la colonie se reconstitue, et les fourmis reviennent quelques semaines après le dernier spray. Un traitement professionnel coûte plus qu’une boîte d’appâts, mais il vise la colonie entière, ce qui évite de racheter des produits tout l’été.',
+    'Cette page détaille ce qui fait varier le prix (espèce, nid à l’intérieur ou dehors, bois attaqué), nos méthodes, et les situations les plus courantes en Île-de-France.',
+  ],
+  enBref: [
+    { q: 'Combien coûte un traitement des fourmis ?', r: 'Dès 120 € TTC en appartement, garantie 1 an. Maison avec jardin, fourmis charpentières : sur devis.' },
+    { q: 'En combien de temps intervenez-vous ?', r: 'En général sous 48 heures.' },
+    { q: 'Pourquoi le prix d’un pro plutôt que des appâts ?', r: 'Parce qu’il faut identifier l’espèce et atteindre la reine ; sinon la colonie revient.' },
+    { q: 'Est-ce plus cher le week-end ?', r: 'Non, aucune majoration.' },
+  ],
+  grille: [
+    { situation: 'Appartement', prix: 'dès 120 €', inclus: 'Identification de l’espèce, gel appât sur les pistes, conseils, garantie 1 an' },
+    { situation: 'Maison avec jardin', prix: 'sur devis', inclus: 'Traitement intérieur et extérieur, recherche du nid' },
+    { situation: 'Fourmis charpentières', prix: 'sur devis', inclus: 'Recherche dans le bois, injection, conseils sur l’humidité' },
+    { situation: 'Supercolonie, espèce invasive', prix: 'sur devis', inclus: 'Plusieurs passages, traitement de la zone' },
+    { situation: 'Commerce, local professionnel', prix: 'sur devis', inclus: 'Intervention hors ouverture, attestation' },
+  ],
+  inclus: [
+    'L’**identification de l’espèce** : fourmi noire des jardins, fourmi pharaon, charpentière, Tapinoma, et d’autres.',
+    'Le **suivi des pistes** jusqu’aux points d’entrée et, si possible, jusqu’au nid.',
+    'La pose d’un **gel appât professionnel** que les ouvrières rapportent jusqu’à la reine.',
+    'Les **conseils** : quoi nettoyer, quoi ne pas pulvériser, comment éviter le retour.',
+    'La **garantie 1 an**.',
+  ],
+  nonInclus: [
+    'La **réparation du bois** attaqué par des fourmis charpentières : à voir avec un menuisier ou un charpentier.',
+    'Le traitement des **parcelles voisines** d’où viennent parfois les fourmis.',
+    'Les **travaux d’étanchéité** si l’humidité attire les fourmis dans une structure en bois.',
+  ],
+  facteurs: [
+    { t: '1. L’espèce', x: 'C’est le facteur principal. La fourmi noire des jardins entre au printemps et se traite assez simplement. La **fourmi pharaon**, petite et jaune, vit dans les immeubles chauffés et forme de nombreux nids. La **fourmi charpentière** creuse le bois humide. Les espèces invasives forment des supercolonies. Nous présentons [les 11 espèces de fourmis](/fourmis) que nous rencontrons.' },
+    { t: '2. Où se trouve le nid', x: 'Un nid dans le jardin, contre la façade, se traite dehors. Un nid dans une cloison, sous un carrelage ou dans le bois d’une charpente demande plus de recherche, donc plus de temps.' },
+    { t: '3. L’intérieur seul ou le jardin aussi', x: 'En maison, il faut souvent traiter à la fois les pistes intérieures et les accès extérieurs (seuils, terrasse, pied de mur).' },
+    { t: '4. Le bois attaqué', x: 'Les fourmis charpentières n’abîment pas le bois aussi vite que des termites, mais elles signalent souvent un problème d’humidité. L’injection dans le bois prend du temps, d’où le devis.' },
+    { t: '5. Les produits déjà utilisés', x: 'Un spray tue les ouvrières visibles et peut pousser certaines espèces à se diviser en plusieurs nids. Le traitement devient alors plus long.' },
+    { t: '6. La saison', x: 'Au printemps et en été, les colonies sont actives et le gel est vite rapporté au nid. Le prix ne change pas selon la saison, mais l’efficacité est meilleure quand les fourmis sont actives.' },
+  ],
+  methodes: {
+    titre: 'Gel appât, traitement du nid, injection : les méthodes et leur prix',
+    intro: 'Notre méthode principale est le **gel appât professionnel**, rapporté par les ouvrières jusqu’à la reine. Il est complété par le traitement direct du nid quand on le trouve, et par une injection dans le bois pour les charpentières.',
+    lignes: [
+      { methode: 'Gel appât sur les pistes', quand: 'Fourmis dans un appartement, une cuisine', prix: 'dès 120 €' },
+      { methode: 'Traitement du nid', quand: 'Nid trouvé dans le jardin, contre la façade', prix: 'sur devis' },
+      { methode: 'Injection dans le bois', quand: 'Fourmis charpentières', prix: 'sur devis' },
+      { methode: 'Plusieurs passages', quand: 'Supercolonie, espèce invasive', prix: 'sur devis' },
+    ],
+    apres: [
+      'Le gel agit **lentement, et c’est voulu** : si les ouvrières mouraient tout de suite, elles ne rapporteraient pas l’appât à la reine. Il est normal de voir encore des fourmis un ou deux jours après le passage.',
+      'Pour la **fourmi Tapinoma magnum**, très suivie en ce moment, nous restons prudents : sa présence en Île-de-France n’est pas confirmée partout. Voir [notre article sur Tapinoma magnum](/blog/tapinoma-magnum-fourmi-invasive).',
+    ],
+  },
+  exemples: [
+    { t: 'Fourmis dans une cuisine à Paris', x: 'Une piste le long du plan de travail, venant d’une fissure. Gel appât sur la piste : **dès 120 €**.' },
+    { t: 'Maison avec terrasse à Saint-Maur-des-Fossés', x: 'Fourmis qui entrent par la baie vitrée chaque printemps. Traitement intérieur et extérieur : **sur devis**.' },
+    { t: 'Sciure au pied d’une poutre', x: 'Fourmis charpentières dans un bois humide. Recherche, injection, conseils : **sur devis**.' },
+    { t: 'Petites fourmis jaunes en immeuble', x: 'Souvent la fourmi pharaon, avec plusieurs nids dans les cloisons. Plusieurs passages : **sur devis**.' },
+  ],
+  soiMeme: [
+    'Les **sprays** donnent une satisfaction immédiate, mais ils ne tuent que les ouvrières visibles, une petite partie de la colonie. La reine continue à pondre.',
+    'Les **boîtes d’appâts** du commerce peuvent marcher contre quelques fourmis noires des jardins. Contre la fourmi pharaon, les charpentières ou une grosse colonie, elles ne suffisent pas.',
+    'Les astuces (vinaigre, craie, marc de café) peuvent dévier une piste quelques jours, sans toucher le nid.',
+    'Ce qui aide : ne rien laisser de sucré à l’air libre, essuyer les miettes, boucher les fissures des seuils et des plinthes, et noter d’où viennent les fourmis avant notre passage.',
+  ],
+  economiser: [
+    { t: 'Ne pas pulvériser avant notre passage', x: 'Le gel marche mieux si les pistes sont intactes.' },
+    { t: 'Repérer la piste', x: 'Indiquer au technicien d’où viennent les fourmis fait gagner du temps.' },
+    { t: 'Envoyer une photo', x: 'L’espèce se reconnaît souvent sur photo : le prix est plus juste dès l’appel.' },
+    { t: 'Agir au printemps', x: 'Les colonies actives rapportent vite le gel : le traitement est plus efficace.' },
+  ],
+  quiPaie: [
+    'Dans un logement loué, un problème présent à l’entrée relève du **propriétaire** (loi ELAN). En cours de bail, prévenez-le par écrit.',
+    'Si les fourmis viennent d’un **jardin commun** ou des **parties communes**, c’est au syndic d’agir. Pour des fourmis charpentières dans la structure d’un bâtiment, c’est au propriétaire de l’immeuble.',
+  ],
+  deroule: [
+    { t: 'Photo ou appel', x: 'Nous identifions l’espèce et donnons le prix de départ.' },
+    { t: 'Intervention sous 48 h', x: 'Le technicien suit les pistes, cherche le nid et confirme le prix.' },
+    { t: 'Gel et traitement du nid', x: 'Gel sur les pistes, traitement du nid si on le trouve.' },
+    { t: 'Garantie 1 an', x: 'Si la colonie revient, nous revenons, sans supplément pendant la garantie.' },
+  ],
+  pieges: [
+    'Un traitement « au spray partout » facturé comme un traitement professionnel ne vise pas la reine : demandez quelle méthode est utilisée.',
+    'Méfiez-vous des diagnostics alarmistes (« termites ! ») pour une simple sciure de fourmis charpentières : une photo permet de faire la différence.',
+  ],
+  faq: [
+    { q: 'Quel est le prix d’un traitement des fourmis ?', a: 'Dès 120 € TTC en appartement, garantie 1 an. Maison, charpentières, supercolonie : sur devis.' },
+    { q: 'En combien de temps intervenez-vous ?', a: 'En général sous 48 heures, 7j/7.' },
+    { q: 'Pourquoi voit-on encore des fourmis après le traitement ?', a: 'Le gel agit lentement pour être rapporté à la reine. Les fourmis disparaissent en quelques jours.' },
+    { q: 'Les fourmis charpentières sont-elles des termites ?', a: 'Non. Elles creusent le bois humide mais ne le mangent pas. Une photo nous permet de faire la différence.' },
+    { q: 'Le traitement est-il adapté aux enfants et aux animaux ?', a: 'Le gel est placé en petites gouttes dans les fentes, hors de portée. Le technicien vous donne les consignes.' },
+    { q: 'Est-ce plus cher le week-end ?', a: 'Non, aucune majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  guides: [
+    { href: '/fourmis', label: 'Les 11 espèces de fourmis' },
+    { href: '/blog/fourmis-tout-savoir-mode-de-vie-reproduction', label: 'Tout savoir sur les fourmis' },
+    { href: '/blog/tapinoma-magnum-fourmi-invasive', label: 'Tapinoma magnum' },
+  ],
+}

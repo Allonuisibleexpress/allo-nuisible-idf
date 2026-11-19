@@ -2,6 +2,7 @@
 // par le mode IA de Google et les moteurs à réponse. Données dans lib/en-bref-services.ts.
 import { EN_BREF_SERVICES } from '@/lib/en-bref-services'
 import { LienWhatsApp } from '@/components/LienWhatsApp'
+import { prixHref, PRIX_LABELS, prixSlug } from '@/lib/prix-liens'
 
 export default function EnBrefService({ cle }: { cle: string }) {
   const qr = EN_BREF_SERVICES[cle]
@@ -18,7 +19,10 @@ export default function EnBrefService({ cle }: { cle: string }) {
             </div>
           ))}
         </dl>
-        <div className="text-center"><LienWhatsApp /></div>
+        <div className="text-center flex flex-col items-center">
+          {prixHref(cle) && <a href={prixHref(cle)!} className="inline-flex mt-4 text-sm font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>Tous les prix {PRIX_LABELS[prixSlug(cle)!]} en détail</a>}
+          <LienWhatsApp />
+        </div>
       </div>
     </section>
   )

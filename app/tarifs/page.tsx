@@ -5,6 +5,7 @@ import { Phone, CheckCircle, ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { PestIcon, type PestKey } from '@/components/PestIcons'
+import { prixHref } from '@/lib/prix-liens'
 
 const PHONE = '07 68 07 72 19'
 const PHONE_HREF = 'tel:+33768077219'
@@ -189,9 +190,16 @@ export default function TarifsPage() {
                     </span>
                     <h2 className="font-black text-white text-base">{name}</h2>
                   </div>
-                  <a href={href} className="flex items-center gap-1.5 text-xs font-bold transition-all hover:opacity-80" style={{ color: '#F0562A' }}>
-                    Voir la page <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2">
+                    {prixHref(href) && (
+                      <a href={prixHref(href)!} className="flex items-center gap-1.5 text-sm font-bold underline underline-offset-2 py-2" style={{ color: '#F0562A' }}>
+                        Prix détaillé <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    <a href={href} className="flex items-center gap-1.5 text-sm font-bold py-2 transition-all hover:opacity-80" style={{ color: '#F0562A' }}>
+                      Voir le service <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
                 {/* Tiers */}
                 <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
