@@ -19,7 +19,7 @@ const SERVICES: { path: string; base?: string; nom: string; themes: string[] }[]
   { path: '/services/pigeons', nom: 'Pigeons', themes: ['Pigeons'] },
   { path: '/services/desinfection', nom: 'Désinfection', themes: ['Conseils', 'Professionnels'] },
 ]
-const DEPS: [string, string][] = [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']]
+const DEPS: [string, string][] = [['paris', 'Paris'], ['val-de-marne', 'Val-de-Marne (94)'], ['hauts-de-seine', 'Hauts-de-Seine (92)'], ['seine-saint-denis', 'Seine-Saint-Denis (93)'], ['essonne', 'Essonne (91)'], ['yvelines', 'Yvelines (78)'], ['seine-et-marne', 'Seine-et-Marne (77)']]
 const LABELS: Record<string, string> = {
   '/services/deratisation': 'Dératisation rats et souris', '/services/punaises-de-lit': 'Punaises de lit', '/services/cryogenie-punaises-de-lit': 'Punaises de lit : traitement écologique par cryogénie', '/services/deratisation-ecologique': 'Dératisation écologique sans raticide',
   '/services/cafards-blattes': 'Cafards et blattes', '/services/puces': 'Puces', '/services/fourmis': 'Fourmis', '/services/acariens': 'Acariens',

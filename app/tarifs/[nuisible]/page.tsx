@@ -30,7 +30,7 @@ function riche(t: string) {
     return s
   })
 }
-const DEPS = [['val-de-marne', 'Val-de-Marne'], ['paris', 'Paris'], ['hauts-de-seine', 'Hauts-de-Seine'], ['essonne', 'Essonne'], ['yvelines', 'Yvelines'], ['seine-et-marne', 'Seine-et-Marne']]
+const DEPS = [['val-de-marne', 'Val-de-Marne'], ['paris', 'Paris'], ['hauts-de-seine', 'Hauts-de-Seine'], ['seine-saint-denis', 'Seine-Saint-Denis'], ['essonne', 'Essonne'], ['yvelines', 'Yvelines'], ['seine-et-marne', 'Seine-et-Marne']]
 
 export default function PagePrixNuisible({ params }: { params: { nuisible: string } }) {
   const p = getPagePrix(params.nuisible)
@@ -225,7 +225,7 @@ export default function PagePrixNuisible({ params }: { params: { nuisible: strin
               <H2>Prix {p.nom} dans votre ville</H2>
               <p className="text-white/65 mb-6">Le prix est le même dans toute l’Île-de-France. Nos pages par département et par commune présentent nos interventions près de chez vous.</p>
               <ul className="flex flex-wrap justify-center gap-2 mb-5">
-                {[...DEPS, ['seine-saint-denis', 'Seine-Saint-Denis'], ['val-d-oise', 'Val-d’Oise']].map(([s, n]) => <li key={s}><a href={`/zones/${s}`} className="inline-block text-sm font-bold text-white/85 hover:text-white rounded-full px-4 py-2" style={card}>{n}</a></li>)}
+                {[...DEPS, ['val-d-oise', 'Val-d’Oise']].map(([s, n]) => <li key={s}><a href={`/zones/${s}`} className="inline-block text-sm font-bold text-white/85 hover:text-white rounded-full px-4 py-2" style={card}>{n}</a></li>)}
               </ul>
               <ul className="flex flex-wrap justify-center gap-1.5">
                 {COMMUNES_94.map((c) => <li key={c.slug}><a href={`/zones/val-de-marne/${c.slug}`} className="inline-flex items-center gap-1 text-xs text-white/75 hover:text-white rounded-full px-3 py-1.5" style={{ border: '1px solid rgba(255,255,255,0.14)' }}><MapPin className="w-3 h-3" style={{ color: O }} aria-hidden="true" />{c.nom}</a></li>)}

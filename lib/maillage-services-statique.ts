@@ -119,6 +119,10 @@ export const MAILLAGE_STATIQUE: Record<string, { title: string; links: { href: s
      "label": "Nid de frelons : Hauts-de-Seine (92)"
     },
     {
+     "href": "/destruction-nid-frelon/seine-saint-denis",
+     "label": "Nid de frelons : Seine-Saint-Denis (93)"
+    },
+    {
      "href": "/destruction-nid-frelon/essonne",
      "label": "Nid de frelons : Essonne (91)"
     },

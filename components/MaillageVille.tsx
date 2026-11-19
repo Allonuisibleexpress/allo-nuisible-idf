@@ -21,7 +21,7 @@ const DEPS: Record<string, { slug: string; dans: string }> = {
 }
 // Familles qui ont une page par département (lib/departements-services.ts)
 const BASES_DEP = ['/deratisation', '/punaises-de-lit', '/destruction-nid-frelon', '/cafards', '/puces', '/souris']
-const DEP_PAGES = ['75', '94', '92', '91', '78', '77']
+const DEP_PAGES = ['75', '94', '92', '93', '91', '78', '77']
 
 // Articles du blog proposés sur une page ville : uniquement ceux qui parlent du même nuisible
 export const THEME_BLOG: Record<string, string[]> = {
