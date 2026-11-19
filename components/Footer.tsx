@@ -15,6 +15,8 @@ const quickLinks = [
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
+  { label: 'Avis clients', href: '/avis' },
+  { label: 'Mairies et collectivités', href: '/mairies-collectivites' },
   { label: 'Zones d\'intervention', href: '/zones' },
   { label: 'Contact', href: '/#contact' },
 ]
@@ -44,7 +46,7 @@ export default function Footer() {
       {/* Bandeau « devis gratuit » présent sur toutes les pages du site */}
       <div style={{ background: '#E8441A' }}>
         <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
-          <p className="text-white font-black text-xl md:text-2xl uppercase tracking-wide">Devis gratuit et sans engagement</p>
+          <div><p className="text-white font-black text-xl md:text-2xl uppercase tracking-wide">Devis gratuit et sans engagement</p><p className="text-white text-sm font-bold">Aucune majoration la nuit, le week-end ni les jours fériés</p></div>
           <a href="tel:+33768077219" className="inline-flex items-center gap-2 bg-white font-black px-6 py-3 rounded-full text-base md:text-lg" style={{ color: '#B8330D' }}>
             <Phone className="w-5 h-5" /> 07 68 07 72 19
           </a>

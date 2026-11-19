@@ -11,6 +11,7 @@ export const FAQ_GENERALE: Rubrique[] = [
       { q: 'Où êtes-vous basés ?', a: 'Au 6 bis rue du Val d’Osne, 94410 Saint-Maurice, dans le Val-de-Marne. Nous intervenons à Paris, dans le Val-de-Marne, les Hauts-de-Seine et le reste de l’Île-de-France.' },
       { q: 'Quels nuisibles traitez-vous ?', a: 'Rats et souris, punaises de lit, cafards et blattes, fourmis, guêpes et frelons, pigeons, chenilles processionnaires, acariens, puces, ainsi que la désinfection de logements et de locaux.' },
       { q: 'Intervenez-vous 7j/7 ?', a: 'Oui, 7 jours sur 7, y compris le week-end et les jours fériés, souvent le jour même.' },
+      { q: 'Le prix est-il plus cher la nuit, le week-end ou un jour férié ?', a: 'Non. Nous n’appliquons aucune majoration la nuit, le week-end ni les jours fériés : le prix annoncé dans le devis est le même un dimanche soir qu’un mardi matin.' },
       { q: 'Vos techniciens sont-ils certifiés ?', a: 'Oui, ils sont titulaires du Certibiocide, la certification obligatoire pour utiliser des produits biocides professionnels (insecticides, raticides).' },
       { q: 'Comment vérifier que votre entreprise existe vraiment ?', a: 'Notre société ALLO NUISIBLE IDF est immatriculée (SIRET 928 763 713 00023) et vérifiable sur annuaire-entreprises.data.gouv.fr. Nos avis clients sont publiés sur notre fiche Google.' },
     ],

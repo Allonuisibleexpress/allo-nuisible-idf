@@ -5,6 +5,7 @@ import './globals.css'
 import './theme-clair.css' // aperçu fond blanc, inactif sauf si APERCU_CLAIR=1 au moment de la construction
 import GlobalRdvButton from '@/components/GlobalRdvButton'
 import WhatsAppFlottant from '@/components/WhatsAppFlottant'
+import ChoixDevis from '@/components/ChoixDevis'
 import RevealManager from '@/components/RevealManager'
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
         {children}
         <GlobalRdvButton />
         <WhatsAppFlottant />
+        <ChoixDevis />
         <RevealManager />
       </body>
     </html>

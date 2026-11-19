@@ -302,7 +302,7 @@ export default function GuêpesFrelonsPage() {
                 <p className="text-white/55 text-sm leading-relaxed">Nid accessible dès 89 €, en hauteur dès 149 €,<br />difficile d&apos;accès dès 199 €. Nacelle : sur devis. Prix TTC.</p>
               </div>
               <p className="mt-4 text-center"><span className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: '#E8441A', color: '#fff' }}>Devis gratuit destruction de nid</span></p>
-              <p className="text-white/60 text-sm mt-2 text-center">Sans engagement · Réponse en 5 min · 7j/7 soirs et week-ends</p>
+              <p className="text-white/60 text-sm mt-2 text-center">Sans engagement · Réponse en 5 min · Aucune majoration nuit et week-end · 7j/7 soirs et week-ends</p>
             </div>
 
             {/* Trust bar */}
@@ -310,7 +310,7 @@ export default function GuêpesFrelonsPage() {
               <div className="flex items-center gap-3 px-6 py-4">
                 <span className="tracking-wide text-sm" style={{ color: '#facc15' }}>★★★★★</span>
                 <span className="text-white font-semibold">4,8/5</span>
-                <span className="text-white/60 text-sm hidden sm:inline">· 59 avis</span>
+                <span className="text-white/60 text-sm hidden sm:inline">· 60 avis</span>
               </div>
               <div className="w-px self-stretch bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-2.5 px-6 py-4">
@@ -518,7 +518,7 @@ export default function GuêpesFrelonsPage() {
             <div className="grid grid-cols-3 mb-14 rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.03)' }}>
               {[
                 { val: '-1h', label: "délai d'intervention garanti" },
-                { val: '7j/7', label: 'soirs et week-ends inclus' },
+                { val: '7j/7', label: 'sans majoration nuit et week-end' },
                 { val: '100%', label: 'clients satisfaits après intervention' },
               ].map(({ val, label }, i) => (
                 <div

@@ -207,7 +207,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         datePublished: a.date,
         dateModified: a.date,
         inLanguage: 'fr-FR',
-        author: { '@type': 'Person', name: 'Houssem Hattab', jobTitle: 'Gérant', url: 'https://allonuisibleidf.fr/qui-sommes-nous', worksFor: { '@type': 'Organization', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr' } },
+        author: { '@type': 'Person', name: 'Houssem Hattab', jobTitle: 'Gérant', url: 'https://allonuisibleidf.fr/auteur/houssem-hattab', worksFor: { '@type': 'Organization', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr' } },
         publisher: { '@type': 'Organization', name: 'Allo Nuisible IDF' },
         mainEntityOfPage: url,
         abstract: a.tldr,
@@ -249,7 +249,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#F0562A', marginBottom: '12px' }}>{a.category}</p>
             <h1 style={{ fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: 900, color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>{a.title}</h1>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
-              <span>Par <a href="/qui-sommes-nous" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'underline' }}>Houssem Hattab</a>, gérant, et nos techniciens certifiés Certibiocide</span>
+              <span>Par <a href="/auteur/houssem-hattab" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'underline' }}>Houssem Hattab</a>, gérant, et nos techniciens certifiés Certibiocide</span>
               <span>·</span>
               <time dateTime={a.date}>{new Date(a.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
               <span>·</span>

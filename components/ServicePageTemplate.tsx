@@ -302,12 +302,12 @@ export default function ServicePageTemplate({ data }: { data: ServiceData }) {
                 </a>
               </div>
               <p className="mb-2">
-                <span className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>
+                <a href="#devis" className="inline-block font-black uppercase tracking-wide text-base md:text-lg px-5 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>
                   {data.devis || 'Devis gratuit'}
-                </span>
+                </a>
               </p>
               <p className="text-white/60 text-sm tracking-wide">
-                Sans engagement · Réponse en 5 min · 7j/7 soirs et week-ends · Île-de-France
+                Sans engagement · Réponse en 5 min · 7j/7 · Aucune majoration nuit, week-end et jours fériés
               </p>
             </div>
 

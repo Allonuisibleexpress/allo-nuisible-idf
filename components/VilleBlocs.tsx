@@ -91,7 +91,7 @@ export function HeroVille({ slug, nom, a, titre, accroche, prix, prixNote, fil, 
         {maj && (
           <p className="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs text-white/55 -mt-3 mb-6">
             <BadgeCheck className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />
-            <span>Rédigé par <a href="/qui-sommes-nous" className="font-bold text-white/80 underline underline-offset-2">Houssem Hattab</a>, gérant d&apos;Allo Nuisible IDF, avec nos techniciens certifiés Certibiocide</span>
+            <span>Rédigé par <a href="/auteur/houssem-hattab" className="font-bold text-white/80 underline underline-offset-2">Houssem Hattab</a>, gérant d&apos;Allo Nuisible IDF, avec nos techniciens certifiés Certibiocide</span>
             <span className="text-white/60">·</span><span>Mis à jour le {maj}</span>
           </p>
         )}

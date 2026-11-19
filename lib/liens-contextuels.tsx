@@ -64,7 +64,7 @@ export function texteRiche(t: string, ctx: ContexteLiens = {}, cle = 't'): React
     const r = REGLES.find((x) => (x.base && m[1].startsWith(x.base + '/')) || m[1] === x.service)
     if (r) ctx.deja?.add(r.cle)
   }
-  return t.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).flatMap((seg, i) => {
+  return t.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).flatMap((seg, i): React.ReactNode[] => {
     if (!seg) return []
     if (seg.startsWith('**')) return [<strong key={`${cle}-b${i}`} className="text-white font-bold">{lierMentions(seg.slice(2, -2), ctx, `${cle}-b${i}`)}</strong>]
     const l = seg.match(/^\[([^\]]+)\]\(([^)]+)\)$/)

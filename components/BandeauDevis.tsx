@@ -36,6 +36,7 @@ export default function BandeauDevis({ slug, mot, a, prix }: { slug: string; mot
             À partir de <span className="font-black text-3xl md:text-4xl align-middle" style={{ color: '#F0562A' }}>{prix}</span> TTC
           </p>
         )}
+        <p className="text-white/80 text-sm font-bold mb-6">Même prix la nuit, le week-end et les jours fériés : aucune majoration.</p>
         <a href="tel:+33768077219" className="inline-flex items-center gap-2 font-black text-white px-7 py-4 rounded-2xl text-base md:text-lg" style={{ background: ACCENT, boxShadow: '0 6px 24px rgba(232,68,26,0.35)' }}>
           <Phone className="w-5 h-5" /> Mon devis gratuit : 07 68 07 72 19
         </a>

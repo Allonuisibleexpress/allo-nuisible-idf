@@ -32,7 +32,7 @@ export function EtiquettePrix({ prix }: { prix: string | null }) {
         <span className="font-black text-3xl md:text-4xl" style={{ color: '#F0562A' }}>{prix}</span>
         <span className="text-white/80 font-bold text-sm md:text-base">TTC</span>
       </span>
-      <span className="inline-block align-middle ml-2 mt-2 font-black uppercase tracking-wide text-sm md:text-base px-4 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>Devis gratuit</span>
+      <a href="#devis" className="inline-block align-middle ml-2 mt-2 font-black uppercase tracking-wide text-sm md:text-base px-4 py-2 rounded-full" style={{ background: ACCENT, color: '#fff' }}>Devis gratuit</a>
     </p>
   )
 }

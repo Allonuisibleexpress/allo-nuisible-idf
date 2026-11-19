@@ -133,6 +133,7 @@ const guarantees = [
   'Garantie 1 an (3 mois pour les nids de guêpes et de frelons)',
   'Re-intervention gratuite si réapparition',
   'Intervention 7j/7 soirs et week-ends',
+  'Aucune majoration la nuit, le week-end ni les jours fériés',
 ]
 
 export default function TarifsPage() {
@@ -225,7 +226,7 @@ export default function TarifsPage() {
           <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '32px 32px' }} />
           <div className="relative max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">Devis gratuit en 5 minutes</h2>
-            <p className="text-white/75 text-base mb-10">Tarif confirmé avant intervention · 7j/7 soirs et week-ends · Île-de-France</p>
+            <p className="text-white/75 text-base mb-10">Tarif confirmé avant intervention · 7j/7 · Aucune majoration nuit, week-end et jours fériés · Île-de-France</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href={PHONE_HREF} className="inline-flex items-center gap-2.5 bg-white font-black px-9 py-4 rounded-2xl hover:scale-105 transition-all text-sm" style={{ color: '#B8330D' }}>
                 <Phone className="w-4 h-4" />{PHONE}

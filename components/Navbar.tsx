@@ -243,13 +243,7 @@ export default function Navbar() {
               <span className="font-semibold hidden min-[1800px]:inline whitespace-nowrap">07 68 07 72 19</span>
             </a>
             <button
-              onClick={() => {
-                if (pathname === '/services/guepes-frelons') {
-                  window.dispatchEvent(new CustomEvent('openRdvModal'))
-                } else {
-                  scrollTo('#contact')
-                }
-              }}
+              onClick={() => window.dispatchEvent(new CustomEvent('ouvrirChoixDevis'))}
               className="contact-brille bg-[#E8441A] hover:bg-[#d03a15] text-white font-bold text-sm px-5 py-2.5 rounded-full uppercase tracking-wider whitespace-nowrap transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#E8441A]/30"
             >
               DEVIS GRATUIT
@@ -258,7 +252,7 @@ export default function Navbar() {
 
           {/* Mobile — téléphone + hamburger */}
           <div className="lg:hidden flex items-center gap-1">
-            <a href="tel:+33768077219" className="font-black uppercase text-[11px] tracking-wide px-3 py-1.5 rounded-full whitespace-nowrap" style={{ background: '#E8441A', color: '#fff' }}>
+            <a href="#devis" className="font-black uppercase text-[11px] tracking-wide px-3 py-1.5 rounded-full whitespace-nowrap" style={{ background: '#E8441A', color: '#fff' }}>
               Devis gratuit
             </a>
             <a

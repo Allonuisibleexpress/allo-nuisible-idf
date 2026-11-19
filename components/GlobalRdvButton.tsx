@@ -91,8 +91,8 @@ export default function GlobalRdvButton() {
     <>
       {/* Bouton flottant centré — Appeler maintenant */}
       <a
-        href={PHONE_HREF}
-        aria-label="Appeler maintenant"
+        href="#devis"
+        aria-label="Devis gratuit : appeler, écrire ou remplir le formulaire"
         style={{
           position: 'fixed',
           bottom: '1.5rem',
@@ -119,7 +119,7 @@ export default function GlobalRdvButton() {
         }}
       >
         <Phone style={{ width: '1rem', height: '1rem', flexShrink: 0 }} />
-        Devis gratuit : appelez
+        Devis gratuit
       </a>
 
       {/* Modal générique */}
