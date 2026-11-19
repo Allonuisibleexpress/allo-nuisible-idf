@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { envoyerSurWhatsApp } from '@/lib/envoi-whatsapp'
 import { usePathname } from 'next/navigation'
 import { X, Phone } from 'lucide-react'
 
@@ -76,13 +77,9 @@ export default function GlobalRdvButton() {
     setLoading(true)
     const fd = new FormData(e.currentTarget)
     fd.set('nuisible', nuisible)
-    const res = await fetch('https://formspree.io/f/xvzjpwdd', {
-      method: 'POST',
-      body: fd,
-      headers: { Accept: 'application/json' },
-    })
+    envoyerSurWhatsApp(fd)
     setLoading(false)
-    if (res.ok) setSubmitted(true)
+    setSubmitted(true)
   }
 
   if (isGuepesPage) return null
@@ -148,8 +145,8 @@ export default function GlobalRdvButton() {
                     <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </div>
-                <p className="text-white font-bold text-lg mb-2">Demande envoyée !</p>
-                <p className="text-white/60 text-sm">Nous vous rappelons dans les plus brefs délais.</p>
+                <p className="text-white font-bold text-lg mb-2">WhatsApp s’est ouvert</p>
+                <p className="text-white/60 text-sm">Appuyez sur « Envoyer » dans WhatsApp : nous vous répondons en quelques minutes.</p>
                 <button onClick={closeModal} className="mt-6 text-sm font-semibold px-6 py-2.5 rounded-full text-white" style={{ background: ACCENT }}>Fermer</button>
               </div>
             ) : (
@@ -182,11 +179,10 @@ export default function GlobalRdvButton() {
                   </div>
 
                   <div>
-                    <label className="block text-white/60 text-xs mb-1.5">Email *</label>
+                    <label className="block text-white/60 text-xs mb-1.5">E-mail (facultatif)</label>
                     <input
                       name="email"
                       type="email"
-                      required
                       placeholder="exemple@mail.com"
                       className="w-full rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-white/25 outline-none focus:ring-1 focus:ring-[#E8441A]"
                       style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}

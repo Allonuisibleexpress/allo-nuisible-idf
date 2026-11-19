@@ -5,6 +5,7 @@ import { MAILLAGE_STATIQUE } from '@/lib/maillage-services-statique'
 import { schemaService } from '@/components/ServicePageTemplate'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { useState, useEffect } from 'react'
+import { envoyerSurWhatsApp } from '@/lib/envoi-whatsapp'
 import {
   Phone, ShieldCheck, Star, ChevronDown, ArrowRight,
   AlertTriangle, Clock, FileText, Briefcase, RefreshCw, X
@@ -825,18 +826,8 @@ function CallbackForm() {
     const formData = new FormData(e.currentTarget)
     formData.set('nuisible', nuisible)
     try {
-      const res = await fetch('https://formspree.io/f/xvzjpwdd', {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
-      })
-      if (res.ok) {
-        setSubmitted(true)
-      } else {
-        setError("Une erreur est survenue, veuillez réessayer ou nous appeler directement.")
-      }
-    } catch {
-      setError("Impossible d'envoyer le formulaire. Appelez-nous directement.")
+      envoyerSurWhatsApp(formData)
+      setSubmitted(true)
     } finally {
       setLoading(false)
     }
@@ -848,9 +839,9 @@ function CallbackForm() {
         <div className="w-14 h-14 rounded-full mx-auto flex items-center justify-center" style={{ background: 'rgba(34,197,94,0.15)' }}>
           <span className="text-2xl text-green-400">✓</span>
         </div>
-        <p className="font-black text-white text-lg">Demande envoyée !</p>
+        <p className="font-black text-white text-lg">WhatsApp s’est ouvert</p>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem' }}>
-          Nous vous rappelons sous 5 minutes.
+          Appuyez sur « Envoyer » dans WhatsApp : nous vous répondons en quelques minutes.
         </p>
       </div>
     )
@@ -921,7 +912,7 @@ function CallbackForm() {
         className="w-full font-bold text-white py-4 rounded-xl text-sm uppercase tracking-wider transition-all hover:opacity-90 disabled:opacity-60"
         style={{ background: ACCENT }}
       >
-        {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
+        {loading ? 'Ouverture de WhatsApp…' : 'Envoyer ma demande sur WhatsApp'}
       </button>
       <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', textAlign: 'center' }}>
         * Champs obligatoires. Vos données restent confidentielles
@@ -966,10 +957,8 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     const fd = new FormData(e.currentTarget)
     fd.set('nuisible', nuisible)
     try {
-      const res = await fetch('https://formspree.io/f/xvzjpwdd', {
-        method: 'POST', body: fd, headers: { Accept: 'application/json' },
-      })
-      if (res.ok) setSubmitted(true)
+      envoyerSurWhatsApp(fd)
+      setSubmitted(true)
     } finally {
       setLoading(false)
     }
@@ -1019,8 +1008,8 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
             <div className="w-14 h-14 rounded-full mx-auto flex items-center justify-center" style={{ background: 'rgba(34,197,94,0.15)' }}>
               <span className="text-2xl text-green-400">✓</span>
             </div>
-            <p className="font-black text-white text-lg">Demande envoyée !</p>
-            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>On vous rappelle sous 5 minutes.</p>
+            <p className="font-black text-white text-lg">WhatsApp s’est ouvert</p>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Appuyez sur « Envoyer » dans WhatsApp : nous vous répondons en quelques minutes.</p>
             <button type="button" onClick={handleClose} className="mt-2 text-sm font-bold px-6 py-3 rounded-xl" style={{ background: ACCENT, color: '#fff' }}>
               Fermer
             </button>
@@ -1041,8 +1030,8 @@ function QuickModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             {/* Email */}
             <div>
-              <label style={lbl}>E-mail <span style={{ color: '#f87171' }}>*</span></label>
-              <input type="email" name="email" required placeholder="vous@exemple.fr" style={field} />
+              <label style={lbl}>E-mail (facultatif)</label>
+              <input type="email" name="email" placeholder="vous@exemple.fr" style={field} />
             </div>
 
             {/* Nuisible */}
