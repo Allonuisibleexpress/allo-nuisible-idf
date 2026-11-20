@@ -3,6 +3,7 @@
 import VideoCarte from '@/components/VideoCarte'
 import { posterVideo, type VideoChantier } from '@/components/MediasChantier'
 import { ficheVideo } from '@/lib/videos-fiches'
+import { VIDEOS_DATES } from '@/lib/videos-dates'
 import { lienYoutube, YOUTUBE_VIDEOS, CHAINE_YOUTUBE } from '@/lib/youtube'
 
 const SITE = 'https://allonuisibleidf.fr'
@@ -29,6 +30,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
       return {
         '@type': 'VideoObject', name: `${f.titre} (${f.lieu})`, description: f.description || f.titre,
         thumbnailUrl: p ? [`${SITE}${p}`] : undefined, contentUrl: `${SITE}${v.src}`,
+        ...(VIDEOS_DATES[v.src] ? { uploadDate: `${VIDEOS_DATES[v.src]}T09:00:00+01:00` } : {}),
         ...(f.duree ? { duration: `PT${f.duree}S` } : {}),
         ...(YOUTUBE_VIDEOS[v.src] ? { embedUrl: `https://www.youtube.com/embed/${YOUTUBE_VIDEOS[v.src]}` } : {}),
         inLanguage: 'fr-FR', publisher: { '@id': `${SITE}/#entreprise` },

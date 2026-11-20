@@ -1,0 +1,27 @@
+// Date de première mise en ligne de chaque vidéo sur le site (premier commit git du fichier), générée le 20/11/2026.
+// Sert au champ uploadDate des données structurées VideoObject (exigé par Google). À régénérer quand une vidéo est ajoutée.
+export const VIDEOS_DATES: Record<string, string> = {
+  "/chantiers/chenilles-processionnaires-retrait-nids-video.mp4": '2026-11-02',
+  "/chantiers/cryogenie-cadre-lit-lattes-video.mp4": '2026-11-02',
+  "/chantiers/cryogenie-punaises-etablissement-enfants-champigny-sur-marne.mp4": '2026-11-02',
+  "/chantiers/cryogenie-punaises-foyer-video-1.mp4": '2026-11-02',
+  "/chantiers/cryogenie-punaises-foyer-video-2.mp4": '2026-11-02',
+  "/chantiers/cryogenie-punaises-foyer-video-3.mp4": '2026-11-02',
+  "/chantiers/diogene-avant-apres-maisons-alfort.mp4": '2026-11-02',
+  "/chantiers/frelons-asiatiques-nid-video.mp4": '2026-11-02',
+  "/chantiers/frelons-cheminee-nogent-sur-marne-video.mp4": '2026-11-02',
+  "/chantiers/frelons-nacelle-champigny-sur-marne.mp4": '2026-11-10',
+  "/chantiers/guepes-gretz-armainvilliers-nid-video.mp4": '2026-11-03',
+  "/chantiers/guepes-tuile-essonne-video.mp4": '2026-11-02',
+  "/chantiers/punaises-creteil-lattes-video.mp4": '2026-11-02',
+  "/chantiers/punaises-de-lit-paris-16-gros-plan-video.mp4": '2026-11-02',
+  "/chantiers/punaises-goulotte-hotel-video.mp4": '2026-11-02',
+  "/chantiers/punaises-ivry-lit-medicalise-video.mp4": '2026-11-02',
+  "/chantiers/punaises-paris-12-infestation-video.mp4": '2026-11-02',
+  "/chantiers/punaises-pulverisation-video.mp4": '2026-11-02',
+  "/chantiers/punaises-vincennes-punaises-mortes-hd.mp4": '2026-11-02',
+  "/chantiers/rats-diogene-video-1.mp4": '2026-11-02',
+  "/chantiers/rats-diogene-video-2.mp4": '2026-11-02',
+  "/chantiers/rats-trous-cloison-video.mp4": '2026-11-02',
+  "/partage/punaises-de-lit-ivry-sur-seine.mp4": '2026-11-02',
+}
