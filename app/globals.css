@@ -176,6 +176,8 @@ footer a.text-sm {
   padding-top: 3px;
   padding-bottom: 3px;
 }
+/* Téléphone et e-mail du pied de page : garder l'icône à côté du texte, une ligne par contact (20/11/2026) */
+footer a.flex.text-sm { display: flex; padding-top: 4px; padding-bottom: 4px; }
 
 /* Onglet « Écologique » du menu (13/11/2026) : contour jaune lumineux qui brille sans arrêt */
 .onglet-eco {
