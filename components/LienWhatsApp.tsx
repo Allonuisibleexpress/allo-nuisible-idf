@@ -18,7 +18,7 @@ export function LienWhatsApp({ sujet, texte = 'Envoyez-nous une photo sur WhatsA
 // Bouton vert (fin de section)
 export function BoutonWhatsApp({ sujet, texte = 'Envoyer une photo sur WhatsApp' }: { sujet?: string; texte?: string }) {
   return (
-    <a href={lienWa(sujet)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-white text-sm px-5 py-3 rounded-xl" style={{ background: '#157A40' }}>
+    <a href={lienWa(sujet)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-white text-sm px-5 py-3 rounded-xl m-2 align-middle" style={{ background: '#157A40' }}>
       <MessageCircle className="w-4 h-4" aria-hidden="true" />{texte}
     </a>
   )

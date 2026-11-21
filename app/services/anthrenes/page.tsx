@@ -39,6 +39,41 @@ function Stades() {
   )
 }
 
+// Galerie (22/11/2026, demande de l'utilisateur : plus de photos) : adultes, larves, dégâts, espèce voisine
+const GALERIE = [
+  { src: '/anthrenes/anthrene-des-tapis-adulte.jpg', titre: 'L’anthrène des tapis', texte: 'Noir tacheté de blanc, avec une bande rouge orangé au milieu du dos. 2,5 à 3,8 mm.', credit: 'JackyM59', licence: 'CC BY-SA 4.0', page: W + 'Anthr%C3%A8ne_des_tapis_(Anthrenus_scrophulariae).jpg' },
+  { src: '/anthrenes/anthrene-des-meubles-adulte.jpg', titre: 'L’anthrène des meubles', texte: 'Anthrenus flavipes, une troisième espèce rencontrée dans les maisons, plus fréquente dans les régions chaudes.', credit: 'CSIRO', licence: 'CC BY 3.0', page: W + 'CSIRO_ScienceImage_2071_Carpet_Beetle_-_Anthrenus_flavipes.jpg' },
+  { src: '/anthrenes/anthrene-larve-adulte-laine.jpg', titre: 'Larves et adulte sur un lainage', texte: 'Les dégâts apparaissent là où l’on ne touche à rien : fond de placard, dessous de tapis, pull rangé depuis longtemps.', credit: 'Clemson University, USDA Cooperative Extension', licence: 'Domaine public', page: W + 'Anthrenus_flavipes_larva_adult_wool.jpg' },
+  { src: '/anthrenes/degats-anthrene-tissu.jpg', titre: 'Les dégâts sur un tissu', texte: 'Des trous irréguliers, souvent dans les zones peu manipulées et à l’abri de la lumière.', credit: 'Clemson University, USDA Cooperative Extension Slide Series, Bugwood.org', licence: 'CC BY 3.0 US', page: W + 'Anthrenus_flavipes_damage_to_cloth.jpg' },
+  { src: '/anthrenes/mues-larves-anthrene.jpg', titre: 'Les mues de la larve', texte: 'Jusqu’à 16 stades larvaires chez l’anthrène bigarré : chaque mue laisse une petite peau brune et velue.', credit: 'Bogdan Nikolovv', licence: 'CC0', page: W + 'All_larval_instars_of_Anthrenus_verbasci_(4-16).png' },
+  { src: '/anthrenes/larve-attagene.jpg', titre: 'Ne pas confondre : la larve d’attagène', texte: 'Un cousin de la même famille, plus allongé, brun doré, avec une longue touffe de poils. Même traitement.', credit: 'Ryan Hodnett', licence: 'CC BY-SA 4.0', page: W + 'Black_Carpet_Beetle_(Attagenus_sp.)_Larva_-_Kitchener,_Ontario_2018-01-19_(01).jpg' },
+  { src: '/anthrenes/stades-anthrene-gravure.jpg', titre: 'Une gravure de 1910', texte: 'Les stades de l’anthrène : l’adulte (d), la nymphe (c), la larve vue de dessous (b) et de dessus (a).', credit: 'Popular Science Monthly, 1910', licence: 'Domaine public', page: W + 'PSM_V76_D223_Carpet_beetle_and_its_stages_of_development.png' },
+]
+
+function Galerie() {
+  return (
+    <section id="anthrenes-en-photos" className="py-16 px-4" style={{ background: '#080808' }}>
+      <div className="max-w-6xl mx-auto text-center">
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Identifier</p>
+        <h2 className="text-2xl md:text-4xl font-black text-white mb-3">Les anthrènes en photos : espèces, larves et dégâts</h2>
+        <p className="text-white/60 max-w-2xl mx-auto mb-10">Comparez avec ce que vous trouvez chez vous. Un doute ? <a href="https://wa.me/33768077219" className="underline font-bold" style={{ color: '#F0562A' }}>Envoyez-nous une photo sur WhatsApp</a>, nous identifions l’insecte gratuitement.</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
+          {GALERIE.map((s) => (
+            <figure key={s.src} className="rounded-2xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <img src={s.src} alt={s.titre} loading="lazy" className="w-full object-cover" style={{ aspectRatio: '4 / 3', background: '#111' }} />
+              <figcaption className="p-4">
+                <p className="text-white font-black mb-1">{s.titre}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{s.texte}</p>
+                <p className="text-[11px] text-white/60 mt-2">Photo : {s.credit}, <a href={s.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{s.licence}</a>, Wikimedia Commons</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 const data: ServiceData = {
   badge: 'Tapis · Lainages · Placards · Literie en plumes',
   devis: 'Devis gratuit anthrènes',
@@ -63,7 +98,7 @@ const data: ServiceData = {
     { title: 'Aspiration et traitement', text: 'Plinthes, bords de tapis, fonds de placard et fentes du parquet aspirés, puis vapeur sèche, cryogénie ou pulvérisation ciblée selon les textiles.' },
     { title: 'Prévention', text: 'Rangement des lainages, moustiquaires, nids d’oiseaux abandonnés à faire retirer : nous vous laissons un plan simple pour que les anthrènes ne reviennent pas.' },
   ],
-  apresProcess: <Stades />,
+  apresProcess: <><Stades /><Galerie /></>,
   titres: { benefits: 'Comment nous éliminons les anthrènes', process: 'Notre intervention, étape par étape', pricing: 'Prix d’un traitement contre les anthrènes', faq: 'Anthrènes : vos questions' },
   guide: {
     sections: [
@@ -91,6 +126,57 @@ const data: ServiceData = {
           "Résultat : on découvre souvent les dégâts **des mois après** l'arrivée des premiers insectes, au fond d'un placard ou sous un tapis jamais déplacé.",
         ],
         encadre: { titre: 'Des anthrènes sur la fenêtre ?', texte: 'Des adultes à l’intérieur, sur les vitres, au printemps, signalent le plus souvent des larves dans le logement. Ce sont elles qu’il faut chercher.' },
+      },
+      {
+        titre: 'Que mangent les larves d’anthrène ?',
+        texte: [
+          "La larve digère la **kératine**, la protéine des **poils**, des **plumes**, de la **laine**, de la **soie**, de la **fourrure** et du **cuir**, ainsi que la chitine des **insectes morts**.",
+        ],
+        liste: [
+          '**Tapis et moquettes en laine**, surtout sous les meubles et le long des plinthes.',
+          '**Vêtements rangés** : pulls, manteaux, écharpes en laine ou cachemire, au fond du dressing.',
+          '**Couettes, oreillers et coussins en plumes**.',
+          '**Fourrures, cuir, peaux** et animaux naturalisés.',
+          '**Feutres des instruments de musique** rangés longtemps, selon Wikipédia.',
+          '**Poils d’animaux et insectes morts** accumulés dans les luminaires, les gaines et derrière les plinthes.',
+        ],
+      },
+      {
+        titre: 'Où chercher les larves chez vous, pièce par pièce',
+        texte: ['La femelle pond dans un endroit **sec, sombre et peu dérangé**, au plus près de la nourriture. C’est là que notre technicien commence :'],
+        liste: [
+          '**Chambre et dressing** : fonds de placard, lainages rangés depuis longtemps, dessous du lit où s’accumulent poils et poussière.',
+          '**Salon** : dessous et bords du tapis en laine jamais déplacé, dessous du canapé, plinthes.',
+          '**Literie** : couette et oreillers en plumes, sommier proche d’une moquette en laine.',
+          '**Gaines de ventilation, luminaires, rebords de fenêtre** : insectes morts et adultes au printemps.',
+          '**Combles et toiture** (maisons) : nids d’oiseaux sous les tuiles ou derrière un coffre de volet roulant.',
+        ],
+      },
+      {
+        titre: 'Les signes qui doivent vous alerter',
+        texte: ['Un seul indice peut passer inaperçu. Deux ou trois ensemble signalent presque toujours une colonie installée :'],
+        liste: [
+          '**Petits coléoptères ronds et tachetés** sur les vitres ou les rebords de fenêtre, au printemps et au début de l’été.',
+          '**Larves brunes et velues** de 1 à 5 mm, sous les tapis ou au fond des placards, même en hiver.',
+          '**Petites peaux vides et velues** : les mues des larves.',
+          '**Trous irréguliers** dans les lainages, tapis rongés « tondus » par endroits.',
+          '**Démangeaisons ou plaques irritées** sans piqûre visible : les poils et les mues des larves peuvent provoquer une dermatite (consultez un médecin).',
+        ],
+      },
+      {
+        titre: 'Pourquoi un logement chauffé favorise les anthrènes',
+        texte: [
+          "La température change tout. Une étude de 1958, citée par Wikipédia, a mesuré une **nymphose de 89 jours à 10 °C**, contre **9 jours seulement à 25 °C**. Dans un appartement chauffé, les larves **mangent toute l’année** et la colonie grandit même en hiver.",
+          "C’est aussi pour cela que l’**automne et l’hiver** sont de **bons moments pour traiter** : les larves sont regroupées près de leur nourriture, et l’on évite que de nouveaux adultes sortent au printemps pour pondre ailleurs.",
+        ],
+        encadre: { titre: 'Les erreurs qui font perdre des mois', texte: 'Pulvériser une bombe du commerce au hasard (elle n’atteint pas les larves cachées), jeter tous ses vêtements (la plupart se traitent), oublier le foyer : tant qu’un nid d’oiseaux ou un vieux tapis infesté reste en place, les anthrènes reviennent.' },
+      },
+      {
+        titre: 'Boutiques, hôtels, collections : les anthrènes chez les professionnels',
+        texte: [
+          "Les anthrènes sont redoutés partout où l’on conserve des **matières animales** : boutiques de vêtements et de tapis, hôtels (moquettes, literie en plumes), musées et collections. **English Heritage**, qui gère des monuments et des collections au Royaume-Uni, leur consacre une fiche dédiée.",
+          "Pour les professionnels, nous intervenons **en dehors des heures d’ouverture**, traitons les **pièces fragiles en cryogénie** (sans eau ni produit) et remettons une **attestation d’intervention**. Voir aussi notre page [professionnels](/professionnels).",
+        ],
       },
       {
         titre: 'Traitement écologique des anthrènes : ce que l’on entend par là',

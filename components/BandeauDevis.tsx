@@ -38,10 +38,13 @@ export default function BandeauDevis({ slug, mot, a, prix }: { slug: string; mot
           </p>
         )}
         <p className="text-white/80 text-sm font-bold mb-6">Même prix la nuit, le week-end et les jours fériés : aucune majoration.</p>
-        <a href="tel:+33768077219" className="inline-flex items-center gap-2 font-black text-white px-7 py-4 rounded-2xl text-base md:text-lg" style={{ background: ACCENT, boxShadow: '0 6px 24px rgba(232,68,26,0.35)' }}>
-          <Phone className="w-5 h-5" /> Mon devis gratuit : 07 68 07 72 19
-        </a>
-<BoutonWhatsApp />
+        {/* Téléphone et WhatsApp côte à côte, bien espacés ; l'un sous l'autre sur mobile (22/11/2026) */}
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
+          <a href="tel:+33768077219" className="inline-flex items-center gap-2 font-black text-white px-7 py-4 rounded-2xl text-base md:text-lg" style={{ background: ACCENT, boxShadow: '0 6px 24px rgba(232,68,26,0.35)' }}>
+            <Phone className="w-5 h-5" /> Mon devis gratuit : 07 68 07 72 19
+          </a>
+          <BoutonWhatsApp />
+        </div>
         {prixHref(mot) && (
           <p className="mt-6"><a href={prixHref(mot)!} className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>Prix {PRIX_LABELS[prixSlug(mot)!]} : ce qui est compris, ce qui fait varier le prix</a></p>
         )}

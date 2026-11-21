@@ -15,6 +15,16 @@ const IGNORER = /liens rapides|^nos services$|zones couvertes|demandez votre dev
 // Libellés courts, du plus précis au plus général (premier qui correspond)
 const REGLES: [RegExp, string][] = [
   [/vidéo/i, 'Vidéos'],
+  [/dans votre secteur/i, 'Votre secteur'],
+  [/professionnels/i, 'Professionnels'],
+  [/comment nous éliminons|comment nous traitons/i, 'Traitement'],
+  [/d.où viennent/i, 'Origine'],
+  [/que mangent|ce qu.ils mangent/i, 'Alimentation'],
+  [/où chercher/i, 'Où chercher'],
+  [/chauffé|température/i, 'Chauffage'],
+  [/prolifèrent/i, 'Prolifération'],
+  [/empêcher|prévenir|prévention/i, 'Prévention'],
+  [/mite ou|ou punaise de lit/i, 'Ne pas confondre'],
   [/articles|aller plus loin|à lire aussi/i, 'Articles'],
   [/nos guides|guides pour|guide sur/i, 'Guides'],
   [/toutes nos villes|par ville|villes les plus|trouvez votre ville/i, 'Villes'],
