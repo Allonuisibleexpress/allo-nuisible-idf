@@ -236,7 +236,7 @@ export default function FourmisPage({ secteur }: { secteur?: Secteur }) {
 
         {secteur && <ChoixSecteur secteur={secteur} />}
 
-        {/* ══════════════════ GARANTIE 1 MOIS ══════════════════ */}
+        {/* ══════════════════ GARANTIE 1 AN ══════════════════ */}
         <section className="reveal" style={{ background: '#141414', padding: '52px 16px' }}>
           <div className="max-w-2xl mx-auto">
             <div style={{
@@ -262,7 +262,7 @@ export default function FourmisPage({ secteur }: { secteur?: Secteur }) {
                 Si les fourmis reviennent, on revient sans frais.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', lineHeight: 1.75, maxWidth: '420px', margin: '0 auto 24px' }}>
-                Toute intervention est garantie. En cas de réapparition après les passages effectués, notre technicien revient : seuls les frais de déplacement vous sont facturés, le traitement est offert.
+                Tous nos traitements contre les fourmis sont garantis 1 an. Si les fourmis reviennent pendant cette période, notre technicien revient et traite à nouveau, sans frais.
               </p>
               <a
                 href={PHONE_HREF}

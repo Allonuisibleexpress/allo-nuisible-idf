@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 import { filDepartement } from '@/lib/departements-services'
 import { Phone, ArrowRight, MapPin, Check, BookOpen, ShieldCheck } from 'lucide-react'
 import { VILLES_PUCES } from '@/lib/villes-puces'
@@ -541,7 +542,7 @@ export default function VilleServicePage({ v, villes, c }: { v: Ville; villes: V
             <div className="mt-10">
               <p className="text-white/60 text-xs uppercase tracking-widest mb-4">{c.autresTitre}</p>
               <div className="flex flex-wrap justify-center gap-2">
-                {autres.map((x) => (
+                {parNom(autres).map((x) => (
                   <a key={x.slug} href={`${c.basePath}/${x.slug}`}
                     className="text-sm text-white/70 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>

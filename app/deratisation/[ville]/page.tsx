@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 import { notFound } from 'next/navigation'
 import DeratEco from '@/components/DeratEco'
@@ -375,7 +376,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               <h3 className="text-lg md:text-xl font-black text-white mb-2">Dératisation près de {v.nom}</h3>
               <p className="text-white/60 text-sm mb-5">Les villes voisines où nous intervenons pour les rats et les souris, même prix dès 120 €.</p>
               <div className="flex flex-wrap justify-center gap-2">
-                {autres.map((x) => (
+                {parNom(autres).map((x) => (
                   <a key={x.slug} href={`/deratisation/${x.slug}`}
                     className="text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>

@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 // Contenu nuisible par nuisible des pages /zones/[département] (19/11/2026) : En bref, sommaire, tableau des prix,
 // une section par nuisible (texte local, méthode, prix, liens vers la page département, les villes et les guides),
 // vrais chantiers du département. Données : lib/zones-departements-contenu.ts.
@@ -122,7 +123,7 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
       {NUISIBLES_ZONES.map((n, i) => {
         const dep = pageDep(n)
         const vs = n.famille ? villes[n.famille] : []
-        const montre = vs.slice(0, 15)
+        const montre = parNom(vs.slice(0, 15)) // les 15 plus proches, affichées par ordre alphabétique
         return (
           <section key={n.cle} id={n.cle} className="px-4 py-14 md:py-16 scroll-mt-24" style={{ background: i % 2 ? '#0d0d0d' : '#0a0a0a' }}>
             <div className="max-w-3xl mx-auto text-center">

@@ -5,6 +5,7 @@ import { ARTICLES } from '@/app/blog/articles'
 import { ArrowRight, BookOpen, MapPin } from 'lucide-react'
 import { villesDuDepartement, villesPoleService } from '@/lib/villes-famille'
 import LienEcologique from '@/components/LienEcologique'
+import { parNom } from '@/lib/tri-villes'
 
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
@@ -43,8 +44,11 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
   const d = articles.length ? h(slug) % articles.length : 0
   const choix = [...articles.slice(d), ...articles.slice(0, d)].slice(0, n)
   // Toutes les villes du même service dans le département, les plus proches d'abord (les 8 premières avec le mot-clé complet)
-  const memeDep = villesDuDepartement(basePath, slug, code)
-  const pole = code !== '94' ? villesPoleService(basePath, slug).filter((v) => v.code !== code).slice(0, 8) : []
+  // Ordre alphabétique (22/11/2026) ; les 8 plus proches gardent le mot-clé complet et l'épingle
+  const parDistance = villesDuDepartement(basePath, slug, code)
+  const plusProches = new Set(parDistance.slice(0, 8).map((v) => v.slug))
+  const memeDep = parNom(parDistance)
+  const pole = code !== '94' ? parNom(villesPoleService(basePath, slug).filter((v) => v.code !== code).slice(0, 8)) : []
   const kmTxt = (n: number) => (n < 100 ? ` · ${n.toFixed(1).replace('.', ',')} km` : '')
   if (!dep && !choix.length) return null
   return (
@@ -67,13 +71,13 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
             {memeDep.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-black text-white mb-2">{mot} {dep.dans} : nos {memeDep.length} autres villes</h3>
-                <p className="text-white/60 text-sm mb-4">Classées de la plus proche à la plus éloignée {a}. Même protocole, même garantie, même délai d’intervention.</p>
+                <p className="text-white/60 text-sm mb-4">Par ordre alphabétique, avec la distance depuis {a.replace(/^(à|au|aux|en) /, '')}. Même protocole, même garantie, même délai d’intervention.</p>
                 <div className="flex flex-wrap justify-center gap-2">
-                  {memeDep.map((v, i) => (
+                  {memeDep.map((v) => (
                     <a key={v.slug} href={`${basePath}/${v.slug}`} className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold text-white/80 hover:text-white transition-colors"
                       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      {i < 8 && <MapPin className="w-3 h-3" style={{ color: '#F0562A' }} />}
-                      {i < 8 ? `${mot} ${v.nom}` : v.nom}
+                      {plusProches.has(v.slug) && <MapPin className="w-3 h-3" style={{ color: '#F0562A' }} />}
+                      {plusProches.has(v.slug) ? `${mot} ${v.nom}` : v.nom}
                       <span className="text-white/60">{kmTxt(v.km)}</span>
                     </a>
                   ))}

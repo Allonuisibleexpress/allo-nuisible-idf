@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 // Bloc de maillage « Autour de Saint-Maurice » (18/11/2026) : sur toutes les pages des villes du pôle (moins de 5 km de la base,
 // plus Villejuif), relie les autres services de la même ville et le même service dans les villes voisines, avec la distance.
 import { POLE, FAMILLES, lienPole, type Famille } from '@/lib/pole-saint-maurice'
@@ -40,7 +41,7 @@ export default function PoleSaintMaurice({ slug, famille }: { slug: string; fami
           <div>
             <h3 className="text-lg font-black text-white mb-3">{quoi} dans les villes voisines</h3>
             <div className="flex flex-wrap justify-center gap-2">
-              {voisines.map((v) => (
+              {parNom(voisines).map((v) => (
                 <a key={v.slug} href={lienPole(famille, v.slug)} className="rounded-full px-4 py-2 text-sm font-semibold hover:text-white transition-colors"
                   style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
                   {famille === 'zones' ? v.nom : `${FAMILLES[famille]} à ${v.nom}`}{v.km > 0 ? ` (${km(v.km)} km)` : ''}

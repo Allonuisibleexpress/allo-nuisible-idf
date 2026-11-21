@@ -146,6 +146,7 @@ import FaqLien from '@/components/FaqLien'
 import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import { DOSSIERS_PUNAISES } from '@/lib/dossiers-punaises'
 import { villesPoleService } from '@/lib/villes-famille'
+import { parNom } from '@/lib/tri-villes'
 import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 
 // 19/11/2026 (demande de l'utilisateur) : « traitement » + nuisible + lieu dans un sous-titre de chaque page
@@ -367,7 +368,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 <CarteDepartement dep={d} base={c.base} avecPage={villes.map((v) => v.slug)} titre={`Carte : ${c.label.toLowerCase()} ${dep.dans}`} legende={villes.length > 0 ? 'Ville avec une page dédiée (cliquable)' : 'Toutes les communes sont desservies'} zone={villes.length === 0} />
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
-                {villes.map((v) => (
+                {parNom(villes).map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="group rounded-xl px-4 py-3 hover:bg-white/[0.06]" style={card}>
                     <span className="block text-white font-bold text-sm">{c.label} {v.nom}</span>
                     <span className="block text-white/60 text-xs">{codePostal(v.slug)} · {REPERES[v.slug]?.km ? `${REPERES[v.slug].km.toLocaleString('fr-FR')} km` : 'notre base'}</span>
@@ -420,7 +421,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               <h2 className="text-xl md:text-2xl font-black text-white mb-2">{c.label} autour de notre base de Saint-Maurice</h2>
               <p className="text-white/55 text-sm mb-6">Nos techniciens partent de Saint-Maurice (94) : voici les villes les plus proches de notre base.</p>
               <div className="flex flex-wrap justify-center gap-2">
-                {pole.map((v) => (
+                {parNom(pole).map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="rounded-full px-3.5 py-1.5 text-[13px] font-semibold hover:text-white transition-colors"
                     style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
                     {c.label} {v.nom}

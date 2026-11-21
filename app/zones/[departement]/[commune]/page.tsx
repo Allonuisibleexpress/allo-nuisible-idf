@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 import FaqBloc from '@/components/FaqBloc'
 import { existePage } from '@/lib/villes-famille'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
@@ -272,7 +273,7 @@ export default function CommunePage({ params }: { params: Params }) {
                 Nous intervenons aussi près de {c.nom}
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {voisines.map((v) => (
+                {parNom(voisines).map((v) => (
                   <a key={v.slug} href={`/zones/${DEPT_SLUG}/${v.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>

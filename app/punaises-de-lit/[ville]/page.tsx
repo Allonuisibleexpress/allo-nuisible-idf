@@ -1,3 +1,4 @@
+import { parNom } from '@/lib/tri-villes'
 import { BoutonWhatsApp } from '@/components/LienWhatsApp'
 import { notFound } from 'next/navigation'
 import MaillageVille from '@/components/MaillageVille'
@@ -368,7 +369,7 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
             <div className="mt-10">
               <p className="text-white/60 text-xs uppercase tracking-widest mb-4">Punaises de lit près de {v.nom}</p>
               <div className="flex flex-wrap justify-center gap-2">
-                {autres.map((x) => (
+                {parNom(autres).map((x) => (
                   <a key={x.slug} href={`/punaises-de-lit/${x.slug}`}
                     className="text-sm text-white/70 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>

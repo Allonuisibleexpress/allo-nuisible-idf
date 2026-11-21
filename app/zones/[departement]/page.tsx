@@ -1,3 +1,4 @@
+import { parNom, compareFr } from '@/lib/tri-villes'
 import FaqBloc from '@/components/FaqBloc'
 import { SAISONS_FAQ } from '@/lib/saisons-faq'
 import { notFound } from 'next/navigation'
@@ -195,7 +196,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               <h2 className="text-2xl md:text-3xl font-black text-white mb-3 text-center">{d.slug === 'paris' ? 'Nos pages par arrondissement' : `Nos pages par ville ${d.dans}`}</h2>
               <p className="text-white/55 mb-8 text-center">{villesPages.length} {d.slug === 'paris' ? 'arrondissements' : 'villes'} avec des pages dédiées, nuisible par nuisible.</p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {villesPages.map((v) => (
+                {parNom(villesPages).map((v) => (
                   <div key={v.slug} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <p className="text-white font-black mb-2 flex items-center gap-1.5"><MapPin className="w-4 h-4" style={{ color: '#F0562A' }} />{v.nom}</p>
                     <ul className="flex flex-wrap gap-1.5">
@@ -220,7 +221,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               <>
                 <p className="text-white/55 mb-8">Les 47 communes du département, chacune avec sa page.</p>
                 <ul className="flex flex-wrap gap-2">
-                  {COMMUNES_94.map((c) => (
+                  {parNom(COMMUNES_94).map((c) => (
                     <li key={c.slug}>
                       <a href={`/zones/val-de-marne/${c.slug}`}
                         className="inline-flex items-center gap-1.5 text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
@@ -235,7 +236,7 @@ export default function DepartementPage({ params }: { params: { departement: str
               <>
                 <p className="text-white/55 mb-8">Et dans toutes les autres communes du département.</p>
                 <ul className="flex flex-wrap gap-2">
-                  {d.communes.map((c) => (
+                  {[...d.communes].sort(compareFr).map((c) => (
                     <li key={c} className="inline-flex items-center gap-1.5 text-sm text-white/75 rounded-full px-3.5 py-1.5"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                       <MapPin className="w-3.5 h-3.5" style={{ color: '#F0562A' }} />{c}
