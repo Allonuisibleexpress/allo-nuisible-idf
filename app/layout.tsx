@@ -7,6 +7,7 @@ import GlobalRdvButton from '@/components/GlobalRdvButton'
 import WhatsAppFlottant from '@/components/WhatsAppFlottant'
 import ChoixDevis from '@/components/ChoixDevis'
 import RevealManager from '@/components/RevealManager'
+import SommairePage from '@/components/SommairePage'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="fr" className={`${inter.variable}${process.env.APERCU_CLAIR === '1' ? ' theme-clair' : ''}`}>
       <body>
         {children}
+        <SommairePage />
         <GlobalRdvButton />
         <WhatsAppFlottant />
         <ChoixDevis />
