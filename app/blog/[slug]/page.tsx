@@ -10,6 +10,7 @@ import { PHOTOS_CHANTIERS } from '@/lib/photos-chantiers'
 import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
+import { titreVideo } from '@/lib/titres-video'
 import FaqLien from '@/components/FaqLien'
 import { ImageCycle } from '@/components/CyclePunaises'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
@@ -60,12 +61,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const a = getArticle(params.slug)
   if (!a) return {}
   const url = `https://allonuisibleidf.fr/blog/${a.slug}`
+  const seo = titreVideo(a.slug)?.seo ?? a.seoTitle
   return {
-    title: a.seoTitle,
+    title: seo,
     description: a.description,
     alternates: { canonical: url },
     openGraph: {
-      title: a.seoTitle,
+      title: seo,
       description: a.description,
       url,
       type: 'article',
@@ -197,12 +199,15 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   if (!a) notFound()
 
   const url = `https://allonuisibleidf.fr/blog/${a.slug}`
+  // Récit filmé : la vidéo est le sujet principal (titre « Vidéo : … » sur deux lignes, vidéo en grand tout en haut)
+  const tv = a.videos && a.videos.length > 0 ? titreVideo(a.slug) : undefined
+  const titre = tv ? tv.lignes.join(' ') : a.title
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Article',
-        headline: a.title,
+        headline: titre,
         description: a.description,
         datePublished: a.date,
         dateModified: a.date,
@@ -217,7 +222,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://allonuisibleidf.fr' },
           { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://allonuisibleidf.fr/blog' },
-          { '@type': 'ListItem', position: 3, name: a.title, item: url },
+          { '@type': 'ListItem', position: 3, name: titre, item: url },
         ],
       },
       {
@@ -247,7 +252,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <Link href="/blog" style={{ fontSize: '12px', fontWeight: 600, color: '#F0562A', textDecoration: 'none' }}>← Retour au blog</Link>
             </div>
             <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#F0562A', marginBottom: '12px' }}>{a.category}</p>
-            <h1 style={{ fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: 900, color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>{a.title}</h1>
+            <h1 style={{ fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: 900, color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>{tv ? tv.lignes.map((l, i) => <span key={i} style={{ display: 'block', color: i === 0 ? '#fff' : '#F0562A' }}>{l}</span>) : a.title}</h1>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
               <span>Par <a href="/auteur/houssem-hattab" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'underline' }}>Houssem Hattab</a>, gérant, et nos techniciens certifiés Certibiocide</span>
               <span>·</span>
@@ -255,6 +260,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <span>·</span>
               <span>Lecture {a.readMin} min</span>
             </div>
+            {tv && (
+              <div id="video" style={{ marginTop: '28px', scrollMarginTop: '90px' }}><VideosEnHaut videos={a.videos!} titre="" sansFond pageActuelle={`/blog/${a.slug}`} grand natif /></div>
+            )}
             {(a.videos || a.mediasEnHaut) && (
               <div style={{ marginTop: '20px' }}>
                 <VignettesChantier photos={a.photos} centre={recit} texte="Photos du chantier" />
@@ -273,8 +281,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </section>
 
           {/* Vidéos du chantier juste sous « En bref », puis les photos (19/11/2026) */}
-          {a.videos && a.videos.length > 0 && (
-            <div style={{ marginBottom: '40px' }}><VideosEnHaut videos={a.videos} titre="Le chantier en vidéo" sansFond pageActuelle={`/blog/${a.slug}`} grand /></div>
+          {a.videos && a.videos.length > 0 && !tv && (
+            <div style={{ marginBottom: '40px' }}><VideosEnHaut videos={a.videos} titre="L’intervention en vidéo" sansFond pageActuelle={`/blog/${a.slug}`} grand /></div>
           )}
           {(a.videos || a.mediasEnHaut) && a.photos && a.photos.length > 0 && (
             <div id="chantier-en-images" style={{ marginBottom: '40px', scrollMarginTop: '90px' }}>

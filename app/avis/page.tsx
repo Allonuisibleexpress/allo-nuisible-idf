@@ -43,7 +43,7 @@ const FAQ = [
   { q: 'Comment laisser un avis après une intervention ?', a: 'Ouvrez notre fiche Google, appuyez sur « Avis » puis « Écrire un avis ». Indiquez si possible le nuisible traité et votre ville : cela aide les personnes qui ont le même problème que vous.' },
   { q: 'Que faites-vous si un client n’est pas satisfait ?', a: 'Nous le rappelons pour comprendre ce qui n’a pas fonctionné. Si les nuisibles reviennent pendant la garantie (1 an, 3 mois pour les nids de guêpes et de frelons), nous revenons sans supplément.' },
   { q: 'Pourquoi tant d’avis parlent-ils de souris ?', a: 'Parce que les souris et les rats sont la demande la plus fréquente autour de notre base de Saint-Maurice : Vincennes, Saint-Maur-des-Fossés, Saint-Maurice, Maisons-Alfort.' },
-  { q: 'Peut-on voir des photos de vos chantiers ?', a: 'Oui, sur notre page « Nos interventions en images » et dans les récits de chantier du blog, avec photos et vidéos prises par nos techniciens.' },
+  { q: 'Peut-on voir des photos de vos chantiers ?', a: 'Oui, sur notre page « Nos interventions en vidéo » et dans les récits de chantier du blog, avec photos et vidéos prises par nos techniciens.' },
 ]
 
 export default function AvisPage() {

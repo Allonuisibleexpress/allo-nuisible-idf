@@ -197,7 +197,7 @@ export default function ZonesNuisibles({ slug, code, nom, dans }: { slug: string
         <section className="px-4 py-14" style={{ background: '#080808' }}>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Nos vrais chantiers <span style={{ color: '#F0562A' }}>{dans}</span></h2>
-            <p className="text-white/60 mb-6">Photos et vidéos de nos interventions, avec le récit complet. Toutes nos images : <a href="/nos-interventions" className="underline underline-offset-2" style={{ color: '#F0562A' }}>nos interventions en images</a>.</p>
+            <p className="text-white/60 mb-6">Photos et vidéos de nos interventions, avec le récit complet. Toutes nos images : <a href="/nos-interventions" className="underline underline-offset-2" style={{ color: '#F0562A' }}>nos interventions en vidéo</a>.</p>
             <ul className="space-y-2 text-left">
               {c.chantiers.map((x) => (
                 <li key={x.href}><a href={x.href} className="flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-white/85 text-sm hover:text-white" style={card}>{x.t}<ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} aria-hidden="true" /></a></li>

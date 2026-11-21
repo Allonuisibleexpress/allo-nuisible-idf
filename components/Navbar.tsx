@@ -41,12 +41,12 @@ const services = [
 /* Onglet « Écologique » (13/11/2026, demandé par l'utilisateur) : page centrale des traitements sans biocide */
 const VERT = '#3FB27F'
 
-const navLinks: { label: string; href: string; court?: string; dropdown?: boolean; external?: boolean; eco?: boolean }[] = [
+const navLinks: { label: string; href: string; court?: string; deuxLignes?: string[]; dropdown?: boolean; external?: boolean; eco?: boolean }[] = [
   { label: 'Accueil', href: '#accueil' },
   { label: 'Nos Services', href: '#services', dropdown: true },
   { label: 'Écologique', href: '/services/traitements-sans-produit-chimique', external: true, eco: true },
   { label: 'Identifier un nuisible', court: 'Identifier', href: '/identifier-nuisible', external: true },
-  { label: 'Nos interventions', court: 'Chantiers', href: '/nos-interventions', external: true },
+  { label: 'Nos interventions en vidéo', deuxLignes: ['Nos interventions', 'en vidéo'], href: '/nos-interventions', external: true },
   { label: 'Tarifs', href: '/tarifs', external: true },
   { label: 'Blog', href: '/blog', external: true },
   { label: 'FAQ', href: '/faq', external: true },
@@ -216,7 +216,7 @@ export default function Navbar() {
                   href={link.href}
                   className="text-white/90 hover:text-[#F0562A] font-medium text-sm px-2 xl:px-3 py-2 rounded whitespace-nowrap transition-colors duration-200"
                 >
-                  {link.court ? (<><span className="min-[1800px]:hidden">{link.court}</span><span className="hidden min-[1800px]:inline">{link.label}</span></>) : link.label}
+                  {link.deuxLignes ? (<span className="flex flex-col items-center leading-[1.1] text-[13px] font-bold text-center">{link.deuxLignes.map((l) => <span key={l}>{l}</span>)}</span>) : link.court ? (<><span className="min-[1800px]:hidden">{link.court}</span><span className="hidden min-[1800px]:inline">{link.label}</span></>) : link.label}
                 </a>
                 )
               ) : (

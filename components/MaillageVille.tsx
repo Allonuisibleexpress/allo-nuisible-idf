@@ -83,7 +83,7 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
             <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
               {[
                 { href: '/tarifs', label: 'Nos tarifs' },
-                { href: '/nos-interventions', label: 'Nos interventions en images' },
+                { href: '/nos-interventions', label: 'Nos interventions en vidéo' },
                 { href: '/services/traitements-sans-produit-chimique', label: 'Traitements sans produit chimique' },
                 { href: '/identifier-nuisible', label: 'Identifier un nuisible' },
                 { href: '/faq', label: 'Questions fréquentes' },

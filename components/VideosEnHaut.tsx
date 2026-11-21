@@ -8,7 +8,7 @@ import { lienYoutube, YOUTUBE_VIDEOS, CHAINE_YOUTUBE } from '@/lib/youtube'
 
 const SITE = 'https://allonuisibleidf.fr'
 
-export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo', intro, fond = '#080808', lien, sansFond = false, pageActuelle, grand = false, mentions }: {
+export default function VideosEnHaut({ videos, titre = 'Nos interventions en vidéo', intro, fond = '#080808', lien, sansFond = false, pageActuelle, grand = false, mentions, natif = false }: {
   videos: (VideoChantier | { src: string; legende?: string; poster?: string })[]
   titre?: string
   intro?: string
@@ -18,6 +18,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
   pageActuelle?: string // pas de lien vers la page où l'on se trouve déjà
   grand?: boolean // vidéo plus grande (articles du blog)
   mentions?: Record<string, string> // chantier d'une ville voisine : « Chantier réalisé à X, à Y km de Z »
+  natif?: boolean // lecteur vidéo présent dès le chargement (récit filmé, vidéo sujet principal)
 }) {
   if (!videos.length) return null
   const n = videos.length
@@ -28,7 +29,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
       const f = ficheVideo(v.src, (v as VideoChantier).legende)
       const p = posterVideo(v as VideoChantier)
       return {
-        '@type': 'VideoObject', name: `${f.titre} (${f.lieu})`, description: f.description || f.titre,
+        '@type': 'VideoObject', name: `${f.titre}, ${f.lieu}`, description: f.description || f.titre,
         thumbnailUrl: p ? [`${SITE}${p}`] : undefined, contentUrl: `${SITE}${v.src}`,
         ...(VIDEOS_DATES[v.src] ? { uploadDate: `${VIDEOS_DATES[v.src]}T09:00:00+01:00` } : {}),
         ...(f.duree ? { duration: `PT${f.duree}S` } : {}),
@@ -45,7 +46,7 @@ export default function VideosEnHaut({ videos, titre = 'Nos chantiers en vidéo'
       {intro && <p className="text-white/65 max-w-2xl mx-auto mb-2 leading-relaxed">{intro}</p>}
       <div className={`grid gap-5 mx-auto mt-7 ${grille}`}>
         {videos.map((v) => (
-          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} pageActuelle={pageActuelle} grand={grand && n === 1} mention={mentions?.[v.src]} />
+          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} pageActuelle={pageActuelle} grand={grand && n === 1} mention={mentions?.[v.src]} natif={natif} />
         ))}
       </div>
       <p className="mt-6 text-sm">

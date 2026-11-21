@@ -103,7 +103,7 @@ const data: ServiceData = {
     photos: ['creteilLattes1', 'cryoFoyer'],
     videos: PUNAISES_VIDEOS.slice(0, 5).map((v) => ({ src: v.src, legende: v.legende, banniere: true, poster: v.poster })),
     titre: 'Nos chantiers de punaises de lit en images',
-    vignettes: 'Nos chantiers en vidéo',
+    vignettes: 'Nos interventions en vidéo',
   },
   galerieDansContenu: true,
   related: {

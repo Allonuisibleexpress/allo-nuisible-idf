@@ -101,7 +101,7 @@ const FAQ: [string, string][] = [
 ]
 
 function faqTxt() {
-  return `## Questions fréquentes\n\n${FAQ.map(([q, a]) => `- ${q} ${a}`).join('\n')}\n- [FAQ complète](${U}/faq) ; [Identifier un nuisible](${U}/identifier-nuisible) ; [Nos interventions en images](${U}/nos-interventions)`
+  return `## Questions fréquentes\n\n${FAQ.map(([q, a]) => `- ${q} ${a}`).join('\n')}\n- [FAQ complète](${U}/faq) ; [Identifier un nuisible](${U}/identifier-nuisible) ; [Nos interventions en vidéo](${U}/nos-interventions)`
 }
 
 const NOMS: Record<string, string> = {

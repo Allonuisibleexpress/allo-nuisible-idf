@@ -200,8 +200,8 @@ export default function PunaisesVillePage({ params }: { params: { ville: string 
           const proches = videosProchesPunaises(v.slug)
           if (!proches.length) return null
           return (
-            <VideosEnHaut videos={proches} titre={`Punaises de lit : nos chantiers en vidéo près ${deVille(v.nom)}`}
-              intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici nos chantiers en vidéo les plus proches : la méthode est la même chez vous.`}
+            <VideosEnHaut videos={proches} titre={`Punaises de lit : nos interventions en vidéo près ${deVille(v.nom)}`}
+              intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici nos interventions en vidéo les plus proches : la méthode est la même chez vous.`}
               mentions={Object.fromEntries(proches.map((p) => [p.src, mentionDistance(p, v.nom)]))} />
           )
         })()}

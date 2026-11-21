@@ -14,16 +14,16 @@ const THEMES: Record<FicheVideo['theme'], { bord: string; badge: string; texte: 
   vert: { bord: 'rgba(63,178,127,0.45)', badge: 'rgba(63,178,127,0.18)', texte: '#a8e6c8', halo: 'rgba(63,178,127,0.10)' },
 }
 
-export default function VideoCarte({ src, poster, fiche, youtube, pageActuelle, grand = false, mention }: { src: string; poster?: string; fiche: FicheVideo; youtube?: string; pageActuelle?: string; grand?: boolean; mention?: string }) {
-  const lien = fiche.lien && fiche.lien.href !== pageActuelle ? fiche.lien : undefined
-  const [lecture, setLecture] = useState(false)
+export default function VideoCarte({ src, poster, fiche, youtube, pageActuelle, grand = false, mention, natif = false }: { src: string; poster?: string; fiche: FicheVideo; youtube?: string; pageActuelle?: string; grand?: boolean; mention?: string; natif?: boolean /* lecteur vidéo présent dès le chargement (page dont la vidéo est le sujet principal, pour Google) */ }) {
+  const lien = fiche.lien && fiche.lien.href.split('#')[0] !== pageActuelle ? fiche.lien : undefined
+  const [lecture, setLecture] = useState(natif)
   const t = THEMES[fiche.theme]
   return (
     <article className={`flex flex-col rounded-[22px] overflow-hidden text-left h-full w-full mx-auto ${grand ? 'max-w-[460px]' : 'max-w-[360px]'}`}
       style={{ background: `linear-gradient(180deg, ${t.halo}, rgba(255,255,255,0.02) 40%), #0e0e0e`, border: `1px solid ${t.bord}`, boxShadow: '0 18px 40px rgba(0,0,0,0.45)' }}>
       <div className="relative w-full" style={{ aspectRatio: '9 / 16', background: '#111' }}>
         {lecture ? (
-          <video src={src} poster={poster} controls autoPlay playsInline className="absolute inset-0 w-full h-full object-cover" aria-label={fiche.titre} />
+          <video src={src} poster={poster} controls autoPlay={!natif} preload={natif ? 'none' : undefined} playsInline className="absolute inset-0 w-full h-full object-cover" aria-label={fiche.titre} />
         ) : (
           <button type="button" onClick={() => setLecture(true)} className="group absolute inset-0 w-full h-full">
             <span className="sr-only">Lire la vidéo : {fiche.titre}</span>

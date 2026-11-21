@@ -4,6 +4,6 @@ import { SITE_URL } from '@/lib/seo'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: '*', allow: '/', disallow: '/partage/' }, // /partage : fichiers avec bannière destinés à Google Business, pas à indexer
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/video-sitemap.xml`],
   }
 }

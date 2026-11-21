@@ -28,7 +28,7 @@ export type VideoDetaillee = {
 
 const texteBrut = (t: string) => t.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
 
-export default function VideosDetaillees({ surtitre = 'Nos chantiers en vidéo', titre, intro, videos, photos, renvoiHaut = false }: {
+export default function VideosDetaillees({ surtitre = 'Nos interventions en vidéo', titre, intro, videos, photos, renvoiHaut = false }: {
   surtitre?: string
   titre: string
   intro: string

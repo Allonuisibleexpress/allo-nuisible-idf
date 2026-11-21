@@ -157,7 +157,7 @@ export default function QuiSommesNousPage() {
         <section className="px-4 py-12" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-black text-white mb-4">Nos <span style={{ color: '#F0562A' }}>vrais chantiers</span>, racontés</h2>
-            <p className="text-white/70 leading-relaxed mb-6">Photos et vidéos de nos interventions, publiées avec la bannière Allo Nuisible IDF. Toutes nos images : <a href="/nos-interventions" className="underline underline-offset-2" style={{ color: '#F0562A' }}>nos interventions en images</a>.</p>
+            <p className="text-white/70 leading-relaxed mb-6">Photos et vidéos de nos interventions, publiées avec la bannière Allo Nuisible IDF. Toutes nos images : <a href="/nos-interventions" className="underline underline-offset-2" style={{ color: '#F0562A' }}>nos interventions en vidéo</a>.</p>
             <ul className="space-y-2 text-left max-w-2xl mx-auto">
               {CHANTIERS.map(({ href, t }) => (
                 <li key={href}><a href={href} className="block rounded-xl px-4 py-3 text-white/85 text-sm hover:text-white" style={card}>{t}</a></li>

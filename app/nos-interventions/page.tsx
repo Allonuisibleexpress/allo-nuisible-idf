@@ -6,12 +6,13 @@ import MediasChantier from '@/components/MediasChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
 import { pageMetadata } from '@/lib/seo'
 import { ARTICLES } from '@/app/blog/articles'
+import { titreVideo } from '@/lib/titres-video'
 
 const ACCENT = '#E8441A'
 
 export const metadata = pageMetadata({
-  title: 'Nos interventions en images : photos et vidéos',
-  description: 'Nos vrais chantiers en photos et vidéos : punaises de lit à Créteil et Paris 12e, rats à Maisons-Alfort, souris à Saint-Maur, guêpes en Seine-et-Marne.',
+  title: 'Nos interventions en vidéo : 14 chantiers filmés',
+  description: 'Nos vraies interventions en vidéo : syndrome de Diogène et rats à Maisons-Alfort, punaises de lit à Paris et dans le 94, nids de frelons et de guêpes.',
   path: '/nos-interventions',
 })
 
@@ -65,10 +66,10 @@ export default function NosInterventionsPage() {
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: '#F0562A' }}>Sur le terrain</p>
             <h1 className="text-4xl sm:text-5xl font-black text-white leading-[1.05] mb-5 tracking-tight">
-              Nos interventions <span style={{ color: '#F0562A' }}>en images</span>
+              <span className="block">Nos interventions</span> <span className="block" style={{ color: '#F0562A' }}>en vidéo</span>
             </h1>
             <p className="text-lg text-white/65 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Photos et vidéos prises par nos techniciens sur de vrais chantiers, en Île-de-France. Sous chaque intervention, le récit complet de ce que nous avons fait.
+              Vidéos et photos prises par nos techniciens lors de vraies interventions, en Île-de-France. Cliquez sur une intervention pour voir la vidéo et le récit complet.
             </p>
             {/* Rubriques */}
             <nav className="flex flex-wrap justify-center gap-2" aria-label="Rubriques">
@@ -87,7 +88,7 @@ export default function NosInterventionsPage() {
             <div className="max-w-5xl mx-auto">
               {/* En-tête de rubrique, centré */}
               <div className="text-center mb-10">
-                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#F0562A' }}>Nos chantiers</p>
+                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#F0562A' }}>Nos interventions</p>
                 <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{r.titre}</h2>
                 <a href={r.service} className="inline-flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-full transition-colors hover:bg-white/10"
                   style={{ color: '#F0562A', border: '1px solid rgba(232,68,26,0.4)' }}>
@@ -97,8 +98,11 @@ export default function NosInterventionsPage() {
               <div className="space-y-10">
                 {r.chantiers.map((a) => {
                   // « Titre : accroche » devient un vrai titre et une phrase d'accroche
-                  const [titre, ...reste] = a.title.split(' : ')
+                  const tv = a.videos?.length ? titreVideo(a.slug) : undefined
+                  const [titreBrut, ...reste] = a.title.split(' : ')
+                  const titre = tv ? tv.lignes.join(' ') : titreBrut
                   const accroche = ACCROCHES[a.slug] ?? reste.join(' : ')
+                  const href = tv ? `/blog/${a.slug}#video` : `/blog/${a.slug}`
                   return (
                     <article key={a.slug} className="rounded-3xl p-6 md:p-10" style={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }}>
                       <div className="text-center max-w-2xl mx-auto mb-8">
@@ -112,7 +116,7 @@ export default function NosInterventionsPage() {
                           </span>
                         </div>
                         <h3 className="text-2xl md:text-4xl font-black text-white leading-tight mb-3">
-                          <a href={`/blog/${a.slug}`} className="hover:underline underline-offset-4">{titre}</a>
+                          <a href={href} className="hover:underline underline-offset-4">{titre}</a>
                         </h3>
                         {accroche && (
                           <p className="text-base md:text-lg font-bold leading-snug mb-4" style={{ color: '#F0562A' }}>
@@ -123,9 +127,9 @@ export default function NosInterventionsPage() {
                       </div>
                       <>{(a.videos?.length ?? 0) > 0 && <VideosEnHaut videos={a.videos!} titre="" sansFond />}{(a.photos?.length ?? 0) > 0 && <MediasChantier photos={a.photos} titre="" />}</>
                       <div className="text-center mt-8">
-                        <a href={`/blog/${a.slug}`} className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full transition-all hover:brightness-110"
+                        <a href={href} className="inline-flex items-center gap-2 font-bold text-white px-6 py-3 rounded-full transition-all hover:brightness-110"
                           style={{ background: ACCENT }}>
-                          Lire le récit complet <ArrowRight className="w-4 h-4" />
+                          {tv ? 'Voir l’intervention en vidéo' : 'Lire le récit complet'} <ArrowRight className="w-4 h-4" />
                         </a>
                       </div>
                     </article>
@@ -144,7 +148,7 @@ export default function NosInterventionsPage() {
             <Phone className="w-5 h-5" /> 07 68 07 72 19
           </a>
         </section>
-        <FaqBloc page="/nos-interventions" titre="Nos interventions en images : vos questions" items={[
+        <FaqBloc page="/nos-interventions" titre="Nos interventions en vidéo : vos questions" items={[
           { q: 'Ces photos et vidéos sont-elles réelles ?', a: 'Oui. Elles ont été prises par nos techniciens lors de vraies interventions, en Île-de-France. Les données de localisation sont retirées pour protéger nos clients.' },
           { q: 'Où peut-on voir d’autres chantiers ?', a: 'Sur notre fiche Google, notre chaîne YouTube et dans les récits d’intervention de notre blog.' },
           { q: 'Peut-on voir un chantier près de chez soi ?', a: 'Nos pages ville présentent, quand nous en avons, un chantier réalisé dans la commune.' },

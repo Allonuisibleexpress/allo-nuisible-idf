@@ -211,7 +211,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           const vids = CHANTIER_DIOGENE.videos.filter((x) => !x.src.includes('avant-apres')).slice(0, 2)
           const m = mentionDistance({ ville: CHANTIER_DIOGENE.ville, distance: d }, v.nom)
           return (
-            <VideosEnHaut videos={vids} titre={`Dératisation : notre chantier en vidéo près ${deVille(v.nom)}`}
+            <VideosEnHaut videos={vids} titre={`Dératisation : notre intervention en vidéo près ${deVille(v.nom)}`}
               intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici notre chantier filmé le plus proche, à Maisons-Alfort : la méthode est la même chez vous.`}
               mentions={Object.fromEntries(vids.map((x) => [x.src, m]))} />
           )
