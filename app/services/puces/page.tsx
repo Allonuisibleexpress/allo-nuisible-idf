@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import { METHODES_PUCES, GUIDE_PUCES } from '@/lib/contenu-services/acariens-puces'
@@ -64,5 +65,5 @@ export const metadata = pageMetadata({
 })
 
 export default function PucesPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/puces') }} />
 }

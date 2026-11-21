@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import { METHODES_DESINFECTION, GUIDE_DESINFECTION } from '@/lib/contenu-services/exterieur'
@@ -71,5 +72,5 @@ export const metadata = pageMetadata({
 })
 
 export default function DesinfectionPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/desinfection') }} />
 }

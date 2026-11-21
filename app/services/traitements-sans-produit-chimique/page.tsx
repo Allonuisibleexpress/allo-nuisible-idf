@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 // Page centrale « Nos traitements écologiques, sans produit chimique » (13/11/2026, demande de l'utilisateur), onglet « Écologique » du menu.
 // Regroupe uniquement les offres réellement sans biocide : punaises de lit (cryogénie, vapeur, chambre froide),
 // dératisation sans raticide, chenilles (retrait des nids, écopièges), acariens (vapeur, cryogénie), pigeons (pics, filets).
@@ -187,5 +188,5 @@ export const metadata = pageMetadata({
 })
 
 export default function TraitementsSansProduitPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/traitements-sans-produit-chimique') }} />
 }

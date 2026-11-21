@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import { METHODES_CAFARDS, GUIDE_CAFARDS } from '@/lib/contenu-services/cafards'
@@ -76,5 +77,5 @@ export const metadata = pageMetadata({
 })
 
 export default function CafardsPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/cafards-blattes') }} />
 }

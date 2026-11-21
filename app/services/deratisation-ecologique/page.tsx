@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 // Dératisation écologique, sans raticide (12/11/2026, demande de l'utilisateur).
 // « Écologique » est toujours défini sur la page : aucun raticide ni poison (pièges mécaniques, piège Ekomille, colmatage).
 // Ekomille reste présenté honnêtement : la méthode la plus courante en dératisation reste les postes avec raticide.
@@ -127,5 +128,5 @@ export const metadata = pageMetadata({
 })
 
 export default function DeratisationEcologiquePage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/deratisation-ecologique') }} />
 }

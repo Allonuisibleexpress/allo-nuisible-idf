@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { PUNAISES_DEMANDEES } from '@/lib/villes-demandees'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
@@ -122,5 +123,5 @@ export const metadata = pageMetadata({
 })
 
 export default function PunaisesPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/punaises-de-lit') }} />
 }

@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -152,5 +153,5 @@ export const metadata = pageMetadata({
 })
 
 export default function AnthrenesPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/anthrenes') }} />
 }

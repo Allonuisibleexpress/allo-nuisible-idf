@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 // Cryogénie des punaises de lit : page refaite le 13/11/2026 (demande de l'utilisateur : « le top du top », un maximum de termes,
 // titre principal « traitement punaises de lit écologique, sans biocide, cryogénie », vidéos de chantier détaillées).
 // « Écologique » = sans biocide, défini sur la page (lib/contenu-services/cryogenie.ts). Contenu et sources : même fichier.
@@ -136,5 +137,5 @@ export const metadata = pageMetadata({
 })
 
 export default function CryogeniePage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/cryogenie-punaises-de-lit') }} />
 }

@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { pageMetadata } from '@/lib/seo'
 import { maillageService } from '@/lib/maillage-services'
 import { METHODES_CHENILLES, GUIDE_CHENILLES } from '@/lib/contenu-services/exterieur'
@@ -65,5 +66,5 @@ export const metadata = pageMetadata({
 })
 
 export default function ChenillesPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/chenilles-processionnaires') }} />
 }

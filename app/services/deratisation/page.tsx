@@ -1,3 +1,4 @@
+import { secteurService } from '@/lib/secteurs'
 import { DERAT_DEMANDEES } from '@/lib/villes-demandees'
 import { pageMetadata } from '@/lib/seo'
 import DeratEco from '@/components/DeratEco'
@@ -121,5 +122,5 @@ export const metadata = pageMetadata({
 })
 
 export default function DeratisationPage() {
-  return <ServicePageTemplate data={data} />
+  return <ServicePageTemplate data={{ ...data, secteur: secteurService('/services/deratisation') }} />
 }
