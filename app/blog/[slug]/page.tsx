@@ -11,6 +11,8 @@ import MediasChantier, { Filigrane } from '@/components/MediasChantier'
 import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
 import { titreVideo } from '@/lib/titres-video'
+import { preload } from 'react-dom'
+import { posterVideo } from '@/components/MediasChantier'
 import FaqLien from '@/components/FaqLien'
 import { ImageCycle } from '@/components/CyclePunaises'
 import { VILLES_PUNAISES } from '@/lib/villes-punaises'
@@ -202,6 +204,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   // Récit filmé : la vidéo est le sujet principal (titre « Vidéo : … » sur deux lignes, vidéo en grand tout en haut)
   const tv = a.videos && a.videos.length > 0 ? titreVideo(a.slug) : undefined
   const titre = tv ? tv.lignes.join(' ') : a.title
+  // Image de la vidéo principale chargée en priorité (premier élément visible de la page)
+  const posterPrincipal = tv ? posterVideo(a.videos![0]) : undefined
+  if (posterPrincipal) preload(posterPrincipal, { as: 'image', fetchPriority: 'high' })
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

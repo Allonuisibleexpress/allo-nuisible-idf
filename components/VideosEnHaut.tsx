@@ -45,8 +45,8 @@ export default function VideosEnHaut({ videos, titre = 'Nos interventions en vid
       {titre && <h2 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">{titre}</h2>}
       {intro && <p className="text-white/65 max-w-2xl mx-auto mb-2 leading-relaxed">{intro}</p>}
       <div className={`grid gap-5 mx-auto mt-7 ${grille}`}>
-        {videos.map((v) => (
-          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} pageActuelle={pageActuelle} grand={grand && n === 1} mention={mentions?.[v.src]} natif={natif} />
+        {videos.map((v, i) => (
+          <VideoCarte key={v.src} src={v.src} poster={posterVideo(v as VideoChantier)} fiche={ficheVideo(v.src, (v as VideoChantier).legende)} youtube={lienYoutube(v.src) ?? undefined} pageActuelle={pageActuelle} grand={grand && n === 1} mention={mentions?.[v.src]} natif={natif && i === 0} /* lecteur direct pour la vidéo principale seulement : page plus rapide */ />
         ))}
       </div>
       <p className="mt-6 text-sm">
