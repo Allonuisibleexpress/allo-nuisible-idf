@@ -75,7 +75,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     intervention: {
-      titre: 'Intervention de dératisation à Vitry-sur-Seine : comment se passe notre passage',
+      titre: 'Intervention contre les rats à Vitry-sur-Seine : notre dératisation, étape par étape',
       etapes: [
         { t: 'Vous nous appelez ou envoyez une photo', x: 'Une photo des crottes, d’un trou ou d’un emballage rongé suffit souvent pour savoir s’il s’agit de rats ou de souris. Vous avez le prix avant notre déplacement.' },
         { t: 'Le technicien cherche les entrées', x: 'Cave, vide sanitaire, garage, gaines, bas de portes, regards : à Vitry, nous regardons aussi le chemin depuis la rue ou le jardin, car les rongeurs viennent souvent de l’extérieur.' },
@@ -84,7 +84,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     dératiseur: {
-      titre: 'Dératiseur à Vitry-sur-Seine : les situations que nous traitons le plus',
+      titre: 'Dératiseur à Vitry-sur-Seine : quand faut-il dératiser ? Les situations que nous traitons',
       cas: [
         { t: 'Un rat dans le hall ou la cave de la résidence', x: 'C’est le signe d’une colonie dans les parties communes. Prévenez par écrit le bailleur ou le syndic : le traitement doit couvrir caves, local poubelles et vide-ordures.' },
         { t: 'Des terriers dans le jardin du pavillon', x: 'Trous au pied d’un mur ou sous une dalle, coulées dans la pelouse : le surmulot creuse. Nous traitons le terrier et protégeons le composteur. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
@@ -168,7 +168,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   intervention: {
-    titre: 'Intervention de dératisation à Champigny-sur-Marne : notre méthode, sans surprise',
+    titre: 'Intervention contre les rats à Champigny-sur-Marne : notre dératisation, sans surprise',
     etapes: [
       { t: 'Photo et prix avant de venir', x: 'Envoyez une photo des crottes, d’un trou ou d’un sac rongé : nous identifions le rongeur et vous donnons le prix. Devis gratuit, dès 120 € pour un appartement.' },
       { t: 'Recherche des entrées', x: 'Près de la Marne, nous commençons par les regards et le vide sanitaire ; en résidence, par les caves et le local à déchets ; en pavillon, par le jardin et le garage.' },
@@ -177,7 +177,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   dératiseur: {
-    titre: 'Dératiseur à Champigny-sur-Marne : les cas que nous rencontrons',
+    titre: 'Dératiseur à Champigny-sur-Marne : quand faut-il dératiser ? Les cas que nous rencontrons',
     cas: [
       { t: 'Des rats sur la berge, au fond du jardin', x: 'Un jardin qui descend vers la Marne reçoit la visite des surmulots. Nous traitons les terriers et protégeons le composteur, puis nous fermons les passages vers la maison. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
       { t: 'Un rat dans la cave de la résidence', x: 'Prévenez par écrit le bailleur ou le syndic : les caves et le local à déchets relèvent des parties communes. Le traitement doit couvrir tout le bâtiment.' },
