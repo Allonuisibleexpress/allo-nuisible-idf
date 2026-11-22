@@ -77,6 +77,7 @@ export function RefonteIntervention({ r }: { r: RefonteDerat }) {
             </li>
           ))}
         </ol>
+        <p className="mt-8 text-white/75 leading-relaxed">Voyez comment nous travaillons sur le terrain : <a href="/blog/deratisation-logement-syndrome-diogene#video" className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>notre dératisation filmée à Maisons-Alfort</a>, du ramassage des rats en tenue de protection aux postes contrôlés deux jours après. Toutes nos vidéos : <a href="/nos-interventions" className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>nos interventions en vidéo</a>.</p>
       </div>
     </section>
   )
