@@ -821,4 +821,91 @@ REFONTE_DERATISATION['ablon-sur-seine'] = {
   sources: [ABLON_INSEE, ABLON_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Alfortville (23/11/2026) ──
+const ALFORT_WIKI: Source = { label: 'Wikipédia, Alfortville (confluent, crues, zone inondable, logement, quartiers)', url: 'https://fr.wikipedia.org/wiki/Alfortville' }
+const ALFORT_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94002, Alfortville', url: 'https://geo.api.gouv.fr/communes?code=94002&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['alfortville'] = {
+  maj: '2026-11-23',
+  accroche: 'Alfortville est bordée par la Seine et par la Marne, et classée tout entière en zone inondable. Pour les rats, c’est un terrain idéal ; pour nous, un terrain que nous connaissons par cœur.',
+  societe: {
+    titre: 'Société de dératisation à Alfortville (94140) : la ville du confluent',
+    paras: [
+      'Alfortville compte **45 531 habitants** sur **3,67 km²**. Elle est installée au **confluent de la Seine et de la Marne** : une bande de terre de **4,5 km de long** sur **0,5 à 1 km de large**, à une altitude de seulement 27 à 37 mètres. Depuis les années 2010, **100 % de la commune** est classée en **zone inondable**. Le **surmulot**, le rat d’égout, vit justement près de l’eau, nage très bien et suit les berges et les réseaux.',
+      'C’est aussi une ville d’**immeubles** : en 2020, **85,4 % des logements** étaient des appartements, dont les grands ensembles de **Chantereine** et du **Grand Ensemble**. Les **caves**, les **parkings** et les **locaux à déchets** proches de l’eau sont les premiers endroits que nous contrôlons.',
+      'Notre base de **Saint-Maurice** est juste de l’autre côté de la Marne : nous sommes à Alfortville en quelques minutes, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Alfortville](/souris/alfortville), [cafards à Alfortville](/cafards/alfortville), [punaises de lit à Alfortville](/punaises-de-lit/alfortville) et [puces à Alfortville](/puces/alfortville).',
+    ],
+  },
+  chiffres: [
+    { valeur: '45 531', texte: 'habitants (population légale Insee), code postal 94140.', source: ALFORT_INSEE },
+    { valeur: '100 %', texte: 'du territoire classé en zone inondable par les plans de prévention des années 2010.', source: ALFORT_WIKI },
+    { valeur: '2 m', texte: 'de submersion possible en cas de crue exceptionnelle, comme en 1910, la plus forte connue.', source: ALFORT_WIKI },
+    { valeur: '85,4 %', texte: 'des logements sont des appartements (2020) : caves, parkings et locaux à déchets partagés.', source: ALFORT_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Alfortville : la ville secteur par secteur',
+    intro: 'Du **confluent** au nord jusqu’au **Port-à-l’Anglais** au sud, entre les **quais de Seine**, la **Marne** et la voie ferrée du **RER D**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le confluent, Chinagora et les bords de Marne',
+        texte: 'Au nord, là où la Marne rejoint la Seine, les berges, les pontons et les espaces verts des quais sont un habitat naturel pour le rat. Les immeubles proches de **Chinagora** et des bords de Marne doivent surveiller leurs **parkings souterrains**, leurs **regards** et leurs **locaux à poubelles**.',
+        photo: { src: '/villes/alfortville/chinagora-confluent.jpg', alt: 'Le complexe Chinagora au confluent de la Seine et de la Marne à Alfortville', legende: 'Chinagora, au confluent de la Seine et de la Marne, vu depuis le pont d’Ivry : l’eau borde la ville.', credit: 'Benj54', licence: 'Domaine public', page: W + 'Chinagora-alfortville.jpg' },
+      },
+      {
+        nom: 'Les quais de Seine et l’île Saint-Pierre',
+        texte: 'Le long de la Seine, les maisons et petits immeubles anciens ont souvent des **caves** et des **soupiraux** au ras du sol, et ont été inondés en 1910. Quand l’eau monte, les rats remontent avec elle vers les sous-sols. Nous contrôlons chaque ouverture, traitons, puis rebouchons et posons des grilles.',
+        photo: { src: '/villes/alfortville/crue-1910-ile-saint-pierre.jpg', alt: 'Carte postale de la crue de 1910 à Alfortville, rue de Rome, île Saint-Pierre', legende: 'Rue de Rome, île Saint-Pierre, pendant la crue de 1910 : à Alfortville, l’eau n’est jamais loin des caves.', credit: 'Auteur inconnu', licence: 'Domaine public', page: W + 'Alfortville.1910.Ile_Saint-Pierre.Rue_de_Rome.jpg' },
+      },
+      {
+        nom: 'Chantereine et le Grand Ensemble',
+        texte: 'Ces deux quartiers prioritaires rassemblent près de **4 000 habitants** dans de grands immeubles, en pleine rénovation : trois tours de 18 étages de Chantereine ont été démolies en octobre 2024. Démolitions et chantiers **dérangent les colonies** de rongeurs, qui se déplacent vers les bâtiments voisins. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+      },
+      {
+        nom: 'Le centre, les squares et la voie ferrée',
+        texte: 'Autour de la **mairie**, de la Halle Carnot, des squares comme **Camélinat** et le long de la voie ferrée du **RER D** (gares Maisons-Alfort-Alfortville et Vert de Maisons), massifs, talus et commerces de bouche attirent les rongeurs. Pour un commerce, nous intervenons hors des heures d’ouverture, avec **attestation**.',
+        photo: { src: '/villes/alfortville/square-camelinat.jpg', alt: 'Le square Camélinat à Alfortville', legende: 'Le square Camélinat : massifs et pergolas au pied des immeubles, des zones de passage à surveiller.', credit: 'Citoyennedu94', licence: 'CC BY-SA 4.0', page: W + 'Square_Cam%C3%A9linat_-_Alfortville_-_France.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Alfortville (94140) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le chemin de l’eau', x: 'Regards, soupiraux, caves et parkings souterrains, colonnes et vide-ordures : à Alfortville, nous suivons le chemin que l’eau et les rats empruntent.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Alfortville (94140) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le parking ou la cave après de fortes pluies', x: 'Quand la Seine ou la Marne montent, les rats quittent les berges et les égouts pour les sous-sols. Nous traitons, puis fermons les accès pour que cela ne recommence pas.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Dans une ville au bord de l’eau, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir notre page [souris à Alfortville](/souris/alfortville) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs après une démolition ou un chantier voisin', x: 'Quand un immeuble est démoli, la colonie cherche un nouvel abri. Prévenez votre syndic ou bailleur dès les premières traces : un traitement rapide évite l’installation.' },
+      { t: 'Un rongeur dans un commerce ou un restaurant', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles), et [cafards à Alfortville](/cafards/alfortville).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Alfortville',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Les parties communes d’un immeuble d’Alfortville se traitent donc à la demande du **syndic** ou du **bailleur**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur les quais, dans un square ou sur la voie publique, alertez la **mairie d’Alfortville**.',
+      'Nous intervenons aussi tout autour : [Maisons-Alfort](/deratisation/maisons-alfort), [Vitry-sur-Seine](/deratisation/vitry-sur-seine), [Ivry-sur-Seine](/deratisation/ivry-sur-seine), [Charenton-le-Pont](/deratisation/charenton-le-pont), [Créteil](/deratisation/creteil), [Choisy-le-Roi](/deratisation/choisy-le-roi) et [Saint-Maurice](/deratisation/saint-maurice).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Alfortville ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, maison ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi tant de rats à Alfortville ?', a: 'La ville est bordée par la Seine et la Marne, et le surmulot vit près de l’eau ([mode de vie du rat](/blog/rat-mode-de-vie)). Quand l’eau monte, il remonte vers les caves et les parkings.' },
+    { q: 'Les crues font-elles venir les rats dans les immeubles ?', a: 'Oui, la montée des eaux chasse les rats des berges et des égouts vers les sous-sols. Après une crue ou de fortes pluies, surveillez caves, parkings et locaux à poubelles.' },
+    { q: 'Qui paie la dératisation d’une résidence à Chantereine ou au Grand Ensemble ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Alfortville ?', a: 'Oui : notre base de Saint-Maurice est voisine. Nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ALFORT_INSEE, ALFORT_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
