@@ -37,6 +37,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
         'Avec **93 963 habitants** sur **11,67 km²**, Vitry-sur-Seine est l’une des villes les plus peuplées du Val-de-Marne. Elle est bordée à l’est par la **Seine sur 3,8 km**, et son paysage passe en quelques rues d’une **grande résidence** à un **quartier de pavillons**, puis à une **zone d’activités**. Pour une société de dératisation, ce mélange change tout : les rats n’arrivent pas par le même chemin dans une tour, un pavillon ou un entrepôt.',
         '**Plus de 40 %** des logements de la ville sont des HLM et **près de 60 %** ont été construits entre **1949 et 1974**. Dans ces immeubles, les rongeurs circulent par les **caves**, les **colonnes de vide-ordures** et les **gaines techniques**. Dans le parc privé, qui compte une forte part de **maisons individuelles**, ils s’installent plutôt dans les **jardins**, les **vides sanitaires** et les **garages**.',
         'Notre base est à **Saint-Maurice**, à environ **5 km** à vol d’oiseau : nous intervenons à Vitry 7 jours sur 7, souvent le jour même, sans majoration la nuit ni le week-end, comme dans les villes voisines : [Ivry-sur-Seine](/deratisation/ivry-sur-seine), [Villejuif](/deratisation/villejuif), [Choisy-le-Roi](/deratisation/choisy-le-roi), [Thiais](/deratisation/thiais) et [Alfortville](/deratisation/alfortville).',
+        'Nos autres pages pour la ville : [punaises de lit à Vitry-sur-Seine](/punaises-de-lit/vitry-sur-seine), [souris à Vitry-sur-Seine](/souris/vitry-sur-seine), [cafards à Vitry-sur-Seine](/cafards/vitry-sur-seine) et [fourmis à Vitry-sur-Seine](/fourmis/vitry-sur-seine).',
       ],
     },
     chiffres: [
@@ -130,6 +131,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
       'Champigny-sur-Marne compte **78 072 habitants** sur **11,30 km²**. Sa particularité : la ville est **bordée des deux côtés par la Marne**, avec **quatre îles classées réserves naturelles régionales**. L’eau, les berges et les réseaux qui y descendent sont l’habitat préféré du **surmulot**, le rat d’égout, qui nage très bien et remonte vers les jardins et les caves.',
       'Le reste de la ville est très contrasté : **37 % de logements sociaux**, de grands ensembles comme au **Bois-l’Abbé** ou aux **Mordacs**, mais aussi **près d’un logement sur trois en maison individuelle**. Pour une société de dératisation, c’est deux métiers : traiter les **parties communes** d’une résidence avec le bailleur, ou chercher un **terrier sous un abri de jardin**.',
       'Nous connaissons bien Champigny : nous y avons détruit un [nid de frelons asiatiques à 12 mètres en nacelle](/blog/nid-frelons-asiatiques-12-metres-nacelle-champigny-sur-marne#video) et traité les lits d’un [établissement de tout-petits contre les punaises de lit, par le froid](/punaises-de-lit/champigny-sur-marne). Notre base de **Saint-Maurice** est à quelques minutes.',
+      'Nos autres pages pour la ville : [punaises de lit à Champigny-sur-Marne](/punaises-de-lit/champigny-sur-marne), [souris à Champigny-sur-Marne](/souris/champigny-sur-marne) et [fourmis à Champigny-sur-Marne](/fourmis/champigny-sur-marne).',
     ],
   },
   chiffres: [
@@ -220,6 +222,7 @@ REFONTE_DERATISATION['creteil'] = {
       'Préfecture du Val-de-Marne, Créteil compte **93 397 habitants** sur **11,42 km²**. Sa géographie explique une bonne partie des appels que nous recevons : un **lac artificiel d’une quarantaine d’hectares** au sud-ouest, des **bords de Marne** aménagés en promenade, et environ **180 hectares d’espaces verts**. L’eau et la végétation attirent le **surmulot**, qui vit près des berges et circule dans les réseaux.',
       'La ville s’est aussi beaucoup construite à partir de **1955**, avec le quartier du **Mont-Mesly**, puis le « Nouveau Créteil » autour de la préfecture. Résultat : beaucoup d’**habitat collectif**, avec ses **caves**, ses **parkings** et ses **locaux à déchets**, à côté du **vieux village** et de ses maisons.',
       'Notre base est à **Saint-Maurice**, juste au nord : nous sommes à Créteil en quelques minutes, 7 jours sur 7. Nous y sommes déjà intervenus, par exemple pour des [punaises cachées dans les lattes d’un sommier](/blog/punaises-de-lit-creteil-sommier-lattes#video), un chantier filmé.',
+      'Nos autres pages pour la ville : [souris à Créteil](/souris/creteil), [cafards à Créteil](/cafards/creteil), [punaises de lit à Créteil](/punaises-de-lit/creteil) et [fourmis à Créteil](/fourmis/creteil).',
     ],
   },
   chiffres: [
@@ -309,7 +312,7 @@ REFONTE_DERATISATION['villejuif'] = {
     paras: [
       'Villejuif compte **60 183 habitants** sur **5,28 km²**, au nord-ouest du Val-de-Marne. La ville est posée sur le **plateau de Longboyau**, entre les vallées de la Seine et de la Bièvre, et **aucun cours d’eau ne la traverse**. Ici, le rat ne vient donc pas des berges : il remonte par le **réseau d’égouts**, les **regards** et les **canalisations**, puis s’installe là où il trouve à manger.',
       'C’est aussi une ville d’**immeubles** : en 2022, **81,2 % des logements** étaient des appartements, avec de grands ensembles comme les **Lozaits**, **Robert-Lebon** ou **Alexandre-Dumas**. Un rongeur repéré dans un hall vient presque toujours des **sous-sols communs**. À côté, le **Bas-Villejuif**, sur les coteaux, garde des **pavillons** avec jardin, cave et vide sanitaire.',
-      'Notre base est à **Saint-Maurice** : nous intervenons à Villejuif 7 jours sur 7. Nous traitons aussi les [punaises de lit à Villejuif](/punaises-de-lit/villejuif), les [fourmis](/fourmis/villejuif) et les [puces](/puces/villejuif).',
+      'Notre base est à **Saint-Maurice** : nous intervenons à Villejuif 7 jours sur 7. Nos autres pages pour la ville : [punaises de lit à Villejuif](/punaises-de-lit/villejuif), [souris à Villejuif](/souris/villejuif), [fourmis à Villejuif](/fourmis/villejuif) et [puces à Villejuif](/puces/villejuif).',
     ],
   },
   chiffres: [
@@ -400,7 +403,7 @@ REFONTE_DERATISATION['choisy-le-roi'] = {
     paras: [
       'Choisy-le-Roi compte **45 946 habitants** sur **5,42 km²**. C’est, avec Paris, **la seule commune de la petite couronne qui s’étend des deux côtés de la Seine**. Le fleuve, ses **quais** et ses **berges** offrent au **surmulot** de l’eau et des abris, et le réseau d’égouts relie les deux rives.',
       'La ville a aussi un centre très vertical : sur la « **dalle** », trois tours de **88, 81 et 68 mètres**, et **huit autres immeubles de plus de 50 mètres**. Dans un immeuble de grande hauteur, un rongeur circule par les **gaines techniques**, les **vide-ordures** et les **colonnes** : il faut traiter à la source, au sous-sol, pas seulement à l’étage où on le voit.',
-      'Notre base est à **Saint-Maurice**, de l’autre côté de Créteil : nous intervenons à Choisy-le-Roi 7 jours sur 7. Nous y traitons aussi les [souris](/souris/choisy-le-roi) et les [punaises de lit](/punaises-de-lit/choisy-le-roi).',
+      'Notre base est à **Saint-Maurice**, de l’autre côté de Créteil : nous intervenons à Choisy-le-Roi 7 jours sur 7. Nos autres pages pour la ville : [souris à Choisy-le-Roi](/souris/choisy-le-roi) et [punaises de lit à Choisy-le-Roi](/punaises-de-lit/choisy-le-roi).',
     ],
   },
   chiffres: [
@@ -486,7 +489,7 @@ REFONTE_DERATISATION['maisons-alfort'] = {
     paras: [
       'À Maisons-Alfort, nous ne parlons pas en théorie : nous y avons mené une **dératisation dans un logement touché par le syndrome de Diogène**, avec ramassage des rats en tenue de protection, pose de postes et suivi. Le chantier est en vidéo : [voir l’intervention à Maisons-Alfort](/blog/deratisation-logement-syndrome-diogene#video). Les trous laissés par les rats dans les cloisons, les postes deux jours après : tout y est.',
       'La ville compte **56 799 habitants** sur **5,35 km²**. Elle est bordée au nord par la **Marne** et à l’ouest par la voie ferrée qui la sépare d’Alfortville. L’ancienne **RN19** la coupe en deux : à l’est, des **quartiers pavillonnaires** et les **bords de Marne** ; à l’ouest, le centre, l’**École vétérinaire**, le **Fort de Charenton** et la mairie.',
-      'Notre base de **Saint-Maurice** est juste de l’autre côté de la Marne : nous sommes à Maisons-Alfort en quelques minutes, 7 jours sur 7. Nous y traitons aussi les [souris](/souris/maisons-alfort), les [cafards](/cafards/maisons-alfort) et les [punaises de lit](/punaises-de-lit/maisons-alfort).',
+      'Notre base de **Saint-Maurice** est juste de l’autre côté de la Marne : nous sommes à Maisons-Alfort en quelques minutes, 7 jours sur 7. Nos autres pages pour la ville : [souris à Maisons-Alfort](/souris/maisons-alfort), [cafards à Maisons-Alfort](/cafards/maisons-alfort) et [punaises de lit à Maisons-Alfort](/punaises-de-lit/maisons-alfort).',
     ],
   },
   chiffres: [
@@ -572,7 +575,7 @@ REFONTE_DERATISATION['saint-maur-des-fosses'] = {
     paras: [
       'Saint-Maur-des-Fossés compte **76 572 habitants** sur **11,26 km²**, avec deux codes postaux : **94100** pour Saint-Maur et **94210** pour **La Varenne-Saint-Hilaire**. La ville est une **presqu’île** entourée par la **dernière boucle de la Marne** : presque partout, la rivière n’est jamais loin. Or le **surmulot**, le rat d’égout, vit près de l’eau, nage très bien et remonte des berges vers les **jardins**, les **caves** et les **réseaux**.',
       'C’est aussi une ville de **maisons** : en 2021, **33,7 % des logements** étaient des maisons individuelles, une part élevée pour la petite couronne. Jardins, abris, composteurs, poulaillers, vide sanitaires : pour une société de dératisation, Saint-Maur, c’est d’abord le traitement d’un **pavillon** et de son terrain.',
-      'Nous connaissons la ville : nous y avons traité des [souris dans un logement loué sur Airbnb](/blog/souris-airbnb-saint-maur-des-fosses), après des remarques de voyageurs. Notre base de **Saint-Maurice** est voisine : nous sommes à Saint-Maur en quelques minutes, 7 jours sur 7. Voir aussi nos pages [souris](/souris/saint-maur-des-fosses), [cafards](/cafards/saint-maur-des-fosses) et [punaises de lit à Saint-Maur](/punaises-de-lit/saint-maur-des-fosses).',
+      'Nous connaissons la ville : nous y avons traité des [souris dans un logement loué sur Airbnb](/blog/souris-airbnb-saint-maur-des-fosses), après des remarques de voyageurs. Notre base de **Saint-Maurice** est voisine : nous sommes à Saint-Maur en quelques minutes, 7 jours sur 7. Nos autres pages pour la ville : [souris à Saint-Maur-des-Fossés](/souris/saint-maur-des-fosses), [cafards à Saint-Maur-des-Fossés](/cafards/saint-maur-des-fosses) et [punaises de lit à Saint-Maur-des-Fossés](/punaises-de-lit/saint-maur-des-fosses).',
     ],
   },
   chiffres: [
