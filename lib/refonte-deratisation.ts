@@ -207,4 +207,94 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
   sources: [CHAMPIGNY_INSEE, CHAMPIGNY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Créteil (22/11/2026) ──
+const CRETEIL_WIKI: Source = { label: 'Wikipédia, Créteil (quartiers, lac, Marne, espaces verts, transports, commerces)', url: 'https://fr.wikipedia.org/wiki/Cr%C3%A9teil' }
+const CRETEIL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94028, Créteil', url: 'https://geo.api.gouv.fr/communes?code=94028&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['creteil'] = {
+  maj: '2026-11-22',
+  accroche: 'Lac, bords de Marne, Mont-Mesly, centre commercial et hôpital : à Créteil, chaque quartier a ses rongeurs. Nous trouvons d’où ils viennent avant de traiter.',
+  societe: {
+    titre: 'Société de dératisation à Créteil (94000) : la préfecture entre lac et Marne',
+    paras: [
+      'Préfecture du Val-de-Marne, Créteil compte **93 397 habitants** sur **11,42 km²**. Sa géographie explique une bonne partie des appels que nous recevons : un **lac artificiel d’une quarantaine d’hectares** au sud-ouest, des **bords de Marne** aménagés en promenade, et environ **180 hectares d’espaces verts**. L’eau et la végétation attirent le **surmulot**, qui vit près des berges et circule dans les réseaux.',
+      'La ville s’est aussi beaucoup construite à partir de **1955**, avec le quartier du **Mont-Mesly**, puis le « Nouveau Créteil » autour de la préfecture. Résultat : beaucoup d’**habitat collectif**, avec ses **caves**, ses **parkings** et ses **locaux à déchets**, à côté du **vieux village** et de ses maisons.',
+      'Notre base est à **Saint-Maurice**, juste au nord : nous sommes à Créteil en quelques minutes, 7 jours sur 7. Nous y sommes déjà intervenus, par exemple pour des [punaises cachées dans les lattes d’un sommier](/blog/punaises-de-lit-creteil-sommier-lattes#video), un chantier filmé.',
+    ],
+  },
+  chiffres: [
+    { valeur: '93 397', texte: 'habitants (population légale Insee), code postal 94000.', source: CRETEIL_INSEE },
+    { valeur: '≈ 40 ha', texte: 'pour le lac de Créteil, plan d’eau artificiel au sud-ouest de la ville.', source: CRETEIL_WIKI },
+    { valeur: '180 ha', texte: 'd’espaces verts : île de loisirs, parc Dupeyroux, jardin de la Côte-d’Or, parc de la Brèche.', source: CRETEIL_WIKI },
+    { valeur: '25 M', texte: 'de visiteurs par an à Créteil Soleil, centre commercial de 124 100 m² ouvert en 1974.', source: CRETEIL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Créteil : la ville secteur par secteur',
+    intro: 'Créteil est découpée en **vingt quartiers**, des **Bords de Marne** au **Front de Lac**, de l’**Échat** au **Mont-Mesly**. Voici ce que chaque grand secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le lac, le Front de Lac et la Pointe du Lac',
+        texte: 'Autour du **lac** et de l’**île de loisirs**, l’eau, les pelouses et les restes de pique-nique attirent les rongeurs. Les résidences du **Front de Lac** et les immeubles proches de la **Pointe du Lac** (terminus de la ligne 8) doivent surveiller leurs **locaux à déchets** et leurs **parkings souterrains**, où un rat trouve abri et nourriture.',
+        photo: { src: '/villes/creteil/lac-ile-de-loisirs.jpg', alt: 'Prairie de l’île de loisirs du lac de Créteil', legende: 'La prairie de l’île de loisirs, au bord du lac : eau, pelouses et poubelles de promenade attirent les rongeurs.', credit: 'Sebfun', licence: 'CC BY-SA 3.0', page: W + 'Cr%C3%A9teil_parc_du_lac.jpg' },
+      },
+      {
+        nom: 'Les Bords de Marne et le vieux Créteil',
+        texte: 'Le long de la **Marne**, qui a connu de nombreuses crues, les maisons anciennes ont souvent des **caves voûtées**, des **soupiraux** et des **regards** au ras du sol. Le surmulot remonte par là. Nous contrôlons chaque ouverture et rebouchons les passages, en plus du traitement.',
+        photo: { src: '/villes/creteil/colombier-vieux-creteil.jpg', alt: 'Le colombier de Créteil', legende: 'Le colombier de Créteil : dans le bâti ancien, caves et soupiraux sont les premières portes d’entrée des rats.', credit: 'Poulpy', licence: 'CC BY-SA 3.0', page: W + 'Colombier,_Cr%C3%A9teil_-_01.jpg' },
+      },
+      {
+        nom: 'Le Mont-Mesly et les grands ensembles',
+        texte: 'Construit à partir de 1955 sur la colline du **Mont-Mesly**, point culminant de la ville, ce secteur compte de nombreux immeubles collectifs. Un rat aperçu dans un hall vient presque toujours des **caves**, des **gaines** ou du **local à déchets** : le traitement doit couvrir les **parties communes**, en lien avec le **bailleur** ou le **syndic**.',
+        photo: { src: '/villes/creteil/mont-mesly-place-abbaye.jpg', alt: 'La place de l’Abbaye, au Mont-Mesly, à Créteil', legende: 'La place de l’Abbaye, au Mont-Mesly : dans l’habitat collectif, caves et gaines relient tous les logements.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Place_Abbaye_-_Cr%C3%A9teil_(FR94)_-_2021-03-26_-_2.jpg' },
+      },
+      {
+        nom: 'Préfecture, Créteil Soleil et les zones commerciales',
+        texte: 'Autour de la **préfecture** et de **Créteil Soleil**, la restauration et les commerces de bouche produisent beaucoup de déchets alimentaires. Pour un professionnel, nous posons des **postes numérotés**, tenons un **registre** et remettons une **attestation** pour les contrôles d’hygiène, avec des passages **hors des heures d’ouverture**.',
+      },
+      {
+        nom: 'L’Échat, l’université et l’hôpital',
+        texte: 'Autour du **CHU Henri-Mondor** et de l’**université Paris-Est Créteil**, qui accueille plus de **25 000 étudiants**, les **résidences étudiantes**, les cuisines collectives et les locaux techniques demandent un suivi régulier : un dispositif **sécurisé**, fermé à clé, et un plan de prévention simple pour les équipes.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Créteil (94000) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et vous donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'La recherche des entrées', x: 'Près du lac et de la Marne, regards et soupiraux ; en résidence, caves, gaines et local à déchets ; en maison, jardin, garage et vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage sécurisés et verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Le rebouchage et le suivi', x: 'Les passages sont rebouchés, les postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Créteil (94000) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un rat dans le parking ou le local à déchets', x: 'C’est le signe d’une colonie dans les parties communes. Prévenez le syndic ou le bailleur par écrit : le traitement doit couvrir tout le sous-sol, pas un seul box.' },
+      { t: 'Des souris dans la cuisine d’un appartement', x: 'Elles passent par les gaines et les arrivées d’eau. Notre page [souris à Créteil](/souris/creteil) détaille comment nous trouvons leur passage. Pour faire la différence, voir [rat ou souris : comment reconnaître](/blog/rat-ou-souris-comment-reconnaitre).' },
+      { t: 'Des terriers dans le jardin d’une maison', x: 'Trous au pied des murs, coulées dans l’herbe : nous traitons les terriers, protégeons le composteur et fermons l’accès au vide sanitaire. Voir aussi [rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, suivi et attestation : notre guide [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) explique ce que vérifient les contrôles.' },
+      { t: 'Les blattes qui suivent les mêmes gaines', x: 'Dans les grandes résidences, les cafards empruntent les mêmes colonnes que les souris : voir notre page [cafards à Créteil](/cafards/creteil).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Créteil',
+    paras: [
+      'Dans le Val-de-Marne, le **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) consacre son **article 119** à la lutte contre les rongeurs : il revient aux **propriétaires**, **syndics**, **bailleurs**, **gestionnaires** et **occupants** d’empêcher l’installation des rats dans leurs propriétés. La dératisation d’une maison, d’un immeuble ou d’un commerce de Créteil est donc à leur charge.',
+      'Locataire, prévenez votre propriétaire ou votre bailleur **par écrit**, avec des photos. Pour des rats sur la voie publique ou dans un parc, c’est la **mairie de Créteil** qu’il faut alerter.',
+      'Nous intervenons aussi tout autour : [Maisons-Alfort](/deratisation/maisons-alfort), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses), [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne), [Choisy-le-Roi](/deratisation/choisy-le-roi), [Alfortville](/deratisation/alfortville) et [Limeil-Brévannes](/deratisation/limeil-brevannes).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Créteil ?', a: 'À partir de 120 € TTC pour un appartement, rats ou souris. Maison, commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Y a-t-il plus de rats près du lac de Créteil ?', a: 'Les plans d’eau et les berges sont favorables au surmulot : eau, abri et restes de nourriture. Les résidences proches du lac et de la Marne doivent surveiller leurs locaux à déchets, parkings et regards.' },
+    { q: 'Qui paie la dératisation d’une résidence au Mont-Mesly ?', a: 'Les parties communes (caves, parkings, local à déchets) relèvent du bailleur ou du syndic. Le règlement sanitaire du Val-de-Marne (article 119) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces de Créteil Soleil et du centre ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre des passages et attestation pour vos contrôles d’hygiène.' },
+    { q: 'Je suis étudiant en résidence à Créteil : que faire ?', a: 'Signalez les rats ou souris au gestionnaire de la résidence, par écrit et avec photos. Il organise le traitement des parties communes et des logements touchés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Regardez les crottes : celles du rat mesurent 1 à 2 cm, celles de la souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Peut-on dératiser sans poison à Créteil ?', a: 'Oui : pièges mécaniques, piège multicapture Ekomille sans raticide et rebouchage des accès, quand il y a des enfants, des animaux ou un jardin potager.' },
+    { q: 'Intervenez-vous vite à Créteil ?', a: 'Oui. Notre base de Saint-Maurice est voisine : nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CRETEIL_INSEE, CRETEIL_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
