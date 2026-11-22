@@ -84,7 +84,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     dératiseur: {
-      titre: 'Dératiseur à Vitry-sur-Seine : quand faut-il dératiser ? Les situations que nous traitons',
+      titre: 'Dératiseur à Vitry-sur-Seine : les situations que nous traitons le plus',
       cas: [
         { t: 'Un rat dans le hall ou la cave de la résidence', x: 'C’est le signe d’une colonie dans les parties communes. Prévenez par écrit le bailleur ou le syndic : le traitement doit couvrir caves, local poubelles et vide-ordures.' },
         { t: 'Des terriers dans le jardin du pavillon', x: 'Trous au pied d’un mur ou sous une dalle, coulées dans la pelouse : le surmulot creuse. Nous traitons le terrier et protégeons le composteur. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
@@ -94,7 +94,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     mairie: {
-      titre: 'Mairie, égouts, bailleurs : qui dératise quoi à Vitry',
+      titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi à Vitry-sur-Seine',
       paras: [
         'La ville de Vitry organise **deux campagnes de dératisation par an** dans l’ensemble des **bâtiments communaux** : celle du **printemps** et celle de l’**automne**, conseillée. Elle intervient aussi de façon curative dans les **parcs et espaces verts** dès qu’une présence de rongeurs lui est signalée.',
         'Les **réseaux d’assainissement** ne sont pas traités par la ville : l’établissement public territorial **Grand-Orly Seine Bièvre** dératise ses réseaux **deux fois par an**, et le **Conseil départemental du Val-de-Marne** une fois par an.',
@@ -177,7 +177,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   dératiseur: {
-    titre: 'Dératiseur à Champigny-sur-Marne : quand faut-il dératiser ? Les cas que nous rencontrons',
+    titre: 'Dératiseur à Champigny-sur-Marne : les cas que nous rencontrons le plus',
     cas: [
       { t: 'Des rats sur la berge, au fond du jardin', x: 'Un jardin qui descend vers la Marne reçoit la visite des surmulots. Nous traitons les terriers et protégeons le composteur, puis nous fermons les passages vers la maison. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
       { t: 'Un rat dans la cave de la résidence', x: 'Prévenez par écrit le bailleur ou le syndic : les caves et le local à déchets relèvent des parties communes. Le traitement doit couvrir tout le bâtiment.' },
@@ -187,7 +187,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   mairie: {
-    titre: 'Propriétaire, syndic, locataire : qui doit dératiser à Champigny',
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Champigny-sur-Marne',
     paras: [
       'Dans le Val-de-Marne, le **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) consacre son **article 119** à la lutte contre les rongeurs. Il revient aux **propriétaires**, **syndics**, **bailleurs**, **gestionnaires** et **occupants** d’empêcher l’installation des rats dans leurs propriétés. À Champigny comme ailleurs, la dératisation d’un pavillon, d’un immeuble ou d’un commerce est donc à leur charge, pas à celle de la mairie.',
       'Locataire, vous signalez le problème **par écrit** au propriétaire ou au bailleur, avec photos. Pour des rats sur la voie publique, dans un parc ou un bâtiment communal, c’est la **mairie** qu’il faut prévenir.',
