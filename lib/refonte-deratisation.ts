@@ -740,4 +740,85 @@ REFONTE_DERATISATION['vincennes'] = {
   sources: [VINCENNES_INSEE, VINCENNES_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Ablon-sur-Seine (23/11/2026) ──
+const ABLON_WIKI: Source = { label: 'Wikipédia, Ablon-sur-Seine (Seine, écluse, logement, gare)', url: 'https://fr.wikipedia.org/wiki/Ablon-sur-Seine' }
+const ABLON_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94001, Ablon-sur-Seine', url: 'https://geo.api.gouv.fr/communes?code=94001&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['ablon-sur-seine'] = {
+  maj: '2026-11-23',
+  accroche: 'Une petite ville au bord de la Seine, des pavillons avec jardin et des quais : à Ablon-sur-Seine, les rats remontent du fleuve. Nous fermons leur chemin.',
+  societe: {
+    titre: 'Société de dératisation à Ablon-sur-Seine (94480) : une ville au bord de la Seine',
+    paras: [
+      'Ablon-sur-Seine est une petite commune du Val-de-Marne : **5 988 habitants** sur **1,14 km²**, tout au sud du département. Elle est posée sur la **rive gauche de la Seine**, qui la sépare de l’Essonne, avec ses **quais**, sa **gare du RER C** et l’**écluse d’Ablon**. Le **surmulot**, le rat d’égout, vit près de l’eau et remonte des berges vers les jardins et les caves.',
+      'C’est une commune **traditionnellement pavillonnaire** : en 2019, **un logement sur trois** était une maison individuelle. Jardin, abri, garage, vide sanitaire, composteur : une dératisation à Ablon, c’est souvent le traitement d’une **maison et de son terrain**, plus rarement d’un immeuble.',
+      'Nous intervenons à Ablon depuis notre base de **Saint-Maurice**, 7 jours sur 7. Nos autres pages pour la ville : [punaises de lit à Ablon-sur-Seine](/punaises-de-lit/ablon-sur-seine) et [nos interventions à Ablon-sur-Seine](/zones/val-de-marne/ablon-sur-seine).',
+    ],
+  },
+  chiffres: [
+    { valeur: '5 988', texte: 'habitants (population légale Insee), code postal 94480.', source: ABLON_INSEE },
+    { valeur: '1,14 km²', texte: 'de superficie : une petite ville entre la Seine, Villeneuve-le-Roi et Athis-Mons.', source: ABLON_INSEE },
+    { valeur: '32,9 %', texte: 'des logements sont des maisons individuelles (2019) : jardins, garages et vide sanitaires.', source: ABLON_WIKI },
+    { valeur: '1', texte: 'écluse sur la Seine, avec barrage et passerelle, à hauteur de la Saussaie des Gobelins.', source: ABLON_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Ablon-sur-Seine : la ville secteur par secteur',
+    intro: 'Entre le **fleuve**, la **voie ferrée** du RER C et les quartiers de **pavillons**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quais de Seine et l’écluse',
+        texte: 'Le long des **quais**, jusqu’à l’**écluse** et la Saussaie des Gobelins, l’eau, les berges et la végétation offrent au rat un habitat idéal. Les maisons qui donnent sur la Seine doivent surveiller leurs **soupiraux**, leurs **regards** et le pied de leurs murs : c’est par là que les rongeurs entrent.',
+        photo: { src: '/villes/ablon-sur-seine/ecluse.jpg', alt: 'La Seine et les écluses d’Ablon-sur-Seine', legende: 'La Seine et les écluses d’Ablon : les berges sont l’habitat naturel du surmulot.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89cluses_Ablon_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_1.jpg' },
+      },
+      {
+        nom: 'Le vieux village et le quai Magne',
+        texte: 'Face à la Seine, la **tour du chatel**, seul vestige d’un château construit en 1348, rappelle l’ancienneté du bâti. Dans les maisons anciennes, les **caves voûtées**, les **murs de pierre** et les **soupiraux** laissent passer les rongeurs : nous les repérons et les rebouchons après le traitement.',
+        photo: { src: '/villes/ablon-sur-seine/tour-du-chatel-quai.jpg', alt: 'La tour du chatel d’Ablon, quai Magne, face à la Seine', legende: 'La tour du chatel, quai Magne : dans le bâti ancien, caves et soupiraux sont les portes d’entrée des rats.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ch%C3%A2teau_Ablon_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_2.jpg' },
+      },
+      {
+        nom: 'La gare du RER C et les quartiers de pavillons',
+        texte: 'Autour de la **gare d’Ablon** et sur le coteau, les **pavillons avec jardin** dominent. Talus ferroviaires, haies, abris et composteurs : nous traitons les **terriers**, protégeons le compost et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/ablon-sur-seine/gare-rer-c.jpg', alt: 'La gare d’Ablon sur la ligne C du RER', legende: 'La gare d’Ablon (RER C) : voies ferrées et talus servent de corridors aux rongeurs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Gare_Ablon_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_4.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Ablon-sur-Seine (94480) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, abri, garage, vide sanitaire, soupiraux côté Seine : nous trouvons par où les rongeurs entrent et où ils nichent.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Ablon-sur-Seine (94480) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Trous au pied des murs, sous la terrasse ou l’abri, coulées dans l’herbe : nous traitons les galeries et fermons les accès. Voir [le mode de vie du rat](/blog/rat-mode-de-vie).' },
+      { t: 'Des bruits sous le plancher ou dans les combles', x: 'Un rat dans le vide sanitaire ou sous le toit : voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Près de la Seine, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans la maison en automne', x: 'Quand il fait froid, les souris entrent par le moindre interstice : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [rat ou souris : comment reconnaître](/blog/rat-ou-souris-comment-reconnaitre).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Ablon-sur-Seine',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Ablon, c’est donc le plus souvent au **propriétaire de la maison** de faire appel à une entreprise de dératisation ; pour une résidence, au **syndic** ou au **bailleur**.',
+      'Pour des rats sur la voie publique ou sur les quais, alertez la **mairie d’Ablon-sur-Seine**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Villeneuve-le-Roi](/deratisation/villeneuve-le-roi), [Athis-Mons](/deratisation/athis-mons), [Orly](/deratisation/orly), [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges) et [Paray-Vieille-Poste](/deratisation/paray-vieille-poste).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Ablon-sur-Seine ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Seine attire-t-elle les rats à Ablon ?', a: 'Les berges et l’eau sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons proches des quais doivent surveiller soupiraux, regards et jardins.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec enfants ou chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Qui paie la dératisation d’une résidence ?', a: 'Les parties communes relèvent du syndic ou du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Mon composteur attire-t-il les rats ?', a: 'Oui, s’il est ouvert ou mal fermé. Évitez viande, poisson et restes cuisinés, et fermez-le bien (voir [rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Ablon-sur-Seine ?', a: 'Oui, 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ABLON_INSEE, ABLON_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
