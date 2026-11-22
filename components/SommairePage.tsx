@@ -93,7 +93,7 @@ export default function SommairePage() {
       if (!texte || IGNORER.test(texte)) return
       // Appel à l'action en fin de page (« Des rats à Maisons-Alfort ? ») : ignoré
       if (/\?$/.test(texte) && /^(des|un|une|nid de)\b/i.test(texte) && texte.split(' ').length < 9) return
-      const label = libelle(texte)
+      const label = h.dataset.sommaire || libelle(texte) // libellé précis fourni par la page (data-sommaire), sinon calculé
       if (vus.has(label)) return
       vus.add(label)
       if (!h.id) h.id = ancre(texte)

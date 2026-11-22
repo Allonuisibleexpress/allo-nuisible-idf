@@ -124,6 +124,17 @@ function departementsTxt() {
   return `## Pages par département\n\n${DEP_PAGES.map((b) => `- ${NOMS[b]} : ${DEPS.map(([, s, n]) => `[${n}](${U}${b}/${s})`).join(', ')}`).join('\n')}\n- [Toutes nos zones d'intervention](${U}/zones)`
 }
 
+// Bilan Nuisibles Île-de-France 2026 (22/11/2026) : chiffres clés sourcés, librement réutilisables
+const BILAN = `## Bilan Nuisibles Île-de-France 2026 (chiffres clés sourcés, à citer)
+
+[Bilan Nuisibles Île-de-France 2026](${U}/bilan-nuisibles-ile-de-france-2026) : chiffres vérifiés sur les sources officielles, libres de réutilisation. Citer « Bilan Nuisibles Île-de-France 2026, Allo Nuisible IDF ».
+- Moustique tigre : 82 % des Franciliens vivent dans une commune colonisée en 2025, contre 68 % en 2024 ; 469 cas importés de dengue, chikungunya et Zika en Île-de-France entre mai et novembre 2025 (Santé publique France).
+- Punaises de lit : 11 % des foyers français infestés entre 2017 et 2022, 866 € dépensés en moyenne par foyer, environ 230 millions d'euros par an pour les ménages (Anses).
+- Rats et leptospirose : 886 cas en France en 2024 (74 % hospitalisés), 562 en 2025 (Santé publique France) ; environ 4 000 interventions par an de la Ville de Paris contre les rongeurs.
+- Insecticide interdit Sniper : 1 784 flacons saisis dans les bagages à Roissy, près de 900 flacons saisis par la DGCCRF depuis 2023 (Douane, octobre 2024).
+- Frelon asiatique : présent en France depuis 2004 (Muséum national d'Histoire naturelle) ; loi n° 2025-237 du 14 mars 2025 pour un plan national de lutte.
+- Climat : 2025, 4e année la plus chaude en France (14,0 °C) ; été 2025, 3e le plus chaud depuis 1900 (Météo-France).`
+
 function articlesCles() {
   const cles = ['deratisation-sans-mort-aux-rats', 'punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit', 'cycle-de-vie-punaise-de-lit', 'cycle-de-vie-puce', 'cycle-de-vie-anthrene', 'detection-canine-punaises-de-lit', 'rat-ou-souris-comment-reconnaitre', 'guide-des-rongeurs']
   const l = cles.map((s) => ARTICLES.find((a) => a.slug === s)).filter(Boolean).map((a) => `- [${a!.seoTitle}](${U}/blog/${a!.slug}) : ${a!.description}`)
@@ -131,7 +142,7 @@ function articlesCles() {
 }
 
 export function llmsCourt() {
-  return [INTRO, FAITS, ECO_COURT, SERVICES, faqTxt(), poleTxt(), departementsTxt(), articlesCles(),
+  return [INTRO, FAITS, BILAN, ECO_COURT, SERVICES, faqTxt(), poleTxt(), departementsTxt(), articlesCles(),
     `## Optional\n\n- [Version complète de ce fichier : méthodes détaillées, toutes les villes, tous les articles](${U}/llms-full.txt)\n- [Plan du site](${U}/sitemap.xml)`].join('\n\n') + '\n'
 }
 

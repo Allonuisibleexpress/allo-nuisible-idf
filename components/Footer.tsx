@@ -16,6 +16,7 @@ const quickLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
   { label: 'Avis clients', href: '/avis' },
+  { label: 'Bilan Nuisibles IDF 2026', href: '/bilan-nuisibles-ile-de-france-2026' },
   { label: 'Mairies et collectivités', href: '/mairies-collectivites' },
   { label: 'Zones d\'intervention', href: '/zones' },
   { label: 'Contact', href: '/#contact' },
