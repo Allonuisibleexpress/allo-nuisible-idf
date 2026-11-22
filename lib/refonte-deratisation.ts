@@ -560,4 +560,94 @@ REFONTE_DERATISATION['maisons-alfort'] = {
   sources: [MA_INSEE, MA_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Saint-Maur-des-Fossés (23/11/2026) ──
+const SM_WIKI: Source = { label: 'Wikipédia, Saint-Maur-des-Fossés (boucle de la Marne, quartiers, crues, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Saint-Maur-des-Foss%C3%A9s' }
+const SM_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94068, Saint-Maur-des-Fossés', url: 'https://geo.api.gouv.fr/communes?code=94068&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['saint-maur-des-fosses'] = {
+  maj: '2026-11-23',
+  accroche: 'Une presqu’île entourée par la Marne, un tiers de maisons avec jardin, des caves inondées en 1910 : à Saint-Maur et à La Varenne, les rats viennent de la rivière. Nous les arrêtons à l’entrée.',
+  societe: {
+    titre: 'Société de dératisation à Saint-Maur-des-Fossés (94100) : une presqu’île dans la boucle de la Marne',
+    paras: [
+      'Saint-Maur-des-Fossés compte **76 572 habitants** sur **11,26 km²**, avec deux codes postaux : **94100** pour Saint-Maur et **94210** pour **La Varenne-Saint-Hilaire**. La ville est une **presqu’île** entourée par la **dernière boucle de la Marne** : presque partout, la rivière n’est jamais loin. Or le **surmulot**, le rat d’égout, vit près de l’eau, nage très bien et remonte des berges vers les **jardins**, les **caves** et les **réseaux**.',
+      'C’est aussi une ville de **maisons** : en 2021, **33,7 % des logements** étaient des maisons individuelles, une part élevée pour la petite couronne. Jardins, abris, composteurs, poulaillers, vide sanitaires : pour une société de dératisation, Saint-Maur, c’est d’abord le traitement d’un **pavillon** et de son terrain.',
+      'Nous connaissons la ville : nous y avons traité des [souris dans un logement loué sur Airbnb](/blog/souris-airbnb-saint-maur-des-fosses), après des remarques de voyageurs. Notre base de **Saint-Maurice** est voisine : nous sommes à Saint-Maur en quelques minutes, 7 jours sur 7. Voir aussi nos pages [souris](/souris/saint-maur-des-fosses), [cafards](/cafards/saint-maur-des-fosses) et [punaises de lit à Saint-Maur](/punaises-de-lit/saint-maur-des-fosses).',
+    ],
+  },
+  chiffres: [
+    { valeur: '76 572', texte: 'habitants (population légale Insee), codes postaux 94100 et 94210 (La Varenne).', source: SM_INSEE },
+    { valeur: '33,7 %', texte: 'des logements sont des maisons individuelles (2021) : jardins, caves et vide sanitaires à protéger.', source: SM_WIKI },
+    { valeur: '+ 2 m', texte: 'd’eau dans les rues lors de la crue de 1910, la plus forte que la ville ait connue.', source: SM_WIKI },
+    { valeur: '8', texte: 'quartiers, ou « villages », de la presqu’île : du Vieux Saint-Maur à La Varenne.', source: SM_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Saint-Maur-des-Fossés : la presqu’île quartier par quartier',
+    intro: 'Saint-Maur se partage en **huit quartiers** : **le Vieux Saint-Maur**, **Saint-Maur-Créteil**, **le Parc**, **Adamville**, **Champignol**, **La Varenne**, **les Mûriers** et **La Pie**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Marne et le chemin de halage',
+        texte: 'Tout autour de la presqu’île, les maisons qui donnent sur la **Marne** et le **chemin de halage** sont les plus exposées. Le rat remonte des berges par les **jardins**, les **regards** et les **soupiraux**, surtout quand l’eau monte. Nous contrôlons chaque ouverture, traitons les **terriers** et posons des grilles là où il le faut.',
+        photo: { src: '/villes/saint-maur-des-fosses/pont-de-saint-maur.jpg', alt: 'Le pont de Saint-Maur au-dessus de la Marne', legende: 'Le pont de Saint-Maur, vu du côté de Joinville : berges boisées et eau, l’habitat préféré du surmulot.', credit: 'Lecheminlu', licence: 'FAL', page: W + 'Pont_St-Maur.jpg' },
+      },
+      {
+        nom: 'La Varenne-Saint-Hilaire et les Mûriers (94210)',
+        texte: 'À l’est de la boucle, **La Varenne** et **les Mûriers** sont des quartiers de grandes **maisons avec jardin**, près de la **place du Marché** et de la gare RER. Composteurs, abris de jardin, potagers, piscines et leurs locaux techniques : nous privilégions les **pièges** et le **rebouchage**, avec des postes **verrouillés** si besoin. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+      {
+        nom: 'Saint-Maur-Créteil, la Pie et le barrage',
+        texte: 'Au sud, face à Créteil, le quartier **Saint-Maur-Créteil** compte davantage d’**immeubles**, dont le quartier prioritaire « **Rives de la Marne** », et la Marne y est aménagée avec le **barrage** et sa passerelle. Caves, parkings et locaux à déchets d’immeubles proches de l’eau : le traitement se fait avec le **syndic** ou le **bailleur**.',
+        photo: { src: '/villes/saint-maur-des-fosses/marne-passerelle-barrage.jpg', alt: 'La Marne et la passerelle du barrage de Créteil, face à Saint-Maur', legende: 'La Marne et la passerelle du barrage de Créteil : immeubles et berges aménagées au sud de la presqu’île.', credit: 'Akiry', licence: 'CC BY-SA 4.0', page: W + 'Barrage_de_cr%C3%A9teil_-_mars_2015_(4).jpg' },
+      },
+      {
+        nom: 'Adamville, le Parc et le Vieux Saint-Maur',
+        texte: 'Autour de la **place d’Adamville**, de la mairie et du cinéma **Le Lido**, comme près de l’**abbaye** du Vieux Saint-Maur et de la gare du **Parc de Saint-Maur**, commerces, restaurants et maisons anciennes partagent **caves**, **cours** et **réseaux**. Un rongeur repéré dans une boutique vient souvent d’un sous-sol voisin.',
+        photo: { src: '/villes/saint-maur-des-fosses/adamville-cinema-lido.jpg', alt: 'Le cinéma Le Lido, place d’Adamville, à Saint-Maur-des-Fossés', legende: 'Le cinéma Le Lido, à Adamville : un quartier de commerces et de restaurants où nous intervenons hors des heures d’ouverture.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Cin%C3%A9ma_Lido_-_Saint-Maur-des-Foss%C3%A9s_(FR94)_-_2021-02-23_-_2.jpg' },
+      },
+      {
+        nom: 'Champignol et les abords du RER A',
+        texte: 'Vers Champigny, **Champignol** s’organise autour de la gare **Saint-Maur-Champigny** du RER A. Maisons, petits immeubles et **talus ferroviaires** : nous vérifions les **vide sanitaires**, les clôtures et les **regards**, chemins habituels des rats entre les voies et les jardins.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Saint-Maur-des-Fossés (94100) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour du terrain', x: 'Bords de Marne : berges, regards, soupiraux. Pavillon : jardin, abri, composteur, garage, vide sanitaire. Immeuble : caves, parkings et local à déchets.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide, près des enfants, des chiens et des potagers.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Saint-Maur-des-Fossés et La Varenne (94210) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans le jardin, près de la Marne', x: 'Trous au pied des murs, sous la terrasse ou l’abri, coulées dans la pelouse : nous traitons les galeries et fermons les accès. Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats), qui explique pourquoi il ne faut pas attendre.' },
+      { t: 'Des rats dans le vide sanitaire ou le garage', x: 'Bruits sous le plancher, isolant arraché, odeur : voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire). Nous traitons, puis posons des grilles sur les aérations.' },
+      { t: 'Des souris dans une location ou un appartement', x: 'Comme dans [le logement Airbnb que nous avons traité à Saint-Maur](/blog/souris-airbnb-saint-maur-des-fosses) : pièges adaptés à un logement occupé, rebouchage, résultat rapide. Voir aussi [souris à Saint-Maur-des-Fossés](/souris/saint-maur-des-fosses).' },
+      { t: 'Les rats attirés par le poulailler, les oiseaux ou le compost', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats) et [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Un rongeur dans un commerce d’Adamville ou de La Varenne', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Saint-Maur-des-Fossés',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Saint-Maur, où les maisons sont nombreuses, c’est donc le plus souvent le **propriétaire du pavillon** qui fait appel à une entreprise de dératisation ; pour un immeuble, le **syndic**.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur la voie publique, en bord de Marne ou dans un square, alertez la **mairie de Saint-Maur-des-Fossés**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Joinville-le-Pont](/deratisation/joinville-le-pont), [Saint-Maurice](/deratisation/saint-maurice), [Maisons-Alfort](/deratisation/maisons-alfort), [Créteil](/deratisation/creteil), [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne), [Sucy-en-Brie](/deratisation/sucy-en-brie), [Chennevières-sur-Marne](/deratisation/chennevieres-sur-marne) et [Champigny-sur-Marne](/deratisation/champigny-sur-marne).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Saint-Maur-des-Fossés ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon avec jardin, commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous aussi à La Varenne-Saint-Hilaire (94210) ?', a: 'Oui, La Varenne fait partie de Saint-Maur-des-Fossés : même équipe, mêmes prix, mêmes délais, 7j/7.' },
+    { q: 'Pourquoi tant de rats près de la Marne ?', a: 'Le surmulot vit près de l’eau, nage très bien et se déplace le long des berges. Les maisons au bord de la Marne doivent surveiller jardins, regards et soupiraux (voir [le mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net, souvent au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo, nous vous répondons gratuitement.' },
+    { q: 'Mon compost ou mon poulailler attire-t-il les rats ?', a: 'Oui, s’ils donnent accès à la nourriture. Fermez le composteur, ramassez les graines le soir et rangez-les en bacs fermés (voir [rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous vite à Saint-Maur-des-Fossés ?', a: 'Oui : notre base de Saint-Maurice est voisine. Nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [SM_INSEE, SM_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
