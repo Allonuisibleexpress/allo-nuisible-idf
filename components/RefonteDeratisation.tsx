@@ -26,6 +26,7 @@ export function RefonteSociete({ r }: { r: RefonteDerat }) {
             </figure>
           ))}
         </div>
+        <p className="mt-8 text-white/75 leading-relaxed">Rats, punaises de lit, leptospirose : tous nos chiffres sourcés sur les nuisibles en Île-de-France sont réunis dans notre <a href="/barometre-des-nuisibles-punaises-de-lit-deratisation-2026" className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>Baromètre des nuisibles 2026</a>.</p>
       </div>
     </section>
   )
