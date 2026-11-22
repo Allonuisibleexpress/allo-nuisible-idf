@@ -388,4 +388,90 @@ REFONTE_DERATISATION['villejuif'] = {
   sources: [VILLEJUIF_INSEE, VILLEJUIF_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Choisy-le-Roi (22/11/2026) ──
+const CHOISY_WIKI: Source = { label: 'Wikipédia, Choisy-le-Roi (Seine, tours de la dalle, logement, transports, parcs)', url: 'https://fr.wikipedia.org/wiki/Choisy-le-Roi' }
+const CHOISY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94022, Choisy-le-Roi', url: 'https://geo.api.gouv.fr/communes?code=94022&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['choisy-le-roi'] = {
+  maj: '2026-11-22',
+  accroche: 'Une ville coupée en deux par la Seine, des tours de 80 mètres sur la dalle, des pavillons et des quais : à Choisy-le-Roi, nous adaptons la dératisation à chaque rive.',
+  societe: {
+    titre: 'Société de dératisation à Choisy-le-Roi (94600) : une ville sur les deux rives',
+    paras: [
+      'Choisy-le-Roi compte **45 946 habitants** sur **5,42 km²**. C’est, avec Paris, **la seule commune de la petite couronne qui s’étend des deux côtés de la Seine**. Le fleuve, ses **quais** et ses **berges** offrent au **surmulot** de l’eau et des abris, et le réseau d’égouts relie les deux rives.',
+      'La ville a aussi un centre très vertical : sur la « **dalle** », trois tours de **88, 81 et 68 mètres**, et **huit autres immeubles de plus de 50 mètres**. Dans un immeuble de grande hauteur, un rongeur circule par les **gaines techniques**, les **vide-ordures** et les **colonnes** : il faut traiter à la source, au sous-sol, pas seulement à l’étage où on le voit.',
+      'Notre base est à **Saint-Maurice**, de l’autre côté de Créteil : nous intervenons à Choisy-le-Roi 7 jours sur 7. Nous y traitons aussi les [souris](/souris/choisy-le-roi) et les [punaises de lit](/punaises-de-lit/choisy-le-roi).',
+    ],
+  },
+  chiffres: [
+    { valeur: '45 946', texte: 'habitants (population légale Insee), code postal 94600.', source: CHOISY_INSEE },
+    { valeur: '2 rives', texte: 'la seule commune de la petite couronne, avec Paris, à s’étendre de part et d’autre de la Seine.', source: CHOISY_WIKI },
+    { valeur: '88 m', texte: 'pour la tour de l’Église, la plus haute des trois tours de la dalle ; huit autres immeubles dépassent 50 m.', source: CHOISY_WIKI },
+    { valeur: '4', texte: 'stations du tramway T9 sur la commune depuis avril 2021, en plus de la gare du RER C.', source: CHOISY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Choisy-le-Roi : la ville secteur par secteur',
+    intro: 'Des **quais de Seine** au **quartier des Gondoles**, de la **dalle** et ses tours au quartier **Barbusse**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quais de Seine et les Gondoles',
+        texte: 'Le long du **quai des Gondoles** et du parc des Gondoles, la Seine, la végétation des berges et les poubelles de promenade attirent les rats. Les maisons et résidences proches doivent surveiller leurs **soupiraux**, **regards** et **caves**, premières portes d’entrée depuis le fleuve.',
+        photo: { src: '/villes/choisy-le-roi/quai-des-gondoles.jpg', alt: 'Le quai des Gondoles au bord de la Seine à Choisy-le-Roi', legende: 'Le quai des Gondoles : berges végétalisées et eau toute proche, un milieu favorable au surmulot.', credit: '1quidam', licence: 'CC BY-SA 3.0', page: W + 'Quai_des_Gondoles_de_Choisy-le-Roi.JPG' },
+      },
+      {
+        nom: 'La dalle, la gare et le centre',
+        texte: 'Autour de la **gare du RER C** et de la dalle, commerces, restauration rapide et immeubles de grande hauteur se partagent les mêmes **sous-sols**, **parkings** et **locaux à déchets**. Nous posons des postes numérotés au sous-sol, contrôlons les **vide-ordures** et remettons une **attestation** aux commerçants et aux syndics.',
+        photo: { src: '/villes/choisy-le-roi/gare-rer-c.jpg', alt: 'La gare RER C de Choisy-le-Roi', legende: 'La gare de Choisy-le-Roi (RER C), au cœur du centre : commerces et immeubles autour des mêmes sous-sols.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Gare_Choisy_Roi_1.jpg' },
+      },
+      {
+        nom: 'Le quartier Barbusse et les résidences',
+        texte: 'Le quartier **Barbusse**, quartier prioritaire de la politique de la ville, compte de nombreux immeubles collectifs. Le traitement doit couvrir les **parties communes** : caves, local à poubelles, espaces verts au pied des bâtiments. Nous travaillons avec le **bailleur** pour que la dératisation tienne dans le temps.',
+        photo: { src: '/villes/choisy-le-roi/square-salvador-allende-barbusse.jpg', alt: 'Le square Salvador-Allende dans le quartier Barbusse à Choisy-le-Roi', legende: 'Le square Salvador-Allende, quartier Barbusse : massifs et pieds d’immeubles sont des zones à surveiller.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Square_Salvador_Allende_-_Choisy-le-Roi_(FR94)_-_2022-04-07_-_1.jpg' },
+      },
+      {
+        nom: 'Les pavillons et le parc interdépartemental des sports',
+        texte: 'Vers Thiais et Orly, les zones pavillonnaires ont des **jardins**, des **abris** et des **vide sanitaires**. Près du **parc interdépartemental des sports**, des parcs de la Mairie et Maurice-Thorez, les rongeurs trouvent couvert et nourriture. Pour un jardin, nous privilégions les **pièges** et le **rebouchage** : voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Choisy-le-Roi (94600) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le point d’entrée', x: 'Près de la Seine, regards et soupiraux ; dans les tours, sous-sols, gaines et vide-ordures ; en pavillon, jardin, garage et vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Choisy-le-Roi (94600) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un rat dans une tour, à un étage élevé', x: 'Il n’est pas arrivé par la fenêtre : il monte par les **gaines** et les **vide-ordures**. Nous traitons le sous-sol et le local à déchets, puis rebouchons les passages autour des colonnes.' },
+      { t: 'Des rats près des quais et des berges', x: 'Maison ou résidence proche de la Seine : contrôle des soupiraux et des regards, traitement des terriers, conseils sur les poubelles. Voir [le mode de vie du rat](/blog/rat-mode-de-vie).' },
+      { t: 'Des souris dans la cuisine', x: 'Elles passent par le pourtour des tuyaux et les gaines. Notre page [souris à Choisy-le-Roi](/souris/choisy-le-roi) détaille notre méthode, et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rongeur dans un commerce du centre', x: 'Restauration rapide, boulangerie, supérette : postes numérotés, registre, attestation. Voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et notre page [cafards et blattes](/services/cafards-blattes).' },
+      { t: 'Des rats sous la terrasse d’un pavillon', x: 'Terriers sous une dalle ou un abri de jardin : pièges, traitement des galeries et fermeture des accès. Pour faire la différence, voir [rat ou souris : comment reconnaître](/blog/rat-ou-souris-comment-reconnaitre).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Choisy-le-Roi',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Dans une tour ou une copropriété de Choisy-le-Roi, la dératisation des parties communes est donc organisée par le **syndic** ou le **bailleur**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur les quais, dans un parc ou sur la voie publique, alertez la **mairie de Choisy-le-Roi**.',
+      'Nous intervenons aussi tout autour : [Orly](/deratisation/orly), [Thiais](/deratisation/thiais), [Vitry-sur-Seine](/deratisation/vitry-sur-seine), [Créteil](/deratisation/creteil), [Alfortville](/deratisation/alfortville), [Valenton](/deratisation/valenton) et [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Choisy-le-Roi ?', a: 'À partir de 120 € TTC pour un appartement, rats ou souris. Pavillon, commerce ou immeuble : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Comment un rat peut-il arriver dans un appartement en hauteur ?', a: 'Par les gaines techniques, les vide-ordures et les colonnes d’évacuation. Le traitement se fait au sous-sol et dans le local à déchets, puis les passages sont rebouchés.' },
+    { q: 'La Seine attire-t-elle les rats à Choisy-le-Roi ?', a: 'Les berges et l’eau sont favorables au surmulot. Les logements proches des quais doivent surveiller soupiraux, regards et caves, et garder leurs poubelles fermées.' },
+    { q: 'Qui paie la dératisation d’une tour ou d’une résidence ?', a: 'Les parties communes relèvent du syndic ou du bailleur. Le règlement sanitaire du Val-de-Marne (article 119) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces du centre-ville ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre des passages et attestation pour vos contrôles d’hygiène.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin ?', a: 'Oui : pièges mécaniques, piège Ekomille sans raticide et rebouchage des accès, si vous avez des enfants, des animaux ou un potager.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les crottes de rat mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Choisy-le-Roi ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CHOISY_INSEE, CHOISY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
