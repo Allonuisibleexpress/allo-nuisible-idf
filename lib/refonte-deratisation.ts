@@ -995,4 +995,92 @@ REFONTE_DERATISATION['arcueil'] = {
   sources: [ARCUEIL_INSEE, ARCUEIL_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Boissy-Saint-Léger (23/11/2026) ──
+const BOISSY_WIKI: Source = { label: 'Wikipédia, Boissy-Saint-Léger (RN19, grands ensembles, Haie Griselle)', url: 'https://fr.wikipedia.org/wiki/Boissy-Saint-L%C3%A9ger' }
+const GROSBOIS_WIKI: Source = { label: 'Wikipédia, Château de Grosbois (domaine de 450 ha, centre d’entraînement, musée du trot)', url: 'https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Grosbois' }
+const BOISSY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94004, Boissy-Saint-Léger', url: 'https://geo.api.gouv.fr/communes?code=94004&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['boissy-saint-leger'] = {
+  maj: '2026-11-23',
+  accroche: 'Un domaine de 450 hectares avec des écuries, une grande cité au nord de la gare, un vieux bourg et des pavillons : à Boissy-Saint-Léger, chaque secteur a ses rongeurs.',
+  societe: {
+    titre: 'Société de dératisation à Boissy-Saint-Léger (94470) : entre bois, écuries et cités',
+    paras: [
+      'Boissy-Saint-Léger compte **17 325 habitants** sur **8,92 km²**, sur la **RN19**, à 18 km de Notre-Dame de Paris. La commune abrite le **château de Grosbois** et son domaine : **450 hectares** achetés en 1962 pour y installer un **centre d’entraînement de chevaux de course**. Paddocks, écuries, fourrage et céréales : un milieu que les rats et les souris recherchent, et qui touche les quartiers voisins.',
+      'La ville a beaucoup changé à partir des années 1960 : sa population a **triplé** avec la construction de **grands ensembles** au nord de la gare du **RER A**. Les cités de la **Haie Griselle** et de la **Hêtraie** comptent plus de **4 000 habitants**. Le reste de la commune est fait du **vieux bourg** et de quartiers de **pavillons** avec jardin.',
+      'Nous intervenons à Boissy depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Boissy-Saint-Léger](/souris/boissy-saint-leger), [punaises de lit à Boissy-Saint-Léger](/punaises-de-lit/boissy-saint-leger), [fourmis à Boissy-Saint-Léger](/fourmis/boissy-saint-leger) et [chenilles processionnaires à Boissy-Saint-Léger](/chenilles-processionnaires/boissy-saint-leger).',
+    ],
+  },
+  chiffres: [
+    { valeur: '17 325', texte: 'habitants (population légale Insee), code postal 94470.', source: BOISSY_INSEE },
+    { valeur: '450 ha', texte: 'pour le domaine de Grosbois, centre d’entraînement de chevaux de course depuis 1962.', source: GROSBOIS_WIKI },
+    { valeur: '2 480', texte: 'logements à la cité de la Haie Griselle, près de 5 000 habitants, quartier prioritaire.', source: BOISSY_WIKI },
+    { valeur: '× 3', texte: 'la population a triplé à partir des années 1960 avec les grands ensembles au nord de la gare.', source: BOISSY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Boissy-Saint-Léger : la ville secteur par secteur',
+    intro: 'Du **domaine de Grosbois** aux cités de la **Haie Griselle** et de la **Hêtraie**, du **vieux bourg** aux pavillons, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le domaine de Grosbois et les lisières',
+        texte: 'Le **château de Grosbois** et son domaine de 450 hectares abritent un centre d’entraînement de chevaux de course et, depuis 2010, un **musée du trot**. Écuries, stocks de fourrage et de céréales, bois et prairies : les maisons en **lisière** voient souvent passer rats et souris, surtout à l’automne. Nous traitons les abords, les **abris de jardin** et les **garages**.',
+        photo: { src: '/villes/boissy-saint-leger/chateau-de-grosbois.jpg', alt: 'Le château de Grosbois à Boissy-Saint-Léger', legende: 'Le château de Grosbois, au cœur d’un domaine de 450 hectares : écuries, fourrage et bois en bordure de la ville.', credit: 'Thesupermat', licence: 'CC BY-SA 3.0', page: W + 'Boissy-Saint-L%C3%A9ger_-_Ch%C3%A2teau_de_Grosbois_-_003.jpg' },
+      },
+      {
+        nom: 'La Haie Griselle et la Hêtraie',
+        texte: 'Au nord de la gare, ces deux cités des années 1960 rassemblent des milliers de logements autour des mêmes **caves**, **vide-ordures** et **locaux à poubelles**. Un rat vu dans un hall vient presque toujours du sous-sol. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/boissy-saint-leger/haie-griselle-place-des-erables.jpg', alt: 'Place des Érables, cité de la Haie Griselle à Boissy-Saint-Léger', legende: 'Place des Érables, cité de la Haie Griselle : dans les grands ensembles, caves et locaux à poubelles sont partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Place_%C3%89rables_-_Boissy-Saint-L%C3%A9ger_(FR94)_-_2022-05-06_-_1.jpg' },
+      },
+      {
+        nom: 'Le vieux bourg, l’église Saint-Léger et les commerces',
+        texte: 'Autour de l’**église Saint-Léger**, de la mairie et du château du **Piple**, le bourg ancien garde des maisons en pierre avec **caves** et **soupiraux**, et des commerces de proximité. Nous inspectons chaque ouverture et intervenons dans les commerces **hors des heures d’ouverture**, avec **attestation**.',
+        photo: { src: '/villes/boissy-saint-leger/eglise-saint-leger.jpg', alt: 'L’église Saint-Léger de Boissy-Saint-Léger', legende: 'L’église Saint-Léger, au cœur du vieux bourg : maisons anciennes, caves et soupiraux.', credit: 'FGarg', licence: 'CC0', page: W + 'IMG_4607_(Eglise_Boissy).JPG' },
+      },
+      {
+        nom: 'Les quartiers pavillonnaires',
+        texte: 'Dans les quartiers de **pavillons**, jardins, composteurs, poulaillers et abris attirent les rongeurs. Nous traitons les **terriers**, protégeons le compost et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Boissy-Saint-Léger (94470) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, garage, vide sanitaire. Cité : caves, vide-ordures, local à poubelles. Écuries et stocks : points d’alimentation et passages.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide, près des animaux.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Boissy-Saint-Léger (94470) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un box, une écurie ou un stock de grain', x: 'Le grain et le fourrage attirent rats et souris. Postes sécurisés hors de portée des chevaux et des chiens, pièges, stockage en bacs fermés : nous adaptons le dispositif aux animaux présents.' },
+      { t: 'Des rats dans la cave ou au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans la maison en automne', x: 'Quand les champs et les bois se refroidissent, les souris cherchent la chaleur : voir [souris à Boissy-Saint-Léger](/souris/boissy-saint-leger) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin', x: 'Trous au pied des murs, coulées dans l’herbe : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des rats attirés par les mangeoires et le poulailler', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Boissy-Saint-Léger',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Un pavillon se traite à la charge de son propriétaire ; les parties communes d’une cité, à celle du **bailleur**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un espace vert, alertez la **mairie de Boissy-Saint-Léger**.',
+      'Nous intervenons aussi tout autour : [Sucy-en-Brie](/deratisation/sucy-en-brie), [Limeil-Brévannes](/deratisation/limeil-brevannes), [Valenton](/deratisation/valenton), [Santeny](/deratisation/santeny), [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne) et [Créteil](/deratisation/creteil).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Boissy-Saint-Léger ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, écurie, commerce ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des souris dans ma maison chaque automne ?', a: 'Près des bois et des prairies, les souris cherchent la chaleur quand il fait froid. Elles passent par le moindre interstice : nous trouvons et bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Traitez-vous les écuries et les stocks de grain ?', a: 'Oui, avec des postes sécurisés hors de portée des chevaux, des chiens et des chats, des pièges et des conseils de stockage. Le dispositif est adapté aux animaux présents.' },
+    { q: 'J’habite à la Haie Griselle : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur. Signalez-lui le problème par écrit, avec photos et dates.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison avec des animaux ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Boissy-Saint-Léger ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BOISSY_INSEE, BOISSY_WIKI, GROSBOIS_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
