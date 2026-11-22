@@ -1,4 +1,4 @@
-// « Bilan Nuisibles Île-de-France 2026 » (22/11/2026, demande de l'utilisateur) : chiffres clés sourcés, à citer.
+// « Baromètre des nuisibles Île-de-France 2026 : punaises de lit, dératisation » (ex-Bilan Nuisibles) (22/11/2026, demande de l'utilisateur) : chiffres clés sourcés, à citer.
 // Chaque chiffre a été vérifié sur la source indiquée (pages officielles lues le 22/11/2026) ; rien n'est estimé ni
 // inventé. Les chiffres « terrain » sont ceux d'Allo Nuisible IDF, confirmés par le gérant.
 export type Source = { label: string; url: string }
@@ -12,6 +12,12 @@ const SPF_IDF_ARBO: Source = { label: 'Santé publique France Île-de-France, Le
 const SPF_ARBO_2025: Source = { label: 'Santé publique France, Chikungunya, dengue, Zika et West Nile : surveillance renforcée 2025', url: 'https://www.santepubliquefrance.fr/maladies-a-transmission-vectorielle/chikungunya/chikungunya-dengue-zika-et-west-nile-donnees-de-la-surveillance-renforcee-en-france-hexagonale-2025' }
 const ANSES_PUNAISES: Source = { label: 'Anses, Punaises de lit : des conséquences sur le budget et la qualité de vie des Français (juillet 2023)', url: 'https://www.anses.fr/fr/content/punaises-de-lit-des-consequences-sur-le-budget-et-la-qualite-de-vie-des-francais' }
 const AN_PUNAISES: Source = { label: 'Assemblée nationale, question écrite n° 12397 (chiffres de l’Anses)', url: 'https://questions.assemblee-nationale.fr/dyn/16/questions/QANR5L16QE12397.pdf' }
+const ANSES_AVIS: Source = { label: 'Anses, avis du 3 juillet 2023 sur les punaises de lit, saisine 2021-SA-0147 (Maisons-Alfort)', url: 'https://www.vie-publique.fr/files/rapports/fichiers_joints/290435_AVIS.pdf' }
+const ANSES_RAPPORT: Source = { label: 'Anses, rapport d’expertise collective « Les punaises de lit : impacts, prévention et lutte » (2023)', url: 'https://www.vie-publique.fr/rapport/290435-anses-punaises-de-lit-impacts-prevention-et-lutte-expertise-collective' }
+const EPA: Source = { label: 'EPA (agence américaine de l’environnement), Bed bugs : appearance and life cycle', url: 'https://www.epa.gov/bedbugs/bed-bugs-appearance-and-life-cycle' }
+const KENTUCKY: Source = { label: 'Université du Kentucky, Bed bugs (fiche ENTFACT-636)', url: 'https://entomology.mgcafe.uky.edu/ef636' }
+const WIKI_PUNAISE: Source = { label: 'Wikipédia, Punaise de lit (d’après P. Delaunay 2015 et Reinhardt & Siva-Jothy 2007)', url: 'https://fr.wikipedia.org/wiki/Punaise_de_lit' }
+const STOP_PUNAISES: Source = { label: 'Gouvernement, stop-punaises.gouv.fr', url: 'https://stop-punaises.gouv.fr/' }
 const DOUANE_SNIPER: Source = { label: 'Douane et DGCCRF, Recrudescence des saisies de Sniper (2 octobre 2024)', url: 'https://www.douane.gouv.fr/actualites/recrudescence-des-saisies-de-sniper-la-douane-et-la-dgccrf-alertent-les-consommateurs' }
 const MNHN_FRELON: Source = { label: 'Muséum national d’Histoire naturelle, Le frelon asiatique (frelonasiatique.mnhn.fr)', url: 'https://frelonasiatique.mnhn.fr/home' }
 const LOI_FRELON: Source = { label: 'Loi n° 2025-237 du 14 mars 2025 visant à endiguer la prolifération du frelon asiatique (AIDA, Ineris)', url: 'https://aida.ineris.fr/reglementation/loi-ndeg-2025-237-140325-visant-a-endiguer-proliferation-frelon-asiatique-a' }
@@ -21,49 +27,98 @@ const TERRAIN: Source = { label: 'Allo Nuisible IDF, données de l’entreprise 
 
 export const THEMES: Theme[] = [
   {
+    id: 'punaises-ampleur',
+    titre: 'Punaises de lit : l’ampleur',
+    accroche: 'Plus d’un foyer sur dix touché en cinq ans : les punaises de lit sont devenues un sujet de santé publique.',
+    chiffres: [
+      { valeur: '11 %', texte: 'des ménages français auraient été infestés par des punaises de lit entre 2017 et 2022 (enquête en population générale menée pour l’Anses).', source: ANSES_AVIS },
+      { valeur: '56 812', texte: 'consultations médicales par an ont pour motif principal les punaises de lit en France (étude Blanchon et al. 2020, reprise par l’Anses).', source: ANSES_AVIS },
+      { valeur: '83,5 M€', texte: 'de coût sanitaire en France pour la seule année 2019 : consultations, arrêts de travail, sommeil et santé mentale dégradés.', source: ANSES_AVIS },
+    ],
+    analyse: [
+      'L’Anses, dont le siège est à **Maisons-Alfort (94)**, à quelques minutes de notre base, conclut que ces infestations sont « à considérer comme un **sujet de santé publique** », au-delà de la simple salubrité.',
+      'À Paris et en petite couronne, nous intervenons dans des **studios**, des **logements étudiants**, des **hôtels**, des **foyers** et des **logements sociaux**. Le point commun : des punaises arrivées dans une valise, un meuble d’occasion ou par un logement voisin.',
+    ],
+    liens: [{ href: '/services/punaises-de-lit', label: 'Notre traitement des punaises de lit' }, { href: '/punaises-de-lit/paris', label: 'Punaises de lit à Paris' }, { href: '/punaises-de-lit/val-de-marne', label: 'Punaises de lit dans le Val-de-Marne' }],
+  },
+  {
+    id: 'punaises-cout',
+    titre: 'Punaises de lit : ce que ça coûte',
+    accroche: 'Le coût réel d’une infestation, pour les ménages comme pour les bailleurs sociaux.',
+    chiffres: [
+      { valeur: '866 €', texte: 'dépensés en moyenne par an par ménage infesté, d’abord en nettoyage et en traitements.', source: ANSES_AVIS },
+      { valeur: '230 M€', texte: 'par an en moyenne pour les ménages français, soit près de 1,4 milliard d’euros sur 2017-2022.', source: ANSES_AVIS },
+      { valeur: '1 052 €', texte: 'coût moyen d’une intervention pour les bailleurs sociaux interrogés en 2021 (médiane : 357 €).', source: ANSES_AVIS },
+      { valeur: '74 509 €', texte: 'dépensés en moyenne par bailleur social interrogé en 2021 contre les punaises de lit (57 537 € en 2020).', source: ANSES_AVIS },
+    ],
+    analyse: [
+      'Le coût grimpe surtout quand le premier traitement échoue : bombes du commerce, affaires déplacées d’une pièce à l’autre, matelas jetés trop vite. Un traitement professionnel **en deux passages**, garanti, évite de payer deux fois.',
+      'Chez nous, un traitement commence **dès 290 € TTC pour un studio ou un T1**, deux passages et garantie 1 an compris, avec un **devis gratuit** donné avant l’intervention.',
+    ],
+    liens: [{ href: '/tarifs/punaises-de-lit', label: 'Prix d’un traitement des punaises de lit' }, { href: '/blog/arnaques-deratisation-nuisibles', label: 'Les arnaques à éviter' }],
+  },
+  {
+    id: 'punaises-qui',
+    titre: 'Punaises de lit : qui est touché',
+    accroche: 'Les punaises de lit ne sont pas une question d’hygiène ni de revenus : ce sont les déplacements et le type de logement qui comptent.',
+    chiffres: [
+      { valeur: 'Locataires', texte: 'Être locataire, vivre en appartement ou en logement partagé fait partie des facteurs de risque identifiés.', source: ANSES_AVIS },
+      { valeur: 'Familles', texte: 'Le nombre d’enfants mineurs dans le foyer, le jeune âge et l’âge actif sont associés à un risque plus élevé.', source: ANSES_AVIS },
+      { valeur: 'Revenus', texte: 'Un faible revenu ne serait pas lié à un risque plus élevé d’infestation, mais l’infestation peut durer plus longtemps dans les foyers modestes, faute de moyens pour la traiter.', source: ANSES_AVIS },
+    ],
+    analyse: [
+      'Les punaises **se nourrissent de sang, pas de saleté** : on les trouve dans des logements impeccables comme dans des hôtels haut de gamme. Elles voyagent dans les **valises**, les **meubles d’occasion** et passent d’un appartement à l’autre par les **gaines** et les **plinthes**.',
+      'Quand plusieurs logements d’un immeuble sont touchés, un traitement isolé tient mal : il faut prévenir le **bailleur** ou le **syndic** par écrit et traiter les logements voisins.',
+    ],
+    liens: [{ href: '/blog/comment-attrape-t-on-des-punaises-de-lit', label: 'Comment attrape-t-on des punaises de lit ?' }, { href: '/professionnels', label: 'Bailleurs, hôtels, foyers' }],
+  },
+  {
+    id: 'punaises-cycle',
+    titre: 'Punaises de lit : le cycle en chiffres',
+    accroche: 'Comprendre le cycle, c’est comprendre pourquoi il faut deux passages.',
+    chiffres: [
+      { valeur: '1 mm', texte: 'la taille d’un œuf, collé dans les coutures, les lattes et les fentes ; il éclot en 7 à 15 jours.', source: EPA },
+      { valeur: '5 mues', texte: 'avant l’âge adulte ; chaque stade dure 3 à 15 jours et laisse une petite peau vide et translucide.', source: WIKI_PUNAISE },
+      { valeur: '200 à 500', texte: 'œufs pondus par une femelle au cours de sa vie ; l’adulte mesure 5 à 7 mm.', source: WIKI_PUNAISE },
+      { valeur: '≈ 1 mois', texte: 'pour devenir adulte entre 21 et 27 °C avec des repas de sang réguliers : plusieurs générations par an dans un logement chauffé.', source: KENTUCKY },
+    ],
+    analyse: [
+      'Les adultes peuvent survivre **plusieurs mois sans repas de sang** : partir quelques semaines ne débarrasse pas le logement. Les **œufs**, protégés par leur coque, résistent à la plupart des produits : c’est pourquoi un second passage, **10 à 15 jours après le premier**, élimine les jeunes punaises sorties entre-temps.',
+      'Notre article illustré détaille les **7 stades**, de l’œuf à l’adulte, avec une photo de chacun.',
+    ],
+    liens: [{ href: '/blog/cycle-de-vie-punaise-de-lit', label: 'Le cycle de la punaise de lit en photos' }, { href: '/blog/piqures-de-punaises-de-lit', label: 'Reconnaître les piqûres' }],
+  },
+  {
+    id: 'punaises-traitement',
+    titre: 'Punaises de lit : traitements et produits interdits',
+    accroche: 'Les punaises résistent de plus en plus aux insecticides, et certains se tournent vers des produits interdits.',
+    chiffres: [
+      { valeur: 'Résistance', texte: 'L’Anses relève une résistance croissante des punaises aux insecticides et recommande de privilégier la lutte intégrée, qui combine méthodes physiques et produits.', source: ANSES_AVIS },
+      { valeur: '1 784', texte: 'flacons de « Sniper 1000 » (197,3 litres) saisis par la douane dans les bagages de voyageurs à Roissy, lors de 22 contrôles.', source: DOUANE_SNIPER },
+      { valeur: '≈ 900', texte: 'flacons de Sniper ou Shooter saisis par la DGCCRF dans les commerces et sur internet depuis 2023.', source: DOUANE_SNIPER },
+    ],
+    analyse: [
+      'Le Sniper et le Shooter contiennent du **dichlorvos**, interdit pour l’usage domestique : les autorités les disent responsables d’intoxications graves, parfois mortelles. Ils ne règlent pas une infestation.',
+      'Nous combinons les méthodes selon le logement : **cryogénie à −78 °C** et **vapeur sèche** sur la literie et les meubles, sans produit, et **insecticide professionnel** appliqué par un technicien **Certibiocide** quand l’infestation est installée. Nos **12 interventions filmées** (Paris 1er, 12e et 16e, Créteil, Vincennes, Ivry-sur-Seine, Champigny-sur-Marne, L’Haÿ-les-Roses…) montrent chaque méthode.',
+    ],
+    liens: [{ href: '/services/cryogenie-punaises-de-lit', label: 'La cryogénie, sans insecticide' }, { href: '/nos-interventions', label: 'Nos interventions en vidéo' }, { href: '/blog/insecticide-interdit-sniper-1000-danger', label: 'Sniper 1000 : pourquoi c’est dangereux' }],
+  },
+  {
     id: 'rats',
-    titre: 'Rats et leptospirose',
+    titre: 'Dératisation : rats et leptospirose',
     accroche: 'Le rat n’est pas qu’une nuisance : il transmet la leptospirose, une maladie à signalement obligatoire depuis 2023.',
     chiffres: [
       { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, dont 441 en France hexagonale et Corse.', source: SPF_LEPTO_2024 },
       { valeur: '74 %', texte: 'des malades de 2024 ont été hospitalisés (653 personnes) ; 13 sont décédés.', source: SPF_LEPTO_2024 },
       { valeur: '562', texte: 'cas signalés en 2025, dont 274 en hexagone et Corse (0,4 cas pour 100 000 habitants).', source: SPF_LEPTO_2025 },
       { valeur: '≈ 4 000', texte: 'interventions par an de la Ville de Paris pour limiter les rongeurs sur le domaine public, dans le cadre d’un plan de lutte intégrée adopté dès 2017.', source: PARIS_RATS },
+      { valeur: '124', texte: 'verbalisations à Paris en 2024 pour de la nourriture jetée dans les rues et les espaces verts, l’une des premières sources de nourriture des rats.', source: PARIS_RATS },
     ],
     analyse: [
       'Le rat brun (surmulot) est le principal réservoir de la leptospirose en ville : la bactérie passe dans l’eau et les sols souillés par son urine. Santé publique France rappelle que les cas signalés sous-estiment vraisemblablement le nombre réel.',
       'Sur le terrain, nous voyons surtout les rats dans les **caves**, les **locaux poubelles** et les **logements très encombrés**. Notre chantier de Maisons-Alfort, filmé, montre pourquoi il faut **dératiser avant de vider** un logement.',
     ],
-    liens: [{ href: '/services/deratisation', label: 'Notre dératisation' }, { href: '/blog/deratisation-logement-syndrome-diogene#video', label: 'Vidéo : syndrome de Diogène et rats à Maisons-Alfort' }],
-  },
-  {
-    id: 'punaises',
-    titre: 'Punaises de lit',
-    accroche: 'Le seul nuisible dont l’Anses a chiffré le coût pour les ménages français.',
-    chiffres: [
-      { valeur: '11 %', texte: 'des foyers français ont été infestés par des punaises de lit entre 2017 et 2022 (enquête Ipsos pour l’Anses).', source: ANSES_PUNAISES },
-      { valeur: '866 €', texte: 'dépensés en moyenne par foyer infesté pour s’en débarrasser.', source: ANSES_PUNAISES },
-      { valeur: '230 M€', texte: 'par an en moyenne : le coût de la lutte pour les ménages français sur 2017-2022 (environ 1,4 milliard d’euros au total).', source: AN_PUNAISES },
-    ],
-    analyse: [
-      'Ce coût s’explique en grande partie par les **traitements ratés** : produits du commerce, bombes, déménagement des affaires d’une pièce à l’autre. Un traitement professionnel en **deux passages** évite de payer deux fois.',
-      'Pour les foyers qui refusent tout insecticide (bébé, personne âgée, animaux), la **cryogénie à −78 °C** traite la literie et les meubles sans produit. Nos vidéos à Ivry-sur-Seine, Champigny-sur-Marne et L’Haÿ-les-Roses le montrent.',
-    ],
-    liens: [{ href: '/services/punaises-de-lit', label: 'Notre traitement des punaises de lit' }, { href: '/services/cryogenie-punaises-de-lit', label: 'La cryogénie, sans insecticide' }],
-  },
-  {
-    id: 'insecticides-interdits',
-    titre: 'Insecticides interdits',
-    accroche: 'Face aux punaises de lit, certains achètent des produits interdits en France, avec de vrais risques.',
-    chiffres: [
-      { valeur: '1 784', texte: 'flacons de « Sniper 1000 » (197,3 litres) saisis par la douane dans les bagages de voyageurs à Roissy, lors de 22 contrôles.', source: DOUANE_SNIPER },
-      { valeur: '≈ 900', texte: 'flacons de Sniper ou Shooter saisis par la DGCCRF dans les commerces et sur internet depuis 2023.', source: DOUANE_SNIPER },
-    ],
-    analyse: [
-      'Ces produits contiennent du **dichlorvos**, interdit pour l’usage domestique. Les autorités les disent responsables d’intoxications graves, parfois mortelles. Ils ne règlent pas une infestation et peuvent rendre un logement dangereux.',
-      'En France, seul un professionnel titulaire du **Certibiocide** peut utiliser les insecticides et raticides réservés aux professionnels (arrêté du 9 octobre 2013).',
-    ],
-    liens: [{ href: '/blog/insecticide-interdit-sniper-1000-danger', label: 'Sniper 1000 : pourquoi c’est dangereux' }, { href: '/blog/arnaques-deratisation-nuisibles', label: 'Les arnaques à éviter' }],
+    liens: [{ href: '/services/deratisation', label: 'Notre dératisation' }, { href: '/tarifs/deratisation', label: 'Prix d’une dératisation' }, { href: '/services/deratisation-ecologique', label: 'Dératisation sans raticide' }, { href: '/blog/deratisation-logement-syndrome-diogene#video', label: 'Vidéo : syndrome de Diogène et rats à Maisons-Alfort' }],
   },
   {
     id: 'moustique-tigre',
@@ -118,4 +173,4 @@ export const TERRAIN_CHIFFRES: Chiffre[] = [
   { valeur: '23 m', texte: 'de portée pour notre perche télescopique.', source: TERRAIN },
 ]
 
-export const SOURCES_EN_PLUS: Source[] = [CERTIBIOCIDE, { label: 'Stop punaises, site du gouvernement', url: 'https://stop-punaises.gouv.fr/' }]
+export const SOURCES_EN_PLUS: Source[] = [ANSES_RAPPORT, ANSES_PUNAISES, AN_PUNAISES, STOP_PUNAISES, CERTIBIOCIDE]

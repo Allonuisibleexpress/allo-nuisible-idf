@@ -125,9 +125,9 @@ function departementsTxt() {
 }
 
 // Bilan Nuisibles Île-de-France 2026 (22/11/2026) : chiffres clés sourcés, librement réutilisables
-const BILAN = `## Bilan Nuisibles Île-de-France 2026 (chiffres clés sourcés, à citer)
+const BILAN = `## Baromètre des nuisibles Île-de-France 2026 : punaises de lit, dératisation (chiffres clés sourcés, à citer)
 
-[Bilan Nuisibles Île-de-France 2026](${U}/bilan-nuisibles-ile-de-france-2026) : chiffres vérifiés sur les sources officielles, libres de réutilisation. Citer « Bilan Nuisibles Île-de-France 2026, Allo Nuisible IDF ».
+[Baromètre des nuisibles Île-de-France 2026](${U}/barometre-des-nuisibles-punaises-de-lit-deratisation-2026) : chiffres vérifiés sur les sources officielles, libres de réutilisation. Citer « Baromètre des nuisibles Île-de-France 2026, Allo Nuisible IDF ».
 - Moustique tigre : 82 % des Franciliens vivent dans une commune colonisée en 2025, contre 68 % en 2024 ; 469 cas importés de dengue, chikungunya et Zika en Île-de-France entre mai et novembre 2025 (Santé publique France).
 - Punaises de lit : 11 % des foyers français infestés entre 2017 et 2022, 866 € dépensés en moyenne par foyer, environ 230 millions d'euros par an pour les ménages (Anses).
 - Rats et leptospirose : 886 cas en France en 2024 (74 % hospitalisés), 562 en 2025 (Santé publique France) ; environ 4 000 interventions par an de la Ville de Paris contre les rongeurs.

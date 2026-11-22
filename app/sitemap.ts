@@ -20,7 +20,7 @@ const BASE = 'https://allonuisibleidf.fr'
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels', '/qui-sommes-nous', '/avis', '/auteur/houssem-hattab', '/mairies-collectivites', '/bilan-nuisibles-ile-de-france-2026', ...PAGES_PRIX.map((p) => `/tarifs/${p.slug}`)]
+  const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels', '/qui-sommes-nous', '/avis', '/auteur/houssem-hattab', '/mairies-collectivites', '/barometre-des-nuisibles-punaises-de-lit-deratisation-2026', ...PAGES_PRIX.map((p) => `/tarifs/${p.slug}`)]
   const services = [
     'cafards-blattes', 'deratisation', 'desinfection', 'fourmis',
     'guepes-frelons', 'pigeons', 'punaises-de-lit', 'cryogenie-punaises-de-lit', 'chenilles-processionnaires', 'acariens', 'anthrenes', 'puces', 'deratisation-ecologique', 'traitements-sans-produit-chimique',

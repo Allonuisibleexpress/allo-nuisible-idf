@@ -31,6 +31,8 @@ const nextConfig = {
       { source: '/services/rongeurs', destination: '/services/deratisation', permanent: true },
       // Page « Punaises de lit : traitement écologique » fusionnée avec la page cryogénie (13/11/2026, même requête)
       { source: '/services/punaises-de-lit-ecologique', destination: '/services/cryogenie-punaises-de-lit', permanent: true },
+      // Bilan Nuisibles renommé « Baromètre des nuisibles » (22/11/2026, choix de l'utilisateur)
+      { source: '/bilan-nuisibles-ile-de-france-2026', destination: '/barometre-des-nuisibles-punaises-de-lit-deratisation-2026', permanent: true },
     ]
   },
 }
