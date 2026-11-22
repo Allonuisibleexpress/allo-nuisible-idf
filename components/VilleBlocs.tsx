@@ -1,3 +1,4 @@
+import { ENTREPRISE } from '@/lib/entreprise'
 import { GERANT } from '@/lib/seo'
 import { deVille } from '@/lib/elision'
 import { CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK } from '@/lib/youtube'
@@ -221,27 +222,10 @@ export function AutresServicesVille({ nom, a, liens }: { nom: string; a: string;
 
 // Données structurées : l'entreprise (adresse réelle) et l'offre « à partir de » pour une page service + ville
 export function schemaPrestataire() {
-  return {
-    '@type': 'LocalBusiness',
-    '@id': 'https://allonuisibleidf.fr/#entreprise',
-    name: 'Allo Nuisible IDF',
-    url: 'https://allonuisibleidf.fr',
-    telephone: '+33768077219',
-    priceRange: '€€',
-    image: 'https://allonuisibleidf.fr/opengraph-image',
-    address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
-    // Pas d'aggregateRating (13/11/2026) : la note vient de la fiche Google, et Google interdit de reprendre dans les
-    // données structurées des avis recueillis sur un autre site. La note reste affichée en clair sur la page, avec le lien.
-    // Mêmes informations que le schéma de l'accueil (12/11/2026) : position, horaires, zone, chaîne YouTube
-    geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
-    hasMap: FICHE_GOOGLE_URL,
-    areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
-    openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
-    knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
-    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
-    employee: GERANT,
-  }
+  // Fiche entreprise complète, la même sur tout le site (lib/entreprise.ts, 22/11/2026)
+  return ENTREPRISE
 }
+
 export function schemaOffre(prix: string, libelle: string) {
   return { '@type': 'Offer', priceCurrency: 'EUR', price: prix, description: `À partir de ${prix} € TTC, ${libelle}`, availability: 'https://schema.org/InStock' }
 }

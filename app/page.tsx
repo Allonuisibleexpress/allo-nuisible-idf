@@ -1,5 +1,6 @@
 import { GERANT } from '@/lib/seo'
 import FaqLien from '@/components/FaqLien'
+import { ENTREPRISE } from '@/lib/entreprise'
 import { pageMetadata } from '@/lib/seo'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
@@ -20,37 +21,13 @@ export const metadata = pageMetadata({
   path: '',
 })
 
-const localBusiness = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Allo Nuisible IDF',
-  url: 'https://allonuisibleidf.fr',
-  logo: 'https://allonuisibleidf.fr/logo-transparent.png',
-  image: 'https://allonuisibleidf.fr/opengraph-image',
-  telephone: '+33768077219',
-  email: 'contact@allonuisibleidf.fr',
-  '@id': 'https://allonuisibleidf.fr/#entreprise',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: "6 bis Rue du Val d'Osne",
-    postalCode: '94410',
-    addressLocality: 'Saint-Maurice',
-    addressRegion: 'Île-de-France',
-    addressCountry: 'FR',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
-  hasMap: 'https://maps.google.com/?cid=11887181769674817823',
-  areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
-  },
-  priceRange: '€€',
-  sameAs: ['https://maps.google.com/?cid=11887181769674817823', CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
-  employee: GERANT,
-  knowsAbout: ['Dératisation', 'Désinsectisation', 'Désinfection', 'Punaises de lit', 'Cafards', 'Guêpes et frelons', 'Fourmis', 'Dépigeonnage'],
+// Fiche entreprise complète (lib/entreprise.ts) + passages lisibles par les assistants vocaux (22/11/2026)
+const localBusiness = { '@context': 'https://schema.org', ...ENTREPRISE }
+const pageAccueil = {
+  '@context': 'https://schema.org', '@type': 'WebPage', '@id': 'https://allonuisibleidf.fr/#accueil', url: 'https://allonuisibleidf.fr',
+  name: 'Allo Nuisible IDF : lutte contre les nuisibles à Paris et en Île-de-France', inLanguage: 'fr-FR',
+  about: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
+  speakable: { '@type': 'SpeakableSpecification', xpath: ['/html/head/title', "/html/head/meta[@name='description']/@content"] },
 }
 
 const FAQ_ACCUEIL = [
@@ -71,6 +48,7 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageAccueil) }} />
       <Navbar />
       <main>
         <Hero />

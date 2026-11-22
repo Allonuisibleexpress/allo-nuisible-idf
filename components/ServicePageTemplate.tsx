@@ -20,6 +20,7 @@ import VignettesChantier from '@/components/VignettesChantier'
 import VideosEnHaut from '@/components/VideosEnHaut'
 import EnBrefService from '@/components/EnBrefService'
 import ChoixSecteur from '@/components/ChoixSecteur'
+import { ENTREPRISE } from '@/lib/entreprise'
 import { liensParVille } from '@/lib/tri-villes'
 import type { Secteur } from '@/lib/secteurs'
 import { prixHref } from '@/lib/prix-liens'
@@ -151,16 +152,8 @@ export function schemaService(data: Pick<ServiceData, 'heroTitle' | 'heroHighlig
   const url = `https://allonuisibleidf.fr${chemin}`
   const nom = `${data.heroTitle} ${data.heroHighlight}`.replace(/\s+/g, ' ').trim()
   const prix = data.pricing.map((t) => parseFloat(t.price.replace(',', '.'))).filter((n) => !isNaN(n))
-  const entreprise = {
-    '@type': 'LocalBusiness', '@id': 'https://allonuisibleidf.fr/#entreprise', name: 'Allo Nuisible IDF', url: 'https://allonuisibleidf.fr',
-    telephone: '+33768077219', email: 'contact@allonuisibleidf.fr', priceRange: '€€', image: 'https://allonuisibleidf.fr/opengraph-image',
-    address: { '@type': 'PostalAddress', streetAddress: '6 bis rue du Val d’Osne', postalCode: '94410', addressLocality: 'Saint-Maurice', addressRegion: 'Île-de-France', addressCountry: 'FR' },
-    geo: { '@type': 'GeoCoordinates', latitude: 48.8187651, longitude: 2.4246496 },
-    openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
-    // Pas d'aggregateRating (13/11/2026) : la note vient de la fiche Google, et Google interdit de reprendre dans les
-    // données structurées des avis recueillis sur un autre site. La note reste affichée en clair sur la page, avec le lien.
-    sameAs: [FICHE_GOOGLE_URL, CHAINE_YOUTUBE, PAGE_FACEBOOK, COMPTE_INSTAGRAM, COMPTE_PINTEREST, COMPTE_TIKTOK],
-  }
+  const entreprise = ENTREPRISE // fiche entreprise complète, la même sur tout le site (22/11/2026)
+
   return {
     '@context': 'https://schema.org',
     '@graph': [

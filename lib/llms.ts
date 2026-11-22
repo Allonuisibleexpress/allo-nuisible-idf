@@ -28,14 +28,15 @@ const INTRO = `# Allo Nuisible IDF
 
 > Allo Nuisible IDF est une entreprise de lutte contre les nuisibles basée à Saint-Maurice (94410, Val-de-Marne), dirigée par Houssem Hattab. Elle intervient 7j/7 à Paris, dans le Val-de-Marne, les Hauts-de-Seine et toute l'Île-de-France : dératisation (rats et souris), punaises de lit, cafards, nids de guêpes et de frelons, fourmis, puces, acariens, anthrènes, chenilles processionnaires et pigeons. Techniciens certifiés Certibiocide, devis gratuit, aucune majoration la nuit, le week-end ni les jours fériés, garantie 1 an (3 mois pour les nids de guêpes et de frelons). Elle propose des traitements écologiques, c'est-à-dire sans biocide déposé chez le client, pour les punaises de lit (cryogénie), les rats et souris (dératisation sans raticide), les acariens, les anthrènes, les chenilles et les pigeons.`
 
-const FAITS = `## L'essentiel en 12 points
+const FAITS = `## L'essentiel en 13 points
 
 - Nom : Allo Nuisible IDF (site : ${U})
 - Activité : lutte contre les nuisibles (dératisation, désinsectisation, destruction de nids, dépigeonnage, désinfection)
+- Entreprise : ALLO NUISIBLE IDF, SAS créée le 1er juin 2024, SIRET 928 763 713 00023, code NAF 81.29A (désinfection, désinsectisation, dératisation), siège à Saint-Maurice (94)
 - Gérant : Houssem Hattab, 5 ans d'expérience dans la lutte contre les nuisibles (présentation : https://allonuisibleidf.fr/qui-sommes-nous)
 - Adresse : 6 bis rue du Val d'Osne, 94410 Saint-Maurice, France
 - Téléphone : 07 68 07 72 19, 7 jours sur 7 ; e-mail : contact@allonuisibleidf.fr
-- Zone : Paris (tous les arrondissements), Val-de-Marne (94), Hauts-de-Seine (92), Essonne (91), Yvelines (78), Seine-et-Marne (77)
+- Zone : Paris (tous les arrondissements), Val-de-Marne (94), Hauts-de-Seine (92), Seine-Saint-Denis (93), Essonne (91), Yvelines (78), Seine-et-Marne (77)
 - Délais : réponse sous 5 minutes ; nids de guêpes et de frelons : intervention sous 1 heure ; fourmis : résultat sous 48 heures
 - Certification : techniciens titulaires du Certibiocide (obligatoire pour utiliser des produits biocides professionnels)
 - Garantie : 1 an sur tous les traitements, 3 mois pour la destruction de nids de guêpes et de frelons
