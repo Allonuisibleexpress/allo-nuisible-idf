@@ -48,6 +48,8 @@ import DossierLocal from '@/components/DossierLocal'
 import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import VignettesChantier from '@/components/VignettesChantier'
 import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
+import { refonteDerat } from '@/lib/refonte-deratisation'
+import { RefonteSociete, RefonteQuartiers, RefonteIntervention, RefonteDeratiseur, RefonteMairie } from '@/components/RefonteDeratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
 import {
   VILLES_DERATISATION, GUIDES_RONGEURS, SOURCES_DERATISATION, MAJ_DERATISATION, getVilleDeratisation,
@@ -115,13 +117,16 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   const filDep = filDepartement('/deratisation', v.code)
   // Maillage (13/11/2026) : les 12 villes les plus proches avec une page dératisation
   const autres = voisinesGaranties(VILLES_DERATISATION, v.slug)
-  const maj = new Date(MAJ_DERATISATION).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+  // Refonte page par page (22/11/2026) : dossier local original, à la place des blocs communs répétés
+  const r = refonteDerat(v.slug)
+  const dateMaj = r?.maj ?? MAJ_DERATISATION
+  const maj = new Date(dateMaj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
 
   // Résumé factuel, repris tel quel pour les moteurs et les assistants IA
   const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
   const faqBase = [...v.faq, ...(GUIDE_DERATISATION[v.slug]?.faq ?? []), saisonVille('deratisation', v.slug)]
   // 18/11/2026 : 8 questions par page, les nouvelles construites sur les données locales de la ville (lib/faq-locale.ts)
-  const faq = [...faqBase, ...faqLocaleDeratisation(v, faqBase)]
+  const faq = r ? r.faq : [...faqBase, ...faqLocaleDeratisation(v, faqBase)]
   const enBref = [
     v.code === '75'
       ? `Allo Nuisible IDF réalise la dératisation ${v.a} et dans les arrondissements voisins.`
@@ -151,7 +156,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         '@id': url,
         url,
         name: `Dératisation des rats et souris ${v.a}`,
-        dateModified: MAJ_DERATISATION,
+        dateModified: dateMaj,
         inLanguage: 'fr-FR',
         author: { '@id': 'https://allonuisibleidf.fr/#gerant' },
         publisher: { '@id': 'https://allonuisibleidf.fr/#entreprise' },
@@ -181,7 +186,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         <HeroVille slug={v.slug} nom={v.nom} a={v.a} titre="Dératisation des rats et souris"
           fil={{ href: '/services/deratisation', label: 'Dératisation' }} dep={filDep} maj={maj}
           prix="120 €" prixNote="Appartement, rats ou souris. Devis gratuit."
-          accroche={`${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
+          accroche={r ? r.accroche : `${phraseDistance(v.slug, v.nom)} ${ACCROCHES[rang % ACCROCHES.length]}`} />
         <MiniaturesChantier a={v.a} photos={photosChantierVille('deratisation', v.slug, v.slug === CHANTIER_DIOGENE.ville ? CHANTIER_DIOGENE.photos : [], 5)} />
 
         {/* En bref */}
@@ -220,32 +225,42 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         <BandeauDevis slug={v.slug} mot="dératisation" a={v.a} prix="120 €" />
 
+        {r ? (
+          <>
+            <RefonteSociete r={r} />
+            <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
+            <RefonteQuartiers r={r} />
+          </>
+        ) : (
+          <>
         {/* ── CONTEXTE LOCAL ── */}
-        <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Rats et souris {v.a} : <span style={{ color: '#F0562A' }}>ce que nous constatons</span></h2>
-            {v.contexte.map((p) => (
-              <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
-            ))}
-            <h3 className="text-lg md:text-xl font-black text-white mt-10 mb-4 text-center">Où chercher les signes de passage {v.a}</h3>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {v.lieux.map((l) => (
-                <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
-                  <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{l}
-                </li>
+          <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6 text-center">Rats et souris {v.a} : <span style={{ color: '#F0562A' }}>ce que nous constatons</span></h2>
+              {v.contexte.map((p) => (
+                <p key={p.slice(0, 24)} className="text-white/70 leading-relaxed mb-4 text-center">{p}</p>
               ))}
-            </ul>
-            <p className="text-white/60 text-sm mt-4 text-center">
-              Indices fréquents : déjections, traces de grignotage, bruits la nuit dans les cloisons, terriers au pied des murs.
-            </p>
-          </div>
-        </section>
-
-        <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-        <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
-        <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Dératiseur ${v.a} : ce que nous savons de ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
-        {DOSSIERS_DERATISATION[v.slug] && <DossierLocal blocs={DOSSIERS_DERATISATION[v.slug]} surtitre={`Le dossier complet : dératisation ${v.a}`} />}
-        <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
+              <h3 className="text-lg md:text-xl font-black text-white mt-10 mb-4 text-center">Où chercher les signes de passage {v.a}</h3>
+              <ul className="grid sm:grid-cols-2 gap-3">
+                {v.lieux.map((l) => (
+                  <li key={l} className="flex items-center gap-2.5 rounded-xl px-4 py-3 text-white/80 text-sm" style={card}>
+                    <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} />{l}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-white/60 text-sm mt-4 text-center">
+                Indices fréquents : déjections, traces de grignotage, bruits la nuit dans les cloisons, terriers au pied des murs.
+              </p>
+            </div>
+          </section>
+  
+          <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
+          <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
+          <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Dératiseur ${v.a} : ce que nous savons de ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
+          {DOSSIERS_DERATISATION[v.slug] && <DossierLocal blocs={DOSSIERS_DERATISATION[v.slug]} surtitre={`Le dossier complet : dératisation ${v.a}`} />}
+          <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
+          </>
+        )}
 
         {/* Page souris de la même ville : chaque page garde son sujet */}
         {VILLES_SOURIS.some((x) => x.slug === v.slug) && (
@@ -260,9 +275,17 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         )}
 
         {/* Avis Google d'un client de cette ville, s'il y en a un */}
-        <SituationsVille famille="deratisation" slug={v.slug} a={v.a} />
-
-        <ProtocoleCondense p={PROTOCOLE_DERATISATION} a={v.a} />
+        {r ? (
+          <>
+            <RefonteIntervention r={r} />
+            <RefonteDeratiseur r={r} />
+          </>
+        ) : (
+          <>
+            <SituationsVille famille="deratisation" slug={v.slug} a={v.a} />
+            <ProtocoleCondense p={PROTOCOLE_DERATISATION} a={v.a} />
+          </>
+        )}
         <DeratEco a={v.a} />
 
 
@@ -308,9 +331,12 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </div>
         </section>
 
-        <ContenuNuisible data={CONTENU_DERATISATION} slug={v.slug} a={v.a} nom={v.nom} partie={3} />
-
-        <ContactMairie slug={v.slug} service="deratisation" a={v.a} />
+        {r ? <RefonteMairie r={r} /> : (
+          <>
+            <ContenuNuisible data={CONTENU_DERATISATION} slug={v.slug} a={v.a} nom={v.nom} partie={3} />
+            <ContactMairie slug={v.slug} service="deratisation" a={v.a} />
+          </>
+        )}
 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
@@ -345,7 +371,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             </div>
             <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Sources</p>
             <ul className="space-y-1">
-              {SOURCES_DERATISATION.map((s) => (
+              {[...(r?.sources ?? []), ...SOURCES_DERATISATION].filter((s, i, l) => l.findIndex((x) => x.url === s.url) === i).map((s) => (
                 <li key={s.url}>
                   <a href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="text-white/60 text-sm underline hover:text-white">{s.label}</a>
                 </li>
