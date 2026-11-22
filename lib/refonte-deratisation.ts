@@ -653,4 +653,91 @@ REFONTE_DERATISATION['saint-maur-des-fosses'] = {
   sources: [SM_INSEE, SM_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Vincennes (23/11/2026) ──
+const VINCENNES_WIKI: Source = { label: 'Wikipédia, Vincennes (quartiers, logement, métro, RER A et jardins couverts)', url: 'https://fr.wikipedia.org/wiki/Vincennes' }
+const VINCENNES_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94080, Vincennes', url: 'https://geo.api.gouv.fr/communes?code=94080&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['vincennes'] = {
+  maj: '2026-11-23',
+  accroche: 'À Vincennes, on vit en immeuble, serrés, à deux pas du bois. Les rats et les souris passent de cave en cave : nous traitons l’immeuble, pas seulement votre appartement.',
+  societe: {
+    titre: 'Société de dératisation à Vincennes (94300) : 25 000 habitants au km²',
+    paras: [
+      'Vincennes compte **48 193 habitants** sur seulement **1,90 km²**, soit plus de **25 000 habitants au km²** : c’est une ville d’**immeubles** collés les uns aux autres, avec **93,7 % d’appartements** selon le dernier détail publié. Pour un rongeur, c’est un réseau continu de **caves**, de **cours**, de **gaines** et de **locaux à poubelles**. Une souris dans votre cuisine vient rarement de chez vous seulement.',
+      'Au sud, la ville touche le **bois de Vincennes** et son **château** ; au centre, la **ligne 1** du métro et le **RER A**, dont les voies ont été couvertes entre 2004 et 2006 pour créer trois jardins. Bois, talus, jardins et commerces de bouche : les rongeurs trouvent ici à la fois abri et nourriture.',
+      'Nous connaissons Vincennes : nous y avons traité un logement contre les punaises de lit, chantier filmé dans [notre vidéo des punaises mortes après traitement à Vincennes](/blog/punaises-de-lit-vincennes-punaises-mortes#video). Notre base de **Saint-Maurice** est à quelques minutes, de l’autre côté du bois.',
+      'Nos autres pages pour la ville : [souris à Vincennes](/souris/vincennes), [cafards à Vincennes](/cafards/vincennes), [punaises de lit à Vincennes](/punaises-de-lit/vincennes) et [fourmis à Vincennes](/fourmis/vincennes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '48 193', texte: 'habitants (population légale Insee), code postal 94300.', source: VINCENNES_INSEE },
+    { valeur: '1,90 km²', texte: 'de superficie, soit plus de 25 000 habitants au km² (calcul sur les chiffres Insee).', source: VINCENNES_INSEE },
+    { valeur: '93,7 %', texte: 'des logements sont des appartements (détail Insee de 2009) : caves et parties communes partagées.', source: VINCENNES_WIKI },
+    { valeur: '3', texte: 'stations de la ligne 1 (Saint-Mandé, Bérault, Château de Vincennes), plus la gare du RER A.', source: VINCENNES_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Vincennes : la ville quartier par quartier',
+    intro: 'Vincennes se compose de **sept quartiers** : **Saint-Louis**, **Vignerons**, **République**, **Sorano**, **Centre-ville**, **Diderot** et **Domaine du bois**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Domaine du bois, le château et les abords du bois de Vincennes',
+        texte: 'Au sud et à l’est, les immeubles qui bordent le **bois de Vincennes** et le **château** sont au contact d’un grand espace vert. Les rats y vivent dans les talus et la végétation, et s’approchent des **locaux à poubelles** et des **caves** des résidences voisines. Nous traitons le pourtour des bâtiments et rebouchons les **soupiraux**.',
+        photo: { src: '/villes/vincennes/donjon-chateau.jpg', alt: 'Le donjon du château de Vincennes', legende: 'Le donjon du château de Vincennes, au bord du bois : un grand espace vert au contact des immeubles.', credit: 'Pierre Camateros', licence: 'CC BY-SA 2.5', page: W + 'Donjon_du_Ch%C3%A2teau_de_Vincennes.jpg' },
+      },
+      {
+        nom: 'Le Centre-ville, Diderot et les commerces',
+        texte: 'Autour de la **mairie**, de la rue de Fontenay et du quartier **Diderot**, restaurants, boulangeries et commerces de bouche partagent souvent les mêmes **caves** et **cours intérieures**. Un rat vu dans une réserve vient presque toujours d’un sous-sol voisin. Nous intervenons **hors des heures d’ouverture**, avec postes numérotés et **attestation** pour les contrôles d’hygiène.',
+        photo: { src: '/villes/vincennes/hotel-de-ville.jpg', alt: 'Façade de l’hôtel de ville de Vincennes', legende: 'L’hôtel de ville de Vincennes, en 2026 : autour, un centre-ville de commerces et d’immeubles anciens.', credit: 'Bretwa', licence: 'CC0', page: W + 'Vincennes_Town_Hall_in_France_-_2026-04-23.jpg' },
+      },
+      {
+        nom: 'Les jardins sur le RER A : Levant, Midi et Couchant',
+        texte: 'Entre 2004 et 2006, les voies du **RER A** ont été couvertes sur trois tronçons d’environ 100 mètres, où sont nés les jardins du **Levant**, du **Midi** et du **Couchant**. Massifs, bassins et talus ferroviaires au pied des immeubles : ce sont des zones de passage à surveiller pour les copropriétés riveraines.',
+        photo: { src: '/villes/vincennes/jardin-du-midi-rer.jpg', alt: 'Le jardin du Midi, aménagé sur la couverture du RER A à Vincennes', legende: 'Le jardin du Midi, sur la couverture des voies du RER A : végétation et immeubles se touchent.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Jardin_Midi_-_Vincennes_(FR94)_-_2022-06-30_-_1.jpg' },
+      },
+      {
+        nom: 'Vignerons, Saint-Louis, République et Sorano',
+        texte: 'Ces quartiers résidentiels sont faits d’**immeubles anciens** et de quelques **maisons** avec petite cour. Dans le bâti ancien, souris et rats circulent par les **planchers**, les **gaines** et le pourtour des **canalisations**. Nous trouvons le passage, traitons, puis rebouchons les accès.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Vincennes (94300) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines, plinthes chez vous ; caves, local à poubelles et cour dans les parties communes : nous trouvons d’où viennent les rongeurs.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Vincennes (94300) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la cuisine d’un appartement', x: 'Le cas le plus fréquent à Vincennes. Elles passent derrière l’électroménager et le long des tuyaux : voir [rat piégé derrière l’électroménager](/blog/rat-piege-cuisine-electromenager), [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et notre page [souris à Vincennes](/souris/vincennes).' },
+      { t: 'Des rats dans la cave ou le local à poubelles', x: 'Le signe d’une colonie dans les sous-sols, souvent reliés à ceux des immeubles voisins. Le traitement doit couvrir les parties communes : prévenez le syndic par écrit.' },
+      { t: 'Des bruits dans les murs ou le plafond', x: 'Dans le bâti ancien, les rongeurs circulent dans les cloisons et les planchers : voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).' },
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles), et [cafards à Vincennes](/cafards/vincennes), qui suivent les mêmes gaines.' },
+      { t: 'Un devis anormalement cher ou un démarchage', x: 'Méfiez-vous des prix annoncés au téléphone puis multipliés sur place : voir [les arnaques à la dératisation](/blog/arnaques-deratisation-nuisibles). Chez nous, le prix est donné avant de venir.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Vincennes',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Vincennes, où presque tout le monde vit en copropriété, c’est le plus souvent au **syndic** de faire traiter les **parties communes**, et à chacun de traiter son logement.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur la voie publique, dans un square ou un jardin, alertez la **mairie de Vincennes** ; pour le bois de Vincennes, qui appartient à Paris, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Saint-Mandé](/deratisation/saint-mande), [Fontenay-sous-Bois](/deratisation/fontenay-sous-bois), [Montreuil](/deratisation/montreuil), [Paris 12e](/deratisation/paris-12), [Paris 20e](/deratisation/paris-20), [Nogent-sur-Marne](/deratisation/nogent-sur-marne) et [Charenton-le-Pont](/deratisation/charenton-le-pont).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Vincennes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, restaurant ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des souris dans mon appartement : faut-il traiter tout l’immeuble ?', a: 'Pas toujours, mais souvent. Si les souris viennent des caves ou des gaines, nous traitons votre logement et conseillons au syndic de traiter les parties communes, sinon elles reviennent (voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Le bois de Vincennes attire-t-il les rats ?', a: 'Un grand espace vert offre abri et nourriture aux rongeurs. Les immeubles en bordure du bois doivent surveiller caves, soupiraux et locaux à poubelles.' },
+    { q: 'Qui paie la dératisation des caves d’une copropriété ?', a: 'Le syndicat des copropriétaires, par le syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les restaurants et commerces de Vincennes ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison dans un appartement avec chat ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés, hors de portée.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Vincennes ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VINCENNES_INSEE, VINCENNES_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
