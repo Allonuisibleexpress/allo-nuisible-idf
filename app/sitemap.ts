@@ -18,7 +18,7 @@ import { VILLES_PUCES } from '@/lib/villes-puces'
 const BASE = 'https://allonuisibleidf.fr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
+  // Pas de lastModified (22/11/2026) : la date de construction était envoyée pour toutes les pages, Google l'ignorait
 
   const staticPages = ['', '/faq', '/identifier-nuisible', '/nos-interventions', '/blog', '/tarifs', '/professionnels', '/qui-sommes-nous', '/avis', '/auteur/houssem-hattab', '/mairies-collectivites', '/barometre-des-nuisibles-punaises-de-lit-deratisation-2026', ...PAGES_PRIX.map((p) => `/tarifs/${p.slug}`)]
   const services = [
@@ -30,13 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((p) => ({
       url: `${BASE}${p}`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: p === '' ? 1 : 0.7,
     })),
     ...services.map((s) => ({
       url: `${BASE}/services/${s}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
@@ -46,32 +44,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...COMMUNES_94.map((c) => `/zones/val-de-marne/${c.slug}`),
     ].map((p) => ({
       url: `${BASE}${p}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
     ...VILLES_DERATISATION.map((v) => ({
       url: `${BASE}/deratisation/${v.slug}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     ...VILLES_PUNAISES.map((v) => ({
       url: `${BASE}/punaises-de-lit/${v.slug}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     ...[...VILLES_CAFARDS.map((v) => `/cafards/${v.slug}`), ...VILLES_SOURIS.map((v) => `/souris/${v.slug}`), ...VILLES_FOURMIS.map((v) => `/fourmis/${v.slug}`), '/fourmis', ...VILLES_CHENILLES.map((v) => `/chenilles-processionnaires/${v.slug}`), ...VILLES_ACARIENS.map((v) => `/acariens/${v.slug}`), ...VILLES_ANTHRENES.map((v) => `/anthrenes/${v.slug}`), ...VILLES_PUCES.map((v) => `/puces/${v.slug}`), ...VILLES_FRELONS.filter((v) => frelonsIndexee(v.slug)).map((v) => `/destruction-nid-frelon/${v.slug}`)].map((p) => ({
       url: `${BASE}${p}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     // Pages service + département (/deratisation/val-de-marne…)
     ...(Object.values(SERVICES_DEP).flatMap((s) => DEP_SLUGS.map((d) => `${s.base}/${d}`))).map((p) => ({
       url: `${BASE}${p}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     })),
@@ -83,7 +76,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...legacyPosts.map((slug) => ({
       url: `${BASE}/blog/${slug}`,
-      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),

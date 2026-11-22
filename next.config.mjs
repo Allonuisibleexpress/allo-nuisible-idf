@@ -31,6 +31,16 @@ const nextConfig = {
       { source: '/services/rongeurs', destination: '/services/deratisation', permanent: true },
       // Page « Punaises de lit : traitement écologique » fusionnée avec la page cryogénie (13/11/2026, même requête)
       { source: '/services/punaises-de-lit-ecologique', destination: '/services/cryogenie-punaises-de-lit', permanent: true },
+      // Adresses « parent » des pages ville (22/11/2026) : renvoyaient une erreur 404 (vues par Google pour /souris et /cafards)
+      { source: '/deratisation', destination: '/services/deratisation', permanent: true },
+      { source: '/souris', destination: '/services/deratisation', permanent: true },
+      { source: '/punaises-de-lit', destination: '/services/punaises-de-lit', permanent: true },
+      { source: '/cafards', destination: '/services/cafards-blattes', permanent: true },
+      { source: '/puces', destination: '/services/puces', permanent: true },
+      { source: '/acariens', destination: '/services/acariens', permanent: true },
+      { source: '/anthrenes', destination: '/services/anthrenes', permanent: true },
+      { source: '/chenilles-processionnaires', destination: '/services/chenilles-processionnaires', permanent: true },
+      { source: '/destruction-nid-frelon', destination: '/services/guepes-frelons', permanent: true },
       // Bilan Nuisibles renommé « Baromètre des nuisibles » (22/11/2026, choix de l'utilisateur)
       { source: '/bilan-nuisibles-ile-de-france-2026', destination: '/barometre-des-nuisibles-punaises-de-lit-deratisation-2026', permanent: true },
     ]
