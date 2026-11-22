@@ -297,4 +297,95 @@ REFONTE_DERATISATION['creteil'] = {
   sources: [CRETEIL_INSEE, CRETEIL_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Villejuif (22/11/2026) ──
+const VILLEJUIF_WIKI: Source = { label: 'Wikipédia, Villejuif (relief, logement, hôpitaux, parcs, transports)', url: 'https://fr.wikipedia.org/wiki/Villejuif' }
+const VILLEJUIF_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94076, Villejuif', url: 'https://geo.api.gouv.fr/communes?code=94076&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['villejuif'] = {
+  maj: '2026-11-22',
+  accroche: 'Sur le plateau de Villejuif, pas de rivière : les rats arrivent par les égouts, les caves des grands ensembles et les jardins. Nous trouvons leur chemin avant de traiter.',
+  societe: {
+    titre: 'Société de dératisation à Villejuif (94800) : une ville sur le plateau',
+    paras: [
+      'Villejuif compte **60 183 habitants** sur **5,28 km²**, au nord-ouest du Val-de-Marne. La ville est posée sur le **plateau de Longboyau**, entre les vallées de la Seine et de la Bièvre, et **aucun cours d’eau ne la traverse**. Ici, le rat ne vient donc pas des berges : il remonte par le **réseau d’égouts**, les **regards** et les **canalisations**, puis s’installe là où il trouve à manger.',
+      'C’est aussi une ville d’**immeubles** : en 2022, **81,2 % des logements** étaient des appartements, avec de grands ensembles comme les **Lozaits**, **Robert-Lebon** ou **Alexandre-Dumas**. Un rongeur repéré dans un hall vient presque toujours des **sous-sols communs**. À côté, le **Bas-Villejuif**, sur les coteaux, garde des **pavillons** avec jardin, cave et vide sanitaire.',
+      'Notre base est à **Saint-Maurice** : nous intervenons à Villejuif 7 jours sur 7. Nous traitons aussi les [punaises de lit à Villejuif](/punaises-de-lit/villejuif), les [fourmis](/fourmis/villejuif) et les [puces](/puces/villejuif).',
+    ],
+  },
+  chiffres: [
+    { valeur: '60 183', texte: 'habitants (population légale Insee), code postal 94800.', source: VILLEJUIF_INSEE },
+    { valeur: '81,2 %', texte: 'des logements sont des appartements (2022) : caves, gaines et locaux à déchets partagés.', source: VILLEJUIF_WIKI },
+    { valeur: '120 m', texte: 'd’altitude au parc des Hautes-Bruyères, point le plus haut du Val-de-Marne.', source: VILLEJUIF_WIKI },
+    { valeur: '10 %', texte: 'du territoire occupé par trois centres hospitaliers : Paul-Guiraud, Paul-Brousse et Gustave-Roussy.', source: VILLEJUIF_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Villejuif : la ville secteur par secteur',
+    intro: 'Du **Haut-Villejuif**, sur le plateau, au **Bas-Villejuif**, sur les coteaux, des grands ensembles aux hôpitaux : voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les grands ensembles : Lozaits, Robert-Lebon, Alexandre-Dumas',
+        texte: 'Ces cités de **logements sociaux** concentrent beaucoup de foyers autour des mêmes **caves**, **vide-ordures** et **locaux à poubelles**. Le traitement d’un seul appartement ne sert à rien si la colonie vit au sous-sol : nous travaillons avec le **bailleur** sur l’ensemble des **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/villejuif/coulee-verte-robert-lebon.jpg', alt: 'La coulée verte au pied de la cité Robert-Lebon à Villejuif', legende: 'La coulée verte au niveau de la cité Robert-Lebon : végétation au pied des immeubles et locaux communs à surveiller.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Villejuif_coulee_verte_a_Robert-Lebon.jpg' },
+      },
+      {
+        nom: 'Le parc des Hautes-Bruyères et les jardins familiaux',
+        texte: 'Le plus grand parc de la ville (plus de **14 hectares**) a été aménagé sur une ancienne **carrière de sablons** et compte **85 parcelles de jardins familiaux**. Potagers, **composteurs** et cabanes de jardin attirent les rongeurs. Pour un jardin, nous privilégions les **pièges** et le **rebouchage**, sans laisser d’appât accessible : voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/villejuif/parc-hautes-bruyeres.jpg', alt: 'Le parc départemental des Hautes-Bruyères à Villejuif', legende: 'Le parc départemental des Hautes-Bruyères, point le plus haut du Val-de-Marne.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Villejuif_parc_des_Hautes-Bruyeres.jpg' },
+      },
+      {
+        nom: 'Monsivry et les hôpitaux',
+        texte: 'Au nord-ouest, le quartier de **Monsivry** accueille les hôpitaux **Paul-Guiraud** et **Paul-Brousse**, et l’institut **Gustave-Roussy** est desservi par la **ligne 14** depuis janvier 2025. Cuisines collectives, internats, laboratoires : ces sites exigent des postes **sécurisés et verrouillés**, un **plan de localisation** et un **registre** des passages, que nous fournissons.',
+        photo: { src: '/villes/villejuif/hopital-paul-brousse.jpg', alt: 'Entrée principale de l’hôpital Paul-Brousse à Villejuif', legende: 'L’hôpital Paul-Brousse, ouvert en 1913 : un site hospitalier demande un dispositif sécurisé et tracé.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Hopital_Paul-Brousse_Villejuif.jpg' },
+      },
+      {
+        nom: 'La RD7, Louis-Aragon et les commerces',
+        texte: 'Le long de la **RD7** (ancienne RN7), autour des stations **Louis-Aragon** (métro 7 et tramway T7) et **Paul-Vaillant-Couturier**, restaurants et commerces de bouche produisent des déchets toute la journée. Nous intervenons **hors des heures d’ouverture**, avec postes numérotés et **attestation** pour les contrôles d’hygiène.',
+        photo: { src: '/villes/villejuif/rd7-louis-aragon.jpg', alt: 'La RD7 vue depuis la station Louis-Aragon à Villejuif', legende: 'La RD7 vue depuis la station Louis-Aragon : un axe de commerces et de restaurants.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Villejuif_RD7_Aragon.jpg' },
+      },
+      {
+        nom: 'Le Bas-Villejuif et les pavillons',
+        texte: 'Sur les **coteaux**, à l’est et à l’ouest, les maisons ont souvent un **sous-sol**, une **cave** ou un **vide sanitaire**. Un bruit de grattement dans un plafond ou une cloison, et c’est souvent un rat qui circule dans le bâti : voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Villejuif (94800) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le chemin des rongeurs', x: 'Regards, siphons et canalisations, caves et vide-ordures en immeuble, vide sanitaire et jardin en pavillon : nous trouvons par où ils passent.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Villejuif (94800) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un rat qui sort des toilettes', x: 'Sur une commune sans rivière, l’égout est la première voie d’entrée. Un rat peut remonter par la cuvette : nous traitons la colonie et vous conseillons sur la pose d’un **clapet anti-rongeurs** par un plombier. Voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines techniques et le pourtour des tuyaux. Notre page [souris à Villejuif](/souris/villejuif) explique comment nous trouvons leur passage, et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats dans la cave ou le local à poubelles', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des terriers dans un jardin ou un potager', x: 'Trous au pied des murs, coulées dans l’herbe, composteur visité : pièges, protection du compost et fermeture du vide sanitaire. Pour faire la différence, voir [rat ou souris : comment reconnaître](/blog/rat-ou-souris-comment-reconnaitre).' },
+      { t: 'Un rongeur dans une cuisine professionnelle', x: 'Restaurant, cantine ou internat : postes numérotés, registre et attestation. Voir notre guide [plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles), et notre page [cafards et blattes](/services/cafards-blattes), qui suivent souvent les mêmes gaines.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Villejuif',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Avec près d’un tiers de **logements sociaux** à Villejuif, c’est souvent le **bailleur** qui organise et paie la dératisation des parties communes.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un square, alertez la **mairie de Villejuif**.',
+      'Nous intervenons aussi tout autour : [Le Kremlin-Bicêtre](/deratisation/le-kremlin-bicetre), [Vitry-sur-Seine](/deratisation/vitry-sur-seine), [Cachan](/deratisation/cachan), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Chevilly-Larue](/deratisation/chevilly-larue), [Arcueil](/deratisation/arcueil) et [Gentilly](/deratisation/gentilly).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Villejuif ?', a: 'À partir de 120 € TTC pour un appartement, rats ou souris. Pavillon, commerce ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des rats à Villejuif alors qu’il n’y a pas de rivière ?', a: 'Le rat d’égout (surmulot) vit dans le réseau d’assainissement. Il remonte par les regards, les canalisations et parfois les toilettes, puis s’installe près de la nourriture : poubelles, caves, composteurs.' },
+    { q: 'J’habite une cité HLM : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur. Signalez-lui le problème par écrit avec photos.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous. Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs, par un plombier, pour éviter que cela recommence.' },
+    { q: 'Intervenez-vous dans les hôpitaux et établissements de santé ?', a: 'Oui, avec des postes sécurisés et verrouillés, un plan de localisation, un registre des passages et une attestation, en accord avec les services techniques.' },
+    { q: 'Rats dans mon jardin familial : peut-on éviter le poison ?', a: 'Oui : pièges mécaniques, piège Ekomille sans raticide, protection du composteur et rebouchage des terriers. C’est la solution que nous recommandons près d’un potager.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les crottes de rat mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Villejuif ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VILLEJUIF_INSEE, VILLEJUIF_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
