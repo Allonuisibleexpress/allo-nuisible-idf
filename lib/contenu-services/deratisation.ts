@@ -107,19 +107,6 @@ export const GUIDE_DERATISATION: GuideService = {
         'Le pavillon lui-même est inspecté : un rat qui vit dehors finit souvent par trouver **un accès au vide sanitaire ou au garage**.',
       ],
     },
-    {
-      titre: 'Les erreurs qui font revenir les rats',
-      texte: ['Nous voyons souvent les mêmes situations chez les clients qui ont essayé seuls avant de nous appeler.'],
-      liste: [
-        '**Poser du raticide à nu** : dangereux pour les animaux et souvent ignoré par les rats méfiants',
-        '**Arrêter trop tôt** dès que les bruits cessent, alors que la colonie n’est pas éliminée',
-        '**Oublier de boucher** les entrées : d’autres rongeurs arrivent par le même chemin',
-        '**Laisser une source de nourriture** : poubelles ouvertes, croquettes, graines',
-      ],
-      encadre: {
-        titre: 'Notre conseil',
-        texte: 'Ne tardez pas : une souris femelle peut avoir plusieurs portées par an. **Plus on intervient tôt, plus le traitement est court.** Appelez-nous au 07 68 07 72 19 pour un devis gratuit.',
-      },
-    },
+    // 22/11/2026 : partie « erreurs » retirée ici, elle existe déjà en plus complet dans lib/contenu-nuisibles/deratisation.ts (titre en double)
   ],
 }

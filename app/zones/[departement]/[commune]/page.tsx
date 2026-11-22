@@ -193,7 +193,7 @@ export default function CommunePage({ params }: { params: Params }) {
               Nous intervenons aussi {c.a} pour :{' '}
               {autres.map((k, i) => (
                 <span key={k}>
-                  <a href={`/services/${METHODES[k].service === 'rongeurs' ? 'deratisation' : METHODES[k].service}`} className="underline hover:text-white">{SERVICES[METHODES[k].service].nom.toLowerCase()}</a>
+                  <a href={`/services/${METHODES[k].service === 'rongeurs' ? 'deratisation' : METHODES[k].service}`} className="underline hover:text-white">{METHODES[k].service === 'rongeurs' ? 'dératisation (rats et souris)' : SERVICES[METHODES[k].service].nom.toLowerCase()}</a>
                   {i < autres.length - 1 ? ', ' : '.'}
                 </span>
               ))}

@@ -202,6 +202,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                 ))}
               </ul>
             </div>
+            {/* Lien clair vers la page de référence (22/11/2026) : c'est elle qui doit porter « dératisation » seul */}
+            <p className="text-center text-sm text-white/65 mt-4">
+              Méthodes, prix et garanties : tout savoir sur notre{' '}
+              <a href="/services/deratisation" className="font-bold underline underline-offset-4" style={{ color: '#F0562A' }}>dératisation en Île-de-France</a>.
+            </p>
           </div>
         </section>
 

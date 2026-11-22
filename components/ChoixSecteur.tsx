@@ -47,7 +47,7 @@ export default function ChoixSecteur({ secteur }: { secteur: Secteur }) {
                     <li key={v.href}>
                       <a href={v.href} title={secteur.service ? `${secteur.service} ${v.nom.startsWith('Paris') ? '' : 'à '}${v.nom}`.replace('  ', ' ') : v.nom} className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
                         style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)' }}>
-                        <span>{v.nom}{secteur.service && <span className="sr-only"> : {secteur.service.toLowerCase()}</span>}</span>
+                        <span>{v.nom}</span>
                         <ArrowRight className="w-4 h-4 flex-shrink-0" style={{ color: '#F0562A' }} aria-hidden="true" />
                       </a>
                     </li>

@@ -2,6 +2,7 @@ import { secteurService } from '@/lib/secteurs'
 import { DERAT_DEMANDEES } from '@/lib/villes-demandees'
 import { pageMetadata } from '@/lib/seo'
 import DeratEco from '@/components/DeratEco'
+import DeratServiceQuestions from '@/components/DeratServiceQuestions'
 import { maillageService } from '@/lib/maillage-services'
 import { CONTENU_DERATISATION } from '@/lib/contenu-nuisibles/deratisation'
 import ServicePageTemplate, { ServiceData } from '@/components/ServicePageTemplate'
@@ -41,6 +42,7 @@ const data: ServiceData = {
   contenu: CONTENU_DERATISATION,
   apresProcess: (
     <>
+      <DeratServiceQuestions />
       <DeratEco />
       <VideosDetaillees
         renvoiHaut
@@ -106,11 +108,12 @@ const data: ServiceData = {
     { q: 'Proposez-vous des contrats de dératisation annuels ?', a: 'Oui. Nous proposons des contrats mensuels, trimestriels ou annuels pour les professionnels et les copropriétés, avec visites programmées, relevés et rapports d’intervention fournis à chaque passage.' },
   ],
   related: {
-    vedette: { title: 'Dératisation : les villes les plus demandées', links: DERAT_DEMANDEES },
+    // 22/11/2026 : libellés réduits au nom de la ville (le titre du bloc porte déjà « dératisation » : pas de répétition)
+    vedette: { title: 'Dératisation : les villes les plus demandées', links: DERAT_DEMANDEES.map((l) => ({ ...l, label: l.label.replace(/^Dératisation /, '') })) },
     extra: maillageService('/services/deratisation'),
-    villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `Dératisation ${v.a} (${v.code})` })) },
+    villes: { title: 'Dératisation par ville', links: VILLES_DERATISATION.map((v) => ({ href: `/deratisation/${v.slug}`, label: `${v.nom} (${v.code})` })) },
     guides: { title: 'Nos guides sur les rongeurs', links: [...Object.entries(GUIDES_RONGEURS).map(([slug, label]) => ({ href: `/blog/${slug}`, label }))] },
-    souris: { title: 'Souris par ville', links: VILLES_SOURIS.map((v) => ({ href: `/souris/${v.slug}`, label: `Souris ${v.a} (${v.code})` })) },
+    souris: { title: 'Souris par ville', links: VILLES_SOURIS.map((v) => ({ href: `/souris/${v.slug}`, label: `${v.nom} (${v.code})` })) },
   },
   ctaTitle: 'Besoin d\'une dératisation ?\nOn intervient rapidement.',
 }
