@@ -26,7 +26,7 @@ const CATALOGUE: { nom: string; service: string; tarif: string; prix: number }[]
   { nom: 'Désinfection', service: '/services/desinfection', tarif: '/tarifs/desinfection', prix: 150 },
 ]
 
-const DEPARTEMENTS = ['Paris', 'Val-de-Marne', 'Hauts-de-Seine', 'Seine-Saint-Denis', 'Essonne', 'Yvelines', 'Seine-et-Marne']
+const DEPARTEMENTS = ['Paris', 'Val-de-Marne', 'Hauts-de-Seine', 'Seine-Saint-Denis', 'Essonne', 'Yvelines', 'Seine-et-Marne', 'Val-d’Oise']
 
 export const ENTREPRISE = {
   '@type': 'LocalBusiness',

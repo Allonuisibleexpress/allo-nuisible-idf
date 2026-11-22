@@ -27,6 +27,7 @@ const DEPS: { code: string; nom: string; slug: string }[] = [
   { code: '91', nom: 'Essonne', slug: 'essonne' },
   { code: '78', nom: 'Yvelines', slug: 'yvelines' },
   { code: '77', nom: 'Seine-et-Marne', slug: 'seine-et-marne' },
+  { code: '95', nom: 'Val-d’Oise', slug: 'val-d-oise' },
 ]
 
 // Service → pages ville ; depBase = pages « service + département » quand elles existent
@@ -59,7 +60,7 @@ export function secteurService(path: string): Secteur | undefined {
         .sort(alpha)
       return {
         code: d.code, nom: d.nom, villes,
-        pageDep: s.depBase ? { href: `${s.depBase}/${d.slug}`, label: `${s.service} : tout le département ${d.nom === 'Paris' ? 'de Paris' : `(${d.code})`}` } : undefined,
+        pageDep: d.code === '95' ? { href: '/zones/val-d-oise', label: 'Nos interventions dans le Val-d’Oise (95)' } : s.depBase ? { href: `${s.depBase}/${d.slug}`, label: `${s.service} : tout le département ${d.nom === 'Paris' ? 'de Paris' : `(${d.code})`}` } : undefined,
       }
     }).filter((d) => d.villes.length || d.pageDep)
     return { service: s.service, deps }

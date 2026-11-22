@@ -36,7 +36,7 @@ const FAITS = `## L'essentiel en 13 points
 - Gérant : Houssem Hattab, 5 ans d'expérience dans la lutte contre les nuisibles (présentation : https://allonuisibleidf.fr/qui-sommes-nous)
 - Adresse : 6 bis rue du Val d'Osne, 94410 Saint-Maurice, France
 - Téléphone : 07 68 07 72 19, 7 jours sur 7 ; e-mail : contact@allonuisibleidf.fr
-- Zone : Paris (tous les arrondissements), Val-de-Marne (94), Hauts-de-Seine (92), Seine-Saint-Denis (93), Essonne (91), Yvelines (78), Seine-et-Marne (77)
+- Zone : Paris (tous les arrondissements), Val-de-Marne (94), Hauts-de-Seine (92), Seine-Saint-Denis (93), Essonne (91), Yvelines (78), Seine-et-Marne (77), Val-d'Oise (95)
 - Délais : réponse sous 5 minutes ; nids de guêpes et de frelons : intervention sous 1 heure ; fourmis : résultat sous 48 heures
 - Certification : techniciens titulaires du Certibiocide (obligatoire pour utiliser des produits biocides professionnels)
 - Garantie : 1 an sur tous les traitements, 3 mois pour la destruction de nids de guêpes et de frelons
