@@ -32,7 +32,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
     maj: '2026-11-22',
     accroche: 'De la Seine au plateau, des grandes résidences aux pavillons : nous trouvons par où passent les rats, nous traitons et nous rebouchons les accès.',
     societe: {
-      titre: 'Société de dératisation à Vitry-sur-Seine : une ville entre Seine, cités et pavillons',
+      titre: 'Société de dératisation à Vitry-sur-Seine (94400) : une ville entre Seine, cités et pavillons',
       paras: [
         'Avec **93 963 habitants** sur **11,67 km²**, Vitry-sur-Seine est l’une des villes les plus peuplées du Val-de-Marne. Elle est bordée à l’est par la **Seine sur 3,8 km**, et son paysage passe en quelques rues d’une **grande résidence** à un **quartier de pavillons**, puis à une **zone d’activités**. Pour une société de dératisation, ce mélange change tout : les rats n’arrivent pas par le même chemin dans une tour, un pavillon ou un entrepôt.',
         '**Plus de 40 %** des logements de la ville sont des HLM et **près de 60 %** ont été construits entre **1949 et 1974**. Dans ces immeubles, les rongeurs circulent par les **caves**, les **colonnes de vide-ordures** et les **gaines techniques**. Dans le parc privé, qui compte une forte part de **maisons individuelles**, ils s’installent plutôt dans les **jardins**, les **vides sanitaires** et les **garages**.',
@@ -75,7 +75,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     intervention: {
-      titre: 'Intervention contre les rats à Vitry-sur-Seine : notre dératisation, étape par étape',
+      titre: 'Intervention contre les rats à Vitry-sur-Seine (94400) : notre dératisation, étape par étape',
       etapes: [
         { t: 'Vous nous appelez ou envoyez une photo', x: 'Une photo des crottes, d’un trou ou d’un emballage rongé suffit souvent pour savoir s’il s’agit de rats ou de souris. Vous avez le prix avant notre déplacement.' },
         { t: 'Le technicien cherche les entrées', x: 'Cave, vide sanitaire, garage, gaines, bas de portes, regards : à Vitry, nous regardons aussi le chemin depuis la rue ou le jardin, car les rongeurs viennent souvent de l’extérieur.' },
@@ -84,7 +84,7 @@ export const REFONTE_DERATISATION: Record<string, RefonteDerat> = {
       ],
     },
     dératiseur: {
-      titre: 'Dératiseur à Vitry-sur-Seine : les situations que nous traitons le plus',
+      titre: 'Dératiseur à Vitry-sur-Seine (94400) : les situations que nous traitons le plus',
       cas: [
         { t: 'Un rat dans le hall ou la cave de la résidence', x: 'C’est le signe d’une colonie dans les parties communes. Prévenez par écrit le bailleur ou le syndic : le traitement doit couvrir caves, local poubelles et vide-ordures.' },
         { t: 'Des terriers dans le jardin du pavillon', x: 'Trous au pied d’un mur ou sous une dalle, coulées dans la pelouse : le surmulot creuse. Nous traitons le terrier et protégeons le composteur. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
@@ -125,7 +125,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
   maj: '2026-11-22',
   accroche: 'Bords de Marne, grands ensembles du Bois-l’Abbé, pavillons du Plateau et de Coeuilly : à Champigny, les rats ne passent pas par les mêmes chemins. Nous trouvons les leurs.',
   societe: {
-    titre: 'Société de dératisation à Champigny-sur-Marne : une ville prise entre deux bras de Marne',
+    titre: 'Société de dératisation à Champigny-sur-Marne (94500) : une ville prise entre deux bras de Marne',
     paras: [
       'Champigny-sur-Marne compte **78 072 habitants** sur **11,30 km²**. Sa particularité : la ville est **bordée des deux côtés par la Marne**, avec **quatre îles classées réserves naturelles régionales**. L’eau, les berges et les réseaux qui y descendent sont l’habitat préféré du **surmulot**, le rat d’égout, qui nage très bien et remonte vers les jardins et les caves.',
       'Le reste de la ville est très contrasté : **37 % de logements sociaux**, de grands ensembles comme au **Bois-l’Abbé** ou aux **Mordacs**, mais aussi **près d’un logement sur trois en maison individuelle**. Pour une société de dératisation, c’est deux métiers : traiter les **parties communes** d’une résidence avec le bailleur, ou chercher un **terrier sous un abri de jardin**.',
@@ -168,7 +168,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   intervention: {
-    titre: 'Intervention contre les rats à Champigny-sur-Marne : notre dératisation, sans surprise',
+    titre: 'Intervention contre les rats à Champigny-sur-Marne (94500) : notre dératisation, sans surprise',
     etapes: [
       { t: 'Photo et prix avant de venir', x: 'Envoyez une photo des crottes, d’un trou ou d’un sac rongé : nous identifions le rongeur et vous donnons le prix. Devis gratuit, dès 120 € pour un appartement.' },
       { t: 'Recherche des entrées', x: 'Près de la Marne, nous commençons par les regards et le vide sanitaire ; en résidence, par les caves et le local à déchets ; en pavillon, par le jardin et le garage.' },
@@ -177,7 +177,7 @@ REFONTE_DERATISATION['champigny-sur-marne'] = {
     ],
   },
   dératiseur: {
-    titre: 'Dératiseur à Champigny-sur-Marne : les cas que nous rencontrons le plus',
+    titre: 'Dératiseur à Champigny-sur-Marne (94500) : les cas que nous rencontrons le plus',
     cas: [
       { t: 'Des rats sur la berge, au fond du jardin', x: 'Un jardin qui descend vers la Marne reçoit la visite des surmulots. Nous traitons les terriers et protégeons le composteur, puis nous fermons les passages vers la maison. Voir aussi [les rats dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
       { t: 'Un rat dans la cave de la résidence', x: 'Prévenez par écrit le bailleur ou le syndic : les caves et le local à déchets relèvent des parties communes. Le traitement doit couvrir tout le bâtiment.' },
