@@ -908,4 +908,91 @@ REFONTE_DERATISATION['alfortville'] = {
   sources: [ALFORT_INSEE, ALFORT_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Arcueil (23/11/2026) ──
+const ARCUEIL_WIKI: Source = { label: 'Wikipédia, Arcueil (vallée de la Bièvre, aqueducs, logement, quartiers, transports)', url: 'https://fr.wikipedia.org/wiki/Arcueil' }
+const ARCUEIL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94003, Arcueil', url: 'https://geo.api.gouv.fr/communes?code=94003&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['arcueil'] = {
+  maj: '2026-11-23',
+  accroche: 'Arcueil est construite dans la vallée de la Bièvre, une rivière longtemps en partie enterrée et rendue à l’air libre en 2022. Entre cités, pavillons et coteaux, nous suivons le chemin des rats.',
+  societe: {
+    titre: 'Société de dératisation à Arcueil (94110) : une ville dans la vallée de la Bièvre',
+    paras: [
+      'Arcueil compte **22 200 habitants** sur **2,33 km²**, entre l’A6 et l’ancienne RN20. La ville occupe en grande partie la **vallée de la Bièvre**, une rivière **en partie couverte à partir de 1900** et **remise à l’air libre en 2022** au parc du Coteau. Une rivière enterrée, c’est un réseau de **canalisations** et de **collecteurs** : le chemin préféré du **surmulot**, le rat d’égout.',
+      'La ville est **urbanisée à plus de 90 %**, avec une forte part d’**habitat social** : environ **38 % du parc locatif** en HLM, et des résidences comme le **Chaperon-Vert** ou la **Vache-Noire**. On y trouve aussi une **cité-jardin** et des **pavillons** sur les coteaux. Pour une société de dératisation, c’est autant de parties communes à traiter que de jardins.',
+      'Nous intervenons à Arcueil depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Arcueil](/souris/arcueil), [punaises de lit à Arcueil](/punaises-de-lit/arcueil) et [fourmis à Arcueil](/fourmis/arcueil).',
+    ],
+  },
+  chiffres: [
+    { valeur: '22 200', texte: 'habitants (population légale Insee), code postal 94110.', source: ARCUEIL_INSEE },
+    { valeur: '1900', texte: 'la Bièvre commence à être couverte dans Arcueil ; elle est de nouveau découverte en 2022 au parc du Coteau.', source: ARCUEIL_WIKI },
+    { valeur: '77,5 %', texte: 'des logements sont des appartements (2020), sur 11 030 logements.', source: ARCUEIL_WIKI },
+    { valeur: '400 m', texte: 'de long pour l’aqueduc Médicis (1613-1624), qui enjambe la vallée de la Bièvre.', source: ARCUEIL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Arcueil : la ville secteur par secteur',
+    intro: 'Arcueil compte six quartiers : **Henri-Barbusse**, **Jean-Macé et la Cité-jardins**, **Joliot-Curie**, **Jules-Ferry**, **Laplace** et le **plateau Kergomard**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La vallée de la Bièvre et le parc du Coteau',
+        texte: 'Au fond de la vallée, la **Bièvre** a longtemps coulé sous la ville, dans des ouvrages enterrés. Là où elle réapparaît, au **parc du Coteau**, l’eau et la végétation attirent les rongeurs. Les immeubles et maisons du fond de vallée doivent surveiller **regards**, **caves** et **soupiraux**.',
+        photo: { src: '/villes/arcueil/bievre-parc-du-coteau.jpg', alt: 'La Bièvre remise à l’air libre au parc du Coteau à Arcueil', legende: 'La Bièvre, de nouveau découverte en 2022 au parc du Coteau : eau et végétation en pleine ville.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ruisseau_Bi%C3%A8vre_Parc_Coteau_Bi%C3%A8vre_-_Arcueil_(FR94)_-_2022-05-19_-_1.jpg' },
+      },
+      {
+        nom: 'Le centre historique et les aqueducs',
+        texte: 'Autour des **aqueducs Médicis et Belgrand** et du centre ancien, le bâti mêle maisons de maître, immeubles en brique et commerces de proximité. Les **caves anciennes**, les **cours** et les **murs de pierre** offrent abris et passages : nous les inspectons un par un.',
+        photo: { src: '/villes/arcueil/aqueducs-medicis-belgrand.jpg', alt: 'Les aqueducs Médicis et Belgrand à Arcueil', legende: 'Les aqueducs Médicis et Belgrand, au-dessus de la vallée : autour, un centre ancien avec caves et cours.', credit: 'DurandMatthieu', licence: 'CC BY 2.5', page: W + 'AqueducArcueilBelMed.JPG' },
+      },
+      {
+        nom: 'Les cités : Chaperon-Vert, Vache-Noire et les résidences',
+        texte: 'Le **Chaperon-Vert**, la résidence de la **Vache-Noire** (en renouvellement urbain) et les nombreuses résidences sociales partagent **caves**, **vide-ordures** et **locaux à poubelles**. Le traitement d’un logement seul ne suffit pas : nous travaillons avec le **bailleur** sur toutes les **parties communes**.',
+      },
+      {
+        nom: 'Laplace, la Vache-Noire et les commerces',
+        texte: 'Autour de la gare **Laplace** du RER B, de l’avenue Laplace et du centre commercial de la **Vache-Noire**, ouvert en 2007, restaurants et commerces de bouche produisent des déchets toute la journée. Nous intervenons **hors des heures d’ouverture**, avec postes numérotés et **attestation**.',
+        photo: { src: '/villes/arcueil/gare-rer-b-laplace.jpg', alt: 'La gare de Laplace, RER B, à Arcueil', legende: 'La gare de Laplace (RER B) : un pôle de commerces et de passage.', credit: 'ArséniureDeGallium', licence: 'CC BY-SA 2.5', page: W + 'RER_B-Laplace1.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Arcueil (94110) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Fond de vallée : regards et caves. Cités : vide-ordures, caves et local à poubelles. Pavillons des coteaux : jardin, abri et vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Arcueil (94110) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou au vide-ordures', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Dans une vallée où la rivière a longtemps été canalisée, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Arcueil](/souris/arcueil) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Sur les coteaux et à la Cité-jardins : pièges, traitement des galeries, protection du compost. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Un rongeur dans un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Arcueil',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Avec une forte part de logements sociaux à Arcueil, c’est souvent le **bailleur** qui organise la dératisation des parties communes.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique, dans un parc ou un square, alertez la **mairie d’Arcueil**.',
+      'Nous intervenons aussi tout autour : [Cachan](/deratisation/cachan), [Gentilly](/deratisation/gentilly), [Le Kremlin-Bicêtre](/deratisation/le-kremlin-bicetre), [Villejuif](/deratisation/villejuif), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Bagneux](/deratisation/bagneux), [Montrouge](/deratisation/montrouge) et [Paris 14e](/deratisation/paris-14).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Arcueil ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, commerce ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Bièvre attire-t-elle les rats à Arcueil ?', a: 'L’eau, les berges et les anciens ouvrages enterrés sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les logements du fond de vallée doivent surveiller regards, caves et soupiraux.' },
+    { q: 'J’habite au Chaperon-Vert : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur. Signalez-lui le problème par écrit, avec photos et dates.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces de la Vache-Noire et de l’avenue Laplace ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Arcueil ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ARCUEIL_INSEE, ARCUEIL_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
