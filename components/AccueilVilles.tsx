@@ -15,7 +15,7 @@ const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(25
 
 const FAMILLES = [
   { base: '/punaises-de-lit', label: 'Punaises de lit', slugs: VILLES_PUNAISES.map((v) => v.slug) },
-  { base: '/deratisation', label: 'Dératisation', slugs: VILLES_DERATISATION.map((v) => v.slug) },
+  { base: '/deratisation', label: 'Rats', slugs: VILLES_DERATISATION.map((v) => v.slug) },
   { base: '/souris', label: 'Souris', slugs: VILLES_SOURIS.map((v) => v.slug) },
   { base: '/cafards', label: 'Cafards', slugs: VILLES_CAFARDS.map((v) => v.slug) },
   { base: '/fourmis', label: 'Fourmis', slugs: VILLES_FOURMIS.map((v) => v.slug) },
@@ -34,7 +34,7 @@ export default function AccueilVilles({ nombre = 12 }: { nombre?: number }) {
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-xs font-black uppercase tracking-[.15em] mb-3" style={{ color: '#F0562A' }}>Près de chez vous</p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-          Dératisation et punaises de lit <span style={{ color: '#F0562A' }}>dans votre ville</span>
+          Nos interventions <span style={{ color: '#F0562A' }}>dans votre ville</span>
         </h2>
         <p className="text-white/60 max-w-2xl mx-auto mb-10">
           Basés à <strong className="text-white">Saint-Maurice (94)</strong>, nous intervenons chaque jour à Paris et dans tout le Val-de-Marne. Choisissez votre ville et votre nuisible.

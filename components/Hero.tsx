@@ -38,7 +38,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero-3 text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}>
-          <strong className="text-white font-bold">Dératisation</strong>, <strong className="text-white font-bold">punaises de lit</strong>, <strong className="text-white font-bold">cafards</strong>, <strong className="text-white font-bold">nids de frelons</strong> et pigeons : nos techniciens certifiés, basés à Saint-Maurice (94), interviennent{' '}
+          <a href="/services/deratisation" className="text-white font-bold underline decoration-white/30 underline-offset-4 hover:decoration-white">Dératisation</a>, <a href="/services/punaises-de-lit" className="text-white font-bold underline decoration-white/30 underline-offset-4 hover:decoration-white">punaises de lit</a>, <strong className="text-white font-bold">cafards</strong>, <strong className="text-white font-bold">nids de frelons</strong> et pigeons : nos techniciens certifiés, basés à Saint-Maurice (94), interviennent{' '}
           <strong className="text-white font-bold">7j/7</strong>, souvent le jour même, <strong className="text-white font-bold">sans majoration la nuit, le week-end ni les jours fériés</strong>. Devis gratuit, garantie jusqu’à 1 an.
         </p>
 
