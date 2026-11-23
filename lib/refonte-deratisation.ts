@@ -1607,4 +1607,95 @@ REFONTE_DERATISATION['chevilly-larue'] = {
   sources: [CHEVILLY_INSEE, CHEVILLY_WIKI, MIN_RUNGIS_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Fontenay-sous-Bois (23/11/2026) ──
+const FONTENAY_WIKI: Source = { label: 'Wikipédia, Fontenay-sous-Bois (sources, carrières, quartiers, logement, Val de Fontenay)', url: 'https://fr.wikipedia.org/wiki/Fontenay-sous-Bois' }
+const FONTENAY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94033, Fontenay-sous-Bois', url: 'https://geo.api.gouv.fr/communes?code=94033&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['fontenay-sous-bois'] = {
+  maj: '2026-11-23',
+  accroche: 'Une ville de sources, d’anciennes carrières et d’anciens marais, entre le bois de Vincennes et le Val de Fontenay : à Fontenay-sous-Bois, le sous-sol est humide et les rongeurs le savent.',
+  societe: {
+    titre: 'Société de dératisation à Fontenay-sous-Bois (94120) : la ville des fontaines',
+    paras: [
+      'Fontenay-sous-Bois compte **53 757 habitants** sur **5,56 km²**, entre 44 et 111 mètres d’altitude, à la pointe du plateau de Belleville. La ville doit son nom à ses **nombreuses sources**, nées des couches d’**argile** à flanc de coteau. Le sous-sol a aussi été creusé par des **carrières de gypse et de calcaire**, exploitées jusqu’en 1928, et le nord-est était autrefois un **marais**. Humidité, galeries, réseaux : un terrain favorable au **surmulot**.',
+      'La ville est très contrastée : des **maisons** qui bordent le **bois de Vincennes**, le **grand ensemble des Larris**, véritable « ville verticale », et le **Val de Fontenay**, premier pôle tertiaire de l’Est parisien. En 2021, **75,7 % des logements** étaient des appartements et **23,5 %** des maisons. Une société de dératisation y traite autant des **caves d’immeuble** que des **jardins** et des **bureaux**.',
+      'Nous intervenons à Fontenay depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Fontenay-sous-Bois](/souris/fontenay-sous-bois), [cafards à Fontenay-sous-Bois](/cafards/fontenay-sous-bois), [punaises de lit à Fontenay-sous-Bois](/punaises-de-lit/fontenay-sous-bois) et [puces à Fontenay-sous-Bois](/puces/fontenay-sous-bois).',
+    ],
+  },
+  chiffres: [
+    { valeur: '53 757', texte: 'habitants (population légale Insee), code postal 94120.', source: FONTENAY_INSEE },
+    { valeur: '1928', texte: 'fin de l’exploitation des carrières de gypse et de calcaire sous la commune.', source: FONTENAY_WIKI },
+    { valeur: '160 ha', texte: 'pour le pôle d’affaires du Val de Fontenay, avec bureaux et centre commercial régional.', source: FONTENAY_WIKI },
+    { valeur: '75,7 %', texte: 'des logements sont des appartements et 23,5 % des maisons (2021).', source: FONTENAY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Fontenay-sous-Bois : la ville secteur par secteur',
+    intro: 'Fontenay juxtapose des quartiers très différents : **Fontenay-Bois**, le **Plateau**, le **village**, les **Rigollots**, les **Larris** et le **Val de Fontenay**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le village, les sources et les fontaines',
+        texte: 'Autour de la **mairie**, de l’église et du **marché Moreau-David**, le vieux Fontenay garde ses **fontaines**, ses caves anciennes et ses commerces de bouche. Sources, réseaux d’eau et sous-sols humides : nous contrôlons **regards**, **caves** et **soupiraux**, et intervenons dans les commerces **hors des heures d’ouverture**.',
+        photo: { src: '/villes/fontenay-sous-bois/fontaine-des-rosettes.jpg', alt: 'La fontaine des Rosettes à Fontenay-sous-Bois', legende: 'La fontaine des Rosettes : Fontenay doit son nom à ses sources, et son sous-sol reste humide.', credit: 'Bruno Barral', licence: 'CC BY-SA 3.0', page: W + 'Fontaine_des_Rosettes_Fontenay.jpg' },
+      },
+      {
+        nom: 'Le marché et les commerces de bouche',
+        texte: 'Un marché, ce sont des déchets alimentaires chaque semaine, des cagettes et des bennes. Les commerces voisins doivent garder leurs **réserves** et **locaux à déchets** fermés. Pour un professionnel : postes **numérotés**, **registre** et **attestation** pour les contrôles d’hygiène.',
+        photo: { src: '/villes/fontenay-sous-bois/marche-moreau-david.jpg', alt: 'Le marché Moreau-David à Fontenay-sous-Bois', legende: 'Le marché Moreau-David : autour des marchés, les déchets alimentaires attirent les rongeurs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'March%C3%A9_Moreau_David_Fontenay_Bois_1.jpg' },
+      },
+      {
+        nom: 'Les Larris et les grandes résidences',
+        texte: 'Le **grand ensemble des Larris**, quartier prioritaire, partage **caves**, **vide-ordures** et **locaux à poubelles** entre des centaines de logements. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les appartements.',
+        photo: { src: '/villes/fontenay-sous-bois/quartier-des-larris.jpg', alt: 'Vue sur le quartier des Larris à Fontenay-sous-Bois', legende: 'Le quartier des Larris vu depuis l’avenue Victor-Hugo : tours et pavillons se côtoient.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Vue_Quartier_Larris_depuis_Avenue_Victor_Hugo_Fontenay_Bois_4.jpg' },
+      },
+      {
+        nom: 'Fontenay-Bois et la lisière du bois de Vincennes',
+        texte: 'Au sud-ouest, les **maisons** et les villas qui jouxtent le **bois de Vincennes** ont jardin, cave et sous-sol. Les rongeurs du bois s’approchent des composteurs et des abris : nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+      {
+        nom: 'Le Val de Fontenay et les Alouettes',
+        texte: 'À l’est, le **Val de Fontenay** concentre bureaux, centre commercial et gares des **RER A et E**. Pour un immeuble de bureaux ou un restaurant d’entreprise : dispositif **sécurisé**, **registre** et **attestation**. Voir [nos services aux professionnels](/professionnels).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Fontenay-sous-Bois (94120) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, vide-ordures, local à poubelles. Maison : jardin, abri, sous-sol, vide sanitaire. Commerce ou bureaux : réserves, cuisines, locaux techniques.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Fontenay-sous-Bois (94120) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans une cave humide', x: 'Sur un sous-sol de sources et d’argile, les caves restent humides et attirent le surmulot. Nous traitons, rebouchons et conseillons sur l’aération et le rangement.' },
+      { t: 'Des rats dans les parties communes aux Larris', x: 'Le signe d’une colonie au sous-sol. Prévenez le bailleur par écrit : le traitement doit couvrir tout l’immeuble.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Fontenay-sous-Bois](/souris/fontenay-sous-bois) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans un jardin près du bois', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie), [la reproduction des rats](/blog/reproduction-des-rats) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+      { t: 'Un rongeur dans un restaurant ou un commerce du marché', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [cafards à Fontenay-sous-Bois](/cafards/fontenay-sous-bois).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Fontenay-sous-Bois',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Une maison se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un square, alertez la **mairie de Fontenay-sous-Bois** ; pour le bois de Vincennes, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Vincennes](/deratisation/vincennes), [Montreuil](/deratisation/montreuil), [Nogent-sur-Marne](/deratisation/nogent-sur-marne), [Le Perreux-sur-Marne](/deratisation/le-perreux-sur-marne), [Saint-Mandé](/deratisation/saint-mande) et [Paris 12e](/deratisation/paris-12).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Fontenay-sous-Bois ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, commerce, bureaux ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des rats dans les caves à Fontenay ?', a: 'Le sous-sol de Fontenay est riche en sources, en argile et en anciennes carrières : les caves restent humides, ce que le surmulot apprécie ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’habite aux Larris : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les bureaux du Val de Fontenay ?', a: 'Oui : dispositif sécurisé, postes numérotés, registre et attestation, avec contrat de suivi si besoin (voir [nos services aux professionnels](/professionnels)).' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Fontenay-sous-Bois ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [FONTENAY_INSEE, FONTENAY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
