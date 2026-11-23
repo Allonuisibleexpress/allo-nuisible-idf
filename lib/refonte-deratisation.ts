@@ -1432,4 +1432,91 @@ REFONTE_DERATISATION['charenton-le-pont'] = {
   sources: [CHARENTON_INSEE, CHARENTON_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Chennevières-sur-Marne (23/11/2026) ──
+const CHENNEVIERES_WIKI: Source = { label: 'Wikipédia, Chennevières-sur-Marne (coteaux, Marne et îles, quartiers, logement)', url: 'https://fr.wikipedia.org/wiki/Chennevi%C3%A8res-sur-Marne' }
+const CHENNEVIERES_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94019, Chennevières-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94019&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['chennevieres-sur-marne'] = {
+  maj: '2026-11-23',
+  accroche: 'Des coteaux classés au-dessus de la Marne, deux îles, des pavillons et le Bois-l’Abbé : à Chennevières-sur-Marne, les rats montent de la rivière vers les jardins. Nous les arrêtons.',
+  societe: {
+    titre: 'Société de dératisation à Chennevières-sur-Marne (94430) : des coteaux au-dessus de la Marne',
+    paras: [
+      'Chennevières-sur-Marne compte **18 710 habitants** sur **5,22 km²**. La ville **surplombe la rive gauche de la Marne**, jusqu’à 104 mètres d’altitude, et ses **coteaux sont un site classé**. **Deux îles** font partie de la commune : l’**île des Vignerons** et l’**île d’Amour**. En bas, la rivière et ses berges, terrain du **surmulot** ; en haut, le plateau qui prolonge la plaine de la Brie.',
+      'C’est une ville de **propriétaires** (57,6 % des ménages) et de **pavillons** avec jardin, sur les coteaux et sur le plateau, mais aussi d’ensembles collectifs comme le **Bois-l’Abbé**, quartier prioritaire partagé avec Champigny. Une société de dératisation y traite autant des **jardins** et des **vide sanitaires** que des **caves d’immeuble**.',
+      'Nous intervenons à Chennevières depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Chennevières-sur-Marne](/souris/chennevieres-sur-marne), [punaises de lit à Chennevières-sur-Marne](/punaises-de-lit/chennevieres-sur-marne), [fourmis à Chennevières-sur-Marne](/fourmis/chennevieres-sur-marne) et [chenilles processionnaires à Chennevières-sur-Marne](/chenilles-processionnaires/chennevieres-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '18 710', texte: 'habitants (population légale Insee), code postal 94430.', source: CHENNEVIERES_INSEE },
+    { valeur: '104 m', texte: 'd’altitude : la ville surplombe la rive gauche de la Marne, sur des coteaux classés.', source: CHENNEVIERES_WIKI },
+    { valeur: '2 îles', texte: 'de la Marne sur la commune : l’île des Vignerons et l’île d’Amour.', source: CHENNEVIERES_WIKI },
+    { valeur: '57,6 %', texte: 'des ménages sont propriétaires de leur logement : beaucoup de maisons avec jardin.', source: CHENNEVIERES_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Chennevières-sur-Marne : la ville quartier par quartier',
+    intro: 'La ville compte six quartiers : **Moulin-Coteaux Sud**, **Bords de Marne**, **Centre-Ville-Belvédère**, **Paris Chennevières-le Fort-Mon Idée**, **Bois-l’Abbé** et **Hauts-de-Chennevières-les Bordes**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les Bords de Marne et les îles',
+        texte: 'En bas des coteaux, les maisons des **bords de Marne**, près de l’île des Vignerons et de l’île d’Amour, sont les plus exposées : l’eau, les berges et la végétation sont l’habitat naturel du rat. Nous contrôlons **soupiraux**, **regards** et pied des murs, et traitons les **terriers**.',
+        photo: { src: '/villes/chennevieres-sur-marne/pissarro-la-marne-a-chennevieres.jpg', alt: 'La Marne à Chennevières, tableau de Camille Pissarro (1864-1865)', legende: 'La Marne à Chennevières, peinte par Camille Pissarro vers 1864 : les berges n’ont pas cessé d’attirer la faune.', credit: 'Camille Pissarro, Galeries nationales d’Écosse', licence: 'Domaine public', page: W + 'Camille_Pissarro_-_The_Marne_at_Chennevi%C3%A8res_-_Google_Art_Project.jpg' },
+      },
+      {
+        nom: 'Les coteaux et le centre ancien',
+        texte: 'Sur les **coteaux** classés et autour de l’**église Saint-Pierre**, les maisons anciennes ont jardins en pente, murets de pierre, **caves** et **soupiraux**. Les rongeurs y circulent à couvert : nous inspectons chaque ouverture et rebouchons après le traitement.',
+        photo: { src: '/villes/chennevieres-sur-marne/eglise-saint-pierre.jpg', alt: 'Chevet de l’église Saint-Pierre de Chennevières-sur-Marne', legende: 'L’église Saint-Pierre, sur les hauteurs : autour, le bâti ancien des coteaux.', credit: 'Melusane', licence: 'CC BY-SA 3.0', page: W + 'Eglise_Ss_Pierre_et_Paul_de_Chennevi%C3%A8res.jpg' },
+      },
+      {
+        nom: 'Le Bois-l’Abbé',
+        texte: 'Partagé avec Champigny, ce **quartier prioritaire** rassemble de grands immeubles autour des mêmes **caves**, **vide-ordures** et **locaux à poubelles**. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/chennevieres-sur-marne/bois-l-abbe-villa-ile-de-france.jpg', alt: 'Villa Île-de-France, quartier du Bois-l’Abbé à Chennevières-sur-Marne', legende: 'Villa Île-de-France, au Bois-l’Abbé : dans l’habitat collectif, caves et locaux à poubelles sont partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Villa_%C3%8Ele_France_-_Chennevi%C3%A8res-sur-Marne_(FR94)_-_2022-04-09_-_1.jpg' },
+      },
+      {
+        nom: 'Les Hauts-de-Chennevières, les Bordes et le plateau',
+        texte: 'Sur le plateau, vers la Brie, les **lotissements de pavillons** et la zone d’activités côtoient champs et espaces verts. Composteurs, abris, garages : à l’automne, les souris des champs cherchent la chaleur des maisons. Voir [rat dans le compost](/blog/rat-compost) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Chennevières-sur-Marne (94430) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, abri, garage, vide sanitaire, soupiraux côté Marne ; en résidence, caves, vide-ordures et local à poubelles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Chennevières-sur-Marne (94430) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans un jardin en pente', x: 'Trous au pied des murets, sous la terrasse ou l’abri : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des souris dans la maison en automne', x: 'Près des champs du plateau, elles cherchent la chaleur : voir [souris à Chennevières-sur-Marne](/souris/chennevieres-sur-marne).' },
+      { t: 'Des bruits sous le plancher ou dans les combles', x: 'Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Des rats dans la cave au Bois-l’Abbé', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des rats attirés par les mangeoires ou le poulailler', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Chennevières-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Chennevières, c’est donc le plus souvent au **propriétaire de la maison** de faire appel à une entreprise de dératisation ; pour une résidence, au **bailleur** ou au **syndic**.',
+      'Pour des rats sur les berges, dans un parc ou sur la voie publique, alertez la **mairie de Chennevières-sur-Marne**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses), [Sucy-en-Brie](/deratisation/sucy-en-brie) et [Le Plessis-Trévise](/deratisation/le-plessis-trevise).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Chennevières-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Les bords de Marne attirent-ils les rats ?', a: 'L’eau et la végétation des berges sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons des bords de Marne doivent surveiller jardins, regards et soupiraux.' },
+    { q: 'Pourquoi des souris chaque automne dans ma maison ?', a: 'Près des champs et des espaces verts du plateau, les souris cherchent la chaleur quand il fait froid. Nous trouvons et bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'J’habite au Bois-l’Abbé : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Chennevières-sur-Marne ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CHENNEVIERES_INSEE, CHENNEVIERES_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
