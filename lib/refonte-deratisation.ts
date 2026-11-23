@@ -1083,4 +1083,92 @@ REFONTE_DERATISATION['boissy-saint-leger'] = {
   sources: [BOISSY_INSEE, BOISSY_WIKI, GROSBOIS_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Bonneuil-sur-Marne (23/11/2026) ──
+const BONNEUIL_WIKI: Source = { label: 'Wikipédia, Bonneuil-sur-Marne (Marne, port, quartiers, logement)', url: 'https://fr.wikipedia.org/wiki/Bonneuil-sur-Marne' }
+const PORT_BONNEUIL_WIKI: Source = { label: 'Wikipédia, Port de Bonneuil-sur-Marne (2e plateforme multimodale d’Île-de-France, HAROPA)', url: 'https://fr.wikipedia.org/wiki/Port_de_Bonneuil-sur-Marne' }
+const BONNEUIL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94011, Bonneuil-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94011&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['bonneuil-sur-marne'] = {
+  maj: '2026-11-23',
+  accroche: 'Un grand port fluvial, des entrepôts, des voies ferrées et des cités : à Bonneuil-sur-Marne, les rongeurs ont de quoi manger et se cacher. Nous traitons les logements comme les entreprises.',
+  societe: {
+    titre: 'Société de dératisation à Bonneuil-sur-Marne (94380) : la ville du port',
+    paras: [
+      'Bonneuil-sur-Marne compte **18 270 habitants** sur **5,49 km²**, au bord de la **Marne**. Entre la rivière et la ville s’étend le **port de Bonneuil**, **deuxième plateforme multimodale d’Île-de-France** : deux darses, des convois fluviaux, **22 km de voies ferrées** et de nombreux entrepôts. Quais, marchandises, palettes et déchets d’activité : un port est un milieu que le **surmulot** connaît bien.',
+      'Côté habitat, Bonneuil est une ville d’**immeubles** : **79,5 % d’appartements** en 2018, et en 2015 le **plus fort taux de logements sociaux du Val-de-Marne** (76,9 %). La cité **Verdun-Saint-Exupéry** (la « cité jaune ») et la cité **Fabien** forment un quartier prioritaire d’environ **4 800 habitants**.',
+      'Nous intervenons à Bonneuil depuis notre base de **Saint-Maurice**, de l’autre côté de la boucle de la Marne, 7 jours sur 7, pour les **particuliers** comme pour les **entreprises du port**.',
+      'Nos autres pages pour la ville : [souris à Bonneuil-sur-Marne](/souris/bonneuil-sur-marne), [punaises de lit à Bonneuil-sur-Marne](/punaises-de-lit/bonneuil-sur-marne) et [fourmis à Bonneuil-sur-Marne](/fourmis/bonneuil-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '18 270', texte: 'habitants (population légale Insee), code postal 94380.', source: BONNEUIL_INSEE },
+    { valeur: '2e', texte: 'plateforme multimodale d’Île-de-France : le port de Bonneuil, avec 22 km de voies ferrées.', source: PORT_BONNEUIL_WIKI },
+    { valeur: '76,9 %', texte: 'de logements sociaux en 2015, le taux le plus élevé du Val-de-Marne.', source: BONNEUIL_WIKI },
+    { valeur: '4 800', texte: 'habitants environ dans le quartier prioritaire des cités Verdun-Saint-Exupéry et Fabien (2020).', source: BONNEUIL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Bonneuil-sur-Marne : la ville secteur par secteur',
+    intro: 'Bonneuil compte cinq quartiers : le **Vieux-Bonneuil**, **République**, la **place des Libertés**, la cité **Verdun-Saint-Exupéry** et la cité **Fabien**, auxquels s’ajoute la zone du **port**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le port, les darses et les entrepôts',
+        texte: 'Le long de la Marne, le **port de Bonneuil** concentre entrepôts, quais, voies ferrées et zones de stockage. Les rongeurs y trouvent abri sous les palettes et nourriture dans les déchets d’activité. Pour une **entreprise**, nous posons des **postes numérotés** avec **plan de localisation**, tenons un **registre** des passages et remettons une **attestation** pour vos audits et assureurs.',
+        photo: { src: '/villes/bonneuil-sur-marne/port-de-bonneuil-marne.jpg', alt: 'La Marne et l’entrée du port de Bonneuil', legende: 'La Marne et l’entrée du port de Bonneuil : quais, entrepôts et voies ferrées au bord de l’eau.', credit: 'Akiry', licence: 'CC BY-SA 4.0', page: W + 'Entree_port_de_bonneuil_(2).jpg' },
+      },
+      {
+        nom: 'Les cités Verdun-Saint-Exupéry et Fabien',
+        texte: 'Ces deux cités, dont la « **cité jaune** », regroupent un quart de la population. Les rongeurs circulent par les **caves**, les **vide-ordures** et les **locaux à poubelles**, communs à des dizaines de logements. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages.',
+        photo: { src: '/villes/bonneuil-sur-marne/cite-jaune-rue-maconnes.jpg', alt: 'Rue Maçonnes, cité jaune, à Bonneuil-sur-Marne', legende: 'Rue Maçonnes, dans la « cité jaune » : dans l’habitat collectif, caves et locaux à poubelles sont partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rue_Ma%C3%A7onnes_-_Bonneuil-sur-Marne_(FR94)_-_2022-04-15_-_1.jpg' },
+      },
+      {
+        nom: 'Le Vieux-Bonneuil et le château du Rancy',
+        texte: 'Autour du **château du Rancy**, inscrit aux monuments historiques, et de la mairie, le vieux bourg garde des maisons anciennes avec **caves** et **soupiraux**. Nous inspectons chaque ouverture, traitons, puis rebouchons.',
+        photo: { src: '/villes/bonneuil-sur-marne/chateau-du-rancy.jpg', alt: 'Façade du château du Rancy à Bonneuil-sur-Marne', legende: 'Le château du Rancy, dans le Vieux-Bonneuil : autour, un bâti ancien avec caves et soupiraux.', credit: 'Racinaire', licence: 'CC BY-SA 3.0', page: W + 'Fa%C3%A7ade_du_ch%C3%A2teau_du_Rancy_%C3%A0_Bonneuil-sur-Marne.JPG' },
+      },
+      {
+        nom: 'République, place des Libertés et les pavillons',
+        texte: 'Dans ces quartiers, immeubles et **pavillons** se côtoient. Jardins, abris et composteurs attirent les rongeurs : nous traitons les **terriers** et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Bonneuil-sur-Marne (94380) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Logement : cuisine, gaines, plinthes. Cité : caves, vide-ordures, local à poubelles. Entrepôt : quais, stockage, bennes et accès.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés et numérotés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations, contrat de suivi pour les entreprises. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Bonneuil-sur-Marne (94380) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un entrepôt ou sur un quai', x: 'Marchandises rongées, crottes sur les palettes : postes numérotés autour du bâtiment, pièges à l’intérieur, registre et attestation. Voir notre page [dératisation pour les professionnels](/professionnels).' },
+      { t: 'Des rats dans la cave ou au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Bonneuil-sur-Marne](/souris/bonneuil-sur-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rongeur dans un restaurant ou une cantine', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Des terriers dans un jardin', x: 'Trous au pied des murs, coulées dans l’herbe : voir [le mode de vie du rat](/blog/rat-mode-de-vie).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Bonneuil-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Dans une ville où la grande majorité des logements sont sociaux, c’est le plus souvent le **bailleur** qui organise la dératisation des parties communes ; dans une entreprise, l’**exploitant** du site.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un espace vert, alertez la **mairie de Bonneuil-sur-Marne**.',
+      'Nous intervenons aussi tout autour : [Créteil](/deratisation/creteil), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses), [Sucy-en-Brie](/deratisation/sucy-en-brie), [Limeil-Brévannes](/deratisation/limeil-brevannes), [Boissy-Saint-Léger](/deratisation/boissy-saint-leger) et [Valenton](/deratisation/valenton).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Bonneuil-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Entrepôt, commerce ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans les entreprises du port de Bonneuil ?', a: 'Oui : postes numérotés, plan de localisation, registre des passages et attestation pour vos audits, avec un contrat de suivi si besoin (voir [nos services aux professionnels](/professionnels)).' },
+    { q: 'J’habite la cité jaune ou la cité Fabien : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur. Signalez-lui le problème par écrit, avec photos et dates.' },
+    { q: 'La Marne et le port attirent-ils les rats ?', a: 'L’eau, les quais et les zones de stockage sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les bâtiments proches doivent surveiller regards, caves et locaux à déchets.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Bonneuil-sur-Marne ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BONNEUIL_INSEE, BONNEUIL_WIKI, PORT_BONNEUIL_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
