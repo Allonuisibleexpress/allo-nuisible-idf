@@ -1786,4 +1786,91 @@ REFONTE_DERATISATION['fresnes'] = {
   sources: [FRESNES_INSEE, FRESNES_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Gentilly (23/11/2026) ──
+const GENTILLY_WIKI: Source = { label: 'Wikipédia, Gentilly (Bièvre couverte, quartiers, logement, autoroutes, transports)', url: 'https://fr.wikipedia.org/wiki/Gentilly_(Val-de-Marne)' }
+const GENTILLY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94037, Gentilly', url: 'https://geo.api.gouv.fr/communes?code=94037&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['gentilly'] = {
+  maj: '2026-11-23',
+  accroche: 'Collée à Paris, coupée par le périphérique et l’A6, posée sur une Bièvre enterrée : à Gentilly, les rongeurs circulent sous la ville. Nous traitons là où ils passent.',
+  societe: {
+    titre: 'Société de dératisation à Gentilly (94250) : une ville bâtie sur la Bièvre',
+    paras: [
+      'Gentilly compte **19 963 habitants** sur seulement **1,18 km²**, juste au sud de Paris, entre le **boulevard périphérique** et les branches **A6A et A6B** de l’autoroute. La **Bièvre** traverse la ville, mais son cours est **couvert sur toute la commune** ; seul un tronçon de **600 mètres** a été rouvert en 2022 avec Arcueil. Une rivière enterrée, ce sont des **collecteurs** et des **canalisations** : le chemin préféré du **surmulot**.',
+      'Gentilly est une ville d’**immeubles** : **90,6 % d’appartements** en 2020, avec de grandes cités comme le **Chaperon-Vert**, **Gabriel-Péri**, **Frileuse** ou **Reine-Blanche**. Seuls le **Plateau** et le **Val-de-Bièvre** gardent un caractère **pavillonnaire**. Pour une société de dératisation, ce sont avant tout des **parties communes** à traiter.',
+      'Nous intervenons à Gentilly depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Gentilly](/souris/gentilly), [punaises de lit à Gentilly](/punaises-de-lit/gentilly) et [fourmis à Gentilly](/fourmis/gentilly).',
+    ],
+  },
+  chiffres: [
+    { valeur: '19 963', texte: 'habitants (population légale Insee), code postal 94250.', source: GENTILLY_INSEE },
+    { valeur: '1,18 km²', texte: 'de superficie : près de 17 000 habitants au km² (calcul sur les chiffres Insee).', source: GENTILLY_INSEE },
+    { valeur: '600 m', texte: 'de Bièvre rouverts en 2022 avec Arcueil ; ailleurs, la rivière reste couverte.', source: GENTILLY_WIKI },
+    { valeur: '90,6 %', texte: 'des logements sont des appartements (2020), sur 9 835 logements.', source: GENTILLY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Gentilly : la ville quartier par quartier',
+    intro: 'Gentilly se partage entre le **Chaperon-Vert**, la cité **Gabriel-Péri**, le quartier **Victor-Hugo**, la cité **Frileuse**, la cité **Reine-Blanche**, le **centre-ville**, le **Plateau** et le **Val-de-Bièvre**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le cours enterré de la Bièvre',
+        texte: 'Sous les rues et les parcs, comme le **parc Picasso**, la Bièvre coule dans des ouvrages couverts. Les rongeurs y circulent et remontent par les **regards**, les **caves** et les **parkings** des immeubles voisins. Nous traitons au plus près du point d’entrée, puis nous rebouchons.',
+        photo: { src: '/villes/gentilly/allee-rene-cassin-bievre.jpg', alt: 'L’allée René-Cassin, sur le cours de la Bièvre, à Gentilly', legende: 'L’allée René-Cassin suit le cours de la Bièvre, enterrée sous la ville.', credit: 'VVVCFFrance', licence: 'CC BY-SA 4.0', page: W + 'Gentilly_all%C3%A9e_Ren%C3%A9_Cassin_2.jpg' },
+      },
+      {
+        nom: 'Les cités le long des autoroutes',
+        texte: 'Le **Chaperon-Vert** (1 500 logements, partagé avec Arcueil), la cité **Gabriel-Péri** et la cité **Reine-Blanche** longent l’**A6A** et l’**A6B**. Talus, ouvrages et délaissés servent de couloirs aux rongeurs vers les **caves** et **locaux à poubelles**. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: { src: '/villes/gentilly/a6a-passerelle-chaperon-vert.jpg', alt: 'L’autoroute A6a vue depuis la passerelle du Chaperon-Vert à Gentilly', legende: 'L’A6a vue depuis la passerelle du Chaperon-Vert : talus et ouvrages bordent les cités.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Autoroute_A6a_vue_depuis_Passerelle_Chaperon_Vert_-_Gentilly_(FR94)_-_2021-11-06_-_2.jpg' },
+      },
+      {
+        nom: 'Le centre-ville, Frileuse et la gare',
+        texte: 'Autour de la **mairie**, du marché de la cité **Frileuse** (les « 4 tours ») et de la gare **RER B**, commerces, restaurants et immeubles partagent **caves** et **locaux à déchets**. Nous intervenons dans les commerces **hors des heures d’ouverture**, avec **attestation**.',
+        photo: { src: '/villes/gentilly/gare-rer-b-gentilly.jpg', alt: 'La gare RER B de Gentilly', legende: 'La gare de Gentilly (RER B) : voies ferrées et talus au cœur de la ville.', credit: 'ArséniureDeGallium', licence: 'CC BY-SA 2.5', page: W + 'RER_B-Gentilly1.jpg' },
+      },
+      {
+        nom: 'Le Plateau et le Val-de-Bièvre',
+        texte: 'Les deux quartiers **pavillonnaires** de la ville : le Plateau, vers Montrouge, et le Val-de-Bièvre, où se trouve aussi le siège de Sanofi. Jardins, abris et vide sanitaires : nous traitons les **terriers** et fermons les accès. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Gentilly (94250) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines, plinthes chez vous ; caves, vide-ordures, parkings et local à poubelles dans les parties communes.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Gentilly (94250) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou au vide-ordures', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Sur une rivière canalisée, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Gentilly](/souris/gentilly) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des bruits dans les murs ou le plafond', x: 'Voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Un rongeur dans un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Gentilly',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Dans les cités de Gentilly, c’est le **bailleur** qui organise la dératisation des parties communes ; dans une copropriété, le **syndic**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Gentilly**.',
+      'Nous intervenons aussi tout autour : [Arcueil](/deratisation/arcueil), [Le Kremlin-Bicêtre](/deratisation/le-kremlin-bicetre), [Villejuif](/deratisation/villejuif), [Montrouge](/deratisation/montrouge), [Paris 13e](/deratisation/paris-13) et [Paris 14e](/deratisation/paris-14).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Gentilly ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, pavillon ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des rats à Gentilly alors que la Bièvre ne se voit pas ?', a: 'La Bièvre coule sous la ville dans des ouvrages couverts, reliés aux réseaux d’assainissement. Le surmulot y circule et remonte par les regards et les caves ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’habite au Chaperon-Vert ou à Reine-Blanche : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Intervenez-vous dans les commerces de Gentilly ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Gentilly ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [GENTILLY_INSEE, GENTILLY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
