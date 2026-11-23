@@ -1873,4 +1873,91 @@ REFONTE_DERATISATION['gentilly'] = {
   sources: [GENTILLY_INSEE, GENTILLY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Ivry-sur-Seine (23/11/2026) ──
+const IVRY_WIKI: Source = { label: 'Wikipédia, Ivry-sur-Seine (quartiers, Ivry Confluences, carrières, logement, Syctom)', url: 'https://fr.wikipedia.org/wiki/Ivry-sur-Seine' }
+const IVRY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94041, Ivry-sur-Seine', url: 'https://geo.api.gouv.fr/communes?code=94041&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['ivry-sur-seine'] = {
+  maj: '2026-11-23',
+  accroche: 'Quais de Seine, anciennes carrières, grands chantiers à Ivry Confluences, cités et centre brutaliste : à Ivry-sur-Seine, les rongeurs ont mille chemins. Nous connaissons la ville, nous y avons déjà travaillé.',
+  societe: {
+    titre: 'Société de dératisation à Ivry-sur-Seine (94200) : une ville au bord de la Seine en pleine transformation',
+    paras: [
+      'Ivry-sur-Seine compte **65 064 habitants** sur **6,11 km²**, entre le **boulevard périphérique** au nord et la **Seine** à l’est, jusqu’à la confluence avec la Marne. Son sous-sol a été creusé de **carrières de calcaire grossier**, exploitées jusqu’au début du XXe siècle, et ses bords de Seine ont accueilli usines, entrepôts et réseaux. Eau, sous-sol et friches : un terrain que le **surmulot** connaît bien.',
+      'Depuis 2008, le grand projet **Ivry Confluences** transforme l’ancien quartier industriel d’**Ivry-Port** : démolitions, terrassements et nouveaux immeubles. Les chantiers **dérangent les colonies** de rongeurs, qui se déplacent vers les bâtiments voisins. La ville compte **87,9 % d’appartements** et **plus de 8 800 logements HLM**.',
+      'Nous connaissons Ivry : nous y avons traité une personne âgée contre les **punaises de lit**, jusque dans son **lit médicalisé**, un chantier filmé : [voir l’intervention à Ivry-sur-Seine](/blog/punaises-de-lit-ivry-sur-seine-personne-agee#video). Notre base de **Saint-Maurice** est à quelques minutes, de l’autre côté de la Seine.',
+      'Nos autres pages pour la ville : [souris à Ivry-sur-Seine](/souris/ivry-sur-seine), [cafards à Ivry-sur-Seine](/cafards/ivry-sur-seine), [punaises de lit à Ivry-sur-Seine](/punaises-de-lit/ivry-sur-seine) et [puces à Ivry-sur-Seine](/puces/ivry-sur-seine).',
+    ],
+  },
+  chiffres: [
+    { valeur: '65 064', texte: 'habitants (population légale Insee), code postal 94200.', source: IVRY_INSEE },
+    { valeur: '87,9 %', texte: 'des logements sont des appartements, sur 31 595 logements.', source: IVRY_WIKI },
+    { valeur: '8 813', texte: 'logements HLM en 2019, soit 30,6 % des résidences principales.', source: IVRY_WIKI },
+    { valeur: '2008', texte: 'lancement d’Ivry Confluences, grand chantier de 15 à 20 ans sur l’ancien Ivry-Port.', source: IVRY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Ivry-sur-Seine : la ville quartier par quartier',
+    intro: 'Ivry se partage entre le **Centre-ville**, **Ivry-Port**, **Louis-Bertrand-Mirabeau-Sémard**, **Marat-Parmentier**, **Monmousseau-Vérollot** et le **Petit-Ivry**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Ivry-Port, Ivry Confluences et les quais de Seine',
+        texte: 'Entre les voies ferrées et la Seine, l’ancien quartier industriel se reconstruit. Les **chantiers** et les **démolitions** délogent les rats, qui cherchent refuge dans les **caves**, **parkings** et **locaux à poubelles** voisins. Les résidences neuves comme anciennes doivent fermer leurs accès dès les premières traces.',
+        photo: { src: '/villes/ivry-sur-seine/ivry-confluences.jpg', alt: 'Le quartier Ivry Confluences en chantier, en 2022', legende: 'Ivry Confluences en 2022 : chantiers et terrassements délogent les colonies de rongeurs.', credit: 'Guillaume70', licence: 'CC BY-SA 4.0', page: W + 'Ivry_Confluences_Fabien_Gambetta.jpg' },
+      },
+      {
+        nom: 'Le Centre-ville et les immeubles de Renaudie',
+        texte: 'Autour de la **mairie** et du centre commercial **Jeanne-Hachette**, les immeubles en étoile de Jean Renaudie et Renée Gailhoustet (années 1970) multiplient terrasses plantées, **parkings**, **coursives** et **locaux techniques**. Les rongeurs y trouvent abris et passages : nous traitons les **parties communes** avec le **bailleur** ou le **syndic**.',
+        photo: { src: '/villes/ivry-sur-seine/centre-ville-renaudie.jpg', alt: 'La mairie d’Ivry-sur-Seine et les immeubles du centre-ville', legende: 'La mairie et le centre-ville d’Ivry : immeubles des années 1970, parkings et locaux techniques.', credit: 'H4stings', licence: 'CC BY-SA 4.0', page: W + 'Mairie_d%27Ivry_et_centre_ville.jpg' },
+      },
+      {
+        nom: 'Le plateau et les anciennes carrières',
+        texte: 'Sur le plateau, vers Villejuif et le Kremlin-Bicêtre, le sous-sol garde d’**anciennes carrières**, comme la cave-carrière Delacroix, découverte en 1983 avenue du Général-Leclerc. Maisons, petits immeubles et caves profondes : nous inspectons **soupiraux**, **regards** et **caves**, puis rebouchons après le traitement.',
+      },
+      {
+        nom: 'Le parc des Cormailles et les espaces verts',
+        texte: 'Le **parc des Cormailles** et les grands espaces verts de la ville attirent les rongeurs vers les immeubles qui les bordent, surtout près des **poubelles**. Les résidences riveraines doivent garder leurs **locaux à déchets** fermés.',
+        photo: { src: '/villes/ivry-sur-seine/parc-des-cormailles.jpg', alt: 'Le parc départemental des Cormailles à Ivry-sur-Seine', legende: 'Le parc des Cormailles : les espaces verts en pleine ville attirent aussi les rongeurs.', credit: 'Pascal3012', licence: 'CC BY-SA 3.0', page: W + 'Parc_des_Cormailles1.JPG' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Ivry-sur-Seine (94200) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines, plinthes chez vous ; caves, parkings, coursives et local à poubelles dans les parties communes ; chantier voisin si besoin.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Ivry-sur-Seine (94200) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats apparus après un chantier voisin', x: 'Quand un terrain est terrassé ou un bâtiment démoli, la colonie cherche un nouvel abri. Prévenez votre syndic ou bailleur dès les premières traces : un traitement rapide évite l’installation.' },
+      { t: 'Des rats dans la cave ou le parking', x: 'Le signe d’une colonie dans les parties communes. Le traitement doit couvrir tout le sous-sol, puis les accès sont fermés.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Ivry-sur-Seine](/souris/ivry-sur-seine) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Au bord de la Seine, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Un rongeur dans un commerce ou un restaurant', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [cafards à Ivry-sur-Seine](/cafards/ivry-sur-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Ivry-sur-Seine',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Ivry, les parties communes se traitent à la demande du **bailleur** ou du **syndic** ; un chantier relève de son **maître d’ouvrage**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique, sur les quais ou dans un parc, alertez la **mairie d’Ivry-sur-Seine**.',
+      'Nous intervenons aussi tout autour : [Vitry-sur-Seine](/deratisation/vitry-sur-seine), [Alfortville](/deratisation/alfortville), [Charenton-le-Pont](/deratisation/charenton-le-pont), [Le Kremlin-Bicêtre](/deratisation/le-kremlin-bicetre), [Villejuif](/deratisation/villejuif), [Maisons-Alfort](/deratisation/maisons-alfort) et [Paris 13e](/deratisation/paris-13).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Ivry-sur-Seine ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, résidence ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Les chantiers d’Ivry Confluences font-ils venir les rats ?', a: 'Les démolitions et terrassements délogent les colonies, qui cherchent refuge dans les bâtiments voisins. Fermez caves et locaux à poubelles, et faites traiter dès les premières traces ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Avez-vous déjà travaillé à Ivry-sur-Seine ?', a: 'Oui, notamment chez une personne âgée contre les punaises de lit, jusque dans son lit médicalisé : [l’intervention est filmée](/blog/punaises-de-lit-ivry-sur-seine-personne-agee#video).' },
+    { q: 'Qui paie la dératisation d’une résidence HLM ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Ivry-sur-Seine ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [IVRY_INSEE, IVRY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
