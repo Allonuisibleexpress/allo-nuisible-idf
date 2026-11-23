@@ -1258,4 +1258,91 @@ REFONTE_DERATISATION['bry-sur-marne'] = {
   sources: [BRY_INSEE, BRY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Cachan (23/11/2026) ──
+const CACHAN_WIKI: Source = { label: 'Wikipédia, Cachan (vallée de la Bièvre, quartiers, logement, aqueducs)', url: 'https://fr.wikipedia.org/wiki/Cachan' }
+const CACHAN_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94016, Cachan', url: 'https://geo.api.gouv.fr/communes?code=94016&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['cachan'] = {
+  maj: '2026-11-23',
+  accroche: 'Cachan s’étend d’un coteau à l’autre de la vallée de la Bièvre : immeubles en bas, pavillons sur les pentes. Nous traitons les deux, avec la même méthode : trouver le passage, puis le fermer.',
+  societe: {
+    titre: 'Société de dératisation à Cachan (94230) : d’un coteau à l’autre de la Bièvre',
+    paras: [
+      'Cachan compte **31 103 habitants** sur **2,79 km²**. La ville occupe **toute la largeur de la vallée de la Bièvre**, d’un coteau à l’autre, entre 42 et 111 mètres d’altitude. Au fond de la vallée, la rivière a longtemps été canalisée : un réseau d’**ouvrages enterrés** et de **collecteurs** que le **surmulot**, le rat d’égout, emprunte volontiers.',
+      'Sur **10 828 résidences principales**, Cachan compte **75 % de logements collectifs** et **23 % de pavillons**, avec un parc social réparti entre **onze bailleurs**. Immeubles en fond de vallée, maisons sur les coteaux et à la **Cité-Jardins** : une société de dératisation y traite aussi bien des **caves d’immeuble** que des **jardins**.',
+      'Nous intervenons à Cachan depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Cachan](/souris/cachan), [punaises de lit à Cachan](/punaises-de-lit/cachan) et [fourmis à Cachan](/fourmis/cachan).',
+    ],
+  },
+  chiffres: [
+    { valeur: '31 103', texte: 'habitants (population légale Insee), code postal 94230.', source: CACHAN_INSEE },
+    { valeur: '75 %', texte: 'de logements collectifs et 23 % de pavillons, sur 10 828 résidences principales.', source: CACHAN_WIKI },
+    { valeur: '11', texte: 'bailleurs sociaux se partagent 3 729 logements sociaux à Cachan.', source: CACHAN_WIKI },
+    { valeur: '69 m', texte: 'de dénivelé entre le fond de la vallée de la Bièvre (42 m) et le haut des coteaux (111 m).', source: CACHAN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Cachan : la ville quartier par quartier',
+    intro: 'Cachan compte sept quartiers : le **Centre-ville**, le **Coteau**, la **Cité-Jardins**, la **Plaine-la Prairie**, la **Grange Ory**, **Saint-Jean** et **les Lumières**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le fond de vallée, la Plaine et la Prairie',
+        texte: 'En bas de la ville, là où coulait la **Bièvre**, les immeubles et les rues reposent sur d’anciens ouvrages hydrauliques et des réseaux d’assainissement. Les rongeurs y circulent puis remontent par les **regards**, les **caves** et les **parkings**. Nous traitons au plus près de leur point d’entrée.',
+        photo: { src: '/villes/cachan/aqueduc-de-la-vanne.jpg', alt: 'L’aqueduc de la Vanne traversant la vallée de la Bièvre à Cachan', legende: 'L’aqueduc de la Vanne traverse la vallée de la Bièvre, vu depuis le jardin panoramique : immeubles en bas, pavillons sur les coteaux.', credit: 'Ze miguel', licence: 'CC BY-SA 3.0', page: W + 'Aqueduc_de_la_Vanne.jpg' },
+      },
+      {
+        nom: 'Le Coteau et la Cité-Jardins',
+        texte: 'Sur les pentes, les **pavillons** avec jardin dominent, comme à la **Cité-Jardins**. Composteurs, abris, haies et vide sanitaires attirent les rongeurs : nous traitons les **terriers**, protégeons le compost et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/cachan/chateau-des-arcs.jpg', alt: 'Le château des Arcs à Cachan, façade sud', legende: 'Le château des Arcs : sur les coteaux de Cachan, maisons anciennes et jardins.', credit: 'Patrbe', licence: 'CC BY-SA 4.0', page: W + 'Ch%C3%A2teau_des_Arcs_-_Cachan_-_fa%C3%A7ade_sud.jpg' },
+      },
+      {
+        nom: 'Le Centre-ville et la gare Arcueil-Cachan',
+        texte: 'Autour de la mairie et de la gare **Arcueil-Cachan** du **RER B**, commerces, restaurants et immeubles partagent **caves** et **locaux à déchets**. Pour un commerce, nous intervenons **hors des heures d’ouverture**, avec postes numérotés et **attestation**.',
+        photo: { src: '/villes/cachan/gare-arcueil-cachan.jpg', alt: 'L’accès à la gare Arcueil-Cachan, rue de la Gare, à Cachan', legende: 'L’accès à la gare Arcueil-Cachan (RER B) : talus, murets et végétation au bord des voies.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Acc%C3%A8s_Gare_Arcueil_Cachan_Rue_Gare_-_Cachan_(FR94)_-_2026-10-18_-_1.jpg' },
+      },
+      {
+        nom: 'La Grange Ory, Saint-Jean et les Lumières',
+        texte: 'Ces quartiers mêlent résidences, logements sociaux et petits collectifs. Le traitement se fait avec le **bailleur** ou le **syndic**, sur les **parties communes** : caves, vide-ordures et locaux à poubelles, puis nous rebouchons les passages vers les logements.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Cachan (94230) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parkings, local à poubelles, gaines. Pavillon : jardin, abri, garage, vide sanitaire. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Cachan (94230) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou le parking', x: 'Le signe d’une colonie dans les parties communes. Prévenez le syndic ou le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Cachan](/souris/cachan) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Sur les coteaux et à la Cité-Jardins : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Un rat qui sort des toilettes', x: 'En fond de vallée, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Un rongeur dans un commerce ou une résidence étudiante', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Cachan',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Cachan, un pavillon se traite à la charge de son propriétaire ; les parties communes d’un immeuble, à celle du **syndic** ou du **bailleur**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Cachan**.',
+      'Nous intervenons aussi tout autour : [Arcueil](/deratisation/arcueil), [Villejuif](/deratisation/villejuif), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Bagneux](/deratisation/bagneux), [Bourg-la-Reine](/deratisation/bourg-la-reine) et [Sceaux](/deratisation/sceaux).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Cachan ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des rats dans le bas de Cachan ?', a: 'Le fond de la vallée de la Bièvre est parcouru par des réseaux enterrés que le surmulot emprunte ([mode de vie du rat](/blog/rat-mode-de-vie)). Il remonte ensuite par les regards, les caves et les parkings.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Qui paie la dératisation d’une résidence sociale ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces du centre de Cachan ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Cachan ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CACHAN_INSEE, CACHAN_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
