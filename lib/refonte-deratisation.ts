@@ -1519,4 +1519,92 @@ REFONTE_DERATISATION['chennevieres-sur-marne'] = {
   sources: [CHENNEVIERES_INSEE, CHENNEVIERES_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Chevilly-Larue (23/11/2026) ──
+const CHEVILLY_WIKI: Source = { label: 'Wikipédia, Chevilly-Larue (secteurs, MIN de Rungis, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Chevilly-Larue' }
+const MIN_RUNGIS_WIKI: Source = { label: 'Wikipédia, Marché d’intérêt national de Rungis (situé sur Rungis et Chevilly-Larue)', url: 'https://fr.wikipedia.org/wiki/March%C3%A9_d%27int%C3%A9r%C3%AAt_national_de_Rungis' }
+const CHEVILLY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94021, Chevilly-Larue', url: 'https://geo.api.gouv.fr/communes?code=94021&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['chevilly-larue'] = {
+  maj: '2026-11-23',
+  accroche: 'La moitié nord du marché de Rungis, le plus grand marché de produits agricoles au monde, est à Chevilly-Larue. Autour, des cités, des pavillons et des commerces de bouche : un terrain que les rongeurs adorent.',
+  societe: {
+    titre: 'Société de dératisation à Chevilly-Larue (94550) : la ville du marché de Rungis',
+    paras: [
+      'Chevilly-Larue compte **19 826 habitants** sur **4,22 km²**, sur le **plateau de Longboyau**, sans aucun cours d’eau. Sa particularité : au centre de la commune se trouve **la moitié nord du marché d’intérêt national de Rungis**, partagé à parts presque égales avec Rungis. C’est le **plus grand marché de produits agricoles au monde**. Fruits, légumes, viandes, poissons, emballages : partout où l’on stocke et manipule de la nourriture, les rats et les souris cherchent à s’installer.',
+      'De part et d’autre du marché, deux secteurs d’habitation : **Larue** à l’ouest, à dominante **pavillonnaire**, et **Chevilly** à l’est, avec l’ancien village, les cités des **Sorbiers** et de la **Saussaie** et le quartier de villas **Bretagne**. En 2022, **80,1 % des logements** étaient des appartements. Une société de dératisation y traite aussi bien des **entrepôts alimentaires** que des **caves** et des **jardins**.',
+      'Nous intervenons à Chevilly-Larue depuis notre base de **Saint-Maurice**, 7 jours sur 7, pour les **particuliers** comme pour les **professionnels de l’alimentaire**.',
+      'Nos autres pages pour la ville : [souris à Chevilly-Larue](/souris/chevilly-larue), [punaises de lit à Chevilly-Larue](/punaises-de-lit/chevilly-larue) et [fourmis à Chevilly-Larue](/fourmis/chevilly-larue).',
+    ],
+  },
+  chiffres: [
+    { valeur: '19 826', texte: 'habitants (population légale Insee), code postal 94550.', source: CHEVILLY_INSEE },
+    { valeur: '1er', texte: 'marché de produits agricoles au monde : le MIN de Rungis, situé pour moitié à Chevilly-Larue.', source: MIN_RUNGIS_WIKI },
+    { valeur: '80,1 %', texte: 'des logements sont des appartements (2022), sur 9 188 logements.', source: CHEVILLY_WIKI },
+    { valeur: '5', texte: 'stations du tramway T7 dans la commune, et le métro 14 depuis 2024.', source: CHEVILLY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Chevilly-Larue : la ville secteur par secteur',
+    intro: 'Chevilly-Larue se découpe en **trois grands secteurs** : **Larue** à l’ouest, le **marché de Rungis** au centre et **Chevilly** à l’est. Voici ce que chacun implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le marché de Rungis et les entreprises alimentaires',
+        texte: 'Au centre, la zone du **MIN** concentre entrepôts, quais de chargement, chambres froides et bennes de déchets alimentaires. C’est la principale concentration d’entreprises de la commune. Pour un grossiste, un transporteur ou un restaurant : **postes numérotés** autour des bâtiments, **plan de localisation**, **registre** des passages et **attestation** pour vos audits d’hygiène.',
+      },
+      {
+        nom: 'Chevilly, le village et la RN7',
+        texte: 'À l’est, autour de l’**église Sainte-Colombe**, ancien centre du village, et jusqu’à la **RN7**, maisons anciennes, commerces et immeubles se partagent **caves**, **cours** et **réseaux**. Un rongeur repéré dans une boutique vient souvent d’un sous-sol voisin.',
+        photo: { src: '/villes/chevilly-larue/eglise-sainte-colombe.jpg', alt: 'L’église Sainte-Colombe de Chevilly-Larue', legende: 'L’église Sainte-Colombe, autrefois centre du village : autour, maisons anciennes et commerces.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89glise_Ste_Colombe_Chevilly_Larue_16.jpg' },
+      },
+      {
+        nom: 'Les Sorbiers, la Saussaie et les résidences',
+        texte: 'Construites pendant les Trente Glorieuses, notamment pour les employés des PTT, ces **cités** ont été réhabilitées ou reconstruites. Caves, vide-ordures et locaux à poubelles restent communs à de nombreux logements : le traitement se fait avec le **bailleur**, sur les **parties communes**.',
+        photo: { src: '/villes/chevilly-larue/metro-14-tramway-t7.jpg', alt: 'La station Chevilly-Larue du métro 14, en correspondance avec le tramway T7', legende: 'La station Chevilly-Larue (métro 14 et tramway T7), ouverte en 2024 : un quartier en pleine transformation.', credit: 'Idris2000', licence: 'CC BY 4.0', page: W + 'Chevilly-Larue_M%C3%A9tro_14_Tramway_T7_2024_07.jpg' },
+      },
+      {
+        nom: 'Larue, Bretagne et les pavillons',
+        texte: 'À l’ouest, **Larue** et le quartier **Bretagne** sont faits de **pavillons** avec jardin. Composteurs, abris, garages : nous traitons les **terriers** et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/chevilly-larue/chapelle-des-spiritains.jpg', alt: 'La chapelle des Spiritains à Chevilly-Larue', legende: 'La chapelle des Spiritains, héritage du séminaire installé à Chevilly : la ville garde de grands jardins et des pavillons.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Chapelle_Spiritains_Chevilly_Larue_5.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Chevilly-Larue (94550) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Logement : cuisine, gaines, plinthes. Cité : caves, vide-ordures, local à poubelles. Entrepôt alimentaire : quais, stockage, bennes et points d’entrée.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés et numérotés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide, près des denrées.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations, contrat de suivi pour les professionnels. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Chevilly-Larue (94550) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rongeurs dans un entrepôt ou une chambre froide', x: 'Emballages rongés, crottes près des palettes : postes numérotés à l’extérieur, pièges à l’intérieur près des denrées, registre et attestation. Voir [nos services aux professionnels](/professionnels).' },
+      { t: 'Un rongeur dans un restaurant ou une cuisine', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Des rats dans la cave ou au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Chevilly-Larue](/souris/chevilly-larue) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'À Larue et à Bretagne : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Chevilly-Larue',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Un pavillon se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**, et un entrepôt à celle de l’**exploitant**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Chevilly-Larue**.',
+      'Nous intervenons aussi tout autour : [Rungis](/deratisation/rungis), [Thiais](/deratisation/thiais), [Fresnes](/deratisation/fresnes), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Villejuif](/deratisation/villejuif) et [Vitry-sur-Seine](/deratisation/vitry-sur-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Chevilly-Larue ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Entrepôt, restaurant, pavillon ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous pour les entreprises du marché de Rungis ?', a: 'Oui : postes numérotés, plan de localisation, registre des passages et attestation pour vos audits, avec contrat de suivi si besoin (voir [nos services aux professionnels](/professionnels)).' },
+    { q: 'Le marché de Rungis attire-t-il les rats vers les habitations ?', a: 'Les zones où l’on stocke de la nourriture attirent les rongeurs ([mode de vie du rat](/blog/rat-mode-de-vie)). Les logements proches doivent garder poubelles et caves bien fermées et signaler toute trace rapidement.' },
+    { q: 'J’habite aux Sorbiers ou à la Saussaie : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison près des denrées alimentaires ?', a: 'Oui : pièges mécaniques et [piège Ekomille sans raticide](/services/deratisation-ecologique) à l’intérieur, appâts uniquement en postes verrouillés à l’extérieur.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Chevilly-Larue ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CHEVILLY_INSEE, CHEVILLY_WIKI, MIN_RUNGIS_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
