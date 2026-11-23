@@ -1171,4 +1171,91 @@ REFONTE_DERATISATION['bonneuil-sur-marne'] = {
   sources: [BONNEUIL_INSEE, BONNEUIL_WIKI, PORT_BONNEUIL_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Bry-sur-Marne (23/11/2026) ──
+const BRY_WIKI: Source = { label: 'Wikipédia, Bry-sur-Marne (Marne, îles, coteaux, logement, INA et studios)', url: 'https://fr.wikipedia.org/wiki/Bry-sur-Marne' }
+const BRY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94015, Bry-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94015&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['bry-sur-marne'] = {
+  maj: '2026-11-23',
+  accroche: 'Bordée par la Marne sur deux côtés, avec deux îles, des coteaux et un tiers de maisons : à Bry-sur-Marne, les rats viennent de la rivière vers les jardins. Nous leur fermons la porte.',
+  societe: {
+    titre: 'Société de dératisation à Bry-sur-Marne (94360) : des coteaux et des bords de Marne',
+    paras: [
+      'Bry-sur-Marne compte **18 503 habitants** sur **3,34 km²**. La **Marne** borde la ville **au nord et à l’ouest**, et **deux îles** font partie de la commune : l’**île d’Amour** et l’**île du Moulin**. Le **surmulot**, le rat d’égout, vit près de l’eau, nage très bien et remonte des berges vers les jardins, les caves et les réseaux.',
+      'C’est une ville de **coteaux** et de **maisons** : l’ancien domaine seigneurial, qui couvrait les deux tiers de la commune, a été **loti dès 1859**, et en 2020 encore **35,3 % des logements** étaient des maisons individuelles. Jardins, abris, composteurs, vide sanitaires : une dératisation à Bry, c’est souvent le traitement d’une **maison et de son terrain**.',
+      'Nous intervenons à Bry depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Bry-sur-Marne](/souris/bry-sur-marne), [cafards à Bry-sur-Marne](/cafards/bry-sur-marne), [punaises de lit à Bry-sur-Marne](/punaises-de-lit/bry-sur-marne) et [chenilles processionnaires à Bry-sur-Marne](/chenilles-processionnaires/bry-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '18 503', texte: 'habitants (population légale Insee), code postal 94360.', source: BRY_INSEE },
+    { valeur: '2 îles', texte: 'de la Marne sur la commune : l’île d’Amour et l’île du Moulin.', source: BRY_WIKI },
+    { valeur: '35,3 %', texte: 'des logements sont des maisons individuelles (2020) : jardins, garages et vide sanitaires.', source: BRY_WIKI },
+    { valeur: '13 ha', texte: 'pour les studios de Bry, 8 plateaux de tournage ; l’INA y a aussi son siège.', source: BRY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Bry-sur-Marne : la ville secteur par secteur',
+    intro: 'Des **quais de Marne** aux **hauts de Bry**, du **vieux village** à la gare du **RER A**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quais de Marne et les îles',
+        texte: 'Le long des quais **Adrien-Mentienne** et **Louis-Ferber**, au bord de la Marne, les maisons ont souvent jardin, haies et sous-sol. L’eau et la végétation des berges attirent le rat. Nous contrôlons **soupiraux**, **regards** et pied des murs, et traitons les **terriers**.',
+        photo: { src: '/villes/bry-sur-marne/quai-adrien-mentienne-marne.jpg', alt: 'Le quai Adrien-Mentienne au bord de la Marne à Bry-sur-Marne', legende: 'Le quai Adrien-Mentienne, en bord de Marne : haies, jardins et maisons à deux pas de la rivière.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Quai_Adrien_Mentienne_-_Bry-sur-Marne_(FR94)_-_2021-10-04_-_1.jpg' },
+      },
+      {
+        nom: 'Le vieux village et la Grande Rue',
+        texte: 'Autour de la **Grande Rue**, de l’église et de la **place Daguerre**, le bâti ancien garde **caves**, **cours** et commerces de proximité. Un rongeur repéré dans une boutique vient souvent d’un sous-sol voisin : nous inspectons chaque ouverture et intervenons **hors des heures d’ouverture**.',
+        photo: { src: '/villes/bry-sur-marne/grande-rue.jpg', alt: 'La Grande Rue de Bry-sur-Marne', legende: 'La Grande Rue, dans le vieux Bry : maisons anciennes, caves et commerces.', credit: 'Aridd', licence: 'CC BY-SA 3.0', page: W + 'Bry-sur-Marne_grande_rue.jpg' },
+      },
+      {
+        nom: 'Les coteaux et les lotissements',
+        texte: 'Sur les **coteaux**, les lotissements nés du découpage de l’ancien domaine sont faits de **pavillons** avec jardin. Composteurs, poulaillers, abris et vide sanitaires : nous traitons les galeries et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/bry-sur-marne/place-daguerre.jpg', alt: 'La place Daguerre et son monument à Bry-sur-Marne', legende: 'La place Daguerre : à Bry, le bâti ancien et les jardins se côtoient.', credit: 'Lecheminlu', licence: 'CC BY-SA 3.0', page: W + 'Place_Daguerre.jpg' },
+      },
+      {
+        nom: 'Les hauts de Bry, l’INA et les studios',
+        texte: 'Sur le plateau, l’**INA** et les **studios de Bry** (13 hectares, 8 plateaux) côtoient résidences et immeubles près de la gare du **RER A**. Pour un site d’activité ou une résidence : postes **numérotés**, **registre** et **attestation**, et traitement des **parties communes** avec le **syndic**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Bry-sur-Marne (94360) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, abri, garage, vide sanitaire, soupiraux côté Marne ; en résidence, caves, parkings et local à poubelles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Bry-sur-Marne (94360) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans le jardin, près de la Marne', x: 'Trous au pied des murs, sous la terrasse ou l’abri, coulées dans la pelouse : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des bruits sous le plancher ou dans les combles', x: 'Un rat dans le vide sanitaire ou sous le toit : voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Des souris dans la maison en automne', x: 'Elles entrent par le moindre interstice quand il fait froid : voir [souris à Bry-sur-Marne](/souris/bry-sur-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats attirés par les mangeoires ou le poulailler', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+      { t: 'Un rongeur dans un commerce ou un site d’activité', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [nos services aux professionnels](/professionnels).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Bry-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Bry, c’est donc le plus souvent au **propriétaire de la maison** de faire appel à une entreprise de dératisation ; pour un immeuble, au **syndic**.',
+      'Pour des rats sur les quais, dans un parc ou sur la voie publique, alertez la **mairie de Bry-sur-Marne**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Le Perreux-sur-Marne](/deratisation/le-perreux-sur-marne), [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Villiers-sur-Marne](/deratisation/villiers-sur-marne), [Nogent-sur-Marne](/deratisation/nogent-sur-marne) et [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Bry-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin, commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Les bords de Marne attirent-ils les rats à Bry ?', a: 'L’eau et la végétation des berges sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons des quais doivent surveiller jardins, regards et soupiraux.' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Mon compost ou mon poulailler attire-t-il les rats ?', a: 'Oui, s’ils donnent accès à la nourriture. Fermez le composteur, ramassez les graines le soir et rangez-les en bacs fermés (voir [rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Bry-sur-Marne ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BRY_INSEE, BRY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
