@@ -1698,4 +1698,92 @@ REFONTE_DERATISATION['fontenay-sous-bois'] = {
   sources: [FONTENAY_INSEE, FONTENAY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Fresnes (23/11/2026) ──
+const FRESNES_WIKI: Source = { label: 'Wikipédia, Fresnes (Bièvre, A6 et A86, grands ensembles, logement, centre pénitentiaire)', url: 'https://fr.wikipedia.org/wiki/Fresnes_(Val-de-Marne)' }
+const FRESNES_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94034, Fresnes', url: 'https://geo.api.gouv.fr/communes?code=94034&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['fresnes'] = {
+  maj: '2026-11-23',
+  accroche: 'À Fresnes, la mairie a pris en 2026 un arrêté pour obliger chacun à lutter contre les rongeurs. Bièvre, autoroutes, grands ensembles et pavillons : voici comment nous vous aidons à le respecter.',
+  societe: {
+    titre: 'Société de dératisation à Fresnes (94260) : une ville qui a pris les rats au sérieux',
+    paras: [
+      'Fresnes compte **29 528 habitants** sur **3,55 km²**. En 2026, la Ville a pris l’**arrêté n° 2026-213** portant **obligation de lutte contre la prolifération des rongeurs**, qui rappelle l’article 119 du règlement sanitaire du Val-de-Marne : propriétaires, syndics, bailleurs et occupants doivent agir. Une société de dératisation vous permet d’être en règle, avec une **attestation** à la clé.',
+      'La ville est traversée par la **Bièvre**, remise à l’air libre sur 200 mètres depuis 2003 dans le **parc des Prés de la Bièvre**, et par le **ru de Rungis**. Elle est aussi découpée par l’**A6** et l’**A86** : talus, ouvrages et terrains délaissés le long des voies sont autant de couloirs pour le **surmulot**.',
+      'Côté habitat, Fresnes est surtout une ville d’**immeubles** : **85,4 % d’appartements** en 2019, avec de grands ensembles construits entre 1955 et 1967 (Tourvoie, Val de Bièvre, La Butte Fleurie, les Thibaudes…). Nous intervenons à Fresnes depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Fresnes](/souris/fresnes), [punaises de lit à Fresnes](/punaises-de-lit/fresnes) et [fourmis à Fresnes](/fourmis/fresnes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '29 528', texte: 'habitants (population légale Insee), code postal 94260.', source: FRESNES_INSEE },
+    { valeur: 'n° 2026-213', texte: 'arrêté de la Ville de Fresnes portant obligation de lutte contre la prolifération des rongeurs.', source: RSD_94 },
+    { valeur: '200 m', texte: 'de Bièvre remise à l’air libre depuis 2003, dans le parc des Prés de la Bièvre.', source: FRESNES_WIKI },
+    { valeur: '85,4 %', texte: 'des logements sont des appartements (2019), sur 12 004 logements.', source: FRESNES_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Fresnes : la ville secteur par secteur',
+    intro: 'Les autoroutes **A6** et **A86** partagent Fresnes en plusieurs secteurs : la **plaine de Montjean** et les zones d’activités à l’est, l’**éco-quartier de la Cerisaie**, et à l’ouest les **quartiers résidentiels** nord et sud, autour du centre pénitentiaire. Voici ce que chacun implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La Bièvre et le parc des Prés de la Bièvre',
+        texte: 'Le long de la **Bièvre** et du **ru de Rungis**, l’eau, les berges et la végétation offrent au rat un habitat naturel. Les immeubles et maisons proches doivent surveiller **regards**, **caves** et **soupiraux**, surtout après de fortes pluies.',
+        photo: { src: '/villes/fresnes/bievre-pres-de-la-bievre.jpg', alt: 'La Bièvre dans le parc des Prés de la Bièvre à Fresnes', legende: 'La Bièvre à l’air libre dans le parc des Prés de la Bièvre : eau et berges boisées en pleine ville.', credit: 'VVVCFFrance', licence: 'CC BY-SA 4.0', page: W + 'Fresnes_Bi%C3%A8vre_dans_le_parc_des_pr%C3%A9s_de_la_Bi%C3%A8vre.jpg' },
+      },
+      {
+        nom: 'Les grands ensembles du centre et du sud',
+        texte: 'Le **Clos La Garenne**, le **Val de Bièvre**, les **Thibaudes** et les autres résidences partagent **caves**, **vide-ordures** et **locaux à poubelles** entre des centaines de logements. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+      },
+      {
+        nom: 'Les autoroutes A6 et A86 et les zones d’activités',
+        texte: 'Talus, bassins, délaissés et clôtures le long des **autoroutes** servent de couloirs aux rongeurs, jusqu’aux **parcs d’activités** Médicis et de la Cerisaie. Pour une entreprise : postes **numérotés**, **plan de localisation**, **registre** et **attestation**.',
+        photo: { src: '/villes/fresnes/autoroute-a6.jpg', alt: 'L’autoroute A6 vue depuis un pont de Fresnes', legende: 'L’A6 vue depuis un pont de Fresnes : talus et ouvrages forment des couloirs pour les rongeurs.', credit: 'Lionel Allorge', licence: 'CC BY-SA 3.0', page: W + 'Highway_A6_France_2011_03.jpg' },
+      },
+      {
+        nom: 'Le centre ancien, les parcs et les pavillons',
+        texte: 'Autour de l’église Saint-Éloi, de la **ferme de Cottinville** (aujourd’hui écomusée) et du **parc André-Villette**, maisons anciennes et pavillons ont jardins, caves et abris. Nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/fresnes/parc-andre-villette.jpg', alt: 'Le parc André-Villette à Fresnes', legende: 'Le parc André-Villette, au centre : parcs et jardins attirent aussi les rongeurs.', credit: 'Lionel Allorge', licence: 'CC BY-SA 3.0', page: W + 'Fresnes_Parc_Andre_Villette_01.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Fresnes (94260) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, vide-ordures, local à poubelles. Maison : jardin, abri, vide sanitaire. Entreprise : quais, stockage, locaux techniques.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage, suivi et attestation', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations, attestation remise pour prouver que vous avez agi. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Fresnes (94260) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un propriétaire qui doit se mettre en règle', x: 'Après un signalement ou un courrier de la mairie : nous traitons, rebouchons et remettons une **attestation d’intervention** qui prouve que vous avez agi, comme le demande l’arrêté.' },
+      { t: 'Des rats dans la cave ou au vide-ordures', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Fresnes](/souris/fresnes) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans un jardin', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats), qui explique pourquoi il ne faut pas attendre.' },
+      { t: 'Un rongeur dans un commerce ou une entreprise', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [nos services aux professionnels](/professionnels).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Fresnes',
+    paras: [
+      'À Fresnes, l’**arrêté municipal n° 2026-213** rappelle l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) : la lutte contre les rongeurs incombe aux **propriétaires**, **syndics**, **bailleurs**, **gestionnaires** et **occupants**. Une maison se traite à la charge de son propriétaire, les parties communes d’un immeuble à celle du **syndic** ou du **bailleur**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique, dans un parc ou le long de la Bièvre, alertez la **mairie de Fresnes**.',
+      'Nous intervenons aussi tout autour : [Antony](/deratisation/antony), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Chevilly-Larue](/deratisation/chevilly-larue), [Rungis](/deratisation/rungis) et [Wissous](/deratisation/wissous).',
+    ],
+    contact: { label: 'Arrêté de la Ville de Fresnes n° 2026-213 portant obligation de lutte contre la prolifération des rongeurs.', lien: { href: 'https://www.fresnes94.fr/app/uploads/1/2026/07/2026-213-arrete-portant-obligation-de-lutte-contre-proliferation-rongeurs-fresnes.pdf', label: 'Lire l’arrêté (PDF)' } },
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Fresnes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, commerce, entreprise ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Que dit l’arrêté de Fresnes sur les rongeurs ?', a: 'L’arrêté municipal n° 2026-213 rappelle que la lutte contre les rongeurs est une obligation des propriétaires, syndics, bailleurs, gestionnaires et occupants, en application de l’article 119 du règlement sanitaire du Val-de-Marne ([nos chiffres et sources](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)).' },
+    { q: 'Me remettez-vous une attestation ?', a: 'Oui, sur simple demande : une attestation d’intervention qui prouve que vous avez agi, à présenter à la mairie, à un syndic ou à un assureur.' },
+    { q: 'La Bièvre attire-t-elle les rats à Fresnes ?', a: 'L’eau et les berges sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les logements proches de la Bièvre et du ru de Rungis doivent surveiller regards, caves et soupiraux.' },
+    { q: 'J’habite un grand ensemble : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur ou du syndic. Signalez-lui le problème par écrit, avec photos et dates.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Fresnes ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [FRESNES_INSEE, FRESNES_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
