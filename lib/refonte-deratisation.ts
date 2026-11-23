@@ -1345,4 +1345,91 @@ REFONTE_DERATISATION['cachan'] = {
   sources: [CACHAN_INSEE, CACHAN_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Charenton-le-Pont (23/11/2026) ──
+const CHARENTON_WIKI: Source = { label: 'Wikipédia, Charenton-le-Pont (quartiers, densité, logement, carrières, Bercy)', url: 'https://fr.wikipedia.org/wiki/Charenton-le-Pont' }
+const CHARENTON_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94018, Charenton-le-Pont', url: 'https://geo.api.gouv.fr/communes?code=94018&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['charenton-le-pont'] = {
+  maj: '2026-11-23',
+  accroche: 'Entre le bois de Vincennes, la Seine et la Marne, sur d’anciennes carrières : à Charenton-le-Pont, presque tout le monde vit en immeuble, et les rongeurs passent par les sous-sols. Nous sommes vos voisins directs.',
+  societe: {
+    titre: 'Société de dératisation à Charenton-le-Pont (94220) : notre ville voisine',
+    paras: [
+      'Charenton-le-Pont compte **28 830 habitants** sur **1,85 km²**, soit plus de **15 000 habitants au km²**, l’une des densités les plus fortes du Val-de-Marne. En 2021, **97,8 % des logements** étaient des appartements. Pour les rats et les souris, c’est un réseau continu de **caves**, de **parkings**, de **gaines** et de **locaux à poubelles**.',
+      'La ville est prise entre le **bois de Vincennes** au nord, la **Seine** et la **Marne** au sud, et traversée par l’**A4**. Son nom vient de l’extraction de la pierre : le sous-sol garde d’**anciennes carrières**, dont certaines ont encore été comblées en 2021 sous le square Jules-Noël. Eau, bois, sous-sols et grands axes : tout ce que le **surmulot** apprécie.',
+      'Notre base est à **Saint-Maurice**, la commune juste à côté : nous sommes à Charenton en quelques minutes, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Charenton-le-Pont](/souris/charenton-le-pont), [cafards à Charenton-le-Pont](/cafards/charenton-le-pont), [punaises de lit à Charenton-le-Pont](/punaises-de-lit/charenton-le-pont) et [puces à Charenton-le-Pont](/puces/charenton-le-pont).',
+    ],
+  },
+  chiffres: [
+    { valeur: '28 830', texte: 'habitants (population légale Insee), code postal 94220.', source: CHARENTON_INSEE },
+    { valeur: '97,8 %', texte: 'des logements sont des appartements (2021) : la quasi-totalité de la ville vit en immeuble.', source: CHARENTON_WIKI },
+    { valeur: '15 349', texte: 'habitants au km², l’une des densités les plus élevées du Val-de-Marne.', source: CHARENTON_WIKI },
+    { valeur: '2021', texte: 'comblement d’anciennes carrières souterraines sous le square Jules-Noël, par injection de coulis.', source: CHARENTON_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Charenton-le-Pont : la ville quartier par quartier',
+    intro: 'La ville compte cinq quartiers : **Valmy**, **Bercy**, **Centre**, **Pasteur** et **Pont**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Pont et les bords de Marne et de Seine',
+        texte: 'Au sud, le quartier du **Pont**, qui doit son nom au pont de Charenton sur la Marne, et les rues riveraines longent la **Marne** et la **Seine**. Quais, berges et réseaux d’assainissement : c’est le chemin naturel du rat d’égout. Les immeubles proches de l’eau doivent surveiller **caves**, **regards** et **locaux à poubelles**.',
+        photo: { src: '/villes/charenton-le-pont/marne-passerelle.jpg', alt: 'La Marne entre Charenton-le-Pont et Alfortville, vue depuis la passerelle', legende: 'La Marne vue depuis la passerelle d’Alfortville : à droite, les immeubles de Charenton au bord de l’eau.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Marne_vue_depuis_Passerelle_Alfortville_Charenton_Pont_6.jpg' },
+      },
+      {
+        nom: 'Le Centre et l’ancien bourg des Carrières',
+        texte: 'Autour de la mairie et de l’église, le centre ancien repose sur d’**anciennes carrières**. Caves profondes, vieux murs et réseaux : un rongeur repéré dans une boutique ou un hall vient souvent d’un **sous-sol voisin**. Nous inspectons, traitons, puis rebouchons les passages.',
+        photo: { src: '/villes/charenton-le-pont/comblement-carrieres.jpg', alt: 'Panneau des travaux de comblement des carrières sous le square Jules-Noël à Charenton-le-Pont', legende: 'Travaux de comblement des carrières sous le square Jules-Noël, en 2021 : à Charenton, le sous-sol est creux par endroits.', credit: 'VVVCFFrance', licence: 'CC BY-SA 4.0', page: W + 'Travaux_de_comblement_de_carri%C3%A8res_sous_l%27ancien_S%C3%A9jour_du_Roi.jpg' },
+      },
+      {
+        nom: 'Bercy, l’A4 et le centre commercial',
+        texte: 'Le quartier **Bercy**, autour du centre commercial **Bercy 2** et de l’**autoroute A4**, mêle immeubles de grande hauteur, parkings, restaurants et anciennes zones d’entrepôts. Pour un commerce ou une résidence : postes **numérotés**, **registre**, **attestation**, et traitement des **parkings souterrains**.',
+        photo: { src: '/villes/charenton-le-pont/autoroute-a4.jpg', alt: 'L’autoroute A4 à Charenton-le-Pont', legende: 'L’A4 traverse Charenton : talus, ouvrages et immeubles de grande hauteur.', credit: 'FrancoisFC', licence: 'CC BY-SA 3.0', page: W + 'Charenton_A4.jpg' },
+      },
+      {
+        nom: 'Valmy, Pasteur et la lisière du bois de Vincennes',
+        texte: 'Au nord, le long de l’**avenue de Gravelle**, les immeubles et hôtels particuliers bordent le **bois de Vincennes**. Les rongeurs vivent dans le bois et s’approchent des **locaux à poubelles** et des **soupiraux** des résidences. Nous traitons le pourtour des bâtiments et fermons les accès.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Charenton-le-Pont (94220) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines et plinthes chez vous ; caves, parkings et local à poubelles dans les parties communes : nous trouvons d’où viennent les rongeurs.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Charenton-le-Pont (94220) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la cuisine d’un appartement', x: 'Le cas le plus fréquent dans une ville d’immeubles : voir [souris à Charenton-le-Pont](/souris/charenton-le-pont), [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [rat derrière l’électroménager](/blog/rat-piege-cuisine-electromenager).' },
+      { t: 'Des rats dans la cave ou le parking', x: 'Le signe d’une colonie dans les sous-sols, souvent reliés entre immeubles. Prévenez le syndic par écrit : le traitement doit couvrir les parties communes.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Au bord de la Seine et de la Marne, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles), et [cafards à Charenton-le-Pont](/cafards/charenton-le-pont).' },
+      { t: 'Des bruits dans les murs ou le plafond', x: 'Dans le bâti ancien, les rongeurs circulent dans les cloisons et les planchers : voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Charenton-le-Pont',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Charenton, où presque tout le monde vit en copropriété, c’est le plus souvent au **syndic** de faire traiter les parties communes, et à chacun son logement.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur la voie publique, sur les quais ou dans un square, alertez la **mairie de Charenton-le-Pont** ; pour le bois de Vincennes, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Saint-Maurice](/deratisation/saint-maurice), [Maisons-Alfort](/deratisation/maisons-alfort), [Alfortville](/deratisation/alfortville), [Ivry-sur-Seine](/deratisation/ivry-sur-seine), [Paris 12e](/deratisation/paris-12), [Vincennes](/deratisation/vincennes) et [Saint-Mandé](/deratisation/saint-mande).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Charenton-le-Pont ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, restaurant ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Êtes-vous vraiment à côté de Charenton ?', a: 'Oui : notre base est à Saint-Maurice, la commune voisine. Nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+    { q: 'J’ai des souris dans mon appartement : faut-il traiter tout l’immeuble ?', a: 'Souvent, oui. Si elles viennent des caves ou des gaines, nous traitons votre logement et conseillons au syndic de traiter les parties communes ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Les anciennes carrières favorisent-elles les rats ?', a: 'Un sous-sol ancien, avec caves profondes et vieux réseaux, offre des abris aux rongeurs. Le traitement se fait au plus près des points d’entrée, puis nous rebouchons.' },
+    { q: 'Qui paie la dératisation des caves d’une copropriété ?', a: 'Le syndicat des copropriétaires, par le syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les restaurants de Charenton et de Bercy 2 ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison dans un appartement avec chat ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [CHARENTON_INSEE, CHARENTON_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
