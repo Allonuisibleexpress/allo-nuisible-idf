@@ -1960,4 +1960,91 @@ REFONTE_DERATISATION['ivry-sur-seine'] = {
   sources: [IVRY_INSEE, IVRY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Joinville-le-Pont (24/11/2026) ──
+const JOINVILLE_WIKI: Source = { label: 'Wikipédia, Joinville-le-Pont (Marne, îles, canal de Saint-Maur, quartiers, logement)', url: 'https://fr.wikipedia.org/wiki/Joinville-le-Pont' }
+const JOINVILLE_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94042, Joinville-le-Pont', url: 'https://geo.api.gouv.fr/communes?code=94042&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['joinville-le-pont'] = {
+  maj: '2026-11-24',
+  accroche: 'Une ville coupée en deux par la Marne, avec deux îles, un canal, un port de plaisance et des guinguettes : à Joinville-le-Pont, l’eau est partout, et le rat aussi. Nous sommes juste à côté, à Saint-Maurice.',
+  societe: {
+    titre: 'Société de dératisation à Joinville-le-Pont (94340) : une ville traversée par la Marne',
+    paras: [
+      'Joinville-le-Pont compte **20 525 habitants** sur **2,29 km²**. La **Marne** la traverse en son milieu et la sépare en deux : **Joinville-le-Haut** à l’ouest, **Joinville-le-Bas** à l’est. L’**île Fanac** occupe le lit de la rivière, l’**île des Saints-Pères** est bordée par le **canal de Saint-Maur**, et le **ru de Polangis**, creusé pour les rameurs, serpente dans le quartier du même nom. Berges, quais, port de plaisance et réseaux : tout ce que le **surmulot** recherche.',
+      'Autrefois lieu de **guinguettes** et de maisons de week-end au bord de l’eau, Joinville compte aujourd’hui **77,5 % d’appartements** et **22,2 % de maisons** (2022). Restaurants des quais, résidences et pavillons de Polangis : une société de dératisation y traite autant les **commerces au bord de l’eau** que les **caves** et les **jardins**.',
+      'Notre base est à **Saint-Maurice**, la commune voisine : nous sommes à Joinville en quelques minutes, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Joinville-le-Pont](/souris/joinville-le-pont), [cafards à Joinville-le-Pont](/cafards/joinville-le-pont), [punaises de lit à Joinville-le-Pont](/punaises-de-lit/joinville-le-pont) et [puces à Joinville-le-Pont](/puces/joinville-le-pont).',
+    ],
+  },
+  chiffres: [
+    { valeur: '20 525', texte: 'habitants (population légale Insee), code postal 94340.', source: JOINVILLE_INSEE },
+    { valeur: '2 îles', texte: 'sur la commune : l’île Fanac et l’île des Saints-Pères, bordée par le canal de Saint-Maur.', source: JOINVILLE_WIKI },
+    { valeur: '130', texte: 'pavillons et plusieurs restaurants des bords de Marne démolis en 1971 pour construire l’A4.', source: JOINVILLE_WIKI },
+    { valeur: '77,5 %', texte: 'des logements sont des appartements et 22,2 % des maisons (2022), sur 10 047 logements.', source: JOINVILLE_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Joinville-le-Pont : la ville quartier par quartier',
+    intro: 'La Marne sépare **Joinville-le-Haut** (centre, Vautier, Canadiens, résidence Espérance, quai de la Marne) de **Joinville-le-Bas** (Polangis et Palissy). Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quais de Marne, le pont et l’île Fanac',
+        texte: 'Autour du **pont de Joinville**, des quais et de l’**île Fanac**, l’eau, les berges et le **port de plaisance** offrent au rat un habitat idéal. Les immeubles et maisons des quais doivent surveiller **caves**, **soupiraux** et **regards**, surtout quand la Marne monte.',
+        photo: { src: '/villes/joinville-le-pont/pont-de-joinville-marne.jpg', alt: 'Le pont de Joinville sur la Marne', legende: 'Le pont de Joinville sur la Marne : quais, berges et port de plaisance au cœur de la ville.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Pont_Joinville_-_Joinville-le-Pont_(FR94)_-_2021-02-07_-_1.jpg' },
+      },
+      {
+        nom: 'Les guinguettes et les restaurants du bord de l’eau',
+        texte: 'Les restaurants des bords de Marne, comme la célèbre guinguette **Chez Gégène**, combinent terrasses, cuisines, réserves et déchets alimentaires au plus près de la rivière. Pour un restaurateur : postes **numérotés**, **registre**, **attestation** et passages **hors service**.',
+        photo: { src: '/villes/joinville-le-pont/guinguette-chez-gegene.jpg', alt: 'La guinguette Chez Gégène à Joinville-le-Pont', legende: 'Chez Gégène, guinguette des bords de Marne : un restaurant au bord de l’eau demande une protection permanente.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Restaurant_Chez_G%C3%A9g%C3%A8ne_-_Joinville-le-Pont_(FR94)_-_2021-02-07_-_2.jpg' },
+      },
+      {
+        nom: 'Polangis, Palissy et le ru de Polangis',
+        texte: 'À **Joinville-le-Bas**, le quartier de **Polangis**, traversé par son petit canal, et celui de **Palissy** comptent de nombreux **pavillons** avec jardin. Eau, haies, composteurs et abris attirent les rongeurs : nous traitons les **terriers** et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/joinville-le-pont/eglise-sainte-anne-polangis.jpg', alt: 'L’église Sainte-Anne de Polangis à Joinville-le-Pont', legende: 'L’église Sainte-Anne de Polangis : un quartier de pavillons traversé par le ru de Polangis.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89glise_Ste_Anne_Polangis_Joinville_Pont_1.jpg' },
+      },
+      {
+        nom: 'Le centre, les Canadiens et la lisière du bois de Vincennes',
+        texte: 'À **Joinville-le-Haut**, le centre, le quartier **Vautier** et celui des **Canadiens**, en bordure du **bois de Vincennes**, mêlent immeubles, commerces et espaces verts ; l’**A4** traverse aussi la commune. Les rongeurs du bois et des talus s’approchent des **locaux à poubelles** et des **parkings** : le traitement se fait avec le **syndic**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Joinville-le-Pont (94340) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le chemin de l’eau', x: 'Quais : regards, soupiraux, caves. Pavillons de Polangis : jardin, abri, vide sanitaire. Restaurants : réserves, cuisine, local à déchets.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Joinville-le-Pont (94340) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble des quais', x: 'Quand la Marne monte, les rats quittent les berges pour les sous-sols. Nous traitons, puis fermons soupiraux et regards pour que cela ne recommence pas.' },
+      { t: 'Un rongeur dans un restaurant ou une guinguette', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [cafards à Joinville-le-Pont](/cafards/joinville-le-pont).' },
+      { t: 'Des terriers dans un jardin de Polangis', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie), [la reproduction des rats](/blog/reproduction-des-rats) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Joinville-le-Pont](/souris/joinville-le-pont) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Au bord de l’eau, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Joinville-le-Pont',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Une maison se traite à la charge de son propriétaire, les parties communes d’un immeuble à celle du **syndic** ou du **bailleur**, un restaurant à celle de l’**exploitant**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur les quais ou la voie publique, alertez la **mairie de Joinville-le-Pont** ; pour le bois de Vincennes, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Saint-Maurice](/deratisation/saint-maurice), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses), [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Nogent-sur-Marne](/deratisation/nogent-sur-marne), [Fontenay-sous-Bois](/deratisation/fontenay-sous-bois), [Vincennes](/deratisation/vincennes) et [Charenton-le-Pont](/deratisation/charenton-le-pont).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Joinville-le-Pont ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, restaurant ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Marne fait-elle venir les rats à Joinville ?', a: 'Oui, les berges et l’eau sont l’habitat du surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Quand la rivière monte, il remonte vers les caves et les parkings des quais.' },
+    { q: 'Intervenez-vous dans les restaurants et guinguettes des bords de Marne ?', a: 'Oui, hors service, avec postes numérotés, registre des passages et attestation pour vos contrôles d’hygiène.' },
+    { q: 'J’ai des trous dans mon jardin à Polangis : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison près de l’eau ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Joinville-le-Pont ?', a: 'Oui : notre base de Saint-Maurice est voisine. Nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [JOINVILLE_INSEE, JOINVILLE_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
