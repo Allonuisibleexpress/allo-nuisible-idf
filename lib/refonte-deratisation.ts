@@ -2581,4 +2581,91 @@ REFONTE_DERATISATION['nogent-sur-marne'] = {
   sources: [NOGENT_INSEE, NOGENT_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Orly (25/11/2026) ──
+const ORLY_WIKI: Source = { label: 'Wikipédia, Orly (quartiers, grand ensemble, aéroport, bords de Seine, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Orly' }
+const ORLY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94054, Orly', url: 'https://geo.api.gouv.fr/communes?code=94054&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['orly'] = {
+  maj: '2026-11-25',
+  accroche: 'Entre l’aéroport à l’ouest et la Seine à l’est, un grand ensemble, un vieux village et des quartiers pavillonnaires : à Orly, chaque secteur a ses rongeurs. Nous savons où les chercher.',
+  societe: {
+    titre: 'Société de dératisation à Orly (94310) : une ville entre aéroport et Seine',
+    paras: [
+      'Orly compte **24 658 habitants** sur **6,69 km²**. Une partie de son territoire est occupée par l’**aéroport de Paris-Orly**, à l’ouest ; à l’est, la commune touche la **Seine**, où les anciens terrains des bords de fleuve sont en renouvellement. Entre les deux : le **vieil Orly**, le **grand ensemble** et plusieurs quartiers de **pavillons**. Berges, friches, réseaux et zones d’activités : autant de terrains favorables au **surmulot**.',
+      'Le **grand ensemble d’Orly** pèse lourd : la **Pierre au Prêtre** compte **1 138 logements sociaux**, les **Aviateurs** **1 564**, sans oublier les Navigateurs, les Hautes Bornes, Calmette ou les Tilleuls. En 2019, **80,4 % des logements** de la ville étaient des appartements. Pour une société de dératisation, ce sont avant tout des **caves**, des **vide-ordures** et des **locaux à poubelles** à traiter avec les bailleurs, et des **jardins** dans les quartiers pavillonnaires.',
+      'Nous intervenons à Orly depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Orly](/souris/orly), [punaises de lit à Orly](/punaises-de-lit/orly) et [fourmis à Orly](/fourmis/orly).',
+    ],
+  },
+  chiffres: [
+    { valeur: '24 658', texte: 'habitants (population légale Insee), code postal 94310.', source: ORLY_INSEE },
+    { valeur: '1 564', texte: 'logements sociaux aux Aviateurs, l’un des quartiers du grand ensemble d’Orly.', source: ORLY_WIKI },
+    { valeur: '1 138', texte: 'logements sociaux à la Pierre au Prêtre, autre quartier du grand ensemble.', source: ORLY_WIKI },
+    { valeur: '80,4 %', texte: 'des logements sont des appartements (2019), sur 9 946 logements.', source: ORLY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Orly : la ville quartier par quartier',
+    intro: 'Orly compte de nombreux quartiers : le **vieil Orly**, le **centre** autour de la place Gaston-Viens, le **grand ensemble** (Pierre au Prêtre, Aviateurs, Navigateurs, Hautes Bornes, Calmette, Tilleuls), les pavillons de **Georges-Méliès**, de la **Cité Jardin** et du **Bas Clos**, les **bords de Seine** et les zones d’activités. Voici ce que chaque secteur implique.',
+    zones: [
+      {
+        nom: 'Le grand ensemble : Pierre au Prêtre, Aviateurs, Navigateurs',
+        texte: 'À l’est et au nord-est, ces quartiers d’habitat collectif rassemblent des milliers de logements autour des mêmes **caves**, **vide-ordures** et **locaux à poubelles**, en pleine rénovation. Un traitement efficace couvre toutes les **parties communes**, en lien avec le **bailleur**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/orly/vue-aerienne-grand-ensemble.jpg', alt: 'Vue aérienne des quartiers est d’Orly et du parc des sports du Grand-Godet', legende: 'Vue aérienne des quartiers est d’Orly, devant le parc des sports du Grand-Godet : le grand ensemble et ses espaces verts.', credit: 'Suaudeau', licence: 'CC BY-SA 4.0', page: W + 'Vue-aerienne-Orly-Grand-godet-Choisy-le-Roi-au-fond.jpg' },
+      },
+      {
+        nom: 'Le vieil Orly et le centre',
+        texte: 'Dans le **vieil Orly**, centre ancien de la ville, les maisons ont des **caves** et des murs anciens ; autour de la **place Gaston-Viens** et des gares du **RER C**, commerces et immeubles partagent sous-sols et locaux à déchets. Nous inspectons chaque ouverture et intervenons dans les commerces hors des heures d’ouverture.',
+        photo: { src: '/villes/orly/ancienne-mairie-vieil-orly.jpg', alt: 'L’ancienne mairie dans le vieil Orly', legende: 'L’ancienne mairie, dans le vieil Orly : un centre ancien avec caves et vieux murs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ancienne_mairie_Orly_4.jpg' },
+      },
+      {
+        nom: 'Le parc, Georges-Méliès, la Cité Jardin et le Bas Clos',
+        texte: 'Les quartiers **pavillonnaires**, entre le centre et l’aéroport ou à l’est du centre ancien, ont jardins, abris et vide sanitaires, et le parc du **château** offre de grands espaces verts. Nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/orly/chateau-du-parc.jpg', alt: 'Le château du parc d’Orly', legende: 'Le château du parc d’Orly : parcs et jardins sont aussi des abris pour les rongeurs.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Le_ch%C3%A2teau_du_parc_d%27Orly_(94).jpg' },
+      },
+      {
+        nom: 'Les bords de Seine et les zones d’activités',
+        texte: 'À l’extrême est, les **bords de Seine** sont d’anciennes friches en renouvellement ; à l’ouest, les zones d’activités du **SENIA** et des **Chaudronniers** jouxtent l’aéroport. Entrepôts, quais de chargement et friches attirent les rongeurs : pour une entreprise, postes **numérotés**, **registre** et **attestation**. Voir [nos services aux professionnels](/professionnels).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Orly (94310) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Grand ensemble : caves, vide-ordures, local à poubelles. Pavillon : jardin, abri, vide sanitaire. Entreprise : quais, stockage, locaux techniques.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Orly (94310) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol, sinon les rats reviennent.' },
+      { t: 'Des rats après des travaux de rénovation', x: 'Démolitions et chantiers délogent les colonies, qui cherchent refuge dans les bâtiments voisins. Agissez dès les premières traces.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Orly](/souris/orly) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Un rongeur dans un entrepôt ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [nos services aux professionnels](/professionnels).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Orly',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Dans le grand ensemble, c’est le **bailleur** qui organise la dératisation des parties communes ; un pavillon se traite à la charge de son propriétaire ; une entreprise, à celle de l’exploitant.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie d’Orly**.',
+      'Nous intervenons aussi tout autour : [Choisy-le-Roi](/deratisation/choisy-le-roi), [Thiais](/deratisation/thiais), [Villeneuve-le-Roi](/deratisation/villeneuve-le-roi), [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges), [Rungis](/deratisation/rungis), [Ablon-sur-Seine](/deratisation/ablon-sur-seine) et [Paray-Vieille-Poste](/deratisation/paray-vieille-poste).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Orly ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, entreprise ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite aux Aviateurs ou à la Pierre au Prêtre : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, local à poubelles) relèvent du bailleur. Signalez-lui le problème par écrit, avec photos et dates.' },
+    { q: 'Les travaux de rénovation font-ils venir les rats ?', a: 'Les démolitions et chantiers délogent les colonies, qui cherchent un nouvel abri dans les immeubles voisins. Fermez caves et locaux à poubelles, et faites traiter dès les premières traces ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Intervenez-vous dans les entreprises proches de l’aéroport ?', a: 'Oui : postes numérotés, plan de localisation, registre des passages et attestation pour vos audits, avec contrat de suivi si besoin (voir [nos services aux professionnels](/professionnels)).' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [ORLY_INSEE, ORLY_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
