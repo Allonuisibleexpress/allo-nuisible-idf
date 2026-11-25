@@ -2938,4 +2938,92 @@ REFONTE_DERATISATION['saint-maurice'] = {
   sources: [STMAURICE_INSEE, STMAURICE_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Santeny (25/11/2026) ──
+const SANTENY_WIKI: Source = { label: 'Wikipédia, Santeny (Plateau briard, forêt de Notre-Dame, Réveillon, logement)', url: 'https://fr.wikipedia.org/wiki/Santeny' }
+const FORET_ND_WIKI: Source = { label: 'Wikipédia, Forêt de Notre-Dame (2 200 ha, forêt domaniale, Arc boisé)', url: 'https://fr.wikipedia.org/wiki/For%C3%AAt_de_Notre-Dame' }
+const SANTENY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94070, Santeny', url: 'https://geo.api.gouv.fr/communes?code=94070&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['santeny'] = {
+  maj: '2026-11-25',
+  accroche: 'Un village de la Brie, aux trois quarts en maisons, entre la forêt de Notre-Dame et la rivière du Réveillon : à Santeny, ce sont surtout les souris, les mulots et les rats des champs qui frappent à la porte à l’automne.',
+  societe: {
+    titre: 'Société de dératisation à Santeny (94440) : un village de maisons entre forêt et rivière',
+    paras: [
+      'Santeny compte **3 913 habitants** sur **10 km²**, sur le **Plateau briard**, à 22 km de Notre-Dame de Paris. C’est une commune encore très rurale : elle est **bordée au nord par la forêt de Notre-Dame**, un massif domanial de **2 200 hectares**, et **traversée par le Réveillon**, une rivière qui file vers l’Yerres. Champs, bois, berges et jardins : les petits rongeurs y sont nombreux.',
+      'Le village est aussi très pavillonnaire : en 2020, **76,9 % des logements** étaient des **maisons individuelles**. Pour une société de dératisation, Santeny, ce sont donc des **maisons avec jardin**, des **garages**, des **combles** et des **vide sanitaires**, plus rarement des parties communes. Les problèmes arrivent surtout à l’**automne**, quand souris et mulots quittent les champs pour la chaleur des maisons.',
+      'Nous intervenons à Santeny depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Santeny](/souris/santeny), [cafards à Santeny](/cafards/santeny), [punaises de lit à Santeny](/punaises-de-lit/santeny) et [chenilles processionnaires à Santeny](/chenilles-processionnaires/santeny).',
+    ],
+  },
+  chiffres: [
+    { valeur: '3 913', texte: 'habitants (population légale Insee), code postal 94440.', source: SANTENY_INSEE },
+    { valeur: '76,9 %', texte: 'des logements sont des maisons individuelles (2020), sur 1 652 logements.', source: SANTENY_WIKI },
+    { valeur: '2 200 ha', texte: 'pour la forêt de Notre-Dame, qui borde Santeny au nord.', source: FORET_ND_WIKI },
+    { valeur: '1138', texte: 'première mention du bourg, qui garde la ferme des Lyons et son colombier.', source: SANTENY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats et les souris à Santeny : le village secteur par secteur',
+    intro: 'Des **lisières de la forêt de Notre-Dame** aux **bords du Réveillon**, du **centre ancien** aux **quartiers de pavillons**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les lisières de la forêt de Notre-Dame',
+        texte: 'Au nord, la **forêt de Notre-Dame** et ses mares abritent une petite faune abondante. Les maisons en lisière voient arriver **mulots**, **souris** et parfois **rats** dans les **garages**, les **abris** et les **tas de bois**. Nous protégeons les points d’entrée de la maison et traitons le jardin.',
+        photo: { src: '/villes/santeny/foret-de-notre-dame-mare.jpg', alt: 'Une mare dans la forêt de Notre-Dame, qui borde Santeny', legende: 'Une mare dans la forêt de Notre-Dame, massif de 2 200 hectares qui borde Santeny au nord.', credit: 'Thesupermat', licence: 'CC BY-SA 3.0', page: W + 'For%C3%AAt_de_Notre-Dame_-_une_mare_-_001.jpg' },
+      },
+      {
+        nom: 'Les bords du Réveillon',
+        texte: 'Le **Réveillon** traverse la commune entre murs de pierre et végétation. Les berges offrent au **surmulot** de l’eau et des abris ; les maisons riveraines doivent surveiller **soupiraux**, **regards** et pied des murs, surtout après de fortes pluies.',
+        photo: { src: '/villes/santeny/riviere-reveillon.jpg', alt: 'La rivière du Réveillon sous un pont de pierre à Santeny', legende: 'Le Réveillon près de l’avenue du Général-Leclerc : berges boisées et vieux murs, des abris pour les rongeurs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rivi%C3%A8re_R%C3%A9veillon_pr%C3%A8s_Avenue_G%C3%A9n%C3%A9ral_Leclerc_-_Santeny_(FR94)_-_2022-05-21_-_1.jpg' },
+      },
+      {
+        nom: 'Le centre ancien et la ferme des Lyons',
+        texte: 'Au cœur du village, l’ancienne **ferme des Lyons** et son colombier rappellent le passé agricole de Santeny. Dans le bâti ancien, **granges**, **caves**, **dépendances** et murs de pierre offrent de nombreuses cachettes : nous les inspectons une à une et rebouchons après le traitement.',
+        photo: { src: '/villes/santeny/ferme-des-lyons-colombier.jpg', alt: 'L’ancienne ferme des Lyons et son colombier à Santeny', legende: 'L’ancienne ferme des Lyons et son colombier, au centre du village : dépendances et murs anciens.', credit: 'Pline', licence: 'CC BY-SA 3.0', page: W + 'Dovecote_of_the_ancien_farm_builiding_des_Lyons_in_Santeny_P1080961.JPG' },
+      },
+      {
+        nom: 'Les quartiers de pavillons et les champs',
+        texte: 'Les quartiers de **maisons individuelles**, souvent en bordure de **champs**, voient les rongeurs entrer dès les premiers froids. Composteurs, poulaillers, abris et vide sanitaires : nous traitons et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rats dans les combles](/blog/rats-dans-les-combles).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Santeny (94440) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat, souris ou mulot et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Garage, abri, combles, vide sanitaire, cave, jardin et composteur : nous trouvons par où les rongeurs entrent.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Santeny (94440) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la maison à l’automne', x: 'Le cas le plus fréquent dans un village entouré de champs et de bois : voir [souris à Santeny](/souris/santeny) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des bruits dans les combles', x: 'Grattements la nuit sous le toit : voir [rats dans les combles](/blog/rats-dans-les-combles). Nous trouvons l’entrée avant de traiter.' },
+      { t: 'Des rongeurs dans une grange, un garage ou un abri', x: 'Grain, croquettes, foin et objets stockés attirent les rongeurs : rangement en bacs fermés, pièges et postes sécurisés.' },
+      { t: 'Des terriers dans le jardin', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des rats attirés par le poulailler ou les mangeoires', x: 'Voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats) et [rat dans le compost](/blog/rat-compost).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire : qui fait quoi à Santeny',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Santeny, où les trois quarts des logements sont des maisons, c’est le plus souvent au **propriétaire** de faire appel à une entreprise de dératisation.',
+      'Pour des rats sur la voie publique ou le long du Réveillon, alertez la **mairie de Santeny** ; la forêt de Notre-Dame est une forêt domaniale.',
+      'Nous intervenons aussi tout autour : [Sucy-en-Brie](/deratisation/sucy-en-brie), [Boissy-Saint-Léger](/deratisation/boissy-saint-leger) et [Limeil-Brévannes](/deratisation/limeil-brevannes).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Santeny ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin, grange ou dépendances : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des souris chaque automne dans ma maison ?', a: 'Entre champs et forêt, les souris et les mulots cherchent la chaleur quand il fait froid. Nous trouvons et bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Souris ou mulot : quelle différence ?', a: 'Le mulot vit surtout dehors et entre à la mauvaise saison ; la souris domestique s’installe durablement dans la maison. Dans les deux cas, nous bouchons les entrées et posons des pièges adaptés.' },
+    { q: 'La forêt de Notre-Dame fait-elle venir les rongeurs ?', a: 'Un massif de 2 200 hectares abrite beaucoup de petits rongeurs, qui s’approchent des maisons en lisière. Garages, abris et tas de bois sont à surveiller.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Mon poulailler attire-t-il les rats ?', a: 'Oui, s’il donne accès aux graines. Rangez-les en bacs fermés, ramassez les restes le soir et grillagez le bas du poulailler (voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats)).' },
+    { q: 'Peut-on dératiser sans poison avec des animaux ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [SANTENY_INSEE, SANTENY_WIKI, FORET_ND_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
