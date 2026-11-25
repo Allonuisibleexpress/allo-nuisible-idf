@@ -3477,4 +3477,96 @@ REFONTE_DERATISATION['villeneuve-saint-georges'] = {
   sources: [VSG_INSEE, VSG_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Villiers-sur-Marne (26/11/2026) ──
+const VSM_WIKI: Source = { label: 'Wikipédia, Villiers-sur-Marne (ru de la Lande, sous-sol de marne, quartiers, Hautes-Noues, logement, bois Saint-Martin)', url: 'https://fr.wikipedia.org/wiki/Villiers-sur-Marne' }
+const VSM_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94079, Villiers-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94079&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['villiers-sur-marne'] = {
+  maj: '2026-11-26',
+  accroche: 'À Villiers-sur-Marne, la Marne ne coule pas : le ruisseau de la ville, le ru de la Lande, a été transformé en égout souterrain. Ajoutez un sol de marne qui fissure les maisons, des grands ensembles et le chantier de la ligne 15 : les rats ont de quoi faire. Nous aussi.',
+  societe: {
+    titre: 'Société de dératisation à Villiers-sur-Marne (94350) : une ville sur la marne, sans la Marne',
+    paras: [
+      'Villiers-sur-Marne compte **33 162 habitants** sur **4,32 km²**, entre 66 et 103 mètres d’altitude, sur le plateau de Brie. Surprise : la **Marne ne traverse pas** la commune, elle passe à moins de 800 mètres, à Bry-sur-Marne. Le nom vient du **sous-sol de marne bleue**, une glaise qui gonfle et se rétracte : les constructions bougent et des **fissures** apparaissent régulièrement. Pour un rongeur, chaque fissure est une porte d’entrée.',
+      'Le ruisseau local, le **ru de la Lande**, a été **canalisé et transformé en égout souterrain**, sous la voie ferrée. Les égouts sont l’habitat du **surmulot** : c’est par ce réseau que les rats circulent sous la ville. En 2020, **65,7 % des logements** étaient des appartements et **32,1 %** des maisons : à Villiers, nous traitons autant de **caves d’immeubles** que de **jardins de pavillons**.',
+      'Nous intervenons à Villiers-sur-Marne depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Villiers-sur-Marne](/souris/villiers-sur-marne), [punaises de lit à Villiers-sur-Marne](/punaises-de-lit/villiers-sur-marne) et [fourmis à Villiers-sur-Marne](/fourmis/villiers-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '33 162', texte: 'habitants (population légale Insee), code postal 94350.', source: VSM_INSEE },
+    { valeur: '800 m', texte: 'à peine séparent Villiers de la Marne, qui ne traverse pas la commune : le nom vient de son sous-sol de marne bleue.', source: VSM_WIKI },
+    { valeur: '7 000', texte: 'habitants environ aux Hautes-Noues, quartier prioritaire depuis 2015, soit près d’un quart de la ville.', source: VSM_WIKI },
+    { valeur: '32,1 %', texte: 'des logements sont des maisons individuelles et 65,7 % des appartements (2020).', source: VSM_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Villiers-sur-Marne : la ville quartier par quartier',
+    intro: 'Villiers compte une douzaine de quartiers, des **Hautes-Noues** au **Bois de Gaumont**, des **Boutareines** aux **Fontaines Giroux**. Beaucoup sont nés dans les années 1960 et 1970 avec la ville nouvelle de **Marne-la-Vallée**, d’autres sont des lotissements des années 1930. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les Hautes-Noues et les grands ensembles',
+        texte: 'Quartier prioritaire depuis 2015, à la limite de **Noisy-le-Grand**, les Hautes-Noues réunissent près de 7 000 habitants. Caves, vide-ordures, locaux à poubelles et espaces verts entre les immeubles : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/villiers-sur-marne/hautes-noues.jpg', alt: 'Immeubles du quartier des Hautes-Noues à Villiers-sur-Marne', legende: 'Les Hautes-Noues, quartier prioritaire : immeubles, parkings et locaux à poubelles partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + "Arr%C3%AAt_Bus_Ferdinand_Buisson_Boulevard_Bishop%27s_Stortford_-_Villiers-sur-Marne_(FR94)_-_2022-03-17_-_3.jpg" },
+      },
+      {
+        nom: 'Le secteur de la gare et le chantier de la ligne 15',
+        texte: 'Le **ru de la Lande** coule désormais en égout sous la voie ferrée. Autour de la gare du **RER E** et du futur pôle **Villiers - Champigny - Bry** de la ligne 15, les grands travaux de terrassement remuent le sous-sol et peuvent déloger les rongeurs vers les immeubles et pavillons voisins. Nous contrôlons caves, regards et jardins proches.',
+        photo: { src: '/villes/villiers-sur-marne/chantier-ligne-15.jpg', alt: 'Chantier de la gare Villiers - Champigny - Bry de la ligne 15 à Villiers-sur-Marne', legende: 'Le chantier de la gare Villiers - Champigny - Bry de la ligne 15, en 2020.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Chantier_Station_M%C3%A9tro_Ligne_15_Bry_Villiers_Champigny_Villiers_Marne_10.jpg' },
+      },
+      {
+        nom: 'Le bois Saint-Martin et ses pavillons',
+        texte: 'Au sud-est, le **bois Saint-Martin** est partagé avec Noisy-le-Grand, Le Plessis-Trévise, Émerainville et Pontault-Combault ; la ville compte près de **14 hectares** d’espaces naturels, avec le parc du Bois-Saint-Denis. Les pavillons en lisière ont jardins, composts et abris : nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/villiers-sur-marne/avenue-bois-saint-martin.jpg', alt: 'Avenue du Bois-Saint-Martin, pavillons à Villiers-sur-Marne', legende: 'Avenue du Bois-Saint-Martin : pavillons, haies et jardins près du bois.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Avenue_Bois_Saint_Martin_-_Villiers-sur-Marne_(FR94)_-_2021-10-02_-_1.jpg' },
+      },
+      {
+        nom: 'Les Perroquets, le Bois de Gaumont et le Centre',
+        texte: 'Les lotissements des années 1930, notamment au **Bois de Gaumont**, et les ruelles pavillonnaires comme le **Cottage des Perroquets** ont des maisons anciennes, des **vide sanitaires** et des murs que la marne fait bouger. Les souris et les rats passent par les fissures : nous les repérons et les rebouchons. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/villiers-sur-marne/cottage-perroquets.jpg', alt: 'Ruelle pavillonnaire du Cottage des Perroquets à Villiers-sur-Marne', legende: 'Le Cottage des Perroquets : ruelle de pavillons, murets et jardins.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Cottage_Perroquets_-_Villiers-sur-Marne_(FR94)_-_2022-03-14_-_1.jpg' },
+      },
+      {
+        nom: 'Les Boutareines, les Portes de Villiers et les zones commerciales',
+        texte: 'Vers **Champigny-sur-Marne**, les Boutareines accueillent grandes enseignes et entrepôts, et les Portes de Villiers un espace commercial le long de l’**A4**. Quais de livraison, bennes et restauration : nous proposons un **contrat de suivi** aux professionnels. Voir [dératisation pour les professionnels](/professionnels).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Villiers-sur-Marne (94350) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Grand ensemble : vide-ordures, caves, local à poubelles. Pavillon : jardin, abri, vide sanitaire, fissures. Commerce : réserves et quais.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Fissures et passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Villiers-sur-Marne (94350) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers au pied des haies, sous l’abri ou le compost : nous traitons la colonie et fermons les accès à la maison.' },
+      { t: 'Des souris par les fissures d’une maison', x: 'Le sol de marne fait bouger les murs : une fissure de quelques millimètres suffit à une souris. Voir [souris à Villiers-sur-Marne](/souris/villiers-sur-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats au vide-ordures d’un immeuble', x: 'Le signe d’une colonie dans les parties communes : le bailleur ou le syndic organise le traitement, nous rebouchons ensuite les passages.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’égouts, dont l’ancien ru de la Lande, est leur autoroute : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des rats derrière un commerce', x: 'Bennes et réserves des zones commerciales : un contrat de suivi avec passages réguliers évite le retour des rongeurs.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Villiers-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Les grands ensembles se traitent à la demande du **bailleur**, les copropriétés à celle du **syndic**, les pavillons à celle de leur propriétaire.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Villiers-sur-Marne**. Pour un logement insalubre, la mairie ou l’Agence régionale de santé peuvent aussi être saisies.',
+      'Nous intervenons aussi tout autour : [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Bry-sur-Marne](/deratisation/bry-sur-marne), [Le Plessis-Trévise](/deratisation/le-plessis-trevise) et [Chennevières-sur-Marne](/deratisation/chennevieres-sur-marne).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Villiers-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, pavillon ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi y a-t-il des rats à Villiers alors que la Marne n’y passe pas ?', a: 'Parce que les rats vivent surtout dans les égouts, et le ruisseau de la ville, le ru de la Lande, est devenu un égout souterrain. Ajoutez jardins, composts et locaux à poubelles : ils ont abri et nourriture ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Les fissures de ma maison laissent-elles entrer les rongeurs ?', a: 'Oui : le sous-sol de marne fait bouger les constructions. Une souris passe par un trou de la taille d’un crayon, un rat par une ouverture à peine plus large. Le rebouchage fait partie de notre traitement.' },
+    { q: 'J’habite aux Hautes-Noues : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Le chantier de la ligne 15 fait-il fuir les rats vers les maisons ?', a: 'Les grands terrassements peuvent déranger les rongeurs installés dans le sol. Si vous voyez des rats apparaître près des travaux, faites contrôler cave, jardin et regards.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Villiers-sur-Marne ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VSM_INSEE, VSM_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
