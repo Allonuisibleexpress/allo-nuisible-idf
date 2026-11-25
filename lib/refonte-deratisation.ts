@@ -2047,4 +2047,92 @@ REFONTE_DERATISATION['joinville-le-pont'] = {
   sources: [JOINVILLE_INSEE, JOINVILLE_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── L'Haÿ-les-Roses (25/11/2026) ──
+const LHAY_WIKI: Source = { label: 'Wikipédia, L’Haÿ-les-Roses (Bièvre, quartiers, quartiers prioritaires, logement)', url: 'https://fr.wikipedia.org/wiki/L%27Ha%C3%BF-les-Roses' }
+const ROSERAIE_WIKI: Source = { label: 'Wikipédia, Roseraie du Val-de-Marne (1894, 3 300 variétés, 1,52 ha)', url: 'https://fr.wikipedia.org/wiki/Roseraie_du_Val-de-Marne' }
+const LHAY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94038, L’Haÿ-les-Roses', url: 'https://geo.api.gouv.fr/communes?code=94038&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['l-hay-les-roses'] = {
+  maj: '2026-11-25',
+  accroche: 'La ville des roses a aussi ses rats : une Bièvre en partie enterrée, des cités, des pavillons avec jardin et 40 hectares d’espaces verts. Nous traitons chaque secteur à sa manière.',
+  societe: {
+    titre: 'Société de dératisation à L’Haÿ-les-Roses (94240) : la ville des roses et de la Bièvre',
+    paras: [
+      'L’Haÿ-les-Roses, sous-préfecture du Val-de-Marne, compte **31 188 habitants** sur **3,90 km²**. Elle doit son nom à sa **roseraie**, la première roseraie moderne, fondée en 1894 par Jules Gravereaux, et compte environ **40 hectares d’espaces verts**. Elle est aussi traversée par la **Bièvre**, longtemps **enterrée** : remise au jour en 2016 sur **600 mètres** dans le parc La Fontaine, elle coule encore sous des jardins et des rues ailleurs. Ouvrages enterrés, berges et parcs : le chemin du **surmulot**.',
+      'Côté habitat, la ville est mixte : **71,7 % d’appartements** et **25,6 % de maisons** en 2021, avec **cinq quartiers prioritaires** (Jardins Parisiens, Vallée-aux-Renards, Lebon-Hochart-Mermoz, les Sorbiers-Lallier…). Une société de dératisation y traite autant les **parties communes** des résidences que les **jardins** des pavillons.',
+      'Nous intervenons à L’Haÿ-les-Roses depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à L’Haÿ-les-Roses](/souris/l-hay-les-roses), [punaises de lit à L’Haÿ-les-Roses](/punaises-de-lit/l-hay-les-roses) et [fourmis à L’Haÿ-les-Roses](/fourmis/l-hay-les-roses).',
+    ],
+  },
+  chiffres: [
+    { valeur: '31 188', texte: 'habitants (population légale Insee), code postal 94240.', source: LHAY_INSEE },
+    { valeur: '600 m', texte: 'de Bièvre remis au jour en 2016 dans le parc La Fontaine ; ailleurs, la rivière reste enterrée.', source: LHAY_WIKI },
+    { valeur: '40 ha', texte: 'd’espaces verts environ, dont la roseraie et ses 3 300 variétés de rosiers.', source: ROSERAIE_WIKI },
+    { valeur: '5', texte: 'quartiers prioritaires de la ville en 2024, avec de grandes résidences collectives.', source: LHAY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à L’Haÿ-les-Roses : la ville quartier par quartier',
+    intro: 'La ville compte six quartiers : le **Centre**, le **Jardin Parisien**, **Lallier-Bicêtre**, les **Blondeaux**, le **Petit Robinson** et la **Vallée-aux-Renards**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La vallée de la Bièvre et ses parcs',
+        texte: 'Le long de l’**avenue Flouquet**, du parc La Fontaine et du parc de la Bièvre, la rivière coule tantôt à l’air libre, tantôt sous terre. Les maisons et immeubles du fond de vallée doivent surveiller **regards**, **caves** et **soupiraux** : c’est par là que remontent les rats.',
+        photo: { src: '/villes/l-hay-les-roses/bievre-parc-la-fontaine.jpg', alt: 'La Bièvre remise à l’air libre le long de l’avenue Flouquet à L’Haÿ-les-Roses', legende: 'La Bièvre remise au jour dans le parc La Fontaine, le long de l’avenue Flouquet : eau et berges au pied des immeubles.', credit: 'VVVCFFrance', licence: 'CC BY-SA 4.0', page: W + 'L%27Ha%C3%BF-les-Roses_Bi%C3%A8vre_av._Flouquet_sud_3.jpg' },
+      },
+      {
+        nom: 'Le Centre, la roseraie et les pavillons',
+        texte: 'Autour du centre ancien, de l’église Saint-Léonard et de la **roseraie**, les **pavillons** avec jardin sont nombreux. Haies, massifs, composteurs et abris attirent les rongeurs : nous traitons les **terriers**, protégeons le compost et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/l-hay-les-roses/roseraie-du-val-de-marne.jpg', alt: 'Le dôme de la roseraie du Val-de-Marne à L’Haÿ-les-Roses', legende: 'Le dôme de la roseraie du Val-de-Marne : la ville compte une quarantaine d’hectares d’espaces verts.', credit: 'C. Potez-Delpuech', licence: 'CC BY-SA 3.0', page: W + 'Dome_roseraie.jpg' },
+      },
+      {
+        nom: 'Les grandes résidences : Jardin Parisien, Lallier, Vallée-aux-Renards',
+        texte: 'Les quartiers prioritaires (Jardins Parisiens, Vallée-aux-Renards, Lebon-Hochart-Mermoz, Sorbiers-Lallier) partagent **caves**, **vide-ordures** et **locaux à poubelles** entre des centaines de logements. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+      },
+      {
+        nom: 'Le métro 14 et les nouveaux quartiers',
+        texte: 'Autour de la station L’Haÿ-les-Roses de la **ligne 14**, le quartier se transforme. Quand il y a des **chantiers**, les terrassements délogent les colonies, qui cherchent refuge dans les **parkings** et **caves** voisins : il faut agir dès les premières traces.',
+        photo: { src: '/villes/l-hay-les-roses/metro-ligne-14.jpg', alt: 'Entrée de la station L’Haÿ-les-Roses de la ligne 14', legende: 'La station L’Haÿ-les-Roses de la ligne 14 : un secteur en transformation, avec ses chantiers.', credit: 'Matgrt', licence: 'CC BY 4.0', page: W + 'Entr%C3%A9e_L%27Ha%C3%BF-les-Roses_(ligne_14).jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à L’Haÿ-les-Roses (94240) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, garage, vide sanitaire. Résidence : caves, vide-ordures, local à poubelles. Fond de vallée : regards et soupiraux.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à L’Haÿ-les-Roses (94240) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans un jardin de pavillon', x: 'Trous au pied des murs, sous la terrasse ou l’abri : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des rats dans la cave ou au vide-ordures', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à L’Haÿ-les-Roses](/souris/l-hay-les-roses) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des bruits sous le plancher', x: 'Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Des rats attirés par les mangeoires ou le compost', x: 'Graines au sol, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à L’Haÿ-les-Roses',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Un pavillon se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique, dans un parc ou le long de la Bièvre, alertez la **mairie de L’Haÿ-les-Roses**.',
+      'Nous intervenons aussi tout autour : [Chevilly-Larue](/deratisation/chevilly-larue), [Fresnes](/deratisation/fresnes), [Villejuif](/deratisation/villejuif), [Cachan](/deratisation/cachan), [Arcueil](/deratisation/arcueil), [Bourg-la-Reine](/deratisation/bourg-la-reine) et [Antony](/deratisation/antony).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à L’Haÿ-les-Roses ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Bièvre attire-t-elle les rats à L’Haÿ ?', a: 'Oui, à l’air libre comme sous terre, la rivière et ses ouvrages sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Le fond de vallée doit surveiller regards, caves et soupiraux.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'J’habite une résidence du Jardin Parisien ou de Lallier : qui paie ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Les chantiers autour du métro 14 font-ils venir les rats ?', a: 'Les terrassements délogent les colonies, qui cherchent un nouvel abri dans les bâtiments voisins. Fermez caves et locaux à poubelles, et faites traiter dès les premières traces.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à L’Haÿ-les-Roses ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [LHAY_INSEE, LHAY_WIKI, ROSERAIE_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
