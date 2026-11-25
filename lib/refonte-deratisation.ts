@@ -2309,4 +2309,92 @@ REFONTE_DERATISATION['le-perreux-sur-marne'] = {
   sources: [PERREUX_INSEE, PERREUX_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Le Plessis-Trévise (25/11/2026) ──
+const PLESSIS_WIKI: Source = { label: 'Wikipédia, Le Plessis-Trévise (lotissements, Bois Saint-Martin, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Le_Plessis-Tr%C3%A9vise' }
+const BOIS_ST_MARTIN_WIKI: Source = { label: 'Wikipédia, Bois Saint-Martin (forêt sur Noisy-le-Grand, Le Plessis-Trévise, Villiers-sur-Marne)', url: 'https://fr.wikipedia.org/wiki/Bois_Saint-Martin' }
+const PLESSIS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94059, Le Plessis-Trévise', url: 'https://geo.api.gouv.fr/communes?code=94059&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['le-plessis-trevise'] = {
+  maj: '2026-11-25',
+  accroche: 'Une ville née de la forêt, lotie en pavillons avec jardin, au bord du Bois Saint-Martin : au Plessis-Trévise, souris et rats viennent des bois et des jardins. Nous protégeons votre maison.',
+  societe: {
+    titre: 'Société de dératisation au Plessis-Trévise (94420) : une ville de lotissements au bord des bois',
+    paras: [
+      'Le Plessis-Trévise compte **21 112 habitants** sur **4,32 km²**, sur le plateau, entre 88 et 111 mètres d’altitude. Au milieu du XIXe siècle, le territoire était **presque entièrement boisé** et ne comptait qu’une cinquantaine d’habitants. En 1857, les héritiers de la duchesse de Trévise font **lotir le domaine** : les grandes propriétés boisées deviennent peu à peu des quartiers de **pavillons**. Une partie du **Bois Saint-Martin** se trouve encore sur la commune.',
+      'Cette histoire explique la plupart des appels que nous recevons : **jardins**, haies, abris, composteurs et **vide sanitaires** de maisons, au contact des espaces boisés. En 2018, **32 % des logements** étaient des maisons individuelles, le reste des appartements. À l’automne, quand il fait froid, les **souris** des bois et des jardins cherchent la chaleur des maisons.',
+      'Nous intervenons au Plessis-Trévise depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris au Plessis-Trévise](/souris/le-plessis-trevise), [punaises de lit au Plessis-Trévise](/punaises-de-lit/le-plessis-trevise), [fourmis au Plessis-Trévise](/fourmis/le-plessis-trevise) et [chenilles processionnaires au Plessis-Trévise](/chenilles-processionnaires/le-plessis-trevise).',
+    ],
+  },
+  chiffres: [
+    { valeur: '21 112', texte: 'habitants (population légale Insee), code postal 94420.', source: PLESSIS_INSEE },
+    { valeur: '1857', texte: 'début du lotissement de l’ancien domaine boisé, qui comptait alors une cinquantaine d’habitants.', source: PLESSIS_WIKI },
+    { valeur: '32 %', texte: 'des logements sont des maisons individuelles (2018), sur 8 442 logements.', source: PLESSIS_WIKI },
+    { valeur: 'Bois', texte: 'Saint-Martin : une forêt partagée entre Le Plessis-Trévise, Villiers-sur-Marne et Noisy-le-Grand.', source: BOIS_ST_MARTIN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats au Plessis-Trévise : la ville secteur par secteur',
+    intro: 'Des **lisières du Bois Saint-Martin** aux **lotissements pavillonnaires**, du **centre** et de l’**avenue Ardouin** aux résidences, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les lisières du Bois Saint-Martin',
+        texte: 'Au nord, les maisons qui bordent le **Bois Saint-Martin** sont au contact direct d’un grand espace boisé. Mulots, souris et rats y vivent et s’approchent des **abris de jardin**, des **garages** et des **tas de bois**. Nous protégeons les points d’entrée de la maison et traitons les **terriers** du jardin.',
+      },
+      {
+        nom: 'Les lotissements pavillonnaires',
+        texte: 'La ville s’est construite par **lotissements successifs**, dès 1857 puis surtout dans les années 1970. Jardins, haies, composteurs, poulaillers et vide sanitaires : c’est là que nous intervenons le plus. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/le-plessis-trevise/chateau-des-tourelles.jpg', alt: 'Le château des Tourelles au Plessis-Trévise', legende: 'Le château des Tourelles, maison bourgeoise entourée de jardins : au Plessis-Trévise, les grandes propriétés ont laissé place aux pavillons.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ch%C3%A2teau_Tourelles_-_Le_Plessis-Tr%C3%A9vise_(FR94)_-_2022-03-17_-_2.jpg' },
+      },
+      {
+        nom: 'Le centre-ville et les résidences',
+        texte: 'Le cœur de ville, aménagé à partir de 1984, rassemble **résidences**, commerces et équipements. Caves, parkings et **locaux à poubelles** partagés : le traitement des parties communes se fait avec le **syndic** ou le **bailleur**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/le-plessis-trevise/centre-ville.jpg', alt: 'Le centre-ville du Plessis-Trévise et ses résidences', legende: 'Le centre-ville et ses résidences : caves, parkings et locaux à poubelles à surveiller.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Le_Plessis-Tr%C3%A9vise_-_Centre_ville.jpg' },
+      },
+      {
+        nom: 'L’avenue Ardouin, le marché et les commerces',
+        texte: 'Sur l’**avenue Ardouin**, la **place du marché** et les commerces de bouche produisent des déchets alimentaires. Pour un commerçant : postes **numérotés**, **registre**, **attestation** et passages hors des heures d’ouverture.',
+        photo: { src: '/villes/le-plessis-trevise/place-du-marche-avenue-ardouin.jpg', alt: 'La place du marché, avenue Ardouin, au Plessis-Trévise', legende: 'La place du marché, avenue Ardouin : autour des marchés, les déchets alimentaires attirent les rongeurs.', credit: 'Eunostos', licence: 'CC BY-SA 4.0', page: W + 'Place_du_march%C3%A9,_avenue_Ardouin,_Le_Plessis-Tr%C3%A9vise.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats au Plessis-Trévise (94420) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, haies, abri, garage, tas de bois, vide sanitaire ; en résidence, caves, parkings et local à poubelles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur au Plessis-Trévise (94420) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la maison dès les premiers froids', x: 'Près des bois, elles cherchent la chaleur à l’automne et passent par le moindre interstice : voir [souris au Plessis-Trévise](/souris/le-plessis-trevise) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin', x: 'Trous au pied des murs, sous la terrasse ou l’abri : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des bruits dans les combles ou le vide sanitaire', x: 'Voir [rats dans les combles](/blog/rats-dans-les-combles) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire). Nous trouvons l’entrée avant de traiter.' },
+      { t: 'Des rongeurs attirés par le poulailler ou les mangeoires', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+      { t: 'Un rongeur dans un commerce du centre', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi au Plessis-Trévise',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Au Plessis-Trévise, ville de pavillons, c’est le plus souvent au **propriétaire** de faire appel à une entreprise de dératisation ; pour une résidence, au **syndic** ou au **bailleur**.',
+      'Pour des rats sur la voie publique, dans un parc ou en lisière de bois, alertez la **mairie du Plessis-Trévise**. Les rongeurs ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Villiers-sur-Marne](/deratisation/villiers-sur-marne), [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Chennevières-sur-Marne](/deratisation/chennevieres-sur-marne) et [Pontault-Combault](/deratisation/pontault-combault).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation au Plessis-Trévise ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon avec jardin ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des souris chaque automne dans ma maison ?', a: 'Près du Bois Saint-Martin et des jardins, les souris cherchent la chaleur quand il fait froid. Nous trouvons et bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Le Bois Saint-Martin fait-il venir les rongeurs ?', a: 'Un grand espace boisé abrite de nombreux rongeurs, qui s’approchent des maisons en lisière, surtout l’hiver. Abris, garages et tas de bois sont les premiers endroits à surveiller.' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Mon poulailler attire-t-il les rats ?', a: 'Oui, s’il donne accès aux graines. Rangez-les en bacs fermés, ramassez les restes le soir et grillagez le bas du poulailler (voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats)).' },
+    { q: 'Qui paie la dératisation d’une résidence ?', a: 'Les parties communes relèvent du syndic ou du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec enfants ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [PLESSIS_INSEE, PLESSIS_WIKI, BOIS_ST_MARTIN_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
