@@ -3117,4 +3117,90 @@ REFONTE_DERATISATION['sucy-en-brie'] = {
   sources: [SUCY_INSEE, SUCY_WIKI, FORET_ND_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Thiais (25/11/2026) ──
+const THIAIS_WIKI: Source = { label: 'Wikipédia, Thiais (relief, cimetière parisien, Belle Épine, Grands Champs, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Thiais' }
+const THIAIS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94073, Thiais', url: 'https://geo.api.gouv.fr/communes?code=94073&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['thiais'] = {
+  maj: '2026-11-25',
+  accroche: 'Un plateau commercial avec Belle Épine, un cimetière de 103 hectares, un coteau de pavillons et la vallée de la Seine : à Thiais, chaque niveau de la ville a ses rongeurs. Nous savons où chercher.',
+  societe: {
+    titre: 'Société de dératisation à Thiais (94320) : une ville sur trois niveaux',
+    paras: [
+      'Thiais compte **32 918 habitants** sur **6,43 km²** et s’étend sur **trois milieux** : le **plateau de Longboyau** à l’ouest et au nord, autrefois agricole, aujourd’hui occupé par les commerces, le **cimetière parisien** et le grand ensemble des **Grands Champs** ; le **coteau** de la vallée de la Seine, berceau du village et des quartiers pavillonnaires des années 1980 ; et la **vallée alluviale**, aux sols sablonneux, où la ville s’est étendue au XXe siècle, avec **Grignon**.',
+      'La commune vit au cœur d’un grand bassin d’activités : le centre commercial **Belle Épine**, le **marché de Rungis** et l’**aéroport d’Orly** sont tout proches, et elle est traversée par l’**A86**, la **RD7** et la RD5. Côté habitat, **72,5 % des logements** sont des appartements et **24 %** des maisons. Pour une société de dératisation, Thiais, ce sont des **commerces**, des **résidences** et des **pavillons**.',
+      'Nous intervenons à Thiais depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Thiais](/souris/thiais), [punaises de lit à Thiais](/punaises-de-lit/thiais) et [fourmis à Thiais](/fourmis/thiais).',
+    ],
+  },
+  chiffres: [
+    { valeur: '32 918', texte: 'habitants (population légale Insee), code postal 94320.', source: THIAIS_INSEE },
+    { valeur: '103 ha', texte: 'pour le cimetière parisien de Thiais, soit environ 16 % de la commune, le deuxième de la région en superficie.', source: THIAIS_WIKI },
+    { valeur: '72,5 %', texte: 'des logements sont des appartements et 24 % des maisons.', source: THIAIS_WIKI },
+    { valeur: '3', texte: 'milieux : le plateau de Longboyau, le coteau de la Seine et la vallée alluviale.', source: THIAIS_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Thiais : la ville secteur par secteur',
+    intro: 'Du **plateau** commercial aux **Grands Champs**, du **vieux village** sur le coteau aux pavillons de la **Vallée verte**, jusqu’à **Grignon** dans la vallée, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le plateau : Belle Épine, zones commerciales et cimetière',
+        texte: 'Sur le **plateau**, le centre commercial **Belle Épine**, les enseignes et les restaurants produisent des déchets alimentaires en quantité. À côté, le **cimetière parisien** forme un très grand espace arboré. Pour un commerce : postes **numérotés**, **registre**, **attestation** et passages hors des heures d’ouverture.',
+        photo: { src: '/villes/thiais/cimetiere-parisien.jpg', alt: 'Une allée arborée du cimetière parisien de Thiais', legende: 'Une allée du cimetière parisien de Thiais : 103 hectares d’espaces arborés sur le plateau.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Avenue_A_Cimeti%C3%A8re_Parisien_Thiais_-_Thiais_(FR94)_-_2024-08-31_-_1.jpg' },
+      },
+      {
+        nom: 'Les Grands Champs',
+        texte: 'Le grand ensemble des **Grands Champs**, en réaménagement avec l’Agence nationale pour la rénovation urbaine, rassemble des immeubles autour des mêmes **caves** et **locaux à poubelles**. Les chantiers délogent les colonies : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+      },
+      {
+        nom: 'Le vieux village et le coteau',
+        texte: 'Sur le **coteau**, berceau de la paroisse, le centre ancien garde des maisons avec **caves**, des cours et sa **fontaine-lavoir**. Plus loin, les lotissements de la **Vallée verte** et de **Green Valley**, construits dans les années 1980, ont jardins et vide sanitaires. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/thiais/fontaine-lavoir.jpg', alt: 'La fontaine-lavoir du vieux Thiais', legende: 'La fontaine-lavoir, dans le vieux Thiais : un centre ancien avec maisons, caves et cours.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Le_lavoir_(6499516531).jpg' },
+      },
+      {
+        nom: 'Grignon et la vallée de la Seine',
+        texte: 'Dans la **vallée**, sur des sols sablonneux, les quartiers sud et est, dont **Grignon** et les cités des **Vergers de Grignon**, mêlent résidences et maisons, à proximité de la Seine et d’Orly. Caves, parkings et jardins : nous traitons au plus près des points d’entrée, puis rebouchons.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Thiais (94320) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Commerce : réserves, cuisine, bennes. Résidence : caves, local à poubelles, parkings. Pavillon : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Thiais (94320) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [nos services aux professionnels](/professionnels).' },
+      { t: 'Des rats dans la cave d’une résidence', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur ou le syndic par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Thiais](/souris/thiais) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des rongeurs après un chantier voisin', x: 'Les travaux de réaménagement délogent les colonies : agissez dès les premières traces, avec le syndic ou le bailleur.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Thiais',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Un pavillon se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**, un commerce à celle de l’**exploitant**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Thiais**.',
+      'Nous intervenons aussi tout autour : [Vitry-sur-Seine](/deratisation/vitry-sur-seine), [Choisy-le-Roi](/deratisation/choisy-le-roi), [Orly](/deratisation/orly), [Rungis](/deratisation/rungis), [Chevilly-Larue](/deratisation/chevilly-larue) et [Paray-Vieille-Poste](/deratisation/paray-vieille-poste).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Thiais ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, pavillon ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans les commerces de Belle Épine et des zones commerciales ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation pour vos contrôles d’hygiène, et contrat de suivi si besoin ([services aux professionnels](/professionnels)).' },
+    { q: 'J’habite aux Grands Champs : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Les travaux de réaménagement font-ils venir les rats ?', a: 'Les démolitions et chantiers délogent les colonies, qui cherchent refuge dans les bâtiments voisins. Fermez caves et locaux à poubelles, et faites traiter dès les premières traces ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Thiais ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [THIAIS_INSEE, THIAIS_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
