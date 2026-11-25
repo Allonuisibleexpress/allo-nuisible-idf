@@ -6,7 +6,7 @@ import { POLE, FAMILLES, lienPole, type Famille } from '@/lib/pole-saint-maurice
 const ACCENT = '#E8441A'
 const km = (n: number) => String(n).replace('.', ',')
 
-export default function PoleSaintMaurice({ slug, famille }: { slug: string; famille: Famille }) {
+export default function PoleSaintMaurice({ slug, famille , sobre = false }: { slug: string; famille: Famille ; sobre?: boolean }) {
   const ici = POLE.find((v) => v.slug === slug)
   if (!ici) return null
   const autresServices = ici.pages.filter((f) => f !== famille)
@@ -44,7 +44,7 @@ export default function PoleSaintMaurice({ slug, famille }: { slug: string; fami
               {parNom(voisines).map((v) => (
                 <a key={v.slug} href={lienPole(famille, v.slug)} className="rounded-full px-4 py-2 text-sm font-semibold hover:text-white transition-colors"
                   style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
-                  {famille === 'zones' ? v.nom : `${FAMILLES[famille]} à ${v.nom}`}{v.km > 0 ? ` (${km(v.km)} km)` : ''}
+                  {famille === 'zones' || sobre ? v.nom : `${FAMILLES[famille]} à ${v.nom}`}{v.km > 0 ? ` (${km(v.km)} km)` : ''}
                 </a>
               ))}
             </div>

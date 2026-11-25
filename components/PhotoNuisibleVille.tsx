@@ -60,7 +60,7 @@ export default function PhotoNuisibleVille({ basePath, a }: { basePath: string; 
     <section className="py-14 px-4" style={{ background: '#0b0b0b' }}>
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#F0562A' }}>Identifier le nuisible</p>
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{d.titre} {a}</h2>
+        <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{d.titre}{a ? ` ${a}` : ''}</h2>
         <div className={`grid gap-6 ${d.photos.length > 4 ? 'sm:grid-cols-2 lg:grid-cols-3' : d.photos.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
           {d.photos.map((p) => (
             <figure key={p.src} className="rounded-2xl overflow-hidden text-left" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>

@@ -388,8 +388,8 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </div>
         </section>
 
-        <PoleSaintMaurice slug={v.slug} famille="deratisation" />
-        <MaillageVille basePath="/deratisation" mot="Dératisation" code={v.code} slug={v.slug} a={v.a} />
+        <PoleSaintMaurice slug={v.slug} famille="deratisation" sobre={!!r} />
+        <MaillageVille basePath="/deratisation" mot="Dératisation" code={v.code} slug={v.slug} a={v.a} sobre={!!r} />
         <AutresServicesVille nom={v.nom} a={v.a} liens={autresServicesVille(v.slug, 'deratisation')} />
 
         {/* ── APPEL FINAL + MAILLAGE ── */}
@@ -414,7 +414,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
                   <a key={x.slug} href={`/deratisation/${x.slug}`}
                     className="text-sm text-white/75 hover:text-white rounded-full px-3.5 py-1.5 transition-colors"
                     style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
-                    Dératisation {x.nom}
+                    {r ? x.nom : `Dératisation ${x.nom}`}
                   </a>
                 ))}
               </div>

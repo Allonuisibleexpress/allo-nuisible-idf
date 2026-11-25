@@ -33,9 +33,9 @@ export const THEME_BLOG: Record<string, string[]> = {
 
 function h(s: string) { let x = 0; for (const c of s) x = (x * 31 + c.charCodeAt(0)) >>> 0; return x }
 
-export default function MaillageVille({ basePath, mot, code, slug, a, depLien = true }: {
+export default function MaillageVille({ basePath, mot, code, slug, a, depLien = true , sobre = false }: {
   basePath: string; mot: string; code: string; slug: string; a: string; depLien?: boolean
-}) {
+; sobre?: boolean }) {
   const dep = DEPS[code]
   const pageDep = dep && depLien && BASES_DEP.includes(basePath) && DEP_PAGES.includes(code) ? `${basePath}/${dep.slug}` : null
   const theme = THEME_BLOG[basePath]
@@ -77,7 +77,7 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
                     <a key={v.slug} href={`${basePath}/${v.slug}`} className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold text-white/80 hover:text-white transition-colors"
                       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
                       {plusProches.has(v.slug) && <MapPin className="w-3 h-3" style={{ color: '#F0562A' }} />}
-                      {plusProches.has(v.slug) ? `${mot} ${v.nom}` : v.nom}
+                      {plusProches.has(v.slug) && !sobre ? `${mot} ${v.nom}` : v.nom}
                       <span className="text-white/60">{kmTxt(v.km)}</span>
                     </a>
                   ))}
