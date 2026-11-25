@@ -3385,4 +3385,96 @@ REFONTE_DERATISATION['villeneuve-le-roi'] = {
   sources: [VLR_INSEE, VLR_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Villeneuve-Saint-Georges (25/11/2026) ──
+const VSG_WIKI: Source = { label: 'Wikipédia, Villeneuve-Saint-Georges (Seine et Yerres, crue de 1910, quartiers, gare de triage, logement)', url: 'https://fr.wikipedia.org/wiki/Villeneuve-Saint-Georges' }
+const VSG_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94078, Villeneuve-Saint-Georges', url: 'https://geo.api.gouv.fr/communes?code=94078&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['villeneuve-saint-georges'] = {
+  maj: '2026-11-25',
+  accroche: 'Au confluent de la Seine et de l’Yerres, avec un centre ancien inondé sous 3,20 m d’eau en 1910, une immense gare de triage et des grands ensembles sur le plateau : à Villeneuve-Saint-Georges, les rats ont tous les terrains. Nous les traitons un par un.',
+  societe: {
+    titre: 'Société de dératisation à Villeneuve-Saint-Georges (94190) : une ville au confluent de la Seine et de l’Yerres',
+    paras: [
+      'Villeneuve-Saint-Georges compte **36 221 habitants** sur **8,07 km²**, entre 30 et 97 mètres d’altitude. Deux cours d’eau la traversent : la **Seine** et l’**Yerres**, qui s’y jette. Lors de la **crue de 1910**, l’eau est montée jusqu’à **3,20 mètres** dans le centre, à l’angle de la rue des Écoles et de l’avenue Carnot, où l’on circulait en bateau. Berges, quais et caves inondables : un terrain idéal pour le **surmulot**, le rat d’égout.',
+      'La ville réunit des quartiers très différents : un **centre ancien** en revitalisation, la **gare de triage**, autrefois l’une des plus grandes d’Europe, des **grands ensembles** au Nord et sur le Plateau, et des quartiers de **pavillons**. En 2021, **68,5 % des logements** étaient des appartements et **27,8 %** des maisons. Pour une société de dératisation, ce sont autant de **caves anciennes**, de **parties communes** et de **jardins** à traiter.',
+      'Nous intervenons à Villeneuve-Saint-Georges depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Villeneuve-Saint-Georges](/souris/villeneuve-saint-georges), [punaises de lit à Villeneuve-Saint-Georges](/punaises-de-lit/villeneuve-saint-georges) et [fourmis à Villeneuve-Saint-Georges](/fourmis/villeneuve-saint-georges).',
+    ],
+  },
+  chiffres: [
+    { valeur: '36 221', texte: 'habitants (population légale Insee), code postal 94190.', source: VSG_INSEE },
+    { valeur: '3,20 m', texte: 'd’eau dans le centre-ville lors de la crue de 1910, à l’angle de la rue des Écoles et de l’avenue Carnot.', source: VSG_WIKI },
+    { valeur: '2', texte: 'cours d’eau : la Seine et l’Yerres, qui s’y jette sur le territoire de la commune.', source: VSG_WIKI },
+    { valeur: '68,5 %', texte: 'des logements sont des appartements et 27,8 % des maisons (2021), sur 13 991 logements.', source: VSG_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Villeneuve-Saint-Georges : la ville quartier par quartier',
+    intro: 'Villeneuve compte sept quartiers, dont le **Centre**, **Blandin-Belleplace**, **Villeneuve-Triage**, le **Plateau-Hauts de Villeneuve**, le **Val Saint-Georges** et le **quartier Nord**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Centre et les quais de Seine',
+        texte: 'Au sud, bordé par la **Seine**, le centre ancien concentre commerces, marché et immeubles anciens ; il bénéficie d’un programme de revitalisation des quartiers anciens dégradés. **Caves voûtées**, cours, réseaux anciens et proximité du fleuve : nous traitons les sous-sols, rebouchons les passages et contrôlons les **regards**.',
+        photo: { src: '/villes/villeneuve-saint-georges/quais-de-seine.jpg', alt: 'Les quais de Seine à Villeneuve-Saint-Georges', legende: 'Les quais de Seine à Villeneuve-Saint-Georges : péniches, berges et le centre ancien sur le coteau.', credit: 'Stéphane Abélard', licence: 'CC BY-SA 4.0', page: W + 'Quais_de_Seine_%C3%A0_Villeneuve-Saint-Georges.jpg' },
+      },
+      {
+        nom: 'Les secteurs inondables',
+        texte: 'Lors de la crue de 1910, la **gare**, sa place, l’avenue Carnot et la rue de Paris ont été inondées. Ces secteurs bas gardent des **caves humides** où les rats se réfugient, surtout quand la Seine ou l’Yerres montent. Nous inspectons les sous-sols après les épisodes de pluie.',
+        photo: { src: '/villes/villeneuve-saint-georges/crue-1910-place-de-la-gare.jpg', alt: 'Carte postale de la place de la gare de Villeneuve-Saint-Georges inondée en 1910', legende: 'La place de la gare inondée lors de la crue de 1910 : les secteurs bas gardent des caves humides.', credit: 'Carte postale ancienne, scan Claude_villetaneuse', licence: 'Domaine public', page: W + 'ELD_-_CRUE_DE_LA_SEINE_-_VILLENEUVE-SAINT-GEORGES_-_Place_de_la_Gare.JPG' },
+      },
+      {
+        nom: 'Villeneuve-Triage et la gare de triage',
+        texte: 'Entre la **Seine** à l’ouest et l’immense **gare de triage** à l’est, ce quartier isolé est relié par une passerelle de près de 400 mètres. Voies, friches ferroviaires et talus forment de vastes couloirs de végétation pour les rongeurs, qui s’approchent des maisons voisines.',
+        photo: { src: '/villes/villeneuve-saint-georges/gare-de-triage.jpg', alt: 'Vue aérienne de la gare de triage de Villeneuve-Saint-Georges', legende: 'La gare de triage vue du ciel : voies, friches et talus sur des dizaines d’hectares.', credit: 'Vertounoir', licence: 'CC BY-SA 4.0', page: W + 'Villeneuve_saint_Georges_triage_juillet_2006.jpg' },
+      },
+      {
+        nom: 'Le quartier Nord et le Plateau',
+        texte: 'Au **Nord**, les grands ensembles des Graviers, Sellier, La Passerelle, Guynemer et Thimmonier, et sur le **Plateau**, le Bois Matar et la Cité SNCF, sont des quartiers prioritaires en réhabilitation. Caves, vide-ordures et locaux à poubelles partagés : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: { src: '/villes/villeneuve-saint-georges/quartier-nord.jpg', alt: 'Rue Jean-Guyonnet dans le quartier Nord de Villeneuve-Saint-Georges', legende: 'Rue Jean-Guyonnet, quartier Nord : immeubles et locaux à poubelles partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rue_Jean_Guyonnet_-_Villeneuve-Saint-Georges_(FR94)_-_2022-05-11_-_1.jpg' },
+      },
+      {
+        nom: 'Blandin-Belleplace et le Val Saint-Georges',
+        texte: 'Blandin-Belleplace, quartier surtout **pavillonnaire** à la limite de Montgeron et de Crosne, a été touché avec Triage par les **inondations de juin 2016 et de janvier 2018**. Jardins, abris et vide sanitaires humides attirent les rongeurs. Nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Villeneuve-Saint-Georges (94190) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Centre ancien : caves, cours, regards. Grand ensemble : vide-ordures, caves, local à poubelles. Pavillon : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Villeneuve-Saint-Georges (94190) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble ancien du centre', x: 'Caves anciennes, réseaux vétustes et proximité de la Seine : nous traitons le sous-sol entier, puis rebouchons. Prévenez le syndic ou le bailleur par écrit.' },
+      { t: 'Des rats après une montée des eaux', x: 'Quand la Seine ou l’Yerres montent, les rats quittent les berges pour les caves. Faites contrôler les sous-sols après les fortes pluies.' },
+      { t: 'Des rats au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement, nous rebouchons ensuite les passages vers les logements.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Près du fleuve, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Villeneuve-Saint-Georges](/souris/villeneuve-saint-georges) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Villeneuve-Saint-Georges',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Les grands ensembles se traitent à la demande du **bailleur**, les immeubles en copropriété du centre à celle du **syndic**, les pavillons à celle de leur propriétaire.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur les quais ou la voie publique, alertez la **mairie de Villeneuve-Saint-Georges**. Pour un logement insalubre, la mairie ou l’Agence régionale de santé peuvent aussi être saisies.',
+      'Nous intervenons aussi tout autour : [Valenton](/deratisation/valenton), [Villeneuve-le-Roi](/deratisation/villeneuve-le-roi), [Limeil-Brévannes](/deratisation/limeil-brevannes), [Choisy-le-Roi](/deratisation/choisy-le-roi) et [Ablon-sur-Seine](/deratisation/ablon-sur-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Villeneuve-Saint-Georges ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, pavillon ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Seine et l’Yerres font-elles venir les rats ?', a: 'Oui : l’eau, les berges et les caves inondables sont le territoire du surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles et maisons proches doivent surveiller caves, soupiraux et regards.' },
+    { q: 'J’habite un immeuble ancien du centre : pourquoi des rats ?', a: 'Les caves anciennes, les réseaux vétustes et la proximité de la Seine leur offrent abri et passages. Le traitement doit couvrir tout le sous-sol, avec rebouchage des accès.' },
+    { q: 'J’habite aux Graviers ou au Bois Matar : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Villeneuve-Saint-Georges ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VSG_INSEE, VSG_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
