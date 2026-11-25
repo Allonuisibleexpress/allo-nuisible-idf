@@ -2760,4 +2760,91 @@ REFONTE_DERATISATION['rungis'] = {
   sources: [RUNGIS_INSEE, RUNGIS_WIKI, MIN_RUNGIS_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Saint-Mandé (25/11/2026) ──
+const STMANDE_WIKI: Source = { label: 'Wikipédia, Saint-Mandé (superficie, bois de Vincennes, lac, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Saint-Mand%C3%A9' }
+const STMANDE_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94067, Saint-Mandé', url: 'https://geo.api.gouv.fr/communes?code=94067&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['saint-mande'] = {
+  maj: '2026-11-25',
+  accroche: 'Une des plus petites communes d’Île-de-France, presque entièrement en appartements, collée au bois de Vincennes et au lac de Saint-Mandé : ici, les rongeurs passent du bois aux caves des immeubles. Nous fermons le passage.',
+  societe: {
+    titre: 'Société de dératisation à Saint-Mandé (94160) : une petite ville d’immeubles au bord du bois',
+    paras: [
+      'Saint-Mandé compte **21 071 habitants** sur **0,92 km²** seulement : c’est la **cinquième plus petite commune d’Île-de-France** par sa superficie, soit plus de **22 000 habitants au km²**. La ville a été amputée au XIXe siècle et a perdu le bois de Vincennes, rattaché à Paris en 1929. Il reste une ville d’**immeubles** serrés, avec **95,7 % d’appartements** en 2022, collée au **bois de Vincennes** et au **lac de Saint-Mandé**.',
+      'Cette configuration explique la plupart des appels : des **souris** dans les cuisines, des **rats** dans les **caves** et les **locaux à poubelles** des immeubles qui bordent le bois, le long de la **chaussée de l’Étang**. Dans des immeubles anciens aux caves reliées entre elles, un traitement isolé ne suffit pas : il faut traiter les **parties communes** avec le **syndic**.',
+      'Notre base de **Saint-Maurice** est de l’autre côté du bois : nous sommes à Saint-Mandé en quelques minutes, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Saint-Mandé](/souris/saint-mande), [cafards à Saint-Mandé](/cafards/saint-mande), [punaises de lit à Saint-Mandé](/punaises-de-lit/saint-mande) et [puces à Saint-Mandé](/puces/saint-mande).',
+    ],
+  },
+  chiffres: [
+    { valeur: '21 071', texte: 'habitants (population légale Insee), code postal 94160.', source: STMANDE_INSEE },
+    { valeur: '0,92 km²', texte: 'de superficie : la cinquième plus petite commune d’Île-de-France.', source: STMANDE_WIKI },
+    { valeur: '95,7 %', texte: 'des logements sont des appartements (2022), sur 11 902 logements.', source: STMANDE_WIKI },
+    { valeur: '1929', texte: 'année où le bois de Vincennes, jusque-là dépendant de Saint-Mandé, est rattaché à Paris.', source: STMANDE_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Saint-Mandé : la ville secteur par secteur',
+    intro: 'De la **chaussée de l’Étang** et du **lac** au centre et aux avenues proches de Paris, voici ce que chaque secteur implique pour une dératisation dans cette ville très dense.',
+    zones: [
+      {
+        nom: 'Le lac de Saint-Mandé et la lisière du bois',
+        texte: 'Le **lac de Saint-Mandé**, dans le bois de Vincennes, et les pelouses qui l’entourent attirent les rongeurs : eau, végétation et restes de pique-nique. Les immeubles en bordure du bois sont les premiers à voir arriver rats et souris, par les **soupiraux**, les **caves** et les **locaux à poubelles**.',
+        photo: { src: '/villes/saint-mande/lac-de-saint-mande.jpg', alt: 'Le lac de Saint-Mandé dans le bois de Vincennes', legende: 'Le lac de Saint-Mandé, dans le bois de Vincennes : eau et végétation à deux pas des immeubles.', credit: 'stone40', licence: 'CC BY-SA 3.0', page: W + 'Lac_de_Saint-Mand%C3%A9_in_2014_(1).jpg' },
+      },
+      {
+        nom: 'La chaussée de l’Étang et les immeubles en bordure du bois',
+        texte: 'La **chaussée de l’Étang** longe le bois au niveau du lac, bordée de grands immeubles d’un côté et d’arbres de l’autre. Les rongeurs passent du bois aux sous-sols : nous traitons les **caves** et les **cours**, posons des grilles sur les soupiraux et rebouchons les passages.',
+        photo: { src: '/villes/saint-mande/chaussee-de-l-etang.jpg', alt: 'La chaussée de l’Étang à Saint-Mandé, entre immeubles et bois de Vincennes', legende: 'La chaussée de l’Étang : les immeubles d’un côté, le bois de Vincennes de l’autre.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Chauss%C3%A9e_%C3%89tang_-_Saint-Mand%C3%A9_(FR94)_-_2023-03-23_-_1.jpg' },
+      },
+      {
+        nom: 'Le centre, les commerces et la ligne 1',
+        texte: 'Autour des stations **Saint-Mandé** et **Bérault** de la ligne 1, de la mairie et de l’**avenue Gambetta**, restaurants, boulangeries et commerces de bouche partagent caves et cours intérieures. Pour un commerce : postes **numérotés**, **registre**, **attestation** et passages hors des heures d’ouverture.',
+        photo: { src: '/villes/saint-mande/station-metro-saint-mande.jpg', alt: 'La station de métro Saint-Mandé et les immeubles voisins', legende: 'La station Saint-Mandé (ligne 1) et ses immeubles : commerces au rez-de-chaussée, caves en dessous.', credit: 'Contributeur Wikimedia Commons', licence: 'Domaine public', page: W + 'St-mande_13.JPG' },
+      },
+      {
+        nom: 'Les grandes institutions et les résidences',
+        texte: 'La ville accueille l’**hôpital Bégin**, le siège de l’**IGN** et de **Météo-France** : de grands sites avec cuisines collectives, locaux techniques et espaces verts. Côté habitat, les copropriétés anciennes et récentes demandent un traitement des **parties communes** organisé par le **syndic**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Saint-Mandé (94160) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines et plinthes chez vous ; caves, cour, local à poubelles et soupiraux côté bois dans les parties communes.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Saint-Mandé (94160) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la cuisine d’un appartement', x: 'Le cas le plus fréquent : voir [souris à Saint-Mandé](/souris/saint-mande), [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [rat derrière l’électroménager](/blog/rat-piege-cuisine-electromenager).' },
+      { t: 'Des rats dans la cave d’un immeuble proche du bois', x: 'Les rongeurs du bois rejoignent les sous-sols par les soupiraux. Prévenez le syndic par écrit : le traitement doit couvrir toutes les caves.' },
+      { t: 'Des bruits dans les murs ou le plafond', x: 'Dans les immeubles anciens, les rongeurs circulent dans les cloisons et les planchers : voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).' },
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [cafards à Saint-Mandé](/cafards/saint-mande).' },
+      { t: 'Un devis anormalement cher', x: 'Méfiez-vous des prix annoncés au téléphone puis multipliés sur place : voir [les arnaques à la dératisation](/blog/arnaques-deratisation-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Saint-Mandé',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Saint-Mandé, presque tout le monde vit en copropriété : c’est au **syndic** de faire traiter les parties communes, et à chacun son logement.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur la voie publique, alertez la **mairie de Saint-Mandé** ; pour le bois de Vincennes et le lac, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Vincennes](/deratisation/vincennes), [Montreuil](/deratisation/montreuil), [Fontenay-sous-Bois](/deratisation/fontenay-sous-bois), [Charenton-le-Pont](/deratisation/charenton-le-pont), [Paris 12e](/deratisation/paris-12) et [Paris 20e](/deratisation/paris-20).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Saint-Mandé ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Le bois de Vincennes et le lac font-ils venir les rats ?', a: 'Oui : un grand espace boisé avec un lac abrite des rongeurs, qui s’approchent des immeubles en lisière ([mode de vie du rat](/blog/rat-mode-de-vie)). Caves, soupiraux et locaux à poubelles sont à surveiller.' },
+    { q: 'J’ai des souris : faut-il traiter tout l’immeuble ?', a: 'Souvent, oui. Si elles viennent des caves ou des gaines, nous traitons votre logement et conseillons au syndic de traiter les parties communes ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Qui paie la dératisation des caves d’une copropriété ?', a: 'Le syndicat des copropriétaires, par le syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces de Saint-Mandé ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison dans un appartement avec chat ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Saint-Mandé ?', a: 'Oui : notre base de Saint-Maurice est de l’autre côté du bois. Nous intervenons 7j/7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [STMANDE_INSEE, STMANDE_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
