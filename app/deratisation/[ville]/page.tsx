@@ -225,7 +225,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           const vids = CHANTIER_DIOGENE.videos.filter((x) => !x.src.includes('avant-apres')).slice(0, 2)
           const m = mentionDistance({ ville: CHANTIER_DIOGENE.ville, distance: d }, v.nom)
           return (
-            <VideosEnHaut videos={vids} titre={`Dératisation : notre intervention en vidéo près ${deVille(v.nom)}`}
+            <VideosEnHaut videos={vids} titre={r ? 'Dératisation : notre intervention en vidéo' : `Dératisation : notre intervention en vidéo près ${deVille(v.nom)}`}
               intro={`Nous n’avons pas encore filmé d’intervention ${v.a}. Voici notre chantier filmé le plus proche, à Maisons-Alfort : la méthode est la même chez vous.`}
               mentions={Object.fromEntries(vids.map((x) => [x.src, m]))} />
           )
@@ -236,7 +236,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {r ? (
           <>
             <RefonteSociete r={r} />
-            <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
+            <PhotoNuisibleVille basePath="/deratisation" a={r ? '' : v.a} />
             <RefonteQuartiers r={r} />
           </>
         ) : (
@@ -263,7 +263,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
           </section>
   
           <ContexteLocal slug={v.slug} service="deratisation" a={v.a} />
-          <PhotoNuisibleVille basePath="/deratisation" a={v.a} />
+          <PhotoNuisibleVille basePath="/deratisation" a={r ? '' : v.a} />
           <LocalVille slug={v.slug} base="/deratisation" nom={v.nom} titre={`Dératiseur ${v.a} : ce que nous savons de ${v.nom}`} paras={[...(LOCAL_DERATISATION_94[v.slug] ?? LOCAL_DERATISATION_75_92[v.slug] ?? LOCAL_DERATISATION_GC[v.slug] ?? LOCAL_DERATISATION_NOUVELLES[v.slug] ?? []), ...(LOCAL_POLE_DERATISATION[v.slug] ?? []), ...ficheDeratisation(v)]} />
           {DOSSIERS_DERATISATION[v.slug] && <DossierLocal blocs={DOSSIERS_DERATISATION[v.slug]} surtitre={`Le dossier complet : dératisation ${v.a}`} />}
           <GuideVille guide={GUIDE_DERATISATION[v.slug]} plus={GUIDE_PLUS[v.slug]} nom={v.nom} slug={v.slug} />
@@ -294,7 +294,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
             <ProtocoleCondense p={PROTOCOLE_DERATISATION} a={v.a} />
           </>
         )}
-        <DeratEco a={v.a} />
+        <DeratEco a={r ? undefined : v.a} />
 
 
         <TarifsVille titre={`Prix d’une dératisation ${v.a}${codePostal(v.slug) ? ` (${codePostal(v.slug)})` : ""} : dès 120 €`}
@@ -395,7 +395,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {/* ── APPEL FINAL + MAILLAGE ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-4xl font-black text-white mb-6">Des rats ou des souris {v.a} ?</h2>
+            <h2 className="text-2xl md:text-4xl font-black text-white mb-6">{r ? 'Des rats ou des souris chez vous ?' : `Des rats ou des souris ${v.a} ?`}</h2>
             <a href={PHONE_HREF}
               className="inline-flex items-center gap-2.5 font-black text-white px-8 py-4 rounded-2xl transition-all hover:brightness-110"
               style={{ background: ACCENT, boxShadow: '0 6px 28px rgba(232,68,26,0.4)' }}>

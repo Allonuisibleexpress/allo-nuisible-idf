@@ -768,7 +768,7 @@ REFONTE_DERATISATION['ablon-sur-seine'] = {
       {
         nom: 'Les quais de Seine et l’écluse',
         texte: 'Le long des **quais**, jusqu’à l’**écluse** et la Saussaie des Gobelins, l’eau, les berges et la végétation offrent au rat un habitat idéal. Les maisons qui donnent sur la Seine doivent surveiller leurs **soupiraux**, leurs **regards** et le pied de leurs murs : c’est par là que les rongeurs entrent.',
-        photo: { src: '/villes/ablon-sur-seine/ecluse.jpg', alt: 'La Seine et les écluses d’Ablon-sur-Seine', legende: 'La Seine et les écluses d’Ablon : les berges sont l’habitat naturel du surmulot.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89cluses_Ablon_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_1.jpg' },
+        photo: { src: '/villes/ablon-sur-seine/ecluse.jpg', alt: 'La Seine et les écluses d’Ablon-sur-Seine', legende: 'La Seine et les écluses d’Ablon : les berges sont le territoire préféré du surmulot.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89cluses_Ablon_-_Ablon-sur-Seine_(FR94)_-_2022-06-05_-_1.jpg' },
       },
       {
         nom: 'Le vieux village et le quai Magne',
@@ -849,7 +849,7 @@ REFONTE_DERATISATION['alfortville'] = {
     zones: [
       {
         nom: 'Le confluent, Chinagora et les bords de Marne',
-        texte: 'Au nord, là où la Marne rejoint la Seine, les berges, les pontons et les espaces verts des quais sont un habitat naturel pour le rat. Les immeubles proches de **Chinagora** et des bords de Marne doivent surveiller leurs **parkings souterrains**, leurs **regards** et leurs **locaux à poubelles**.',
+        texte: 'Au nord, là où la Marne rejoint la Seine, les berges, les pontons et les espaces verts des quais sont un refuge tout trouvé pour le rat. Les immeubles proches de **Chinagora** et des bords de Marne doivent surveiller leurs **parkings souterrains**, leurs **regards** et leurs **locaux à poubelles**.',
         photo: { src: '/villes/alfortville/chinagora-confluent.jpg', alt: 'Le complexe Chinagora au confluent de la Seine et de la Marne à Alfortville', legende: 'Chinagora, au confluent de la Seine et de la Marne, vu depuis le pont d’Ivry : l’eau borde la ville.', credit: 'Benj54', licence: 'Domaine public', page: W + 'Chinagora-alfortville.jpg' },
       },
       {
@@ -1373,7 +1373,7 @@ REFONTE_DERATISATION['charenton-le-pont'] = {
     zones: [
       {
         nom: 'Le Pont et les bords de Marne et de Seine',
-        texte: 'Au sud, le quartier du **Pont**, qui doit son nom au pont de Charenton sur la Marne, et les rues riveraines longent la **Marne** et la **Seine**. Quais, berges et réseaux d’assainissement : c’est le chemin naturel du rat d’égout. Les immeubles proches de l’eau doivent surveiller **caves**, **regards** et **locaux à poubelles**.',
+        texte: 'Au sud, le quartier du **Pont**, qui doit son nom au pont de Charenton sur la Marne, et les rues riveraines longent la **Marne** et la **Seine**. Quais, berges et réseaux d’assainissement : c’est le chemin habituel du rat d’égout. Les immeubles proches de l’eau doivent surveiller **caves**, **regards** et **locaux à poubelles**.',
         photo: { src: '/villes/charenton-le-pont/marne-passerelle.jpg', alt: 'La Marne entre Charenton-le-Pont et Alfortville, vue depuis la passerelle', legende: 'La Marne vue depuis la passerelle d’Alfortville : à droite, les immeubles de Charenton au bord de l’eau.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Marne_vue_depuis_Passerelle_Alfortville_Charenton_Pont_6.jpg' },
       },
       {
@@ -1460,7 +1460,7 @@ REFONTE_DERATISATION['chennevieres-sur-marne'] = {
     zones: [
       {
         nom: 'Les Bords de Marne et les îles',
-        texte: 'En bas des coteaux, les maisons des **bords de Marne**, près de l’île des Vignerons et de l’île d’Amour, sont les plus exposées : l’eau, les berges et la végétation sont l’habitat naturel du rat. Nous contrôlons **soupiraux**, **regards** et pied des murs, et traitons les **terriers**.',
+        texte: 'En bas des coteaux, les maisons des **bords de Marne**, près de l’île des Vignerons et de l’île d’Amour, sont les plus exposées : l’eau, les berges et la végétation sont le territoire préféré du rat. Nous contrôlons **soupiraux**, **regards** et pied des murs, et traitons les **terriers**.',
         photo: { src: '/villes/chennevieres-sur-marne/pissarro-la-marne-a-chennevieres.jpg', alt: 'La Marne à Chennevières, tableau de Camille Pissarro (1864-1865)', legende: 'La Marne à Chennevières, peinte par Camille Pissarro vers 1864 : les berges n’ont pas cessé d’attirer la faune.', credit: 'Camille Pissarro, Galeries nationales d’Écosse', licence: 'Domaine public', page: W + 'Camille_Pissarro_-_The_Marne_at_Chennevi%C3%A8res_-_Google_Art_Project.jpg' },
       },
       {
@@ -1726,7 +1726,7 @@ REFONTE_DERATISATION['fresnes'] = {
     zones: [
       {
         nom: 'La Bièvre et le parc des Prés de la Bièvre',
-        texte: 'Le long de la **Bièvre** et du **ru de Rungis**, l’eau, les berges et la végétation offrent au rat un habitat naturel. Les immeubles et maisons proches doivent surveiller **regards**, **caves** et **soupiraux**, surtout après de fortes pluies.',
+        texte: 'Le long de la **Bièvre** et du **ru de Rungis**, l’eau, les berges et la végétation offrent au rat un refuge tout trouvé. Les immeubles et maisons proches doivent surveiller **regards**, **caves** et **soupiraux**, surtout après de fortes pluies.',
         photo: { src: '/villes/fresnes/bievre-pres-de-la-bievre.jpg', alt: 'La Bièvre dans le parc des Prés de la Bièvre à Fresnes', legende: 'La Bièvre à l’air libre dans le parc des Prés de la Bièvre : eau et berges boisées en pleine ville.', credit: 'VVVCFFrance', licence: 'CC BY-SA 4.0', page: W + 'Fresnes_Bi%C3%A8vre_dans_le_parc_des_pr%C3%A9s_de_la_Bi%C3%A8vre.jpg' },
       },
       {
