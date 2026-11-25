@@ -3203,4 +3203,95 @@ REFONTE_DERATISATION['thiais'] = {
   sources: [THIAIS_INSEE, THIAIS_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Valenton (25/11/2026) ──
+const VALENTON_WIKI: Source = { label: 'Wikipédia, Valenton (quartiers, Plage bleue, station Seine-Amont du SIAAP, transports)', url: 'https://fr.wikipedia.org/wiki/Valenton' }
+const VALENTON_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94074, Valenton', url: 'https://geo.api.gouv.fr/communes?code=94074&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['valenton'] = {
+  maj: '2026-11-25',
+  accroche: 'Un parc de 27 hectares autour d’un plan d’eau, une grande station d’épuration, des cités, un coteau de pavillons et des quartiers neufs : à Valenton, les rats ont de l’eau et des réseaux. Nous traitons secteur par secteur.',
+  societe: {
+    titre: 'Société de dératisation à Valenton (94460) : une ville de parcs et de réseaux',
+    paras: [
+      'Valenton compte **14 406 habitants** sur **5,31 km²**, dont environ **84 hectares d’espaces verts publics**. Le plus grand est le **parc départemental de la Plage bleue** (26,88 hectares), aménagé à partir de 1987 autour d’un plan d’eau. La commune accueille aussi la **station d’épuration Seine-Amont** du SIAAP, qui traite les eaux usées de la majeure partie du Val-de-Marne : Valenton est donc traversée par un **réseau d’assainissement** important, le chemin habituel du **surmulot**, le rat d’égout.',
+      'La ville mêle des quartiers d’**habitat social** (la Lutèce, les Polognes), un **coteau pavillonnaire** (le Coteau, les Tourelles), une **zone commerciale** (le Champ-Saint-Julien), une **gare de triage** et des quartiers neufs au **Val Pompadour**, desservi depuis 2025 par le téléphérique **Câble 1**. Une société de dératisation y traite autant les **parties communes** des résidences que les **jardins** et les **commerces**.',
+      'Nous intervenons à Valenton depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Valenton](/souris/valenton), [punaises de lit à Valenton](/punaises-de-lit/valenton) et [fourmis à Valenton](/fourmis/valenton).',
+    ],
+  },
+  chiffres: [
+    { valeur: '14 406', texte: 'habitants (population légale Insee), code postal 94460.', source: VALENTON_INSEE },
+    { valeur: '84 ha', texte: 'd’espaces verts publics sur 531 hectares, dont le parc de la Plage bleue.', source: VALENTON_WIKI },
+    { valeur: '26,88 ha', texte: 'pour le parc départemental de la Plage bleue, Trophée du paysage en 1993.', source: VALENTON_WIKI },
+    { valeur: '1,6 M', texte: 'équivalent-habitants pour la station d’épuration Seine-Amont, qui traite les eaux usées de la majeure partie du 94.', source: VALENTON_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Valenton : la ville quartier par quartier',
+    intro: 'Valenton compte le **Fonx**, le **Centre-ville**, la **Lutèce**, le **Coteau**, les **Polognes**, les **Tourelles**, le **Champ-Saint-Julien** et le **Val Pompadour**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La Lutèce et la Plage bleue',
+        texte: 'En bordure du **parc de la Plage bleue**, le quartier de la **Lutèce** est composé majoritairement de logements sociaux. Le plan d’eau, les pelouses et les poubelles du parc attirent les rongeurs vers les **caves** et **locaux à poubelles** voisins. Le traitement des parties communes se fait avec le **bailleur**.',
+        photo: { src: '/villes/valenton/parc-de-la-plage-bleue.jpg', alt: 'Le parc départemental de la Plage bleue à Valenton, avec son plan d’eau', legende: 'Le parc de la Plage bleue et son plan d’eau : 27 hectares d’espaces verts au bord des quartiers.', credit: 'Rémih', licence: 'CC BY-SA 4.0', page: W + 'Parc_d%C3%A9partemental_de_la_Plage-Bleue_08.jpg' },
+      },
+      {
+        nom: 'Le Val Pompadour et les quartiers neufs',
+        texte: 'Au nord, le **Val Pompadour** est en pleine expansion, avec plus de 600 logements nouveaux et la station **Valenton** du **Câble 1**. Les chantiers délogent les colonies, qui cherchent un abri dans les **parkings** et **locaux techniques** des immeubles récents : il faut agir dès les premières traces, avec le **syndic**.',
+        photo: { src: '/villes/valenton/vue-aerienne-val-pompadour.jpg', alt: 'Vue aérienne du nord de Valenton et du Val Pompadour', legende: 'Vue aérienne du nord de Valenton : le Val Pompadour, les voies ferrées et les grands axes.', credit: 'Suaudeau', licence: 'CC BY-SA 4.0', page: W + 'Vue-aerienne-de-Valenton-nord.jpg' },
+      },
+      {
+        nom: 'Le Centre-ville, le Fonx et le château',
+        texte: 'Le **centre-ville**, avec son marché principal et ses commerces, et le **Fonx** voisin mêlent immeubles et maisons anciennes ; la ville garde aussi son **château**. Marché, commerces de bouche et caves : nous intervenons hors des heures d’ouverture et inspectons soupiraux et cours.',
+        photo: { src: '/villes/valenton/chateau-de-valenton.jpg', alt: 'Le château de Valenton', legende: 'Le château de Valenton : un bâti ancien, avec caves et dépendances.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ch%C3%A2teau_Valenton_15.jpg' },
+      },
+      {
+        nom: 'Le Coteau, les Polognes et les Tourelles',
+        texte: 'Sur le **plateau**, le **Coteau** et les **Tourelles** sont des quartiers **pavillonnaires** ; les **Polognes** comptent des logements sociaux. Jardins, composteurs, abris et vide sanitaires d’un côté, caves partagées de l’autre : nous adaptons le traitement. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+      {
+        nom: 'Le Champ-Saint-Julien, le triage et les réseaux',
+        texte: 'La zone commerciale du **Champ-Saint-Julien**, avec ses moyennes surfaces et ses restaurants, la **gare de triage** et les **réseaux d’assainissement** offrent couvert et nourriture aux rongeurs. Pour une entreprise : postes **numérotés**, **registre** et **attestation**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Valenton (94460) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Résidence : caves, vide-ordures, local à poubelles. Pavillon : jardin, abri, vide sanitaire. Commerce : réserves, cuisine, bennes.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Valenton (94460) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou au local à poubelles d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Avec un réseau d’assainissement aussi important, l’égout est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+      { t: 'Des rats dans les parkings d’une résidence neuve', x: 'Les chantiers voisins délogent les colonies : prévenez le syndic dès les premières traces.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Valenton](/souris/valenton) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Valenton',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Une résidence sociale se traite à la demande du **bailleur**, une copropriété à celle du **syndic**, un pavillon à celle de son propriétaire.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique, alertez la **mairie de Valenton** ; le parc de la Plage bleue est un parc départemental.',
+      'Nous intervenons aussi tout autour : [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges), [Choisy-le-Roi](/deratisation/choisy-le-roi), [Créteil](/deratisation/creteil), [Limeil-Brévannes](/deratisation/limeil-brevannes) et [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Valenton ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, commerce ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Plage bleue attire-t-elle les rats vers les immeubles ?', a: 'Un grand parc avec un plan d’eau offre abri et nourriture aux rongeurs ([mode de vie du rat](/blog/rat-mode-de-vie)). Les résidences voisines doivent garder caves et locaux à poubelles fermés.' },
+    { q: 'J’habite à la Lutèce ou aux Polognes : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Je vis au Val Pompadour et je vois des rats : pourquoi ?', a: 'Les chantiers voisins délogent les colonies, qui cherchent un nouvel abri dans les immeubles récents. Signalez-le vite au syndic : un traitement rapide évite l’installation.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Valenton ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VALENTON_INSEE, VALENTON_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
