@@ -2135,4 +2135,91 @@ REFONTE_DERATISATION['l-hay-les-roses'] = {
   sources: [LHAY_INSEE, LHAY_WIKI, ROSERAIE_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Le Kremlin-Bicêtre (25/11/2026) ──
+const KB_WIKI: Source = { label: 'Wikipédia, Le Kremlin-Bicêtre (carrières, avenue de Fontainebleau, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Le_Kremlin-Bic%C3%AAtre' }
+const KB_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94043, Le Kremlin-Bicêtre', url: 'https://geo.api.gouv.fr/communes?code=94043&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['le-kremlin-bicetre'] = {
+  maj: '2026-11-25',
+  accroche: 'Collé à Paris, entre le périphérique, l’avenue de Fontainebleau et l’hôpital Bicêtre, sur d’anciennes carrières : au Kremlin-Bicêtre, presque tout le monde vit en immeuble, et les rongeurs passent par les sous-sols.',
+  societe: {
+    titre: 'Société de dératisation au Kremlin-Bicêtre (94270) : une ville dense aux portes de Paris',
+    paras: [
+      'Le Kremlin-Bicêtre compte **24 110 habitants** sur seulement **1,54 km²**, soit plus de **15 000 habitants au km²**. La ville touche Paris par le **boulevard périphérique** et l’**A6b**, et s’organise autour de l’**avenue de Fontainebleau**, ancienne grande route vers le sud, bordée d’immeubles et de commerces. Son histoire se confond avec celle de l’**hôpital de Bicêtre**, qui occupe une grande partie du territoire.',
+      'Le sous-sol a été creusé de **carrières de calcaire grossier**, souterraines et à ciel ouvert, et de **carrières d’argile** dans la vallée. Aujourd’hui, **93,6 % des logements** sont des appartements (2020), dont **31,2 % de HLM**. Pour une société de dératisation, ce sont avant tout des **caves**, des **parkings** et des **locaux à poubelles** à traiter, souvent reliés d’un immeuble à l’autre.',
+      'Nous intervenons au Kremlin-Bicêtre depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris au Kremlin-Bicêtre](/souris/le-kremlin-bicetre), [punaises de lit au Kremlin-Bicêtre](/punaises-de-lit/le-kremlin-bicetre), [fourmis au Kremlin-Bicêtre](/fourmis/le-kremlin-bicetre) et [puces au Kremlin-Bicêtre](/puces/le-kremlin-bicetre).',
+    ],
+  },
+  chiffres: [
+    { valeur: '24 110', texte: 'habitants (population légale Insee), code postal 94270.', source: KB_INSEE },
+    { valeur: '1,54 km²', texte: 'de superficie : plus de 15 000 habitants au km² (calcul sur les chiffres Insee).', source: KB_INSEE },
+    { valeur: '93,6 %', texte: 'des logements sont des appartements (2020), sur 13 170 logements.', source: KB_WIKI },
+    { valeur: '31,2 %', texte: 'de logements HLM en 2020 (3 612 logements).', source: KB_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats au Kremlin-Bicêtre : la ville secteur par secteur',
+    intro: 'De l’**avenue de Fontainebleau** au **périphérique**, des abords de l’**hôpital Bicêtre** aux résidences et au **parc Pinel**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'L’avenue de Fontainebleau et les commerces',
+        texte: 'Axe principal de la ville, l’**avenue de Fontainebleau** concentre immeubles, restaurants, commerces de bouche et le centre commercial **Okabé**. Réserves, cuisines et locaux à déchets attirent rats et souris. Pour un commerce : postes **numérotés**, **registre**, **attestation** et passages **hors des heures d’ouverture**.',
+        photo: { src: '/villes/le-kremlin-bicetre/avenue-de-fontainebleau.jpg', alt: 'L’avenue de Fontainebleau au Kremlin-Bicêtre', legende: 'L’avenue de Fontainebleau : immeubles, commerces et restaurants sur l’axe principal de la ville.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Avenue_Fontainebleau_-_Le_Kremlin-Bic%C3%AAtre_(FR94)_-_2021-10-24_-_1.jpg' },
+      },
+      {
+        nom: 'Les abords de l’hôpital Bicêtre et la ligne 14',
+        texte: 'Autour du grand domaine hospitalier et de la station **Hôpital Bicêtre** de la **ligne 14**, résidences, commerces et chantiers se côtoient. Les terrassements délogent les colonies : les immeubles voisins doivent fermer **caves**, **soupiraux** et **locaux à poubelles** dès les premières traces.',
+        photo: { src: '/villes/le-kremlin-bicetre/station-hopital-bicetre.jpg', alt: 'La station Hôpital Bicêtre de la ligne 14 au Kremlin-Bicêtre', legende: 'La station Hôpital Bicêtre (ligne 14), ouverte en 2024 : un secteur en pleine transformation.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Station_H%C3%B4pital_Bic%C3%AAtre_M%C3%A9tro_Paris_-_Le_Kremlin-Bic%C3%AAtre_(FR94)_-_2024-06-26_-_1.jpg' },
+      },
+      {
+        nom: 'Le centre, la mairie et les anciennes carrières',
+        texte: 'Autour de la **mairie** et de son jardin, immeubles anciens et petits collectifs reposent sur un sous-sol creusé par d’**anciennes carrières**. Caves profondes et vieux réseaux offrent des abris aux rongeurs : nous inspectons **soupiraux**, **regards** et **caves**, puis rebouchons.',
+        photo: { src: '/villes/le-kremlin-bicetre/mairie-et-jardin.jpg', alt: 'La mairie du Kremlin-Bicêtre et son jardin', legende: 'La mairie et son jardin : autour, un bâti ancien sur d’anciennes carrières.', credit: 'Guillaume « Frozman » Calas', licence: 'CC BY 2.5', page: W + 'Kremlin-bicetre-france-mairie-02.jpg' },
+      },
+      {
+        nom: 'Les résidences et le long du périphérique',
+        texte: 'Près du **périphérique** et de l’**A6b**, les grandes résidences et HLM partagent **caves**, **vide-ordures** et **locaux à poubelles**. Talus et ouvrages routiers servent de couloirs aux rongeurs. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats au Kremlin-Bicêtre (94270) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'L’enquête dans l’immeuble', x: 'Cuisine, gaines, plinthes chez vous ; caves, parkings, vide-ordures et local à poubelles dans les parties communes.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur au Kremlin-Bicêtre (94270) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans la cuisine d’un appartement', x: 'Le cas le plus fréquent dans une ville d’immeubles : voir [souris au Kremlin-Bicêtre](/souris/le-kremlin-bicetre), [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [rat derrière l’électroménager](/blog/rat-piege-cuisine-electromenager).' },
+      { t: 'Des rats dans la cave ou le parking', x: 'Le signe d’une colonie dans les sous-sols, souvent reliés entre immeubles. Prévenez le syndic ou le bailleur par écrit : le traitement doit couvrir les parties communes.' },
+      { t: 'Des rats apparus après un chantier voisin', x: 'Quand un terrain est terrassé, la colonie cherche un nouvel abri. Agissez dès les premières traces pour éviter l’installation.' },
+      { t: 'Un rongeur dans un restaurant ou un commerce', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Des bruits dans les murs ou le plafond', x: 'Dans le bâti ancien, les rongeurs circulent dans les cloisons : voir [rat dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi au Kremlin-Bicêtre',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Au Kremlin-Bicêtre, les parties communes se traitent à la demande du **syndic** ou du **bailleur**, et chacun traite son logement.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie du Kremlin-Bicêtre**.',
+      'Nous intervenons aussi tout autour : [Gentilly](/deratisation/gentilly), [Arcueil](/deratisation/arcueil), [Villejuif](/deratisation/villejuif), [Ivry-sur-Seine](/deratisation/ivry-sur-seine), [Vitry-sur-Seine](/deratisation/vitry-sur-seine) et [Paris 13e](/deratisation/paris-13).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation au Kremlin-Bicêtre ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Commerce, restaurant ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des souris dans mon appartement : faut-il traiter tout l’immeuble ?', a: 'Souvent, oui. Si elles viennent des caves ou des gaines, nous traitons votre logement et conseillons au syndic de traiter les parties communes ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Les anciennes carrières favorisent-elles les rats ?', a: 'Un sous-sol ancien, avec caves profondes et vieux réseaux, offre des abris aux rongeurs ([mode de vie du rat](/blog/rat-mode-de-vie)). Le traitement se fait au plus près des points d’entrée, puis nous rebouchons.' },
+    { q: 'Qui paie la dératisation d’une résidence HLM ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les commerces de l’avenue de Fontainebleau ?', a: 'Oui, hors des heures d’ouverture, avec postes numérotés, registre et attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Peut-on dératiser sans poison dans un appartement avec chat ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite au Kremlin-Bicêtre ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [KB_INSEE, KB_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
