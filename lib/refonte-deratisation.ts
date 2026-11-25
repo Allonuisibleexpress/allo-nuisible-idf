@@ -3026,4 +3026,95 @@ REFONTE_DERATISATION['santeny'] = {
   sources: [SANTENY_INSEE, SANTENY_WIKI, FORET_ND_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Sucy-en-Brie (25/11/2026) ──
+const SUCY_WIKI: Source = { label: 'Wikipédia, Sucy-en-Brie (plateau, Morbras, bois Notre-Dame, parcs, grands ensembles, logement)', url: 'https://fr.wikipedia.org/wiki/Sucy-en-Brie' }
+const SUCY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94071, Sucy-en-Brie', url: 'https://geo.api.gouv.fr/communes?code=94071&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['sucy-en-brie'] = {
+  maj: '2026-11-25',
+  accroche: 'Un plateau couvert de forêt, un coteau sur la Marne, la vallée du Morbras et d’anciens marais en bas de ville : à Sucy-en-Brie, 35 % du territoire est vert, et les rongeurs en profitent. Nous protégeons maisons et résidences.',
+  societe: {
+    titre: 'Société de dératisation à Sucy-en-Brie (94370) : une ville verte entre forêt, Morbras et Marne',
+    paras: [
+      'Sucy-en-Brie compte **27 764 habitants** sur **10,39 km²**. La ville est posée à la rupture du **plateau de Brie**, à une centaine de mètres d’altitude, dont toute la partie est est couverte par le **bois Notre-Dame** (306 hectares dans Sucy). À l’ouest, un **coteau** domine la vallée de la **Marne** ; au nord, la vallée du **Morbras** creuse le plateau. En bas, vers la gare, d’**anciennes zones marécageuses** asséchées ont longtemps posé des problèmes d’inondation par fortes pluies. Au total, **35 % du territoire** est fait d’espaces verts.',
+      'Côté habitat, Sucy est à mi-chemin : **51,5 % de maisons** et **48,1 % d’appartements** (2018). Les grands ensembles de la **Cité Verte**, de la **Fosse Rouge** (812 appartements, sur la rive du Morbras), des Noyers et de la Procession côtoient de nombreux quartiers **pavillonnaires**. Une société de dératisation y traite autant les **jardins en lisière de forêt** que les **caves** et **locaux à poubelles** des résidences.',
+      'Nous intervenons à Sucy depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Sucy-en-Brie](/souris/sucy-en-brie), [cafards à Sucy-en-Brie](/cafards/sucy-en-brie), [punaises de lit à Sucy-en-Brie](/punaises-de-lit/sucy-en-brie) et [chenilles processionnaires à Sucy-en-Brie](/chenilles-processionnaires/sucy-en-brie).',
+    ],
+  },
+  chiffres: [
+    { valeur: '27 764', texte: 'habitants (population légale Insee), code postal 94370.', source: SUCY_INSEE },
+    { valeur: '35 %', texte: 'du territoire en espaces verts, dont 306 hectares de bois Notre-Dame et un parc de 44 hectares.', source: SUCY_WIKI },
+    { valeur: '51,5 %', texte: 'des logements sont des maisons individuelles et 48,1 % des appartements (2018).', source: SUCY_WIKI },
+    { valeur: '812', texte: 'appartements à la Fosse Rouge, grand ensemble construit sur la rive du Morbras.', source: SUCY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Sucy-en-Brie : la ville quartier par quartier',
+    intro: 'Sucy s’organise autour du **centre-ville**, du **centre gare**, du **Fort**, des **Bruyères** dans le bois, des **Berges** sur la Marne et des grands ensembles de la vallée du **Morbras**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La vallée du Morbras et la Fosse Rouge',
+        texte: 'Au nord, le **Morbras** coule au pied de la **Fosse Rouge**, construite sur sa rive. L’eau, la végétation des berges et les grands immeubles aux **caves**, **vide-ordures** et **locaux à poubelles** partagés forment un terrain favorable. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: { src: '/villes/sucy-en-brie/ruisseau-du-morbras.jpg', alt: 'Le ruisseau du Morbras près du chemin du Vallon à Sucy-en-Brie', legende: 'Le Morbras, près du chemin du Vallon : un petit cours d’eau bordé de végétation, au pied des quartiers.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Ruisseau_Morbras_pr%C3%A8s_Chemin_Vallon_-_Sucy-en-Brie_(FR94)_-_2022-05-07_-_2.jpg' },
+      },
+      {
+        nom: 'Les grands ensembles : Cité Verte, Fosse Rouge, Noyers, Procession',
+        texte: 'Construits dans les années 1960 et 1970 à la place des champs, ces ensembles rassemblent des centaines de logements autour des mêmes sous-sols. Un rat vu dans un hall vient presque toujours des **caves** : nous traitons tout le sous-sol, puis rebouchons les passages vers les logements.',
+        photo: { src: '/villes/sucy-en-brie/cite-de-la-fosse-rouge.jpg', alt: 'Allée Rubens, cité de la Fosse Rouge à Sucy-en-Brie', legende: 'La cité de la Fosse Rouge, allée Rubens : un grand ensemble aux caves et locaux à poubelles partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'All%C3%A9e_Rubens_-_Sucy-en-Brie_(FR94)_-_2022-05-07_-_1.jpg' },
+      },
+      {
+        nom: 'Le bois Notre-Dame, les Bruyères et le Parc de Sucy',
+        texte: 'À l’est, le quartier des **Bruyères** est situé dans le **bois Notre-Dame**, et le **Parc de Sucy** (44 hectares) le borde. Souris, mulots et rats des bois s’approchent des maisons à l’automne : garages, abris, tas de bois et **vide sanitaires** sont à protéger.',
+      },
+      {
+        nom: 'Le centre-ville, le centre gare et les anciens marais',
+        texte: 'Le **centre-ville**, autour de l’**église Saint-Martin** et des anciens parcs de châteaux, garde des maisons avec caves ; en bas, le **centre gare**, près de la gare **Sucy-Bonneuil** du RER A, est bâti sur d’anciens **marais asséchés**. Caves humides après les fortes pluies et commerces de bouche : nous inspectons et traitons.',
+        photo: { src: '/villes/sucy-en-brie/eglise-saint-martin.jpg', alt: 'L’église Saint-Martin de Sucy-en-Brie', legende: 'L’église Saint-Martin, au cœur du bourg historique : maisons anciennes, caves et jardins.', credit: 'Mgiraud', licence: 'CC BY-SA 3.0', page: W + 'Sucy-en-Brie_-_%C3%89glise_Saint-Martin.jpg' },
+      },
+      {
+        nom: 'Le Fort, les Berges et les pavillons du coteau',
+        texte: 'Le quartier du **Fort**, né d’une ZAC, mêle collectifs et pavillons autour d’un centre commercial ; les **Berges** longent la Marne au pied du coteau. Jardins, haies et composteurs : nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Sucy-en-Brie (94370) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat, souris ou mulot et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Maison en lisière : garage, abri, vide sanitaire. Résidence : caves, vide-ordures, local à poubelles. Bas de ville : caves humides et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Sucy-en-Brie (94370) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris ou des mulots dans la maison à l’automne', x: 'Près du bois Notre-Dame, ils cherchent la chaleur dès les premiers froids : voir [souris à Sucy-en-Brie](/souris/sucy-en-brie) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats dans la cave ou au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes. Prévenez le bailleur par écrit : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des rats dans une cave humide du bas de la ville', x: 'Sur les anciens marais, les caves restent humides après la pluie. Nous traitons, bouchons les passages et conseillons sur l’aération.' },
+      { t: 'Des terriers dans le jardin', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des bruits dans les combles', x: 'Voir [rats dans les combles](/blog/rats-dans-les-combles) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Sucy-en-Brie',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Une maison se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**.',
+      'Locataire, signalez les rats **par écrit**, avec photos et dates. Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Sucy-en-Brie** ; le bois Notre-Dame est une forêt domaniale.',
+      'Nous intervenons aussi tout autour : [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne), [Boissy-Saint-Léger](/deratisation/boissy-saint-leger), [Chennevières-sur-Marne](/deratisation/chennevieres-sur-marne), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses) et [Santeny](/deratisation/santeny).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Sucy-en-Brie ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Le bois Notre-Dame fait-il venir les rongeurs ?', a: 'Un grand massif boisé abrite beaucoup de petits rongeurs, qui s’approchent des maisons en lisière, surtout à l’automne. Garages, abris et tas de bois sont à surveiller.' },
+    { q: 'Pourquoi des souris chaque automne ?', a: 'Avec 35 % d’espaces verts, Sucy offre de nombreux abris aux souris et mulots, qui cherchent la chaleur quand il fait froid. Nous bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'J’habite à la Fosse Rouge ou à la Cité Verte : qui paie la dératisation ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Ma cave est humide en bas de la ville : est-ce un risque ?', a: 'Le bas de Sucy est bâti sur d’anciens marais : les caves humides attirent les rats. Nous traitons, bouchons les passages et vous conseillons sur l’aération ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [SUCY_INSEE, SUCY_WIKI, FORET_ND_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
