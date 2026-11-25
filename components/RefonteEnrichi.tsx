@@ -17,7 +17,8 @@ const surtitre = (t: string) => <p className="text-xs font-black uppercase track
 const h = (s: string) => s.split('').reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 11)
 const IPM = { credit: 'NY State IPM Program, Cornell University', licence: 'CC BY 2.0', base: 'https://commons.wikimedia.org/wiki/File:' }
 
-type Ctx = { r: RefonteDerat; slug: string; nom: string; a: string; cp: string }
+// de / le : pages département (26/11/2026), « habitants du Val-de-Marne », « pour le Val-de-Marne »
+type Ctx = { r: RefonteDerat; slug: string; nom: string; a: string; cp: string; de?: string; le?: string }
 type Img = { src: string; alt: string; legende: string; credit?: string; licence?: string; page?: string }
 
 const reel = (k: PhotoKey): Img => { const p = PHOTOS_CHANTIERS[k]; return { src: mini(p.src), alt: p.alt, legende: p.legende } }
@@ -49,7 +50,7 @@ export function RefonteEssentiel({ r, slug, nom, a, cp }: Ctx) {
       : '**Méthode** : on cherche d’abord par où passent les rongeurs, on pose des postes **sécurisés** ou des pièges, on **bouche** les accès et on revient contrôler.',
     '**Sans biocide si besoin** : pièges mécaniques et piège multicapture **Ekomille**, pour les foyers avec enfants, animaux ou potager. Voir la [dératisation écologique](/services/deratisation-ecologique).',
     `**Secteurs à surveiller ${a}** : ${zones}.`,
-    '**Qui paie** : propriétaires, syndics, bailleurs et occupants doivent lutter contre les rongeurs (règlement sanitaire du Val-de-Marne, **article 119**).',
+    `**Qui paie** : propriétaires, syndics, bailleurs et occupants doivent lutter contre les rongeurs (${r.reglement ?? 'règlement sanitaire du Val-de-Marne, **article 119**'}).`,
     `**Garantie et confiance** : garantie **1 an**, techniciens certifiés **Certibiocide**, note Google **${NOTE_GOOGLE.note}/5** ([lire les avis de nos clients](${FICHE_GOOGLE_URL})).`,
   ]
   return (
@@ -121,7 +122,7 @@ export function RefonteSignes({ slug, a }: Ctx) {
 }
 
 /* ── 3. Dératiser soi-même ou appeler un dératiseur ── */
-export function RefonteSoiMeme({ slug, a, nom }: Ctx) {
+export function RefonteSoiMeme({ slug, a, nom, de }: Ctx) {
   const k = h(slug + 'd') % 2
   const lignes: [string, string, string][] = [
     ['Trouver d’où viennent les rongeurs', 'Difficile sans expérience', 'Diagnostic complet des entrées et des nids'],
@@ -133,7 +134,7 @@ export function RefonteSoiMeme({ slug, a, nom }: Ctx) {
   ]
   const intro = k
     ? `Peut-on dératiser soi-même ${a} ? Pour une souris isolée, oui. Contre des rats installés dans une cave, un jardin ou un immeuble, les essais en solitaire font surtout perdre du temps pendant que la colonie grandit.`
-    : `Beaucoup d’habitants de ${nom} essaient d’abord de dératiser seuls. Ça peut suffire pour une souris de passage ; face à des rats, le recours à un dératiseur professionnel évite que l’infestation s’étende aux voisins.`
+    : `Beaucoup d’habitants ${de ?? `de ${nom}`} essaient d’abord de dératiser seuls. Ça peut suffire pour une souris de passage ; face à des rats, le recours à un dératiseur professionnel évite que l’infestation s’étende aux voisins.`
   return (
     <section className="py-14 md:py-20 px-4" style={{ background: '#080808' }}>
       <div className="max-w-5xl mx-auto text-center">
@@ -179,7 +180,7 @@ export function RefonteSoiMeme({ slug, a, nom }: Ctx) {
 }
 
 /* ── 4. La méthode selon le lieu ── */
-export function RefonteLieux({ slug, a, nom }: Ctx) {
+export function RefonteLieux({ r, slug, a, nom, le }: Ctx) {
   const k = h(slug + 'l') % 2
   const lieux: { t: string; x: [string, string]; img?: Img }[] = [
     { t: `Rats ou souris dans un appartement ${a}`, x: [
@@ -195,7 +196,7 @@ export function RefonteLieux({ slug, a, nom }: Ctx) {
       'Un rat dans un parking ou une cave signale une colonie dans les sous-sols. Le traitement couvre l’ensemble des parties communes, pas un seul box.',
     ] },
     { t: 'Copropriété, syndic et bailleur', x: [
-      'Pour un immeuble, nous proposons un traitement des parties communes avec plan des postes, passages réguliers et rapport remis au syndic ou au bailleur, en application de l’article 119 du règlement sanitaire.',
+      `Pour un immeuble, nous proposons un traitement des parties communes avec plan des postes, passages réguliers et rapport remis au syndic ou au bailleur, en application ${r.reglement ? 'du règlement sanitaire départemental' : 'de l’article 119 du règlement sanitaire'}.`,
       'Le syndic ou le bailleur organise le traitement des parties communes. Nous fournissons un plan de pose, un registre des passages et une attestation, et pouvons assurer un contrat de suivi.',
     ] },
     { t: 'Restaurant, commerce de bouche et cuisine collective', x: [
@@ -216,7 +217,7 @@ export function RefonteLieux({ slug, a, nom }: Ctx) {
       <div className="max-w-5xl mx-auto text-center">
         {surtitre('Chaque lieu sa méthode')}
         <h2 className="text-2xl md:text-4xl font-black text-white leading-tight mb-4">Appartement, maison, cave ou restaurant : notre traitement anti-rongeurs {a}</h2>
-        <p className="text-white/70 max-w-3xl mx-auto leading-relaxed mb-10">{k ? `On ne traite pas une cave d’immeuble comme un pavillon avec jardin. Voici comment nous adaptons notre intervention ${a}, selon votre situation.` : `Le bon dispositif dépend du lieu, des personnes présentes et des animaux. Voici nos réponses, cas par cas, pour ${nom}.`}</p>
+        <p className="text-white/70 max-w-3xl mx-auto leading-relaxed mb-10">{k ? `On ne traite pas une cave d’immeuble comme un pavillon avec jardin. Voici comment nous adaptons notre intervention ${a}, selon votre situation.` : `Le bon dispositif dépend du lieu, des personnes présentes et des animaux. Voici nos réponses, cas par cas, pour ${le ?? nom}.`}</p>
         <div className="grid md:grid-cols-2 gap-5 text-left">
           {lieux.map((l) => (
             <article key={l.t} className="rounded-2xl p-5 md:p-6" style={card}>

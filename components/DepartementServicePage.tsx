@@ -27,6 +27,17 @@ import { VILLES_FRELONS, frelonsIndexee } from '@/lib/villes-frelons'
 import { VILLES_PUCES } from '@/lib/villes-puces'
 
 import CryoPunaisesLien from '@/components/CryoPunaisesLien'
+// 26/11/2026 : pages dératisation + département refaites dans le style des pages ville refondues
+import { refonteDeratDep, accrocheVilleDerat } from '@/lib/refonte-deratisation-departements'
+import { RefonteEssentiel, RefonteSignes, RefonteSoiMeme, RefonteLieux } from '@/components/RefonteEnrichi'
+import { RefonteSociete, RefonteQuartiers, RefonteIntervention, RefonteDeratiseur, RefonteMairie } from '@/components/RefonteDeratisation'
+import { faqLongueTraine } from '@/lib/faq-longue-traine'
+import { enrichi } from '@/components/ArticleService'
+import VideosEnHaut from '@/components/VideosEnHaut'
+import { MiniaturesChantier } from '@/components/ContenuNuisible'
+import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
+const LE_DEP: Record<DepSlug, string> = { paris: 'Paris', 'val-de-marne': 'le Val-de-Marne', 'hauts-de-seine': 'les Hauts-de-Seine', 'seine-saint-denis': 'la Seine-Saint-Denis', essonne: 'l’Essonne', yvelines: 'les Yvelines', 'seine-et-marne': 'la Seine-et-Marne' }
+const brut = (x: string) => x.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
 const ACCENT = '#E8441A'
 const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)' }
 const nf = (n: number) => n.toLocaleString('fr-FR')
@@ -158,6 +169,8 @@ const TRAITEMENT_DEP: Record<string, string> = {
 export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: DepSlug }) {
   const c = SERVICES_DEP[s], dep = DEPS[d], ct = c.contenu[d]
   const villes = villesDuDep(s, d)
+  const rd = s === 'deratisation' ? refonteDeratDep(d) : undefined
+  const ctx = rd ? { r: rd, slug: d, nom: dep.nom, a: dep.dans, cp: dep.code, de: dep.de, le: LE_DEP[d] } : undefined
   const url = `${SITE_URL}${c.base}/${d}`
   const autresDeps = DEP_SLUGS.filter((x) => x !== d)
   // Articles du blog sur le même nuisible (13/11/2026)
@@ -182,7 +195,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
     { q: `J’ai un problème de ${rep.probleme} ${dep.dans} : que faire ?`, a: `N’attendez pas et n’utilisez pas de produit au hasard. Allo Nuisible IDF intervient 7j/7 dans tout le ${dep.nom} (${dep.code}), souvent le jour même, depuis sa base de Saint-Maurice (94). ${rep.comment} Dès ${c.prix} TTC, devis gratuit, garantie ${rep.garantie.split(' :')[0]}. Téléphone : 07 68 07 72 19.` },
     { q: `Qui appeler pour ${rep.quoi} ${dep.dans} ?`, a: `Allo Nuisible IDF, entreprise de lutte contre les nuisibles basée à Saint-Maurice (94), dirigée par Houssem Hattab, avec des techniciens certifiés Certibiocide. Intervention dans tout le ${dep.nom}, notamment à ${villesProches.join(', ')}. Particuliers, copropriétés et professionnels. 07 68 07 72 19, 7j/7.` },
   ] : []
-  const faq = [
+  const faq = rd ? [...faqIA, ...rd.faq, ...faqLongueTraine(d, dep.dans)] : [
     ...faqIA,
     ...ct.faq,
     ...SAISONS_FAQ[c.famille],
@@ -198,7 +211,11 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         areaServed: [{ '@type': 'AdministrativeArea', name: dep.nom, identifier: dep.code }, ...villes.map((v) => ({ '@type': 'City', name: v.nom }))],
         provider: schemaPrestataire(), offers: schemaOffre(c.prixNum, c.prixNote),
       },
-      { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+      { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: brut(f.a) } })) },
+      ...(rd ? [{
+        '@type': 'ItemList', name: `${c.label} ${dep.dans} (${dep.code}) : nos pages par ville`, numberOfItems: villes.length,
+        itemListElement: parNom(villes).map((v, i) => ({ '@type': 'ListItem', position: i + 1, name: `${c.label} ${v.nom} (${codePostal(v.slug)})`, url: `${SITE_URL}${c.base}/${v.slug}` })),
+      }] : []),
       {
         '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
@@ -227,10 +244,10 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               <strong className="text-white">{NOTE_GOOGLE.note}/5</strong><span className="text-white/60">sur Google</span>
             </a>
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
-              {c.h1} <span style={{ color: '#F0562A' }}>{dep.dans}</span>
+              {rd ? 'Dératisation' : c.h1} <span style={{ color: '#F0562A' }}>{dep.dans}{rd ? ` (${dep.code})` : ''}</span>
             </h1>
             <p className="text-white/60 font-bold tracking-widest mb-6">{dep.code} · {dep.communes} · {nf(dep.population)} habitants</p>
-            <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-7">{ct.accroche} {d === 'val-de-marne' ? 'Notre base est à Saint-Maurice, au cœur du département.' : 'Notre base est à Saint-Maurice (94), tout près.'}</p>
+            <p className="text-lg md:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed mb-7">{rd ? rd.accroche : <>{ct.accroche} {d === 'val-de-marne' ? 'Notre base est à Saint-Maurice, au cœur du département.' : 'Notre base est à Saint-Maurice (94), tout près.'}</>}</p>
             <div className="flex flex-wrap justify-center items-center gap-3 mb-7">
               <span className="inline-flex items-baseline gap-2 rounded-2xl px-5 py-3" style={{ background: 'rgba(232,68,26,0.12)', border: '1.5px solid rgba(232,68,26,0.45)' }}>
                 <span className="text-white/80 font-bold text-sm">À partir de</span>
@@ -258,6 +275,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
+        {rd && <MiniaturesChantier a={dep.dans} photos={CHANTIER_DIOGENE.photos} />}
         {rep && (
           <section className="px-4 py-10 md:py-12" style={{ background: '#0d0d0d' }} aria-labelledby="reponse-directe">
             <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-8" style={{ background: 'rgba(232,68,26,0.07)', border: '1.5px solid rgba(232,68,26,0.35)' }}>
@@ -283,10 +301,17 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </section>
         )}
 
+        {rd && (
+          <VideosEnHaut videos={CHANTIER_DIOGENE.videos.filter((x) => !x.src.includes('avant-apres'))}
+            titre={`Dératisation ${dep.dans} (${dep.code}) : notre intervention en vidéo`}
+            intro={`Notre chantier filmé à Maisons-Alfort (94) : ramassage des rats en tenue de protection, postes contrôlés deux jours après, trous laissés par les rats avant rebouchage. La méthode est la même partout ${dep.dans}.`}
+            lien={{ href: CHANTIER_DIOGENE.article, label: 'Lire le récit complet du chantier de Maisons-Alfort' }} />
+        )}
         <BandeauDevis slug={d + s} mot={c.label.toLowerCase()} a={dep.dans} prix={c.prix} />
+        {ctx && <RefonteEssentiel {...ctx} />}
 
         {/* ── CONTEXTE DÉPARTEMENT ── */}
-        <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
+        {rd ? <RefonteSociete r={rd} /> : <section className="py-14 md:py-20 px-4" style={{ background: '#0d0d0d' }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-6">{TRAITEMENT_DEP[s] ?? c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>ce qu’il faut savoir</span></h2>
             {ct.paras.map((p) => <p key={p.slice(0, 30)} className="text-white/70 leading-relaxed mb-4">{inline(p)}</p>)}
@@ -299,7 +324,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               ))}
             </div>
           </div>
-        </section>
+        </section>}
 
         {/* ── NUISIBLES CONCERNÉS ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
@@ -327,7 +352,9 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
-        {CHANTIERS[s].length > 0 && <PhotosChantiers photos={CHANTIERS[s]} titre={`Nos chantiers ${s === 'frelons' ? 'de destruction de nids' : `de ${c.label.toLowerCase()}`} en photos`} intro={`Photos prises par nos techniciens lors de vraies interventions, en Île-de-France.`} fond="#0d0d0d" />}
+        {rd && <RefonteQuartiers r={rd} />}
+        {ctx && <RefonteSignes {...ctx} />}
+        {CHANTIERS[s].length > 0 && <div id="nos-chantiers"><PhotosChantiers photos={CHANTIERS[s]} titre={`Nos chantiers ${s === 'frelons' ? 'de destruction de nids' : `de ${c.label.toLowerCase()}`} en photos`} intro={`Photos prises par nos techniciens lors de vraies interventions, en Île-de-France.`} fond="#0d0d0d" /></div>}
 
         {/* ── SAISONS ── */}
         <section className="py-14 md:py-16 px-4" style={{ background: '#0d0d0d' }}>
@@ -362,7 +389,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
         {/* ── VILLES ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#0b0b0b' }}>
             <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans} : <span style={{ color: '#F0562A' }}>{villes.length > 0 ? 'trouvez votre ville' : 'notre zone d’intervention'}</span></h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">{c.label} {dep.dans}{rd ? ` (${dep.code})` : ''} : <span style={{ color: '#F0562A' }}>{villes.length > 0 ? 'trouvez votre ville' : 'notre zone d’intervention'}</span></h2>
               <p className="text-white/55 mb-8">{villes.length > 0 ? `${villes.length} ${d === 'paris' ? 'arrondissements' : 'villes'} avec une page dédiée, du plus proche au plus éloigné de notre base de Saint-Maurice. Cliquez sur la carte ou sur la liste.` : `Nous intervenons dans ${d === 'paris' ? 'tous les arrondissements' : 'toutes les communes'} ${dep.de}, sur devis gratuit.`}</p>
               <div className="mb-10">
                 <CarteDepartement dep={d} base={c.base} avecPage={villes.map((v) => v.slug)} titre={`Carte : ${c.label.toLowerCase()} ${dep.dans}`} legende={villes.length > 0 ? 'Ville avec une page dédiée (cliquable)' : 'Toutes les communes sont desservies'} zone={villes.length === 0} />
@@ -370,22 +397,30 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-left">
                 {parNom(villes).map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="group rounded-xl px-4 py-3 hover:bg-white/[0.06]" style={card}>
-                    <span className="block text-white font-bold text-sm">{c.label} {v.nom}</span>
+                    <span className="block text-white font-bold text-sm">{rd ? v.nom : `${c.label} ${v.nom}`}</span>
                     <span className="block text-white/60 text-xs">{codePostal(v.slug)} · {REPERES[v.slug]?.km ? `${REPERES[v.slug].km.toLocaleString('fr-FR')} km` : 'notre base'}</span>
+                    {rd && accrocheVilleDerat(v.slug) && <span className="block text-white/60 text-xs mt-1 leading-snug">{accrocheVilleDerat(v.slug)}</span>}
                   </a>
                 ))}
               </div>
             </div>
           </section>
 
-        <SituationsVille famille={c.famille} slug={`dep-${d}`} a={dep.dans} />
+        {!rd && <SituationsVille famille={c.famille} slug={`dep-${d}`} a={dep.dans} />}
 
         {s === 'punaises' && <CyclePunaises a={dep.dans} titre={`Punaises de lit ${dep.dans} : les 7 stades à reconnaître`} />}
         {s === 'punaises' && <CryoPunaisesLien a={dep.dans} />}
-        <EtapesVille slug={d + s} a={dep.dans} titre={`${s === 'frelons' ? 'Destruction de nid' : c.label} ${dep.dans} : comment nous intervenons`} etapes={c.etapes} />
+        {rd && ctx ? (
+          <>
+            <RefonteIntervention r={rd} />
+            <RefonteLieux {...ctx} />
+            <RefonteDeratiseur r={rd} />
+            <RefonteSoiMeme {...ctx} />
+          </>
+        ) : <EtapesVille slug={d + s} a={dep.dans} titre={`${s === 'frelons' ? 'Destruction de nid' : c.label} ${dep.dans} : comment nous intervenons`} etapes={c.etapes} />}
         {s === 'deratisation' && <DeratEco a={dep.dans} />}
 
-        <TarifsVille titre={`Prix ${s === 'frelons' ? 'd’une destruction de nid de frelons' : `${c.label.toLowerCase()}`} ${dep.code} : tarifs ${dep.dans}`} intro="Le devis est gratuit et le prix est fixé avant l’intervention, le même dans tout le département." lignes={c.tarifs} note={`Prix TTC. Garantie ${s === 'frelons' ? '3 mois' : '1 an'} sur nos traitements.`} />
+        <TarifsVille titre={rd ? `Prix d’une dératisation ${dep.dans} (${dep.code}) : dès ${c.prix}` : `Prix ${s === 'frelons' ? 'd’une destruction de nid de frelons' : `${c.label.toLowerCase()}`} ${dep.code} : tarifs ${dep.dans}`} intro="Le devis est gratuit et le prix est fixé avant l’intervention, le même dans tout le département." lignes={c.tarifs} note={`Prix TTC. Garantie ${s === 'frelons' ? '3 mois' : '1 an'} sur nos traitements.`} />
 
         <AvisDefilants depart={(d.length + s.length) * 3} />
 
@@ -410,7 +445,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
           </div>
         </section>
 
-        {s === 'deratisation' && DOSSIERS_DERATISATION[d] && <DossierLocal blocs={DOSSIERS_DERATISATION[d]} surtitre={`Le dossier complet : dératisation ${dep.dans}`} />}
+        {s === 'deratisation' && !rd && DOSSIERS_DERATISATION[d] && <DossierLocal blocs={DOSSIERS_DERATISATION[d]} surtitre={`Le dossier complet : dératisation ${dep.dans}`} />}
         {s === 'punaises' && DOSSIERS_PUNAISES[d] && <DossierLocal blocs={DOSSIERS_PUNAISES[d]} surtitre={`Le dossier complet : punaises de lit ${dep.dans}`} />}
         <PhotoNuisibleVille basePath={c.base} a={dep.dans} />
         <div className="px-4 pt-4" style={{ background: '#0b0b0b' }}><LienEcologique basePath={c.base} slug={d} a={dep.dans} /></div>
@@ -424,13 +459,15 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
                 {parNom(pole).map((v) => (
                   <a key={v.slug} href={`${c.base}/${v.slug}`} className="rounded-full px-3.5 py-1.5 text-[13px] font-semibold hover:text-white transition-colors"
                     style={{ background: 'rgba(232,68,26,0.08)', border: '1px solid rgba(232,68,26,0.3)', color: '#f3c2b3' }}>
-                    {c.label} {v.nom}
+                    {rd ? v.nom : `${c.label} ${v.nom}`}
                   </a>
                 ))}
               </div>
             </div>
           </section>
         )}
+
+        {rd && <RefonteMairie r={rd} />}
 
         {/* ── FAQ ── */}
         <section className="py-14 md:py-20 px-4" style={{ background: '#111' }}>
@@ -439,14 +476,32 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             <div className="space-y-3">
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
-                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
-                  <p className="text-white/65 text-sm leading-relaxed mt-3">{f.a}</p>
-                  <FaqLien q={f.q} a={f.a} ctx={{ page: `${c.base}/${d}`, base: c.base }} />
+                  <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">{rd ? <h3 className="text-base font-bold m-0">{f.q}</h3> : f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span></summary>
+                  <p className="text-white/65 text-sm leading-relaxed mt-3">{rd ? enrichi(f.a) : f.a}</p>
+                  <FaqLien q={f.q} a={brut(f.a)} ctx={{ page: `${c.base}/${d}`, base: c.base }} />
                 </details>
               ))}
             </div>
           </div>
         </section>
+
+        {rd && (
+          <section className="py-12 px-4" style={{ background: '#0d0d0d' }}>
+            <div className="max-w-3xl mx-auto rounded-2xl p-6 md:p-7" style={card}>
+              <div className="flex items-start gap-3 mb-4">
+                <ShieldCheck className="w-6 h-6 flex-shrink-0" style={{ color: '#F0562A' }} />
+                <div>
+                  <p className="text-white font-bold">Rédigé par Houssem Hattab, gérant d&apos;Allo Nuisible IDF, et notre équipe technique</p>
+                  <p className="text-white/55 text-sm">Techniciens titulaires du Certibiocide, la certification obligatoire pour utiliser des raticides professionnels. Mis à jour le {new Date(rd.maj).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}.</p>
+                </div>
+              </div>
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-2">Sources</p>
+              <ul className="space-y-1">
+                {rd.sources.map((x) => <li key={x.url}><a href={x.url} target="_blank" rel="noopener noreferrer nofollow" className="text-white/60 text-sm underline hover:text-white">{x.label}</a></li>)}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* ── MAILLAGE ── */}
         {articlesDep.length > 0 && (

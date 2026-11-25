@@ -18,6 +18,7 @@ export type RefonteDerat = {
   mairie: { titre: string; paras: string[]; contact?: { label: string; tel?: string; lien?: { href: string; label: string } } }
   faq: { q: string; a: string }[]
   sources: Source[]
+  reglement?: string // page département : règlement sanitaire cité dans « L’essentiel » (défaut : Val-de-Marne, article 119)
 }
 
 const W = 'https://commons.wikimedia.org/wiki/File:'

@@ -57,11 +57,11 @@ export default function MaillageVille({ basePath, mot, code, slug, a, depLien = 
         <LienEcologique basePath={basePath} slug={slug} a={a} />
         {dep && (
           <div className="mb-10">
-            <h2 className="text-xl md:text-2xl font-black text-white mb-4">{mot} {dep.dans} : toutes nos villes</h2>
+            <h2 className="text-xl md:text-2xl font-black text-white mb-4">{mot} {dep.dans}{basePath === '/deratisation' ? ` (${code})` : ''} : toutes nos villes</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {pageDep && (
                 <a href={pageDep} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white" style={{ background: 'rgba(232,68,26,0.15)', border: '1px solid rgba(232,68,26,0.4)' }}>
-                  {mot} {dep.dans} <ArrowRight className="w-4 h-4" />
+                  {mot} {dep.dans}{basePath === '/deratisation' ? ` (${code})` : ''} <ArrowRight className="w-4 h-4" />
                 </a>
               )}
               <a href={`/zones/${dep.slug}`} className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white/80" style={{ border: '1px solid rgba(255,255,255,0.15)' }}>
