@@ -2847,4 +2847,95 @@ REFONTE_DERATISATION['saint-mande'] = {
   sources: [STMANDE_INSEE, STMANDE_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Saint-Maurice (25/11/2026) : la ville de notre base ──
+const STMAURICE_WIKI: Source = { label: 'Wikipédia, Saint-Maurice (Val-de-Marne) (Marne, plateau de Gravelle, A4, hôpitaux, quartiers)', url: 'https://fr.wikipedia.org/wiki/Saint-Maurice_(Val-de-Marne)' }
+const STMAURICE_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94069, Saint-Maurice', url: 'https://geo.api.gouv.fr/communes?code=94069&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['saint-maurice'] = {
+  maj: '2026-11-25',
+  accroche: 'Saint-Maurice, c’est chez nous : notre base est ici. Entre la Marne, l’A4, le plateau de Gravelle et le bois de Vincennes, nous connaissons chaque rue, et nous intervenons en quelques minutes.',
+  societe: {
+    titre: 'Société de dératisation à Saint-Maurice (94410) : notre ville, notre base',
+    paras: [
+      'Allo Nuisible IDF est **basé à Saint-Maurice**. Pour vous, cela veut dire un technicien chez vous en quelques minutes, 7 jours sur 7, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés, et une équipe qui connaît le terrain par cœur.',
+      'La ville compte **14 506 habitants** sur **1,45 km²**. Elle s’étire le long de la **Marne** sur **plus de 3 km**, jusqu’à Charenton, avec le **chemin de halage du Moulin des Corbeaux** et le **bras de Gravelle**. Au-dessus, le **plateau de Gravelle** domine la vallée d’une trentaine de mètres et touche le **bois de Vincennes**. Entre les deux passe l’**A4**, construite en 1974-1975 sur le tracé de l’ancien **canal de Saint-Maurice**, remblayé dans les années 1950. Eau, talus, bois et sous-sols : tout ce que le **surmulot** recherche.',
+      'Nos autres pages pour la ville : [souris à Saint-Maurice](/souris/saint-maurice), [cafards à Saint-Maurice](/cafards/saint-maurice), [punaises de lit à Saint-Maurice](/punaises-de-lit/saint-maurice) et [frelons à Saint-Maurice](/destruction-nid-frelon/saint-maurice).',
+    ],
+  },
+  chiffres: [
+    { valeur: '14 506', texte: 'habitants (population légale Insee), code postal 94410.', source: STMAURICE_INSEE },
+    { valeur: '3 km', texte: 'de bords de Marne, avec le chemin de halage du Moulin des Corbeaux et le bras de Gravelle.', source: STMAURICE_WIKI },
+    { valeur: '30 m', texte: 'de dénivelé entre la vallée et le plateau de Gravelle, en bordure du bois de Vincennes.', source: STMAURICE_WIKI },
+    { valeur: '7', texte: 'quartiers : Plateau, Centre, Val d’Osne, Ancienne gendarmerie, Gravelle, Écluse et Panoramis.', source: STMAURICE_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Saint-Maurice : la ville quartier par quartier',
+    intro: 'Saint-Maurice se partage entre le **Plateau**, le **Centre**, le **Val d’Osne**, l’**Ancienne gendarmerie**, **Gravelle**, l’**Écluse** et le **Panoramis**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Marne, l’Écluse et l’île aux Corbeaux',
+        texte: 'Le long du **chemin du Moulin des Corbeaux**, sous les ponts de l’A4, l’eau, les berges et les talus forment un corridor idéal pour les rats. Les immeubles et maisons des **quais** et du quartier de l’**Écluse** doivent surveiller **caves**, **soupiraux** et **regards**, surtout quand la Marne monte.',
+        photo: { src: '/villes/saint-maurice/chemin-du-moulin-des-corbeaux.jpg', alt: 'Le chemin du Moulin des Corbeaux le long de la Marne à Saint-Maurice, sous l’A4', legende: 'Le chemin du Moulin des Corbeaux, entre la Marne et les talus, sous le viaduc de l’A4 : un corridor pour les rongeurs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'All%C3%A9e_Moulin_Corbeaux_-_Saint-Maurice_(FR94)_-_2020-08-24_-_4.jpg' },
+      },
+      {
+        nom: 'Le quai de la République et le Centre',
+        texte: 'Sur le **quai de la République** et dans le centre, immeubles anciens et récents bordent la rivière et l’autoroute. Caves, cours et locaux à poubelles partagés : le traitement des parties communes se fait avec le **syndic**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/saint-maurice/quai-de-la-republique.jpg', alt: 'Le quai de la République à Saint-Maurice', legende: 'Le quai de la République : des immeubles à quelques mètres de la Marne et de ses berges.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Quai_R%C3%A9publique_-_Saint-Maurice_(FR94)_-_2021-01-30_-_1.jpg' },
+      },
+      {
+        nom: 'Le Plateau, Gravelle et la lisière du bois',
+        texte: 'Sur le **plateau de Gravelle**, au contact du **bois de Vincennes**, maisons, petites résidences et équipements côtoient un grand espace boisé. Souris et rats du bois s’approchent des **jardins**, des **garages** et des **locaux à poubelles**. Nous traitons et fermons les accès. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/saint-maurice/maison-natale-delacroix.jpg', alt: 'La maison natale d’Eugène Delacroix à Saint-Maurice', legende: 'La maison natale d’Eugène Delacroix : Saint-Maurice garde un bâti ancien avec caves et jardins.', credit: 'Parisette', licence: 'Domaine public', page: W + 'Maison_natale_Delacroix.JPG' },
+      },
+      {
+        nom: 'Les hôpitaux et les grands sites',
+        texte: 'Les **Hôpitaux de Saint-Maurice**, dont l’**hôpital Esquirol**, réunis depuis 2024 dans les Hôpitaux Paris Est Val-de-Marne, occupent un vaste domaine avec cuisines collectives, locaux techniques et espaces verts. Pour ce type de site : postes **sécurisés** et **numérotés**, **plan de localisation**, **registre** et **attestation**.',
+        photo: { src: '/villes/saint-maurice/chapelle-hopital-esquirol.jpg', alt: 'La chapelle de l’hôpital Esquirol à Saint-Maurice', legende: 'La chapelle de l’hôpital Esquirol : un grand domaine hospitalier, avec ses espaces verts et ses locaux techniques.', credit: '74laprune', licence: 'CC0', page: W + 'Chapelle_hopital_St-Maurice.jpg' },
+      },
+      {
+        nom: 'Le Panoramis, le Val d’Osne et l’Ancienne gendarmerie',
+        texte: 'Au **Panoramis**, pavillons et bureaux ont laissé place à de nouveaux immeubles ; les chantiers délogent les colonies, qui cherchent refuge dans les bâtiments voisins. Au **Val d’Osne** et à l’**Ancienne gendarmerie**, résidences et maisons partagent caves, parkings et jardins.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Saint-Maurice (94410) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Un appel, un technicien tout de suite', x: 'Nous sommes sur place : envoyez une photo, vous avez le prix, et nous venons souvent le jour même. Dès 120 € pour un appartement.' },
+      { t: 'Le chemin des rongeurs', x: 'Bords de Marne : regards, soupiraux, caves. Plateau : jardin, garage, vide sanitaire. Immeuble : caves, parkings, local à poubelles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi de proximité', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations : à Saint-Maurice, les visites de contrôle sont rapides. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Saint-Maurice (94410) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble des quais', x: 'Quand la Marne monte, les rats quittent les berges pour les sous-sols. Nous traitons, puis bouchons soupiraux et passages.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Saint-Maurice](/souris/saint-maurice) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs après un chantier voisin', x: 'Les démolitions et terrassements délogent les colonies : agissez dès les premières traces, avec le syndic.' },
+      { t: 'Des terriers dans un jardin du plateau', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Au bord de la Marne, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Saint-Maurice',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Les parties communes d’un immeuble se traitent à la demande du **syndic** ou du **bailleur**, une maison à celle de son propriétaire.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur les berges ou la voie publique, alertez la **mairie de Saint-Maurice** ; pour le bois de Vincennes, la **Ville de Paris**.',
+      'Depuis Saint-Maurice, nous intervenons aussi dans toutes les villes voisines : [Charenton-le-Pont](/deratisation/charenton-le-pont), [Joinville-le-Pont](/deratisation/joinville-le-pont), [Maisons-Alfort](/deratisation/maisons-alfort), [Saint-Maur-des-Fossés](/deratisation/saint-maur-des-fosses), [Alfortville](/deratisation/alfortville), [Vincennes](/deratisation/vincennes) et [Paris 12e](/deratisation/paris-12).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Saint-Maurice ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, commerce ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Êtes-vous vraiment basés à Saint-Maurice ?', a: 'Oui, notre base est à Saint-Maurice. C’est pour cela que nous intervenons très vite ici et dans les villes voisines, 7j/7, sans majoration la nuit, le week-end ni les jours fériés.' },
+    { q: 'La Marne et l’A4 attirent-elles les rats ?', a: 'Les berges, l’eau et les talus de l’autoroute forment un corridor pour le surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles des quais doivent surveiller caves, soupiraux et locaux à poubelles.' },
+    { q: 'Le bois de Vincennes fait-il venir les rongeurs sur le plateau ?', a: 'Un grand espace boisé abrite des rongeurs, qui s’approchent des maisons et résidences en lisière, surtout l’hiver. Garages, abris et caves sont à surveiller.' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Intervenez-vous dans les établissements de santé ?', a: 'Oui, avec des postes sécurisés et numérotés, un plan de localisation, un registre des passages et une attestation, en accord avec les services techniques.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [STMAURICE_INSEE, STMAURICE_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
