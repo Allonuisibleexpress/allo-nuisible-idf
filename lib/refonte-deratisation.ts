@@ -18,6 +18,7 @@ export type RefonteDerat = {
   mairie: { titre: string; paras: string[]; contact?: { label: string; tel?: string; lien?: { href: string; label: string } } }
   faq: { q: string; a: string }[]
   sources: Source[]
+  quiPaie?: string // page département : point « Qui paie » complet de « L’essentiel » quand le règlement diffère du 94
   reglement?: string // page département : règlement sanitaire cité dans « L’essentiel » (défaut : Val-de-Marne, article 119)
 }
 

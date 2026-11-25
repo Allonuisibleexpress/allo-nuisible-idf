@@ -128,6 +128,103 @@ REFONTE_DERAT_DEP['val-de-marne'] = {
   sources: [VDM_INSEE, VDM_WIKI, RSD_94, VITRY_MAIRIE, SPF_LEPTO],
 }
 
+// ── Hauts-de-Seine (92) ──
+const HDS_WIKI: Source = { label: 'Wikipédia, Hauts-de-Seine (boucles de la Seine, communes riveraines, relief, carrières du sud, vallée de la Bièvre)', url: 'https://fr.wikipedia.org/wiki/Hauts-de-Seine' }
+const HDS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : département 92, communes, populations légales et surfaces', url: 'https://geo.api.gouv.fr/departements/92/communes?fields=nom,population,surface' }
+const LOI_1989: Source = { label: 'Loi n° 89-462 du 6 juillet 1989 tendant à améliorer les rapports locatifs, article 6 (Légifrance)', url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000509310' }
+const MEUDON: Source = { label: 'Ville de Meudon, Animaux nuisibles et sauvages (dératisation, règlement sanitaire départemental des Hauts-de-Seine)', url: 'https://meudon.fr/mon-quotidien/environnement/animaux/animaux-nuisibles-et-sauvages/' }
+
+REFONTE_DERAT_DEP['hauts-de-seine'] = {
+  maj: '2026-11-26',
+  reglement: 'loi du 6 juillet 1989 et règlement sanitaire départemental des Hauts-de-Seine',
+  quiPaie: '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic**.',
+  accroche: 'La Seine en deux grandes boucles, le port de Gennevilliers, les tours de La Défense, les anciennes carrières du sud et les grands parcs : dans les Hauts-de-Seine, chaque secteur a ses rats. Nous avons une page détaillée pour 26 villes du département.',
+  societe: {
+    titre: 'Société de dératisation dans les Hauts-de-Seine (92) : un département dessiné par les boucles de la Seine',
+    paras: [
+      'Les Hauts-de-Seine comptent **1 654 712 habitants** dans **36 communes**, sur environ **176 km²** : près de **9 400 habitants au km²**, le département le plus dense d’Île-de-France après Paris. La **Seine** y décrit deux boucles très marquées et borde **17 des 36 communes**, franchie par **36 ponts**. Quais, berges, réseaux d’assainissement et caves d’immeubles : le **surmulot** y trouve eau, abri et nourriture.',
+      'Au nord s’étendent des **plaines alluviales**, avec le port de Gennevilliers ; au centre, une falaise de Sèvres à Asnières, dont le **mont Valérien** (162 m) ; au sud, un **plateau calcaire** qui culmine à 180 m vers Vaucresson et d’où l’on a extrait pendant des siècles la pierre de Paris, à Châtillon, Bagneux ou Clamart : il en reste de **nombreux souterrains**. Immeubles anciens, tours de bureaux, pavillons et parcs : chaque terrain demande sa méthode de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)** et interviennent **7 jours sur 7** dans tout le 92, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour le département : [souris dans les Hauts-de-Seine](/souris/hauts-de-seine), [punaises de lit dans les Hauts-de-Seine](/punaises-de-lit/hauts-de-seine), [cafards dans les Hauts-de-Seine](/cafards/hauts-de-seine) et [tous nos services dans les Hauts-de-Seine](/zones/hauts-de-seine).',
+    ],
+  },
+  chiffres: [
+    { valeur: '1 654 712', texte: 'habitants dans les 36 communes des Hauts-de-Seine (populations légales Insee).', source: HDS_INSEE },
+    { valeur: '≈ 9 400', texte: 'habitants au km² (1 654 712 habitants sur environ 176 km²) : beaucoup d’immeubles, de caves et de locaux à poubelles partagés.', source: HDS_INSEE },
+    { valeur: '17 sur 36', texte: 'communes du département sont bordées par la Seine, franchie par 36 ponts.', source: HDS_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats dans les Hauts-de-Seine (92) : le département secteur par secteur',
+    intro: 'Nous avons découpé le département en cinq secteurs, du port de Gennevilliers à la vallée de la Bièvre. Pour chaque ville, une page complète détaille ses quartiers, ses risques et notre méthode : cliquez sur le nom de votre commune.',
+    zones: [
+      {
+        nom: 'La boucle nord et le port de Gennevilliers',
+        texte: `Au nord, des plaines alluviales au bord de la Seine, le port de Gennevilliers, ses entrepôts et ses voies ferrées, puis des villes très denses jusqu’aux portes de Paris. Quais, zones d’activité et caves d’immeubles : les rats y trouvent nourriture et passages. Nos pages : ${l('gennevilliers', 'Gennevilliers')}, ${l('asnieres-sur-seine', 'Asnières-sur-Seine')}, ${l('colombes', 'Colombes')}, ${l('la-garenne-colombes', 'La Garenne-Colombes')}, ${l('clichy', 'Clichy')} et ${l('levallois-perret', 'Levallois-Perret')}.`,
+        photo: { src: '/departements/hauts-de-seine/port-de-gennevilliers.jpg', alt: 'Vue aérienne du port de Gennevilliers et de la Seine', legende: 'Le port de Gennevilliers et la boucle de la Seine vus du ciel.', credit: 'Milliped', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_the_Port_de_Gennevilliers,_9_NOV_2018_-_1.jpg' },
+      },
+      {
+        nom: 'Neuilly, La Défense et le mont Valérien',
+        texte: `Quais de Seine, immeubles de bureaux, restaurants et galeries commerciales autour de La Défense, puis les coteaux de Suresnes et de Rueil au pied du mont Valérien. Ici, la dératisation concerne autant les **professionnels** que les copropriétés. Nos pages : ${l('neuilly-sur-seine', 'Neuilly-sur-Seine')}, ${l('courbevoie', 'Courbevoie')}, ${l('puteaux', 'Puteaux')}, ${l('nanterre', 'Nanterre')}, ${l('suresnes', 'Suresnes')} et ${l('rueil-malmaison', 'Rueil-Malmaison')}. Voir aussi [dératisation pour les professionnels](/professionnels).`,
+        photo: { src: '/departements/hauts-de-seine/quais-de-seine-courbevoie.jpg', alt: 'Les quais de Seine à Courbevoie, avec les tours de La Défense au loin', legende: 'Les quais de Seine à Courbevoie, près de l’île de la Jatte : berges et immeubles riverains.', credit: 'Clicsouris', licence: 'CC BY-SA 2.5', page: 'https://commons.wikimedia.org/wiki/File:Courbevoie_-_Quais_de_Seine_-_panoramique_01.jpg' },
+      },
+      {
+        nom: 'Boulogne, Issy et Meudon, entre Seine et coteaux',
+        texte: `La Seine contourne l’île Seguin, entre Boulogne-Billancourt, Issy-les-Moulineaux et les coteaux boisés de Meudon. Immeubles récents, anciens sites industriels, jardins en pente et lisières de forêt : nous traitons caves, parkings et jardins. Nos pages : ${l('boulogne-billancourt', 'Boulogne-Billancourt')}, ${l('issy-les-moulineaux', 'Issy-les-Moulineaux')} et ${l('meudon', 'Meudon')}.`,
+        photo: { src: '/departements/hauts-de-seine/ile-seguin-boulogne.jpg', alt: 'Vue aérienne de l’île Seguin et de la Seine à Boulogne-Billancourt', legende: 'L’île Seguin et la Seine entre Boulogne-Billancourt et Meudon, vues du ciel.', credit: 'David.Monniaux', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Ile_Seguin_Boulogne_Billancourt_P1190130.jpg' },
+      },
+      {
+        nom: 'Le sud des portes de Paris et les anciennes carrières',
+        texte: `De Montrouge à Clamart, des villes denses bâties sur le plateau calcaire, où l’on a extrait la pierre pendant des siècles : caves profondes, sous-sols anciens et immeubles serrés. La dératisation s’y fait surtout en **copropriété**, cave par cave. Nos pages : ${l('montrouge', 'Montrouge')}, ${l('malakoff', 'Malakoff')}, ${l('vanves', 'Vanves')}, ${l('chatillon', 'Châtillon')}, ${l('bagneux', 'Bagneux')} et ${l('clamart', 'Clamart')}.`,
+        photo: { src: '/departements/hauts-de-seine/carriere-chatillon.jpg', alt: 'Treuil de l’ancienne carrière Auboin à Châtillon', legende: 'Le treuil de l’ancienne carrière Auboin à Châtillon, témoin des carrières de pierre du sud du département.', credit: 'Myrabella', licence: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Chatillon_treuil_carriere_Auboin.jpg' },
+      },
+      {
+        nom: 'La vallée de la Bièvre et le parc de Sceaux',
+        texte: `Le plateau calcaire est entaillé à l’est par la vallée de la Bièvre. Grands parcs, pavillons avec jardin et résidences : les rats vivent dehors, près des **composts** et des **abris**, puis entrent dans les maisons à l’automne. Nos pages : ${l('sceaux', 'Sceaux')}, ${l('bourg-la-reine', 'Bourg-la-Reine')}, ${l('fontenay-aux-roses', 'Fontenay-aux-Roses')}, ${l('antony', 'Antony')} et ${l('chatenay-malabry', 'Châtenay-Malabry')}.`,
+        photo: { src: '/departements/hauts-de-seine/parc-de-sceaux.jpg', alt: 'Le Grand Canal du parc de Sceaux', legende: 'Le Grand Canal du parc de Sceaux : pelouses, plans d’eau et lisières boisées.', credit: 'Guilhem Vellut', licence: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Grand_Canal_@_Parc_de_Sceaux_@_Ile-de-France_@_Paris_(28776136496).jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats dans les Hauts-de-Seine (92) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, partout dans le 92.' },
+      { t: 'Le diagnostic', x: 'Immeuble ancien : caves, cours, gaines. Bureaux ou commerce : réserves, locaux techniques, bennes. Pavillon : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur dans les Hauts-de-Seine (92) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans les caves d’un immeuble', x: 'Le cas le plus fréquent dans un département aussi dense : nous traitons tout le sous-sol, puis rebouchons les passages vers les logements. Prévenez le syndic par écrit.' },
+      { t: 'Des rongeurs dans des bureaux ou un restaurant', x: 'Restaurants d’entreprise, commerces de bouche, galeries commerciales : contrat de suivi, postes numérotés, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris dans les Hauts-de-Seine](/souris/hauts-de-seine) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi dans les Hauts-de-Seine (92)',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, cours et locaux à poubelles relèvent du **syndic** ; une maison, de son propriétaire. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Les **communes** agissent sur l’espace public et leurs bâtiments. À Meudon par exemple, la Ville traite les espaces verts et les bâtiments publics, coordonne des opérations dans certains logements sociaux, et le réseau d’assainissement est traité par l’intercommunalité (GPSO). Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120), une source de nourriture pour les rats.',
+      `Chez vous, dans votre cave ou votre jardin, c’est une entreprise de dératisation qui intervient. Nos pages les plus consultées du 92 : ${l('boulogne-billancourt', 'Boulogne-Billancourt')}, ${l('nanterre', 'Nanterre')}, ${l('montrouge', 'Montrouge')} et ${l('issy-les-moulineaux', 'Issy-les-Moulineaux')}.`,
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation dans les Hauts-de-Seine (92) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans les 36 communes. Maison, immeuble, bureaux ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans toutes les communes du 92 ?', a: 'Oui, dans les 36 communes des Hauts-de-Seine, souvent le jour même, depuis notre base de Saint-Maurice. Nous avons une page détaillée pour 26 d’entre elles, de [Gennevilliers](/deratisation/gennevilliers) à [Antony](/deratisation/antony).' },
+    { q: 'Pourquoi y a-t-il des rats près de la Seine dans le 92 ?', a: 'La Seine borde 17 des 36 communes du département. Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales jusqu’aux caves ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Je suis locataire dans les Hauts-de-Seine : qui paie la dératisation ?', a: 'Le bailleur doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). En copropriété, les parties communes relèvent du syndic. Signalez le problème par écrit, avec photos.' },
+    { q: 'Nourrir les pigeons ou les chats errants attire-t-il les rats ?', a: 'Oui : les restes de nourriture laissés dehors nourrissent aussi les rats. Le règlement sanitaire départemental des Hauts-de-Seine interdit de nourrir les animaux errants (articles 26 et 120, rappelés par la ville de Meudon).' },
+    { q: 'La mairie peut-elle dératiser chez moi ?', a: 'En général non : les communes traitent l’espace public et leurs bâtiments, et l’assainissement relève souvent de l’intercommunalité. Chez vous, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'Intervenez-vous dans les bureaux et les restaurants du 92 ?', a: 'Oui : plan de lutte, postes numérotés, passages réguliers hors des heures d’ouverture, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'Proposez-vous une dératisation sans poison dans les Hauts-de-Seine ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les écoles et les crèches.' },
+  ],
+  sources: [HDS_INSEE, LOI_1989, MEUDON, SPF_LEPTO, HDS_WIKI],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),

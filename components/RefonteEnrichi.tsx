@@ -50,7 +50,7 @@ export function RefonteEssentiel({ r, slug, nom, a, cp }: Ctx) {
       : '**Méthode** : on cherche d’abord par où passent les rongeurs, on pose des postes **sécurisés** ou des pièges, on **bouche** les accès et on revient contrôler.',
     '**Sans biocide si besoin** : pièges mécaniques et piège multicapture **Ekomille**, pour les foyers avec enfants, animaux ou potager. Voir la [dératisation écologique](/services/deratisation-ecologique).',
     `**Secteurs à surveiller ${a}** : ${zones}.`,
-    `**Qui paie** : propriétaires, syndics, bailleurs et occupants doivent lutter contre les rongeurs (${r.reglement ?? 'règlement sanitaire du Val-de-Marne, **article 119**'}).`,
+    r.quiPaie ?? `**Qui paie** : propriétaires, syndics, bailleurs et occupants doivent lutter contre les rongeurs (${r.reglement ?? 'règlement sanitaire du Val-de-Marne, **article 119**'}).`,
     `**Garantie et confiance** : garantie **1 an**, techniciens certifiés **Certibiocide**, note Google **${NOTE_GOOGLE.note}/5** ([lire les avis de nos clients](${FICHE_GOOGLE_URL})).`,
   ]
   return (
