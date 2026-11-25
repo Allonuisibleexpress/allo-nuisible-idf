@@ -27,6 +27,7 @@ import SituationsVille from '@/components/SituationsVille'
 import { autresServicesVille } from '@/lib/services-ville'
 import { codePostal } from '@/lib/codes-postaux'
 import { enrichi } from '@/components/ArticleService'
+import { faqLongueTraine } from '@/lib/faq-longue-traine'
 import { saisonVille } from '@/lib/saisons-faq'
 import { faqLocaleDeratisation } from '@/lib/faq-locale'
 import PoleSaintMaurice from '@/components/PoleSaintMaurice'
@@ -127,7 +128,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
   const rang = Math.max(0, VILLES_DERATISATION.findIndex((x) => x.slug === v.slug))
   const faqBase = [...v.faq, ...(GUIDE_DERATISATION[v.slug]?.faq ?? []), saisonVille('deratisation', v.slug)]
   // 18/11/2026 : 8 questions par page, les nouvelles construites sur les données locales de la ville (lib/faq-locale.ts)
-  const faq = r ? r.faq : [...faqBase, ...faqLocaleDeratisation(v, faqBase)]
+  const faq = r ? [...r.faq, ...faqLongueTraine(v.slug, v.a)] : [...faqBase, ...faqLocaleDeratisation(v, faqBase)]
   // 22/11/2026 : les réponses des pages refondues peuvent contenir **gras** et [liens](/url) ; texte brut pour Google
   const brut = (s: string) => s.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
   const enBref = [
@@ -354,7 +355,7 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
               {faq.map((f) => (
                 <details key={f.q} className="group rounded-xl px-5 py-4" style={card}>
                   <summary className="cursor-pointer font-bold text-white list-none flex justify-between gap-4">
-                    {f.q}<span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
+                    <h3 className="text-base font-bold text-white m-0">{f.q}</h3><span className="text-white/60 group-open:rotate-45 transition-transform">+</span>
                   </summary>
                   <p className="text-white/65 text-sm leading-relaxed mt-3">{enrichi(f.a)}</p>
                   <FaqLien q={f.q} a={brut(f.a)} ctx={{ page: `/deratisation/${v.slug}`, base: '/deratisation', slug: v.slug, a: v.a, dep: depDeCode(v.code), existe: existePage }} />
