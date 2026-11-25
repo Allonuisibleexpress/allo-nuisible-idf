@@ -2489,4 +2489,96 @@ REFONTE_DERATISATION['limeil-brevannes'] = {
   sources: [LIMEIL_INSEE, LIMEIL_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Nogent-sur-Marne (25/11/2026) ──
+const NOGENT_WIKI: Source = { label: 'Wikipédia, Nogent-sur-Marne (coteau, Marne, port de plaisance, quartiers, logement, viaduc)', url: 'https://fr.wikipedia.org/wiki/Nogent-sur-Marne' }
+const NOGENT_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94052, Nogent-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94052&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['nogent-sur-marne'] = {
+  maj: '2026-11-25',
+  accroche: 'Un coteau qui descend vers la Marne, un port de plaisance, des guinguettes et le bois de Vincennes à l’ouest : à Nogent-sur-Marne, les rats ont l’eau, le bois et la ville. Nous connaissons le terrain, nous y sommes déjà intervenus.',
+  societe: {
+    titre: 'Société de dératisation à Nogent-sur-Marne (94130) : une ville en pente vers la Marne',
+    paras: [
+      'Nogent-sur-Marne compte **32 455 habitants** sur **2,80 km²**. La ville est bâtie **au flanc d’un coteau** qui domine une boucle de la **Marne**, entre 36 et 99 mètres d’altitude, avec beaucoup de rues en pente. Elle touche le **bois de Vincennes** à l’ouest et la Marne au sud, où se trouve le **port de plaisance**, deuxième d’Île-de-France avec **170 emplacements**. Eau, berges, bois et réseaux qui descendent vers la rivière : un terrain que le **surmulot** connaît bien.',
+      'Côté habitat, Nogent est surtout une ville d’**appartements** (84,6 % au dernier détail publié), avec des maisons sur les coteaux et en bord de Marne. Restaurants des bords de l’eau, marché, résidences : une société de dératisation y traite autant des **commerces** que des **caves** et des **jardins**.',
+      'Nous connaissons Nogent : nous y avons retiré un [nid de frelons dans une cheminée](/blog/nid-frelons-cheminee-nogent-sur-marne#video), un chantier filmé. Notre base de **Saint-Maurice** est à quelques minutes, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Nogent-sur-Marne](/souris/nogent-sur-marne), [cafards à Nogent-sur-Marne](/cafards/nogent-sur-marne), [punaises de lit à Nogent-sur-Marne](/punaises-de-lit/nogent-sur-marne) et [frelons à Nogent-sur-Marne](/destruction-nid-frelon/nogent-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '32 455', texte: 'habitants (population légale Insee), code postal 94130.', source: NOGENT_INSEE },
+    { valeur: '170', texte: 'emplacements au port de plaisance, le deuxième d’Île-de-France après celui de l’Arsenal à Paris.', source: NOGENT_WIKI },
+    { valeur: '63 m', texte: 'de dénivelé entre les bords de Marne (36 m) et le haut de la ville (99 m), près du fort de Nogent.', source: NOGENT_WIKI },
+    { valeur: '6', texte: 'quartiers : Beauté Baltard, le Bois-Porte de Nogent, Nogent Village, Plaisance, le Port sous la Lune et les Viselets.', source: NOGENT_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Nogent-sur-Marne : la ville quartier par quartier',
+    intro: 'Nogent compte six quartiers : **Beauté Baltard**, **le Bois-Porte de Nogent**, **Nogent Village**, **Plaisance** (avec les Maréchaux), **le Port sous la Lune** et **les Viselets**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Port sous la Lune et les bords de Marne',
+        texte: 'Au sud, le long de la Marne, du **port de plaisance** et des **guinguettes**, l’eau, les berges et les restaurants attirent les rats. Les immeubles et maisons des bords de l’eau doivent surveiller **caves**, **soupiraux** et **locaux à poubelles** ; les restaurants, leurs **réserves**.',
+        photo: { src: '/villes/nogent-sur-marne/bords-de-marne-ile-de-beaute.jpg', alt: 'Les bords de Marne à Nogent-sur-Marne vus depuis le quartier de l’île de Beauté', legende: 'Les bords de Marne vus depuis l’île de Beauté : bateaux, berges boisées et guinguettes au bord de l’eau.', credit: 'Contributeur Wikimedia Commons', licence: 'CC BY-SA 1.0', page: W + 'Marne_Nogent.JPG' },
+      },
+      {
+        nom: 'Beauté Baltard et le centre',
+        texte: 'Autour du **pavillon Baltard**, du marché et des commerces du centre, la restauration et les commerces de bouche produisent des déchets toute la journée. Pour un professionnel : postes **numérotés**, **registre**, **attestation** et passages hors des heures d’ouverture.',
+        photo: { src: '/villes/nogent-sur-marne/pavillon-baltard.jpg', alt: 'Le pavillon Baltard à Nogent-sur-Marne', legende: 'Le pavillon Baltard : autour, marché, commerces et restaurants du centre.', credit: 'Nogent94130', licence: 'CC BY-SA 3.0', page: W + 'Nogent-sur-Marne_Pavillon_Baltard_20110707.jpg' },
+      },
+      {
+        nom: 'Nogent Village et les rues en pente',
+        texte: 'Dans le vieux Nogent, autour de l’**église Saint-Saturnin**, les maisons anciennes à flanc de coteau ont des **caves**, de vieux murs et des jardins en pente. Les rongeurs y circulent à couvert : nous inspectons chaque ouverture et rebouchons après le traitement.',
+        photo: { src: '/villes/nogent-sur-marne/eglise-saint-saturnin.jpg', alt: 'L’église Saint-Saturnin de Nogent-sur-Marne', legende: 'L’église Saint-Saturnin, au cœur du vieux Nogent : maisons anciennes, caves et jardins en pente.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89glise_Saint_Saturnin_-_Nogent-sur-Marne_(FR94)_-_2023-02-27_-_1.jpg' },
+      },
+      {
+        nom: 'Le Bois-Porte de Nogent et le viaduc',
+        texte: 'À l’ouest, en lisière du **bois de Vincennes**, et près du **viaduc** de 1854 qui franchit la vallée, immeubles et maisons côtoient espaces verts, talus ferroviaires et voies du **RER A**. Les rongeurs du bois et des talus s’approchent des **locaux à poubelles** et des jardins.',
+        photo: { src: '/villes/nogent-sur-marne/viaduc-vers-1900.jpg', alt: 'Carte postale du viaduc de Nogent-sur-Marne vers 1900', legende: 'Le viaduc de Nogent vers 1900 : construit en 1854, il marque toujours le paysage de la ville.', credit: 'Carte postale ancienne, scan Claude Shoshany', licence: 'Domaine public', page: W + 'NOGENT_-_Vue_panoramique_du_Viaduc.jpg' },
+      },
+      {
+        nom: 'Plaisance, les Maréchaux et les Viselets',
+        texte: 'Au nord-est, vers le **fort de Nogent** et le point culminant de la ville, résidences et pavillons partagent caves, parkings et jardins. Le traitement des parties communes se fait avec le **syndic** ou le **bailleur**. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Nogent-sur-Marne (94130) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Bords de Marne : regards, soupiraux, caves. Coteau : murs, jardins en pente, vide sanitaire. Restaurant : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Nogent-sur-Marne (94130) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Un rongeur dans un restaurant des bords de Marne', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles) et [cafards à Nogent-sur-Marne](/cafards/nogent-sur-marne).' },
+      { t: 'Des rats dans la cave d’un immeuble proche de l’eau', x: 'Le signe d’une colonie dans les sous-sols. Prévenez le syndic par écrit : le traitement doit couvrir les parties communes.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris à Nogent-sur-Marne](/souris/nogent-sur-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans un jardin en pente', x: 'Vieux murs, haies et jardins en pente offrent des abris : voir [le mode de vie du rat](/blog/rat-mode-de-vie).' },
+      { t: 'Un rat qui sort des toilettes', x: 'En bas du coteau, près de la Marne, le réseau d’assainissement est un chemin direct : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Nogent-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Les parties communes d’un immeuble nogentais se traitent donc à la demande du **syndic** ; une maison ou un restaurant, à celle du propriétaire ou de l’exploitant.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur les quais ou la voie publique, alertez la **mairie de Nogent-sur-Marne** ; pour le bois de Vincennes, la **Ville de Paris**.',
+      'Nous intervenons aussi tout autour : [Le Perreux-sur-Marne](/deratisation/le-perreux-sur-marne), [Fontenay-sous-Bois](/deratisation/fontenay-sous-bois), [Joinville-le-Pont](/deratisation/joinville-le-pont), [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Vincennes](/deratisation/vincennes), [Bry-sur-Marne](/deratisation/bry-sur-marne) et [Paris 12e](/deratisation/paris-12).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Nogent-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Restaurant, maison ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Avez-vous déjà travaillé à Nogent-sur-Marne ?', a: 'Oui, notamment pour un nid de frelons dans une cheminée : [l’intervention est filmée](/blog/nid-frelons-cheminee-nogent-sur-marne#video). Notre base de Saint-Maurice est toute proche.' },
+    { q: 'Le port et les bords de Marne attirent-ils les rats ?', a: 'Oui : l’eau, les berges et les restaurants sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles proches doivent surveiller caves, soupiraux et locaux à poubelles.' },
+    { q: 'Intervenez-vous dans les restaurants et guinguettes ?', a: 'Oui, hors service, avec postes numérotés, registre et attestation pour vos contrôles d’hygiène : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Le bois de Vincennes fait-il venir les rongeurs ?', a: 'Un grand espace boisé abrite des rongeurs, qui s’approchent des immeubles et maisons en lisière. Locaux à poubelles, caves et jardins sont à surveiller en priorité.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [NOGENT_INSEE, NOGENT_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
