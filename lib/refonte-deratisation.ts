@@ -3294,4 +3294,95 @@ REFONTE_DERATISATION['valenton'] = {
   sources: [VALENTON_INSEE, VALENTON_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Villeneuve-le-Roi (25/11/2026) ──
+const VLR_WIKI: Source = { label: 'Wikipédia, Villeneuve-le-Roi (coteau, Seine, aéroport, pavillons, Haut-Pays, Faisanderie)', url: 'https://fr.wikipedia.org/wiki/Villeneuve-le-Roi' }
+const VLR_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94077, Villeneuve-le-Roi', url: 'https://geo.api.gouv.fr/communes?code=94077&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['villeneuve-le-roi'] = {
+  maj: '2026-11-25',
+  accroche: 'Une ville de pavillons qui descend du plateau de l’aéroport jusqu’à la Seine : à Villeneuve-le-Roi, les rats remontent des berges et des voies ferrées vers les jardins. Nous protégeons votre maison.',
+  societe: {
+    titre: 'Société de dératisation à Villeneuve-le-Roi (94290) : une ville de pavillons sur le coteau de la Seine',
+    paras: [
+      'Villeneuve-le-Roi compte **21 000 habitants** sur **8,44 km²**, entre l’**aéroport d’Orly** à l’ouest, sur le plateau, et la **Seine** à l’est, en contrebas. La ville **s’étire à flanc de coteau** entre les deux, de 91 à 30 mètres d’altitude, traversée par la **ligne ferroviaire Paris-Bordeaux** et le **RER C**. Berges, talus ferroviaires et réseaux qui descendent vers le fleuve : le terrain du **surmulot**.',
+      'Contrairement à ses voisines Orly et Villeneuve-Saint-Georges, Villeneuve-le-Roi se caractérise par un **fort taux de pavillons**. Dès 1898, le **lotissement du parc de la Faisanderie**, sur 102 hectares, a attiré des Parisiens ; le **Haut-Pays** garde des maisons de l’ancien village agricole. Pour une société de dératisation, Villeneuve-le-Roi, ce sont surtout des **jardins**, des **garages**, des **caves** et des **vide sanitaires**.',
+      'Nous intervenons à Villeneuve-le-Roi depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Villeneuve-le-Roi](/souris/villeneuve-le-roi), [punaises de lit à Villeneuve-le-Roi](/punaises-de-lit/villeneuve-le-roi) et [fourmis à Villeneuve-le-Roi](/fourmis/villeneuve-le-roi).',
+    ],
+  },
+  chiffres: [
+    { valeur: '21 000', texte: 'habitants (population légale Insee), code postal 94290.', source: VLR_INSEE },
+    { valeur: '102 ha', texte: 'pour le lotissement du parc de la Faisanderie, lancé dès 1898.', source: VLR_WIKI },
+    { valeur: '61 m', texte: 'de dénivelé entre le plateau de l’aéroport (91 m) et les bords de Seine (30 m).', source: VLR_WIKI },
+    { valeur: '1910', texte: 'construction du kiosque Art nouveau, symbole de la ville, place Amédée-Soupault.', source: VLR_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Villeneuve-le-Roi : la ville secteur par secteur',
+    intro: 'Des **bords de Seine** au **Haut-Pays**, du **centre** et de son kiosque aux lotissements de la **Faisanderie**, le long des **voies ferrées**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quartiers pavillonnaires et la Faisanderie',
+        texte: 'Les grands lotissements, dont celui de la **Faisanderie**, offrent des rues entières de **maisons avec jardin**. Composteurs, poulaillers, abris et vide sanitaires : c’est là que nous intervenons le plus. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/villeneuve-le-roi/vue-aerienne-seine-coteau.jpg', alt: 'Vue aérienne des quartiers pavillonnaires de Villeneuve-le-Roi et de la voie ferrée', legende: 'Vue aérienne de Villeneuve-le-Roi : des rues de pavillons le long de la voie ferrée Paris-Bordeaux.', credit: 'Poudou99', licence: 'CC BY 3.0', page: W + 'Vue_a%C3%A9rienne_de_Villeneuve_le_Roi_IMG_9996.JPG' },
+      },
+      {
+        nom: 'Les bords de Seine et le bas de la ville',
+        texte: 'À l’est, au pied du coteau, les maisons proches de la **Seine** et de ses berges, en cours d’aménagement, sont les plus exposées : l’eau et la végétation attirent le rat. Nous contrôlons **soupiraux**, **regards** et pied des murs, surtout après de fortes pluies.',
+      },
+      {
+        nom: 'Le centre et le kiosque',
+        texte: 'Autour de la **place Amédée-Soupault** et de son **kiosque Art nouveau** de 1910, commerces et immeubles partagent caves et locaux à déchets. Pour un commerce : postes **numérotés**, **registre** et **attestation**, avec passages hors des heures d’ouverture.',
+        photo: { src: '/villes/villeneuve-le-roi/kiosque-place-amedee-soupault.jpg', alt: 'Le kiosque Art nouveau de la place Amédée-Soupault à Villeneuve-le-Roi', legende: 'Le kiosque de 1910, place Amédée-Soupault : le cœur de la ville et ses commerces.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Kiosque_Place_Am%C3%A9d%C3%A9e_Soupault_-_Villeneuve-le-Roi_(FR94)_-_2022-06-05_-_4.jpg' },
+      },
+      {
+        nom: 'Le Haut-Pays et le vieux village',
+        texte: 'Le **Haut-Pays** garde les maisons de l’ancien **village agricole** : murs de pierre, **caves**, dépendances et jardins. Les rongeurs y trouvent de nombreuses cachettes ; nous inspectons chaque ouverture et rebouchons après le traitement.',
+        photo: { src: '/villes/villeneuve-le-roi/eglise-saint-pierre-saint-paul.jpg', alt: 'L’église Saint-Pierre-Saint-Paul de Villeneuve-le-Roi', legende: 'L’église Saint-Pierre-Saint-Paul : Villeneuve-le-Roi garde un bâti ancien avec caves et murs de pierre.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + '%C3%89glise_Saints_Pierre_Paul_-_Villeneuve-le-Roi_(FR94)_-_2022-06-05_-_3.jpg' },
+      },
+      {
+        nom: 'Les voies ferrées et la lisière de l’aéroport',
+        texte: 'Les **talus ferroviaires** de la ligne Paris-Bordeaux et les abords de l’**aéroport** forment des couloirs de végétation où circulent les rongeurs. Les jardins qui les bordent doivent surveiller clôtures, abris et **terriers**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Villeneuve-le-Roi (94290) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, abri, garage, cave, vide sanitaire, combles ; près de la Seine, soupiraux et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Villeneuve-le-Roi (94290) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Trous au pied des murs, sous la terrasse ou l’abri : voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des souris dans la maison à l’automne', x: 'Elles entrent par le moindre interstice : voir [souris à Villeneuve-le-Roi](/souris/villeneuve-le-roi) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des bruits sous le plancher ou dans les combles', x: 'Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Des rats attirés par le poulailler ou les mangeoires', x: 'Voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+      { t: 'Un rongeur dans un commerce du centre', x: 'Postes numérotés, registre, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi à Villeneuve-le-Roi',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Dans une ville de pavillons comme Villeneuve-le-Roi, c’est le plus souvent au **propriétaire** de faire appel à une entreprise de dératisation ; pour une résidence, au **syndic** ou au **bailleur**.',
+      'Pour des rats sur la voie publique ou les berges, alertez la **mairie de Villeneuve-le-Roi**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Orly](/deratisation/orly), [Ablon-sur-Seine](/deratisation/ablon-sur-seine), [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges), [Choisy-le-Roi](/deratisation/choisy-le-roi), [Athis-Mons](/deratisation/athis-mons) et [Paray-Vieille-Poste](/deratisation/paray-vieille-poste).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Villeneuve-le-Roi ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon avec jardin : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Les bords de Seine attirent-ils les rats ?', a: 'L’eau et la végétation des berges sont favorables au surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons du bas de la ville doivent surveiller jardins, regards et soupiraux.' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Pourquoi des souris chaque automne dans ma maison ?', a: 'Quand il fait froid, les souris cherchent la chaleur et passent par le moindre interstice. Nous trouvons et bouchons leurs entrées ([par où entrent les souris](/blog/souris-par-ou-entrent-elles)).' },
+    { q: 'Mon compost ou mon poulailler attire-t-il les rats ?', a: 'Oui, s’ils donnent accès à la nourriture. Fermez le composteur, ramassez les graines le soir et rangez-les en bacs fermés (voir [rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Qui paie la dératisation d’une résidence ?', a: 'Les parties communes relèvent du syndic ou du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin avec chien ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [VLR_INSEE, VLR_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
