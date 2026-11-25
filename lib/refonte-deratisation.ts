@@ -2222,4 +2222,91 @@ REFONTE_DERATISATION['le-kremlin-bicetre'] = {
   sources: [KB_INSEE, KB_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Le Perreux-sur-Marne (25/11/2026) ──
+const PERREUX_WIKI: Source = { label: 'Wikipédia, Le Perreux-sur-Marne (Marne, crue de 1910, logement, Parc du Perreux, transports)', url: 'https://fr.wikipedia.org/wiki/Le_Perreux-sur-Marne' }
+const PERREUX_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94058, Le Perreux-sur-Marne', url: 'https://geo.api.gouv.fr/communes?code=94058&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['le-perreux-sur-marne'] = {
+  maj: '2026-11-25',
+  accroche: 'Pavillons, villas et jardins le long de la Marne, sur des terrains qui furent inondés en 1910 : au Perreux-sur-Marne, les rats montent de la rivière vers les maisons. Nous les arrêtons à l’entrée.',
+  societe: {
+    titre: 'Société de dératisation au Perreux-sur-Marne (94170) : une ville de maisons au bord de la Marne',
+    paras: [
+      'Le Perreux-sur-Marne compte **35 260 habitants** sur **3,96 km²**, entre 35 et 70 mètres d’altitude. La **Marne** borde la commune **à l’est et au sud**, face à Bry-sur-Marne et Champigny. Lors de la **crue de janvier 1910**, l’eau est montée de plus de **5 mètres** au-dessus de son lit et **un quart de la commune** s’est retrouvé sous les eaux pendant plusieurs semaines. Berges, caves et sous-sols proches de l’eau : un terrain que le **surmulot**, le rat d’égout, connaît bien.',
+      'Le Perreux s’est construit à la fin du XIXe siècle avec l’arrivée du chemin de fer : des Parisiens y ont bâti **pavillons et villas**, souvent sur les terrains bas et inondables du sud, près de la gare. Aujourd’hui encore, **29,1 % des logements** sont des maisons individuelles et les logements sociaux sont peu nombreux. Pour une société de dératisation, Le Perreux, c’est d’abord des **jardins**, des **caves** et des **vide sanitaires** de maisons, et des **copropriétés** gérées par un syndic.',
+      'Nous intervenons au Perreux depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris au Perreux-sur-Marne](/souris/le-perreux-sur-marne), [cafards au Perreux-sur-Marne](/cafards/le-perreux-sur-marne), [punaises de lit au Perreux-sur-Marne](/punaises-de-lit/le-perreux-sur-marne) et [chenilles processionnaires au Perreux-sur-Marne](/chenilles-processionnaires/le-perreux-sur-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '35 260', texte: 'habitants (population légale Insee), code postal 94170.', source: PERREUX_INSEE },
+    { valeur: '1/4', texte: 'de la commune sous les eaux lors de la crue de janvier 1910, pendant plusieurs semaines.', source: PERREUX_WIKI },
+    { valeur: '29,1 %', texte: 'des logements sont des maisons individuelles, sur 16 032 logements.', source: PERREUX_WIKI },
+    { valeur: '≈ 100', texte: 'pavillons dans le lotissement du Parc du Perreux, sur l’ancien domaine du château.', source: PERREUX_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats au Perreux-sur-Marne : la ville secteur par secteur',
+    intro: 'Des **bords de Marne** au **Parc du Perreux**, des **terrains bas du sud** au **centre** et aux abords de la **gare RER E**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Marne, du pont de Bry à la passerelle',
+        texte: 'À l’est, le long de la Marne, entre le **pont de Bry** et la **passerelle de Bry**, les maisons ont souvent un jardin qui descend vers l’eau, un sous-sol et des **soupiraux**. Le surmulot remonte des berges par les jardins et les regards. Nous contrôlons chaque ouverture, traitons les **terriers** et posons des grilles.',
+        photo: { src: '/villes/le-perreux-sur-marne/la-marne-pont-de-bry.jpg', alt: 'La Marne au pont de Bry, avec le repère de la crue de 1910 sur la pile', legende: 'La Marne au pont de Bry : la ligne rouge marque la hauteur de la crue de 1910 (39,07 m), bien au-dessus des jardins riverains.', credit: 'Georges Le Gars', licence: 'CC BY-SA 3.0', page: W + '4_la_Marne_au_Pont_de_Bry.JPG' },
+      },
+      {
+        nom: 'Les terrains bas du sud, inondés en 1910',
+        texte: 'Au sud, près de la Marne et de la limite avec Nogent, les quartiers bâtis sur des terrains bas ont été les plus touchés en 1910. Caves humides, vide sanitaires et réseaux y attirent les rongeurs, surtout après de fortes pluies. Nous inspectons les **sous-sols** et fermons les passages.',
+        photo: { src: '/villes/le-perreux-sur-marne/crue-1910-zones-inondees.jpg', alt: 'Carte des zones du Perreux-sur-Marne inondées lors de la crue de 1910', legende: 'Les zones inondées en janvier 1910 (en vert), le long de la Marne : ce sont aussi les secteurs où les caves restent les plus humides.', credit: 'Georges Le Gars', licence: 'CC BY-SA 3.0', page: W + 'Crue_de_janvier_1910,_Le_Perreux,_zones_inond%C3%A9es.jpg' },
+      },
+      {
+        nom: 'Le Parc du Perreux et les quartiers de villas',
+        texte: 'Au cœur de la ville, le **Parc du Perreux**, lotissement d’une centaine de pavillons sur l’ancien domaine du château, et les rues de **villas** anciennes, dont plusieurs maisons Art nouveau, ont de grands jardins, des caves et des dépendances. Composteurs, abris et haies : nous traitons et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/le-perreux-sur-marne/villa-art-nouveau.jpg', alt: 'Villa Art nouveau avec jardin au Perreux-sur-Marne', legende: 'Une villa Art nouveau du Perreux : jardin, sous-sol et dépendances, autant de cachettes possibles pour les rongeurs.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Villa_Jacques_-_Le_Perreux-sur-Marne_(FR94)_-_2021-03-20_-_3.jpg' },
+      },
+      {
+        nom: 'Le centre, la gare et les copropriétés',
+        texte: 'Autour de la mairie, de l’église Saint-Jean-Baptiste et de la gare **Nogent-Le Perreux** (RER E), immeubles et commerces partagent **caves**, **cours** et **locaux à poubelles**. Le traitement des parties communes se fait avec le **syndic** ; pour un commerce, nous intervenons hors des heures d’ouverture, avec **attestation**.',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats au Perreux-sur-Marne (94170) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le tour de la maison', x: 'Jardin, abri, garage, sous-sol, vide sanitaire, soupiraux côté Marne ; en copropriété, caves et local à poubelles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur au Perreux-sur-Marne (94170) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des terriers dans un jardin au bord de la Marne', x: 'Trous au pied des murs, sous la terrasse ou l’abri, coulées vers la rivière : nous traitons les galeries et fermons les accès. Voir [le mode de vie du rat](/blog/rat-mode-de-vie).' },
+      { t: 'Des rats dans une cave humide après la pluie', x: 'Quand la Marne monte, les rats cherchent des abris plus hauts, souvent dans les caves et les sous-sols. Nous traitons, puis bouchons soupiraux et passages.' },
+      { t: 'Des bruits sous le plancher ou dans les combles', x: 'Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire) et [rats dans les combles](/blog/rats-dans-les-combles).' },
+      { t: 'Des souris dans la maison en automne', x: 'Elles entrent par le moindre interstice : voir [souris au Perreux-sur-Marne](/souris/le-perreux-sur-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats attirés par les mangeoires ou le poulailler', x: 'Graines au sol, mangeoires, compost ouvert : voir [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, syndic : qui fait quoi au Perreux-sur-Marne',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Au Perreux, ville de maisons, c’est le plus souvent au **propriétaire** de faire appel à une entreprise de dératisation ; pour un immeuble, au **syndic**.',
+      'Locataire, prévenez votre propriétaire **par écrit**, avec photos. Pour des rats sur les berges ou la voie publique, alertez la **mairie du Perreux-sur-Marne**. Les rats ne connaissent pas les clôtures : prévenir vos voisins aide à traiter le secteur.',
+      'Nous intervenons aussi tout autour : [Nogent-sur-Marne](/deratisation/nogent-sur-marne), [Bry-sur-Marne](/deratisation/bry-sur-marne), [Champigny-sur-Marne](/deratisation/champigny-sur-marne), [Fontenay-sous-Bois](/deratisation/fontenay-sous-bois), [Villiers-sur-Marne](/deratisation/villiers-sur-marne) et [Joinville-le-Pont](/deratisation/joinville-le-pont).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation au Perreux-sur-Marne ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison avec jardin ou copropriété : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Les bords de Marne attirent-ils les rats au Perreux ?', a: 'Oui, l’eau et les berges sont le territoire du surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons proches de la rivière doivent surveiller jardins, regards et soupiraux.' },
+    { q: 'Ma cave est humide et j’entends des rats : est-ce lié ?', a: 'Souvent. Les terrains bas du Perreux, inondés en 1910, gardent des caves humides où les rats trouvent abri. Nous traitons et bouchons les passages, et vous conseillons sur l’aération et le rangement.' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Mon compost ou mes mangeoires attirent-ils les rats ?', a: 'Oui, s’ils donnent accès à la nourriture. Fermez le composteur, ramassez les graines le soir et rangez-les en bacs fermés (voir [rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Qui paie la dératisation d’une copropriété ?', a: 'Les parties communes relèvent du syndic. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison dans un jardin ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, si vous avez des enfants, des animaux ou un potager.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [PERREUX_INSEE, PERREUX_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
