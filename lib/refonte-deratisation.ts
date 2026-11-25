@@ -2668,4 +2668,96 @@ REFONTE_DERATISATION['orly'] = {
   sources: [ORLY_INSEE, ORLY_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Rungis (25/11/2026) ──
+const RUNGIS_WIKI: Source = { label: 'Wikipédia, Rungis (MIN, zone Icade, village, plaine de Montjean, logement, transports)', url: 'https://fr.wikipedia.org/wiki/Rungis' }
+const RUNGIS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94065, Rungis', url: 'https://geo.api.gouv.fr/communes?code=94065&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['rungis'] = {
+  maj: '2026-11-25',
+  accroche: 'Un petit village de 5 600 habitants entouré du plus grand marché de produits frais au monde, d’une zone d’affaires de 350 entreprises et de la plaine de Montjean : à Rungis, la dératisation concerne autant les pavillons que les professionnels.',
+  societe: {
+    titre: 'Société de dératisation à Rungis (94150) : un village au cœur d’un pôle économique',
+    paras: [
+      'Rungis ne compte que **5 611 habitants** sur **4,20 km²**, mais la commune est connue dans le monde entier pour son **marché d’intérêt national**, le plus grand marché de produits frais au monde, partagé avec Chevilly-Larue. Elle accueille aussi la zone d’activités **Icade** (ancien Silic) : **350 entreprises** et **12 000 emplois** sur **63 hectares**, le centre commercial **Belle Épine**, une plateforme logistique et une zone hôtelière, à deux kilomètres de l’aéroport d’Orly. Denrées, entrepôts, quais et bennes : un milieu où les rongeurs trouvent à manger toute l’année.',
+      'À côté de ce pôle économique, Rungis reste un **village** : connu depuis 1124, il garde son centre ancien et une forte part de **maisons**, **41,7 % des logements** en 2018. Au sud, la **plaine de Montjean**, longtemps agricole, accueille un nouveau quartier. Une société de dératisation y traite donc des **pavillons avec jardin** autant que des **sites professionnels**.',
+      'Nous intervenons à Rungis depuis notre base de **Saint-Maurice**, 7 jours sur 7, pour les particuliers comme pour les entreprises.',
+      'Nos autres pages pour la ville : [punaises de lit à Rungis](/punaises-de-lit/rungis) et [nos interventions à Rungis](/zones/val-de-marne/rungis).',
+    ],
+  },
+  chiffres: [
+    { valeur: '5 611', texte: 'habitants (population légale Insee), code postal 94150.', source: RUNGIS_INSEE },
+    { valeur: '350', texte: 'entreprises et 12 000 emplois sur les 63 hectares de la zone Icade, ancien Silic.', source: RUNGIS_WIKI },
+    { valeur: '41,7 %', texte: 'des logements sont des maisons individuelles (2018), sur 2 503 logements.', source: RUNGIS_WIKI },
+    { valeur: '1124', texte: 'première mention du village, dont la source alimentait Paris par les aqueducs d’Arcueil.', source: RUNGIS_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Rungis : la commune secteur par secteur',
+    intro: 'Du **marché d’intérêt national** à la **zone Icade**, du **village** et de la **place Louis-XIII** à la **plaine de Montjean**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le marché d’intérêt national et la logistique',
+        texte: 'Fruits, légumes, viandes, poissons, emballages et bennes : le **MIN** et les plateformes logistiques concentrent des quantités de denrées. Pour un grossiste, un transporteur ou un restaurant d’entreprise : **postes numérotés** autour des bâtiments, **pièges** près des stocks, **plan de localisation**, **registre** et **attestation** pour vos audits d’hygiène.',
+        photo: { src: '/villes/rungis/marche-interet-national.jpg', alt: 'Étalage de fruits et légumes au marché d’intérêt national de Rungis', legende: 'Le marché d’intérêt national de Rungis : des denrées en quantité, qui exigent une protection permanente contre les rongeurs.', credit: 'Nick Saltmarsh', licence: 'CC BY 2.0', page: W + 'Wholesale_display_Rungis.jpg' },
+      },
+      {
+        nom: 'La zone Icade, Belle Épine et les hôtels',
+        texte: 'Bureaux, sièges sociaux, restaurants d’entreprise, hôtels et centre commercial **Belle Épine** : chaque site a ses cuisines, ses réserves et ses locaux à déchets. Nous proposons un **contrat de suivi** avec visites régulières et rapport, adapté aux exigences des grandes entreprises. Voir [nos services aux professionnels](/professionnels).',
+      },
+      {
+        nom: 'Le village et la place Louis-XIII',
+        texte: 'Le **centre ancien** de Rungis, autour de la **place Louis-XIII** et de ses commerces, garde des maisons avec **caves** et jardins. Les rongeurs des zones voisines s’en approchent : nous inspectons les **soupiraux**, les **regards** et les abris, et intervenons dans les commerces hors des heures d’ouverture.',
+        photo: { src: '/villes/rungis/place-louis-xiii-village.jpg', alt: 'La place Louis-XIII au centre de Rungis', legende: 'La place Louis-XIII, au cœur du village : commerces, terrasses et maisons anciennes.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Place_Louis_XIII_Rungis.jpg' },
+      },
+      {
+        nom: 'Les quartiers pavillonnaires et le parc de la Colline Cacao',
+        texte: 'Avec près de quatre logements sur dix en maison, Rungis compte de nombreux **jardins**, des haies et des espaces verts comme le parc de la **Colline Cacao**. Composteurs, abris, vide sanitaires : nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/rungis/parc-colline-cacao.jpg', alt: 'Le parc de la Colline Cacao à Rungis', legende: 'Le parc de la Colline Cacao : espaces verts et jardins au contact des quartiers de maisons.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Parc_Colline_Cacao_Rungis.jpg' },
+      },
+      {
+        nom: 'La plaine de Montjean et le nouveau quartier',
+        texte: 'Au sud, la **plaine de Montjean**, longtemps cultivée, accueille un nouveau quartier en construction. Champs, friches et terrassements délogent **mulots**, **souris** et **rats**, qui cherchent un abri dans les bâtiments voisins, surtout à l’automne. Il faut fermer les accès dès les premières traces.',
+        photo: { src: '/villes/rungis/plaine-de-montjean.jpg', alt: 'La rigole gallo-romaine dans la plaine de Montjean, avec le nouveau quartier en construction', legende: 'La plaine de Montjean, avec la rigole gallo-romaine et le nouveau quartier en construction : les terrassements délogent les rongeurs des champs.', credit: 'Like tears in rain', licence: 'CC BY-SA 4.0', page: W + 'Rigole_gallo-romaine_dans_la_plaine_de_Montjean_(3),_Rungis.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Rungis (94150) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, garage, vide sanitaire. Entrepôt ou bureau : quais, stocks, cuisines, locaux techniques, abords extérieurs.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés et numérotés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide, près des denrées.' },
+      { t: 'Rebouchage, suivi et rapport', x: 'Passages rebouchés, postes contrôlés jusqu’à l’arrêt des consommations, contrat de suivi pour les entreprises. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Rungis (94150) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rongeurs dans un entrepôt alimentaire ou une chambre froide', x: 'Emballages rongés, crottes près des palettes : postes à l’extérieur, pièges à l’intérieur près des denrées, registre et attestation. Voir [nos services aux professionnels](/professionnels).' },
+      { t: 'Un rongeur dans un restaurant d’entreprise ou un hôtel', x: 'Postes numérotés, passages hors service, attestation : voir [le plan de lutte contre les nuisibles d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Des souris ou des mulots dans la maison à l’automne', x: 'Près des champs et des espaces verts, ils cherchent la chaleur : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des terriers dans le jardin', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des bruits dans les combles ou le vide sanitaire', x: 'Voir [rats dans les combles](/blog/rats-dans-les-combles) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, exploitant : qui fait quoi à Rungis',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. À Rungis, une maison se traite à la charge de son propriétaire, une résidence à celle du **syndic**, et un site professionnel à celle de son **exploitant**, qui doit souvent pouvoir présenter un plan de lutte lors des contrôles.',
+      'Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Rungis**.',
+      'Nous intervenons aussi tout autour : [Chevilly-Larue](/deratisation/chevilly-larue), [Thiais](/deratisation/thiais), [Orly](/deratisation/orly), [Fresnes](/deratisation/fresnes), [Wissous](/deratisation/wissous) et [Paray-Vieille-Poste](/deratisation/paray-vieille-poste).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Rungis ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, entrepôt, bureau ou restaurant : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Proposez-vous des contrats aux entreprises de Rungis ?', a: 'Oui : contrat de suivi avec visites régulières, postes numérotés, plan de localisation, registre et rapport après chaque passage (voir [nos services aux professionnels](/professionnels)).' },
+    { q: 'Intervenez-vous près des denrées alimentaires ?', a: 'Oui, avec des méthodes adaptées : pièges mécaniques et [piège Ekomille sans raticide](/services/deratisation-ecologique) à l’intérieur, appâts uniquement en postes verrouillés à l’extérieur.' },
+    { q: 'Le marché et la zone d’activités attirent-ils les rats vers les maisons ?', a: 'Les zones où l’on stocke de la nourriture attirent les rongeurs ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons voisines doivent garder poubelles, compost et caves bien fermés.' },
+    { q: 'Les travaux de la plaine de Montjean font-ils venir des rongeurs ?', a: 'Les terrassements délogent mulots, souris et rats des anciens champs. Fermez garages et abris, et signalez-nous les premières traces : un traitement rapide évite l’installation.' },
+    { q: 'J’ai des trous dans mon jardin : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Qui paie la dératisation d’une résidence ?', a: 'Les parties communes relèvent du syndic ou du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [RUNGIS_INSEE, RUNGIS_WIKI, MIN_RUNGIS_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
