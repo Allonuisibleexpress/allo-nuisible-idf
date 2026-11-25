@@ -2397,4 +2397,96 @@ REFONTE_DERATISATION['le-plessis-trevise'] = {
   sources: [PLESSIS_INSEE, PLESSIS_WIKI, BOIS_ST_MARTIN_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Limeil-Brévannes (25/11/2026) ──
+const LIMEIL_WIKI: Source = { label: 'Wikipédia, Limeil-Brévannes (forêt de la Grange, parcs, quartiers, hôpital Émile-Roux, Câble 1)', url: 'https://fr.wikipedia.org/wiki/Limeil-Br%C3%A9vannes' }
+const LIMEIL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94044, Limeil-Brévannes', url: 'https://geo.api.gouv.fr/communes?code=94044&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['limeil-brevannes'] = {
+  maj: '2026-11-25',
+  accroche: 'Une forêt de 110 hectares, des parcs, des quartiers neufs et des pavillons, entre le plateau de Limeil et le bas de Brévannes : à Limeil-Brévannes, les rongeurs ne manquent pas d’abris. Nous les en privons.',
+  societe: {
+    titre: 'Société de dératisation à Limeil-Brévannes (94450) : une ville entre forêt et quartiers neufs',
+    paras: [
+      'Limeil-Brévannes compte **27 406 habitants** sur **6,95 km²**. La commune est née de la réunion de deux villages : **Brévannes**, en bas de la ville, et **Limeil**, sur le plateau. Sa particularité : la **forêt de la Grange** couvre **110 hectares**, soit **18 % du territoire**. Classée forêt de protection et gérée par l’Office national des forêts, elle fait partie du massif de l’**Arc boisé**. Une forêt aussi proche des habitations, c’est un réservoir de **souris**, de **mulots** et de **rats** qui s’approchent des maisons à la mauvaise saison.',
+      'La ville se transforme aussi : l’**écoquartier des Temps Durables**, le nouveau parc urbain du quartier **Saint-Martin** et, depuis 2025, le téléphérique **Câble 1** vers Créteil. Chantiers et terrassements délogent les colonies de rongeurs, qui cherchent un nouvel abri dans les bâtiments voisins. Pour une société de dératisation, Limeil-Brévannes, ce sont autant des **pavillons en lisière de bois** que des **résidences neuves** et des **parties communes**.',
+      'Nous intervenons à Limeil-Brévannes depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [souris à Limeil-Brévannes](/souris/limeil-brevannes), [punaises de lit à Limeil-Brévannes](/punaises-de-lit/limeil-brevannes), [fourmis à Limeil-Brévannes](/fourmis/limeil-brevannes) et [chenilles processionnaires à Limeil-Brévannes](/chenilles-processionnaires/limeil-brevannes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '27 406', texte: 'habitants (population légale Insee), code postal 94450.', source: LIMEIL_INSEE },
+    { valeur: '110 ha', texte: 'pour la forêt de la Grange, soit 18 % du territoire, classée forêt de protection.', source: LIMEIL_WIKI },
+    { valeur: '2,5 ha', texte: 'pour le parc Léon-Bernard, axe vert qui relie le haut et le bas de la ville depuis 2008.', source: LIMEIL_WIKI },
+    { valeur: '2', texte: 'stations du téléphérique Câble 1 dans la commune : Plage Bleue et La Végétale Fontaine Saint-Martin.', source: LIMEIL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Limeil-Brévannes : la ville secteur par secteur',
+    intro: 'De la **forêt de la Grange** au **quartier Saint-Martin**, de l’**écoquartier des Temps Durables** au **parc de l’hôpital Émile-Roux**, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La forêt de la Grange et ses lisières',
+        texte: 'Avec 110 hectares de châtaigniers, de chênes et de bouleaux, la **forêt de la Grange** abrite de nombreux petits rongeurs. Les maisons en lisière voient arriver souris et mulots dès l’automne, dans les **garages**, les **abris de jardin** et les **tas de bois**. Nous protégeons les entrées de la maison et traitons le jardin.',
+        photo: { src: '/villes/limeil-brevannes/foret-de-la-grange.jpg', alt: 'Allée de la forêt de la Grange à Limeil-Brévannes', legende: 'La forêt de la Grange, 110 hectares en pleine commune : un réservoir de petits rongeurs à deux pas des maisons.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Route_Grand_Wirtemberg_-_Limeil-Br%C3%A9vannes_(FR94)_-_2022-05-06_-_1.jpg' },
+      },
+      {
+        nom: 'Le quartier Saint-Martin et les résidences',
+        texte: 'Quartier prioritaire de la ville, **Saint-Martin** rassemble des résidences autour des mêmes **caves**, **parkings** et **locaux à poubelles**. Le traitement se fait avec le **bailleur** sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/limeil-brevannes/quartier-saint-martin.jpg', alt: 'Rue du Docteur-Calmette dans le quartier Saint-Martin à Limeil-Brévannes', legende: 'Rue du Docteur-Calmette, quartier Saint-Martin : résidences avec caves et parkings partagés.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rue_Docteur_Calmette_-_Limeil-Br%C3%A9vannes_(FR94)_-_2022-05-06_-_1.jpg' },
+      },
+      {
+        nom: 'L’écoquartier des Temps Durables et les quartiers neufs',
+        texte: 'Les immeubles récents ont des **parkings souterrains**, des **locaux techniques** et des espaces verts au pied des bâtiments. Pendant les chantiers, les rongeurs délogés s’y installent vite. Il faut agir dès les premières traces, avec le **syndic** de la résidence.',
+        photo: { src: '/villes/limeil-brevannes/ecoquartier-temps-durables.jpg', alt: 'Allée Blaise-Cendrars dans l’écoquartier des Temps Durables à Limeil-Brévannes', legende: 'L’écoquartier des Temps Durables : résidences récentes, parkings souterrains et espaces verts.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'All%C3%A9e_Blaise_Cendrars_-_Limeil-Br%C3%A9vannes_(FR94)_-_2022-05-06_-_1.jpg' },
+      },
+      {
+        nom: 'Brévannes, l’hôpital Émile-Roux et le Câble 1',
+        texte: 'En bas de la ville, autour de l’**hôpital Émile-Roux** de l’AP-HP, installé dans l’ancien château de Brévannes et son parc arboré, et des nouvelles stations du **Câble 1**, on trouve pavillons, commerces et équipements. Parcs et talus offrent couvert aux rongeurs : les maisons voisines doivent surveiller jardins et soupiraux.',
+        photo: { src: '/villes/limeil-brevannes/telepherique-cable-1.jpg', alt: 'Station du téléphérique Câble 1 à Limeil-Brévannes', legende: 'Une station du Câble 1, mis en service en 2025 : un secteur en pleine transformation.', credit: 'Matgrt', licence: 'CC BY-SA 4.0', page: W + 'C1_Limeil-Brevannes(2025).jpg' },
+      },
+      {
+        nom: 'Le plateau de Limeil et les pavillons',
+        texte: 'Sur le **plateau**, le vieux Limeil et ses quartiers de **pavillons** ont jardins, haies et composteurs. Nous traitons les **terriers** et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Limeil-Brévannes (94450) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes, des terriers ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon en lisière : garage, abri, tas de bois, vide sanitaire. Résidence : caves, parkings, local à poubelles. Chantier voisin : points d’entrée.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Limeil-Brévannes (94450) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris ou des mulots dans la maison à l’automne', x: 'Près de la forêt, ils cherchent la chaleur dès les premiers froids : voir [souris à Limeil-Brévannes](/souris/limeil-brevannes) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rats dans les parkings d’une résidence neuve', x: 'Les chantiers voisins délogent les colonies. Prévenez le syndic par écrit dès les premières traces : le traitement doit couvrir tout le sous-sol.' },
+      { t: 'Des rats dans la cave ou au local à poubelles', x: 'Le signe d’une colonie dans les parties communes : le bailleur ou le syndic organise le traitement, nous rebouchons ensuite les passages.' },
+      { t: 'Des terriers dans le jardin', x: 'Voir [le mode de vie du rat](/blog/rat-mode-de-vie) et [la reproduction des rats](/blog/reproduction-des-rats).' },
+      { t: 'Des rongeurs attirés par le compost ou les mangeoires', x: 'Voir [rat dans le compost](/blog/rat-compost) et [nourrir les oiseaux attire les rats](/blog/nourrir-oiseaux-pigeons-attire-rats).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, propriétaire, bailleur : qui fait quoi à Limeil-Brévannes',
+    paras: [
+      'Dans le Val-de-Marne, l’**article 119** du **règlement sanitaire départemental** (arrêté préfectoral du 26 février 1985) impose aux **propriétaires**, **syndics**, **bailleurs** et **occupants** d’empêcher l’installation des rongeurs. Un pavillon se traite à la charge de son propriétaire, une résidence à celle du **bailleur** ou du **syndic**, un chantier à celle de son **maître d’ouvrage**.',
+      'Pour des rats sur la voie publique ou dans un parc, alertez la **mairie de Limeil-Brévannes** ; la forêt de la Grange est entretenue par l’**Office national des forêts**.',
+      'Nous intervenons aussi tout autour : [Valenton](/deratisation/valenton), [Bonneuil-sur-Marne](/deratisation/bonneuil-sur-marne), [Créteil](/deratisation/creteil), [Boissy-Saint-Léger](/deratisation/boissy-saint-leger) et [Villeneuve-Saint-Georges](/deratisation/villeneuve-saint-georges).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Limeil-Brévannes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon ou résidence : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La forêt de la Grange fait-elle venir les rongeurs ?', a: 'Une forêt de 110 hectares abrite beaucoup de petits rongeurs, qui s’approchent des maisons en lisière à l’automne et l’hiver. Garages, abris et tas de bois sont à surveiller en priorité.' },
+    { q: 'Souris ou mulot : quelle différence pour le traitement ?', a: 'Le mulot vit plutôt dehors et entre surtout à la mauvaise saison ; la souris s’installe durablement dans la maison. Dans les deux cas, nous trouvons et bouchons les entrées et posons des pièges adaptés.' },
+    { q: 'J’habite une résidence neuve et je vois des rats : pourquoi ?', a: 'Les chantiers voisins délogent les colonies, qui cherchent un nouvel abri dans les parkings et locaux des immeubles récents. Signalez-le vite au syndic : un traitement rapide évite l’installation.' },
+    { q: 'Qui paie la dératisation d’une résidence à Saint-Martin ?', a: 'Les parties communes relèvent du bailleur. Le règlement sanitaire du Val-de-Marne ([article 119](/barometre-des-nuisibles-punaises-de-lit-deratisation-2026)) fait de la lutte contre les rongeurs une obligation des propriétaires, syndics, bailleurs et occupants.' },
+    { q: 'Peut-on dératiser sans poison près d’un jardin ou d’un bois ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès. S’il faut un appât, il est placé dans des postes verrouillés.' },
+    { q: 'J’ai des trous dans ma pelouse : rats ou taupes ?', a: 'Un terrier de rat est un trou net au pied d’un mur, d’une terrasse ou d’un abri, avec une coulée dans l’herbe. Une taupe laisse des monticules de terre. Envoyez-nous une photo.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  ],
+  sources: [LIMEIL_INSEE, LIMEIL_WIKI, RSD_94, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
