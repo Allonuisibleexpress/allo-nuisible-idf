@@ -36,5 +36,13 @@ export function faqLongueTraine(slug: string, a: string): Q[] {
       'Oui. Crottes, urine et nids laissent des souillures : après la dératisation, nous pouvons désinfecter les zones touchées, dès 150 €. Voir [notre service de désinfection](/services/desinfection).',
       'Oui, c’est conseillé quand une cave, un grenier ou un local a été très fréquenté par les rats. La désinfection est proposée dès 150 € : voir [désinfection après nuisibles](/services/desinfection).',
     ]) },
+    { q: 'La dératisation présente-t-elle un risque pour mon chien ou mon chat ?', a: v([
+      'Les appâts sont enfermés dans des postes verrouillés, hors de portée des animaux, et nous vous indiquons où ils se trouvent. Si vous préférez éviter tout raticide, nous utilisons des pièges mécaniques ou le piège Ekomille ([dératisation écologique](/services/deratisation-ecologique)).',
+      'Nous adaptons le dispositif aux animaux présents : postes fermés à clé et placés hors de leur portée, ou méthode sans raticide avec pièges et Ekomille ([dératisation écologique](/services/deratisation-ecologique)). Signalez-nous vos animaux dès l’appel.',
+    ]) },
+    { q: `Intervenez-vous en urgence le soir ou le week-end ${a} ?`, a: v([
+      'Oui, 7 jours sur 7, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés. Un rat dans une chambre d’enfant ou une cuisine de restaurant ne peut pas attendre lundi.',
+      'Oui : nous intervenons tous les jours, y compris le soir, le week-end et les jours fériés, au même tarif. Appelez ou envoyez une photo, nous vous donnons un créneau rapidement.',
+    ]) },
   ]
 }

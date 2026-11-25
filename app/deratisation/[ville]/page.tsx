@@ -51,6 +51,7 @@ import { DOSSIERS_DERATISATION } from '@/lib/dossiers-deratisation'
 import VignettesChantier from '@/components/VignettesChantier'
 import { CHANTIER_DIOGENE } from '@/lib/photos-chantiers'
 import { refonteDerat } from '@/lib/refonte-deratisation'
+import { RefonteEssentiel, RefonteSignes, RefonteSoiMeme, RefonteLieux } from '@/components/RefonteEnrichi'
 import { RefonteSociete, RefonteQuartiers, RefonteIntervention, RefonteDeratiseur, RefonteMairie } from '@/components/RefonteDeratisation'
 import { VILLES_SOURIS } from '@/lib/villes-souris'
 import {
@@ -236,9 +237,11 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
 
         {r ? (
           <>
+            <RefonteEssentiel r={r} slug={v.slug} nom={v.nom} a={v.a} cp={codePostal(v.slug)} />
             <RefonteSociete r={r} />
             <PhotoNuisibleVille basePath="/deratisation" a={r ? '' : v.a} />
             <RefonteQuartiers r={r} />
+            <RefonteSignes r={r} slug={v.slug} nom={v.nom} a={v.a} cp={codePostal(v.slug)} />
           </>
         ) : (
           <>
@@ -287,7 +290,9 @@ export default function DeratisationVillePage({ params }: { params: { ville: str
         {r ? (
           <>
             <RefonteIntervention r={r} />
+            <RefonteLieux r={r} slug={v.slug} nom={v.nom} a={v.a} cp={codePostal(v.slug)} />
             <RefonteDeratiseur r={r} />
+            <RefonteSoiMeme r={r} slug={v.slug} nom={v.nom} a={v.a} cp={codePostal(v.slug)} />
           </>
         ) : (
           <>

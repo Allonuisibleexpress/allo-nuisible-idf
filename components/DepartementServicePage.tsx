@@ -224,7 +224,7 @@ export default function DepartementServicePage({ s, d }: { s: ServiceDep; d: Dep
             </nav>
             <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 text-sm" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}>
               <span className="flex text-yellow-400">{[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}</span>
-              <strong className="text-white">{NOTE_GOOGLE.note}/5</strong><span className="text-white/60">sur {NOTE_GOOGLE.nombre} avis Google</span>
+              <strong className="text-white">{NOTE_GOOGLE.note}/5</strong><span className="text-white/60">sur Google</span>
             </a>
             <h1 className="text-[2.1rem] sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-3 tracking-tight">
               {c.h1} <span style={{ color: '#F0562A' }}>{dep.dans}</span>

@@ -30,7 +30,7 @@ export default function AvisDefilants({ depart = 0, fond = '#0d0d0d' }: { depart
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3">Ils nous ont fait confiance, <span style={{ color: '#F0562A' }}>ils en parlent</span></h2>
         <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/70 text-sm hover:text-white">
           <span className="flex text-yellow-400">{[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}</span>
-          <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur {NOTE_GOOGLE.nombre} avis Google, reproduits mot pour mot
+          <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur Google, avis reproduits mot pour mot
         </a>
       </div>
       <div className="relative" style={{ maskImage: 'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)', WebkitMaskImage: 'linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)' }}>

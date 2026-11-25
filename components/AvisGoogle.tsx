@@ -12,7 +12,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
           <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Ce que disent nos clients</h2>
           <p className="text-white/60 text-sm">
             <span className="text-yellow-400">★★★★★</span>{' '}
-            <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur {NOTE_GOOGLE.nombre} avis Google. Avis reproduits mot pour mot.
+            <strong className="text-white">{NOTE_GOOGLE.note}/5</strong> sur Google. Avis reproduits mot pour mot.
           </p>
         </div>
         <div className={ordre.length >= 3 ? 'grid md:grid-cols-3 gap-5' : ordre.length === 2 ? 'grid md:grid-cols-2 gap-5 max-w-3xl mx-auto' : 'max-w-xl mx-auto'}>
@@ -41,7 +41,7 @@ export default function AvisGoogle({ ordre = ['jo', 'gaetan', 'lauren'], fond = 
           <a href={FICHE_GOOGLE_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-bold text-white px-7 py-3.5 rounded-full text-sm"
             style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
-            Lire nos {NOTE_GOOGLE.nombre} avis sur Google
+            Lire tous nos avis sur Google
           </a>
         </div>
       </div>
