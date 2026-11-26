@@ -5110,4 +5110,100 @@ REFONTE_DERATISATION['meudon'] = {
   sources: [MEU_INSEE, MEUDON_RSD92, MEU_WIKI, LOI_89, SPF_LEPTO],
 }
 
+// ── Montrouge (27/11/2026) ──
+const MTR_WIKI: Source = { label: 'Wikipédia, Montrouge (superficie, carrières de calcaire, logement, squares, histoire, route d’Orléans)', url: 'https://fr.wikipedia.org/wiki/Montrouge' }
+const MTR_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92049, Montrouge', url: 'https://geo.api.gouv.fr/communes?code=92049&fields=nom,code,codesPostaux,population,surface' }
+const wmt = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/montrouge/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['montrouge'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Plus de 22 000 habitants au km², 95 % d’appartements, une ville posée sur d’anciennes carrières de calcaire et seulement 5 % de squares : à Montrouge, les rats vivent dans les caves, les cours et les réseaux. Nous les traitons immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Montrouge (92120) : une ville très dense aux portes du 14e',
+    paras: [
+      'Montrouge compte **46 324 habitants** sur seulement **2,07 km²**, soit plus de **22 000 habitants au km²** : la ville a perdu au cours de son histoire les deux tiers de sa superficie, notamment au profit de Paris. Son relief est celui d’un **plateau**, entre 67 et 85 mètres d’altitude, et, comme Paris, elle repose sur d’anciennes **carrières de calcaire**.',
+      'En 2018, **94,9 % des logements** étaient des appartements et seulement **3,3 %** des maisons. Les espaces verts tiennent dans dix-huit squares, environ **9 hectares**, soit près de **5 %** du territoire. Pour une société de dératisation, Montrouge est une ville de **caves**, de **cours**, de **locaux à poubelles** et de **commerces de bouche**, à traiter avec les **syndics**, souvent immeuble par immeuble.',
+      'Nous intervenons à Montrouge depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Montrouge](/punaises-de-lit/montrouge) et [fourmis à Montrouge](/fourmis/montrouge).',
+    ],
+  },
+  chiffres: [
+    { valeur: '46 324', texte: 'habitants (population légale Insee), code postal 92120.', source: MTR_INSEE },
+    { valeur: '≈ 22 400', texte: 'habitants au km² (46 324 habitants sur 2,07 km²) : l’une des villes les plus denses du département.', source: MTR_INSEE },
+    { valeur: '94,9 %', texte: 'des logements sont des appartements (2018) : caves, cours et locaux à poubelles partagés.', source: MTR_WIKI },
+    { valeur: '5 %', texte: 'du territoire en squares (18 squares, environ 9 hectares) : les rares espaces verts concentrent les terriers.', source: MTR_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Montrouge : la ville secteur par secteur',
+    intro: 'Montrouge est une ville compacte, sans grandes coupures : un **centre** autour de la mairie, des rues commerçantes, l’ancienne **route d’Orléans** et des immeubles anciens posés sur les carrières. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La place Émile-Cresp et le centre',
+        texte: 'Autour de la **mairie**, de son beffroi et de l’église Saint-Jacques-le-Majeur : immeubles, commerces, marché et restaurants. Réserves, cuisines et locaux à poubelles attirent les rongeurs : nous intervenons chez les **commerçants** et en copropriété. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wmt('place-emile-cresp.jpg', 'La place Émile-Cresp, la mairie et le beffroi de Montrouge', 'La place Émile-Cresp, avec la mairie, le beffroi et l’église.', 'Ibex73', 'CC BY-SA 4.0', 'Place_Emile_Cresp,_Montrouge.jpg'),
+      },
+      {
+        nom: 'Les squares, rares espaces verts',
+        texte: 'Le **square Renaudel**, le square de l’Hôtel-de-Ville ou le jardin Pablo-Picasso : dans une ville aussi dense, ces squares concentrent les terriers. Pelouses, massifs et poubelles de parc : les rats creusent en bordure et gagnent les immeubles riverains. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wmt('square-renaudel.jpg', 'La pelouse et les arbres du square Renaudel à Montrouge', 'Le square Renaudel et son kiosque à musique.', 'Ralf.treinen', 'CC BY-SA 3.0', 'Montrouge_square_renaudel.jpg'),
+      },
+      {
+        nom: 'Autour du métro Mairie de Montrouge',
+        texte: 'Le long de la ligne 4 et des rues commerçantes : immeubles anciens, cafés et commerces de bouche. Réseaux, gaines et caves communiquent d’un immeuble à l’autre : le mieux est un traitement coordonné entre syndics voisins.',
+        photo: wmt('metro-mairie-de-montrouge.jpg', 'L’accès à la station de métro Mairie de Montrouge et un immeuble ancien', 'L’accès à la station Mairie de Montrouge et les immeubles anciens du centre.', 'Fmjwiki', 'CC BY-SA 3.0', 'M%C3%A9tro_Mairie_de_Montrouge_acc%C3%A8s_sud(1).JPG'),
+      },
+      {
+        nom: 'L’avenue Aristide-Briand, ancienne route d’Orléans',
+        texte: 'Grand axe vers Paris, l’ancienne **route d’Orléans** aligne immeubles, bureaux, commerces et restaurants. Parkings, réserves et locaux techniques : pour les professionnels, nous proposons un plan de lutte avec postes numérotés et attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wmt('route-d-orleans-ancienne.jpg', 'Carte postale ancienne de la route d’Orléans à Montrouge', 'La route d’Orléans, actuelle avenue Aristide-Briand, avant 1914.', 'Carte postale ancienne, scan Claude_Villetaneuse', 'Domaine public', 'Grand-Montrouge_-_Route_d%27Orl%C3%A9ans.JPG'),
+      },
+      {
+        nom: 'Les immeubles anciens et les caves sur carrières',
+        texte: 'Une grande partie de la ville date de la fin du XIXe et du début du XXe siècle : immeubles en pierre, caves profondes et soupiraux, sur un sous-sol de **carrières de calcaire**. Nous traitons les caves entières avec le **syndic**, posons des grilles et rebouchons les passages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wmt('immeuble-avenue-verdier.jpg', 'Tympan sculpté d’un immeuble de 1897, avenue Verdier à Montrouge', 'Le tympan sculpté d’un immeuble de 1897, avenue Verdier.', 'Ralf.treinen', 'CC BY-SA 3.0', 'Montrouge_av_verdier_30_tymphan.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Montrouge (92120) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, cour, local à poubelles, gaines, soupiraux. Commerce : réserves et cuisine. Parking : niveaux et locaux techniques.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Montrouge (92120) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble ancien', x: 'Le cas le plus fréquent : nous traitons tout le sous-sol avec le syndic, puis rebouchons les passages vers les logements et les caves voisines.' },
+      { t: 'Des rongeurs dans un restaurant ou un commerce', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Les rats de l’immeuble voisin', x: 'Dans une ville aussi dense, les caves communiquent : un traitement coordonné entre syndics évite que les rats passent d’un immeuble à l’autre.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Montrouge',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, cours et locaux à poubelles relèvent du **syndic** ; un commerce, de son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Malakoff](/deratisation/malakoff), [Bagneux](/deratisation/bagneux), [Châtillon](/deratisation/chatillon), [Arcueil](/deratisation/arcueil), [Gentilly](/deratisation/gentilly) et [Paris 14e](/deratisation/paris-14). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Montrouge ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, cave ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi tant de rats dans les caves de Montrouge ?', a: 'La ville est très dense, avec des immeubles anciens dont les caves communiquent, sur un sous-sol de carrières. Le surmulot y trouve abri, réseaux et nourriture ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, cours et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Les rats de l’immeuble voisin peuvent-ils venir chez moi ?', a: 'Oui : murs mitoyens, caves et réseaux communiquent. Le plus efficace est un traitement coordonné entre syndics voisins, avec rebouchage des passages.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Montrouge ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [MTR_INSEE, MTR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
