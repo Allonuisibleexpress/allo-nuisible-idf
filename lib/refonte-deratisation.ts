@@ -4630,4 +4630,100 @@ REFONTE_DERATISATION['antony'] = {
   sources: [ANT_INSEE, ANT_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Neuilly-sur-Seine (27/11/2026, soin particulier demandé : comparé à Urgences Nuisibles, Express n'a pas de page) ──
+const NEU_WIKI: Source = { label: 'Wikipédia, Neuilly-sur-Seine (Seine, île de la Jatte, bois de Boulogne, quartiers, logement, histoire, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Neuilly-sur-Seine' }
+const NEU_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92051, Neuilly-sur-Seine', url: 'https://geo.api.gouv.fr/communes?code=92051&fields=nom,code,codesPostaux,population,surface' }
+const wne = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/neuilly-sur-seine/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['neuilly-sur-seine'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Entre le bois de Boulogne et la Seine, avec l’île de la Jatte, des hôtels particuliers, des immeubles bourgeois à caves profondes et des restaurants le long de l’avenue du Roule : à Neuilly-sur-Seine, les rats sont discrets mais bien installés. Nous intervenons avec la même discrétion, quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Neuilly-sur-Seine (92200) : entre le bois de Boulogne, la Seine et l’île de la Jatte',
+    paras: [
+      'Neuilly-sur-Seine compte **59 538 habitants** sur **3,72 km²**, soit environ **16 000 habitants au km²**. La commune est bordée à l’est et au sud par **Paris** (portes de Villiers, des Ternes et Maillot) et par le **bois de Boulogne**, à l’ouest par la **Seine**, face à La Défense, et au nord par Levallois-Perret. Elle englobe la plus grande partie de l’**île de la Jatte** et l’extrémité de l’île de Puteaux, dite **île du Pont**. Lors de la **crue de 1910**, Neuilly a été inondée comme les villes voisines.',
+      'Son histoire est liée au fleuve : un **bac** traversait la Seine dès 1140, puis un pont en bois a été construit en 1609, remplacé en 1772 par le **pont de pierre de Perronet**, long de 219 mètres. La ville n’a pas de véritable centre, mais des quartiers différenciés, de **Saint-James-Madrid** aux **Sablons**. Le parc de logements est presque entièrement collectif : environ **95 % d’appartements**, dans des **immeubles bourgeois** à caves profondes, avec des **hôtels particuliers** autour du bois. Pour une société de dératisation, ce sont des **caves**, des **parkings**, des **cours** et des **jardins privés** à traiter avec discrétion, en lien avec le **syndic** ou le propriétaire.',
+      'Nous intervenons à Neuilly-sur-Seine depuis notre base de **Saint-Maurice**, 7 jours sur 7, souvent le jour même.',
+      'Nos autres pages pour la ville : [punaises de lit à Neuilly-sur-Seine](/punaises-de-lit/neuilly-sur-seine) et [fourmis à Neuilly-sur-Seine](/fourmis/neuilly-sur-seine). Pour le quartier d’affaires voisin : [dératisation à La Défense](/deratisation/la-defense).',
+    ],
+  },
+  chiffres: [
+    { valeur: '59 538', texte: 'habitants (population légale Insee), code postal 92200.', source: NEU_INSEE },
+    { valeur: '≈ 95 %', texte: 'des logements sont des appartements et environ 2,4 % des maisons : caves, parkings et cours partagés.', source: NEU_WIKI },
+    { valeur: '219 m', texte: 'de long pour le pont de pierre de Perronet (1772) : la ville s’est construite autour du passage de la Seine.', source: NEU_WIKI },
+    { valeur: '1910', texte: 'crue de la Seine : Neuilly a été inondée comme les villes voisines situées le long du fleuve.', source: NEU_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Neuilly-sur-Seine : la ville quartier par quartier',
+    intro: 'L’Insee découpe Neuilly en quatre grands quartiers, **Saint-James-Madrid**, **Charles-Laffitte**, la **Plaine des Sablons** et le **Parc de Neuilly** ; la mairie en compte onze, de **Bagatelle** à la **Jatte** en passant par **Sablons** ou **Saussaye**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'L’île de la Jatte et les bords de Seine',
+        texte: 'L’**île de la Jatte**, ancien secteur industriel devenu résidentiel, est entourée par la Seine, avec ses berges boisées et le temple de l’Amour. Le surmulot vit au bord de l’eau et remonte par les réseaux jusqu’aux parkings et aux caves des résidences. Nous contrôlons les sous-sols et les regards, puis rebouchons les passages, en particulier après une montée des eaux.',
+        photo: wne('ile-de-la-jatte-temple.jpg', 'Le temple de l’Amour et les berges boisées de l’île de la Jatte à Neuilly-sur-Seine', 'L’île de la Jatte, ses berges boisées et le temple de l’Amour, au bord de la Seine.', 'Polymagou', 'CC BY-SA 4.0', 'Temple_de_l%27Amour,_%C3%AEle_de_la_Jatte,_Neuilly-sur-Seine_1.jpg'),
+      },
+      {
+        nom: 'Saint-James, Bagatelle et la lisière du bois de Boulogne',
+        texte: 'Le pourtour du **bois de Boulogne** et le quartier **Saint-James**, avec le parc classé de la **Folie Saint-James**, réunissent hôtels particuliers, villas et jardins. À l’automne, les rongeurs du bois se rapprochent des maisons : terriers au pied des haies, passages par les soupiraux et les garages. Nous traitons les jardins et fermons chaque accès. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wne('parc-folie-saint-james.jpg', 'Allée et pelouses du parc de la Folie Saint-James à Neuilly-sur-Seine', 'Le parc de la Folie Saint-James, en lisière du bois de Boulogne.', 'Celette', 'CC BY-SA 4.0', 'Parc_de_la_Folie_Saint-James,_Neuilly-sur-Seine_1.jpg'),
+      },
+      {
+        nom: 'L’avenue Charles-de-Gaulle et le quartier du Pont',
+        texte: 'Prolongement des Champs-Élysées vers La Défense, l’**avenue Charles-de-Gaulle** traverse la ville jusqu’au pont de Neuilly, avec bureaux, immeubles, restaurants et parkings souterrains. Les chantiers de voirie et les réseaux remuent le sous-sol : nous intervenons chez les **professionnels** et en copropriété. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wne('avenue-charles-de-gaulle.jpg', 'L’avenue Charles-de-Gaulle à Neuilly-sur-Seine en travaux, avec La Défense au fond', 'L’avenue Charles-de-Gaulle en 2023, vue vers La Défense.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Charles_Gaulle_-_Neuilly-sur-Seine_(FR92)_-_2023-07-01_-_1.jpg'),
+      },
+      {
+        nom: 'Les Sablons, le marché et l’avenue du Roule',
+        texte: 'Autour de la **place du Marché**, des **Sablons** et de l’**avenue du Roule**, le secteur le plus recherché pour ses commerces : restaurants, commerces de bouche, marché et immeubles bourgeois. Réserves, cuisines et locaux à poubelles attirent les rongeurs : plan des postes, passages hors service et attestation. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wne('rue-parmentier.jpg', 'Une rue résidentielle bordée d’immeubles bourgeois à Neuilly-sur-Seine', 'Une rue de Neuilly : immeubles bourgeois et alignements d’arbres.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Parmentier_-_Neuilly-sur-Seine_(FR92)_-_2023-04-05_-_1.jpg'),
+      },
+      {
+        nom: 'Le Parc, Charles-Laffitte et le boulevard Bineau',
+        texte: 'Au nord, vers Levallois, le quartier du **Parc**, sur l’emplacement de l’ancien château de Neuilly, et le **boulevard Bineau** : grands immeubles, résidences avec jardins et squares. Caves, parkings et cours : la dératisation se fait surtout en **copropriété**, cave par cave, avec rebouchage des soupiraux.',
+        photo: wne('boulevard-bineau.jpg', 'Le boulevard Bineau, ses arbres et ses immeubles à Neuilly-sur-Seine', 'Le boulevard Bineau : alignements d’arbres, immeubles et jardins privés.', 'Chabe01', 'CC BY-SA 4.0', 'Boulevard_Bineau_-_Neuilly-sur-Seine_(FR92)_-_2023-04-05_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Neuilly-sur-Seine (92200) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, cour, soupiraux. Hôtel particulier ou villa : jardin, dépendances, sous-sol. Restaurant : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés et discrets, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées sur les soupiraux, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Neuilly-sur-Seine (92200) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble bourgeois', x: 'Caves profondes, soupiraux et réseaux anciens : nous traitons tout le sous-sol avec le syndic, puis posons des grilles et rebouchons les passages vers les logements.' },
+      { t: 'Des rongeurs dans le jardin d’un hôtel particulier', x: 'Près du bois de Boulogne, terriers au pied des haies et passages vers les dépendances : traitement discret, sans raticide si vous avez des enfants ou des animaux, et fermeture des accès.' },
+      { t: 'Des rats dans un parking de résidence', x: 'Sur l’île de la Jatte comme au Parc, les parkings communiquent avec les réseaux : postes numérotés sur tout le sous-sol, en lien avec le gestionnaire.' },
+      { t: 'Des rongeurs dans un restaurant de l’avenue du Roule', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines, les planchers et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, propriétaire : qui fait quoi à Neuilly-sur-Seine',
+    paras: [
+      'À Neuilly, presque tous les logements sont en immeuble : les caves, parkings, cours et locaux à poubelles relèvent du **syndic de copropriété**. Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles ; un hôtel particulier ou une villa, à son propriétaire ; un restaurant, à son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments ; le bois de Boulogne relève de la Ville de Paris. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Levallois-Perret](/deratisation/levallois-perret), [Courbevoie](/deratisation/courbevoie), [Puteaux](/deratisation/puteaux), [La Défense](/deratisation/la-defense), [Paris 16e](/deratisation/paris-16) et [Paris 17e](/deratisation/paris-17). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Neuilly-sur-Seine ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, hôtel particulier, parking ou restaurant : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous de façon discrète dans un hôtel particulier ou une résidence ?', a: 'Oui : intervention à l’heure qui vous convient, y compris tôt le matin ou le soir, postes d’appâtage fermés et discrets, et compte rendu après chaque passage.' },
+    { q: 'Le bois de Boulogne fait-il venir les rongeurs à Neuilly ?', a: 'Les bois abritent souris et rats, qui se rapprochent des maisons et des jardins à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : soupiraux, garages, dépendances.' },
+    { q: 'J’habite sur l’île de la Jatte : suis-je plus exposé ?', a: 'Les résidences entourées par la Seine voient plus souvent le surmulot, qui vit près de l’eau et circule par les réseaux ([mode de vie du rat](/blog/rat-mode-de-vie)). Après une crue ou de fortes pluies, faites contrôler parkings et caves.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Neuilly-sur-Seine ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [NEU_INSEE, NEU_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
