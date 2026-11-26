@@ -598,6 +598,97 @@ REFONTE_DERAT_DEP.yvelines = {
   sources: [YV_INSEE, LOI_1989, SPF_LEPTO, YV_WIKI],
 }
 
+// ── Seine-et-Marne (77) ──
+const SEM_WIKI: Source = { label: 'Wikipédia, Seine-et-Marne (superficie, Brie et Gâtinais, crue de juin 2016, Marne-la-Vallée)', url: 'https://fr.wikipedia.org/wiki/Seine-et-Marne' }
+const SEM_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : département 77, communes, populations légales et surfaces', url: 'https://geo.api.gouv.fr/departements/77/communes?fields=nom,population,surface' }
+const s77 = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/departements/seine-et-marne/${f}`, alt, legende, credit, licence, page: 'https://commons.wikimedia.org/wiki/File:' + fichier })
+
+REFONTE_DERAT_DEP['seine-et-marne'] = {
+  maj: '2026-11-27',
+  reglement: 'loi du 6 juillet 1989 et règlement sanitaire départemental de Seine-et-Marne',
+  quiPaie: '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic** ; une maison, de son propriétaire.',
+  accroche: 'La Seine et la Marne, la Brie, la forêt de Fontainebleau, Marne-la-Vallée et des centaines de villages : la Seine-et-Marne couvre la moitié de l’Île-de-France. Rats des berges, des jardins et des fermes : nous avons une page détaillée pour 11 villes.',
+  societe: {
+    titre: 'Société de dératisation en Seine-et-Marne (77) : la moitié de l’Île-de-France, de la Marne à Fontainebleau',
+    paras: [
+      'La Seine-et-Marne compte **1 468 108 habitants** dans **507 communes**, sur environ **5 915 km²** : à lui seul, le département couvre **la moitié de la superficie de l’Île-de-France**. Il tire son nom de la **Seine** et de la **Marne**, et s’étend sur plusieurs régions naturelles, dont la **Brie** et le **Gâtinais**, avec au sud-ouest la **forêt de Fontainebleau**.',
+      'Fin mai et début juin **2016**, de fortes pluies ont provoqué la crue du **Loing** et de la **Marne** : à **Nemours**, on a mesuré jusqu’à **2,30 mètres** d’eau dans les rues. Berges, caves inondables, **pavillons avec jardin**, **corps de ferme** et zones d’activité de **Marne-la-Vallée** : le **surmulot** trouve partout eau et abri. Chaque secteur demande sa méthode de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)** et interviennent **7 jours sur 7** en Seine-et-Marne, souvent le jour même dans l’ouest du département, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour le département : [souris en Seine-et-Marne](/souris/seine-et-marne), [punaises de lit en Seine-et-Marne](/punaises-de-lit/seine-et-marne), [cafards en Seine-et-Marne](/cafards/seine-et-marne) et [tous nos services en Seine-et-Marne](/zones/seine-et-marne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '1 468 108', texte: 'habitants dans les 507 communes de Seine-et-Marne (populations légales Insee).', source: SEM_INSEE },
+    { valeur: '50 %', texte: 'de la superficie de l’Île-de-France : avec environ 5 915 km², la Seine-et-Marne est de loin le plus grand département de la région.', source: SEM_WIKI },
+    { valeur: '2,30 m', texte: 'd’eau dans les rues de Nemours lors de la crue de juin 2016, qui a touché le Loing et la Marne.', source: SEM_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats en Seine-et-Marne (77) : le département secteur par secteur',
+    intro: 'Nous avons regroupé nos 11 villes du département en quatre secteurs, de Marne-la-Vallée à Fontainebleau. Pour chacune, une page complète détaille ses quartiers, ses risques et notre méthode : cliquez sur le nom de votre commune.',
+    zones: [
+      {
+        nom: 'Marne-la-Vallée et la vallée de la Marne',
+        texte: `À l’ouest, la Marne longe Chelles et les villes de Marne-la-Vallée, où se mêlent quartiers anciens, pavillons, résidences récentes et zones d’activité. Berges, îles, jardins et réseaux : les rats circulent de la rivière aux sous-sols. Nos pages : ${l('chelles', 'Chelles')}, ${l('champs-sur-marne', 'Champs-sur-Marne')}, ${l('bussy-saint-georges', 'Bussy-Saint-Georges')} et ${l('pontault-combault', 'Pontault-Combault')}.`,
+        photo: s77('chelles-ile-refuge.jpg', 'L’île du Refuge sur la Marne à Chelles', 'L’île du Refuge, sur la Marne à Chelles : berges boisées et eau calme.', 'Myrabella', 'CC BY-SA 3.0', 'Chelles_ile_Refuge.jpg'),
+      },
+      {
+        nom: 'Meaux et le nord du département',
+        texte: `Au nord, la Marne traverse Meaux en larges méandres, au pied du centre ancien ; vers l’ouest, les quartiers pavillonnaires se rapprochent de la Seine-Saint-Denis. Quais, caves et jardins : nous traitons maisons, immeubles et commerces. Nos pages : ${l('meaux', 'Meaux')} et ${l('villeparisis', 'Villeparisis')}.`,
+        photo: s77('marne-meaux.jpg', 'La Marne et un vieux pont en pierre à Meaux', 'La Marne à Meaux : vieux pont, quais et immeubles riverains.', 'Chabe01', 'CC BY-SA 4.0', 'Rivi%C3%A8re_Marne_-_Meaux_(FR77)_-_2024-07-20_-_1.jpg'),
+      },
+      {
+        nom: 'Melun, Sénart et la Seine',
+        texte: `La Seine traverse Melun, la préfecture, puis longe Dammarie-les-Lys ; à l’est, la ville nouvelle de Sénart réunit Savigny-le-Temple et Combs-la-Ville. Grands ensembles, quartiers de pavillons et bords de Seine : caves, locaux à poubelles et vide sanitaires sont nos points de contrôle. Nos pages : ${l('melun', 'Melun')}, ${l('dammarie-les-lys', 'Dammarie-les-Lys')}, ${l('savigny-le-temple', 'Savigny-le-Temple')} et ${l('combs-la-ville', 'Combs-la-Ville')}.`,
+        photo: s77('seine-melun.jpg', 'La Seine et ses quais boisés à Melun', 'La Seine à Melun : quais arborés et bateaux amarrés.', 'Tej', 'CC BY-SA 3.0', 'SEINE_A_MELUN_3.jpg'),
+      },
+      {
+        nom: 'Fontainebleau et sa forêt',
+        texte: `Au sud-ouest, la ville est entourée par la forêt de Fontainebleau. Maisons en lisière, jardins, dépendances et commerces du centre : à l’automne, souris et rats quittent les bois pour les garages et les combles. Notre page : ${l('fontainebleau', 'Fontainebleau')}.`,
+        photo: s77('foret-fontainebleau.jpg', 'Bouleaux et rochers dans la forêt de Fontainebleau', 'La forêt de Fontainebleau : bouleaux, pins et rochers.', 'Nicolas Vigier', 'CC0', 'For%C3%AAt_de_Fontainebleau_-_7989675741.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats en Seine-et-Marne (77) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, partout dans le 77.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Corps de ferme : granges, stockages, silos. Immeuble : caves, local à poubelles, gaines.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur en Seine-et-Marne (77) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Des rats dans une cave après une crue', x: 'Près de la Marne, de la Seine ou du Loing, la montée des eaux chasse les rats des berges vers les sous-sols : nous traitons la cave entière puis rebouchons les passages.' },
+      { t: 'Des rongeurs dans une grange ou un stockage', x: 'Grains, fourrage et matériel attirent rats et souris : postes sécurisés, pièges et rebouchage, avec un suivi régulier si besoin.' },
+      { t: 'Des souris dans une maison', x: 'Elles passent par les gaines, les bas de portes et le pourtour des tuyaux : voir [souris en Seine-et-Marne](/souris/seine-et-marne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs dans un restaurant ou un entrepôt', x: 'Commerces de bouche, logistique et zones d’activité : contrat de suivi, postes numérotés, registre et attestation pour vos contrôles d’hygiène.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi en Seine-et-Marne (77)',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les **communes** agissent sur l’espace public et dans leurs bâtiments. Chez vous, dans votre cave ou votre jardin, c’est une entreprise de dératisation qui intervient. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates, et gardez une copie.',
+      `Nos villes de Seine-et-Marne les plus proches de notre base de Saint-Maurice : ${l('pontault-combault', 'Pontault-Combault')}, ${l('champs-sur-marne', 'Champs-sur-Marne')} et ${l('chelles', 'Chelles')}.`,
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation en Seine-et-Marne (77) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans tout le département. Maison, ferme, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous partout en Seine-et-Marne ?', a: 'Oui, depuis notre base de Saint-Maurice, souvent le jour même dans l’ouest du département. Nous avons une page détaillée pour 11 villes, dont [Meaux](/deratisation/meaux) et [Melun](/deratisation/melun).' },
+    { q: 'Pourquoi des rats près de la Marne et de la Seine ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales. Les berges et les caves inondables lui offrent abri et passages ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Traitez-vous les fermes, granges et bâtiments agricoles ?', a: 'Oui : stockages, granges et silos attirent les rongeurs. Nous posons des postes sécurisés et des pièges, rebouchons les accès et proposons un suivi régulier, sur devis.' },
+    { q: 'Je suis locataire en Seine-et-Marne : qui paie la dératisation ?', a: 'Le bailleur doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). En copropriété, les parties communes relèvent du syndic. Signalez le problème par écrit, avec photos.' },
+    { q: 'La mairie peut-elle dératiser chez moi ?', a: 'En général non : les communes traitent l’espace public et leurs bâtiments. Chez vous, dans votre cave ou votre jardin, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'J’habite près de la forêt de Fontainebleau : pourquoi des rongeurs chez moi ?', a: 'Les bois abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : garage, combles, vide sanitaire.' },
+    { q: 'Proposez-vous une dératisation sans poison en Seine-et-Marne ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les écoles et les crèches.' },
+  ],
+  sources: [SEM_INSEE, LOI_1989, SPF_LEPTO, SEM_WIKI],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),
