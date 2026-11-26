@@ -225,6 +225,107 @@ REFONTE_DERAT_DEP['hauts-de-seine'] = {
   sources: [HDS_INSEE, LOI_1989, MEUDON, SPF_LEPTO, HDS_WIKI],
 }
 
+// ── Paris (75) ──
+const PARIS_RATS: Source = { label: 'Ville de Paris, Comment Paris lutte contre les rats (SMASH, plan de lutte intégrée, Rats 360°, chiffres 2024-2026)', url: 'https://www.paris.fr/pages/les-rats-a-paris-le-saviez-vous-6418' }
+const RSD_PARIS: Source = { label: 'Arrêté du 20 novembre 1979 portant règlement sanitaire du département de Paris, article 119 « Rongeurs » (Légifrance)', url: 'https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006364004/' }
+const PARIS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : Paris (75056), population légale et surface', url: 'https://geo.api.gouv.fr/departements/75/communes?fields=nom,population,surface' }
+const p = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/departements/paris/${f}`, alt, legende, credit, licence, page: 'https://commons.wikimedia.org/wiki/File:' + fichier })
+
+REFONTE_DERAT_DEP.paris = {
+  maj: '2026-11-26',
+  reglement: 'règlement sanitaire de Paris, **article 119**',
+  quiPaie: '**Qui paie** : dans les cours, caves, jardins et bâtiments privés, ce sont les **propriétaires** (règlement sanitaire de Paris, **article 119**) ; dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989).',
+  accroche: 'Caves voûtées, cours d’immeuble, quais de Seine, canal Saint-Martin et jardins publics : à Paris, la Ville traite l’espace public, mais chez vous, c’est au propriétaire d’agir. Nous intervenons dans les 20 arrondissements, avec une page détaillée pour chacun.',
+  societe: {
+    titre: 'Société de dératisation à Paris (75) : 20 arrondissements, 2 millions d’habitants et autant de caves',
+    paras: [
+      'Paris compte **2 103 778 habitants** sur environ **105 km²**, soit près de **20 000 habitants au km²**, la plus forte densité de France. Immeubles anciens à **caves voûtées**, cours intérieures, **locaux à poubelles**, commerces de bouche et réseau d’**égouts** : le **rat brun**, ou surmulot, y trouve tout ce qu’il lui faut. Selon la Ville de Paris, il aime les lieux humides, les égouts, les caves et les espaces verts.',
+      'La **Ville de Paris** mène un plan de lutte intégrée depuis **2017** et réalise environ **4 000 interventions par an** sur le domaine public, par son Service municipal d’actions de salubrité et d’hygiène (**SMASH**). Mais dans les jardins, cours, caves et bâtiments privés, la Ville rappelle qu’il **incombe aux propriétaires** de mettre en place les mesures de lutte. C’est là qu’intervient une entreprise de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)**, aux portes du 12e, et interviennent **7 jours sur 7** dans tout Paris, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour Paris : [souris à Paris](/souris/paris), [punaises de lit à Paris](/punaises-de-lit/paris), [cafards à Paris](/cafards/paris) et [tous nos services à Paris](/zones/paris).',
+    ],
+  },
+  chiffres: [
+    { valeur: '≈ 4 000', texte: 'interventions par an de la Ville de Paris pour limiter les rongeurs sur le domaine public, dans le cadre d’un plan de lutte intégrée lancé en 2017.', source: PARIS_RATS },
+    { valeur: '≈ 20 000', texte: 'habitants au km² : 2 103 778 Parisiens sur environ 105 km², avec autant de caves, cours et locaux à poubelles partagés.', source: PARIS_INSEE },
+    { valeur: '3 à 5', texte: 'portées par an pour une femelle rat brun, qui peut se reproduire dès 8 semaines : une colonie grossit vite si on attend.', source: PARIS_RATS },
+    { valeur: '6 300', texte: 'poubelles Cybel, qui empêchent les animaux d’atteindre le sac, installées par la Ville dans les rues (chiffre 2026).', source: PARIS_RATS },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris (75) : la capitale secteur par secteur',
+    intro: 'Nous avons regroupé les 20 arrondissements en six secteurs. Pour chacun, une page complète détaille les quartiers, les risques et notre méthode : cliquez sur votre arrondissement.',
+    zones: [
+      {
+        nom: 'Paris Centre, du Louvre au Marais',
+        texte: `Immeubles anciens, caves voûtées, restaurants serrés et forte fréquentation : le cœur de Paris concentre nourriture et cachettes. Le square de la Tour-Saint-Jacques a été l’un des sites pilotes de l’opération « Rats 360° » de la Ville en 2025. Nos pages : ${l('paris-1', 'Paris 1er')}, ${l('paris-2', 'Paris 2e')}, ${l('paris-3', 'Paris 3e')} et ${l('paris-4', 'Paris 4e')}.`,
+        photo: p('square-tour-saint-jacques.jpg', 'Le square de la Tour-Saint-Jacques à Paris', 'Le square de la Tour-Saint-Jacques, site pilote de l’opération « Rats 360° » de la Ville de Paris en 2025.', 'LPLT', 'CC BY-SA 3.0', 'Square_de_la_Tour-Saint-jacques.JPG'),
+      },
+      {
+        nom: 'La rive gauche et les quais de Seine',
+        texte: `Du Quartier latin aux Invalides, quais bas, immeubles haussmanniens et cours anciennes : les rats circulent entre les berges, les égouts et les caves. Nous traitons les sous-sols d’immeuble avec le syndic. Nos pages : ${l('paris-5', 'Paris 5e')}, ${l('paris-6', 'Paris 6e')} et ${l('paris-7', 'Paris 7e')}.`,
+        photo: p('quais-de-seine.jpg', 'Les quais de Seine et le pont de la Tournelle à Paris', 'La Seine au pont de la Tournelle : quais bas et immeubles anciens au bord de l’eau.', 'Schezar', 'CC BY 2.0', "Paris_75004_Quai_d%27Orl%C3%A9ans_-_Pont_de_la_Tournelle_20140409.jpg"),
+      },
+      {
+        nom: 'L’ouest : grands boulevards, Monceau et le 16e',
+        texte: `Immeubles bourgeois, hôtels particuliers, restaurants et grands parcs comme Monceau : copropriétés, cuisines professionnelles et jardins privés. Nos pages : ${l('paris-8', 'Paris 8e')}, ${l('paris-9', 'Paris 9e')}, ${l('paris-16', 'Paris 16e')} et ${l('paris-17', 'Paris 17e')}.`,
+        photo: p('parc-monceau.jpg', 'Les pelouses et les arbres du parc Monceau à Paris', 'Le parc Monceau (8e) : pelouses et massifs, au milieu des immeubles.', 'DiscoA340', 'CC BY-SA 4.0', 'Landscape_Panorama_of_the_Parc_Monceau_2.jpg'),
+      },
+      {
+        nom: 'Le canal Saint-Martin et l’est parisien',
+        texte: `Quais du canal, cafés, marchés, cours d’artisans et, au sud-est, le bois de Vincennes près de notre base : la place Madeleine-Braun, au bord du canal, a été un site pilote de « Rats 360° ». Nos pages : ${l('paris-10', 'Paris 10e')}, ${l('paris-11', 'Paris 11e')}, ${l('paris-12', 'Paris 12e')} et ${l('paris-20', 'Paris 20e')}.`,
+        photo: p('canal-saint-martin.jpg', 'Le canal Saint-Martin vu du quai de Valmy à Paris', 'Le canal Saint-Martin (10e), autour duquel la Ville a mené l’opération « Rats 360° » en 2025.', 'DimiTalen', 'CC0', 'Canal_Saint-Martin_from_Quay_de_Valmy,_Paris,_2016.jpg'),
+      },
+      {
+        nom: 'Le nord : Montmartre, la Villette et les Buttes-Chaumont',
+        texte: `Grands ensembles, immeubles anciens, parcs et marchés : le jardin Hérold, dans le quartier Danube (19e), a fait partie des sites pilotes de la Ville. Nous intervenons en copropriété, chez les bailleurs et dans les commerces. Nos pages : ${l('paris-18', 'Paris 18e')} et ${l('paris-19', 'Paris 19e')}.`,
+        photo: p('buttes-chaumont.jpg', 'Le parc des Buttes-Chaumont à Paris', 'Le parc des Buttes-Chaumont (19e) : pins, lac et coteaux boisés.', 'FreCha', 'CC BY-SA 4.0', 'Parc_des_Buttes-Chaumont.jpg'),
+      },
+      {
+        nom: 'Le sud : 13e, 14e et 15e',
+        texte: `Tours, cités, immeubles anciens et grands squares : le square du Docteur-Calmette, quartier Périchaux-Brançion (15e), a été un site pilote de « Rats 360° ». Caves, locaux à poubelles et jardins de résidence sont nos points de contrôle. Nos pages : ${l('paris-13', 'Paris 13e')}, ${l('paris-14', 'Paris 14e')} et ${l('paris-15', 'Paris 15e')}.`,
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Paris (75) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, dans tout Paris.' },
+      { t: 'Le diagnostic', x: 'Immeuble ancien : caves voûtées, cour, local à poubelles, gaines. Restaurant : réserves, cuisine, sous-sol. Rez-de-chaussée : passages de tuyaux et soupiraux.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées sur les soupiraux, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Paris (75) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou la cour d’un immeuble', x: 'Le cas parisien par excellence : nous traitons tout le sous-sol avec le syndic, puis rebouchons soupiraux et passages. La Ville rappelle que ces espaces privés relèvent des propriétaires.' },
+      { t: 'Des rongeurs dans un restaurant ou un commerce de bouche', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Des souris dans un appartement haussmannien', x: 'Elles passent par les gaines, les planchers et le pourtour des tuyaux : voir [souris à Paris](/souris/paris) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’égouts est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des rats dans le jardin d’une résidence', x: 'Terriers au pied des massifs, près des bacs ou des composts : nous traitons la colonie et conseillons des contenants fermés, comme le fait la Ville dans ses jardins.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, Ville de Paris, syndic : qui fait quoi à Paris (75)',
+    paras: [
+      'L’**article 119** du **règlement sanitaire de Paris** (arrêté du 20 novembre 1979) demande aux **propriétaires** de prendre les mesures pour éviter l’introduction des rongeurs, et aux propriétaires et occupants de vérifier régulièrement leurs locaux. La Ville de Paris le rappelle : dans les jardins, cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. En copropriété, c’est le **syndic** qui organise le traitement des parties communes.',
+      'La **Ville de Paris** agit sur l’espace public par son service SMASH, mène des actions dans les égouts et se coordonne avec les bailleurs sociaux. Un rat dans la rue ou un square se signale avec l’application **DansMaRue**. La Ville sanctionne aussi le jet de nourriture dans les rues et les espaces verts : **124 verbalisations** en 2024.',
+      'Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates : il doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Les arrondissements les plus proches de notre base : ' + l('paris-12', 'Paris 12e') + ', ' + l('paris-11', 'Paris 11e') + ' et ' + l('paris-20', 'Paris 20e') + '.',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Paris (75) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans les 20 arrondissements. Immeuble, cave ou restaurant : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans tous les arrondissements de Paris ?', a: 'Oui, du 1er au 20e, souvent le jour même, depuis notre base de Saint-Maurice, aux portes du 12e. Chaque arrondissement a sa page, par exemple [dératisation à Paris 12e](/deratisation/paris-12) ou [dératisation à Paris 18e](/deratisation/paris-18).' },
+    { q: 'La Ville de Paris dératise-t-elle les immeubles privés ?', a: 'Non : elle traite l’espace public (environ 4 000 interventions par an) et les égouts. Dans les cours, caves, jardins et bâtiments privés, la Ville rappelle que la lutte incombe aux propriétaires.' },
+    { q: 'Qui doit payer la dératisation d’un immeuble parisien ?', a: 'Les parties communes relèvent du syndic de copropriété, en application de l’article 119 du règlement sanitaire de Paris. Dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989).' },
+    { q: 'Comment signaler un rat dans la rue à Paris ?', a: 'Avec l’application DansMaRue de la Ville de Paris, qui géolocalise le signalement. Les services municipaux le prennent en charge sur l’espace public.' },
+    { q: 'Les rats sont-ils plus visibles l’été à Paris ?', a: 'Oui, selon la Ville de Paris : la chaleur accélère leur reproduction, et quand les sols s’assèchent, ils remontent davantage en surface pour chercher de l’eau ([la reproduction des rats](/blog/reproduction-des-rats)).' },
+    { q: 'Les rats peuvent-ils transmettre des maladies ?', a: 'Les contacts directs sont rares, mais la leptospirose se transmet par l’urine des animaux infectés : 886 cas ont été signalés en France en 2024 (Santé publique France). Ne touchez jamais un rat ni un piège à mains nues.' },
+    { q: 'Proposez-vous une dératisation sans poison à Paris ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les crèches et les commerces.' },
+  ],
+  sources: [PARIS_RATS, RSD_PARIS, PARIS_INSEE, LOI_1989, SPF_LEPTO],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),
