@@ -184,7 +184,7 @@ export function RefonteSoiMeme({ slug, a, nom, de }: Ctx) {
 export function RefonteLieux({ r, slug, a, nom, le }: Ctx) {
   const k = h(slug + 'l') % 2
   const lieux: { t: string; x: [string, string]; img?: Img }[] = [
-    { t: `Rats ou souris dans un appartement ${a}`, x: [
+    { t: `Rats ou souris ${/^(dans|en) /.test(a) ? 'en appartement' : 'dans un appartement'} ${a}`, x: [
       'Nous cherchons le passage, souvent autour des tuyaux de cuisine, derrière l’électroménager ou dans les gaines. Pièges et postes verrouillés sont posés aux points de passage, puis les jours sont bouchés. Voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles).',
       'Dans un logement, la priorité est de couper le passage : pourtour des canalisations, plinthes, gaines techniques. Le dispositif reste discret et sécurisé, vous continuez à vivre normalement chez vous.',
     ], img: reel(pick(slug, 'appart', ['sourisAirbnb', 'ratPiege'] as PhotoKey[])) },

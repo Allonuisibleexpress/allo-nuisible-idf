@@ -417,6 +417,96 @@ REFONTE_DERAT_DEP['seine-saint-denis'] = {
   sources: [SSD_INSEE, LOI_1989, SPF_LEPTO, SSD_WIKI],
 }
 
+// ── Essonne (91) ──
+const ESS_WIKI: Source = { label: 'Wikipédia, Essonne (département) : Seine, Orge, Essonne, Yvette, relief et plateau de Saclay', url: 'https://fr.wikipedia.org/wiki/Essonne_(d%C3%A9partement)' }
+const ESS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : département 91, communes, populations légales et surfaces', url: 'https://geo.api.gouv.fr/departements/91/communes?fields=nom,population,surface' }
+const e = (f: string, alt: string, legende: string, fichier: string): PhotoVille => ({ src: `/departements/essonne/${f}`, alt, legende, credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:' + fichier })
+
+REFONTE_DERAT_DEP.essonne = {
+  maj: '2026-11-27',
+  reglement: 'loi du 6 juillet 1989 et règlement sanitaire départemental de l’Essonne',
+  quiPaie: '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic** ; une maison, de son propriétaire.',
+  accroche: 'La Seine, l’Orge, l’Essonne et l’Yvette, des pavillons avec jardin, des grands ensembles et les abords de l’aéroport d’Orly : dans l’Essonne, les rats suivent l’eau. Nous intervenons dans tout le département, avec une page détaillée pour 13 villes.',
+  societe: {
+    titre: 'Société de dératisation dans l’Essonne (91) : un département de rivières, de la Seine à l’Yvette',
+    paras: [
+      'L’Essonne compte **1 338 485 habitants** dans **194 communes**, sur environ **1 804 km²**. Au nord, des villes denses le long de la **Seine** et de l’**Orge** ; au nord-ouest, la vallée de l’**Yvette** et le plateau de **Saclay** ; au sud, le grand plateau de la **Beauce**. Le relief descend de 178 mètres à l’ouest jusqu’à **31 mètres** au bord de la Seine, à Vigneux-sur-Seine.',
+      'La **Seine** traverse le nord-est du département sur **24 kilomètres**. L’**Orge** s’y jette à **Viry-Châtillon** et **Athis-Mons**, l’**Essonne** à **Corbeil-Essonnes**. Berges, réseaux d’eaux pluviales, caves et **jardins de pavillons** : le **surmulot** circule le long de ces cours d’eau et s’installe près des maisons. Chaque secteur demande sa méthode de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)** et interviennent **7 jours sur 7** dans l’Essonne, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour le département : [souris dans l’Essonne](/souris/essonne), [punaises de lit dans l’Essonne](/punaises-de-lit/essonne), [cafards dans l’Essonne](/cafards/essonne) et [tous nos services dans l’Essonne](/zones/essonne).',
+    ],
+  },
+  chiffres: [
+    { valeur: '1 338 485', texte: 'habitants dans les 194 communes de l’Essonne (populations légales Insee).', source: ESS_INSEE },
+    { valeur: '24 km', texte: 'de Seine traversent le nord-est du département, du Coudray-Montceaux à Vigneux-sur-Seine.', source: ESS_WIKI },
+    { valeur: '41 km', texte: 'd’Orge dans l’Essonne, de Dourdan jusqu’à la Seine, où elle se jette à Viry-Châtillon et Athis-Mons.', source: ESS_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats dans l’Essonne (91) : le département secteur par secteur',
+    intro: 'Nous avons regroupé nos 13 villes du département en quatre secteurs, du bord de la Seine au plateau de Saclay. Pour chacune, une page complète détaille ses quartiers, ses risques et notre méthode : cliquez sur le nom de votre commune.',
+    zones: [
+      {
+        nom: 'La vallée de l’Orge, jusqu’à la Seine',
+        texte: `L’Orge traverse des quartiers de pavillons et de résidences avant de rejoindre la Seine à Viry-Châtillon et Athis-Mons. Berges, jardins en bord de rivière et réseaux d’eaux pluviales : les rats vivent près de l’eau et gagnent les vide sanitaires et les garages. Nos pages : ${l('athis-mons', 'Athis-Mons')}, ${l('viry-chatillon', 'Viry-Châtillon')}, ${l('savigny-sur-orge', 'Savigny-sur-Orge')} et ${l('sainte-genevieve-des-bois', 'Sainte-Geneviève-des-Bois')}.`,
+        photo: e('orge-viry-chatillon.jpg', 'L’Orge canalisée entre les pavillons à Viry-Châtillon', 'L’Orge à Viry-Châtillon, entre les pavillons et leurs jardins.', 'Rivi%C3%A8re_Orge_-_Viry-Ch%C3%A2tillon_(FR91)_-_2024-04-20_-_1.jpg'),
+      },
+      {
+        nom: 'Les bords de Seine, de Corbeil à Vigneux',
+        texte: `De Corbeil-Essonnes, où l’Essonne rejoint la Seine, jusqu’à Vigneux-sur-Seine, point le plus bas du département, le fleuve longe des grands ensembles, des quartiers pavillonnaires et des zones d’activité. Caves, locaux à poubelles et berges : nous traitons les sous-sols et les jardins. Nos pages : ${l('corbeil-essonnes', 'Corbeil-Essonnes')}, ${l('evry-courcouronnes', 'Évry-Courcouronnes')}, ${l('ris-orangis', 'Ris-Orangis')} et ${l('vigneux-sur-seine', 'Vigneux-sur-Seine')}.`,
+        photo: e('seine-ris-orangis.jpg', 'La Seine et ses berges boisées à Ris-Orangis', 'La Seine à Ris-Orangis : berges boisées et quais.', 'Fleuve_Seine_-_Ris-Orangis_(FR91)_-_2023-10-21_-_1.jpg'),
+      },
+      {
+        nom: 'Les abords de l’aéroport d’Orly',
+        texte: `Au nord, l’aéroport d’Orly s’étend à cheval sur l’Essonne et le Val-de-Marne. Autour : entrepôts, zones d’activité, hôtels et quartiers de pavillons. Pour les professionnels, nous proposons un **plan de lutte** avec postes numérotés et attestation. Nos pages : ${l('paray-vieille-poste', 'Paray-Vieille-Poste')} et ${l('wissous', 'Wissous')}. Voir aussi [dératisation pour les professionnels](/professionnels).`,
+      },
+      {
+        nom: 'Massy, Palaiseau et la vallée de l’Yvette',
+        texte: `Au nord-ouest, plateaux et vallées encaissées se succèdent : le plateau de Saclay, la vallée de l’Yvette, les quartiers d’affaires et les grands ensembles de Massy. Jardins en pente, cours d’eau et sous-sols : nous adaptons le traitement à chaque terrain. Nos pages : ${l('massy', 'Massy')}, ${l('palaiseau', 'Palaiseau')} et ${l('gif-sur-yvette', 'Gif-sur-Yvette')}.`,
+        photo: e('yvette-gif-sur-yvette.jpg', 'L’Yvette entre les arbres et une maison à Gif-sur-Yvette', 'L’Yvette à Gif-sur-Yvette : rivière, berges boisées et maisons riveraines.', 'Rivi%C3%A8re_Yvette_-_Gif-sur-Yvette_(FR91)_-_2026-01-17_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats dans l’Essonne (91) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, partout dans le 91.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Immeuble : caves, local à poubelles, gaines. Entrepôt ou commerce : quais, réserves, bennes.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur dans l’Essonne (91) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Le cas le plus fréquent dans l’Essonne : terriers sous l’abri, au pied de la haie ou près du compost. Nous traitons la colonie et fermons l’accès au vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Des rats près de l’Orge ou de la Seine', x: 'Les maisons proches de l’eau sont plus exposées, surtout après de fortes pluies : nous contrôlons caves, soupiraux et regards, puis rebouchons les passages ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+      { t: 'Des rongeurs dans un vide sanitaire', x: 'Bruits sous le plancher, odeur, isolant arraché : nous traitons le vide sanitaire et posons des grilles sur les aérations. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).' },
+      { t: 'Des souris dans une maison ou un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris dans l’Essonne](/souris/essonne) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs dans un entrepôt ou un restaurant', x: 'Zones d’activité, commerces de bouche et logistique : contrat de suivi, postes numérotés, registre et attestation pour vos contrôles d’hygiène.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi dans l’Essonne (91)',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les **communes** agissent sur l’espace public et dans leurs bâtiments. Chez vous, dans votre cave ou votre jardin, c’est une entreprise de dératisation qui intervient. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates, et gardez une copie.',
+      `Nos villes de l’Essonne les plus proches de notre base de Saint-Maurice : ${l('athis-mons', 'Athis-Mons')}, ${l('paray-vieille-poste', 'Paray-Vieille-Poste')} et ${l('vigneux-sur-seine', 'Vigneux-sur-Seine')}.`,
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation dans l’Essonne (91) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans tout le département. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans toute l’Essonne ?', a: 'Oui, depuis notre base de Saint-Maurice, souvent le jour même au nord du département. Nous avons une page détaillée pour 13 villes, dont [Massy](/deratisation/massy) et [Évry-Courcouronnes](/deratisation/evry-courcouronnes).' },
+    { q: 'Pourquoi des rats près de l’Orge et de la Seine ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales. Les berges de l’Orge, de la Seine et de l’Yvette lui offrent abri et passages jusqu’aux jardins et aux caves.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez les croquettes et les graines, puis faites traiter les terriers. Nous fermons aussi l’accès au vide sanitaire pour que les rats n’entrent pas dans la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Je suis locataire dans l’Essonne : qui paie la dératisation ?', a: 'Le bailleur doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). En copropriété, les parties communes relèvent du syndic. Signalez le problème par écrit, avec photos.' },
+    { q: 'La mairie peut-elle dératiser chez moi ?', a: 'En général non : les communes traitent l’espace public et leurs bâtiments. Chez vous, dans votre cave ou votre jardin, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'Intervenez-vous dans les entrepôts et les commerces de l’Essonne ?', a: 'Oui : plan de lutte, postes numérotés, passages réguliers hors des heures d’ouverture, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'Proposez-vous une dératisation sans poison dans l’Essonne ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les écoles et les crèches.' },
+  ],
+  sources: [ESS_INSEE, LOI_1989, SPF_LEPTO, ESS_WIKI],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),
