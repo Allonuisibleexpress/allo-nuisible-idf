@@ -3629,6 +3629,7 @@ REFONTE_DERATISATION['boulogne-billancourt'] = {
       {
         nom: 'Le Centre-Ville et Silly-Gallieni',
         texte: 'Cœur historique, immeubles haussmanniens, commerces, marchés et restaurants le long de la route de la Reine : la dératisation s’y fait surtout en **copropriété**, cave par cave, et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: { src: '/villes/boulogne-billancourt/route-de-la-reine.jpg', alt: 'La route de la Reine, immeubles et commerces à Boulogne-Billancourt', legende: 'La route de la Reine : immeubles anciens et commerces en rez-de-chaussée.', credit: 'Benjism89', licence: 'CC BY-SA 3.0', page: W + 'Boulogne-Billancourt_-_Cours_de_la_Reine_-_2.JPG' },
       },
     ],
   },
@@ -3723,6 +3724,7 @@ REFONTE_DERATISATION['nanterre'] = {
       {
         nom: 'Le Plateau-Mont-Valérien et la Boule',
         texte: 'Sur les pentes du **mont Valérien**, partagé avec Suresnes et Rueil-Malmaison, et autour de la **Boule**, des quartiers de pavillons avec jardin et des résidences : les rats creusent au pied des haies et des abris, puis entrent dans les garages. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/nanterre/place-de-la-boule.jpg', alt: 'La place de la Boule et les maisons alentour à Nanterre', legende: 'La place de la Boule : carrefour, maisons et petits immeubles.', credit: 'Auteur inconnu', licence: 'CC0', page: W + 'Place_de_la_Boule_de_Nanterre_dans_les_ann%C3%A9es_2010.jpeg' },
       },
     ],
   },
