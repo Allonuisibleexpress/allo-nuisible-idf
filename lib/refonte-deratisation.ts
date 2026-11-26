@@ -4055,4 +4055,100 @@ REFONTE_DERATISATION['courbevoie'] = {
   sources: [CBV_INSEE, CBV_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Rueil-Malmaison (27/11/2026) ──
+const RUE_WIKI: Source = { label: 'Wikipédia, Rueil-Malmaison (Seine et alluvions, forêt de Malmaison, mont Valérien, villages, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Rueil-Malmaison' }
+const RUE_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92063, Rueil-Malmaison', url: 'https://geo.api.gouv.fr/communes?code=92063&fields=nom,code,codesPostaux,population,surface' }
+const wru = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/rueil-malmaison/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['rueil-malmaison'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'La plus grande commune du 92 : des bords de Seine inondés en 1910, le bois de Saint-Cucufa et ses étangs, la Malmaison, le mont Valérien et des rues entières de pavillons. À Rueil-Malmaison, les rats vivent autant dans les jardins que près de l’eau. Nous les traitons village par village.',
+  societe: {
+    titre: 'Société de dératisation à Rueil-Malmaison (92500) : la plus vaste commune des Hauts-de-Seine',
+    paras: [
+      'Rueil-Malmaison compte **82 874 habitants** sur **14,5 km²** : c’est la commune la plus étendue des Hauts-de-Seine. Établie sur la **rive gauche de la Seine**, elle monte des bords du fleuve, où les **alluvions** couvrent tout le quart nord-ouest sur 12 à 14 mètres d’épaisseur, jusqu’au plateau du sud (160 m) et au **mont Valérien**. Lors de la **crue de 1910**, Rueil a été inondée comme les villes voisines.',
+      'La ville garde de grands espaces boisés : la **forêt de Malmaison** et le **bois de Saint-Cucufa** (197 hectares sur la commune), le vallon des **Gallicourts** et le **parc de Bois-Préau**. En 2015, **23,1 % des logements** étaient des maisons et **75,9 %** des appartements. Pour une société de dératisation, ce sont autant de **jardins en lisière**, de **vide sanitaires** et de **garages** que de **caves de résidences**.',
+      'Nous intervenons à Rueil-Malmaison depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Rueil-Malmaison](/punaises-de-lit/rueil-malmaison) et [fourmis à Rueil-Malmaison](/fourmis/rueil-malmaison).',
+    ],
+  },
+  chiffres: [
+    { valeur: '82 874', texte: 'habitants (population légale Insee), code postal 92500.', source: RUE_INSEE },
+    { valeur: '14,5 km²', texte: 'de superficie : la commune la plus étendue des Hauts-de-Seine.', source: RUE_INSEE },
+    { valeur: '197 ha', texte: 'de forêt de Malmaison et de bois de Saint-Cucufa sur la commune : des lisières où les rongeurs vivent près des maisons.', source: RUE_WIKI },
+    { valeur: '23,1 %', texte: 'des logements sont des maisons individuelles (2015) : jardins, abris et vide sanitaires à surveiller.', source: RUE_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Rueil-Malmaison : la ville village par village',
+    intro: 'La mairie découpe Rueil en douze « villages », de **Rueil-sur-Seine** et **Bords-de-Seine** au **Mont-Valérien**, en passant par **Plaine-Gare**, le **Centre-Ville**, les **Coteaux**, le **Plateau**, **Buzenval** ou **Jonchère-Malmaison-Saint-Cucufa**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Seine et le parc des Impressionnistes',
+        texte: 'Au nord-ouest, sur les alluvions, Rueil-sur-Seine, Belle Rive et les **berges de Seine**, avec le **parc des Impressionnistes**. Terrains bas, inondés en 1910, plans d’eau et résidences : le surmulot vit près de l’eau et gagne les caves et parkings. Nous contrôlons les sous-sols et rebouchons les passages.',
+        photo: wru('parc-des-impressionnistes.jpg', 'Bassin, roseaux et passerelle du parc des Impressionnistes à Rueil-Malmaison', 'Le parc des Impressionnistes, près des berges de Seine.', 'Moonik', 'CC BY-SA 3.0', 'Rueil-Malmaison_Parc_des_Impressionnistes_008.jpg'),
+      },
+      {
+        nom: 'Plaine-Gare et le Centre-Ville',
+        texte: 'Autour de la gare et du nouvel hôtel de ville : immeubles, résidences, commerces et marchés. Caves, parkings et locaux à poubelles : la dératisation s’y fait surtout en **copropriété** et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wru('hotel-de-ville.jpg', 'Le nouvel hôtel de ville de Rueil-Malmaison', 'Le nouvel hôtel de ville, au cœur du Centre-Ville.', 'Christophe Barbarin', 'CC BY-SA 4.0', 'Rueil-Malmaison_-_New_town_hall.JPG'),
+      },
+      {
+        nom: 'La Malmaison et Bois-Préau',
+        texte: 'Le domaine de la **Malmaison** et le **parc de Bois-Préau** (17 hectares) sont entourés de rues résidentielles et de grandes propriétés. Pelouses, massifs et dépendances : les rats creusent au pied des murs et des haies. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wru('chateau-de-malmaison.jpg', 'Le château de Malmaison et sa pelouse à Rueil-Malmaison', 'Le château de Malmaison et son parc.', 'Moonik', 'CC BY-SA 3.0', 'Ch%C3%A2teau_de_Malmaison_%C3%A0_Rueil-Malmaison_003.jpg'),
+      },
+      {
+        nom: 'Saint-Cucufa, Buzenval et la lisière de la forêt',
+        texte: 'Au sud, le **bois de Saint-Cucufa** et ses étangs touchent les quartiers de Buzenval et de la Jonchère. À l’automne, souris et rats quittent la forêt pour les garages, les combles et les vide sanitaires : nous repérons les entrées, posons le dispositif et bouchons les accès.',
+        photo: wru('etang-saint-cucufa.jpg', 'L’étang de Saint-Cucufa entouré de bois à Rueil-Malmaison', 'L’étang de Saint-Cucufa, dans la forêt de Malmaison.', 'Chabe01', 'CC BY-SA 4.0', '%C3%89tang_Saint_Cucufa_-_Rueil-Malmaison_(FR92)_-_2023-09-07_-_1.jpg'),
+      },
+      {
+        nom: 'Les Coteaux, le Plateau et le Mont-Valérien',
+        texte: 'Sur les pentes qui montent vers le plateau et le **mont Valérien**, des rues entières de **pavillons avec jardin**. Les rats creusent sous les abris, au pied des haies et près des composts, puis entrent par le garage. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wru('boulevard-leon-louesse.jpg', 'Rue bordée de pavillons et d’arbres, boulevard Léon-Louesse à Rueil-Malmaison', 'Le boulevard Léon-Louesse : pavillons, clôtures et jardins.', 'Bretwa', 'CC0', 'L%C3%A9on_Louesse_Boulevard_in_Rueil-Malmaison_-_2025-12-31.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Rueil-Malmaison (92500) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Résidence : caves, parking, local à poubelles. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Rueil-Malmaison (92500) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rongeurs dans une maison en lisière de forêt', x: 'Près de Saint-Cucufa et de la Malmaison, souris et rats entrent à l’automne par le garage, les combles ou le vide sanitaire. Nous bouchons chaque accès.' },
+      { t: 'Des rats dans le parking d’une résidence', x: 'Près de la Seine, sous-sols et réseaux communiquent : nous posons des postes numérotés sur tout le sous-sol, avec le syndic.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans une maison', x: 'Elles passent par les bas de portes, les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Rueil-Malmaison',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Nanterre](/deratisation/nanterre) et [Suresnes](/deratisation/suresnes), et dans les Yvelines voisines. Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine) et [dératisation dans les Yvelines](/deratisation/yvelines).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Rueil-Malmaison ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite près du bois de Saint-Cucufa : pourquoi des rongeurs chez moi ?', a: 'Les bois abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : garage, combles, vide sanitaire.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès au vide sanitaire pour que les rats n’entrent pas dans la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'J’habite près de la Seine : suis-je plus exposé ?', a: 'Oui : les bords de Seine, bâtis sur des alluvions, ont été inondés en 1910, et le surmulot vit près de l’eau ([mode de vie du rat](/blog/rat-mode-de-vie)). Après une crue ou de fortes pluies, faites contrôler caves et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Rueil-Malmaison ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [RUE_INSEE, RUE_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
