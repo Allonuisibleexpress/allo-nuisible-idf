@@ -507,6 +507,97 @@ REFONTE_DERAT_DEP.essonne = {
   sources: [ESS_INSEE, LOI_1989, SPF_LEPTO, ESS_WIKI],
 }
 
+// ── Yvelines (78) ──
+const YV_WIKI: Source = { label: 'Wikipédia, Yvelines (Seine et méandres, confluent de l’Oise, forêts, Versailles, Saint-Quentin-en-Yvelines)', url: 'https://fr.wikipedia.org/wiki/Yvelines' }
+const YV_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : département 78, communes, populations légales et surfaces', url: 'https://geo.api.gouv.fr/departements/78/communes?fields=nom,population,surface' }
+const y = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/departements/yvelines/${f}`, alt, legende, credit, licence, page: 'https://commons.wikimedia.org/wiki/File:' + fichier })
+
+REFONTE_DERAT_DEP.yvelines = {
+  maj: '2026-11-27',
+  reglement: 'loi du 6 juillet 1989 et règlement sanitaire départemental des Yvelines',
+  quiPaie: '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic** ; une maison, de son propriétaire.',
+  accroche: 'La Seine en grands méandres, le confluent de l’Oise, des forêts sur près d’un tiers du territoire, Versailles et Saint-Quentin-en-Yvelines : dans les Yvelines, les rats vivent au bord de l’eau et en lisière des bois. Nous avons une page détaillée pour 13 villes.',
+  societe: {
+    titre: 'Société de dératisation dans les Yvelines (78) : la Seine, l’Oise et le département le plus boisé d’Île-de-France',
+    paras: [
+      'Les Yvelines comptent **1 485 086 habitants** dans **259 communes**, sur environ **2 284 km²**. La **Seine** traverse le nord du département sur environ **100 kilomètres**, en profonds méandres, comme la boucle de Saint-Germain-en-Laye ; elle reçoit l’**Oise** à **Conflans-Sainte-Honorine**. Les **forêts** couvrent près de **68 000 hectares**, environ **30 %** du territoire : c’est le département le plus boisé d’Île-de-France.',
+      'Bords de Seine, quais, caves inondables, lisières de forêt, centres anciens comme celui de **Versailles**, quartiers de pavillons et ville nouvelle de **Saint-Quentin-en-Yvelines** : le **surmulot** vit au bord de l’eau, les rongeurs des bois se rapprochent des maisons à l’automne. Chaque secteur demande sa méthode de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)** et interviennent **7 jours sur 7** dans les Yvelines, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour le département : [souris dans les Yvelines](/souris/yvelines), [punaises de lit dans les Yvelines](/punaises-de-lit/yvelines), [cafards dans les Yvelines](/cafards/yvelines) et [tous nos services dans les Yvelines](/zones/yvelines).',
+    ],
+  },
+  chiffres: [
+    { valeur: '1 485 086', texte: 'habitants dans les 259 communes des Yvelines (populations légales Insee).', source: YV_INSEE },
+    { valeur: '≈ 100 km', texte: 'de Seine traversent le nord du département, en méandres, avec le confluent de l’Oise à Conflans-Sainte-Honorine.', source: YV_WIKI },
+    { valeur: '30 %', texte: 'du territoire est couvert de forêts (près de 68 000 hectares) : le département le plus boisé d’Île-de-France.', source: YV_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats dans les Yvelines (78) : le département secteur par secteur',
+    intro: 'Nous avons regroupé nos 13 villes du département en quatre secteurs, de la boucle de la Seine à Saint-Quentin-en-Yvelines. Pour chacune, une page complète détaille ses quartiers, ses risques et notre méthode : cliquez sur le nom de votre commune.',
+    zones: [
+      {
+        nom: 'La boucle de la Seine, de Sartrouville à Saint-Germain-en-Laye',
+        texte: `La Seine enserre la forêt de Saint-Germain-en-Laye dans une large boucle. Autour : quartiers de pavillons avec jardin, villas, résidences et bords de Seine. Les rats vivent sur les berges et dans les jardins, puis entrent dans les vide sanitaires et les garages. Nos pages : ${l('sartrouville', 'Sartrouville')}, ${l('houilles', 'Houilles')}, ${l('le-vesinet', 'Le Vésinet')}, ${l('maisons-laffitte', 'Maisons-Laffitte')} et ${l('saint-germain-en-laye', 'Saint-Germain-en-Laye')}.`,
+        photo: y('seine-maisons-laffitte.jpg', 'La Seine et ses berges boisées à Maisons-Laffitte', 'La Seine à Maisons-Laffitte : berges boisées et maisons riveraines.', 'Chabe01', 'CC BY-SA 4.0', 'Fleuve_Seine_-_Maisons-Laffitte_(FR78)_-_2025-07-14_-_1.jpg'),
+      },
+      {
+        nom: 'Le confluent de l’Oise et la Seine jusqu’à Mantes',
+        texte: `À Conflans-Sainte-Honorine, l’Oise rejoint la Seine, qui continue vers Poissy, Les Mureaux et Mantes-la-Jolie. Quais, péniches, zones d’activité et grands ensembles : lors des crues, comme en juin 2016, l’eau chasse les rats vers les caves et les sous-sols. Nos pages : ${l('conflans-sainte-honorine', 'Conflans-Sainte-Honorine')}, ${l('poissy', 'Poissy')}, ${l('les-mureaux', 'Les Mureaux')} et ${l('mantes-la-jolie', 'Mantes-la-Jolie')}.`,
+        photo: y('conflans-inondations-2016.jpg', 'Les quais de Conflans-Sainte-Honorine inondés en juin 2016', 'Les quais de Conflans-Sainte-Honorine inondés en juin 2016 : la crue pousse les rats vers les caves.', 'Alexandrin', 'CC BY-SA 4.0', 'Conflans-Sainte-Honorine_inondations_juin_2016_(1).jpg'),
+      },
+      {
+        nom: 'Versailles et ses quartiers anciens',
+        texte: `Le centre ancien de Versailles, avec les quartiers Notre-Dame et Saint-Louis, est un secteur sauvegardé de 246 hectares. Immeubles anciens, caves, cours, commerces de bouche, grands parcs et pièces d’eau : nous traitons surtout en **copropriété** et chez les professionnels. Notre page : ${l('versailles', 'Versailles')}.`,
+        photo: y('piece-eau-suisses-versailles.jpg', 'La pièce d’eau des Suisses à Versailles', 'La pièce d’eau des Suisses à Versailles, au pied de l’Orangerie.', 'Thomon', 'CC BY-SA 4.0', 'Pi%C3%A8ce_d%27eau_des_Suisses_Versailles.jpg'),
+      },
+      {
+        nom: 'Saint-Quentin-en-Yvelines : Montigny, Élancourt et Trappes',
+        texte: `Principal pôle économique du département, Saint-Quentin-en-Yvelines associe quartiers résidentiels, bassins, grands ensembles et zones d’activité, avec à Élancourt la colline de la Revanche, une butte artificielle de 231 mètres. Locaux à poubelles, caves et entrepôts : nous intervenons avec les bailleurs, les syndics et les entreprises. Nos pages : ${l('montigny-le-bretonneux', 'Montigny-le-Bretonneux')}, ${l('elancourt', 'Élancourt')} et ${l('trappes', 'Trappes')}.`,
+        photo: y('montigny-sourderie.jpg', 'Le bassin de la Sourderie et ses immeubles à Montigny-le-Bretonneux', 'Le bassin de la Sourderie à Montigny-le-Bretonneux : résidences au bord de l’eau.', 'Egbpl', 'CC BY-SA 3.0', 'Montigny_le_Bx_Sourderie.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats dans les Yvelines (78) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, partout dans le 78.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Immeuble ancien : caves, cour, gaines. Bords de Seine : soupiraux, regards, sous-sols.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur dans les Yvelines (78) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Des rats dans une cave après une crue', x: 'Près de la Seine et de l’Oise, la montée des eaux chasse les rats des berges vers les sous-sols : nous traitons la cave entière puis rebouchons les passages.' },
+      { t: 'Des rongeurs dans une maison en lisière de forêt', x: 'À l’automne, souris et rats quittent les bois pour les garages et les combles : nous repérons les entrées, posons le dispositif et bouchons les accès.' },
+      { t: 'Des souris dans un appartement ancien', x: 'Elles passent par les gaines, les planchers et le pourtour des tuyaux : voir [souris dans les Yvelines](/souris/yvelines) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs dans un restaurant ou un entrepôt', x: 'Commerces de bouche, zones d’activité et logistique : contrat de suivi, postes numérotés, registre et attestation pour vos contrôles d’hygiène.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi dans les Yvelines (78)',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les **communes** agissent sur l’espace public et dans leurs bâtiments. Chez vous, dans votre cave ou votre jardin, c’est une entreprise de dératisation qui intervient. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates, et gardez une copie.',
+      `Nos villes des Yvelines les plus proches de Paris : ${l('sartrouville', 'Sartrouville')}, ${l('houilles', 'Houilles')} et ${l('le-vesinet', 'Le Vésinet')}.`,
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation dans les Yvelines (78) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans tout le département. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous partout dans les Yvelines ?', a: 'Oui, depuis notre base de Saint-Maurice, souvent le jour même dans les villes proches de Paris. Nous avons une page détaillée pour 13 villes, dont [Versailles](/deratisation/versailles) et [Saint-Germain-en-Laye](/deratisation/saint-germain-en-laye).' },
+    { q: 'Pourquoi des rats près de la Seine et de l’Oise ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales. Les berges, les quais et les caves inondables lui offrent abri et passages ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'J’habite en lisière de forêt : pourquoi des rongeurs chez moi ?', a: 'Les bois abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : garage, combles, vide sanitaire.' },
+    { q: 'Je suis locataire dans les Yvelines : qui paie la dératisation ?', a: 'Le bailleur doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). En copropriété, les parties communes relèvent du syndic. Signalez le problème par écrit, avec photos.' },
+    { q: 'La mairie peut-elle dératiser chez moi ?', a: 'En général non : les communes traitent l’espace public et leurs bâtiments. Chez vous, dans votre cave ou votre jardin, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'Intervenez-vous dans les commerces et les entrepôts des Yvelines ?', a: 'Oui : plan de lutte, postes numérotés, passages réguliers hors des heures d’ouverture, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'Proposez-vous une dératisation sans poison dans les Yvelines ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les écoles et les crèches.' },
+  ],
+  sources: [YV_INSEE, LOI_1989, SPF_LEPTO, YV_WIKI],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),
