@@ -4726,4 +4726,100 @@ REFONTE_DERATISATION['neuilly-sur-seine'] = {
   sources: [NEU_INSEE, NEU_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Clamart (27/11/2026) ──
+const CLA_WIKI: Source = { label: 'Wikipédia, Clamart (relief, ru canalisé et remontées de nappe, bois de Clamart, quartiers, logement, carrières)', url: 'https://fr.wikipedia.org/wiki/Clamart' }
+const CLA_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92023, Clamart', url: 'https://geo.api.gouv.fr/communes?code=92023&fields=nom,code,codesPostaux,population,surface' }
+const wca = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/clamart/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['clamart'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Un bois qui coupe la ville en deux, des remontées de nappe sur presque tout le territoire, des pavillons, des cités et d’anciennes carrières : à Clamart, les caves sont humides et les rongeurs vivent en lisière. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Clamart (92140) : une ville coupée par le bois, entre Bas et Haut-Clamart',
+    paras: [
+      'Clamart compte **58 576 habitants** sur **8,76 km²**, à 9 kilomètres de Paris, entre **64 et 175 mètres** d’altitude. La ville est presque coupée en deux par le **bois de Clamart** : le **Bas-Clamart**, centre historique, et le **Haut-Clamart**, avec le Jardin-Parisien et le Petit-Clamart. Aucun cours d’eau ne la draine aujourd’hui, l’ancien ru ayant été **canalisé**, mais on observe des **remontées de nappe** sur la quasi-totalité du territoire : beaucoup de caves et de sous-sols restent humides.',
+      'En 2021, **26,7 % des logements** étaient des maisons et **72,4 %** des appartements ; la ville comptait **33 %** de logements sociaux en 2007, répartis dans tous les quartiers. Le sous-sol garde aussi la trace d’anciennes **carrières de craie**, vers Issy. Pour une société de dératisation, ce sont autant de **jardins en lisière**, de **vide sanitaires** et de **caves humides** que de **parties communes** de résidences à traiter avec les bailleurs.',
+      'Nous intervenons à Clamart depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Clamart](/punaises-de-lit/clamart) et [fourmis à Clamart](/fourmis/clamart).',
+    ],
+  },
+  chiffres: [
+    { valeur: '58 576', texte: 'habitants (population légale Insee), code postal 92140.', source: CLA_INSEE },
+    { valeur: '64 à 175 m', texte: 'd’altitude : du Bas-Clamart aux hauteurs du bois, avec des remontées de nappe sur presque toute la commune.', source: CLA_WIKI },
+    { valeur: '26,7 %', texte: 'des logements sont des maisons individuelles (2021) : jardins, abris et vide sanitaires à surveiller.', source: CLA_WIKI },
+    { valeur: '33 %', texte: 'de logements sociaux en 2007, répartis dans toute la ville : caves et locaux à poubelles partagés.', source: CLA_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Clamart : la ville quartier par quartier',
+    intro: 'L’Insee découpe Clamart en cinq grands quartiers : le **Centre-ville**, **Percy**, **la Gare**, le **Jardin-Parisien** et le **Petit-Clamart**. Le bois de Clamart sépare le Bas du Haut-Clamart. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le bois de Clamart et ses lisières',
+        texte: 'Le **bois de Clamart**, prolongement de la forêt de Meudon, sépare les deux parties de la ville. Ses lisières touchent des rues entières de maisons et de résidences. À l’automne, souris et rats quittent le bois pour les garages, les combles et les vide sanitaires : nous repérons les entrées, posons le dispositif et bouchons les accès.',
+        photo: wca('bois-de-clamart.jpg', 'Carte postale ancienne d’une route forestière dans le bois de Clamart', 'Une route forestière du bois de Clamart, sur une carte postale ancienne.', 'Carte postale ancienne', 'Licence Ouverte', 'Carte_postale_-_Clamart_-_Bois_de_Clamart_-_Route_Foresti%C3%A8re_-_9FI-CLA_150.jpg'),
+      },
+      {
+        nom: 'Le Centre-ville et le Bas-Clamart',
+        texte: 'Autour de la **place de l’Hôtel-de-Ville** et de l’église Saint-Pierre-Saint-Paul, le centre historique réunit maisons anciennes, immeubles et commerces. Caves anciennes, humides par remontée de nappe, et cours : nous traitons les sous-sols et rebouchons les soupiraux. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wca('place-hotel-de-ville.jpg', 'La place de l’Hôtel-de-Ville de Clamart le soir', 'La place de l’Hôtel-de-Ville, au cœur du Bas-Clamart.', 'Sinaloa', 'CC BY-SA 3.0', 'Mairie_de_Clamart_le_soir.JPG'),
+      },
+      {
+        nom: 'La Gare et la voie ferrée',
+        texte: 'De part et d’autre de la gare de Clamart, des quartiers de **pavillons** et de petits immeubles bordent les voies ferrées. Talus, jardins et réseaux forment des couloirs pour les rongeurs, qui gagnent les maisons voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wca('gare-de-clamart.jpg', 'La gare de Clamart, ses quais et les pavillons alentour', 'La gare de Clamart : voies ferrées, talus et pavillons riverains.', 'Remontees', 'CC BY-SA 4.0', 'Gare_de_Clamart_vers_Paris.jpg'),
+      },
+      {
+        nom: 'Le Jardin-Parisien et le tramway T10',
+        texte: 'Sur l’ancien plateau des champs de petits pois, remplacés par des **cités** à partir des années 1950, le **Jardin-Parisien** est desservi par le tramway T10. Caves, vide-ordures et locaux à poubelles : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: wca('jardin-parisien-t10.jpg', 'La station Jardin-Parisien du tramway T10 à Clamart', 'La station Jardin-Parisien du tramway T10, dans le Haut-Clamart.', 'Chabe01', 'CC BY-SA 4.0', 'Station_Jardin_Parisien_Tramway_IdF_Ligne_10_-_Clamart_(FR92)_-_2023-06-28_-_1.jpg'),
+      },
+      {
+        nom: 'Le Petit-Clamart et Percy',
+        texte: 'Le **Petit-Clamart** et le quartier **Percy**, autour de l’hôpital, alignent des rues de **pavillons avec jardin**. Les rats creusent sous les abris et au pied des haies, puis entrent par le vide sanitaire ou le garage : nous traitons la colonie et fermons chaque accès.',
+        photo: wca('avenue-du-petit-clamart.jpg', 'Rue bordée de pavillons dans le quartier du Petit-Clamart', 'Une rue du Petit-Clamart : pavillons, clôtures et jardins.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Petit_Clamart_-_Clamart_(FR92)_-_2023-08-12_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Clamart (92140) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Résidence : caves, local à poubelles, gaines. Maison en lisière : combles et dépendances.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Clamart (92140) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rongeurs dans une maison en lisière du bois', x: 'À l’automne, souris et rats entrent par le garage, les combles ou le vide sanitaire. Nous repérons et bouchons chaque accès.' },
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rats dans une cave humide', x: 'Les remontées de nappe gardent les sous-sols humides, ce qui plaît au surmulot : nous traitons la cave entière puis rebouchons les passages.' },
+      { t: 'Des rats au vide-ordures d’une résidence', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Clamart',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les résidences sociales, les caves, vide-ordures et locaux à poubelles relèvent du **bailleur** ; en copropriété, du **syndic** ; un pavillon, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Meudon](/deratisation/meudon), [Issy-les-Moulineaux](/deratisation/issy-les-moulineaux), [Vanves](/deratisation/vanves), [Malakoff](/deratisation/malakoff), [Châtillon](/deratisation/chatillon) et [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Clamart ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite près du bois de Clamart : pourquoi des rongeurs chez moi ?', a: 'Les bois abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : garage, combles, vide sanitaire.' },
+    { q: 'Ma cave est humide : attire-t-elle les rats ?', a: 'Oui : le surmulot aime l’humidité, et Clamart connaît des remontées de nappe sur presque tout son territoire ([mode de vie du rat](/blog/rat-mode-de-vie)). Bouchez les soupiraux et faites contrôler les regards.' },
+    { q: 'J’habite au Jardin-Parisien : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Clamart ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CLA_INSEE, CLA_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
