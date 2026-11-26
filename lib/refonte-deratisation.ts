@@ -5398,4 +5398,100 @@ REFONTE_DERATISATION['puteaux'] = {
   sources: [PUT_INSEE, PUT_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Châtillon (27/11/2026) ──
+const CHA_WIKI: Source = { label: 'Wikipédia, Châtillon (Hauts-de-Seine) : coulée verte, carrière Auboin, parcs, ateliers SNCF et RATP, tramway T6', url: 'https://fr.wikipedia.org/wiki/Ch%C3%A2tillon_(Hauts-de-Seine)' }
+const CHA_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92020, Châtillon', url: 'https://geo.api.gouv.fr/communes?code=92020&fields=nom,code,codesPostaux,population,surface' }
+const wch = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/chatillon/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['chatillon'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'La coulée verte, d’anciennes carrières de pierre, des parcs boisés, des ateliers ferroviaires et des quartiers résidentiels serrés : à Châtillon, les rats trouvent des talus, des caves et des réseaux. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Châtillon (92320) : une ville dense entre coulée verte et anciennes carrières',
+    paras: [
+      'Châtillon compte **36 705 habitants** sur **2,92 km²**, soit près de **12 600 habitants au km²**, entre Montrouge, Bagneux, Clamart, Malakoff et Fontenay-aux-Roses. La ville est traversée par la **coulée verte du Sud-Parisien**, qui la relie à Malakoff et à Bagneux, et par l’axe du **tramway T6**. Son sous-sol garde la trace d’anciennes **carrières de pierre**, dont il reste le treuil de la carrière Auboin.',
+      'Châtillon accueille aussi les **ateliers de Châtillon**, dépôts d’entretien de la SNCF et de la RATP, de grands campus d’entreprises et le terminus de la ligne 13. Parcs boisés, talus, voies ferrées, caves d’immeubles et locaux à poubelles : pour une société de dératisation, il y a autant de **couloirs verts** que de **sous-sols** à surveiller.',
+      'Nous intervenons à Châtillon depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Châtillon](/punaises-de-lit/chatillon) et [fourmis à Châtillon](/fourmis/chatillon).',
+    ],
+  },
+  chiffres: [
+    { valeur: '36 705', texte: 'habitants (population légale Insee), code postal 92320.', source: CHA_INSEE },
+    { valeur: '≈ 12 600', texte: 'habitants au km² (36 705 habitants sur 2,92 km²) : immeubles, caves et locaux à poubelles partagés.', source: CHA_INSEE },
+    { valeur: '1 coulée verte', texte: 'traverse la ville, vers Malakoff au nord et Bagneux au sud-est : un couloir de talus et de haies.', source: CHA_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Châtillon : la ville secteur par secteur',
+    intro: 'L’Insee découpe Châtillon en onze petits secteurs, de **République** aux **Sablons**, en passant par **Guynemer**, le **Stade** ou le **Parc**. Voici ce que chaque type de secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La coulée verte du Sud-Parisien',
+        texte: 'Étroite et très fréquentée, la **coulée verte** traverse la ville entre les résidences : talus plantés, haies et pelouses. Les rats y creusent et gagnent les jardins et les caves voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wch('coulee-verte.jpg', 'La coulée verte bordée de haies et d’immeubles à Châtillon', 'La coulée verte du Sud-Parisien, entre haies et résidences.', 'VVVCFFrance', 'CC BY-SA 4.0', '40_Ch%C3%A2tillon_Coul%C3%A9e_verte.jpg'),
+      },
+      {
+        nom: 'Le centre et la mairie',
+        texte: 'Autour de la mairie et de l’église Saint-Philippe-et-Saint-Jacques : immeubles anciens, commerces et restaurants. Caves, cours et locaux à poubelles : la dératisation se fait surtout en **copropriété** et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wch('mairie.jpg', 'La façade de la mairie de Châtillon fleurie', 'La mairie de Châtillon, au cœur du centre.', 'Chabe01', 'CC BY-SA 4.0', 'Mairie_-_Ch%C3%A2tillon_(FR92)_-_2023-08-15_-_1.jpg'),
+      },
+      {
+        nom: 'Le parc des Sarments et les espaces boisés',
+        texte: 'Le **parc des Sarments** et les jardins boisés offrent sous-bois, feuilles mortes et talus : un abri pour les rongeurs, qui se rapprochent des maisons et des résidences à l’automne. Nous traitons les terriers en bordure et fermons les accès aux bâtiments.',
+        photo: wch('parc-des-sarments.jpg', 'Une allée sous les arbres dans le parc des Sarments à Châtillon', 'Une allée boisée du parc des Sarments.', 'Chabe01', 'CC BY-SA 4.0', 'Parc_Sarments_-_Ch%C3%A2tillon_(FR92)_-_2023-08-15_-_1.jpg'),
+      },
+      {
+        nom: 'La Folie Desmares et les quartiers résidentiels',
+        texte: 'Autour de la **Folie Desmares**, demeure ancienne classée, des rues de maisons et de petits immeubles avec jardin. Haies, abris et vide sanitaires : les rats creusent au pied des clôtures et entrent par les garages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wch('folie-desmares.jpg', 'La façade de la Folie Desmares à Châtillon', 'La Folie Desmares, demeure ancienne au cœur d’un quartier résidentiel.', 'Chabe01', 'CC BY-SA 4.0', 'Folie_Desmares_-_Ch%C3%A2tillon_(FR92)_-_2023-08-15_-_3.jpg'),
+      },
+      {
+        nom: 'Les anciennes carrières, les ateliers et le T6',
+        texte: 'Sous la ville, d’anciennes **carrières de pierre** ; en surface, les **ateliers SNCF et RATP**, les campus d’entreprises et le tramway T6. Voies, talus, locaux techniques et restaurants d’entreprise : pour les professionnels, nous proposons un **plan de lutte** avec attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: { src: '/departements/hauts-de-seine/carriere-chatillon.jpg', alt: 'Le treuil de l’ancienne carrière Auboin à Châtillon', legende: 'Le treuil de l’ancienne carrière Auboin, vestige des carrières de pierre.', credit: 'Myrabella', licence: 'CC BY-SA 3.0', page: W + 'Chatillon_treuil_carriere_Auboin.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Châtillon (92320) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, local à poubelles, gaines. Maison : jardin, abri, vide sanitaire. Bord de coulée verte : talus et clôtures.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Châtillon (92320) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un jardin près de la coulée verte', x: 'Talus et haies servent de couloir : nous traitons les terriers et fermons l’accès au vide sanitaire et au garage.' },
+      { t: 'Des rats dans la cave d’un immeuble', x: 'Nous traitons tout le sous-sol avec le syndic ou le bailleur, puis rebouchons les passages vers les logements.' },
+      { t: 'Des rongeurs dans un restaurant d’entreprise', x: 'Campus et bureaux : plan de lutte, postes numérotés, passages hors service, registre et attestation.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Châtillon',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Montrouge](/deratisation/montrouge), [Bagneux](/deratisation/bagneux), [Clamart](/deratisation/clamart), [Malakoff](/deratisation/malakoff) et [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Châtillon ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La coulée verte attire-t-elle les rats vers les immeubles ?', a: 'Les talus et les haies offrent des terriers et des couloirs aux rongeurs. Faites boucher les soupiraux et les accès aux caves, et fermez composts et poubelles.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Châtillon ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CHA_INSEE, CHA_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
