@@ -4246,4 +4246,100 @@ REFONTE_DERATISATION['la-defense'] = {
   sources: [LD_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Levallois-Perret (27/11/2026) ──
+const LEV_WIKI: Source = { label: 'Wikipédia, Levallois-Perret (densité, nappe phréatique et crues de 1830 et 1910, île de la Jatte, quartiers, rues en damier)', url: 'https://fr.wikipedia.org/wiki/Levallois-Perret' }
+const LEV_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92044, Levallois-Perret', url: 'https://geo.api.gouv.fr/communes?code=92044&fields=nom,code,codesPostaux,population,surface' }
+const wlv = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/levallois-perret/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['levallois-perret'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'La ville la plus dense de France, des immeubles collés en façade de rue, une nappe d’eau presque à fleur de sol au bord de la Seine et la pointe de l’île de la Jatte : à Levallois-Perret, les rats vivent dans les caves et sous les rues. Nous les traitons immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Levallois-Perret (92300) : la commune la plus dense de France, au bord de la Seine',
+    paras: [
+      'Levallois-Perret compte **68 092 habitants** sur **2,42 km²**, soit environ **28 000 habitants au km²** : la ville détient le record national de densité. Hormis l’île de la Jatte, son territoire tient dans un carré d’environ 1,5 kilomètre de côté, entre le **périphérique** au sud-est et la **Seine** au nord-ouest. Les rues, étroites et en **damier**, sont bordées d’immeubles construits en façade.',
+      'Le sous-sol est fait d’**alluvions de la Seine**. Dans les quartiers qui bordent le fleuve, la **nappe phréatique** est à une profondeur quasi nulle : ces quartiers ont été inondés à plusieurs reprises, notamment en **1830** et en **1910**, et relèvent aujourd’hui d’un plan de prévention du risque inondation. Caves humides, réseaux serrés, locaux à poubelles partagés : pour une société de dératisation, Levallois est une ville de **sous-sols** à traiter avec le **syndic**.',
+      'Nous intervenons à Levallois-Perret depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Levallois-Perret](/punaises-de-lit/levallois-perret) et [fourmis à Levallois-Perret](/fourmis/levallois-perret).',
+    ],
+  },
+  chiffres: [
+    { valeur: '68 092', texte: 'habitants (population légale Insee), code postal 92300.', source: LEV_INSEE },
+    { valeur: '≈ 28 000', texte: 'habitants au km² (68 092 habitants sur 2,42 km²) : la commune la plus dense de France.', source: LEV_INSEE },
+    { valeur: '25 à 33 m', texte: 'd’altitude seulement : au bord de la Seine, la nappe phréatique est presque à fleur de sol.', source: LEV_WIKI },
+    { valeur: '1830 et 1910', texte: 'crues de la Seine qui ont inondé les quartiers riverains, aujourd’hui couverts par un plan de prévention du risque inondation.', source: LEV_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Levallois-Perret : la ville quartier par quartier',
+    intro: 'Les quartiers riverains, **Front de Villiers**, **Front-de-Seine** et **Collange**, sont les plus bas (25 m) ; vers l’est, **Front de Paris**, **Eiffel** et **Front de Neuilly** montent jusqu’à 33 mètres. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Front-de-Seine, Collange et Front de Villiers',
+        texte: 'Au bord du fleuve, sur les alluvions et une nappe presque affleurante, les caves restent humides et les réseaux communiquent avec les berges. Lors des crues, l’eau chasse les rats vers les sous-sols. Nous traitons les caves entières, posons des grilles sur les soupiraux et rebouchons les passages.',
+        photo: wlv('seine-quai-michelet.jpg', 'Carte postale ancienne de la Seine et du pont de chemin de fer vus du quai Michelet à Levallois', 'La Seine et le pont du chemin de fer vus du quai Michelet, sur une carte postale ancienne.', 'Auteur inconnu', 'Domaine public', 'Levallois_Perret_Seine_et_Pont_de_Chemin_de_Fer_vue_prise_du_quai_Michelet.jpg'),
+      },
+      {
+        nom: 'L’île de la Jatte',
+        texte: 'La partie nord de l’**île de la Jatte** appartient à Levallois : berges boisées, péniches amarrées et résidences. Le surmulot vit au bord de l’eau et remonte par les réseaux. Nous intervenons dans les résidences de l’île et chez les riverains des quais.',
+        photo: wlv('ile-de-la-jatte.jpg', 'La Seine, une péniche et les berges de l’île de la Jatte à Levallois-Perret', 'Le bras de Seine et l’île de la Jatte, côté Levallois.', 'Chabe01', 'CC BY-SA 4.0', '%C3%8Ele_Jatte_Levallois_Perret_1.jpg'),
+      },
+      {
+        nom: 'Le centre en damier',
+        texte: 'Des rues étroites, d’environ 10 mètres de large, à angle droit, et des immeubles collés les uns aux autres : une colonie passe d’une cave à l’autre par les murs mitoyens et les réseaux. La dératisation se fait surtout en **copropriété**, et le mieux est un traitement coordonné entre immeubles voisins.',
+        photo: wlv('rue-danton.jpg', 'Une rue étroite bordée d’immeubles à Levallois-Perret', 'Une rue typique de Levallois : étroite, rectiligne, bordée d’immeubles en façade.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Danton_-_Levallois-Perret_(FR92)_-_2023-07-06_-_2.jpg'),
+      },
+      {
+        nom: 'Le parc de la Planchette et les squares',
+        texte: 'Dans une ville aussi dense, les rares espaces verts concentrent les terriers : **parc de la Planchette**, square Baudin et jardins de résidence. Pelouses, massifs et poubelles de parc attirent les rongeurs, qui gagnent ensuite les immeubles riverains. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wlv('parc-de-la-planchette.jpg', 'L’entrée du parc de la Planchette à Levallois-Perret', 'L’entrée du parc de la Planchette.', 'Chabe01', 'CC BY-SA 4.0', 'Parc_Planchette_-_Levallois-Perret_(FR92)_-_2023-07-06_-_1.jpg'),
+      },
+      {
+        nom: 'Front de Paris et Eiffel, aux portes du 17e',
+        texte: 'Le long du périphérique et des anciennes fortifications, dont il reste l’ancien **octroi** de la rue Baudin : immeubles, bureaux, commerces et restaurants. Caves, parkings et cuisines : nous intervenons chez les **commerçants** et en copropriété. Voir aussi [dératisation à Paris 17e](/deratisation/paris-17).',
+        photo: wlv('ancien-octroi-rue-baudin.jpg', 'Le bâtiment de l’ancien octroi, rue Baudin à Levallois-Perret', 'L’ancien octroi de la rue Baudin, vestige des fortifications.', 'Chabe01', 'CC BY-SA 4.0', 'Octroi_Levallois_Perret_Rue_Baudin_-_Levallois-Perret_(FR92)_-_2023-11-11_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Levallois-Perret (92300) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines, soupiraux. Restaurant : réserves et cuisine. Bord de Seine : sous-sols humides et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Levallois-Perret (92300) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble', x: 'Le cas le plus fréquent dans la ville la plus dense de France : nous traitons tout le sous-sol avec le syndic, puis rebouchons les passages vers les logements et les caves voisines.' },
+      { t: 'Des rats après une montée de la Seine', x: 'Près du fleuve, la nappe presque affleurante et les crues poussent les rats vers les caves. Faites contrôler votre sous-sol après de fortes pluies.' },
+      { t: 'Des rongeurs dans un restaurant ou un commerce', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux, d’un appartement à l’autre : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Levallois-Perret',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; un commerce, de son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Clichy](/deratisation/clichy), [Neuilly-sur-Seine](/deratisation/neuilly-sur-seine), [Courbevoie](/deratisation/courbevoie), [Asnières-sur-Seine](/deratisation/asnieres-sur-seine) et [Paris 17e](/deratisation/paris-17). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Levallois-Perret ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, parking ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi tant de rats dans les caves de Levallois ?', a: 'La ville est la plus dense de France, avec des immeubles collés et des caves qui communiquent ; près de la Seine, la nappe est presque à fleur de sol. Le surmulot y trouve humidité, passages et nourriture ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Les rats de l’immeuble voisin peuvent-ils venir dans ma cave ?', a: 'Oui : murs mitoyens, réseaux et caves communiquent. Le plus efficace est un traitement coordonné entre syndics voisins, avec rebouchage des passages.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Levallois-Perret ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [LEV_INSEE, LEV_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
