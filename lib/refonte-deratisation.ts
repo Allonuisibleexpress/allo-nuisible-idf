@@ -5237,7 +5237,7 @@ REFONTE_DERATISATION['bagneux'] = {
     zones: [
       {
         nom: 'La coulée verte du Sud-Parisien',
-        texte: 'Ancienne emprise ferroviaire devenue promenade, la **coulée verte** traverse la ville : talus plantés, haies et pelouses longent les résidences. Les rats y creusent des terriers et gagnent les jardins et les caves voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        texte: 'Promenade plantée qui reprend une partie de l’ancien chemin de pèlerinage vers Saint-Jacques-de-Compostelle, la **coulée verte** traverse la ville : talus plantés, haies et pelouses longent les résidences. Les rats y creusent des terriers et gagnent les jardins et les caves voisines. Voir [rat dans le compost](/blog/rat-compost).',
         photo: wbg('coulee-verte.jpg', 'La coulée verte du Sud-Parisien à Bagneux, avec ses talus plantés', 'La coulée verte du Sud-Parisien, entre talus plantés et résidences.', 'Chabe01', 'CC BY-SA 4.0', 'Coul%C3%A9e_Verte_Bagneux_Hauts_Seine_1.jpg'),
       },
       {
@@ -5300,6 +5300,102 @@ REFONTE_DERATISATION['bagneux'] = {
     { q: 'Intervenez-vous vite à Bagneux ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
   ],
   sources: [BAG_INSEE, BAG_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
+// ── Puteaux (27/11/2026) ──
+const PUT_WIKI: Source = { label: 'Wikipédia, Puteaux (Bas et Haut de Puteaux, La Défense, île de Puteaux, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Puteaux' }
+const PUT_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92062, Puteaux', url: 'https://geo.api.gouv.fr/communes?code=92062&fields=nom,code,codesPostaux,population,surface' }
+const wpu = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/puteaux/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['puteaux'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Les deux tiers de La Défense, toute l’île de Puteaux, un vieux bourg au bord de la Seine et un plateau d’anciennes usines devenu quartier de résidences : à Puteaux, les rats vivent sous la dalle, dans les caves et au bord de l’eau. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Puteaux (92800) : entre la Seine et La Défense',
+    paras: [
+      'Puteaux compte **44 002 habitants** sur **3,19 km²**, soit près de **13 800 habitants au km²**, sur la **rive gauche de la Seine**, face au bois de Boulogne et à Neuilly. La commune comprend toute l’**île de Puteaux** et environ les **deux tiers du quartier d’affaires de La Défense**. Comme les villes voisines, Puteaux a été inondée lors de la **crue de 1910**.',
+      'La ville se partage entre le **Bas de Puteaux**, entre la voie ferrée et la Seine, le plus anciennement urbanisé, et le **Haut de Puteaux**, un plateau d’anciennes usines remplacées par des cités de brique des années 1950, des résidences et des copropriétés. Les logements sont à **96 % des appartements**. Pour une société de dératisation, ce sont des **caves**, des **parkings**, des **locaux à poubelles**, des **restaurants** et, côté Défense, des **sous-sols de bureaux**.',
+      'Nous intervenons à Puteaux depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Puteaux](/punaises-de-lit/puteaux) et [fourmis à Puteaux](/fourmis/puteaux). Pour le quartier d’affaires : [dératisation à La Défense](/deratisation/la-defense).',
+    ],
+  },
+  chiffres: [
+    { valeur: '44 002', texte: 'habitants (population légale Insee), code postal 92800.', source: PUT_INSEE },
+    { valeur: '2/3', texte: 'du quartier d’affaires de La Défense se trouvent sur le territoire de Puteaux.', source: PUT_WIKI },
+    { valeur: '96 %', texte: 'des logements sont des appartements : caves, parkings et locaux à poubelles partagés.', source: PUT_WIKI },
+    { valeur: '1910', texte: 'crue de la Seine : Puteaux a été inondée comme les villes voisines situées le long du fleuve.', source: PUT_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Puteaux : la ville quartier par quartier',
+    intro: 'L’Insee découpe Puteaux en quatre grands quartiers : **Défense**, **Bergères**, **Mairie** et **Centre**. On distingue surtout le **Bas de Puteaux**, le **Haut de Puteaux**, **La Défense** et l’**île de Puteaux**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'L’île de Puteaux et les bords de Seine',
+        texte: 'L’**île de Puteaux**, traversée par le pont de Puteaux, est accolée depuis 1935 à l’île du Pont, côté Neuilly. Berges, équipements sportifs et quais : le surmulot vit au bord de l’eau et remonte par les réseaux jusqu’aux caves du Bas de Puteaux. Nous contrôlons sous-sols et regards, puis rebouchons les passages.',
+        photo: wpu('ile-de-puteaux.jpg', 'Les berges de l’île de Puteaux et la Seine, avec les tours de La Défense', 'Les berges de l’île de Puteaux et la Seine.', 'Polymagou', 'CC BY-SA 4.0', '%C3%8Ele_de_Puteaux_4.jpg'),
+      },
+      {
+        nom: 'Le Vieux Puteaux et le Bas de Puteaux',
+        texte: 'Autour de la vieille église, du théâtre et de l’hôtel de ville de 1934 : immeubles anciens, dont certains ont été rénovés, rues commerçantes et le boulevard Richard-Wallace. Caves anciennes, cours et commerces de bouche : nous traitons les sous-sols avec le **syndic** et intervenons chez les **commerçants**.',
+        photo: wpu('vieux-puteaux-theatre.jpg', 'La façade du théâtre dans le Bas de Puteaux', 'Le théâtre, dans le Bas de Puteaux.', 'Chabe01', 'CC BY-SA 4.0', 'Th%C3%A9%C3%A2tre_-_Puteaux_(FR92)_-_2023-09-16_-_1.jpg'),
+      },
+      {
+        nom: 'La gare et la voie ferrée',
+        texte: 'La voie ferrée sépare le Bas du Haut de Puteaux. Talus, quais et réseaux forment des couloirs pour les rongeurs, qui gagnent les immeubles et jardins riverains. Nous contrôlons les caves et les espaces verts proches des voies.',
+        photo: wpu('gare-de-puteaux.jpg', 'Les quais de la gare de Puteaux et un train', 'La gare de Puteaux, entre le Bas et le Haut de Puteaux.', 'Chabe01', 'CC BY-SA 4.0', 'Gare_Puteaux_-_Puteaux_(FR92)_-_2024-06-23_-_1.jpg'),
+      },
+      {
+        nom: 'Le Haut de Puteaux et ses cités',
+        texte: 'Sur le plateau, d’anciennes usines ont laissé place à des **cités de brique** des années 1950, comme la cité-jardin, à des résidences des années 1960-1970 et à des copropriétés récentes. Caves, vide-ordures et locaux à poubelles : le traitement se fait avec le **bailleur** ou le **syndic**, sur toutes les parties communes.',
+        photo: wpu('haut-de-puteaux-cites.jpg', 'Les immeubles de brique des cités du Haut de Puteaux', 'Les cités de brique du Haut de Puteaux.', 'Copyleft', 'CC BY-SA 3.0', 'Cite-jardin_Puteaux.jpg'),
+      },
+      {
+        nom: 'La Défense, côté Puteaux',
+        texte: 'Environ deux tiers du quartier d’affaires se trouvent à Puteaux : tours, restaurants, parkings et livraisons sous la dalle. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés et attestation. Toute notre méthode pour le quartier : [dératisation à La Défense](/deratisation/la-defense).',
+        photo: wpu('cours-michelet-la-defense.jpg', 'Le cours Michelet et des immeubles de bureaux à La Défense, côté Puteaux', 'Le cours Michelet, à La Défense, côté Puteaux.', 'Chabe01', 'CC BY-SA 4.0', 'Cours_Michelet_-_Puteaux_(FR92)_-_2023-09-16_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Puteaux (92800) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Bureaux ou restaurant : réserves, cuisine, quais de livraison. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Puteaux (92800) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rongeurs dans un restaurant ou des bureaux', x: 'Côté Défense comme dans le centre : plan de lutte, postes numérotés, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des rats dans un parking souterrain', x: 'Les parkings communiquent avec les réseaux : postes numérotés sur tout le sous-sol, avec le syndic ou le gestionnaire.' },
+      { t: 'Des rats dans la cave d’un immeuble du Bas de Puteaux', x: 'Près de la Seine, caves anciennes et réseaux offrent abri et passages : nous traitons le sous-sol entier puis rebouchons les accès.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, gestionnaire : qui fait quoi à Puteaux',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans une tour de bureaux, du **gestionnaire** ; un restaurant, de son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [La Défense](/deratisation/la-defense), [Courbevoie](/deratisation/courbevoie), [Neuilly-sur-Seine](/deratisation/neuilly-sur-seine), [Suresnes](/deratisation/suresnes) et [Nanterre](/deratisation/nanterre). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Puteaux ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, parking, bureaux ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans les bureaux de La Défense côté Puteaux ?', a: 'Oui : plan de lutte, postes numérotés, passages hors des heures de service, registre et attestation. Voir notre page [dératisation à La Défense](/deratisation/la-defense).' },
+    { q: 'Des rats dans le parking de ma résidence : qui paie ?', a: 'Le parking est une partie commune : c’est au syndic d’organiser et de financer le traitement. Si vous êtes locataire, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).' },
+    { q: 'La Seine fait-elle venir les rats à Puteaux ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles du Bas de Puteaux doivent surveiller caves et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Puteaux ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [PUT_INSEE, PUT_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
