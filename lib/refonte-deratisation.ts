@@ -4342,4 +4342,100 @@ REFONTE_DERATISATION['levallois-perret'] = {
   sources: [LEV_INSEE, LEV_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Issy-les-Moulineaux (27/11/2026) ──
+const ISY_WIKI: Source = { label: 'Wikipédia, Issy-les-Moulineaux (Seine et île Saint-Germain, dénivelé, quartiers, Cœur de Ville, fort d’Issy, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Issy-les-Moulineaux' }
+const ISY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92040, Issy-les-Moulineaux', url: 'https://geo.api.gouv.fr/communes?code=92040&fields=nom,code,codesPostaux,population,surface' }
+const wis = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/issy-les-moulineaux/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['issy-les-moulineaux'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Des péniches sur le petit bras de Seine, l’île Saint-Germain, les bureaux du Val de Seine, puis une forte pente jusqu’au fort et aux Hauts d’Issy : à Issy-les-Moulineaux, les rats remontent du fleuve vers les caves et les parkings. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Issy-les-Moulineaux (92130) : de la Seine aux Hauts d’Issy, une ville d’appartements',
+    paras: [
+      'Issy-les-Moulineaux compte **67 669 habitants** sur **4,24 km²**, soit près de **16 000 habitants au km²**, aux portes du 15e arrondissement. La ville est limitée au nord-ouest par la **Seine**, dont un bras forme l’**île Saint-Germain** ; son relief présente un **fort dénivelé** entre les bords du fleuve et les hauteurs du sud-ouest. Lors de la **crue de 1910**, Issy a été inondée comme les villes voisines.',
+      'En 2022, **93,2 % des logements** étaient des appartements et seulement **5,3 %** des maisons. Quartier d’affaires du **Val de Seine**, écoquartiers, grands ensembles et immeubles anciens du centre : pour une société de dératisation, Issy est d’abord une ville de **caves**, de **parkings souterrains**, de **locaux à poubelles** et de **restaurants**, à traiter avec les syndics et les gestionnaires.',
+      'Nous intervenons à Issy-les-Moulineaux depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Issy-les-Moulineaux](/punaises-de-lit/issy-les-moulineaux) et [fourmis à Issy-les-Moulineaux](/fourmis/issy-les-moulineaux).',
+    ],
+  },
+  chiffres: [
+    { valeur: '67 669', texte: 'habitants (population légale Insee), code postal 92130.', source: ISY_INSEE },
+    { valeur: '93,2 %', texte: 'des logements sont des appartements (2022) : caves, parkings et locaux à poubelles partagés.', source: ISY_WIKI },
+    { valeur: '≈ 16 000', texte: 'habitants au km² (67 669 habitants sur 4,24 km²), aux portes de Paris.', source: ISY_INSEE },
+    { valeur: '1910', texte: 'crue de la Seine : Issy a été inondée comme les villes voisines situées le long du fleuve.', source: ISY_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Issy-les-Moulineaux : la ville quartier par quartier',
+    intro: 'L’Insee découpe Issy en sept grands quartiers : les **Varennes**, le **Centre-ville**, les **Hauts d’Issy**, les **Épinettes**, la **Ferme**, le **Val-de-Seine** et les **Îles**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les Îles et le petit bras de Seine',
+        texte: 'Le long du **petit bras de la Seine**, des péniches habitées, des quais et des immeubles récents. Le surmulot vit sur les berges et circule par les réseaux jusqu’aux parkings et aux caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages, en particulier après une montée des eaux.',
+        photo: wis('petit-bras-de-seine.jpg', 'Le petit bras de la Seine, ses péniches et les immeubles riverains à Issy-les-Moulineaux', 'Le petit bras de la Seine : péniches, quais et immeubles du Val de Seine.', 'Guilhem Vellut', 'CC BY 2.0', 'Petit_Bras_de_Seine_@_Issy-les-Moulineaux_@_Paris_(30184037683).jpg'),
+      },
+      {
+        nom: 'L’île Saint-Germain et son parc',
+        texte: 'Le **parc de l’île Saint-Germain**, avec sa mare et la Tour aux Figures, est entouré d’eau. Roselières, pelouses et massifs : les rats creusent en bordure et gagnent les immeubles voisins. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wis('parc-ile-saint-germain.jpg', 'La mare du parc de l’île Saint-Germain et la Tour aux Figures à Issy-les-Moulineaux', 'Le parc de l’île Saint-Germain, sa mare et la Tour aux Figures.', 'Myrabella', 'CC BY-SA 3.0', 'Ile_saint-germain_mare.jpg'),
+      },
+      {
+        nom: 'Le Val de Seine, quartier d’affaires',
+        texte: 'Le **Val de Seine** aligne immeubles de bureaux, sièges d’entreprises, restaurants et parkings souterrains, près de l’héliport. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés, passages hors des heures de service et attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wis('val-de-seine.jpg', 'Les immeubles de bureaux du quartier Val de Seine à Issy-les-Moulineaux', 'Le quartier d’affaires du Val de Seine.', 'Metropolitan', 'Domaine public', 'Val_de_Seine.jpg'),
+      },
+      {
+        nom: 'Les Hauts d’Issy et l’écoquartier du Fort',
+        texte: 'En haut de la pente, sur le site de l’ancien **fort d’Issy**, un écoquartier mêle résidences récentes, jardins et cheminements plantés. Parkings, locaux à déchets et massifs : nous traitons les sous-sols avec le syndic et les espaces verts de résidence.',
+        photo: wis('ecoquartier-fort-d-issy.jpg', 'Cheminement planté et résidences de l’écoquartier du fort d’Issy', 'L’écoquartier du fort d’Issy : résidences et cheminements plantés.', 'Guilhem Vellut', 'CC BY 2.0', 'Fort_d%27Issy-les-Moulineaux_(34984409671).jpg'),
+      },
+      {
+        nom: 'Le Centre-ville, Corentin-Celton et les Varennes',
+        texte: 'Desservi par le métro et limitrophe de Paris, c’est le quartier le plus dense de la ville, avec l’îlot **Issy Cœur de Ville** et son parc de 13 000 m². Immeubles anciens, commerces, marchés et restaurants : la dératisation s’y fait surtout en **copropriété** et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wis('jardin-corentin-celton.jpg', 'Les arcades et le jardin de l’ancien hôpital Corentin-Celton à Issy-les-Moulineaux', 'Le jardin de Corentin-Celton et ses arcades, au centre-ville.', 'GFreihalter', 'CC BY-SA 3.0', 'Issy-les-Moulineaux_H%C3%B4pital_Corentin_Celton_17.JPG'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Issy-les-Moulineaux (92130) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Bureaux ou restaurant : réserves, cuisine, quais de livraison. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Issy-les-Moulineaux (92130) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un parking souterrain', x: 'Dans une ville de résidences et de bureaux, les parkings communiquent avec les réseaux : nous posons des postes numérotés sur tout le sous-sol, avec le syndic ou le gestionnaire.' },
+      { t: 'Des rongeurs dans un restaurant ou des bureaux', x: 'Restaurants d’entreprise, cafés et commerces : plan de lutte, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des rats près de la Seine', x: 'Péniches, quais et immeubles riverains : le surmulot remonte des berges par les réseaux. Nous traitons les sous-sols et rebouchons les accès.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Issy-les-Moulineaux',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans un immeuble de bureaux, du **gestionnaire** ; un restaurant, de son exploitant.',
+      'Issy-les-Moulineaux fait partie du territoire **Grand Paris Seine Ouest (GPSO)** ; à Meudon, ville du même territoire, la Ville indique que le réseau d’assainissement est traité par GPSO. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120). Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Boulogne-Billancourt](/deratisation/boulogne-billancourt), [Meudon](/deratisation/meudon), [Clamart](/deratisation/clamart), [Vanves](/deratisation/vanves) et [Paris 15e](/deratisation/paris-15). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Issy-les-Moulineaux ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, parking, bureaux ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Des rats dans le parking de ma résidence : qui paie ?', a: 'Le parking est une partie commune : c’est au syndic d’organiser et de financer le traitement. Si vous êtes locataire, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).' },
+    { q: 'Intervenez-vous dans les bureaux du Val de Seine ?', a: 'Oui : plan de lutte, postes numérotés, passages hors des heures de service, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'La Seine fait-elle venir les rats à Issy ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles proches des berges et de l’île Saint-Germain doivent surveiller sous-sols et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Issy-les-Moulineaux ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ISY_INSEE, ISY_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
