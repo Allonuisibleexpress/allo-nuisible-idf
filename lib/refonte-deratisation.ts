@@ -3672,4 +3672,98 @@ REFONTE_DERATISATION['boulogne-billancourt'] = {
   sources: [BB_INSEE, BB_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Nanterre (27/11/2026) ──
+const NAN_WIKI: Source = { label: 'Wikipédia, Nanterre (Seine, plaine de Nanterre, quartiers, quartiers prioritaires, Les Groues, logement, parcs)', url: 'https://fr.wikipedia.org/wiki/Nanterre' }
+const NAN_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92050, Nanterre', url: 'https://geo.api.gouv.fr/communes?code=92050&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['nanterre'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une plaine qui descend du mont Valérien jusqu’à la Seine, des tours de cité, un vieux bourg, un parc alimenté par l’eau du fleuve et le grand chantier des Groues : à Nanterre, les rats ont tous les terrains. Nous les traitons un par un.',
+  societe: {
+    titre: 'Société de dératisation à Nanterre (92000) : la préfecture des Hauts-de-Seine, entre Seine et mont Valérien',
+    paras: [
+      'Nanterre compte **97 783 habitants** sur **12,2 km²**. La ville occupe la **plaine de Nanterre**, qui s’étend de la **Seine**, au nord-ouest, jusqu’au **mont Valérien** et à la colline de **La Défense**. Berges, chemin de halage, réseaux d’eaux pluviales et grands parcs : le **surmulot**, le rat d’égout, y trouve eau et passages.',
+      'En 2018, **84,4 % des logements** étaient des appartements et **14,1 %** des maisons ; seuls **26,6 %** des habitants étaient propriétaires de leur logement. La ville compte **six quartiers prioritaires**, avec environ **29 000 habitants**. Pour une société de dératisation, cela veut dire beaucoup de **caves**, de **vide-ordures** et de **locaux à poubelles** à traiter avec les **bailleurs**, et des pavillons avec jardin dans le vieux Nanterre.',
+      'Nous intervenons à Nanterre depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Nanterre](/punaises-de-lit/nanterre) et [fourmis à Nanterre](/fourmis/nanterre).',
+    ],
+  },
+  chiffres: [
+    { valeur: '97 783', texte: 'habitants (population légale Insee), code postal 92000.', source: NAN_INSEE },
+    { valeur: '84,4 %', texte: 'des logements sont des appartements et 14,1 % des maisons ; 26,6 % des habitants sont propriétaires (2018).', source: NAN_WIKI },
+    { valeur: '≈ 29 000', texte: 'habitants vivent dans les six quartiers prioritaires de la ville, presque un tiers de la population.', source: NAN_WIKI },
+    { valeur: '65 ha', texte: 'pour le nouveau quartier des Groues, en chantier jusqu’en 2032 : les terrassements déplacent les rongeurs.', source: NAN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Nanterre : la ville quartier par quartier',
+    intro: 'Nanterre compte dix quartiers, du **Centre** au **Petit-Nanterre**, en passant par le **Parc**, l’**Université**, le **Chemin de l’Île** et le **Plateau-Mont-Valérien**, et un onzième en construction, **les Groues**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Chemin de l’Île et les bords de Seine',
+        texte: 'Au nord-ouest, la Seine borde la ville. Le **parc départemental du Chemin de l’Île** a des bassins alimentés par l’eau du fleuve et donne accès au chemin de halage. Berges, roselières et cités voisines : les rats circulent entre l’eau et les caves. Nous traitons les sous-sols avec les bailleurs et rebouchons les passages.',
+        photo: { src: '/villes/nanterre/parc-chemin-de-l-ile.jpg', alt: 'Bassins et passerelle de dalles au parc du Chemin de l’Île à Nanterre', legende: 'Le parc du Chemin de l’Île : bassins alimentés par l’eau de la Seine.', credit: 'Ariel Kogan', licence: 'CC BY-SA 3.0', page: W + "Parc_du_Chemin-de-l%27Ile._CC_by_Ariel_Kogan.jpg" },
+      },
+      {
+        nom: 'Le Parc et le parc André-Malraux',
+        texte: 'Le **Parc** est le plus peuplé des quartiers prioritaires, avec environ 12 000 habitants. Tours, caves et vide-ordures d’un côté, les 25 hectares du **parc André-Malraux** de l’autre : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/nanterre/tours-aillaud-parc-malraux.jpg', alt: 'Les tours Aillaud vues depuis le parc André-Malraux à Nanterre', legende: 'Les tours Aillaud vues depuis le parc André-Malraux.', credit: 'Guilhem Vellut', licence: 'CC BY 2.0', page: W + 'Tours_Aillaud_@_Parc_Andr%C3%A9_Malraux_@_La_D%C3%A9fense_@_Paris_(34799539710).jpg' },
+      },
+      {
+        nom: 'Le Centre et le Vieux-Pont',
+        texte: 'Autour du vieux bourg et du **parc des Anciennes-Mairies**, maisons anciennes, petits immeubles et commerces : caves, cours et jardins de ville. Nous cherchons les passages au pied des murs et autour des canalisations. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/nanterre/rue-du-vieux-pont.jpg', alt: 'La rue du Vieux-Pont, maisons et immeubles à Nanterre', legende: 'La rue du Vieux-Pont : maisons de ville, murets et petits immeubles.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rue_Vieux_Pont_-_Nanterre_(FR92)_-_2023-09-14_-_1.jpg' },
+      },
+      {
+        nom: 'Les Groues et le Petit-Nanterre',
+        texte: 'Le nouveau quartier des **Groues**, 65 hectares détachés du Parc Nord et du Petit-Nanterre, est en chantier jusqu’en 2032, le long des voies ferrées. Les grands terrassements dérangent les rongeurs installés dans le sol, qui peuvent gagner les immeubles voisins : faites contrôler caves et regards si des rats apparaissent.',
+        photo: { src: '/villes/nanterre/chantier-les-groues.jpg', alt: 'Chantier du quartier des Groues le long des voies ferrées à Nanterre', legende: 'Le chantier des Groues, le long des voies ferrées.', credit: 'CrayzC00kie', licence: 'CC0', page: W + 'Construction_Les_Groues.jpg' },
+      },
+      {
+        nom: 'Le Plateau-Mont-Valérien et la Boule',
+        texte: 'Sur les pentes du **mont Valérien**, partagé avec Suresnes et Rueil-Malmaison, et autour de la **Boule**, des quartiers de pavillons avec jardin et des résidences : les rats creusent au pied des haies et des abris, puis entrent dans les garages. Voir [rat dans le compost](/blog/rat-compost).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Nanterre (92000) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Cité : vide-ordures, caves, local à poubelles. Vieux Nanterre : caves, cours, vide sanitaire. Pavillon du Plateau : jardin, abri, garage.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Nanterre (92000) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats au vide-ordures ou dans les caves d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages vers les logements.' },
+      { t: 'Des rats près d’un chantier', x: 'Les Groues, les nouvelles lignes et les immeubles en construction remuent le sol : les rongeurs se déplacent vers les caves et jardins voisins. Un contrôle rapide évite qu’ils s’installent.' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, bailleur, syndic : qui fait quoi à Nanterre',
+    paras: [
+      'À Nanterre, près des trois quarts des habitants ne sont pas propriétaires de leur logement. La **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les cités, les caves, vide-ordures et locaux à poubelles se traitent à la demande du **bailleur** ; en copropriété, à celle du **syndic** ; une maison, à celle de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Rueil-Malmaison](/deratisation/rueil-malmaison), [Suresnes](/deratisation/suresnes), [Puteaux](/deratisation/puteaux), [Courbevoie](/deratisation/courbevoie), [La Garenne-Colombes](/deratisation/la-garenne-colombes) et [Colombes](/deratisation/colombes). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Nanterre ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, maison ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite une cité à Nanterre : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'La Seine fait-elle venir les rats à Nanterre ?', a: 'Oui : le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales ([mode de vie du rat](/blog/rat-mode-de-vie)). Les quartiers proches des berges, comme le Chemin de l’Île, doivent surveiller caves et regards.' },
+    { q: 'Le chantier des Groues fait-il sortir les rats ?', a: 'Les grands terrassements peuvent déranger les rongeurs installés dans le sol. Si des rats apparaissent près du chantier, faites contrôler cave, jardin et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Nanterre ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [NAN_INSEE, NAN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
