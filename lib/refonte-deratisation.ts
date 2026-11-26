@@ -3766,4 +3766,99 @@ REFONTE_DERATISATION['nanterre'] = {
   sources: [NAN_INSEE, NAN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Asnières-sur-Seine (27/11/2026) ──
+const ASN_WIKI: Source = { label: 'Wikipédia, Asnières-sur-Seine (bras de Seine remblayés, sols humides et demi-sous-sols, crue de 1910, quartiers)', url: 'https://fr.wikipedia.org/wiki/Asni%C3%A8res-sur-Seine' }
+const ASN_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92004, Asnières-sur-Seine', url: 'https://geo.api.gouv.fr/communes?code=92004&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['asnieres-sur-seine'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Des bras de Seine remblayés, des îles disparues, des immeubles posés sur un ancien fond marécageux et des rues inondées en 1910 : à Asnières-sur-Seine, le sous-sol est humide et les rats s’y plaisent. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Asnières-sur-Seine (92600) : une ville bâtie sur d’anciens bras de Seine',
+    paras: [
+      'Asnières-sur-Seine compte **93 941 habitants** sur **4,82 km²**, soit près de **19 500 habitants au km²**, sur la rive gauche de la **Seine**. Son territoire est plat : les anciens bras du fleuve ont été **remblayés**, faisant disparaître l’île des Ravageurs et l’île Robinson. Le sous-sol garde les **nappes humides de l’ancien fond marécageux**.',
+      'Au bord de la Seine, la plupart des immeubles n’ont que des **demi-sous-sols** pris dans la couche de remblais, qui jouent le rôle de **vide sanitaire**. Humidité, réseaux et caves basses : c’est le milieu préféré du **surmulot**, le rat d’égout. Lors de la **crue de 1910**, des rues entières comme la rue Dusseau ou la rue de Normandie ont été inondées. Pour une société de dératisation, ces sous-sols sont les premiers points à contrôler.',
+      'Nous intervenons à Asnières-sur-Seine depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Asnières-sur-Seine](/punaises-de-lit/asnieres-sur-seine) et [fourmis à Asnières-sur-Seine](/fourmis/asnieres-sur-seine).',
+    ],
+  },
+  chiffres: [
+    { valeur: '93 941', texte: 'habitants (population légale Insee), code postal 92600.', source: ASN_INSEE },
+    { valeur: '≈ 19 500', texte: 'habitants au km² (93 941 habitants sur 4,82 km²) : immeubles serrés, caves et locaux à poubelles partagés.', source: ASN_INSEE },
+    { valeur: '3 îles', texte: 'aujourd’hui disparues ou rattachées à la terre ferme : des Ravageurs, Robinson et Vailard. Les bras de Seine ont été remblayés.', source: ASN_WIKI },
+    { valeur: '1910', texte: 'crue de la Seine : les rues Dusseau et de Normandie, entre autres, ont été inondées. Les sous-sols bas restent humides.', source: ASN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Asnières-sur-Seine : la ville quartier par quartier',
+    intro: 'L’Insee découpe la ville en sept grands quartiers : **Bécon-Flachat**, **Champs-Magenta**, **Alma-Philosophes**, **Mairie**, **Grésillons**, **Renoir-Métro** et **Nord**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Seine et les anciennes îles',
+        texte: 'Sur les terrains sableux et humides gagnés sur les anciens bras du fleuve, les immeubles reposent sur des **demi-sous-sols** qui servent de vide sanitaire. Lors des crues, comme en 1910, l’eau chasse les rats vers ces sous-sols. Nous traitons les vides sanitaires, posons des grilles sur les aérations et rebouchons les passages vers les logements.',
+        photo: { src: '/villes/asnieres-sur-seine/crue-1910-rue-dusseau.jpg', alt: 'Carte postale de la rue Dusseau inondée à Asnières en janvier 1910', legende: 'La rue Dusseau inondée en janvier 1910 : on y circulait en barque.', credit: 'Carte postale ancienne, scan Claude_villetaneuse', licence: 'Domaine public', page: W + 'BF_193_-_ASNIERES_-_Les_inondations_de_Janvier_1910_-_Rue_Dusseau.JPG' },
+      },
+      {
+        nom: 'La Mairie, le château et le parc Voyer-d’Argenson',
+        texte: 'Autour de l’hôtel de ville, du château d’Asnières et du **parc Voyer-d’Argenson** : immeubles anciens, cours et jardins. Pelouses, massifs et caves voûtées : les rats creusent au pied des murs et passent par les soupiraux. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/asnieres-sur-seine/parc-voyer-d-argenson.jpg', alt: 'Statue, passerelle et massifs du parc Voyer-d’Argenson à Asnières-sur-Seine', legende: 'Le parc Voyer-d’Argenson : pelouses, massifs et passerelle.', credit: 'Parisette', licence: 'CC BY-SA 3.0', page: W + 'Square_Voyer_d%27Argenson.jpg' },
+      },
+      {
+        nom: 'Les Grésillons et le nord de la ville',
+        texte: 'Au nord, vers Gennevilliers, la **cité-jardin des Grésillons** et des quartiers d’habitat social : caves, vide-ordures et locaux à poubelles partagés. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: { src: '/villes/asnieres-sur-seine/cite-jardin-gresillons.jpg', alt: 'Carte postale ancienne de la cité-jardin des Grésillons', legende: 'La cité-jardin des Grésillons, entre Asnières et Gennevilliers.', credit: 'Carte postale ancienne, scan Claude Shoshany', licence: 'Domaine public', page: W + 'Asni%C3%A8res_Gennevilliers_-_Cit%C3%A9_Jardin_des_Gr%C3%A9sillons_(dans_le_fond,_l%27Hopital_Beaujon).JPG' },
+      },
+      {
+        nom: 'Alma-Philosophes et Seine Est',
+        texte: 'Le cœur historique, le long du boulevard Voltaire et de l’avenue Gabriel-Péri, est en rénovation ; à l’est, l’ancien site industriel de 7 hectares de **Seine Est** devient un quartier de bureaux, de commerces et de logements. Chantiers et démolitions dérangent les rongeurs : faites contrôler caves et regards si des rats apparaissent.',
+        photo: { src: '/villes/asnieres-sur-seine/boulevard-voltaire.jpg', alt: 'Le boulevard Voltaire et ses immeubles à Asnières-sur-Seine', legende: 'Le boulevard Voltaire, au cœur du quartier des Philosophes.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Boulevard_Voltaire_-_Asni%C3%A8res-sur-Seine_(FR92)_-_2024-04-06_-_1.jpg' },
+      },
+      {
+        nom: 'Bécon-Flachat et Champs-Magenta',
+        texte: 'Autour de la gare de **Bécon-les-Bruyères**, rues résidentielles, immeubles et maisons de ville : la dératisation se fait surtout en **copropriété**, cave par cave, et dans les jardins. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/asnieres-sur-seine/gare-de-becon.jpg', alt: 'La gare de Bécon-les-Bruyères et les immeubles voisins à Asnières-sur-Seine', legende: 'La gare de Bécon-les-Bruyères : voies ferrées, talus et immeubles riverains.', credit: 'Benjism89', licence: 'CC BY-SA 3.0', page: W + 'Gare_de_B%C3%A9con-les-Bruy%C3%A8res_-_2.jpg' },
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Asnières-sur-Seine (92600) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Bord de Seine : demi-sous-sol, vide sanitaire, aérations. Cité : vide-ordures, caves, local à poubelles. Maison : jardin, abri, garage.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Asnières-sur-Seine (92600) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le demi-sous-sol d’un immeuble', x: 'Près de la Seine, les demi-sous-sols humides servent de vide sanitaire et attirent les surmulots. Nous traitons tout le sous-sol avec le syndic, puis posons grilles et rebouchages.' },
+      { t: 'Des rats après une montée de la Seine', x: 'Les crues et les fortes pluies chassent les rats des berges et des réseaux vers les caves. Faites contrôler votre sous-sol après ces épisodes.' },
+      { t: 'Des rats au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Asnières-sur-Seine',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, demi-sous-sols et locaux à poubelles relèvent du **syndic** ; dans les cités, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Gennevilliers](/deratisation/gennevilliers), [Colombes](/deratisation/colombes), [Clichy](/deratisation/clichy), [Levallois-Perret](/deratisation/levallois-perret), [Courbevoie](/deratisation/courbevoie) et [La Garenne-Colombes](/deratisation/la-garenne-colombes). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Asnières-sur-Seine ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, maison ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi tant de rats près de la Seine à Asnières ?', a: 'Les bords de Seine sont bâtis sur des terrains sableux et humides, d’anciens bras du fleuve remblayés. Le surmulot aime l’humidité et circule par les égouts jusqu’aux demi-sous-sols ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+    { q: 'Mon immeuble n’a qu’un demi-sous-sol : peut-on le dératiser ?', a: 'Oui. Ce demi-sous-sol joue le rôle de vide sanitaire : nous y posons des postes sécurisés, contrôlons les aérations et rebouchons les passages vers les logements. Le syndic organise le traitement des parties communes.' },
+    { q: 'J’habite aux Grésillons : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur ou du syndic. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Asnières-sur-Seine ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ASN_INSEE, ASN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
