@@ -4822,4 +4822,100 @@ REFONTE_DERATISATION['clamart'] = {
   sources: [CLA_INSEE, CLA_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Gennevilliers (27/11/2026) ──
+const GEN_WIKI: Source = { label: 'Wikipédia, Gennevilliers (presqu’île alluviale, carrières remblayées, port, zone industrielle, quartiers, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Gennevilliers' }
+const GEN_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92036, Gennevilliers', url: 'https://geo.api.gouv.fr/communes?code=92036&fields=nom,code,codesPostaux,population,surface' }
+const wge = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/gennevilliers/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['gennevilliers'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Le premier port fluvial de France, une zone industrielle qui couvre les deux tiers de la ville, une presqu’île de sables et de galets inondée en 1910 et des grands ensembles : à Gennevilliers, les rats ont des quais, des entrepôts et des caves. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Gennevilliers (92230) : le premier port fluvial de France, dans une boucle de la Seine',
+    paras: [
+      'Gennevilliers compte **50 979 habitants** sur **11,6 km²**, dans un méandre de la **Seine**, entre 21 et 33 mètres d’altitude. La plaine de la presqu’île est **sablonneuse et plate** : le fleuve y a déposé galets, graviers et sables, longtemps exploités dans des **carrières** ensuite remblayées. Lors de la **crue de 1910**, la plaine et le Petit-Gennevilliers ont été inondés.',
+      'Le **port de Gennevilliers** est le premier port d’Île-de-France et le premier port fluvial français : 51 hectares de plans d’eau, une zone industrielle de **220 hectares** avec environ **275 entreprises** et 8 000 emplois directs. La zone industrielle et le port occupent les **deux tiers** du territoire. Côté habitat, **88,6 %** des logements sont des appartements et la ville compte **57,7 %** de logements sociaux (2021). Pour une société de dératisation, ce sont des **entrepôts**, des **quais**, des **bennes** et des **parties communes** de cités à traiter, avec les entreprises et les bailleurs.',
+      'Nous intervenons à Gennevilliers depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Gennevilliers](/punaises-de-lit/gennevilliers) et [fourmis à Gennevilliers](/fourmis/gennevilliers).',
+    ],
+  },
+  chiffres: [
+    { valeur: '50 979', texte: 'habitants (population légale Insee), code postal 92230.', source: GEN_INSEE },
+    { valeur: '2/3', texte: 'du territoire occupés par la zone industrielle et le port, premier port fluvial de France.', source: GEN_WIKI },
+    { valeur: '275', texte: 'entreprises environ dans la zone industrielle du port (220 hectares) : entrepôts, quais et bennes à surveiller.', source: GEN_WIKI },
+    { valeur: '57,7 %', texte: 'de logements sociaux en 2021 : caves, vide-ordures et locaux à poubelles partagés.', source: GEN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Gennevilliers : la ville quartier par quartier',
+    intro: 'L’Insee découpe Gennevilliers en cinq grands quartiers : le **Luth**, le **Fossé de l’Aumône**, les **Agnettes**, les **Grésillons** et **Village-Chandon** ; à l’ouest s’étend le port. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le port et la zone industrielle',
+        texte: 'Darses, quais, entrepôts, plateformes logistiques et industries : sur 220 hectares, nourriture, déchets et abris ne manquent pas. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés, contrôles réguliers, registre et attestation pour vos audits. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: { src: '/departements/hauts-de-seine/port-de-gennevilliers.jpg', alt: 'Vue aérienne du port de Gennevilliers et de la Seine', legende: 'Le port de Gennevilliers et ses darses, dans la boucle de la Seine.', credit: 'Milliped', licence: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_the_Port_de_Gennevilliers,_9_NOV_2018_-_1.jpg' },
+      },
+      {
+        nom: 'La plaine inondable et le Petit-Gennevilliers',
+        texte: 'Sur la presqu’île sablonneuse, au bord de la Seine, la plaine a été inondée en 1910. Sols d’alluvions et de remblais, berges et réseaux : le surmulot y circule et remonte vers les sous-sols. Nous contrôlons caves et regards après les fortes pluies et rebouchons les passages.',
+        photo: wge('crue-1910-plaine.jpg', 'Carte postale de la plaine de Gennevilliers inondée en janvier 1910', 'La plaine de Gennevilliers inondée lors de la grande crue de janvier 1910.', 'Carte postale ancienne, scan Claude_villetaneuse', 'Domaine public', 'ND_82_-_GENNEVILLIERS_-_Grande_crue_de_la_Seine_(janvier_1910)_-_Inondation_de_la_plaine.JPG'),
+      },
+      {
+        nom: 'Le Luth et les grands ensembles',
+        texte: 'Au nord, le **Luth**, urbanisé dans les années 1950-1970, est le plus grand quartier prioritaire de la ville, en restructuration. Tours, caves, vide-ordures et locaux à poubelles : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: wge('cite-rouge-renovation.jpg', 'Tours d’habitat social en rénovation à Gennevilliers', 'La cité rouge en rénovation, en 2013.', 'Basile', 'CC BY-SA 4.0', 'D%C3%A9molition_partielle_de_la_cit%C3%A9_rouge_-_HLM_de_Gennevilliers.JPG'),
+      },
+      {
+        nom: 'Le Village et la place Jean-Grandel',
+        texte: 'Le **Vieux-Gennevilliers**, autour de l’église Sainte-Marie-Madeleine et de la place Jean-Grandel, réunit maisons anciennes, petits immeubles et commerces. Caves anciennes, cours et jardins : nous traitons les sous-sols et les terriers au pied des murs. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wge('eglise-du-village.jpg', 'L’église Sainte-Marie-Madeleine et la place du Village à Gennevilliers', 'L’église Sainte-Marie-Madeleine, au cœur du Vieux-Gennevilliers.', 'Thomon', 'CC BY-SA 4.0', 'Eglise_Sainte-Marie-Madeleine_de_Gennevilliers_Nord.jpg'),
+      },
+      {
+        nom: 'Chandon-République, les Agnettes et les Grésillons',
+        texte: 'Sur d’anciennes usines, l’**écoquartier Chandon-République** a accueilli des logements pour environ 3 000 habitants entre 2013 et 2016, près de bureaux et de rues de maisons. Parkings, locaux à poubelles et jardins : nous intervenons en copropriété et chez les particuliers. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wge('avenue-chandon.jpg', 'L’avenue Chandon, ses maisons et immeubles à Gennevilliers', 'L’avenue Chandon : maisons, petits immeubles et tours de bureaux au fond.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Chandon_-_Gennevilliers_(FR92)_-_2024-04-06_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Gennevilliers (92230) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Entrepôt : quais, réserves, bennes, locaux techniques. Cité : vide-ordures, caves, local à poubelles. Maison : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Gennevilliers (92230) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un entrepôt ou une plateforme logistique', x: 'Palettes, cartons, denrées et quais de chargement : contrat de suivi avec postes extérieurs, pièges près des stocks, rapport après chaque visite pour vos audits.' },
+      { t: 'Des rats au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages.' },
+      { t: 'Des rats dans une cave près de la Seine', x: 'Sur la presqu’île, sols sableux et réseaux mènent les rats des berges aux sous-sols, surtout après une crue : nous traitons la cave entière puis rebouchons.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, bailleur, entreprise : qui fait quoi à Gennevilliers',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les cités, les caves, vide-ordures et locaux à poubelles relèvent du **bailleur** ; en copropriété, du **syndic** ; un entrepôt ou une usine, de l’**entreprise** qui l’occupe ou de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Asnières-sur-Seine](/deratisation/asnieres-sur-seine), [Colombes](/deratisation/colombes) et [Épinay-sur-Seine](/deratisation/epinay-sur-seine). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Gennevilliers ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Entrepôt, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Proposez-vous un contrat de dératisation pour une entreprise du port ?', a: 'Oui : visites régulières, postes numérotés, plan de localisation, registre et rapport après chaque passage, utiles pour vos audits et vos assureurs. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'J’habite au Luth : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'La Seine fait-elle venir les rats à Gennevilliers ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales ([mode de vie du rat](/blog/rat-mode-de-vie)). Sur la presqu’île, inondée en 1910, les sous-sols proches des berges doivent être surveillés.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Gennevilliers ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [GEN_INSEE, GEN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
