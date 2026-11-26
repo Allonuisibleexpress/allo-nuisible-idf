@@ -3593,7 +3593,7 @@ REFONTE_DERATISATION['boulogne-billancourt'] = {
       'Boulogne-Billancourt compte **119 019 habitants** sur **6,15 km²** : c’est la commune la plus peuplée des Hauts-de-Seine, avec près de **19 300 habitants au km²**. Elle occupe une **plaine basse**, entre 28 et 40 mètres d’altitude, bordée au sud et à l’ouest par une **boucle de la Seine** et au nord par le **bois de Boulogne**. Sols de sables et d’alluvions, eau peu profonde : la ville est exposée aux **crues**, comme celle de **1910**.',
       'Les logements sont à **96,6 % des appartements** : immeubles haussmanniens, grands ensembles, immeubles récents du Trapèze. Pour une société de dératisation, ce sont surtout des **caves**, des **parkings souterrains**, des **locaux à poubelles** et des **gaines** à traiter, avec le **syndic**. Les quais, les parcs et les anciens terrains Renault offrent aux rats des passages vers les immeubles riverains.',
       'Nous intervenons à Boulogne-Billancourt depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
-      'Nos autres pages pour la ville : [punaises de lit à Boulogne-Billancourt](/punaises-de-lit/boulogne-billancourt), [puces à Boulogne-Billancourt](/puces/boulogne-billancourt), [anthrènes à Boulogne-Billancourt](/anthrenes/boulogne-billancourt) et [fourmis à Boulogne-Billancourt](/fourmis/boulogne-billancourt).',
+      'Nos autres pages pour la ville : [punaises de lit à Boulogne-Billancourt](/punaises-de-lit/boulogne-billancourt) et [fourmis à Boulogne-Billancourt](/fourmis/boulogne-billancourt).',
     ],
   },
   chiffres: [
