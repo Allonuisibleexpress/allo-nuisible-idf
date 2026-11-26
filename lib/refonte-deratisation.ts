@@ -5590,4 +5590,100 @@ REFONTE_DERATISATION['chatenay-malabry'] = {
   sources: [CHM_INSEE, CHM_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Malakoff (27/11/2026) ──
+const MAL_WIKI: Source = { label: 'Wikipédia, Malakoff (Hauts-de-Seine) : relief, carrières, ancienne ville industrielle, îlots, logement, coulée verte', url: 'https://fr.wikipedia.org/wiki/Malakoff_(Hauts-de-Seine)' }
+const MAL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92046, Malakoff', url: 'https://geo.api.gouv.fr/communes?code=92046&fields=nom,code,codesPostaux,population,surface' }
+const wml = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/malakoff/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['malakoff'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une ancienne ville d’usines et de carrières aux portes du 14e, des immeubles de toutes les époques, des impasses, une coulée verte le long de la ligne TGV : à Malakoff, les rats trouvent caves, cours et talus. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Malakoff (92240) : une ancienne ville industrielle aux portes de Paris',
+    paras: [
+      'Malakoff compte **30 557 habitants** sur **2,07 km²**, soit près de **14 800 habitants au km²**, entre le 14e arrondissement, Vanves, Montrouge, Châtillon et Clamart. Le sol est presque plat, de **64 mètres** à la limite de Paris à **95 mètres** près du fort de Vanves. Au début du XIXe siècle, les **carrières** du territoire ont fourni la pierre de Paris, avant que la ville ne se développe autour de petites usines.',
+      'Malakoff garde la trace de ce passé **industriel** : constructions en brique, anciens ateliers, maisons du XIXe siècle à côté d’immeubles des années 1970 à 2000. En 2018, **83,9 %** des logements étaient des appartements et **14 %** des maisons. La **coulée verte du Sud-Parisien**, qui longe la ligne TGV Atlantique, traverse la ville. Pour une société de dératisation, ce sont des **caves**, des **cours**, des **impasses** et des **talus** à surveiller.',
+      'Nous intervenons à Malakoff depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Malakoff](/punaises-de-lit/malakoff) et [fourmis à Malakoff](/fourmis/malakoff).',
+    ],
+  },
+  chiffres: [
+    { valeur: '30 557', texte: 'habitants (population légale Insee), code postal 92240.', source: MAL_INSEE },
+    { valeur: '≈ 14 800', texte: 'habitants au km² (30 557 habitants sur 2,07 km²), aux portes du 14e arrondissement.', source: MAL_INSEE },
+    { valeur: '14 %', texte: 'des logements sont des maisons individuelles et 83,9 % des appartements (2018).', source: MAL_WIKI },
+    { valeur: '64 à 95 m', texte: 'd’altitude : un sol presque plat, de la limite de Paris jusqu’au fort de Vanves.', source: MAL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Malakoff : la ville secteur par secteur',
+    intro: 'L’Insee découpe Malakoff en onze secteurs, du **Nord** et du **Petit-Vanves** au **Fort**, en passant par le **Centre**, les **Pierres-Plates** ou les **Nouzeaux**. Les abords de Paris sont faits de petits immeubles, le reste de la ville est surtout résidentiel. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La coulée verte et la ligne TGV',
+        texte: 'La **coulée verte**, qui relie Paris à Massy, longe la ligne TGV Atlantique : talus plantés, haies et squares, comme le square du Douanier-Rousseau. Les rats y creusent et gagnent les jardins et caves des résidences voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wml('coulee-verte.jpg', 'L’entrée de la coulée verte au square du Douanier-Rousseau à Malakoff', 'L’entrée de la coulée verte, au square du Douanier-Rousseau.', 'VVVCFFrance', 'CC BY-SA 4.0', '30_entr%C3%A9e_de_la_coul%C3%A9e_verte_%C3%A0_Malakoff_square_du_Douanier_Rousseau.jpg'),
+      },
+      {
+        nom: 'Le nord, aux portes du 14e',
+        texte: 'Près de Paris, des petits immeubles anciens, des commerces et le **boulevard Camélinat**. Caves, cours et locaux à poubelles : la dératisation se fait surtout en **copropriété**, idéalement en coordination entre immeubles voisins.',
+        photo: wml('boulevard-camelinat.jpg', 'Le boulevard Camélinat et ses immeubles à Malakoff', 'Le boulevard Camélinat.', 'Chabe01', 'CC BY-SA 4.0', 'Boulevard_Cam%C3%A9linat_-_Malakoff_(FR92)_-_2026-02-07_-_1.jpg'),
+      },
+      {
+        nom: 'Le Centre et l’avenue Pierre-Larousse',
+        texte: 'Autour de l’avenue **Pierre-Larousse**, des constructions de toutes les époques, des commerces et des immeubles en rénovation. Les chantiers dérangent les rongeurs, et les commerces de bouche les nourrissent : nous intervenons chez les **commerçants** et en copropriété. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wml('avenue-pierre-larousse.jpg', 'L’avenue Pierre-Larousse à Malakoff, commerces et immeubles en travaux', 'L’avenue Pierre-Larousse : commerces et immeubles de toutes les époques.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Pierre_Larousse_-_Malakoff_(FR92)_-_2023-08-11_-_1.jpg'),
+      },
+      {
+        nom: 'Les impasses et les anciens ateliers',
+        texte: 'Héritage industriel : des **impasses**, des cours et d’anciens ateliers en brique, mêlés à des maisons et à de petits immeubles. Murs anciens, appentis et caves : nous repérons les passages au pied des murs et les rebouchons. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wml('impasse-puzin.jpg', 'Une impasse bordée de murs anciens et d’immeubles à Malakoff', 'Une impasse de Malakoff : murs anciens, cours et ateliers.', 'Chabe01', 'CC BY-SA 4.0', 'Impasse_Puzin_-_Malakoff_(FR92)_-_2023-08-11_-_1.jpg'),
+      },
+      {
+        nom: 'Le sud résidentiel, vers Clamart et Châtillon',
+        texte: 'Vers le fort de Vanves, Clamart et Châtillon, des quartiers surtout **résidentiels** avec maisons et jardins, et le cimetière communal. Haies, abris et composts : les rats creusent au pied des clôtures et entrent par les garages. Nous traitons la colonie et fermons chaque accès.',
+        photo: wml('cimetiere.jpg', 'Une allée arborée du cimetière de Malakoff', 'Une allée du cimetière de Malakoff, au sud de la ville.', 'Chabe01', 'CC BY-SA 4.0', 'Cimeti%C3%A8re_-_Malakoff_(FR92)_-_2026-05-23_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Malakoff (92240) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, cour, local à poubelles, gaines. Maison : jardin, abri, vide sanitaire. Bord de coulée verte : talus et clôtures.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Malakoff (92240) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un petit immeuble', x: 'Le cas le plus fréquent au nord de la ville : nous traitons le sous-sol avec le syndic, puis rebouchons les passages vers les logements et les caves voisines.' },
+      { t: 'Des rats dans un jardin près de la coulée verte', x: 'Talus et haies servent de couloir : nous traitons les terriers et fermons l’accès au vide sanitaire et au garage.' },
+      { t: 'Des rongeurs dans une cour ou un ancien atelier', x: 'Murs anciens, appentis et stockages : nous traitons les cachettes et bouchons les passages vers les logements.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Malakoff',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, cours et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Vanves](/deratisation/vanves), [Montrouge](/deratisation/montrouge), [Châtillon](/deratisation/chatillon), [Clamart](/deratisation/clamart) et [Paris 14e](/deratisation/paris-14). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Malakoff ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La coulée verte attire-t-elle les rats vers les maisons ?', a: 'Les talus et les haies offrent des terriers et des couloirs aux rongeurs. Fermez composts et abris, rangez les graines et faites boucher les accès au vide sanitaire et au garage.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, cours et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Les rats de l’immeuble voisin peuvent-ils venir chez moi ?', a: 'Oui : murs mitoyens, caves et réseaux communiquent. Le plus efficace est un traitement coordonné entre voisins ou syndics, avec rebouchage des passages.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Malakoff ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [MAL_INSEE, MAL_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
