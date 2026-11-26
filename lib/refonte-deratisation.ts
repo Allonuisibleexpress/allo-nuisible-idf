@@ -5206,4 +5206,100 @@ REFONTE_DERATISATION['montrouge'] = {
   sources: [MTR_INSEE, MTR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Bagneux (27/11/2026) ──
+const BAG_WIKI: Source = { label: 'Wikipédia, Bagneux (coulée verte, sous-sol de marnes et gypse, aqueducs, espaces verts, cimetière parisien, cités et quartiers prioritaires, logement)', url: 'https://fr.wikipedia.org/wiki/Bagneux_(Hauts-de-Seine)' }
+const BAG_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92007, Bagneux', url: 'https://geo.api.gouv.fr/communes?code=92007&fields=nom,code,codesPostaux,population,surface' }
+const wbg = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/bagneux/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['bagneux'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une coulée verte, le grand cimetière parisien, une vingtaine de cités, un vieux bourg et des sentiers entre les pavillons : à Bagneux, les rats ont des talus, des caves et des locaux à poubelles. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Bagneux (92220) : une ville verte et populaire au sud de Montrouge',
+    paras: [
+      'Bagneux compte **44 572 habitants** sur **4,18 km²**, au sud-est des Hauts-de-Seine, à la limite du Val-de-Marne. La ville est traversée par la **coulée verte du Sud-Parisien** et compte **47 hectares** d’espaces verts publics, plus de **11 %** de son territoire, dont une grande partie dans le **cimetière parisien de Bagneux**. Son sous-sol mêle remblais, **marnes** et **gypse** ; les aqueducs de la **Vanne** et du **Loing** la traversent.',
+      'En 2018, **90,1 % des logements** étaient des appartements et **9 %** des maisons. La ville compte une **vingtaine de cités** d’habitat social, dont trois quartiers prioritaires : la **cité des Musiciens** (Pierre-Plate), au nord, et les grands ensembles **Abbé-Grégoire-Mirabeau-Lincoln** et des **Tertres-Cuverons**, au sud. Pour une société de dératisation, ce sont des **caves**, des **vide-ordures** et des **locaux à poubelles** à traiter avec les bailleurs, et des **jardins** à surveiller près des talus.',
+      'Nous intervenons à Bagneux depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Bagneux](/punaises-de-lit/bagneux) et [fourmis à Bagneux](/fourmis/bagneux).',
+    ],
+  },
+  chiffres: [
+    { valeur: '44 572', texte: 'habitants (population légale Insee), code postal 92220.', source: BAG_INSEE },
+    { valeur: '11 %', texte: 'du territoire en espaces verts publics (47 hectares), coulée verte et cimetière parisien compris.', source: BAG_WIKI },
+    { valeur: '≈ 20 cités', texte: 'd’habitat social, dont trois quartiers prioritaires : cité des Musiciens, Abbé-Grégoire et Tertres-Cuverons.', source: BAG_WIKI },
+    { valeur: '90,1 %', texte: 'des logements sont des appartements (2018) : caves, vide-ordures et locaux à poubelles partagés.', source: BAG_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Bagneux : la ville quartier par quartier',
+    intro: 'Bagneux s’étend du **vieux bourg** aux grands ensembles du nord et du sud, le long de la **coulée verte** et autour du **cimetière parisien**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La coulée verte du Sud-Parisien',
+        texte: 'Ancienne emprise ferroviaire devenue promenade, la **coulée verte** traverse la ville : talus plantés, haies et pelouses longent les résidences. Les rats y creusent des terriers et gagnent les jardins et les caves voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wbg('coulee-verte.jpg', 'La coulée verte du Sud-Parisien à Bagneux, avec ses talus plantés', 'La coulée verte du Sud-Parisien, entre talus plantés et résidences.', 'Chabe01', 'CC BY-SA 4.0', 'Coul%C3%A9e_Verte_Bagneux_Hauts_Seine_1.jpg'),
+      },
+      {
+        nom: 'Le cimetière parisien et ses abords',
+        texte: 'Le **cimetière parisien de Bagneux**, géré par la Ville de Paris, compte des centaines d’arbres remarquables et de longues allées. Autour, des rues de maisons et de petits immeubles : les rongeurs vivent dans les massifs et passent dans les jardins riverains.',
+        photo: wbg('cimetiere-parisien.jpg', 'Une allée arborée du cimetière parisien de Bagneux', 'Une allée arborée du cimetière parisien de Bagneux.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Bagneux_Cimeti%C3%A8re_Parisien_Bagneux_-_Bagneux_(FR92)_-_2024-08-29_-_1.jpg'),
+      },
+      {
+        nom: 'Le vieux Bagneux',
+        texte: 'Autour de l’église et de la **Maison Richelieu**, le centre ancien garde des maisons de bourg, des murs de pierre et des cours. Caves anciennes et soupiraux : nous traitons les sous-sols et rebouchons les passages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wbg('maison-richelieu.jpg', 'La Maison Richelieu et la place pavée du vieux Bagneux', 'La Maison Richelieu, au cœur du vieux Bagneux.', 'Chabe01', 'CC BY-SA 4.0', 'Maison_Richelieu_-_Bagneux_(FR92)_-_2023-07-30_-_2_Maison_Richelieu_-_Bagneux_(FR92)_-_2023-07-30_-_5.jpg'),
+      },
+      {
+        nom: 'Les grands ensembles, du nord au sud',
+        texte: 'La **cité des Musiciens** (Pierre-Plate) au nord, l’**Abbé-Grégoire-Mirabeau-Lincoln** et les **Tertres-Cuverons** au sud, près du terminus de la ligne 4 : caves, vide-ordures et locaux à poubelles. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: wbg('metro-lucie-aubrac.jpg', 'La station Bagneux-Lucie-Aubrac, terminus de la ligne 4', 'La station Bagneux-Lucie-Aubrac, terminus sud de la ligne 4.', 'Chabe01', 'CC BY-SA 4.0', 'Station_Bagneux_Lucie_Aubrac_M%C3%A9tro_Paris_Ligne_4_-_Bagneux_(FR92)_-_2025-10-18_-_1.jpg'),
+      },
+      {
+        nom: 'Les sentiers et les quartiers de maisons',
+        texte: 'Entre les résidences, des **sentiers** bordés de haies desservent des rues de pavillons avec jardin. Haies, abris et composts : les rats creusent au pied des clôtures et entrent par les garages ou les vide sanitaires. Nous traitons la colonie et fermons chaque accès.',
+        photo: wbg('rue-des-blains.jpg', 'Un sentier piéton bordé de haies dans un quartier de maisons à Bagneux', 'Un sentier piéton bordé de haies, entre les maisons.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Blains_-_Bagneux_(FR92)_-_2023-07-30_-_7.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Bagneux (92220) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Cité : vide-ordures, caves, local à poubelles. Maison : jardin, abri, vide sanitaire. Bord de coulée verte : talus et clôtures.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Bagneux (92220) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats au vide-ordures d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages vers les logements.' },
+      { t: 'Des rats dans un jardin près de la coulée verte', x: 'Talus et haies servent de couloir : nous traitons les terriers et fermons l’accès au vide sanitaire et au garage.' },
+      { t: 'Des rats dans la cave d’une maison ancienne', x: 'Murs de pierre, soupiraux et caves voûtées : nous traitons le sous-sol et rebouchons les passages.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, bailleur, syndic : qui fait quoi à Bagneux',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les cités, les caves, vide-ordures et locaux à poubelles relèvent du **bailleur** ; en copropriété, du **syndic** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments ; le cimetière parisien relève de la Ville de Paris. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon). Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Montrouge](/deratisation/montrouge), [Châtillon](/deratisation/chatillon), [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses), [Bourg-la-Reine](/deratisation/bourg-la-reine), [Arcueil](/deratisation/arcueil) et [Cachan](/deratisation/cachan). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Bagneux ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite une cité à Bagneux : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'La coulée verte attire-t-elle les rats vers les maisons ?', a: 'Les talus et les haies offrent des terriers et des couloirs aux rongeurs. Fermez composts et abris, rangez les graines et faites boucher les accès au vide sanitaire et au garage.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Bagneux ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BAG_INSEE, BAG_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
