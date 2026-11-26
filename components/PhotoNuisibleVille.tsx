@@ -72,7 +72,7 @@ export default function PhotoNuisibleVille({ basePath, a }: { basePath: string; 
             </figure>
           ))}
         </div>
-        <a href="/identifier-nuisible" className="inline-block mt-6 text-sm font-bold" style={{ color: '#F0562A' }}>Un doute sur l’insecte ? Notre guide pour identifier un nuisible</a>
+        <a href="/identifier-nuisible" className="inline-block mt-6 text-sm font-bold" style={{ color: '#F0562A' }}>Un doute sur {['/deratisation', '/souris'].includes(basePath) ? 'l’animal' : 'l’insecte'} ? Notre guide pour identifier un nuisible</a>
       </div>
     </section>
   )

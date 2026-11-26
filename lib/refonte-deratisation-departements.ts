@@ -326,6 +326,97 @@ REFONTE_DERAT_DEP.paris = {
   sources: [PARIS_RATS, RSD_PARIS, PARIS_INSEE, LOI_1989, SPF_LEPTO],
 }
 
+// ── Seine-Saint-Denis (93) ──
+const SSD_WIKI: Source = { label: 'Wikipédia, Seine-Saint-Denis (Seine, Marne, canaux de l’Ourcq, Saint-Denis et de Chelles, espaces verts, parcs départementaux)', url: 'https://fr.wikipedia.org/wiki/Seine-Saint-Denis' }
+const SSD_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : département 93, communes, populations légales et surfaces', url: 'https://geo.api.gouv.fr/departements/93/communes?fields=nom,population,surface' }
+const q = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/departements/seine-saint-denis/${f}`, alt, legende, credit, licence, page: 'https://commons.wikimedia.org/wiki/File:' + fichier })
+
+REFONTE_DERAT_DEP['seine-saint-denis'] = {
+  maj: '2026-11-26',
+  reglement: 'loi du 6 juillet 1989 et règlement sanitaire départemental de la Seine-Saint-Denis',
+  quiPaie: '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic**, et dans les cités, du **bailleur**.',
+  accroche: 'Trois canaux, la Seine au nord, la Marne au sud-est, des grands ensembles, des pavillons et de grands parcs : en Seine-Saint-Denis, les rats ont de l’eau et des cachettes partout. Nous intervenons dans les 39 communes, avec une page détaillée pour 8 d’entre elles.',
+  societe: {
+    titre: 'Société de dératisation en Seine-Saint-Denis (93) : un département traversé par trois canaux',
+    paras: [
+      'La Seine-Saint-Denis compte **1 704 316 habitants** dans **39 communes**, sur **236 km²** : environ **7 200 habitants au km²**. La **Seine** la borde au nord-ouest, la **Marne** traverse son extrémité sud-est, et trois canaux l’irriguent : le **canal de l’Ourcq**, le **canal Saint-Denis** et le **canal de Chelles**. Berges, quais, réseaux d’assainissement et bassins de rétention des eaux de pluie : le **surmulot**, le rat d’égout, y trouve de l’eau et des passages.',
+      'Le département associe des **grands ensembles**, des quartiers de **pavillons avec jardin**, des zones d’activité et de grands parcs départementaux, comme le parc **Georges-Valbon** ou le parc du **Sausset**. Les espaces verts y sont passés d’environ **1 m² à 11 m² par habitant** entre 1980 et 2020. Caves, locaux à poubelles, jardins et lisières : chaque terrain demande sa méthode de dératisation.',
+      'Nos dératiseurs partent de **Saint-Maurice (94)** et interviennent **7 jours sur 7** dans tout le 93, souvent le jour même, **sans majoration** la nuit, le week-end ni les jours fériés.',
+      'Nos autres pages pour le département : [souris en Seine-Saint-Denis](/souris/seine-saint-denis), [punaises de lit en Seine-Saint-Denis](/punaises-de-lit/seine-saint-denis), [cafards en Seine-Saint-Denis](/cafards/seine-saint-denis) et [tous nos services en Seine-Saint-Denis](/zones/seine-saint-denis).',
+    ],
+  },
+  chiffres: [
+    { valeur: '1 704 316', texte: 'habitants dans les 39 communes de la Seine-Saint-Denis (populations légales Insee), soit environ 7 200 au km².', source: SSD_INSEE },
+    { valeur: '3 canaux', texte: 'traversent le département : l’Ourcq, Saint-Denis et Chelles, en plus de la Seine au nord-ouest et de la Marne au sud-est.', source: SSD_WIKI },
+    { valeur: '11 m²', texte: 'd’espaces verts par habitant en 2020, contre environ 1 m² en 1980 : parcs, coulées vertes et jardins où les rats creusent leurs terriers.', source: SSD_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats en Seine-Saint-Denis (93) : le département secteur par secteur',
+    intro: 'Nous avons regroupé nos villes du département en quatre secteurs. Pour chacune, une page complète détaille ses quartiers, ses risques et notre méthode : cliquez sur le nom de votre commune.',
+    zones: [
+      {
+        nom: 'Le canal de l’Ourcq, de Pantin à Bobigny',
+        texte: `Aux portes de Paris, le canal de l’Ourcq longe d’anciens sites industriels, des immeubles récents et des quartiers denses. Quais, chantiers et locaux à poubelles : les rats circulent entre l’eau, les réseaux et les sous-sols. Nos pages : ${l('pantin', 'Pantin')} et ${l('bobigny', 'Bobigny')}.`,
+        photo: q('canal-ourcq-pantin.jpg', 'Le canal de l’Ourcq à Pantin, avec les Grands Moulins au fond', 'Le canal de l’Ourcq à Pantin, avec au fond la silhouette des Grands Moulins.', 'Claude Shoshany', 'CC BY 2.5', "Canal_de_l%27Ourcq_%C3%A0_Pantin.JPG"),
+      },
+      {
+        nom: 'Les coteaux de l’est parisien : Montreuil, Bagnolet et Les Lilas',
+        texte: `Immeubles anciens, pavillons, jardins en terrasse et parcs comme Jean-Moulin–Les Guilands, partagé entre Bagnolet et Montreuil, ou les Beaumonts : ici, nous traitons autant les caves d’immeuble que les jardins. Nos pages : ${l('montreuil', 'Montreuil')}, ${l('bagnolet', 'Bagnolet')} et ${l('les-lilas', 'Les Lilas')}.`,
+        photo: q('parc-des-beaumonts-montreuil.jpg', 'Le parc des Beaumonts à Montreuil', 'Le parc des Beaumonts à Montreuil : pelouses, bosquets et immeubles en lisière.', 'Damien Boilley', 'CC BY 2.0', 'Montreuil_parc_des_Beaumonts_1.jpg'),
+      },
+      {
+        nom: 'Le nord, la Seine et le parc Georges-Valbon',
+        texte: `Au nord-ouest, la Seine borde le département à hauteur de la boucle de Gennevilliers, le long d’Épinay-sur-Seine. Plus à l’est s’étend le parc Georges-Valbon, l’ancien parc départemental de La Courneuve. Grands ensembles, berges et zones d’activité : nous intervenons avec les bailleurs, les syndics et les professionnels. Notre page : ${l('epinay-sur-seine', 'Épinay-sur-Seine')}.`,
+        photo: q('parc-georges-valbon.jpg', 'Les pelouses du parc Georges-Valbon, ex-parc de La Courneuve', 'Le parc Georges-Valbon, ancien parc départemental de La Courneuve.', 'Claude Villetaneuse', 'CC BY-SA 3.0', 'Parc_de_la_Courneuve_-_01.JPG'),
+      },
+      {
+        nom: 'L’est pavillonnaire, le Sausset et la forêt de Bondy',
+        texte: `Vers l’est, les quartiers de pavillons, le canal de l’Ourcq à Aulnay-sous-Bois, le parc du Sausset, partagé entre Aulnay-sous-Bois et Villepinte, et la forêt de Bondy : les rats vivent dehors, près des **composts**, des **abris** et des **lisières**, puis entrent dans les maisons à l’automne. Nos pages : ${l('aulnay-sous-bois', 'Aulnay-sous-Bois')} et ${l('livry-gargan', 'Livry-Gargan')}.`,
+        photo: q('parc-du-sausset.jpg', 'Vue du parc départemental du Sausset', 'Le parc départemental du Sausset, entre Aulnay-sous-Bois et Villepinte.', 'Suaudeau', 'Domaine public', 'ParcDuSausset.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats en Seine-Saint-Denis (93) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement, partout dans le 93.' },
+      { t: 'Le diagnostic', x: 'Grand ensemble : vide-ordures, caves, local à poubelles. Immeuble ancien : caves, cour, gaines. Pavillon : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur en Seine-Saint-Denis (93) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats au vide-ordures ou dans les caves d’une cité', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages vers les logements.' },
+      { t: 'Des terriers dans le jardin d’un pavillon', x: 'Sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).' },
+      { t: 'Des rats près d’un canal ou d’une berge', x: 'Les logements proches de l’eau sont plus exposés : nous contrôlons caves, soupiraux et regards, puis rebouchons les passages ([mode de vie du rat](/blog/rat-mode-de-vie)).' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [souris en Seine-Saint-Denis](/souris/seine-saint-denis) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Des rongeurs dans un commerce ou un entrepôt', x: 'Commerces de bouche, marchés et zones d’activité : contrat de suivi, postes numérotés, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, bailleur : qui fait quoi en Seine-Saint-Denis (93)',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les cités, les caves, vide-ordures et locaux à poubelles se traitent à la demande du **bailleur** ; en copropriété, à celle du **syndic** ; une maison, à celle de son propriétaire.',
+      'Les **communes** agissent sur l’espace public et dans leurs bâtiments. Chez vous, dans votre cave ou votre jardin, c’est une entreprise de dératisation qui intervient. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates, et gardez une copie.',
+      `Nos villes du 93 les plus proches de notre base de Saint-Maurice : ${l('montreuil', 'Montreuil')}, ${l('bagnolet', 'Bagnolet')} et ${l('les-lilas', 'Les Lilas')}.`,
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation en Seine-Saint-Denis (93) ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris, au même prix dans les 39 communes. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous dans toutes les communes du 93 ?', a: 'Oui, dans les 39 communes de la Seine-Saint-Denis, souvent le jour même, depuis notre base de Saint-Maurice. Nous avons une page détaillée pour 8 d’entre elles, dont [Montreuil](/deratisation/montreuil) et [Aulnay-sous-Bois](/deratisation/aulnay-sous-bois).' },
+    { q: 'Pourquoi des rats près des canaux de la Seine-Saint-Denis ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales. Les canaux de l’Ourcq, Saint-Denis et de Chelles, la Seine et la Marne lui offrent berges et passages jusqu’aux caves.' },
+    { q: 'J’habite une cité : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'La mairie peut-elle dératiser chez moi ?', a: 'En général non : les communes traitent l’espace public et leurs bâtiments. Chez vous, dans votre cave ou votre jardin, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'Les grands parcs du 93 attirent-ils les rats vers les maisons ?', a: 'Les parcs, coulées vertes et lisières offrent des terriers aux rongeurs, qui se rapprochent des maisons voisines à l’automne. Fermez composts et abris, et faites contrôler le vide sanitaire.' },
+    { q: 'Intervenez-vous dans les commerces et les entrepôts du 93 ?', a: 'Oui : plan de lutte, postes numérotés, passages réguliers hors des heures d’ouverture, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'Proposez-vous une dératisation sans poison en Seine-Saint-Denis ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, pour les foyers avec enfants ou animaux, les écoles et les crèches.' },
+  ],
+  sources: [SSD_INSEE, LOI_1989, SPF_LEPTO, SSD_WIKI],
+}
+
 export const refonteDeratDep = (d: string) => REFONTE_DERAT_DEP[d as DepSlug]
 
 // Phrase d'accroche d'une ville refondue (partie après « : » du titre « Société de dératisation à X (CP) : … »),
