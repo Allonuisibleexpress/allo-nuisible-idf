@@ -5150,7 +5150,7 @@ REFONTE_DERATISATION['montrouge'] = {
         photo: wmt('square-renaudel.jpg', 'La pelouse et les arbres du square Renaudel à Montrouge', 'Le square Renaudel et son kiosque à musique.', 'Ralf.treinen', 'CC BY-SA 3.0', 'Montrouge_square_renaudel.jpg'),
       },
       {
-        nom: 'Autour du métro Mairie de Montrouge',
+        nom: 'Le quartier du métro Mairie de Montrouge',
         texte: 'Le long de la ligne 4 et des rues commerçantes : immeubles anciens, cafés et commerces de bouche. Réseaux, gaines et caves communiquent d’un immeuble à l’autre : le mieux est un traitement coordonné entre syndics voisins.',
         photo: wmt('metro-mairie-de-montrouge.jpg', 'L’accès à la station de métro Mairie de Montrouge et un immeuble ancien', 'L’accès à la station Mairie de Montrouge et les immeubles anciens du centre.', 'Fmjwiki', 'CC BY-SA 3.0', 'M%C3%A9tro_Mairie_de_Montrouge_acc%C3%A8s_sud(1).JPG'),
       },
