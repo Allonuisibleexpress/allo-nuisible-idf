@@ -4438,4 +4438,100 @@ REFONTE_DERATISATION['issy-les-moulineaux'] = {
   sources: [ISY_INSEE, ISY_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Clichy (27/11/2026) ──
+const CLI_WIKI: Source = { label: 'Wikipédia, Clichy (Seine, quartiers, parcs, lutte contre l’habitat indigne, OPAH et plans de sauvegarde)', url: 'https://fr.wikipedia.org/wiki/Clichy' }
+const CLI_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92024, Clichy', url: 'https://geo.api.gouv.fr/communes?code=92024&fields=nom,code,codesPostaux,population,surface' }
+const wcl = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/clichy/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['clichy'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Des quais de Seine, des immeubles anciens serrés, une longue lutte contre l’habitat dégradé et des parcs bâtis sur d’anciennes friches : à Clichy, les rats vivent dans les caves, les cours et les réseaux. Nous les traitons immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Clichy (92110) : une ville dense entre la Seine et Paris',
+    paras: [
+      'Clichy compte **64 410 habitants** sur **3,08 km²**, soit près de **20 900 habitants au km²**. La ville est limitée au nord-ouest par la **Seine**, face à Asnières-sur-Seine, au sud par le **17e arrondissement de Paris**, et voisine de Levallois-Perret et de Saint-Ouen. Ancienne ville de blanchisseries puis d’industries, elle garde de nombreux **immeubles anciens** et des façades Art nouveau et Art déco.',
+      'Clichy mène depuis longtemps une lutte contre l’**habitat indigne** : en 2003, **15 %** des résidences principales étaient considérées comme indignes par l’Anah, et entre 1986 et 2007, quatre opérations d’amélioration de l’habitat ont permis de rénover **571 immeubles**. Caves vétustes, cours, réseaux anciens, locaux à poubelles : pour une société de dératisation, ce sont les premiers points à contrôler, avec le **syndic** ou le **bailleur**.',
+      'Nous intervenons à Clichy depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Clichy](/punaises-de-lit/clichy) et [fourmis à Clichy](/fourmis/clichy).',
+    ],
+  },
+  chiffres: [
+    { valeur: '64 410', texte: 'habitants (population légale Insee), code postal 92110.', source: CLI_INSEE },
+    { valeur: '≈ 20 900', texte: 'habitants au km² (64 410 habitants sur 3,08 km²) : immeubles serrés, caves et cours partagées.', source: CLI_INSEE },
+    { valeur: '15 %', texte: 'des résidences principales considérées comme indignes par l’Anah en 2003, selon le plan local de l’habitat.', source: CLI_WIKI },
+    { valeur: '571', texte: 'immeubles rénovés (6 000 logements) entre 1986 et 2007 grâce aux opérations d’amélioration de l’habitat.', source: CLI_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Clichy : la ville quartier par quartier',
+    intro: 'L’Insee découpe Clichy en six grands quartiers : le **Centre-ville**, **Bac d’Asnières-Valiton-Fournier**, **Berges de Seine-Quartier Nord**, **Victor-Hugo-République**, **Entrée de ville** et **Moreuil-Gambetta**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les Berges de Seine et le quartier Nord',
+        texte: 'Le long du quai, face à Asnières, la Seine, ses berges arborées et les réseaux d’assainissement. Le surmulot vit au bord de l’eau et remonte par les égouts jusqu’aux caves des immeubles riverains. Nous contrôlons sous-sols et regards, puis rebouchons les passages.',
+        photo: wcl('quai-de-seine.jpg', 'Le quai le long de la Seine à Clichy, avec un camion d’assainissement', 'Le quai de Clichy le long de la Seine : berges arborées et réseaux d’assainissement.', 'Chabe01', 'CC BY-SA 4.0', 'Quai_Clichy_Charles_Gaulle_-_Clichy_(FR92)_-_2023-07-08_-_1.jpg'),
+      },
+      {
+        nom: 'Le parc des Impressionnistes, sur une ancienne friche',
+        texte: 'Inauguré en 2010 sur une **friche industrielle** de 5 hectares, le parc a été surélevé avec des remblais, dont les terres excavées lors de la construction de la tour Eiffel. Pelouses, talus et massifs : les rats creusent en bordure et gagnent les immeubles voisins. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wcl('parc-des-impressionnistes.jpg', 'La grande pelouse et l’allée du parc des Impressionnistes à Clichy', 'Le parc des Impressionnistes, bâti sur une ancienne friche industrielle.', 'Artvill', 'CC BY-SA 4.0', 'Parc_des_Impressionnistes_2021_11.jpg'),
+      },
+      {
+        nom: 'Victor-Hugo-République et le parc Roger-Salengro',
+        texte: 'Le **parc Roger-Salengro** (2,4 hectares), créé en 1897, garde des arbres centenaires ; autour, des immeubles anciens et des maisons bourgeoises. Caves voûtées, cours et jardins : nous traitons les sous-sols et les terriers au pied des murs. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wcl('parc-roger-salengro.jpg', 'Pelouse et grands arbres du parc Roger-Salengro à Clichy', 'Le parc Roger-Salengro et ses arbres centenaires.', 'Rlbberlin', 'CC0', 'Parc_Roger_Salengro,_Clichy_-_impression_1.jpg'),
+      },
+      {
+        nom: 'Le Centre-ville et Moreuil-Gambetta',
+        texte: 'Immeubles anciens, façades Art déco et copropriétés, dont certaines ont fait l’objet de **plans de sauvegarde** : caves vétustes, gaines et locaux à poubelles. La dératisation s’y fait en **copropriété**, cave par cave, idéalement en coordination avec les immeubles voisins.',
+        photo: wcl('facade-art-deco.jpg', 'Haut de façade Art déco d’un immeuble ancien à Clichy', 'Une façade Art déco : Clichy garde de nombreux immeubles anciens.', 'Lolo92110', 'CC BY-SA 4.0', 'Fa%C3%A7ade_art_d%C3%A9co_-_Clichy.jpg'),
+      },
+      {
+        nom: 'Bac d’Asnières, Valiton et l’entrée de ville',
+        texte: 'Rues commerçantes, restaurants, marchés et immeubles serrés jusqu’aux portes du 17e : les commerces de bouche attirent les rongeurs. Nous intervenons chez les **commerçants** avec plan des postes et attestation. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wcl('rue-henri-barbusse.jpg', 'Une rue commerçante bordée d’immeubles anciens à Clichy', 'Une rue commerçante de Clichy : immeubles anciens et commerces en rez-de-chaussée.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Henri_Barbusse_-_Clichy_(FR92)_-_2023-07-08_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Clichy (92110) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble ancien : caves, cour, gaines, soupiraux. Commerce : réserves et cuisine. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Clichy (92110) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble ancien', x: 'Caves vétustes et réseaux anciens offrent abri et passages : nous traitons tout le sous-sol avec le syndic, puis rebouchons les accès vers les logements et les caves voisines.' },
+      { t: 'Des rats dans un logement dégradé', x: 'Infiltrations, trous dans les cloisons, gaines ouvertes : le traitement va de pair avec le rebouchage. Locataire, signalez-le par écrit à votre bailleur, qui doit fournir un logement exempt de nuisibles.' },
+      { t: 'Des rongeurs dans un restaurant ou un commerce', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Clichy',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, cours et locaux à poubelles relèvent du **syndic** ; un commerce, de son exploitant.',
+      'La ville de Clichy dispose d’un **pôle hygiène** au sein de ses services de santé, et agit sur l’espace public et dans ses bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon). Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Levallois-Perret](/deratisation/levallois-perret), [Asnières-sur-Seine](/deratisation/asnieres-sur-seine) et [Paris 17e](/deratisation/paris-17). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Clichy ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, cave ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Mon immeuble est ancien et dégradé : les rats peuvent-ils revenir ?', a: 'Oui, si les passages restent ouverts. C’est pourquoi nous rebouchons trous, gaines et soupiraux après le traitement, et conseillons un traitement coordonné avec les immeubles voisins.' },
+    { q: 'Je suis locataire à Clichy : qui paie la dératisation ?', a: 'En règle générale le propriétaire : il doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). Les parties communes relèvent du syndic. Signalez le problème par écrit, avec photos.' },
+    { q: 'La Seine fait-elle venir les rats à Clichy ?', a: 'Le surmulot vit près de l’eau et circule par les égouts jusqu’aux caves ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles proches des berges doivent surveiller sous-sols et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Clichy ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CLI_INSEE, CLI_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
