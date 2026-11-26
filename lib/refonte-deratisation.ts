@@ -3959,4 +3959,100 @@ REFONTE_DERATISATION['colombes'] = {
   sources: [COL_INSEE, COL_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Courbevoie (27/11/2026) ──
+const CBV_WIKI: Source = { label: 'Wikipédia, Courbevoie (rive gauche de la Seine, La Défense, quartiers, ancien port, logement social)', url: 'https://fr.wikipedia.org/wiki/Courbevoie' }
+const CBV_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92026, Courbevoie', url: 'https://geo.api.gouv.fr/communes?code=92026&fields=nom,code,codesPostaux,population,surface' }
+const wcb = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/courbevoie/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['courbevoie'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Les tours de La Défense, un ancien port devenu promenade, des immeubles serrés le long de la Seine et le parc de Bécon : à Courbevoie, les rats vivent sous la dalle, dans les parkings et au bord du fleuve. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Courbevoie (92400) : entre la Seine et les tours de La Défense',
+    paras: [
+      'Courbevoie compte **82 902 habitants** sur **4,16 km²**, soit près de **19 900 habitants au km²**, à deux kilomètres de Paris. La ville s’étend sur la **rive gauche de la Seine**, du quartier d’affaires de **La Défense**, au sud, jusqu’à Asnières-sur-Seine, au nord ; le fleuve la borde au sud-est. Avant de devenir une ville de bureaux, Courbevoie vivait de la Seine et de son **port**.',
+      'Tours de bureaux, **parkings souterrains**, **restaurants d’entreprise**, immeubles d’habitation serrés et grands parcs : pour une société de dératisation, Courbevoie est d’abord une ville de **sous-sols**. Les rats y trouvent les réseaux, les locaux à poubelles et la nourriture des commerces ; les quais et les parcs leur offrent des terriers.',
+      'Nous intervenons à Courbevoie depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Courbevoie](/punaises-de-lit/courbevoie) et [fourmis à Courbevoie](/fourmis/courbevoie).',
+    ],
+  },
+  chiffres: [
+    { valeur: '82 902', texte: 'habitants (population légale Insee), code postal 92400.', source: CBV_INSEE },
+    { valeur: '≈ 19 900', texte: 'habitants au km² (82 902 habitants sur 4,16 km²) : immeubles, caves et parkings partagés.', source: CBV_INSEE },
+    { valeur: '2 km', texte: 'seulement séparent Courbevoie de Paris : la ville s’étend de La Défense à Asnières, le long de la Seine.', source: CBV_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Courbevoie : la ville quartier par quartier',
+    intro: 'La ville compte quatre quartiers : le **Faubourg de l’Arche**, **Bécon**, le **Cœur de Ville** et **Gambetta**, avec une partie du quartier d’affaires de **La Défense** et les bords de Seine. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les bords de Seine et l’ancien port',
+        texte: 'L’ancien port de Courbevoie a été transformé en **promenade piétonne**, avec un belvédère sur la Seine. Berges, pelouses et immeubles riverains : le surmulot vit au bord de l’eau et circule par les réseaux jusqu’aux caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages.',
+        photo: wcb('ancien-port-promenade.jpg', 'La promenade aménagée sur l’ancien port de Courbevoie, au bord de la Seine', 'L’ancien port de Courbevoie, devenu promenade piétonne avec un belvédère sur la Seine.', 'Agfrbr', 'CC BY-SA 4.0', "L%27ancien_port_de_Courbevoie_transform%C3%A9_en_promenade_pi%C3%A9tonne.JPG"),
+      },
+      {
+        nom: 'La Défense : tours, dalle et parkings',
+        texte: 'Une partie du quartier d’affaires de **La Défense** est sur le territoire de Courbevoie. Sous la dalle : parkings, livraisons, locaux techniques et restaurants. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés, passages hors des heures de service et attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wcb('courbevoie-la-defense-seine.jpg', 'Courbevoie et les tours de La Défense vus depuis le pont de Levallois', 'Courbevoie et La Défense vus du pont de Levallois, au bord de la Seine.', 'Poissons1957', 'CC BY 4.0', 'Courbevoie_et_La_D%C3%A9fense_vus_du_pont_de_Levallois.jpg'),
+      },
+      {
+        nom: 'Le Faubourg de l’Arche et le parc du Millénaire',
+        texte: 'Aménagé sur l’ancienne ZAC Danton, le **Faubourg de l’Arche** associe immeubles récents, bureaux et le **parc du Millénaire**. Parkings souterrains, locaux à poubelles et massifs : nous traitons les sous-sols avec le syndic et les jardins de résidence.',
+        photo: wcb('parc-du-millenaire.jpg', 'Le parc du Millénaire et les immeubles du Faubourg de l’Arche à Courbevoie', 'Le parc du Millénaire, au Faubourg de l’Arche, en janvier 2026.', 'Bretwa', 'CC0', 'Parc_du_Mill%C3%A9naire_at_Courbevoie_-_2026-01-03.jpg'),
+      },
+      {
+        nom: 'Bécon et son parc',
+        texte: 'Au nord, vers Asnières, le quartier de **Bécon** et son parc en terrasses : maisons, immeubles anciens et jardins. Les rats creusent au pied des murs et des massifs, puis passent par les soupiraux. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wcb('parc-de-becon.jpg', 'Escalier et façade en pierre dans le parc de Bécon à Courbevoie', 'Le parc de Bécon : terrasses, escaliers et massifs.', 'Moonik', 'CC BY-SA 3.0', 'Parc_de_B%C3%A9con_Courbevoie_002.jpg'),
+      },
+      {
+        nom: 'Le Cœur de Ville et Gambetta',
+        texte: 'Autour de l’ancien boulevard de Courbevoie, aujourd’hui boulevard de Verdun : immeubles anciens, commerces, marchés et restaurants. La dératisation s’y fait surtout en **copropriété**, cave par cave, et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wcb('boulevard-de-courbevoie-ancien.jpg', 'Carte postale ancienne du boulevard de Courbevoie et de son tramway', 'Le boulevard de Courbevoie, actuel boulevard de Verdun, sur une carte postale ancienne.', 'Carte postale ancienne, scan Claude_villetaneuse', 'Domaine public', 'ND_95_-_COURBEVOIE_-_Le_Boulevard_de_Courbevoie_et_la_Passerelle_de_la_Rue_Saint-Denis.JPG'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Courbevoie (92400) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Bureaux ou restaurant : réserves, cuisine, quais de livraison. Maison : jardin, abri, vide sanitaire.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Courbevoie (92400) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un parking souterrain', x: 'Le cas typique de Courbevoie : les parkings et locaux techniques communiquent avec les réseaux. Nous posons des postes numérotés sur tout le sous-sol, avec le syndic ou le gestionnaire.' },
+      { t: 'Des rongeurs dans un restaurant ou des bureaux', x: 'Restaurants d’entreprise, cafés et commerces : plan de lutte, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des rats dans la cave d’un immeuble ancien', x: 'Près de la Seine, caves et réseaux anciens offrent abri et passages : nous traitons tout le sous-sol puis rebouchons les accès.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Courbevoie',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans un immeuble de bureaux, du **gestionnaire** ou du propriétaire ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Puteaux](/deratisation/puteaux), [Neuilly-sur-Seine](/deratisation/neuilly-sur-seine), [Levallois-Perret](/deratisation/levallois-perret), [Asnières-sur-Seine](/deratisation/asnieres-sur-seine), [La Garenne-Colombes](/deratisation/la-garenne-colombes) et [Nanterre](/deratisation/nanterre). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Courbevoie ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, parking, bureaux ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Des rats dans le parking de ma résidence : qui paie ?', a: 'Le parking est une partie commune : c’est au syndic d’organiser et de financer le traitement. Si vous êtes locataire, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).' },
+    { q: 'Intervenez-vous dans les bureaux et restaurants de La Défense ?', a: 'Oui : plan de lutte, postes numérotés, passages hors des heures de service, registre et attestation pour vos contrôles d’hygiène. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'La Seine fait-elle venir les rats à Courbevoie ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales jusqu’aux caves ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles proches des berges doivent surveiller sous-sols et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Courbevoie ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CBV_INSEE, CBV_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]

@@ -40,7 +40,7 @@ function Figure({ img }: { img: Img }) {
 export function RefonteEssentiel({ r, slug, nom, a, cp }: Ctx) {
   const km = REPERES[slug]?.km
   // 27/11/2026 : article en minuscule en milieu de phrase (« le canal », « le Mont-Mesly »), sauf noms de communes (« La Varenne », « Le Perreux »), et pas de deux-points imbriqué
-  const zones = r.quartiers.zones.slice(0, 3).map((z) => z.nom.replace(/\s*\(.*\)$/, '').replace(' : ', ', ').replace(/^(Le |La |Les |L’)(?!(Varenne|Kremlin|Perreux|Plessis|Lilas|Courneuve|Garenne|Queue|Bourget|Mureaux|Vésinet|Haÿ)\b)/, (m) => m.toLowerCase())).join(' ; ')
+  const zones = r.quartiers.zones.slice(0, 3).map((z) => z.nom.replace(/\s*\(.*\)$/, '').replace(' : ', ', ').replace(/^(Le |La |Les |L’)(?!(Varenne|Kremlin|Perreux|Plessis|Lilas|Courneuve|Garenne|Queue|Bourget|Mureaux|Vésinet|Haÿ|Défense)\b)/, (m) => m.toLowerCase())).join(' ; ')
   const k = h(slug) % 2
   const points = [
     `**Prix** : à partir de **120 € TTC** pour un appartement ${a} (${cp}), rats ou souris. Devis gratuit, donné avant l’intervention.`,
