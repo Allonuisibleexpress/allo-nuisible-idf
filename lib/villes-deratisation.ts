@@ -1512,6 +1512,25 @@ export const VILLES_DERATISATION: VilleDeratisation[] = [
       ...FAQ_COMMUNE('à Bagneux'),
     ],
   },
+  // 27/11/2026 (demande de l'utilisateur) : page dédiée au quartier d'affaires de La Défense (Puteaux, Courbevoie, Nanterre,
+  // La Garenne-Colombes) ; pas de code postal unique, donc pas de code dans le titre. Contenu : lib/refonte-deratisation.ts.
+  {
+    slug: 'la-defense',
+    nom: 'La Défense',
+    a: 'à La Défense',
+    code: '92',
+    departement: 'Hauts-de-Seine',
+    zoneHref: '/zones/hauts-de-seine',
+    title: 'Dératisation à La Défense (92), bureaux, restaurants, parkings',
+    description: 'Dératisation à La Défense : parkings sous la dalle, restaurants, bureaux et résidences. Postes sécurisés, pièges, attestation. Devis gratuit.',
+    contexte: [
+      'La Défense s\'étend sur Puteaux, Courbevoie, Nanterre et La Garenne-Colombes : tours de bureaux, restaurants, centre commercial, logements et parkings sous la dalle.',
+    ],
+    lieux: ['Parkings et livraisons sous la dalle', 'Restaurants et commerces', 'Locaux techniques', 'Caves des résidences'],
+    proches: ['Puteaux', 'Courbevoie', 'Nanterre', 'La Garenne-Colombes'],
+    guides: ['restaurant-plan-lutte-nuisibles', 'rongeur-moteur-voiture-cables', 'rat-mode-de-vie'],
+    faq: [],
+  },
   {
     slug: 'puteaux',
     nom: 'Puteaux',

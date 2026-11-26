@@ -3752,7 +3752,7 @@ REFONTE_DERATISATION['nanterre'] = {
     paras: [
       'À Nanterre, près des trois quarts des habitants ne sont pas propriétaires de leur logement. La **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les cités, les caves, vide-ordures et locaux à poubelles se traitent à la demande du **bailleur** ; en copropriété, à celle du **syndic** ; une maison, à celle de son propriétaire.',
       'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
-      'Nous intervenons aussi tout autour : [Rueil-Malmaison](/deratisation/rueil-malmaison), [Suresnes](/deratisation/suresnes), [Puteaux](/deratisation/puteaux), [Courbevoie](/deratisation/courbevoie), [La Garenne-Colombes](/deratisation/la-garenne-colombes) et [Colombes](/deratisation/colombes). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+      'Nous intervenons aussi tout autour : [La Défense](/deratisation/la-defense), [Rueil-Malmaison](/deratisation/rueil-malmaison), [Suresnes](/deratisation/suresnes), [Puteaux](/deratisation/puteaux), [Courbevoie](/deratisation/courbevoie), [La Garenne-Colombes](/deratisation/la-garenne-colombes) et [Colombes](/deratisation/colombes). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
     ],
   },
   faq: [
@@ -3995,7 +3995,7 @@ REFONTE_DERATISATION['courbevoie'] = {
       },
       {
         nom: 'La Défense : tours, dalle et parkings',
-        texte: 'Une partie du quartier d’affaires de **La Défense** est sur le territoire de Courbevoie. Sous la dalle : parkings, livraisons, locaux techniques et restaurants. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés, passages hors des heures de service et attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        texte: 'Une partie du quartier d’affaires de **La Défense** est sur le territoire de Courbevoie. Sous la dalle : parkings, livraisons, locaux techniques et restaurants. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés, passages hors des heures de service et attestation. Notre page dédiée : [dératisation à La Défense](/deratisation/la-defense).',
         photo: wcb('courbevoie-la-defense-seine.jpg', 'Courbevoie et les tours de La Défense vus depuis le pont de Levallois', 'Courbevoie et La Défense vus du pont de Levallois, au bord de la Seine.', 'Poissons1957', 'CC BY 4.0', 'Courbevoie_et_La_D%C3%A9fense_vus_du_pont_de_Levallois.jpg'),
       },
       {
@@ -4149,6 +4149,101 @@ REFONTE_DERATISATION['rueil-malmaison'] = {
     { q: 'Intervenez-vous vite à Rueil-Malmaison ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
   ],
   sources: [RUE_INSEE, RUE_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
+// ── La Défense (27/11/2026, page dédiée demandée par l'utilisateur) ──
+const LD_WIKI: Source = { label: 'Wikipédia, La Défense (communes, 160 hectares, dalle de 31 hectares, entreprises, salariés, habitants, secteurs, parkings sous la dalle)', url: 'https://fr.wikipedia.org/wiki/La_D%C3%A9fense' }
+const wld = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/la-defense/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['la-defense'] = {
+  maj: '2026-11-27',
+  quiPaie: '**Qui paie** : dans un immeuble de bureaux, le **propriétaire** ou le **gestionnaire** de l’immeuble pour les parties communes, chaque entreprise pour ses locaux ; dans un restaurant, l’exploitant ; dans un logement loué, le bailleur (loi du 6 juillet 1989, **article 6**).',
+  reglement: REGLEMENT_92,
+  accroche: '200 000 salariés, 2 800 entreprises, des restaurants à chaque étage et une dalle de 31 hectares posée sur des parkings et des livraisons : à La Défense, les rats vivent sous vos pieds. Nous intervenons dans les bureaux, les restaurants, les parkings et les résidences du quartier.',
+  societe: {
+    titre: 'Société de dératisation à La Défense (92) : le premier quartier d’affaires, de Puteaux à Nanterre',
+    paras: [
+      '**La Défense** s’étend sur **160 hectares** et sur quatre communes des Hauts-de-Seine : **Puteaux**, **Courbevoie**, **Nanterre** et **La Garenne-Colombes**. En 2025, le quartier comptait environ **2 800 entreprises**, **200 000 salariés**, **70 000 étudiants** et **50 000 habitants**, avec **61 immeubles de grande hauteur** et près de trois millions de mètres carrés de bureaux.',
+      'Le quartier repose sur une **dalle piétonne de 31 hectares**, surélevée par rapport au sol naturel : les **circulations automobiles**, les **livraisons** et les **parkings** sont placés **sous la dalle** ou en périphérie, le long du boulevard circulaire. Restaurants d’entreprise, cafés, centre commercial, locaux à déchets et réseaux : pour un rat, c’est un garde-manger relié à des kilomètres de sous-sols. Pour une société de dératisation, c’est un travail de **plan de lutte**, avec suivi et traçabilité.',
+      'Nous intervenons à La Défense depuis notre base de **Saint-Maurice**, 7 jours sur 7, de nuit ou hors des heures d’ouverture si besoin.',
+      'Nos pages pour les communes du quartier : [dératisation à Puteaux](/deratisation/puteaux), [dératisation à Courbevoie](/deratisation/courbevoie), [dératisation à Nanterre](/deratisation/nanterre) et [dératisation à La Garenne-Colombes](/deratisation/la-garenne-colombes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '200 000', texte: 'salariés environ dans 2 800 entreprises (2025) : autant de cuisines, de cafés et de déchets alimentaires chaque jour.', source: LD_WIKI },
+    { valeur: '31 ha', texte: 'de dalle piétonne surélevée, avec parkings, livraisons et circulations automobiles en dessous.', source: LD_WIKI },
+    { valeur: '4 communes', texte: 'se partagent le quartier : Puteaux, Courbevoie, Nanterre et La Garenne-Colombes, sur 160 hectares.', source: LD_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à La Défense : le quartier secteur par secteur',
+    intro: 'Depuis 2011, La Défense est divisée en quatre grands secteurs : **Arche Nord**, **Arche Sud**, **Esplanade Nord** et **Esplanade Sud**. Mais pour les rongeurs, ce qui compte, c’est ce qui se passe sous la dalle. Voici les points que nous contrôlons.',
+    zones: [
+      {
+        nom: 'Le dessous de la dalle : parkings, livraisons et locaux techniques',
+        texte: 'La séparation des flux place voitures, camions de livraison et parkings sous la dalle. Quais de livraison, locaux à déchets, gaines et réseaux d’assainissement forment un milieu sombre et abrité, relié aux cuisines. Nous posons des **postes numérotés**, avec un plan de localisation, sur tous les points de passage.',
+        photo: wld('boulevard-circulaire.jpg', 'Le boulevard circulaire de La Défense entre les tours, côté Courbevoie', 'Le boulevard circulaire, côté Courbevoie : accès aux parkings et aux livraisons sous la dalle.', 'VVVCFFrance', 'CC BY-SA 4.0', 'Boulevard_circulaire_de_la_D%C3%A9fense_%C3%A0_Courbevoie.jpg'),
+      },
+      {
+        nom: 'L’Esplanade et le parvis',
+        texte: 'Sur la dalle, bassins, jardins suspendus, terrasses de café et poubelles de rue : les miettes et les restes de repas attirent rats et pigeons. Les rongeurs remontent par les grilles, les trémies et les joints de dalle. Nous traitons les accès et proposons un suivi aux gestionnaires d’espaces.',
+        photo: wld('parvis-grande-arche.jpg', 'Le parvis de La Défense et les tours vus depuis la Grande Arche', 'Le parvis de La Défense, entre la Grande Arche et les tours.', 'Guilhem Vellut', 'CC BY 2.0', 'Parvis_@_Grande_Arche_@_La_D%C3%A9fense_@_Paris_(35053652091).jpg'),
+      },
+      {
+        nom: 'Les tours de bureaux et leurs restaurants d’entreprise',
+        texte: 'Cuisines collectives, cafétérias, offices d’étage et salles de pause : une souris installée dans un faux plafond ou une gaine peut circuler d’un étage à l’autre. Nous intervenons **hors des heures de service**, avec registre des passages et **attestation** pour vos contrôles d’hygiène. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wld('esplanade-vue-grande-arche.jpg', 'L’esplanade de La Défense et ses tours vues depuis le toit de la Grande Arche', 'L’esplanade et les tours de bureaux vues depuis la Grande Arche.', 'Dev Jadiya', 'CC BY-SA 4.0', 'View_from_the_Grande_Arche_platform_looking_down_Esplanade_de_La_D%C3%A9fense_-_July_2026_01.jpg'),
+      },
+      {
+        nom: 'Les Jardins de l’Arche, côté Nanterre',
+        texte: 'Les Jardins de l’Arche relient La Défense à Nanterre, avec de grands équipements, des résidences et des espaces verts. Pelouses, massifs et chantiers : les rats creusent leurs terriers en bordure et gagnent les sous-sols voisins. Voir aussi [dératisation à Nanterre](/deratisation/nanterre).',
+        photo: wld('jardins-de-l-arche.jpg', 'L’allée des Jardins de l’Arche à Nanterre, au pied de La Défense', 'Les Jardins de l’Arche, côté Nanterre.', 'Chabe01', 'CC BY-SA 4.0', 'Jardins_Arche_-_Nanterre_(FR92)_-_2023-09-16_-_1.jpg'),
+      },
+      {
+        nom: 'Les résidences et les bords de Seine',
+        texte: 'La Défense compte aussi environ **50 000 habitants**, dans des résidences de Puteaux et Courbevoie, jusqu’aux bords de Seine. Caves, parkings résidentiels et locaux à poubelles : le traitement se fait avec le **syndic**, puis nous rebouchons les passages vers les logements. Voir [dératisation à Puteaux](/deratisation/puteaux).',
+        photo: wld('la-defense-depuis-la-seine.jpg', 'Les tours de La Défense vues depuis le bord de la Seine', 'Les tours de La Défense vues depuis la Seine.', 'GFreihalter', 'CC BY-SA 4.0', 'Neuilly-sur-Seine_(92)_La_D%C3%A9fense_519.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à La Défense (92) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Un appel, un devis', x: 'Décrivez le site (bureaux, restaurant, parking, résidence) ou envoyez une photo : devis gratuit, prix annoncé avant l’intervention. Dès 120 € pour un appartement.' },
+      { t: 'L’audit du site', x: 'Cuisines, réserves, locaux à déchets, quais de livraison, gaines et faux plafonds : nous repérons les traces, les points d’entrée et les zones à risque.' },
+      { t: 'Le plan de lutte', x: 'Postes d’appâtage verrouillés et numérotés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide, sur plan de localisation.' },
+      { t: 'Suivi et attestation', x: 'Passages réguliers hors des heures de service, registre, rapport et attestation pour vos contrôles d’hygiène. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à La Défense (92) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des souris dans un restaurant d’entreprise', x: 'Crottes dans une réserve, emballages percés : nous intervenons hors service, posons le dispositif et rebouchons les passages autour des tuyaux et des gaines.' },
+      { t: 'Des rats dans un parking ou un quai de livraison', x: 'Sous la dalle, les rats circulent entre les locaux à déchets et les réseaux. Postes numérotés sur tout le niveau, en lien avec le gestionnaire du parking ou de l’immeuble.' },
+      { t: 'Des rongeurs dans un commerce de bouche', x: 'Boulangerie, restauration rapide, épicerie : plan des postes, passages planifiés, attestation. Voir [nos services aux professionnels](/professionnels).' },
+      { t: 'Des câbles rongés dans un local technique', x: 'Les incisives du rat poussent en continu : un local électrique ou informatique fréquenté par des rongeurs présente un vrai risque. Nous traitons et bouchons les accès.' },
+      { t: 'Des rats dans la cave d’une résidence', x: 'Pour les 50 000 habitants du quartier : traitement des caves et locaux à poubelles avec le syndic, puis rebouchage des passages vers les logements.' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, gestionnaire, syndic : qui fait quoi à La Défense',
+    paras: [
+      'À La Défense, la lutte contre les rongeurs se joue d’abord **à l’échelle de l’immeuble**. Dans une tour de bureaux, le **propriétaire** ou le **gestionnaire** organise le traitement des parties communes (parkings, locaux à déchets, locaux techniques) ; chaque **entreprise** et chaque **restaurant** traite ses propres locaux et doit pouvoir le justifier lors d’un contrôle d’hygiène.',
+      'Dans une résidence, les parties communes relèvent du **syndic** ; dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Les communes agissent sur l’espace public, et le **règlement sanitaire départemental des Hauts-de-Seine** interdit de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon).',
+      'Toutes nos villes du département : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine). Pour les entreprises : [nos services aux professionnels](/professionnels).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à La Défense ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement. Bureaux, restaurant, parking ou contrat de suivi annuel : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Intervenez-vous hors des heures de bureau à La Défense ?', a: 'Oui : tôt le matin, le soir, la nuit ou le week-end, sans majoration, pour ne pas gêner vos équipes ni vos clients.' },
+    { q: 'Fournissez-vous une attestation pour un contrôle d’hygiène ?', a: 'Oui : plan de localisation des postes, registre des passages, rapport et attestation, pour les restaurants, cuisines collectives et commerces de bouche. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { q: 'Qui paie la dératisation d’un parking sous la dalle ?', a: 'Le propriétaire ou le gestionnaire du parking ou de l’immeuble, qui organise le traitement des parties communes. Chaque entreprise ou restaurant traite ses propres locaux.' },
+    { q: 'Proposez-vous un contrat annuel pour une entreprise ?', a: 'Oui : visites régulières, postes numérotés, rapport après chaque passage et intervention rapide en cas de signalement. Voir [nos services aux professionnels](/professionnels).' },
+    { q: 'Peut-on dératiser sans poison dans un restaurant ?', a: 'Oui : pièges mécaniques, pièges connectés, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, compatibles avec une cuisine en activité.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à La Défense ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [LD_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]

@@ -165,7 +165,7 @@ REFONTE_DERAT_DEP['hauts-de-seine'] = {
       },
       {
         nom: 'Neuilly, La Défense et le mont Valérien',
-        texte: `Quais de Seine, immeubles de bureaux, restaurants et galeries commerciales autour de La Défense, puis les coteaux de Suresnes et de Rueil au pied du mont Valérien. Ici, la dératisation concerne autant les **professionnels** que les copropriétés. Nos pages : ${l('neuilly-sur-seine', 'Neuilly-sur-Seine')}, ${l('courbevoie', 'Courbevoie')}, ${l('puteaux', 'Puteaux')}, ${l('nanterre', 'Nanterre')}, ${l('suresnes', 'Suresnes')} et ${l('rueil-malmaison', 'Rueil-Malmaison')}. Voir aussi [dératisation pour les professionnels](/professionnels).`,
+        texte: `Quais de Seine, immeubles de bureaux, restaurants et galeries commerciales autour de La Défense, puis les coteaux de Suresnes et de Rueil au pied du mont Valérien. Ici, la dératisation concerne autant les **professionnels** que les copropriétés. Nos pages : ${l('neuilly-sur-seine', 'Neuilly-sur-Seine')}, ${l('courbevoie', 'Courbevoie')}, ${l('puteaux', 'Puteaux')}, ${l('nanterre', 'Nanterre')}, ${l('suresnes', 'Suresnes')} et ${l('rueil-malmaison', 'Rueil-Malmaison')}. Notre page dédiée au quartier d’affaires : [dératisation à La Défense](/deratisation/la-defense).`,
         photo: { src: '/departements/hauts-de-seine/quais-de-seine-courbevoie.jpg', alt: 'Les quais de Seine à Courbevoie, avec les tours de La Défense au loin', legende: 'Les quais de Seine à Courbevoie, près de l’île de la Jatte : berges et immeubles riverains.', credit: 'Clicsouris', licence: 'CC BY-SA 2.5', page: 'https://commons.wikimedia.org/wiki/File:Courbevoie_-_Quais_de_Seine_-_panoramique_01.jpg' },
       },
       {
