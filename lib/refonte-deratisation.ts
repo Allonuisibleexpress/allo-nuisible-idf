@@ -3863,4 +3863,100 @@ REFONTE_DERATISATION['asnieres-sur-seine'] = {
   sources: [ASN_INSEE, ASN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Colombes (27/11/2026) ──
+const COL_WIKI: Source = { label: 'Wikipédia, Colombes (plateau calcaire et bords de Seine inondables, carrières, quartiers, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Colombes' }
+const COL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92025, Colombes', url: 'https://geo.api.gouv.fr/communes?code=92025&fields=nom,code,codesPostaux,population,surface' }
+const wc = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/colombes/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['colombes'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Au nord, des bords de Seine inondables où la digue a cédé en 1910 ; au sud, un plateau calcaire creusé d’anciennes carrières ; entre les deux, des milliers de pavillons et de grands ensembles : à Colombes, les rats ont des jardins et des caves partout. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Colombes (92700) : la première commune pavillonnaire de la petite couronne',
+    paras: [
+      'Colombes compte **91 053 habitants** sur **7,8 km²**, dans la **boucle nord** des Hauts-de-Seine. Son territoire réunit deux ensembles : au sud, un **plateau calcaire** ; au nord, des **bords de Seine** alluviaux, de basse altitude, situés en **zone inondable**. Entre les deux, on a exploité des **carrières** et des **sablières**, comme aux Côtes d’Auty, jusqu’au début du XXe siècle.',
+      'Colombes est présentée comme la **première commune pavillonnaire de la petite couronne** : en 2018, **25,2 % des logements** étaient des maisons et **73,8 %** des appartements, et **45,8 %** des habitants étaient propriétaires. Pour une société de dératisation, cela veut dire autant de **jardins**, de **vide sanitaires** et de **garages** que de **caves d’immeubles** et de **locaux à poubelles**.',
+      'Nous intervenons à Colombes depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Colombes](/punaises-de-lit/colombes) et [fourmis à Colombes](/fourmis/colombes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '91 053', texte: 'habitants (population légale Insee), code postal 92700.', source: COL_INSEE },
+    { valeur: '25,2 %', texte: 'des logements sont des maisons individuelles (2018) : jardins, abris et vide sanitaires à surveiller.', source: COL_WIKI },
+    { valeur: '1910', texte: 'rupture de la digue lors de la crue de la Seine : le nord de la commune reste en zone inondable.', source: COL_WIKI },
+    { valeur: '3 quartiers', texte: 'en renouvellement urbain : les Grèves, les Fossés-Jean et Europe-Île-Marante.', source: COL_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Colombes : la ville quartier par quartier',
+    intro: 'L’Insee découpe Colombes en quatre grands quartiers : **Wiener-Centre-ville-Champarons**, **Europe-Gare du Stade-Fossés-Jean**, **les Grèves-Plateau-Moslard** et **Petit-Colombes**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le nord inondable et les bords de Seine',
+        texte: 'Au nord, les terrains bas au bord de la Seine sont en **zone inondable** ; en janvier 1910, la digue a cédé. Berges, réseaux et sous-sols humides : le surmulot y circule et remonte vers les caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages, en particulier après une montée des eaux.',
+        photo: wc('crue-1910-digue.jpg', 'Carte postale de la rupture de la digue à Colombes en janvier 1910', 'Janvier 1910 : la digue cède et le nord de Colombes est inondé.', 'Carte postale ancienne, versée par G. Garitan', 'CC BY-SA 4.0', 'Janv_1910_Colombes_rupture_digue_1404858.jpg'),
+      },
+      {
+        nom: 'Les Grèves, les Côtes d’Auty et les anciennes carrières',
+        texte: 'Sur le coteau entre plateau et Seine, d’anciennes carrières et sablières ont laissé place à des **grands ensembles**, comme la cité des Côtes d’Auty. Caves, vide-ordures et locaux à poubelles : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: wc('cite-cotes-d-auty.jpg', 'Les immeubles de la cité des Côtes d’Auty à Colombes', 'La cité des Côtes d’Auty, grand ensemble bâti sur le coteau.', 'AL', 'CC BY 3.0', "Cit%C3%A9_c%C3%B4te_d%27Auty.JPG"),
+      },
+      {
+        nom: 'Le Plateau et les quartiers pavillonnaires',
+        texte: 'Au sud, sur le plateau calcaire, des rues entières de **pavillons avec jardin**. Les rats creusent sous les abris, au pied des haies et près des composts, puis entrent par le vide sanitaire ou le garage. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wc('quartier-du-plateau.jpg', 'Vue sur les toits des pavillons du quartier du Plateau à Colombes', 'Le quartier du Plateau : une mer de pavillons avec jardin.', 'AL', 'CC BY 3.0', 'Colombesplateau.JPG'),
+      },
+      {
+        nom: 'Le Centre-ville et la gare',
+        texte: 'Autour de la gare, créée en 1854, l’habitat est dense : immeubles anciens, commerces et restaurants. La dératisation s’y fait surtout en **copropriété**, cave par cave, et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wc('gare-de-colombes.jpg', 'Les voies ferrées et les immeubles près de la gare de Colombes', 'Les abords de la gare de Colombes : voies, talus et immeubles riverains.', 'Clicsouris', 'CC BY-SA 3.0', 'Gare_de_Colombes_01.jpg'),
+      },
+      {
+        nom: 'Europe, Île-Marante et le stade Yves-du-Manoir',
+        texte: 'Au nord-ouest, le quartier Europe-Île-Marante, en rénovation, et le stade olympique **Yves-du-Manoir**, en reconversion. Chantiers, grands espaces verts et résidences : les travaux dérangent les rongeurs, qui gagnent les immeubles voisins. Faites contrôler caves et regards si des rats apparaissent.',
+        photo: wc('stade-yves-du-manoir.jpg', 'Les tribunes et la pelouse du stade Yves-du-Manoir à Colombes', 'Le stade olympique Yves-du-Manoir.', 'Dr.Clint.Beans', 'CC BY-SA 3.0', 'Stade_Yves_du_Manoir_Colombes6.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Colombes (92700) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire, garage. Grand ensemble : vide-ordures, caves, local à poubelles. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Colombes (92700) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Le cas le plus fréquent à Colombes : terriers sous l’abri, au pied de la haie ou près du compost. Nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rats au vide-ordures d’un grand ensemble', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages vers les logements.' },
+      { t: 'Des rats dans une cave après une crue', x: 'Au nord de la ville, la montée de la Seine chasse les rats des berges vers les sous-sols : nous traitons la cave entière puis rebouchons les passages.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans une maison', x: 'Elles passent par les bas de portes, les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Colombes',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans les grands ensembles, les caves, vide-ordures et locaux à poubelles se traitent à la demande du **bailleur** ; en copropriété, à celle du **syndic** ; un pavillon, à celle de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [La Garenne-Colombes](/deratisation/la-garenne-colombes), [Nanterre](/deratisation/nanterre), [Gennevilliers](/deratisation/gennevilliers), [Asnières-sur-Seine](/deratisation/asnieres-sur-seine), [Courbevoie](/deratisation/courbevoie) et [Bezons](/deratisation/bezons). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Colombes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des rats dans mon jardin à Colombes : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès au vide sanitaire pour que les rats n’entrent pas dans la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'J’habite près de la Seine : suis-je plus exposé ?', a: 'Oui : le nord de Colombes est en zone inondable, et le surmulot vit près de l’eau ([mode de vie du rat](/blog/rat-mode-de-vie)). Après une crue ou de fortes pluies, faites contrôler caves et regards.' },
+    { q: 'J’habite aux Fossés-Jean ou aux Grèves : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Colombes ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [COL_INSEE, COL_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
