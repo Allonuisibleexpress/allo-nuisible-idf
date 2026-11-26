@@ -4918,4 +4918,100 @@ REFONTE_DERATISATION['gennevilliers'] = {
   sources: [GEN_INSEE, GEN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Suresnes (27/11/2026) ──
+const SUR_WIKI: Source = { label: 'Wikipédia, Suresnes (Seine et écluse, mont Valérien, bas de Suresnes et plateaux, quartiers, cité-jardins, logement, crue de 1910)', url: 'https://fr.wikipedia.org/wiki/Suresnes' }
+const SUR_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92073, Suresnes', url: 'https://geo.api.gouv.fr/communes?code=92073&fields=nom,code,codesPostaux,population,surface' }
+const wsu = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/suresnes/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['suresnes'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Des quais et une écluse sur la Seine en bas, le mont Valérien en haut, une cité-jardins et ses jardins familiaux entre les deux : à Suresnes, les rats remontent des berges et les rongeurs descendent des coteaux. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Suresnes (92150) : de la Seine au mont Valérien',
+    paras: [
+      'Suresnes compte **48 956 habitants** sur **3,80 km²**, entièrement sur la **rive gauche de la Seine**, face au bois de Boulogne. La ville s’étage sur les pentes du **mont Valérien** : le **bas de Suresnes**, le long du fleuve, et les **plateaux**, en hauteur, séparés par les voies ferrées des coteaux. Comme les villes voisines, Suresnes a été touchée par la **crue de 1910**.',
+      'Les logements sont à **85,4 % des appartements** et **13 %** des maisons. La ville est connue pour sa **cité-jardins**, construite dans l’entre-deux-guerres, avec ses jardins familiaux, et pour ses parcs en terrasses. Pour une société de dératisation, ce sont autant de **caves** et de **locaux à poubelles** de résidences que de **jardins**, de **composts** et de **talus** où les rats creusent.',
+      'Nous intervenons à Suresnes depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Suresnes](/punaises-de-lit/suresnes) et [fourmis à Suresnes](/fourmis/suresnes).',
+    ],
+  },
+  chiffres: [
+    { valeur: '48 956', texte: 'habitants (population légale Insee), code postal 92150.', source: SUR_INSEE },
+    { valeur: '85,4 %', texte: 'des logements sont des appartements et 13 % des maisons : caves, cours et jardins à surveiller.', source: SUR_WIKI },
+    { valeur: '6 quartiers', texte: 'du bord de Seine au mont Valérien : Centre-ville, Écluse-Belvédère, République, Liberté, Mont-Valérien et Cité-jardins.', source: SUR_WIKI },
+    { valeur: '1910', texte: 'crue de la Seine : Suresnes a été touchée comme les villes voisines situées le long du fleuve.', source: SUR_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Suresnes : la ville quartier par quartier',
+    intro: 'Suresnes compte six quartiers : le **Centre-ville**, **Écluse-Belvédère**, **République**, **Liberté**, **Mont-Valérien** et la **Cité-jardins**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les quais de Seine et le bas de Suresnes',
+        texte: 'Le long du **quai Gallieni** et des quais bas, la Seine, ses berges arborées et les immeubles du bas de la ville. Le surmulot vit au bord de l’eau et remonte par les réseaux jusqu’aux caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages, en particulier après une montée des eaux.',
+        photo: wsu('quai-bas-barrage.jpg', 'Le quai bas de Suresnes au bord de la Seine, avec le barrage au loin', 'Le quai bas de Suresnes, avec le barrage en arrière-plan.', 'Celette', 'CC BY-SA 4.0', 'Quais_de_Suresnes_51.jpg'),
+      },
+      {
+        nom: 'Écluse-Belvédère',
+        texte: 'Autour de l’**écluse de Suresnes** et du tramway, des immeubles, des bureaux et des berges aménagées. Quais, locaux techniques et parkings : nous intervenons en copropriété et chez les professionnels. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wsu('ecluse-de-suresnes.jpg', 'L’écluse de Suresnes sur la Seine, avec les tours de La Défense au loin', 'L’écluse de Suresnes sur la Seine, avec La Défense à l’horizon.', 'Moonik', 'CC BY-SA 3.0', 'Suresnes_-_%C3%89cluse_de_Suresnes_001.JPG'),
+      },
+      {
+        nom: 'La Cité-jardins et ses jardins familiaux',
+        texte: 'La **cité-jardins** de Suresnes, avec ses immeubles de brique et ses **jardins familiaux**, est un ensemble d’habitat social. Potagers, cabanes et composts d’un côté, caves et locaux à poubelles de l’autre : le traitement se fait avec le **bailleur** pour les parties communes, et nous conseillons les jardiniers. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wsu('cite-jardins-jardins-familiaux.jpg', 'Jardins familiaux et immeubles de brique de la cité-jardins de Suresnes', 'Les jardins familiaux de la cité-jardins.', 'Remi Jouan', 'CC BY-SA 3.0', 'Suresnes_-_Jardins_familiaux_(2).JPG'),
+      },
+      {
+        nom: 'Le Mont-Valérien et les coteaux',
+        texte: 'Sur les pentes du **mont Valérien**, partagé avec Nanterre et Rueil-Malmaison, des pavillons, des résidences et des jardins en pente, le long des voies ferrées. Talus et jardins forment des couloirs pour les rongeurs, qui gagnent garages et vide sanitaires. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wsu('gare-mont-valerien.jpg', 'La gare de Suresnes-Mont-Valérien entre les talus boisés', 'La gare de Suresnes-Mont-Valérien, entre talus boisés et maisons.', 'Geralix', 'CC BY-SA 3.0', 'Gare_de_Suresnes-Mont-Val%C3%A9rien_02.jpg'),
+      },
+      {
+        nom: 'Le Centre-ville, République et Liberté',
+        texte: 'Autour de la mairie et des rues commerçantes, immeubles anciens, commerces, marchés et le **parc des Landes** et ses massifs fleuris. Caves, cours et locaux à poubelles : la dératisation se fait surtout en **copropriété** et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wsu('parc-des-landes.jpg', 'Les massifs fleuris du parc des Landes à Suresnes', 'Le parc des Landes et ses massifs fleuris.', 'Celette', 'CC BY-SA 4.0', 'Massifs_floraux_Landes_Suresnes_2.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Suresnes (92150) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, local à poubelles, gaines. Pavillon des coteaux : jardin, abri, vide sanitaire. Bord de Seine : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Suresnes (92150) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans un jardin familial ou un potager', x: 'Composts, cabanes et récoltes attirent les rongeurs : nous traitons les terriers, de préférence sans raticide près des cultures, et conseillons des bacs fermés.' },
+      { t: 'Des rats dans la cave d’un immeuble', x: 'Nous traitons tout le sous-sol avec le syndic ou le bailleur, puis rebouchons les passages vers les logements.' },
+      { t: 'Des rongeurs dans une maison des coteaux', x: 'Talus, voies ferrées et jardins en pente : les rongeurs entrent par le garage ou le vide sanitaire. Nous repérons et bouchons chaque accès.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Suresnes',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. Dans la cité-jardins et les résidences sociales, les caves et locaux à poubelles relèvent du **bailleur** ; en copropriété, du **syndic** ; un pavillon, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Puteaux](/deratisation/puteaux), [Nanterre](/deratisation/nanterre), [Rueil-Malmaison](/deratisation/rueil-malmaison), [La Défense](/deratisation/la-defense) et [Paris 16e](/deratisation/paris-16). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Suresnes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des rats dans mon jardin familial : que faire ?', a: 'Fermez les composts, ne laissez pas de récoltes au sol et faites traiter les terriers. Près des cultures, nous privilégions les pièges et le [piège Ekomille sans raticide](/services/deratisation-ecologique).' },
+    { q: 'J’habite la cité-jardins : qui paie la dératisation ?', a: 'Les parties communes (caves, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'La Seine fait-elle venir les rats à Suresnes ?', a: 'Le surmulot vit près de l’eau et circule par les égouts et les réseaux d’eaux pluviales ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles du bas de Suresnes doivent surveiller caves et regards.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Suresnes ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [SUR_INSEE, SUR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
