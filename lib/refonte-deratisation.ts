@@ -4534,4 +4534,100 @@ REFONTE_DERATISATION['clichy'] = {
   sources: [CLI_INSEE, CLI_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Antony (27/11/2026) ──
+const ANT_WIKI: Source = { label: 'Wikipédia, Antony (Bièvre et ruisseaux, sous-sol de marnes, quartiers pavillonnaires, Noyer-Doré, logement, espaces verts)', url: 'https://fr.wikipedia.org/wiki/Antony' }
+const ANT_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92002, Antony', url: 'https://geo.api.gouv.fr/communes?code=92002&fields=nom,code,codesPostaux,population,surface' }
+const wan = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/antony/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['antony'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'La Bièvre à ciel ouvert dans le parc Heller puis enterrée sous la ville, des ruisseaux recouverts, des rues entières de pavillons et de grands parcs : à Antony, les rats vivent dans les jardins comme dans les réseaux. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Antony (92160) : une ville de pavillons dans la vallée de la Bièvre',
+    paras: [
+      'Antony compte **64 263 habitants** sur **9,56 km²**, à 8 kilomètres de la porte d’Orléans. Trois cours d’eau la traversent : la **Bièvre**, le **ruisseau des Godets**, à l’air libre, et le **ru d’Aulnay**, entièrement recouvert. La Bièvre coule à ciel ouvert dans le **parc Heller**, puis elle est **canalisée et recouverte** en aval. Sous la ville, des couches de **marnes imperméables** retiennent l’eau : sols humides, réseaux et anciens lits de rivière offrent au surmulot des passages discrets.',
+      'Une grande partie d’Antony est faite de **quartiers pavillonnaires**, bâtis à la fin du XIXe et au début du XXe siècle : en 2022, **30,1 % des logements** étaient des maisons et **68,8 %** des appartements. La ville revendique aussi environ **144 hectares** de parcs, de bois et d’allées arborées. Pour une société de dératisation, ce sont autant de **jardins**, de **composts**, de **vide sanitaires** et de **garages** que de **caves de résidences**.',
+      'Nous intervenons à Antony depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Antony](/punaises-de-lit/antony) et [fourmis à Antony](/fourmis/antony).',
+    ],
+  },
+  chiffres: [
+    { valeur: '64 263', texte: 'habitants (population légale Insee), code postal 92160.', source: ANT_INSEE },
+    { valeur: '3', texte: 'cours d’eau : la Bièvre, le ruisseau des Godets et le ru d’Aulnay, ce dernier entièrement recouvert.', source: ANT_WIKI },
+    { valeur: '30,1 %', texte: 'des logements sont des maisons individuelles (2022) : jardins, abris et vide sanitaires à surveiller.', source: ANT_WIKI },
+    { valeur: '144 ha', texte: 'de parcs, de bois et d’allées arborées, dont une partie du parc de Sceaux : des terriers en bordure des jardins.', source: ANT_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Antony : la ville quartier par quartier',
+    intro: 'Antony s’étend du **centre ancien** aux grands **quartiers pavillonnaires**, avec la **Cité Blanche**, le **Noyer-Doré**, la **Croix-de-Berny** et le **parc Heller**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le parc Heller et la vallée de la Bièvre',
+        texte: 'Dans le **parc Heller**, un bras de la Bièvre coule à ciel ouvert, alimenté par le ruisseau des Godets ; en aval, la rivière est canalisée et recouverte. Plans d’eau, berges et réseaux enterrés : le surmulot vit près de l’eau et circule sous les rues jusqu’aux caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages.',
+        photo: wan('parc-heller.jpg', 'Le lac du parc Heller à Antony', 'Le lac du parc Heller, dans la vallée de la Bièvre.', 'besopha', 'CC BY-SA 2.0', 'Antony_-_Parc_Heller_-_Le_lac.jpg'),
+      },
+      {
+        nom: 'Les quartiers pavillonnaires',
+        texte: 'Des rues entières de **pavillons avec jardin**, dont les maisons Art nouveau de l’avenue Gabriel-Péri et les pavillons mitoyens des **Castors**, construits en 1954. Les rats creusent sous les abris, au pied des haies et près des composts, puis entrent par le vide sanitaire ou le garage. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wan('pavillons-des-castors-1954.jpg', 'Construction des pavillons mitoyens des Castors à Antony en 1954', 'La construction des pavillons des Castors en 1954.', 'Auteur inconnu', 'CC0', 'Construction_pavillons_Castor_Antony.jpg'),
+      },
+      {
+        nom: 'Le centre ancien',
+        texte: 'Autour des anciennes **maisons de vignerons**, de l’église et des commerces : murs de pierre, caves anciennes et cours. Les rats passent par les soupiraux et les fissures des vieux murs : nous les repérons et les rebouchons. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wan('maisons-de-vignerons.jpg', 'Anciennes maisons de vignerons en pierre dans le centre d’Antony', 'Les anciennes maisons de vignerons du centre-ville.', 'AntonyB', 'Domaine public', 'Maisons_vignerons.jpg'),
+      },
+      {
+        nom: 'La Cité Blanche et le Noyer-Doré',
+        texte: 'Les grands immeubles de la **Cité Blanche** et le quartier du **Noyer-Doré**, quartier prioritaire d’environ 3 600 habitants dont la rénovation s’est achevée en 2014 : caves, vide-ordures et locaux à poubelles partagés. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+        photo: wan('cite-blanche.jpg', 'Les tours de la Cité Blanche à Antony', 'Les grands immeubles de la Cité Blanche.', 'AntonyB', 'Domaine public', 'Antony-grands_immeubles.JPG'),
+      },
+      {
+        nom: 'La Croix-de-Berny et le pôle d’activités',
+        texte: 'Le long de l’**A86** et de la **N20**, le pôle de haute technologie et le quartier de la **Croix-de-Berny** réunissent bureaux, commerces et restaurants. Pour les entreprises, nous proposons un **plan de lutte** avec postes numérotés et attestation. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: wan('pole-haute-technologie.jpg', 'Les bureaux vitrés du pôle de haute technologie à Antony', 'Le pôle de haute technologie, le long de l’A86.', 'AntonyB', 'Domaine public', 'Antony-p%C3%B4le_haute_technologie.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Antony (92160) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, compost, vide sanitaire, garage. Résidence : caves, local à poubelles, gaines. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Antony (92160) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Le cas le plus fréquent à Antony : terriers sous l’abri, au pied de la haie ou près du compost. Nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rongeurs dans un vide sanitaire', x: 'Bruits sous le plancher, odeur, isolant arraché : nous traitons le vide sanitaire et posons des grilles sur les aérations.' },
+      { t: 'Des rats au vide-ordures d’une résidence', x: 'Le signe d’une colonie dans les parties communes : le bailleur ou le syndic organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans une maison', x: 'Elles passent par les bas de portes, les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Antony',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; un pavillon, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Châtenay-Malabry](/deratisation/chatenay-malabry), [Sceaux](/deratisation/sceaux), [Bourg-la-Reine](/deratisation/bourg-la-reine), [Fresnes](/deratisation/fresnes), [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses), [Massy](/deratisation/massy) et [Wissous](/deratisation/wissous). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Antony ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des rats dans mon jardin à Antony : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès au vide sanitaire pour que les rats n’entrent pas dans la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'La Bièvre enterrée fait-elle venir les rats ?', a: 'Les rivières canalisées et les réseaux d’eaux pluviales sont des couloirs pour le surmulot, qui vit près de l’eau ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons proches de l’ancien lit doivent surveiller caves et regards.' },
+    { q: 'J’habite au Noyer-Doré : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Antony ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [ANT_INSEE, ANT_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
