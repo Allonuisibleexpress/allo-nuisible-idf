@@ -5494,4 +5494,100 @@ REFONTE_DERATISATION['chatillon'] = {
   sources: [CHA_INSEE, CHA_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Châtenay-Malabry (27/11/2026) ──
+const CHM_WIKI: Source = { label: 'Wikipédia, Châtenay-Malabry (plateau et vallons, ru d’Aulnay et ru de Châtenay, ville-parc, cité-jardin de la Butte-Rouge, logement)', url: 'https://fr.wikipedia.org/wiki/Ch%C3%A2tenay-Malabry' }
+const CHM_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92019, Châtenay-Malabry', url: 'https://geo.api.gouv.fr/communes?code=92019&fields=nom,code,codesPostaux,population,surface' }
+const wcm = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/chatenay-malabry/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['chatenay-malabry'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une ville-parc dont plus de la moitié est faite d’espaces verts, la forêt de Verrières, la Vallée-aux-Loups, deux ruisseaux dont un souterrain et la grande cité-jardin de la Butte-Rouge : à Châtenay-Malabry, les rongeurs vivent en lisière comme dans les caves. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Châtenay-Malabry (92290) : une ville-parc entre forêt et vallons',
+    paras: [
+      'Châtenay-Malabry compte **35 825 habitants** sur **6,37 km²**, à 10 kilomètres au sud de Paris, près du parc de Sceaux et en bordure de l’Essonne. Plus de la **moitié du territoire** est faite d’**espaces verts et de parcs**. Le relief passe d’un **plateau** à l’ouest, côté forêt de Verrières, à deux **vallons** : au nord, le **ru d’Aulnay** coule en partie à l’air libre dans le parc de la Vallée-aux-Loups ; au sud, le **ru de Châtenay** est entièrement souterrain.',
+      'En 2021, **88,7 % des logements** étaient des appartements et **10,5 %** des maisons. La ville compte la grande **cité-jardin de la Butte-Rouge**, construite des années 1930 aux années 1960 avec jusqu’à 4 000 logements, aujourd’hui quartier prioritaire de près de 4 300 habitants. Pour une société de dératisation, ce sont des **caves** et des **locaux à poubelles** de résidences, et des **jardins en lisière** de parcs et de bois.',
+      'Nous intervenons à Châtenay-Malabry depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Châtenay-Malabry](/punaises-de-lit/chatenay-malabry) et [fourmis à Châtenay-Malabry](/fourmis/chatenay-malabry).',
+    ],
+  },
+  chiffres: [
+    { valeur: '35 825', texte: 'habitants (population légale Insee), code postal 92290.', source: CHM_INSEE },
+    { valeur: '> 50 %', texte: 'du territoire en espaces verts et parcs : des lisières partout, où les rongeurs creusent leurs terriers.', source: CHM_WIKI },
+    { valeur: '4 300', texte: 'habitants environ dans la cité-jardin de la Butte-Rouge, quartier prioritaire.', source: CHM_WIKI },
+    { valeur: '88,7 %', texte: 'des logements sont des appartements (2021) : caves et locaux à poubelles partagés.', source: CHM_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Châtenay-Malabry : la ville quartier par quartier',
+    intro: 'Châtenay-Malabry s’étend du **plateau** et de la **forêt de Verrières** jusqu’au **vieux Châtenay**, sur la crête entre deux vallons, avec la **Butte-Rouge**, la **Vallée-aux-Loups** et le **Petit-Châtenay**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La cité-jardin de la Butte-Rouge',
+        texte: 'Grand ensemble construit entre les années 1930 et 1960, la **Butte-Rouge** mêle immeubles, pelouses et arbres. Caves, vide-ordures et locaux à poubelles : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**, puis nous rebouchons les passages vers les logements.',
+        photo: wcm('cite-jardin-butte-rouge.jpg', 'Vue aérienne de la cité-jardin de la Butte-Rouge à Châtenay-Malabry', 'La cité-jardin de la Butte-Rouge, entre immeubles et verdure.', 'Kieffer92', 'CC BY-SA 4.0', 'BUTTE-ROUGE-1024x683.jpg'),
+      },
+      {
+        nom: 'La Vallée-aux-Loups et le ru d’Aulnay',
+        texte: 'Dans le vallon nord, le **ru d’Aulnay** traverse à l’air libre le parc de la **Vallée-aux-Loups**, autour de la maison de Chateaubriand, et l’arboretum. Eau, prairies et bois : les rongeurs y trouvent abri et gagnent les maisons voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wcm('vallee-aux-loups-chateaubriand.jpg', 'La maison de Chateaubriand et son parc dans la Vallée-aux-Loups', 'La maison de Chateaubriand, dans le parc de la Vallée-aux-Loups.', 'besopha', 'CC BY-SA 2.0', 'La_maison_de_Chateaubriand.jpg'),
+      },
+      {
+        nom: 'L’arboretum et la lisière des bois',
+        texte: 'L’**arboretum**, les parcs et, à l’ouest, la **forêt de Verrières** touchent des rues entières de résidences et de maisons. À l’automne, souris et rats quittent les bois pour les garages, les combles et les vide sanitaires : nous repérons les entrées et bouchons chaque accès.',
+        photo: wcm('arboretum.jpg', 'Un grand cèdre aux branches tortueuses dans l’arboretum de Châtenay-Malabry', 'Un cèdre de l’arboretum.', 'Parisette', 'CC BY-SA 3.0', 'C%C3%A8dre_arboretum.JPG'),
+      },
+      {
+        nom: 'Le vieux Châtenay',
+        texte: 'Sur la crête entre les deux vallons, le centre ancien garde son **lavoir**, des maisons anciennes et des résidences récentes. Sous le vallon sud, le **ru de Châtenay** coule entièrement sous terre. Caves, cours et réseaux : nous traitons les sous-sols et rebouchons les passages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wcm('lavoir-vieux-chatenay.jpg', 'Le lavoir couvert du vieux Châtenay entouré de résidences', 'Le lavoir du vieux Châtenay.', 'VVVCFFrance', 'CC BY-SA 4.0', 'Lavoir_de_Ch%C3%A2tenay.jpg'),
+      },
+      {
+        nom: 'Le Petit-Châtenay et les quartiers résidentiels',
+        texte: 'Le long de l’avenue de la Division-Leclerc et dans le **Petit-Châtenay** : résidences, maisons et commerces. Locaux à poubelles, parkings et jardins : la dératisation se fait en **copropriété** et chez les particuliers.',
+        photo: wcm('petit-chatenay.jpg', 'Résidences et toits de maisons dans le quartier du Petit-Châtenay', 'Le quartier du Petit-Châtenay : résidences et maisons.', 'Kieffer92', 'CC BY-SA 4.0', 'Villa_Angela.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Châtenay-Malabry (92290) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Résidence : caves, local à poubelles, gaines. Maison en lisière : jardin, abri, vide sanitaire, combles.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Châtenay-Malabry (92290) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats au vide-ordures d’une résidence', x: 'Le signe d’une colonie dans les parties communes : le bailleur organise le traitement de tout l’immeuble, nous rebouchons ensuite les passages.' },
+      { t: 'Des rongeurs dans une maison en lisière de bois', x: 'À l’automne, souris et rats entrent par le garage, les combles ou le vide sanitaire. Nous repérons et bouchons chaque accès.' },
+      { t: 'Des rats dans un jardin près d’un parc', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès à la maison.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, bailleur, syndic : qui fait quoi à Châtenay-Malabry',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. À la Butte-Rouge et dans les résidences sociales, les caves et locaux à poubelles relèvent du **bailleur** ; en copropriété, du **syndic** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon). Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Sceaux](/deratisation/sceaux), [Antony](/deratisation/antony) et [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Châtenay-Malabry ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite la Butte-Rouge : qui paie la dératisation ?', a: 'Les parties communes (caves, vide-ordures, locaux à poubelles) relèvent du bailleur. Dans votre logement, le bailleur doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez-le par écrit.' },
+    { q: 'J’habite près d’un parc ou de la forêt : pourquoi des rongeurs chez moi ?', a: 'Les bois et les parcs abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Châtenay-Malabry ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [CHM_INSEE, CHM_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
