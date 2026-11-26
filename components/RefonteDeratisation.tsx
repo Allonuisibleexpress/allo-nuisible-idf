@@ -44,7 +44,11 @@ export function RefonteQuartiers({ r }: { r: RefonteDerat }) {
             <article key={z.nom} className={`rounded-2xl overflow-hidden ${z.photo ? 'md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]' : ''}`} style={card}>
               {z.photo && (
                 <figure className="m-0">
-                  <img src={z.photo.src} alt={z.photo.alt} loading="lazy" className="w-full h-full object-cover" style={{ aspectRatio: '4 / 3', background: '#111' }} />
+                  {/* 27/11/2026 : version 800 px (dossier mini/) sur mobile et tablette, photo pleine qualité sur ordinateur */}
+                  <picture>
+                    <source media="(min-width: 1024px)" srcSet={z.photo.src} />
+                    <img src={z.photo.src.replace(/\/([^/]+\.jpe?g)$/i, '/mini/$1')} alt={z.photo.alt} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover" style={{ aspectRatio: '4 / 3', background: '#111' }} />
+                  </picture>
                   <figcaption className="px-4 py-2 text-[11px] text-white/60">
                     {z.photo.legende} Photo : {z.photo.credit}, <a href={z.photo.page} target="_blank" rel="noopener noreferrer nofollow" className="underline">{z.photo.licence}</a>, Wikimedia Commons
                   </figcaption>
