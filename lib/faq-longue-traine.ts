@@ -12,6 +12,11 @@ export function faqLongueTraine(slug: string, a: string): Q[] {
       'Un professionnel certifié Certibiocide, qui annonce son prix avant de venir, travaille avec des postes sécurisés, rebouche les accès et remet une attestation. Méfiez-vous des tarifs donnés au téléphone puis multipliés sur place : voir [les arnaques à la dératisation](/blog/arnaques-deratisation-nuisibles).',
       'Choisissez un dératiseur certifié Certibiocide, avec un prix connu d’avance, une garantie écrite et une attestation d’intervention. Un démarchage insistant ou un prix qui change sur place sont de mauvais signes ([les arnaques à éviter](/blog/arnaques-deratisation-nuisibles)).',
     ]) },
+    // 27/11/2026 (demande de l'utilisateur) : la question « qui paie ? » sur toutes les pages, propriétaire ou locataire
+    { q: `Qui paie la dératisation ${a} : le propriétaire ou le locataire ?`, a: v([
+      'En règle générale, le propriétaire. Il doit louer un logement décent, exempt de toute infestation de nuisibles (loi du 6 juillet 1989, article 6). En copropriété, les caves, parkings et locaux à poubelles relèvent du syndic. Le locataire n’a pas à payer un problème qui existait à son arrivée ou qui vient de l’immeuble : signalez-le par écrit, avec photos.',
+      'Le plus souvent, c’est le propriétaire : la loi du 6 juillet 1989 (article 6) l’oblige à fournir un logement exempt de nuisibles. Les parties communes (caves, locaux à poubelles, parkings) se traitent à la demande du syndic ou du bailleur. Locataire, prévenez votre propriétaire par écrit, avec photos et dates, et gardez une copie.',
+    ]) },
     { q: `Combien de temps dure une dératisation ${a} ?`, a: v([
       'Le premier passage sert au diagnostic, à la pose des postes et au rebouchage. Nous revenons ensuite contrôler les consommations jusqu’à ce qu’elles s’arrêtent : la durée totale dépend de l’ampleur de l’infestation et du lieu.',
       'Elle se fait en plusieurs temps : diagnostic et pose du dispositif au premier passage, puis visites de contrôle jusqu’à l’arrêt des consommations. Une souris isolée se règle plus vite qu’une colonie de rats dans des caves.',

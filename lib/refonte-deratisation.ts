@@ -3571,4 +3571,105 @@ REFONTE_DERATISATION['villiers-sur-marne'] = {
   sources: [VSM_INSEE, VSM_WIKI, RSD_94, SPF_LEPTO],
 }
 
+// ── Hauts-de-Seine (92) : sources communes (27/11/2026). Pas de texte officiel lisible donnant le numéro de l'article
+// « rongeurs » du règlement sanitaire du 92 : on cite la loi de 1989 et les articles 26 et 120 rappelés par Meudon.
+const LOI_89: Source = { label: 'Loi n° 89-462 du 6 juillet 1989 tendant à améliorer les rapports locatifs, article 6 (Légifrance)', url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000509310' }
+const MEUDON_RSD92: Source = { label: 'Ville de Meudon, Animaux nuisibles et sauvages (dératisation, assainissement par GPSO, règlement sanitaire départemental des Hauts-de-Seine)', url: 'https://meudon.fr/mon-quotidien/environnement/animaux/animaux-nuisibles-et-sauvages/' }
+const QUI_PAIE_92 = '**Qui paie** : dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, **article 6**) ; en copropriété, les parties communes relèvent du **syndic** ; une maison, de son propriétaire.'
+const REGLEMENT_92 = 'loi du 6 juillet 1989 et règlement sanitaire départemental des Hauts-de-Seine'
+
+// ── Boulogne-Billancourt (27/11/2026) ──
+const BB_WIKI: Source = { label: 'Wikipédia, Boulogne-Billancourt (boucle de la Seine, crues, quartiers, île Seguin, Trapèze, logement, parcs)', url: 'https://fr.wikipedia.org/wiki/Boulogne-Billancourt' }
+const BB_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92012, Boulogne-Billancourt', url: 'https://geo.api.gouv.fr/communes?code=92012&fields=nom,code,codesPostaux,population,surface' }
+
+REFONTE_DERATISATION['boulogne-billancourt'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une plaine basse enserrée par la Seine, 96 % d’appartements, l’île Seguin, ancien site Renault, et le bois de Boulogne au nord : à Boulogne-Billancourt, les rats passent du fleuve aux caves d’immeubles. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Boulogne-Billancourt (92100) : la ville la plus peuplée du 92, dans une boucle de la Seine',
+    paras: [
+      'Boulogne-Billancourt compte **119 019 habitants** sur **6,15 km²** : c’est la commune la plus peuplée des Hauts-de-Seine, avec près de **19 300 habitants au km²**. Elle occupe une **plaine basse**, entre 28 et 40 mètres d’altitude, bordée au sud et à l’ouest par une **boucle de la Seine** et au nord par le **bois de Boulogne**. Sols de sables et d’alluvions, eau peu profonde : la ville est exposée aux **crues**, comme celle de **1910**.',
+      'Les logements sont à **96,6 % des appartements** : immeubles haussmanniens, grands ensembles, immeubles récents du Trapèze. Pour une société de dératisation, ce sont surtout des **caves**, des **parkings souterrains**, des **locaux à poubelles** et des **gaines** à traiter, avec le **syndic**. Les quais, les parcs et les anciens terrains Renault offrent aux rats des passages vers les immeubles riverains.',
+      'Nous intervenons à Boulogne-Billancourt depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Boulogne-Billancourt](/punaises-de-lit/boulogne-billancourt), [puces à Boulogne-Billancourt](/puces/boulogne-billancourt), [anthrènes à Boulogne-Billancourt](/anthrenes/boulogne-billancourt) et [fourmis à Boulogne-Billancourt](/fourmis/boulogne-billancourt).',
+    ],
+  },
+  chiffres: [
+    { valeur: '119 019', texte: 'habitants (population légale Insee) : la ville la plus peuplée des Hauts-de-Seine, code postal 92100.', source: BB_INSEE },
+    { valeur: '96,6 %', texte: 'des logements sont des appartements : caves, parkings et locaux à poubelles partagés sont les premiers points à contrôler.', source: BB_WIKI },
+    { valeur: '28 à 40 m', texte: 'd’altitude seulement : une plaine basse entourée par la Seine, exposée aux crues comme celle de 1910.', source: BB_WIKI },
+    { valeur: '≈ 19 300', texte: 'habitants au km² (119 019 habitants sur 6,15 km²), l’une des plus fortes densités d’Île-de-France hors Paris.', source: BB_INSEE },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Boulogne-Billancourt : la ville quartier par quartier',
+    intro: 'Boulogne-Billancourt compte six quartiers, de **Parchamp-Albert-Kahn** au nord à **Billancourt-Rives de Seine** au sud, en passant par les **Princes-Marmottan**, **Silly-Gallieni**, le **Centre-Ville** et **République-Point du Jour**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Billancourt, Rives de Seine et le Trapèze',
+        texte: 'Au sud, sur les anciens terrains des usines Renault, l’écoquartier du **Trapèze** (74 hectares) a remplacé l’industrie par des immeubles récents, des parcs et des quais. Parkings souterrains, locaux techniques et berges : nous contrôlons les sous-sols et rebouchons les passages vers les logements.',
+        photo: { src: '/villes/boulogne-billancourt/quai-de-stalingrad.jpg', alt: 'Immeubles du quai de Stalingrad au bord de la Seine à Boulogne-Billancourt', legende: 'Le quai de Stalingrad : immeubles riverains et berges de la Seine.', credit: 'GFreihalter', licence: 'CC BY-SA 4.0', page: W + 'Boulogne-Billancourt_(92)_Quai_de_Stalingrad_214.jpg' },
+      },
+      {
+        nom: 'L’île Seguin et le Point du Jour',
+        texte: 'L’**île Seguin**, ancien centre historique de Renault, est aujourd’hui en réaménagement ; le quartier **République-Point du Jour** accueille de nombreuses entreprises. Chantiers, bureaux et restaurants d’entreprise : les travaux déplacent les rongeurs, les cuisines les attirent. Voir [dératisation pour les professionnels](/professionnels).',
+        photo: { src: '/departements/hauts-de-seine/ile-seguin-boulogne.jpg', alt: 'Vue aérienne de l’île Seguin et de la Seine à Boulogne-Billancourt', legende: 'L’île Seguin et la boucle de la Seine vues du ciel.', credit: 'David.Monniaux', licence: 'CC BY-SA 3.0', page: W + 'Ile_Seguin_Boulogne_Billancourt_P1190130.jpg' },
+      },
+      {
+        nom: 'Les Princes-Marmottan et la lisière du bois',
+        texte: 'Au nord, près du **bois de Boulogne** et du stade Roland-Garros : hôtels particuliers, maisons et immeubles avec jardin. Les rongeurs du bois se rapprochent des jardins et des caves à l’automne : nous traitons les **terriers** et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: { src: '/villes/boulogne-billancourt/boulevard-d-auteuil.jpg', alt: 'Hôtel particulier et grilles boulevard d’Auteuil à Boulogne-Billancourt', legende: 'Boulevard d’Auteuil : hôtels particuliers et jardins en bordure du bois de Boulogne.', credit: 'Bledard92', licence: 'CC BY-SA 3.0', page: W + 'Boulevard_auteuil_boulogne_billancourt.JPG' },
+      },
+      {
+        nom: 'Parchamp-Albert-Kahn et le parc Edmond-de-Rothschild',
+        texte: 'Le **parc Edmond-de-Rothschild**, au nord-ouest, représente près de la moitié des espaces verts de la ville ; autour, des rues résidentielles et les jardins Albert-Kahn. Pelouses, massifs et pavillons : les rats creusent au pied des haies et des murs. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/boulogne-billancourt/parc-rothschild.jpg', alt: 'Le château Rothschild dans le parc Edmond-de-Rothschild à Boulogne-Billancourt', legende: 'Le château Rothschild, au cœur du parc Edmond-de-Rothschild.', credit: 'Traumrune', licence: 'CC BY-SA 3.0', page: W + 'Boulogne-parc-Rothschild_18.JPG' },
+      },
+      {
+        nom: 'Le Centre-Ville et Silly-Gallieni',
+        texte: 'Cœur historique, immeubles haussmanniens, commerces, marchés et restaurants le long de la route de la Reine : la dératisation s’y fait surtout en **copropriété**, cave par cave, et chez les **commerçants**. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Boulogne-Billancourt (92100) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Maison du nord de la ville : jardin, abri, vide sanitaire. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Boulogne-Billancourt (92100) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans les caves ou le parking d’un immeuble', x: 'Le cas le plus fréquent dans une ville d’appartements : nous traitons tout le sous-sol avec le syndic, puis rebouchons les passages vers les logements.' },
+      { t: 'Des rats après une montée de la Seine', x: 'Dans une plaine basse entourée par le fleuve, les crues et les fortes pluies chassent les rats des berges et des réseaux vers les caves. Faites contrôler votre sous-sol après ces épisodes.' },
+      { t: 'Des rongeurs dans un restaurant ou des bureaux', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Boulogne-Billancourt',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; une maison, de son propriétaire. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Boulogne-Billancourt fait partie du territoire **Grand Paris Seine Ouest (GPSO)**. À Meudon, ville du même territoire, la Ville indique que le réseau d’assainissement est traité par GPSO et que la commune agit sur l’espace public. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120) : une source de nourriture pour les rats.',
+      'Nous intervenons aussi tout autour : [Issy-les-Moulineaux](/deratisation/issy-les-moulineaux), [Meudon](/deratisation/meudon) et [Paris 16e](/deratisation/paris-16). Toutes nos villes du département : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Boulogne-Billancourt ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, maison ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'Pourquoi des rats dans une ville aussi urbaine que Boulogne ?', a: 'La Seine entoure la ville au sud et à l’ouest : le surmulot vit près de l’eau et circule par les égouts jusqu’aux caves d’immeubles ([mode de vie du rat](/blog/rat-mode-de-vie)). Les locaux à poubelles et les commerces de bouche le nourrissent.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Je suis locataire à Boulogne-Billancourt : que faire ?', a: 'Le bailleur doit fournir un logement décent, exempt de nuisibles (loi du 6 juillet 1989, article 6). Signalez le problème par écrit, avec photos et dates, et gardez une copie.' },
+    { q: 'Les travaux de l’île Seguin et du Trapèze font-ils sortir les rats ?', a: 'Les grands terrassements peuvent déranger les rongeurs installés dans le sol. Si des rats apparaissent près d’un chantier, faites contrôler cave, parking et regards.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Boulogne-Billancourt ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BB_INSEE, BB_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
