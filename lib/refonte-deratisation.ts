@@ -5014,4 +5014,100 @@ REFONTE_DERATISATION['suresnes'] = {
   sources: [SUR_INSEE, SUR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Meudon (27/11/2026) ──
+const MEU_WIKI: Source = { label: 'Wikipédia, Meudon (coteaux et forêt, Bas-Meudon, étangs, ru d’Arthelon devenu égout, carrières de craie, quartiers)', url: 'https://fr.wikipedia.org/wiki/Meudon' }
+const MEU_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92048, Meudon', url: 'https://geo.api.gouv.fr/communes?code=92048&fields=nom,code,codesPostaux,population,surface' }
+const wme = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/meudon/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['meudon'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'De la Seine à 28 mètres jusqu’à la forêt à 179 mètres, des étangs, un ancien ru devenu égout, des carrières de craie sous les coteaux et Meudon-la-Forêt sur le plateau : à Meudon, les rongeurs vivent en lisière comme dans les réseaux. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Meudon (92190) : des bords de Seine à la forêt, en passant par les coteaux',
+    paras: [
+      'Meudon compte **46 334 habitants** sur **9,94 km²**, avec deux codes postaux : **92190** pour Meudon et **92360** pour **Meudon-la-Forêt**. La ville occupe les **coteaux** du bord de Seine et les hauteurs voisines, avec de **fortes pentes** : l’altitude passe de **28 mètres** au niveau du fleuve à **179 mètres**. La **forêt de Meudon** occupe les hauteurs, la ville les pentes en contrebas.',
+      'Le **Bas-Meudon**, aujourd’hui Meudon-sur-Seine, fait face à l’île Seguin et à l’île Saint-Germain. La ville compte de nombreux **étangs** (Meudon, Villebon, Trivaux, Chalais, la Garenne) et des sources ; le **ru d’Arthelon**, entièrement enterré, a été transformé en **égout** au début du XXe siècle. Sous les coteaux, d’anciennes **carrières de craie** témoignent de l’extraction du blanc de Meudon. Pour une société de dératisation, ce sont autant de **lisières**, de **jardins en pente** et de **réseaux** que de **caves de résidences**.',
+      'Nous intervenons à Meudon et à Meudon-la-Forêt depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Meudon](/punaises-de-lit/meudon) et [fourmis à Meudon](/fourmis/meudon).',
+    ],
+  },
+  chiffres: [
+    { valeur: '46 334', texte: 'habitants (population légale Insee), codes postaux 92190 et 92360 (Meudon-la-Forêt).', source: MEU_INSEE },
+    { valeur: '28 à 179 m', texte: 'd’altitude : des bords de Seine aux hauteurs de la forêt, avec de fortes pentes.', source: MEU_WIKI },
+    { valeur: '5 étangs', texte: 'en forêt de Meudon et dans la ville : Meudon, Villebon, Trivaux, Chalais et la Garenne.', source: MEU_WIKI },
+    { valeur: '1 campagne', texte: 'de lutte contre les rongeurs lancée chaque année par la Ville sur l’espace public ; les habitants sont tenus de participer à l’effort.', source: MEUDON_RSD92 },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Meudon : la ville quartier par quartier',
+    intro: 'Meudon réunit plusieurs quartiers : le **Centre-Ville**, **Bellevue**, le **Val-Fleury**, le **Bas-Meudon** et **Meudon-la-Forêt**, sur le plateau. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Bas-Meudon, au bord de la Seine',
+        texte: 'Face à l’île Seguin, le **Bas-Meudon**, aujourd’hui Meudon-sur-Seine, longe le fleuve et la route départementale. Berges, réseaux et immeubles riverains : le surmulot vit au bord de l’eau et remonte vers les caves. Nous contrôlons sous-sols et regards, puis rebouchons les passages.',
+        photo: wme('bas-meudon-tramway.jpg', 'L’ancienne gare du Bas-Meudon, devenue station du tramway à Meudon-sur-Seine', 'L’ancienne gare du Bas-Meudon, aujourd’hui station du tramway, au bord de la Seine.', 'Poudou99', 'CC BY-SA 3.0', 'Gare_du_Bas-Meudon_-_20130821_165724.jpg'),
+      },
+      {
+        nom: 'Le Val-Fleury et le Centre-Ville',
+        texte: 'Dans le vallon, sous lequel coule le **ru d’Arthelon** devenu égout, le Val-Fleury et le Centre réunissent immeubles anciens, commerces et maisons. Réseaux, caves et cours : nous traitons les sous-sols et rebouchons les soupiraux. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wme('gare-val-fleury.jpg', 'La gare de Meudon-Val-Fleury et sa façade en brique', 'La gare de Meudon-Val-Fleury, dans le vallon du ru d’Arthelon.', 'Geralix', 'CC BY-SA 3.0', 'Gare_de_Meudon_-_Val_Fleury_05.jpg'),
+      },
+      {
+        nom: 'Bellevue et les coteaux',
+        texte: 'Sur les **coteaux**, maisons, villas et jardins en terrasses dominent la Seine. Sous les pentes, d’anciennes **carrières de craie** ont été creusées pour le blanc de Meudon. Talus, murets et jardins : les rats creusent sous les abris et passent par les vide sanitaires. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wme('carrieres-de-craie.jpg', 'Visite des anciennes carrières de craie sous Meudon', 'Les anciennes carrières de craie de Meudon, ouvertes lors des Journées du patrimoine.', 'Myrabella', 'CC BY-SA 3.0', 'Carrieres_de_Meudon_Journees_Patrimoine_2010.jpg'),
+      },
+      {
+        nom: 'La forêt de Meudon et ses étangs',
+        texte: 'La **forêt de Meudon** et ses étangs, comme celui de Villebon, touchent des rues entières de maisons. À l’automne, souris et rats quittent les bois pour les garages, les combles et les vide sanitaires : nous repérons les entrées, posons le dispositif et bouchons chaque accès.',
+        photo: wme('etang-de-villebon.jpg', 'L’étang de Villebon entouré d’arbres dans la forêt de Meudon', 'L’étang de Villebon, dans la forêt de Meudon.', 'Félix Potuit', 'Domaine public', 'EtangVillebon.jpg'),
+      },
+      {
+        nom: 'Meudon-la-Forêt (92360)',
+        texte: 'Sur le plateau, **Meudon-la-Forêt**, desservi par le tramway T6, réunit de grandes résidences des années 1960, des commerces et des parcs, en lisière de la forêt. Caves, parkings et locaux à poubelles : le traitement se fait avec le **syndic** ou le **bailleur**, sur toutes les **parties communes**.',
+        photo: wme('meudon-la-foret-t6.jpg', 'La station Meudon-Forêt du tramway T6 à Meudon-la-Forêt', 'La station Meudon-Forêt du tramway T6, sur le plateau.', 'Chabe01', 'CC BY-SA 4.0', 'Station_Tramway_IdF_Ligne_6_Meudon_For%C3%AAt_-_Meudon_(FR92)_-_2021-01-03_-_6.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Meudon (92190) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Maison des coteaux ou en lisière : jardin, abri, vide sanitaire, combles. Résidence : caves, parking, local à poubelles. Bas-Meudon : sous-sols et regards.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Meudon (92190) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rongeurs dans une maison en lisière de forêt', x: 'À l’automne, souris et rats entrent par le garage, les combles ou le vide sanitaire. Nous repérons et bouchons chaque accès.' },
+      { t: 'Des rats dans un jardin en terrasses', x: 'Murets, talus et composts : les rats creusent dans les pentes. Nous traitons la colonie et fermons l’accès à la maison.' },
+      { t: 'Des rats dans la cave d’une résidence de Meudon-la-Forêt', x: 'Nous traitons tout le sous-sol avec le syndic ou le bailleur, puis rebouchons les passages vers les logements.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, mairie, syndic : qui fait quoi à Meudon',
+    paras: [
+      'La **Ville de Meudon** agit sur les espaces publics (espaces verts, réseaux, bâtiments publics), lance **chaque année une campagne** de lutte contre les rongeurs et coordonne des opérations dans certaines résidences sociales ; le **réseau d’assainissement** est traité par le territoire **Grand Paris Seine Ouest (GPSO)**. La Ville rappelle que les Meudonnais sont tenus de participer à l’effort de salubrité publique.',
+      'Chez vous, c’est à vous ou à votre copropriété d’agir : dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement exempt de nuisibles ; en copropriété, les parties communes relèvent du **syndic**. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120).',
+      'Nous intervenons aussi tout autour : [Issy-les-Moulineaux](/deratisation/issy-les-moulineaux), [Clamart](/deratisation/clamart) et [Boulogne-Billancourt](/deratisation/boulogne-billancourt). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Meudon ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La mairie de Meudon dératise-t-elle chez moi ?', a: 'Non : la Ville traite l’espace public et mène une campagne annuelle, et l’assainissement relève de GPSO. Chez vous, dans votre cave ou votre jardin, il faut faire appel à une entreprise de dératisation.' },
+    { q: 'J’habite en lisière de la forêt de Meudon : pourquoi des rongeurs ?', a: 'Les bois abritent souris et rats, qui cherchent la chaleur des maisons à l’automne. Fermez composts et abris, rangez les graines et faites boucher les entrées : garage, combles, vide sanitaire.' },
+    { q: 'Intervenez-vous à Meudon-la-Forêt (92360) ?', a: 'Oui, dans tout Meudon, y compris Meudon-la-Forêt : résidences, commerces et maisons, souvent le jour même.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Meudon ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [MEU_INSEE, MEUDON_RSD92, MEU_WIKI, LOI_89, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
