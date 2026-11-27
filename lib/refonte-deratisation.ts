@@ -6171,6 +6171,52 @@ const PARIS_RATS_V: Source = { label: 'Ville de Paris, Comment Paris lutte contr
 const RSD_PARIS_119: Source = { label: 'Arrêté du 20 novembre 1979 portant règlement sanitaire du département de Paris, article 119 « Rongeurs » (Légifrance)', url: 'https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006364004/' }
 const QUI_PAIE_75 = '**Qui paie** : dans les cours, caves, jardins et bâtiments privés, ce sont les **propriétaires** (règlement sanitaire de Paris, **article 119**) ; en copropriété, le **syndic** pour les parties communes ; dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).'
 const REGLEMENT_75 = 'règlement sanitaire de Paris, **article 119**'
+type Q75 = { q: string; a: string }
+// Blocs communs des arrondissements (27/11/2026) : la partie locale (société, chiffres, secteurs, cas et FAQ locaux,
+// voisins) est écrite à la main pour chaque arrondissement ; seuls le protocole et le cadre légal parisien sont partagés.
+const P_INTERVENTION = (a: string, cp: string) => ({
+  titre: `Intervention contre les rats ${a} (${cp}) : notre dératisation, pas à pas`,
+  etapes: [
+    { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+    { t: 'Le diagnostic', x: 'Immeuble ancien : caves, cour, local à poubelles, gaines. Restaurant ou commerce : réserves, cuisine, sous-sol. Rez-de-chaussée : soupiraux et passages de tuyaux.' },
+    { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+    { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées sur les soupiraux, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+  ],
+})
+const P_DERATISEUR = (a: string, cp: string, local: { t: string; x: string }) => ({
+  titre: `Dératiseur ${a} (${cp}) : les cas que nous rencontrons le plus`,
+  cas: [
+    { t: 'Des rats dans la cave ou la cour d’un immeuble', x: 'Le cas parisien par excellence : nous traitons tout le sous-sol avec le syndic, puis rebouchons soupiraux et passages. La Ville rappelle que ces espaces privés relèvent des propriétaires.' },
+    local,
+    { t: 'Des rongeurs dans un commerce ou un restaurant', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).' },
+    { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’égouts est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+    { t: 'Des souris dans un appartement ancien', x: 'Elles passent par les gaines, les planchers et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris à Paris](/souris/paris).' },
+  ],
+})
+const P_MAIRIE = (a: string, signaler: string, voisins: [string, string][]) => ({
+  titre: `Entreprise de dératisation, Ville de Paris, syndic : qui fait quoi ${a}`,
+  paras: [
+    'L’**article 119** du **règlement sanitaire de Paris** (arrêté du 20 novembre 1979) demande aux **propriétaires** de prendre les mesures pour éviter l’introduction des rongeurs, et aux propriétaires et occupants de vérifier régulièrement leurs locaux. La Ville de Paris le rappelle : dans les jardins, cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. En copropriété, c’est le **syndic** qui organise le traitement des parties communes.',
+    `La Ville agit sur l’espace public par son service **SMASH**, mène des actions dans les égouts et se coordonne avec les bailleurs sociaux. Un rat ${signaler} se signale avec l’application **DansMaRue**. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates : il doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).`,
+    `Nous intervenons aussi tout autour : ${voisins.map(([s, n]) => `[${n}](/deratisation/${s})`).join(', ').replace(/, ([^,]*)$/, ' et $1')}. Tous les arrondissements : [dératisation à Paris](/deratisation/paris).`,
+  ],
+})
+const P_FAQ = (a: string, local: Q75[]): Q75[] => [
+  { q: `Combien coûte une dératisation ${a} ?`, a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, cave ou restaurant : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+  { q: 'La Ville de Paris dératise-t-elle mon immeuble ?', a: 'Non : elle traite l’espace public et les égouts. Dans les cours, caves, jardins et bâtiments privés, la lutte incombe aux propriétaires (règlement sanitaire de Paris, article 119).' },
+  ...local,
+  { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+  { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+  { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+  { q: `Intervenez-vous vite ${a} ?`, a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+]
+const P_AUTRES = (slug: string, nom: string) => `Nos autres pages pour l’arrondissement : [punaises de lit à ${nom}](/punaises-de-lit/${slug}), [cafards à ${nom}](/cafards/${slug}) et [souris à Paris](/souris/paris).`
+const P_INSEE = (n: number, nom: string): Source => ({ label: `Découpage administratif (Insee), geo.api.gouv.fr : arrondissement municipal 751${String(n).padStart(2, '0')}, ${nom}`, url: `https://geo.api.gouv.fr/communes?code=751${String(n).padStart(2, '0')}&type=arrondissement-municipal&fields=nom,code,codesPostaux,population,surface` })
+const P_WIKI = (n: number, detail: string): Source => ({ label: `Wikipédia, ${n === 1 ? '1er' : n + 'e'} arrondissement de Paris (${detail})`, url: `https://fr.wikipedia.org/wiki/${n === 1 ? '1er' : n + 'e'}_arrondissement_de_Paris` })
+const P_LEPTO_CHIFFRE = { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO }
+const P_VILLE_CHIFFRE = { valeur: '≈ 4 000', texte: 'interventions par an de la Ville de Paris contre les rongeurs, sur le seul domaine public : caves et cours privées relèvent des propriétaires.', source: PARIS_RATS_V }
+const P_SOURCES = (insee: Source, wiki: Source, ...autres: Source[]) => [insee, wiki, ...autres, PARIS_RATS_V, RSD_PARIS_119, LOI_89, SPF_LEPTO]
+const wp = (slug: string) => (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/${slug}/${f}`, alt, legende, credit, licence, page: W + fichier })
 
 // ── Paris 12e (27/11/2026) ──
 const P12_WIKI: Source = { label: 'Wikipédia, 12e arrondissement de Paris (quartiers, bois de Vincennes, faubourg Saint-Antoine, Bercy, viaduc des Arts et coulée verte, marché d’Aligre)', url: 'https://fr.wikipedia.org/wiki/12e_arrondissement_de_Paris' }
@@ -6267,6 +6313,69 @@ REFONTE_DERATISATION['paris-12'] = {
     { q: 'Intervenez-vous vite à Paris 12e ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, juste de l’autre côté du bois de Vincennes, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
   ],
   sources: [P12_INSEE, P12_WIKI, BERCY_WIKI, PARIS_RATS_V, RSD_PARIS_119, LOI_89, SPF_LEPTO],
+}
+
+// ── Paris 11e (27/11/2026) ──
+const w11 = wp('paris-11')
+REFONTE_DERATISATION['paris-11'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'L’arrondissement le plus dense de Paris, le canal Saint-Martin couvert sous le boulevard Richard-Lenoir, les cours d’artisans du faubourg Saint-Antoine et des centaines de restaurants : dans le 11e, les rats vivent sous les pieds des habitants. Nous les traitons cour par cour, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 11e (75011) : l’arrondissement le plus dense de Paris',
+    paras: [
+      'Le 11e arrondissement compte **138 170 habitants** sur **3,65 km²**, soit près de **38 000 habitants au km²** : c’est l’arrondissement **le plus densément peuplé de Paris**. Il s’étend entre les places de la **Bastille**, de la **République** et de la **Nation**, sur quatre quartiers administratifs : **Folie-Méricourt**, **Saint-Ambroise**, **Roquette** et **Sainte-Marguerite**.',
+      'Il s’est construit autour de deux faubourgs, celui **du Temple** au nord et celui de **Saint-Antoine** au sud, réputé pour ses ébénistes : il en garde de nombreuses **cours** et **passages**. À l’ouest, le **boulevard Richard-Lenoir** recouvre le **canal Saint-Martin** depuis 1860. Immeubles anciens à caves, cours partagées, rues de restaurants et de bars : pour une société de dératisation, le 11e est un terrain dense, où une colonie passe vite d’un immeuble à l’autre.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans le 11e depuis **Saint-Maurice**, 7 jours sur 7.',
+      P_AUTRES('paris-11', 'Paris 11e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '138 170', texte: 'habitants dans le 11e (population légale Insee), code postal 75011.', source: P_INSEE(11, 'Paris 11e') },
+    { valeur: '≈ 38 000', texte: 'habitants au km² : l’arrondissement le plus densément peuplé de Paris.', source: P_WIKI(11, 'densité, quartiers, faubourgs') },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 11e : l’arrondissement secteur par secteur',
+    intro: 'Le 11e compte quatre quartiers administratifs : **Folie-Méricourt**, **Saint-Ambroise**, **Roquette** et **Sainte-Marguerite**. Du canal couvert aux cours du faubourg, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le boulevard Richard-Lenoir et le canal couvert',
+        texte: 'Sous le terre-plein central du **boulevard Richard-Lenoir**, le **canal Saint-Martin** coule à couvert depuis **1860** ; en surface, squares et le long **marché Bastille**. Eau, déchets alimentaires et immeubles anciens de part et d’autre : caves et locaux à poubelles des immeubles riverains sont nos premiers points de contrôle.',
+        photo: w11('marche-bastille.jpg', 'Les structures du marché Bastille sur le terre-plein du boulevard Richard-Lenoir', 'Le terre-plein du boulevard Richard-Lenoir, au-dessus du canal Saint-Martin, un jour de marché.', 'Patrick Nouhailler', 'CC BY-SA 2.0', 'March%C3%A9_Bastille,_boulevard_Richard-Lenoir,_30_June_2012.jpg'),
+      },
+      {
+        nom: 'Oberkampf et la Folie-Méricourt',
+        texte: 'La **rue Oberkampf** et ses voisines alignent bars, restaurants et épiceries au pied d’immeubles anciens. Réserves, cuisines, bacs à poubelles sortis le soir : les rongeurs suivent la nourriture. Nous intervenons chez les **restaurateurs** (postes numérotés, registre) et dans les copropriétés au-dessus.',
+        photo: w11('rue-oberkampf.jpg', 'La rue Oberkampf, ses commerces et ses immeubles anciens', 'La rue Oberkampf, rue de bars et de restaurants.', 'Philipp Hertzog', 'CC BY-SA 3.0', 'Rue_Oberkampf.jpg'),
+      },
+      {
+        nom: 'Saint-Ambroise et les squares',
+        texte: 'Autour de Saint-Ambroise, des squares de quartier comme le **square Maurice-Gardette** sont entourés d’immeubles serrés. Massifs, bacs et pique-niques nourrissent les rats sur l’espace public, que la Ville traite ; les immeubles riverains doivent fermer caves et soupiraux.',
+        photo: w11('square-maurice-gardette.jpg', 'L’entrée du square Maurice-Gardette dans le 11e arrondissement', 'L’entrée du square Maurice-Gardette.', 'Mbzt', 'CC BY-SA 4.0', 'P1300957_Paris_XI_square_Maurice-Gardette_rwk.jpg'),
+      },
+      {
+        nom: 'La Roquette, Sainte-Marguerite et les cours du faubourg',
+        texte: 'Entre la **rue de la Roquette** et la **rue du Faubourg-Saint-Antoine**, les anciennes **cours d’artisans du bois** et les passages sont devenus logements, ateliers et bureaux. Cours pavées, caves voûtées et vieux réseaux : les rats passent d’une cour à l’autre. Nous traitons avec le syndic l’ensemble des cours concernées. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w11('rue-de-la-roquette.jpg', 'La rue de la Roquette et ses immeubles, dans le 11e arrondissement', 'La rue de la Roquette.', 'LPLT', 'CC BY-SA 3.0', 'Rue_de_la_Roquette.JPG'),
+      },
+      {
+        nom: 'Voltaire et la place Léon-Blum',
+        texte: 'Autour de la **mairie du 11e**, place Léon-Blum, et le long du **boulevard Voltaire** : immeubles haussmanniens, commerces en rez-de-chaussée et parkings souterrains. Locaux à poubelles, caves et gaines techniques : la dératisation se fait en **copropriété**, idéalement avec les immeubles voisins.',
+        photo: w11('mairie-du-11e.jpg', 'La mairie du 11e arrondissement vue du boulevard Voltaire', 'La mairie du 11e, place Léon-Blum.', 'FLLL', 'CC BY-SA 3.0', 'Mairie_du_11e_vue_du_Bd_Voltaire.JPG'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 11e', '75011'),
+  dératiseur: P_DERATISEUR('à Paris 11e', '75011', { t: 'Des rats dans une cour du faubourg', x: 'Cours pavées, ateliers et caves voûtées communiquent souvent : nous traitons toutes les cours reliées et rebouchons les passages entre elles.' }),
+  mairie: P_MAIRIE('à Paris 11e', 'dans la rue, un square ou sur le boulevard Richard-Lenoir', [['paris-12', 'Paris 12e'], ['paris-20', 'Paris 20e'], ['paris-10', 'Paris 10e'], ['paris-3', 'Paris 3e'], ['paris-4', 'Paris 4e']]),
+  faq: P_FAQ('à Paris 11e', [
+    { q: 'Le canal Saint-Martin couvert fait-il venir les rats ?', a: 'Le canal, couvert depuis 1860 sous le boulevard Richard-Lenoir, et les égouts sont des milieux humides où vit le surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les immeubles riverains doivent surtout protéger caves et soupiraux.' },
+    { q: 'J’ai un restaurant rue Oberkampf : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+  ]),
+  sources: P_SOURCES(P_INSEE(11, 'Paris 11e'), P_WIKI(11, 'densité, quartiers, faubourgs du Temple et Saint-Antoine'), { label: 'Wikipédia, Boulevard Richard-Lenoir (canal Saint-Martin couvert en 1860, marché Bastille)', url: 'https://fr.wikipedia.org/wiki/Boulevard_Richard-Lenoir' }),
 }
 
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
