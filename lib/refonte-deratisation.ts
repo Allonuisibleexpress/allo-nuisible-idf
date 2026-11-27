@@ -5878,4 +5878,100 @@ REFONTE_DERATISATION['vanves'] = {
   sources: [VAN_INSEE, VAN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Fontenay-aux-Roses (27/11/2026) ──
+const FAR_WIKI: Source = { label: 'Wikipédia, Fontenay-aux-Roses (coteau du plateau de Châtillon, ru des Blagis devenu collecteur, quartiers, logement, espaces verts)', url: 'https://fr.wikipedia.org/wiki/Fontenay-aux-Roses' }
+const FAR_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92032, Fontenay-aux-Roses', url: 'https://geo.api.gouv.fr/communes?code=92032&fields=nom,code,codesPostaux,population,surface' }
+const wfr = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/fontenay-aux-roses/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['fontenay-aux-roses'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une ville sur un coteau, un ancien ruisseau devenu collecteur d’eaux pluviales, une coulée verte de 10 hectares, des villas et des résidences : à Fontenay-aux-Roses, les rats suivent les réseaux et les jardins. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Fontenay-aux-Roses (92260) : une ville de coteau entre Sceaux et Clamart',
+    paras: [
+      'Fontenay-aux-Roses compte **24 070 habitants** sur **2,53 km²**, sur le **plateau de Châtillon**, à flanc de coteau, à une altitude moyenne de 100 mètres. Elle est traversée d’ouest en est par l’ancien **ru de la Fontaine du Moulin**, ou ru des Blagis : **canalisé et mis en souterrain** dans les années 1950, il est devenu le **collecteur des Blagis**, qui draine les eaux pluviales. Ces réseaux enterrés sont des couloirs naturels pour le **surmulot**.',
+      'En 2018, **80,8 %** des logements étaient des appartements et **16,8 %** des maisons. La ville compte la **coulée verte** (10 hectares), le **parc Sainte-Barbe** et des rues de villas et de résidences. Pour une société de dératisation, ce sont autant de **caves** de résidences que de **jardins** et de **vide sanitaires** de maisons à surveiller.',
+      'Nous intervenons à Fontenay-aux-Roses depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Fontenay-aux-Roses](/punaises-de-lit/fontenay-aux-roses) et [fourmis à Fontenay-aux-Roses](/fourmis/fontenay-aux-roses).',
+    ],
+  },
+  chiffres: [
+    { valeur: '24 070', texte: 'habitants (population légale Insee), code postal 92260.', source: FAR_INSEE },
+    { valeur: '1950', texte: 'années où le ru des Blagis a été canalisé et mis sous terre : il sert aujourd’hui de collecteur d’eaux pluviales.', source: FAR_WIKI },
+    { valeur: '10 ha', texte: 'de coulée verte, plus le parc Sainte-Barbe (1,8 hectare) : des talus et pelouses où les rats creusent.', source: FAR_WIKI },
+    { valeur: '16,8 %', texte: 'des logements sont des maisons individuelles et 80,8 % des appartements (2018).', source: FAR_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Fontenay-aux-Roses : la ville quartier par quartier',
+    intro: 'Fontenay-aux-Roses compte cinq quartiers : **Pervenches-Val Content**, **Parc-Centre-Ville**, **Scarron-Sorrières**, **Ormeaux-Renards** et **Blagis-Gare**. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La coulée verte et ses résidences',
+        texte: 'La **coulée verte**, 10 hectares de talus, de haies et de pelouses, longe des résidences récentes. Les rats y creusent et gagnent les jardins, les parkings et les caves voisines. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wfr('coulee-verte.jpg', 'La rue de la Voie-Verte, entre résidences et haies, à Fontenay-aux-Roses', 'La rue de la Voie-Verte, le long de la coulée verte.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Voie_Verte_-_Fontenay-aux-Roses_(FR92)_-_2023-08-14_-_1.jpg'),
+      },
+      {
+        nom: 'Le parc Sainte-Barbe et le centre-ville',
+        texte: 'Le **parc Sainte-Barbe** (1,8 hectare), ses grands arbres et ses pelouses, au cœur du quartier Parc-Centre-Ville. Les rongeurs y trouvent abri et gagnent les immeubles et commerces voisins : nous traitons les accès des bâtiments et les jardins de résidence.',
+        photo: wfr('parc-sainte-barbe.jpg', 'Allée ombragée du parc Sainte-Barbe à Fontenay-aux-Roses', 'Le parc Sainte-Barbe, au centre-ville.', 'Chabe01', 'CC BY-SA 4.0', 'Parc_Sainte_Barbe_-_Fontenay-aux-Roses_(FR92)_-_2023-08-14_-_1.jpg'),
+      },
+      {
+        nom: 'Le vieux centre et l’église',
+        texte: 'Autour de l’église Saint-Pierre-et-Saint-Paul : maisons anciennes, petits immeubles, commerces et marchés. Caves anciennes, cours et soupiraux : nous traitons les sous-sols et rebouchons les passages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wfr('eglise-centre.jpg', 'L’église Saint-Pierre-et-Saint-Paul de Fontenay-aux-Roses', 'L’église Saint-Pierre-et-Saint-Paul, au cœur du vieux centre.', 'Chabe01', 'CC BY-SA 4.0', '%C3%89glise_Sts_Pierre_Paul_-_Fontenay-aux-Roses_(FR92)_-_2021-01-03_-_2.jpg'),
+      },
+      {
+        nom: 'Les villas et les rues de maisons',
+        texte: 'Dans les quartiers de **villas** et de maisons, comme autour de la villa des Roses : murs anciens, jardins, haies et appentis. Les rats creusent au pied des murs et entrent par les garages ou les vide sanitaires. Nous traitons la colonie et fermons chaque accès.',
+        photo: wfr('villa-des-roses.jpg', 'La villa des Roses, petite rue de maisons à Fontenay-aux-Roses', 'La villa des Roses : maisons, murs anciens et jardins.', 'Chabe01', 'CC BY-SA 4.0', 'Villa_Roses_-_Fontenay-aux-Roses_(FR92)_-_2023-08-14_-_1.jpg'),
+      },
+      {
+        nom: 'Blagis-Gare, au fond du coteau',
+        texte: 'Au point le plus bas, autour de la gare du RER et de l’église des Blagis, passe le **collecteur des Blagis**, ancien ruisseau devenu réseau d’eaux pluviales. Talus de la voie ferrée, réseaux et résidences : nous contrôlons caves et regards, puis rebouchons les passages.',
+        photo: wfr('gare-blagis.jpg', 'La gare de Fontenay-aux-Roses entre talus et maisons', 'La gare de Fontenay-aux-Roses, au fond du coteau, côté Blagis.', 'Chabe01', 'CC BY-SA 4.0', 'Gare_Fontenay_Roses_-_Fontenay-aux-Roses_(FR92)_-_2023-08-14_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Fontenay-aux-Roses (92260) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Résidence : caves, parking, local à poubelles. Maison : jardin, abri, vide sanitaire. Bas du coteau : regards et réseaux.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Fontenay-aux-Roses (92260) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’une maison', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rats dans la cave ou le parking d’une résidence', x: 'Nous traitons tout le sous-sol avec le syndic ou le bailleur, puis rebouchons les passages vers les logements.' },
+      { t: 'Des rats remontés par les réseaux', x: 'Le collecteur des Blagis et les réseaux d’eaux pluviales servent de couloirs : nous contrôlons les regards et posons des grilles.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Fontenay-aux-Roses',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Sceaux](/deratisation/sceaux), [Bagneux](/deratisation/bagneux), [Châtillon](/deratisation/chatillon), [Clamart](/deratisation/clamart) et [Châtenay-Malabry](/deratisation/chatenay-malabry). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Fontenay-aux-Roses ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, résidence ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Le ru des Blagis enterré fait-il venir les rats ?', a: 'Les ruisseaux canalisés et les réseaux d’eaux pluviales sont des couloirs pour le surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons et immeubles du bas du coteau doivent surveiller caves et regards.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Fontenay-aux-Roses ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [FAR_INSEE, FAR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
