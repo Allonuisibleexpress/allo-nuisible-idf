@@ -6070,4 +6070,100 @@ REFONTE_DERATISATION['bourg-la-reine'] = {
   sources: [BLR_INSEE, BLR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Sceaux (27/11/2026) ──
+const SC_WIKI: Source = { label: 'Wikipédia, Sceaux (parc départemental, ru des Blagis devenu collecteur, coulée verte, quartiers Insee, habitat, logement en 2018)', url: 'https://fr.wikipedia.org/wiki/Sceaux_(Hauts-de-Seine)' }
+const SC_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92071, Sceaux', url: 'https://geo.api.gouv.fr/communes?code=92071&fields=nom,code,codesPostaux,population,surface' }
+const wsc = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/sceaux/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['sceaux'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Un parc de 181 hectares dessiné par Le Nôtre, un ancien ruisseau devenu collecteur à la limite de Fontenay-aux-Roses, la coulée verte et des rues de pavillons en meulière : à Sceaux, les rats vivent entre jardins, réseaux et caves. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Sceaux (92330) : une ville entre parc, jardins et réseaux',
+    paras: [
+      'Sceaux compte **20 884 habitants** sur **3,6 km²**, au sud de Paris, entre Bourg-la-Reine, Antony, Châtenay-Malabry et Fontenay-aux-Roses. Une grande partie de son territoire est occupée par le **parc départemental de Sceaux**, dessiné par André Le Nôtre : **181 hectares**, dont **120** sur la commune, vestige du domaine de Colbert.',
+      'Au nord, l’ancien **ru des Blagis**, qui marque la limite avec Fontenay-aux-Roses, a été **canalisé et mis en souterrain dans les années 1950** : c’est aujourd’hui le **collecteur des Blagis**, qui draine les eaux pluviales. La ville est aussi traversée par la **coulée verte du Sud parisien**. En 2018, **20,5 %** des logements étaient des maisons individuelles et **77 %** des appartements : maisons en meulière, immeubles anciens et résidences récentes.',
+      'Pour une société de dératisation, Sceaux, ce sont des **jardins** en lisière de parc, des **réseaux** enterrés, des **caves** d’immeubles et les **commerces** du centre. Nous y intervenons depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Sceaux](/punaises-de-lit/sceaux) et [fourmis à Sceaux](/fourmis/sceaux).',
+    ],
+  },
+  chiffres: [
+    { valeur: '20 884', texte: 'habitants (population légale Insee), code postal 92330.', source: SC_INSEE },
+    { valeur: '120 ha', texte: 'du parc départemental de Sceaux (181 ha au total) se trouvent sur la commune.', source: SC_WIKI },
+    { valeur: '20,5 %', texte: 'des logements sont des maisons individuelles, souvent avec jardin (2018).', source: SC_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Sceaux : la ville secteur par secteur',
+    intro: 'L’Insee découpe Sceaux en huit secteurs : **Robinson**, **Cheneaux-Sablons**, **Vieux Sceaux-Curie**, **Parc de Sceaux**, **Desgranges-Fontenay**, **Centre**, **Blagis** et **Musiciens-Roosevelt**. Voici ce que chaque type de secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le parc de Sceaux et le château',
+        texte: 'Le château actuel a été construit de **1856 à 1858** à l’emplacement de celui de Colbert. Le parc est géré par le Département : nous n’y intervenons pas, mais ses pelouses, bassins et bosquets nourrissent une faune qui fréquente aussi les rues voisines. Les maisons et immeubles en bordure du parc doivent surveiller caves, jardins et locaux à poubelles.',
+        photo: wsc('chateau-de-sceaux.jpg', 'Le château de Sceaux au bout de son allée, entre les ifs taillés', 'Le château de Sceaux, reconstruit de 1856 à 1858.', 'Chabe01', 'CC BY-SA 4.0', 'Ch%C3%A2teau_Sceaux_-_Sceaux_(FR92)_-_2026-09-06_-_5.jpg'),
+      },
+      {
+        nom: 'Les pavillons en lisière du parc',
+        texte: 'Autour du parc, le **lotissement du Parc de Sceaux** et les quartiers **Musiciens-Roosevelt** ou **Cheneaux-Sablons** alignent pavillons et villas en meulière. Jardins, haies, abris et composts : les rats creusent au pied des clôtures et entrent par les garages ou les vides sanitaires. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wsc('parc-de-sceaux.jpg', 'Une allée bordée d’arbres taillés dans le parc de Sceaux', 'Une allée du parc de Sceaux.', 'Chabe01', 'CC BY-SA 4.0', 'Parc_Sceaux_-_Sceaux_(FR92)_-_2026-09-06_-_2.jpg'),
+      },
+      {
+        nom: 'Le centre et la rue Houdan',
+        texte: 'La **rue Houdan**, piétonne dans le centre, réunit commerces, restaurants et immeubles anciens du **Vieux Sceaux**. Réserves, cuisines et locaux à poubelles attirent les rongeurs : nous intervenons chez les **commerçants** et en copropriété. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wsc('rue-houdan.jpg', 'Le carrefour de la rue Houdan, entre immeubles anciens et récents, à Sceaux', 'La rue Houdan, axe du centre-ville.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Houdan_-_Sceaux_(FR92)_-_2023-03-19_-_2.jpg'),
+      },
+      {
+        nom: 'Les Blagis et le collecteur',
+        texte: 'Au nord, le quartier des **Blagis**, à la limite de Fontenay-aux-Roses et de Bagneux, compte davantage d’immeubles. Sous les rues, l’ancien **ru des Blagis** est devenu un **collecteur** d’eaux pluviales : un couloir pour le surmulot, qui remonte vers les caves et les parkings. La dératisation se fait avec le **syndic** ou le **bailleur**, puis nous rebouchons les passages.',
+        photo: wsc('immeuble-rue-houdan.jpg', 'Un immeuble d’angle en brique et pierre, rue Houdan à Sceaux', 'Un immeuble ancien de la rue Houdan : caves et locaux à poubelles à surveiller.', 'Chabe01', 'CC BY-SA 4.0', 'Immeuble_112_Rue_Houdan_-_Sceaux_(FR92)_-_2023-03-19_-_1.jpg'),
+      },
+      {
+        nom: 'Robinson et les gares du RER B',
+        texte: 'Sceaux est desservie par les gares de **Sceaux** et de **Robinson**, terminus de la branche du RER B. Talus, voies et résidences voisines, puis la **coulée verte** qui traverse la ville : végétation et réseaux offrent abri et passages. Nous contrôlons les abords des immeubles et des maisons riveraines.',
+        photo: wsc('gare-de-sceaux.jpg', 'Le petit bâtiment de la gare RER de Sceaux et son totem RER', 'La gare RER de Sceaux.', 'Chabe01', 'CC BY-SA 4.0', 'Gare_Sceaux_-_Sceaux_(FR92)_-_2023-08-06_-_6.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Sceaux (92330) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire. Immeuble : caves, parking, local à poubelles. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Sceaux (92330) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’une maison en meulière', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire et au garage.' },
+      { t: 'Des rats remontés par les réseaux', x: 'Le collecteur des Blagis et les réseaux d’eaux pluviales servent de couloirs : nous contrôlons les regards et posons des grilles.' },
+      { t: 'Des rongeurs dans un commerce de la rue Houdan', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Sceaux',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; une maison, de son propriétaire ; un commerce, de son exploitant. Le parc de Sceaux relève du Département.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Bourg-la-Reine](/deratisation/bourg-la-reine), [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses), [Antony](/deratisation/antony), [Châtenay-Malabry](/deratisation/chatenay-malabry) et [Bagneux](/deratisation/bagneux). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Sceaux ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Maison, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite près du parc de Sceaux : est-ce que j’ai plus de risques ?', a: 'Les espaces verts offrent abri et nourriture, et les jardins voisins en profitent. Fermez le compost, rentrez croquettes et graines, et faites traiter dès les premiers terriers ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Le collecteur des Blagis fait-il venir les rats ?', a: 'Les ruisseaux canalisés et les réseaux d’eaux pluviales sont des couloirs pour le surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons et immeubles proches doivent surveiller caves et regards.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Sceaux ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [SC_INSEE, SC_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
