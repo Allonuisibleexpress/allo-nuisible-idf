@@ -5686,4 +5686,100 @@ REFONTE_DERATISATION['malakoff'] = {
   sources: [MAL_INSEE, MAL_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── La Garenne-Colombes (27/11/2026) ──
+const LGC_WIKI: Source = { label: 'Wikipédia, La Garenne-Colombes (situation, relief, habitat, îlots, logement, place de Belgique et La Défense)', url: 'https://fr.wikipedia.org/wiki/La_Garenne-Colombes' }
+const LGC_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92035, La Garenne-Colombes', url: 'https://geo.api.gouv.fr/communes?code=92035&fields=nom,code,codesPostaux,population,surface' }
+const wlg = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/la-garenne-colombes/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['la-garenne-colombes'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une petite ville résidentielle collée à La Défense, des immeubles 1900, des pavillons et des villas, une ancienne présence de petites industries et un nouveau quartier à Charlebourg : à La Garenne-Colombes, les rats vivent dans les caves et les jardins. Nous les traitons rue par rue.',
+  societe: {
+    titre: 'Société de dératisation à La Garenne-Colombes (92250) : une ville résidentielle aux portes de La Défense',
+    paras: [
+      'La Garenne-Colombes compte **30 197 habitants** sur **1,78 km²**, soit près de **17 000 habitants au km²**, entre Colombes, Bois-Colombes, Courbevoie et Nanterre. La **place de Belgique** est à quelques centaines de mètres de **La Défense**, dont une partie s’étend sur la commune. Le relief est presque plat, entre 37 et 46 mètres d’altitude.',
+      'Autrefois, de petites industries côtoyaient des pavillons ; aujourd’hui, la ville est surtout **résidentielle** : pavillons, maisons de ville, villas, immeubles de la fin du XIXe et du début du XXe siècle, quelques immeubles haussmanniens et le nouveau quartier de **Charlebourg**. En 2018, **89,3 %** des logements étaient des appartements et **9,7 %** des maisons. Pour une société de dératisation, ce sont des **caves**, des **cours**, des **parkings** et des **jardins** à traiter.',
+      'Nous intervenons à La Garenne-Colombes depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à La Garenne-Colombes](/punaises-de-lit/la-garenne-colombes) et [fourmis à La Garenne-Colombes](/fourmis/la-garenne-colombes). Pour le quartier d’affaires voisin : [dératisation à La Défense](/deratisation/la-defense).',
+    ],
+  },
+  chiffres: [
+    { valeur: '30 197', texte: 'habitants (population légale Insee), code postal 92250.', source: LGC_INSEE },
+    { valeur: '≈ 17 000', texte: 'habitants au km² (30 197 habitants sur 1,78 km²) : immeubles, caves et jardins serrés.', source: LGC_INSEE },
+    { valeur: '89,3 %', texte: 'des logements sont des appartements et 9,7 % des maisons (2018).', source: LGC_WIKI },
+    { valeur: '4 communes', texte: 'se partagent La Défense, dont La Garenne-Colombes, avec Puteaux, Courbevoie et Nanterre.', source: LD_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à La Garenne-Colombes : la ville secteur par secteur',
+    intro: 'L’Insee découpe la ville en onze petits secteurs, de la **ZAC de Charlebourg** aux **Champs-Philippe**, en passant par **Médéric**, **Sartoris** ou les **Vallées**. Voici ce que chaque type de secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Charlebourg et la place de Belgique, côté La Défense',
+        texte: 'Près de La Défense, le quartier de **Charlebourg** et la place de Belgique réunissent immeubles récents, bureaux, commerces et parkings souterrains, avec les tours en toile de fond. Sous-sols et locaux à poubelles : nous intervenons en copropriété et chez les professionnels. Voir [dératisation à La Défense](/deratisation/la-defense).',
+        photo: wlg('petite-rue-vue-la-defense.jpg', 'Une rue bordée d’arbres à La Garenne-Colombes avec les tours de La Défense au fond', 'Une rue de La Garenne-Colombes, avec les tours de La Défense au fond.', 'Magicboost', 'CC BY-SA 3.0', 'Petite_rue_LGC.JPG'),
+      },
+      {
+        nom: 'La place de la Fontaine et le centre',
+        texte: 'Autour de la **place du Général-Leclerc**, dite place de la Fontaine : immeubles, commerces, marchés et restaurants. Réserves, cuisines et locaux à poubelles attirent les rongeurs : nous intervenons chez les **commerçants** avec plan des postes et attestation. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wlg('place-de-la-fontaine.jpg', 'La place de la Fontaine et ses commerces à La Garenne-Colombes', 'La place du Général-Leclerc, dite place de la Fontaine.', 'Magicboost', 'CC BY 2.5', 'La_Garenne-Colombes,_place_de_la_fontaine.jpg'),
+      },
+      {
+        nom: 'Les immeubles 1900 et les rues anciennes',
+        texte: 'Rue Médéric et alentour, des **immeubles du début du XXe siècle**, quelques haussmanniens et des maisons de ville : caves anciennes, cours et soupiraux. Nous traitons les sous-sols avec le **syndic** et rebouchons les passages vers les logements.',
+        photo: wlg('immeuble-1903-rue-mederic.jpg', 'Un immeuble de 1903 rue Médéric à La Garenne-Colombes', 'Un immeuble de 1903, rue Médéric.', 'Magicboost', 'CC BY 2.5', 'La_Garenne-Colombes,_immeuble_1903.jpg'),
+      },
+      {
+        nom: 'Le parc Victor-Roy et les quartiers de pavillons',
+        texte: 'Le **parc Victor-Roy**, derrière l’hôtel de ville, et les rues de **pavillons et de villas** avec jardin : les rats creusent sous les abris, au pied des haies et près des composts, puis entrent par le garage ou le vide sanitaire. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wlg('parc-victor-roy.jpg', 'Les pelouses et massifs du parc Victor-Roy à La Garenne-Colombes', 'Le parc Victor-Roy, parc de l’hôtel de ville.', 'Qjafcc', 'CC BY-SA 3.0', 'La_Garenne-Colombes_-_Parc_Victor_Roy_(2010).jpg'),
+      },
+      {
+        nom: 'La gare et les Vallées',
+        texte: 'Autour de la **gare** et vers les Vallées, à la limite de Bois-Colombes : voie ferrée, talus, maisons et petits immeubles. Talus et réseaux forment des couloirs pour les rongeurs, qui gagnent les jardins et les caves riveraines. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wlg('gare.jpg', 'La gare de La Garenne-Colombes et sa façade de brique', 'La gare de La Garenne-Colombes.', 'Chabe01', 'CC BY-SA 4.0', 'Gare_Garenne_Colombes_-_La_Garenne-Colombes_(FR92)_-_2024-04-01_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à La Garenne-Colombes (92250) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Pavillon : jardin, abri, vide sanitaire, garage. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à La Garenne-Colombes (92250) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave d’un immeuble ancien', x: 'Nous traitons tout le sous-sol avec le syndic, puis rebouchons les passages vers les logements et les caves voisines.' },
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rats dans un parking souterrain', x: 'Près de Charlebourg et de La Défense, les parkings communiquent avec les réseaux : postes numérotés sur tout le sous-sol.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à La Garenne-Colombes',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; un pavillon, de son propriétaire ; un commerce, de son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [La Défense](/deratisation/la-defense), [Colombes](/deratisation/colombes), [Courbevoie](/deratisation/courbevoie), [Nanterre](/deratisation/nanterre) et [Asnières-sur-Seine](/deratisation/asnieres-sur-seine). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à La Garenne-Colombes ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Intervenez-vous aussi à La Défense, tout près ?', a: 'Oui : bureaux, restaurants et parkings du quartier d’affaires, avec plan de lutte et attestation. Voir [dératisation à La Défense](/deratisation/la-defense).' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à La Garenne-Colombes ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [LGC_INSEE, LGC_WIKI, LD_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
