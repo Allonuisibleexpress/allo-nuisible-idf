@@ -27,7 +27,7 @@ const REGLES: [RegExp, string][] = [
   [/mite ou|ou punaise de lit/i, 'Ne pas confondre'],
   [/articles|aller plus loin|à lire aussi/i, 'Articles'],
   [/nos guides|guides pour|guide sur/i, 'Guides'],
-  [/toutes nos villes|par ville|villes les plus|trouvez votre ville/i, 'Villes'],
+  [/toutes nos villes|par ville|villes les plus|trouvez votre ville|tous nos arrondissements/i, 'Villes'],
   [/par département/i, 'Départements'],
   [/autres interventions|nos autres/i, 'Autres services'],
   [/autour de/i, 'Autour de chez vous'],

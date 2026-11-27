@@ -6166,4 +6166,107 @@ REFONTE_DERATISATION['sceaux'] = {
   sources: [SC_INSEE, SC_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ══ PARIS (75), à partir du 27/11/2026 : règlement sanitaire de Paris, article 119, et page de la Ville de Paris ══
+const PARIS_RATS_V: Source = { label: 'Ville de Paris, Comment Paris lutte contre les rats (SMASH, environ 4 000 interventions par an, obligations des propriétaires, DansMaRue)', url: 'https://www.paris.fr/pages/les-rats-a-paris-le-saviez-vous-6418' }
+const RSD_PARIS_119: Source = { label: 'Arrêté du 20 novembre 1979 portant règlement sanitaire du département de Paris, article 119 « Rongeurs » (Légifrance)', url: 'https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006364004/' }
+const QUI_PAIE_75 = '**Qui paie** : dans les cours, caves, jardins et bâtiments privés, ce sont les **propriétaires** (règlement sanitaire de Paris, **article 119**) ; en copropriété, le **syndic** pour les parties communes ; dans un logement loué, le bailleur doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).'
+const REGLEMENT_75 = 'règlement sanitaire de Paris, **article 119**'
+
+// ── Paris 12e (27/11/2026) ──
+const P12_WIKI: Source = { label: 'Wikipédia, 12e arrondissement de Paris (quartiers, bois de Vincennes, faubourg Saint-Antoine, Bercy, viaduc des Arts et coulée verte, marché d’Aligre)', url: 'https://fr.wikipedia.org/wiki/12e_arrondissement_de_Paris' }
+const P12_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : arrondissement municipal 75112, Paris 12e', url: 'https://geo.api.gouv.fr/communes?code=75112&type=arrondissement-municipal&fields=nom,code,codesPostaux,population,surface' }
+const BERCY_WIKI: Source = { label: 'Wikipédia, Parc de Bercy (trois jardins à l’emplacement des anciens entrepôts de vins)', url: 'https://fr.wikipedia.org/wiki/Parc_de_Bercy' }
+const wp12 = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/paris-12/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['paris-12'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le bois de Vincennes, les anciens entrepôts de vins de Bercy, le marché d’Aligre, la gare de Lyon et des immeubles anciens à caves : le 12e est l’arrondissement voisin de notre base de Saint-Maurice. Nous y traitons les rats cour par cour, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 12e (75012) : de la Bastille au bois de Vincennes',
+    paras: [
+      'Le 12e arrondissement compte **138 024 habitants**. Sans le bois de Vincennes, il couvre **6,38 km²**, soit plus de **21 000 habitants au km²** ; avec le bois, rattaché en **1929**, il atteint **16,32 km²**, le deuxième plus grand arrondissement de Paris. Il est bordé au sud par la **Seine** et à l’est par **Saint-Mandé** et **Charenton-le-Pont**.',
+      'Il réunit quatre quartiers administratifs, **Bel-Air**, **Picpus**, **Bercy** et **Quinze-Vingts**, et des quartiers connus comme **Aligre** ou **Reuilly**. À l’ouest, le **faubourg Saint-Antoine** garde ses cours d’artisans du bois ; au sud, le **parc de Bercy** occupe l’emplacement des anciens entrepôts de vins. Immeubles anciens à caves, cours, marchés, restaurants et grands espaces verts : le **rat brun** y trouve abri et nourriture.',
+      'La **Ville de Paris** traite l’espace public (environ **4 000 interventions par an** dans tout Paris), mais dans les cours, caves, jardins et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans le 12e depuis **Saint-Maurice**, juste de l’autre côté du bois, 7 jours sur 7.',
+      'Nos autres pages pour l’arrondissement : [souris à Paris 12e](/souris/paris-12), [punaises de lit à Paris 12e](/punaises-de-lit/paris-12), [cafards à Paris 12e](/cafards/paris-12) et [fourmis à Paris 12e](/fourmis/paris-12).',
+    ],
+  },
+  chiffres: [
+    { valeur: '138 024', texte: 'habitants dans le 12e (population légale Insee), code postal 75012.', source: P12_INSEE },
+    { valeur: '995 ha', texte: 'pour le bois de Vincennes, rattaché au 12e en 1929 : le plus grand espace vert de Paris.', source: P12_WIKI },
+    { valeur: '≈ 4 000', texte: 'interventions par an de la Ville de Paris contre les rongeurs, sur le seul domaine public : caves et cours privées relèvent des propriétaires.', source: PARIS_RATS_V },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 12e : l’arrondissement secteur par secteur',
+    intro: 'Le 12e compte quatre quartiers administratifs : **Bel-Air**, **Picpus**, **Bercy** et **Quinze-Vingts**. Des cours du faubourg Saint-Antoine aux rives du lac Daumesnil, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Aligre et le marché Beauvau',
+        texte: 'Le **marché d’Aligre** associe un marché couvert, le marché Beauvau, et un marché de plein air, **6 jours sur 7**. Déchets alimentaires, réserves de commerçants et immeubles anciens tout autour : les immeubles voisins doivent protéger caves et locaux à poubelles. Nous intervenons chez les **commerçants** et en copropriété. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wp12('marche-beauvau.jpg', 'La halle du marché Beauvau, place d’Aligre, dans le 12e arrondissement de Paris', 'Le marché Beauvau, place d’Aligre.', 'Mbzt', 'CC BY 3.0', 'P1010871_Paris_XII_Place_Aligre_March%C3%A9_Beauvau_reductwk.JPG'),
+      },
+      {
+        nom: 'Le viaduc des Arts et la coulée verte',
+        texte: 'L’ancien viaduc de la ligne de Vincennes accueille sous ses arches le **viaduc des Arts** et, au-dessus, la **coulée verte René-Dumont**, qui file vers l’est. Massifs, restaurants en rez-de-chaussée et immeubles de l’avenue Daumesnil : les rats passent des plantations aux cours. Nous traitons les cours et les caves avec le **syndic**, puis rebouchons soupiraux et passages.',
+        photo: wp12('viaduc-des-arts.jpg', 'Les arches en brique du viaduc des Arts et leurs terrasses, avenue Daumesnil', 'Le viaduc des Arts, avenue Daumesnil.', 'David McSpadden', 'CC BY 2.0', 'Viaduc_des_arts,_Paris_23_May_2014.jpg'),
+      },
+      {
+        nom: 'La gare de Lyon et les Quinze-Vingts',
+        texte: 'Autour de la **gare de Lyon** : hôtels, restaurants, immeubles de bureaux et d’habitation, parkings souterrains. Cuisines professionnelles et sous-sols sont nos points de contrôle, avec postes numérotés, registre et attestation pour les contrôles d’hygiène.',
+        photo: wp12('gare-de-lyon.jpg', 'La façade de la gare de Lyon et sa tour de l’horloge, à Paris', 'La gare de Lyon et sa tour de l’horloge.', 'Chabe01', 'CC BY-SA 4.0', 'Fa%C3%A7ade_ouest_Gare_Lyon_Paris_10.jpg'),
+      },
+      {
+        nom: 'Bercy, de la Seine au parc',
+        texte: 'Le **parc de Bercy** réunit trois jardins à l’emplacement des **anciens entrepôts de vins**, entre la Seine, Bercy Village et les résidences du quartier. Pelouses, bassins et potagers voisinent avec les immeubles récents : caves, parkings et jardins de résidence se traitent avec le **syndic** ou le **bailleur**.',
+        photo: wp12('parc-de-bercy.jpg', 'Un bassin et sa passerelle dans le parc de Bercy, devant des immeubles', 'Un bassin du parc de Bercy, au pied des résidences.', 'DiscoA340', 'CC BY-SA 4.0', 'Pond_in_the_Parc_de_Bercy.jpg'),
+      },
+      {
+        nom: 'Bel-Air, Picpus et le bois de Vincennes',
+        texte: 'À l’est, **Bel-Air** et **Picpus** mêlent immeubles anciens, résidences et quelques rues plus calmes jusqu’au **bois de Vincennes** et au lac Daumesnil. Le bois relève de la Ville ; les immeubles et jardins riverains, de leurs propriétaires. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: wp12('lac-daumesnil.jpg', 'Le lac Daumesnil et ses rives boisées dans le bois de Vincennes', 'Le lac Daumesnil, dans le bois de Vincennes.', 'Julien Magne', 'CC BY 2.0', 'Le_Lac_Daumesnil_2010.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Paris 12e (75012) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble ancien : caves, cour, local à poubelles, gaines. Restaurant ou commerce : réserves, cuisine, sous-sol. Rez-de-chaussée : soupiraux et passages de tuyaux.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées sur les soupiraux, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Paris 12e (75012) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou la cour d’un immeuble', x: 'Le cas parisien par excellence : nous traitons tout le sous-sol avec le syndic, puis rebouchons soupiraux et passages. La Ville rappelle que ces espaces privés relèvent des propriétaires.' },
+      { t: 'Des rongeurs dans un commerce ou un restaurant', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Des souris dans un appartement ancien', x: 'Elles passent par les gaines, les planchers et le pourtour des tuyaux : voir [souris à Paris 12e](/souris/paris-12) et [par où entrent les souris](/blog/souris-par-ou-entrent-elles).' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’égouts est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des rats dans le jardin d’une résidence', x: 'Terriers au pied des massifs, près des bacs ou des composts : nous traitons la colonie et conseillons des contenants fermés. Voir [rat dans le compost](/blog/rat-compost).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, Ville de Paris, syndic : qui fait quoi à Paris 12e',
+    paras: [
+      'L’**article 119** du **règlement sanitaire de Paris** (arrêté du 20 novembre 1979) demande aux **propriétaires** de prendre les mesures pour éviter l’introduction des rongeurs, et aux propriétaires et occupants de vérifier régulièrement leurs locaux. La Ville de Paris le rappelle : dans les jardins, cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. En copropriété, c’est le **syndic** qui organise le traitement des parties communes.',
+      'La Ville agit sur l’espace public par son service **SMASH**, mène des actions dans les égouts et se coordonne avec les bailleurs sociaux. Un rat dans la rue, un square ou le bois se signale avec l’application **DansMaRue**. Locataire, signalez les rats **par écrit** à votre bailleur, avec photos et dates : il doit vous fournir un logement exempt de nuisibles (loi du 6 juillet 1989, article 6).',
+      'Nous intervenons aussi tout autour : [Paris 11e](/deratisation/paris-11), [Paris 20e](/deratisation/paris-20), [Paris 4e](/deratisation/paris-4), [Paris 13e](/deratisation/paris-13), [Saint-Mandé](/deratisation/saint-mande) et [Charenton-le-Pont](/deratisation/charenton-le-pont). Tous les arrondissements : [dératisation à Paris](/deratisation/paris).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Paris 12e ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, cave ou restaurant : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'La Ville de Paris dératise-t-elle mon immeuble ?', a: 'Non : elle traite l’espace public et les égouts. Dans les cours, caves, jardins et bâtiments privés, la lutte incombe aux propriétaires (règlement sanitaire de Paris, article 119).' },
+    { q: 'J’habite près du marché d’Aligre : est-ce que j’ai plus de risques ?', a: 'Un marché alimentaire est une source régulière de nourriture. Les immeubles voisins doivent surtout protéger leurs caves et locaux à poubelles : portes qui ferment, soupiraux grillagés, bacs fermés.' },
+    { q: 'Comment signaler un rat dans la rue ou le bois de Vincennes ?', a: 'Avec l’application DansMaRue de la Ville de Paris, qui géolocalise le signalement. Les services municipaux le prennent en charge sur l’espace public.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Paris 12e ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, juste de l’autre côté du bois de Vincennes, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [P12_INSEE, P12_WIKI, BERCY_WIKI, PARIS_RATS_V, RSD_PARIS_119, LOI_89, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
