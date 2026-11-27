@@ -5782,4 +5782,100 @@ REFONTE_DERATISATION['la-garenne-colombes'] = {
   sources: [LGC_INSEE, LGC_WIKI, LD_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Vanves (27/11/2026) ──
+const VAN_WIKI: Source = { label: 'Wikipédia, Vanves (relief, trois quartiers, logement, coulée verte, parcs)', url: 'https://fr.wikipedia.org/wiki/Vanves' }
+const VAN_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92075, Vanves', url: 'https://geo.api.gouv.fr/communes?code=92075&fields=nom,code,codesPostaux,population,surface' }
+const wva = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/vanves/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['vanves'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une petite ville très dense aux portes du 15e, un Plateau de grands immeubles, un vieux centre autour de Saint-Rémy, des Hauts plus calmes et deux grands parcs : à Vanves, les rats vivent dans les caves, les parkings et les jardins. Nous les traitons quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Vanves (92170) : une ville dense entre Paris, Issy et Malakoff',
+    paras: [
+      'Vanves compte **28 622 habitants** sur seulement **1,56 km²**, soit près de **18 400 habitants au km²**, au sud-ouest de Paris. Le relief monte de **35 à 78 mètres**. La ville se partage en trois quartiers : le **Plateau**, le plus récent et le plus dense, le **Centre Saint-Rémy**, le plus ancien, et les **Hauts-de-Vanves**, plus calmes.',
+      'En 2020, **90,6 %** des logements étaient des appartements et **7,9 %** des maisons. Grands immeubles du Plateau, petites rues anciennes du centre, parcs boisés comme celui du lycée Michelet et le parc Frédéric-Pic : pour une société de dératisation, ce sont des **caves**, des **parkings**, des **locaux à poubelles** et des **jardins** à surveiller, avec les **syndics** et les **bailleurs**.',
+      'Nous intervenons à Vanves depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Vanves](/punaises-de-lit/vanves) et [fourmis à Vanves](/fourmis/vanves).',
+    ],
+  },
+  chiffres: [
+    { valeur: '28 622', texte: 'habitants (population légale Insee), code postal 92170.', source: VAN_INSEE },
+    { valeur: '≈ 18 400', texte: 'habitants au km² (28 622 habitants sur 1,56 km²) : l’une des villes les plus denses du département.', source: VAN_INSEE },
+    { valeur: '90,6 %', texte: 'des logements sont des appartements (2020) : caves, parkings et locaux à poubelles partagés.', source: VAN_WIKI },
+    { valeur: '3 quartiers', texte: 'aux visages différents : le Plateau dense, le vieux Centre Saint-Rémy et les Hauts-de-Vanves.', source: VAN_WIKI },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Vanves : la ville quartier par quartier',
+    intro: 'Vanves compte trois quartiers : le **Plateau**, le **Centre Saint-Rémy** et les **Hauts-de-Vanves**, avec de grands parcs entre eux. Voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Plateau et ses grands immeubles',
+        texte: 'Partie la plus récente et la plus dense de la ville, le **Plateau** aligne de grands immeubles, des voies piétonnes et un habitat mixte, privé et social. Caves, parkings, vide-ordures et locaux à poubelles : le traitement se fait avec le **syndic** ou le **bailleur**, sur toutes les parties communes.',
+        photo: wva('plateau-de-vanves.jpg', 'Grands immeubles du quartier du Plateau à Vanves', 'Les grands immeubles du Plateau.', 'Fauxjeton', 'CC BY-SA 3.0', 'Plateau_de_vanves.jpg'),
+      },
+      {
+        nom: 'Le Centre Saint-Rémy, le vieux Vanves',
+        texte: 'Autour de l’**église Saint-Rémy**, le petit village d’origine : maisons anciennes, immeubles serrés, cours et commerces. Caves anciennes et soupiraux : nous traitons les sous-sols et rebouchons les passages. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wva('eglise-saint-remy.jpg', 'Le clocher de l’église Saint-Rémy à Vanves', 'Le clocher de l’église Saint-Rémy, au cœur du vieux Vanves.', 'Chabe01', 'CC BY-SA 4.0', '%C3%89glise_Saint_R%C3%A9my_-_Vanves_(FR92)_-_2023-08-03_-_4.jpg'),
+      },
+      {
+        nom: 'Le parc du lycée Michelet',
+        texte: 'Le grand **parc du lycée Michelet** offre pelouses, bosquets et grands arbres en pleine ville. Les rongeurs y trouvent abri et gagnent les immeubles riverains : nous traitons les accès des bâtiments voisins et les jardins de résidence.',
+        photo: wva('parc-lycee-michelet.jpg', 'Les pelouses et grands arbres du parc du lycée Michelet à Vanves', 'Le parc du lycée Michelet, en pleine ville.', 'Myrabella', 'CC BY-SA 4.0', 'Lycee_Michelet_Vanves_parc.jpg'),
+      },
+      {
+        nom: 'Le parc Frédéric-Pic et les résidences',
+        texte: 'Le **parc Frédéric-Pic**, ses massifs et ses grands arbres sont entourés de résidences. Massifs, poubelles de parc et pelouses : les rats creusent en bordure et passent dans les jardins de résidence. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: wva('parc-frederic-pic.jpg', 'Massif fleuri et résidences autour du parc Frédéric-Pic à Vanves', 'Le parc Frédéric-Pic, entouré de résidences.', 'Chabe01', 'CC BY-SA 4.0', 'Parc_Fr%C3%A9d%C3%A9ric_Pic_-_Vanves_(FR92)_-_2023-08-03_-_2.jpg'),
+      },
+      {
+        nom: 'Les Hauts-de-Vanves',
+        texte: 'Partie la plus calme et la moins dense, les **Hauts-de-Vanves** mêlent maisons, petits immeubles et jardins le long d’avenues arborées. Haies, abris et garages : nous traitons les terriers et fermons les accès aux maisons.',
+        photo: wva('avenue-de-la-paix.jpg', 'L’avenue de la Paix, arborée, à Vanves', 'L’avenue de la Paix : maisons, petits immeubles et arbres.', 'Chabe01', 'CC BY-SA 4.0', 'Avenue_Paix_-_Vanves_(FR92)_-_2023-08-03_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Vanves (92170) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Immeuble : caves, parking, local à poubelles, gaines. Maison : jardin, abri, vide sanitaire. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Vanves (92170) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans la cave ou le parking d’un immeuble du Plateau', x: 'Nous traitons tout le sous-sol avec le syndic ou le bailleur, puis rebouchons les passages vers les logements.' },
+      { t: 'Des rats dans une cave ancienne du centre', x: 'Caves voûtées et soupiraux : nous traitons le sous-sol et posons des grilles.' },
+      { t: 'Des rongeurs près d’un parc', x: 'Les grands parcs abritent les rongeurs, qui gagnent les immeubles et jardins riverains : nous fermons les accès.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Vanves',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; dans les résidences sociales, du **bailleur** ; une maison, de son propriétaire.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Issy-les-Moulineaux](/deratisation/issy-les-moulineaux), [Malakoff](/deratisation/malakoff), [Clamart](/deratisation/clamart) et [Paris 15e](/deratisation/paris-15). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Vanves ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Immeuble, maison ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'J’habite près d’un parc : pourquoi des rongeurs chez moi ?', a: 'Les parcs abritent souris et rats, qui gagnent les immeubles et jardins riverains, surtout à l’automne. Faites boucher soupiraux et passages, et fermez poubelles et composts.' },
+    { q: 'Les rats de l’immeuble voisin peuvent-ils venir chez moi ?', a: 'Oui : murs mitoyens, caves et réseaux communiquent. Le plus efficace est un traitement coordonné entre syndics voisins, avec rebouchage des passages.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Vanves ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [VAN_INSEE, VAN_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
