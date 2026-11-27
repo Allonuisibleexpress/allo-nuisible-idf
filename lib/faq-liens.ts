@@ -106,7 +106,7 @@ export function lienFaq(q: string, _rep: string, ctx: CtxFaq = {}): LienFaq | nu
   if (/professionnel|restaurant|attestation|copropriét|syndic|bailleur|hôtel|commerces?\b|contrat|immeuble/.test(t)) { const l = first({ href: '/professionnels', label: 'Nos interventions pour les professionnels' }); if (l) return l }
   // 7. Zone, quartiers, villes voisines, où vous trouver
   if (/quartiers?|villes? voisines|communes voisines|autour de|\bvilles?\b|secteur|département|où se trouve|où êtes|basés?/.test(t)) {
-    const l = first(fam && ctx.dep && AVEC_DEP.includes(fam) ? { href: `${fam}/${ctx.dep.slug}`, label: `${famN?.nom ?? 'Nos services'} ${ctx.dep.dans} : toutes nos villes` } : null, ctx.dep ? { href: `/zones/${ctx.dep.slug}`, label: `Tous nos services ${ctx.dep.dans}` } : null, { href: '/zones', label: 'Nos zones d’intervention autour de Saint-Maurice' })
+    const l = first(fam && ctx.dep && AVEC_DEP.includes(fam) ? { href: `${fam}/${ctx.dep.slug}`, label: `${famN?.nom ?? 'Nos services'} ${ctx.dep.dans} : ${ctx.dep.slug === 'paris' ? 'tous nos arrondissements' : 'toutes nos villes'}` } : null, ctx.dep ? { href: `/zones/${ctx.dep.slug}`, label: `Tous nos services ${ctx.dep.dans}` } : null, { href: '/zones', label: 'Nos zones d’intervention autour de Saint-Maurice' })
     if (l) return l
   }
   // 8. Délai, urgence, jour même

@@ -7220,4 +7220,319 @@ REFONTE_DERATISATION['paris-4'] = {
   sources: P_SOURCES(P_INSEE(4, 'Paris 4e'), P_WIKI(4, 'quartiers, Paris Centre, île Saint-Louis, Marais'), { label: 'Wikipédia, Port de l’Arsenal (relie le canal Saint-Martin à la Seine)', url: 'https://fr.wikipedia.org/wiki/Port_de_l%27Arsenal' }),
 }
 
+// ── Paris 5e (27/11/2026) ──
+const w5 = wp('paris-5')
+REFONTE_DERATISATION['paris-5'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le Jardin des plantes et ses 27 hectares, la rue Mouffetard et ses commerces de bouche, les arènes de Lutèce, le Panthéon et les universités, les quais de Seine : le 5e mêle jardins, restaurants et immeubles très anciens. Nous y traitons les rats cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 5e (75005) : du Panthéon au Jardin des plantes',
+    paras: [
+      'Le 5e arrondissement, dit **du Panthéon**, compte **55 252 habitants** sur **2,54 km²**, soit près de **22 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Saint-Victor**, **Jardin-des-Plantes**, **Val-de-Grâce** et **Sorbonne**.',
+      'C’est le Quartier latin : universités, grandes écoles, le **Panthéon**, la **rue Mouffetard** et ses commerces, les **arènes de Lutèce**, le **Jardin des plantes** (27 hectares) et les **quais de Seine** avec le jardin Tino-Rossi. Immeubles parmi les plus anciens de Paris, caves voûtées, restaurants et résidences étudiantes : pour une société de dératisation, ce sont des **caves**, des **cuisines** et des immeubles en bordure de jardins à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 5e, 7 jours sur 7.',
+      P_AUTRES('paris-5', 'Paris 5e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '55 252', texte: 'habitants dans le 5e (population légale Insee), code postal 75005.', source: P_INSEE(5, 'Paris 5e') },
+    { valeur: '27 ha', texte: 'pour le Jardin des plantes, au bord de la Seine.', source: { label: 'Wikipédia, Jardin des plantes de Paris (superficie)', url: 'https://fr.wikipedia.org/wiki/Jardin_des_plantes_de_Paris' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 5e : l’arrondissement secteur par secteur',
+    intro: 'Le 5e compte quatre quartiers administratifs : **Saint-Victor**, **Jardin-des-Plantes**, **Val-de-Grâce** et **Sorbonne**. Des quais au Panthéon, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Jardin des plantes',
+        texte: 'Le **Jardin des plantes** (27 hectares), ses parterres, ses serres et sa ménagerie, borde la Seine et la gare d’Austerlitz. Il relève de son gestionnaire ; les immeubles riverains, rue Cuvier ou rue Geoffroy-Saint-Hilaire, doivent protéger **caves**, **cours** et **locaux à poubelles**.',
+        photo: w5('jardin-des-plantes.jpg', 'Les parterres fleuris du Jardin des plantes', 'Les parterres du Jardin des plantes.', 'Nemo bis', 'CC BY-SA 3.0', '2015-05-27_Paris,_Jardin_des_plantes_01.jpg'),
+      },
+      {
+        nom: 'La rue Mouffetard',
+        texte: 'Primeurs, fromagers, boulangeries, restaurants et bars : la **rue Mouffetard** est une rue de bouche, très animée le soir. Réserves, cuisines, bacs à poubelles et caves anciennes : nous intervenons chez les **commerçants** (plan de lutte, registre) et dans les copropriétés au-dessus.',
+        photo: w5('rue-mouffetard.jpg', 'Les étals et les terrasses de la rue Mouffetard', 'La rue Mouffetard et ses commerces.', 'LPLT', 'CC BY-SA 3.0', 'Rue_Mouffetard.JPG'),
+      },
+      {
+        nom: 'Les arènes de Lutèce et Saint-Victor',
+        texte: 'Autour des **arènes de Lutèce**, vestige gallo-romain devenu square, et du campus de Jussieu : immeubles anciens, résidences et rues calmes. Jardins, talus et vieux murs : nous contrôlons caves et soupiraux des immeubles voisins. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w5('arenes-de-lutece.jpg', 'La piste et les gradins des arènes de Lutèce', 'Les arènes de Lutèce.', 'Brodigny', 'CC BY-SA 3.0', 'Ar%C3%A8nes_de_Lut%C3%A8ce_(vue_actuelle).jpg'),
+      },
+      {
+        nom: 'Le Panthéon et la Sorbonne',
+        texte: 'Sur la montagne Sainte-Geneviève, autour du **Panthéon** et de la **Sorbonne** : universités, bibliothèques, restaurants et résidences étudiantes. Cuisines collectives et sous-sols anciens : nous intervenons avec les **gestionnaires** de bâtiments et les syndics.',
+        photo: w5('place-du-pantheon.jpg', 'La place du Panthéon et la façade du Panthéon', 'La place du Panthéon.', 'Jason Riedy', 'CC BY 2.0', 'Paris_75005_Place_du_Panth%C3%A9on_20160417_(3).jpg'),
+      },
+      {
+        nom: 'Les quais et le jardin Tino-Rossi',
+        texte: 'Le long du **quai Saint-Bernard**, le **jardin Tino-Rossi** et ses sculptures bordent la Seine. Berges, végétation et pique-niques : les rats suivent le fleuve. Les immeubles des quais doivent surtout protéger caves et locaux à poubelles.',
+        photo: w5('jardin-tino-rossi.jpg', 'Un saule pleureur au bord de la Seine dans le jardin Tino-Rossi', 'Le jardin Tino-Rossi, au bord de la Seine.', 'Moonik', 'CC BY-SA 3.0', 'Paris_5e_Jardin_Tino_Rossi_001.JPG'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 5e', '75005'),
+  dératiseur: P_DERATISEUR('à Paris 5e', '75005', { t: 'Des rats dans une résidence étudiante ou une cuisine collective', x: 'Cuisines partagées, locaux à poubelles et caves : nous traitons avec le gestionnaire, posons des postes sécurisés et rebouchons les passages.' }),
+  mairie: P_MAIRIE('à Paris 5e', 'dans la rue, un square ou sur les quais', [['paris-6', 'Paris 6e'], ['paris-13', 'Paris 13e'], ['paris-14', 'Paris 14e'], ['paris-4', 'Paris 4e'], ['paris-12', 'Paris 12e']]),
+  faq: P_FAQ('à Paris 5e', [
+    { q: 'J’habite près de la rue Mouffetard : ai-je plus de risques ?', a: 'Une rue de commerces de bouche est une source régulière de nourriture. Les immeubles voisins doivent surtout protéger leurs caves et locaux à poubelles : portes qui ferment, soupiraux grillagés, bacs fermés.' },
+    { q: 'J’ai un restaurant dans le Quartier latin : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+  ]),
+  sources: P_SOURCES(P_INSEE(5, 'Paris 5e'), P_WIKI(5, 'quartiers, Quartier latin, rue Mouffetard, Jardin des plantes')),
+}
+
+// ── Paris 6e (27/11/2026) ──
+const w6 = wp('paris-6')
+REFONTE_DERATISATION['paris-6'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le jardin du Luxembourg, Saint-Germain-des-Prés, la rue de Buci et ses restaurants, l’Odéon et les galeries de la rue de Seine : le 6e réunit jardins, cafés et immeubles anciens à caves. Nous y traitons les rats immeuble par immeuble, en toute discrétion.',
+  societe: {
+    titre: 'Société de dératisation à Paris 6e (75006) : du Luxembourg à Saint-Germain-des-Prés',
+    paras: [
+      'Le 6e arrondissement, dit **du Luxembourg**, compte **40 389 habitants** sur **2,15 km²**. Il réunit quatre quartiers administratifs : **Monnaie**, **Odéon**, **Notre-Dame-des-Champs** et **Saint-Germain-des-Prés**.',
+      'Il abrite le **jardin du Luxembourg** (22,45 hectares) et le Sénat, l’**église Saint-Germain-des-Prés**, le **théâtre de l’Odéon**, la **rue de Buci** et ses restaurants, les galeries de la **rue de Seine** et des immeubles parmi les plus anciens de la rive gauche. Caves voûtées, cours, cafés, restaurants et hôtels : pour une société de dératisation, ce sont des **cuisines**, des **réserves** et des **caves** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 6e, 7 jours sur 7, discrètement.',
+      P_AUTRES('paris-6', 'Paris 6e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '40 389', texte: 'habitants dans le 6e (population légale Insee), code postal 75006.', source: P_INSEE(6, 'Paris 6e') },
+    { valeur: '22,45 ha', texte: 'pour le jardin du Luxembourg, jardin du Sénat ouvert au public.', source: { label: 'Wikipédia, Jardin du Luxembourg (superficie)', url: 'https://fr.wikipedia.org/wiki/Jardin_du_Luxembourg' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 6e : l’arrondissement secteur par secteur',
+    intro: 'Le 6e compte quatre quartiers administratifs : **Monnaie**, **Odéon**, **Notre-Dame-des-Champs** et **Saint-Germain-des-Prés**. Du Luxembourg aux quais, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le jardin du Luxembourg',
+        texte: 'Le **jardin du Luxembourg** (22,45 hectares), son grand bassin, ses pelouses et ses kiosques reçoivent chaque jour une foule de promeneurs. Il relève du Sénat ; les immeubles qui le bordent, rue de Vaugirard ou rue Guynemer, doivent protéger **caves**, **cours** et **locaux à poubelles**.',
+        photo: w6('jardin-du-luxembourg.jpg', 'Le grand bassin du jardin du Luxembourg et ses promeneurs', 'Le grand bassin du jardin du Luxembourg.', 'GFreihalter', 'CC BY-SA 3.0', 'Paris_6e_Jardin_du_Luxembourg_Bassin_127.jpg'),
+      },
+      {
+        nom: 'L’Odéon',
+        texte: 'Autour du **théâtre de l’Odéon** et du carrefour de l’Odéon : immeubles anciens, librairies, cinémas, cafés et restaurants. Cuisines, réserves et caves voûtées : nous intervenons chez les **restaurateurs** et dans les copropriétés.',
+        photo: w6('theatre-de-l-odeon.jpg', 'La façade à arcades du théâtre de l’Odéon', 'Le théâtre de l’Odéon, place Paul-Claudel.', 'Polymagou', 'CC BY-SA 4.0', 'Th%C3%A9%C3%A2tre_de_l%27Od%C3%A9on,_place_Paul-Claudel,_Paris_6e.jpg'),
+      },
+      {
+        nom: 'Saint-Germain-des-Prés',
+        texte: 'Autour de l’**église Saint-Germain-des-Prés**, ancienne abbatiale : cafés, brasseries, hôtels et boutiques. Sous-sols, cuisines professionnelles et locaux de service : nous travaillons avec un **plan de lutte**, discret, et une attestation pour les contrôles d’hygiène.',
+        photo: w6('saint-germain-des-pres.jpg', 'Le clocher de l’église Saint-Germain-des-Prés et la place', 'L’église Saint-Germain-des-Prés et sa place.', 'Mbzt', 'CC BY 3.0', 'P1020882_Paris_VI_Place_Saint-Germain-des-pr%C3%A8s_Eglise_rwk.JPG'),
+      },
+      {
+        nom: 'La rue de Buci',
+        texte: 'Restaurants, terrasses et commerces de bouche : la **rue de Buci** et ses voisines concentrent la nourriture au pied d’immeubles anciens. Bacs à poubelles, réserves et caves communicantes : nous traitons commerces et copropriétés ensemble.',
+        photo: w6('rue-de-buci.jpg', 'La rue de Buci, ses commerces et ses passants', 'La rue de Buci.', 'Guilhem Vellut', 'CC BY 2.0', 'Rue_de_Buci_(Paris)_2012-09-20.jpg'),
+      },
+      {
+        nom: 'La rue de Seine et la Monnaie',
+        texte: 'De la **rue de Seine** aux quais, autour de la Monnaie de Paris : galeries, hôtels particuliers, cours pavées et immeubles anciens. Caves voûtées et vieux réseaux, à deux pas de la Seine : nous contrôlons sous-sols et soupiraux. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w6('rue-de-seine.jpg', 'La rue de Seine et ses immeubles anciens', 'La rue de Seine.', 'Ralf Treinen', 'CC BY-SA 3.0', 'Paris,_Rue_de_Seine.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 6e', '75006'),
+  dératiseur: P_DERATISEUR('à Paris 6e', '75006', { t: 'Des rats dans un hôtel ou une brasserie', x: 'Cuisines, réserves, sous-sols et locaux de service : plan de lutte, postes numérotés, registre et attestation. Nous intervenons avant l’ouverture ou après la fermeture, discrètement.' }),
+  mairie: P_MAIRIE('à Paris 6e', 'dans la rue, un square ou sur les quais', [['paris-5', 'Paris 5e'], ['paris-7', 'Paris 7e'], ['paris-14', 'Paris 14e'], ['paris-15', 'Paris 15e'], ['paris-1', 'Paris 1er']]),
+  faq: P_FAQ('à Paris 6e', [
+    { q: 'J’habite près du jardin du Luxembourg : ai-je plus de risques ?', a: 'Les grands jardins offrent abri et nourriture aux rongeurs. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles, et réagir dès les premiers signes.' },
+    { q: 'Pouvez-vous intervenir discrètement dans un hôtel ou un restaurant ?', a: 'Oui : intervention avant l’ouverture ou après la fermeture, postes discrets et sécurisés, plan de lutte et attestation pour vos contrôles d’hygiène.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(6, 'Paris 6e'), P_WIKI(6, 'quartiers, Luxembourg, Saint-Germain-des-Prés')),
+}
+
+// ── Paris 7e (27/11/2026) ──
+const w7 = wp('paris-7')
+REFONTE_DERATISATION['paris-7'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le Champ-de-Mars et la tour Eiffel, les Invalides, les berges de Seine, la rue Cler et ses commerces, les hôtels particuliers du faubourg Saint-Germain : le 7e mêle grands espaces verts, ministères et immeubles bourgeois. Nous y traitons les rats immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Paris 7e (75007) : du Champ-de-Mars aux Invalides',
+    paras: [
+      'Le 7e arrondissement, dit **du Palais-Bourbon**, compte **48 015 habitants** sur **4,08 km²**. Il réunit quatre quartiers administratifs : **Saint-Thomas-d’Aquin**, **Invalides**, **École-Militaire** et **Gros-Caillou**.',
+      'Il abrite la **tour Eiffel** et le **Champ-de-Mars** (24,3 hectares), les **Invalides**, l’Assemblée nationale, de nombreux ministères et ambassades, les **berges de Seine** et, dans l’ancien faubourg Saint-Germain, des **hôtels particuliers** avec jardins. Immeubles haussmanniens à caves, rues commerçantes comme la **rue Cler**, restaurants et grandes pelouses : pour une société de dératisation, ce sont des **caves**, des **jardins** et des **cuisines** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, jardins et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 7e, 7 jours sur 7, discrètement.',
+      P_AUTRES('paris-7', 'Paris 7e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '48 015', texte: 'habitants dans le 7e (population légale Insee), code postal 75007.', source: P_INSEE(7, 'Paris 7e') },
+    { valeur: '24,3 ha', texte: 'pour le Champ-de-Mars, au pied de la tour Eiffel.', source: { label: 'Wikipédia, Champ-de-Mars (superficie)', url: 'https://fr.wikipedia.org/wiki/Champ-de-Mars_(Paris)' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 7e : l’arrondissement secteur par secteur',
+    intro: 'Le 7e compte quatre quartiers administratifs : **Saint-Thomas-d’Aquin**, **Invalides**, **École-Militaire** et **Gros-Caillou**. Du Champ-de-Mars aux berges, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Champ-de-Mars et la tour Eiffel',
+        texte: 'Les pelouses du **Champ-de-Mars** (24,3 hectares) accueillent chaque jour des milliers de visiteurs et de pique-niques. Elles relèvent de la Ville ; les immeubles de l’avenue de Suffren, de l’avenue de La Bourdonnais et des rues voisines doivent protéger **caves**, **cours** et **locaux à poubelles**.',
+        photo: w7('champ-de-mars.jpg', 'Les pelouses du Champ-de-Mars et la tour Eiffel', 'Le Champ-de-Mars, au pied de la tour Eiffel.', 'zianis', 'CC BY-SA 3.0', 'Vue_de_la_Tour_Eiffel_depuis_le_champ_de_Mars.jpg'),
+      },
+      {
+        nom: 'Les berges de Seine',
+        texte: 'Du port de Suffren au pont de l’Alma, les **berges** accueillent bateaux, restaurants flottants et promeneurs. L’eau et les déchets alimentaires attirent le surmulot : les immeubles des quais doivent surveiller caves et soupiraux.',
+        photo: w7('port-de-suffren.jpg', 'Les berges de Seine au port de Suffren, avec des bateaux amarrés', 'Les berges de Seine au port de Suffren.', 'Victor Grigas', 'CC BY-SA 3.0', 'Paris_75007_Port_de_Suffren_Vedettes_de_Paris_20140624.jpg'),
+      },
+      {
+        nom: 'Les Invalides',
+        texte: 'Autour des **Invalides** et de leur esplanade : grands immeubles, ministères, musées et restaurants. Sous-sols, cuisines collectives et grands jardins : nous intervenons avec les **gestionnaires** d’immeubles et les syndics.',
+        photo: w7('invalides.jpg', 'Le dôme doré des Invalides', 'Le dôme des Invalides.', 'Benh Lieu Song', 'CC BY 2.5', 'Invalides_2007_03_11.jpg'),
+      },
+      {
+        nom: 'La rue Cler et le Gros-Caillou',
+        texte: 'La **rue Cler** et ses voisines alignent primeurs, fromagers, boulangeries et restaurants au pied d’immeubles anciens. Réserves, cuisines et caves : nous intervenons chez les **commerçants** (plan de lutte, registre) et dans les copropriétés.',
+        photo: w7('rue-cler.jpg', 'La rue Cler et ses immeubles, dans le quartier du Gros-Caillou', 'La rue Cler, quartier du Gros-Caillou.', 'Mbzt', 'CC BY-SA 3.0', 'P1200290_Paris_VII_rue_Cler_rwk.jpg'),
+      },
+      {
+        nom: 'Le faubourg Saint-Germain et la rue du Bac',
+        texte: 'Autour de la **rue du Bac**, de la rue de Grenelle et de la rue de Varenne : hôtels particuliers, ministères, ambassades, jardins privés et grands immeubles. Jardins, caves profondes et dépendances : nous intervenons discrètement, planifiés avec le gardien ou l’intendance. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w7('rue-du-bac.jpg', 'La rue du Bac et ses immeubles en pierre de taille', 'La rue du Bac.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Bac_-_Paris_VII_(FR75)_-_2021-08-07_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 7e', '75007'),
+  dératiseur: P_DERATISEUR('à Paris 7e', '75007', { t: 'Des rats dans le jardin d’un hôtel particulier', x: 'Terriers au pied des massifs, passages vers les caves et les dépendances : nous traitons la colonie et fermons les accès, avec une intervention discrète planifiée avec le gardien ou l’intendance.' }),
+  mairie: P_MAIRIE('à Paris 7e', 'dans la rue, au Champ-de-Mars ou sur les berges', [['paris-15', 'Paris 15e'], ['paris-6', 'Paris 6e'], ['paris-16', 'Paris 16e'], ['paris-8', 'Paris 8e'], ['paris-1', 'Paris 1er']]),
+  faq: P_FAQ('à Paris 7e', [
+    { q: 'J’habite près du Champ-de-Mars : ai-je plus de risques ?', a: 'Les grandes pelouses très fréquentées et les pique-niques nourrissent les rongeurs. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles, et réagir dès les premiers signes.' },
+    { q: 'Pouvez-vous intervenir discrètement ?', a: 'Oui : rendez-vous planifié avec vous, le gardien ou l’intendance, postes discrets et sécurisés, attestation d’intervention remise par e-mail.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(7, 'Paris 7e'), P_WIKI(7, 'quartiers, Palais-Bourbon, Invalides, Champ-de-Mars')),
+}
+
+// ── Paris 8e (27/11/2026) ──
+const w8 = wp('paris-8')
+REFONTE_DERATISATION['paris-8'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Les Champs-Élysées et leurs jardins, le parc Monceau, la Madeleine, la gare Saint-Lazare, palaces, restaurants et bureaux : le 8e compte peu d’habitants mais une foule de cuisines, de sous-sols et de commerces. Nous y traitons les rats établissement par établissement.',
+  societe: {
+    titre: 'Société de dératisation à Paris 8e (75008) : des Champs-Élysées au parc Monceau',
+    paras: [
+      'Le 8e arrondissement, dit **de l’Élysée**, compte **35 317 habitants** sur **3,88 km²**. Il réunit quatre quartiers administratifs : **Champs-Élysées**, **Faubourg-du-Roule**, **Madeleine** et **Europe**.',
+      'C’est un arrondissement d’affaires, de palaces et de commerces : l’**avenue des Champs-Élysées** et ses **jardins** (13,75 hectares), le **parc Monceau** (8,25 hectares), la **Madeleine**, la **gare Saint-Lazare**, la rue du Faubourg-Saint-Honoré, des sièges sociaux et des immeubles haussmanniens. Grandes cuisines, sous-sols, parkings et locaux de service : pour une société de dératisation, le 8e se traite surtout avec les **gestionnaires** d’immeubles et les **exploitants**.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, parkings et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 8e, 7 jours sur 7, de nuit si nécessaire.',
+      P_AUTRES('paris-8', 'Paris 8e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '35 317', texte: 'habitants dans le 8e (population légale Insee), code postal 75008.', source: P_INSEE(8, 'Paris 8e') },
+    { valeur: '13,75 ha', texte: 'pour les jardins des Champs-Élysées, entre la Concorde et le rond-point.', source: { label: 'Wikipédia, Jardins des Champs-Élysées (superficie)', url: 'https://fr.wikipedia.org/wiki/Jardins_des_Champs-%C3%89lys%C3%A9es' } },
+    { valeur: '8,25 ha', texte: 'pour le parc Monceau, entouré d’hôtels particuliers.', source: { label: 'Wikipédia, Parc Monceau (superficie)', url: 'https://fr.wikipedia.org/wiki/Parc_Monceau' } },
+    P_VILLE_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 8e : l’arrondissement secteur par secteur',
+    intro: 'Le 8e compte quatre quartiers administratifs : **Champs-Élysées**, **Faubourg-du-Roule**, **Madeleine** et **Europe**. Des jardins de l’avenue aux voies de Saint-Lazare, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les jardins des Champs-Élysées',
+        texte: 'Entre la Concorde et le rond-point, les **jardins des Champs-Élysées** (13,75 hectares) bordent théâtres, restaurants et pavillons. Ils relèvent de la Ville ; les établissements voisins doivent protéger **cuisines**, **réserves** et **locaux à poubelles**.',
+        photo: w8('jardins-des-champs-elysees.jpg', 'Un ginkgo doré dans les jardins des Champs-Élysées', 'Les jardins des Champs-Élysées en automne.', 'Wolfgang Moroder', 'CC BY-SA 3.0', 'Jardins_des_Champs-%C3%89lys%C3%A9es_Paris.jpg'),
+      },
+      {
+        nom: 'L’avenue des Champs-Élysées',
+        texte: 'Sur l’**avenue des Champs-Élysées** et dans les rues voisines : restaurants, hôtels, boutiques, bureaux et grands sous-sols. Les cuisines tournent tard et les poubelles sont nombreuses : nous mettons en place des **plans de lutte** et intervenons de nuit si besoin.',
+        photo: w8('avenue-des-champs-elysees.jpg', 'Les arbres illuminés de l’avenue des Champs-Élysées, la nuit', 'L’avenue des Champs-Élysées illuminée.', 'Pierre Blaché', 'CC0', 'Avenue_des_Champs-Elys%C3%A9es,_Paris_12_December_2020.jpg'),
+      },
+      {
+        nom: 'Le parc Monceau',
+        texte: 'Le **parc Monceau** (8,25 hectares) et ses allées sont entourés d’hôtels particuliers et d’immeubles cossus. Le parc relève de la Ville ; jardins privés, caves profondes et dépendances, des propriétaires. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w8('parc-monceau.jpg', 'Une allée ombragée du parc Monceau', 'Une allée du parc Monceau.', 'Chabe01', 'CC BY-SA 4.0', 'All%C3%A9e_Sud_Ouest_Parc_Monceau_-_Paris_VIII_(FR75)_-_2021-09-14_-_1.jpg'),
+      },
+      {
+        nom: 'La Madeleine',
+        texte: 'Autour de l’**église de la Madeleine** : épiceries fines, traiteurs, restaurants, marché aux fleurs et bureaux. Réserves alimentaires et sous-sols : nous intervenons chez les **commerçants** et dans les immeubles de bureaux, avec un dispositif discret.',
+        photo: w8('eglise-de-la-madeleine.jpg', 'Les colonnes de l’église de la Madeleine', 'L’église de la Madeleine.', 'Guilhem Vellut', 'CC BY 2.0', 'North_facade_of_%C3%89glise_de_la_Madeleine,_Paris_13_June_2017.jpg'),
+      },
+      {
+        nom: 'Saint-Lazare et le quartier de l’Europe',
+        texte: 'Autour de la **gare Saint-Lazare** et des voies du quartier de l’**Europe** : flux de voyageurs, restauration rapide, commerces et immeubles anciens. Voies, talus et sous-sols : les rats y trouvent abri ; nous traitons les immeubles et les commerces riverains.',
+        photo: w8('gare-saint-lazare.jpg', 'La façade de la gare Saint-Lazare et son horloge', 'La gare Saint-Lazare.', 'Moonik', 'CC BY-SA 3.0', 'Gare_de_Paris-Saint-Lazare_001.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 8e', '75008'),
+  dératiseur: P_DERATISEUR('à Paris 8e', '75008', { t: 'Des rats dans un immeuble de bureaux ou un palace', x: 'Sous-sols, cuisines d’entreprise, locaux de service et parkings : plan de lutte, postes numérotés, registre et attestation, interventions hors des heures d’ouverture.' }),
+  mairie: P_MAIRIE('à Paris 8e', 'dans la rue, un jardin ou sur l’avenue', [['paris-17', 'Paris 17e'], ['paris-16', 'Paris 16e'], ['paris-9', 'Paris 9e'], ['paris-1', 'Paris 1er'], ['paris-7', 'Paris 7e']]),
+  faq: P_FAQ('à Paris 8e', [
+    { q: 'Intervenez-vous la nuit pour les restaurants et les hôtels ?', a: 'Oui : nous intervenons avant l’ouverture, après la fermeture ou la nuit, sans majoration, pour ne pas gêner votre clientèle. Plan de lutte et attestation fournis.' },
+    { q: 'Des rats dans un immeuble de bureaux : qui doit agir ?', a: 'Le propriétaire ou le gestionnaire de l’immeuble pour les parties communes et les sous-sols, chaque occupant pour ses locaux. Un traitement coordonné sur tout le bâtiment est le plus efficace.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(8, 'Paris 8e'), P_WIKI(8, 'quartiers, Élysée, Champs-Élysées, gare Saint-Lazare')),
+}
+
+// ── Paris 9e (27/11/2026) ──
+const w9 = wp('paris-9')
+REFONTE_DERATISATION['paris-9'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'L’Opéra et les grands magasins, la rue des Martyrs et ses commerces de bouche, la Nouvelle Athènes et la place Saint-Georges, les squares d’Anvers et Montholon : le 9e est dense, commerçant et ancien. Nous y traitons les rats cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 9e (75009) : de l’Opéra à la rue des Martyrs',
+    paras: [
+      'Le 9e arrondissement, dit **de l’Opéra**, compte **57 271 habitants** sur **2,18 km²**, soit plus de **26 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Saint-Georges**, **Chaussée-d’Antin**, **Faubourg-Montmartre** et **Rochechouart**.',
+      'Au sud, l’**Opéra Garnier** et les **grands magasins** du boulevard Haussmann, bureaux et restaurants ; au nord, la **Nouvelle Athènes** autour de la **place Saint-Georges**, la **rue des Martyrs** et ses commerces de bouche, et des squares de quartier comme le **square d’Anvers** et le **square Montholon**. Immeubles anciens à caves, cours, restaurants et commerces : pour une société de dératisation, ce sont des **cuisines**, des **réserves** et des **caves** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 9e, 7 jours sur 7.',
+      P_AUTRES('paris-9', 'Paris 9e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '57 271', texte: 'habitants dans le 9e (population légale Insee), code postal 75009.', source: P_INSEE(9, 'Paris 9e') },
+    { valeur: '≈ 26 000', texte: 'habitants au km² : un arrondissement dense, aux immeubles serrés.', source: P_INSEE(9, 'Paris 9e') },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 9e : l’arrondissement secteur par secteur',
+    intro: 'Le 9e compte quatre quartiers administratifs : **Saint-Georges**, **Chaussée-d’Antin**, **Faubourg-Montmartre** et **Rochechouart**. De l’Opéra au boulevard de Rochechouart, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'L’Opéra et les grands magasins',
+        texte: 'Autour de l’**Opéra Garnier** et des **grands magasins** du boulevard Haussmann : restaurants, bureaux, hôtels et grands sous-sols. Cuisines professionnelles, réserves et locaux de service : nous mettons en place des **plans de lutte** et intervenons hors des heures d’ouverture.',
+        photo: w9('opera-garnier.jpg', 'La façade principale de l’Opéra Garnier', 'L’Opéra Garnier.', 'Suicasmo', 'CC BY-SA 4.0', 'Principal_facade_of_the_Op%C3%A9ra_Garnier_20150803.jpg'),
+      },
+      {
+        nom: 'La rue des Martyrs',
+        texte: 'Boulangeries, fromagers, primeurs, traiteurs et restaurants : la **rue des Martyrs** est une rue de bouche qui monte vers Montmartre. Réserves, bacs à poubelles et caves anciennes : nous intervenons chez les **commerçants** et dans les copropriétés au-dessus.',
+        photo: w9('rue-des-martyrs.jpg', 'La rue des Martyrs, ses commerces et ses passants', 'La rue des Martyrs.', 'A bit iffy', 'CC BY-SA 4.0', 'Rue_des_Martyrs,_Paris.jpg'),
+      },
+      {
+        nom: 'La place Saint-Georges et la Nouvelle Athènes',
+        texte: 'Autour de la **place Saint-Georges**, la **Nouvelle Athènes** aligne hôtels particuliers, cités, cours et immeubles du XIXe siècle. Cours pavées, jardins cachés et caves voûtées : les rats passent d’une cour à l’autre. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w9('place-saint-georges.jpg', 'La place Saint-Georges, sa fontaine et ses immeubles', 'La place Saint-Georges.', 'Celette', 'CC BY-SA 4.0', 'Place_Saint-Georges,_Paris_9e.jpg'),
+      },
+      {
+        nom: 'Le square d’Anvers et Rochechouart',
+        texte: 'Le **square d’Anvers**, son kiosque et sa vue sur le Sacré-Cœur bordent le boulevard de Rochechouart, ses commerces et ses immeubles. Le square relève de la Ville ; les immeubles riverains doivent fermer caves, soupiraux et locaux à poubelles.',
+        photo: w9('square-d-anvers.jpg', 'Le kiosque du square d’Anvers et le Sacré-Cœur au fond', 'Le square d’Anvers et le Sacré-Cœur.', 'Mbzt', 'CC BY 3.0', 'P1150251_Paris_IX_square_d%27Anvers_rwk.jpg'),
+      },
+      {
+        nom: 'Le square Montholon et le Faubourg-Montmartre',
+        texte: 'Autour du **square Montholon** et de la rue du Faubourg-Montmartre : immeubles anciens, restaurants, commerces de gros et passages. Réserves, caves communicantes et poubelles : nous traitons commerces et copropriétés ensemble.',
+        photo: w9('square-montholon.jpg', 'Le square Montholon vu d’en haut, entouré d’immeubles', 'Le square Montholon.', 'Orodrigu', 'CC BY-SA 3.0', 'SquareMontholon.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 9e', '75009'),
+  dératiseur: P_DERATISEUR('à Paris 9e', '75009', { t: 'Des rats dans une cour de la Nouvelle Athènes', x: 'Cour pavée, jardin, caves voûtées et vieux réseaux : nous traitons tout l’immeuble avec le syndic, posons des grilles sur les soupiraux et rebouchons les passages vers les cours voisines.' }),
+  mairie: P_MAIRIE('à Paris 9e', 'dans la rue ou un square', [['paris-18', 'Paris 18e'], ['paris-10', 'Paris 10e'], ['paris-8', 'Paris 8e'], ['paris-2', 'Paris 2e'], ['paris-17', 'Paris 17e']]),
+  faq: P_FAQ('à Paris 9e', [
+    { q: 'J’habite près de la rue des Martyrs : ai-je plus de risques ?', a: 'Une rue de commerces de bouche est une source régulière de nourriture. Les immeubles voisins doivent surtout protéger leurs caves et locaux à poubelles : portes qui ferment, soupiraux grillagés, bacs fermés.' },
+    { q: 'J’ai un restaurant près de l’Opéra : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+  ]),
+  sources: P_SOURCES(P_INSEE(9, 'Paris 9e'), P_WIKI(9, 'quartiers, Opéra, Saint-Georges, Rochechouart')),
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
