@@ -5974,4 +5974,100 @@ REFONTE_DERATISATION['fontenay-aux-roses'] = {
   sources: [FAR_INSEE, FAR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
 }
 
+// ── Bourg-la-Reine (27/11/2026) ──
+const BLR_WIKI: Source = { label: 'Wikipédia, Bourg-la-Reine (ru des Blagis devenu collecteur, alluvions de la Bièvre, crues, RD 920, habitat, logement)', url: 'https://fr.wikipedia.org/wiki/Bourg-la-Reine' }
+const BLR_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 92014, Bourg-la-Reine', url: 'https://geo.api.gouv.fr/communes?code=92014&fields=nom,code,codesPostaux,population,surface' }
+const wbl = (f: string, alt: string, legende: string, credit: string, licence: string, fichier: string): PhotoVille => ({ src: `/villes/bourg-la-reine/${f}`, alt, legende, credit, licence, page: W + fichier })
+
+REFONTE_DERATISATION['bourg-la-reine'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_92,
+  reglement: REGLEMENT_92,
+  accroche: 'Une ville bâtie sur les alluvions de la Bièvre, un ancien ruisseau devenu collecteur sous les rues, l’ancienne nationale 20 en travers et des quartiers de pavillons au sud et à l’est : à Bourg-la-Reine, les rats suivent les réseaux et les jardins. Nous les traitons rue par rue.',
+  societe: {
+    titre: 'Société de dératisation à Bourg-la-Reine (92340) : une ville sur les alluvions de la Bièvre',
+    paras: [
+      'Bourg-la-Reine compte **21 019 habitants** sur **1,86 km²**, à une dizaine de kilomètres au sud de Paris. La ville est traversée sur toute sa longueur par la **RD 920**, l’ancienne nationale 20, qui reprend le tracé d’une voie romaine. Elle s’étend sur une couche d’**alluvions déposées par la Bièvre** ; la rivière a connu des crues, comme en 1526.',
+      'D’ouest en est, l’ancien **ru des Blagis** traversait la ville ; ses remontées d’eau ont fini par ruiner l’ancienne église. **Canalisé et mis en souterrain**, il est devenu le **collecteur des Blagis**, qui draine les eaux pluviales. En 2019, **80,4 %** des logements étaient des appartements et **19 %** des maisons, surtout au sud et à l’est. Pour une société de dératisation, ce sont des **réseaux**, des **caves**, des **jardins** et des **commerces** à surveiller.',
+      'Nous intervenons à Bourg-la-Reine depuis notre base de **Saint-Maurice**, 7 jours sur 7.',
+      'Nos autres pages pour la ville : [punaises de lit à Bourg-la-Reine](/punaises-de-lit/bourg-la-reine) et [fourmis à Bourg-la-Reine](/fourmis/bourg-la-reine).',
+    ],
+  },
+  chiffres: [
+    { valeur: '21 019', texte: 'habitants (population légale Insee), code postal 92340.', source: BLR_INSEE },
+    { valeur: '19 %', texte: 'des logements sont des maisons individuelles, surtout au sud et à l’est de la ville (2019).', source: BLR_WIKI },
+    { valeur: '1 collecteur', texte: 'sous la ville : l’ancien ru des Blagis, canalisé, draine les eaux pluviales jusqu’à L’Haÿ-les-Roses.', source: BLR_WIKI },
+    { valeur: '886', texte: 'cas de leptospirose signalés en France en 2024, une maladie transmise surtout par l’urine des rats ; 74 % des malades ont été hospitalisés.', source: SPF_LEPTO },
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Bourg-la-Reine : la ville secteur par secteur',
+    intro: 'L’Insee découpe Bourg-la-Reine en huit secteurs, des **Bas-Coquarts-les Blagis** au **Petit-Chambord**, en passant par le **Centre-ville**, **Mirebeau** ou la **Faïencerie**. Voici ce que chaque type de secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le centre-ville et la rue piétonne',
+        texte: 'Autour de la **rue piétonne** et de l’église Saint-Gilles : commerces, restaurants, marchés et immeubles anciens. Réserves, cuisines et locaux à poubelles attirent les rongeurs : nous intervenons chez les **commerçants** et en copropriété. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: wbl('rue-pietonne.jpg', 'La rue piétonne commerçante du centre de Bourg-la-Reine', 'La rue piétonne, au centre-ville.', 'Auteur Wikimedia', 'CC BY-SA 3.0', 'Bourg-la-Reine_(la_rue_pi%C3%A9tonne).JPG'),
+      },
+      {
+        nom: 'L’ancien ru des Blagis et la vallée de la Bièvre',
+        texte: 'Le **ru des Blagis**, peint par Utrillo quand il coulait encore à l’air libre, est aujourd’hui un **collecteur** sous les rues. Réseaux enterrés et sols d’alluvions : le surmulot circule sous la ville et remonte vers les caves. Nous contrôlons regards et sous-sols, puis rebouchons les passages.',
+        photo: wbl('la-bievre-utrillo.jpg', 'Tableau de Maurice Utrillo représentant la rivière à Bourg-la-Reine en 1925', '« La Bièvre à Bourg-la-Reine », Maurice Utrillo, 1925 : le ruisseau à ciel ouvert, avant sa mise sous terre.', 'Maurice Utrillo', 'Domaine public', 'La_Bi%C3%A8vre_%C3%A0_Bourg-la-Reine_(Hauts-de-Seine)_-_Maurice_Utrillo.jpg'),
+      },
+      {
+        nom: 'L’église Saint-Gilles et les immeubles de la RD 920',
+        texte: 'Le long de l’ancienne **nationale 20** et autour de l’église Saint-Gilles, des immeubles d’appartements et des résidences. Caves, parkings et locaux à poubelles : la dératisation se fait en **copropriété**, idéalement en coordination entre immeubles voisins.',
+        photo: wbl('eglise-saint-gilles.jpg', 'L’église Saint-Gilles et sa façade à colonnes à Bourg-la-Reine', 'L’église Saint-Gilles.', 'AntonyB', 'CC BY-SA 3.0', 'Bourg-la-Reine_(l%27%C3%A9glise_Saint-Gilles_1).JPG'),
+      },
+      {
+        nom: 'Les quartiers pavillonnaires du sud et de l’est',
+        texte: 'Au sud et à l’est, des rues de **pavillons** et de villas, comme la célèbre **villa Hennebique**. Jardins, haies, abris et composts : les rats creusent au pied des clôtures et entrent par les garages ou les vide sanitaires. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: wbl('villa-hennebique.jpg', 'La villa Hennebique et sa tour à Bourg-la-Reine', 'La villa Hennebique, au milieu des jardins.', 'Auteur Wikimedia', 'CC BY 2.5', 'Hennebique_houseblr.jpg'),
+      },
+      {
+        nom: 'La gare et les Bas-Coquarts',
+        texte: 'Autour de la **gare du RER B** et vers les Bas-Coquarts, au nord-ouest, près de Bagneux : talus, voies, résidences et quelques immeubles d’habitat social. Caves et locaux à poubelles se traitent avec le **bailleur** ou le **syndic**, puis nous rebouchons les passages.',
+        photo: wbl('gare.jpg', 'Le parvis de la gare RER de Bourg-la-Reine', 'La gare RER de Bourg-la-Reine.', 'Chabe01', 'CC BY-SA 4.0', 'Gare_Bourg_Reine_-_Bourg-la-Reine_(FR92)_-_2023-06-28_-_1.jpg'),
+      },
+    ],
+  },
+  intervention: {
+    titre: 'Intervention contre les rats à Bourg-la-Reine (92340) : notre dératisation, pas à pas',
+    etapes: [
+      { t: 'Une photo, un prix', x: 'Envoyez une photo des crottes ou des dégâts : nous identifions rat ou souris et donnons le prix avant de venir. Dès 120 € pour un appartement.' },
+      { t: 'Le diagnostic', x: 'Pavillon : jardin, abri, vide sanitaire. Immeuble : caves, parking, local à poubelles. Commerce : réserves et cuisine.' },
+      { t: 'Le dispositif adapté', x: 'Postes d’appâtage verrouillés, pièges mécaniques ou connectés, ou [dératisation écologique](/services/deratisation-ecologique) avec le piège Ekomille, sans raticide.' },
+      { t: 'Rebouchage et suivi', x: 'Passages rebouchés, grilles posées, postes contrôlés jusqu’à l’arrêt des consommations. Garantie 1 an. Voir les [prix d’une dératisation](/tarifs/deratisation).' },
+    ],
+  },
+  dératiseur: {
+    titre: 'Dératiseur à Bourg-la-Reine (92340) : les cas que nous rencontrons le plus',
+    cas: [
+      { t: 'Des rats dans le jardin d’un pavillon', x: 'Terriers sous l’abri, au pied de la haie ou près du compost : nous traitons la colonie et fermons l’accès au vide sanitaire.' },
+      { t: 'Des rats remontés par les réseaux', x: 'Le collecteur des Blagis et les réseaux d’eaux pluviales servent de couloirs : nous contrôlons les regards et posons des grilles.' },
+      { t: 'Des rongeurs dans un commerce du centre', x: 'Postes numérotés, plan de localisation, passages hors service, registre et attestation pour vos contrôles d’hygiène.' },
+      { t: 'Un rat qui sort des toilettes', x: 'Le réseau d’assainissement est leur chemin : voir [rat dans les toilettes](/blog/rat-dans-les-toilettes). Nous traitons la colonie et conseillons la pose d’un clapet par un plombier.' },
+      { t: 'Des souris dans un appartement', x: 'Elles passent par les gaines et le pourtour des tuyaux : voir [par où entrent les souris](/blog/souris-par-ou-entrent-elles) et [souris dans les Hauts-de-Seine](/souris/hauts-de-seine).' },
+    ],
+  },
+  mairie: {
+    titre: 'Entreprise de dératisation, syndic, bailleur : qui fait quoi à Bourg-la-Reine',
+    paras: [
+      'Dans un logement loué, la **loi du 6 juillet 1989** (article 6) impose au **bailleur** de fournir un logement décent, exempt de nuisibles. En copropriété, les caves, parkings et locaux à poubelles relèvent du **syndic** ; une maison, de son propriétaire ; un commerce, de son exploitant.',
+      'Les communes agissent sur l’espace public et dans leurs bâtiments. Le **règlement sanitaire départemental des Hauts-de-Seine** interdit aussi de nourrir les animaux errants, pigeons compris (articles 26 et 120, rappelés par la ville de Meudon) : une source de nourriture pour les rats. Locataire, signalez les rats **par écrit**, avec photos et dates.',
+      'Nous intervenons aussi tout autour : [Sceaux](/deratisation/sceaux), [Antony](/deratisation/antony), [Bagneux](/deratisation/bagneux), [Fontenay-aux-Roses](/deratisation/fontenay-aux-roses), [Cachan](/deratisation/cachan) et [L’Haÿ-les-Roses](/deratisation/l-hay-les-roses). Toutes nos villes : [dératisation dans les Hauts-de-Seine](/deratisation/hauts-de-seine).',
+    ],
+  },
+  faq: [
+    { q: 'Combien coûte une dératisation à Bourg-la-Reine ?', a: '[À partir de 120 € TTC](/tarifs/deratisation) pour un appartement, rats ou souris. Pavillon, immeuble ou commerce : prix sur devis gratuit, donné avant l’intervention. Garantie 1 an.' },
+    { q: 'J’ai des rats dans mon jardin : que faire ?', a: 'Fermez le compost, rentrez croquettes et graines, puis faites traiter les terriers. Nous fermons aussi l’accès à la maison ([rat dans le compost](/blog/rat-compost)).' },
+    { q: 'Le ru des Blagis enterré fait-il venir les rats ?', a: 'Les ruisseaux canalisés et les réseaux d’eaux pluviales sont des couloirs pour le surmulot ([mode de vie du rat](/blog/rat-mode-de-vie)). Les maisons et immeubles proches doivent surveiller caves et regards.' },
+    { q: 'J’habite en copropriété : qui paie la dératisation de la cave ?', a: 'Les caves, parkings et locaux à poubelles sont des parties communes : c’est au syndic d’organiser et de financer le traitement. Prévenez-le par écrit, avec photos.' },
+    { q: 'Un rat est sorti de mes toilettes : que faire ?', a: 'Fermez l’abattant, mettez un poids dessus et appelez-nous (voir [rat dans les toilettes](/blog/rat-dans-les-toilettes)). Nous traitons la colonie et vous conseillons sur la pose d’un clapet anti-rongeurs par un plombier.' },
+    { q: 'Peut-on dératiser sans poison ?', a: 'Oui : pièges mécaniques, [piège Ekomille sans raticide](/services/deratisation-ecologique) et rebouchage des accès, quand il y a des enfants ou des animaux.' },
+    { q: 'Rat ou souris : comment savoir ?', a: 'Les [crottes de rat](/blog/rat-ou-souris-comment-reconnaitre) mesurent 1 à 2 cm, celles de souris quelques millimètres. Envoyez-nous une photo, nous identifions le rongeur gratuitement.' },
+    { q: 'Intervenez-vous vite à Bourg-la-Reine ?', a: 'Oui, 7j/7 depuis notre base de Saint-Maurice, souvent le jour même, sans majoration la nuit, le week-end ni les jours fériés.' },
+  ],
+  sources: [BLR_INSEE, BLR_WIKI, LOI_89, MEUDON_RSD92, SPF_LEPTO],
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
