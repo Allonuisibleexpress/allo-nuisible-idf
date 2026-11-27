@@ -6504,4 +6504,75 @@ REFONTE_DERATISATION['paris-13'] = {
   sources: P_SOURCES(P_INSEE(13, 'Paris 13e'), P_WIKI(13, 'quartiers, opération Italie 13, Olympiades, Butte-aux-Cailles, Paris Rive Gauche')),
 }
 
+// ── Paris 16e (27/11/2026, demande de l'utilisateur : « optimise à fond le 16e ») : 6 secteurs, 2 codes postaux ──
+const w16 = wp('paris-16')
+const BOULOGNE_BOIS: Source = { label: 'Wikipédia, Bois de Boulogne (846 hectares, lacs Inférieur et Supérieur, annexion de 1925 et 1929)', url: 'https://fr.wikipedia.org/wiki/Bois_de_Boulogne' }
+REFONTE_DERATISATION['paris-16'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le bois de Boulogne et ses 846 hectares, les jardins du Trocadéro et du Ranelagh, les villas d’Auteuil, les hôtels particuliers et les immeubles haussmanniens à caves : le 16e est l’arrondissement le plus vert de Paris, et les rats le savent. Nous les traitons villa par villa, cave par cave, en 75016 comme en 75116.',
+  societe: {
+    titre: 'Société de dératisation à Paris 16e (75016, 75116) : du Trocadéro au bois de Boulogne',
+    paras: [
+      'Le 16e arrondissement, dit **de Passy**, compte **159 386 habitants** sur **16,4 km²** en comptant le **bois de Boulogne** (846 hectares), qui en fait intégralement partie : hors bois, la densité avoisine **20 000 habitants au km²**. C’est le **seul arrondissement de Paris à avoir deux codes postaux** : **75016** au sud et **75116** au nord. Il réunit quatre quartiers administratifs : **Auteuil**, **la Muette**, **Porte-Dauphine** et **Chaillot**.',
+      'Il est né en **1860** de l’annexion des villages d’**Auteuil**, de **Passy** et d’une partie de **Chaillot** ; Auteuil était encore en grande partie rural à cette date, puis s’est couvert de lotissements jusqu’à l’entre-deux-guerres. Le résultat : un arrondissement résidentiel où se côtoient **immeubles haussmanniens** à caves, **hôtels particuliers**, **villas** et **résidences fermées** avec jardins, ambassades, grandes avenues plantées et le **bois de Boulogne** tout le long de l’ouest.',
+      'Pour une société de dératisation, le 16e, ce sont des **jardins privés** et des **cours** plantées, des **caves** profondes, des **parkings** d’immeubles, des **cuisines** de restaurants et d’ambassades, et des immeubles en lisière du bois et des jardins publics. La **Ville de Paris** traite l’espace public ; dans les jardins, cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 16e, 7 jours sur 7, avec **discrétion** : véhicule banalisé sur demande, intervention planifiée avec le gardien ou le syndic.',
+      P_AUTRES('paris-16', 'Paris 16e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '159 386', texte: 'habitants dans le 16e (population légale Insee), codes postaux 75016 et 75116.', source: P_INSEE(16, 'Paris 16e') },
+    { valeur: '846 ha', texte: 'pour le bois de Boulogne, entièrement situé dans le 16e : plus de la moitié de la surface de l’arrondissement.', source: BOULOGNE_BOIS },
+    { valeur: '2', texte: 'codes postaux, 75016 et 75116 : le 16e est le seul arrondissement de Paris dans ce cas.', source: P_WIKI(16, 'quartiers, codes postaux 75016 et 75116, villages d’Auteuil, Passy et Chaillot') },
+    P_VILLE_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 16e : l’arrondissement secteur par secteur',
+    intro: 'Le 16e compte quatre quartiers administratifs : **Auteuil**, **la Muette**, **Porte-Dauphine** et **Chaillot**. Des jardins du Trocadéro aux villas d’Auteuil, voici ce que chacun de ses six grands secteurs implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Chaillot et le Trocadéro (75116)',
+        texte: 'Autour des **jardins du Trocadéro**, face à la tour Eiffel, et de l’avenue Kléber : grands immeubles haussmanniens, musées, hôtels, restaurants et ambassades. Les jardins et leurs bassins relèvent de la Ville ; les immeubles riverains, eux, doivent surveiller caves, cours de service et locaux à poubelles, où les rats trouvent abri et nourriture. Nous intervenons en **copropriété**, dans les **hôtels** et les **cuisines professionnelles**.',
+        photo: w16('jardins-du-trocadero.jpg', 'Les jardins et les fontaines du Trocadéro vus d’en haut', 'Les jardins et les fontaines du Trocadéro, quartier de Chaillot.', 'Mario Sánchez Prada', 'CC BY-SA 2.0', 'Fontaines_du_Trocad%C3%A9ro_6_October_2009.jpg'),
+      },
+      {
+        nom: 'Porte-Dauphine et l’avenue Foch (75116)',
+        texte: 'L’**avenue Foch**, la plus large de Paris, est bordée de **pelouses** et de contre-allées plantées, devant des immeubles cossus et des hôtels particuliers qui mènent au bois de Boulogne. Grands sous-sols, parkings, jardins sur rue et locaux de service : nous traitons tout le bâtiment avec le **gestionnaire** ou le **syndic**, puis rebouchons les passages.',
+        photo: w16('avenue-foch.jpg', 'Une contre-allée de l’avenue Foch, ses pelouses et ses immeubles haussmanniens', 'Une contre-allée de l’avenue Foch, côté pelouses.', 'Polymagou', 'CC BY-SA 4.0', 'Avenue_Foch,_Paris_16e_7.jpg'),
+      },
+      {
+        nom: 'La Muette, Passy et le jardin du Ranelagh (75016)',
+        texte: 'Autour de la **rue de Passy**, de la Muette et du **jardin du Ranelagh** : commerces de bouche, marchés, immeubles anciens et cours plantées. Le jardin relève de la Ville ; les immeubles qui le bordent doivent fermer caves et soupiraux, et les commerçants tenir un **plan de lutte** contre les rongeurs.',
+        photo: w16('jardin-du-ranelagh.jpg', 'Les grands arbres et l’aire de jeux du jardin du Ranelagh', 'Le jardin du Ranelagh, à la Muette.', 'Polymagou', 'CC BY-SA 4.0', 'Jardin_du_Ranelagh,_Paris_16e_49.jpg'),
+      },
+      {
+        nom: 'Le bois de Boulogne et ses lisières',
+        texte: 'Avec ses **846 hectares**, ses lacs Inférieur et Supérieur, le Jardin d’acclimatation, Roland-Garros et les hippodromes, le **bois de Boulogne** est un réservoir de faune. Il relève de la Ville de Paris ; les maisons, résidences et immeubles qui le bordent doivent protéger **jardins**, **garages** et **vides sanitaires**. Voir [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: w16('lac-inferieur.jpg', 'Le lac Inférieur du bois de Boulogne et ses rives boisées', 'Le lac Inférieur, dans le bois de Boulogne.', 'BikerNormand', 'CC BY-SA 2.0', 'Lac_Inf%C3%A9rieur_du_Bois_de_Boulogne,_Paris_26_August_2015.jpg'),
+      },
+      {
+        nom: 'Le vieil Auteuil et la rue d’Auteuil (75016)',
+        texte: 'L’ancien village d’**Auteuil** garde ses rues étroites, ses placettes plantées, ses petits immeubles et ses maisons avec jardin. Jardinets, composts, caves anciennes et réseaux : les rats creusent au pied des murs et entrent par les soupiraux. Nous traitons les terriers et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w16('rue-d-auteuil.jpg', 'Une placette plantée au croisement de la rue d’Auteuil et de la rue du Buis', 'La rue d’Auteuil au croisement de la rue du Buis, dans le vieil Auteuil.', 'Polymagou', 'CC BY-SA 4.0', 'Rue_d%27Auteuil,_rue_du_Buis,_Paris_16e_1.jpg'),
+      },
+      {
+        nom: 'Les villas et résidences fermées d’Auteuil (75016)',
+        texte: 'La **villa Montmorency**, la plus grande résidence fermée de l’arrondissement, et d’autres villas privées alignent maisons, jardins, haies et dépendances. Les voies privées relèvent des copropriétaires : la dératisation s’y organise à l’échelle de la **villa entière**, avec le syndic ou l’association des propriétaires, sinon les rats passent d’un jardin à l’autre.',
+        photo: w16('villa-montmorency.jpg', 'L’entrée de la villa Montmorency, entre une maison en brique et un immeuble haussmannien', 'L’entrée de la villa Montmorency, la plus grande résidence fermée du 16e.', 'Mbzt', 'CC BY-SA 3.0', 'P1230896_Paris_XVI_villa_Montmorency_rwk.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 16e', '75016, 75116'),
+  dératiseur: P_DERATISEUR('à Paris 16e', '75016, 75116', { t: 'Des rats dans le jardin d’une villa ou d’un hôtel particulier', x: 'Terriers au pied des haies, sous un abri ou près du compost, passages vers le garage ou le vide sanitaire : nous traitons la colonie, coordonnons avec les jardins voisins et fermons les accès. Intervention discrète, planifiée avec vous ou votre gardien.' }),
+  mairie: P_MAIRIE('à Paris 16e', 'dans la rue, un jardin public ou le bois de Boulogne', [['paris-17', 'Paris 17e'], ['paris-8', 'Paris 8e'], ['paris-15', 'Paris 15e'], ['paris-7', 'Paris 7e'], ['boulogne-billancourt', 'Boulogne-Billancourt'], ['neuilly-sur-seine', 'Neuilly-sur-Seine'], ['issy-les-moulineaux', 'Issy-les-Moulineaux']]),
+  faq: P_FAQ('à Paris 16e', [
+    { q: 'Quel code postal pour une dératisation dans le 16e : 75016 ou 75116 ?', a: 'Les deux : le 16e est le seul arrondissement de Paris à avoir deux codes postaux, 75016 au sud (Auteuil, Passy) et 75116 au nord (Chaillot, Porte-Dauphine). Nous intervenons partout, au même tarif.' },
+    { q: 'J’habite près du bois de Boulogne : ai-je plus de risques ?', a: 'Les grands espaces verts offrent abri et nourriture aux rongeurs, et les jardins voisins en profitent. Fermez composts et poubelles, rentrez croquettes et graines, grillagez soupiraux et vides sanitaires, et faites traiter dès les premiers terriers.' },
+    { q: 'Des rats dans une villa privée : qui doit agir ?', a: 'Chaque propriétaire chez lui, mais le traitement n’est efficace qu’à l’échelle de la villa entière : syndic ou association des copropriétaires organise une intervention commune sur les jardins, la voie privée et les locaux partagés.' },
+    { q: 'Pouvez-vous intervenir discrètement ?', a: 'Oui : véhicule banalisé sur demande, rendez-vous planifié avec vous, le gardien ou le syndic, postes discrets et sécurisés. L’attestation d’intervention vous est remise par e-mail.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(16, 'Paris 16e'), P_WIKI(16, 'quartiers, codes postaux 75016 et 75116, villages d’Auteuil, Passy et Chaillot, villa Montmorency'), BOULOGNE_BOIS),
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]

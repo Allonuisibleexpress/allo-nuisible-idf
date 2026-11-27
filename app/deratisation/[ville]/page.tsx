@@ -88,7 +88,9 @@ export function generateMetadata({ params }: { params: { ville: string } }) {
   const court = v.nom.replace(/\bSainte-/g, 'Ste-').replace(/\bSaint-/g, 'St-')
   titres.push(`Dératisation ${v.nom} : rats, souris dès 120 €`, `Dératisation ${court} : rats et souris dès 120 €`, `Dératisation ${court} : rats, souris dès 120 €`)
   const title = titres.find((t) => t.length <= 60) ?? `Dératisation ${court} : rats, souris dès 120 €`
-  const desc = `Dératisation ${v.a}${cp ? ` (${cp})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
+  // 27/11/2026 : le 16e a deux codes postaux (75016 au sud, 75116 au nord), les deux dans la description
+  const cpDesc = v.slug === 'paris-16' ? '75016, 75116' : cp
+  const desc = `Dératisation ${v.a}${cpDesc ? ` (${cpDesc})` : ''} : rats et souris, postes sécurisés ou pièges, accès rebouchés. Dès 120 € TTC, devis gratuit, garantie 1 an, 7j/7.`
   const description = desc.length <= 160 ? desc : desc.replace(', 7j/7.', '.')
   return pageMetadata({ title, description, path: `/deratisation/${v.slug}` })
 }
