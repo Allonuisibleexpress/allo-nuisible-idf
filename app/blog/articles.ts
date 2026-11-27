@@ -1256,7 +1256,7 @@ export const ARTICLES: Article[] = [
       { q: "Comment savoir si les souris sont parties ?", a: "Plus de nouvelles crottes, plus de bruits la nuit et plus de grignotages pendant plusieurs semaines. Un professionnel peut poser des postes de contrôle pour le vérifier." },
     ],
     sources: [
-      { label: 'Guide anti-nuisibles, taille de passage des souris', url: 'https://www.guideantinuisibles.fr/blog/trou-passage-souris-taille/' },
+      { label: 'Cornell University, biologie des souris et des rats (taille des passages)', url: 'https://cals.cornell.edu/integrated-pest-management/outreach-education/whats-bugging-you/rodents/mouse-and-rat-biology-and-behavior' },
     ],
     cta: { title: 'Des souris chez vous cet automne ?', text: "On élimine celles qui sont déjà là, puis on vous montre exactement quoi boucher. Intervention 7j/7 en Île-de-France." },
   },
@@ -1572,7 +1572,7 @@ export const ARTICLES: Article[] = [
       { q: "Peut-on enlever soi-même un vieux nid vide ?", a: "Oui s'il est accessible sans risque et sans aucune activité. En hauteur ou au moindre doute, faites appel à un professionnel." },
     ],
     sources: [
-      { label: 'Nuisibook, nid de frelons en hiver', url: 'https://www.nuisibook.com/blog-nuisibook/nid-de-frelons-hiver-danger-solutions' },
+      { label: 'Muséum national d’Histoire naturelle, le frelon asiatique (cycle du nid)', url: 'https://frelonasiatique.mnhn.fr/home' },
       { label: 'Mairie de Praz-sur-Arly, que deviennent les nids en hiver', url: 'https://www.mairie-prazsurarly.fr/actualites/journal-ligne/frelons-asiatiques-deviennent-nids-hiver' },
     ],
     cta: { title: 'Un nid encore actif cet automne ?', text: "Destruction sécurisée, y compris en hauteur, par des techniciens équipés, partout en Île-de-France." },
@@ -4608,7 +4608,7 @@ export const ARTICLES: Article[] = [
       { q: "Jusqu'à quelle hauteur la perche fonctionne-t-elle ?", a: "Jusqu'à plusieurs mètres. Au-delà, une nacelle est prévue sur devis." },
     ],
     sources: [
-      { label: 'Nuisibook, nid de frelons en hiver', url: 'https://www.nuisibook.com/blog-nuisibook/nid-de-frelons-hiver-danger-solutions' },
+      { label: 'Muséum national d’Histoire naturelle, le frelon asiatique (cycle du nid)', url: 'https://frelonasiatique.mnhn.fr/home' },
     ],
     cta: { title: 'Un nid au-dessus de votre porte ?', text: "Retrait à la perche, inspection des combles, à partir de 89 € TTC. Appel gratuit, intervention rapide." },
   },
@@ -4828,7 +4828,7 @@ export const ARTICLES: Article[] = [
       { q: "Que faire en cas de piqûres multiples ?", a: "Appelez le 15, surtout en cas de malaise, de gonflement du visage ou de gêne respiratoire." },
     ],
     sources: [
-      { label: 'Nuisibook, nid de frelons en hiver', url: 'https://www.nuisibook.com/blog-nuisibook/nid-de-frelons-hiver-danger-solutions' },
+      { label: 'Muséum national d’Histoire naturelle, le frelon asiatique (cycle du nid)', url: 'https://frelonasiatique.mnhn.fr/home' },
     ],
     cta: { title: 'Un nid dans votre haie ?', text: "Ne taillez pas : nos techniciens traitent et retirent le nid en tenue complète, à partir de 89 € TTC." },
   },
