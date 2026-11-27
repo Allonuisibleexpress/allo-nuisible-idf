@@ -6575,4 +6575,198 @@ REFONTE_DERATISATION['paris-16'] = {
   sources: P_SOURCES(P_INSEE(16, 'Paris 16e'), P_WIKI(16, 'quartiers, codes postaux 75016 et 75116, villages d’Auteuil, Passy et Chaillot, villa Montmorency'), BOULOGNE_BOIS),
 }
 
+// ── Paris 15e (27/11/2026) ──
+const w15 = wp('paris-15')
+REFONTE_DERATISATION['paris-15'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'L’arrondissement le plus peuplé de Paris : les tours du Front de Seine, la Petite Ceinture, deux grands parcs nés d’anciens abattoirs et d’anciennes usines, des rues commerçantes et des milliers de caves. Dans le 15e, nous traitons les rats immeuble par immeuble, quartier par quartier.',
+  societe: {
+    titre: 'Société de dératisation à Paris 15e (75015) : l’arrondissement le plus peuplé de Paris',
+    paras: [
+      'Le 15e arrondissement, dit **de Vaugirard**, compte **229 713 habitants** sur **8,47 km²**, soit plus de **27 000 habitants au km²** : c’est **l’arrondissement le plus peuplé de Paris**. Il réunit quatre quartiers administratifs : **Saint-Lambert**, **Necker**, **Grenelle** et **Javel**, et comprend l’**île aux Cygnes**, sur la Seine.',
+      'Né en **1860** de l’annexion de Vaugirard et de Grenelle, il a longtemps été industriel : les **abattoirs de Vaugirard** (1894-1974) sont devenus le **parc Georges-Brassens**, et les **usines Citroën** de Javel le **parc André-Citroën**, inauguré en 1992. Le **Front de Seine** a ajouté ses tours et sa dalle, et l’ancienne **Petite Ceinture** est devenue une promenade en 2013. Pour une société de dératisation, ce sont des **caves** d’immeubles haussmanniens et des années 1930, des **parkings** sous dalle, des **commerces de bouche** et des **jardins** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, parkings et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 15e, 7 jours sur 7.',
+      P_AUTRES('paris-15', 'Paris 15e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '229 713', texte: 'habitants dans le 15e (population légale Insee), code postal 75015 : le plus peuplé des 20 arrondissements.', source: P_INSEE(15, 'Paris 15e') },
+    { valeur: '1894-1974', texte: 'les abattoirs de Vaugirard, remplacés par le parc Georges-Brassens.', source: { label: 'Wikipédia, Parc Georges-Brassens (anciens abattoirs de Vaugirard)', url: 'https://fr.wikipedia.org/wiki/Parc_Georges-Brassens' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 15e : l’arrondissement secteur par secteur',
+    intro: 'Le 15e compte quatre quartiers administratifs : **Saint-Lambert**, **Necker**, **Grenelle** et **Javel**. Des tours du Front de Seine aux rails de la Petite Ceinture, voici ce que chacun de ses grands secteurs implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le Front de Seine et Beaugrenelle',
+        texte: 'Les **tours du Front de Seine** reposent sur une **dalle** qui couvre parkings, voies de livraison et locaux techniques, à côté du centre commercial de Beaugrenelle. Sous la dalle, gaines, vide-ordures et poubelles collectives forment un réseau abrité. Nous traitons avec le **syndic** ou le gestionnaire, niveau par niveau, puis fermons les passages.',
+        photo: w15('front-de-seine.jpg', 'Les tours du Front de Seine au bord de la Seine, avec la tour Eiffel au loin', 'Les tours du Front de Seine, quartier de Grenelle.', 'Jean-Christophe Benoist', 'CC BY 3.0', 'Front_de_Seine_-_Paris_15.jpg'),
+      },
+      {
+        nom: 'L’île aux Cygnes et les quais',
+        texte: 'L’**allée des Cygnes**, sur l’île du même nom, file entre le pont de Bir-Hakeim et le pont de Grenelle. Berges, végétation et péniches : les rats longent la Seine. Les immeubles des quais doivent surtout protéger **caves**, **parkings** et **locaux à poubelles**.',
+        photo: w15('allee-des-cygnes.jpg', 'L’allée des Cygnes plantée d’arbres sur l’île aux Cygnes', 'L’allée des Cygnes, sur l’île aux Cygnes.', 'Guilhem Vellut', 'CC BY 2.0', 'All%C3%A9e_des_Cygnes,_Ile_aux_Cygnes,_Paris_7_February_2016.jpg'),
+      },
+      {
+        nom: 'Javel et le parc André-Citroën',
+        texte: 'Sur l’ancien site des **usines Citroën**, le **parc André-Citroën** (inauguré en 1992) aligne pelouses, serres et bassins, entouré d’immeubles récents et de bureaux. Le parc relève de la Ville ; les résidences voisines, avec leurs jardins et leurs parkings, de leurs syndics. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w15('parc-andre-citroen.jpg', 'Les serres vitrées et les bassins du parc André-Citroën', 'Les serres du parc André-Citroën, à Javel.', 'Free On Line Photos', 'Utilisation libre', 'Serres_Parc-Andr%C3%A9-Citro%C3%ABn-Paris.jpg'),
+      },
+      {
+        nom: 'La rue du Commerce et Grenelle',
+        texte: 'La **rue du Commerce** et les rues voisines de Grenelle alignent boutiques, boulangeries, restaurants et marchés sous des immeubles anciens. Réserves, cuisines et bacs à poubelles attirent les rongeurs : nous intervenons chez les **commerçants** (postes numérotés, registre) et dans les copropriétés au-dessus.',
+        photo: w15('rue-du-commerce.jpg', 'La rue du Commerce, ses commerces et ses immeubles anciens', 'La rue du Commerce, quartier de Grenelle.', 'Guilhem Vellut', 'CC BY 2.0', 'Rue_du_Commerce_@_Paris_(31540644226).jpg'),
+      },
+      {
+        nom: 'Vaugirard et le parc Georges-Brassens',
+        texte: 'Les **abattoirs de Vaugirard** ont fonctionné de **1894 à 1974** ; le **parc Georges-Brassens** en garde le beffroi du marché à la criée et la halle aux chevaux. Autour, Saint-Lambert aligne immeubles des années 1930, résidences et cours. Caves, locaux à poubelles et jardins de résidence sont nos points de contrôle.',
+        photo: w15('parc-georges-brassens.jpg', 'Le beffroi de l’ancien marché aux bestiaux dans le parc Georges-Brassens', 'Le beffroi de l’ancien marché, parc Georges-Brassens.', 'Guilhem Vellut', 'CC BY 2.0', 'Beffroi_de_l%27ancien_march%C3%A9_@_Parc_Georges_Brassens_@_Paris_(30158472663).jpg'),
+      },
+      {
+        nom: 'La Petite Ceinture du 15e',
+        texte: 'L’ancienne voie ferrée de la **Petite Ceinture**, ouverte en promenade en **2013**, longe le sud-ouest de l’arrondissement, entre talus, murs et immeubles en surplomb. Végétation et calme : un abri pour les rongeurs. Les immeubles riverains doivent fermer soupiraux, caves et locaux à poubelles. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w15('petite-ceinture.jpg', 'Les rails de la Petite Ceinture devenue promenade, au pied des immeubles du 15e', 'La promenade de la Petite Ceinture du 15e.', 'Myrabella', 'CC BY-SA 3.0', 'Paris_15e_Petite_Ceinture_promenade.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 15e', '75015'),
+  dératiseur: P_DERATISEUR('à Paris 15e', '75015', { t: 'Des rats sous la dalle du Front de Seine ou dans un parking', x: 'Locaux techniques, vide-ordures, gaines et parkings communiquent : nous traitons tout le sous-sol avec le syndic ou le gestionnaire, puis fermons les accès entre niveaux.' }),
+  mairie: P_MAIRIE('à Paris 15e', 'dans la rue, un parc ou sur la Petite Ceinture', [['paris-7', 'Paris 7e'], ['paris-14', 'Paris 14e'], ['paris-16', 'Paris 16e'], ['paris-6', 'Paris 6e'], ['issy-les-moulineaux', 'Issy-les-Moulineaux'], ['vanves', 'Vanves'], ['malakoff', 'Malakoff']]),
+  faq: P_FAQ('à Paris 15e', [
+    { q: 'Des rats sous la dalle de ma tour : qui doit agir ?', a: 'Le syndic ou le gestionnaire, pour les parties communes : parkings, locaux à poubelles, vide-ordures et locaux techniques. La dalle publique relève de la Ville. Signalez le problème par écrit, avec photos.' },
+    { q: 'J’habite près de la Petite Ceinture ou d’un parc : ai-je plus de risques ?', a: 'Les talus, la végétation et les grands parcs offrent abri et nourriture. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles, et réagir dès les premiers signes.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(15, 'Paris 15e'), P_WIKI(15, 'arrondissement le plus peuplé, quartiers, abattoirs, Petite Ceinture, Front de Seine'), { label: 'Wikipédia, Parc André-Citroën (anciennes usines Citroën de Javel, inauguré en 1992)', url: 'https://fr.wikipedia.org/wiki/Parc_Andr%C3%A9-Citro%C3%ABn' }),
+}
+
+// ── Paris 17e (27/11/2026) ──
+const w17 = wp('paris-17')
+REFONTE_DERATISATION['paris-17'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Les immeubles haussmanniens des Ternes et de la Plaine-Monceau, le village des Batignolles et son square, le nouveau quartier Clichy-Batignolles et son grand parc : le 17e mêle caves anciennes, jardins et parkings récents. Nous y traitons les rats immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Paris 17e (75017) : des Ternes aux Batignolles',
+    paras: [
+      'Le 17e arrondissement, dit **de Batignolles-Monceau**, compte **159 212 habitants** sur **5,66 km²**, soit plus de **28 000 habitants au km²**. Très étendu d’ouest en est, il réunit quatre quartiers administratifs : **Ternes**, **Plaine-de-Monceaux**, **Batignolles** et **Épinettes**.',
+      'Il est né en **1860** de l’annexion de la commune de Batignolles-Monceau et des Ternes, qui dépendaient de Neuilly. À l’ouest, **immeubles haussmanniens** et avenues commerçantes comme l’**avenue des Ternes** ; à l’est, l’ancien **village des Batignolles** et les Épinettes ; au nord, le quartier **Clichy-Batignolles**, construit sur d’anciens terrains ferroviaires autour du **parc Martin-Luther-King**. Pour une société de dératisation, ce sont des **caves** anciennes, des **cours**, des **parkings** récents et des **commerces de bouche** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, parkings et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 17e, 7 jours sur 7.',
+      P_AUTRES('paris-17', 'Paris 17e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '159 212', texte: 'habitants dans le 17e (population légale Insee), code postal 75017.', source: P_INSEE(17, 'Paris 17e') },
+    { valeur: '4', texte: 'quartiers administratifs : Ternes, Plaine-de-Monceaux, Batignolles et Épinettes.', source: P_WIKI(17, 'quartiers, annexion de 1860, Clichy-Batignolles') },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 17e : l’arrondissement secteur par secteur',
+    intro: 'Le 17e compte quatre quartiers administratifs : **Ternes**, **Plaine-de-Monceaux**, **Batignolles** et **Épinettes**. Des avenues haussmanniennes au parc Martin-Luther-King, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les Ternes et l’avenue des Ternes',
+        texte: 'L’**avenue des Ternes**, très commerçante, et les rues voisines alignent **immeubles haussmanniens**, restaurants, marchés et commerces de bouche, à quelques minutes de l’Étoile. Caves, cours de service et locaux à poubelles : nous intervenons en **copropriété** et chez les **commerçants** (postes numérotés, registre).',
+        photo: w17('avenue-des-ternes.jpg', 'L’avenue des Ternes bordée d’arbres et d’immeubles haussmanniens', 'L’avenue des Ternes.', 'Thomas Sauzedde', 'CC BY 2.0', 'Avenue_des_Ternes,_Paris_August_2011.jpg'),
+      },
+      {
+        nom: 'La Plaine-Monceau, aux portes du parc',
+        texte: 'Entre le boulevard Malesherbes et l’avenue de Wagram, la **Plaine-Monceau** aligne hôtels particuliers et grands immeubles en pierre de taille jusqu’au **parc Monceau** (8,25 hectares, dans le 8e). Grands sous-sols, cours plantées et jardins privés : nous traitons tout le bâtiment avec le syndic ou le gestionnaire.',
+        photo: w17('rue-de-prony.jpg', 'La rue de Prony et la rotonde du parc Monceau au bout de la rue', 'La rue de Prony, avec la rotonde du parc Monceau au fond.', 'Mbzt', 'CC BY 3.0', 'P1050397_Paris_XVII_rue_de_Prony-parc_Monceau_rwk.JPG'),
+      },
+      {
+        nom: 'Le village des Batignolles',
+        texte: 'Autour de l’église Sainte-Marie et de la **place du Docteur-Félix-Lobligeois**, l’ancien village garde ses petites rues, ses immeubles anciens, ses cafés et ses commerces. Caves voûtées, cours et réseaux anciens : les rats passent d’un immeuble à l’autre. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w17('place-lobligeois.jpg', 'La place du Docteur-Félix-Lobligeois et ses arbres, au cœur des Batignolles', 'La place du Docteur-Félix-Lobligeois, au cœur du village des Batignolles.', 'Mbzt', 'CC BY-SA 3.0', 'P1160935_Paris_XVII_place_du_Docteur_F%C3%A9lix_Lobligeois_rwk.jpg'),
+      },
+      {
+        nom: 'Le square des Batignolles',
+        texte: 'Avec sa pièce d’eau, ses rocailles et ses massifs, le **square des Batignolles** longe les voies ferrées de Saint-Lazare. Le square relève de la Ville ; les immeubles qui le bordent doivent fermer caves, soupiraux et locaux à poubelles, surtout côté voies.',
+        photo: w17('square-des-batignolles.jpg', 'Les massifs fleuris et les grands arbres du square des Batignolles', 'Le square des Batignolles.', 'Georges Seguin (Okki)', 'CC BY-SA 3.0', 'Square_des_Batignolles_20060815_05.jpg'),
+      },
+      {
+        nom: 'Clichy-Batignolles et le parc Martin-Luther-King',
+        texte: 'Sur d’**anciens terrains ferroviaires**, le quartier **Clichy-Batignolles** a fait pousser immeubles récents, bureaux et le palais de justice autour du **parc Martin-Luther-King**. Pelouses, bassins, jardins partagés et grands parkings souterrains : la prévention se joue dès la livraison des bâtiments, avec le **syndic** ou le **bailleur**. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w17('parc-martin-luther-king.jpg', 'Des cerisiers en fleur dans le parc Martin-Luther-King, devant les immeubles neufs', 'Le parc Martin-Luther-King, au centre de Clichy-Batignolles.', 'Contrepoints.org', 'CC BY-SA 4.0', 'Cerisiers_en_fleur_au_Parc_Martin_Luther_King_(Clichy-Batignolles).jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 17e', '75017'),
+  dératiseur: P_DERATISEUR('à Paris 17e', '75017', { t: 'Des rats dans un immeuble neuf de Clichy-Batignolles', x: 'Parkings, locaux à poubelles et gaines encore mal fermés : nous traitons avec le syndic ou le bailleur, puis faisons reboucher les passages et poser des grilles. Plus tôt on agit, plus vite c’est réglé.' }),
+  mairie: P_MAIRIE('à Paris 17e', 'dans la rue, un square ou le parc Martin-Luther-King', [['paris-8', 'Paris 8e'], ['paris-16', 'Paris 16e'], ['paris-18', 'Paris 18e'], ['levallois-perret', 'Levallois-Perret'], ['clichy', 'Clichy'], ['neuilly-sur-seine', 'Neuilly-sur-Seine']]),
+  faq: P_FAQ('à Paris 17e', [
+    { q: 'Un immeuble neuf peut-il avoir des rats ?', a: 'Oui : un chantier déplace les colonies, et parkings, gaines et locaux à poubelles neufs sont parfois mal fermés. Le syndic ou le bailleur doit faire traiter les parties communes et reboucher les passages.' },
+    { q: 'J’habite près du square des Batignolles ou des voies ferrées : ai-je plus de risques ?', a: 'Les talus, les voies et les espaces verts offrent abri et calme aux rongeurs. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(17, 'Paris 17e'), P_WIKI(17, 'quartiers, annexion de 1860, Ternes, Batignolles, Clichy-Batignolles'), { label: 'Wikipédia, Parc Monceau (8,25 hectares)', url: 'https://fr.wikipedia.org/wiki/Parc_Monceau' }),
+}
+
+// ── Paris 18e (27/11/2026) ──
+const w18 = wp('paris-18')
+REFONTE_DERATISATION['paris-18'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'La butte Montmartre et ses anciennes carrières de plâtre, le cimetière de Montmartre, les marchés de la Goutte-d’Or, les anciens terrains ferroviaires de la Chapelle : le 18e est l’un des arrondissements les plus denses de Paris. Nous y traitons les rats cour par cour, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 18e (75018) : de Montmartre à la Chapelle',
+    paras: [
+      'Le 18e arrondissement, dit **des Buttes-Montmartre**, compte **183 127 habitants** sur **5,99 km²**, soit plus de **30 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Grandes-Carrières**, **Clignancourt**, **Goutte-d’Or** et **la Chapelle**.',
+      'Créé en **1860** à partir de Montmartre et de la Chapelle, il garde l’empreinte des **carrières de plâtre** qui creusaient la butte : le **cimetière de Montmartre** (11 hectares) a été installé sur l’une d’elles. Butte et Sacré-Cœur, rues commerçantes et marchés de la **Goutte-d’Or**, immeubles anciens serrés, grandes résidences et anciens terrains ferroviaires vers la Chapelle : pour une société de dératisation, ce sont des **caves**, des **cours**, des **locaux à poubelles** et des **commerces de bouche** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 18e, 7 jours sur 7.',
+      P_AUTRES('paris-18', 'Paris 18e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '183 127', texte: 'habitants dans le 18e (population légale Insee), code postal 75018.', source: P_INSEE(18, 'Paris 18e') },
+    { valeur: '11 ha', texte: 'pour le cimetière de Montmartre, installé sur d’anciennes carrières de plâtre.', source: { label: 'Wikipédia, Cimetière de Montmartre (superficie, anciennes carrières de plâtre)', url: 'https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_de_Montmartre' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 18e : l’arrondissement secteur par secteur',
+    intro: 'Le 18e compte quatre quartiers administratifs : **Grandes-Carrières**, **Clignancourt**, **Goutte-d’Or** et **la Chapelle**. Du sommet de la butte aux jardins d’Éole, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La butte Montmartre et le Sacré-Cœur',
+        texte: 'Sur la butte, autour du **Sacré-Cœur** : escaliers, petites rues, immeubles anciens, restaurants et foule de visiteurs. Déchets alimentaires, réserves de restaurants et caves anciennes : nous intervenons chez les **restaurateurs** et dans les copropriétés, puis rebouchons soupiraux et passages.',
+        photo: w18('sacre-coeur.jpg', 'La basilique du Sacré-Cœur au sommet de la butte Montmartre', 'La basilique du Sacré-Cœur, au sommet de la butte.', 'Terragio67', 'CC BY-SA 4.0', 'Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_Paris_-_GT-01_-_2024.jpg'),
+      },
+      {
+        nom: 'Les jardins de Montmartre et le Clos-Montmartre',
+        texte: 'Sur les pentes nord de la butte, le **Clos-Montmartre**, planté par la Ville en **1933** (0,15 hectare de vigne), voisine avec des maisons, des jardins et des immeubles en terrasse. Jardinets, murs de soutènement et escaliers : les rats y trouvent des abris. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w18('vigne-de-montmartre.jpg', 'Les rangs de vigne du Clos-Montmartre devant des maisons et des immeubles', 'La vigne du Clos-Montmartre, plantée en 1933.', 'Shadowgate', 'CC BY 2.0', 'Vigne_de_Montmartre,_Paris_9_September_2013.jpg'),
+      },
+      {
+        nom: 'Le cimetière de Montmartre et les Grandes-Carrières',
+        texte: 'Le **cimetière de Montmartre** (11 hectares) occupe d’anciennes **carrières de plâtre**, qui ont donné leur nom au quartier des **Grandes-Carrières**. Il relève de la Ville ; les immeubles qui le bordent doivent protéger caves et cours. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w18('cimetiere-de-montmartre.jpg', 'Une allée du cimetière de Montmartre bordée de chapelles et d’arbres', 'Une allée du cimetière de Montmartre.', 'ManoSolo13241324', 'CC BY-SA 4.0', 'Cimeti%C3%A8re_de_Montmartre_all%C3%A9e_division_3.jpg'),
+      },
+      {
+        nom: 'La Goutte-d’Or et Barbès',
+        texte: 'Rues serrées, immeubles anciens, **marchés** et commerces alimentaires autour de Barbès et de la **rue de la Goutte-d’Or** : beaucoup de nourriture, des cours étroites et des caves anciennes. Nous traitons avec le **syndic** ou le **bailleur** l’ensemble des parties communes, puis rebouchons les passages entre immeubles.',
+        photo: w18('rue-de-la-goutte-d-or.jpg', 'La rue pavée de la Goutte-d’Or entre des immeubles anciens', 'La rue de la Goutte-d’Or.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Goutte_Or_-_Paris_XVIII_(FR75)_-_2025-02-01_-_3.jpg'),
+      },
+      {
+        nom: 'La Chapelle et les jardins d’Éole',
+        texte: 'À l’est, sur d’anciens terrains ferroviaires, les **jardins d’Éole** (4,2 hectares) longent les voies de la gare de l’Est et du Nord, au milieu de résidences et d’immeubles. Talus, voies, locaux à poubelles et parkings : la dératisation se fait avec le **bailleur** ou le **syndic**, sur toute la résidence.',
+        photo: w18('jardins-d-eole.jpg', 'Les pelouses et la promenade des jardins d’Éole devant des immeubles', 'Les jardins d’Éole, à la Chapelle.', 'Mbzt', 'CC BY-SA 3.0', 'P1060192_Paris_XVIII_jardins_d%27Eole_rwk.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 18e', '75018'),
+  dératiseur: P_DERATISEUR('à Paris 18e', '75018', { t: 'Des rats dans un immeuble près d’un marché', x: 'Les déchets d’un marché alimentaire nourrissent les rats du secteur : nous traitons caves et locaux à poubelles, posons des grilles sur les soupiraux et conseillons des bacs fermés.' }),
+  mairie: P_MAIRIE('à Paris 18e', 'dans la rue, un square ou sur la butte', [['paris-17', 'Paris 17e'], ['paris-19', 'Paris 19e'], ['paris-9', 'Paris 9e'], ['paris-10', 'Paris 10e']]),
+  faq: P_FAQ('à Paris 18e', [
+    { q: 'J’habite près d’un marché à Barbès ou à la Chapelle : ai-je plus de risques ?', a: 'Un marché alimentaire est une source régulière de nourriture. Les immeubles voisins doivent surtout protéger leurs caves et locaux à poubelles : portes qui ferment, soupiraux grillagés, bacs fermés.' },
+    { q: 'Les anciennes carrières de Montmartre attirent-elles les rats ?', a: 'Les rats vivent surtout dans les égouts, les caves et les espaces verts. Sur la butte, les murs anciens, les caves et les jardins en terrasse offrent des abris : faites vérifier soupiraux et passages dès les premiers signes.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(18, 'Paris 18e'), P_WIKI(18, 'quartiers, création en 1860, Montmartre et la Chapelle'), { label: 'Wikipédia, Vigne de Montmartre (Clos-Montmartre planté en 1933, 0,15 hectare)', url: 'https://fr.wikipedia.org/wiki/Vigne_de_Montmartre' }, { label: 'Wikipédia, Jardins d’Éole (4,2 hectares)', url: 'https://fr.wikipedia.org/wiki/Jardins_d%27%C3%89ole' }),
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
