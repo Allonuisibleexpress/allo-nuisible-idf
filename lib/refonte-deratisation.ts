@@ -6965,4 +6965,259 @@ REFONTE_DERATISATION['paris-10'] = {
   sources: P_SOURCES(P_INSEE(10, 'Paris 10e'), P_WIKI(10, 'quartiers, faubourgs, hôpital Saint-Louis, gares')),
 }
 
+// ── Paris Centre (1er à 4e), 27/11/2026 : administrés ensemble par la mairie de Paris Centre depuis 2020 ──
+const PARIS_CENTRE = 'Depuis 2020, les 1er, 2e, 3e et 4e arrondissements sont administrés ensemble par la **mairie de Paris Centre**.'
+
+// ── Paris 1er ──
+const w1 = wp('paris-1')
+REFONTE_DERATISATION['paris-1'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le jardin des Tuileries, les Halles et leur Canopée, le Palais-Royal, la place Vendôme : le 1er arrondissement compte peu d’habitants mais des millions de visiteurs, des restaurants, des hôtels et des caves anciennes. Nous y traitons les rats immeuble par immeuble, commerce par commerce.',
+  societe: {
+    titre: 'Société de dératisation à Paris 1er (75001) : du Louvre aux Halles',
+    paras: [
+      `Le 1er arrondissement, dit **du Louvre**, compte **15 114 habitants** sur **1,83 km²**. Il réunit quatre quartiers administratifs : **Saint-Germain-l’Auxerrois**, **les Halles**, **Palais-Royal** et **Place-Vendôme**. ${PARIS_CENTRE}`,
+      'Peu peuplé mais très fréquenté, il abrite le **Louvre**, le **jardin des Tuileries** (25,5 hectares), le **Forum des Halles** et sa Canopée, le **jardin du Palais-Royal** et la **place Vendôme**. Restaurants, hôtels, grands magasins, sous-sols commerciaux et immeubles anciens à caves : pour une société de dératisation, ce sont des **cuisines professionnelles**, des **réserves**, des **locaux à poubelles** et des **caves** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires** et aux exploitants. Nous intervenons dans tout le 1er, 7 jours sur 7, y compris tôt le matin ou tard le soir pour les commerces.',
+      P_AUTRES('paris-1', 'Paris 1er'),
+    ],
+  },
+  chiffres: [
+    { valeur: '15 114', texte: 'habitants dans le 1er (population légale Insee), code postal 75001.', source: P_INSEE(1, 'Paris 1er') },
+    { valeur: '25,5 ha', texte: 'pour le jardin des Tuileries, entre le Louvre et la Concorde.', source: { label: 'Wikipédia, Jardin des Tuileries (superficie)', url: 'https://fr.wikipedia.org/wiki/Jardin_des_Tuileries' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 1er : l’arrondissement secteur par secteur',
+    intro: 'Le 1er compte quatre quartiers administratifs : **Saint-Germain-l’Auxerrois**, **les Halles**, **Palais-Royal** et **Place-Vendôme**. Des jardins aux sous-sols des Halles, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le jardin des Tuileries',
+        texte: 'Le **jardin des Tuileries** (25,5 hectares), entre le Louvre et la Concorde, reçoit chaque jour une foule de promeneurs, de kiosques et de pique-niques. Il relève de son gestionnaire ; les immeubles et hôtels de la rue de Rivoli, eux, doivent protéger **caves**, **cuisines** et **locaux à poubelles**.',
+        photo: w1('jardin-des-tuileries.jpg', 'La grande allée du jardin des Tuileries', 'La grande allée du jardin des Tuileries.', 'Guilhem Vellut', 'CC BY 2.0', 'Grande_all%C3%A9e_du_jardin_des_Tuileries,_Paris_le_5_mai_2016.jpg'),
+      },
+      {
+        nom: 'Les Halles et la Canopée',
+        texte: 'Sous la **Canopée**, le **Forum des Halles** empile commerces, restaurants, gares et parkings sur plusieurs niveaux souterrains. Autour, rues de restaurants et immeubles anciens : réserves, cuisines et sous-sols sont nos points de contrôle, avec **plan de lutte**, postes numérotés et registre.',
+        photo: w1('canopee-des-halles.jpg', 'La Canopée et les niveaux du Forum des Halles', 'La Canopée du Forum des Halles.', 'xiquinhosilva', 'CC BY 2.0', 'Canop%C3%A9e_des_Halles,_Paris_(36551928931).jpg'),
+      },
+      {
+        nom: 'Saint-Eustache et le jardin Nelson-Mandela',
+        texte: 'Entre l’**église Saint-Eustache** et la Bourse de commerce, le **jardin Nelson-Mandela** a remplacé l’ancien jardin des Halles. Pelouses, massifs et aires de jeux voisinent avec des immeubles d’habitation et des restaurants : les copropriétés riveraines doivent surveiller caves et cours. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w1('jardin-nelson-mandela.jpg', 'Le jardin Nelson-Mandela et l’église Saint-Eustache vus d’en haut', 'Le jardin Nelson-Mandela et l’église Saint-Eustache.', 'Suaudeau', 'CC BY 4.0', 'Jardin_Nelson-Mandela.jpg'),
+      },
+      {
+        nom: 'Le Palais-Royal',
+        texte: 'Le **jardin du Palais-Royal**, ses galeries, ses restaurants et ses immeubles anciens forment un îlot fermé. Galeries commerçantes, cuisines et caves voûtées : nous intervenons chez les **restaurateurs** et dans les copropriétés, discrètement et aux heures qui conviennent.',
+        photo: w1('jardin-du-palais-royal.jpg', 'Les allées d’arbres taillés du jardin du Palais-Royal', 'Le jardin du Palais-Royal.', 'Gerda Arendt', 'CC0', 'Jardin_du_Palais-Royal,_Paris.jpg'),
+      },
+      {
+        nom: 'La place Vendôme et la rue Saint-Honoré',
+        texte: 'Autour de la **place Vendôme** et de la **rue Saint-Honoré** : palaces, hôtels, joailliers, restaurants et immeubles de bureaux. Grandes cuisines, sous-sols et locaux de service : nous travaillons avec les **gestionnaires** d’établissements, avec un dispositif discret et une attestation pour les contrôles d’hygiène.',
+        photo: w1('place-vendome.jpg', 'La colonne Vendôme au centre de la place Vendôme', 'La colonne de la place Vendôme.', 'acediscovery', 'CC BY 4.0', 'Place-Vendome-Paris.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 1er', '75001'),
+  dératiseur: P_DERATISEUR('à Paris 1er', '75001', { t: 'Des rats dans un hôtel ou un restaurant', x: 'Cuisines, réserves, sous-sols et locaux de service : plan de lutte, postes numérotés, passages hors service, registre et attestation. Nous intervenons avant l’ouverture ou après la fermeture.' }),
+  mairie: P_MAIRIE('à Paris 1er', 'dans la rue, un jardin ou sur les quais', [['paris-2', 'Paris 2e'], ['paris-4', 'Paris 4e'], ['paris-8', 'Paris 8e'], ['paris-9', 'Paris 9e'], ['paris-6', 'Paris 6e'], ['paris-7', 'Paris 7e']]),
+  faq: P_FAQ('à Paris 1er', [
+    { q: 'J’ai un restaurant aux Halles : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+    { q: 'Quelle mairie contacter dans le 1er ?', a: 'Depuis 2020, la mairie de Paris Centre regroupe les 1er, 2e, 3e et 4e arrondissements. Pour un rat sur l’espace public, utilisez l’application DansMaRue ; pour votre immeuble, c’est au propriétaire ou au syndic d’agir.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(1, 'Paris 1er'), P_WIKI(1, 'quartiers, Paris Centre, Louvre, Halles')),
+}
+
+// ── Paris 2e ──
+const w2 = wp('paris-2')
+REFONTE_DERATISATION['paris-2'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le plus petit arrondissement de Paris : passages couverts, rue Montorgueil et ses restaurants, Sentier et ses ateliers, Bourse et immeubles anciens serrés. Dans le 2e, les rats passent d’une cave à l’autre : nous les traitons immeuble par immeuble.',
+  societe: {
+    titre: 'Société de dératisation à Paris 2e (75002) : passages, Sentier et Montorgueil',
+    paras: [
+      `Le 2e arrondissement, dit **de la Bourse**, compte **19 847 habitants** sur **99 hectares** : c’est **le plus petit arrondissement de Paris**. Il réunit quatre quartiers administratifs : **Gaillon**, **Vivienne**, **Mail** et **Bonne-Nouvelle**. ${PARIS_CENTRE}`,
+      'Il abrite l’ancienne **Bourse** (palais Brongniart), le site Richelieu de la Bibliothèque nationale, les **passages couverts** comme le **passage des Panoramas** (1799) et la **galerie Vivienne** (1823), le quartier du **Sentier** et la **rue Montorgueil**. Immeubles anciens serrés, caves communicantes, restaurants, ateliers et bureaux : pour une société de dératisation, ce sont des **cuisines**, des **réserves**, des **caves** et des **cours** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 2e, 7 jours sur 7.',
+      P_AUTRES('paris-2', 'Paris 2e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '19 847', texte: 'habitants dans le 2e (population légale Insee), code postal 75002.', source: P_INSEE(2, 'Paris 2e') },
+    { valeur: '99 ha', texte: 'de superficie : le plus petit des 20 arrondissements de Paris.', source: P_WIKI(2, 'superficie, quartiers, Bourse, Paris Centre') },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 2e : l’arrondissement secteur par secteur',
+    intro: 'Le 2e compte quatre quartiers administratifs : **Gaillon**, **Vivienne**, **Mail** et **Bonne-Nouvelle**. Des passages couverts aux pavés de Montorgueil, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'La rue Montorgueil',
+        texte: 'Rue piétonne de restaurants, de primeurs, de fromagers et de boulangeries, la **rue Montorgueil** concentre la nourriture. Réserves, cuisines, bacs à poubelles et caves anciennes : nous intervenons chez les **commerçants** (plan de lutte, registre) et dans les copropriétés au-dessus.',
+        photo: w2('rue-montorgueil.jpg', 'Les terrasses de la rue Montorgueil au pied d’immeubles anciens', 'La rue Montorgueil et ses terrasses.', 'Jean-Christophe Benoist', 'CC BY-SA 3.0', 'Paris_-_Rue_Montorgueil.JPG'),
+      },
+      {
+        nom: 'Le passage des Panoramas',
+        texte: 'Ouvert en **1799**, le **passage des Panoramas** aligne restaurants et boutiques sous verrière, au rez-de-chaussée d’immeubles anciens. Cuisines serrées, réserves et caves communicantes : un rat qui entre par un restaurant peut circuler dans tout le passage. Nous traitons l’ensemble avec le **syndic** et les exploitants.',
+        photo: w2('passage-des-panoramas.jpg', 'Le passage des Panoramas, ses vitrines et ses tables de restaurant', 'Le passage des Panoramas, ouvert en 1799.', 'Nicolas Vigier', 'CC0', 'Passage_des_Panoramas_01.jpg'),
+      },
+      {
+        nom: 'La galerie Vivienne et le Palais-Royal',
+        texte: 'Créée en **1823**, la **galerie Vivienne** relie le quartier de la Bourse au Palais-Royal, entre librairies, restaurants et immeubles anciens. Galeries, cuisines et caves voûtées : nous intervenons discrètement, aux heures qui conviennent aux commerces.',
+        photo: w2('galerie-vivienne.jpg', 'La galerie Vivienne, ses arcades, sa verrière et ses mosaïques', 'La galerie Vivienne, créée en 1823.', 'Benh Lieu Song', 'CC BY-SA 2.0', 'Galerie_Vivienne,_12_March_2015.jpg'),
+      },
+      {
+        nom: 'La Bourse et le quartier Gaillon',
+        texte: 'Autour du **palais Brongniart**, ancienne Bourse de Paris, et vers l’Opéra : bureaux, banques, restaurants d’affaires et immeubles haussmanniens. Grands sous-sols, cuisines professionnelles et locaux de service : nous travaillons avec les **gestionnaires** d’immeubles.',
+        photo: w2('palais-brongniart.jpg', 'La façade à colonnes du palais Brongniart, ancienne Bourse de Paris', 'Le palais Brongniart, ancienne Bourse.', 'Arthur Weidmann', 'CC BY-SA 4.0', 'Palais_Brongniart_Facade.jpg'),
+      },
+      {
+        nom: 'Le Sentier et Bonne-Nouvelle',
+        texte: 'Le **Sentier**, autour de la **place du Caire** et de la **rue d’Aboukir**, a longtemps été le quartier du textile. Ateliers, entrepôts, cartons et immeubles anciens à cours étroites : des abris pour les rongeurs. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w2('rue-d-aboukir.jpg', 'La rue d’Aboukir vue depuis la place du Caire, photographie en couleurs ancienne', 'La rue d’Aboukir vue de la place du Caire, autochrome des Archives de la Planète.', 'Stéphane Passet', 'CC0', 'La_rue_d%27Aboukir,_vue_depuis_la_place_du_Caire_-_A7469.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 2e', '75002'),
+  dératiseur: P_DERATISEUR('à Paris 2e', '75002', { t: 'Des rats dans un passage couvert', x: 'Restaurants et boutiques partagent souvent caves et réseaux : nous traitons tout le passage avec le syndic et les exploitants, puis rebouchons les communications entre locaux.' }),
+  mairie: P_MAIRIE('à Paris 2e', 'dans la rue ou sur une place', [['paris-1', 'Paris 1er'], ['paris-3', 'Paris 3e'], ['paris-9', 'Paris 9e'], ['paris-10', 'Paris 10e']]),
+  faq: P_FAQ('à Paris 2e', [
+    { q: 'Des rats dans un passage couvert : qui doit agir ?', a: 'Le syndic ou le propriétaire du passage pour les parties communes, chaque exploitant pour son local. Le traitement n’est efficace que s’il couvre tout le passage : nous le coordonnons.' },
+    { q: 'Quelle mairie contacter dans le 2e ?', a: 'Depuis 2020, la mairie de Paris Centre regroupe les 1er, 2e, 3e et 4e arrondissements. Pour un rat sur l’espace public, utilisez l’application DansMaRue ; pour votre immeuble, c’est au propriétaire ou au syndic d’agir.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(2, 'Paris 2e'), P_WIKI(2, 'superficie, quartiers, Bourse, Paris Centre'), { label: 'Wikipédia, Passage des Panoramas (créé en 1799)', url: 'https://fr.wikipedia.org/wiki/Passage_des_Panoramas' }, { label: 'Wikipédia, Galerie Vivienne (créée en 1823)', url: 'https://fr.wikipedia.org/wiki/Galerie_Vivienne' }),
+}
+
+// ── Paris 3e ──
+const w3 = wp('paris-3')
+REFONTE_DERATISATION['paris-3'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le haut Marais, ses hôtels particuliers et ses cours, le marché des Enfants-Rouges créé en 1615, le Carreau du Temple et le square du Temple : le 3e mêle bâtiments anciens, restaurants et jardins cachés. Nous y traitons les rats cour par cour, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 3e (75003) : le haut Marais, cour par cour',
+    paras: [
+      `Le 3e arrondissement, dit **du Temple**, compte **32 179 habitants** sur **1,17 km²**, soit plus de **27 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Arts-et-Métiers**, **Enfants-Rouges**, **Archives** et **Sainte-Avoie**. ${PARIS_CENTRE}`,
+      'Issu de l’extension de Paris aux XIIIe et XIVe siècles, il conserve des rues parmi les plus anciennes de la ville, des **hôtels particuliers** (Archives nationales, musée Picasso à l’hôtel Salé), le **marché des Enfants-Rouges**, créé en **1615**, le **Carreau du Temple** et le **square du Temple**. Caves voûtées, cours pavées, restaurants et ateliers : pour une société de dératisation, le 3e est un terrain ancien, où les rats circulent par les sous-sols.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 3e, 7 jours sur 7.',
+      P_AUTRES('paris-3', 'Paris 3e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '32 179', texte: 'habitants dans le 3e (population légale Insee), code postal 75003.', source: P_INSEE(3, 'Paris 3e') },
+    { valeur: '1615', texte: 'date de création du marché des Enfants-Rouges, marché couvert du haut Marais.', source: { label: 'Wikipédia, Marché des Enfants-Rouges (création en 1615)', url: 'https://fr.wikipedia.org/wiki/March%C3%A9_des_Enfants-Rouges' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 3e : l’arrondissement secteur par secteur',
+    intro: 'Le 3e compte quatre quartiers administratifs : **Arts-et-Métiers**, **Enfants-Rouges**, **Archives** et **Sainte-Avoie**. Du marché couvert aux jardins des hôtels particuliers, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le marché des Enfants-Rouges et la rue de Bretagne',
+        texte: 'Créé en **1615**, le **marché des Enfants-Rouges** et ses stands de cuisine, ouverts sur la **rue de Bretagne**, attirent une foule de clients. Déchets alimentaires, réserves et caves anciennes tout autour : nous intervenons chez les **commerçants** et dans les immeubles voisins.',
+        photo: w3('marche-des-enfants-rouges.jpg', 'L’intérieur du marché couvert des Enfants-Rouges', 'Le marché des Enfants-Rouges, créé en 1615.', 'Popolon', 'CC BY-SA 3.0', 'Paris_III-March%C3%A9_des_Enfants-Rouges.jpg'),
+      },
+      {
+        nom: 'Le Carreau du Temple',
+        texte: 'L’ancienne halle du **Carreau du Temple**, rénovée, accueille marchés, salons et événements, au milieu d’immeubles anciens, d’ateliers et de restaurants. Rez-de-chaussée commerciaux, caves et cours : nous traitons avec le **syndic** et les exploitants.',
+        photo: w3('carreau-du-temple.jpg', 'La halle métallique du Carreau du Temple', 'La halle du Carreau du Temple.', 'Carreau du Temple', 'CC BY-SA 4.0', 'Carreau_du_Temple,_Paris_9_April_2014.jpg'),
+      },
+      {
+        nom: 'Le square du Temple',
+        texte: 'Avec son plan d’eau, ses massifs et ses grands arbres, le **square du Temple** est l’un des jardins les plus fréquentés du quartier, face à la mairie de Paris Centre. Il relève de la Ville ; les immeubles qui le bordent doivent fermer caves et soupiraux.',
+        photo: w3('square-du-temple.jpg', 'Le plan d’eau et les massifs fleuris du square du Temple', 'Le square du Temple.', 'Guilhem Vellut', 'CC BY 2.0', 'Square_du_Temple_@_Paris_(34253102842).jpg'),
+      },
+      {
+        nom: 'Les hôtels particuliers et leurs jardins',
+        texte: 'Autour des **Archives nationales** et du **musée Picasso** (hôtel Salé), le Marais aligne hôtels particuliers, cours pavées et jardins cachés, souvent divisés en appartements. Jardins, caves voûtées et vieux réseaux : les rats passent d’une cour à l’autre. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w3('jardin-hotel-sale.jpg', 'Le jardin de l’hôtel Salé devant la façade du musée Picasso', 'Le jardin de l’hôtel Salé, devant le musée Picasso.', 'Chabe01', 'CC BY-SA 4.0', 'Jardin_H%C3%B4tel_Sal%C3%A9_L%C3%A9onor_Fini_-_Paris_III_(FR75)_-_2024-05-22_-_1.jpg'),
+      },
+      {
+        nom: 'Arts-et-Métiers et Sainte-Avoie',
+        texte: 'Entre le **Conservatoire national des arts et métiers** et la rue du Temple, des rues étroites d’immeubles anciens, de commerces de gros, d’ateliers et de restaurants. Réserves, cartons et caves communicantes : nous traitons commerces et copropriétés ensemble, puis rebouchons les passages.',
+        photo: w3('rue-de-bretagne.jpg', 'La plaque de la rue de Bretagne dans le 3e arrondissement', 'Une plaque de rue du 3e arrondissement, rue de Bretagne.', 'Groume', 'CC BY-SA 2.0', 'Rue_de_Bretagne_(Paris_3).jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 3e', '75003'),
+  dératiseur: P_DERATISEUR('à Paris 3e', '75003', { t: 'Des rats dans la cour d’un hôtel particulier', x: 'Cour pavée, jardin, caves voûtées et vieux réseaux : nous traitons tout l’immeuble avec le syndic, posons des grilles sur les soupiraux et rebouchons les passages vers les cours voisines.' }),
+  mairie: P_MAIRIE('à Paris 3e', 'dans la rue ou un square', [['paris-4', 'Paris 4e'], ['paris-2', 'Paris 2e'], ['paris-10', 'Paris 10e'], ['paris-11', 'Paris 11e']]),
+  faq: P_FAQ('à Paris 3e', [
+    { q: 'J’habite près du marché des Enfants-Rouges : ai-je plus de risques ?', a: 'Un marché alimentaire est une source régulière de nourriture. Les immeubles voisins doivent surtout protéger leurs caves et locaux à poubelles : portes qui ferment, soupiraux grillagés, bacs fermés.' },
+    { q: 'Quelle mairie contacter dans le 3e ?', a: 'La mairie de Paris Centre, installée dans le 3e, regroupe depuis 2020 les 1er, 2e, 3e et 4e arrondissements. Pour un rat sur l’espace public, utilisez l’application DansMaRue ; pour votre immeuble, c’est au propriétaire ou au syndic d’agir.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(3, 'Paris 3e'), P_WIKI(3, 'quartiers, Paris Centre, Archives nationales, Carreau du Temple, square du Temple')),
+}
+
+// ── Paris 4e ──
+const w4 = wp('paris-4')
+REFONTE_DERATISATION['paris-4'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le square de la Tour-Saint-Jacques, site pilote de l’opération « Rats 360° » de la Ville en 2025, l’Hôtel de Ville, le Marais et la place des Vosges, l’île Saint-Louis et le port de l’Arsenal : le 4e est au cœur de Paris et de la lutte contre les rats. Nous y traitons les rats cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 4e (75004) : de l’Hôtel de Ville à l’île Saint-Louis',
+    paras: [
+      `Le 4e arrondissement, dit **de l’Hôtel-de-Ville**, compte **27 332 habitants** sur **1,60 km²**. Il réunit quatre quartiers administratifs : **Saint-Merri**, **Saint-Gervais**, **Notre-Dame** et **l’Arsenal**. ${PARIS_CENTRE}`,
+      'Il abrite l’**Hôtel de Ville**, le sud du **Marais**, la **place des Vosges**, l’**île Saint-Louis**, l’est de l’île de la Cité avec Notre-Dame, et le **port de l’Arsenal**, qui relie le canal Saint-Martin à la Seine. En 2025, le **square de la Tour-Saint-Jacques** a été l’un des **quatre sites pilotes** de l’opération « **Rats 360°** » de la Ville. Quais, jardins, restaurants et immeubles anciens à caves : pour une société de dératisation, le 4e demande un traitement précis, immeuble par immeuble.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 4e, 7 jours sur 7.',
+      P_AUTRES('paris-4', 'Paris 4e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '27 332', texte: 'habitants dans le 4e (population légale Insee), code postal 75004.', source: P_INSEE(4, 'Paris 4e') },
+    { valeur: '4', texte: 'sites pilotes de l’opération « Rats 360° » de la Ville en 2025, dont le square de la Tour-Saint-Jacques, dans le 4e.', source: PARIS_RATS_V },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 4e : l’arrondissement secteur par secteur',
+    intro: 'Le 4e compte quatre quartiers administratifs : **Saint-Merri**, **Saint-Gervais**, **Notre-Dame** et **l’Arsenal**. Du square de la Tour-Saint-Jacques au port de l’Arsenal, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le square de la Tour-Saint-Jacques',
+        texte: 'De juillet à septembre 2025, la Ville y a mené l’opération « **Rats 360°** » : rebouchage des terriers, réduction des zones de nichage, sensibilisation et verbalisation. Le square relève de la Ville ; les immeubles, restaurants et commerces voisins de la rue de Rivoli doivent protéger **caves**, **cuisines** et **locaux à poubelles**.',
+        photo: w4('square-tour-saint-jacques.jpg', 'Le square de la Tour-Saint-Jacques et sa tour gothique', 'Le square de la Tour-Saint-Jacques, site pilote de l’opération « Rats 360° » en 2025.', 'LPLT', 'CC BY-SA 3.0', 'Square_de_la_Tour-Saint-jacques.JPG'),
+      },
+      {
+        nom: 'L’Hôtel de Ville et les quais',
+        texte: 'Autour de l’**Hôtel de Ville** et le long des **quais de Seine** : grands immeubles, cafés, restaurants et foule. Berges et réseaux d’eau servent de couloirs au surmulot : les immeubles riverains doivent surveiller caves et soupiraux.',
+        photo: w4('hotel-de-ville.jpg', 'L’Hôtel de Ville de Paris vu depuis la Seine', 'L’Hôtel de Ville vu depuis la Seine.', 'Marcin Białek', 'CC BY-SA 3.0', 'Hotel_de_Ville_de_Paris_2012.JPG'),
+      },
+      {
+        nom: 'Le Marais et la place des Vosges',
+        texte: 'Dans le sud du **Marais**, autour de la **place des Vosges** (à cheval sur les 3e et 4e) : hôtels particuliers, cours pavées, restaurants et boutiques. Caves voûtées et cours communicantes : nous traitons l’immeuble entier avec le **syndic**. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w4('place-des-vosges.jpg', 'La statue équestre de Louis XIII dans le square de la place des Vosges', 'Le square de la place des Vosges et la statue de Louis XIII.', 'Mbzt', 'CC BY-SA 4.0', 'F0723_Paris_IV_place_Vosges_statue_Louis_XIII_rwk.jpg'),
+      },
+      {
+        nom: 'L’île Saint-Louis',
+        texte: 'Sur l’**île Saint-Louis**, immeubles du XVIIe siècle, quais, restaurants et glaciers. Caves anciennes au bord de l’eau, cours étroites : les rats remontent des berges et des réseaux. Nous intervenons en copropriété et chez les commerçants.',
+        photo: w4('ile-saint-louis.jpg', 'Les immeubles du quai d’Orléans sur l’île Saint-Louis', 'Le quai d’Orléans, sur l’île Saint-Louis.', 'GFreihalter', 'CC BY-SA 4.0', 'Paris_4e_%C3%8Ele_Saint-Louis_Quai_d%27Orl%C3%A9ans_867.jpg'),
+      },
+      {
+        nom: 'L’Arsenal et son port',
+        texte: 'Le **port de l’Arsenal** relie le canal Saint-Martin à la Seine, entre la Bastille et le quai de la Rapée : bateaux de plaisance, jardin en terrasse et immeubles riverains. Eau, végétation et quais : nous traitons caves, parkings et locaux à poubelles des immeubles voisins.',
+        photo: w4('port-de-l-arsenal.jpg', 'Les bateaux du port de l’Arsenal et la colonne de Juillet au fond', 'Le port de l’Arsenal et la colonne de la Bastille.', 'Myrabella', 'CC BY-SA 4.0', 'Paris_port_Arsenal.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 4e', '75004'),
+  dératiseur: P_DERATISEUR('à Paris 4e', '75004', { t: 'Des rats dans une cave au bord de l’eau', x: 'Près des quais, de l’île Saint-Louis ou de l’Arsenal, les caves anciennes sont exposées : nous traitons tout le sous-sol, posons des grilles sur les soupiraux et rebouchons les passages.' }),
+  mairie: P_MAIRIE('à Paris 4e', 'dans la rue, un square ou sur les quais', [['paris-3', 'Paris 3e'], ['paris-1', 'Paris 1er'], ['paris-11', 'Paris 11e'], ['paris-12', 'Paris 12e'], ['paris-5', 'Paris 5e']]),
+  faq: P_FAQ('à Paris 4e', [
+    { q: 'Qu’est-ce que l’opération « Rats 360° » à la Tour-Saint-Jacques ?', a: 'Une expérimentation de la Ville de Paris menée de juillet à septembre 2025 sur quatre sites, dont le square de la Tour-Saint-Jacques : rebouchage des terriers, réduction des zones de nichage, sensibilisation et verbalisation. Elle concerne l’espace public ; votre immeuble reste à la charge du propriétaire.' },
+    { q: 'Quelle mairie contacter dans le 4e ?', a: 'Depuis 2020, la mairie de Paris Centre regroupe les 1er, 2e, 3e et 4e arrondissements. Pour un rat sur l’espace public, utilisez l’application DansMaRue ; pour votre immeuble, c’est au propriétaire ou au syndic d’agir.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(4, 'Paris 4e'), P_WIKI(4, 'quartiers, Paris Centre, île Saint-Louis, Marais'), { label: 'Wikipédia, Port de l’Arsenal (relie le canal Saint-Martin à la Seine)', url: 'https://fr.wikipedia.org/wiki/Port_de_l%27Arsenal' }),
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
