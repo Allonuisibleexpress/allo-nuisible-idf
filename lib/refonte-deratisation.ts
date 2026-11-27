@@ -6637,6 +6637,7 @@ REFONTE_DERATISATION['paris-15'] = {
   dératiseur: P_DERATISEUR('à Paris 15e', '75015', { t: 'Des rats sous la dalle du Front de Seine ou dans un parking', x: 'Locaux techniques, vide-ordures, gaines et parkings communiquent : nous traitons tout le sous-sol avec le syndic ou le gestionnaire, puis fermons les accès entre niveaux.' }),
   mairie: P_MAIRIE('à Paris 15e', 'dans la rue, un parc ou sur la Petite Ceinture', [['paris-7', 'Paris 7e'], ['paris-14', 'Paris 14e'], ['paris-16', 'Paris 16e'], ['paris-6', 'Paris 6e'], ['issy-les-moulineaux', 'Issy-les-Moulineaux'], ['vanves', 'Vanves'], ['malakoff', 'Malakoff']]),
   faq: P_FAQ('à Paris 15e', [
+    { q: 'La Ville de Paris a-t-elle mené une opération contre les rats dans le 15e ?', a: 'Oui : en 2025, le square du Docteur-Calmette, quartier Périchaux-Brançion, a été l’un des quatre sites pilotes de l’opération « Rats 360° » (rebouchage des terriers, réduction des zones de nichage, sensibilisation). Elle concerne l’espace public ; les caves et cours privées restent à la charge des propriétaires.' },
     { q: 'Des rats sous la dalle de ma tour : qui doit agir ?', a: 'Le syndic ou le gestionnaire, pour les parties communes : parkings, locaux à poubelles, vide-ordures et locaux techniques. La dalle publique relève de la Ville. Signalez le problème par écrit, avec photos.' },
     { q: 'J’habite près de la Petite Ceinture ou d’un parc : ai-je plus de risques ?', a: 'Les talus, la végétation et les grands parcs offrent abri et nourriture. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles, et réagir dès les premiers signes.' },
   ]),
@@ -6767,6 +6768,201 @@ REFONTE_DERATISATION['paris-18'] = {
     { q: 'Les anciennes carrières de Montmartre attirent-elles les rats ?', a: 'Les rats vivent surtout dans les égouts, les caves et les espaces verts. Sur la butte, les murs anciens, les caves et les jardins en terrasse offrent des abris : faites vérifier soupiraux et passages dès les premiers signes.' },
   ]),
   sources: P_SOURCES(P_INSEE(18, 'Paris 18e'), P_WIKI(18, 'quartiers, création en 1860, Montmartre et la Chapelle'), { label: 'Wikipédia, Vigne de Montmartre (Clos-Montmartre planté en 1933, 0,15 hectare)', url: 'https://fr.wikipedia.org/wiki/Vigne_de_Montmartre' }, { label: 'Wikipédia, Jardins d’Éole (4,2 hectares)', url: 'https://fr.wikipedia.org/wiki/Jardins_d%27%C3%89ole' }),
+}
+
+// ── Paris 19e (27/11/2026) ──
+const w19 = wp('paris-19')
+REFONTE_DERATISATION['paris-19'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le bassin de la Villette et le canal de l’Ourcq, le parc de la Villette sur les anciens abattoirs, les Buttes-Chaumont creusées dans d’anciennes carrières, les tours de la place des Fêtes et des Orgues de Flandre : le 19e est l’arrondissement de l’eau et des grands ensembles. Nous y traitons les rats résidence par résidence.',
+  societe: {
+    titre: 'Société de dératisation à Paris 19e (75019) : des Buttes-Chaumont au bassin de la Villette',
+    paras: [
+      'Le 19e arrondissement, dit **des Buttes-Chaumont**, compte **178 691 habitants** sur **6,78 km²**, soit plus de **26 000 habitants au km²**. Il réunit quatre quartiers administratifs : **la Villette**, **Pont-de-Flandre**, **Amérique** et **Combat**.',
+      'L’ancien village de la Villette, annexé en **1860**, s’est construit autour de l’eau : le **bassin de la Villette** (achevé en **1809**), le **canal de l’Ourcq** (terminé en **1837**) et le canal Saint-Denis. Les **abattoirs** et le marché aux bestiaux y ont fonctionné de **1867 à 1974**, à la place de l’actuel **parc de la Villette** (55 hectares). Le **parc des Buttes-Chaumont**, ouvert en 1867, occupe d’anciennes carrières. Grands ensembles (place des Fêtes, **Orgues de Flandre**), immeubles anciens, quais et parcs : pour une société de dératisation, ce sont des **berges**, des **locaux à poubelles** collectifs, des **parkings** et des **caves** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, parkings et bâtiments privés, la lutte **incombe aux propriétaires** et aux bailleurs. Nous intervenons dans tout le 19e, 7 jours sur 7.',
+      P_AUTRES('paris-19', 'Paris 19e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '178 691', texte: 'habitants dans le 19e (population légale Insee), code postal 75019.', source: P_INSEE(19, 'Paris 19e') },
+    { valeur: '55 ha', texte: 'pour le parc de la Villette, aménagé sur le site des anciens abattoirs (1867-1974).', source: { label: 'Wikipédia, Parc de la Villette (55 ha, anciens abattoirs de la Villette)', url: 'https://fr.wikipedia.org/wiki/Parc_de_la_Villette' } },
+    { valeur: '24,7 ha', texte: 'pour le parc des Buttes-Chaumont, ouvert en 1867 sur d’anciennes carrières, avec plus de 40 m de dénivelé.', source: { label: 'Wikipédia, Parc des Buttes-Chaumont (superficie, ouverture, anciennes carrières)', url: 'https://fr.wikipedia.org/wiki/Parc_des_Buttes-Chaumont' } },
+    P_VILLE_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 19e : l’arrondissement secteur par secteur',
+    intro: 'Le 19e compte quatre quartiers administratifs : **la Villette**, **Pont-de-Flandre**, **Amérique** et **Combat**. Des quais du bassin aux tours de la place des Fêtes, voici ce que chacun de ses grands secteurs implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le bassin de la Villette',
+        texte: 'Achevé en **1809**, le **bassin de la Villette** est bordé de quais animés, de cinémas, de bars et de grands immeubles. L’eau, les pique-niques et les poubelles de rue attirent le surmulot ; les immeubles riverains doivent protéger **caves**, **parkings** et **locaux à poubelles**, que nous traitons avec le syndic.',
+        photo: w19('bassin-de-la-villette.jpg', 'Le bassin de la Villette, ses quais pavés et ses immeubles', 'Le bassin de la Villette, achevé en 1809.', 'HJ Mitchell', 'CC BY 4.0', 'Bassin_de_la_Villette,_Paris_01.jpg'),
+      },
+      {
+        nom: 'Le canal de l’Ourcq et Pont-de-Flandre',
+        texte: 'Terminé en **1837**, le **canal de l’Ourcq** file vers la Seine-Saint-Denis entre quais, péniches et résidences. Berges, végétation et réseaux d’eau : les rats circulent le long du canal. Nous intervenons dans les résidences riveraines, avec le **bailleur** ou le **syndic**.',
+        photo: w19('canal-de-l-ourcq.jpg', 'Le canal de l’Ourcq bordé d’arbres, de bateaux amarrés et d’immeubles', 'Le canal de l’Ourcq.', 'Heidi Meudt', 'CC BY 4.0', 'Canal_de_l%27Ourcq_Paris_July_2026_01.jpg'),
+      },
+      {
+        nom: 'Le parc de la Villette, sur les anciens abattoirs',
+        texte: 'Sur le site des **abattoirs** et du marché aux bestiaux (**1867-1974**), le **parc de la Villette** (55 hectares) réunit pelouses, jardins, folies rouges et grandes salles de spectacle. Il relève de son gestionnaire ; les résidences voisines doivent surveiller jardins, locaux à poubelles et parkings.',
+        photo: w19('parc-de-la-villette.jpg', 'Une passerelle rouge du parc de la Villette au milieu des arbres', 'Une folie et sa passerelle, au parc de la Villette.', 'Reza1615', 'Domaine public', 'Paris_Parc_de_La_Villette_Folie_R4_b.jpg'),
+      },
+      {
+        nom: 'Les Buttes-Chaumont et le quartier d’Amérique',
+        texte: 'Ouvert en **1867** sur d’**anciennes carrières**, le **parc des Buttes-Chaumont** (24,7 hectares) offre plus de 40 mètres de dénivelé, un lac, des falaises et des bois. Autour, le quartier d’**Amérique** aligne immeubles, villas et maisons sur les pentes. Jardinets, caves et murs anciens : nous traitons les terriers et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w19('buttes-chaumont.jpg', 'Les pins et le lac du parc des Buttes-Chaumont vus d’en haut', 'Le parc des Buttes-Chaumont, ouvert en 1867.', 'FreCha', 'CC BY-SA 4.0', 'Parc_des_Buttes-Chaumont.jpg'),
+      },
+      {
+        nom: 'Les Orgues de Flandre et l’avenue de Flandre',
+        texte: 'Le long de l’**avenue de Flandre**, les tours des **Orgues de Flandre** et d’autres grands ensembles dominent le quartier. Vide-ordures, locaux à poubelles collectifs, parkings et caves : la dératisation se fait sur **toute la résidence**, avec le bailleur, sinon la colonie change simplement de bâtiment.',
+        photo: w19('orgues-de-flandre.jpg', 'Les tours des Orgues de Flandre vues depuis le belvédère des Buttes-Chaumont', 'Les Orgues de Flandre, vues depuis les Buttes-Chaumont.', 'Chabe01', 'CC BY-SA 4.0', 'Orgues_Flandre_vus_depuis_Belv%C3%A9d%C3%A8re_Buttes_Chaumont_Paris_2.jpg'),
+      },
+      {
+        nom: 'La place des Fêtes et le Combat',
+        texte: 'Autour de la **place des Fêtes**, tours d’habitation, dalle, marché et parkings ; vers Combat et Colonel-Fabien, immeubles anciens et résidences. Sous les dalles et dans les sous-sols, gaines et locaux techniques forment un réseau abrité : nous traitons niveau par niveau. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w19('place-des-fetes.jpg', 'Les tours d’habitation de la place des Fêtes', 'La place des Fêtes et ses tours.', 'DXR', 'CC BY-SA 4.0', 'Place_des_F%C3%AAtes,_Paris_19e_20140427_1.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 19e', '75019'),
+  dératiseur: P_DERATISEUR('à Paris 19e', '75019', { t: 'Des rats au pied d’une tour ou d’une grande résidence', x: 'Locaux à poubelles, vide-ordures, parkings et pelouses : nous traitons avec le bailleur ou le syndic, sur tout l’ensemble, pour éviter que la colonie change simplement de bâtiment.' }),
+  mairie: P_MAIRIE('à Paris 19e', 'sur les quais, dans un square ou un parc', [['paris-20', 'Paris 20e'], ['paris-18', 'Paris 18e'], ['paris-10', 'Paris 10e'], ['pantin', 'Pantin'], ['les-lilas', 'Les Lilas']]),
+  faq: P_FAQ('à Paris 19e', [
+    { q: 'La Ville de Paris a-t-elle mené une opération contre les rats dans le 19e ?', a: 'Oui : en 2025, le jardin Hérold, quartier Danube, a été l’un des quatre sites pilotes de l’opération « Rats 360° » (rebouchage des terriers, réduction des zones de nichage, sensibilisation). Elle concerne l’espace public ; les caves et cours privées restent à la charge des propriétaires.' },
+    { q: 'J’habite au bord du bassin ou du canal : ai-je plus de risques ?', a: 'L’eau, les berges et les poubelles de rue attirent le surmulot. Les immeubles riverains doivent surtout protéger caves, parkings et locaux à poubelles, et réagir dès les premiers signes.' },
+    { q: 'Des rats dans ma résidence HLM : qui doit agir ?', a: 'Le bailleur, pour les parties communes et les logements : il doit fournir un logement exempt de nuisibles (loi du 6 juillet 1989). Signalez le problème par écrit, avec photos et dates ; la Ville se coordonne aussi avec les bailleurs sociaux.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(19, 'Paris 19e'), P_WIKI(19, 'quartiers, bassin de la Villette, canal de l’Ourcq, abattoirs')),
+}
+
+// ── Paris 14e (27/11/2026) ──
+const w14 = wp('paris-14')
+REFONTE_DERATISATION['paris-14'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Des carrières sous les rues, les Catacombes, le parc Montsouris et son lac, la Cité universitaire, le cimetière du Montparnasse et les brasseries du boulevard : le 14e cache beaucoup de choses sous ses pieds. Nous y traitons les rats cave par cave, cour par cour.',
+  societe: {
+    titre: 'Société de dératisation à Paris 14e (75014) : de Montparnasse au parc Montsouris',
+    paras: [
+      'Le 14e arrondissement, dit **de l’Observatoire**, compte **136 455 habitants** sur **5,61 km²**, soit plus de **24 000 habitants au km²**. Ses limites datent de **1860**. Il réunit quatre quartiers administratifs : **Montparnasse**, **Parc-de-Montsouris**, **Petit-Montrouge** et **Plaisance**.',
+      'Sous ses rues s’étendent d’**anciennes carrières souterraines**, dont une partie forme les **Catacombes**, l’ossuaire municipal. En surface : les brasseries de **Montparnasse**, le **cimetière du Montparnasse**, le **parc Montsouris** (15,5 hectares) et la **Cité internationale universitaire** (34 hectares), des rues commerçantes comme la rue Daguerre, des immeubles anciens et des résidences. Pour une société de dératisation, ce sont des **caves**, des **cours**, des **restaurants** et des immeubles en bordure de grands espaces verts à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 14e, 7 jours sur 7.',
+      P_AUTRES('paris-14', 'Paris 14e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '136 455', texte: 'habitants dans le 14e (population légale Insee), code postal 75014.', source: P_INSEE(14, 'Paris 14e') },
+    { valeur: '15,5 ha', texte: 'pour le parc Montsouris, avec son lac, au sud de l’arrondissement.', source: { label: 'Wikipédia, Parc Montsouris (superficie)', url: 'https://fr.wikipedia.org/wiki/Parc_Montsouris' } },
+    { valeur: '34 ha', texte: 'pour la Cité internationale universitaire de Paris, ses pelouses et ses maisons.', source: { label: 'Wikipédia, Cité internationale universitaire de Paris (superficie)', url: 'https://fr.wikipedia.org/wiki/Cit%C3%A9_internationale_universitaire_de_Paris' } },
+    P_VILLE_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 14e : l’arrondissement secteur par secteur',
+    intro: 'Le 14e compte quatre quartiers administratifs : **Montparnasse**, **Parc-de-Montsouris**, **Petit-Montrouge** et **Plaisance**. Des brasseries du boulevard aux pelouses de la Cité universitaire, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Denfert-Rochereau et les Catacombes',
+        texte: 'Place **Denfert-Rochereau**, les pavillons de l’ancienne barrière d’Enfer marquent l’entrée des **Catacombes**, installées dans d’**anciennes carrières souterraines**. Autour, grands immeubles, hôpitaux et commerces. Caves profondes et vieux réseaux : nous contrôlons sous-sols et soupiraux, puis rebouchons les passages. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w14('denfert-rochereau.jpg', 'Les pavillons de la barrière d’Enfer sur la place Denfert-Rochereau', 'Les pavillons de la barrière d’Enfer, place Denfert-Rochereau, à l’entrée des Catacombes.', 'Coyau', 'CC BY-SA 3.0', 'Barri%C3%A8re_d%27Enfer,_place_Denfert-Rochereau,_Paris_05.jpg'),
+      },
+      {
+        nom: 'Le cimetière du Montparnasse et le boulevard',
+        texte: 'Entre le **cimetière du Montparnasse** et le boulevard du Montparnasse, brasseries historiques, restaurants, hôtels et immeubles anciens. Cuisines professionnelles, réserves et locaux à poubelles : nous mettons en place des **plans de lutte** (postes numérotés, registre) et traitons les copropriétés au-dessus.',
+        photo: w14('cimetiere-du-montparnasse.jpg', 'L’allée principale du cimetière du Montparnasse bordée d’arbres', 'L’allée principale du cimetière du Montparnasse.', 'Chabe01', 'CC BY-SA 4.0', 'All%C3%A9e_Principale_Cimeti%C3%A8re_Montparnasse_-_Paris_XIV_(FR75)_-_2024-08-29_-_1.jpg'),
+      },
+      {
+        nom: 'Plaisance et Pernety',
+        texte: 'Autour de la **rue Raymond-Losserand** et de Pernety : immeubles anciens et récents, cours, petites rues et résidences. Locaux à poubelles, caves et jardins de résidence sont nos points de contrôle ; nous traitons avec le **syndic** ou le **bailleur**, sur toutes les parties communes.',
+        photo: w14('rue-raymond-losserand.jpg', 'La rue Raymond-Losserand et ses immeubles, dans le quartier de Plaisance', 'La rue Raymond-Losserand, quartier de Plaisance.', 'Chabe01', 'CC BY-SA 4.0', 'Rue_Raymond_Losserand_-_Paris_XIV_(FR75)_-_2021-08-01_-_4.jpg'),
+      },
+      {
+        nom: 'Le parc Montsouris et ses villas',
+        texte: 'Le **parc Montsouris** (15,5 hectares), son **lac** et ses pelouses sont bordés d’immeubles et, côté est, de petites rues de **villas** et de maisons avec jardin. Le parc relève de la Ville ; jardinets, composts et vides sanitaires, des propriétaires. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w14('parc-montsouris.jpg', 'Le lac du parc Montsouris entouré d’arbres', 'Le lac du parc Montsouris.', 'Basili', 'CC BY-SA 4.0', 'Lac_du_parc_Montsouris_%C3%A0_Paris.JPG'),
+      },
+      {
+        nom: 'La Cité internationale universitaire',
+        texte: 'Au sud, la **Cité internationale universitaire** déploie ses **34 hectares** de pelouses et de maisons d’étudiants le long du boulevard Jourdan. Restaurants universitaires, cuisines collectives et résidences : nous intervenons dans les **cuisines** et les **bâtiments**, avec leurs gestionnaires.',
+        photo: w14('cite-universitaire.jpg', 'La grande pelouse et la Maison internationale de la Cité universitaire', 'La grande pelouse de la Cité internationale universitaire.', 'besopha', 'CC BY-SA 2.0', 'La_pelouse_de_la_cit%C3%A9_Universitaire_de_Paris.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 14e', '75014'),
+  dératiseur: P_DERATISEUR('à Paris 14e', '75014', { t: 'Des rats dans une cave ancienne', x: 'Caves profondes, murs anciens et vieux réseaux : nous contrôlons tout le sous-sol, traitons la colonie et rebouchons les passages vers les immeubles voisins.' }),
+  mairie: P_MAIRIE('à Paris 14e', 'dans la rue, un square ou le parc Montsouris', [['paris-15', 'Paris 15e'], ['paris-13', 'Paris 13e'], ['paris-6', 'Paris 6e'], ['montrouge', 'Montrouge'], ['malakoff', 'Malakoff'], ['gentilly', 'Gentilly']]),
+  faq: P_FAQ('à Paris 14e', [
+    { q: 'Les Catacombes et les anciennes carrières attirent-elles les rats ?', a: 'Les rats vivent surtout dans les égouts, les caves et les espaces verts. Dans le 14e, les caves profondes et les murs anciens offrent des abris : faites vérifier soupiraux et passages dès les premiers signes.' },
+    { q: 'J’ai un restaurant à Montparnasse : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+  ]),
+  sources: P_SOURCES(P_INSEE(14, 'Paris 14e'), P_WIKI(14, 'quartiers, limites de 1860, Catacombes, cimetière du Montparnasse'), { label: 'Wikipédia, Catacombes de Paris (anciennes carrières souterraines du 14e)', url: 'https://fr.wikipedia.org/wiki/Catacombes_de_Paris' }),
+}
+
+// ── Paris 10e (27/11/2026) ──
+const w10 = wp('paris-10')
+REFONTE_DERATISATION['paris-10'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Le canal Saint-Martin, site pilote de l’opération « Rats 360° » de la Ville en 2025, la gare du Nord et la gare de l’Est, les faubourgs Saint-Denis et Saint-Martin, leurs passages et leurs restaurants : le 10e concentre eau, voyageurs et commerces de bouche. Nous y traitons les rats cour par cour.',
+  societe: {
+    titre: 'Société de dératisation à Paris 10e (75010) : du canal Saint-Martin aux grandes gares',
+    paras: [
+      'Le 10e arrondissement, dit **de l’Entrepôt**, compte **83 873 habitants** sur **2,89 km²**, soit environ **29 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Saint-Vincent-de-Paul**, **Porte-Saint-Denis**, **Porte-Saint-Martin** et **Hôpital-Saint-Louis**.',
+      'Il s’est construit le long des anciennes routes de Saint-Denis et de Saint-Martin, devenues **faubourgs**, puis autour de l’**hôpital Saint-Louis** (fondé sous Henri IV en 1607), du **canal Saint-Martin** et des **gares du Nord et de l’Est**. En 2025, la **place Madeleine-Braun et le canal Saint-Martin** ont été l’un des **quatre sites pilotes** de l’opération « **Rats 360°** » de la Ville de Paris. Pour une société de dératisation, ce sont des **quais**, des **cours** et **passages** anciens, des **restaurants** et des **caves** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans tout le 10e, 7 jours sur 7.',
+      P_AUTRES('paris-10', 'Paris 10e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '83 873', texte: 'habitants dans le 10e (population légale Insee), code postal 75010.', source: P_INSEE(10, 'Paris 10e') },
+    { valeur: '4', texte: 'sites pilotes de l’opération « Rats 360° » de la Ville en 2025, dont la place Madeleine-Braun et le canal Saint-Martin, dans le 10e.', source: PARIS_RATS_V },
+    { valeur: '4,55 km', texte: 'de canal Saint-Martin, entre le bassin de la Villette et la Seine, en partie à ciel ouvert dans le 10e.', source: { label: 'Wikipédia, Canal Saint-Martin (longueur)', url: 'https://fr.wikipedia.org/wiki/Canal_Saint-Martin' } },
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 10e : l’arrondissement secteur par secteur',
+    intro: 'Le 10e compte quatre quartiers administratifs : **Saint-Vincent-de-Paul**, **Porte-Saint-Denis**, **Porte-Saint-Martin** et **Hôpital-Saint-Louis**. Des quais du canal aux parvis des gares, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Le canal Saint-Martin et ses quais',
+        texte: 'Quais de Valmy et de Jemmapes, passerelles, arbres et pique-niques : le **canal Saint-Martin** attire foule et déchets alimentaires. La Ville y a mené l’opération « **Rats 360°** » en 2025, autour de la place Madeleine-Braun. Les immeubles riverains, eux, doivent protéger **caves**, **cours** et **locaux à poubelles**.',
+        photo: w10('canal-saint-martin.jpg', 'Le canal Saint-Martin et ses quais bordés d’arbres en automne', 'Le canal Saint-Martin vu de la passerelle Bichat.', 'Gerda Arendt', 'CC0', 'Canal_Saint-Martin_from_Passerelle_Bichat,_Paris.jpg'),
+      },
+      {
+        nom: 'L’hôpital Saint-Louis et ses abords',
+        texte: 'Fondé en **1607**, l’**hôpital Saint-Louis** et ses hauts murs dominent le quartier, entre le canal et le faubourg du Temple. Autour, immeubles anciens, cours et restaurants : nous traitons caves et parties communes avec le **syndic**, puis rebouchons soupiraux et passages.',
+        photo: w10('hopital-saint-louis.jpg', 'Les toits et le mur d’enceinte de l’hôpital Saint-Louis, rue Bichat', 'L’hôpital Saint-Louis vu de la rue Bichat.', 'GFreihalter', 'CC BY-SA 4.0', 'Paris_10e_H%C3%B4pital_Saint-Louis_636.jpg'),
+      },
+      {
+        nom: 'La gare du Nord et la gare de l’Est',
+        texte: 'Autour des **deux grandes gares** : hôtels, restaurants, cafés, commerces ouverts tard et grands immeubles. Voies, sous-sols, cuisines professionnelles et poubelles nombreuses : nous intervenons dans les **hôtels** et **restaurants** (plan de lutte, registre) et dans les copropriétés voisines.',
+        photo: w10('gare-du-nord.jpg', 'La façade monumentale de la gare du Nord et ses statues', 'La façade de la gare du Nord.', 'Velvet', 'CC BY-SA 3.0', 'Paris_gare_nord_face_1.jpg'),
+      },
+      {
+        nom: 'Le faubourg Saint-Denis et ses passages',
+        texte: 'La **rue du Faubourg-Saint-Denis** et ses voisines alignent épiceries, restaurants, primeurs et **passages** couverts, sous des immeubles anciens à cours. Beaucoup de nourriture, des réserves serrées et des caves communicantes : nous traitons commerces et copropriétés ensemble. Voir [le plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles).',
+        photo: w10('faubourg-saint-denis.jpg', 'Le carrefour de la rue du Château-d’Eau et de la rue du Faubourg-Saint-Denis', 'La rue du Faubourg-Saint-Denis au croisement de la rue du Château-d’Eau.', 'Greg Wolf', 'CC BY 2.0', 'Rue_du_Ch%C3%A2teau_d%27Eau,_Rue_du_Faubourg_Saint-Denis,_Paris_May_2015.jpg'),
+      },
+      {
+        nom: 'Les portes Saint-Denis et Saint-Martin',
+        texte: 'Sur les Grands Boulevards, la **porte Saint-Denis** et la porte Saint-Martin ouvrent sur des rues de théâtres, de restaurants et de commerces de gros. Immeubles anciens, cours et sous-sols encombrés : les rats y trouvent abri. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w10('porte-saint-denis.jpg', 'L’arc de la porte Saint-Denis entre deux immeubles', 'La porte Saint-Denis, sur les Grands Boulevards.', 'Coyau', 'CC BY-SA 3.0', 'Porte_Saint-Denis_01.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 10e', '75010'),
+  dératiseur: P_DERATISEUR('à Paris 10e', '75010', { t: 'Des rats dans un immeuble au bord du canal', x: 'Les quais fréquentés nourrissent les rats du secteur : nous traitons caves et locaux à poubelles, posons des grilles sur les soupiraux et coordonnons avec les immeubles voisins.' }),
+  mairie: P_MAIRIE('à Paris 10e', 'sur les quais du canal, dans la rue ou un square', [['paris-11', 'Paris 11e'], ['paris-19', 'Paris 19e'], ['paris-18', 'Paris 18e'], ['paris-9', 'Paris 9e'], ['paris-3', 'Paris 3e'], ['paris-2', 'Paris 2e']]),
+  faq: P_FAQ('à Paris 10e', [
+    { q: 'Qu’est-ce que l’opération « Rats 360° » au canal Saint-Martin ?', a: 'Une expérimentation de la Ville de Paris menée de juillet à septembre 2025 sur quatre sites, dont la place Madeleine-Braun et le canal Saint-Martin : actions sur le milieu (rebouchage des terriers, réduction des zones de nichage), sensibilisation et verbalisation. Elle concerne l’espace public ; votre immeuble reste à la charge du propriétaire.' },
+    { q: 'J’habite au bord du canal Saint-Martin : ai-je plus de risques ?', a: 'L’eau, les quais très fréquentés et les poubelles de rue attirent le surmulot. Les immeubles riverains doivent surtout protéger caves, cours et locaux à poubelles, et réagir dès les premiers signes.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(10, 'Paris 10e'), P_WIKI(10, 'quartiers, faubourgs, hôpital Saint-Louis, gares')),
 }
 
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
