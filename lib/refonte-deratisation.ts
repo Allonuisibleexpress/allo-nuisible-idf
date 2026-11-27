@@ -6010,8 +6010,8 @@ REFONTE_DERATISATION['bourg-la-reine'] = {
       },
       {
         nom: 'L’ancien ru des Blagis et la vallée de la Bièvre',
-        texte: 'Le **ru des Blagis**, peint par Utrillo quand il coulait encore à l’air libre, est aujourd’hui un **collecteur** sous les rues. Réseaux enterrés et sols d’alluvions : le surmulot circule sous la ville et remonte vers les caves. Nous contrôlons regards et sous-sols, puis rebouchons les passages.',
-        photo: wbl('la-bievre-utrillo.jpg', 'Tableau de Maurice Utrillo représentant la rivière à Bourg-la-Reine en 1925', '« La Bièvre à Bourg-la-Reine », Maurice Utrillo, 1925 : le ruisseau à ciel ouvert, avant sa mise sous terre.', 'Maurice Utrillo', 'Domaine public', 'La_Bi%C3%A8vre_%C3%A0_Bourg-la-Reine_(Hauts-de-Seine)_-_Maurice_Utrillo.jpg'),
+        texte: 'En 1925, Utrillo peignait encore « La Bièvre à Bourg-la-Reine » à ciel ouvert ; l’ancien **ru des Blagis**, lui, est aujourd’hui un **collecteur** sous les rues. Réseaux enterrés et sols d’alluvions : le surmulot circule sous la ville et remonte vers les caves. Nous contrôlons regards et sous-sols, puis rebouchons les passages.',
+        photo: wbl('la-bievre-utrillo.jpg', 'Tableau de Maurice Utrillo représentant la rivière à Bourg-la-Reine en 1925', '« La Bièvre à Bourg-la-Reine », Maurice Utrillo, 1925 : un cours d’eau encore à ciel ouvert.', 'Maurice Utrillo', 'Domaine public', 'La_Bi%C3%A8vre_%C3%A0_Bourg-la-Reine_(Hauts-de-Seine)_-_Maurice_Utrillo.jpg'),
       },
       {
         nom: 'L’église Saint-Gilles et les immeubles de la RD 920',
