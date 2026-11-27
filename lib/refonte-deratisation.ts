@@ -6378,4 +6378,130 @@ REFONTE_DERATISATION['paris-11'] = {
   sources: P_SOURCES(P_INSEE(11, 'Paris 11e'), P_WIKI(11, 'densité, quartiers, faubourgs du Temple et Saint-Antoine'), { label: 'Wikipédia, Boulevard Richard-Lenoir (canal Saint-Martin couvert en 1860, marché Bastille)', url: 'https://fr.wikipedia.org/wiki/Boulevard_Richard-Lenoir' }),
 }
 
+// ── Paris 20e (27/11/2026) ──
+const w20 = wp('paris-20')
+REFONTE_DERATISATION['paris-20'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Les collines de Belleville et de Ménilmontant, le Père-Lachaise, la Petite Ceinture en tranchée, des immeubles anciens et de grandes résidences : le 20e est l’un des arrondissements les plus peuplés de Paris. Nous y traitons les rats cour par cour, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 20e (75020) : de Belleville à Charonne',
+    paras: [
+      'Le 20e arrondissement, dit **de Ménilmontant**, compte **185 140 habitants** sur **6 km²**, soit près de **31 000 habitants au km²**. Créé en **1860** par l’annexion d’une partie de Belleville et de Charonne, il réunit quatre quartiers administratifs : **Belleville**, **Saint-Fargeau**, **Père-Lachaise** et **Charonne**.',
+      'Ancien faubourg ouvrier et industriel (fonderies, ateliers, chaussure), il mêle aujourd’hui **immeubles anciens**, cours d’ateliers, **grandes résidences** et espaces verts : le **cimetière du Père-Lachaise** (44 hectares), le **parc de Belleville** et la **Petite Ceinture**, ancienne voie ferrée. Pour une société de dératisation, ce sont des caves, des locaux à poubelles, des jardins de résidence et des talus à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans le 20e depuis **Saint-Maurice**, 7 jours sur 7.',
+      P_AUTRES('paris-20', 'Paris 20e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '185 140', texte: 'habitants dans le 20e (population légale Insee), code postal 75020.', source: P_INSEE(20, 'Paris 20e') },
+    { valeur: '44 ha', texte: 'pour le cimetière du Père-Lachaise, le plus grand cimetière de Paris intra-muros.', source: { label: 'Wikipédia, Cimetière du Père-Lachaise (superficie)', url: 'https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_du_P%C3%A8re-Lachaise' } },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 20e : l’arrondissement secteur par secteur',
+    intro: 'Le 20e compte quatre quartiers administratifs : **Belleville**, **Saint-Fargeau**, **Père-Lachaise** et **Charonne**. Des pentes de Belleville aux pavés de Charonne, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Belleville et la rue de Belleville',
+        texte: 'Sur les pentes de la **rue de Belleville** : restaurants, épiceries, marchés et immeubles anciens serrés, souvent avec cours et caves. Réserves, bacs à poubelles et vieux réseaux : nous intervenons chez les **commerçants** et dans les copropriétés, puis rebouchons soupiraux et passages.',
+        photo: w20('rue-de-belleville.jpg', 'La rue de Belleville, ses commerces et ses immeubles', 'La rue de Belleville.', 'Aleksandr Zykov', 'CC BY-SA 2.0', 'Rue_de_Belleville_June_2010.jpg'),
+      },
+      {
+        nom: 'Le parc de Belleville et les hauts de Ménilmontant',
+        texte: 'Ouvert en **1988** sur une colline autrefois creusée de carrières de gypse, le **parc de Belleville** (4,5 hectares) descend en terrasses vers la ville. Pelouses, massifs et pique-niques : la Ville traite le parc, mais les immeubles riverains doivent fermer caves et locaux à poubelles.',
+        photo: w20('parc-de-belleville.jpg', 'Les allées et pelouses en pente du parc de Belleville', 'Le parc de Belleville, ouvert en 1988.', 'Edouard d’Erasme', 'CC BY-SA 4.0', 'Parc_de_Belleville_(Paris,_20th_arrondissement).jpg'),
+      },
+      {
+        nom: 'Le Père-Lachaise et ses abords',
+        texte: 'Le **cimetière du Père-Lachaise** couvre **44 hectares** d’allées, d’arbres et de tombeaux. Il relève de la Ville ; les immeubles qui le bordent, de leurs propriétaires. Rez-de-chaussée, caves et cours voisines sont nos points de contrôle. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w20('pere-lachaise.jpg', 'Une allée pavée bordée de tombeaux au cimetière du Père-Lachaise', 'Une allée du cimetière du Père-Lachaise.', 'MOSSOT', 'CC BY-SA 3.0', 'Cimeti%C3%A8re_du_P%C3%A8re-Lachaise_-_Tombeaux_dispos%C3%A9s_le_long_d%27une_all%C3%A9e.JPG'),
+      },
+      {
+        nom: 'La Petite Ceinture et Saint-Fargeau',
+        texte: 'L’ancienne voie ferrée de la **Petite Ceinture** traverse l’arrondissement en tranchée, entre talus boisés et grilles. Végétation, calme et immeubles en surplomb : un abri pour les rongeurs. À l’est, **Saint-Fargeau** aligne résidences et immeubles plus récents : parkings, locaux à poubelles et jardins de résidence se traitent avec le **bailleur** ou le **syndic**.',
+        photo: w20('petite-ceinture.jpg', 'La tranchée boisée de la Petite Ceinture vue de la rue des Couronnes', 'La Petite Ceinture vue de la rue des Couronnes.', 'Poissons1957', 'CC BY-SA 4.0', 'Petite_Ceinture_ferroviaire_(Paris_20e)_-_Rue_des_Couronnes.jpg'),
+      },
+      {
+        nom: 'Charonne, de l’église aux grands boulevards',
+        texte: 'Autour de **Saint-Germain-de-Charonne**, les rues de l’ancien village gardent maisons basses, jardins et escaliers ; plus au sud, vers le cours de Vincennes, grands immeubles et résidences. Jardinets, composts et caves : nous traitons les terriers et fermons les accès. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w20('saint-germain-de-charonne.jpg', 'L’église Saint-Germain-de-Charonne et son escalier', 'L’église Saint-Germain-de-Charonne, au cœur de l’ancien village.', 'Guilhem Vellut', 'CC BY 2.0', 'Eglise_Saint-Germain_de_Charonne,_Paris_12_March_2016.jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 20e', '75020'),
+  dératiseur: P_DERATISEUR('à Paris 20e', '75020', { t: 'Des rats au pied d’une grande résidence', x: 'Locaux à poubelles, parkings et pelouses de résidence : nous traitons avec le bailleur ou le syndic, sur tout l’ensemble, pour éviter que la colonie change simplement de bâtiment.' }),
+  mairie: P_MAIRIE('à Paris 20e', 'dans la rue, un square ou le parc de Belleville', [['paris-11', 'Paris 11e'], ['paris-12', 'Paris 12e'], ['paris-19', 'Paris 19e'], ['paris-10', 'Paris 10e'], ['saint-mande', 'Saint-Mandé']]),
+  faq: P_FAQ('à Paris 20e', [
+    { q: 'J’habite près du Père-Lachaise ou de la Petite Ceinture : ai-je plus de risques ?', a: 'Les grands espaces verts et les talus offrent abri et calme aux rongeurs. Les immeubles riverains doivent surtout protéger caves, soupiraux et locaux à poubelles, et réagir dès les premiers signes.' },
+    { q: 'Des rats dans ma résidence : qui doit agir ?', a: 'Le bailleur ou le syndic, pour les parties communes : caves, parkings, locaux à poubelles, espaces verts. Prévenez-le par écrit, avec photos et dates ; nous traitons l’ensemble de la résidence.' },
+  ]),
+  sources: P_SOURCES(P_INSEE(20, 'Paris 20e'), P_WIKI(20, 'quartiers, annexion de 1860, histoire industrielle'), { label: 'Wikipédia, Parc de Belleville (ouverture en 1988, 4,5 ha, anciennes carrières)', url: 'https://fr.wikipedia.org/wiki/Parc_de_Belleville' }),
+}
+
+// ── Paris 13e (27/11/2026) ──
+const w13 = wp('paris-13')
+REFONTE_DERATISATION['paris-13'] = {
+  maj: '2026-11-27',
+  quiPaie: QUI_PAIE_75,
+  reglement: REGLEMENT_75,
+  accroche: 'Les tours et les dalles de l’opération Italie 13, le quartier asiatique et ses commerces de bouche, les pavés de la Butte-aux-Cailles et les nouveaux immeubles de Paris Rive Gauche : dans le 13e, chaque secteur a ses rats. Nous les traitons dalle par dalle, cave par cave.',
+  societe: {
+    titre: 'Société de dératisation à Paris 13e (75013) : des tours aux pavés de la Butte-aux-Cailles',
+    paras: [
+      'Le 13e arrondissement compte **181 271 habitants** sur **7,13 km²**, soit plus de **25 000 habitants au km²**. Il réunit quatre quartiers administratifs : **Salpêtrière**, **Gare**, **Maison-Blanche** et **Croulebarbe**. Ancien quartier ouvrier et industriel, il abrite la gare d’Austerlitz, l’hôpital de la Pitié-Salpêtrière, la manufacture des Gobelins et la Bibliothèque nationale de France.',
+      'Dans la seconde moitié du XXe siècle, le sud de l’arrondissement a été profondément transformé par l’**opération Italie 13**, inspirée de Le Corbusier : **tours**, **dalles** et parkings souterrains, dont le quartier des **Olympiades**. À l’est, **Paris Rive Gauche**, l’un des plus grands chantiers de France, longe la Seine. Pour une société de dératisation, ce sont des **sous-sols de dalle**, des **locaux à poubelles** collectifs et des **commerces de bouche** à surveiller.',
+      'La **Ville de Paris** traite l’espace public, mais dans les cours, caves, parkings et bâtiments privés, la lutte **incombe aux propriétaires**. Nous intervenons dans le 13e depuis **Saint-Maurice**, de l’autre côté de la Seine, 7 jours sur 7.',
+      P_AUTRES('paris-13', 'Paris 13e'),
+    ],
+  },
+  chiffres: [
+    { valeur: '181 271', texte: 'habitants dans le 13e (population légale Insee), code postal 75013.', source: P_INSEE(13, 'Paris 13e') },
+    { valeur: '4', texte: 'quartiers administratifs : Salpêtrière, Gare, Maison-Blanche et Croulebarbe.', source: P_WIKI(13, 'quartiers, opération Italie 13, Paris Rive Gauche') },
+    P_VILLE_CHIFFRE,
+    P_LEPTO_CHIFFRE,
+  ],
+  quartiers: {
+    titre: 'Où se cachent les rats à Paris 13e : l’arrondissement secteur par secteur',
+    intro: 'Le 13e compte quatre quartiers administratifs : **Salpêtrière**, **Gare**, **Maison-Blanche** et **Croulebarbe**. Des tours des Olympiades aux pavés de la Butte-aux-Cailles, voici ce que chaque secteur implique pour une dératisation.',
+    zones: [
+      {
+        nom: 'Les tours, les dalles et les Olympiades',
+        texte: 'Héritage de l’**opération Italie 13** : tours d’habitation, **dalles** piétonnes et commerces posés au-dessus de **parkings** et de voies de livraison. Sous la dalle, gaines, vide-ordures, locaux techniques et poubelles forment un réseau où les rats circulent à l’abri. Nous traitons avec le **syndic** ou le **bailleur**, niveau par niveau.',
+        photo: w13('tours-du-13e.jpg', 'Des tours d’habitation et une dalle piétonne dans le sud du 13e arrondissement', 'Tours et dalle dans le sud du 13e.', 'besopha', 'CC BY-SA 2.0', 'Les_tours_de_Paris_13.jpg'),
+      },
+      {
+        nom: 'Le quartier asiatique et l’avenue de Choisy',
+        texte: 'Entre l’**avenue de Choisy** et l’avenue d’Ivry, le **quartier asiatique** concentre restaurants, épiceries et supermarchés. Réserves, chambres froides, livraisons et déchets alimentaires : nous mettons en place des **plans de lutte** avec postes numérotés et registre. Les immeubles d’habitation au-dessus des parkings se traitent avec le syndic.',
+        photo: w13('parc-de-choisy.jpg', 'Entrée de parking et résidences dans l’allée du Parc-de-Choisy', 'L’allée du Parc-de-Choisy : résidences et entrées de parkings souterrains.', 'Ordifana75', 'CC BY-SA 3.0', 'Paris_13e_-_All%C3%A9e_du_Parc-de-Choisy_-_vue_ouest.jpg'),
+      },
+      {
+        nom: 'La Butte-aux-Cailles',
+        texte: 'Le « sommet » du 13e, à une soixantaine de mètres d’altitude : rues pavées, **maisons basses**, petits immeubles, bars et restaurants. Jardinets, cours et caves anciennes : les rats passent par les soupiraux et les réseaux. Voir [rats dans les murs et cloisons](/blog/rat-dans-les-murs-cloisons).',
+        photo: w13('butte-aux-cailles.jpg', 'La rue pavée de la Butte-aux-Cailles et ses terrasses', 'La rue de la Butte-aux-Cailles.', 'Ordifana75', 'CC BY-SA 3.0', 'Paris_13e_-_Rue_de_la_Butte-aux-Cailles_-_vue_est_4.jpg'),
+      },
+      {
+        nom: 'Paris Rive Gauche et la Bibliothèque nationale',
+        texte: 'Le long de la Seine, autour de la **Bibliothèque François-Mitterrand**, le quartier **Paris Rive Gauche** aligne immeubles récents, bureaux, universités et restaurants, séparés du reste de l’arrondissement par les voies ferrées. Parkings, locaux à poubelles et rez-de-chaussée commerciaux : la prévention se fait dès la livraison des bâtiments.',
+        photo: w13('bnf-esplanade.jpg', 'L’esplanade de la Bibliothèque nationale de France et les immeubles de Paris Rive Gauche', 'L’esplanade de la Bibliothèque François-Mitterrand et Paris Rive Gauche.', 'Romainbehar', 'CC0', 'Paris_13e_-_Biblioth%C3%A8que_nationale_de_France_-_Site_Fran%C3%A7ois_Mitterrand_-_Esplanade.jpeg'),
+      },
+      {
+        nom: 'Le parc Kellermann et Maison-Blanche',
+        texte: 'Au sud, près du boulevard périphérique, le **parc Kellermann**, son plan d’eau et ses grands arbres côtoient les tours et les résidences de **Maison-Blanche**. La Ville traite le parc ; les résidences voisines doivent surveiller pelouses, locaux à poubelles et parkings. Voir [rat dans le compost](/blog/rat-compost).',
+        photo: w13('parc-kellermann.jpg', 'Le plan d’eau du parc Kellermann et une tour à l’arrière-plan', 'Le plan d’eau du parc Kellermann.', 'Guilhem Vellut', 'CC BY 2.0', 'Pond_@_Parc_Kellerman_@_Paris_(30550528462).jpg'),
+      },
+    ],
+  },
+  intervention: P_INTERVENTION('à Paris 13e', '75013'),
+  dératiseur: P_DERATISEUR('à Paris 13e', '75013', { t: 'Des rats sous une dalle ou dans un parking', x: 'Locaux techniques, vide-ordures, gaines et parkings communiquent : nous traitons tout le sous-sol avec le syndic ou le bailleur, puis fermons les accès entre niveaux.' }),
+  mairie: P_MAIRIE('à Paris 13e', 'dans la rue, sur une dalle publique ou dans un parc', [['paris-5', 'Paris 5e'], ['paris-14', 'Paris 14e'], ['paris-12', 'Paris 12e'], ['ivry-sur-seine', 'Ivry-sur-Seine'], ['le-kremlin-bicetre', 'Le Kremlin-Bicêtre'], ['gentilly', 'Gentilly']]),
+  faq: P_FAQ('à Paris 13e', [
+    { q: 'Des rats sous la dalle de ma tour : qui doit agir ?', a: 'Le syndic ou le bailleur, pour les parties communes : parkings, locaux à poubelles, vide-ordures et locaux techniques. La dalle publique relève de la Ville. Signalez le problème par écrit, avec photos.' },
+    { q: 'J’ai un restaurant avenue de Choisy : quelles obligations ?', a: 'Un plan de lutte contre les nuisibles, avec postes numérotés, plan de localisation et registre des passages, présenté lors des contrôles d’hygiène. Nous le mettons en place ([plan de lutte d’un restaurant](/blog/restaurant-plan-lutte-nuisibles)).' },
+  ]),
+  sources: P_SOURCES(P_INSEE(13, 'Paris 13e'), P_WIKI(13, 'quartiers, opération Italie 13, Olympiades, Butte-aux-Cailles, Paris Rive Gauche')),
+}
+
 export const refonteDerat = (slug: string) => REFONTE_DERATISATION[slug]
