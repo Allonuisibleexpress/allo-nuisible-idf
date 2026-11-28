@@ -828,7 +828,7 @@ const ALFORT_WIKI: Source = { label: 'Wikipédia, Alfortville (confluent, crues,
 const ALFORT_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94002, Alfortville', url: 'https://geo.api.gouv.fr/communes?code=94002&fields=nom,code,codesPostaux,population,surface' }
 
 REFONTE_DERATISATION['alfortville'] = {
-  maj: '2026-11-23',
+  maj: '2026-11-28',
   accroche: 'Alfortville est bordée par la Seine et par la Marne, et classée tout entière en zone inondable. Pour les rats, c’est un terrain idéal ; pour nous, un terrain que nous connaissons par cœur.',
   societe: {
     titre: 'Société de dératisation à Alfortville (94140) : la ville du confluent',
@@ -847,7 +847,7 @@ REFONTE_DERATISATION['alfortville'] = {
   ],
   quartiers: {
     titre: 'Où se cachent les rats à Alfortville : la ville secteur par secteur',
-    intro: 'Du **confluent** au nord jusqu’au **Port-à-l’Anglais** au sud, entre les **quais de Seine**, la **Marne** et la voie ferrée du **RER D**, voici ce que chaque secteur implique pour une dératisation.',
+    intro: 'Du **confluent** au nord jusqu’au **Port-à-l’Anglais** au sud, entre les **quais de Seine**, la **Marne**, les **cités ouvrières** et la voie ferrée du **RER D**, voici ce que chaque secteur implique pour une dératisation.',
     zones: [
       {
         nom: 'Le confluent, Chinagora et les bords de Marne',
@@ -860,8 +860,18 @@ REFONTE_DERATISATION['alfortville'] = {
         photo: { src: '/villes/alfortville/crue-1910-ile-saint-pierre.jpg', alt: 'Carte postale de la crue de 1910 à Alfortville, rue de Rome, île Saint-Pierre', legende: 'Rue de Rome, île Saint-Pierre, pendant la crue de 1910 : à Alfortville, l’eau n’est jamais loin des caves.', credit: 'Auteur inconnu', licence: 'Domaine public', page: W + 'Alfortville.1910.Ile_Saint-Pierre.Rue_de_Rome.jpg' },
       },
       {
+        nom: 'Cités ouvrières, cours communes et maisons de brique',
+        texte: 'Entre les quais et la voie ferrée, Alfortville garde son tissu ouvrier : petites maisons de brique comme celles de la **villa Saint-Louis**, immeubles autour d’une **cour commune**, ateliers transformés. Caves anciennes, murets, jardinets et canalisations vieillissantes offrent autant de passages. Nous repérons les trous et les **soupiraux**, traitons, puis rebouchons au mortier ou au grillage fin. Voir [le mode de vie du rat](/blog/rat-mode-de-vie).',
+        photo: { src: '/villes/alfortville/villa-saint-louis.jpg', alt: 'Les maisons de brique de la cité ouvrière de la villa Saint-Louis à Alfortville', legende: 'La cité ouvrière de la villa Saint-Louis : maisons de brique, jardinets et murets, typiques du vieil Alfortville.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Cit%C3%A9_Ouvri%C3%A8re_Villa_Saint_Louis_-_Alfortville_(FR94)_-_2021-03-05_-_1.jpg' },
+      },
+      {
         nom: 'Chantereine et le Grand Ensemble',
         texte: 'Ces deux quartiers prioritaires rassemblent près de **4 000 habitants** dans de grands immeubles, en pleine rénovation : trois tours de 18 étages de Chantereine ont été démolies en octobre 2024. Démolitions et chantiers **dérangent les colonies** de rongeurs, qui se déplacent vers les bâtiments voisins. Le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
+      },
+      {
+        nom: 'Le sud : le barrage-écluse du Port-à-l’Anglais',
+        texte: 'Au sud, la ville rejoint la Seine au **barrage-écluse du Port-à-l’Anglais**, ouvrage du XIXe siècle qui relie Alfortville à Vitry-sur-Seine. Berges engazonnées, talus, promenades et pavillons proches de l’eau : les rats circulent le long du fleuve et remontent vers les **jardins** et les **vides sanitaires**. Nous traitons les terriers des jardins, puis bouchons les accès des maisons. Côté Vitry : [dératisation à Vitry-sur-Seine](/deratisation/vitry-sur-seine).',
+        photo: { src: '/villes/alfortville/ecluse-port-a-l-anglais.jpg', alt: 'Le barrage-écluse du Port-à-l’Anglais sur la Seine à Alfortville', legende: 'Le barrage-écluse du Port-à-l’Anglais : au sud d’Alfortville, berges et promenades au bord de la Seine.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Barrage_%C3%89cluse_Port_Anglais_Alfortville_1.jpg' },
       },
       {
         nom: 'Le centre, les squares et la voie ferrée',
@@ -915,7 +925,7 @@ const ARCUEIL_WIKI: Source = { label: 'Wikipédia, Arcueil (vallée de la Bièvr
 const ARCUEIL_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94003, Arcueil', url: 'https://geo.api.gouv.fr/communes?code=94003&fields=nom,code,codesPostaux,population,surface' }
 
 REFONTE_DERATISATION['arcueil'] = {
-  maj: '2026-11-23',
+  maj: '2026-11-28',
   accroche: 'Arcueil est construite dans la vallée de la Bièvre, une rivière longtemps en partie enterrée et rendue à l’air libre en 2022. Entre cités, pavillons et coteaux, nous suivons le chemin des rats.',
   societe: {
     titre: 'Société de dératisation à Arcueil (94110) : une ville dans la vallée de la Bièvre',
@@ -948,7 +958,13 @@ REFONTE_DERATISATION['arcueil'] = {
       },
       {
         nom: 'Les cités : Chaperon-Vert, Vache-Noire et les résidences',
-        texte: 'Le **Chaperon-Vert**, la résidence de la **Vache-Noire** (en renouvellement urbain) et les nombreuses résidences sociales partagent **caves**, **vide-ordures** et **locaux à poubelles**. Le traitement d’un logement seul ne suffit pas : nous travaillons avec le **bailleur** sur toutes les **parties communes**.',
+        texte: 'Environ **38 %** du parc locatif d’Arcueil est en HLM, surtout dans des cités de **sept étages au plus**, qui servent de repères dans la ville. Le **Chaperon-Vert**, la résidence de la **Vache-Noire** (en renouvellement urbain) et les autres résidences sociales partagent **caves**, **vide-ordures** et **locaux à poubelles**. Le traitement d’un logement seul ne suffit pas : nous travaillons avec le **bailleur** sur toutes les **parties communes**.',
+        photo: { src: '/villes/arcueil/avenue-chaperon-vert.jpg', alt: 'L’avenue du Chaperon-Vert à Arcueil', legende: 'L’avenue du Chaperon-Vert : à Arcueil, environ 38 % des logements locatifs sont des HLM.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Avenue_Chaperon_Vert_-_Arcueil_(FR94)_-_2022-05-15_-_1.jpg' },
+      },
+      {
+        nom: 'Parcs, squares et jardins',
+        texte: 'Du **parc Paul-Vaillant-Couturier** aux squares de quartier, pelouses, massifs et haies offrent aux rats des terriers faciles à creuser, près des poubelles et des aires de pique-nique. Quand un terrier apparaît au pied d’un immeuble voisin, nous traitons les abords et bouchons les passages vers les **caves**. Pour la voie publique ou un parc, prévenez la mairie ; pour votre résidence, c’est au syndic ou au bailleur d’agir. Voir [trou dans le jardin : rat ou autre ?](/blog/trou-dans-le-jardin).',
+        photo: { src: '/villes/arcueil/parc-paul-vaillant-couturier.jpg', alt: 'Les pelouses et les arbres du parc Paul-Vaillant-Couturier à Arcueil', legende: 'Le parc Paul-Vaillant-Couturier : pelouses et massifs, à surveiller quand un terrier apparaît.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Parc_Paul_Vaillant_Couturier_-_Arcueil_(FR94)_-_2026-10-18_-_1.jpg' },
       },
       {
         nom: 'Laplace, la Vache-Noire et les commerces',
@@ -1003,7 +1019,7 @@ const GROSBOIS_WIKI: Source = { label: 'Wikipédia, Château de Grosbois (domain
 const BOISSY_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94004, Boissy-Saint-Léger', url: 'https://geo.api.gouv.fr/communes?code=94004&fields=nom,code,codesPostaux,population,surface' }
 
 REFONTE_DERATISATION['boissy-saint-leger'] = {
-  maj: '2026-11-23',
+  maj: '2026-11-28',
   accroche: 'Un domaine de 450 hectares avec des écuries, une grande cité au nord de la gare, un vieux bourg et des pavillons : à Boissy-Saint-Léger, chaque secteur a ses rongeurs.',
   societe: {
     titre: 'Société de dératisation à Boissy-Saint-Léger (94470) : entre bois, écuries et cités',
@@ -1040,8 +1056,14 @@ REFONTE_DERATISATION['boissy-saint-leger'] = {
         photo: { src: '/villes/boissy-saint-leger/eglise-saint-leger.jpg', alt: 'L’église Saint-Léger de Boissy-Saint-Léger', legende: 'L’église Saint-Léger, au cœur du vieux bourg : maisons anciennes, caves et soupiraux.', credit: 'FGarg', licence: 'CC0', page: W + 'IMG_4607_(Eglise_Boissy).JPG' },
       },
       {
+        nom: 'La gare du RER A et ses abords',
+        texte: 'Boissy-Saint-Léger est desservie par le **RER A** ; au nord de la gare s’étendent les grands ensembles de la Haie Griselle et de la Hêtraie, et des immeubles bordent le parvis. Commerces, restauration rapide, bennes et parkings attirent les rongeurs. Dans les immeubles, nous traitons les **caves**, les **parkings** et les **locaux à poubelles**, et dans les commerces nous intervenons **hors des heures d’ouverture**, avec **attestation**.',
+        photo: { src: '/villes/boissy-saint-leger/parvis-gare-rer-a.jpg', alt: 'Le parvis de la gare de Boissy-Saint-Léger', legende: 'Le parvis de la gare de Boissy-Saint-Léger, sur la ligne A du RER, avec ses immeubles.', credit: 'Bmazerolles', licence: 'CC BY-SA 4.0', page: W + 'Gare_de_Boissy-St-Leger_-_parvis.jpg' },
+      },
+      {
         nom: 'Les quartiers pavillonnaires',
         texte: 'Dans les quartiers de **pavillons**, jardins, composteurs, poulaillers et abris attirent les rongeurs. Nous traitons les **terriers**, protégeons le compost et fermons l’accès au **vide sanitaire**. Voir [rat dans le compost](/blog/rat-compost) et [rat dans le vide sanitaire](/blog/rat-vide-sanitaire).',
+        photo: { src: '/villes/boissy-saint-leger/rue-stephanie-pavillons.jpg', alt: 'Une rue de pavillons à Boissy-Saint-Léger', legende: 'Rue Stéphanie : pavillons, murets et jardins, le paysage le plus courant de Boissy-Saint-Léger.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Rue_St%C3%A9phanie_-_Boissy-Saint-L%C3%A9ger_(FR94)_-_2022-05-06_-_1.jpg' },
       },
     ],
   },
@@ -3124,7 +3146,7 @@ const THIAIS_WIKI: Source = { label: 'Wikipédia, Thiais (relief, cimetière par
 const THIAIS_INSEE: Source = { label: 'Découpage administratif (Insee), geo.api.gouv.fr : commune 94073, Thiais', url: 'https://geo.api.gouv.fr/communes?code=94073&fields=nom,code,codesPostaux,population,surface' }
 
 REFONTE_DERATISATION['thiais'] = {
-  maj: '2026-11-25',
+  maj: '2026-11-28',
   accroche: 'Un plateau commercial avec Belle Épine, un cimetière de 103 hectares, un coteau de pavillons et la vallée de la Seine : à Thiais, chaque niveau de la ville a ses rongeurs. Nous savons où chercher.',
   societe: {
     titre: 'Société de dératisation à Thiais (94320) : une ville sur trois niveaux',
@@ -3143,25 +3165,32 @@ REFONTE_DERATISATION['thiais'] = {
   ],
   quartiers: {
     titre: 'Où se cachent les rats à Thiais : la ville secteur par secteur',
-    intro: 'Du **plateau** commercial aux **Grands Champs**, du **vieux village** sur le coteau aux pavillons de la **Vallée verte**, jusqu’à **Grignon** dans la vallée, voici ce que chaque secteur implique pour une dératisation.',
+    intro: 'De **Belle Épine** et de la **RD7** au **cimetière parisien** et aux **Grands Champs** sur le plateau, du **vieux village** sur le coteau au pôle **Thiais-Orly** du métro, jusqu’à **Grignon** dans la vallée, voici ce que chaque secteur implique pour une dératisation.',
     zones: [
       {
-        nom: 'Le plateau : Belle Épine, zones commerciales et cimetière',
-        texte: 'Sur le **plateau**, le centre commercial **Belle Épine**, les enseignes et les restaurants produisent des déchets alimentaires en quantité. À côté, le **cimetière parisien** forme un très grand espace arboré. Pour un commerce : postes **numérotés**, **registre**, **attestation** et passages hors des heures d’ouverture.',
+        nom: 'Belle Épine, Thiais Village et la RD7',
+        texte: 'À l’ouest, le long de la **RD7** (l’ancienne nationale 7, limite occidentale de la ville), le centre commercial **Belle Épine**, ouvert en 1971, et son extension **Thiais Village** (2007) concentrent restaurants, réserves et bennes : de quoi nourrir des rongeurs toute l’année. Pour un commerce : postes **numérotés**, **registre**, **attestation** pour vos contrôles d’hygiène et passages **hors des heures d’ouverture**. Voir [nos services aux professionnels](/professionnels).',
+        photo: { src: '/villes/thiais/rd7-belle-epine.jpg', alt: 'La RD7 à Thiais vue depuis la passerelle de Belle Épine', legende: 'La RD7 vue depuis la passerelle de Belle Épine : à l’ouest de Thiais, la zone commerciale borde l’ancienne nationale 7.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Route_D7_vue_depuis_Passerelle_Belle_%C3%89pine_-_Thiais_(FR94)_-_2021-12-31_-_1.jpg' },
+      },
+      {
+        nom: 'Le plateau : cimetière parisien et Grands Champs',
+        texte: 'Sur le **plateau de Longboyau**, autrefois agricole, le **cimetière parisien** forme un très grand espace arboré. Tout près, le grand ensemble des **Grands Champs**, en réaménagement avec l’Agence nationale pour la rénovation urbaine, rassemble des immeubles autour des mêmes **caves** et **locaux à poubelles**. Les chantiers délogent les colonies : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
         photo: { src: '/villes/thiais/cimetiere-parisien.jpg', alt: 'Une allée arborée du cimetière parisien de Thiais', legende: 'Une allée du cimetière parisien de Thiais : 103 hectares d’espaces arborés sur le plateau.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Avenue_A_Cimeti%C3%A8re_Parisien_Thiais_-_Thiais_(FR94)_-_2024-08-31_-_1.jpg' },
       },
       {
-        nom: 'Les Grands Champs',
-        texte: 'Le grand ensemble des **Grands Champs**, en réaménagement avec l’Agence nationale pour la rénovation urbaine, rassemble des immeubles autour des mêmes **caves** et **locaux à poubelles**. Les chantiers délogent les colonies : le traitement se fait avec le **bailleur**, sur toutes les **parties communes**.',
-      },
-      {
         nom: 'Le vieux village et le coteau',
-        texte: 'Sur le **coteau**, berceau de la paroisse, le centre ancien garde des maisons avec **caves**, des cours et sa **fontaine-lavoir**. Plus loin, les lotissements de la **Vallée verte** et de **Green Valley**, construits dans les années 1980, ont jardins et vide sanitaires. Voir [rat dans le compost](/blog/rat-compost).',
+        texte: 'Sur le **coteau**, berceau de la paroisse, le centre ancien garde des maisons avec **caves**, des cours et sa **fontaine-lavoir**. Plus loin, les lotissements de la **Vallée verte** et de **Green Valley**, construits dans les années 1980, ont jardins et vides sanitaires. Voir [rat dans le compost](/blog/rat-compost).',
         photo: { src: '/villes/thiais/fontaine-lavoir.jpg', alt: 'La fontaine-lavoir du vieux Thiais', legende: 'La fontaine-lavoir, dans le vieux Thiais : un centre ancien avec maisons, caves et cours.', credit: 'besopha', licence: 'CC BY-SA 2.0', page: W + 'Le_lavoir_(6499516531).jpg' },
       },
       {
+        nom: 'Le pôle Thiais-Orly : métro 14 et tramway T7',
+        texte: 'Thiais est desservie par la **ligne 14** du métro, avec les stations **Thiais-Orly** et **Chevilly-Larue**, et par le **tramway T7**, avec cinq stations sur la commune ou à proximité. Autour des gares, les travaux de voirie et de réseaux dérangent les rongeurs, qui cherchent alors refuge dans les immeubles et les pavillons voisins. Dès les premières traces, un diagnostic évite qu’une colonie s’installe dans les caves.',
+        photo: { src: '/villes/thiais/station-thiais-orly.jpg', alt: 'Les abords de la station de métro Thiais-Orly', legende: 'Les abords de la station Thiais-Orly de la ligne 14 : un nouveau pôle de transport au sud de la ville.', credit: 'Chabe01', licence: 'CC BY-SA 4.0', page: W + 'Voie_Nord_Station_Thiais_Orly_M%C3%A9tro_Paris_-_Thiais_(FR94)_-_2026-07-28_-_1.jpg' },
+      },
+      {
         nom: 'Grignon et la vallée de la Seine',
-        texte: 'Dans la **vallée**, sur des sols sablonneux, les quartiers sud et est, dont **Grignon** et les cités des **Vergers de Grignon**, mêlent résidences et maisons, à proximité de la Seine et d’Orly. Caves, parkings et jardins : nous traitons au plus près des points d’entrée, puis rebouchons.',
+        texte: 'Au sud, **Grignon**, hameau attesté dès le Moyen Âge et partagé avec Orly, a gardé sa vocation agricole jusqu’aux années 1980 et la fermeture de sa dernière ferme. Dans la **vallée**, sur des sols sablonneux, les quartiers sud et est, dont les cités des **Vergers de Grignon**, mêlent résidences, maisons et jardins ouvriers, à proximité de la Seine et d’Orly. Caves, parkings et jardins : nous traitons au plus près des points d’entrée, puis rebouchons.',
+        photo: { src: '/villes/thiais/eglise-rue-de-grignon.jpg', alt: 'Carte postale ancienne de l’église et de la rue de Grignon à Thiais', legende: 'Carte postale ancienne : l’église et la rue de Grignon, au temps où Thiais était encore un bourg agricole.', credit: 'Auteur inconnu', licence: 'Domaine public', page: W + 'Thiais.Eglise_et_rue_de_Grignon.jpg' },
       },
     ],
   },
