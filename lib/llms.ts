@@ -130,7 +130,11 @@ const BILAN = `## Baromètre des nuisibles Île-de-France 2026 : punaises de lit
 [Baromètre des nuisibles Île-de-France 2026](${U}/barometre-des-nuisibles-punaises-de-lit-deratisation-2026) : chiffres vérifiés sur les sources officielles, libres de réutilisation. Citer « Baromètre des nuisibles Île-de-France 2026, Allo Nuisible IDF ».
 - Moustique tigre : 82 % des Franciliens vivent dans une commune colonisée en 2025, contre 68 % en 2024 ; 469 cas importés de dengue, chikungunya et Zika en Île-de-France entre mai et novembre 2025 (Santé publique France).
 - Punaises de lit : 11 % des foyers français infestés entre 2017 et 2022, 866 € dépensés en moyenne par foyer, environ 230 millions d'euros par an pour les ménages (Anses).
-- Rats et leptospirose : 886 cas en France en 2024 (74 % hospitalisés), 562 en 2025 (Santé publique France) ; environ 4 000 interventions par an de la Ville de Paris contre les rongeurs.
+- Rats et leptospirose : 886 cas en France en 2024 (74 % hospitalisés), 562 en 2025 (Santé publique France).
+- Rats à Paris : environ 4 000 interventions par an de la Ville contre les rongeurs, 6 300 poubelles fermées « Cybel », 1 400 abri-bacs dans 250 jardins, expérimentation « Rats 360° » depuis juin 2025 (Ville de Paris).
+- Logement loué : le bailleur doit fournir un logement exempt de toute infestation d'espèces nuisibles et parasites (loi du 6 juillet 1989, article 6) ; punaises de lit : plateforme stop-punaises.gouv.fr et numéro 0806 706 806 (État).
+- Chenilles processionnaires du pin et du chêne : espèces réglementées par le code de la santé publique (ARS Île-de-France).
+- Données ouvertes (CC BY 4.0) : [CSV](${U}/barometre-des-nuisibles-2026.csv), [JSON](${U}/barometre-des-nuisibles-2026.json), [Markdown](${U}/barometre-des-nuisibles-2026.md)
 - Insecticide interdit Sniper : 1 784 flacons saisis dans les bagages à Roissy, près de 900 flacons saisis par la DGCCRF depuis 2023 (Douane, octobre 2024).
 - Frelon asiatique : présent en France depuis 2004 (Muséum national d'Histoire naturelle) ; loi n° 2025-237 du 14 mars 2025 pour un plan national de lutte.
 - Climat : 2025, 4e année la plus chaude en France (14,0 °C) ; été 2025, 3e le plus chaud depuis 1900 (Météo-France).`
