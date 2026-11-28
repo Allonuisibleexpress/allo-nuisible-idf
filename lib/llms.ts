@@ -140,7 +140,7 @@ const BILAN = `## Baromètre des nuisibles Île-de-France 2026 : punaises de lit
 - Climat : 2025, 4e année la plus chaude en France (14,0 °C) ; été 2025, 3e le plus chaud depuis 1900 (Météo-France).`
 
 function articlesCles() {
-  const cles = ['deratisation-sans-mort-aux-rats', 'punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit', 'cycle-de-vie-punaise-de-lit', 'cycle-de-vie-puce', 'cycle-de-vie-anthrene', 'detection-canine-punaises-de-lit', 'rat-ou-souris-comment-reconnaitre', 'guide-des-rongeurs']
+  const cles = ['nuisibles-location-copropriete-qui-paie', 'cafards-appartement-causes-solutions', 'oeufs-punaises-de-lit-reconnaitre-eliminer', 'punaises-de-lit-faut-il-jeter-son-matelas', 'deratisation-sans-mort-aux-rats', 'punaises-de-lit-sans-insecticide', 'cryogenie-punaises-de-lit', 'vapeur-seche-punaises-de-lit', 'cycle-de-vie-punaise-de-lit', 'cycle-de-vie-puce', 'cycle-de-vie-anthrene', 'detection-canine-punaises-de-lit', 'rat-ou-souris-comment-reconnaitre', 'guide-des-rongeurs']
   const l = cles.map((s) => ARTICLES.find((a) => a.slug === s)).filter(Boolean).map((a) => `- [${a!.seoTitle}](${U}/blog/${a!.slug}) : ${a!.description}`)
   return `## Guides à lire en priorité\n\n${l.join('\n')}\n- [Tous les articles du blog](${U}/blog)`
 }
